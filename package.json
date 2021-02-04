@@ -1,14 +1,14 @@
 {
-  "name": "ezmaxinc-sdk-typescrit-axios",
-  "version": "1.0.27",
-  "description": "OpenAPI client for ezmaxinc-sdk-typescrit-axios",
+  "name": "@ezmaxinc/ezmax-sdk-typescript-axios",
+  "version": "1.0.28",
+  "description": "OpenAPI client for @ezmaxinc/ezmax-sdk-typescript-axios",
   "author": "OpenAPI-Generator Contributors",
   "keywords": [
     "axios",
     "typescript",
     "openapi-client",
     "openapi-generator",
-    "ezmaxinc-sdk-typescrit-axios"
+    "@ezmaxinc/ezmax-sdk-typescript-axios"
   ],
   "license": "Unlicense",
   "main": "./dist/index.js",
