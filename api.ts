@@ -2584,6 +2584,16 @@ export enum FieldEUserType {
 }
 
 /**
+ * The user type of the User for SSPR
+ * @export
+ * @enum {string}
+ */
+export enum FieldEUserTypeSSPR {
+    EzsignUser = 'EzsignUser',
+    Native = 'Native'
+}
+
+/**
  * Request for the /1/object/franchisereferalincome/createObject API Request
  * @export
  * @interface FranchisereferalincomeCreateObjectV1Request
@@ -2878,6 +2888,197 @@ export interface PhoneRequest {
      * @memberof PhoneRequest
      */
     sPhoneExtension?: string;
+}
+/**
+ * Request for the /1/module/sspr/resetPasswordRequest API Request
+ * @export
+ * @interface SsprResetPasswordRequestV1Request
+ */
+export interface SsprResetPasswordRequestV1Request {
+    /**
+     * The customer code assigned to your account
+     * @type {string}
+     * @memberof SsprResetPasswordRequestV1Request
+     */
+    pksCustomerCode: string;
+    /**
+     * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
+     * @type {number}
+     * @memberof SsprResetPasswordRequestV1Request
+     */
+    fkiLanguageID: number;
+    /**
+     * 
+     * @type {FieldEUserTypeSSPR}
+     * @memberof SsprResetPasswordRequestV1Request
+     */
+    eUserTypeSSPR: FieldEUserTypeSSPR;
+    /**
+     * The email address.
+     * @type {string}
+     * @memberof SsprResetPasswordRequestV1Request
+     */
+    sEmailAddress?: string;
+    /**
+     * The Login name of the User.
+     * @type {string}
+     * @memberof SsprResetPasswordRequestV1Request
+     */
+    sUserLoginname?: string;
+}
+/**
+ * Request for the /1/module/sspr/resetPassword API Request
+ * @export
+ * @interface SsprResetPasswordV1Request
+ */
+export interface SsprResetPasswordV1Request {
+    /**
+     * The customer code assigned to your account
+     * @type {string}
+     * @memberof SsprResetPasswordV1Request
+     */
+    pksCustomerCode: string;
+    /**
+     * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
+     * @type {number}
+     * @memberof SsprResetPasswordV1Request
+     */
+    fkiLanguageID: number;
+    /**
+     * 
+     * @type {FieldEUserTypeSSPR}
+     * @memberof SsprResetPasswordV1Request
+     */
+    eUserTypeSSPR: FieldEUserTypeSSPR;
+    /**
+     * The email address.
+     * @type {string}
+     * @memberof SsprResetPasswordV1Request
+     */
+    sEmailAddress?: string;
+    /**
+     * The Login name of the User.
+     * @type {string}
+     * @memberof SsprResetPasswordV1Request
+     */
+    sUserLoginname?: string;
+    /**
+     * Hex Encoded Secret SSPR token
+     * @type {string}
+     * @memberof SsprResetPasswordV1Request
+     */
+    binUserSSPRtoken: string;
+}
+/**
+ * Request for the /1/module/sspr/sendUsernames API Request
+ * @export
+ * @interface SsprSendUsernamesV1Request
+ */
+export interface SsprSendUsernamesV1Request {
+    /**
+     * The customer code assigned to your account
+     * @type {string}
+     * @memberof SsprSendUsernamesV1Request
+     */
+    pksCustomerCode: string;
+    /**
+     * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
+     * @type {number}
+     * @memberof SsprSendUsernamesV1Request
+     */
+    fkiLanguageID: number;
+    /**
+     * 
+     * @type {FieldEUserTypeSSPR}
+     * @memberof SsprSendUsernamesV1Request
+     */
+    eUserTypeSSPR: FieldEUserTypeSSPR;
+    /**
+     * The email address.
+     * @type {string}
+     * @memberof SsprSendUsernamesV1Request
+     */
+    sEmailAddress: string;
+}
+/**
+ * Request for the /1/module/sspr/unlockAccountRequest API Request
+ * @export
+ * @interface SsprUnlockAccountRequestV1Request
+ */
+export interface SsprUnlockAccountRequestV1Request {
+    /**
+     * The customer code assigned to your account
+     * @type {string}
+     * @memberof SsprUnlockAccountRequestV1Request
+     */
+    pksCustomerCode: string;
+    /**
+     * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
+     * @type {number}
+     * @memberof SsprUnlockAccountRequestV1Request
+     */
+    fkiLanguageID: number;
+    /**
+     * 
+     * @type {FieldEUserTypeSSPR}
+     * @memberof SsprUnlockAccountRequestV1Request
+     */
+    eUserTypeSSPR: FieldEUserTypeSSPR;
+    /**
+     * The email address.
+     * @type {string}
+     * @memberof SsprUnlockAccountRequestV1Request
+     */
+    sEmailAddress?: string;
+    /**
+     * The Login name of the User.
+     * @type {string}
+     * @memberof SsprUnlockAccountRequestV1Request
+     */
+    sUserLoginname?: string;
+}
+/**
+ * Request for the /1/module/sspr/unlockAccount API Request
+ * @export
+ * @interface SsprUnlockAccountV1Request
+ */
+export interface SsprUnlockAccountV1Request {
+    /**
+     * The customer code assigned to your account
+     * @type {string}
+     * @memberof SsprUnlockAccountV1Request
+     */
+    pksCustomerCode: string;
+    /**
+     * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
+     * @type {number}
+     * @memberof SsprUnlockAccountV1Request
+     */
+    fkiLanguageID: number;
+    /**
+     * 
+     * @type {FieldEUserTypeSSPR}
+     * @memberof SsprUnlockAccountV1Request
+     */
+    eUserTypeSSPR: FieldEUserTypeSSPR;
+    /**
+     * The email address.
+     * @type {string}
+     * @memberof SsprUnlockAccountV1Request
+     */
+    sEmailAddress?: string;
+    /**
+     * The Login name of the User.
+     * @type {string}
+     * @memberof SsprUnlockAccountV1Request
+     */
+    sUserLoginname?: string;
+    /**
+     * Hex Encoded Secret SSPR token
+     * @type {string}
+     * @memberof SsprUnlockAccountV1Request
+     */
+    binUserSSPRtoken: string;
 }
 /**
  * Request for the /1/object/ezsigndocument/editObject API Request
@@ -3535,13 +3736,16 @@ export class GlobalCustomerApi extends BaseAPI {
 export const ModuleSsprApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * This endpoint returns an email with the username(s) matching the email address provided in case of forgotten username
-         * @summary Remind of forgotten username(s)
+         * This endpoint sends an email with a link to reset the user\'s password.  sEmailAddress must be set if eUserTypeSSPR = EzsignUser  sUserLoginname must be set if eUserTypeSSPR = Native
+         * @summary Reset Password Request
+         * @param {SsprResetPasswordRequestV1Request} ssprResetPasswordRequestV1Request 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ssprRemindUsernamesV1: async (options: any = {}): Promise<RequestArgs> => {
-            const localVarPath = `/1/module/sspr/remindUsernames`;
+        ssprResetPasswordRequestV1: async (ssprResetPasswordRequestV1Request: SsprResetPasswordRequestV1Request, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'ssprResetPasswordRequestV1Request' is not null or undefined
+            assertParamExists('ssprResetPasswordRequestV1', 'ssprResetPasswordRequestV1Request', ssprResetPasswordRequestV1Request)
+            const localVarPath = `/1/module/sspr/resetPasswordRequest/`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -3558,9 +3762,168 @@ export const ModuleSsprApiAxiosParamCreator = function (configuration?: Configur
 
 
     
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
             setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(ssprResetPasswordRequestV1Request, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * This endpoint resets the user\'s password.  sEmailAddress must be set if eUserTypeSSPR = EzsignUser  sUserLoginname must be set if eUserTypeSSPR = Native
+         * @summary Reset Password
+         * @param {SsprResetPasswordV1Request} ssprResetPasswordV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ssprResetPasswordV1: async (ssprResetPasswordV1Request: SsprResetPasswordV1Request, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'ssprResetPasswordV1Request' is not null or undefined
+            assertParamExists('ssprResetPasswordV1', 'ssprResetPasswordV1Request', ssprResetPasswordV1Request)
+            const localVarPath = `/1/module/sspr/resetPassword`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(ssprResetPasswordV1Request, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * This endpoint returns an email with the username(s) matching the email address provided in case of forgotten username
+         * @summary Send username(s)
+         * @param {SsprSendUsernamesV1Request} ssprSendUsernamesV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ssprSendUsernamesV1: async (ssprSendUsernamesV1Request: SsprSendUsernamesV1Request, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'ssprSendUsernamesV1Request' is not null or undefined
+            assertParamExists('ssprSendUsernamesV1', 'ssprSendUsernamesV1Request', ssprSendUsernamesV1Request)
+            const localVarPath = `/1/module/sspr/sendUsernames`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(ssprSendUsernamesV1Request, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * This endpoint sends an email with a link to unlock the user account.  sEmailAddress must be set if eUserTypeSSPR = EzsignUser  sUserLoginname must be set if eUserTypeSSPR = Native
+         * @summary Unlock Account Request
+         * @param {SsprUnlockAccountRequestV1Request} ssprUnlockAccountRequestV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ssprUnlockAccountRequestV1: async (ssprUnlockAccountRequestV1Request: SsprUnlockAccountRequestV1Request, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'ssprUnlockAccountRequestV1Request' is not null or undefined
+            assertParamExists('ssprUnlockAccountRequestV1', 'ssprUnlockAccountRequestV1Request', ssprUnlockAccountRequestV1Request)
+            const localVarPath = `/1/module/sspr/unlockAccountRequest`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(ssprUnlockAccountRequestV1Request, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * This endpoint unlocks the user account.  sEmailAddress must be set if eUserTypeSSPR = EzsignUser  sUserLoginname must be set if eUserTypeSSPR = Native
+         * @summary Unlock Account
+         * @param {SsprUnlockAccountV1Request} ssprUnlockAccountV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ssprUnlockAccountV1: async (ssprUnlockAccountV1Request: SsprUnlockAccountV1Request, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'ssprUnlockAccountV1Request' is not null or undefined
+            assertParamExists('ssprUnlockAccountV1', 'ssprUnlockAccountV1Request', ssprUnlockAccountV1Request)
+            const localVarPath = `/1/module/sspr/unlockAccount`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(ssprUnlockAccountV1Request, localVarRequestOptions, configuration)
 
             return {
                 url: toPathString(localVarUrlObj),
@@ -3578,13 +3941,58 @@ export const ModuleSsprApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = ModuleSsprApiAxiosParamCreator(configuration)
     return {
         /**
-         * This endpoint returns an email with the username(s) matching the email address provided in case of forgotten username
-         * @summary Remind of forgotten username(s)
+         * This endpoint sends an email with a link to reset the user\'s password.  sEmailAddress must be set if eUserTypeSSPR = EzsignUser  sUserLoginname must be set if eUserTypeSSPR = Native
+         * @summary Reset Password Request
+         * @param {SsprResetPasswordRequestV1Request} ssprResetPasswordRequestV1Request 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ssprRemindUsernamesV1(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.ssprRemindUsernamesV1(options);
+        async ssprResetPasswordRequestV1(ssprResetPasswordRequestV1Request: SsprResetPasswordRequestV1Request, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ssprResetPasswordRequestV1(ssprResetPasswordRequestV1Request, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * This endpoint resets the user\'s password.  sEmailAddress must be set if eUserTypeSSPR = EzsignUser  sUserLoginname must be set if eUserTypeSSPR = Native
+         * @summary Reset Password
+         * @param {SsprResetPasswordV1Request} ssprResetPasswordV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ssprResetPasswordV1(ssprResetPasswordV1Request: SsprResetPasswordV1Request, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ssprResetPasswordV1(ssprResetPasswordV1Request, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * This endpoint returns an email with the username(s) matching the email address provided in case of forgotten username
+         * @summary Send username(s)
+         * @param {SsprSendUsernamesV1Request} ssprSendUsernamesV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ssprSendUsernamesV1(ssprSendUsernamesV1Request: SsprSendUsernamesV1Request, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ssprSendUsernamesV1(ssprSendUsernamesV1Request, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * This endpoint sends an email with a link to unlock the user account.  sEmailAddress must be set if eUserTypeSSPR = EzsignUser  sUserLoginname must be set if eUserTypeSSPR = Native
+         * @summary Unlock Account Request
+         * @param {SsprUnlockAccountRequestV1Request} ssprUnlockAccountRequestV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ssprUnlockAccountRequestV1(ssprUnlockAccountRequestV1Request: SsprUnlockAccountRequestV1Request, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ssprUnlockAccountRequestV1(ssprUnlockAccountRequestV1Request, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * This endpoint unlocks the user account.  sEmailAddress must be set if eUserTypeSSPR = EzsignUser  sUserLoginname must be set if eUserTypeSSPR = Native
+         * @summary Unlock Account
+         * @param {SsprUnlockAccountV1Request} ssprUnlockAccountV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ssprUnlockAccountV1(ssprUnlockAccountV1Request: SsprUnlockAccountV1Request, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ssprUnlockAccountV1(ssprUnlockAccountV1Request, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -3598,13 +4006,54 @@ export const ModuleSsprApiFactory = function (configuration?: Configuration, bas
     const localVarFp = ModuleSsprApiFp(configuration)
     return {
         /**
-         * This endpoint returns an email with the username(s) matching the email address provided in case of forgotten username
-         * @summary Remind of forgotten username(s)
+         * This endpoint sends an email with a link to reset the user\'s password.  sEmailAddress must be set if eUserTypeSSPR = EzsignUser  sUserLoginname must be set if eUserTypeSSPR = Native
+         * @summary Reset Password Request
+         * @param {SsprResetPasswordRequestV1Request} ssprResetPasswordRequestV1Request 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ssprRemindUsernamesV1(options?: any): AxiosPromise<void> {
-            return localVarFp.ssprRemindUsernamesV1(options).then((request) => request(axios, basePath));
+        ssprResetPasswordRequestV1(ssprResetPasswordRequestV1Request: SsprResetPasswordRequestV1Request, options?: any): AxiosPromise<void> {
+            return localVarFp.ssprResetPasswordRequestV1(ssprResetPasswordRequestV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * This endpoint resets the user\'s password.  sEmailAddress must be set if eUserTypeSSPR = EzsignUser  sUserLoginname must be set if eUserTypeSSPR = Native
+         * @summary Reset Password
+         * @param {SsprResetPasswordV1Request} ssprResetPasswordV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ssprResetPasswordV1(ssprResetPasswordV1Request: SsprResetPasswordV1Request, options?: any): AxiosPromise<void> {
+            return localVarFp.ssprResetPasswordV1(ssprResetPasswordV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * This endpoint returns an email with the username(s) matching the email address provided in case of forgotten username
+         * @summary Send username(s)
+         * @param {SsprSendUsernamesV1Request} ssprSendUsernamesV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ssprSendUsernamesV1(ssprSendUsernamesV1Request: SsprSendUsernamesV1Request, options?: any): AxiosPromise<void> {
+            return localVarFp.ssprSendUsernamesV1(ssprSendUsernamesV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * This endpoint sends an email with a link to unlock the user account.  sEmailAddress must be set if eUserTypeSSPR = EzsignUser  sUserLoginname must be set if eUserTypeSSPR = Native
+         * @summary Unlock Account Request
+         * @param {SsprUnlockAccountRequestV1Request} ssprUnlockAccountRequestV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ssprUnlockAccountRequestV1(ssprUnlockAccountRequestV1Request: SsprUnlockAccountRequestV1Request, options?: any): AxiosPromise<void> {
+            return localVarFp.ssprUnlockAccountRequestV1(ssprUnlockAccountRequestV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * This endpoint unlocks the user account.  sEmailAddress must be set if eUserTypeSSPR = EzsignUser  sUserLoginname must be set if eUserTypeSSPR = Native
+         * @summary Unlock Account
+         * @param {SsprUnlockAccountV1Request} ssprUnlockAccountV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ssprUnlockAccountV1(ssprUnlockAccountV1Request: SsprUnlockAccountV1Request, options?: any): AxiosPromise<void> {
+            return localVarFp.ssprUnlockAccountV1(ssprUnlockAccountV1Request, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -3617,14 +4066,63 @@ export const ModuleSsprApiFactory = function (configuration?: Configuration, bas
  */
 export class ModuleSsprApi extends BaseAPI {
     /**
-     * This endpoint returns an email with the username(s) matching the email address provided in case of forgotten username
-     * @summary Remind of forgotten username(s)
+     * This endpoint sends an email with a link to reset the user\'s password.  sEmailAddress must be set if eUserTypeSSPR = EzsignUser  sUserLoginname must be set if eUserTypeSSPR = Native
+     * @summary Reset Password Request
+     * @param {SsprResetPasswordRequestV1Request} ssprResetPasswordRequestV1Request 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ModuleSsprApi
      */
-    public ssprRemindUsernamesV1(options?: any) {
-        return ModuleSsprApiFp(this.configuration).ssprRemindUsernamesV1(options).then((request) => request(this.axios, this.basePath));
+    public ssprResetPasswordRequestV1(ssprResetPasswordRequestV1Request: SsprResetPasswordRequestV1Request, options?: any) {
+        return ModuleSsprApiFp(this.configuration).ssprResetPasswordRequestV1(ssprResetPasswordRequestV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * This endpoint resets the user\'s password.  sEmailAddress must be set if eUserTypeSSPR = EzsignUser  sUserLoginname must be set if eUserTypeSSPR = Native
+     * @summary Reset Password
+     * @param {SsprResetPasswordV1Request} ssprResetPasswordV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ModuleSsprApi
+     */
+    public ssprResetPasswordV1(ssprResetPasswordV1Request: SsprResetPasswordV1Request, options?: any) {
+        return ModuleSsprApiFp(this.configuration).ssprResetPasswordV1(ssprResetPasswordV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * This endpoint returns an email with the username(s) matching the email address provided in case of forgotten username
+     * @summary Send username(s)
+     * @param {SsprSendUsernamesV1Request} ssprSendUsernamesV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ModuleSsprApi
+     */
+    public ssprSendUsernamesV1(ssprSendUsernamesV1Request: SsprSendUsernamesV1Request, options?: any) {
+        return ModuleSsprApiFp(this.configuration).ssprSendUsernamesV1(ssprSendUsernamesV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * This endpoint sends an email with a link to unlock the user account.  sEmailAddress must be set if eUserTypeSSPR = EzsignUser  sUserLoginname must be set if eUserTypeSSPR = Native
+     * @summary Unlock Account Request
+     * @param {SsprUnlockAccountRequestV1Request} ssprUnlockAccountRequestV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ModuleSsprApi
+     */
+    public ssprUnlockAccountRequestV1(ssprUnlockAccountRequestV1Request: SsprUnlockAccountRequestV1Request, options?: any) {
+        return ModuleSsprApiFp(this.configuration).ssprUnlockAccountRequestV1(ssprUnlockAccountRequestV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * This endpoint unlocks the user account.  sEmailAddress must be set if eUserTypeSSPR = EzsignUser  sUserLoginname must be set if eUserTypeSSPR = Native
+     * @summary Unlock Account
+     * @param {SsprUnlockAccountV1Request} ssprUnlockAccountV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ModuleSsprApi
+     */
+    public ssprUnlockAccountV1(ssprUnlockAccountV1Request: SsprUnlockAccountV1Request, options?: any) {
+        return ModuleSsprApiFp(this.configuration).ssprUnlockAccountV1(ssprUnlockAccountV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
