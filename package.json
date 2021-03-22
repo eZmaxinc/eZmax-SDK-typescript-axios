@@ -1,6 +1,6 @@
 {
   "name": "@ezmaxinc/ezmax-sdk-typescript-axios",
-  "version": "1.0.37",
+  "version": "1.0.38",
   "description": "OpenAPI client for @ezmaxinc/ezmax-sdk-typescript-axios",
   "author": "OpenAPI-Generator Contributors",
   "keywords": [
