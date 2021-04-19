@@ -44,7 +44,10 @@ export const ObjectFranchiseofficeApiAxiosParamCreator = function (configuration
             const localVarPath = `/1/object/franchiseoffice/getAutocomplete/{sSelector}`
                 .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+	    
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;

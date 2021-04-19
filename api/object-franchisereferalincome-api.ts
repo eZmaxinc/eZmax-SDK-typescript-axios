@@ -44,7 +44,10 @@ export const ObjectFranchisereferalincomeApiAxiosParamCreator = function (config
             assertParamExists('franchisereferalincomeCreateObjectV1', 'franchisereferalincomeCreateObjectV1Request', franchisereferalincomeCreateObjectV1Request)
             const localVarPath = `/1/object/franchisereferalincome`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+	    
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;

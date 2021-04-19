@@ -54,7 +54,10 @@ export const ModuleSsprApiAxiosParamCreator = function (configuration?: Configur
             assertParamExists('ssprResetPasswordRequestV1', 'ssprResetPasswordRequestV1Request', ssprResetPasswordRequestV1Request)
             const localVarPath = `/1/module/sspr/resetPasswordRequest`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+	    
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -109,7 +112,10 @@ export const ModuleSsprApiAxiosParamCreator = function (configuration?: Configur
             assertParamExists('ssprResetPasswordV1', 'ssprResetPasswordV1Request', ssprResetPasswordV1Request)
             const localVarPath = `/1/module/sspr/resetPassword`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+	    
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -164,7 +170,10 @@ export const ModuleSsprApiAxiosParamCreator = function (configuration?: Configur
             assertParamExists('ssprSendUsernamesV1', 'ssprSendUsernamesV1Request', ssprSendUsernamesV1Request)
             const localVarPath = `/1/module/sspr/sendUsernames`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+	    
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -219,7 +228,10 @@ export const ModuleSsprApiAxiosParamCreator = function (configuration?: Configur
             assertParamExists('ssprUnlockAccountRequestV1', 'ssprUnlockAccountRequestV1Request', ssprUnlockAccountRequestV1Request)
             const localVarPath = `/1/module/sspr/unlockAccountRequest`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+	    
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -274,7 +286,10 @@ export const ModuleSsprApiAxiosParamCreator = function (configuration?: Configur
             assertParamExists('ssprUnlockAccountV1', 'ssprUnlockAccountV1Request', ssprUnlockAccountV1Request)
             const localVarPath = `/1/module/sspr/unlockAccount`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+	    
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -329,7 +344,10 @@ export const ModuleSsprApiAxiosParamCreator = function (configuration?: Configur
             assertParamExists('ssprValidateTokenV1', 'ssprValidateTokenV1Request', ssprValidateTokenV1Request)
             const localVarPath = `/1/module/sspr/validateToken`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+	    
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;

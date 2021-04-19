@@ -44,7 +44,10 @@ export const ObjectApikeyApiAxiosParamCreator = function (configuration?: Config
             assertParamExists('apikeyCreateObjectV1', 'apikeyCreateObjectV1Request', apikeyCreateObjectV1Request)
             const localVarPath = `/1/object/apikey`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+	    
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
