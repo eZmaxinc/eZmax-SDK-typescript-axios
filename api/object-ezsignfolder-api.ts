@@ -54,7 +54,10 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             assertParamExists('ezsignfolderCreateObjectV1', 'ezsignfolderCreateObjectV1Request', ezsignfolderCreateObjectV1Request)
             const localVarPath = `/1/object/ezsignfolder`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+	    
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -110,7 +113,10 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             const localVarPath = `/1/object/ezsignfolder/{pkiEzsignfolderID}`
                 .replace(`{${"pkiEzsignfolderID"}}`, encodeURIComponent(String(pkiEzsignfolderID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+	    
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -163,7 +169,10 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             const localVarPath = `/1/object/ezsignfolder/{pkiEzsignfolderID}/getChildren`
                 .replace(`{${"pkiEzsignfolderID"}}`, encodeURIComponent(String(pkiEzsignfolderID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+	    
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -216,7 +225,10 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             const localVarPath = `/1/object/ezsignfolder/{pkiEzsignfolderID}`
                 .replace(`{${"pkiEzsignfolderID"}}`, encodeURIComponent(String(pkiEzsignfolderID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+	    
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -272,7 +284,10 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             const localVarPath = `/1/object/ezsignfolder/{pkiEzsignfolderID}/send`
                 .replace(`{${"pkiEzsignfolderID"}}`, encodeURIComponent(String(pkiEzsignfolderID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+	    
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;

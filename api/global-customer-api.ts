@@ -46,7 +46,10 @@ export const GlobalCustomerApiAxiosParamCreator = function (configuration?: Conf
             const localVarPath = `/1/customer/{pksCustomerCode}/endpoint`
                 .replace(`{${"pksCustomerCode"}}`, encodeURIComponent(String(pksCustomerCode)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+	    
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;

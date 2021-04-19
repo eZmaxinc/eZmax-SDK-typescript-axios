@@ -60,7 +60,10 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/applyezsigntemplate`
                 .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+	    
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -115,7 +118,10 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             assertParamExists('ezsigndocumentCreateObjectV1', 'ezsigndocumentCreateObjectV1Request', ezsigndocumentCreateObjectV1Request)
             const localVarPath = `/1/object/ezsigndocument`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+	    
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -171,7 +177,10 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}`
                 .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+	    
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -224,7 +233,10 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/getChildren`
                 .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+	    
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -281,7 +293,10 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
                 .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)))
                 .replace(`{${"eDocumentType"}}`, encodeURIComponent(String(eDocumentType)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+	    
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -334,7 +349,10 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}`
                 .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+	    
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;

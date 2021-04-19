@@ -50,7 +50,10 @@ export const ObjectEzsignsignatureApiAxiosParamCreator = function (configuration
             assertParamExists('ezsignsignatureCreateObjectV1', 'ezsignsignatureCreateObjectV1Request', ezsignsignatureCreateObjectV1Request)
             const localVarPath = `/1/object/ezsignsignature`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+	    
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -106,7 +109,10 @@ export const ObjectEzsignsignatureApiAxiosParamCreator = function (configuration
             const localVarPath = `/1/object/ezsignsignature/{pkiEzsignsignatureID}`
                 .replace(`{${"pkiEzsignsignatureID"}}`, encodeURIComponent(String(pkiEzsignsignatureID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+	    
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -159,7 +165,10 @@ export const ObjectEzsignsignatureApiAxiosParamCreator = function (configuration
             const localVarPath = `/1/object/ezsignsignature/{pkiEzsignsignatureID}/getChildren`
                 .replace(`{${"pkiEzsignsignatureID"}}`, encodeURIComponent(String(pkiEzsignsignatureID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+	    
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -212,7 +221,10 @@ export const ObjectEzsignsignatureApiAxiosParamCreator = function (configuration
             const localVarPath = `/1/object/ezsignsignature/{pkiEzsignsignatureID}`
                 .replace(`{${"pkiEzsignsignatureID"}}`, encodeURIComponent(String(pkiEzsignsignatureID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+	    
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
