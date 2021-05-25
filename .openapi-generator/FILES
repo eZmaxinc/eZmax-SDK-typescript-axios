@@ -4,6 +4,7 @@
 README.md
 api.ts
 api/global-customer-api.ts
+api/module-authenticate-api.ts
 api/module-sspr-api.ts
 api/module-user-api.ts
 api/object-activesession-api.ts
@@ -32,6 +33,9 @@ model/apikey-request-compound.ts
 model/apikey-request.ts
 model/apikey-response.ts
 model/attempt-response.ts
+model/authenticate-authenticate-v2-request.ts
+model/authenticate-authenticate-v2-response-mpayload.ts
+model/authenticate-authenticate-v2-response.ts
 model/common-audit.ts
 model/common-get-autocomplete-v1-response-mpayload.ts
 model/common-get-autocomplete-v1-response.ts

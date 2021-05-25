@@ -13,17 +13,17 @@
  */
 
 
+import { AuthenticateAuthenticateV2ResponseMPayload } from './authenticate-authenticate-v2-response-mpayload';
 import { CommonResponse } from './common-response';
 import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
-import { EzsigndocumentCreateObjectV1ResponseMPayload } from './ezsigndocument-create-object-v1-response-mpayload';
 
 /**
- * @type EzsigndocumentCreateObjectV1Response
- * Response for the /1/object/ezsigndocument/createObject API Request
+ * @type AuthenticateAuthenticateV2Response
+ * Response for the /2/module/authenticate/authenticate API Request
  * @export
  */
-export type EzsigndocumentCreateObjectV1Response = CommonResponse;
+export type AuthenticateAuthenticateV2Response = CommonResponse;
 
 
 

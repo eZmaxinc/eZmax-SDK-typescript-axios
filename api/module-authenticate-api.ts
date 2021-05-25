@@ -21,28 +21,34 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
 // @ts-ignore
-import { UserCreateEzsignuserV1Request } from '../model';
+import { AuthenticateAuthenticateV2Request } from '../model';
 // @ts-ignore
-import { UserCreateEzsignuserV1Response } from '../model';
+import { AuthenticateAuthenticateV2Response } from '../model';
+// @ts-ignore
+import { CommonResponseError } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
- * ModuleUserApi - axios parameter creator
+ * ModuleAuthenticateApi - axios parameter creator
  * @export
  */
-export const ModuleUserApiAxiosParamCreator = function (configuration?: Configuration) {
+export const ModuleAuthenticateApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * The endpoint allows to initiate the creation or a user of type Ezsignuser.  The user will be created only once the email verification process will be completed
-         * @summary Create a new User of type Ezsignuser
-         * @param {Array<UserCreateEzsignuserV1Request>} userCreateEzsignuserV1Request 
+         * This endpoint authenticates a user.
+         * @summary Authenticate a user
+         * @param {'ezsignuser'} eSessionType 
+         * @param {AuthenticateAuthenticateV2Request} authenticateAuthenticateV2Request 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userCreateEzsignuserV1: async (userCreateEzsignuserV1Request: Array<UserCreateEzsignuserV1Request>, options: any = {}): Promise<RequestArgs> => {
-            // verify required parameter 'userCreateEzsignuserV1Request' is not null or undefined
-            assertParamExists('userCreateEzsignuserV1', 'userCreateEzsignuserV1Request', userCreateEzsignuserV1Request)
-            const localVarPath = `/1/module/user/createezsignuser`;
+        authenticateAuthenticateV2: async (eSessionType: 'ezsignuser', authenticateAuthenticateV2Request: AuthenticateAuthenticateV2Request, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'eSessionType' is not null or undefined
+            assertParamExists('authenticateAuthenticateV2', 'eSessionType', eSessionType)
+            // verify required parameter 'authenticateAuthenticateV2Request' is not null or undefined
+            assertParamExists('authenticateAuthenticateV2', 'authenticateAuthenticateV2Request', authenticateAuthenticateV2Request)
+            const localVarPath = `/2/module/authenticate/authenticate/ezsignuser/{eSessionType}`
+                .replace(`{${"eSessionType"}}`, encodeURIComponent(String(eSessionType)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -67,7 +73,7 @@ export const ModuleUserApiAxiosParamCreator = function (configuration?: Configur
             setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(userCreateEzsignuserV1Request, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(authenticateAuthenticateV2Request, localVarRequestOptions, configuration)
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -94,62 +100,65 @@ export const ModuleUserApiAxiosParamCreator = function (configuration?: Configur
 };
 
 /**
- * ModuleUserApi - functional programming interface
+ * ModuleAuthenticateApi - functional programming interface
  * @export
  */
-export const ModuleUserApiFp = function(configuration?: Configuration) {
-    const localVarAxiosParamCreator = ModuleUserApiAxiosParamCreator(configuration)
+export const ModuleAuthenticateApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = ModuleAuthenticateApiAxiosParamCreator(configuration)
     return {
         /**
-         * The endpoint allows to initiate the creation or a user of type Ezsignuser.  The user will be created only once the email verification process will be completed
-         * @summary Create a new User of type Ezsignuser
-         * @param {Array<UserCreateEzsignuserV1Request>} userCreateEzsignuserV1Request 
+         * This endpoint authenticates a user.
+         * @summary Authenticate a user
+         * @param {'ezsignuser'} eSessionType 
+         * @param {AuthenticateAuthenticateV2Request} authenticateAuthenticateV2Request 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async userCreateEzsignuserV1(userCreateEzsignuserV1Request: Array<UserCreateEzsignuserV1Request>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserCreateEzsignuserV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.userCreateEzsignuserV1(userCreateEzsignuserV1Request, options);
+        async authenticateAuthenticateV2(eSessionType: 'ezsignuser', authenticateAuthenticateV2Request: AuthenticateAuthenticateV2Request, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AuthenticateAuthenticateV2Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.authenticateAuthenticateV2(eSessionType, authenticateAuthenticateV2Request, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
 };
 
 /**
- * ModuleUserApi - factory interface
+ * ModuleAuthenticateApi - factory interface
  * @export
  */
-export const ModuleUserApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
-    const localVarFp = ModuleUserApiFp(configuration)
+export const ModuleAuthenticateApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = ModuleAuthenticateApiFp(configuration)
     return {
         /**
-         * The endpoint allows to initiate the creation or a user of type Ezsignuser.  The user will be created only once the email verification process will be completed
-         * @summary Create a new User of type Ezsignuser
-         * @param {Array<UserCreateEzsignuserV1Request>} userCreateEzsignuserV1Request 
+         * This endpoint authenticates a user.
+         * @summary Authenticate a user
+         * @param {'ezsignuser'} eSessionType 
+         * @param {AuthenticateAuthenticateV2Request} authenticateAuthenticateV2Request 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userCreateEzsignuserV1(userCreateEzsignuserV1Request: Array<UserCreateEzsignuserV1Request>, options?: any): AxiosPromise<UserCreateEzsignuserV1Response> {
-            return localVarFp.userCreateEzsignuserV1(userCreateEzsignuserV1Request, options).then((request) => request(axios, basePath));
+        authenticateAuthenticateV2(eSessionType: 'ezsignuser', authenticateAuthenticateV2Request: AuthenticateAuthenticateV2Request, options?: any): AxiosPromise<AuthenticateAuthenticateV2Response> {
+            return localVarFp.authenticateAuthenticateV2(eSessionType, authenticateAuthenticateV2Request, options).then((request) => request(axios, basePath));
         },
     };
 };
 
 /**
- * ModuleUserApi - object-oriented interface
+ * ModuleAuthenticateApi - object-oriented interface
  * @export
- * @class ModuleUserApi
+ * @class ModuleAuthenticateApi
  * @extends {BaseAPI}
  */
-export class ModuleUserApi extends BaseAPI {
+export class ModuleAuthenticateApi extends BaseAPI {
     /**
-     * The endpoint allows to initiate the creation or a user of type Ezsignuser.  The user will be created only once the email verification process will be completed
-     * @summary Create a new User of type Ezsignuser
-     * @param {Array<UserCreateEzsignuserV1Request>} userCreateEzsignuserV1Request 
+     * This endpoint authenticates a user.
+     * @summary Authenticate a user
+     * @param {'ezsignuser'} eSessionType 
+     * @param {AuthenticateAuthenticateV2Request} authenticateAuthenticateV2Request 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
-     * @memberof ModuleUserApi
+     * @memberof ModuleAuthenticateApi
      */
-    public userCreateEzsignuserV1(userCreateEzsignuserV1Request: Array<UserCreateEzsignuserV1Request>, options?: any) {
-        return ModuleUserApiFp(this.configuration).userCreateEzsignuserV1(userCreateEzsignuserV1Request, options).then((request) => request(this.axios, this.basePath));
+    public authenticateAuthenticateV2(eSessionType: 'ezsignuser', authenticateAuthenticateV2Request: AuthenticateAuthenticateV2Request, options?: any) {
+        return ModuleAuthenticateApiFp(this.configuration).authenticateAuthenticateV2(eSessionType, authenticateAuthenticateV2Request, options).then((request) => request(this.axios, this.basePath));
     }
 }
