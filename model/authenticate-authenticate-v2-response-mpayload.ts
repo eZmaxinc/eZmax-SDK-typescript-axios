@@ -15,23 +15,23 @@
 
 
 /**
- * Description of the API Key  
+ * Payload for the /2/module/authenticate/authenticate API Request
  * @export
- * @interface MultilingualApikeyDescription
+ * @interface AuthenticateAuthenticateV2ResponseMPayload
  */
-export interface MultilingualApikeyDescription {
+export interface AuthenticateAuthenticateV2ResponseMPayload {
     /**
-     * Value in French
+     * The Authorization key
      * @type {string}
-     * @memberof MultilingualApikeyDescription
+     * @memberof AuthenticateAuthenticateV2ResponseMPayload
      */
-    sApikeyDescription1?: string;
+    sAuthorization: string;
     /**
-     * Value in English
+     * The secret key
      * @type {string}
-     * @memberof MultilingualApikeyDescription
+     * @memberof AuthenticateAuthenticateV2ResponseMPayload
      */
-    sApikeyDescription2?: string;
+    sSecret: string;
 }
 
 
