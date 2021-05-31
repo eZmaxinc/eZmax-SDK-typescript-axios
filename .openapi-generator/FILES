@@ -101,6 +101,7 @@ model/ezsignsigner-request.ts
 model/field-eezsigndocument-step.ts
 model/field-eezsignfolder-sendreminderfrequency.ts
 model/field-eezsignfolder-step.ts
+model/field-eezsignsignature-type.ts
 model/field-ephone-type.ts
 model/field-euser-type-sspr.ts
 model/field-euser-type.ts

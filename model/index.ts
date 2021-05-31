@@ -76,6 +76,7 @@ export * from './ezsignsigner-request-compound-contact';
 export * from './field-eezsigndocument-step';
 export * from './field-eezsignfolder-sendreminderfrequency';
 export * from './field-eezsignfolder-step';
+export * from './field-eezsignsignature-type';
 export * from './field-ephone-type';
 export * from './field-euser-type';
 export * from './field-euser-type-sspr';
