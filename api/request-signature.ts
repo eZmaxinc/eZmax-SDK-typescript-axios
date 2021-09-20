@@ -1,4 +1,6 @@
-import  { SHA256, HmacSHA256 } from 'crypto-js';
+declare var require: any
+var forge = require('node-forge')
+
   
 export interface IFingerprintData {
   authorization: string
@@ -26,15 +28,23 @@ export interface IHeadersData {
 export class RequestSignature {
   public static getFingerprint(fingerprintData: IFingerprintData): string {
     const contentToHash = `${fingerprintData.method}\n${fingerprintData.url}\n${fingerprintData.body}\n${fingerprintData.authorization}\n${fingerprintData.date}`
-    const output = SHA256(contentToHash).toString()
-    return 'v1=' + output
+    
+    const md = forge.md.sha256.create()
+    md.update(contentToHash)
+
+    const ouput = md.digest().toHex()
+    
+    return 'v1=' + ouput
   }
 
   public static getSignature(signatureData: ISignatureData): string {
     const contentToSign = `${signatureData.fingerprint}${signatureData.authorization}${signatureData.date}`
-    const output = HmacSHA256(contentToSign, signatureData.secret).toString();
 
-    return 'v1=' + output
+    const hmac = forge.hmac.create()
+    hmac.start('sha256', signatureData.secret)
+    hmac.update(contentToSign)
+  
+    return 'v1=' + hmac.digest().toHex()
   }
 
   public static getHeaders(headerData: IHeadersData) {
