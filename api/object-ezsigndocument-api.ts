@@ -35,6 +35,8 @@ import { EzsigndocumentDeleteObjectV1Response } from '../model';
 // @ts-ignore
 import { EzsigndocumentGetDownloadUrlV1Response } from '../model';
 // @ts-ignore
+import { EzsigndocumentGetEzsignpagesV1Response } from '../model';
+// @ts-ignore
 import { EzsigndocumentGetObjectV1Response } from '../model';
 // @ts-ignore
 import { EzsigndocumentGetWordsPositionsV1Request } from '../model';
@@ -51,7 +53,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
         /**
          * This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
          * @summary Apply an Ezsign Template to the Ezsigndocument.
-         * @param {number} pkiEzsigndocumentID The unique ID of the Ezsigndocument
+         * @param {number} pkiEzsigndocumentID 
          * @param {EzsigndocumentApplyEzsigntemplateV1Request} ezsigndocumentApplyEzsigntemplateV1Request 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -171,7 +173,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
         /**
          * 
          * @summary Delete an existing Ezsigndocument
-         * @param {number} pkiEzsigndocumentID The unique ID of the Ezsigndocument
+         * @param {number} pkiEzsigndocumentID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -227,7 +229,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
         /**
          * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
          * @summary Retrieve an existing Ezsigndocument\'s children IDs
-         * @param {number} pkiEzsigndocumentID The unique ID of the Ezsigndocument
+         * @param {number} pkiEzsigndocumentID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -283,7 +285,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
         /**
          * This endpoint returns URLs to different files that can be downloaded during the signing process.  These links will expire after 5 minutes so the download of the file should be made soon after retrieving the link.
          * @summary Retrieve a URL to download documents.
-         * @param {number} pkiEzsigndocumentID The unique ID of the Ezsigndocument
+         * @param {number} pkiEzsigndocumentID 
          * @param {'Initial' | 'Signed' | 'Proof' | 'Proofdocument'} eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **Signed** Is the final document once all signatures were applied. 3. **Proofdocument** Is the evidence report. 4. **Proof** Is the complete evidence archive including all of the above and more. 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -342,8 +344,64 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
         },
         /**
          * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+         * @summary Retrieve an existing Ezsigndocument\'s Ezsignpages
+         * @param {number} pkiEzsigndocumentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigndocumentGetEzsignpagesV1: async (pkiEzsigndocumentID: number, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
+            assertParamExists('ezsigndocumentGetEzsignpagesV1', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
+            const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignpages`
+                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+	    
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + localVarPath as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
          * @summary Retrieve an existing Ezsigndocument\'s Form Data
-         * @param {number} pkiEzsigndocumentID The unique ID of the Ezsigndocument
+         * @param {number} pkiEzsigndocumentID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -399,7 +457,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
         /**
          * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
          * @summary Retrieve an existing Ezsigndocument
-         * @param {number} pkiEzsigndocumentID The unique ID of the Ezsigndocument
+         * @param {number} pkiEzsigndocumentID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -455,7 +513,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
         /**
          * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
          * @summary Retrieve positions X,Y of given words from a Ezsigndocument
-         * @param {number} pkiEzsigndocumentID The unique ID of the Ezsigndocument
+         * @param {number} pkiEzsigndocumentID 
          * @param {EzsigndocumentGetWordsPositionsV1Request} ezsigndocumentGetWordsPositionsV1Request 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -527,7 +585,7 @@ export const ObjectEzsigndocumentApiFp = function(configuration?: Configuration)
         /**
          * This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
          * @summary Apply an Ezsign Template to the Ezsigndocument.
-         * @param {number} pkiEzsigndocumentID The unique ID of the Ezsigndocument
+         * @param {number} pkiEzsigndocumentID 
          * @param {EzsigndocumentApplyEzsigntemplateV1Request} ezsigndocumentApplyEzsigntemplateV1Request 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -550,7 +608,7 @@ export const ObjectEzsigndocumentApiFp = function(configuration?: Configuration)
         /**
          * 
          * @summary Delete an existing Ezsigndocument
-         * @param {number} pkiEzsigndocumentID The unique ID of the Ezsigndocument
+         * @param {number} pkiEzsigndocumentID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -561,7 +619,7 @@ export const ObjectEzsigndocumentApiFp = function(configuration?: Configuration)
         /**
          * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
          * @summary Retrieve an existing Ezsigndocument\'s children IDs
-         * @param {number} pkiEzsigndocumentID The unique ID of the Ezsigndocument
+         * @param {number} pkiEzsigndocumentID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -572,7 +630,7 @@ export const ObjectEzsigndocumentApiFp = function(configuration?: Configuration)
         /**
          * This endpoint returns URLs to different files that can be downloaded during the signing process.  These links will expire after 5 minutes so the download of the file should be made soon after retrieving the link.
          * @summary Retrieve a URL to download documents.
-         * @param {number} pkiEzsigndocumentID The unique ID of the Ezsigndocument
+         * @param {number} pkiEzsigndocumentID 
          * @param {'Initial' | 'Signed' | 'Proof' | 'Proofdocument'} eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **Signed** Is the final document once all signatures were applied. 3. **Proofdocument** Is the evidence report. 4. **Proof** Is the complete evidence archive including all of the above and more. 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -583,8 +641,19 @@ export const ObjectEzsigndocumentApiFp = function(configuration?: Configuration)
         },
         /**
          * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+         * @summary Retrieve an existing Ezsigndocument\'s Ezsignpages
+         * @param {number} pkiEzsigndocumentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsigndocumentGetEzsignpagesV1(pkiEzsigndocumentID: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentGetEzsignpagesV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigndocumentGetEzsignpagesV1(pkiEzsigndocumentID, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
          * @summary Retrieve an existing Ezsigndocument\'s Form Data
-         * @param {number} pkiEzsigndocumentID The unique ID of the Ezsigndocument
+         * @param {number} pkiEzsigndocumentID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -595,7 +664,7 @@ export const ObjectEzsigndocumentApiFp = function(configuration?: Configuration)
         /**
          * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
          * @summary Retrieve an existing Ezsigndocument
-         * @param {number} pkiEzsigndocumentID The unique ID of the Ezsigndocument
+         * @param {number} pkiEzsigndocumentID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -606,7 +675,7 @@ export const ObjectEzsigndocumentApiFp = function(configuration?: Configuration)
         /**
          * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
          * @summary Retrieve positions X,Y of given words from a Ezsigndocument
-         * @param {number} pkiEzsigndocumentID The unique ID of the Ezsigndocument
+         * @param {number} pkiEzsigndocumentID 
          * @param {EzsigndocumentGetWordsPositionsV1Request} ezsigndocumentGetWordsPositionsV1Request 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -628,7 +697,7 @@ export const ObjectEzsigndocumentApiFactory = function (configuration?: Configur
         /**
          * This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
          * @summary Apply an Ezsign Template to the Ezsigndocument.
-         * @param {number} pkiEzsigndocumentID The unique ID of the Ezsigndocument
+         * @param {number} pkiEzsigndocumentID 
          * @param {EzsigndocumentApplyEzsigntemplateV1Request} ezsigndocumentApplyEzsigntemplateV1Request 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -649,7 +718,7 @@ export const ObjectEzsigndocumentApiFactory = function (configuration?: Configur
         /**
          * 
          * @summary Delete an existing Ezsigndocument
-         * @param {number} pkiEzsigndocumentID The unique ID of the Ezsigndocument
+         * @param {number} pkiEzsigndocumentID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -659,7 +728,7 @@ export const ObjectEzsigndocumentApiFactory = function (configuration?: Configur
         /**
          * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
          * @summary Retrieve an existing Ezsigndocument\'s children IDs
-         * @param {number} pkiEzsigndocumentID The unique ID of the Ezsigndocument
+         * @param {number} pkiEzsigndocumentID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -669,7 +738,7 @@ export const ObjectEzsigndocumentApiFactory = function (configuration?: Configur
         /**
          * This endpoint returns URLs to different files that can be downloaded during the signing process.  These links will expire after 5 minutes so the download of the file should be made soon after retrieving the link.
          * @summary Retrieve a URL to download documents.
-         * @param {number} pkiEzsigndocumentID The unique ID of the Ezsigndocument
+         * @param {number} pkiEzsigndocumentID 
          * @param {'Initial' | 'Signed' | 'Proof' | 'Proofdocument'} eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **Signed** Is the final document once all signatures were applied. 3. **Proofdocument** Is the evidence report. 4. **Proof** Is the complete evidence archive including all of the above and more. 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -679,8 +748,18 @@ export const ObjectEzsigndocumentApiFactory = function (configuration?: Configur
         },
         /**
          * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+         * @summary Retrieve an existing Ezsigndocument\'s Ezsignpages
+         * @param {number} pkiEzsigndocumentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigndocumentGetEzsignpagesV1(pkiEzsigndocumentID: number, options?: any): AxiosPromise<EzsigndocumentGetEzsignpagesV1Response> {
+            return localVarFp.ezsigndocumentGetEzsignpagesV1(pkiEzsigndocumentID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
          * @summary Retrieve an existing Ezsigndocument\'s Form Data
-         * @param {number} pkiEzsigndocumentID The unique ID of the Ezsigndocument
+         * @param {number} pkiEzsigndocumentID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -690,7 +769,7 @@ export const ObjectEzsigndocumentApiFactory = function (configuration?: Configur
         /**
          * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
          * @summary Retrieve an existing Ezsigndocument
-         * @param {number} pkiEzsigndocumentID The unique ID of the Ezsigndocument
+         * @param {number} pkiEzsigndocumentID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -700,7 +779,7 @@ export const ObjectEzsigndocumentApiFactory = function (configuration?: Configur
         /**
          * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
          * @summary Retrieve positions X,Y of given words from a Ezsigndocument
-         * @param {number} pkiEzsigndocumentID The unique ID of the Ezsigndocument
+         * @param {number} pkiEzsigndocumentID 
          * @param {EzsigndocumentGetWordsPositionsV1Request} ezsigndocumentGetWordsPositionsV1Request 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -721,7 +800,7 @@ export class ObjectEzsigndocumentApi extends BaseAPI {
     /**
      * This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
      * @summary Apply an Ezsign Template to the Ezsigndocument.
-     * @param {number} pkiEzsigndocumentID The unique ID of the Ezsigndocument
+     * @param {number} pkiEzsigndocumentID 
      * @param {EzsigndocumentApplyEzsigntemplateV1Request} ezsigndocumentApplyEzsigntemplateV1Request 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -746,7 +825,7 @@ export class ObjectEzsigndocumentApi extends BaseAPI {
     /**
      * 
      * @summary Delete an existing Ezsigndocument
-     * @param {number} pkiEzsigndocumentID The unique ID of the Ezsigndocument
+     * @param {number} pkiEzsigndocumentID 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ObjectEzsigndocumentApi
@@ -758,7 +837,7 @@ export class ObjectEzsigndocumentApi extends BaseAPI {
     /**
      * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
      * @summary Retrieve an existing Ezsigndocument\'s children IDs
-     * @param {number} pkiEzsigndocumentID The unique ID of the Ezsigndocument
+     * @param {number} pkiEzsigndocumentID 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ObjectEzsigndocumentApi
@@ -770,7 +849,7 @@ export class ObjectEzsigndocumentApi extends BaseAPI {
     /**
      * This endpoint returns URLs to different files that can be downloaded during the signing process.  These links will expire after 5 minutes so the download of the file should be made soon after retrieving the link.
      * @summary Retrieve a URL to download documents.
-     * @param {number} pkiEzsigndocumentID The unique ID of the Ezsigndocument
+     * @param {number} pkiEzsigndocumentID 
      * @param {'Initial' | 'Signed' | 'Proof' | 'Proofdocument'} eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **Signed** Is the final document once all signatures were applied. 3. **Proofdocument** Is the evidence report. 4. **Proof** Is the complete evidence archive including all of the above and more. 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -782,8 +861,20 @@ export class ObjectEzsigndocumentApi extends BaseAPI {
 
     /**
      * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+     * @summary Retrieve an existing Ezsigndocument\'s Ezsignpages
+     * @param {number} pkiEzsigndocumentID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectEzsigndocumentApi
+     */
+    public ezsigndocumentGetEzsignpagesV1(pkiEzsigndocumentID: number, options?: any) {
+        return ObjectEzsigndocumentApiFp(this.configuration).ezsigndocumentGetEzsignpagesV1(pkiEzsigndocumentID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
      * @summary Retrieve an existing Ezsigndocument\'s Form Data
-     * @param {number} pkiEzsigndocumentID The unique ID of the Ezsigndocument
+     * @param {number} pkiEzsigndocumentID 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ObjectEzsigndocumentApi
@@ -795,7 +886,7 @@ export class ObjectEzsigndocumentApi extends BaseAPI {
     /**
      * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
      * @summary Retrieve an existing Ezsigndocument
-     * @param {number} pkiEzsigndocumentID The unique ID of the Ezsigndocument
+     * @param {number} pkiEzsigndocumentID 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ObjectEzsigndocumentApi
@@ -807,7 +898,7 @@ export class ObjectEzsigndocumentApi extends BaseAPI {
     /**
      * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
      * @summary Retrieve positions X,Y of given words from a Ezsigndocument
-     * @param {number} pkiEzsigndocumentID The unique ID of the Ezsigndocument
+     * @param {number} pkiEzsigndocumentID 
      * @param {EzsigndocumentGetWordsPositionsV1Request} ezsigndocumentGetWordsPositionsV1Request 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}

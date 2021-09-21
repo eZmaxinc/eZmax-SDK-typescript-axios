@@ -50,7 +50,7 @@ export interface EzsigndocumentResponseCompound {
      */
     sEzsigndocumentName: string;
     /**
-     * The unique ID of the Ezsigntemplate
+     * The unique ID of the Ezsigndocument
      * @type {number}
      * @memberof EzsigndocumentResponseCompound
      */

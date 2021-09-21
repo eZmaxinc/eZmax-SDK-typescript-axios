@@ -101,7 +101,7 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
         /**
          * 
          * @summary Delete an existing Ezsignfoldersignerassociation
-         * @param {number} pkiEzsignfoldersignerassociationID The unique ID of the Ezsignfoldersignerassociation
+         * @param {number} pkiEzsignfoldersignerassociationID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -157,7 +157,7 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
         /**
          * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
          * @summary Retrieve an existing Ezsignfoldersignerassociation\'s children IDs
-         * @param {number} pkiEzsignfoldersignerassociationID The unique ID of the Ezsignfoldersignerassociation
+         * @param {number} pkiEzsignfoldersignerassociationID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -213,7 +213,7 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
         /**
          * This endpoint returns a Login Url that can be used in a browser or embedded in an I-Frame to allow in person signing.  The signer Login type must be configured as In-Person.
          * @summary Retrieve a Login Url to allow In-Person signing
-         * @param {number} pkiEzsignfoldersignerassociationID The unique ID of the Ezsignfoldersignerassociation
+         * @param {number} pkiEzsignfoldersignerassociationID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -269,7 +269,7 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
         /**
          * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
          * @summary Retrieve an existing Ezsignfoldersignerassociation
-         * @param {number} pkiEzsignfoldersignerassociationID The unique ID of the Ezsignfoldersignerassociation
+         * @param {number} pkiEzsignfoldersignerassociationID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -346,7 +346,7 @@ export const ObjectEzsignfoldersignerassociationApiFp = function(configuration?:
         /**
          * 
          * @summary Delete an existing Ezsignfoldersignerassociation
-         * @param {number} pkiEzsignfoldersignerassociationID The unique ID of the Ezsignfoldersignerassociation
+         * @param {number} pkiEzsignfoldersignerassociationID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -357,7 +357,7 @@ export const ObjectEzsignfoldersignerassociationApiFp = function(configuration?:
         /**
          * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
          * @summary Retrieve an existing Ezsignfoldersignerassociation\'s children IDs
-         * @param {number} pkiEzsignfoldersignerassociationID The unique ID of the Ezsignfoldersignerassociation
+         * @param {number} pkiEzsignfoldersignerassociationID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -368,7 +368,7 @@ export const ObjectEzsignfoldersignerassociationApiFp = function(configuration?:
         /**
          * This endpoint returns a Login Url that can be used in a browser or embedded in an I-Frame to allow in person signing.  The signer Login type must be configured as In-Person.
          * @summary Retrieve a Login Url to allow In-Person signing
-         * @param {number} pkiEzsignfoldersignerassociationID The unique ID of the Ezsignfoldersignerassociation
+         * @param {number} pkiEzsignfoldersignerassociationID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -379,7 +379,7 @@ export const ObjectEzsignfoldersignerassociationApiFp = function(configuration?:
         /**
          * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
          * @summary Retrieve an existing Ezsignfoldersignerassociation
-         * @param {number} pkiEzsignfoldersignerassociationID The unique ID of the Ezsignfoldersignerassociation
+         * @param {number} pkiEzsignfoldersignerassociationID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -410,7 +410,7 @@ export const ObjectEzsignfoldersignerassociationApiFactory = function (configura
         /**
          * 
          * @summary Delete an existing Ezsignfoldersignerassociation
-         * @param {number} pkiEzsignfoldersignerassociationID The unique ID of the Ezsignfoldersignerassociation
+         * @param {number} pkiEzsignfoldersignerassociationID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -420,7 +420,7 @@ export const ObjectEzsignfoldersignerassociationApiFactory = function (configura
         /**
          * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
          * @summary Retrieve an existing Ezsignfoldersignerassociation\'s children IDs
-         * @param {number} pkiEzsignfoldersignerassociationID The unique ID of the Ezsignfoldersignerassociation
+         * @param {number} pkiEzsignfoldersignerassociationID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -430,7 +430,7 @@ export const ObjectEzsignfoldersignerassociationApiFactory = function (configura
         /**
          * This endpoint returns a Login Url that can be used in a browser or embedded in an I-Frame to allow in person signing.  The signer Login type must be configured as In-Person.
          * @summary Retrieve a Login Url to allow In-Person signing
-         * @param {number} pkiEzsignfoldersignerassociationID The unique ID of the Ezsignfoldersignerassociation
+         * @param {number} pkiEzsignfoldersignerassociationID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -440,7 +440,7 @@ export const ObjectEzsignfoldersignerassociationApiFactory = function (configura
         /**
          * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
          * @summary Retrieve an existing Ezsignfoldersignerassociation
-         * @param {number} pkiEzsignfoldersignerassociationID The unique ID of the Ezsignfoldersignerassociation
+         * @param {number} pkiEzsignfoldersignerassociationID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -472,7 +472,7 @@ export class ObjectEzsignfoldersignerassociationApi extends BaseAPI {
     /**
      * 
      * @summary Delete an existing Ezsignfoldersignerassociation
-     * @param {number} pkiEzsignfoldersignerassociationID The unique ID of the Ezsignfoldersignerassociation
+     * @param {number} pkiEzsignfoldersignerassociationID 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ObjectEzsignfoldersignerassociationApi
@@ -484,7 +484,7 @@ export class ObjectEzsignfoldersignerassociationApi extends BaseAPI {
     /**
      * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
      * @summary Retrieve an existing Ezsignfoldersignerassociation\'s children IDs
-     * @param {number} pkiEzsignfoldersignerassociationID The unique ID of the Ezsignfoldersignerassociation
+     * @param {number} pkiEzsignfoldersignerassociationID 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ObjectEzsignfoldersignerassociationApi
@@ -496,7 +496,7 @@ export class ObjectEzsignfoldersignerassociationApi extends BaseAPI {
     /**
      * This endpoint returns a Login Url that can be used in a browser or embedded in an I-Frame to allow in person signing.  The signer Login type must be configured as In-Person.
      * @summary Retrieve a Login Url to allow In-Person signing
-     * @param {number} pkiEzsignfoldersignerassociationID The unique ID of the Ezsignfoldersignerassociation
+     * @param {number} pkiEzsignfoldersignerassociationID 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ObjectEzsignfoldersignerassociationApi
@@ -508,7 +508,7 @@ export class ObjectEzsignfoldersignerassociationApi extends BaseAPI {
     /**
      * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
      * @summary Retrieve an existing Ezsignfoldersignerassociation
-     * @param {number} pkiEzsignfoldersignerassociationID The unique ID of the Ezsignfoldersignerassociation
+     * @param {number} pkiEzsignfoldersignerassociationID 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ObjectEzsignfoldersignerassociationApi

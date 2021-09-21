@@ -99,7 +99,7 @@ export const ObjectEzsignsignatureApiAxiosParamCreator = function (configuration
         /**
          * 
          * @summary Delete an existing Ezsignsignature
-         * @param {number} pkiEzsignsignatureID The unique ID of the Ezsignsignature
+         * @param {number} pkiEzsignsignatureID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -155,7 +155,7 @@ export const ObjectEzsignsignatureApiAxiosParamCreator = function (configuration
         /**
          * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
          * @summary Retrieve an existing Ezsignsignature\'s children IDs
-         * @param {number} pkiEzsignsignatureID The unique ID of the Ezsignsignature
+         * @param {number} pkiEzsignsignatureID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -211,7 +211,7 @@ export const ObjectEzsignsignatureApiAxiosParamCreator = function (configuration
         /**
          * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
          * @summary Retrieve an existing Ezsignsignature
-         * @param {number} pkiEzsignsignatureID The unique ID of the Ezsignsignature
+         * @param {number} pkiEzsignsignatureID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -288,7 +288,7 @@ export const ObjectEzsignsignatureApiFp = function(configuration?: Configuration
         /**
          * 
          * @summary Delete an existing Ezsignsignature
-         * @param {number} pkiEzsignsignatureID The unique ID of the Ezsignsignature
+         * @param {number} pkiEzsignsignatureID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -299,7 +299,7 @@ export const ObjectEzsignsignatureApiFp = function(configuration?: Configuration
         /**
          * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
          * @summary Retrieve an existing Ezsignsignature\'s children IDs
-         * @param {number} pkiEzsignsignatureID The unique ID of the Ezsignsignature
+         * @param {number} pkiEzsignsignatureID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -310,7 +310,7 @@ export const ObjectEzsignsignatureApiFp = function(configuration?: Configuration
         /**
          * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
          * @summary Retrieve an existing Ezsignsignature
-         * @param {number} pkiEzsignsignatureID The unique ID of the Ezsignsignature
+         * @param {number} pkiEzsignsignatureID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -341,7 +341,7 @@ export const ObjectEzsignsignatureApiFactory = function (configuration?: Configu
         /**
          * 
          * @summary Delete an existing Ezsignsignature
-         * @param {number} pkiEzsignsignatureID The unique ID of the Ezsignsignature
+         * @param {number} pkiEzsignsignatureID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -351,7 +351,7 @@ export const ObjectEzsignsignatureApiFactory = function (configuration?: Configu
         /**
          * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
          * @summary Retrieve an existing Ezsignsignature\'s children IDs
-         * @param {number} pkiEzsignsignatureID The unique ID of the Ezsignsignature
+         * @param {number} pkiEzsignsignatureID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -361,7 +361,7 @@ export const ObjectEzsignsignatureApiFactory = function (configuration?: Configu
         /**
          * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
          * @summary Retrieve an existing Ezsignsignature
-         * @param {number} pkiEzsignsignatureID The unique ID of the Ezsignsignature
+         * @param {number} pkiEzsignsignatureID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -393,7 +393,7 @@ export class ObjectEzsignsignatureApi extends BaseAPI {
     /**
      * 
      * @summary Delete an existing Ezsignsignature
-     * @param {number} pkiEzsignsignatureID The unique ID of the Ezsignsignature
+     * @param {number} pkiEzsignsignatureID 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ObjectEzsignsignatureApi
@@ -405,7 +405,7 @@ export class ObjectEzsignsignatureApi extends BaseAPI {
     /**
      * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
      * @summary Retrieve an existing Ezsignsignature\'s children IDs
-     * @param {number} pkiEzsignsignatureID The unique ID of the Ezsignsignature
+     * @param {number} pkiEzsignsignatureID 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ObjectEzsignsignatureApi
@@ -417,7 +417,7 @@ export class ObjectEzsignsignatureApi extends BaseAPI {
     /**
      * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
      * @summary Retrieve an existing Ezsignsignature
-     * @param {number} pkiEzsignsignatureID The unique ID of the Ezsignsignature
+     * @param {number} pkiEzsignsignatureID 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ObjectEzsignsignatureApi

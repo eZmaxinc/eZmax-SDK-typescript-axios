@@ -35,7 +35,7 @@ export const GlobalCustomerApiAxiosParamCreator = function (configuration?: Conf
         /**
          * Retrieve the customer\'s specific server endpoint where to send requests. This will help locate the proper region (ie: sInfrastructureregionCode) and the proper environment (ie: sInfrastructureenvironmenttypeDescription) where the customer\'s data is stored.
          * @summary Get customer endpoint
-         * @param {string} pksCustomerCode The customer code assigned to your account
+         * @param {string} pksCustomerCode 
          * @param {'appcluster01' | 'ezsignuser'} [sInfrastructureproductCode] The infrastructure product Code  If undefined, \&quot;appcluster01\&quot; is assumed
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -106,7 +106,7 @@ export const GlobalCustomerApiFp = function(configuration?: Configuration) {
         /**
          * Retrieve the customer\'s specific server endpoint where to send requests. This will help locate the proper region (ie: sInfrastructureregionCode) and the proper environment (ie: sInfrastructureenvironmenttypeDescription) where the customer\'s data is stored.
          * @summary Get customer endpoint
-         * @param {string} pksCustomerCode The customer code assigned to your account
+         * @param {string} pksCustomerCode 
          * @param {'appcluster01' | 'ezsignuser'} [sInfrastructureproductCode] The infrastructure product Code  If undefined, \&quot;appcluster01\&quot; is assumed
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -128,7 +128,7 @@ export const GlobalCustomerApiFactory = function (configuration?: Configuration,
         /**
          * Retrieve the customer\'s specific server endpoint where to send requests. This will help locate the proper region (ie: sInfrastructureregionCode) and the proper environment (ie: sInfrastructureenvironmenttypeDescription) where the customer\'s data is stored.
          * @summary Get customer endpoint
-         * @param {string} pksCustomerCode The customer code assigned to your account
+         * @param {string} pksCustomerCode 
          * @param {'appcluster01' | 'ezsignuser'} [sInfrastructureproductCode] The infrastructure product Code  If undefined, \&quot;appcluster01\&quot; is assumed
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -149,7 +149,7 @@ export class GlobalCustomerApi extends BaseAPI {
     /**
      * Retrieve the customer\'s specific server endpoint where to send requests. This will help locate the proper region (ie: sInfrastructureregionCode) and the proper environment (ie: sInfrastructureenvironmenttypeDescription) where the customer\'s data is stored.
      * @summary Get customer endpoint
-     * @param {string} pksCustomerCode The customer code assigned to your account
+     * @param {string} pksCustomerCode 
      * @param {'appcluster01' | 'ezsignuser'} [sInfrastructureproductCode] The infrastructure product Code  If undefined, \&quot;appcluster01\&quot; is assumed
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}

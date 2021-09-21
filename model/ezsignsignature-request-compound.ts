@@ -31,7 +31,7 @@ export interface EzsignsignatureRequestCompound {
      */
     fkiEzsignfoldersignerassociationID: number;
     /**
-     * The page number in the document where to apply the signature
+     * The page number in the Ezsigndocument
      * @type {number}
      * @memberof EzsignsignatureRequestCompound
      */
@@ -61,7 +61,7 @@ export interface EzsignsignatureRequestCompound {
      */
     eEzsignsignatureType: FieldEEzsignsignatureType;
     /**
-     * The unique ID of the Ezsigntemplate
+     * The unique ID of the Ezsigndocument
      * @type {number}
      * @memberof EzsignsignatureRequestCompound
      */

@@ -103,7 +103,7 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
         /**
          * 
          * @summary Delete an existing Ezsignfolder
-         * @param {number} pkiEzsignfolderID The unique ID of the Ezsignfolder
+         * @param {number} pkiEzsignfolderID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -159,7 +159,7 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
         /**
          * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
          * @summary Retrieve an existing Ezsignfolder\'s children IDs
-         * @param {number} pkiEzsignfolderID The unique ID of the Ezsignfolder
+         * @param {number} pkiEzsignfolderID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -214,8 +214,64 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
         },
         /**
          * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+         * @summary Retrieve an existing Ezsignfolder\'s forms data
+         * @param {number} pkiEzsignfolderID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsignfolderGetFormsDataV1: async (pkiEzsignfolderID: number, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiEzsignfolderID' is not null or undefined
+            assertParamExists('ezsignfolderGetFormsDataV1', 'pkiEzsignfolderID', pkiEzsignfolderID)
+            const localVarPath = `/1/object/ezsignfolder/{pkiEzsignfolderID}/getFormsData`
+                .replace(`{${"pkiEzsignfolderID"}}`, encodeURIComponent(String(pkiEzsignfolderID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+	    
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + localVarPath as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
          * @summary Retrieve an existing Ezsignfolder
-         * @param {number} pkiEzsignfolderID The unique ID of the Ezsignfolder
+         * @param {number} pkiEzsignfolderID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -271,7 +327,7 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
         /**
          * 
          * @summary Send the Ezsignfolder to the signatories for signature
-         * @param {number} pkiEzsignfolderID The unique ID of the Ezsignfolder
+         * @param {number} pkiEzsignfolderID 
          * @param {EzsignfolderSendV1Request} ezsignfolderSendV1Request 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -354,7 +410,7 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Delete an existing Ezsignfolder
-         * @param {number} pkiEzsignfolderID The unique ID of the Ezsignfolder
+         * @param {number} pkiEzsignfolderID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -365,7 +421,7 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
         /**
          * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
          * @summary Retrieve an existing Ezsignfolder\'s children IDs
-         * @param {number} pkiEzsignfolderID The unique ID of the Ezsignfolder
+         * @param {number} pkiEzsignfolderID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -375,8 +431,19 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
         },
         /**
          * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+         * @summary Retrieve an existing Ezsignfolder\'s forms data
+         * @param {number} pkiEzsignfolderID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsignfolderGetFormsDataV1(pkiEzsignfolderID: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<any>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderGetFormsDataV1(pkiEzsignfolderID, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
          * @summary Retrieve an existing Ezsignfolder
-         * @param {number} pkiEzsignfolderID The unique ID of the Ezsignfolder
+         * @param {number} pkiEzsignfolderID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -387,7 +454,7 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Send the Ezsignfolder to the signatories for signature
-         * @param {number} pkiEzsignfolderID The unique ID of the Ezsignfolder
+         * @param {number} pkiEzsignfolderID 
          * @param {EzsignfolderSendV1Request} ezsignfolderSendV1Request 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -419,7 +486,7 @@ export const ObjectEzsignfolderApiFactory = function (configuration?: Configurat
         /**
          * 
          * @summary Delete an existing Ezsignfolder
-         * @param {number} pkiEzsignfolderID The unique ID of the Ezsignfolder
+         * @param {number} pkiEzsignfolderID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -429,7 +496,7 @@ export const ObjectEzsignfolderApiFactory = function (configuration?: Configurat
         /**
          * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
          * @summary Retrieve an existing Ezsignfolder\'s children IDs
-         * @param {number} pkiEzsignfolderID The unique ID of the Ezsignfolder
+         * @param {number} pkiEzsignfolderID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -438,8 +505,18 @@ export const ObjectEzsignfolderApiFactory = function (configuration?: Configurat
         },
         /**
          * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+         * @summary Retrieve an existing Ezsignfolder\'s forms data
+         * @param {number} pkiEzsignfolderID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsignfolderGetFormsDataV1(pkiEzsignfolderID: number, options?: any): AxiosPromise<any> {
+            return localVarFp.ezsignfolderGetFormsDataV1(pkiEzsignfolderID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
          * @summary Retrieve an existing Ezsignfolder
-         * @param {number} pkiEzsignfolderID The unique ID of the Ezsignfolder
+         * @param {number} pkiEzsignfolderID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -449,7 +526,7 @@ export const ObjectEzsignfolderApiFactory = function (configuration?: Configurat
         /**
          * 
          * @summary Send the Ezsignfolder to the signatories for signature
-         * @param {number} pkiEzsignfolderID The unique ID of the Ezsignfolder
+         * @param {number} pkiEzsignfolderID 
          * @param {EzsignfolderSendV1Request} ezsignfolderSendV1Request 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -482,7 +559,7 @@ export class ObjectEzsignfolderApi extends BaseAPI {
     /**
      * 
      * @summary Delete an existing Ezsignfolder
-     * @param {number} pkiEzsignfolderID The unique ID of the Ezsignfolder
+     * @param {number} pkiEzsignfolderID 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ObjectEzsignfolderApi
@@ -494,7 +571,7 @@ export class ObjectEzsignfolderApi extends BaseAPI {
     /**
      * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
      * @summary Retrieve an existing Ezsignfolder\'s children IDs
-     * @param {number} pkiEzsignfolderID The unique ID of the Ezsignfolder
+     * @param {number} pkiEzsignfolderID 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ObjectEzsignfolderApi
@@ -505,8 +582,20 @@ export class ObjectEzsignfolderApi extends BaseAPI {
 
     /**
      * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+     * @summary Retrieve an existing Ezsignfolder\'s forms data
+     * @param {number} pkiEzsignfolderID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectEzsignfolderApi
+     */
+    public ezsignfolderGetFormsDataV1(pkiEzsignfolderID: number, options?: any) {
+        return ObjectEzsignfolderApiFp(this.configuration).ezsignfolderGetFormsDataV1(pkiEzsignfolderID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
      * @summary Retrieve an existing Ezsignfolder
-     * @param {number} pkiEzsignfolderID The unique ID of the Ezsignfolder
+     * @param {number} pkiEzsignfolderID 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ObjectEzsignfolderApi
@@ -518,7 +607,7 @@ export class ObjectEzsignfolderApi extends BaseAPI {
     /**
      * 
      * @summary Send the Ezsignfolder to the signatories for signature
-     * @param {number} pkiEzsignfolderID The unique ID of the Ezsignfolder
+     * @param {number} pkiEzsignfolderID 
      * @param {EzsignfolderSendV1Request} ezsignfolderSendV1Request 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}

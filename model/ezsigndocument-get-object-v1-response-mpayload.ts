@@ -50,7 +50,7 @@ export interface EzsigndocumentGetObjectV1ResponseMPayload {
      */
     sEzsigndocumentName: string;
     /**
-     * The unique ID of the Ezsigntemplate
+     * The unique ID of the Ezsigndocument
      * @type {number}
      * @memberof EzsigndocumentGetObjectV1ResponseMPayload
      */

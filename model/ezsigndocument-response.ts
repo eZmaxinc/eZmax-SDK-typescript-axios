@@ -14,7 +14,6 @@
 
 
 import { CommonAudit } from './common-audit';
-import { EzsigndocumentResponseAllOf } from './ezsigndocument-response-all-of';
 import { FieldEEzsigndocumentStep } from './field-eezsigndocument-step';
 
 
@@ -50,7 +49,7 @@ export interface EzsigndocumentResponse {
      */
     sEzsigndocumentName: string;
     /**
-     * The unique ID of the Ezsigntemplate
+     * The unique ID of the Ezsigndocument
      * @type {number}
      * @memberof EzsigndocumentResponse
      */
