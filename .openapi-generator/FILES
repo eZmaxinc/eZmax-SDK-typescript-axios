@@ -55,9 +55,15 @@ model/contact-request.ts
 model/contactinformations-request-compound-all-of.ts
 model/contactinformations-request-compound.ts
 model/contactinformations-request.ts
+model/custom-form-data-document-response.ts
+model/custom-form-data-folder-response.ts
+model/custom-form-data-signer-response.ts
+model/custom-word-position-response.ts
 model/email-request.ts
 model/ezsigndocument-apply-ezsigntemplate-v1-request.ts
 model/ezsigndocument-apply-ezsigntemplate-v1-response.ts
+model/ezsigndocument-apply-ezsigntemplate-v2-request.ts
+model/ezsigndocument-apply-ezsigntemplate-v2-response.ts
 model/ezsigndocument-create-object-v1-request.ts
 model/ezsigndocument-create-object-v1-response-all-of.ts
 model/ezsigndocument-create-object-v1-response-mpayload.ts
@@ -69,6 +75,9 @@ model/ezsigndocument-get-download-url-v1-response.ts
 model/ezsigndocument-get-ezsignpages-v1-response-all-of.ts
 model/ezsigndocument-get-ezsignpages-v1-response-mpayload.ts
 model/ezsigndocument-get-ezsignpages-v1-response.ts
+model/ezsigndocument-get-form-data-v1-response-all-of.ts
+model/ezsigndocument-get-form-data-v1-response-mpayload.ts
+model/ezsigndocument-get-form-data-v1-response.ts
 model/ezsigndocument-get-object-v1-response-all-of.ts
 model/ezsigndocument-get-object-v1-response-mpayload.ts
 model/ezsigndocument-get-object-v1-response.ts
@@ -84,6 +93,9 @@ model/ezsignfolder-create-object-v1-request.ts
 model/ezsignfolder-create-object-v1-response-mpayload.ts
 model/ezsignfolder-create-object-v1-response.ts
 model/ezsignfolder-delete-object-v1-response.ts
+model/ezsignfolder-get-forms-data-v1-response-all-of.ts
+model/ezsignfolder-get-forms-data-v1-response-mpayload.ts
+model/ezsignfolder-get-forms-data-v1-response.ts
 model/ezsignfolder-get-object-v1-response-all-of.ts
 model/ezsignfolder-get-object-v1-response-mpayload.ts
 model/ezsignfolder-get-object-v1-response.ts
@@ -107,6 +119,11 @@ model/ezsignfoldersignerassociation-get-object-v1-response.ts
 model/ezsignfoldersignerassociation-request-compound-all-of.ts
 model/ezsignfoldersignerassociation-request-compound.ts
 model/ezsignfoldersignerassociation-request.ts
+model/ezsignformfield-response-compound.ts
+model/ezsignformfield-response.ts
+model/ezsignformfieldgroup-response-compound-all-of.ts
+model/ezsignformfieldgroup-response-compound.ts
+model/ezsignformfieldgroup-response.ts
 model/ezsignpage-response.ts
 model/ezsignsignature-create-object-v1-request.ts
 model/ezsignsignature-create-object-v1-response-all-of.ts
@@ -166,6 +183,5 @@ model/webhook-response.ts
 model/webhook-user-user-created-all-of.ts
 model/webhook-user-user-created.ts
 model/website-request.ts
-model/word-position-response.ts
 package.json
 tsconfig.json
