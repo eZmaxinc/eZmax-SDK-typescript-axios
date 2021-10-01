@@ -23,10 +23,4 @@ import { CustomWordPositionResponse } from './custom-word-position-response';
  * @interface EzsigndocumentGetWordsPositionsV1ResponseMPayload
  */
 export interface EzsigndocumentGetWordsPositionsV1ResponseMPayload {
-    /**
-     * An array of words with an array of pages and positions X,Y  They are returned with the sames words that was sent in the request.
-     * @type {Array<CustomWordPositionResponse>}
-     * @memberof EzsigndocumentGetWordsPositionsV1ResponseMPayload
-     */
-    a_sWords: Array<CustomWordPositionResponse>;
 }

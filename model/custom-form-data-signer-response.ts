@@ -48,7 +48,7 @@ export interface CustomFormDataSignerResponse {
      */
     sContactLastname: string;
     /**
-     * This array contains the labels or each Form fields in the form but WITHOUT the values
+     * 
      * @type {Array<EzsignformfieldgroupResponseCompound>}
      * @memberof CustomFormDataSignerResponse
      */

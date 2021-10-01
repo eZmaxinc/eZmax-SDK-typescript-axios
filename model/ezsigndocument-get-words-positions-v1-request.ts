@@ -23,9 +23,25 @@
  */
 export interface EzsigndocumentGetWordsPositionsV1Request {
     /**
-     * 
+     * Specify if you want to retrieve *All* words or specific *Words* from the document. If you specify *Words*, you must send the list of words to search in *a_sWord*.
+     * @type {string}
+     * @memberof EzsigndocumentGetWordsPositionsV1Request
+     */
+    eGet?: EzsigndocumentGetWordsPositionsV1RequestEGetEnum;
+    /**
+     * Array of words to find in the document
      * @type {Array<string>}
      * @memberof EzsigndocumentGetWordsPositionsV1Request
      */
-    a_sWords: Array<string>;
+    a_sWord?: Array<string>;
 }
+
+/**
+    * @export
+    * @enum {string}
+    */
+export enum EzsigndocumentGetWordsPositionsV1RequestEGetEnum {
+    All = 'All',
+    Words = 'Words'
+}
+
