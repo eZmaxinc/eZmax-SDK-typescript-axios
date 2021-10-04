@@ -32,5 +32,5 @@ export interface CustomWordPositionWordResponse {
      * @type {Array<CustomWordPositionOccurenceResponse>}
      * @memberof CustomWordPositionWordResponse
      */
-    'objWordPositionOccurence': Array<CustomWordPositionOccurenceResponse>;
+    'a_objWordPositionOccurence': Array<CustomWordPositionOccurenceResponse>;
 }
