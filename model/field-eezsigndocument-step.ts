@@ -14,13 +14,12 @@
 
 
 
-
-
 /**
  * The signature step of the Ezsigndocument.
  * @export
  * @enum {string}
  */
+
 export enum FieldEEzsigndocumentStep {
     Unsent = 'Unsent',
     Unsigned = 'Unsigned',

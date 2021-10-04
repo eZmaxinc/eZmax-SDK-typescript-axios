@@ -18,30 +18,10 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 import { EzsignsignatureGetObjectV1ResponseAllOf } from './ezsignsignature-get-object-v1-response-all-of';
 
-
-
 /**
+ * @type EzsignsignatureGetObjectV1Response
  * Response for the /1/object/ezsignsignature/getObject API Request
  * @export
- * @interface EzsignsignatureGetObjectV1Response
  */
-export interface EzsignsignatureGetObjectV1Response {
-    /**
-     * Payload for the /1/object/ezsignsignature/getObject API Request
-     * @type {object}
-     * @memberof EzsignsignatureGetObjectV1Response
-     */
-    mPayload: object;
-    /**
-     * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsignsignatureGetObjectV1Response
-     */
-    objDebugPayload?: CommonResponseObjDebugPayload;
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsignsignatureGetObjectV1Response
-     */
-    objDebug?: CommonResponseObjDebug;
-}
+export type EzsignsignatureGetObjectV1Response = CommonResponse & EzsignsignatureGetObjectV1ResponseAllOf;
+

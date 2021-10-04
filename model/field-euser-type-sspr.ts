@@ -14,13 +14,12 @@
 
 
 
-
-
 /**
  * The user type of the User for SSPR
  * @export
  * @enum {string}
  */
+
 export enum FieldEUserTypeSSPR {
     EzsignUser = 'EzsignUser',
     Native = 'Native'

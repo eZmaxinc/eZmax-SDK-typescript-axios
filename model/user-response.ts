@@ -16,8 +16,6 @@
 import { CommonAudit } from './common-audit';
 import { FieldEUserType } from './field-euser-type';
 
-
-
 /**
  * A User Object
  * @export
@@ -29,41 +27,41 @@ export interface UserResponse {
      * @type {number}
      * @memberof UserResponse
      */
-    pkiUserID: number;
+    'pkiUserID': number;
     /**
      * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @type {number}
      * @memberof UserResponse
      */
-    fkiLanguageID: number;
+    'fkiLanguageID': number;
     /**
      * 
      * @type {FieldEUserType}
      * @memberof UserResponse
      */
-    eUserType: FieldEUserType;
+    'eUserType': FieldEUserType;
     /**
      * The First name of the user
      * @type {string}
      * @memberof UserResponse
      */
-    sUserFirstname: string;
+    'sUserFirstname': string;
     /**
      * The Last name of the user
      * @type {string}
      * @memberof UserResponse
      */
-    sUserLastname: string;
+    'sUserLastname': string;
     /**
      * The Login name of the User.
      * @type {string}
      * @memberof UserResponse
      */
-    sUserLoginname: string;
+    'sUserLoginname': string;
     /**
      * 
      * @type {CommonAudit}
      * @memberof UserResponse
      */
-    objAudit: CommonAudit;
+    'objAudit': CommonAudit;
 }

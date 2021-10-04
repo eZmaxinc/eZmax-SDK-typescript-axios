@@ -17,24 +17,10 @@ import { CommonResponse } from './common-response';
 import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 
-
-
 /**
+ * @type EzsignfolderSendV1Response
  * Response for the /1/object/ezsignfolder/{pkiEzsignfolderID}/send API Request
  * @export
- * @interface EzsignfolderSendV1Response
  */
-export interface EzsignfolderSendV1Response {
-    /**
-     * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsignfolderSendV1Response
-     */
-    objDebugPayload?: CommonResponseObjDebugPayload;
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsignfolderSendV1Response
-     */
-    objDebug?: CommonResponseObjDebug;
-}
+export type EzsignfolderSendV1Response = CommonResponse;
+

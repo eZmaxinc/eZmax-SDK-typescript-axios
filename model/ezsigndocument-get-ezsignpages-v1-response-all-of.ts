@@ -15,8 +15,6 @@
 
 import { EzsigndocumentGetEzsignpagesV1ResponseMPayload } from './ezsigndocument-get-ezsignpages-v1-response-mpayload';
 
-
-
 /**
  * 
  * @export
@@ -28,5 +26,5 @@ export interface EzsigndocumentGetEzsignpagesV1ResponseAllOf {
      * @type {EzsigndocumentGetEzsignpagesV1ResponseMPayload}
      * @memberof EzsigndocumentGetEzsignpagesV1ResponseAllOf
      */
-    mPayload: EzsigndocumentGetEzsignpagesV1ResponseMPayload;
+    'mPayload': EzsigndocumentGetEzsignpagesV1ResponseMPayload;
 }

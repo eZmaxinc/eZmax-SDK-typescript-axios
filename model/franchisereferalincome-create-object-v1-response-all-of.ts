@@ -15,8 +15,6 @@
 
 import { FranchisereferalincomeCreateObjectV1ResponseMPayload } from './franchisereferalincome-create-object-v1-response-mpayload';
 
-
-
 /**
  * 
  * @export
@@ -28,5 +26,5 @@ export interface FranchisereferalincomeCreateObjectV1ResponseAllOf {
      * @type {FranchisereferalincomeCreateObjectV1ResponseMPayload}
      * @memberof FranchisereferalincomeCreateObjectV1ResponseAllOf
      */
-    mPayload: FranchisereferalincomeCreateObjectV1ResponseMPayload;
+    'mPayload': FranchisereferalincomeCreateObjectV1ResponseMPayload;
 }

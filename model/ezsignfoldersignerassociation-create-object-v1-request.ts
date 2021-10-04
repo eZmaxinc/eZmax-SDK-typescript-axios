@@ -16,8 +16,6 @@
 import { EzsignfoldersignerassociationRequest } from './ezsignfoldersignerassociation-request';
 import { EzsignfoldersignerassociationRequestCompound } from './ezsignfoldersignerassociation-request-compound';
 
-
-
 /**
  * Request for the /1/object/ezsignfoldersignerassociation/createObject API Request
  * @export
@@ -29,11 +27,11 @@ export interface EzsignfoldersignerassociationCreateObjectV1Request {
      * @type {EzsignfoldersignerassociationRequest}
      * @memberof EzsignfoldersignerassociationCreateObjectV1Request
      */
-    objEzsignfoldersignerassociation?: EzsignfoldersignerassociationRequest;
+    'objEzsignfoldersignerassociation'?: EzsignfoldersignerassociationRequest;
     /**
      * 
      * @type {EzsignfoldersignerassociationRequestCompound}
      * @memberof EzsignfoldersignerassociationCreateObjectV1Request
      */
-    objEzsignfoldersignerassociationCompound?: EzsignfoldersignerassociationRequestCompound;
+    'objEzsignfoldersignerassociationCompound'?: EzsignfoldersignerassociationRequestCompound;
 }

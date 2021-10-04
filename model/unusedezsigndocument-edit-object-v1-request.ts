@@ -15,8 +15,6 @@
 
 import { EzsigndocumentRequest } from './ezsigndocument-request';
 
-
-
 /**
  * Request for the /1/object/ezsigndocument/editObject API Request
  * @export
@@ -28,5 +26,5 @@ export interface UNUSEDEzsigndocumentEditObjectV1Request {
      * @type {EzsigndocumentRequest}
      * @memberof UNUSEDEzsigndocumentEditObjectV1Request
      */
-    objEzsigndocument?: EzsigndocumentRequest;
+    'objEzsigndocument'?: EzsigndocumentRequest;
 }

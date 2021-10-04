@@ -15,8 +15,6 @@
 
 import { EzsigndocumentCreateObjectV1ResponseMPayload } from './ezsigndocument-create-object-v1-response-mpayload';
 
-
-
 /**
  * 
  * @export
@@ -28,5 +26,5 @@ export interface EzsigndocumentCreateObjectV1ResponseAllOf {
      * @type {EzsigndocumentCreateObjectV1ResponseMPayload}
      * @memberof EzsigndocumentCreateObjectV1ResponseAllOf
      */
-    mPayload: EzsigndocumentCreateObjectV1ResponseMPayload;
+    'mPayload': EzsigndocumentCreateObjectV1ResponseMPayload;
 }

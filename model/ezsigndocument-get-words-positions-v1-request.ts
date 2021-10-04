@@ -14,8 +14,6 @@
 
 
 
-
-
 /**
  * Request for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions API Request
  * @export
@@ -27,13 +25,13 @@ export interface EzsigndocumentGetWordsPositionsV1Request {
      * @type {string}
      * @memberof EzsigndocumentGetWordsPositionsV1Request
      */
-    eGet?: EzsigndocumentGetWordsPositionsV1RequestEGetEnum;
+    'eGet'?: EzsigndocumentGetWordsPositionsV1RequestEGetEnum;
     /**
      * Array of words to find in the document
      * @type {Array<string>}
      * @memberof EzsigndocumentGetWordsPositionsV1Request
      */
-    a_sWord?: Array<string>;
+    'a_sWord'?: Array<string>;
 }
 
 /**

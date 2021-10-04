@@ -19,30 +19,10 @@ import { CommonResponse } from './common-response';
 import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 
-
-
 /**
+ * @type ActivesessionGetCurrentV1Response
  * Response for the /1/object/activesession/getCurrent API Request
  * @export
- * @interface ActivesessionGetCurrentV1Response
  */
-export interface ActivesessionGetCurrentV1Response {
-    /**
-     * 
-     * @type {ActivesessionGetCurrentV1ResponseMPayload}
-     * @memberof ActivesessionGetCurrentV1Response
-     */
-    mPayload: ActivesessionGetCurrentV1ResponseMPayload;
-    /**
-     * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof ActivesessionGetCurrentV1Response
-     */
-    objDebugPayload?: CommonResponseObjDebugPayload;
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof ActivesessionGetCurrentV1Response
-     */
-    objDebug?: CommonResponseObjDebug;
-}
+export type ActivesessionGetCurrentV1Response = ActivesessionGetCurrentV1ResponseAllOf & CommonResponse;
+

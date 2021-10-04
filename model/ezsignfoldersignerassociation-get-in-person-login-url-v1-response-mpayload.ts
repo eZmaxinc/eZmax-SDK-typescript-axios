@@ -14,8 +14,6 @@
 
 
 
-
-
 /**
  * Payload for the /1/object/ezsignfoldersignerassociation/getInPersonLoginUrl API Request
  * @export
@@ -27,5 +25,5 @@ export interface EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayl
      * @type {string}
      * @memberof EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload
      */
-    sLoginUrl: string;
+    'sLoginUrl': string;
 }

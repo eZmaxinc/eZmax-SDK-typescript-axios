@@ -14,8 +14,6 @@
 
 
 
-
-
 /**
  * 
  * @export
@@ -27,5 +25,5 @@ export interface EzsignfoldersignerassociationGetObjectV1ResponseAllOf {
      * @type {object}
      * @memberof EzsignfoldersignerassociationGetObjectV1ResponseAllOf
      */
-    mPayload: object;
+    'mPayload': object;
 }

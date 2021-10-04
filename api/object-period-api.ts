@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -38,7 +38,7 @@ export const ObjectPeriodApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        periodGetAutocompleteV1: async (sSelector: 'ActiveNormal' | 'ActiveNormalAndEndOfYear' | 'AllNormal' | 'AllNormalAndEndOfYear', sQuery?: string, options: any = {}): Promise<RequestArgs> => {
+        periodGetAutocompleteV1: async (sSelector: 'ActiveNormal' | 'ActiveNormalAndEndOfYear' | 'AllNormal' | 'AllNormalAndEndOfYear', sQuery?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('periodGetAutocompleteV1', 'sSelector', sSelector)
             const localVarPath = `/1/object/period/getAutocomplete/{sSelector}`
@@ -109,7 +109,7 @@ export const ObjectPeriodApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async periodGetAutocompleteV1(sSelector: 'ActiveNormal' | 'ActiveNormalAndEndOfYear' | 'AllNormal' | 'AllNormalAndEndOfYear', sQuery?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonGetAutocompleteV1Response>> {
+        async periodGetAutocompleteV1(sSelector: 'ActiveNormal' | 'ActiveNormalAndEndOfYear' | 'AllNormal' | 'AllNormalAndEndOfYear', sQuery?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonGetAutocompleteV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.periodGetAutocompleteV1(sSelector, sQuery, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -153,7 +153,7 @@ export class ObjectPeriodApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectPeriodApi
      */
-    public periodGetAutocompleteV1(sSelector: 'ActiveNormal' | 'ActiveNormalAndEndOfYear' | 'AllNormal' | 'AllNormalAndEndOfYear', sQuery?: string, options?: any) {
+    public periodGetAutocompleteV1(sSelector: 'ActiveNormal' | 'ActiveNormalAndEndOfYear' | 'AllNormal' | 'AllNormalAndEndOfYear', sQuery?: string, options?: AxiosRequestConfig) {
         return ObjectPeriodApiFp(this.configuration).periodGetAutocompleteV1(sSelector, sQuery, options).then((request) => request(this.axios, this.basePath));
     }
 }

@@ -15,8 +15,6 @@
 
 import { EzsignfoldersignerassociationRequest } from './ezsignfoldersignerassociation-request';
 
-
-
 /**
  * 
  * @export
@@ -28,5 +26,5 @@ export interface EzsignfolderRequestCompoundAllOf {
      * @type {Array<EzsignfoldersignerassociationRequest>}
      * @memberof EzsignfolderRequestCompoundAllOf
      */
-    a_Ezsignfoldersignerassociation: Array<EzsignfoldersignerassociationRequest>;
+    'a_Ezsignfoldersignerassociation': Array<EzsignfoldersignerassociationRequest>;
 }

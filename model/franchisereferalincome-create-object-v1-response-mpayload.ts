@@ -14,8 +14,6 @@
 
 
 
-
-
 /**
  * Payload for the /1/object/franchisereferalincome/createObject API Request
  * @export
@@ -27,5 +25,5 @@ export interface FranchisereferalincomeCreateObjectV1ResponseMPayload {
      * @type {Array<number>}
      * @memberof FranchisereferalincomeCreateObjectV1ResponseMPayload
      */
-    a_pkiFranchisereferalincomeID: Array<number>;
+    'a_pkiFranchisereferalincomeID': Array<number>;
 }

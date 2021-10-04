@@ -15,8 +15,6 @@
 
 import { EzsignformfieldgroupResponseCompound } from './ezsignformfieldgroup-response-compound';
 
-
-
 /**
  * A form Data Signer Object
  * @export
@@ -28,29 +26,29 @@ export interface CustomFormDataSignerResponse {
      * @type {number}
      * @memberof CustomFormDataSignerResponse
      */
-    fkiEzsignfoldersignerassociationID: number;
+    'fkiEzsignfoldersignerassociationID': number;
     /**
      * The unique ID of the User
      * @type {number}
      * @memberof CustomFormDataSignerResponse
      */
-    fkiUserID?: number;
+    'fkiUserID'?: number;
     /**
      * The First name of the contact
      * @type {string}
      * @memberof CustomFormDataSignerResponse
      */
-    sContactFirstname: string;
+    'sContactFirstname': string;
     /**
      * The Last name of the contact
      * @type {string}
      * @memberof CustomFormDataSignerResponse
      */
-    sContactLastname: string;
+    'sContactLastname': string;
     /**
      * 
      * @type {Array<EzsignformfieldgroupResponseCompound>}
      * @memberof CustomFormDataSignerResponse
      */
-    a_objEzsignformfieldgroupCompound: Array<EzsignformfieldgroupResponseCompound>;
+    'a_objEzsignformfieldgroupCompound': Array<EzsignformfieldgroupResponseCompound>;
 }

@@ -15,8 +15,6 @@
 
 import { EzsignfoldersignerassociationCreateObjectV1ResponseMPayload } from './ezsignfoldersignerassociation-create-object-v1-response-mpayload';
 
-
-
 /**
  * 
  * @export
@@ -28,5 +26,5 @@ export interface EzsignfoldersignerassociationCreateObjectV1ResponseAllOf {
      * @type {EzsignfoldersignerassociationCreateObjectV1ResponseMPayload}
      * @memberof EzsignfoldersignerassociationCreateObjectV1ResponseAllOf
      */
-    mPayload: EzsignfoldersignerassociationCreateObjectV1ResponseMPayload;
+    'mPayload': EzsignfoldersignerassociationCreateObjectV1ResponseMPayload;
 }

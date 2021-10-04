@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -39,7 +39,7 @@ export const ObjectFranchisereferalincomeApiAxiosParamCreator = function (config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        franchisereferalincomeCreateObjectV1: async (franchisereferalincomeCreateObjectV1Request: Array<FranchisereferalincomeCreateObjectV1Request>, options: any = {}): Promise<RequestArgs> => {
+        franchisereferalincomeCreateObjectV1: async (franchisereferalincomeCreateObjectV1Request: Array<FranchisereferalincomeCreateObjectV1Request>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'franchisereferalincomeCreateObjectV1Request' is not null or undefined
             assertParamExists('franchisereferalincomeCreateObjectV1', 'franchisereferalincomeCreateObjectV1Request', franchisereferalincomeCreateObjectV1Request)
             const localVarPath = `/1/object/franchisereferalincome`;
@@ -107,7 +107,7 @@ export const ObjectFranchisereferalincomeApiFp = function(configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async franchisereferalincomeCreateObjectV1(franchisereferalincomeCreateObjectV1Request: Array<FranchisereferalincomeCreateObjectV1Request>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<FranchisereferalincomeCreateObjectV1Response>> {
+        async franchisereferalincomeCreateObjectV1(franchisereferalincomeCreateObjectV1Request: Array<FranchisereferalincomeCreateObjectV1Request>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<FranchisereferalincomeCreateObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.franchisereferalincomeCreateObjectV1(franchisereferalincomeCreateObjectV1Request, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -149,7 +149,7 @@ export class ObjectFranchisereferalincomeApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectFranchisereferalincomeApi
      */
-    public franchisereferalincomeCreateObjectV1(franchisereferalincomeCreateObjectV1Request: Array<FranchisereferalincomeCreateObjectV1Request>, options?: any) {
+    public franchisereferalincomeCreateObjectV1(franchisereferalincomeCreateObjectV1Request: Array<FranchisereferalincomeCreateObjectV1Request>, options?: AxiosRequestConfig) {
         return ObjectFranchisereferalincomeApiFp(this.configuration).franchisereferalincomeCreateObjectV1(franchisereferalincomeCreateObjectV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 }

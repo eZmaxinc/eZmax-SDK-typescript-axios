@@ -19,30 +19,10 @@ import { EzsignfolderResponse } from './ezsignfolder-response';
 import { WebhookEzsignFolderCompletedAllOf } from './webhook-ezsign-folder-completed-all-of';
 import { WebhookResponse } from './webhook-response';
 
-
-
 /**
+ * @type WebhookEzsignFolderCompleted
  * This is the base Webhook object
  * @export
- * @interface WebhookEzsignFolderCompleted
  */
-export interface WebhookEzsignFolderCompleted {
-    /**
-     * 
-     * @type {EzsignfolderResponse}
-     * @memberof WebhookEzsignFolderCompleted
-     */
-    objEzsignfolder: EzsignfolderResponse;
-    /**
-     * 
-     * @type {WebhookResponse}
-     * @memberof WebhookEzsignFolderCompleted
-     */
-    objWebhook: WebhookResponse;
-    /**
-     * An array containing details of previous attempts that were made to deliver the message. The array is empty if it\'s the first attempt.
-     * @type {Array<AttemptResponse>}
-     * @memberof WebhookEzsignFolderCompleted
-     */
-    a_objAttempt: Array<AttemptResponse>;
-}
+export type WebhookEzsignFolderCompleted = CommonWebhook & WebhookEzsignFolderCompletedAllOf;
+

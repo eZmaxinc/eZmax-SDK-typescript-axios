@@ -17,24 +17,10 @@ import { CommonResponse } from './common-response';
 import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 
-
-
 /**
+ * @type UNUSEDEzsignsignatureEditObjectV1Response
  * Response for the /1/object/ezsignsignature/editObject API Request
  * @export
- * @interface UNUSEDEzsignsignatureEditObjectV1Response
  */
-export interface UNUSEDEzsignsignatureEditObjectV1Response {
-    /**
-     * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof UNUSEDEzsignsignatureEditObjectV1Response
-     */
-    objDebugPayload?: CommonResponseObjDebugPayload;
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof UNUSEDEzsignsignatureEditObjectV1Response
-     */
-    objDebug?: CommonResponseObjDebug;
-}
+export type UNUSEDEzsignsignatureEditObjectV1Response = CommonResponse;
+

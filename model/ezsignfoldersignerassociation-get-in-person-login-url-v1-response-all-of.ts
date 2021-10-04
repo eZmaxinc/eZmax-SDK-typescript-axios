@@ -15,8 +15,6 @@
 
 import { EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload } from './ezsignfoldersignerassociation-get-in-person-login-url-v1-response-mpayload';
 
-
-
 /**
  * 
  * @export
@@ -28,5 +26,5 @@ export interface EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseAllOf
      * @type {EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload}
      * @memberof EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseAllOf
      */
-    mPayload: EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload;
+    'mPayload': EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload;
 }

@@ -14,8 +14,6 @@
 
 
 
-
-
 /**
  * Payload for the /1/object/ezsigndocument/{pkiEzsigndocument}/getDownloadUrl API Request
  * @export
@@ -27,5 +25,5 @@ export interface EzsigndocumentGetDownloadUrlV1ResponseMPayload {
      * @type {string}
      * @memberof EzsigndocumentGetDownloadUrlV1ResponseMPayload
      */
-    sDownloadUrl: string;
+    'sDownloadUrl': string;
 }

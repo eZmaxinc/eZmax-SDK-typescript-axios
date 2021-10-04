@@ -14,8 +14,6 @@
 
 
 
-
-
 /**
  * Payload for the /1/object/ezsignfolder/createObject API Request
  * @export
@@ -27,5 +25,5 @@ export interface EzsignfolderCreateObjectV1ResponseMPayload {
      * @type {Array<number>}
      * @memberof EzsignfolderCreateObjectV1ResponseMPayload
      */
-    a_pkiEzsignfolderID: Array<number>;
+    'a_pkiEzsignfolderID': Array<number>;
 }

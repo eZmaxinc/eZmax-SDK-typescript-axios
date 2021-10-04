@@ -14,8 +14,6 @@
 
 
 
-
-
 /**
  * 
  * @export
@@ -27,5 +25,5 @@ export interface EzsignsignatureGetObjectV1ResponseAllOf {
      * @type {object}
      * @memberof EzsignsignatureGetObjectV1ResponseAllOf
      */
-    mPayload: object;
+    'mPayload': object;
 }

@@ -14,8 +14,6 @@
 
 
 
-
-
 /**
  * A Contact Object
  * @export
@@ -27,11 +25,11 @@ export interface EmailRequest {
      * @type {number}
      * @memberof EmailRequest
      */
-    fkiEmailtypeID: number;
+    'fkiEmailtypeID': number;
     /**
      * The email address.
      * @type {string}
      * @memberof EmailRequest
      */
-    sEmailAddress: string;
+    'sEmailAddress': string;
 }

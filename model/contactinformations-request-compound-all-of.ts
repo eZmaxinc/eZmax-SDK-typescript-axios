@@ -18,8 +18,6 @@ import { EmailRequest } from './email-request';
 import { PhoneRequest } from './phone-request';
 import { WebsiteRequest } from './website-request';
 
-
-
 /**
  * 
  * @export
@@ -31,23 +29,23 @@ export interface ContactinformationsRequestCompoundAllOf {
      * @type {Array<AddressRequest>}
      * @memberof ContactinformationsRequestCompoundAllOf
      */
-    a_objAddress: Array<AddressRequest>;
+    'a_objAddress': Array<AddressRequest>;
     /**
      * 
      * @type {Array<PhoneRequest>}
      * @memberof ContactinformationsRequestCompoundAllOf
      */
-    a_objPhone: Array<PhoneRequest>;
+    'a_objPhone': Array<PhoneRequest>;
     /**
      * 
      * @type {Array<EmailRequest>}
      * @memberof ContactinformationsRequestCompoundAllOf
      */
-    a_objEmail: Array<EmailRequest>;
+    'a_objEmail': Array<EmailRequest>;
     /**
      * 
      * @type {Array<WebsiteRequest>}
      * @memberof ContactinformationsRequestCompoundAllOf
      */
-    a_objWebsite: Array<WebsiteRequest>;
+    'a_objWebsite': Array<WebsiteRequest>;
 }

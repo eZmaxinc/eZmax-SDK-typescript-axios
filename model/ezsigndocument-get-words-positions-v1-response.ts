@@ -16,33 +16,13 @@
 import { CommonResponse } from './common-response';
 import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
+import { CustomWordPositionWordResponse } from './custom-word-position-word-response';
 import { EzsigndocumentGetWordsPositionsV1ResponseAllOf } from './ezsigndocument-get-words-positions-v1-response-all-of';
-import { EzsigndocumentGetWordsPositionsV1ResponseMPayload } from './ezsigndocument-get-words-positions-v1-response-mpayload';
-
-
 
 /**
+ * @type EzsigndocumentGetWordsPositionsV1Response
  * Response for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions API Request
  * @export
- * @interface EzsigndocumentGetWordsPositionsV1Response
  */
-export interface EzsigndocumentGetWordsPositionsV1Response {
-    /**
-     * 
-     * @type {EzsigndocumentGetWordsPositionsV1ResponseMPayload}
-     * @memberof EzsigndocumentGetWordsPositionsV1Response
-     */
-    mPayload: EzsigndocumentGetWordsPositionsV1ResponseMPayload;
-    /**
-     * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsigndocumentGetWordsPositionsV1Response
-     */
-    objDebugPayload?: CommonResponseObjDebugPayload;
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsigndocumentGetWordsPositionsV1Response
-     */
-    objDebug?: CommonResponseObjDebug;
-}
+export type EzsigndocumentGetWordsPositionsV1Response = CommonResponse & EzsigndocumentGetWordsPositionsV1ResponseAllOf;
+

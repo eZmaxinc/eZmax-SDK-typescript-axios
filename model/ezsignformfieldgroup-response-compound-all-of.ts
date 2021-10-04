@@ -15,8 +15,6 @@
 
 import { EzsignformfieldResponse } from './ezsignformfield-response';
 
-
-
 /**
  * 
  * @export
@@ -28,5 +26,5 @@ export interface EzsignformfieldgroupResponseCompoundAllOf {
      * @type {Array<EzsignformfieldResponse>}
      * @memberof EzsignformfieldgroupResponseCompoundAllOf
      */
-    a_objEzsignformfield: Array<EzsignformfieldResponse>;
+    'a_objEzsignformfield': Array<EzsignformfieldResponse>;
 }

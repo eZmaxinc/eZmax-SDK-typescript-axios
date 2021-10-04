@@ -16,8 +16,6 @@
 import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 
-
-
 /**
  * All API response will inherit this based Response
  * @export
@@ -29,11 +27,11 @@ export interface CommonResponse {
      * @type {CommonResponseObjDebugPayload}
      * @memberof CommonResponse
      */
-    objDebugPayload?: CommonResponseObjDebugPayload;
+    'objDebugPayload'?: CommonResponseObjDebugPayload;
     /**
      * 
      * @type {CommonResponseObjDebug}
      * @memberof CommonResponse
      */
-    objDebug?: CommonResponseObjDebug;
+    'objDebug'?: CommonResponseObjDebug;
 }

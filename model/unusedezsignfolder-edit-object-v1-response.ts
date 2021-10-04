@@ -17,24 +17,10 @@ import { CommonResponse } from './common-response';
 import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 
-
-
 /**
+ * @type UNUSEDEzsignfolderEditObjectV1Response
  * Response for the /1/object/ezsignfolder/editObject API Request
  * @export
- * @interface UNUSEDEzsignfolderEditObjectV1Response
  */
-export interface UNUSEDEzsignfolderEditObjectV1Response {
-    /**
-     * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof UNUSEDEzsignfolderEditObjectV1Response
-     */
-    objDebugPayload?: CommonResponseObjDebugPayload;
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof UNUSEDEzsignfolderEditObjectV1Response
-     */
-    objDebug?: CommonResponseObjDebug;
-}
+export type UNUSEDEzsignfolderEditObjectV1Response = CommonResponse;
+

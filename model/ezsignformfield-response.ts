@@ -14,8 +14,6 @@
 
 
 
-
-
 /**
  * An Ezsignformfield Object
  * @export
@@ -27,11 +25,11 @@ export interface EzsignformfieldResponse {
      * @type {string}
      * @memberof EzsignformfieldResponse
      */
-    sEzsignformfieldLabel: string;
+    'sEzsignformfieldLabel': string;
     /**
      * The Value for the Ezsignformfield
      * @type {string}
      * @memberof EzsignformfieldResponse
      */
-    sEzsignformfieldValue: string;
+    'sEzsignformfieldValue': string;
 }

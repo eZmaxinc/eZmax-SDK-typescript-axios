@@ -14,8 +14,6 @@
 
 
 
-
-
 /**
  * Request for the /1/module/user/createEzsignuser API Request
  * @export
@@ -27,47 +25,47 @@ export interface UserCreateEzsignuserV1Request {
      * @type {number}
      * @memberof UserCreateEzsignuserV1Request
      */
-    fkiLanguageID: number;
+    'fkiLanguageID': number;
     /**
      * The First name of the user
      * @type {string}
      * @memberof UserCreateEzsignuserV1Request
      */
-    sUserFirstname: string;
+    'sUserFirstname': string;
     /**
      * The Last name of the user
      * @type {string}
      * @memberof UserCreateEzsignuserV1Request
      */
-    sUserLastname: string;
+    'sUserLastname': string;
     /**
      * The email address.
      * @type {string}
      * @memberof UserCreateEzsignuserV1Request
      */
-    sEmailAddress: string;
+    'sEmailAddress': string;
     /**
      * The region of the phone number. (For a North America Number only)  The region is the \"514\" section in this sample phone number: (514) 990-1516 x123
      * @type {string}
      * @memberof UserCreateEzsignuserV1Request
      */
-    sPhoneRegion: string;
+    'sPhoneRegion': string;
     /**
      * The exchange of the phone number. (For a North America Number only)  The exchange is the \"990\" section in this sample phone number: (514) 990-1516 x123
      * @type {string}
      * @memberof UserCreateEzsignuserV1Request
      */
-    sPhoneExchange: string;
+    'sPhoneExchange': string;
     /**
      * The number of the phone number. (For a North America Number only)  The number is the \"1516\" section in this sample phone number: (514) 990-1516 x123
      * @type {string}
      * @memberof UserCreateEzsignuserV1Request
      */
-    sPhoneNumber: string;
+    'sPhoneNumber': string;
     /**
      * The extension of the phone number.  The extension is the \"123\" section in this sample phone number: (514) 990-1516 x123.  It can also be used with international phone numbers
      * @type {string}
      * @memberof UserCreateEzsignuserV1Request
      */
-    sPhoneExtension?: string;
+    'sPhoneExtension'?: string;
 }

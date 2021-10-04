@@ -15,8 +15,6 @@
 
 import { FieldEUserTypeSSPR } from './field-euser-type-sspr';
 
-
-
 /**
  * Request for the /1/module/sspr/resetPasswordRequest API Request
  * @export
@@ -28,29 +26,29 @@ export interface SsprResetPasswordRequestV1Request {
      * @type {string}
      * @memberof SsprResetPasswordRequestV1Request
      */
-    pksCustomerCode: string;
+    'pksCustomerCode': string;
     /**
      * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @type {number}
      * @memberof SsprResetPasswordRequestV1Request
      */
-    fkiLanguageID: number;
+    'fkiLanguageID': number;
     /**
      * 
      * @type {FieldEUserTypeSSPR}
      * @memberof SsprResetPasswordRequestV1Request
      */
-    eUserTypeSSPR: FieldEUserTypeSSPR;
+    'eUserTypeSSPR': FieldEUserTypeSSPR;
     /**
      * The email address.
      * @type {string}
      * @memberof SsprResetPasswordRequestV1Request
      */
-    sEmailAddress?: string;
+    'sEmailAddress'?: string;
     /**
      * The Login name of the User.
      * @type {string}
      * @memberof SsprResetPasswordRequestV1Request
      */
-    sUserLoginname?: string;
+    'sUserLoginname'?: string;
 }

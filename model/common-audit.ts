@@ -14,8 +14,6 @@
 
 
 
-
-
 /**
  * Gives informations about the user that created the object and the last user to have modified it.  If the object was never modified after creation, both Created and Modified informations will be the same.  Apikey details will only be provided if the changes were made by an API key.  
  * @export
@@ -27,35 +25,35 @@ export interface CommonAudit {
      * @type {number}
      * @memberof CommonAudit
      */
-    fkiUserIDCreated: number;
+    'fkiUserIDCreated': number;
     /**
      * The unique ID of the User
      * @type {number}
      * @memberof CommonAudit
      */
-    fkiUserIDModified: number;
+    'fkiUserIDModified': number;
     /**
      * The unique ID of the Apikey
      * @type {number}
      * @memberof CommonAudit
      */
-    fkiApikeyIDCreated?: number;
+    'fkiApikeyIDCreated'?: number;
     /**
      * The unique ID of the Apikey
      * @type {number}
      * @memberof CommonAudit
      */
-    fkiApikeyIDModified?: number;
+    'fkiApikeyIDModified'?: number;
     /**
      * Represent a Date Time. The timezone is the one configured in the User\'s profile.
      * @type {string}
      * @memberof CommonAudit
      */
-    dtCreatedDate: string;
+    'dtCreatedDate': string;
     /**
      * Represent a Date Time. The timezone is the one configured in the User\'s profile.
      * @type {string}
      * @memberof CommonAudit
      */
-    dtModifiedDate: string;
+    'dtModifiedDate': string;
 }

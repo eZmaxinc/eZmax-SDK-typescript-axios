@@ -15,8 +15,6 @@
 
 import { FieldEUserTypeSSPR } from './field-euser-type-sspr';
 
-
-
 /**
  * Request for the /1/module/sspr/unlockAccountRequest API Request
  * @export
@@ -28,29 +26,29 @@ export interface SsprUnlockAccountRequestV1Request {
      * @type {string}
      * @memberof SsprUnlockAccountRequestV1Request
      */
-    pksCustomerCode: string;
+    'pksCustomerCode': string;
     /**
      * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @type {number}
      * @memberof SsprUnlockAccountRequestV1Request
      */
-    fkiLanguageID: number;
+    'fkiLanguageID': number;
     /**
      * 
      * @type {FieldEUserTypeSSPR}
      * @memberof SsprUnlockAccountRequestV1Request
      */
-    eUserTypeSSPR: FieldEUserTypeSSPR;
+    'eUserTypeSSPR': FieldEUserTypeSSPR;
     /**
      * The email address.
      * @type {string}
      * @memberof SsprUnlockAccountRequestV1Request
      */
-    sEmailAddress?: string;
+    'sEmailAddress'?: string;
     /**
      * The Login name of the User.
      * @type {string}
      * @memberof SsprUnlockAccountRequestV1Request
      */
-    sUserLoginname?: string;
+    'sUserLoginname'?: string;
 }

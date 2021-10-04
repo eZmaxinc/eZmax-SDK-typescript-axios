@@ -14,8 +14,6 @@
 
 
 
-
-
 /**
  * Payload for the /2/module/authenticate/authenticate API Request
  * @export
@@ -27,11 +25,11 @@ export interface AuthenticateAuthenticateV2ResponseMPayload {
      * @type {string}
      * @memberof AuthenticateAuthenticateV2ResponseMPayload
      */
-    sAuthorization: string;
+    'sAuthorization': string;
     /**
      * The secret key
      * @type {string}
      * @memberof AuthenticateAuthenticateV2ResponseMPayload
      */
-    sSecret: string;
+    'sSecret': string;
 }

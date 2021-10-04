@@ -14,8 +14,6 @@
 
 
 
-
-
 /**
  * Generic Error Message
  * @export
@@ -27,11 +25,11 @@ export interface CommonResponseError {
      * @type {string}
      * @memberof CommonResponseError
      */
-    sErrorMessage: string;
+    'sErrorMessage': string;
     /**
      * The error code. See documentation for valid values
      * @type {string}
      * @memberof CommonResponseError
      */
-    eErrorCode?: string;
+    'eErrorCode'?: string;
 }

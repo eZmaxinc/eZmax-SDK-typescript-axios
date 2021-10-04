@@ -15,8 +15,6 @@
 
 import { ApikeyResponse } from './apikey-response';
 
-
-
 /**
  * Payload for the /1/object/apikey/createObject API Request
  * @export
@@ -28,5 +26,5 @@ export interface ApikeyCreateObjectV1ResponseMPayload {
      * @type {Array<ApikeyResponse>}
      * @memberof ApikeyCreateObjectV1ResponseMPayload
      */
-    a_objApikey: Array<ApikeyResponse>;
+    'a_objApikey': Array<ApikeyResponse>;
 }

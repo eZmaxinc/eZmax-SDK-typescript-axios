@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -40,7 +40,7 @@ export const GlobalCustomerApiAxiosParamCreator = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        globalCustomerGetEndpointV1: async (pksCustomerCode: string, sInfrastructureproductCode?: 'appcluster01' | 'ezsignuser', options: any = {}): Promise<RequestArgs> => {
+        globalCustomerGetEndpointV1: async (pksCustomerCode: string, sInfrastructureproductCode?: 'appcluster01' | 'ezsignuser', options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pksCustomerCode' is not null or undefined
             assertParamExists('globalCustomerGetEndpointV1', 'pksCustomerCode', pksCustomerCode)
             const localVarPath = `/1/customer/{pksCustomerCode}/endpoint`
@@ -111,7 +111,7 @@ export const GlobalCustomerApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async globalCustomerGetEndpointV1(pksCustomerCode: string, sInfrastructureproductCode?: 'appcluster01' | 'ezsignuser', options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GlobalCustomerGetEndpointV1Response>> {
+        async globalCustomerGetEndpointV1(pksCustomerCode: string, sInfrastructureproductCode?: 'appcluster01' | 'ezsignuser', options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GlobalCustomerGetEndpointV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.globalCustomerGetEndpointV1(pksCustomerCode, sInfrastructureproductCode, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -155,7 +155,7 @@ export class GlobalCustomerApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof GlobalCustomerApi
      */
-    public globalCustomerGetEndpointV1(pksCustomerCode: string, sInfrastructureproductCode?: 'appcluster01' | 'ezsignuser', options?: any) {
+    public globalCustomerGetEndpointV1(pksCustomerCode: string, sInfrastructureproductCode?: 'appcluster01' | 'ezsignuser', options?: AxiosRequestConfig) {
         return GlobalCustomerApiFp(this.configuration).globalCustomerGetEndpointV1(pksCustomerCode, sInfrastructureproductCode, options).then((request) => request(this.axios, this.basePath));
     }
 }

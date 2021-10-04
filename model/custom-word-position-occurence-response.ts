@@ -14,30 +14,28 @@
 
 
 
-
-
 /**
  * A Word Position Object
  * @export
- * @interface CustomWordPositionResponse
+ * @interface CustomWordPositionOccurenceResponse
  */
-export interface CustomWordPositionResponse {
+export interface CustomWordPositionOccurenceResponse {
     /**
      * The page where the word occurence was found
      * @type {number}
-     * @memberof CustomWordPositionResponse
+     * @memberof CustomWordPositionOccurenceResponse
      */
-    iPage?: number;
+    'iPage'?: number;
     /**
      * The X coordinate (Horizontal) where the Word occurence was found.  Coordinate is calculated at 100dpi (dot per inch).
      * @type {number}
-     * @memberof CustomWordPositionResponse
+     * @memberof CustomWordPositionOccurenceResponse
      */
-    iX?: number;
+    'iX'?: number;
     /**
      * The Y coordinate (Vertical) where the Word occurence was found.  Coordinate is calculated at 100dpi (dot per inch).
      * @type {number}
-     * @memberof CustomWordPositionResponse
+     * @memberof CustomWordPositionOccurenceResponse
      */
-    iY?: number;
+    'iY'?: number;
 }

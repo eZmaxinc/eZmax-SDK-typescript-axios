@@ -14,8 +14,6 @@
 
 
 
-
-
 /**
  * Request for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/applyezsigntemplate API Request
  * @export
@@ -27,17 +25,17 @@ export interface EzsigndocumentApplyEzsigntemplateV1Request {
      * @type {number}
      * @memberof EzsigndocumentApplyEzsigntemplateV1Request
      */
-    fkiEzsigntemplateID: number;
+    'fkiEzsigntemplateID': number;
     /**
      * 
      * @type {Array<string>}
      * @memberof EzsigndocumentApplyEzsigntemplateV1Request
      */
-    a_sEzsigntemplatesigner: Array<string>;
+    'a_sEzsigntemplatesigner': Array<string>;
     /**
      * 
      * @type {Array<number>}
      * @memberof EzsigndocumentApplyEzsigntemplateV1Request
      */
-    a_pkiEzsignfoldersignerassociationID: Array<number>;
+    'a_pkiEzsignfoldersignerassociationID': Array<number>;
 }

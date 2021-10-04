@@ -14,8 +14,6 @@
 
 
 
-
-
 /**
  * A webhook object
  * @export
@@ -27,43 +25,43 @@ export interface WebhookResponse {
      * @type {number}
      * @memberof WebhookResponse
      */
-    pkiWebhookID: number;
+    'pkiWebhookID': number;
     /**
      * The Module generating the Event.
      * @type {string}
      * @memberof WebhookResponse
      */
-    eWebhookModule: WebhookResponseEWebhookModuleEnum;
+    'eWebhookModule': WebhookResponseEWebhookModuleEnum;
     /**
      * This Ezsign Event. This property will be set only if the Module is \"Ezsign\".
      * @type {string}
      * @memberof WebhookResponse
      */
-    eWebhookEzsignevent?: WebhookResponseEWebhookEzsigneventEnum;
+    'eWebhookEzsignevent'?: WebhookResponseEWebhookEzsigneventEnum;
     /**
      * The customer code assigned to your account
      * @type {string}
      * @memberof WebhookResponse
      */
-    pksCustomerCode: string;
+    'pksCustomerCode': string;
     /**
      * The url being called
      * @type {string}
      * @memberof WebhookResponse
      */
-    sWebhookUrl: string;
+    'sWebhookUrl': string;
     /**
      * The email that will receive the webhook in case all attempts fail.
      * @type {string}
      * @memberof WebhookResponse
      */
-    sWebhookEmailfailed: string;
+    'sWebhookEmailfailed': string;
     /**
      * This Management Event. This property will be set only if the Module is \"Management\".
      * @type {string}
      * @memberof WebhookResponse
      */
-    eWebhookManagementevent?: WebhookResponseEWebhookManagementeventEnum;
+    'eWebhookManagementevent'?: WebhookResponseEWebhookManagementeventEnum;
 }
 
 /**

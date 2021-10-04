@@ -14,8 +14,6 @@
 
 
 
-
-
 /**
  * Response for the /1/customer/{pksCustomerCode}/endpoint API Request
  * @export
@@ -27,5 +25,5 @@ export interface GlobalCustomerGetEndpointV1Response {
      * @type {string}
      * @memberof GlobalCustomerGetEndpointV1Response
      */
-    sEndpointURL: string;
+    'sEndpointURL': string;
 }

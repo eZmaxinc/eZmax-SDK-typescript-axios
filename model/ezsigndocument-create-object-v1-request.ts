@@ -16,8 +16,6 @@
 import { EzsigndocumentRequest } from './ezsigndocument-request';
 import { EzsigndocumentRequestCompound } from './ezsigndocument-request-compound';
 
-
-
 /**
  * Request for the /1/object/ezsigndocument/createObject API Request
  * @export
@@ -29,11 +27,11 @@ export interface EzsigndocumentCreateObjectV1Request {
      * @type {EzsigndocumentRequest}
      * @memberof EzsigndocumentCreateObjectV1Request
      */
-    objEzsigndocument?: EzsigndocumentRequest;
+    'objEzsigndocument'?: EzsigndocumentRequest;
     /**
      * 
      * @type {EzsigndocumentRequestCompound}
      * @memberof EzsigndocumentCreateObjectV1Request
      */
-    objEzsigndocumentCompound?: EzsigndocumentRequestCompound;
+    'objEzsigndocumentCompound'?: EzsigndocumentRequestCompound;
 }

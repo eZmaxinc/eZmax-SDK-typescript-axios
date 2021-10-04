@@ -15,8 +15,6 @@
 
 import { EzsignsignatureRequest } from './ezsignsignature-request';
 
-
-
 /**
  * Request for the /1/object/ezsignsignature/editObject API Request
  * @export
@@ -28,5 +26,5 @@ export interface UNUSEDEzsignsignatureEditObjectV1Request {
      * @type {EzsignsignatureRequest}
      * @memberof UNUSEDEzsignsignatureEditObjectV1Request
      */
-    objEzsignsignature?: EzsignsignatureRequest;
+    'objEzsignsignature'?: EzsignsignatureRequest;
 }

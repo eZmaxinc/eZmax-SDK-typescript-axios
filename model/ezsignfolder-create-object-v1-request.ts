@@ -16,8 +16,6 @@
 import { EzsignfolderRequest } from './ezsignfolder-request';
 import { EzsignfolderRequestCompound } from './ezsignfolder-request-compound';
 
-
-
 /**
  * Request for the /1/object/ezsignfolder/createObject API Request
  * @export
@@ -29,11 +27,11 @@ export interface EzsignfolderCreateObjectV1Request {
      * @type {EzsignfolderRequest}
      * @memberof EzsignfolderCreateObjectV1Request
      */
-    objEzsignfolder?: EzsignfolderRequest;
+    'objEzsignfolder'?: EzsignfolderRequest;
     /**
      * 
      * @type {EzsignfolderRequestCompound}
      * @memberof EzsignfolderCreateObjectV1Request
      */
-    objEzsignfolderCompound?: EzsignfolderRequestCompound;
+    'objEzsignfolderCompound'?: EzsignfolderRequestCompound;
 }

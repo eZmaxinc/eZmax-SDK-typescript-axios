@@ -15,8 +15,6 @@
 
 import { EzsigndocumentGetFormDataV1ResponseMPayload } from './ezsigndocument-get-form-data-v1-response-mpayload';
 
-
-
 /**
  * 
  * @export
@@ -28,5 +26,5 @@ export interface EzsigndocumentGetFormDataV1ResponseAllOf {
      * @type {EzsigndocumentGetFormDataV1ResponseMPayload}
      * @memberof EzsigndocumentGetFormDataV1ResponseAllOf
      */
-    mPayload: EzsigndocumentGetFormDataV1ResponseMPayload;
+    'mPayload': EzsigndocumentGetFormDataV1ResponseMPayload;
 }

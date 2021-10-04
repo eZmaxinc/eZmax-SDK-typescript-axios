@@ -14,8 +14,6 @@
 
 
 
-
-
 /**
  * Description of the API Key  
  * @export
@@ -27,11 +25,11 @@ export interface MultilingualApikeyDescription {
      * @type {string}
      * @memberof MultilingualApikeyDescription
      */
-    sApikeyDescription1?: string;
+    'sApikeyDescription1'?: string;
     /**
      * Value in English
      * @type {string}
      * @memberof MultilingualApikeyDescription
      */
-    sApikeyDescription2?: string;
+    'sApikeyDescription2'?: string;
 }

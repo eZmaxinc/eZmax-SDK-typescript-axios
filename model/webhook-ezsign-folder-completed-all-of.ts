@@ -15,8 +15,6 @@
 
 import { EzsignfolderResponse } from './ezsignfolder-response';
 
-
-
 /**
  * 
  * @export
@@ -28,5 +26,5 @@ export interface WebhookEzsignFolderCompletedAllOf {
      * @type {EzsignfolderResponse}
      * @memberof WebhookEzsignFolderCompletedAllOf
      */
-    objEzsignfolder: EzsignfolderResponse;
+    'objEzsignfolder': EzsignfolderResponse;
 }

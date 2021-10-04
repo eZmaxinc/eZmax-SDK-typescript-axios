@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -39,7 +39,7 @@ export const ObjectApikeyApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apikeyCreateObjectV1: async (apikeyCreateObjectV1Request: Array<ApikeyCreateObjectV1Request>, options: any = {}): Promise<RequestArgs> => {
+        apikeyCreateObjectV1: async (apikeyCreateObjectV1Request: Array<ApikeyCreateObjectV1Request>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'apikeyCreateObjectV1Request' is not null or undefined
             assertParamExists('apikeyCreateObjectV1', 'apikeyCreateObjectV1Request', apikeyCreateObjectV1Request)
             const localVarPath = `/1/object/apikey`;
@@ -107,7 +107,7 @@ export const ObjectApikeyApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async apikeyCreateObjectV1(apikeyCreateObjectV1Request: Array<ApikeyCreateObjectV1Request>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApikeyCreateObjectV1Response>> {
+        async apikeyCreateObjectV1(apikeyCreateObjectV1Request: Array<ApikeyCreateObjectV1Request>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApikeyCreateObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.apikeyCreateObjectV1(apikeyCreateObjectV1Request, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -149,7 +149,7 @@ export class ObjectApikeyApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectApikeyApi
      */
-    public apikeyCreateObjectV1(apikeyCreateObjectV1Request: Array<ApikeyCreateObjectV1Request>, options?: any) {
+    public apikeyCreateObjectV1(apikeyCreateObjectV1Request: Array<ApikeyCreateObjectV1Request>, options?: AxiosRequestConfig) {
         return ObjectApikeyApiFp(this.configuration).apikeyCreateObjectV1(apikeyCreateObjectV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 }

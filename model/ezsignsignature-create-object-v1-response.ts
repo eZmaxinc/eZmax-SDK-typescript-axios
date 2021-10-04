@@ -19,30 +19,10 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
 import { EzsignsignatureCreateObjectV1ResponseAllOf } from './ezsignsignature-create-object-v1-response-all-of';
 import { EzsignsignatureCreateObjectV1ResponseMPayload } from './ezsignsignature-create-object-v1-response-mpayload';
 
-
-
 /**
+ * @type EzsignsignatureCreateObjectV1Response
  * Response for the /1/object/ezsignsignature/createObject API Request
  * @export
- * @interface EzsignsignatureCreateObjectV1Response
  */
-export interface EzsignsignatureCreateObjectV1Response {
-    /**
-     * 
-     * @type {EzsignsignatureCreateObjectV1ResponseMPayload}
-     * @memberof EzsignsignatureCreateObjectV1Response
-     */
-    mPayload: EzsignsignatureCreateObjectV1ResponseMPayload;
-    /**
-     * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsignsignatureCreateObjectV1Response
-     */
-    objDebugPayload?: CommonResponseObjDebugPayload;
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsignsignatureCreateObjectV1Response
-     */
-    objDebug?: CommonResponseObjDebug;
-}
+export type EzsignsignatureCreateObjectV1Response = CommonResponse & EzsignsignatureCreateObjectV1ResponseAllOf;
+

@@ -14,8 +14,6 @@
 
 
 
-
-
 /**
  * An Ezsignformfieldgroup Object
  * @export
@@ -27,5 +25,5 @@ export interface EzsignformfieldgroupResponse {
      * @type {string}
      * @memberof EzsignformfieldgroupResponse
      */
-    sEzsignformfieldgroupLabel: string;
+    'sEzsignformfieldgroupLabel': string;
 }

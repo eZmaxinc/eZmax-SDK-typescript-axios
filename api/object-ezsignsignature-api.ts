@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -45,7 +45,7 @@ export const ObjectEzsignsignatureApiAxiosParamCreator = function (configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignsignatureCreateObjectV1: async (ezsignsignatureCreateObjectV1Request: Array<EzsignsignatureCreateObjectV1Request>, options: any = {}): Promise<RequestArgs> => {
+        ezsignsignatureCreateObjectV1: async (ezsignsignatureCreateObjectV1Request: Array<EzsignsignatureCreateObjectV1Request>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'ezsignsignatureCreateObjectV1Request' is not null or undefined
             assertParamExists('ezsignsignatureCreateObjectV1', 'ezsignsignatureCreateObjectV1Request', ezsignsignatureCreateObjectV1Request)
             const localVarPath = `/1/object/ezsignsignature`;
@@ -103,7 +103,7 @@ export const ObjectEzsignsignatureApiAxiosParamCreator = function (configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignsignatureDeleteObjectV1: async (pkiEzsignsignatureID: number, options: any = {}): Promise<RequestArgs> => {
+        ezsignsignatureDeleteObjectV1: async (pkiEzsignsignatureID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsignsignatureID' is not null or undefined
             assertParamExists('ezsignsignatureDeleteObjectV1', 'pkiEzsignsignatureID', pkiEzsignsignatureID)
             const localVarPath = `/1/object/ezsignsignature/{pkiEzsignsignatureID}`
@@ -159,7 +159,7 @@ export const ObjectEzsignsignatureApiAxiosParamCreator = function (configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignsignatureGetChildrenV1: async (pkiEzsignsignatureID: number, options: any = {}): Promise<RequestArgs> => {
+        ezsignsignatureGetChildrenV1: async (pkiEzsignsignatureID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsignsignatureID' is not null or undefined
             assertParamExists('ezsignsignatureGetChildrenV1', 'pkiEzsignsignatureID', pkiEzsignsignatureID)
             const localVarPath = `/1/object/ezsignsignature/{pkiEzsignsignatureID}/getChildren`
@@ -215,7 +215,7 @@ export const ObjectEzsignsignatureApiAxiosParamCreator = function (configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignsignatureGetObjectV1: async (pkiEzsignsignatureID: number, options: any = {}): Promise<RequestArgs> => {
+        ezsignsignatureGetObjectV1: async (pkiEzsignsignatureID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsignsignatureID' is not null or undefined
             assertParamExists('ezsignsignatureGetObjectV1', 'pkiEzsignsignatureID', pkiEzsignsignatureID)
             const localVarPath = `/1/object/ezsignsignature/{pkiEzsignsignatureID}`
@@ -281,7 +281,7 @@ export const ObjectEzsignsignatureApiFp = function(configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignsignatureCreateObjectV1(ezsignsignatureCreateObjectV1Request: Array<EzsignsignatureCreateObjectV1Request>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignsignatureCreateObjectV1Response>> {
+        async ezsignsignatureCreateObjectV1(ezsignsignatureCreateObjectV1Request: Array<EzsignsignatureCreateObjectV1Request>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignsignatureCreateObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignsignatureCreateObjectV1(ezsignsignatureCreateObjectV1Request, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -292,7 +292,7 @@ export const ObjectEzsignsignatureApiFp = function(configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignsignatureDeleteObjectV1(pkiEzsignsignatureID: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignsignatureDeleteObjectV1Response>> {
+        async ezsignsignatureDeleteObjectV1(pkiEzsignsignatureID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignsignatureDeleteObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignsignatureDeleteObjectV1(pkiEzsignsignatureID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -303,7 +303,7 @@ export const ObjectEzsignsignatureApiFp = function(configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignsignatureGetChildrenV1(pkiEzsignsignatureID: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async ezsignsignatureGetChildrenV1(pkiEzsignsignatureID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignsignatureGetChildrenV1(pkiEzsignsignatureID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -314,7 +314,7 @@ export const ObjectEzsignsignatureApiFp = function(configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignsignatureGetObjectV1(pkiEzsignsignatureID: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignsignatureGetObjectV1Response>> {
+        async ezsignsignatureGetObjectV1(pkiEzsignsignatureID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignsignatureGetObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignsignatureGetObjectV1(pkiEzsignsignatureID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -386,7 +386,7 @@ export class ObjectEzsignsignatureApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsignsignatureApi
      */
-    public ezsignsignatureCreateObjectV1(ezsignsignatureCreateObjectV1Request: Array<EzsignsignatureCreateObjectV1Request>, options?: any) {
+    public ezsignsignatureCreateObjectV1(ezsignsignatureCreateObjectV1Request: Array<EzsignsignatureCreateObjectV1Request>, options?: AxiosRequestConfig) {
         return ObjectEzsignsignatureApiFp(this.configuration).ezsignsignatureCreateObjectV1(ezsignsignatureCreateObjectV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -398,7 +398,7 @@ export class ObjectEzsignsignatureApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsignsignatureApi
      */
-    public ezsignsignatureDeleteObjectV1(pkiEzsignsignatureID: number, options?: any) {
+    public ezsignsignatureDeleteObjectV1(pkiEzsignsignatureID: number, options?: AxiosRequestConfig) {
         return ObjectEzsignsignatureApiFp(this.configuration).ezsignsignatureDeleteObjectV1(pkiEzsignsignatureID, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -410,7 +410,7 @@ export class ObjectEzsignsignatureApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsignsignatureApi
      */
-    public ezsignsignatureGetChildrenV1(pkiEzsignsignatureID: number, options?: any) {
+    public ezsignsignatureGetChildrenV1(pkiEzsignsignatureID: number, options?: AxiosRequestConfig) {
         return ObjectEzsignsignatureApiFp(this.configuration).ezsignsignatureGetChildrenV1(pkiEzsignsignatureID, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -422,7 +422,7 @@ export class ObjectEzsignsignatureApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsignsignatureApi
      */
-    public ezsignsignatureGetObjectV1(pkiEzsignsignatureID: number, options?: any) {
+    public ezsignsignatureGetObjectV1(pkiEzsignsignatureID: number, options?: AxiosRequestConfig) {
         return ObjectEzsignsignatureApiFp(this.configuration).ezsignsignatureGetObjectV1(pkiEzsignsignatureID, options).then((request) => request(this.axios, this.basePath));
     }
 }

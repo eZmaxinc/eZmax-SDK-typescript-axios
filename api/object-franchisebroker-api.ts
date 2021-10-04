@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -38,7 +38,7 @@ export const ObjectFranchisebrokerApiAxiosParamCreator = function (configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        franchisebrokerGetAutocompleteV1: async (sSelector: 'Active' | 'All', sQuery?: string, options: any = {}): Promise<RequestArgs> => {
+        franchisebrokerGetAutocompleteV1: async (sSelector: 'Active' | 'All', sQuery?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('franchisebrokerGetAutocompleteV1', 'sSelector', sSelector)
             const localVarPath = `/1/object/franchisebroker/getAutocomplete/{sSelector}`
@@ -109,7 +109,7 @@ export const ObjectFranchisebrokerApiFp = function(configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async franchisebrokerGetAutocompleteV1(sSelector: 'Active' | 'All', sQuery?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonGetAutocompleteV1Response>> {
+        async franchisebrokerGetAutocompleteV1(sSelector: 'Active' | 'All', sQuery?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonGetAutocompleteV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.franchisebrokerGetAutocompleteV1(sSelector, sQuery, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -153,7 +153,7 @@ export class ObjectFranchisebrokerApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectFranchisebrokerApi
      */
-    public franchisebrokerGetAutocompleteV1(sSelector: 'Active' | 'All', sQuery?: string, options?: any) {
+    public franchisebrokerGetAutocompleteV1(sSelector: 'Active' | 'All', sQuery?: string, options?: AxiosRequestConfig) {
         return ObjectFranchisebrokerApiFp(this.configuration).franchisebrokerGetAutocompleteV1(sSelector, sQuery, options).then((request) => request(this.axios, this.basePath));
     }
 }

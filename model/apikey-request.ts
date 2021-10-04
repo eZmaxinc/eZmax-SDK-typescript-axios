@@ -15,8 +15,6 @@
 
 import { MultilingualApikeyDescription } from './multilingual-apikey-description';
 
-
-
 /**
  * An Apikey Object
  * @export
@@ -28,11 +26,11 @@ export interface ApikeyRequest {
      * @type {number}
      * @memberof ApikeyRequest
      */
-    fkiUserID: number;
+    'fkiUserID': number;
     /**
      * 
      * @type {MultilingualApikeyDescription}
      * @memberof ApikeyRequest
      */
-    objApikeyDescription: MultilingualApikeyDescription;
+    'objApikeyDescription': MultilingualApikeyDescription;
 }

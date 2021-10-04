@@ -19,30 +19,10 @@ import { CommonResponse } from './common-response';
 import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 
-
-
 /**
+ * @type CommonGetAutocompleteV1Response
  * Response for the /1/object/xxx/getAutocomplete API Request
  * @export
- * @interface CommonGetAutocompleteV1Response
  */
-export interface CommonGetAutocompleteV1Response {
-    /**
-     * 
-     * @type {Array<CommonGetAutocompleteV1ResponseMPayload>}
-     * @memberof CommonGetAutocompleteV1Response
-     */
-    mPayload: Array<CommonGetAutocompleteV1ResponseMPayload>;
-    /**
-     * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof CommonGetAutocompleteV1Response
-     */
-    objDebugPayload?: CommonResponseObjDebugPayload;
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof CommonGetAutocompleteV1Response
-     */
-    objDebug?: CommonResponseObjDebug;
-}
+export type CommonGetAutocompleteV1Response = CommonGetAutocompleteV1ResponseAllOf & CommonResponse;
+

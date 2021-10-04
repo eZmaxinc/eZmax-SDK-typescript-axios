@@ -17,30 +17,10 @@ import { EzsignfoldersignerassociationRequest } from './ezsignfoldersignerassoci
 import { EzsignfoldersignerassociationRequestCompoundAllOf } from './ezsignfoldersignerassociation-request-compound-all-of';
 import { EzsignsignerRequestCompound } from './ezsignsigner-request-compound';
 
-
-
 /**
+ * @type EzsignfoldersignerassociationRequestCompound
  * An Ezsignfoldersignerassociation Object and children to create a complete structure
  * @export
- * @interface EzsignfoldersignerassociationRequestCompound
  */
-export interface EzsignfoldersignerassociationRequestCompound {
-    /**
-     * 
-     * @type {EzsignsignerRequestCompound}
-     * @memberof EzsignfoldersignerassociationRequestCompound
-     */
-    objEzsignsigner?: EzsignsignerRequestCompound;
-    /**
-     * A reference to a valid User.  This is only used if the signatory will be a user from the system.
-     * @type {number}
-     * @memberof EzsignfoldersignerassociationRequestCompound
-     */
-    fkiUserID?: number;
-    /**
-     * A reference to a valid Ezsignfolder.  That value is returned after a successful Ezsignfolder Creation.
-     * @type {number}
-     * @memberof EzsignfoldersignerassociationRequestCompound
-     */
-    fkiEzsignfolderID: number;
-}
+export type EzsignfoldersignerassociationRequestCompound = EzsignfoldersignerassociationRequest & EzsignfoldersignerassociationRequestCompoundAllOf;
+

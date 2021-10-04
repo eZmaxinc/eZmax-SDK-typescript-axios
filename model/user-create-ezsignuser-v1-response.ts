@@ -19,30 +19,10 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
 import { UserCreateEzsignuserV1ResponseAllOf } from './user-create-ezsignuser-v1-response-all-of';
 import { UserCreateEzsignuserV1ResponseMPayload } from './user-create-ezsignuser-v1-response-mpayload';
 
-
-
 /**
+ * @type UserCreateEzsignuserV1Response
  * Response for the /1/module/user/createEzsignuser API Request
  * @export
- * @interface UserCreateEzsignuserV1Response
  */
-export interface UserCreateEzsignuserV1Response {
-    /**
-     * 
-     * @type {UserCreateEzsignuserV1ResponseMPayload}
-     * @memberof UserCreateEzsignuserV1Response
-     */
-    mPayload: UserCreateEzsignuserV1ResponseMPayload;
-    /**
-     * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof UserCreateEzsignuserV1Response
-     */
-    objDebugPayload?: CommonResponseObjDebugPayload;
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof UserCreateEzsignuserV1Response
-     */
-    objDebug?: CommonResponseObjDebug;
-}
+export type UserCreateEzsignuserV1Response = CommonResponse & UserCreateEzsignuserV1ResponseAllOf;
+

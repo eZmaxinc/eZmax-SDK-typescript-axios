@@ -17,24 +17,10 @@ import { CommonResponse } from './common-response';
 import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 
-
-
 /**
+ * @type EzsignfolderDeleteObjectV1Response
  * Response for the /1/object/ezsignfolder/deleteObject API Request
  * @export
- * @interface EzsignfolderDeleteObjectV1Response
  */
-export interface EzsignfolderDeleteObjectV1Response {
-    /**
-     * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsignfolderDeleteObjectV1Response
-     */
-    objDebugPayload?: CommonResponseObjDebugPayload;
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsignfolderDeleteObjectV1Response
-     */
-    objDebug?: CommonResponseObjDebug;
-}
+export type EzsignfolderDeleteObjectV1Response = CommonResponse;
+

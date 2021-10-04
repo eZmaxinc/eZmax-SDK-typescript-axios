@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -39,7 +39,7 @@ export const ModuleUserApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userCreateEzsignuserV1: async (userCreateEzsignuserV1Request: Array<UserCreateEzsignuserV1Request>, options: any = {}): Promise<RequestArgs> => {
+        userCreateEzsignuserV1: async (userCreateEzsignuserV1Request: Array<UserCreateEzsignuserV1Request>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'userCreateEzsignuserV1Request' is not null or undefined
             assertParamExists('userCreateEzsignuserV1', 'userCreateEzsignuserV1Request', userCreateEzsignuserV1Request)
             const localVarPath = `/1/module/user/createezsignuser`;
@@ -107,7 +107,7 @@ export const ModuleUserApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async userCreateEzsignuserV1(userCreateEzsignuserV1Request: Array<UserCreateEzsignuserV1Request>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserCreateEzsignuserV1Response>> {
+        async userCreateEzsignuserV1(userCreateEzsignuserV1Request: Array<UserCreateEzsignuserV1Request>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserCreateEzsignuserV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.userCreateEzsignuserV1(userCreateEzsignuserV1Request, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -149,7 +149,7 @@ export class ModuleUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ModuleUserApi
      */
-    public userCreateEzsignuserV1(userCreateEzsignuserV1Request: Array<UserCreateEzsignuserV1Request>, options?: any) {
+    public userCreateEzsignuserV1(userCreateEzsignuserV1Request: Array<UserCreateEzsignuserV1Request>, options?: AxiosRequestConfig) {
         return ModuleUserApiFp(this.configuration).userCreateEzsignuserV1(userCreateEzsignuserV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 }

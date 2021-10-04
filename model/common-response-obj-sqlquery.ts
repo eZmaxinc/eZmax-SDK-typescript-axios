@@ -14,8 +14,6 @@
 
 
 
-
-
 /**
  * Definition of objSQLQuery Object
  * @export
@@ -27,11 +25,11 @@ export interface CommonResponseObjSQLQuery {
      * @type {string}
      * @memberof CommonResponseObjSQLQuery
      */
-    sQuery: string;
+    'sQuery': string;
     /**
      * Execution time of the SQL Query in seconds
      * @type {number}
      * @memberof CommonResponseObjSQLQuery
      */
-    fDuration: number;
+    'fDuration': number;
 }

@@ -15,8 +15,6 @@
 
 import { CommonGetAutocompleteV1ResponseMPayload } from './common-get-autocomplete-v1-response-mpayload';
 
-
-
 /**
  * 
  * @export
@@ -28,5 +26,5 @@ export interface CommonGetAutocompleteV1ResponseAllOf {
      * @type {Array<CommonGetAutocompleteV1ResponseMPayload>}
      * @memberof CommonGetAutocompleteV1ResponseAllOf
      */
-    mPayload: Array<CommonGetAutocompleteV1ResponseMPayload>;
+    'mPayload': Array<CommonGetAutocompleteV1ResponseMPayload>;
 }

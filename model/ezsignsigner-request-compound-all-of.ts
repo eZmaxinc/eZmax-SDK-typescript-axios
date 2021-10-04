@@ -15,8 +15,6 @@
 
 import { EzsignsignerRequestCompoundContact } from './ezsignsigner-request-compound-contact';
 
-
-
 /**
  * 
  * @export
@@ -28,5 +26,5 @@ export interface EzsignsignerRequestCompoundAllOf {
      * @type {EzsignsignerRequestCompoundContact}
      * @memberof EzsignsignerRequestCompoundAllOf
      */
-    objContact: EzsignsignerRequestCompoundContact;
+    'objContact': EzsignsignerRequestCompoundContact;
 }

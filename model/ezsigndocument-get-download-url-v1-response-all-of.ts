@@ -15,8 +15,6 @@
 
 import { EzsigndocumentGetDownloadUrlV1ResponseMPayload } from './ezsigndocument-get-download-url-v1-response-mpayload';
 
-
-
 /**
  * 
  * @export
@@ -28,5 +26,5 @@ export interface EzsigndocumentGetDownloadUrlV1ResponseAllOf {
      * @type {EzsigndocumentGetDownloadUrlV1ResponseMPayload}
      * @memberof EzsigndocumentGetDownloadUrlV1ResponseAllOf
      */
-    mPayload: EzsigndocumentGetDownloadUrlV1ResponseMPayload;
+    'mPayload': EzsigndocumentGetDownloadUrlV1ResponseMPayload;
 }

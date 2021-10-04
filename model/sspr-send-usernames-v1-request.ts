@@ -15,8 +15,6 @@
 
 import { FieldEUserTypeSSPR } from './field-euser-type-sspr';
 
-
-
 /**
  * Request for the /1/module/sspr/sendUsernames API Request
  * @export
@@ -28,23 +26,23 @@ export interface SsprSendUsernamesV1Request {
      * @type {string}
      * @memberof SsprSendUsernamesV1Request
      */
-    pksCustomerCode: string;
+    'pksCustomerCode': string;
     /**
      * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @type {number}
      * @memberof SsprSendUsernamesV1Request
      */
-    fkiLanguageID: number;
+    'fkiLanguageID': number;
     /**
      * 
      * @type {FieldEUserTypeSSPR}
      * @memberof SsprSendUsernamesV1Request
      */
-    eUserTypeSSPR: FieldEUserTypeSSPR;
+    'eUserTypeSSPR': FieldEUserTypeSSPR;
     /**
      * The email address.
      * @type {string}
      * @memberof SsprSendUsernamesV1Request
      */
-    sEmailAddress: string;
+    'sEmailAddress': string;
 }

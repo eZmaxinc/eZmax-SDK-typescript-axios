@@ -19,30 +19,10 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
 import { EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseAllOf } from './ezsignfoldersignerassociation-get-in-person-login-url-v1-response-all-of';
 import { EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload } from './ezsignfoldersignerassociation-get-in-person-login-url-v1-response-mpayload';
 
-
-
 /**
+ * @type EzsignfoldersignerassociationGetInPersonLoginUrlV1Response
  * Response for the /1/object/ezsignfoldersignerassociation/getInPersonLoginUrl API Request
  * @export
- * @interface EzsignfoldersignerassociationGetInPersonLoginUrlV1Response
  */
-export interface EzsignfoldersignerassociationGetInPersonLoginUrlV1Response {
-    /**
-     * 
-     * @type {EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload}
-     * @memberof EzsignfoldersignerassociationGetInPersonLoginUrlV1Response
-     */
-    mPayload: EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload;
-    /**
-     * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsignfoldersignerassociationGetInPersonLoginUrlV1Response
-     */
-    objDebugPayload?: CommonResponseObjDebugPayload;
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsignfoldersignerassociationGetInPersonLoginUrlV1Response
-     */
-    objDebug?: CommonResponseObjDebug;
-}
+export type EzsignfoldersignerassociationGetInPersonLoginUrlV1Response = CommonResponse & EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseAllOf;
+

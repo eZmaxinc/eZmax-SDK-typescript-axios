@@ -14,8 +14,6 @@
 
 
 
-
-
 /**
  * Payload for the /1/object/ezsignfoldersignerassociation/createObject API Request
  * @export
@@ -27,5 +25,5 @@ export interface EzsignfoldersignerassociationCreateObjectV1ResponseMPayload {
      * @type {Array<number>}
      * @memberof EzsignfoldersignerassociationCreateObjectV1ResponseMPayload
      */
-    a_pkiEzsignfoldersignerassociationID: Array<number>;
+    'a_pkiEzsignfoldersignerassociationID': Array<number>;
 }

@@ -14,8 +14,6 @@
 
 
 
-
-
 /**
  * This is a debug object containing debugging information on the actual function
  * @export
@@ -27,17 +25,17 @@ export interface CommonResponseObjDebugPayload {
      * @type {number}
      * @memberof CommonResponseObjDebugPayload
      */
-    iVersionMin: number;
+    'iVersionMin': number;
     /**
      * The maximum version of the function that can be called
      * @type {number}
      * @memberof CommonResponseObjDebugPayload
      */
-    iVersionMax: number;
+    'iVersionMax': number;
     /**
      * An array of permissions required to access this function.  If the value \"0\" is present in the array, anyone can call this function.  You must have one of the permission to access the function. You don\'t need to have all of them.
      * @type {Array<number>}
      * @memberof CommonResponseObjDebugPayload
      */
-    a_RequiredPermissions: Array<number>;
+    'a_RequiredPermissions': Array<number>;
 }

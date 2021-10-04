@@ -17,54 +17,10 @@ import { ContactRequest } from './contact-request';
 import { ContactRequestCompoundAllOf } from './contact-request-compound-all-of';
 import { ContactinformationsRequestCompound } from './contactinformations-request-compound';
 
-
-
 /**
+ * @type ContactRequestCompound
  * A Contact Object and children to create a complete structure
  * @export
- * @interface ContactRequestCompound
  */
-export interface ContactRequestCompound {
-    /**
-     * 
-     * @type {ContactinformationsRequestCompound}
-     * @memberof ContactRequestCompound
-     */
-    objContactinformations: ContactinformationsRequestCompound;
-    /**
-     * The unique ID of the Contacttitle.  Valid values:  |Value|Description| |-|-| |1|Ms.| |2|Mr.| |4|(Blank)| |5|Me (For Notaries)|
-     * @type {number}
-     * @memberof ContactRequestCompound
-     */
-    fkiContacttitleID: number;
-    /**
-     * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
-     * @type {number}
-     * @memberof ContactRequestCompound
-     */
-    fkiLanguageID: number;
-    /**
-     * The First name of the contact
-     * @type {string}
-     * @memberof ContactRequestCompound
-     */
-    sContactFirstname: string;
-    /**
-     * The Last name of the contact
-     * @type {string}
-     * @memberof ContactRequestCompound
-     */
-    sContactLastname: string;
-    /**
-     * The Company name of the contact
-     * @type {string}
-     * @memberof ContactRequestCompound
-     */
-    sContactCompany: string;
-    /**
-     * The Birth Date of the contact
-     * @type {string}
-     * @memberof ContactRequestCompound
-     */
-    dtContactBirthdate?: string;
-}
+export type ContactRequestCompound = ContactRequest & ContactRequestCompoundAllOf;
+

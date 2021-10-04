@@ -16,8 +16,6 @@
 import { FranchisereferalincomeRequest } from './franchisereferalincome-request';
 import { FranchisereferalincomeRequestCompound } from './franchisereferalincome-request-compound';
 
-
-
 /**
  * Request for the /1/object/franchisereferalincome/createObject API Request
  * @export
@@ -29,11 +27,11 @@ export interface FranchisereferalincomeCreateObjectV1Request {
      * @type {FranchisereferalincomeRequest}
      * @memberof FranchisereferalincomeCreateObjectV1Request
      */
-    objFranchisereferalincome?: FranchisereferalincomeRequest;
+    'objFranchisereferalincome'?: FranchisereferalincomeRequest;
     /**
      * 
      * @type {FranchisereferalincomeRequestCompound}
      * @memberof FranchisereferalincomeCreateObjectV1Request
      */
-    objFranchisereferalincomeCompound?: FranchisereferalincomeRequestCompound;
+    'objFranchisereferalincomeCompound'?: FranchisereferalincomeRequestCompound;
 }

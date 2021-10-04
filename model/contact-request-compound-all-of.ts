@@ -15,8 +15,6 @@
 
 import { ContactinformationsRequestCompound } from './contactinformations-request-compound';
 
-
-
 /**
  * 
  * @export
@@ -28,5 +26,5 @@ export interface ContactRequestCompoundAllOf {
      * @type {ContactinformationsRequestCompound}
      * @memberof ContactRequestCompoundAllOf
      */
-    objContactinformations: ContactinformationsRequestCompound;
+    'objContactinformations': ContactinformationsRequestCompound;
 }

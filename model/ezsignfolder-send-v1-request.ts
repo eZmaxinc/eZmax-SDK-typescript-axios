@@ -14,8 +14,6 @@
 
 
 
-
-
 /**
  * Request for the /1/object/ezsignfolder/{pkiEzsignfolderID}/send API Request
  * @export
@@ -27,5 +25,5 @@ export interface EzsignfolderSendV1Request {
      * @type {string}
      * @memberof EzsignfolderSendV1Request
      */
-    tExtraMessage: string;
+    'tExtraMessage': string;
 }

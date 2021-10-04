@@ -15,8 +15,6 @@
 
 import { FieldEPhoneType } from './field-ephone-type';
 
-
-
 /**
  * A Phone Object
  * @export
@@ -28,41 +26,41 @@ export interface PhoneRequest {
      * @type {number}
      * @memberof PhoneRequest
      */
-    fkiPhonetypeID: number;
+    'fkiPhonetypeID': number;
     /**
      * 
      * @type {FieldEPhoneType}
      * @memberof PhoneRequest
      */
-    ePhoneType: FieldEPhoneType;
+    'ePhoneType': FieldEPhoneType;
     /**
      * The region of the phone number. (For a North America Number only)  The region is the \"514\" section in this sample phone number: (514) 990-1516 x123
      * @type {string}
      * @memberof PhoneRequest
      */
-    sPhoneRegion?: string;
+    'sPhoneRegion'?: string;
     /**
      * The exchange of the phone number. (For a North America Number only)  The exchange is the \"990\" section in this sample phone number: (514) 990-1516 x123
      * @type {string}
      * @memberof PhoneRequest
      */
-    sPhoneExchange?: string;
+    'sPhoneExchange'?: string;
     /**
      * The number of the phone number. (For a North America Number only)  The number is the \"1516\" section in this sample phone number: (514) 990-1516 x123
      * @type {string}
      * @memberof PhoneRequest
      */
-    sPhoneNumber?: string;
+    'sPhoneNumber'?: string;
     /**
      * The international phone number. (For phone numbers outside of North)  Do not specify the \"011\" part of the phone number used to dial an international phone number from North America.  For example for this sample phone number \"+442071838750\", you would send \"442071838750\" without the \"+\" sign.
      * @type {string}
      * @memberof PhoneRequest
      */
-    sPhoneInternational?: string;
+    'sPhoneInternational'?: string;
     /**
      * The extension of the phone number.  The extension is the \"123\" section in this sample phone number: (514) 990-1516 x123.  It can also be used with international phone numbers
      * @type {string}
      * @memberof PhoneRequest
      */
-    sPhoneExtension?: string;
+    'sPhoneExtension'?: string;
 }

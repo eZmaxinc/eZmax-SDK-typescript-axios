@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -65,7 +65,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
          * @deprecated
          * @throws {RequiredError}
          */
-        ezsigndocumentApplyEzsigntemplateV1: async (pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateV1Request: EzsigndocumentApplyEzsigntemplateV1Request, options: any = {}): Promise<RequestArgs> => {
+        ezsigndocumentApplyEzsigntemplateV1: async (pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateV1Request: EzsigndocumentApplyEzsigntemplateV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
             assertParamExists('ezsigndocumentApplyEzsigntemplateV1', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
             // verify required parameter 'ezsigndocumentApplyEzsigntemplateV1Request' is not null or undefined
@@ -127,7 +127,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigndocumentApplyEzsigntemplateV2: async (pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateV2Request: EzsigndocumentApplyEzsigntemplateV2Request, options: any = {}): Promise<RequestArgs> => {
+        ezsigndocumentApplyEzsigntemplateV2: async (pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateV2Request: EzsigndocumentApplyEzsigntemplateV2Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
             assertParamExists('ezsigndocumentApplyEzsigntemplateV2', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
             // verify required parameter 'ezsigndocumentApplyEzsigntemplateV2Request' is not null or undefined
@@ -188,7 +188,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigndocumentCreateObjectV1: async (ezsigndocumentCreateObjectV1Request: Array<EzsigndocumentCreateObjectV1Request>, options: any = {}): Promise<RequestArgs> => {
+        ezsigndocumentCreateObjectV1: async (ezsigndocumentCreateObjectV1Request: Array<EzsigndocumentCreateObjectV1Request>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'ezsigndocumentCreateObjectV1Request' is not null or undefined
             assertParamExists('ezsigndocumentCreateObjectV1', 'ezsigndocumentCreateObjectV1Request', ezsigndocumentCreateObjectV1Request)
             const localVarPath = `/1/object/ezsigndocument`;
@@ -246,7 +246,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigndocumentDeleteObjectV1: async (pkiEzsigndocumentID: number, options: any = {}): Promise<RequestArgs> => {
+        ezsigndocumentDeleteObjectV1: async (pkiEzsigndocumentID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
             assertParamExists('ezsigndocumentDeleteObjectV1', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}`
@@ -302,7 +302,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigndocumentGetChildrenV1: async (pkiEzsigndocumentID: number, options: any = {}): Promise<RequestArgs> => {
+        ezsigndocumentGetChildrenV1: async (pkiEzsigndocumentID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
             assertParamExists('ezsigndocumentGetChildrenV1', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/getChildren`
@@ -359,7 +359,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigndocumentGetDownloadUrlV1: async (pkiEzsigndocumentID: number, eDocumentType: 'Initial' | 'Signed' | 'Proof' | 'Proofdocument', options: any = {}): Promise<RequestArgs> => {
+        ezsigndocumentGetDownloadUrlV1: async (pkiEzsigndocumentID: number, eDocumentType: 'Initial' | 'Signed' | 'Proof' | 'Proofdocument', options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
             assertParamExists('ezsigndocumentGetDownloadUrlV1', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
             // verify required parameter 'eDocumentType' is not null or undefined
@@ -418,7 +418,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigndocumentGetEzsignpagesV1: async (pkiEzsigndocumentID: number, options: any = {}): Promise<RequestArgs> => {
+        ezsigndocumentGetEzsignpagesV1: async (pkiEzsigndocumentID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
             assertParamExists('ezsigndocumentGetEzsignpagesV1', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignpages`
@@ -474,7 +474,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigndocumentGetFormDataV1: async (pkiEzsigndocumentID: number, options: any = {}): Promise<RequestArgs> => {
+        ezsigndocumentGetFormDataV1: async (pkiEzsigndocumentID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
             assertParamExists('ezsigndocumentGetFormDataV1', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/getFormData`
@@ -530,7 +530,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigndocumentGetObjectV1: async (pkiEzsigndocumentID: number, options: any = {}): Promise<RequestArgs> => {
+        ezsigndocumentGetObjectV1: async (pkiEzsigndocumentID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
             assertParamExists('ezsigndocumentGetObjectV1', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}`
@@ -587,7 +587,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigndocumentGetWordsPositionsV1: async (pkiEzsigndocumentID: number, ezsigndocumentGetWordsPositionsV1Request: EzsigndocumentGetWordsPositionsV1Request, options: any = {}): Promise<RequestArgs> => {
+        ezsigndocumentGetWordsPositionsV1: async (pkiEzsigndocumentID: number, ezsigndocumentGetWordsPositionsV1Request: EzsigndocumentGetWordsPositionsV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
             assertParamExists('ezsigndocumentGetWordsPositionsV1', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
             // verify required parameter 'ezsigndocumentGetWordsPositionsV1Request' is not null or undefined
@@ -660,7 +660,7 @@ export const ObjectEzsigndocumentApiFp = function(configuration?: Configuration)
          * @deprecated
          * @throws {RequiredError}
          */
-        async ezsigndocumentApplyEzsigntemplateV1(pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateV1Request: EzsigndocumentApplyEzsigntemplateV1Request, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentApplyEzsigntemplateV1Response>> {
+        async ezsigndocumentApplyEzsigntemplateV1(pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateV1Request: EzsigndocumentApplyEzsigntemplateV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentApplyEzsigntemplateV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigndocumentApplyEzsigntemplateV1(pkiEzsigndocumentID, ezsigndocumentApplyEzsigntemplateV1Request, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -672,7 +672,7 @@ export const ObjectEzsigndocumentApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsigndocumentApplyEzsigntemplateV2(pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateV2Request: EzsigndocumentApplyEzsigntemplateV2Request, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentApplyEzsigntemplateV2Response>> {
+        async ezsigndocumentApplyEzsigntemplateV2(pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateV2Request: EzsigndocumentApplyEzsigntemplateV2Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentApplyEzsigntemplateV2Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigndocumentApplyEzsigntemplateV2(pkiEzsigndocumentID, ezsigndocumentApplyEzsigntemplateV2Request, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -683,7 +683,7 @@ export const ObjectEzsigndocumentApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsigndocumentCreateObjectV1(ezsigndocumentCreateObjectV1Request: Array<EzsigndocumentCreateObjectV1Request>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentCreateObjectV1Response>> {
+        async ezsigndocumentCreateObjectV1(ezsigndocumentCreateObjectV1Request: Array<EzsigndocumentCreateObjectV1Request>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentCreateObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigndocumentCreateObjectV1(ezsigndocumentCreateObjectV1Request, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -694,7 +694,7 @@ export const ObjectEzsigndocumentApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsigndocumentDeleteObjectV1(pkiEzsigndocumentID: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentDeleteObjectV1Response>> {
+        async ezsigndocumentDeleteObjectV1(pkiEzsigndocumentID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentDeleteObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigndocumentDeleteObjectV1(pkiEzsigndocumentID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -705,7 +705,7 @@ export const ObjectEzsigndocumentApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsigndocumentGetChildrenV1(pkiEzsigndocumentID: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async ezsigndocumentGetChildrenV1(pkiEzsigndocumentID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigndocumentGetChildrenV1(pkiEzsigndocumentID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -717,7 +717,7 @@ export const ObjectEzsigndocumentApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsigndocumentGetDownloadUrlV1(pkiEzsigndocumentID: number, eDocumentType: 'Initial' | 'Signed' | 'Proof' | 'Proofdocument', options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentGetDownloadUrlV1Response>> {
+        async ezsigndocumentGetDownloadUrlV1(pkiEzsigndocumentID: number, eDocumentType: 'Initial' | 'Signed' | 'Proof' | 'Proofdocument', options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentGetDownloadUrlV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigndocumentGetDownloadUrlV1(pkiEzsigndocumentID, eDocumentType, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -728,7 +728,7 @@ export const ObjectEzsigndocumentApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsigndocumentGetEzsignpagesV1(pkiEzsigndocumentID: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentGetEzsignpagesV1Response>> {
+        async ezsigndocumentGetEzsignpagesV1(pkiEzsigndocumentID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentGetEzsignpagesV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigndocumentGetEzsignpagesV1(pkiEzsigndocumentID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -739,7 +739,7 @@ export const ObjectEzsigndocumentApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsigndocumentGetFormDataV1(pkiEzsigndocumentID: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentGetFormDataV1Response>> {
+        async ezsigndocumentGetFormDataV1(pkiEzsigndocumentID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentGetFormDataV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigndocumentGetFormDataV1(pkiEzsigndocumentID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -750,7 +750,7 @@ export const ObjectEzsigndocumentApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsigndocumentGetObjectV1(pkiEzsigndocumentID: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentGetObjectV1Response>> {
+        async ezsigndocumentGetObjectV1(pkiEzsigndocumentID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentGetObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigndocumentGetObjectV1(pkiEzsigndocumentID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -762,7 +762,7 @@ export const ObjectEzsigndocumentApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsigndocumentGetWordsPositionsV1(pkiEzsigndocumentID: number, ezsigndocumentGetWordsPositionsV1Request: EzsigndocumentGetWordsPositionsV1Request, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentGetWordsPositionsV1Response>> {
+        async ezsigndocumentGetWordsPositionsV1(pkiEzsigndocumentID: number, ezsigndocumentGetWordsPositionsV1Request: EzsigndocumentGetWordsPositionsV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentGetWordsPositionsV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigndocumentGetWordsPositionsV1(pkiEzsigndocumentID, ezsigndocumentGetWordsPositionsV1Request, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -901,7 +901,7 @@ export class ObjectEzsigndocumentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsigndocumentApi
      */
-    public ezsigndocumentApplyEzsigntemplateV1(pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateV1Request: EzsigndocumentApplyEzsigntemplateV1Request, options?: any) {
+    public ezsigndocumentApplyEzsigntemplateV1(pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateV1Request: EzsigndocumentApplyEzsigntemplateV1Request, options?: AxiosRequestConfig) {
         return ObjectEzsigndocumentApiFp(this.configuration).ezsigndocumentApplyEzsigntemplateV1(pkiEzsigndocumentID, ezsigndocumentApplyEzsigntemplateV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -914,7 +914,7 @@ export class ObjectEzsigndocumentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsigndocumentApi
      */
-    public ezsigndocumentApplyEzsigntemplateV2(pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateV2Request: EzsigndocumentApplyEzsigntemplateV2Request, options?: any) {
+    public ezsigndocumentApplyEzsigntemplateV2(pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateV2Request: EzsigndocumentApplyEzsigntemplateV2Request, options?: AxiosRequestConfig) {
         return ObjectEzsigndocumentApiFp(this.configuration).ezsigndocumentApplyEzsigntemplateV2(pkiEzsigndocumentID, ezsigndocumentApplyEzsigntemplateV2Request, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -926,7 +926,7 @@ export class ObjectEzsigndocumentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsigndocumentApi
      */
-    public ezsigndocumentCreateObjectV1(ezsigndocumentCreateObjectV1Request: Array<EzsigndocumentCreateObjectV1Request>, options?: any) {
+    public ezsigndocumentCreateObjectV1(ezsigndocumentCreateObjectV1Request: Array<EzsigndocumentCreateObjectV1Request>, options?: AxiosRequestConfig) {
         return ObjectEzsigndocumentApiFp(this.configuration).ezsigndocumentCreateObjectV1(ezsigndocumentCreateObjectV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -938,7 +938,7 @@ export class ObjectEzsigndocumentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsigndocumentApi
      */
-    public ezsigndocumentDeleteObjectV1(pkiEzsigndocumentID: number, options?: any) {
+    public ezsigndocumentDeleteObjectV1(pkiEzsigndocumentID: number, options?: AxiosRequestConfig) {
         return ObjectEzsigndocumentApiFp(this.configuration).ezsigndocumentDeleteObjectV1(pkiEzsigndocumentID, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -950,7 +950,7 @@ export class ObjectEzsigndocumentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsigndocumentApi
      */
-    public ezsigndocumentGetChildrenV1(pkiEzsigndocumentID: number, options?: any) {
+    public ezsigndocumentGetChildrenV1(pkiEzsigndocumentID: number, options?: AxiosRequestConfig) {
         return ObjectEzsigndocumentApiFp(this.configuration).ezsigndocumentGetChildrenV1(pkiEzsigndocumentID, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -963,7 +963,7 @@ export class ObjectEzsigndocumentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsigndocumentApi
      */
-    public ezsigndocumentGetDownloadUrlV1(pkiEzsigndocumentID: number, eDocumentType: 'Initial' | 'Signed' | 'Proof' | 'Proofdocument', options?: any) {
+    public ezsigndocumentGetDownloadUrlV1(pkiEzsigndocumentID: number, eDocumentType: 'Initial' | 'Signed' | 'Proof' | 'Proofdocument', options?: AxiosRequestConfig) {
         return ObjectEzsigndocumentApiFp(this.configuration).ezsigndocumentGetDownloadUrlV1(pkiEzsigndocumentID, eDocumentType, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -975,7 +975,7 @@ export class ObjectEzsigndocumentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsigndocumentApi
      */
-    public ezsigndocumentGetEzsignpagesV1(pkiEzsigndocumentID: number, options?: any) {
+    public ezsigndocumentGetEzsignpagesV1(pkiEzsigndocumentID: number, options?: AxiosRequestConfig) {
         return ObjectEzsigndocumentApiFp(this.configuration).ezsigndocumentGetEzsignpagesV1(pkiEzsigndocumentID, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -987,7 +987,7 @@ export class ObjectEzsigndocumentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsigndocumentApi
      */
-    public ezsigndocumentGetFormDataV1(pkiEzsigndocumentID: number, options?: any) {
+    public ezsigndocumentGetFormDataV1(pkiEzsigndocumentID: number, options?: AxiosRequestConfig) {
         return ObjectEzsigndocumentApiFp(this.configuration).ezsigndocumentGetFormDataV1(pkiEzsigndocumentID, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -999,7 +999,7 @@ export class ObjectEzsigndocumentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsigndocumentApi
      */
-    public ezsigndocumentGetObjectV1(pkiEzsigndocumentID: number, options?: any) {
+    public ezsigndocumentGetObjectV1(pkiEzsigndocumentID: number, options?: AxiosRequestConfig) {
         return ObjectEzsigndocumentApiFp(this.configuration).ezsigndocumentGetObjectV1(pkiEzsigndocumentID, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1012,7 +1012,7 @@ export class ObjectEzsigndocumentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsigndocumentApi
      */
-    public ezsigndocumentGetWordsPositionsV1(pkiEzsigndocumentID: number, ezsigndocumentGetWordsPositionsV1Request: EzsigndocumentGetWordsPositionsV1Request, options?: any) {
+    public ezsigndocumentGetWordsPositionsV1(pkiEzsigndocumentID: number, ezsigndocumentGetWordsPositionsV1Request: EzsigndocumentGetWordsPositionsV1Request, options?: AxiosRequestConfig) {
         return ObjectEzsigndocumentApiFp(this.configuration).ezsigndocumentGetWordsPositionsV1(pkiEzsigndocumentID, ezsigndocumentGetWordsPositionsV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 }

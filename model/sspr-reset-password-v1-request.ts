@@ -15,8 +15,6 @@
 
 import { FieldEUserTypeSSPR } from './field-euser-type-sspr';
 
-
-
 /**
  * Request for the /1/module/sspr/resetPassword API Request
  * @export
@@ -28,41 +26,41 @@ export interface SsprResetPasswordV1Request {
      * @type {string}
      * @memberof SsprResetPasswordV1Request
      */
-    pksCustomerCode: string;
+    'pksCustomerCode': string;
     /**
      * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @type {number}
      * @memberof SsprResetPasswordV1Request
      */
-    fkiLanguageID: number;
+    'fkiLanguageID': number;
     /**
      * 
      * @type {FieldEUserTypeSSPR}
      * @memberof SsprResetPasswordV1Request
      */
-    eUserTypeSSPR: FieldEUserTypeSSPR;
+    'eUserTypeSSPR': FieldEUserTypeSSPR;
     /**
      * The email address.
      * @type {string}
      * @memberof SsprResetPasswordV1Request
      */
-    sEmailAddress?: string;
+    'sEmailAddress'?: string;
     /**
      * The Login name of the User.
      * @type {string}
      * @memberof SsprResetPasswordV1Request
      */
-    sUserLoginname?: string;
+    'sUserLoginname'?: string;
     /**
      * Hex Encoded Secret SSPR token
      * @type {string}
      * @memberof SsprResetPasswordV1Request
      */
-    binUserSSPRtoken: string;
+    'binUserSSPRtoken': string;
     /**
      * A Password.  Must meet complexity requirements
      * @type {string}
      * @memberof SsprResetPasswordV1Request
      */
-    sPassword: string;
+    'sPassword': string;
 }

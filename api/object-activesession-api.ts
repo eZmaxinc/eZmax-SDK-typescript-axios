@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -36,7 +36,7 @@ export const ObjectActivesessionApiAxiosParamCreator = function (configuration?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        activesessionGetCurrentV1: async (options: any = {}): Promise<RequestArgs> => {
+        activesessionGetCurrentV1: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/1/object/activesession/getCurrent`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
@@ -98,7 +98,7 @@ export const ObjectActivesessionApiFp = function(configuration?: Configuration) 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async activesessionGetCurrentV1(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ActivesessionGetCurrentV1Response>> {
+        async activesessionGetCurrentV1(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ActivesessionGetCurrentV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.activesessionGetCurrentV1(options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -138,7 +138,7 @@ export class ObjectActivesessionApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectActivesessionApi
      */
-    public activesessionGetCurrentV1(options?: any) {
+    public activesessionGetCurrentV1(options?: AxiosRequestConfig) {
         return ObjectActivesessionApiFp(this.configuration).activesessionGetCurrentV1(options).then((request) => request(this.axios, this.basePath));
     }
 }

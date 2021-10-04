@@ -16,24 +16,10 @@
 import { ApikeyRequest } from './apikey-request';
 import { MultilingualApikeyDescription } from './multilingual-apikey-description';
 
-
-
 /**
+ * @type ApikeyRequestCompound
  * An Apikey Object and children to create a complete structure
  * @export
- * @interface ApikeyRequestCompound
  */
-export interface ApikeyRequestCompound {
-    /**
-     * The unique ID of the User
-     * @type {number}
-     * @memberof ApikeyRequestCompound
-     */
-    fkiUserID: number;
-    /**
-     * 
-     * @type {MultilingualApikeyDescription}
-     * @memberof ApikeyRequestCompound
-     */
-    objApikeyDescription: MultilingualApikeyDescription;
-}
+export type ApikeyRequestCompound = ApikeyRequest;
+

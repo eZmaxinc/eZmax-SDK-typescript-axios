@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -47,7 +47,7 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfoldersignerassociationCreateObjectV1: async (ezsignfoldersignerassociationCreateObjectV1Request: Array<EzsignfoldersignerassociationCreateObjectV1Request>, options: any = {}): Promise<RequestArgs> => {
+        ezsignfoldersignerassociationCreateObjectV1: async (ezsignfoldersignerassociationCreateObjectV1Request: Array<EzsignfoldersignerassociationCreateObjectV1Request>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'ezsignfoldersignerassociationCreateObjectV1Request' is not null or undefined
             assertParamExists('ezsignfoldersignerassociationCreateObjectV1', 'ezsignfoldersignerassociationCreateObjectV1Request', ezsignfoldersignerassociationCreateObjectV1Request)
             const localVarPath = `/1/object/ezsignfoldersignerassociation`;
@@ -105,7 +105,7 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfoldersignerassociationDeleteObjectV1: async (pkiEzsignfoldersignerassociationID: number, options: any = {}): Promise<RequestArgs> => {
+        ezsignfoldersignerassociationDeleteObjectV1: async (pkiEzsignfoldersignerassociationID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsignfoldersignerassociationID' is not null or undefined
             assertParamExists('ezsignfoldersignerassociationDeleteObjectV1', 'pkiEzsignfoldersignerassociationID', pkiEzsignfoldersignerassociationID)
             const localVarPath = `/1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}`
@@ -161,7 +161,7 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfoldersignerassociationGetChildrenV1: async (pkiEzsignfoldersignerassociationID: number, options: any = {}): Promise<RequestArgs> => {
+        ezsignfoldersignerassociationGetChildrenV1: async (pkiEzsignfoldersignerassociationID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsignfoldersignerassociationID' is not null or undefined
             assertParamExists('ezsignfoldersignerassociationGetChildrenV1', 'pkiEzsignfoldersignerassociationID', pkiEzsignfoldersignerassociationID)
             const localVarPath = `/1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/getChildren`
@@ -217,7 +217,7 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfoldersignerassociationGetInPersonLoginUrlV1: async (pkiEzsignfoldersignerassociationID: number, options: any = {}): Promise<RequestArgs> => {
+        ezsignfoldersignerassociationGetInPersonLoginUrlV1: async (pkiEzsignfoldersignerassociationID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsignfoldersignerassociationID' is not null or undefined
             assertParamExists('ezsignfoldersignerassociationGetInPersonLoginUrlV1', 'pkiEzsignfoldersignerassociationID', pkiEzsignfoldersignerassociationID)
             const localVarPath = `/1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/getInPersonLoginUrl`
@@ -273,7 +273,7 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfoldersignerassociationGetObjectV1: async (pkiEzsignfoldersignerassociationID: number, options: any = {}): Promise<RequestArgs> => {
+        ezsignfoldersignerassociationGetObjectV1: async (pkiEzsignfoldersignerassociationID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsignfoldersignerassociationID' is not null or undefined
             assertParamExists('ezsignfoldersignerassociationGetObjectV1', 'pkiEzsignfoldersignerassociationID', pkiEzsignfoldersignerassociationID)
             const localVarPath = `/1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}`
@@ -339,7 +339,7 @@ export const ObjectEzsignfoldersignerassociationApiFp = function(configuration?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignfoldersignerassociationCreateObjectV1(ezsignfoldersignerassociationCreateObjectV1Request: Array<EzsignfoldersignerassociationCreateObjectV1Request>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfoldersignerassociationCreateObjectV1Response>> {
+        async ezsignfoldersignerassociationCreateObjectV1(ezsignfoldersignerassociationCreateObjectV1Request: Array<EzsignfoldersignerassociationCreateObjectV1Request>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfoldersignerassociationCreateObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfoldersignerassociationCreateObjectV1(ezsignfoldersignerassociationCreateObjectV1Request, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -350,7 +350,7 @@ export const ObjectEzsignfoldersignerassociationApiFp = function(configuration?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignfoldersignerassociationDeleteObjectV1(pkiEzsignfoldersignerassociationID: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfoldersignerassociationDeleteObjectV1Response>> {
+        async ezsignfoldersignerassociationDeleteObjectV1(pkiEzsignfoldersignerassociationID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfoldersignerassociationDeleteObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfoldersignerassociationDeleteObjectV1(pkiEzsignfoldersignerassociationID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -361,7 +361,7 @@ export const ObjectEzsignfoldersignerassociationApiFp = function(configuration?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignfoldersignerassociationGetChildrenV1(pkiEzsignfoldersignerassociationID: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async ezsignfoldersignerassociationGetChildrenV1(pkiEzsignfoldersignerassociationID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfoldersignerassociationGetChildrenV1(pkiEzsignfoldersignerassociationID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -372,7 +372,7 @@ export const ObjectEzsignfoldersignerassociationApiFp = function(configuration?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignfoldersignerassociationGetInPersonLoginUrlV1(pkiEzsignfoldersignerassociationID: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfoldersignerassociationGetInPersonLoginUrlV1Response>> {
+        async ezsignfoldersignerassociationGetInPersonLoginUrlV1(pkiEzsignfoldersignerassociationID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfoldersignerassociationGetInPersonLoginUrlV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfoldersignerassociationGetInPersonLoginUrlV1(pkiEzsignfoldersignerassociationID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -383,7 +383,7 @@ export const ObjectEzsignfoldersignerassociationApiFp = function(configuration?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignfoldersignerassociationGetObjectV1(pkiEzsignfoldersignerassociationID: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfoldersignerassociationGetObjectV1Response>> {
+        async ezsignfoldersignerassociationGetObjectV1(pkiEzsignfoldersignerassociationID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfoldersignerassociationGetObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfoldersignerassociationGetObjectV1(pkiEzsignfoldersignerassociationID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -465,7 +465,7 @@ export class ObjectEzsignfoldersignerassociationApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsignfoldersignerassociationApi
      */
-    public ezsignfoldersignerassociationCreateObjectV1(ezsignfoldersignerassociationCreateObjectV1Request: Array<EzsignfoldersignerassociationCreateObjectV1Request>, options?: any) {
+    public ezsignfoldersignerassociationCreateObjectV1(ezsignfoldersignerassociationCreateObjectV1Request: Array<EzsignfoldersignerassociationCreateObjectV1Request>, options?: AxiosRequestConfig) {
         return ObjectEzsignfoldersignerassociationApiFp(this.configuration).ezsignfoldersignerassociationCreateObjectV1(ezsignfoldersignerassociationCreateObjectV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -477,7 +477,7 @@ export class ObjectEzsignfoldersignerassociationApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsignfoldersignerassociationApi
      */
-    public ezsignfoldersignerassociationDeleteObjectV1(pkiEzsignfoldersignerassociationID: number, options?: any) {
+    public ezsignfoldersignerassociationDeleteObjectV1(pkiEzsignfoldersignerassociationID: number, options?: AxiosRequestConfig) {
         return ObjectEzsignfoldersignerassociationApiFp(this.configuration).ezsignfoldersignerassociationDeleteObjectV1(pkiEzsignfoldersignerassociationID, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -489,7 +489,7 @@ export class ObjectEzsignfoldersignerassociationApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsignfoldersignerassociationApi
      */
-    public ezsignfoldersignerassociationGetChildrenV1(pkiEzsignfoldersignerassociationID: number, options?: any) {
+    public ezsignfoldersignerassociationGetChildrenV1(pkiEzsignfoldersignerassociationID: number, options?: AxiosRequestConfig) {
         return ObjectEzsignfoldersignerassociationApiFp(this.configuration).ezsignfoldersignerassociationGetChildrenV1(pkiEzsignfoldersignerassociationID, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -501,7 +501,7 @@ export class ObjectEzsignfoldersignerassociationApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsignfoldersignerassociationApi
      */
-    public ezsignfoldersignerassociationGetInPersonLoginUrlV1(pkiEzsignfoldersignerassociationID: number, options?: any) {
+    public ezsignfoldersignerassociationGetInPersonLoginUrlV1(pkiEzsignfoldersignerassociationID: number, options?: AxiosRequestConfig) {
         return ObjectEzsignfoldersignerassociationApiFp(this.configuration).ezsignfoldersignerassociationGetInPersonLoginUrlV1(pkiEzsignfoldersignerassociationID, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -513,7 +513,7 @@ export class ObjectEzsignfoldersignerassociationApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsignfoldersignerassociationApi
      */
-    public ezsignfoldersignerassociationGetObjectV1(pkiEzsignfoldersignerassociationID: number, options?: any) {
+    public ezsignfoldersignerassociationGetObjectV1(pkiEzsignfoldersignerassociationID: number, options?: AxiosRequestConfig) {
         return ObjectEzsignfoldersignerassociationApiFp(this.configuration).ezsignfoldersignerassociationGetObjectV1(pkiEzsignfoldersignerassociationID, options).then((request) => request(this.axios, this.basePath));
     }
 }

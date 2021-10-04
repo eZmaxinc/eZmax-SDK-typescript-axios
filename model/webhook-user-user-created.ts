@@ -19,30 +19,10 @@ import { UserResponse } from './user-response';
 import { WebhookResponse } from './webhook-response';
 import { WebhookUserUserCreatedAllOf } from './webhook-user-user-created-all-of';
 
-
-
 /**
+ * @type WebhookUserUserCreated
  * This is the base Webhook object
  * @export
- * @interface WebhookUserUserCreated
  */
-export interface WebhookUserUserCreated {
-    /**
-     * 
-     * @type {UserResponse}
-     * @memberof WebhookUserUserCreated
-     */
-    objUser: UserResponse;
-    /**
-     * 
-     * @type {WebhookResponse}
-     * @memberof WebhookUserUserCreated
-     */
-    objWebhook: WebhookResponse;
-    /**
-     * An array containing details of previous attempts that were made to deliver the message. The array is empty if it\'s the first attempt.
-     * @type {Array<AttemptResponse>}
-     * @memberof WebhookUserUserCreated
-     */
-    a_objAttempt: Array<AttemptResponse>;
-}
+export type WebhookUserUserCreated = CommonWebhook & WebhookUserUserCreatedAllOf;
+

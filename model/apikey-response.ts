@@ -16,8 +16,6 @@
 import { CommonAudit } from './common-audit';
 import { MultilingualApikeyDescription } from './multilingual-apikey-description';
 
-
-
 /**
  * An Apikey Object
  * @export
@@ -29,23 +27,23 @@ export interface ApikeyResponse {
      * @type {MultilingualApikeyDescription}
      * @memberof ApikeyResponse
      */
-    objApikeyDescription: MultilingualApikeyDescription;
+    'objApikeyDescription': MultilingualApikeyDescription;
     /**
      * The secret token for the API key.  This will be returned only on creation.
      * @type {string}
      * @memberof ApikeyResponse
      */
-    sComputedToken?: string;
+    'sComputedToken'?: string;
     /**
      * The unique ID of the Apikey
      * @type {number}
      * @memberof ApikeyResponse
      */
-    pkiApikeyID: number;
+    'pkiApikeyID': number;
     /**
      * 
      * @type {CommonAudit}
      * @memberof ApikeyResponse
      */
-    objAudit: CommonAudit;
+    'objAudit': CommonAudit;
 }

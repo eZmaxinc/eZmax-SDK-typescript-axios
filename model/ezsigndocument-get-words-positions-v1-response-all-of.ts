@@ -13,9 +13,7 @@
  */
 
 
-import { EzsigndocumentGetWordsPositionsV1ResponseMPayload } from './ezsigndocument-get-words-positions-v1-response-mpayload';
-
-
+import { CustomWordPositionWordResponse } from './custom-word-position-word-response';
 
 /**
  * 
@@ -24,9 +22,9 @@ import { EzsigndocumentGetWordsPositionsV1ResponseMPayload } from './ezsigndocum
  */
 export interface EzsigndocumentGetWordsPositionsV1ResponseAllOf {
     /**
-     * 
-     * @type {EzsigndocumentGetWordsPositionsV1ResponseMPayload}
+     * Payload for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions API Request
+     * @type {Array<CustomWordPositionWordResponse>}
      * @memberof EzsigndocumentGetWordsPositionsV1ResponseAllOf
      */
-    mPayload: EzsigndocumentGetWordsPositionsV1ResponseMPayload;
+    'mPayload': Array<CustomWordPositionWordResponse>;
 }

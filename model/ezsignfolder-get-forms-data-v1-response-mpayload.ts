@@ -16,30 +16,10 @@
 import { CustomFormDataDocumentResponse } from './custom-form-data-document-response';
 import { CustomFormDataFolderResponse } from './custom-form-data-folder-response';
 
-
-
 /**
+ * @type EzsignfolderGetFormsDataV1ResponseMPayload
  * Payload for the /1/object/ezsignfolder/{pkiEzsigndocument}/getFormsData API Request
  * @export
- * @interface EzsignfolderGetFormsDataV1ResponseMPayload
  */
-export interface EzsignfolderGetFormsDataV1ResponseMPayload {
-    /**
-     * The unique ID of the Ezsignfolder
-     * @type {number}
-     * @memberof EzsignfolderGetFormsDataV1ResponseMPayload
-     */
-    pkiEzsignfolderID: number;
-    /**
-     * The description of the Ezsign Folder
-     * @type {string}
-     * @memberof EzsignfolderGetFormsDataV1ResponseMPayload
-     */
-    sEzsignfolderDescription: string;
-    /**
-     * 
-     * @type {Array<CustomFormDataDocumentResponse>}
-     * @memberof EzsignfolderGetFormsDataV1ResponseMPayload
-     */
-    a_objFormDataDocument: Array<CustomFormDataDocumentResponse>;
-}
+export type EzsignfolderGetFormsDataV1ResponseMPayload = CustomFormDataFolderResponse;
+

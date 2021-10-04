@@ -14,13 +14,12 @@
 
 
 
-
-
 /**
  * Frequency at which reminders will be sent to signers that haven\'t signed the documents
  * @export
  * @enum {string}
  */
+
 export enum FieldEEzsignfolderSendreminderfrequency {
     None = 'None',
     Daily = 'Daily',

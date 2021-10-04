@@ -16,8 +16,6 @@
 import { AttemptResponse } from './attempt-response';
 import { WebhookResponse } from './webhook-response';
 
-
-
 /**
  * This is the base Webhook object
  * @export
@@ -29,11 +27,11 @@ export interface CommonWebhook {
      * @type {WebhookResponse}
      * @memberof CommonWebhook
      */
-    objWebhook: WebhookResponse;
+    'objWebhook': WebhookResponse;
     /**
      * An array containing details of previous attempts that were made to deliver the message. The array is empty if it\'s the first attempt.
      * @type {Array<AttemptResponse>}
      * @memberof CommonWebhook
      */
-    a_objAttempt: Array<AttemptResponse>;
+    'a_objAttempt': Array<AttemptResponse>;
 }

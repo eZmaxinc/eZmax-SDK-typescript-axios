@@ -15,8 +15,6 @@
 
 import { ApikeyCreateObjectV1ResponseMPayload } from './apikey-create-object-v1-response-mpayload';
 
-
-
 /**
  * 
  * @export
@@ -28,5 +26,5 @@ export interface ApikeyCreateObjectV1ResponseAllOf {
      * @type {ApikeyCreateObjectV1ResponseMPayload}
      * @memberof ApikeyCreateObjectV1ResponseAllOf
      */
-    mPayload: ApikeyCreateObjectV1ResponseMPayload;
+    'mPayload': ApikeyCreateObjectV1ResponseMPayload;
 }

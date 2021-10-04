@@ -15,8 +15,6 @@
 
 import { ActivesessionGetCurrentV1ResponseMPayload } from './activesession-get-current-v1-response-mpayload';
 
-
-
 /**
  * 
  * @export
@@ -28,5 +26,5 @@ export interface ActivesessionGetCurrentV1ResponseAllOf {
      * @type {ActivesessionGetCurrentV1ResponseMPayload}
      * @memberof ActivesessionGetCurrentV1ResponseAllOf
      */
-    mPayload: ActivesessionGetCurrentV1ResponseMPayload;
+    'mPayload': ActivesessionGetCurrentV1ResponseMPayload;
 }

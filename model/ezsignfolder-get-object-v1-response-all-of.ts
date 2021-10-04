@@ -15,8 +15,6 @@
 
 import { EzsignfolderGetObjectV1ResponseMPayload } from './ezsignfolder-get-object-v1-response-mpayload';
 
-
-
 /**
  * 
  * @export
@@ -28,5 +26,5 @@ export interface EzsignfolderGetObjectV1ResponseAllOf {
      * @type {EzsignfolderGetObjectV1ResponseMPayload}
      * @memberof EzsignfolderGetObjectV1ResponseAllOf
      */
-    mPayload: EzsignfolderGetObjectV1ResponseMPayload;
+    'mPayload': EzsignfolderGetObjectV1ResponseMPayload;
 }

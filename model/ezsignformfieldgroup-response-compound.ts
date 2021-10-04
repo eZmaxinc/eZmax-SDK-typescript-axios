@@ -17,24 +17,10 @@ import { EzsignformfieldResponse } from './ezsignformfield-response';
 import { EzsignformfieldgroupResponse } from './ezsignformfieldgroup-response';
 import { EzsignformfieldgroupResponseCompoundAllOf } from './ezsignformfieldgroup-response-compound-all-of';
 
-
-
 /**
+ * @type EzsignformfieldgroupResponseCompound
  * An Ezsignformfieldgroup Object and children to create a complete structure
  * @export
- * @interface EzsignformfieldgroupResponseCompound
  */
-export interface EzsignformfieldgroupResponseCompound {
-    /**
-     * The Label for the Ezsignformfieldgroup
-     * @type {string}
-     * @memberof EzsignformfieldgroupResponseCompound
-     */
-    sEzsignformfieldgroupLabel: string;
-    /**
-     * 
-     * @type {Array<EzsignformfieldResponse>}
-     * @memberof EzsignformfieldgroupResponseCompound
-     */
-    a_objEzsignformfield: Array<EzsignformfieldResponse>;
-}
+export type EzsignformfieldgroupResponseCompound = EzsignformfieldgroupResponse & EzsignformfieldgroupResponseCompoundAllOf;
+

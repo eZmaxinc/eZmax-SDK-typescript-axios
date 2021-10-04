@@ -15,8 +15,6 @@
 
 import { UserCreateEzsignuserV1ResponseMPayload } from './user-create-ezsignuser-v1-response-mpayload';
 
-
-
 /**
  * 
  * @export
@@ -28,5 +26,5 @@ export interface UserCreateEzsignuserV1ResponseAllOf {
      * @type {UserCreateEzsignuserV1ResponseMPayload}
      * @memberof UserCreateEzsignuserV1ResponseAllOf
      */
-    mPayload: UserCreateEzsignuserV1ResponseMPayload;
+    'mPayload': UserCreateEzsignuserV1ResponseMPayload;
 }

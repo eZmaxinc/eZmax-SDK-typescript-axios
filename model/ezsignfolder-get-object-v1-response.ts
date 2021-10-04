@@ -19,30 +19,10 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
 import { EzsignfolderGetObjectV1ResponseAllOf } from './ezsignfolder-get-object-v1-response-all-of';
 import { EzsignfolderGetObjectV1ResponseMPayload } from './ezsignfolder-get-object-v1-response-mpayload';
 
-
-
 /**
+ * @type EzsignfolderGetObjectV1Response
  * Response for the /1/object/ezsignfolder/getObject API Request
  * @export
- * @interface EzsignfolderGetObjectV1Response
  */
-export interface EzsignfolderGetObjectV1Response {
-    /**
-     * 
-     * @type {EzsignfolderGetObjectV1ResponseMPayload}
-     * @memberof EzsignfolderGetObjectV1Response
-     */
-    mPayload: EzsignfolderGetObjectV1ResponseMPayload;
-    /**
-     * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsignfolderGetObjectV1Response
-     */
-    objDebugPayload?: CommonResponseObjDebugPayload;
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsignfolderGetObjectV1Response
-     */
-    objDebug?: CommonResponseObjDebug;
-}
+export type EzsignfolderGetObjectV1Response = CommonResponse & EzsignfolderGetObjectV1ResponseAllOf;
+

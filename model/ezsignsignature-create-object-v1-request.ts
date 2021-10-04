@@ -16,8 +16,6 @@
 import { EzsignsignatureRequest } from './ezsignsignature-request';
 import { EzsignsignatureRequestCompound } from './ezsignsignature-request-compound';
 
-
-
 /**
  * Request for the /1/object/ezsignsignature/createObject API Request
  * @export
@@ -29,11 +27,11 @@ export interface EzsignsignatureCreateObjectV1Request {
      * @type {EzsignsignatureRequest}
      * @memberof EzsignsignatureCreateObjectV1Request
      */
-    objEzsignsignature?: EzsignsignatureRequest;
+    'objEzsignsignature'?: EzsignsignatureRequest;
     /**
      * 
      * @type {EzsignsignatureRequestCompound}
      * @memberof EzsignsignatureCreateObjectV1Request
      */
-    objEzsignsignatureCompound?: EzsignsignatureRequestCompound;
+    'objEzsignsignatureCompound'?: EzsignsignatureRequestCompound;
 }

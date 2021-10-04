@@ -16,8 +16,6 @@
 import { AddressRequest } from './address-request';
 import { ContactRequestCompound } from './contact-request-compound';
 
-
-
 /**
  * 
  * @export
@@ -29,11 +27,11 @@ export interface FranchisereferalincomeRequestCompoundAllOf {
      * @type {AddressRequest}
      * @memberof FranchisereferalincomeRequestCompoundAllOf
      */
-    objAddress?: AddressRequest;
+    'objAddress'?: AddressRequest;
     /**
      * 
      * @type {Array<ContactRequestCompound>}
      * @memberof FranchisereferalincomeRequestCompoundAllOf
      */
-    a_objContact: Array<ContactRequestCompound>;
+    'a_objContact': Array<ContactRequestCompound>;
 }

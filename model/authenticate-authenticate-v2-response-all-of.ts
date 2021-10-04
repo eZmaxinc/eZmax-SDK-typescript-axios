@@ -15,8 +15,6 @@
 
 import { AuthenticateAuthenticateV2ResponseMPayload } from './authenticate-authenticate-v2-response-mpayload';
 
-
-
 /**
  * 
  * @export
@@ -28,5 +26,5 @@ export interface AuthenticateAuthenticateV2ResponseAllOf {
      * @type {AuthenticateAuthenticateV2ResponseMPayload}
      * @memberof AuthenticateAuthenticateV2ResponseAllOf
      */
-    mPayload: AuthenticateAuthenticateV2ResponseMPayload;
+    'mPayload': AuthenticateAuthenticateV2ResponseMPayload;
 }

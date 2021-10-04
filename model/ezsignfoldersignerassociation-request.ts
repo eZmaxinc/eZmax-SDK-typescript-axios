@@ -14,8 +14,6 @@
 
 
 
-
-
 /**
  * An Ezsignfoldersignerassociation Object
  * @export
@@ -27,11 +25,11 @@ export interface EzsignfoldersignerassociationRequest {
      * @type {number}
      * @memberof EzsignfoldersignerassociationRequest
      */
-    fkiUserID?: number;
+    'fkiUserID'?: number;
     /**
      * A reference to a valid Ezsignfolder.  That value is returned after a successful Ezsignfolder Creation.
      * @type {number}
      * @memberof EzsignfoldersignerassociationRequest
      */
-    fkiEzsignfolderID: number;
+    'fkiEzsignfolderID': number;
 }

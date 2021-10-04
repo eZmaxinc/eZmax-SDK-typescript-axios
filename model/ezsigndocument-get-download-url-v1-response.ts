@@ -19,30 +19,10 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
 import { EzsigndocumentGetDownloadUrlV1ResponseAllOf } from './ezsigndocument-get-download-url-v1-response-all-of';
 import { EzsigndocumentGetDownloadUrlV1ResponseMPayload } from './ezsigndocument-get-download-url-v1-response-mpayload';
 
-
-
 /**
+ * @type EzsigndocumentGetDownloadUrlV1Response
  * Response for the /1/object/ezsigndocument/{pkiEzsigndocument}/getDownloadUrl API Request
  * @export
- * @interface EzsigndocumentGetDownloadUrlV1Response
  */
-export interface EzsigndocumentGetDownloadUrlV1Response {
-    /**
-     * 
-     * @type {EzsigndocumentGetDownloadUrlV1ResponseMPayload}
-     * @memberof EzsigndocumentGetDownloadUrlV1Response
-     */
-    mPayload: EzsigndocumentGetDownloadUrlV1ResponseMPayload;
-    /**
-     * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsigndocumentGetDownloadUrlV1Response
-     */
-    objDebugPayload?: CommonResponseObjDebugPayload;
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsigndocumentGetDownloadUrlV1Response
-     */
-    objDebug?: CommonResponseObjDebug;
-}
+export type EzsigndocumentGetDownloadUrlV1Response = CommonResponse & EzsigndocumentGetDownloadUrlV1ResponseAllOf;
+

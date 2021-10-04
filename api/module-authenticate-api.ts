@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -42,7 +42,7 @@ export const ModuleAuthenticateApiAxiosParamCreator = function (configuration?: 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        authenticateAuthenticateV2: async (eSessionType: 'ezsignuser', authenticateAuthenticateV2Request: AuthenticateAuthenticateV2Request, options: any = {}): Promise<RequestArgs> => {
+        authenticateAuthenticateV2: async (eSessionType: 'ezsignuser', authenticateAuthenticateV2Request: AuthenticateAuthenticateV2Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'eSessionType' is not null or undefined
             assertParamExists('authenticateAuthenticateV2', 'eSessionType', eSessionType)
             // verify required parameter 'authenticateAuthenticateV2Request' is not null or undefined
@@ -114,7 +114,7 @@ export const ModuleAuthenticateApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async authenticateAuthenticateV2(eSessionType: 'ezsignuser', authenticateAuthenticateV2Request: AuthenticateAuthenticateV2Request, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AuthenticateAuthenticateV2Response>> {
+        async authenticateAuthenticateV2(eSessionType: 'ezsignuser', authenticateAuthenticateV2Request: AuthenticateAuthenticateV2Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AuthenticateAuthenticateV2Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.authenticateAuthenticateV2(eSessionType, authenticateAuthenticateV2Request, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -158,7 +158,7 @@ export class ModuleAuthenticateApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ModuleAuthenticateApi
      */
-    public authenticateAuthenticateV2(eSessionType: 'ezsignuser', authenticateAuthenticateV2Request: AuthenticateAuthenticateV2Request, options?: any) {
+    public authenticateAuthenticateV2(eSessionType: 'ezsignuser', authenticateAuthenticateV2Request: AuthenticateAuthenticateV2Request, options?: AxiosRequestConfig) {
         return ModuleAuthenticateApiFp(this.configuration).authenticateAuthenticateV2(eSessionType, authenticateAuthenticateV2Request, options).then((request) => request(this.axios, this.basePath));
     }
 }

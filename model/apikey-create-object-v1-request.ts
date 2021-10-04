@@ -16,8 +16,6 @@
 import { ApikeyRequest } from './apikey-request';
 import { ApikeyRequestCompound } from './apikey-request-compound';
 
-
-
 /**
  * Request for the /1/object/apikey/createObject API Request
  * @export
@@ -29,11 +27,11 @@ export interface ApikeyCreateObjectV1Request {
      * @type {ApikeyRequest}
      * @memberof ApikeyCreateObjectV1Request
      */
-    objApikey?: ApikeyRequest;
+    'objApikey'?: ApikeyRequest;
     /**
      * 
      * @type {ApikeyRequestCompound}
      * @memberof ApikeyCreateObjectV1Request
      */
-    objApikeyCompound?: ApikeyRequestCompound;
+    'objApikeyCompound'?: ApikeyRequestCompound;
 }

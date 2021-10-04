@@ -16,42 +16,10 @@
 import { CustomFormDataDocumentResponse } from './custom-form-data-document-response';
 import { CustomFormDataSignerResponse } from './custom-form-data-signer-response';
 
-
-
 /**
+ * @type EzsigndocumentGetFormDataV1ResponseMPayload
  * Payload for the /1/object/ezsigndocument/{pkiEzsigndocument}/getFormData API Request
  * @export
- * @interface EzsigndocumentGetFormDataV1ResponseMPayload
  */
-export interface EzsigndocumentGetFormDataV1ResponseMPayload {
-    /**
-     * The unique ID of the Ezsigndocument
-     * @type {number}
-     * @memberof EzsigndocumentGetFormDataV1ResponseMPayload
-     */
-    pkiEzsigndocumentID: number;
-    /**
-     * The unique ID of the Ezsignfolder
-     * @type {number}
-     * @memberof EzsigndocumentGetFormDataV1ResponseMPayload
-     */
-    fkiEzsignfolderID: number;
-    /**
-     * The name of the document that will be presented to Ezsignfoldersignerassociations
-     * @type {string}
-     * @memberof EzsigndocumentGetFormDataV1ResponseMPayload
-     */
-    sEzsigndocumentName: string;
-    /**
-     * The date and time at which the object was last modified
-     * @type {string}
-     * @memberof EzsigndocumentGetFormDataV1ResponseMPayload
-     */
-    dtModifiedDate: string;
-    /**
-     * 
-     * @type {Array<CustomFormDataSignerResponse>}
-     * @memberof EzsigndocumentGetFormDataV1ResponseMPayload
-     */
-    a_objFormDataSigner: Array<CustomFormDataSignerResponse>;
-}
+export type EzsigndocumentGetFormDataV1ResponseMPayload = CustomFormDataDocumentResponse;
+

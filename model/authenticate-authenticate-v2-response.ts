@@ -19,30 +19,10 @@ import { CommonResponse } from './common-response';
 import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 
-
-
 /**
+ * @type AuthenticateAuthenticateV2Response
  * Response for the /2/module/authenticate/authenticate API Request
  * @export
- * @interface AuthenticateAuthenticateV2Response
  */
-export interface AuthenticateAuthenticateV2Response {
-    /**
-     * 
-     * @type {AuthenticateAuthenticateV2ResponseMPayload}
-     * @memberof AuthenticateAuthenticateV2Response
-     */
-    mPayload: AuthenticateAuthenticateV2ResponseMPayload;
-    /**
-     * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof AuthenticateAuthenticateV2Response
-     */
-    objDebugPayload?: CommonResponseObjDebugPayload;
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof AuthenticateAuthenticateV2Response
-     */
-    objDebug?: CommonResponseObjDebug;
-}
+export type AuthenticateAuthenticateV2Response = AuthenticateAuthenticateV2ResponseAllOf & CommonResponse;
+

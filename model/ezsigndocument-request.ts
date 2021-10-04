@@ -14,8 +14,6 @@
 
 
 
-
-
 /**
  * An Ezsigndocument Object
  * @export
@@ -27,43 +25,43 @@ export interface EzsigndocumentRequest {
      * @type {string}
      * @memberof EzsigndocumentRequest
      */
-    eEzsigndocumentSource: EzsigndocumentRequestEEzsigndocumentSourceEnum;
+    'eEzsigndocumentSource': EzsigndocumentRequestEEzsigndocumentSourceEnum;
     /**
      * Indicates the format of the document.
      * @type {string}
      * @memberof EzsigndocumentRequest
      */
-    eEzsigndocumentFormat: EzsigndocumentRequestEEzsigndocumentFormatEnum;
+    'eEzsigndocumentFormat': EzsigndocumentRequestEEzsigndocumentFormatEnum;
     /**
      * The Base64 encoded binary content of the document.  This field is Required when eEzsigndocumentSource = Base64.
      * @type {string}
      * @memberof EzsigndocumentRequest
      */
-    sEzsigndocumentBase64?: string;
+    'sEzsigndocumentBase64'?: string;
     /**
      * A reference to a valid Ezsignfolder.  That value is returned after a successful Ezsignfolder Creation.
      * @type {number}
      * @memberof EzsigndocumentRequest
      */
-    fkiEzsignfolderID: number;
+    'fkiEzsignfolderID': number;
     /**
      * Represent a Date Time. The timezone is the one configured in the User\'s profile.
      * @type {string}
      * @memberof EzsigndocumentRequest
      */
-    dtEzsigndocumentDuedate: string;
+    'dtEzsigndocumentDuedate': string;
     /**
      * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @type {number}
      * @memberof EzsigndocumentRequest
      */
-    fkiLanguageID: number;
+    'fkiLanguageID': number;
     /**
      * The name of the document that will be presented to Ezsignfoldersignerassociations
      * @type {string}
      * @memberof EzsigndocumentRequest
      */
-    sEzsigndocumentName: string;
+    'sEzsigndocumentName': string;
 }
 
 /**

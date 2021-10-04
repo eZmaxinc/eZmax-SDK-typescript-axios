@@ -19,30 +19,10 @@ import { EzsigndocumentResponse } from './ezsigndocument-response';
 import { WebhookEzsignDocumentCompletedAllOf } from './webhook-ezsign-document-completed-all-of';
 import { WebhookResponse } from './webhook-response';
 
-
-
 /**
+ * @type WebhookEzsignDocumentCompleted
  * This is the base Webhook object
  * @export
- * @interface WebhookEzsignDocumentCompleted
  */
-export interface WebhookEzsignDocumentCompleted {
-    /**
-     * 
-     * @type {EzsigndocumentResponse}
-     * @memberof WebhookEzsignDocumentCompleted
-     */
-    objEzsigndocument: EzsigndocumentResponse;
-    /**
-     * 
-     * @type {WebhookResponse}
-     * @memberof WebhookEzsignDocumentCompleted
-     */
-    objWebhook: WebhookResponse;
-    /**
-     * An array containing details of previous attempts that were made to deliver the message. The array is empty if it\'s the first attempt.
-     * @type {Array<AttemptResponse>}
-     * @memberof WebhookEzsignDocumentCompleted
-     */
-    a_objAttempt: Array<AttemptResponse>;
-}
+export type WebhookEzsignDocumentCompleted = CommonWebhook & WebhookEzsignDocumentCompletedAllOf;
+

@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -49,7 +49,7 @@ export const ModuleSsprApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ssprResetPasswordRequestV1: async (ssprResetPasswordRequestV1Request: SsprResetPasswordRequestV1Request, options: any = {}): Promise<RequestArgs> => {
+        ssprResetPasswordRequestV1: async (ssprResetPasswordRequestV1Request: SsprResetPasswordRequestV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'ssprResetPasswordRequestV1Request' is not null or undefined
             assertParamExists('ssprResetPasswordRequestV1', 'ssprResetPasswordRequestV1Request', ssprResetPasswordRequestV1Request)
             const localVarPath = `/1/module/sspr/resetPasswordRequest`;
@@ -107,7 +107,7 @@ export const ModuleSsprApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ssprResetPasswordV1: async (ssprResetPasswordV1Request: SsprResetPasswordV1Request, options: any = {}): Promise<RequestArgs> => {
+        ssprResetPasswordV1: async (ssprResetPasswordV1Request: SsprResetPasswordV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'ssprResetPasswordV1Request' is not null or undefined
             assertParamExists('ssprResetPasswordV1', 'ssprResetPasswordV1Request', ssprResetPasswordV1Request)
             const localVarPath = `/1/module/sspr/resetPassword`;
@@ -165,7 +165,7 @@ export const ModuleSsprApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ssprSendUsernamesV1: async (ssprSendUsernamesV1Request: SsprSendUsernamesV1Request, options: any = {}): Promise<RequestArgs> => {
+        ssprSendUsernamesV1: async (ssprSendUsernamesV1Request: SsprSendUsernamesV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'ssprSendUsernamesV1Request' is not null or undefined
             assertParamExists('ssprSendUsernamesV1', 'ssprSendUsernamesV1Request', ssprSendUsernamesV1Request)
             const localVarPath = `/1/module/sspr/sendUsernames`;
@@ -223,7 +223,7 @@ export const ModuleSsprApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ssprUnlockAccountRequestV1: async (ssprUnlockAccountRequestV1Request: SsprUnlockAccountRequestV1Request, options: any = {}): Promise<RequestArgs> => {
+        ssprUnlockAccountRequestV1: async (ssprUnlockAccountRequestV1Request: SsprUnlockAccountRequestV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'ssprUnlockAccountRequestV1Request' is not null or undefined
             assertParamExists('ssprUnlockAccountRequestV1', 'ssprUnlockAccountRequestV1Request', ssprUnlockAccountRequestV1Request)
             const localVarPath = `/1/module/sspr/unlockAccountRequest`;
@@ -281,7 +281,7 @@ export const ModuleSsprApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ssprUnlockAccountV1: async (ssprUnlockAccountV1Request: SsprUnlockAccountV1Request, options: any = {}): Promise<RequestArgs> => {
+        ssprUnlockAccountV1: async (ssprUnlockAccountV1Request: SsprUnlockAccountV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'ssprUnlockAccountV1Request' is not null or undefined
             assertParamExists('ssprUnlockAccountV1', 'ssprUnlockAccountV1Request', ssprUnlockAccountV1Request)
             const localVarPath = `/1/module/sspr/unlockAccount`;
@@ -339,7 +339,7 @@ export const ModuleSsprApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ssprValidateTokenV1: async (ssprValidateTokenV1Request: SsprValidateTokenV1Request, options: any = {}): Promise<RequestArgs> => {
+        ssprValidateTokenV1: async (ssprValidateTokenV1Request: SsprValidateTokenV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'ssprValidateTokenV1Request' is not null or undefined
             assertParamExists('ssprValidateTokenV1', 'ssprValidateTokenV1Request', ssprValidateTokenV1Request)
             const localVarPath = `/1/module/sspr/validateToken`;
@@ -407,7 +407,7 @@ export const ModuleSsprApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ssprResetPasswordRequestV1(ssprResetPasswordRequestV1Request: SsprResetPasswordRequestV1Request, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async ssprResetPasswordRequestV1(ssprResetPasswordRequestV1Request: SsprResetPasswordRequestV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ssprResetPasswordRequestV1(ssprResetPasswordRequestV1Request, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -418,7 +418,7 @@ export const ModuleSsprApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ssprResetPasswordV1(ssprResetPasswordV1Request: SsprResetPasswordV1Request, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async ssprResetPasswordV1(ssprResetPasswordV1Request: SsprResetPasswordV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ssprResetPasswordV1(ssprResetPasswordV1Request, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -429,7 +429,7 @@ export const ModuleSsprApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ssprSendUsernamesV1(ssprSendUsernamesV1Request: SsprSendUsernamesV1Request, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async ssprSendUsernamesV1(ssprSendUsernamesV1Request: SsprSendUsernamesV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ssprSendUsernamesV1(ssprSendUsernamesV1Request, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -440,7 +440,7 @@ export const ModuleSsprApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ssprUnlockAccountRequestV1(ssprUnlockAccountRequestV1Request: SsprUnlockAccountRequestV1Request, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async ssprUnlockAccountRequestV1(ssprUnlockAccountRequestV1Request: SsprUnlockAccountRequestV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ssprUnlockAccountRequestV1(ssprUnlockAccountRequestV1Request, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -451,7 +451,7 @@ export const ModuleSsprApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ssprUnlockAccountV1(ssprUnlockAccountV1Request: SsprUnlockAccountV1Request, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async ssprUnlockAccountV1(ssprUnlockAccountV1Request: SsprUnlockAccountV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ssprUnlockAccountV1(ssprUnlockAccountV1Request, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -462,7 +462,7 @@ export const ModuleSsprApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ssprValidateTokenV1(ssprValidateTokenV1Request: SsprValidateTokenV1Request, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async ssprValidateTokenV1(ssprValidateTokenV1Request: SsprValidateTokenV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ssprValidateTokenV1(ssprValidateTokenV1Request, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -554,7 +554,7 @@ export class ModuleSsprApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ModuleSsprApi
      */
-    public ssprResetPasswordRequestV1(ssprResetPasswordRequestV1Request: SsprResetPasswordRequestV1Request, options?: any) {
+    public ssprResetPasswordRequestV1(ssprResetPasswordRequestV1Request: SsprResetPasswordRequestV1Request, options?: AxiosRequestConfig) {
         return ModuleSsprApiFp(this.configuration).ssprResetPasswordRequestV1(ssprResetPasswordRequestV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -566,7 +566,7 @@ export class ModuleSsprApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ModuleSsprApi
      */
-    public ssprResetPasswordV1(ssprResetPasswordV1Request: SsprResetPasswordV1Request, options?: any) {
+    public ssprResetPasswordV1(ssprResetPasswordV1Request: SsprResetPasswordV1Request, options?: AxiosRequestConfig) {
         return ModuleSsprApiFp(this.configuration).ssprResetPasswordV1(ssprResetPasswordV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -578,7 +578,7 @@ export class ModuleSsprApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ModuleSsprApi
      */
-    public ssprSendUsernamesV1(ssprSendUsernamesV1Request: SsprSendUsernamesV1Request, options?: any) {
+    public ssprSendUsernamesV1(ssprSendUsernamesV1Request: SsprSendUsernamesV1Request, options?: AxiosRequestConfig) {
         return ModuleSsprApiFp(this.configuration).ssprSendUsernamesV1(ssprSendUsernamesV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -590,7 +590,7 @@ export class ModuleSsprApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ModuleSsprApi
      */
-    public ssprUnlockAccountRequestV1(ssprUnlockAccountRequestV1Request: SsprUnlockAccountRequestV1Request, options?: any) {
+    public ssprUnlockAccountRequestV1(ssprUnlockAccountRequestV1Request: SsprUnlockAccountRequestV1Request, options?: AxiosRequestConfig) {
         return ModuleSsprApiFp(this.configuration).ssprUnlockAccountRequestV1(ssprUnlockAccountRequestV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -602,7 +602,7 @@ export class ModuleSsprApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ModuleSsprApi
      */
-    public ssprUnlockAccountV1(ssprUnlockAccountV1Request: SsprUnlockAccountV1Request, options?: any) {
+    public ssprUnlockAccountV1(ssprUnlockAccountV1Request: SsprUnlockAccountV1Request, options?: AxiosRequestConfig) {
         return ModuleSsprApiFp(this.configuration).ssprUnlockAccountV1(ssprUnlockAccountV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -614,7 +614,7 @@ export class ModuleSsprApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ModuleSsprApi
      */
-    public ssprValidateTokenV1(ssprValidateTokenV1Request: SsprValidateTokenV1Request, options?: any) {
+    public ssprValidateTokenV1(ssprValidateTokenV1Request: SsprValidateTokenV1Request, options?: AxiosRequestConfig) {
         return ModuleSsprApiFp(this.configuration).ssprValidateTokenV1(ssprValidateTokenV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 }

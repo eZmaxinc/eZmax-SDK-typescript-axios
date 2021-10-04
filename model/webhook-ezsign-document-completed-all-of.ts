@@ -15,8 +15,6 @@
 
 import { EzsigndocumentResponse } from './ezsigndocument-response';
 
-
-
 /**
  * 
  * @export
@@ -28,5 +26,5 @@ export interface WebhookEzsignDocumentCompletedAllOf {
      * @type {EzsigndocumentResponse}
      * @memberof WebhookEzsignDocumentCompletedAllOf
      */
-    objEzsigndocument: EzsigndocumentResponse;
+    'objEzsigndocument': EzsigndocumentResponse;
 }

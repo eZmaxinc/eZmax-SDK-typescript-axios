@@ -15,24 +15,10 @@
 
 import { EzsignformfieldResponse } from './ezsignformfield-response';
 
-
-
 /**
+ * @type EzsignformfieldResponseCompound
  * An Ezsignformfield Object and children to create a complete structure
  * @export
- * @interface EzsignformfieldResponseCompound
  */
-export interface EzsignformfieldResponseCompound {
-    /**
-     * The Label for the Ezsignformfield
-     * @type {string}
-     * @memberof EzsignformfieldResponseCompound
-     */
-    sEzsignformfieldLabel: string;
-    /**
-     * The Value for the Ezsignformfield
-     * @type {string}
-     * @memberof EzsignformfieldResponseCompound
-     */
-    sEzsignformfieldValue: string;
-}
+export type EzsignformfieldResponseCompound = EzsignformfieldResponse;
+

@@ -15,8 +15,6 @@
 
 import { EzsignfoldersignerassociationRequest } from './ezsignfoldersignerassociation-request';
 
-
-
 /**
  * Request for the /1/object/ezsignfoldersignerassociation/editObject API Request
  * @export
@@ -28,5 +26,5 @@ export interface UNUSEDEzsignfoldersignerassociationEditObjectV1Request {
      * @type {EzsignfoldersignerassociationRequest}
      * @memberof UNUSEDEzsignfoldersignerassociationEditObjectV1Request
      */
-    objEzsignfoldersignerassociation?: EzsignfoldersignerassociationRequest;
+    'objEzsignfoldersignerassociation'?: EzsignfoldersignerassociationRequest;
 }

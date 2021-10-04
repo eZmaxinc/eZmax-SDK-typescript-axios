@@ -14,8 +14,6 @@
 
 
 
-
-
 /**
  * Payload for the /1/object/ezsignsignature/createObject API Request
  * @export
@@ -27,5 +25,5 @@ export interface EzsignsignatureCreateObjectV1ResponseMPayload {
      * @type {Array<number>}
      * @memberof EzsignsignatureCreateObjectV1ResponseMPayload
      */
-    a_pkiEzsignsignatureID: Array<number>;
+    'a_pkiEzsignsignatureID': Array<number>;
 }

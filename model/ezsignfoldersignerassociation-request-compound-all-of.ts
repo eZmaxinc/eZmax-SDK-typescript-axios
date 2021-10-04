@@ -15,8 +15,6 @@
 
 import { EzsignsignerRequestCompound } from './ezsignsigner-request-compound';
 
-
-
 /**
  * 
  * @export
@@ -28,5 +26,5 @@ export interface EzsignfoldersignerassociationRequestCompoundAllOf {
      * @type {EzsignsignerRequestCompound}
      * @memberof EzsignfoldersignerassociationRequestCompoundAllOf
      */
-    objEzsignsigner?: EzsignsignerRequestCompound;
+    'objEzsignsigner'?: EzsignsignerRequestCompound;
 }

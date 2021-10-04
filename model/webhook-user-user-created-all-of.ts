@@ -15,8 +15,6 @@
 
 import { UserResponse } from './user-response';
 
-
-
 /**
  * 
  * @export
@@ -28,5 +26,5 @@ export interface WebhookUserUserCreatedAllOf {
      * @type {UserResponse}
      * @memberof WebhookUserUserCreatedAllOf
      */
-    objUser: UserResponse;
+    'objUser': UserResponse;
 }

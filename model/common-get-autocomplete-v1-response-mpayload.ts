@@ -14,8 +14,6 @@
 
 
 
-
-
 /**
  * Generic Autocomplete Response
  * @export
@@ -27,17 +25,17 @@ export interface CommonGetAutocompleteV1ResponseMPayload {
      * @type {string}
      * @memberof CommonGetAutocompleteV1ResponseMPayload
      */
-    group: string;
+    'group': string;
     /**
      * The Unique ID of the element
      * @type {string}
      * @memberof CommonGetAutocompleteV1ResponseMPayload
      */
-    id: string;
+    'id': string;
     /**
      * The Description of the element
      * @type {string}
      * @memberof CommonGetAutocompleteV1ResponseMPayload
      */
-    option: string;
+    'option': string;
 }

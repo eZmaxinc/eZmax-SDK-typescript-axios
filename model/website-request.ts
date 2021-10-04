@@ -14,8 +14,6 @@
 
 
 
-
-
 /**
  * A Website Object
  * @export
@@ -27,11 +25,11 @@ export interface WebsiteRequest {
      * @type {number}
      * @memberof WebsiteRequest
      */
-    fkiWebsitetypeID: number;
+    'fkiWebsitetypeID': number;
     /**
      * The URL of the website.
      * @type {string}
      * @memberof WebsiteRequest
      */
-    sWebsiteAddress: string;
+    'sWebsiteAddress': string;
 }

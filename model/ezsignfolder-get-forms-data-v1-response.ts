@@ -19,30 +19,10 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
 import { EzsignfolderGetFormsDataV1ResponseAllOf } from './ezsignfolder-get-forms-data-v1-response-all-of';
 import { EzsignfolderGetFormsDataV1ResponseMPayload } from './ezsignfolder-get-forms-data-v1-response-mpayload';
 
-
-
 /**
+ * @type EzsignfolderGetFormsDataV1Response
  * Response for the /1/object/ezsignfolder/{pkiEzsignfolder}/getFormsData API Request
  * @export
- * @interface EzsignfolderGetFormsDataV1Response
  */
-export interface EzsignfolderGetFormsDataV1Response {
-    /**
-     * 
-     * @type {EzsignfolderGetFormsDataV1ResponseMPayload}
-     * @memberof EzsignfolderGetFormsDataV1Response
-     */
-    mPayload: EzsignfolderGetFormsDataV1ResponseMPayload;
-    /**
-     * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsignfolderGetFormsDataV1Response
-     */
-    objDebugPayload?: CommonResponseObjDebugPayload;
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsignfolderGetFormsDataV1Response
-     */
-    objDebug?: CommonResponseObjDebug;
-}
+export type EzsignfolderGetFormsDataV1Response = CommonResponse & EzsignfolderGetFormsDataV1ResponseAllOf;
+

@@ -14,8 +14,6 @@
 
 
 
-
-
 /**
  * Request for the /2/module/authenticate/authenticate API Request
  * @export
@@ -27,29 +25,29 @@ export interface AuthenticateAuthenticateV2Request {
      * @type {string}
      * @memberof AuthenticateAuthenticateV2Request
      */
-    pksCustomerCode: string;
+    'pksCustomerCode': string;
     /**
      * The email address.
      * @type {string}
      * @memberof AuthenticateAuthenticateV2Request
      */
-    sEmailAddress?: string;
+    'sEmailAddress'?: string;
     /**
      * The Login name of the User.
      * @type {string}
      * @memberof AuthenticateAuthenticateV2Request
      */
-    sUserLoginname?: string;
+    'sUserLoginname'?: string;
     /**
      * A Password.  Must meet complexity requirements
      * @type {string}
      * @memberof AuthenticateAuthenticateV2Request
      */
-    sPassword?: string;
+    'sPassword'?: string;
     /**
      * A Password encrypted and encoded in Base64  Must meet complexity requirements
      * @type {string}
      * @memberof AuthenticateAuthenticateV2Request
      */
-    sPasswordEncrypted?: string;
+    'sPasswordEncrypted'?: string;
 }

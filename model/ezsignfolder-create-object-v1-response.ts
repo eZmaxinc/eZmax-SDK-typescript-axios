@@ -18,30 +18,10 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 import { EzsignfolderCreateObjectV1ResponseMPayload } from './ezsignfolder-create-object-v1-response-mpayload';
 
-
-
 /**
+ * @type EzsignfolderCreateObjectV1Response
  * Response for the /1/object/ezsignfolder/createObject API Request
  * @export
- * @interface EzsignfolderCreateObjectV1Response
  */
-export interface EzsignfolderCreateObjectV1Response {
-    /**
-     * 
-     * @type {EzsignfolderCreateObjectV1ResponseMPayload}
-     * @memberof EzsignfolderCreateObjectV1Response
-     */
-    mPayload: EzsignfolderCreateObjectV1ResponseMPayload;
-    /**
-     * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsignfolderCreateObjectV1Response
-     */
-    objDebugPayload?: CommonResponseObjDebugPayload;
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsignfolderCreateObjectV1Response
-     */
-    objDebug?: CommonResponseObjDebug;
-}
+export type EzsignfolderCreateObjectV1Response = CommonResponse;
+

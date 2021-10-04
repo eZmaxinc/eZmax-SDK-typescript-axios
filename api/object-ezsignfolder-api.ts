@@ -13,7 +13,7 @@
  */
 
 
-import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
+import globalAxios, { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 // Some imports not used depending on template conditions
 // @ts-ignore
@@ -51,7 +51,7 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfolderCreateObjectV1: async (ezsignfolderCreateObjectV1Request: Array<EzsignfolderCreateObjectV1Request>, options: any = {}): Promise<RequestArgs> => {
+        ezsignfolderCreateObjectV1: async (ezsignfolderCreateObjectV1Request: Array<EzsignfolderCreateObjectV1Request>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'ezsignfolderCreateObjectV1Request' is not null or undefined
             assertParamExists('ezsignfolderCreateObjectV1', 'ezsignfolderCreateObjectV1Request', ezsignfolderCreateObjectV1Request)
             const localVarPath = `/1/object/ezsignfolder`;
@@ -109,7 +109,7 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfolderDeleteObjectV1: async (pkiEzsignfolderID: number, options: any = {}): Promise<RequestArgs> => {
+        ezsignfolderDeleteObjectV1: async (pkiEzsignfolderID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsignfolderID' is not null or undefined
             assertParamExists('ezsignfolderDeleteObjectV1', 'pkiEzsignfolderID', pkiEzsignfolderID)
             const localVarPath = `/1/object/ezsignfolder/{pkiEzsignfolderID}`
@@ -165,7 +165,7 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfolderGetChildrenV1: async (pkiEzsignfolderID: number, options: any = {}): Promise<RequestArgs> => {
+        ezsignfolderGetChildrenV1: async (pkiEzsignfolderID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsignfolderID' is not null or undefined
             assertParamExists('ezsignfolderGetChildrenV1', 'pkiEzsignfolderID', pkiEzsignfolderID)
             const localVarPath = `/1/object/ezsignfolder/{pkiEzsignfolderID}/getChildren`
@@ -221,7 +221,7 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfolderGetFormsDataV1: async (pkiEzsignfolderID: number, options: any = {}): Promise<RequestArgs> => {
+        ezsignfolderGetFormsDataV1: async (pkiEzsignfolderID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsignfolderID' is not null or undefined
             assertParamExists('ezsignfolderGetFormsDataV1', 'pkiEzsignfolderID', pkiEzsignfolderID)
             const localVarPath = `/1/object/ezsignfolder/{pkiEzsignfolderID}/getFormsData`
@@ -277,7 +277,7 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfolderGetObjectV1: async (pkiEzsignfolderID: number, options: any = {}): Promise<RequestArgs> => {
+        ezsignfolderGetObjectV1: async (pkiEzsignfolderID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsignfolderID' is not null or undefined
             assertParamExists('ezsignfolderGetObjectV1', 'pkiEzsignfolderID', pkiEzsignfolderID)
             const localVarPath = `/1/object/ezsignfolder/{pkiEzsignfolderID}`
@@ -334,7 +334,7 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfolderSendV1: async (pkiEzsignfolderID: number, ezsignfolderSendV1Request: EzsignfolderSendV1Request, options: any = {}): Promise<RequestArgs> => {
+        ezsignfolderSendV1: async (pkiEzsignfolderID: number, ezsignfolderSendV1Request: EzsignfolderSendV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsignfolderID' is not null or undefined
             assertParamExists('ezsignfolderSendV1', 'pkiEzsignfolderID', pkiEzsignfolderID)
             // verify required parameter 'ezsignfolderSendV1Request' is not null or undefined
@@ -405,7 +405,7 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignfolderCreateObjectV1(ezsignfolderCreateObjectV1Request: Array<EzsignfolderCreateObjectV1Request>, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderCreateObjectV1Response>> {
+        async ezsignfolderCreateObjectV1(ezsignfolderCreateObjectV1Request: Array<EzsignfolderCreateObjectV1Request>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderCreateObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderCreateObjectV1(ezsignfolderCreateObjectV1Request, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -416,7 +416,7 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignfolderDeleteObjectV1(pkiEzsignfolderID: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderDeleteObjectV1Response>> {
+        async ezsignfolderDeleteObjectV1(pkiEzsignfolderID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderDeleteObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderDeleteObjectV1(pkiEzsignfolderID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -427,7 +427,7 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignfolderGetChildrenV1(pkiEzsignfolderID: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async ezsignfolderGetChildrenV1(pkiEzsignfolderID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderGetChildrenV1(pkiEzsignfolderID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -438,7 +438,7 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignfolderGetFormsDataV1(pkiEzsignfolderID: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderGetFormsDataV1Response>> {
+        async ezsignfolderGetFormsDataV1(pkiEzsignfolderID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderGetFormsDataV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderGetFormsDataV1(pkiEzsignfolderID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -449,7 +449,7 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignfolderGetObjectV1(pkiEzsignfolderID: number, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderGetObjectV1Response>> {
+        async ezsignfolderGetObjectV1(pkiEzsignfolderID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderGetObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderGetObjectV1(pkiEzsignfolderID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -461,7 +461,7 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignfolderSendV1(pkiEzsignfolderID: number, ezsignfolderSendV1Request: EzsignfolderSendV1Request, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderSendV1Response>> {
+        async ezsignfolderSendV1(pkiEzsignfolderID: number, ezsignfolderSendV1Request: EzsignfolderSendV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderSendV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderSendV1(pkiEzsignfolderID, ezsignfolderSendV1Request, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -554,7 +554,7 @@ export class ObjectEzsignfolderApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsignfolderApi
      */
-    public ezsignfolderCreateObjectV1(ezsignfolderCreateObjectV1Request: Array<EzsignfolderCreateObjectV1Request>, options?: any) {
+    public ezsignfolderCreateObjectV1(ezsignfolderCreateObjectV1Request: Array<EzsignfolderCreateObjectV1Request>, options?: AxiosRequestConfig) {
         return ObjectEzsignfolderApiFp(this.configuration).ezsignfolderCreateObjectV1(ezsignfolderCreateObjectV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -566,7 +566,7 @@ export class ObjectEzsignfolderApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsignfolderApi
      */
-    public ezsignfolderDeleteObjectV1(pkiEzsignfolderID: number, options?: any) {
+    public ezsignfolderDeleteObjectV1(pkiEzsignfolderID: number, options?: AxiosRequestConfig) {
         return ObjectEzsignfolderApiFp(this.configuration).ezsignfolderDeleteObjectV1(pkiEzsignfolderID, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -578,7 +578,7 @@ export class ObjectEzsignfolderApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsignfolderApi
      */
-    public ezsignfolderGetChildrenV1(pkiEzsignfolderID: number, options?: any) {
+    public ezsignfolderGetChildrenV1(pkiEzsignfolderID: number, options?: AxiosRequestConfig) {
         return ObjectEzsignfolderApiFp(this.configuration).ezsignfolderGetChildrenV1(pkiEzsignfolderID, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -590,7 +590,7 @@ export class ObjectEzsignfolderApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsignfolderApi
      */
-    public ezsignfolderGetFormsDataV1(pkiEzsignfolderID: number, options?: any) {
+    public ezsignfolderGetFormsDataV1(pkiEzsignfolderID: number, options?: AxiosRequestConfig) {
         return ObjectEzsignfolderApiFp(this.configuration).ezsignfolderGetFormsDataV1(pkiEzsignfolderID, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -602,7 +602,7 @@ export class ObjectEzsignfolderApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsignfolderApi
      */
-    public ezsignfolderGetObjectV1(pkiEzsignfolderID: number, options?: any) {
+    public ezsignfolderGetObjectV1(pkiEzsignfolderID: number, options?: AxiosRequestConfig) {
         return ObjectEzsignfolderApiFp(this.configuration).ezsignfolderGetObjectV1(pkiEzsignfolderID, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -615,7 +615,7 @@ export class ObjectEzsignfolderApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsignfolderApi
      */
-    public ezsignfolderSendV1(pkiEzsignfolderID: number, ezsignfolderSendV1Request: EzsignfolderSendV1Request, options?: any) {
+    public ezsignfolderSendV1(pkiEzsignfolderID: number, ezsignfolderSendV1Request: EzsignfolderSendV1Request, options?: AxiosRequestConfig) {
         return ObjectEzsignfolderApiFp(this.configuration).ezsignfolderSendV1(pkiEzsignfolderID, ezsignfolderSendV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 }

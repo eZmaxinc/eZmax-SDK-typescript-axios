@@ -15,8 +15,6 @@
 
 import { FieldEUserTypeSSPR } from './field-euser-type-sspr';
 
-
-
 /**
  * Request for the /1/module/sspr/validateToken API Request
  * @export
@@ -28,35 +26,35 @@ export interface SsprValidateTokenV1Request {
      * @type {string}
      * @memberof SsprValidateTokenV1Request
      */
-    pksCustomerCode: string;
+    'pksCustomerCode': string;
     /**
      * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @type {number}
      * @memberof SsprValidateTokenV1Request
      */
-    fkiLanguageID: number;
+    'fkiLanguageID': number;
     /**
      * 
      * @type {FieldEUserTypeSSPR}
      * @memberof SsprValidateTokenV1Request
      */
-    eUserTypeSSPR: FieldEUserTypeSSPR;
+    'eUserTypeSSPR': FieldEUserTypeSSPR;
     /**
      * The email address.
      * @type {string}
      * @memberof SsprValidateTokenV1Request
      */
-    sEmailAddress?: string;
+    'sEmailAddress'?: string;
     /**
      * The Login name of the User.
      * @type {string}
      * @memberof SsprValidateTokenV1Request
      */
-    sUserLoginname?: string;
+    'sUserLoginname'?: string;
     /**
      * Hex Encoded Secret SSPR token
      * @type {string}
      * @memberof SsprValidateTokenV1Request
      */
-    binUserSSPRtoken: string;
+    'binUserSSPRtoken': string;
 }

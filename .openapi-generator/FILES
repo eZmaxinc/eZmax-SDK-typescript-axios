@@ -58,7 +58,8 @@ model/contactinformations-request.ts
 model/custom-form-data-document-response.ts
 model/custom-form-data-folder-response.ts
 model/custom-form-data-signer-response.ts
-model/custom-word-position-response.ts
+model/custom-word-position-occurence-response.ts
+model/custom-word-position-word-response.ts
 model/email-request.ts
 model/ezsigndocument-apply-ezsigntemplate-v1-request.ts
 model/ezsigndocument-apply-ezsigntemplate-v1-response.ts
@@ -83,7 +84,6 @@ model/ezsigndocument-get-object-v1-response-mpayload.ts
 model/ezsigndocument-get-object-v1-response.ts
 model/ezsigndocument-get-words-positions-v1-request.ts
 model/ezsigndocument-get-words-positions-v1-response-all-of.ts
-model/ezsigndocument-get-words-positions-v1-response-mpayload.ts
 model/ezsigndocument-get-words-positions-v1-response.ts
 model/ezsigndocument-request-compound.ts
 model/ezsigndocument-request.ts

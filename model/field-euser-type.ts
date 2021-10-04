@@ -14,13 +14,12 @@
 
 
 
-
-
 /**
  * The user type of the User.
  * @export
  * @enum {string}
  */
+
 export enum FieldEUserType {
     AgentBroker = 'AgentBroker',
     Assistant = 'Assistant',
