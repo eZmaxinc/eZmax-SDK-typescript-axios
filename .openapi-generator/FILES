@@ -12,6 +12,7 @@ api/object-apikey-api.ts
 api/object-ezsigndocument-api.ts
 api/object-ezsignfolder-api.ts
 api/object-ezsignfoldersignerassociation-api.ts
+api/object-ezsignfoldertype-api.ts
 api/object-ezsignsignature-api.ts
 api/object-franchisebroker-api.ts
 api/object-franchiseoffice-api.ts
@@ -43,6 +44,7 @@ model/common-audit.ts
 model/common-get-autocomplete-v1-response-all-of.ts
 model/common-get-autocomplete-v1-response-mpayload.ts
 model/common-get-autocomplete-v1-response.ts
+model/common-get-list-v1-response-mpayload.ts
 model/common-response-error.ts
 model/common-response-obj-debug-payload.ts
 model/common-response-obj-debug.ts
@@ -119,6 +121,11 @@ model/ezsignfoldersignerassociation-get-object-v1-response.ts
 model/ezsignfoldersignerassociation-request-compound-all-of.ts
 model/ezsignfoldersignerassociation-request-compound.ts
 model/ezsignfoldersignerassociation-request.ts
+model/ezsignfoldertype-get-list-v1-response-all-of.ts
+model/ezsignfoldertype-get-list-v1-response-mpayload-all-of.ts
+model/ezsignfoldertype-get-list-v1-response-mpayload.ts
+model/ezsignfoldertype-get-list-v1-response.ts
+model/ezsignfoldertype-list-element.ts
 model/ezsignformfield-response-compound.ts
 model/ezsignformfield-response.ts
 model/ezsignformfieldgroup-response-compound-all-of.ts
