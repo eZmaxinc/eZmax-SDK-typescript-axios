@@ -67,6 +67,7 @@ export * from './ezsigndocument-response';
 export * from './ezsigndocument-response-compound';
 export * from './ezsignfolder-create-object-v1-request';
 export * from './ezsignfolder-create-object-v1-response';
+export * from './ezsignfolder-create-object-v1-response-all-of';
 export * from './ezsignfolder-create-object-v1-response-mpayload';
 export * from './ezsignfolder-delete-object-v1-response';
 export * from './ezsignfolder-get-forms-data-v1-response';

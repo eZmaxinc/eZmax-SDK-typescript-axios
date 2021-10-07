@@ -92,6 +92,7 @@ model/ezsigndocument-request.ts
 model/ezsigndocument-response-compound.ts
 model/ezsigndocument-response.ts
 model/ezsignfolder-create-object-v1-request.ts
+model/ezsignfolder-create-object-v1-response-all-of.ts
 model/ezsignfolder-create-object-v1-response-mpayload.ts
 model/ezsignfolder-create-object-v1-response.ts
 model/ezsignfolder-delete-object-v1-response.ts
