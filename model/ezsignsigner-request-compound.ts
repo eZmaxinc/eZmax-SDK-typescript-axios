@@ -24,3 +24,4 @@ import { EzsignsignerRequestCompoundContact } from './ezsignsigner-request-compo
  */
 export type EzsignsignerRequestCompound = EzsignsignerRequest & EzsignsignerRequestCompoundAllOf;
 
+

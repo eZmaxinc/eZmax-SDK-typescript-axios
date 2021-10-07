@@ -15,16 +15,15 @@
 
 
 /**
- * 
+ * The language of the returned content.  1. **\\*** (or header not defined) Default language 2. **en** English 2. **fr** French  
  * @export
- * @interface EzsignfoldersignerassociationGetObjectV1ResponseAllOf
+ * @enum {string}
  */
-export interface EzsignfoldersignerassociationGetObjectV1ResponseAllOf {
-    /**
-     * Payload for the /1/object/ezsignfoldersignerassociation/getObject API Request
-     * @type {object}
-     * @memberof EzsignfoldersignerassociationGetObjectV1ResponseAllOf
-     */
-    'mPayload': object;
+
+export enum HeaderAcceptLanguage {
+    Star = '*',
+    en = 'en',
+    fr = 'fr'
 }
+
 

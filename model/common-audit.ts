@@ -57,3 +57,4 @@ export interface CommonAudit {
      */
     'dtModifiedDate': string;
 }
+

@@ -35,3 +35,4 @@ export interface EzsignfoldersignerassociationCreateObjectV1Request {
      */
     'objEzsignfoldersignerassociationCompound'?: EzsignfoldersignerassociationRequestCompound;
 }
+

@@ -45,3 +45,4 @@ export interface ContactinformationsRequest {
      */
     'iWebsiteDefault': number;
 }
+

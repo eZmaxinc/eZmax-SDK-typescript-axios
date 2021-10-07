@@ -52,3 +52,4 @@ export interface CustomFormDataDocumentResponse {
      */
     'a_objFormDataSigner': Array<CustomFormDataSignerResponse>;
 }
+

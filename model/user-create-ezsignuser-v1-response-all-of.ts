@@ -28,3 +28,4 @@ export interface UserCreateEzsignuserV1ResponseAllOf {
      */
     'mPayload': UserCreateEzsignuserV1ResponseMPayload;
 }
+

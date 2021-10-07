@@ -28,3 +28,4 @@ export interface FranchisereferalincomeCreateObjectV1ResponseAllOf {
      */
     'mPayload': FranchisereferalincomeCreateObjectV1ResponseMPayload;
 }
+

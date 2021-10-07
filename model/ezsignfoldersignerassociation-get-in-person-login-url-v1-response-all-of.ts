@@ -28,3 +28,4 @@ export interface EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseAllOf
      */
     'mPayload': EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload;
 }
+

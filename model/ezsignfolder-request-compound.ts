@@ -25,3 +25,4 @@ import { FieldEEzsignfolderSendreminderfrequency } from './field-eezsignfolder-s
  */
 export type EzsignfolderRequestCompound = EzsignfolderRequest & EzsignfolderRequestCompoundAllOf;
 
+

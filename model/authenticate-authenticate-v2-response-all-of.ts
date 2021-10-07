@@ -28,3 +28,4 @@ export interface AuthenticateAuthenticateV2ResponseAllOf {
      */
     'mPayload': AuthenticateAuthenticateV2ResponseMPayload;
 }
+

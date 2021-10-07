@@ -33,3 +33,4 @@ export interface MultilingualApikeyDescription {
      */
     'sApikeyDescription2'?: string;
 }
+

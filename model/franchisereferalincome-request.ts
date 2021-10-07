@@ -87,3 +87,4 @@ export interface FranchisereferalincomeRequest {
      */
     'sFranchisereferalincomeRemoteid': string;
 }
+

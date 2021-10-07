@@ -35,3 +35,4 @@ export interface FranchisereferalincomeCreateObjectV1Request {
      */
     'objFranchisereferalincomeCompound'?: FranchisereferalincomeRequestCompound;
 }
+

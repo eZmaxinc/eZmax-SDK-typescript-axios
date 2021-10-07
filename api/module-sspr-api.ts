@@ -57,7 +57,7 @@ export const ModuleSsprApiAxiosParamCreator = function (configuration?: Configur
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, basePath);
-	    
+
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -74,7 +74,7 @@ export const ModuleSsprApiAxiosParamCreator = function (configuration?: Configur
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ssprResetPasswordRequestV1Request, localVarRequestOptions, configuration)
@@ -115,7 +115,7 @@ export const ModuleSsprApiAxiosParamCreator = function (configuration?: Configur
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, basePath);
-	    
+
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -132,7 +132,7 @@ export const ModuleSsprApiAxiosParamCreator = function (configuration?: Configur
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ssprResetPasswordV1Request, localVarRequestOptions, configuration)
@@ -173,7 +173,7 @@ export const ModuleSsprApiAxiosParamCreator = function (configuration?: Configur
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, basePath);
-	    
+
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -190,7 +190,7 @@ export const ModuleSsprApiAxiosParamCreator = function (configuration?: Configur
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ssprSendUsernamesV1Request, localVarRequestOptions, configuration)
@@ -231,7 +231,7 @@ export const ModuleSsprApiAxiosParamCreator = function (configuration?: Configur
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, basePath);
-	    
+
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -248,7 +248,7 @@ export const ModuleSsprApiAxiosParamCreator = function (configuration?: Configur
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ssprUnlockAccountRequestV1Request, localVarRequestOptions, configuration)
@@ -289,7 +289,7 @@ export const ModuleSsprApiAxiosParamCreator = function (configuration?: Configur
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, basePath);
-	    
+
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -306,7 +306,7 @@ export const ModuleSsprApiAxiosParamCreator = function (configuration?: Configur
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ssprUnlockAccountV1Request, localVarRequestOptions, configuration)
@@ -347,7 +347,7 @@ export const ModuleSsprApiAxiosParamCreator = function (configuration?: Configur
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, basePath);
-	    
+
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -364,7 +364,7 @@ export const ModuleSsprApiAxiosParamCreator = function (configuration?: Configur
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ssprValidateTokenV1Request, localVarRequestOptions, configuration)

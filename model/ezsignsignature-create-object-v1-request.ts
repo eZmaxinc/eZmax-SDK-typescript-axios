@@ -35,3 +35,4 @@ export interface EzsignsignatureCreateObjectV1Request {
      */
     'objEzsignsignatureCompound'?: EzsignsignatureRequestCompound;
 }
+

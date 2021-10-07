@@ -52,3 +52,4 @@ export interface SsprUnlockAccountRequestV1Request {
      */
     'sUserLoginname'?: string;
 }
+

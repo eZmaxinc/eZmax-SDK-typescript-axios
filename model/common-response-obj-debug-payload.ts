@@ -39,3 +39,4 @@ export interface CommonResponseObjDebugPayload {
      */
     'a_RequiredPermissions': Array<number>;
 }
+

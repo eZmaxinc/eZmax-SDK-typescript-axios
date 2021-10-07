@@ -28,3 +28,4 @@ export interface CommonGetAutocompleteV1ResponseAllOf {
      */
     'mPayload': Array<CommonGetAutocompleteV1ResponseMPayload>;
 }
+

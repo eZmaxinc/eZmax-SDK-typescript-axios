@@ -24,3 +24,4 @@ import { EzsignfoldertypeListElement } from './ezsignfoldertype-list-element';
  */
 export type EzsignfoldertypeGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload & EzsignfoldertypeGetListV1ResponseMPayloadAllOf;
 
+

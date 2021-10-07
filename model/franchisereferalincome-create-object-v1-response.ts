@@ -26,3 +26,4 @@ import { FranchisereferalincomeCreateObjectV1ResponseMPayload } from './franchis
  */
 export type FranchisereferalincomeCreateObjectV1Response = CommonResponse & FranchisereferalincomeCreateObjectV1ResponseAllOf;
 
+

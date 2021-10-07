@@ -28,3 +28,4 @@ export interface EzsigndocumentGetWordsPositionsV1ResponseAllOf {
      */
     'mPayload': Array<CustomWordPositionWordResponse>;
 }
+

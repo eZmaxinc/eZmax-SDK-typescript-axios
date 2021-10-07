@@ -39,3 +39,4 @@ export interface CustomWordPositionOccurenceResponse {
      */
     'iY'?: number;
 }
+

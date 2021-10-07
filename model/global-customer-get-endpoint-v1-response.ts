@@ -27,3 +27,4 @@ export interface GlobalCustomerGetEndpointV1Response {
      */
     'sEndpointURL': string;
 }
+

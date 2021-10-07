@@ -49,3 +49,4 @@ export interface ContactinformationsRequestCompoundAllOf {
      */
     'a_objWebsite': Array<WebsiteRequest>;
 }
+

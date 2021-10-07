@@ -25,3 +25,4 @@ import { FranchisereferalincomeRequestCompoundAllOf } from './franchisereferalin
  */
 export type FranchisereferalincomeRequestCompound = FranchisereferalincomeRequest & FranchisereferalincomeRequestCompoundAllOf;
 
+

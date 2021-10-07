@@ -26,3 +26,4 @@ import { EzsignfoldertypeGetListV1ResponseMPayload } from './ezsignfoldertype-ge
  */
 export type EzsignfoldertypeGetListV1Response = CommonResponse & EzsignfoldertypeGetListV1ResponseAllOf;
 
+

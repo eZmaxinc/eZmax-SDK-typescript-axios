@@ -28,3 +28,4 @@ export interface WebhookEzsignDocumentCompletedAllOf {
      */
     'objEzsigndocument': EzsigndocumentResponse;
 }
+

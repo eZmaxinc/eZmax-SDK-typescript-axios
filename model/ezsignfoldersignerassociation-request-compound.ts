@@ -24,3 +24,4 @@ import { EzsignsignerRequestCompound } from './ezsignsigner-request-compound';
  */
 export type EzsignfoldersignerassociationRequestCompound = EzsignfoldersignerassociationRequest & EzsignfoldersignerassociationRequestCompoundAllOf;
 
+

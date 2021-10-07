@@ -39,3 +39,4 @@ export interface EzsigndocumentApplyEzsigntemplateV2Request {
      */
     'a_pkiEzsignfoldersignerassociationID': Array<number>;
 }
+

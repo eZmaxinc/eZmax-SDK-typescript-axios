@@ -28,3 +28,4 @@ export interface UNUSEDEzsignfolderEditObjectV1Request {
      */
     'objEzsignfolder'?: EzsignfolderRequest;
 }
+

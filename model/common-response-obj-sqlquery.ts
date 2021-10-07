@@ -33,3 +33,4 @@ export interface CommonResponseObjSQLQuery {
      */
     'fDuration': number;
 }
+

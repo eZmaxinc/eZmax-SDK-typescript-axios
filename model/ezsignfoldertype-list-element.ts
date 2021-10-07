@@ -33,3 +33,4 @@ export interface EzsignfoldertypeListElement {
      */
     'sEzsignfoldertypeNameX': string;
 }
+

@@ -14,12 +14,13 @@
 
 
 import { CustomFormDataDocumentResponse } from './custom-form-data-document-response';
-import { CustomFormDataFolderResponse } from './custom-form-data-folder-response';
+import { CustomFormsDataFolderResponse } from './custom-forms-data-folder-response';
 
 /**
  * @type EzsignfolderGetFormsDataV1ResponseMPayload
  * Payload for the /1/object/ezsignfolder/{pkiEzsigndocument}/getFormsData API Request
  * @export
  */
-export type EzsignfolderGetFormsDataV1ResponseMPayload = CustomFormDataFolderResponse;
+export type EzsignfolderGetFormsDataV1ResponseMPayload = CustomFormsDataFolderResponse;
+
 

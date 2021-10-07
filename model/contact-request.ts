@@ -57,3 +57,4 @@ export interface ContactRequest {
      */
     'dtContactBirthdate'?: string;
 }
+

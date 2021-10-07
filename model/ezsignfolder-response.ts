@@ -84,3 +84,4 @@ export interface EzsignfolderResponse {
      */
     'objAudit': CommonAudit;
 }
+

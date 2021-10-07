@@ -52,3 +52,4 @@ export interface EzsignfolderRequest {
      */
     'eEzsignfolderSendreminderfrequency': FieldEEzsignfolderSendreminderfrequency;
 }
+

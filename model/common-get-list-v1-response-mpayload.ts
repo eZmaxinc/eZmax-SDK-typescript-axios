@@ -33,3 +33,4 @@ export interface CommonGetListV1ResponseMPayload {
      */
     'iRowFiltered': number;
 }
+

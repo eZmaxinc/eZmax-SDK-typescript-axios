@@ -58,8 +58,8 @@ model/contactinformations-request-compound-all-of.ts
 model/contactinformations-request-compound.ts
 model/contactinformations-request.ts
 model/custom-form-data-document-response.ts
-model/custom-form-data-folder-response.ts
 model/custom-form-data-signer-response.ts
+model/custom-forms-data-folder-response.ts
 model/custom-word-position-occurence-response.ts
 model/custom-word-position-word-response.ts
 model/email-request.ts
@@ -160,6 +160,7 @@ model/franchisereferalincome-request-compound-all-of.ts
 model/franchisereferalincome-request-compound.ts
 model/franchisereferalincome-request.ts
 model/global-customer-get-endpoint-v1-response.ts
+model/header-accept-language.ts
 model/index.ts
 model/multilingual-apikey-description.ts
 model/phone-request.ts

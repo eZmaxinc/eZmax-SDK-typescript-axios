@@ -52,3 +52,4 @@ export interface CustomFormDataSignerResponse {
      */
     'a_objEzsignformfieldgroupCompound': Array<EzsignformfieldgroupResponseCompound>;
 }
+

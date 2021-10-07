@@ -28,3 +28,4 @@ export interface ContactRequestCompoundAllOf {
      */
     'objContactinformations': ContactinformationsRequestCompound;
 }
+

@@ -55,7 +55,7 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, basePath);
-	    
+
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -72,7 +72,7 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ezsignfoldersignerassociationCreateObjectV1Request, localVarRequestOptions, configuration)
@@ -114,7 +114,7 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, basePath);
-	    
+
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -129,7 +129,7 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -170,7 +170,7 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, basePath);
-	    
+
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -185,7 +185,7 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -226,7 +226,7 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, basePath);
-	    
+
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -241,7 +241,7 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -282,7 +282,7 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, basePath);
-	    
+
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -297,7 +297,7 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 

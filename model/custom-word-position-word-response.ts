@@ -34,3 +34,4 @@ export interface CustomWordPositionWordResponse {
      */
     'a_objWordPositionOccurence': Array<CustomWordPositionOccurenceResponse>;
 }
+

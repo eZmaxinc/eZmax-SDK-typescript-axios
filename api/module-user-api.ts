@@ -47,7 +47,7 @@ export const ModuleUserApiAxiosParamCreator = function (configuration?: Configur
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, basePath);
-	    
+
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -64,7 +64,7 @@ export const ModuleUserApiAxiosParamCreator = function (configuration?: Configur
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(userCreateEzsignuserV1Request, localVarRequestOptions, configuration)

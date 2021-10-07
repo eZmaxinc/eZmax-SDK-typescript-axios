@@ -64,3 +64,4 @@ export interface SsprResetPasswordV1Request {
      */
     'sPassword': string;
 }
+

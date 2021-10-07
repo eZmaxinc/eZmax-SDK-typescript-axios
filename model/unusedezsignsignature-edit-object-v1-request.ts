@@ -28,3 +28,4 @@ export interface UNUSEDEzsignsignatureEditObjectV1Request {
      */
     'objEzsignsignature'?: EzsignsignatureRequest;
 }
+

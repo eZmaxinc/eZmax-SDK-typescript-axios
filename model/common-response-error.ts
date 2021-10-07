@@ -33,3 +33,4 @@ export interface CommonResponseError {
      */
     'eErrorCode'?: string;
 }
+

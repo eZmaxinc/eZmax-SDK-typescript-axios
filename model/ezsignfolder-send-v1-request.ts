@@ -27,3 +27,4 @@ export interface EzsignfolderSendV1Request {
      */
     'tExtraMessage': string;
 }
+

@@ -33,3 +33,4 @@ export interface AuthenticateAuthenticateV2ResponseMPayload {
      */
     'sSecret': string;
 }
+

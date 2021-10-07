@@ -58,3 +58,4 @@ export interface SsprValidateTokenV1Request {
      */
     'binUserSSPRtoken': string;
 }
+

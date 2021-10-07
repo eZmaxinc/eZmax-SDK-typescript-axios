@@ -21,7 +21,11 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
 // @ts-ignore
+import { CommonResponseError } from '../model';
+// @ts-ignore
 import { EzsignfoldertypeGetListV1Response } from '../model';
+// @ts-ignore
+import { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -31,18 +35,23 @@ import { RequestSignature, IHeadersData } from '../api/request-signature';
 export const ObjectEzsignfoldertypeApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+         * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.  Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfoldertypePrivacylevel | User<br>Usergroup |
          * @summary Retrieve Ezsignfoldertype list
+         * @param {'sEzsignfoldertypeNameX' | 'sEzsignfoldertypeNameX desc'} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfoldertypeGetListV1: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsignfoldertypeGetListV1: async (eOrderBy?: 'sEzsignfoldertypeNameX' | 'sEzsignfoldertypeNameX desc', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/1/object/ezsignfoldertype/getList`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, basePath);
-	    
+
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -55,9 +64,29 @@ export const ObjectEzsignfoldertypeApiAxiosParamCreator = function (configuratio
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            if (eOrderBy !== undefined) {
+                localVarQueryParameter['eOrderBy'] = eOrderBy;
+            }
+
+            if (iRowMax !== undefined) {
+                localVarQueryParameter['iRowMax'] = iRowMax;
+            }
+
+            if (iRowOffset !== undefined) {
+                localVarQueryParameter['iRowOffset'] = iRowOffset;
+            }
+
+            if (sFilter !== undefined) {
+                localVarQueryParameter['sFilter'] = sFilter;
+            }
+
+            if (acceptLanguage !== undefined && acceptLanguage !== null) {
+                localVarHeaderParameter['Accept-Language'] = String(JSON.stringify(acceptLanguage));
+            }
+
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -93,13 +122,18 @@ export const ObjectEzsignfoldertypeApiFp = function(configuration?: Configuratio
     const localVarAxiosParamCreator = ObjectEzsignfoldertypeApiAxiosParamCreator(configuration)
     return {
         /**
-         * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+         * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.  Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfoldertypePrivacylevel | User<br>Usergroup |
          * @summary Retrieve Ezsignfoldertype list
+         * @param {'sEzsignfoldertypeNameX' | 'sEzsignfoldertypeNameX desc'} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignfoldertypeGetListV1(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfoldertypeGetListV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfoldertypeGetListV1(options);
+        async ezsignfoldertypeGetListV1(eOrderBy?: 'sEzsignfoldertypeNameX' | 'sEzsignfoldertypeNameX desc', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfoldertypeGetListV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfoldertypeGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -113,13 +147,18 @@ export const ObjectEzsignfoldertypeApiFactory = function (configuration?: Config
     const localVarFp = ObjectEzsignfoldertypeApiFp(configuration)
     return {
         /**
-         * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+         * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.  Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfoldertypePrivacylevel | User<br>Usergroup |
          * @summary Retrieve Ezsignfoldertype list
+         * @param {'sEzsignfoldertypeNameX' | 'sEzsignfoldertypeNameX desc'} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfoldertypeGetListV1(options?: any): AxiosPromise<EzsignfoldertypeGetListV1Response> {
-            return localVarFp.ezsignfoldertypeGetListV1(options).then((request) => request(axios, basePath));
+        ezsignfoldertypeGetListV1(eOrderBy?: 'sEzsignfoldertypeNameX' | 'sEzsignfoldertypeNameX desc', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: any): AxiosPromise<EzsignfoldertypeGetListV1Response> {
+            return localVarFp.ezsignfoldertypeGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -132,13 +171,18 @@ export const ObjectEzsignfoldertypeApiFactory = function (configuration?: Config
  */
 export class ObjectEzsignfoldertypeApi extends BaseAPI {
     /**
-     * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+     * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.  Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfoldertypePrivacylevel | User<br>Usergroup |
      * @summary Retrieve Ezsignfoldertype list
+     * @param {'sEzsignfoldertypeNameX' | 'sEzsignfoldertypeNameX desc'} [eOrderBy] Specify how you want the results to be sorted
+     * @param {number} [iRowMax] 
+     * @param {number} [iRowOffset] 
+     * @param {HeaderAcceptLanguage} [acceptLanguage] 
+     * @param {string} [sFilter] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ObjectEzsignfoldertypeApi
      */
-    public ezsignfoldertypeGetListV1(options?: AxiosRequestConfig) {
-        return ObjectEzsignfoldertypeApiFp(this.configuration).ezsignfoldertypeGetListV1(options).then((request) => request(this.axios, this.basePath));
+    public ezsignfoldertypeGetListV1(eOrderBy?: 'sEzsignfoldertypeNameX' | 'sEzsignfoldertypeNameX desc', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig) {
+        return ObjectEzsignfoldertypeApiFp(this.configuration).ezsignfoldertypeGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(this.axios, this.basePath));
     }
 }

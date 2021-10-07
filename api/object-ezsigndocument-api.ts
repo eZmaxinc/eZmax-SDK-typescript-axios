@@ -76,7 +76,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, basePath);
-	    
+
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -93,7 +93,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ezsigndocumentApplyEzsigntemplateV1Request, localVarRequestOptions, configuration)
@@ -138,7 +138,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, basePath);
-	    
+
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -155,7 +155,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ezsigndocumentApplyEzsigntemplateV2Request, localVarRequestOptions, configuration)
@@ -196,7 +196,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, basePath);
-	    
+
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -213,7 +213,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ezsigndocumentCreateObjectV1Request, localVarRequestOptions, configuration)
@@ -255,7 +255,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, basePath);
-	    
+
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -270,7 +270,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -311,7 +311,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, basePath);
-	    
+
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -326,7 +326,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -371,7 +371,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, basePath);
-	    
+
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -386,7 +386,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -427,7 +427,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, basePath);
-	    
+
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -442,7 +442,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -483,7 +483,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, basePath);
-	    
+
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -498,7 +498,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -539,7 +539,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, basePath);
-	    
+
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -554,7 +554,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
 
 
     
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
 
@@ -598,7 +598,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
             const localVarUrlObj = new URL(localVarPath, basePath);
-	    
+
             let baseOptions;
             if (configuration) {
                 baseOptions = configuration.baseOptions;
@@ -615,7 +615,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
     
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ezsigndocumentGetWordsPositionsV1Request, localVarRequestOptions, configuration)

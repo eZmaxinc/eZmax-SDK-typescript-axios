@@ -35,3 +35,4 @@ export interface ApikeyCreateObjectV1Request {
      */
     'objApikeyCompound'?: ApikeyRequestCompound;
 }
+

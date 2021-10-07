@@ -33,3 +33,4 @@ export interface UserCreateEzsignuserV1ResponseMPayload {
      */
     'a_sEmailAddressFailure': Array<string>;
 }
+

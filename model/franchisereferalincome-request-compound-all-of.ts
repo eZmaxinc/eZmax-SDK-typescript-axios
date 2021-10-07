@@ -35,3 +35,4 @@ export interface FranchisereferalincomeRequestCompoundAllOf {
      */
     'a_objContact': Array<ContactRequestCompound>;
 }
+

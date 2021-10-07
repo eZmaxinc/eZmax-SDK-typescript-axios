@@ -26,3 +26,4 @@ import { EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload } fr
  */
 export type EzsignfoldersignerassociationGetInPersonLoginUrlV1Response = CommonResponse & EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseAllOf;
 
+

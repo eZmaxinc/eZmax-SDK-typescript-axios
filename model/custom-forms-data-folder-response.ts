@@ -16,27 +16,28 @@
 import { CustomFormDataDocumentResponse } from './custom-form-data-document-response';
 
 /**
- * A form Data Folder Object
+ * A forms Data Folder Object
  * @export
- * @interface CustomFormDataFolderResponse
+ * @interface CustomFormsDataFolderResponse
  */
-export interface CustomFormDataFolderResponse {
+export interface CustomFormsDataFolderResponse {
     /**
      * The unique ID of the Ezsignfolder
      * @type {number}
-     * @memberof CustomFormDataFolderResponse
+     * @memberof CustomFormsDataFolderResponse
      */
     'pkiEzsignfolderID': number;
     /**
      * The description of the Ezsign Folder
      * @type {string}
-     * @memberof CustomFormDataFolderResponse
+     * @memberof CustomFormsDataFolderResponse
      */
     'sEzsignfolderDescription': string;
     /**
      * 
      * @type {Array<CustomFormDataDocumentResponse>}
-     * @memberof CustomFormDataFolderResponse
+     * @memberof CustomFormsDataFolderResponse
      */
     'a_objFormDataDocument': Array<CustomFormDataDocumentResponse>;
 }
+

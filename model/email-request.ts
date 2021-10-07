@@ -33,3 +33,4 @@ export interface EmailRequest {
      */
     'sEmailAddress': string;
 }
+

@@ -24,3 +24,4 @@ import { ContactinformationsRequestCompound } from './contactinformations-reques
  */
 export type ContactRequestCompound = ContactRequest & ContactRequestCompoundAllOf;
 
+

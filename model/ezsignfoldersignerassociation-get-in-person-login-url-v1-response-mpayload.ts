@@ -27,3 +27,4 @@ export interface EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayl
      */
     'sLoginUrl': string;
 }
+

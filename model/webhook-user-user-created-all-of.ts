@@ -28,3 +28,4 @@ export interface WebhookUserUserCreatedAllOf {
      */
     'objUser': UserResponse;
 }
+

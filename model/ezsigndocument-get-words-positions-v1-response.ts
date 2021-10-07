@@ -26,3 +26,4 @@ import { EzsigndocumentGetWordsPositionsV1ResponseAllOf } from './ezsigndocument
  */
 export type EzsigndocumentGetWordsPositionsV1Response = CommonResponse & EzsigndocumentGetWordsPositionsV1ResponseAllOf;
 
+

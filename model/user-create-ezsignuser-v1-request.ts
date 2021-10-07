@@ -69,3 +69,4 @@ export interface UserCreateEzsignuserV1Request {
      */
     'sPhoneExtension'?: string;
 }
+

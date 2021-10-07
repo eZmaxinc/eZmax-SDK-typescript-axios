@@ -46,3 +46,4 @@ export interface SsprSendUsernamesV1Request {
      */
     'sEmailAddress': string;
 }
+

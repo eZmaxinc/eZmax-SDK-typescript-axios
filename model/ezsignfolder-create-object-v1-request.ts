@@ -35,3 +35,4 @@ export interface EzsignfolderCreateObjectV1Request {
      */
     'objEzsignfolderCompound'?: EzsignfolderRequestCompound;
 }
+

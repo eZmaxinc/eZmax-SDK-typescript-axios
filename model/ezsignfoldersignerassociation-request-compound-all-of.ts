@@ -28,3 +28,4 @@ export interface EzsignfoldersignerassociationRequestCompoundAllOf {
      */
     'objEzsignsigner'?: EzsignsignerRequestCompound;
 }
+

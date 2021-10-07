@@ -27,3 +27,4 @@ export interface EzsignsignatureGetObjectV1ResponseAllOf {
      */
     'mPayload': object;
 }
+

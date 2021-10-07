@@ -63,3 +63,4 @@ export interface EzsignpageResponse {
      */
     'sImageUrl': string;
 }
+

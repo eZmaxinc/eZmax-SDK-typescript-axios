@@ -33,3 +33,4 @@ export interface EzsignfoldersignerassociationRequest {
      */
     'fkiEzsignfolderID': number;
 }
+

@@ -28,3 +28,4 @@ export interface EzsignfoldertypeGetListV1ResponseMPayloadAllOf {
      */
     'a_objEzsignfoldertype': Array<EzsignfoldertypeListElement>;
 }
+

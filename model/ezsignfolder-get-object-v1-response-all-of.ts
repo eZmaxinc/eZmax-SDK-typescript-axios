@@ -28,3 +28,4 @@ export interface EzsignfolderGetObjectV1ResponseAllOf {
      */
     'mPayload': EzsignfolderGetObjectV1ResponseMPayload;
 }
+

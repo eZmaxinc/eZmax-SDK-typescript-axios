@@ -35,3 +35,4 @@ export interface CommonWebhook {
      */
     'a_objAttempt': Array<AttemptResponse>;
 }
+

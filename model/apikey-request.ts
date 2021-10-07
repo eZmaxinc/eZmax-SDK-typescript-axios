@@ -34,3 +34,4 @@ export interface ApikeyRequest {
      */
     'objApikeyDescription': MultilingualApikeyDescription;
 }
+

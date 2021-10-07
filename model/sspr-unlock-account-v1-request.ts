@@ -58,3 +58,4 @@ export interface SsprUnlockAccountV1Request {
      */
     'binUserSSPRtoken': string;
 }
+

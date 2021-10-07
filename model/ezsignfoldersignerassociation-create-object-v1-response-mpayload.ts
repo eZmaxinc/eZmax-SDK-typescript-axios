@@ -27,3 +27,4 @@ export interface EzsignfoldersignerassociationCreateObjectV1ResponseMPayload {
      */
     'a_pkiEzsignfoldersignerassociationID': Array<number>;
 }
+

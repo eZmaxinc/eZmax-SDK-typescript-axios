@@ -27,3 +27,4 @@ export interface FranchisereferalincomeCreateObjectV1ResponseMPayload {
      */
     'a_pkiFranchisereferalincomeID': Array<number>;
 }
+

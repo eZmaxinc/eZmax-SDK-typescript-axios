@@ -28,3 +28,4 @@ export interface EzsignfolderRequestCompoundAllOf {
      */
     'a_Ezsignfoldersignerassociation': Array<EzsignfoldersignerassociationRequest>;
 }
+

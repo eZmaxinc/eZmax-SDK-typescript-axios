@@ -28,3 +28,4 @@ export interface ActivesessionGetCurrentV1ResponseAllOf {
      */
     'mPayload': ActivesessionGetCurrentV1ResponseMPayload;
 }
+

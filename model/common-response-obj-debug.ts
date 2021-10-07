@@ -52,3 +52,4 @@ export interface CommonResponseObjDebug {
      */
     'a_objSQLQuery': Array<CommonResponseObjSQLQuery>;
 }
+

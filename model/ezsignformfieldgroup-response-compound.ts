@@ -24,3 +24,4 @@ import { EzsignformfieldgroupResponseCompoundAllOf } from './ezsignformfieldgrou
  */
 export type EzsignformfieldgroupResponseCompound = EzsignformfieldgroupResponse & EzsignformfieldgroupResponseCompoundAllOf;
 
+

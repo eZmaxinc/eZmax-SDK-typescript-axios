@@ -28,3 +28,4 @@ export interface EzsigndocumentGetEzsignpagesV1ResponseMPayload {
      */
     'a_objEzsignpage': Array<EzsignpageResponse>;
 }
+

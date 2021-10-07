@@ -27,3 +27,4 @@ import { WebsiteRequest } from './website-request';
  */
 export type ContactinformationsRequestCompound = ContactinformationsRequest & ContactinformationsRequestCompoundAllOf;
 
+

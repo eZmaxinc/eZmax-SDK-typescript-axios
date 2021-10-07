@@ -39,3 +39,4 @@ export interface CommonGetAutocompleteV1ResponseMPayload {
      */
     'option': string;
 }
+
