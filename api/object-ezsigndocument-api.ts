@@ -106,7 +106,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
                         authorization: configuration.apiKey as string,
                         secret: secret as string,
                         method: 'POST' as string,
-                        url: basePath + localVarPath as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
                         body: localVarRequestOptions.data || '' as string
                     }
                     const signatureHeaders = RequestSignature.getHeaders(headers)
@@ -168,7 +168,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
                         authorization: configuration.apiKey as string,
                         secret: secret as string,
                         method: 'POST' as string,
-                        url: basePath + localVarPath as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
                         body: localVarRequestOptions.data || '' as string
                     }
                     const signatureHeaders = RequestSignature.getHeaders(headers)
@@ -226,7 +226,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
                         authorization: configuration.apiKey as string,
                         secret: secret as string,
                         method: 'POST' as string,
-                        url: basePath + localVarPath as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
                         body: localVarRequestOptions.data || '' as string
                     }
                     const signatureHeaders = RequestSignature.getHeaders(headers)
@@ -282,7 +282,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
                         authorization: configuration.apiKey as string,
                         secret: secret as string,
                         method: 'DELETE' as string,
-                        url: basePath + localVarPath as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
                         body: localVarRequestOptions.data || '' as string
                     }
                     const signatureHeaders = RequestSignature.getHeaders(headers)
@@ -338,7 +338,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
                         authorization: configuration.apiKey as string,
                         secret: secret as string,
                         method: 'GET' as string,
-                        url: basePath + localVarPath as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
                         body: localVarRequestOptions.data || '' as string
                     }
                     const signatureHeaders = RequestSignature.getHeaders(headers)
@@ -398,7 +398,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
                         authorization: configuration.apiKey as string,
                         secret: secret as string,
                         method: 'GET' as string,
-                        url: basePath + localVarPath as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
                         body: localVarRequestOptions.data || '' as string
                     }
                     const signatureHeaders = RequestSignature.getHeaders(headers)
@@ -454,7 +454,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
                         authorization: configuration.apiKey as string,
                         secret: secret as string,
                         method: 'GET' as string,
-                        url: basePath + localVarPath as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
                         body: localVarRequestOptions.data || '' as string
                     }
                     const signatureHeaders = RequestSignature.getHeaders(headers)
@@ -510,7 +510,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
                         authorization: configuration.apiKey as string,
                         secret: secret as string,
                         method: 'GET' as string,
-                        url: basePath + localVarPath as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
                         body: localVarRequestOptions.data || '' as string
                     }
                     const signatureHeaders = RequestSignature.getHeaders(headers)
@@ -566,7 +566,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
                         authorization: configuration.apiKey as string,
                         secret: secret as string,
                         method: 'GET' as string,
-                        url: basePath + localVarPath as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
                         body: localVarRequestOptions.data || '' as string
                     }
                     const signatureHeaders = RequestSignature.getHeaders(headers)
@@ -628,7 +628,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
                         authorization: configuration.apiKey as string,
                         secret: secret as string,
                         method: 'POST' as string,
-                        url: basePath + localVarPath as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
                         body: localVarRequestOptions.data || '' as string
                     }
                     const signatureHeaders = RequestSignature.getHeaders(headers)

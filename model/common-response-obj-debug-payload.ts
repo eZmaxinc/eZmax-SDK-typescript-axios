@@ -37,6 +37,6 @@ export interface CommonResponseObjDebugPayload {
      * @type {Array<number>}
      * @memberof CommonResponseObjDebugPayload
      */
-    'a_RequiredPermissions': Array<number>;
+    'a_RequiredPermission': Array<number>;
 }
 

@@ -46,6 +46,10 @@ model/common-get-autocomplete-v1-response-mpayload.ts
 model/common-get-autocomplete-v1-response.ts
 model/common-get-list-v1-response-mpayload.ts
 model/common-response-error.ts
+model/common-response-filter.ts
+model/common-response-get-list.ts
+model/common-response-obj-debug-payload-get-list-all-of.ts
+model/common-response-obj-debug-payload-get-list.ts
 model/common-response-obj-debug-payload.ts
 model/common-response-obj-debug.ts
 model/common-response-obj-sqlquery.ts
@@ -149,6 +153,7 @@ model/ezsignsigner-request.ts
 model/field-eezsigndocument-step.ts
 model/field-eezsignfolder-sendreminderfrequency.ts
 model/field-eezsignfolder-step.ts
+model/field-eezsignfoldertype-privacylevel.ts
 model/field-eezsignsignature-type.ts
 model/field-ephone-type.ts
 model/field-euser-type-sspr.ts

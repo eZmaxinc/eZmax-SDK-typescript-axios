@@ -13,17 +13,26 @@
  */
 
 
-import { CommonResponseGetList } from './common-response-get-list';
 import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayloadGetList } from './common-response-obj-debug-payload-get-list';
-import { EzsignfoldertypeGetListV1ResponseAllOf } from './ezsignfoldertype-get-list-v1-response-all-of';
-import { EzsignfoldertypeGetListV1ResponseMPayload } from './ezsignfoldertype-get-list-v1-response-mpayload';
 
 /**
- * @type EzsignfoldertypeGetListV1Response
- * Response for the /1/object/ezsignfoldertype/getList API Request
+ * All API response will inherit this based Response
  * @export
+ * @interface CommonResponseGetList
  */
-export type EzsignfoldertypeGetListV1Response = CommonResponseGetList & EzsignfoldertypeGetListV1ResponseAllOf;
-
+export interface CommonResponseGetList {
+    /**
+     * 
+     * @type {CommonResponseObjDebugPayloadGetList}
+     * @memberof CommonResponseGetList
+     */
+    'objDebugPayload'?: CommonResponseObjDebugPayloadGetList;
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof CommonResponseGetList
+     */
+    'objDebug'?: CommonResponseObjDebug;
+}
 

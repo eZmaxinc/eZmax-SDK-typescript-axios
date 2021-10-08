@@ -88,7 +88,15 @@ export class Configuration {
         this.password = param.password;
         this.accessToken = param.accessToken;
         this.basePath = param.basePath;
-        this.baseOptions = param.baseOptions;
+        this.baseOptions = { 
+            ...param.baseOptions, 
+            ...{
+                headers: {
+                   'accept': 'application/json',
+                   'accept-language': '*'
+                }
+             }
+        };
         this.formDataCtor = param.formDataCtor;
     }
 

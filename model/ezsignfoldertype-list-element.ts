@@ -13,6 +13,7 @@
  */
 
 
+import { FieldEEzsignfoldertypePrivacylevel } from './field-eezsignfoldertype-privacylevel';
 
 /**
  * An Ezsignfoldertype List Element
@@ -27,10 +28,22 @@ export interface EzsignfoldertypeListElement {
      */
     'pkiEzsignfoldertypeID': number;
     /**
+     * 
+     * @type {FieldEEzsignfoldertypePrivacylevel}
+     * @memberof EzsignfoldertypeListElement
+     */
+    'eEzsignfoldertypePrivacylevel': FieldEEzsignfoldertypePrivacylevel;
+    /**
      * The name of the Ezsignfoldertype in the language of the requester
      * @type {string}
      * @memberof EzsignfoldertypeListElement
      */
     'sEzsignfoldertypeNameX': string;
+    /**
+     * Whether the Ezsignfoldertype is active or not
+     * @type {boolean}
+     * @memberof EzsignfoldertypeListElement
+     */
+    'bEzsignfoldertypeIsactive': boolean;
 }
 

@@ -69,7 +69,7 @@ export const ObjectActivesessionApiAxiosParamCreator = function (configuration?:
                         authorization: configuration.apiKey as string,
                         secret: secret as string,
                         method: 'GET' as string,
-                        url: basePath + localVarPath as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
                         body: localVarRequestOptions.data || '' as string
                     }
                     const signatureHeaders = RequestSignature.getHeaders(headers)
