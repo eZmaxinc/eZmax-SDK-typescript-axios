@@ -321,7 +321,8 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             }
 
             if (acceptLanguage !== undefined && acceptLanguage !== null) {
-                localVarHeaderParameter['Accept-Language'] = String(JSON.stringify(acceptLanguage));
+
+		localVarHeaderParameter['Accept-Language'] = String(acceptLanguage);
             }
 
 

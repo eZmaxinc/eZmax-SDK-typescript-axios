@@ -72,7 +72,8 @@ export const ObjectEzsignfoldertypeApiAxiosParamCreator = function (configuratio
             }
 
             if (acceptLanguage !== undefined && acceptLanguage !== null) {
-                localVarHeaderParameter['Accept-Language'] = String(JSON.stringify(acceptLanguage));
+
+		localVarHeaderParameter['Accept-Language'] = String(acceptLanguage);
             }
 
 
@@ -149,7 +150,8 @@ export const ObjectEzsignfoldertypeApiAxiosParamCreator = function (configuratio
             }
 
             if (acceptLanguage !== undefined && acceptLanguage !== null) {
-                localVarHeaderParameter['Accept-Language'] = String(JSON.stringify(acceptLanguage));
+
+		localVarHeaderParameter['Accept-Language'] = String(acceptLanguage);
             }
 
 
