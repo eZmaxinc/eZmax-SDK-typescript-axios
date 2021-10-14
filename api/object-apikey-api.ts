@@ -66,7 +66,7 @@ export const ObjectApikeyApiAxiosParamCreator = function (configuration?: Config
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(apikeyCreateObjectV1Request, localVarRequestOptions, configuration)
 
             // Signature

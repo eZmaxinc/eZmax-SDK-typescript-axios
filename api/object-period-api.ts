@@ -34,7 +34,7 @@ export const ObjectPeriodApiAxiosParamCreator = function (configuration?: Config
          * Get the list of Periods to be used in a dropdown or autocomplete control.
          * @summary Retrieve Periods and IDs
          * @param {'ActiveNormal' | 'ActiveNormalAndEndOfYear' | 'AllNormal' | 'AllNormalAndEndOfYear'} sSelector The types of Periods to return
-         * @param {string} [sQuery] Allow to filter on the option value
+         * @param {string} [sQuery] Allow to filter the returned results
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -68,7 +68,7 @@ export const ObjectPeriodApiAxiosParamCreator = function (configuration?: Config
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -105,7 +105,7 @@ export const ObjectPeriodApiFp = function(configuration?: Configuration) {
          * Get the list of Periods to be used in a dropdown or autocomplete control.
          * @summary Retrieve Periods and IDs
          * @param {'ActiveNormal' | 'ActiveNormalAndEndOfYear' | 'AllNormal' | 'AllNormalAndEndOfYear'} sSelector The types of Periods to return
-         * @param {string} [sQuery] Allow to filter on the option value
+         * @param {string} [sQuery] Allow to filter the returned results
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -127,7 +127,7 @@ export const ObjectPeriodApiFactory = function (configuration?: Configuration, b
          * Get the list of Periods to be used in a dropdown or autocomplete control.
          * @summary Retrieve Periods and IDs
          * @param {'ActiveNormal' | 'ActiveNormalAndEndOfYear' | 'AllNormal' | 'AllNormalAndEndOfYear'} sSelector The types of Periods to return
-         * @param {string} [sQuery] Allow to filter on the option value
+         * @param {string} [sQuery] Allow to filter the returned results
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -148,7 +148,7 @@ export class ObjectPeriodApi extends BaseAPI {
      * Get the list of Periods to be used in a dropdown or autocomplete control.
      * @summary Retrieve Periods and IDs
      * @param {'ActiveNormal' | 'ActiveNormalAndEndOfYear' | 'AllNormal' | 'AllNormalAndEndOfYear'} sSelector The types of Periods to return
-     * @param {string} [sQuery] Allow to filter on the option value
+     * @param {string} [sQuery] Allow to filter the returned results
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ObjectPeriodApi

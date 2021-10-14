@@ -89,13 +89,13 @@ export class Configuration {
         this.accessToken = param.accessToken;
         this.basePath = param.basePath;
         this.baseOptions = { 
-            ...param.baseOptions, 
             ...{
                 headers: {
-                   'accept': 'application/json',
-                   'accept-language': '*'
+                   'Accept': 'application/json',
+                   'Accept-Language': '*'
                 }
-             }
+            },
+            ...param.baseOptions
         };
         this.formDataCtor = param.formDataCtor;
     }

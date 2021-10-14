@@ -42,7 +42,6 @@ model/authenticate-authenticate-v2-response-mpayload.ts
 model/authenticate-authenticate-v2-response.ts
 model/common-audit.ts
 model/common-get-autocomplete-v1-response-all-of.ts
-model/common-get-autocomplete-v1-response-mpayload.ts
 model/common-get-autocomplete-v1-response.ts
 model/common-get-list-v1-response-mpayload.ts
 model/common-response-error.ts
@@ -61,6 +60,7 @@ model/contact-request.ts
 model/contactinformations-request-compound-all-of.ts
 model/contactinformations-request-compound.ts
 model/contactinformations-request.ts
+model/custom-autocomplete-element-response.ts
 model/custom-form-data-document-response.ts
 model/custom-form-data-signer-response.ts
 model/custom-forms-data-folder-response.ts
@@ -103,9 +103,14 @@ model/ezsignfolder-delete-object-v1-response.ts
 model/ezsignfolder-get-forms-data-v1-response-all-of.ts
 model/ezsignfolder-get-forms-data-v1-response-mpayload.ts
 model/ezsignfolder-get-forms-data-v1-response.ts
+model/ezsignfolder-get-list-v1-response-all-of.ts
+model/ezsignfolder-get-list-v1-response-mpayload-all-of.ts
+model/ezsignfolder-get-list-v1-response-mpayload.ts
+model/ezsignfolder-get-list-v1-response.ts
 model/ezsignfolder-get-object-v1-response-all-of.ts
 model/ezsignfolder-get-object-v1-response-mpayload.ts
 model/ezsignfolder-get-object-v1-response.ts
+model/ezsignfolder-list-element.ts
 model/ezsignfolder-request-compound-all-of.ts
 model/ezsignfolder-request-compound.ts
 model/ezsignfolder-request.ts

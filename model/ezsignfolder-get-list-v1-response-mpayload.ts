@@ -14,14 +14,14 @@
 
 
 import { CommonGetListV1ResponseMPayload } from './common-get-list-v1-response-mpayload';
-import { EzsignfoldertypeGetListV1ResponseMPayloadAllOf } from './ezsignfoldertype-get-list-v1-response-mpayload-all-of';
-import { EzsignfoldertypeListElement } from './ezsignfoldertype-list-element';
+import { EzsignfolderGetListV1ResponseMPayloadAllOf } from './ezsignfolder-get-list-v1-response-mpayload-all-of';
+import { EzsignfolderListElement } from './ezsignfolder-list-element';
 
 /**
- * @type EzsignfoldertypeGetListV1ResponseMPayload
- * Payload for the /1/object/ezsignfoldertype/getList API Request
+ * @type EzsignfolderGetListV1ResponseMPayload
+ * Payload for the /1/object/ezsignfolder/getList API Request
  * @export
  */
-export type EzsignfoldertypeGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload & EzsignfoldertypeGetListV1ResponseMPayloadAllOf;
+export type EzsignfolderGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload & EzsignfolderGetListV1ResponseMPayloadAllOf;
 
 

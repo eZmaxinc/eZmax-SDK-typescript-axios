@@ -95,7 +95,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ezsigndocumentApplyEzsigntemplateV1Request, localVarRequestOptions, configuration)
 
             // Signature
@@ -157,7 +157,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ezsigndocumentApplyEzsigntemplateV2Request, localVarRequestOptions, configuration)
 
             // Signature
@@ -215,7 +215,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ezsigndocumentCreateObjectV1Request, localVarRequestOptions, configuration)
 
             // Signature
@@ -272,7 +272,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -328,7 +328,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -388,7 +388,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -444,7 +444,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -468,7 +468,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             };
         },
         /**
-         * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+         * 
          * @summary Retrieve an existing Ezsigndocument\'s Form Data
          * @param {number} pkiEzsigndocumentID 
          * @param {*} [options] Override http request option.
@@ -500,7 +500,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -556,7 +556,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -580,7 +580,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             };
         },
         /**
-         * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+         * 
          * @summary Retrieve positions X,Y of given words from a Ezsigndocument
          * @param {number} pkiEzsigndocumentID 
          * @param {EzsigndocumentGetWordsPositionsV1Request} ezsigndocumentGetWordsPositionsV1Request 
@@ -617,7 +617,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ezsigndocumentGetWordsPositionsV1Request, localVarRequestOptions, configuration)
 
             // Signature
@@ -733,7 +733,7 @@ export const ObjectEzsigndocumentApiFp = function(configuration?: Configuration)
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+         * 
          * @summary Retrieve an existing Ezsigndocument\'s Form Data
          * @param {number} pkiEzsigndocumentID 
          * @param {*} [options] Override http request option.
@@ -755,7 +755,7 @@ export const ObjectEzsigndocumentApiFp = function(configuration?: Configuration)
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+         * 
          * @summary Retrieve positions X,Y of given words from a Ezsigndocument
          * @param {number} pkiEzsigndocumentID 
          * @param {EzsigndocumentGetWordsPositionsV1Request} ezsigndocumentGetWordsPositionsV1Request 
@@ -851,7 +851,7 @@ export const ObjectEzsigndocumentApiFactory = function (configuration?: Configur
             return localVarFp.ezsigndocumentGetEzsignpagesV1(pkiEzsigndocumentID, options).then((request) => request(axios, basePath));
         },
         /**
-         * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+         * 
          * @summary Retrieve an existing Ezsigndocument\'s Form Data
          * @param {number} pkiEzsigndocumentID 
          * @param {*} [options] Override http request option.
@@ -871,7 +871,7 @@ export const ObjectEzsigndocumentApiFactory = function (configuration?: Configur
             return localVarFp.ezsigndocumentGetObjectV1(pkiEzsigndocumentID, options).then((request) => request(axios, basePath));
         },
         /**
-         * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+         * 
          * @summary Retrieve positions X,Y of given words from a Ezsigndocument
          * @param {number} pkiEzsigndocumentID 
          * @param {EzsigndocumentGetWordsPositionsV1Request} ezsigndocumentGetWordsPositionsV1Request 
@@ -980,7 +980,7 @@ export class ObjectEzsigndocumentApi extends BaseAPI {
     }
 
     /**
-     * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+     * 
      * @summary Retrieve an existing Ezsigndocument\'s Form Data
      * @param {number} pkiEzsigndocumentID 
      * @param {*} [options] Override http request option.
@@ -1004,7 +1004,7 @@ export class ObjectEzsigndocumentApi extends BaseAPI {
     }
 
     /**
-     * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+     * 
      * @summary Retrieve positions X,Y of given words from a Ezsigndocument
      * @param {number} pkiEzsigndocumentID 
      * @param {EzsigndocumentGetWordsPositionsV1Request} ezsigndocumentGetWordsPositionsV1Request 

@@ -13,19 +13,24 @@
  */
 
 
-import { CustomAutocompleteElementResponse } from './custom-autocomplete-element-response';
 
 /**
- * 
+ * An Ezsignfolder List Element
  * @export
- * @interface CommonGetAutocompleteV1ResponseAllOf
+ * @interface EzsignfolderListElement
  */
-export interface CommonGetAutocompleteV1ResponseAllOf {
+export interface EzsignfolderListElement {
     /**
-     * Generic Autocomplete Response
-     * @type {Array<CustomAutocompleteElementResponse>}
-     * @memberof CommonGetAutocompleteV1ResponseAllOf
+     * The unique ID of the Ezsignfolder
+     * @type {number}
+     * @memberof EzsignfolderListElement
      */
-    'mPayload': Array<CustomAutocompleteElementResponse>;
+    'pkiEzsignfolderID': number;
+    /**
+     * The description of the Ezsign Folder
+     * @type {string}
+     * @memberof EzsignfolderListElement
+     */
+    'sEzsignfolderDescription': string;
 }
 

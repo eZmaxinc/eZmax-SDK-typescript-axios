@@ -66,7 +66,7 @@ export const ModuleUserApiAxiosParamCreator = function (configuration?: Configur
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(userCreateEzsignuserV1Request, localVarRequestOptions, configuration)
 
             // Signature

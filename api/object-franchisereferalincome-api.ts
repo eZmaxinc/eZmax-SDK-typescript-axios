@@ -66,7 +66,7 @@ export const ObjectFranchisereferalincomeApiAxiosParamCreator = function (config
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(franchisereferalincomeCreateObjectV1Request, localVarRequestOptions, configuration)
 
             // Signature

@@ -13,19 +13,19 @@
  */
 
 
-import { CustomAutocompleteElementResponse } from './custom-autocomplete-element-response';
+import { EzsignfolderGetListV1ResponseMPayload } from './ezsignfolder-get-list-v1-response-mpayload';
 
 /**
  * 
  * @export
- * @interface CommonGetAutocompleteV1ResponseAllOf
+ * @interface EzsignfolderGetListV1ResponseAllOf
  */
-export interface CommonGetAutocompleteV1ResponseAllOf {
+export interface EzsignfolderGetListV1ResponseAllOf {
     /**
-     * Generic Autocomplete Response
-     * @type {Array<CustomAutocompleteElementResponse>}
-     * @memberof CommonGetAutocompleteV1ResponseAllOf
+     * 
+     * @type {EzsignfolderGetListV1ResponseMPayload}
+     * @memberof EzsignfolderGetListV1ResponseAllOf
      */
-    'mPayload': Array<CustomAutocompleteElementResponse>;
+    'mPayload': EzsignfolderGetListV1ResponseMPayload;
 }
 

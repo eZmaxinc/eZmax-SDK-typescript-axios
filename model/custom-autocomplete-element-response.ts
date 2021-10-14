@@ -17,26 +17,26 @@
 /**
  * Generic Autocomplete Response
  * @export
- * @interface CommonGetAutocompleteV1ResponseMPayload
+ * @interface CustomAutocompleteElementResponse
  */
-export interface CommonGetAutocompleteV1ResponseMPayload {
+export interface CustomAutocompleteElementResponse {
     /**
-     * The Category (ie group) for the dropdown or an empty string if not categorized
+     * The Category for the dropdown or an empty string if not categorized
      * @type {string}
-     * @memberof CommonGetAutocompleteV1ResponseMPayload
+     * @memberof CustomAutocompleteElementResponse
      */
-    'group': string;
-    /**
-     * The Unique ID of the element
-     * @type {string}
-     * @memberof CommonGetAutocompleteV1ResponseMPayload
-     */
-    'id': string;
+    'sCategory': string;
     /**
      * The Description of the element
      * @type {string}
-     * @memberof CommonGetAutocompleteV1ResponseMPayload
+     * @memberof CustomAutocompleteElementResponse
      */
-    'option': string;
+    'sLabel': string;
+    /**
+     * The Unique ID of the element
+     * @type {number | string}
+     * @memberof CustomAutocompleteElementResponse
+     */
+    'mValue': number | string;
 }
 

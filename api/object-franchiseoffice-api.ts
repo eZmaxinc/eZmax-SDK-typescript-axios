@@ -34,7 +34,7 @@ export const ObjectFranchiseofficeApiAxiosParamCreator = function (configuration
          * Get the list of Franchiseoffices to be used in a dropdown or autocomplete control.
          * @summary Retrieve Franchiseoffices and IDs
          * @param {'Active' | 'All'} sSelector The type of Franchiseoffices to return
-         * @param {string} [sQuery] Allow to filter on the option value
+         * @param {string} [sQuery] Allow to filter the returned results
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -68,7 +68,7 @@ export const ObjectFranchiseofficeApiAxiosParamCreator = function (configuration
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -105,7 +105,7 @@ export const ObjectFranchiseofficeApiFp = function(configuration?: Configuration
          * Get the list of Franchiseoffices to be used in a dropdown or autocomplete control.
          * @summary Retrieve Franchiseoffices and IDs
          * @param {'Active' | 'All'} sSelector The type of Franchiseoffices to return
-         * @param {string} [sQuery] Allow to filter on the option value
+         * @param {string} [sQuery] Allow to filter the returned results
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -127,7 +127,7 @@ export const ObjectFranchiseofficeApiFactory = function (configuration?: Configu
          * Get the list of Franchiseoffices to be used in a dropdown or autocomplete control.
          * @summary Retrieve Franchiseoffices and IDs
          * @param {'Active' | 'All'} sSelector The type of Franchiseoffices to return
-         * @param {string} [sQuery] Allow to filter on the option value
+         * @param {string} [sQuery] Allow to filter the returned results
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -148,7 +148,7 @@ export class ObjectFranchiseofficeApi extends BaseAPI {
      * Get the list of Franchiseoffices to be used in a dropdown or autocomplete control.
      * @summary Retrieve Franchiseoffices and IDs
      * @param {'Active' | 'All'} sSelector The type of Franchiseoffices to return
-     * @param {string} [sQuery] Allow to filter on the option value
+     * @param {string} [sQuery] Allow to filter the returned results
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ObjectFranchiseofficeApi

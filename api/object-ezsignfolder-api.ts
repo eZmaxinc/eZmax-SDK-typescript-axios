@@ -31,11 +31,15 @@ import { EzsignfolderDeleteObjectV1Response } from '../model';
 // @ts-ignore
 import { EzsignfolderGetFormsDataV1Response } from '../model';
 // @ts-ignore
+import { EzsignfolderGetListV1Response } from '../model';
+// @ts-ignore
 import { EzsignfolderGetObjectV1Response } from '../model';
 // @ts-ignore
 import { EzsignfolderSendV1Request } from '../model';
 // @ts-ignore
 import { EzsignfolderSendV1Response } from '../model';
+// @ts-ignore
+import { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -78,7 +82,7 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ezsignfolderCreateObjectV1Request, localVarRequestOptions, configuration)
 
             // Signature
@@ -135,7 +139,7 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -191,7 +195,7 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -215,7 +219,7 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             };
         },
         /**
-         * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+         * 
          * @summary Retrieve an existing Ezsignfolder\'s forms data
          * @param {number} pkiEzsignfolderID 
          * @param {*} [options] Override http request option.
@@ -247,7 +251,84 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Ezsignfolder list
+         * @param {'pkiEzsignfolderID_ASC' | 'pkiEzsignfolderID_DESC' | 'sEzsignfolderDescription' | 'sEzsignfolderDescription_DESC'} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsignfolderGetListV1: async (eOrderBy?: 'pkiEzsignfolderID_ASC' | 'pkiEzsignfolderID_DESC' | 'sEzsignfolderDescription' | 'sEzsignfolderDescription_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/1/object/ezsignfolder/getList`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            if (eOrderBy !== undefined) {
+                localVarQueryParameter['eOrderBy'] = eOrderBy;
+            }
+
+            if (iRowMax !== undefined) {
+                localVarQueryParameter['iRowMax'] = iRowMax;
+            }
+
+            if (iRowOffset !== undefined) {
+                localVarQueryParameter['iRowOffset'] = iRowOffset;
+            }
+
+            if (sFilter !== undefined) {
+                localVarQueryParameter['sFilter'] = sFilter;
+            }
+
+            if (acceptLanguage !== undefined && acceptLanguage !== null) {
+                localVarHeaderParameter['Accept-Language'] = String(JSON.stringify(acceptLanguage));
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -303,7 +384,7 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -364,7 +445,7 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ezsignfolderSendV1Request, localVarRequestOptions, configuration)
 
             // Signature
@@ -432,7 +513,7 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+         * 
          * @summary Retrieve an existing Ezsignfolder\'s forms data
          * @param {number} pkiEzsignfolderID 
          * @param {*} [options] Override http request option.
@@ -440,6 +521,21 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
          */
         async ezsignfolderGetFormsDataV1(pkiEzsignfolderID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderGetFormsDataV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderGetFormsDataV1(pkiEzsignfolderID, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
+         * @summary Retrieve Ezsignfolder list
+         * @param {'pkiEzsignfolderID_ASC' | 'pkiEzsignfolderID_DESC' | 'sEzsignfolderDescription' | 'sEzsignfolderDescription_DESC'} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsignfolderGetListV1(eOrderBy?: 'pkiEzsignfolderID_ASC' | 'pkiEzsignfolderID_DESC' | 'sEzsignfolderDescription' | 'sEzsignfolderDescription_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderGetListV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -506,7 +602,7 @@ export const ObjectEzsignfolderApiFactory = function (configuration?: Configurat
             return localVarFp.ezsignfolderGetChildrenV1(pkiEzsignfolderID, options).then((request) => request(axios, basePath));
         },
         /**
-         * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+         * 
          * @summary Retrieve an existing Ezsignfolder\'s forms data
          * @param {number} pkiEzsignfolderID 
          * @param {*} [options] Override http request option.
@@ -514,6 +610,20 @@ export const ObjectEzsignfolderApiFactory = function (configuration?: Configurat
          */
         ezsignfolderGetFormsDataV1(pkiEzsignfolderID: number, options?: any): AxiosPromise<EzsignfolderGetFormsDataV1Response> {
             return localVarFp.ezsignfolderGetFormsDataV1(pkiEzsignfolderID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Ezsignfolder list
+         * @param {'pkiEzsignfolderID_ASC' | 'pkiEzsignfolderID_DESC' | 'sEzsignfolderDescription' | 'sEzsignfolderDescription_DESC'} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsignfolderGetListV1(eOrderBy?: 'pkiEzsignfolderID_ASC' | 'pkiEzsignfolderID_DESC' | 'sEzsignfolderDescription' | 'sEzsignfolderDescription_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: any): AxiosPromise<EzsignfolderGetListV1Response> {
+            return localVarFp.ezsignfolderGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(axios, basePath));
         },
         /**
          * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
@@ -583,7 +693,7 @@ export class ObjectEzsignfolderApi extends BaseAPI {
     }
 
     /**
-     * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+     * 
      * @summary Retrieve an existing Ezsignfolder\'s forms data
      * @param {number} pkiEzsignfolderID 
      * @param {*} [options] Override http request option.
@@ -592,6 +702,22 @@ export class ObjectEzsignfolderApi extends BaseAPI {
      */
     public ezsignfolderGetFormsDataV1(pkiEzsignfolderID: number, options?: AxiosRequestConfig) {
         return ObjectEzsignfolderApiFp(this.configuration).ezsignfolderGetFormsDataV1(pkiEzsignfolderID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Ezsignfolder list
+     * @param {'pkiEzsignfolderID_ASC' | 'pkiEzsignfolderID_DESC' | 'sEzsignfolderDescription' | 'sEzsignfolderDescription_DESC'} [eOrderBy] Specify how you want the results to be sorted
+     * @param {number} [iRowMax] 
+     * @param {number} [iRowOffset] 
+     * @param {HeaderAcceptLanguage} [acceptLanguage] 
+     * @param {string} [sFilter] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectEzsignfolderApi
+     */
+    public ezsignfolderGetListV1(eOrderBy?: 'pkiEzsignfolderID_ASC' | 'pkiEzsignfolderID_DESC' | 'sEzsignfolderDescription' | 'sEzsignfolderDescription_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig) {
+        return ObjectEzsignfolderApiFp(this.configuration).ezsignfolderGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

@@ -76,7 +76,7 @@ export const ModuleSsprApiAxiosParamCreator = function (configuration?: Configur
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ssprResetPasswordRequestV1Request, localVarRequestOptions, configuration)
 
             // Signature
@@ -134,7 +134,7 @@ export const ModuleSsprApiAxiosParamCreator = function (configuration?: Configur
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ssprResetPasswordV1Request, localVarRequestOptions, configuration)
 
             // Signature
@@ -192,7 +192,7 @@ export const ModuleSsprApiAxiosParamCreator = function (configuration?: Configur
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ssprSendUsernamesV1Request, localVarRequestOptions, configuration)
 
             // Signature
@@ -250,7 +250,7 @@ export const ModuleSsprApiAxiosParamCreator = function (configuration?: Configur
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ssprUnlockAccountRequestV1Request, localVarRequestOptions, configuration)
 
             // Signature
@@ -308,7 +308,7 @@ export const ModuleSsprApiAxiosParamCreator = function (configuration?: Configur
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ssprUnlockAccountV1Request, localVarRequestOptions, configuration)
 
             // Signature
@@ -366,7 +366,7 @@ export const ModuleSsprApiAxiosParamCreator = function (configuration?: Configur
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ssprValidateTokenV1Request, localVarRequestOptions, configuration)
 
             // Signature

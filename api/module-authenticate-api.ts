@@ -72,7 +72,7 @@ export const ModuleAuthenticateApiAxiosParamCreator = function (configuration?: 
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(authenticateAuthenticateV2Request, localVarRequestOptions, configuration)
 
             // Signature
