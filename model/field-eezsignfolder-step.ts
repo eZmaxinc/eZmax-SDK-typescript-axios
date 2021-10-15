@@ -25,7 +25,6 @@ export enum FieldEEzsignfolderStep {
     Sent = 'Sent',
     PartiallySigned = 'PartiallySigned',
     Expired = 'Expired',
-    Signed = 'Signed',
     Completed = 'Completed',
     Archived = 'Archived'
 }

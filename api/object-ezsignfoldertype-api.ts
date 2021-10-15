@@ -48,7 +48,7 @@ export const ObjectEzsignfoldertypeApiAxiosParamCreator = function (configuratio
         ezsignfoldertypeGetAutocompleteV1: async (sSelector: 'Active' | 'All', acceptLanguage?: HeaderAcceptLanguage, sQuery?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('ezsignfoldertypeGetAutocompleteV1', 'sSelector', sSelector)
-            const localVarPath = `/1/object/ezsignfoldertype/getAutocomplete/{sSelector}/`
+            const localVarPath = `/1/object/ezsignfoldertype/getAutocomplete/{sSelector}`
                 .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL

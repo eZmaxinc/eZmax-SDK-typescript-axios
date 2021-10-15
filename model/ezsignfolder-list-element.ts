@@ -13,6 +13,8 @@
  */
 
 
+import { FieldEEzsignfolderStep } from './field-eezsignfolder-step';
+import { Null } from './null';
 
 /**
  * An Ezsignfolder List Element
@@ -27,10 +29,70 @@ export interface EzsignfolderListElement {
      */
     'pkiEzsignfolderID': number;
     /**
+     * The unique ID of the Ezsignfoldertype.
+     * @type {number}
+     * @memberof EzsignfolderListElement
+     */
+    'fkiEzsignfoldertypeID': number;
+    /**
+     * The name of the Ezsignfoldertype in the language of the requester
+     * @type {string}
+     * @memberof EzsignfolderListElement
+     */
+    'sEzsignfoldertypeNameX': string;
+    /**
      * The description of the Ezsign Folder
      * @type {string}
      * @memberof EzsignfolderListElement
      */
     'sEzsignfolderDescription': string;
+    /**
+     * 
+     * @type {FieldEEzsignfolderStep}
+     * @memberof EzsignfolderListElement
+     */
+    'eEzsignfolderStep': FieldEEzsignfolderStep;
+    /**
+     * The date and time at which the object was created
+     * @type {string}
+     * @memberof EzsignfolderListElement
+     */
+    'dtCreatedDate': string;
+    /**
+     * 
+     * @type {string | Null}
+     * @memberof EzsignfolderListElement
+     */
+    'dtEzsignfolderSentdate': string | Null;
+    /**
+     * The date at which no more signature will be accepted on the folder
+     * @type {string | Null}
+     * @memberof EzsignfolderListElement
+     */
+    'dtDueDate': string | Null;
+    /**
+     * The total number of Ezsigndocument in the folder
+     * @type {number}
+     * @memberof EzsignfolderListElement
+     */
+    'iTotalDocument': number;
+    /**
+     * The total number of Ezsigndocument in the folder that were saved in the edm system
+     * @type {number}
+     * @memberof EzsignfolderListElement
+     */
+    'iTotalDocumentEdm': number;
+    /**
+     * The total number of signature blocks in all Ezsigndocuments in the folder
+     * @type {number}
+     * @memberof EzsignfolderListElement
+     */
+    'iTotalSignature': number;
+    /**
+     * The total number of already signed signature blocks in all Ezsigndocuments in the folder
+     * @type {number}
+     * @memberof EzsignfolderListElement
+     */
+    'iTotalSignatureSigned': number;
 }
 

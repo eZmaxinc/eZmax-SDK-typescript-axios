@@ -275,9 +275,9 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             };
         },
         /**
-         * 
+         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent<br>Sent<br>PartiallySigned<br>Expired<br>Completed<br>Archived |
          * @summary Retrieve Ezsignfolder list
-         * @param {'pkiEzsignfolderID_ASC' | 'pkiEzsignfolderID_DESC' | 'sEzsignfolderDescription' | 'sEzsignfolderDescription_DESC'} [eOrderBy] Specify how you want the results to be sorted
+         * @param {'pkiEzsignfolderID_ASC' | 'pkiEzsignfolderID_DESC' | 'sEzsignfolderDescription_ASC' | 'sEzsignfolderDescription_DESC' | 'dtCreatedDate_ASC' | 'dtCreatedDate_DESC' | 'fkiEzsignfoldertypeID_ASC' | 'fkiEzsignfoldertypeID_DESC' | 'sEzsignfoldertypeNameX_ASC' | 'sEzsignfoldertypeNameX_DESC' | 'eEzsignfolderStep_ASC' | 'eEzsignfolderStep_DESC' | 'dtEzsignfolderSentdate_ASC' | 'dtEzsignfolderSentdate_DESC' | 'dtDueDate_ASC' | 'dtDueDate_DESC' | 'iTotalDocument_ASC' | 'iTotalDocument_DESC' | 'iTotalDocumentEdm_ASC' | 'iTotalDocumentEdm_DESC' | 'iTotalSignature_ASC' | 'iTotalSignature_DESC' | 'iTotalSignatureSigned_ASC' | 'iTotalSignatureSigned_DESC'} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
          * @param {number} [iRowOffset] 
          * @param {HeaderAcceptLanguage} [acceptLanguage] 
@@ -285,7 +285,7 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfolderGetListV1: async (eOrderBy?: 'pkiEzsignfolderID_ASC' | 'pkiEzsignfolderID_DESC' | 'sEzsignfolderDescription' | 'sEzsignfolderDescription_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsignfolderGetListV1: async (eOrderBy?: 'pkiEzsignfolderID_ASC' | 'pkiEzsignfolderID_DESC' | 'sEzsignfolderDescription_ASC' | 'sEzsignfolderDescription_DESC' | 'dtCreatedDate_ASC' | 'dtCreatedDate_DESC' | 'fkiEzsignfoldertypeID_ASC' | 'fkiEzsignfoldertypeID_DESC' | 'sEzsignfoldertypeNameX_ASC' | 'sEzsignfoldertypeNameX_DESC' | 'eEzsignfolderStep_ASC' | 'eEzsignfolderStep_DESC' | 'dtEzsignfolderSentdate_ASC' | 'dtEzsignfolderSentdate_DESC' | 'dtDueDate_ASC' | 'dtDueDate_DESC' | 'iTotalDocument_ASC' | 'iTotalDocument_DESC' | 'iTotalDocumentEdm_ASC' | 'iTotalDocumentEdm_DESC' | 'iTotalSignature_ASC' | 'iTotalSignature_DESC' | 'iTotalSignatureSigned_ASC' | 'iTotalSignatureSigned_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/1/object/ezsignfolder/getList`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
@@ -525,9 +525,9 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * 
+         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent<br>Sent<br>PartiallySigned<br>Expired<br>Completed<br>Archived |
          * @summary Retrieve Ezsignfolder list
-         * @param {'pkiEzsignfolderID_ASC' | 'pkiEzsignfolderID_DESC' | 'sEzsignfolderDescription' | 'sEzsignfolderDescription_DESC'} [eOrderBy] Specify how you want the results to be sorted
+         * @param {'pkiEzsignfolderID_ASC' | 'pkiEzsignfolderID_DESC' | 'sEzsignfolderDescription_ASC' | 'sEzsignfolderDescription_DESC' | 'dtCreatedDate_ASC' | 'dtCreatedDate_DESC' | 'fkiEzsignfoldertypeID_ASC' | 'fkiEzsignfoldertypeID_DESC' | 'sEzsignfoldertypeNameX_ASC' | 'sEzsignfoldertypeNameX_DESC' | 'eEzsignfolderStep_ASC' | 'eEzsignfolderStep_DESC' | 'dtEzsignfolderSentdate_ASC' | 'dtEzsignfolderSentdate_DESC' | 'dtDueDate_ASC' | 'dtDueDate_DESC' | 'iTotalDocument_ASC' | 'iTotalDocument_DESC' | 'iTotalDocumentEdm_ASC' | 'iTotalDocumentEdm_DESC' | 'iTotalSignature_ASC' | 'iTotalSignature_DESC' | 'iTotalSignatureSigned_ASC' | 'iTotalSignatureSigned_DESC'} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
          * @param {number} [iRowOffset] 
          * @param {HeaderAcceptLanguage} [acceptLanguage] 
@@ -535,7 +535,7 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignfolderGetListV1(eOrderBy?: 'pkiEzsignfolderID_ASC' | 'pkiEzsignfolderID_DESC' | 'sEzsignfolderDescription' | 'sEzsignfolderDescription_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderGetListV1Response>> {
+        async ezsignfolderGetListV1(eOrderBy?: 'pkiEzsignfolderID_ASC' | 'pkiEzsignfolderID_DESC' | 'sEzsignfolderDescription_ASC' | 'sEzsignfolderDescription_DESC' | 'dtCreatedDate_ASC' | 'dtCreatedDate_DESC' | 'fkiEzsignfoldertypeID_ASC' | 'fkiEzsignfoldertypeID_DESC' | 'sEzsignfoldertypeNameX_ASC' | 'sEzsignfoldertypeNameX_DESC' | 'eEzsignfolderStep_ASC' | 'eEzsignfolderStep_DESC' | 'dtEzsignfolderSentdate_ASC' | 'dtEzsignfolderSentdate_DESC' | 'dtDueDate_ASC' | 'dtDueDate_DESC' | 'iTotalDocument_ASC' | 'iTotalDocument_DESC' | 'iTotalDocumentEdm_ASC' | 'iTotalDocumentEdm_DESC' | 'iTotalSignature_ASC' | 'iTotalSignature_DESC' | 'iTotalSignatureSigned_ASC' | 'iTotalSignatureSigned_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderGetListV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -613,9 +613,9 @@ export const ObjectEzsignfolderApiFactory = function (configuration?: Configurat
             return localVarFp.ezsignfolderGetFormsDataV1(pkiEzsignfolderID, options).then((request) => request(axios, basePath));
         },
         /**
-         * 
+         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent<br>Sent<br>PartiallySigned<br>Expired<br>Completed<br>Archived |
          * @summary Retrieve Ezsignfolder list
-         * @param {'pkiEzsignfolderID_ASC' | 'pkiEzsignfolderID_DESC' | 'sEzsignfolderDescription' | 'sEzsignfolderDescription_DESC'} [eOrderBy] Specify how you want the results to be sorted
+         * @param {'pkiEzsignfolderID_ASC' | 'pkiEzsignfolderID_DESC' | 'sEzsignfolderDescription_ASC' | 'sEzsignfolderDescription_DESC' | 'dtCreatedDate_ASC' | 'dtCreatedDate_DESC' | 'fkiEzsignfoldertypeID_ASC' | 'fkiEzsignfoldertypeID_DESC' | 'sEzsignfoldertypeNameX_ASC' | 'sEzsignfoldertypeNameX_DESC' | 'eEzsignfolderStep_ASC' | 'eEzsignfolderStep_DESC' | 'dtEzsignfolderSentdate_ASC' | 'dtEzsignfolderSentdate_DESC' | 'dtDueDate_ASC' | 'dtDueDate_DESC' | 'iTotalDocument_ASC' | 'iTotalDocument_DESC' | 'iTotalDocumentEdm_ASC' | 'iTotalDocumentEdm_DESC' | 'iTotalSignature_ASC' | 'iTotalSignature_DESC' | 'iTotalSignatureSigned_ASC' | 'iTotalSignatureSigned_DESC'} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
          * @param {number} [iRowOffset] 
          * @param {HeaderAcceptLanguage} [acceptLanguage] 
@@ -623,7 +623,7 @@ export const ObjectEzsignfolderApiFactory = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfolderGetListV1(eOrderBy?: 'pkiEzsignfolderID_ASC' | 'pkiEzsignfolderID_DESC' | 'sEzsignfolderDescription' | 'sEzsignfolderDescription_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: any): AxiosPromise<EzsignfolderGetListV1Response> {
+        ezsignfolderGetListV1(eOrderBy?: 'pkiEzsignfolderID_ASC' | 'pkiEzsignfolderID_DESC' | 'sEzsignfolderDescription_ASC' | 'sEzsignfolderDescription_DESC' | 'dtCreatedDate_ASC' | 'dtCreatedDate_DESC' | 'fkiEzsignfoldertypeID_ASC' | 'fkiEzsignfoldertypeID_DESC' | 'sEzsignfoldertypeNameX_ASC' | 'sEzsignfoldertypeNameX_DESC' | 'eEzsignfolderStep_ASC' | 'eEzsignfolderStep_DESC' | 'dtEzsignfolderSentdate_ASC' | 'dtEzsignfolderSentdate_DESC' | 'dtDueDate_ASC' | 'dtDueDate_DESC' | 'iTotalDocument_ASC' | 'iTotalDocument_DESC' | 'iTotalDocumentEdm_ASC' | 'iTotalDocumentEdm_DESC' | 'iTotalSignature_ASC' | 'iTotalSignature_DESC' | 'iTotalSignatureSigned_ASC' | 'iTotalSignatureSigned_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: any): AxiosPromise<EzsignfolderGetListV1Response> {
             return localVarFp.ezsignfolderGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(axios, basePath));
         },
         /**
@@ -706,9 +706,9 @@ export class ObjectEzsignfolderApi extends BaseAPI {
     }
 
     /**
-     * 
+     * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent<br>Sent<br>PartiallySigned<br>Expired<br>Completed<br>Archived |
      * @summary Retrieve Ezsignfolder list
-     * @param {'pkiEzsignfolderID_ASC' | 'pkiEzsignfolderID_DESC' | 'sEzsignfolderDescription' | 'sEzsignfolderDescription_DESC'} [eOrderBy] Specify how you want the results to be sorted
+     * @param {'pkiEzsignfolderID_ASC' | 'pkiEzsignfolderID_DESC' | 'sEzsignfolderDescription_ASC' | 'sEzsignfolderDescription_DESC' | 'dtCreatedDate_ASC' | 'dtCreatedDate_DESC' | 'fkiEzsignfoldertypeID_ASC' | 'fkiEzsignfoldertypeID_DESC' | 'sEzsignfoldertypeNameX_ASC' | 'sEzsignfoldertypeNameX_DESC' | 'eEzsignfolderStep_ASC' | 'eEzsignfolderStep_DESC' | 'dtEzsignfolderSentdate_ASC' | 'dtEzsignfolderSentdate_DESC' | 'dtDueDate_ASC' | 'dtDueDate_DESC' | 'iTotalDocument_ASC' | 'iTotalDocument_DESC' | 'iTotalDocumentEdm_ASC' | 'iTotalDocumentEdm_DESC' | 'iTotalSignature_ASC' | 'iTotalSignature_DESC' | 'iTotalSignatureSigned_ASC' | 'iTotalSignatureSigned_DESC'} [eOrderBy] Specify how you want the results to be sorted
      * @param {number} [iRowMax] 
      * @param {number} [iRowOffset] 
      * @param {HeaderAcceptLanguage} [acceptLanguage] 
@@ -717,7 +717,7 @@ export class ObjectEzsignfolderApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsignfolderApi
      */
-    public ezsignfolderGetListV1(eOrderBy?: 'pkiEzsignfolderID_ASC' | 'pkiEzsignfolderID_DESC' | 'sEzsignfolderDescription' | 'sEzsignfolderDescription_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig) {
+    public ezsignfolderGetListV1(eOrderBy?: 'pkiEzsignfolderID_ASC' | 'pkiEzsignfolderID_DESC' | 'sEzsignfolderDescription_ASC' | 'sEzsignfolderDescription_DESC' | 'dtCreatedDate_ASC' | 'dtCreatedDate_DESC' | 'fkiEzsignfoldertypeID_ASC' | 'fkiEzsignfoldertypeID_DESC' | 'sEzsignfoldertypeNameX_ASC' | 'sEzsignfoldertypeNameX_DESC' | 'eEzsignfolderStep_ASC' | 'eEzsignfolderStep_DESC' | 'dtEzsignfolderSentdate_ASC' | 'dtEzsignfolderSentdate_DESC' | 'dtDueDate_ASC' | 'dtDueDate_DESC' | 'iTotalDocument_ASC' | 'iTotalDocument_DESC' | 'iTotalDocumentEdm_ASC' | 'iTotalDocumentEdm_DESC' | 'iTotalSignature_ASC' | 'iTotalSignature_DESC' | 'iTotalSignatureSigned_ASC' | 'iTotalSignatureSigned_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig) {
         return ObjectEzsignfolderApiFp(this.configuration).ezsignfolderGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(this.axios, this.basePath));
     }
 
