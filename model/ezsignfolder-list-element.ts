@@ -14,7 +14,6 @@
 
 
 import { FieldEEzsignfolderStep } from './field-eezsignfolder-step';
-import { Null } from './null';
 
 /**
  * An Ezsignfolder List Element
@@ -60,16 +59,16 @@ export interface EzsignfolderListElement {
     'dtCreatedDate': string;
     /**
      * 
-     * @type {string | Null}
+     * @type {string | object}
      * @memberof EzsignfolderListElement
      */
-    'dtEzsignfolderSentdate': string | Null;
+    'dtEzsignfolderSentdate': string | object;
     /**
      * The date at which no more signature will be accepted on the folder
-     * @type {string | Null}
+     * @type {string | object}
      * @memberof EzsignfolderListElement
      */
-    'dtDueDate': string | Null;
+    'dtDueDate': string | object;
     /**
      * The total number of Ezsigndocument in the folder
      * @type {number}

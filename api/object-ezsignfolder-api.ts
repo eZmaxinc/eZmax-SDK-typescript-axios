@@ -275,7 +275,7 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             };
         },
         /**
-         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent<br>Sent<br>PartiallySigned<br>Expired<br>Completed<br>Archived |
+         * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.  Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent<br>Sent<br>PartiallySigned<br>Expired<br>Completed<br>Archived |
          * @summary Retrieve Ezsignfolder list
          * @param {'pkiEzsignfolderID_ASC' | 'pkiEzsignfolderID_DESC' | 'sEzsignfolderDescription_ASC' | 'sEzsignfolderDescription_DESC' | 'dtCreatedDate_ASC' | 'dtCreatedDate_DESC' | 'fkiEzsignfoldertypeID_ASC' | 'fkiEzsignfoldertypeID_DESC' | 'sEzsignfoldertypeNameX_ASC' | 'sEzsignfoldertypeNameX_DESC' | 'eEzsignfolderStep_ASC' | 'eEzsignfolderStep_DESC' | 'dtEzsignfolderSentdate_ASC' | 'dtEzsignfolderSentdate_DESC' | 'dtDueDate_ASC' | 'dtDueDate_DESC' | 'iTotalDocument_ASC' | 'iTotalDocument_DESC' | 'iTotalDocumentEdm_ASC' | 'iTotalDocumentEdm_DESC' | 'iTotalSignature_ASC' | 'iTotalSignature_DESC' | 'iTotalSignatureSigned_ASC' | 'iTotalSignatureSigned_DESC'} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -525,7 +525,7 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent<br>Sent<br>PartiallySigned<br>Expired<br>Completed<br>Archived |
+         * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.  Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent<br>Sent<br>PartiallySigned<br>Expired<br>Completed<br>Archived |
          * @summary Retrieve Ezsignfolder list
          * @param {'pkiEzsignfolderID_ASC' | 'pkiEzsignfolderID_DESC' | 'sEzsignfolderDescription_ASC' | 'sEzsignfolderDescription_DESC' | 'dtCreatedDate_ASC' | 'dtCreatedDate_DESC' | 'fkiEzsignfoldertypeID_ASC' | 'fkiEzsignfoldertypeID_DESC' | 'sEzsignfoldertypeNameX_ASC' | 'sEzsignfoldertypeNameX_DESC' | 'eEzsignfolderStep_ASC' | 'eEzsignfolderStep_DESC' | 'dtEzsignfolderSentdate_ASC' | 'dtEzsignfolderSentdate_DESC' | 'dtDueDate_ASC' | 'dtDueDate_DESC' | 'iTotalDocument_ASC' | 'iTotalDocument_DESC' | 'iTotalDocumentEdm_ASC' | 'iTotalDocumentEdm_DESC' | 'iTotalSignature_ASC' | 'iTotalSignature_DESC' | 'iTotalSignatureSigned_ASC' | 'iTotalSignatureSigned_DESC'} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -613,7 +613,7 @@ export const ObjectEzsignfolderApiFactory = function (configuration?: Configurat
             return localVarFp.ezsignfolderGetFormsDataV1(pkiEzsignfolderID, options).then((request) => request(axios, basePath));
         },
         /**
-         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent<br>Sent<br>PartiallySigned<br>Expired<br>Completed<br>Archived |
+         * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.  Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent<br>Sent<br>PartiallySigned<br>Expired<br>Completed<br>Archived |
          * @summary Retrieve Ezsignfolder list
          * @param {'pkiEzsignfolderID_ASC' | 'pkiEzsignfolderID_DESC' | 'sEzsignfolderDescription_ASC' | 'sEzsignfolderDescription_DESC' | 'dtCreatedDate_ASC' | 'dtCreatedDate_DESC' | 'fkiEzsignfoldertypeID_ASC' | 'fkiEzsignfoldertypeID_DESC' | 'sEzsignfoldertypeNameX_ASC' | 'sEzsignfoldertypeNameX_DESC' | 'eEzsignfolderStep_ASC' | 'eEzsignfolderStep_DESC' | 'dtEzsignfolderSentdate_ASC' | 'dtEzsignfolderSentdate_DESC' | 'dtDueDate_ASC' | 'dtDueDate_DESC' | 'iTotalDocument_ASC' | 'iTotalDocument_DESC' | 'iTotalDocumentEdm_ASC' | 'iTotalDocumentEdm_DESC' | 'iTotalSignature_ASC' | 'iTotalSignature_DESC' | 'iTotalSignatureSigned_ASC' | 'iTotalSignatureSigned_DESC'} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -706,7 +706,7 @@ export class ObjectEzsignfolderApi extends BaseAPI {
     }
 
     /**
-     * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent<br>Sent<br>PartiallySigned<br>Expired<br>Completed<br>Archived |
+     * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.  Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent<br>Sent<br>PartiallySigned<br>Expired<br>Completed<br>Archived |
      * @summary Retrieve Ezsignfolder list
      * @param {'pkiEzsignfolderID_ASC' | 'pkiEzsignfolderID_DESC' | 'sEzsignfolderDescription_ASC' | 'sEzsignfolderDescription_DESC' | 'dtCreatedDate_ASC' | 'dtCreatedDate_DESC' | 'fkiEzsignfoldertypeID_ASC' | 'fkiEzsignfoldertypeID_DESC' | 'sEzsignfoldertypeNameX_ASC' | 'sEzsignfoldertypeNameX_DESC' | 'eEzsignfolderStep_ASC' | 'eEzsignfolderStep_DESC' | 'dtEzsignfolderSentdate_ASC' | 'dtEzsignfolderSentdate_DESC' | 'dtDueDate_ASC' | 'dtDueDate_DESC' | 'iTotalDocument_ASC' | 'iTotalDocument_DESC' | 'iTotalDocumentEdm_ASC' | 'iTotalDocumentEdm_DESC' | 'iTotalSignature_ASC' | 'iTotalSignature_DESC' | 'iTotalSignatureSigned_ASC' | 'iTotalSignatureSigned_DESC'} [eOrderBy] Specify how you want the results to be sorted
      * @param {number} [iRowMax] 

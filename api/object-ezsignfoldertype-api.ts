@@ -40,12 +40,12 @@ export const ObjectEzsignfoldertypeApiAxiosParamCreator = function (configuratio
          * Get the list of Ezsignfoldertypes to be used in a dropdown or autocomplete control.
          * @summary Retrieve Ezsignfoldertypes and IDs
          * @param {'Active' | 'All'} sSelector The type of Ezsignfoldertypes to return
-         * @param {HeaderAcceptLanguage} [acceptLanguage] 
          * @param {string} [sQuery] Allow to filter the returned results
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfoldertypeGetAutocompleteV1: async (sSelector: 'Active' | 'All', acceptLanguage?: HeaderAcceptLanguage, sQuery?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsignfoldertypeGetAutocompleteV1: async (sSelector: 'Active' | 'All', sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('ezsignfoldertypeGetAutocompleteV1', 'sSelector', sSelector)
             const localVarPath = `/1/object/ezsignfoldertype/getAutocomplete/{sSelector}`
@@ -195,13 +195,13 @@ export const ObjectEzsignfoldertypeApiFp = function(configuration?: Configuratio
          * Get the list of Ezsignfoldertypes to be used in a dropdown or autocomplete control.
          * @summary Retrieve Ezsignfoldertypes and IDs
          * @param {'Active' | 'All'} sSelector The type of Ezsignfoldertypes to return
-         * @param {HeaderAcceptLanguage} [acceptLanguage] 
          * @param {string} [sQuery] Allow to filter the returned results
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignfoldertypeGetAutocompleteV1(sSelector: 'Active' | 'All', acceptLanguage?: HeaderAcceptLanguage, sQuery?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonGetAutocompleteV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfoldertypeGetAutocompleteV1(sSelector, acceptLanguage, sQuery, options);
+        async ezsignfoldertypeGetAutocompleteV1(sSelector: 'Active' | 'All', sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonGetAutocompleteV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfoldertypeGetAutocompleteV1(sSelector, sQuery, acceptLanguage, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -233,13 +233,13 @@ export const ObjectEzsignfoldertypeApiFactory = function (configuration?: Config
          * Get the list of Ezsignfoldertypes to be used in a dropdown or autocomplete control.
          * @summary Retrieve Ezsignfoldertypes and IDs
          * @param {'Active' | 'All'} sSelector The type of Ezsignfoldertypes to return
-         * @param {HeaderAcceptLanguage} [acceptLanguage] 
          * @param {string} [sQuery] Allow to filter the returned results
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfoldertypeGetAutocompleteV1(sSelector: 'Active' | 'All', acceptLanguage?: HeaderAcceptLanguage, sQuery?: string, options?: any): AxiosPromise<CommonGetAutocompleteV1Response> {
-            return localVarFp.ezsignfoldertypeGetAutocompleteV1(sSelector, acceptLanguage, sQuery, options).then((request) => request(axios, basePath));
+        ezsignfoldertypeGetAutocompleteV1(sSelector: 'Active' | 'All', sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: any): AxiosPromise<CommonGetAutocompleteV1Response> {
+            return localVarFp.ezsignfoldertypeGetAutocompleteV1(sSelector, sQuery, acceptLanguage, options).then((request) => request(axios, basePath));
         },
         /**
          * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfoldertypePrivacylevel | User<br>Usergroup |
@@ -269,14 +269,14 @@ export class ObjectEzsignfoldertypeApi extends BaseAPI {
      * Get the list of Ezsignfoldertypes to be used in a dropdown or autocomplete control.
      * @summary Retrieve Ezsignfoldertypes and IDs
      * @param {'Active' | 'All'} sSelector The type of Ezsignfoldertypes to return
-     * @param {HeaderAcceptLanguage} [acceptLanguage] 
      * @param {string} [sQuery] Allow to filter the returned results
+     * @param {HeaderAcceptLanguage} [acceptLanguage] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ObjectEzsignfoldertypeApi
      */
-    public ezsignfoldertypeGetAutocompleteV1(sSelector: 'Active' | 'All', acceptLanguage?: HeaderAcceptLanguage, sQuery?: string, options?: AxiosRequestConfig) {
-        return ObjectEzsignfoldertypeApiFp(this.configuration).ezsignfoldertypeGetAutocompleteV1(sSelector, acceptLanguage, sQuery, options).then((request) => request(this.axios, this.basePath));
+    public ezsignfoldertypeGetAutocompleteV1(sSelector: 'Active' | 'All', sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig) {
+        return ObjectEzsignfoldertypeApiFp(this.configuration).ezsignfoldertypeGetAutocompleteV1(sSelector, sQuery, acceptLanguage, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
