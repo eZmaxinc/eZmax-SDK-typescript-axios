@@ -13,19 +13,19 @@
  */
 
 
-import { ListpresentationRequest } from './listpresentation-request';
+import { ListGetListpresentationV1ResponseMPayload } from './list-get-listpresentation-v1-response-mpayload';
 
 /**
- * Payload for the POST /1/module/list/listpresentation/{sListName} API Request
+ * 
  * @export
- * @interface ListSaveListpresentationV1ResponseMPayload
+ * @interface ListGetListpresentationV1ResponseAllOf
  */
-export interface ListSaveListpresentationV1ResponseMPayload {
+export interface ListGetListpresentationV1ResponseAllOf {
     /**
      * 
-     * @type {Array<ListpresentationRequest>}
-     * @memberof ListSaveListpresentationV1ResponseMPayload
+     * @type {ListGetListpresentationV1ResponseMPayload}
+     * @memberof ListGetListpresentationV1ResponseAllOf
      */
-    'a_objListpresentation': Array<ListpresentationRequest>;
+    'mPayload': ListGetListpresentationV1ResponseMPayload;
 }
 

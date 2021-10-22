@@ -23,6 +23,8 @@ import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } fr
 // @ts-ignore
 import { CommonResponseError } from '../model';
 // @ts-ignore
+import { ListGetListpresentationV1Response } from '../model';
+// @ts-ignore
 import { ListSaveListpresentationV1Request } from '../model';
 // @ts-ignore
 import { ListSaveListpresentationV1Response } from '../model';
@@ -35,6 +37,62 @@ import { RequestSignature, IHeadersData } from '../api/request-signature';
 export const ModuleListApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
+         * Retrive previously saved Listpresentation
+         * @summary Get all Listpresentation for a specific list
+         * @param {string} sListName The list Name
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listGetListpresentationV1: async (sListName: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'sListName' is not null or undefined
+            assertParamExists('listGetListpresentationV1', 'sListName', sListName)
+            const localVarPath = `/1/module/list/listpresentation/{sListName}`
+                .replace(`{${"sListName"}}`, encodeURIComponent(String(sListName)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Users can create many Listpresentations for lists in the system. They can customize orber by, filters, numbers of rows, etc.
          * @summary Save all Listpresentation for a specific list
          * @param {string} sListName The list Name
@@ -42,11 +100,11 @@ export const ModuleListApiAxiosParamCreator = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listListpresentationV1: async (sListName: string, listSaveListpresentationV1Request: ListSaveListpresentationV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        listSaveListpresentationV1: async (sListName: string, listSaveListpresentationV1Request: ListSaveListpresentationV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sListName' is not null or undefined
-            assertParamExists('listListpresentationV1', 'sListName', sListName)
+            assertParamExists('listSaveListpresentationV1', 'sListName', sListName)
             // verify required parameter 'listSaveListpresentationV1Request' is not null or undefined
-            assertParamExists('listListpresentationV1', 'listSaveListpresentationV1Request', listSaveListpresentationV1Request)
+            assertParamExists('listSaveListpresentationV1', 'listSaveListpresentationV1Request', listSaveListpresentationV1Request)
             const localVarPath = `/1/module/list/listpresentation/{sListName}`
                 .replace(`{${"sListName"}}`, encodeURIComponent(String(sListName)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -107,6 +165,17 @@ export const ModuleListApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = ModuleListApiAxiosParamCreator(configuration)
     return {
         /**
+         * Retrive previously saved Listpresentation
+         * @summary Get all Listpresentation for a specific list
+         * @param {string} sListName The list Name
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async listGetListpresentationV1(sListName: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListGetListpresentationV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listGetListpresentationV1(sListName, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
          * Users can create many Listpresentations for lists in the system. They can customize orber by, filters, numbers of rows, etc.
          * @summary Save all Listpresentation for a specific list
          * @param {string} sListName The list Name
@@ -114,8 +183,8 @@ export const ModuleListApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async listListpresentationV1(sListName: string, listSaveListpresentationV1Request: ListSaveListpresentationV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListSaveListpresentationV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.listListpresentationV1(sListName, listSaveListpresentationV1Request, options);
+        async listSaveListpresentationV1(sListName: string, listSaveListpresentationV1Request: ListSaveListpresentationV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ListSaveListpresentationV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.listSaveListpresentationV1(sListName, listSaveListpresentationV1Request, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -129,6 +198,16 @@ export const ModuleListApiFactory = function (configuration?: Configuration, bas
     const localVarFp = ModuleListApiFp(configuration)
     return {
         /**
+         * Retrive previously saved Listpresentation
+         * @summary Get all Listpresentation for a specific list
+         * @param {string} sListName The list Name
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        listGetListpresentationV1(sListName: string, options?: any): AxiosPromise<ListGetListpresentationV1Response> {
+            return localVarFp.listGetListpresentationV1(sListName, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Users can create many Listpresentations for lists in the system. They can customize orber by, filters, numbers of rows, etc.
          * @summary Save all Listpresentation for a specific list
          * @param {string} sListName The list Name
@@ -136,8 +215,8 @@ export const ModuleListApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listListpresentationV1(sListName: string, listSaveListpresentationV1Request: ListSaveListpresentationV1Request, options?: any): AxiosPromise<ListSaveListpresentationV1Response> {
-            return localVarFp.listListpresentationV1(sListName, listSaveListpresentationV1Request, options).then((request) => request(axios, basePath));
+        listSaveListpresentationV1(sListName: string, listSaveListpresentationV1Request: ListSaveListpresentationV1Request, options?: any): AxiosPromise<ListSaveListpresentationV1Response> {
+            return localVarFp.listSaveListpresentationV1(sListName, listSaveListpresentationV1Request, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -150,6 +229,18 @@ export const ModuleListApiFactory = function (configuration?: Configuration, bas
  */
 export class ModuleListApi extends BaseAPI {
     /**
+     * Retrive previously saved Listpresentation
+     * @summary Get all Listpresentation for a specific list
+     * @param {string} sListName The list Name
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ModuleListApi
+     */
+    public listGetListpresentationV1(sListName: string, options?: AxiosRequestConfig) {
+        return ModuleListApiFp(this.configuration).listGetListpresentationV1(sListName, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * Users can create many Listpresentations for lists in the system. They can customize orber by, filters, numbers of rows, etc.
      * @summary Save all Listpresentation for a specific list
      * @param {string} sListName The list Name
@@ -158,7 +249,7 @@ export class ModuleListApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ModuleListApi
      */
-    public listListpresentationV1(sListName: string, listSaveListpresentationV1Request: ListSaveListpresentationV1Request, options?: AxiosRequestConfig) {
-        return ModuleListApiFp(this.configuration).listListpresentationV1(sListName, listSaveListpresentationV1Request, options).then((request) => request(this.axios, this.basePath));
+    public listSaveListpresentationV1(sListName: string, listSaveListpresentationV1Request: ListSaveListpresentationV1Request, options?: AxiosRequestConfig) {
+        return ModuleListApiFp(this.configuration).listSaveListpresentationV1(sListName, listSaveListpresentationV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 }

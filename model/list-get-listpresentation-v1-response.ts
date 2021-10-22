@@ -16,12 +16,14 @@
 import { CommonResponse } from './common-response';
 import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
+import { ListGetListpresentationV1ResponseAllOf } from './list-get-listpresentation-v1-response-all-of';
+import { ListGetListpresentationV1ResponseMPayload } from './list-get-listpresentation-v1-response-mpayload';
 
 /**
- * @type ListSaveListpresentationV1Response
- * Response for the POST /1/module/list/listpresentation/{sListName} API Request
+ * @type ListGetListpresentationV1Response
+ * Response for the GET /1/module/list/listpresentation/{sListName} API Request
  * @export
  */
-export type ListSaveListpresentationV1Response = CommonResponse;
+export type ListGetListpresentationV1Response = CommonResponse & ListGetListpresentationV1ResponseAllOf;
 
 

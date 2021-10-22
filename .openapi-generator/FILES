@@ -175,9 +175,10 @@ model/franchisereferalincome-request.ts
 model/global-customer-get-endpoint-v1-response.ts
 model/header-accept-language.ts
 model/index.ts
+model/list-get-listpresentation-v1-response-all-of.ts
+model/list-get-listpresentation-v1-response-mpayload.ts
+model/list-get-listpresentation-v1-response.ts
 model/list-save-listpresentation-v1-request.ts
-model/list-save-listpresentation-v1-response-all-of.ts
-model/list-save-listpresentation-v1-response-mpayload.ts
 model/list-save-listpresentation-v1-response.ts
 model/listpresentation-request.ts
 model/multilingual-apikey-description.ts
