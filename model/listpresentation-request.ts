@@ -56,5 +56,11 @@ export interface ListpresentationRequest {
      * @memberof ListpresentationRequest
      */
     'iListpresentationRowOffset': number;
+    /**
+     * Set to true if the user chose this Listpresentation as the default one. A single element should be set to true
+     * @type {boolean}
+     * @memberof ListpresentationRequest
+     */
+    'bListpresentationDefault': boolean;
 }
 
