@@ -5,6 +5,7 @@ README.md
 api.ts
 api/global-customer-api.ts
 api/module-authenticate-api.ts
+api/module-list-api.ts
 api/module-sspr-api.ts
 api/module-user-api.ts
 api/object-activesession-api.ts
@@ -118,6 +119,7 @@ model/ezsignfolder-response-compound.ts
 model/ezsignfolder-response.ts
 model/ezsignfolder-send-v1-request.ts
 model/ezsignfolder-send-v1-response.ts
+model/ezsignfolder-unsend-v1-response.ts
 model/ezsignfoldersignerassociation-create-object-v1-request.ts
 model/ezsignfoldersignerassociation-create-object-v1-response-all-of.ts
 model/ezsignfoldersignerassociation-create-object-v1-response-mpayload.ts
@@ -173,6 +175,11 @@ model/franchisereferalincome-request.ts
 model/global-customer-get-endpoint-v1-response.ts
 model/header-accept-language.ts
 model/index.ts
+model/list-save-listpresentation-v1-request.ts
+model/list-save-listpresentation-v1-response-all-of.ts
+model/list-save-listpresentation-v1-response-mpayload.ts
+model/list-save-listpresentation-v1-response.ts
+model/listpresentation-request.ts
 model/multilingual-apikey-description.ts
 model/phone-request.ts
 model/sspr-reset-password-request-v1-request.ts
