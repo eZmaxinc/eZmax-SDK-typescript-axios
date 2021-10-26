@@ -20,6 +20,8 @@ export * from './common-get-autocomplete-v1-response-all-of';
 export * from './common-get-list-v1-response-mpayload';
 export * from './common-response';
 export * from './common-response-error';
+export * from './common-response-error-stemporary-file-url';
+export * from './common-response-error-stemporary-file-url-all-of';
 export * from './common-response-filter';
 export * from './common-response-get-list';
 export * from './common-response-obj-debug';

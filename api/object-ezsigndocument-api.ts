@@ -23,6 +23,8 @@ import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } fr
 // @ts-ignore
 import { CommonResponseError } from '../model';
 // @ts-ignore
+import { CommonResponseErrorSTemporaryFileUrl } from '../model';
+// @ts-ignore
 import { EzsigndocumentApplyEzsigntemplateV1Request } from '../model';
 // @ts-ignore
 import { EzsigndocumentApplyEzsigntemplateV1Response } from '../model';
