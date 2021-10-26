@@ -13,19 +13,18 @@
  */
 
 
-import { AuthenticateAuthenticateV2ResponseMPayload } from './authenticate-authenticate-v2-response-mpayload';
 
 /**
  * 
  * @export
- * @interface AuthenticateAuthenticateV2ResponseAllOf
+ * @interface CommonResponseErrorSTemporaryFileUrlAllOf
  */
-export interface AuthenticateAuthenticateV2ResponseAllOf {
+export interface CommonResponseErrorSTemporaryFileUrlAllOf {
     /**
-     * 
-     * @type {AuthenticateAuthenticateV2ResponseMPayload}
-     * @memberof AuthenticateAuthenticateV2ResponseAllOf
+     * The Temporary File Url of the document that was uploaded. That url can be reused instead of uploading the file again.
+     * @type {string}
+     * @memberof CommonResponseErrorSTemporaryFileUrlAllOf
      */
-    'mPayload': AuthenticateAuthenticateV2ResponseMPayload;
+    'sTemporaryFileUrl'?: string;
 }
 

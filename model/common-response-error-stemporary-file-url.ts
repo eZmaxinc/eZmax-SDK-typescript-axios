@@ -13,16 +13,14 @@
  */
 
 
+import { CommonResponseError } from './common-response-error';
+import { CommonResponseErrorSTemporaryFileUrlAllOf } from './common-response-error-stemporary-file-url-all-of';
 
 /**
- * The user type of the User for SSPR
+ * @type CommonResponseErrorSTemporaryFileUrl
+ * Generic Error Message
  * @export
- * @enum {string}
  */
-
-export enum FieldEUserTypeSSPR {
-    EzsignUser = 'EzsignUser',
-    Native = 'Native'
-}
+export type CommonResponseErrorSTemporaryFileUrl = CommonResponseError & CommonResponseErrorSTemporaryFileUrlAllOf;
 
 

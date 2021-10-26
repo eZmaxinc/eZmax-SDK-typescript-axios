@@ -45,6 +45,8 @@ model/common-audit.ts
 model/common-get-autocomplete-v1-response-all-of.ts
 model/common-get-autocomplete-v1-response.ts
 model/common-get-list-v1-response-mpayload.ts
+model/common-response-error-stemporary-file-url-all-of.ts
+model/common-response-error-stemporary-file-url.ts
 model/common-response-error.ts
 model/common-response-filter.ts
 model/common-response-get-list.ts
