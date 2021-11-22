@@ -21,6 +21,7 @@ export * from './api/module-sspr-api';
 export * from './api/module-user-api';
 export * from './api/object-activesession-api';
 export * from './api/object-apikey-api';
+export * from './api/object-ezsignbulksend-api';
 export * from './api/object-ezsigndocument-api';
 export * from './api/object-ezsignfolder-api';
 export * from './api/object-ezsignfoldersignerassociation-api';

@@ -1,5 +1,6 @@
 declare var require: any
 var forge = require('node-forge')
+var utf8 = require('utf8')
 
   
 export interface IFingerprintData {
@@ -56,7 +57,7 @@ export class RequestSignature {
       date: isoDate,
       method: headerData.method,
       url: headerData.url,
-      body: headerData.body
+      body: utf8.encode(headerData.body)
     })
 
     const signature: string = this.getSignature({

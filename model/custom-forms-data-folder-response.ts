@@ -28,7 +28,7 @@ export interface CustomFormsDataFolderResponse {
      */
     'pkiEzsignfolderID': number;
     /**
-     * The description of the Ezsign Folder
+     * The description of the Ezsignfolder
      * @type {string}
      * @memberof CustomFormsDataFolderResponse
      */

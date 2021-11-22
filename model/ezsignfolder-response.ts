@@ -36,7 +36,7 @@ export interface EzsignfolderResponse {
      */
     'fkiEzsigntsarequirementID': number;
     /**
-     * The description of the Ezsign Folder
+     * The description of the Ezsignfolder
      * @type {string}
      * @memberof EzsignfolderResponse
      */

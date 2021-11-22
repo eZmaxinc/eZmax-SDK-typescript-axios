@@ -47,7 +47,7 @@ export interface EzsignfolderListElement {
      */
     'sEzsignfoldertypeNameX': string;
     /**
-     * The description of the Ezsign Folder
+     * The description of the Ezsignfolder
      * @type {string}
      * @memberof EzsignfolderListElement
      */
@@ -81,24 +81,24 @@ export interface EzsignfolderListElement {
      * @type {number}
      * @memberof EzsignfolderListElement
      */
-    'iTotalDocument': number;
+    'iEzsigndocument': number;
     /**
      * The total number of Ezsigndocument in the folder that were saved in the edm system
      * @type {number}
      * @memberof EzsignfolderListElement
      */
-    'iTotalDocumentEdm': number;
+    'iEzsigndocumentEdm': number;
     /**
      * The total number of signature blocks in all Ezsigndocuments in the folder
      * @type {number}
      * @memberof EzsignfolderListElement
      */
-    'iTotalSignature': number;
+    'iEzsignsignature': number;
     /**
      * The total number of already signed signature blocks in all Ezsigndocuments in the folder
      * @type {number}
      * @memberof EzsignfolderListElement
      */
-    'iTotalSignatureSigned': number;
+    'iEzsignsignatureSigned': number;
 }
 

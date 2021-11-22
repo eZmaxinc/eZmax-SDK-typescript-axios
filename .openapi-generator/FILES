@@ -10,6 +10,7 @@ api/module-sspr-api.ts
 api/module-user-api.ts
 api/object-activesession-api.ts
 api/object-apikey-api.ts
+api/object-ezsignbulksend-api.ts
 api/object-ezsigndocument-api.ts
 api/object-ezsignfolder-api.ts
 api/object-ezsignfoldersignerassociation-api.ts
@@ -70,6 +71,11 @@ model/custom-forms-data-folder-response.ts
 model/custom-word-position-occurence-response.ts
 model/custom-word-position-word-response.ts
 model/email-request.ts
+model/ezsignbulksend-get-list-v1-response-all-of.ts
+model/ezsignbulksend-get-list-v1-response-mpayload-all-of.ts
+model/ezsignbulksend-get-list-v1-response-mpayload.ts
+model/ezsignbulksend-get-list-v1-response.ts
+model/ezsignbulksend-list-element.ts
 model/ezsigndocument-apply-ezsigntemplate-v1-request.ts
 model/ezsigndocument-apply-ezsigntemplate-v1-response.ts
 model/ezsigndocument-apply-ezsigntemplate-v2-request.ts
