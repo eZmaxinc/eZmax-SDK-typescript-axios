@@ -27,6 +27,7 @@ export * from './api/object-ezsignfolder-api';
 export * from './api/object-ezsignfoldersignerassociation-api';
 export * from './api/object-ezsignfoldertype-api';
 export * from './api/object-ezsignsignature-api';
+export * from './api/object-ezsigntemplatepackage-api';
 export * from './api/object-franchisebroker-api';
 export * from './api/object-franchiseoffice-api';
 export * from './api/object-franchisereferalincome-api';
