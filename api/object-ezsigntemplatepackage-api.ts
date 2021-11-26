@@ -35,7 +35,7 @@ import { RequestSignature, IHeadersData } from '../api/request-signature';
 export const ObjectEzsigntemplatepackageApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | ezsigntemplatepackage | Company<br>Department<br>Team<br>User<br>Usergroup |
+         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsigntemplatepackageType | Company<br>Department<br>Team<br>User<br>Usergroup |
          * @summary Retrieve Ezsigntemplatepackage list
          * @param {'pkiEzsigntemplatepackageID_ASC' | 'pkiEzsigntemplatepackageID_DESC' | 'fkiDepartmentID_ASC' | 'fkiDepartmentID_DESC' | 'fkiTeamID_ASC' | 'fkiTeamID_DESC' | 'fkiEzsignfoldertypeID_ASC' | 'fkiEzsignfoldertypeID_DESC' | 'fkiLanguageID_ASC' | 'fkiLanguageID_DESC' | 'eEzsigntemplatepackageType_ASC' | 'eEzsigntemplatepackageType_DESC' | 'sEzsigntemplatepackageDescription_ASC' | 'sEzsigntemplatepackageDescription_DESC' | 'bEzsigntemplatepackageIsactive_ASC' | 'bEzsigntemplatepackageIsactive_DESC' | 'iEzsigntemplatepackagemembership_ASC' | 'iEzsigntemplatepackagemembership_DESC'} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -123,7 +123,7 @@ export const ObjectEzsigntemplatepackageApiFp = function(configuration?: Configu
     const localVarAxiosParamCreator = ObjectEzsigntemplatepackageApiAxiosParamCreator(configuration)
     return {
         /**
-         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | ezsigntemplatepackage | Company<br>Department<br>Team<br>User<br>Usergroup |
+         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsigntemplatepackageType | Company<br>Department<br>Team<br>User<br>Usergroup |
          * @summary Retrieve Ezsigntemplatepackage list
          * @param {'pkiEzsigntemplatepackageID_ASC' | 'pkiEzsigntemplatepackageID_DESC' | 'fkiDepartmentID_ASC' | 'fkiDepartmentID_DESC' | 'fkiTeamID_ASC' | 'fkiTeamID_DESC' | 'fkiEzsignfoldertypeID_ASC' | 'fkiEzsignfoldertypeID_DESC' | 'fkiLanguageID_ASC' | 'fkiLanguageID_DESC' | 'eEzsigntemplatepackageType_ASC' | 'eEzsigntemplatepackageType_DESC' | 'sEzsigntemplatepackageDescription_ASC' | 'sEzsigntemplatepackageDescription_DESC' | 'bEzsigntemplatepackageIsactive_ASC' | 'bEzsigntemplatepackageIsactive_DESC' | 'iEzsigntemplatepackagemembership_ASC' | 'iEzsigntemplatepackagemembership_DESC'} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -148,7 +148,7 @@ export const ObjectEzsigntemplatepackageApiFactory = function (configuration?: C
     const localVarFp = ObjectEzsigntemplatepackageApiFp(configuration)
     return {
         /**
-         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | ezsigntemplatepackage | Company<br>Department<br>Team<br>User<br>Usergroup |
+         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsigntemplatepackageType | Company<br>Department<br>Team<br>User<br>Usergroup |
          * @summary Retrieve Ezsigntemplatepackage list
          * @param {'pkiEzsigntemplatepackageID_ASC' | 'pkiEzsigntemplatepackageID_DESC' | 'fkiDepartmentID_ASC' | 'fkiDepartmentID_DESC' | 'fkiTeamID_ASC' | 'fkiTeamID_DESC' | 'fkiEzsignfoldertypeID_ASC' | 'fkiEzsignfoldertypeID_DESC' | 'fkiLanguageID_ASC' | 'fkiLanguageID_DESC' | 'eEzsigntemplatepackageType_ASC' | 'eEzsigntemplatepackageType_DESC' | 'sEzsigntemplatepackageDescription_ASC' | 'sEzsigntemplatepackageDescription_DESC' | 'bEzsigntemplatepackageIsactive_ASC' | 'bEzsigntemplatepackageIsactive_DESC' | 'iEzsigntemplatepackagemembership_ASC' | 'iEzsigntemplatepackagemembership_DESC'} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -172,7 +172,7 @@ export const ObjectEzsigntemplatepackageApiFactory = function (configuration?: C
  */
 export class ObjectEzsigntemplatepackageApi extends BaseAPI {
     /**
-     * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | ezsigntemplatepackage | Company<br>Department<br>Team<br>User<br>Usergroup |
+     * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsigntemplatepackageType | Company<br>Department<br>Team<br>User<br>Usergroup |
      * @summary Retrieve Ezsigntemplatepackage list
      * @param {'pkiEzsigntemplatepackageID_ASC' | 'pkiEzsigntemplatepackageID_DESC' | 'fkiDepartmentID_ASC' | 'fkiDepartmentID_DESC' | 'fkiTeamID_ASC' | 'fkiTeamID_DESC' | 'fkiEzsignfoldertypeID_ASC' | 'fkiEzsignfoldertypeID_DESC' | 'fkiLanguageID_ASC' | 'fkiLanguageID_DESC' | 'eEzsigntemplatepackageType_ASC' | 'eEzsigntemplatepackageType_DESC' | 'sEzsigntemplatepackageDescription_ASC' | 'sEzsigntemplatepackageDescription_DESC' | 'bEzsigntemplatepackageIsactive_ASC' | 'bEzsigntemplatepackageIsactive_DESC' | 'iEzsigntemplatepackagemembership_ASC' | 'iEzsigntemplatepackagemembership_DESC'} [eOrderBy] Specify how you want the results to be sorted
      * @param {number} [iRowMax] 

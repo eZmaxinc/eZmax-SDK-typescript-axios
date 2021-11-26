@@ -26,6 +26,6 @@ export interface EzsignbulksendGetListV1ResponseMPayloadAllOf {
      * @type {Array<EzsignbulksendListElement>}
      * @memberof EzsignbulksendGetListV1ResponseMPayloadAllOf
      */
-    'a_objEzsignfolder'?: Array<EzsignbulksendListElement>;
+    'a_objEzsignbulksend': Array<EzsignbulksendListElement>;
 }
 
