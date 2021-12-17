@@ -28,23 +28,23 @@ export interface EzsigntemplatepackageListElement {
      */
     'pkiEzsigntemplatepackageID': number;
     /**
-     * 
-     * @type {number | object}
+     * The unique ID of the Department.
+     * @type {number}
      * @memberof EzsigntemplatepackageListElement
      */
-    'fkiDepartmentID': number | object;
+    'fkiDepartmentID': number | null;
     /**
-     * 
-     * @type {number | object}
+     * The unique ID of the Team
+     * @type {number}
      * @memberof EzsigntemplatepackageListElement
      */
-    'fkiTeamID': number | object;
+    'fkiTeamID': number | null;
     /**
-     * 
-     * @type {number | object}
+     * The unique ID of the Ezsignfoldertype.
+     * @type {number}
      * @memberof EzsigntemplatepackageListElement
      */
-    'fkiEzsignfoldertypeID': number | object;
+    'fkiEzsignfoldertypeID': number | null;
     /**
      * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @type {number}

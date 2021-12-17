@@ -64,7 +64,7 @@ export interface EzsignfolderResponse {
      * @type {string}
      * @memberof EzsignfolderResponse
      */
-    'dtEzsignfolderSentdate': string;
+    'dtEzsignfolderSentdate': string | null;
     /**
      * 
      * @type {FieldEEzsignfolderStep}

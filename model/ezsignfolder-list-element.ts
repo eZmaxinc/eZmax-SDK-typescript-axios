@@ -65,17 +65,17 @@ export interface EzsignfolderListElement {
      */
     'dtCreatedDate': string;
     /**
-     * 
-     * @type {string | object}
+     * The date and time at which the Ezsign folder was sent the last time.
+     * @type {string}
      * @memberof EzsignfolderListElement
      */
-    'dtEzsignfolderSentdate': string | object;
+    'dtEzsignfolderSentdate': string | null;
     /**
-     * The date at which no more signature will be accepted on the folder
-     * @type {string | object}
+     * Represent a Date Time. The timezone is the one configured in the User\'s profile.
+     * @type {string}
      * @memberof EzsignfolderListElement
      */
-    'dtDueDate': string | object;
+    'dtDueDate': string | null;
     /**
      * The total number of Ezsigndocument in the folder
      * @type {number}

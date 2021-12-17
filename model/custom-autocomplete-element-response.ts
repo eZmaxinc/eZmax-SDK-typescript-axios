@@ -34,9 +34,9 @@ export interface CustomAutocompleteElementResponse {
     'sLabel': string;
     /**
      * The Unique ID of the element
-     * @type {number | string}
+     * @type {string}
      * @memberof CustomAutocompleteElementResponse
      */
-    'mValue': number | string;
+    'mValue': string;
 }
 
