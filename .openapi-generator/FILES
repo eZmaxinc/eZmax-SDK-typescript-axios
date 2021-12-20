@@ -110,6 +110,9 @@ model/ezsignfolder-create-object-v1-response-all-of.ts
 model/ezsignfolder-create-object-v1-response-mpayload.ts
 model/ezsignfolder-create-object-v1-response.ts
 model/ezsignfolder-delete-object-v1-response.ts
+model/ezsignfolder-get-ezsigndocuments-v1-response-all-of.ts
+model/ezsignfolder-get-ezsigndocuments-v1-response-mpayload.ts
+model/ezsignfolder-get-ezsigndocuments-v1-response.ts
 model/ezsignfolder-get-forms-data-v1-response-all-of.ts
 model/ezsignfolder-get-forms-data-v1-response-mpayload.ts
 model/ezsignfolder-get-forms-data-v1-response.ts
@@ -138,10 +141,13 @@ model/ezsignfoldersignerassociation-get-in-person-login-url-v1-response-all-of.t
 model/ezsignfoldersignerassociation-get-in-person-login-url-v1-response-mpayload.ts
 model/ezsignfoldersignerassociation-get-in-person-login-url-v1-response.ts
 model/ezsignfoldersignerassociation-get-object-v1-response-all-of.ts
+model/ezsignfoldersignerassociation-get-object-v1-response-mpayload.ts
 model/ezsignfoldersignerassociation-get-object-v1-response.ts
 model/ezsignfoldersignerassociation-request-compound-all-of.ts
 model/ezsignfoldersignerassociation-request-compound.ts
 model/ezsignfoldersignerassociation-request.ts
+model/ezsignfoldersignerassociation-response-compound.ts
+model/ezsignfoldersignerassociation-response.ts
 model/ezsignfoldertype-get-list-v1-response-all-of.ts
 model/ezsignfoldertype-get-list-v1-response-mpayload-all-of.ts
 model/ezsignfoldertype-get-list-v1-response-mpayload.ts
