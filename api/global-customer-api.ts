@@ -70,7 +70,7 @@ export const GlobalCustomerApiAxiosParamCreator = function (configuration?: Conf
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
             if (configuration && configuration.apiKey) {

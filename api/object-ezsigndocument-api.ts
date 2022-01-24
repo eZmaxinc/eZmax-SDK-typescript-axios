@@ -97,7 +97,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ezsigndocumentApplyEzsigntemplateV1Request, localVarRequestOptions, configuration)
 
             // Signature
@@ -159,7 +159,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ezsigndocumentApplyEzsigntemplateV2Request, localVarRequestOptions, configuration)
 
             // Signature
@@ -217,7 +217,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ezsigndocumentCreateObjectV1Request, localVarRequestOptions, configuration)
 
             // Signature
@@ -274,7 +274,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -334,7 +334,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -390,7 +390,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -446,7 +446,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -502,7 +502,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -563,7 +563,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ezsigndocumentGetWordsPositionsV1Request, localVarRequestOptions, configuration)
 
             // Signature

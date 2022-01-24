@@ -13,15 +13,19 @@
  */
 
 
-import { CommonAudit } from './common-audit';
-import { EzsigndocumentResponseCompound } from './ezsigndocument-response-compound';
-import { FieldEEzsigndocumentStep } from './field-eezsigndocument-step';
+import { EzsignsignerResponseCompoundContact } from './ezsignsigner-response-compound-contact';
 
 /**
- * @type EzsigndocumentGetObjectV1ResponseMPayload
- * Payload for the /1/object/ezsigndocument/getObject API Request
+ * 
  * @export
+ * @interface EzsignsignerResponseCompoundAllOf
  */
-export type EzsigndocumentGetObjectV1ResponseMPayload = EzsigndocumentResponseCompound;
-
+export interface EzsignsignerResponseCompoundAllOf {
+    /**
+     * 
+     * @type {EzsignsignerResponseCompoundContact}
+     * @memberof EzsignsignerResponseCompoundAllOf
+     */
+    'objContact': EzsignsignerResponseCompoundContact;
+}
 

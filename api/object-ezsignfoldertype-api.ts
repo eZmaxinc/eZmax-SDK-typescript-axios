@@ -72,7 +72,6 @@ export const ObjectEzsignfoldertypeApiAxiosParamCreator = function (configuratio
             }
 
             if (acceptLanguage !== undefined && acceptLanguage !== null) {
-
 		localVarHeaderParameter['Accept-Language'] = String(acceptLanguage);
             }
 
@@ -80,7 +79,7 @@ export const ObjectEzsignfoldertypeApiAxiosParamCreator = function (configuratio
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -150,7 +149,6 @@ export const ObjectEzsignfoldertypeApiAxiosParamCreator = function (configuratio
             }
 
             if (acceptLanguage !== undefined && acceptLanguage !== null) {
-
 		localVarHeaderParameter['Accept-Language'] = String(acceptLanguage);
             }
 
@@ -158,7 +156,7 @@ export const ObjectEzsignfoldertypeApiAxiosParamCreator = function (configuratio
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
             if (configuration && configuration.apiKey) {

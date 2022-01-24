@@ -68,7 +68,7 @@ export const ObjectPeriodApiAxiosParamCreator = function (configuration?: Config
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
             if (configuration && configuration.apiKey) {

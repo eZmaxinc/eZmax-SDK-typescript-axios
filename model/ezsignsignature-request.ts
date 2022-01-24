@@ -46,7 +46,7 @@ export interface EzsignsignatureRequest {
      */
     'iEzsignsignatureY': number;
     /**
-     * The step when the Ezsignsigner will be invited to sign.
+     * The step when the Ezsignsigner will be invited to sign or fill form fields
      * @type {number}
      * @memberof EzsignsignatureRequest
      */

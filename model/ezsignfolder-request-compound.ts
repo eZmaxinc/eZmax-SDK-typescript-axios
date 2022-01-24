@@ -14,8 +14,6 @@
 
 
 import { EzsignfolderRequest } from './ezsignfolder-request';
-import { EzsignfolderRequestCompoundAllOf } from './ezsignfolder-request-compound-all-of';
-import { EzsignfoldersignerassociationRequest } from './ezsignfoldersignerassociation-request';
 import { FieldEEzsignfolderSendreminderfrequency } from './field-eezsignfolder-sendreminderfrequency';
 
 /**
@@ -23,6 +21,6 @@ import { FieldEEzsignfolderSendreminderfrequency } from './field-eezsignfolder-s
  * An Ezsignfolder Object and children to create a complete structure
  * @export
  */
-export type EzsignfolderRequestCompound = EzsignfolderRequest & EzsignfolderRequestCompoundAllOf;
+export type EzsignfolderRequestCompound = EzsignfolderRequest;
 
 

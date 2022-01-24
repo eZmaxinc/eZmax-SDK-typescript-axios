@@ -81,7 +81,6 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
             }
 
             if (acceptLanguage !== undefined && acceptLanguage !== null) {
-
 		localVarHeaderParameter['Accept-Language'] = String(acceptLanguage);
             }
 
@@ -89,7 +88,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
             if (configuration && configuration.apiKey) {

@@ -96,6 +96,18 @@ export interface EzsignfolderResponse {
      */
     'dtEzsignfolderSentdate': string | null;
     /**
+     * The scheduled date and time at which the Ezsignfolder should be archived.
+     * @type {string}
+     * @memberof EzsignfolderResponse
+     */
+    'dtEzsignfolderScheduledarchive': string;
+    /**
+     * The scheduled date and time at which the Ezsignfolder should be Destroyed.
+     * @type {string}
+     * @memberof EzsignfolderResponse
+     */
+    'dtEzsignfolderScheduleddestruction': string;
+    /**
      * 
      * @type {FieldEEzsignfolderStep}
      * @memberof EzsignfolderResponse

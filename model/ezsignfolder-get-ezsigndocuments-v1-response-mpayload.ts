@@ -13,7 +13,7 @@
  */
 
 
-import { EzsigndocumentResponse } from './ezsigndocument-response';
+import { EzsigndocumentResponseCompound } from './ezsigndocument-response-compound';
 
 /**
  * Payload for the /1/object/ezsignfolder/{pkiEzsignfolder}/getEzsigndocuments API Request
@@ -23,9 +23,9 @@ import { EzsigndocumentResponse } from './ezsigndocument-response';
 export interface EzsignfolderGetEzsigndocumentsV1ResponseMPayload {
     /**
      * 
-     * @type {Array<EzsigndocumentResponse>}
+     * @type {Array<EzsigndocumentResponseCompound>}
      * @memberof EzsignfolderGetEzsigndocumentsV1ResponseMPayload
      */
-    'a_objEzsigndocument': Array<EzsigndocumentResponse>;
+    'a_objEzsigndocument': Array<EzsigndocumentResponseCompound>;
 }
 

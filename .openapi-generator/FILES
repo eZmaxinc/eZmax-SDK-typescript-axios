@@ -66,6 +66,8 @@ model/contactinformations-request-compound-all-of.ts
 model/contactinformations-request-compound.ts
 model/contactinformations-request.ts
 model/custom-autocomplete-element-response.ts
+model/custom-ezsignfoldersignerassociationstatus-response.ts
+model/custom-ezsignsignaturestatus-response.ts
 model/custom-form-data-document-response.ts
 model/custom-form-data-signer-response.ts
 model/custom-forms-data-folder-response.ts
@@ -113,6 +115,9 @@ model/ezsignfolder-delete-object-v1-response.ts
 model/ezsignfolder-get-ezsigndocuments-v1-response-all-of.ts
 model/ezsignfolder-get-ezsigndocuments-v1-response-mpayload.ts
 model/ezsignfolder-get-ezsigndocuments-v1-response.ts
+model/ezsignfolder-get-ezsignfoldersignerassociations-v1-response-all-of.ts
+model/ezsignfolder-get-ezsignfoldersignerassociations-v1-response-mpayload.ts
+model/ezsignfolder-get-ezsignfoldersignerassociations-v1-response.ts
 model/ezsignfolder-get-forms-data-v1-response-all-of.ts
 model/ezsignfolder-get-forms-data-v1-response-mpayload.ts
 model/ezsignfolder-get-forms-data-v1-response.ts
@@ -124,7 +129,6 @@ model/ezsignfolder-get-object-v1-response-all-of.ts
 model/ezsignfolder-get-object-v1-response-mpayload.ts
 model/ezsignfolder-get-object-v1-response.ts
 model/ezsignfolder-list-element.ts
-model/ezsignfolder-request-compound-all-of.ts
 model/ezsignfolder-request-compound.ts
 model/ezsignfolder-request.ts
 model/ezsignfolder-response-compound.ts
@@ -172,6 +176,10 @@ model/ezsignsigner-request-compound-all-of.ts
 model/ezsignsigner-request-compound-contact.ts
 model/ezsignsigner-request-compound.ts
 model/ezsignsigner-request.ts
+model/ezsignsigner-response-compound-all-of.ts
+model/ezsignsigner-response-compound-contact.ts
+model/ezsignsigner-response-compound.ts
+model/ezsignsigner-response.ts
 model/ezsigntemplatepackage-get-list-v1-response-all-of.ts
 model/ezsigntemplatepackage-get-list-v1-response-mpayload-all-of.ts
 model/ezsigntemplatepackage-get-list-v1-response-mpayload.ts

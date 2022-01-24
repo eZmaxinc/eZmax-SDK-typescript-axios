@@ -17,43 +17,43 @@
 /**
  * A Ezsignsigner->Contact Object and children to create a complete structure
  * @export
- * @interface EzsignsignerRequestCompoundContact
+ * @interface EzsignsignerResponseCompoundContact
  */
-export interface EzsignsignerRequestCompoundContact {
+export interface EzsignsignerResponseCompoundContact {
     /**
      * The First name of the contact
      * @type {string}
-     * @memberof EzsignsignerRequestCompoundContact
+     * @memberof EzsignsignerResponseCompoundContact
      */
     'sContactFirstname': string;
     /**
      * The Last name of the contact
      * @type {string}
-     * @memberof EzsignsignerRequestCompoundContact
+     * @memberof EzsignsignerResponseCompoundContact
      */
     'sContactLastname': string;
     /**
      * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @type {number}
-     * @memberof EzsignsignerRequestCompoundContact
+     * @memberof EzsignsignerResponseCompoundContact
      */
     'fkiLanguageID': number;
     /**
      * The email address.
      * @type {string}
-     * @memberof EzsignsignerRequestCompoundContact
+     * @memberof EzsignsignerResponseCompoundContact
      */
     'sEmailAddress'?: string;
     /**
      * The Phone number of the contact. Use format \"5149901516\" for North American Numbers (Without \"1\" for long distance code) you would dial like this: 1-514-990-1516. Use format \"498945233886\" for international numbers (Without \"011\") you would dial like this: +49 89 452 33 88-6. In this example \"49\" is the country code of Germany.
      * @type {string}
-     * @memberof EzsignsignerRequestCompoundContact
+     * @memberof EzsignsignerResponseCompoundContact
      */
     'sPhoneNumber'?: string;
     /**
      * The Cell Phone number of the contact. Use format \"5149901516\" for North American Numbers (Without \"1\" for long distance code) you would dial like this: 1-514-990-1516. Use format \"498945233886\" for international numbers (Without \"011\") you would dial like this: +49 89 452 33 88-6. In this example \"49\" is the country code of Germany.
      * @type {string}
-     * @memberof EzsignsignerRequestCompoundContact
+     * @memberof EzsignsignerResponseCompoundContact
      */
     'sPhoneNumberCell'?: string;
 }
