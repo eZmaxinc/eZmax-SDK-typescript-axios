@@ -14,7 +14,7 @@
 
 
 import { CommonAudit } from './common-audit';
-import { EzsignfolderResponse } from './ezsignfolder-response';
+import { EzsignfolderResponseCompound } from './ezsignfolder-response-compound';
 import { FieldEEzsignfolderSendreminderfrequency } from './field-eezsignfolder-sendreminderfrequency';
 import { FieldEEzsignfolderStep } from './field-eezsignfolder-step';
 
@@ -23,6 +23,6 @@ import { FieldEEzsignfolderStep } from './field-eezsignfolder-step';
  * Payload for the /1/object/ezsignfolder/getObject API Request
  * @export
  */
-export type EzsignfolderGetObjectV1ResponseMPayload = EzsignfolderResponse;
+export type EzsignfolderGetObjectV1ResponseMPayload = EzsignfolderResponseCompound;
 
 
