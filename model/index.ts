@@ -143,6 +143,7 @@ export * from './ezsignsignature-get-object-v1-response';
 export * from './ezsignsignature-get-object-v1-response-all-of';
 export * from './ezsignsignature-request';
 export * from './ezsignsignature-request-compound';
+export * from './ezsignsignaturecustomdate-request';
 export * from './ezsignsigner-request';
 export * from './ezsignsigner-request-compound';
 export * from './ezsignsigner-request-compound-all-of';

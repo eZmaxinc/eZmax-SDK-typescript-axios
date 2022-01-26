@@ -14,6 +14,7 @@
 
 
 import { EzsignsignatureRequest } from './ezsignsignature-request';
+import { EzsignsignaturecustomdateRequest } from './ezsignsignaturecustomdate-request';
 import { FieldEEzsignsignatureType } from './field-eezsignsignature-type';
 
 /**
