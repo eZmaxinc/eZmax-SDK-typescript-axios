@@ -33,18 +33,6 @@ export interface EzsignfoldersignerassociationResponse {
      */
     'fkiEzsignfolderID': number;
     /**
-     * The unique ID of the Ezsignsigner
-     * @type {number}
-     * @memberof EzsignfoldersignerassociationResponse
-     */
-    'fkiEzsignsignerID': number | null;
-    /**
-     * The unique ID of the User
-     * @type {number}
-     * @memberof EzsignfoldersignerassociationResponse
-     */
-    'fkiUserID': number | null;
-    /**
      * If this flag is true. The signatory will receive a copy of every signed Ezsigndocument even if it ain\'t required to sign the document.
      * @type {boolean}
      * @memberof EzsignfoldersignerassociationResponse

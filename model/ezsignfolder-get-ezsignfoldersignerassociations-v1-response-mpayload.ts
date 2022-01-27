@@ -13,7 +13,7 @@
  */
 
 
-import { EzsignfoldersignerassociationResponse } from './ezsignfoldersignerassociation-response';
+import { EzsignfoldersignerassociationResponseCompound } from './ezsignfoldersignerassociation-response-compound';
 
 /**
  * Payload for the /1/object/ezsignfolder/{pkiEzsignfolder}/getEzsignfoldersignerassociations API Request
@@ -23,9 +23,9 @@ import { EzsignfoldersignerassociationResponse } from './ezsignfoldersignerassoc
 export interface EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload {
     /**
      * 
-     * @type {Array<EzsignfoldersignerassociationResponse>}
+     * @type {Array<EzsignfoldersignerassociationResponseCompound>}
      * @memberof EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload
      */
-    'a_objEzsignfoldersignerassociation': Array<EzsignfoldersignerassociationResponse>;
+    'a_objEzsignfoldersignerassociation': Array<EzsignfoldersignerassociationResponseCompound>;
 }
 

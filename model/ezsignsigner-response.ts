@@ -21,6 +21,12 @@
  */
 export interface EzsignsignerResponse {
     /**
+     * The unique ID of the Ezsignsigner
+     * @type {number}
+     * @memberof EzsignsignerResponse
+     */
+    'pkiEzsignsignerID': number;
+    /**
      * The unique ID of the Taxassignment.  Valid values:  |Value|Description| |-|-| |1|No tax| |2|GST| |3|HST (ON)| |4|HST (NB)| |5|HST (NS)| |6|HST (NL)| |7|HST (PE)| |8|GST + QST (QC)| |9|GST + QST (QC) Non-Recoverable| |10|GST + PST (BC)| |11|GST + PST (SK)| |12|GST + RST (MB)| |13|GST + PST (BC) Non-Recoverable| |14|GST + PST (SK) Non-Recoverable| |15|GST + RST (MB) Non-Recoverable|
      * @type {number}
      * @memberof EzsignsignerResponse
@@ -33,29 +39,16 @@ export interface EzsignsignerResponse {
      */
     'fkiSecretquestionID'?: number;
     /**
-     * The method the Ezsignsigner will authenticate to the signing platform.  1. **Password** means the Ezsignsigner will receive a secure link by email. 2. **PasswordPhone** means the Ezsignsigner will receive a secure link by email and will need to authenticate using SMS or Phone call. **Additional fee applies**. 3. **PasswordQuestion** means the Ezsignsigner will receive a secure link by email and will need to authenticate using a predefined question and answer. 4. **InPersonPhone** means the Ezsignsigner will only be able to sign \"In-Person\" and will need to authenticate using SMS or Phone call. No email will be sent for invitation to sign. **Additional fee applies**. 5. **InPerson** means the Ezsignsigner will only be able to sign \"In-Person\" and there won\'t be any authentication. No email will be sent for invitation to sign. Make sure you evaluate the risk of signature denial and at minimum, we recommend you use a handwritten signature type.
-     * @type {string}
+     * The unique ID of the Userlogintype
+     * @type {number}
      * @memberof EzsignsignerResponse
      */
-    'eEzsignsignerLogintype': EzsignsignerResponseEEzsignsignerLogintypeEnum;
+    'fkiUserlogintypeID': number;
     /**
-     * The predefined answer to the secret question the Ezsignsigner will need to provide to successfully authenticate.
+     * The description of the Userlogintype in the language of the requester
      * @type {string}
      * @memberof EzsignsignerResponse
      */
-    'sEzsignsignerSecretanswer'?: string;
+    'sUserlogintypeDescriptionX': string;
 }
-
-/**
-    * @export
-    * @enum {string}
-    */
-export enum EzsignsignerResponseEEzsignsignerLogintypeEnum {
-    Password = 'Password',
-    PasswordPhone = 'PasswordPhone',
-    PasswordQuestion = 'PasswordQuestion',
-    InPersonPhone = 'InPersonPhone',
-    InPerson = 'InPerson'
-}
-
 

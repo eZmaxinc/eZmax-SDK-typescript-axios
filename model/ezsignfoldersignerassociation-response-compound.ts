@@ -14,6 +14,8 @@
 
 
 import { EzsignfoldersignerassociationResponse } from './ezsignfoldersignerassociation-response';
+import { EzsignfoldersignerassociationResponseCompoundUser } from './ezsignfoldersignerassociation-response-compound-user';
+import { EzsignsignerResponseCompound } from './ezsignsigner-response-compound';
 
 /**
  * @type EzsignfoldersignerassociationResponseCompound

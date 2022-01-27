@@ -123,6 +123,7 @@ export * from './ezsignfoldersignerassociation-request-compound';
 export * from './ezsignfoldersignerassociation-request-compound-all-of';
 export * from './ezsignfoldersignerassociation-response';
 export * from './ezsignfoldersignerassociation-response-compound';
+export * from './ezsignfoldersignerassociation-response-compound-user';
 export * from './ezsignfoldertype-get-list-v1-response';
 export * from './ezsignfoldertype-get-list-v1-response-all-of';
 export * from './ezsignfoldertype-get-list-v1-response-mpayload';
