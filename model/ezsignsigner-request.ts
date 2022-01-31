@@ -46,16 +46,14 @@ export interface EzsignsignerRequest {
     'sEzsignsignerSecretanswer'?: string;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum EzsignsignerRequestEEzsignsignerLogintypeEnum {
-    Password = 'Password',
-    PasswordPhone = 'PasswordPhone',
-    PasswordQuestion = 'PasswordQuestion',
-    InPersonPhone = 'InPersonPhone',
-    InPerson = 'InPerson'
-}
+export const EzsignsignerRequestEEzsignsignerLogintypeEnum = {
+    Password: 'Password',
+    PasswordPhone: 'PasswordPhone',
+    PasswordQuestion: 'PasswordQuestion',
+    InPersonPhone: 'InPersonPhone',
+    InPerson: 'InPerson'
+} as const;
+
+export type EzsignsignerRequestEEzsignsignerLogintypeEnum = typeof EzsignsignerRequestEEzsignsignerLogintypeEnum[keyof typeof EzsignsignerRequestEEzsignsignerLogintypeEnum];
 
 

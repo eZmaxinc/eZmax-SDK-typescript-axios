@@ -40,13 +40,11 @@ export interface EzsigndocumentGetWordsPositionsV1Request {
     'a_sWord'?: Array<string>;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum EzsigndocumentGetWordsPositionsV1RequestEGetEnum {
-    All = 'All',
-    Words = 'Words'
-}
+export const EzsigndocumentGetWordsPositionsV1RequestEGetEnum = {
+    All: 'All',
+    Words: 'Words'
+} as const;
+
+export type EzsigndocumentGetWordsPositionsV1RequestEGetEnum = typeof EzsigndocumentGetWordsPositionsV1RequestEGetEnum[keyof typeof EzsigndocumentGetWordsPositionsV1RequestEGetEnum];
 
 

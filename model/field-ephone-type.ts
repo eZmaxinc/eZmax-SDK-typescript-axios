@@ -20,9 +20,12 @@
  * @enum {string}
  */
 
-export enum FieldEPhoneType {
-    Local = 'Local',
-    International = 'International'
-}
+export const FieldEPhoneType = {
+    Local: 'Local',
+    International: 'International'
+} as const;
+
+export type FieldEPhoneType = typeof FieldEPhoneType[keyof typeof FieldEPhoneType];
+
 
 

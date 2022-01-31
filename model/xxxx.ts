@@ -15,17 +15,22 @@
 
 
 /**
- * The user type of the User for SSPR
+ * Test
  * @export
- * @enum {string}
+ * @interface Xxxx
  */
-
-export const FieldEUserTypeSSPR = {
-    EzsignUser: 'EzsignUser',
-    Native: 'Native'
-} as const;
-
-export type FieldEUserTypeSSPR = typeof FieldEUserTypeSSPR[keyof typeof FieldEUserTypeSSPR];
-
-
+export interface Xxxx {
+    /**
+     * 
+     * @type {number}
+     * @memberof Xxxx
+     */
+    'foo': number;
+    /**
+     * 
+     * @type {number}
+     * @memberof Xxxx
+     */
+    'bar': number;
+}
 

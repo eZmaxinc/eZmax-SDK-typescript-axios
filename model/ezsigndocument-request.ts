@@ -82,20 +82,16 @@ export interface EzsigndocumentRequest {
     'sEzsigndocumentName': string;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum EzsigndocumentRequestEEzsigndocumentSourceEnum {
-    Base64 = 'Base64',
-    Url = 'Url'
-}
-/**
-    * @export
-    * @enum {string}
-    */
-export enum EzsigndocumentRequestEEzsigndocumentFormatEnum {
-    Pdf = 'Pdf'
-}
+export const EzsigndocumentRequestEEzsigndocumentSourceEnum = {
+    Base64: 'Base64',
+    Url: 'Url'
+} as const;
+
+export type EzsigndocumentRequestEEzsigndocumentSourceEnum = typeof EzsigndocumentRequestEEzsigndocumentSourceEnum[keyof typeof EzsigndocumentRequestEEzsigndocumentSourceEnum];
+export const EzsigndocumentRequestEEzsigndocumentFormatEnum = {
+    Pdf: 'Pdf'
+} as const;
+
+export type EzsigndocumentRequestEEzsigndocumentFormatEnum = typeof EzsigndocumentRequestEEzsigndocumentFormatEnum[keyof typeof EzsigndocumentRequestEEzsigndocumentFormatEnum];
 
 

@@ -76,12 +76,10 @@ export interface ActivesessionGetCurrentV1ResponseMPayload {
     'fkiApikeyID': number;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum ActivesessionGetCurrentV1ResponseMPayloadEActivesessionSessiontypeEnum {
-    Normal = 'Normal'
-}
+export const ActivesessionGetCurrentV1ResponseMPayloadEActivesessionSessiontypeEnum = {
+    Normal: 'Normal'
+} as const;
+
+export type ActivesessionGetCurrentV1ResponseMPayloadEActivesessionSessiontypeEnum = typeof ActivesessionGetCurrentV1ResponseMPayloadEActivesessionSessiontypeEnum[keyof typeof ActivesessionGetCurrentV1ResponseMPayloadEActivesessionSessiontypeEnum];
 
 

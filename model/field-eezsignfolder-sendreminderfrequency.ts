@@ -20,10 +20,13 @@
  * @enum {string}
  */
 
-export enum FieldEEzsignfolderSendreminderfrequency {
-    None = 'None',
-    Daily = 'Daily',
-    Weekly = 'Weekly'
-}
+export const FieldEEzsignfolderSendreminderfrequency = {
+    None: 'None',
+    Daily: 'Daily',
+    Weekly: 'Weekly'
+} as const;
+
+export type FieldEEzsignfolderSendreminderfrequency = typeof FieldEEzsignfolderSendreminderfrequency[keyof typeof FieldEEzsignfolderSendreminderfrequency];
+
 
 

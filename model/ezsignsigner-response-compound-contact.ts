@@ -21,6 +21,12 @@
  */
 export interface EzsignsignerResponseCompoundContact {
     /**
+     * The unique ID of the Contact
+     * @type {number}
+     * @memberof EzsignsignerResponseCompoundContact
+     */
+    'pkiContactID': number;
+    /**
      * The First name of the contact
      * @type {string}
      * @memberof EzsignsignerResponseCompoundContact

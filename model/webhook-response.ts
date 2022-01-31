@@ -64,28 +64,22 @@ export interface WebhookResponse {
     'eWebhookManagementevent'?: WebhookResponseEWebhookManagementeventEnum;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum WebhookResponseEWebhookModuleEnum {
-    Ezsign = 'Ezsign',
-    Management = 'Management'
-}
-/**
-    * @export
-    * @enum {string}
-    */
-export enum WebhookResponseEWebhookEzsigneventEnum {
-    DocumentCompleted = 'DocumentCompleted',
-    FolderCompleted = 'FolderCompleted'
-}
-/**
-    * @export
-    * @enum {string}
-    */
-export enum WebhookResponseEWebhookManagementeventEnum {
-    UserCreated = 'UserCreated'
-}
+export const WebhookResponseEWebhookModuleEnum = {
+    Ezsign: 'Ezsign',
+    Management: 'Management'
+} as const;
+
+export type WebhookResponseEWebhookModuleEnum = typeof WebhookResponseEWebhookModuleEnum[keyof typeof WebhookResponseEWebhookModuleEnum];
+export const WebhookResponseEWebhookEzsigneventEnum = {
+    DocumentCompleted: 'DocumentCompleted',
+    FolderCompleted: 'FolderCompleted'
+} as const;
+
+export type WebhookResponseEWebhookEzsigneventEnum = typeof WebhookResponseEWebhookEzsigneventEnum[keyof typeof WebhookResponseEWebhookEzsigneventEnum];
+export const WebhookResponseEWebhookManagementeventEnum = {
+    UserCreated: 'UserCreated'
+} as const;
+
+export type WebhookResponseEWebhookManagementeventEnum = typeof WebhookResponseEWebhookManagementeventEnum[keyof typeof WebhookResponseEWebhookManagementeventEnum];
 
 

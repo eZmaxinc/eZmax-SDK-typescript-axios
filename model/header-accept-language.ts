@@ -20,10 +20,13 @@
  * @enum {string}
  */
 
-export enum HeaderAcceptLanguage {
-    Star = '*',
-    en = 'en',
-    fr = 'fr'
-}
+export const HeaderAcceptLanguage = {
+    Star: '*',
+    en: 'en',
+    fr: 'fr'
+} as const;
+
+export type HeaderAcceptLanguage = typeof HeaderAcceptLanguage[keyof typeof HeaderAcceptLanguage];
+
 
 

@@ -20,9 +20,12 @@
  * @enum {string}
  */
 
-export enum FieldEEzsignfoldertypePrivacylevel {
-    User = 'User',
-    Usergroup = 'Usergroup'
-}
+export const FieldEEzsignfoldertypePrivacylevel = {
+    User: 'User',
+    Usergroup: 'Usergroup'
+} as const;
+
+export type FieldEEzsignfoldertypePrivacylevel = typeof FieldEEzsignfoldertypePrivacylevel[keyof typeof FieldEEzsignfoldertypePrivacylevel];
+
 
 

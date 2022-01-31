@@ -241,5 +241,6 @@ model/webhook-response.ts
 model/webhook-user-user-created-all-of.ts
 model/webhook-user-user-created.ts
 model/website-request.ts
+model/xxxx.ts
 package.json
 tsconfig.json

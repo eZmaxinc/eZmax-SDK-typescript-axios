@@ -20,12 +20,15 @@
  * @enum {string}
  */
 
-export enum FieldEEzsigntemplatepackageType {
-    Company = 'Company',
-    Department = 'Department',
-    Team = 'Team',
-    User = 'User',
-    Usergroup = 'Usergroup'
-}
+export const FieldEEzsigntemplatepackageType = {
+    Company: 'Company',
+    Department: 'Department',
+    Team: 'Team',
+    User: 'User',
+    Usergroup: 'Usergroup'
+} as const;
+
+export type FieldEEzsigntemplatepackageType = typeof FieldEEzsigntemplatepackageType[keyof typeof FieldEEzsigntemplatepackageType];
+
 
 

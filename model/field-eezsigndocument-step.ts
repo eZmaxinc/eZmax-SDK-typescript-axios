@@ -20,13 +20,16 @@
  * @enum {string}
  */
 
-export enum FieldEEzsigndocumentStep {
-    Unsent = 'Unsent',
-    Unsigned = 'Unsigned',
-    PartiallySigned = 'PartiallySigned',
-    DeclinedToSign = 'DeclinedToSign',
-    PrematurelyEnded = 'PrematurelyEnded',
-    Completed = 'Completed'
-}
+export const FieldEEzsigndocumentStep = {
+    Unsent: 'Unsent',
+    Unsigned: 'Unsigned',
+    PartiallySigned: 'PartiallySigned',
+    DeclinedToSign: 'DeclinedToSign',
+    PrematurelyEnded: 'PrematurelyEnded',
+    Completed: 'Completed'
+} as const;
+
+export type FieldEEzsigndocumentStep = typeof FieldEEzsigndocumentStep[keyof typeof FieldEEzsigndocumentStep];
+
 
 

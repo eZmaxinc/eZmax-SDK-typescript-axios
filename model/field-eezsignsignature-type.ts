@@ -20,12 +20,15 @@
  * @enum {string}
  */
 
-export enum FieldEEzsignsignatureType {
-    Acknowledgement = 'Acknowledgement',
-    City = 'City',
-    Handwritten = 'Handwritten',
-    Initials = 'Initials',
-    Name = 'Name'
-}
+export const FieldEEzsignsignatureType = {
+    Acknowledgement: 'Acknowledgement',
+    City: 'City',
+    Handwritten: 'Handwritten',
+    Initials: 'Initials',
+    Name: 'Name'
+} as const;
+
+export type FieldEEzsignsignatureType = typeof FieldEEzsignsignatureType[keyof typeof FieldEEzsignsignatureType];
+
 
 

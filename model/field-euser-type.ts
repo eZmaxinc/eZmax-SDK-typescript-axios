@@ -20,28 +20,31 @@
  * @enum {string}
  */
 
-export enum FieldEUserType {
-    AgentBroker = 'AgentBroker',
-    Assistant = 'Assistant',
-    Attendance = 'Attendance',
-    Customer = 'Customer',
-    Employee = 'Employee',
-    Ezcom = 'Ezcom',
-    EzsignSigner = 'EzsignSigner',
-    EzsignUser = 'EzsignUser',
-    FranchiseCustomerServer = 'FranchiseCustomerServer',
-    Normal = 'Normal',
-    RewardAdministration = 'RewardAdministration',
-    RewardMember = 'RewardMember',
-    RewardRepresentative = 'RewardRepresentative',
-    RewardCustomer = 'RewardCustomer',
-    RewardDistributorServer = 'RewardDistributorServer',
-    Supplier = 'Supplier',
-    VetrxCustomer = 'VetrxCustomer',
-    Vetrxcustomergroup = 'Vetrxcustomergroup',
-    VetrxCustomerServer = 'VetrxCustomerServer',
-    VetrxManufacturer = 'VetrxManufacturer',
-    VetrxVendor = 'VetrxVendor'
-}
+export const FieldEUserType = {
+    AgentBroker: 'AgentBroker',
+    Assistant: 'Assistant',
+    Attendance: 'Attendance',
+    Customer: 'Customer',
+    Employee: 'Employee',
+    Ezcom: 'Ezcom',
+    EzsignSigner: 'EzsignSigner',
+    EzsignUser: 'EzsignUser',
+    FranchiseCustomerServer: 'FranchiseCustomerServer',
+    Normal: 'Normal',
+    RewardAdministration: 'RewardAdministration',
+    RewardMember: 'RewardMember',
+    RewardRepresentative: 'RewardRepresentative',
+    RewardCustomer: 'RewardCustomer',
+    RewardDistributorServer: 'RewardDistributorServer',
+    Supplier: 'Supplier',
+    VetrxCustomer: 'VetrxCustomer',
+    Vetrxcustomergroup: 'Vetrxcustomergroup',
+    VetrxCustomerServer: 'VetrxCustomerServer',
+    VetrxManufacturer: 'VetrxManufacturer',
+    VetrxVendor: 'VetrxVendor'
+} as const;
+
+export type FieldEUserType = typeof FieldEUserType[keyof typeof FieldEUserType];
+
 
 

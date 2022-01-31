@@ -46,13 +46,11 @@ export interface CustomEzsignsignaturestatusResponse {
     'iEzsignsignaturestatusSigned': number;
 }
 
-/**
-    * @export
-    * @enum {string}
-    */
-export enum CustomEzsignsignaturestatusResponseEEzsignsignaturestatusSteptypeEnum {
-    Form = 'Form',
-    Signature = 'Signature'
-}
+export const CustomEzsignsignaturestatusResponseEEzsignsignaturestatusSteptypeEnum = {
+    Form: 'Form',
+    Signature: 'Signature'
+} as const;
+
+export type CustomEzsignsignaturestatusResponseEEzsignsignaturestatusSteptypeEnum = typeof CustomEzsignsignaturestatusResponseEEzsignsignaturestatusSteptypeEnum[keyof typeof CustomEzsignsignaturestatusResponseEEzsignsignaturestatusSteptypeEnum];
 
 
