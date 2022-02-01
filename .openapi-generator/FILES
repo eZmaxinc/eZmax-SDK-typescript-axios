@@ -105,6 +105,7 @@ model/ezsigndocument-get-words-positions-v1-response-all-of.ts
 model/ezsigndocument-get-words-positions-v1-response.ts
 model/ezsigndocument-request-compound.ts
 model/ezsigndocument-request.ts
+model/ezsigndocument-response-compound-all-of.ts
 model/ezsigndocument-response-compound.ts
 model/ezsigndocument-response.ts
 model/ezsignfolder-create-object-v1-request.ts
@@ -150,6 +151,7 @@ model/ezsignfoldersignerassociation-get-object-v1-response.ts
 model/ezsignfoldersignerassociation-request-compound-all-of.ts
 model/ezsignfoldersignerassociation-request-compound.ts
 model/ezsignfoldersignerassociation-request.ts
+model/ezsignfoldersignerassociation-response-compound-all-of.ts
 model/ezsignfoldersignerassociation-response-compound-user.ts
 model/ezsignfoldersignerassociation-response-compound.ts
 model/ezsignfoldersignerassociation-response.ts
@@ -171,6 +173,7 @@ model/ezsignsignature-create-object-v1-response.ts
 model/ezsignsignature-delete-object-v1-response.ts
 model/ezsignsignature-get-object-v1-response-all-of.ts
 model/ezsignsignature-get-object-v1-response.ts
+model/ezsignsignature-request-compound-all-of.ts
 model/ezsignsignature-request-compound.ts
 model/ezsignsignature-request.ts
 model/ezsignsignaturecustomdate-request.ts
@@ -187,6 +190,7 @@ model/ezsigntemplatepackage-get-list-v1-response-mpayload-all-of.ts
 model/ezsigntemplatepackage-get-list-v1-response-mpayload.ts
 model/ezsigntemplatepackage-get-list-v1-response.ts
 model/ezsigntemplatepackage-list-element.ts
+model/field-eactivesession-weekdaystart.ts
 model/field-eezsigndocument-step.ts
 model/field-eezsignfolder-sendreminderfrequency.ts
 model/field-eezsignfolder-step.ts

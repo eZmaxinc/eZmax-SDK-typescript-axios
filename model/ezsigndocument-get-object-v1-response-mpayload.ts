@@ -14,6 +14,7 @@
 
 
 import { CommonAudit } from './common-audit';
+import { CustomEzsignfoldersignerassociationstatusResponse } from './custom-ezsignfoldersignerassociationstatus-response';
 import { EzsigndocumentResponseCompound } from './ezsigndocument-response-compound';
 import { FieldEEzsigndocumentStep } from './field-eezsigndocument-step';
 

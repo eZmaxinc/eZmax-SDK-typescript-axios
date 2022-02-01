@@ -16,6 +16,7 @@
 import { CommonAudit } from './common-audit';
 import { CustomEzsignfoldersignerassociationstatusResponse } from './custom-ezsignfoldersignerassociationstatus-response';
 import { EzsigndocumentResponse } from './ezsigndocument-response';
+import { EzsigndocumentResponseCompoundAllOf } from './ezsigndocument-response-compound-all-of';
 import { FieldEEzsigndocumentStep } from './field-eezsigndocument-step';
 
 /**
@@ -23,6 +24,6 @@ import { FieldEEzsigndocumentStep } from './field-eezsigndocument-step';
  * An Ezsigndocument Object and children to create a complete structure
  * @export
  */
-export type EzsigndocumentResponseCompound = EzsigndocumentResponse;
+export type EzsigndocumentResponseCompound = EzsigndocumentResponse & EzsigndocumentResponseCompoundAllOf;
 
 

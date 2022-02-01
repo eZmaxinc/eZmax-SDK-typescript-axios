@@ -13,16 +13,26 @@
  */
 
 
-import { EzsignfoldersignerassociationResponse } from './ezsignfoldersignerassociation-response';
-import { EzsignfoldersignerassociationResponseCompoundAllOf } from './ezsignfoldersignerassociation-response-compound-all-of';
 import { EzsignfoldersignerassociationResponseCompoundUser } from './ezsignfoldersignerassociation-response-compound-user';
 import { EzsignsignerResponseCompound } from './ezsignsigner-response-compound';
 
 /**
- * @type EzsignfoldersignerassociationResponseCompound
- * An Ezsignfoldersignerassociation Object
+ * 
  * @export
+ * @interface EzsignfoldersignerassociationResponseCompoundAllOf
  */
-export type EzsignfoldersignerassociationResponseCompound = EzsignfoldersignerassociationResponse & EzsignfoldersignerassociationResponseCompoundAllOf;
-
+export interface EzsignfoldersignerassociationResponseCompoundAllOf {
+    /**
+     * 
+     * @type {EzsignfoldersignerassociationResponseCompoundUser}
+     * @memberof EzsignfoldersignerassociationResponseCompoundAllOf
+     */
+    'objUser'?: EzsignfoldersignerassociationResponseCompoundUser;
+    /**
+     * 
+     * @type {EzsignsignerResponseCompound}
+     * @memberof EzsignfoldersignerassociationResponseCompoundAllOf
+     */
+    'objEzsignsigner'?: EzsignsignerResponseCompound;
+}
 

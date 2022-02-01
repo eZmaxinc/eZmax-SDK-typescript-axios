@@ -14,6 +14,7 @@
 
 
 import { EzsignsignatureRequest } from './ezsignsignature-request';
+import { EzsignsignatureRequestCompoundAllOf } from './ezsignsignature-request-compound-all-of';
 import { EzsignsignaturecustomdateRequest } from './ezsignsignaturecustomdate-request';
 import { FieldEEzsignsignatureType } from './field-eezsignsignature-type';
 
@@ -22,6 +23,6 @@ import { FieldEEzsignsignatureType } from './field-eezsignsignature-type';
  * An Ezsignsignature Object and children to create a complete structure
  * @export
  */
-export type EzsignsignatureRequestCompound = EzsignsignatureRequest;
+export type EzsignsignatureRequestCompound = EzsignsignatureRequest & EzsignsignatureRequestCompoundAllOf;
 
 

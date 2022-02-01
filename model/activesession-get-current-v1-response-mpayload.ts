@@ -13,6 +13,7 @@
  */
 
 
+import { FieldEActivesessionWeekdaystart } from './field-eactivesession-weekdaystart';
 
 /**
  * Payload for the /1/object/activesession/getCurrent API Request
@@ -32,6 +33,12 @@ export interface ActivesessionGetCurrentV1ResponseMPayload {
      * @memberof ActivesessionGetCurrentV1ResponseMPayload
      */
     'eActivesessionSessiontype': ActivesessionGetCurrentV1ResponseMPayloadEActivesessionSessiontypeEnum;
+    /**
+     * 
+     * @type {FieldEActivesessionWeekdaystart}
+     * @memberof ActivesessionGetCurrentV1ResponseMPayload
+     */
+    'eActivesessionWeekdaystart': FieldEActivesessionWeekdaystart;
     /**
      * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @type {number}
