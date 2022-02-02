@@ -30,6 +30,11 @@ index.ts
 model/activesession-get-current-v1-response-all-of.ts
 model/activesession-get-current-v1-response-mpayload.ts
 model/activesession-get-current-v1-response.ts
+model/activesession-response-compound-all-of.ts
+model/activesession-response-compound-apikey.ts
+model/activesession-response-compound-user.ts
+model/activesession-response-compound.ts
+model/activesession-response.ts
 model/address-request.ts
 model/apikey-create-object-v1-request.ts
 model/apikey-create-object-v1-response-all-of.ts
@@ -190,6 +195,7 @@ model/ezsigntemplatepackage-get-list-v1-response-mpayload-all-of.ts
 model/ezsigntemplatepackage-get-list-v1-response-mpayload.ts
 model/ezsigntemplatepackage-get-list-v1-response.ts
 model/ezsigntemplatepackage-list-element.ts
+model/field-eactivesession-sessiontype.ts
 model/field-eactivesession-weekdaystart.ts
 model/field-eezsigndocument-step.ts
 model/field-eezsignfolder-sendreminderfrequency.ts
@@ -245,6 +251,5 @@ model/webhook-response.ts
 model/webhook-user-user-created-all-of.ts
 model/webhook-user-user-created.ts
 model/website-request.ts
-model/xxxx.ts
 package.json
 tsconfig.json

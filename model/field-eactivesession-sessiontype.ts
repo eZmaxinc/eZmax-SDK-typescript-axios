@@ -15,22 +15,16 @@
 
 
 /**
- * Test
+ * The Type of session for the Activesession
  * @export
- * @interface Xxxx
+ * @enum {string}
  */
-export interface Xxxx {
-    /**
-     * 
-     * @type {number}
-     * @memberof Xxxx
-     */
-    'foo': number;
-    /**
-     * 
-     * @type {number}
-     * @memberof Xxxx
-     */
-    'bar': number;
-}
+
+export const FieldEActivesessionSessiontype = {
+    Normal: 'Normal'
+} as const;
+
+export type FieldEActivesessionSessiontype = typeof FieldEActivesessionSessiontype[keyof typeof FieldEActivesessionSessiontype];
+
+
 

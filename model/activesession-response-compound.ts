@@ -13,17 +13,18 @@
  */
 
 
-import { ActivesessionResponseCompound } from './activesession-response-compound';
+import { ActivesessionResponse } from './activesession-response';
+import { ActivesessionResponseCompoundAllOf } from './activesession-response-compound-all-of';
 import { ActivesessionResponseCompoundApikey } from './activesession-response-compound-apikey';
 import { ActivesessionResponseCompoundUser } from './activesession-response-compound-user';
 import { FieldEActivesessionSessiontype } from './field-eactivesession-sessiontype';
 import { FieldEActivesessionWeekdaystart } from './field-eactivesession-weekdaystart';
 
 /**
- * @type ActivesessionGetCurrentV1ResponseMPayload
+ * @type ActivesessionResponseCompound
  * Payload for the /1/object/activesession/getCurrent API Request
  * @export
  */
-export type ActivesessionGetCurrentV1ResponseMPayload = ActivesessionResponseCompound;
+export type ActivesessionResponseCompound = ActivesessionResponse & ActivesessionResponseCompoundAllOf;
 
 
