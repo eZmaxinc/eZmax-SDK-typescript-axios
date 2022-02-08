@@ -21,6 +21,12 @@
  */
 export interface EzsignfoldersignerassociationRequest {
     /**
+     * The unique ID of the Ezsignfoldersignerassociation
+     * @type {number}
+     * @memberof EzsignfoldersignerassociationRequest
+     */
+    'pkiEzsignfoldersignerassociationID'?: number;
+    /**
      * The unique ID of the User
      * @type {number}
      * @memberof EzsignfoldersignerassociationRequest

@@ -89,6 +89,8 @@ export * from './ezsignfolder-create-object-v1-response';
 export * from './ezsignfolder-create-object-v1-response-all-of';
 export * from './ezsignfolder-create-object-v1-response-mpayload';
 export * from './ezsignfolder-delete-object-v1-response';
+export * from './ezsignfolder-edit-object-v1-request';
+export * from './ezsignfolder-edit-object-v1-response';
 export * from './ezsignfolder-get-ezsigndocuments-v1-response';
 export * from './ezsignfolder-get-ezsigndocuments-v1-response-all-of';
 export * from './ezsignfolder-get-ezsigndocuments-v1-response-mpayload';

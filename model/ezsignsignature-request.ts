@@ -22,6 +22,12 @@ import { FieldEEzsignsignatureType } from './field-eezsignsignature-type';
  */
 export interface EzsignsignatureRequest {
     /**
+     * The unique ID of the Ezsignsignature
+     * @type {number}
+     * @memberof EzsignsignatureRequest
+     */
+    'pkiEzsignsignatureID'?: number;
+    /**
      * The unique ID of the Ezsignfoldersignerassociation
      * @type {number}
      * @memberof EzsignsignatureRequest

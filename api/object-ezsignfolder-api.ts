@@ -29,6 +29,10 @@ import { EzsignfolderCreateObjectV1Response } from '../model';
 // @ts-ignore
 import { EzsignfolderDeleteObjectV1Response } from '../model';
 // @ts-ignore
+import { EzsignfolderEditObjectV1Request } from '../model';
+// @ts-ignore
+import { EzsignfolderEditObjectV1Response } from '../model';
+// @ts-ignore
 import { EzsignfolderGetEzsigndocumentsV1Response } from '../model';
 // @ts-ignore
 import { EzsignfolderGetEzsignfoldersignerassociationsV1Response } from '../model';
@@ -155,6 +159,68 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
                         authorization: configuration.apiKey as string,
                         secret: secret as string,
                         method: 'DELETE' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Edit an Ezsignfolder
+         * @param {number} pkiEzsignfolderID 
+         * @param {EzsignfolderEditObjectV1Request} ezsignfolderEditObjectV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsignfolderEditObjectV1: async (pkiEzsignfolderID: number, ezsignfolderEditObjectV1Request: EzsignfolderEditObjectV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiEzsignfolderID' is not null or undefined
+            assertParamExists('ezsignfolderEditObjectV1', 'pkiEzsignfolderID', pkiEzsignfolderID)
+            // verify required parameter 'ezsignfolderEditObjectV1Request' is not null or undefined
+            assertParamExists('ezsignfolderEditObjectV1', 'ezsignfolderEditObjectV1Request', ezsignfolderEditObjectV1Request)
+            const localVarPath = `/1/object/ezsignfolder/{pkiEzsignfolderID}`
+                .replace(`{${"pkiEzsignfolderID"}}`, encodeURIComponent(String(pkiEzsignfolderID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(ezsignfolderEditObjectV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'PUT' as string,
                         url: basePath + toPathString(localVarUrlObj) as string,
                         body: localVarRequestOptions.data || '' as string
                     }
@@ -627,6 +693,18 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Edit an Ezsignfolder
+         * @param {number} pkiEzsignfolderID 
+         * @param {EzsignfolderEditObjectV1Request} ezsignfolderEditObjectV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsignfolderEditObjectV1(pkiEzsignfolderID: number, ezsignfolderEditObjectV1Request: EzsignfolderEditObjectV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderEditObjectV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderEditObjectV1(pkiEzsignfolderID, ezsignfolderEditObjectV1Request, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
          * @summary Retrieve an existing Ezsignfolder\'s Ezsigndocuments
          * @param {number} pkiEzsignfolderID 
          * @param {*} [options] Override http request option.
@@ -740,6 +818,17 @@ export const ObjectEzsignfolderApiFactory = function (configuration?: Configurat
         },
         /**
          * 
+         * @summary Edit an Ezsignfolder
+         * @param {number} pkiEzsignfolderID 
+         * @param {EzsignfolderEditObjectV1Request} ezsignfolderEditObjectV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsignfolderEditObjectV1(pkiEzsignfolderID: number, ezsignfolderEditObjectV1Request: EzsignfolderEditObjectV1Request, options?: any): AxiosPromise<EzsignfolderEditObjectV1Response> {
+            return localVarFp.ezsignfolderEditObjectV1(pkiEzsignfolderID, ezsignfolderEditObjectV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Retrieve an existing Ezsignfolder\'s Ezsigndocuments
          * @param {number} pkiEzsignfolderID 
          * @param {*} [options] Override http request option.
@@ -846,6 +935,19 @@ export class ObjectEzsignfolderApi extends BaseAPI {
      */
     public ezsignfolderDeleteObjectV1(pkiEzsignfolderID: number, options?: AxiosRequestConfig) {
         return ObjectEzsignfolderApiFp(this.configuration).ezsignfolderDeleteObjectV1(pkiEzsignfolderID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Edit an Ezsignfolder
+     * @param {number} pkiEzsignfolderID 
+     * @param {EzsignfolderEditObjectV1Request} ezsignfolderEditObjectV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectEzsignfolderApi
+     */
+    public ezsignfolderEditObjectV1(pkiEzsignfolderID: number, ezsignfolderEditObjectV1Request: EzsignfolderEditObjectV1Request, options?: AxiosRequestConfig) {
+        return ObjectEzsignfolderApiFp(this.configuration).ezsignfolderEditObjectV1(pkiEzsignfolderID, ezsignfolderEditObjectV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

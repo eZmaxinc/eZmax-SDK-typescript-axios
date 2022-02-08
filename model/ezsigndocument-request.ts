@@ -21,6 +21,12 @@
  */
 export interface EzsigndocumentRequest {
     /**
+     * The unique ID of the Ezsigndocument
+     * @type {number}
+     * @memberof EzsigndocumentRequest
+     */
+    'pkiEzsigndocumentID'?: number;
+    /**
      * Indicates where to look for the document binary content.
      * @type {string}
      * @memberof EzsigndocumentRequest

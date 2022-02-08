@@ -118,6 +118,8 @@ model/ezsignfolder-create-object-v1-response-all-of.ts
 model/ezsignfolder-create-object-v1-response-mpayload.ts
 model/ezsignfolder-create-object-v1-response.ts
 model/ezsignfolder-delete-object-v1-response.ts
+model/ezsignfolder-edit-object-v1-request.ts
+model/ezsignfolder-edit-object-v1-response.ts
 model/ezsignfolder-get-ezsigndocuments-v1-response-all-of.ts
 model/ezsignfolder-get-ezsigndocuments-v1-response-mpayload.ts
 model/ezsignfolder-get-ezsigndocuments-v1-response.ts

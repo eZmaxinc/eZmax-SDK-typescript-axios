@@ -22,6 +22,12 @@ import { FieldEEzsignfolderSendreminderfrequency } from './field-eezsignfolder-s
  */
 export interface EzsignfolderRequest {
     /**
+     * The unique ID of the Ezsignfolder
+     * @type {number}
+     * @memberof EzsignfolderRequest
+     */
+    'pkiEzsignfolderID'?: number;
+    /**
      * The unique ID of the Ezsignfoldertype.
      * @type {number}
      * @memberof EzsignfolderRequest

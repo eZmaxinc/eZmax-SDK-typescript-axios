@@ -21,6 +21,12 @@
  */
 export interface FranchisereferalincomeRequest {
     /**
+     * The unique ID of the Franchisereferalincome
+     * @type {number}
+     * @memberof FranchisereferalincomeRequest
+     */
+    'pkiFranchisereferalincomeID'?: number;
+    /**
      * The unique ID of the Franchisebroker
      * @type {number}
      * @memberof FranchisereferalincomeRequest

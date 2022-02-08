@@ -22,6 +22,12 @@ import { MultilingualApikeyDescription } from './multilingual-apikey-description
  */
 export interface ApikeyRequest {
     /**
+     * The unique ID of the Apikey
+     * @type {number}
+     * @memberof ApikeyRequest
+     */
+    'pkiApikeyID'?: number;
+    /**
      * The unique ID of the User
      * @type {number}
      * @memberof ApikeyRequest
