@@ -108,7 +108,10 @@ model/ezsigndocument-get-object-v1-response.ts
 model/ezsigndocument-get-words-positions-v1-request.ts
 model/ezsigndocument-get-words-positions-v1-response-all-of.ts
 model/ezsigndocument-get-words-positions-v1-response.ts
+model/ezsigndocument-patch-object-v1-request.ts
+model/ezsigndocument-patch-object-v1-response.ts
 model/ezsigndocument-request-compound.ts
+model/ezsigndocument-request-patch.ts
 model/ezsigndocument-request.ts
 model/ezsigndocument-response-compound-all-of.ts
 model/ezsigndocument-response-compound.ts

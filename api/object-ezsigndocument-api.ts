@@ -51,6 +51,10 @@ import { EzsigndocumentGetWordsPositionsV1Request } from '../model';
 // @ts-ignore
 import { EzsigndocumentGetWordsPositionsV1Response } from '../model';
 // @ts-ignore
+import { EzsigndocumentPatchObjectV1Request } from '../model';
+// @ts-ignore
+import { EzsigndocumentPatchObjectV1Response } from '../model';
+// @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
  * ObjectEzsigndocumentApi - axios parameter creator
@@ -587,6 +591,68 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * 
+         * @summary Patch an existing Ezsigndocument
+         * @param {number} pkiEzsigndocumentID 
+         * @param {EzsigndocumentPatchObjectV1Request} ezsigndocumentPatchObjectV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigndocumentPatchObjectV1: async (pkiEzsigndocumentID: number, ezsigndocumentPatchObjectV1Request: EzsigndocumentPatchObjectV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
+            assertParamExists('ezsigndocumentPatchObjectV1', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
+            // verify required parameter 'ezsigndocumentPatchObjectV1Request' is not null or undefined
+            assertParamExists('ezsigndocumentPatchObjectV1', 'ezsigndocumentPatchObjectV1Request', ezsigndocumentPatchObjectV1Request)
+            const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}`
+                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(ezsigndocumentPatchObjectV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'PATCH' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -701,6 +767,18 @@ export const ObjectEzsigndocumentApiFp = function(configuration?: Configuration)
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigndocumentGetWordsPositionsV1(pkiEzsigndocumentID, ezsigndocumentGetWordsPositionsV1Request, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
+        /**
+         * 
+         * @summary Patch an existing Ezsigndocument
+         * @param {number} pkiEzsigndocumentID 
+         * @param {EzsigndocumentPatchObjectV1Request} ezsigndocumentPatchObjectV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsigndocumentPatchObjectV1(pkiEzsigndocumentID: number, ezsigndocumentPatchObjectV1Request: EzsigndocumentPatchObjectV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentPatchObjectV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigndocumentPatchObjectV1(pkiEzsigndocumentID, ezsigndocumentPatchObjectV1Request, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
     }
 };
 
@@ -805,6 +883,17 @@ export const ObjectEzsigndocumentApiFactory = function (configuration?: Configur
          */
         ezsigndocumentGetWordsPositionsV1(pkiEzsigndocumentID: number, ezsigndocumentGetWordsPositionsV1Request: EzsigndocumentGetWordsPositionsV1Request, options?: any): AxiosPromise<EzsigndocumentGetWordsPositionsV1Response> {
             return localVarFp.ezsigndocumentGetWordsPositionsV1(pkiEzsigndocumentID, ezsigndocumentGetWordsPositionsV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Patch an existing Ezsigndocument
+         * @param {number} pkiEzsigndocumentID 
+         * @param {EzsigndocumentPatchObjectV1Request} ezsigndocumentPatchObjectV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigndocumentPatchObjectV1(pkiEzsigndocumentID: number, ezsigndocumentPatchObjectV1Request: EzsigndocumentPatchObjectV1Request, options?: any): AxiosPromise<EzsigndocumentPatchObjectV1Response> {
+            return localVarFp.ezsigndocumentPatchObjectV1(pkiEzsigndocumentID, ezsigndocumentPatchObjectV1Request, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -927,5 +1016,18 @@ export class ObjectEzsigndocumentApi extends BaseAPI {
      */
     public ezsigndocumentGetWordsPositionsV1(pkiEzsigndocumentID: number, ezsigndocumentGetWordsPositionsV1Request: EzsigndocumentGetWordsPositionsV1Request, options?: AxiosRequestConfig) {
         return ObjectEzsigndocumentApiFp(this.configuration).ezsigndocumentGetWordsPositionsV1(pkiEzsigndocumentID, ezsigndocumentGetWordsPositionsV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Patch an existing Ezsigndocument
+     * @param {number} pkiEzsigndocumentID 
+     * @param {EzsigndocumentPatchObjectV1Request} ezsigndocumentPatchObjectV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectEzsigndocumentApi
+     */
+    public ezsigndocumentPatchObjectV1(pkiEzsigndocumentID: number, ezsigndocumentPatchObjectV1Request: EzsigndocumentPatchObjectV1Request, options?: AxiosRequestConfig) {
+        return ObjectEzsigndocumentApiFp(this.configuration).ezsigndocumentPatchObjectV1(pkiEzsigndocumentID, ezsigndocumentPatchObjectV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 }

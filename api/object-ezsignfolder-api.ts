@@ -174,7 +174,7 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
         },
         /**
          * 
-         * @summary Edit an Ezsignfolder
+         * @summary Modify an existing Ezsignfolder
          * @param {number} pkiEzsignfolderID 
          * @param {EzsignfolderEditObjectV1Request} ezsignfolderEditObjectV1Request 
          * @param {*} [options] Override http request option.
@@ -693,7 +693,7 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
-         * @summary Edit an Ezsignfolder
+         * @summary Modify an existing Ezsignfolder
          * @param {number} pkiEzsignfolderID 
          * @param {EzsignfolderEditObjectV1Request} ezsignfolderEditObjectV1Request 
          * @param {*} [options] Override http request option.
@@ -818,7 +818,7 @@ export const ObjectEzsignfolderApiFactory = function (configuration?: Configurat
         },
         /**
          * 
-         * @summary Edit an Ezsignfolder
+         * @summary Modify an existing Ezsignfolder
          * @param {number} pkiEzsignfolderID 
          * @param {EzsignfolderEditObjectV1Request} ezsignfolderEditObjectV1Request 
          * @param {*} [options] Override http request option.
@@ -939,7 +939,7 @@ export class ObjectEzsignfolderApi extends BaseAPI {
 
     /**
      * 
-     * @summary Edit an Ezsignfolder
+     * @summary Modify an existing Ezsignfolder
      * @param {number} pkiEzsignfolderID 
      * @param {EzsignfolderEditObjectV1Request} ezsignfolderEditObjectV1Request 
      * @param {*} [options] Override http request option.
