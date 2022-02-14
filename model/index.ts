@@ -152,6 +152,8 @@ export * from './ezsignsignature-create-object-v1-response';
 export * from './ezsignsignature-create-object-v1-response-all-of';
 export * from './ezsignsignature-create-object-v1-response-mpayload';
 export * from './ezsignsignature-delete-object-v1-response';
+export * from './ezsignsignature-edit-object-v1-request';
+export * from './ezsignsignature-edit-object-v1-response';
 export * from './ezsignsignature-get-object-v1-response';
 export * from './ezsignsignature-get-object-v1-response-all-of';
 export * from './ezsignsignature-request';

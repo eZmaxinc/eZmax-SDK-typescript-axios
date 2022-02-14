@@ -181,6 +181,8 @@ model/ezsignsignature-create-object-v1-response-all-of.ts
 model/ezsignsignature-create-object-v1-response-mpayload.ts
 model/ezsignsignature-create-object-v1-response.ts
 model/ezsignsignature-delete-object-v1-response.ts
+model/ezsignsignature-edit-object-v1-request.ts
+model/ezsignsignature-edit-object-v1-response.ts
 model/ezsignsignature-get-object-v1-response-all-of.ts
 model/ezsignsignature-get-object-v1-response.ts
 model/ezsignsignature-request-compound-all-of.ts

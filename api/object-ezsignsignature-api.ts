@@ -29,6 +29,10 @@ import { EzsignsignatureCreateObjectV1Response } from '../model';
 // @ts-ignore
 import { EzsignsignatureDeleteObjectV1Response } from '../model';
 // @ts-ignore
+import { EzsignsignatureEditObjectV1Request } from '../model';
+// @ts-ignore
+import { EzsignsignatureEditObjectV1Response } from '../model';
+// @ts-ignore
 import { EzsignsignatureGetObjectV1Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
@@ -153,6 +157,68 @@ export const ObjectEzsignsignatureApiAxiosParamCreator = function (configuration
             };
         },
         /**
+         * 
+         * @summary Edit an existing Ezsignsignature
+         * @param {number} pkiEzsignsignatureID 
+         * @param {EzsignsignatureEditObjectV1Request} ezsignsignatureEditObjectV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsignsignatureEditObjectV1: async (pkiEzsignsignatureID: number, ezsignsignatureEditObjectV1Request: EzsignsignatureEditObjectV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiEzsignsignatureID' is not null or undefined
+            assertParamExists('ezsignsignatureEditObjectV1', 'pkiEzsignsignatureID', pkiEzsignsignatureID)
+            // verify required parameter 'ezsignsignatureEditObjectV1Request' is not null or undefined
+            assertParamExists('ezsignsignatureEditObjectV1', 'ezsignsignatureEditObjectV1Request', ezsignsignatureEditObjectV1Request)
+            const localVarPath = `/1/object/ezsignsignature/{pkiEzsignsignatureID}`
+                .replace(`{${"pkiEzsignsignatureID"}}`, encodeURIComponent(String(pkiEzsignsignatureID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(ezsignsignatureEditObjectV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'PUT' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
          * @summary Retrieve an existing Ezsignsignature
          * @param {number} pkiEzsignsignatureID 
@@ -241,6 +307,18 @@ export const ObjectEzsignsignatureApiFp = function(configuration?: Configuration
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
+         * 
+         * @summary Edit an existing Ezsignsignature
+         * @param {number} pkiEzsignsignatureID 
+         * @param {EzsignsignatureEditObjectV1Request} ezsignsignatureEditObjectV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsignsignatureEditObjectV1(pkiEzsignsignatureID: number, ezsignsignatureEditObjectV1Request: EzsignsignatureEditObjectV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignsignatureEditObjectV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignsignatureEditObjectV1(pkiEzsignsignatureID, ezsignsignatureEditObjectV1Request, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
          * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
          * @summary Retrieve an existing Ezsignsignature
          * @param {number} pkiEzsignsignatureID 
@@ -280,6 +358,17 @@ export const ObjectEzsignsignatureApiFactory = function (configuration?: Configu
          */
         ezsignsignatureDeleteObjectV1(pkiEzsignsignatureID: number, options?: any): AxiosPromise<EzsignsignatureDeleteObjectV1Response> {
             return localVarFp.ezsignsignatureDeleteObjectV1(pkiEzsignsignatureID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Edit an existing Ezsignsignature
+         * @param {number} pkiEzsignsignatureID 
+         * @param {EzsignsignatureEditObjectV1Request} ezsignsignatureEditObjectV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsignsignatureEditObjectV1(pkiEzsignsignatureID: number, ezsignsignatureEditObjectV1Request: EzsignsignatureEditObjectV1Request, options?: any): AxiosPromise<EzsignsignatureEditObjectV1Response> {
+            return localVarFp.ezsignsignatureEditObjectV1(pkiEzsignsignatureID, ezsignsignatureEditObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
          * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
@@ -323,6 +412,19 @@ export class ObjectEzsignsignatureApi extends BaseAPI {
      */
     public ezsignsignatureDeleteObjectV1(pkiEzsignsignatureID: number, options?: AxiosRequestConfig) {
         return ObjectEzsignsignatureApiFp(this.configuration).ezsignsignatureDeleteObjectV1(pkiEzsignsignatureID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Edit an existing Ezsignsignature
+     * @param {number} pkiEzsignsignatureID 
+     * @param {EzsignsignatureEditObjectV1Request} ezsignsignatureEditObjectV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectEzsignsignatureApi
+     */
+    public ezsignsignatureEditObjectV1(pkiEzsignsignatureID: number, ezsignsignatureEditObjectV1Request: EzsignsignatureEditObjectV1Request, options?: AxiosRequestConfig) {
+        return ObjectEzsignsignatureApiFp(this.configuration).ezsignsignatureEditObjectV1(pkiEzsignsignatureID, ezsignsignatureEditObjectV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
