@@ -39,6 +39,8 @@ import { EzsigndocumentCreateObjectV1Response } from '../model';
 // @ts-ignore
 import { EzsigndocumentDeleteObjectV1Response } from '../model';
 // @ts-ignore
+import { EzsigndocumentEditEzsignsignaturesV1Response } from '../model';
+// @ts-ignore
 import { EzsigndocumentGetDownloadUrlV1Response } from '../model';
 // @ts-ignore
 import { EzsigndocumentGetEzsignpagesV1Response } from '../model';
@@ -54,6 +56,8 @@ import { EzsigndocumentGetWordsPositionsV1Response } from '../model';
 import { EzsigndocumentPatchObjectV1Request } from '../model';
 // @ts-ignore
 import { EzsigndocumentPatchObjectV1Response } from '../model';
+// @ts-ignore
+import { EzsignsignatureRequestCompound } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -288,6 +292,68 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
                         authorization: configuration.apiKey as string,
                         secret: secret as string,
                         method: 'DELETE' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Using this endpoint, you can edit multiple ezsignsignatures at the same time.
+         * @summary Edit multiple ezsignsignatures
+         * @param {number} pkiEzsigndocumentID 
+         * @param {Array<EzsignsignatureRequestCompound>} ezsignsignatureRequestCompound 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigndocumentEditEzsignsignaturesV1: async (pkiEzsigndocumentID: number, ezsignsignatureRequestCompound: Array<EzsignsignatureRequestCompound>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
+            assertParamExists('ezsigndocumentEditEzsignsignaturesV1', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
+            // verify required parameter 'ezsignsignatureRequestCompound' is not null or undefined
+            assertParamExists('ezsigndocumentEditEzsignsignaturesV1', 'ezsignsignatureRequestCompound', ezsignsignatureRequestCompound)
+            const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignsignatures`
+                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(ezsignsignatureRequestCompound, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'PUT' as string,
                         url: basePath + toPathString(localVarUrlObj) as string,
                         body: localVarRequestOptions.data || '' as string
                     }
@@ -711,6 +777,18 @@ export const ObjectEzsigndocumentApiFp = function(configuration?: Configuration)
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
+         * Using this endpoint, you can edit multiple ezsignsignatures at the same time.
+         * @summary Edit multiple ezsignsignatures
+         * @param {number} pkiEzsigndocumentID 
+         * @param {Array<EzsignsignatureRequestCompound>} ezsignsignatureRequestCompound 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsigndocumentEditEzsignsignaturesV1(pkiEzsigndocumentID: number, ezsignsignatureRequestCompound: Array<EzsignsignatureRequestCompound>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentEditEzsignsignaturesV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigndocumentEditEzsignsignaturesV1(pkiEzsigndocumentID, ezsignsignatureRequestCompound, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
          * This endpoint returns URLs to different files that can be downloaded during the signing process.  These links will expire after 5 minutes so the download of the file should be made soon after retrieving the link.
          * @summary Retrieve a URL to download documents.
          * @param {number} pkiEzsigndocumentID 
@@ -831,6 +909,17 @@ export const ObjectEzsigndocumentApiFactory = function (configuration?: Configur
          */
         ezsigndocumentDeleteObjectV1(pkiEzsigndocumentID: number, options?: any): AxiosPromise<EzsigndocumentDeleteObjectV1Response> {
             return localVarFp.ezsigndocumentDeleteObjectV1(pkiEzsigndocumentID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Using this endpoint, you can edit multiple ezsignsignatures at the same time.
+         * @summary Edit multiple ezsignsignatures
+         * @param {number} pkiEzsigndocumentID 
+         * @param {Array<EzsignsignatureRequestCompound>} ezsignsignatureRequestCompound 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigndocumentEditEzsignsignaturesV1(pkiEzsigndocumentID: number, ezsignsignatureRequestCompound: Array<EzsignsignatureRequestCompound>, options?: any): AxiosPromise<EzsigndocumentEditEzsignsignaturesV1Response> {
+            return localVarFp.ezsigndocumentEditEzsignsignaturesV1(pkiEzsigndocumentID, ezsignsignatureRequestCompound, options).then((request) => request(axios, basePath));
         },
         /**
          * This endpoint returns URLs to different files that can be downloaded during the signing process.  These links will expire after 5 minutes so the download of the file should be made soon after retrieving the link.
@@ -954,6 +1043,19 @@ export class ObjectEzsigndocumentApi extends BaseAPI {
      */
     public ezsigndocumentDeleteObjectV1(pkiEzsigndocumentID: number, options?: AxiosRequestConfig) {
         return ObjectEzsigndocumentApiFp(this.configuration).ezsigndocumentDeleteObjectV1(pkiEzsigndocumentID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Using this endpoint, you can edit multiple ezsignsignatures at the same time.
+     * @summary Edit multiple ezsignsignatures
+     * @param {number} pkiEzsigndocumentID 
+     * @param {Array<EzsignsignatureRequestCompound>} ezsignsignatureRequestCompound 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectEzsigndocumentApi
+     */
+    public ezsigndocumentEditEzsignsignaturesV1(pkiEzsigndocumentID: number, ezsignsignatureRequestCompound: Array<EzsignsignatureRequestCompound>, options?: AxiosRequestConfig) {
+        return ObjectEzsigndocumentApiFp(this.configuration).ezsigndocumentEditEzsignsignaturesV1(pkiEzsigndocumentID, ezsignsignatureRequestCompound, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

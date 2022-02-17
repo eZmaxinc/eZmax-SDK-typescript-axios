@@ -64,6 +64,7 @@ export * from './ezsigndocument-create-object-v1-response';
 export * from './ezsigndocument-create-object-v1-response-all-of';
 export * from './ezsigndocument-create-object-v1-response-mpayload';
 export * from './ezsigndocument-delete-object-v1-response';
+export * from './ezsigndocument-edit-ezsignsignatures-v1-response';
 export * from './ezsigndocument-get-download-url-v1-response';
 export * from './ezsigndocument-get-download-url-v1-response-all-of';
 export * from './ezsigndocument-get-download-url-v1-response-mpayload';

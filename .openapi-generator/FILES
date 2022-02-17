@@ -93,6 +93,7 @@ model/ezsigndocument-create-object-v1-response-all-of.ts
 model/ezsigndocument-create-object-v1-response-mpayload.ts
 model/ezsigndocument-create-object-v1-response.ts
 model/ezsigndocument-delete-object-v1-response.ts
+model/ezsigndocument-edit-ezsignsignatures-v1-response.ts
 model/ezsigndocument-get-download-url-v1-response-all-of.ts
 model/ezsigndocument-get-download-url-v1-response-mpayload.ts
 model/ezsigndocument-get-download-url-v1-response.ts
