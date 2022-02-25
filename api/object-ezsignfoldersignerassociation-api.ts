@@ -27,6 +27,10 @@ import { EzsignfoldersignerassociationCreateObjectV1Request } from '../model';
 // @ts-ignore
 import { EzsignfoldersignerassociationCreateObjectV1Response } from '../model';
 // @ts-ignore
+import { EzsignfoldersignerassociationCreateObjectV2Request } from '../model';
+// @ts-ignore
+import { EzsignfoldersignerassociationCreateObjectV2Response } from '../model';
+// @ts-ignore
 import { EzsignfoldersignerassociationDeleteObjectV1Response } from '../model';
 // @ts-ignore
 import { EzsignfoldersignerassociationGetInPersonLoginUrlV1Response } from '../model';
@@ -45,6 +49,7 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
          * @summary Create a new Ezsignfoldersignerassociation
          * @param {Array<EzsignfoldersignerassociationCreateObjectV1Request>} ezsignfoldersignerassociationCreateObjectV1Request 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         ezsignfoldersignerassociationCreateObjectV1: async (ezsignfoldersignerassociationCreateObjectV1Request: Array<EzsignfoldersignerassociationCreateObjectV1Request>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -76,6 +81,64 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ezsignfoldersignerassociationCreateObjectV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * The endpoint allows to create one or many elements at once.
+         * @summary Create a new Ezsignfoldersignerassociation
+         * @param {EzsignfoldersignerassociationCreateObjectV2Request} ezsignfoldersignerassociationCreateObjectV2Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsignfoldersignerassociationCreateObjectV2: async (ezsignfoldersignerassociationCreateObjectV2Request: EzsignfoldersignerassociationCreateObjectV2Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'ezsignfoldersignerassociationCreateObjectV2Request' is not null or undefined
+            assertParamExists('ezsignfoldersignerassociationCreateObjectV2', 'ezsignfoldersignerassociationCreateObjectV2Request', ezsignfoldersignerassociationCreateObjectV2Request)
+            const localVarPath = `/2/object/ezsignfoldersignerassociation`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(ezsignfoldersignerassociationCreateObjectV2Request, localVarRequestOptions, configuration)
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -281,10 +344,22 @@ export const ObjectEzsignfoldersignerassociationApiFp = function(configuration?:
          * @summary Create a new Ezsignfoldersignerassociation
          * @param {Array<EzsignfoldersignerassociationCreateObjectV1Request>} ezsignfoldersignerassociationCreateObjectV1Request 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         async ezsignfoldersignerassociationCreateObjectV1(ezsignfoldersignerassociationCreateObjectV1Request: Array<EzsignfoldersignerassociationCreateObjectV1Request>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfoldersignerassociationCreateObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfoldersignerassociationCreateObjectV1(ezsignfoldersignerassociationCreateObjectV1Request, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * The endpoint allows to create one or many elements at once.
+         * @summary Create a new Ezsignfoldersignerassociation
+         * @param {EzsignfoldersignerassociationCreateObjectV2Request} ezsignfoldersignerassociationCreateObjectV2Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsignfoldersignerassociationCreateObjectV2(ezsignfoldersignerassociationCreateObjectV2Request: EzsignfoldersignerassociationCreateObjectV2Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfoldersignerassociationCreateObjectV2Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfoldersignerassociationCreateObjectV2(ezsignfoldersignerassociationCreateObjectV2Request, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -335,10 +410,21 @@ export const ObjectEzsignfoldersignerassociationApiFactory = function (configura
          * @summary Create a new Ezsignfoldersignerassociation
          * @param {Array<EzsignfoldersignerassociationCreateObjectV1Request>} ezsignfoldersignerassociationCreateObjectV1Request 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         ezsignfoldersignerassociationCreateObjectV1(ezsignfoldersignerassociationCreateObjectV1Request: Array<EzsignfoldersignerassociationCreateObjectV1Request>, options?: any): AxiosPromise<EzsignfoldersignerassociationCreateObjectV1Response> {
             return localVarFp.ezsignfoldersignerassociationCreateObjectV1(ezsignfoldersignerassociationCreateObjectV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * The endpoint allows to create one or many elements at once.
+         * @summary Create a new Ezsignfoldersignerassociation
+         * @param {EzsignfoldersignerassociationCreateObjectV2Request} ezsignfoldersignerassociationCreateObjectV2Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsignfoldersignerassociationCreateObjectV2(ezsignfoldersignerassociationCreateObjectV2Request: EzsignfoldersignerassociationCreateObjectV2Request, options?: any): AxiosPromise<EzsignfoldersignerassociationCreateObjectV2Response> {
+            return localVarFp.ezsignfoldersignerassociationCreateObjectV2(ezsignfoldersignerassociationCreateObjectV2Request, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -385,11 +471,24 @@ export class ObjectEzsignfoldersignerassociationApi extends BaseAPI {
      * @summary Create a new Ezsignfoldersignerassociation
      * @param {Array<EzsignfoldersignerassociationCreateObjectV1Request>} ezsignfoldersignerassociationCreateObjectV1Request 
      * @param {*} [options] Override http request option.
+     * @deprecated
      * @throws {RequiredError}
      * @memberof ObjectEzsignfoldersignerassociationApi
      */
     public ezsignfoldersignerassociationCreateObjectV1(ezsignfoldersignerassociationCreateObjectV1Request: Array<EzsignfoldersignerassociationCreateObjectV1Request>, options?: AxiosRequestConfig) {
         return ObjectEzsignfoldersignerassociationApiFp(this.configuration).ezsignfoldersignerassociationCreateObjectV1(ezsignfoldersignerassociationCreateObjectV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * The endpoint allows to create one or many elements at once.
+     * @summary Create a new Ezsignfoldersignerassociation
+     * @param {EzsignfoldersignerassociationCreateObjectV2Request} ezsignfoldersignerassociationCreateObjectV2Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectEzsignfoldersignerassociationApi
+     */
+    public ezsignfoldersignerassociationCreateObjectV2(ezsignfoldersignerassociationCreateObjectV2Request: EzsignfoldersignerassociationCreateObjectV2Request, options?: AxiosRequestConfig) {
+        return ObjectEzsignfoldersignerassociationApiFp(this.configuration).ezsignfoldersignerassociationCreateObjectV2(ezsignfoldersignerassociationCreateObjectV2Request, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

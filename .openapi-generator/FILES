@@ -39,6 +39,10 @@ model/apikey-create-object-v1-request.ts
 model/apikey-create-object-v1-response-all-of.ts
 model/apikey-create-object-v1-response-mpayload.ts
 model/apikey-create-object-v1-response.ts
+model/apikey-create-object-v2-request.ts
+model/apikey-create-object-v2-response-all-of.ts
+model/apikey-create-object-v2-response-mpayload.ts
+model/apikey-create-object-v2-response.ts
 model/apikey-request-compound.ts
 model/apikey-request.ts
 model/apikey-response.ts
@@ -96,6 +100,10 @@ model/ezsigndocument-create-object-v1-request.ts
 model/ezsigndocument-create-object-v1-response-all-of.ts
 model/ezsigndocument-create-object-v1-response-mpayload.ts
 model/ezsigndocument-create-object-v1-response.ts
+model/ezsigndocument-create-object-v2-request.ts
+model/ezsigndocument-create-object-v2-response-all-of.ts
+model/ezsigndocument-create-object-v2-response-mpayload.ts
+model/ezsigndocument-create-object-v2-response.ts
 model/ezsigndocument-delete-object-v1-response.ts
 model/ezsigndocument-edit-ezsignsignatures-v1-request.ts
 model/ezsigndocument-edit-ezsignsignatures-v1-response.ts
@@ -131,6 +139,10 @@ model/ezsignfolder-create-object-v1-request.ts
 model/ezsignfolder-create-object-v1-response-all-of.ts
 model/ezsignfolder-create-object-v1-response-mpayload.ts
 model/ezsignfolder-create-object-v1-response.ts
+model/ezsignfolder-create-object-v2-request.ts
+model/ezsignfolder-create-object-v2-response-all-of.ts
+model/ezsignfolder-create-object-v2-response-mpayload.ts
+model/ezsignfolder-create-object-v2-response.ts
 model/ezsignfolder-delete-object-v1-response.ts
 model/ezsignfolder-edit-object-v1-request.ts
 model/ezsignfolder-edit-object-v1-response.ts
@@ -162,6 +174,10 @@ model/ezsignfoldersignerassociation-create-object-v1-request.ts
 model/ezsignfoldersignerassociation-create-object-v1-response-all-of.ts
 model/ezsignfoldersignerassociation-create-object-v1-response-mpayload.ts
 model/ezsignfoldersignerassociation-create-object-v1-response.ts
+model/ezsignfoldersignerassociation-create-object-v2-request.ts
+model/ezsignfoldersignerassociation-create-object-v2-response-all-of.ts
+model/ezsignfoldersignerassociation-create-object-v2-response-mpayload.ts
+model/ezsignfoldersignerassociation-create-object-v2-response.ts
 model/ezsignfoldersignerassociation-delete-object-v1-response.ts
 model/ezsignfoldersignerassociation-get-in-person-login-url-v1-response-all-of.ts
 model/ezsignfoldersignerassociation-get-in-person-login-url-v1-response-mpayload.ts
@@ -191,6 +207,10 @@ model/ezsignsignature-create-object-v1-request.ts
 model/ezsignsignature-create-object-v1-response-all-of.ts
 model/ezsignsignature-create-object-v1-response-mpayload.ts
 model/ezsignsignature-create-object-v1-response.ts
+model/ezsignsignature-create-object-v2-request.ts
+model/ezsignsignature-create-object-v2-response-all-of.ts
+model/ezsignsignature-create-object-v2-response-mpayload.ts
+model/ezsignsignature-create-object-v2-response.ts
 model/ezsignsignature-delete-object-v1-response.ts
 model/ezsignsignature-edit-object-v1-request.ts
 model/ezsignsignature-edit-object-v1-response.ts
@@ -229,6 +249,10 @@ model/franchisereferalincome-create-object-v1-request.ts
 model/franchisereferalincome-create-object-v1-response-all-of.ts
 model/franchisereferalincome-create-object-v1-response-mpayload.ts
 model/franchisereferalincome-create-object-v1-response.ts
+model/franchisereferalincome-create-object-v2-request.ts
+model/franchisereferalincome-create-object-v2-response-all-of.ts
+model/franchisereferalincome-create-object-v2-response-mpayload.ts
+model/franchisereferalincome-create-object-v2-response.ts
 model/franchisereferalincome-request-compound-all-of.ts
 model/franchisereferalincome-request-compound.ts
 model/franchisereferalincome-request.ts

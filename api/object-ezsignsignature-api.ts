@@ -27,6 +27,10 @@ import { EzsignsignatureCreateObjectV1Request } from '../model';
 // @ts-ignore
 import { EzsignsignatureCreateObjectV1Response } from '../model';
 // @ts-ignore
+import { EzsignsignatureCreateObjectV2Request } from '../model';
+// @ts-ignore
+import { EzsignsignatureCreateObjectV2Response } from '../model';
+// @ts-ignore
 import { EzsignsignatureDeleteObjectV1Response } from '../model';
 // @ts-ignore
 import { EzsignsignatureEditObjectV1Request } from '../model';
@@ -47,6 +51,7 @@ export const ObjectEzsignsignatureApiAxiosParamCreator = function (configuration
          * @summary Create a new Ezsignsignature
          * @param {Array<EzsignsignatureCreateObjectV1Request>} ezsignsignatureCreateObjectV1Request 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         ezsignsignatureCreateObjectV1: async (ezsignsignatureCreateObjectV1Request: Array<EzsignsignatureCreateObjectV1Request>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -78,6 +83,64 @@ export const ObjectEzsignsignatureApiAxiosParamCreator = function (configuration
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ezsignsignatureCreateObjectV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * The endpoint allows to create one or many elements at once.
+         * @summary Create a new Ezsignsignature
+         * @param {EzsignsignatureCreateObjectV2Request} ezsignsignatureCreateObjectV2Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsignsignatureCreateObjectV2: async (ezsignsignatureCreateObjectV2Request: EzsignsignatureCreateObjectV2Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'ezsignsignatureCreateObjectV2Request' is not null or undefined
+            assertParamExists('ezsignsignatureCreateObjectV2', 'ezsignsignatureCreateObjectV2Request', ezsignsignatureCreateObjectV2Request)
+            const localVarPath = `/2/object/ezsignsignature`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(ezsignsignatureCreateObjectV2Request, localVarRequestOptions, configuration)
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -289,10 +352,22 @@ export const ObjectEzsignsignatureApiFp = function(configuration?: Configuration
          * @summary Create a new Ezsignsignature
          * @param {Array<EzsignsignatureCreateObjectV1Request>} ezsignsignatureCreateObjectV1Request 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         async ezsignsignatureCreateObjectV1(ezsignsignatureCreateObjectV1Request: Array<EzsignsignatureCreateObjectV1Request>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignsignatureCreateObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignsignatureCreateObjectV1(ezsignsignatureCreateObjectV1Request, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * The endpoint allows to create one or many elements at once.
+         * @summary Create a new Ezsignsignature
+         * @param {EzsignsignatureCreateObjectV2Request} ezsignsignatureCreateObjectV2Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsignsignatureCreateObjectV2(ezsignsignatureCreateObjectV2Request: EzsignsignatureCreateObjectV2Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignsignatureCreateObjectV2Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignsignatureCreateObjectV2(ezsignsignatureCreateObjectV2Request, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -344,10 +419,21 @@ export const ObjectEzsignsignatureApiFactory = function (configuration?: Configu
          * @summary Create a new Ezsignsignature
          * @param {Array<EzsignsignatureCreateObjectV1Request>} ezsignsignatureCreateObjectV1Request 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         ezsignsignatureCreateObjectV1(ezsignsignatureCreateObjectV1Request: Array<EzsignsignatureCreateObjectV1Request>, options?: any): AxiosPromise<EzsignsignatureCreateObjectV1Response> {
             return localVarFp.ezsignsignatureCreateObjectV1(ezsignsignatureCreateObjectV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * The endpoint allows to create one or many elements at once.
+         * @summary Create a new Ezsignsignature
+         * @param {EzsignsignatureCreateObjectV2Request} ezsignsignatureCreateObjectV2Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsignsignatureCreateObjectV2(ezsignsignatureCreateObjectV2Request: EzsignsignatureCreateObjectV2Request, options?: any): AxiosPromise<EzsignsignatureCreateObjectV2Response> {
+            return localVarFp.ezsignsignatureCreateObjectV2(ezsignsignatureCreateObjectV2Request, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -395,11 +481,24 @@ export class ObjectEzsignsignatureApi extends BaseAPI {
      * @summary Create a new Ezsignsignature
      * @param {Array<EzsignsignatureCreateObjectV1Request>} ezsignsignatureCreateObjectV1Request 
      * @param {*} [options] Override http request option.
+     * @deprecated
      * @throws {RequiredError}
      * @memberof ObjectEzsignsignatureApi
      */
     public ezsignsignatureCreateObjectV1(ezsignsignatureCreateObjectV1Request: Array<EzsignsignatureCreateObjectV1Request>, options?: AxiosRequestConfig) {
         return ObjectEzsignsignatureApiFp(this.configuration).ezsignsignatureCreateObjectV1(ezsignsignatureCreateObjectV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * The endpoint allows to create one or many elements at once.
+     * @summary Create a new Ezsignsignature
+     * @param {EzsignsignatureCreateObjectV2Request} ezsignsignatureCreateObjectV2Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectEzsignsignatureApi
+     */
+    public ezsignsignatureCreateObjectV2(ezsignsignatureCreateObjectV2Request: EzsignsignatureCreateObjectV2Request, options?: AxiosRequestConfig) {
+        return ObjectEzsignsignatureApiFp(this.configuration).ezsignsignatureCreateObjectV2(ezsignsignatureCreateObjectV2Request, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
