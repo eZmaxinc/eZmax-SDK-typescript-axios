@@ -75,7 +75,7 @@ export interface FranchisereferalincomeRequest {
      */
     'dtFranchisereferalincomeDisbursed': string;
     /**
-     * A comment about the transaction
+     * Comment about the transaction
      * @type {string}
      * @memberof FranchisereferalincomeRequest
      */

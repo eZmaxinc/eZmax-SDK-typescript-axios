@@ -17,7 +17,6 @@
 export * from './api/global-customer-api';
 export * from './api/module-authenticate-api';
 export * from './api/module-list-api';
-export * from './api/module-sspr-api';
 export * from './api/module-user-api';
 export * from './api/object-activesession-api';
 export * from './api/object-apikey-api';

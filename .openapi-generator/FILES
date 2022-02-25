@@ -6,7 +6,6 @@ api.ts
 api/global-customer-api.ts
 api/module-authenticate-api.ts
 api/module-list-api.ts
-api/module-sspr-api.ts
 api/module-user-api.ts
 api/object-activesession-api.ts
 api/object-apikey-api.ts
@@ -83,7 +82,12 @@ model/ezsignbulksend-get-list-v1-response-all-of.ts
 model/ezsignbulksend-get-list-v1-response-mpayload-all-of.ts
 model/ezsignbulksend-get-list-v1-response-mpayload.ts
 model/ezsignbulksend-get-list-v1-response.ts
+model/ezsignbulksend-get-object-v1-response-all-of.ts
+model/ezsignbulksend-get-object-v1-response-mpayload.ts
+model/ezsignbulksend-get-object-v1-response.ts
 model/ezsignbulksend-list-element.ts
+model/ezsignbulksend-response-compound.ts
+model/ezsignbulksend-response.ts
 model/ezsigndocument-apply-ezsigntemplate-v1-request.ts
 model/ezsigndocument-apply-ezsigntemplate-v1-response.ts
 model/ezsigndocument-apply-ezsigntemplate-v2-request.ts
@@ -95,6 +99,7 @@ model/ezsigndocument-create-object-v1-response.ts
 model/ezsigndocument-delete-object-v1-response.ts
 model/ezsigndocument-edit-ezsignsignatures-v1-request.ts
 model/ezsigndocument-edit-ezsignsignatures-v1-response.ts
+model/ezsigndocument-end-prematurely-v1-response.ts
 model/ezsigndocument-get-download-url-v1-response-all-of.ts
 model/ezsigndocument-get-download-url-v1-response-mpayload.ts
 model/ezsigndocument-get-download-url-v1-response.ts
@@ -107,6 +112,9 @@ model/ezsigndocument-get-form-data-v1-response.ts
 model/ezsigndocument-get-object-v1-response-all-of.ts
 model/ezsigndocument-get-object-v1-response-mpayload.ts
 model/ezsigndocument-get-object-v1-response.ts
+model/ezsigndocument-get-temporary-proof-v1-response-all-of.ts
+model/ezsigndocument-get-temporary-proof-v1-response-mpayload.ts
+model/ezsigndocument-get-temporary-proof-v1-response.ts
 model/ezsigndocument-get-words-positions-v1-request.ts
 model/ezsigndocument-get-words-positions-v1-response-all-of.ts
 model/ezsigndocument-get-words-positions-v1-response.ts
@@ -118,6 +126,7 @@ model/ezsigndocument-request.ts
 model/ezsigndocument-response-compound-all-of.ts
 model/ezsigndocument-response-compound.ts
 model/ezsigndocument-response.ts
+model/ezsigndocumentlog-response.ts
 model/ezsignfolder-create-object-v1-request.ts
 model/ezsignfolder-create-object-v1-response-all-of.ts
 model/ezsignfolder-create-object-v1-response-mpayload.ts
@@ -207,6 +216,7 @@ model/ezsigntemplatepackage-list-element.ts
 model/field-eactivesession-sessiontype.ts
 model/field-eactivesession-weekdaystart.ts
 model/field-eezsigndocument-step.ts
+model/field-eezsigndocumentlog-type.ts
 model/field-eezsignfolder-sendreminderfrequency.ts
 model/field-eezsignfolder-step.ts
 model/field-eezsignfoldertype-privacylevel.ts
@@ -239,14 +249,6 @@ model/sspr-send-usernames-v1-request.ts
 model/sspr-unlock-account-request-v1-request.ts
 model/sspr-unlock-account-v1-request.ts
 model/sspr-validate-token-v1-request.ts
-model/unusedezsigndocument-edit-object-v1-request.ts
-model/unusedezsigndocument-edit-object-v1-response.ts
-model/unusedezsignfolder-edit-object-v1-request.ts
-model/unusedezsignfolder-edit-object-v1-response.ts
-model/unusedezsignfoldersignerassociation-edit-object-v1-request.ts
-model/unusedezsignfoldersignerassociation-edit-object-v1-response.ts
-model/unusedezsignsignature-edit-object-v1-request.ts
-model/unusedezsignsignature-edit-object-v1-response.ts
 model/user-create-ezsignuser-v1-request.ts
 model/user-create-ezsignuser-v1-response-all-of.ts
 model/user-create-ezsignuser-v1-response-mpayload.ts

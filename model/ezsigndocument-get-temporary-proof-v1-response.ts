@@ -16,12 +16,14 @@
 import { CommonResponse } from './common-response';
 import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
+import { EzsigndocumentGetTemporaryProofV1ResponseAllOf } from './ezsigndocument-get-temporary-proof-v1-response-all-of';
+import { EzsigndocumentGetTemporaryProofV1ResponseMPayload } from './ezsigndocument-get-temporary-proof-v1-response-mpayload';
 
 /**
- * @type UNUSEDEzsignsignatureEditObjectV1Response
- * Response for the /1/object/ezsignsignature/editObject API Request
+ * @type EzsigndocumentGetTemporaryProofV1Response
+ * Response for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getTemporaryProof API Request
  * @export
  */
-export type UNUSEDEzsignsignatureEditObjectV1Response = CommonResponse;
+export type EzsigndocumentGetTemporaryProofV1Response = CommonResponse & EzsigndocumentGetTemporaryProofV1ResponseAllOf;
 
 

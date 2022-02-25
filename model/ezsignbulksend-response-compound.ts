@@ -13,19 +13,14 @@
  */
 
 
-import { EzsignsignatureRequest } from './ezsignsignature-request';
+import { CommonAudit } from './common-audit';
+import { EzsignbulksendResponse } from './ezsignbulksend-response';
 
 /**
- * Request for the /1/object/ezsignsignature/editObject API Request
+ * @type EzsignbulksendResponseCompound
+ * An Ezsignbulksend Object and children to create a complete structure
  * @export
- * @interface UNUSEDEzsignsignatureEditObjectV1Request
  */
-export interface UNUSEDEzsignsignatureEditObjectV1Request {
-    /**
-     * 
-     * @type {EzsignsignatureRequest}
-     * @memberof UNUSEDEzsignsignatureEditObjectV1Request
-     */
-    'objEzsignsignature'?: EzsignsignatureRequest;
-}
+export type EzsignbulksendResponseCompound = EzsignbulksendResponse;
+
 

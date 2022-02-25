@@ -72,7 +72,7 @@ export interface EzsignfolderResponse {
      */
     'sEzsignfolderDescription': string;
     /**
-     * Somes extra notes about the eZsign Folder
+     * Note about the Ezsignfolder
      * @type {string}
      * @memberof EzsignfolderResponse
      */

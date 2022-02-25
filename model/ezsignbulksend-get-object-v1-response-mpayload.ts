@@ -13,19 +13,14 @@
  */
 
 
-import { EzsignfolderRequest } from './ezsignfolder-request';
+import { CommonAudit } from './common-audit';
+import { EzsignbulksendResponseCompound } from './ezsignbulksend-response-compound';
 
 /**
- * Request for the /1/object/ezsignfolder/editObject API Request
+ * @type EzsignbulksendGetObjectV1ResponseMPayload
+ * Payload for the /1/object/ezsignbulksend/{pkiEzsignbulksendID}/getObject API Request
  * @export
- * @interface UNUSEDEzsignfolderEditObjectV1Request
  */
-export interface UNUSEDEzsignfolderEditObjectV1Request {
-    /**
-     * 
-     * @type {EzsignfolderRequest}
-     * @memberof UNUSEDEzsignfolderEditObjectV1Request
-     */
-    'objEzsignfolder'?: EzsignfolderRequest;
-}
+export type EzsignbulksendGetObjectV1ResponseMPayload = EzsignbulksendResponseCompound;
+
 

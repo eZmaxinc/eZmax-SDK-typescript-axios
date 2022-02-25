@@ -13,19 +13,15 @@
  */
 
 
-import { EzsigndocumentRequest } from './ezsigndocument-request';
+import { CommonResponse } from './common-response';
+import { CommonResponseObjDebug } from './common-response-obj-debug';
+import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 
 /**
- * Request for the /1/object/ezsigndocument/editObject API Request
+ * @type EzsigndocumentEndPrematurelyV1Response
+ * Response for the /1/object/ezsigndocument/{pkiEzsigndocument}/endPrematurely API Request
  * @export
- * @interface UNUSEDEzsigndocumentEditObjectV1Request
  */
-export interface UNUSEDEzsigndocumentEditObjectV1Request {
-    /**
-     * 
-     * @type {EzsigndocumentRequest}
-     * @memberof UNUSEDEzsigndocumentEditObjectV1Request
-     */
-    'objEzsigndocument'?: EzsigndocumentRequest;
-}
+export type EzsigndocumentEndPrematurelyV1Response = CommonResponse;
+
 

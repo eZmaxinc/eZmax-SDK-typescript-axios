@@ -13,19 +13,19 @@
  */
 
 
-import { EzsignsignerRequestCompound } from './ezsignsigner-request-compound';
+import { EzsigndocumentGetTemporaryProofV1ResponseMPayload } from './ezsigndocument-get-temporary-proof-v1-response-mpayload';
 
 /**
  * 
  * @export
- * @interface EzsignfoldersignerassociationRequestCompoundAllOf
+ * @interface EzsigndocumentGetTemporaryProofV1ResponseAllOf
  */
-export interface EzsignfoldersignerassociationRequestCompoundAllOf {
+export interface EzsigndocumentGetTemporaryProofV1ResponseAllOf {
     /**
      * 
-     * @type {EzsignsignerRequestCompound}
-     * @memberof EzsignfoldersignerassociationRequestCompoundAllOf
+     * @type {EzsigndocumentGetTemporaryProofV1ResponseMPayload}
+     * @memberof EzsigndocumentGetTemporaryProofV1ResponseAllOf
      */
-    'objEzsignsigner': EzsignsignerRequestCompound;
+    'mPayload': EzsigndocumentGetTemporaryProofV1ResponseMPayload;
 }
 

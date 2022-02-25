@@ -16,12 +16,14 @@
 import { CommonResponse } from './common-response';
 import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
+import { EzsignbulksendGetObjectV1ResponseAllOf } from './ezsignbulksend-get-object-v1-response-all-of';
+import { EzsignbulksendGetObjectV1ResponseMPayload } from './ezsignbulksend-get-object-v1-response-mpayload';
 
 /**
- * @type UNUSEDEzsignfoldersignerassociationEditObjectV1Response
- * Response for the /1/object/ezsignfoldersignerassociation/editObject API Request
+ * @type EzsignbulksendGetObjectV1Response
+ * Response for the /1/object/ezsignbulksend/getObject API Request
  * @export
  */
-export type UNUSEDEzsignfoldersignerassociationEditObjectV1Response = CommonResponse;
+export type EzsignbulksendGetObjectV1Response = CommonResponse & EzsignbulksendGetObjectV1ResponseAllOf;
 
 

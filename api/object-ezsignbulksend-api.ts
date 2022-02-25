@@ -25,6 +25,8 @@ import { CommonResponseError } from '../model';
 // @ts-ignore
 import { EzsignbulksendGetListV1Response } from '../model';
 // @ts-ignore
+import { EzsignbulksendGetObjectV1Response } from '../model';
+// @ts-ignore
 import { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
@@ -111,6 +113,62 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * 
+         * @summary Retrieve an existing Ezsignbulksend
+         * @param {number} pkiEzsignbulksendID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsignbulksendGetObjectV1: async (pkiEzsignbulksendID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiEzsignbulksendID' is not null or undefined
+            assertParamExists('ezsignbulksendGetObjectV1', 'pkiEzsignbulksendID', pkiEzsignbulksendID)
+            const localVarPath = `/1/object/ezsignbulksend/{pkiEzsignbulksendID}`
+                .replace(`{${"pkiEzsignbulksendID"}}`, encodeURIComponent(String(pkiEzsignbulksendID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -134,6 +192,17 @@ export const ObjectEzsignbulksendApiFp = function(configuration?: Configuration)
          */
         async ezsignbulksendGetListV1(eOrderBy?: 'pkiEzsignbulksendID_ASC' | 'pkiEzsignbulksendID_DESC' | 'fkiEzsignfoldertypeID_ASC' | 'fkiEzsignfoldertypeID_DESC' | 'sEzsignbulksendDescription_ASC' | 'sEzsignbulksendDescription_DESC' | 'sEzsignfoldertypeNameX_ASC' | 'sEzsignfoldertypeNameX_DESC' | 'eEzsignfoldertypePrivacylevel_ASC' | 'eEzsignfoldertypePrivacylevel_DESC' | 'bEzsignbulksendIsactive_ASC' | 'bEzsignbulksendIsactive_DESC' | 'iEzsignbulksendtransmission_ASC' | 'iEzsignbulksendtransmission_DESC' | 'iEzsignfolder_ASC' | 'iEzsignfolder_DESC' | 'iEzsigndocument_ASC' | 'iEzsigndocument_DESC' | 'iEzsignsignature_ASC' | 'iEzsignsignature_DESC' | 'iEzsignsignatureSigned_ASC' | 'iEzsignsignatureSigned_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignbulksendGetListV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignbulksendGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
+         * @summary Retrieve an existing Ezsignbulksend
+         * @param {number} pkiEzsignbulksendID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsignbulksendGetObjectV1(pkiEzsignbulksendID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignbulksendGetObjectV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignbulksendGetObjectV1(pkiEzsignbulksendID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -160,6 +229,16 @@ export const ObjectEzsignbulksendApiFactory = function (configuration?: Configur
         ezsignbulksendGetListV1(eOrderBy?: 'pkiEzsignbulksendID_ASC' | 'pkiEzsignbulksendID_DESC' | 'fkiEzsignfoldertypeID_ASC' | 'fkiEzsignfoldertypeID_DESC' | 'sEzsignbulksendDescription_ASC' | 'sEzsignbulksendDescription_DESC' | 'sEzsignfoldertypeNameX_ASC' | 'sEzsignfoldertypeNameX_DESC' | 'eEzsignfoldertypePrivacylevel_ASC' | 'eEzsignfoldertypePrivacylevel_DESC' | 'bEzsignbulksendIsactive_ASC' | 'bEzsignbulksendIsactive_DESC' | 'iEzsignbulksendtransmission_ASC' | 'iEzsignbulksendtransmission_DESC' | 'iEzsignfolder_ASC' | 'iEzsignfolder_DESC' | 'iEzsigndocument_ASC' | 'iEzsigndocument_DESC' | 'iEzsignsignature_ASC' | 'iEzsignsignature_DESC' | 'iEzsignsignatureSigned_ASC' | 'iEzsignsignatureSigned_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: any): AxiosPromise<EzsignbulksendGetListV1Response> {
             return localVarFp.ezsignbulksendGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(axios, basePath));
         },
+        /**
+         * 
+         * @summary Retrieve an existing Ezsignbulksend
+         * @param {number} pkiEzsignbulksendID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsignbulksendGetObjectV1(pkiEzsignbulksendID: number, options?: any): AxiosPromise<EzsignbulksendGetObjectV1Response> {
+            return localVarFp.ezsignbulksendGetObjectV1(pkiEzsignbulksendID, options).then((request) => request(axios, basePath));
+        },
     };
 };
 
@@ -184,5 +263,17 @@ export class ObjectEzsignbulksendApi extends BaseAPI {
      */
     public ezsignbulksendGetListV1(eOrderBy?: 'pkiEzsignbulksendID_ASC' | 'pkiEzsignbulksendID_DESC' | 'fkiEzsignfoldertypeID_ASC' | 'fkiEzsignfoldertypeID_DESC' | 'sEzsignbulksendDescription_ASC' | 'sEzsignbulksendDescription_DESC' | 'sEzsignfoldertypeNameX_ASC' | 'sEzsignfoldertypeNameX_DESC' | 'eEzsignfoldertypePrivacylevel_ASC' | 'eEzsignfoldertypePrivacylevel_DESC' | 'bEzsignbulksendIsactive_ASC' | 'bEzsignbulksendIsactive_DESC' | 'iEzsignbulksendtransmission_ASC' | 'iEzsignbulksendtransmission_DESC' | 'iEzsignfolder_ASC' | 'iEzsignfolder_DESC' | 'iEzsigndocument_ASC' | 'iEzsigndocument_DESC' | 'iEzsignsignature_ASC' | 'iEzsignsignature_DESC' | 'iEzsignsignatureSigned_ASC' | 'iEzsignsignatureSigned_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig) {
         return ObjectEzsignbulksendApiFp(this.configuration).ezsignbulksendGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve an existing Ezsignbulksend
+     * @param {number} pkiEzsignbulksendID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectEzsignbulksendApi
+     */
+    public ezsignbulksendGetObjectV1(pkiEzsignbulksendID: number, options?: AxiosRequestConfig) {
+        return ObjectEzsignbulksendApiFp(this.configuration).ezsignbulksendGetObjectV1(pkiEzsignbulksendID, options).then((request) => request(this.axios, this.basePath));
     }
 }

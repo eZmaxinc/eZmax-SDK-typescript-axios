@@ -601,11 +601,11 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
          * Once an Ezsignfolder has been sent to signatories, it cannot be modified.  Using this endpoint, you can unsend the Ezsignfolder and make it modifiable again.  Signatories will receive an email informing them the signature process was aborted and they might receive a new invitation to sign.  ⚠️ Warning: Any signature previously made by signatories on \"Non-completed\" Ezsigndocuments will be lost.
          * @summary Unsend the Ezsignfolder
          * @param {number} pkiEzsignfolderID 
-         * @param {string} body 
+         * @param {object} body 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfolderUnsendV1: async (pkiEzsignfolderID: number, body: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsignfolderUnsendV1: async (pkiEzsignfolderID: number, body: object, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsignfolderID' is not null or undefined
             assertParamExists('ezsignfolderUnsendV1', 'pkiEzsignfolderID', pkiEzsignfolderID)
             // verify required parameter 'body' is not null or undefined
@@ -778,11 +778,11 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
          * Once an Ezsignfolder has been sent to signatories, it cannot be modified.  Using this endpoint, you can unsend the Ezsignfolder and make it modifiable again.  Signatories will receive an email informing them the signature process was aborted and they might receive a new invitation to sign.  ⚠️ Warning: Any signature previously made by signatories on \"Non-completed\" Ezsigndocuments will be lost.
          * @summary Unsend the Ezsignfolder
          * @param {number} pkiEzsignfolderID 
-         * @param {string} body 
+         * @param {object} body 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignfolderUnsendV1(pkiEzsignfolderID: number, body: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderUnsendV1Response>> {
+        async ezsignfolderUnsendV1(pkiEzsignfolderID: number, body: object, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderUnsendV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderUnsendV1(pkiEzsignfolderID, body, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -896,11 +896,11 @@ export const ObjectEzsignfolderApiFactory = function (configuration?: Configurat
          * Once an Ezsignfolder has been sent to signatories, it cannot be modified.  Using this endpoint, you can unsend the Ezsignfolder and make it modifiable again.  Signatories will receive an email informing them the signature process was aborted and they might receive a new invitation to sign.  ⚠️ Warning: Any signature previously made by signatories on \"Non-completed\" Ezsigndocuments will be lost.
          * @summary Unsend the Ezsignfolder
          * @param {number} pkiEzsignfolderID 
-         * @param {string} body 
+         * @param {object} body 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfolderUnsendV1(pkiEzsignfolderID: number, body: string, options?: any): AxiosPromise<EzsignfolderUnsendV1Response> {
+        ezsignfolderUnsendV1(pkiEzsignfolderID: number, body: object, options?: any): AxiosPromise<EzsignfolderUnsendV1Response> {
             return localVarFp.ezsignfolderUnsendV1(pkiEzsignfolderID, body, options).then((request) => request(axios, basePath));
         },
     };
@@ -1031,12 +1031,12 @@ export class ObjectEzsignfolderApi extends BaseAPI {
      * Once an Ezsignfolder has been sent to signatories, it cannot be modified.  Using this endpoint, you can unsend the Ezsignfolder and make it modifiable again.  Signatories will receive an email informing them the signature process was aborted and they might receive a new invitation to sign.  ⚠️ Warning: Any signature previously made by signatories on \"Non-completed\" Ezsigndocuments will be lost.
      * @summary Unsend the Ezsignfolder
      * @param {number} pkiEzsignfolderID 
-     * @param {string} body 
+     * @param {object} body 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ObjectEzsignfolderApi
      */
-    public ezsignfolderUnsendV1(pkiEzsignfolderID: number, body: string, options?: AxiosRequestConfig) {
+    public ezsignfolderUnsendV1(pkiEzsignfolderID: number, body: object, options?: AxiosRequestConfig) {
         return ObjectEzsignfolderApiFp(this.configuration).ezsignfolderUnsendV1(pkiEzsignfolderID, body, options).then((request) => request(this.axios, this.basePath));
     }
 }

@@ -13,15 +13,19 @@
  */
 
 
-import { CommonResponse } from './common-response';
-import { CommonResponseObjDebug } from './common-response-obj-debug';
-import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
+import { EzsignbulksendGetObjectV1ResponseMPayload } from './ezsignbulksend-get-object-v1-response-mpayload';
 
 /**
- * @type UNUSEDEzsigndocumentEditObjectV1Response
- * Response for the /1/object/ezsigndocument/editObject API Request
+ * 
  * @export
+ * @interface EzsignbulksendGetObjectV1ResponseAllOf
  */
-export type UNUSEDEzsigndocumentEditObjectV1Response = CommonResponse;
-
+export interface EzsignbulksendGetObjectV1ResponseAllOf {
+    /**
+     * 
+     * @type {EzsignbulksendGetObjectV1ResponseMPayload}
+     * @memberof EzsignbulksendGetObjectV1ResponseAllOf
+     */
+    'mPayload': EzsignbulksendGetObjectV1ResponseMPayload;
+}
 
