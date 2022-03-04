@@ -13,12 +13,12 @@
  */
 
 
-import { AddressRequest } from './address-request';
+import { AddressRequestCompound } from './address-request-compound';
 import { ContactinformationsRequest } from './contactinformations-request';
 import { ContactinformationsRequestCompoundAllOf } from './contactinformations-request-compound-all-of';
-import { EmailRequest } from './email-request';
-import { PhoneRequest } from './phone-request';
-import { WebsiteRequest } from './website-request';
+import { EmailRequestCompound } from './email-request-compound';
+import { PhoneRequestCompound } from './phone-request-compound';
+import { WebsiteRequestCompound } from './website-request-compound';
 
 /**
  * @type ContactinformationsRequestCompound

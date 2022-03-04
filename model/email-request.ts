@@ -15,7 +15,7 @@
 
 
 /**
- * A Contact Object
+ * An Email Object
  * @export
  * @interface EmailRequest
  */

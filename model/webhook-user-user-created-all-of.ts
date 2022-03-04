@@ -13,7 +13,7 @@
  */
 
 
-import { UserResponse } from './user-response';
+import { UserResponseCompound } from './user-response-compound';
 
 /**
  * 
@@ -23,9 +23,9 @@ import { UserResponse } from './user-response';
 export interface WebhookUserUserCreatedAllOf {
     /**
      * 
-     * @type {UserResponse}
+     * @type {UserResponseCompound}
      * @memberof WebhookUserUserCreatedAllOf
      */
-    'objUser': UserResponse;
+    'objUser': UserResponseCompound;
 }
 

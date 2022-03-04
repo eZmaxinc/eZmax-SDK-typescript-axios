@@ -282,7 +282,7 @@ export const ObjectEzsignsignatureApiAxiosParamCreator = function (configuration
             };
         },
         /**
-         * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+         * 
          * @summary Retrieve an existing Ezsignsignature
          * @param {number} pkiEzsignsignatureID 
          * @param {*} [options] Override http request option.
@@ -394,7 +394,7 @@ export const ObjectEzsignsignatureApiFp = function(configuration?: Configuration
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+         * 
          * @summary Retrieve an existing Ezsignsignature
          * @param {number} pkiEzsignsignatureID 
          * @param {*} [options] Override http request option.
@@ -457,7 +457,7 @@ export const ObjectEzsignsignatureApiFactory = function (configuration?: Configu
             return localVarFp.ezsignsignatureEditObjectV1(pkiEzsignsignatureID, ezsignsignatureEditObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
-         * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+         * 
          * @summary Retrieve an existing Ezsignsignature
          * @param {number} pkiEzsignsignatureID 
          * @param {*} [options] Override http request option.
@@ -527,7 +527,7 @@ export class ObjectEzsignsignatureApi extends BaseAPI {
     }
 
     /**
-     * ## ⚠️EARLY ADOPTERS WARNING  ### This endpoint is not officially released. Its definition might still change and it might not be available in every environment and region.
+     * 
      * @summary Retrieve an existing Ezsignsignature
      * @param {number} pkiEzsignsignatureID 
      * @param {*} [options] Override http request option.

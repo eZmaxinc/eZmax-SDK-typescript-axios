@@ -13,7 +13,7 @@
  */
 
 
-import { EzsigndocumentlogResponse } from './ezsigndocumentlog-response';
+import { EzsigndocumentlogResponseCompound } from './ezsigndocumentlog-response-compound';
 
 /**
  * Payload for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getTemporaryProof API Request
@@ -23,9 +23,9 @@ import { EzsigndocumentlogResponse } from './ezsigndocumentlog-response';
 export interface EzsigndocumentGetTemporaryProofV1ResponseMPayload {
     /**
      * 
-     * @type {EzsigndocumentlogResponse}
+     * @type {EzsigndocumentlogResponseCompound}
      * @memberof EzsigndocumentGetTemporaryProofV1ResponseMPayload
      */
-    'a_objEzsigndocumentlog': EzsigndocumentlogResponse;
+    'a_objEzsigndocumentlog': EzsigndocumentlogResponseCompound;
 }
 

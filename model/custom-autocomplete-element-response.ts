@@ -15,7 +15,7 @@
 
 
 /**
- * Generic Autocomplete Response
+ * Generic AutocompleteElement Response
  * @export
  * @interface CustomAutocompleteElementResponse
  */

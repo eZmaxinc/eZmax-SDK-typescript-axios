@@ -13,6 +13,7 @@
  */
 
 
+import { EzsignsignatureGetObjectV1ResponseMPayload } from './ezsignsignature-get-object-v1-response-mpayload';
 
 /**
  * 
@@ -21,10 +22,10 @@
  */
 export interface EzsignsignatureGetObjectV1ResponseAllOf {
     /**
-     * Payload for the /1/object/ezsignsignature/getObject API Request
-     * @type {object}
+     * 
+     * @type {EzsignsignatureGetObjectV1ResponseMPayload}
      * @memberof EzsignsignatureGetObjectV1ResponseAllOf
      */
-    'mPayload': object;
+    'mPayload': EzsignsignatureGetObjectV1ResponseMPayload;
 }
 

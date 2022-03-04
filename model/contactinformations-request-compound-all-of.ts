@@ -13,10 +13,10 @@
  */
 
 
-import { AddressRequest } from './address-request';
-import { EmailRequest } from './email-request';
-import { PhoneRequest } from './phone-request';
-import { WebsiteRequest } from './website-request';
+import { AddressRequestCompound } from './address-request-compound';
+import { EmailRequestCompound } from './email-request-compound';
+import { PhoneRequestCompound } from './phone-request-compound';
+import { WebsiteRequestCompound } from './website-request-compound';
 
 /**
  * 
@@ -26,27 +26,27 @@ import { WebsiteRequest } from './website-request';
 export interface ContactinformationsRequestCompoundAllOf {
     /**
      * 
-     * @type {Array<AddressRequest>}
+     * @type {Array<AddressRequestCompound>}
      * @memberof ContactinformationsRequestCompoundAllOf
      */
-    'a_objAddress': Array<AddressRequest>;
+    'a_objAddress': Array<AddressRequestCompound>;
     /**
      * 
-     * @type {Array<PhoneRequest>}
+     * @type {Array<PhoneRequestCompound>}
      * @memberof ContactinformationsRequestCompoundAllOf
      */
-    'a_objPhone': Array<PhoneRequest>;
+    'a_objPhone': Array<PhoneRequestCompound>;
     /**
      * 
-     * @type {Array<EmailRequest>}
+     * @type {Array<EmailRequestCompound>}
      * @memberof ContactinformationsRequestCompoundAllOf
      */
-    'a_objEmail': Array<EmailRequest>;
+    'a_objEmail': Array<EmailRequestCompound>;
     /**
      * 
-     * @type {Array<WebsiteRequest>}
+     * @type {Array<WebsiteRequestCompound>}
      * @memberof ContactinformationsRequestCompoundAllOf
      */
-    'a_objWebsite': Array<WebsiteRequest>;
+    'a_objWebsite': Array<WebsiteRequestCompound>;
 }
 

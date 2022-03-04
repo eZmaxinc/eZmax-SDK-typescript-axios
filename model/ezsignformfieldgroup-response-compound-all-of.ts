@@ -13,7 +13,9 @@
  */
 
 
-import { EzsignformfieldResponse } from './ezsignformfield-response';
+import { CustomDropdownElementResponseCompound } from './custom-dropdown-element-response-compound';
+import { EzsignformfieldResponseCompound } from './ezsignformfield-response-compound';
+import { EzsignformfieldgroupsignerResponseCompound } from './ezsignformfieldgroupsigner-response-compound';
 
 /**
  * 
@@ -23,9 +25,21 @@ import { EzsignformfieldResponse } from './ezsignformfield-response';
 export interface EzsignformfieldgroupResponseCompoundAllOf {
     /**
      * 
-     * @type {Array<EzsignformfieldResponse>}
+     * @type {Array<EzsignformfieldResponseCompound>}
      * @memberof EzsignformfieldgroupResponseCompoundAllOf
      */
-    'a_objEzsignformfield': Array<EzsignformfieldResponse>;
+    'a_objEzsignformfield': Array<EzsignformfieldResponseCompound>;
+    /**
+     * 
+     * @type {Array<CustomDropdownElementResponseCompound>}
+     * @memberof EzsignformfieldgroupResponseCompoundAllOf
+     */
+    'a_objDropdownElement'?: Array<CustomDropdownElementResponseCompound>;
+    /**
+     * 
+     * @type {EzsignformfieldgroupsignerResponseCompound}
+     * @memberof EzsignformfieldgroupResponseCompoundAllOf
+     */
+    'a_objEzsignformfieldgroupsigner': EzsignformfieldgroupsignerResponseCompound;
 }
 

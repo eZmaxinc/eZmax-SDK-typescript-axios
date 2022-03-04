@@ -26,6 +26,6 @@ export interface EzsignfoldersignerassociationRequestCompoundAllOf {
      * @type {EzsignsignerRequestCompound}
      * @memberof EzsignfoldersignerassociationRequestCompoundAllOf
      */
-    'objEzsignsigner': EzsignsignerRequestCompound;
+    'objEzsignsigner'?: EzsignsignerRequestCompound;
 }
 

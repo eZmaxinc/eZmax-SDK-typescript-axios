@@ -13,9 +13,9 @@
  */
 
 
-import { AttemptResponse } from './attempt-response';
+import { AttemptResponseCompound } from './attempt-response-compound';
 import { CommonWebhook } from './common-webhook';
-import { UserResponse } from './user-response';
+import { UserResponseCompound } from './user-response-compound';
 import { WebhookResponse } from './webhook-response';
 import { WebhookUserUserCreatedAllOf } from './webhook-user-user-created-all-of';
 

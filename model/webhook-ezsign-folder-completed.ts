@@ -13,7 +13,7 @@
  */
 
 
-import { AttemptResponse } from './attempt-response';
+import { AttemptResponseCompound } from './attempt-response-compound';
 import { CommonWebhook } from './common-webhook';
 import { EzsignfolderResponse } from './ezsignfolder-response';
 import { WebhookEzsignFolderCompletedAllOf } from './webhook-ezsign-folder-completed-all-of';

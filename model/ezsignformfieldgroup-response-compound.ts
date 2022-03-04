@@ -13,9 +13,14 @@
  */
 
 
-import { EzsignformfieldResponse } from './ezsignformfield-response';
+import { CustomDropdownElementResponseCompound } from './custom-dropdown-element-response-compound';
+import { EzsignformfieldResponseCompound } from './ezsignformfield-response-compound';
 import { EzsignformfieldgroupResponse } from './ezsignformfieldgroup-response';
 import { EzsignformfieldgroupResponseCompoundAllOf } from './ezsignformfieldgroup-response-compound-all-of';
+import { EzsignformfieldgroupsignerResponseCompound } from './ezsignformfieldgroupsigner-response-compound';
+import { FieldEEzsignformfieldgroupSignerrequirement } from './field-eezsignformfieldgroup-signerrequirement';
+import { FieldEEzsignformfieldgroupTooltipposition } from './field-eezsignformfieldgroup-tooltipposition';
+import { FieldEEzsignformfieldgroupType } from './field-eezsignformfieldgroup-type';
 
 /**
  * @type EzsignformfieldgroupResponseCompound

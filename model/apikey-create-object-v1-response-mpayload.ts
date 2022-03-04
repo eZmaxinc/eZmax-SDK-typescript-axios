@@ -13,7 +13,7 @@
  */
 
 
-import { ApikeyResponse } from './apikey-response';
+import { ApikeyResponseCompound } from './apikey-response-compound';
 
 /**
  * Payload for the /1/object/apikey/createObject API Request
@@ -23,9 +23,9 @@ import { ApikeyResponse } from './apikey-response';
 export interface ApikeyCreateObjectV1ResponseMPayload {
     /**
      * 
-     * @type {Array<ApikeyResponse>}
+     * @type {Array<ApikeyResponseCompound>}
      * @memberof ApikeyCreateObjectV1ResponseMPayload
      */
-    'a_objApikey': Array<ApikeyResponse>;
+    'a_objApikey': Array<ApikeyResponseCompound>;
 }
 

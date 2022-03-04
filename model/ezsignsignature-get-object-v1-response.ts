@@ -17,6 +17,7 @@ import { CommonResponse } from './common-response';
 import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 import { EzsignsignatureGetObjectV1ResponseAllOf } from './ezsignsignature-get-object-v1-response-all-of';
+import { EzsignsignatureGetObjectV1ResponseMPayload } from './ezsignsignature-get-object-v1-response-mpayload';
 
 /**
  * @type EzsignsignatureGetObjectV1Response

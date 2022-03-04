@@ -13,7 +13,7 @@
  */
 
 
-import { ListpresentationRequest } from './listpresentation-request';
+import { ListpresentationResponseCompound } from './listpresentation-response-compound';
 
 /**
  * Payload for the GET /1/module/list/listpresentation/{sListName} API Request
@@ -23,9 +23,9 @@ import { ListpresentationRequest } from './listpresentation-request';
 export interface ListGetListpresentationV1ResponseMPayload {
     /**
      * 
-     * @type {Array<ListpresentationRequest>}
+     * @type {Array<ListpresentationResponseCompound>}
      * @memberof ListGetListpresentationV1ResponseMPayload
      */
-    'a_objListpresentation': Array<ListpresentationRequest>;
+    'a_objListpresentation': Array<ListpresentationResponseCompound>;
 }
 

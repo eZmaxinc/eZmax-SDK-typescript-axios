@@ -13,7 +13,7 @@
  */
 
 
-import { EzsignformfieldgroupResponseCompound } from './ezsignformfieldgroup-response-compound';
+import { CustomFormDataEzsignformfieldgroupResponse } from './custom-form-data-ezsignformfieldgroup-response';
 
 /**
  * A form Data Signer Object
@@ -47,9 +47,9 @@ export interface CustomFormDataSignerResponse {
     'sContactLastname': string;
     /**
      * 
-     * @type {Array<EzsignformfieldgroupResponseCompound>}
+     * @type {Array<CustomFormDataEzsignformfieldgroupResponse>}
      * @memberof CustomFormDataSignerResponse
      */
-    'a_objEzsignformfieldgroupCompound': Array<EzsignformfieldgroupResponseCompound>;
+    'a_objEzsignformfieldgroup': Array<CustomFormDataEzsignformfieldgroupResponse>;
 }
 

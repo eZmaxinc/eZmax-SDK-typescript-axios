@@ -13,7 +13,7 @@
  */
 
 
-import { ListpresentationRequest } from './listpresentation-request';
+import { ListpresentationRequestCompound } from './listpresentation-request-compound';
 
 /**
  * Request for the POST /1/module/list/listpresentation/{sListName} API Request
@@ -23,9 +23,9 @@ import { ListpresentationRequest } from './listpresentation-request';
 export interface ListSaveListpresentationV1Request {
     /**
      * 
-     * @type {Array<ListpresentationRequest>}
+     * @type {Array<ListpresentationRequestCompound>}
      * @memberof ListSaveListpresentationV1Request
      */
-    'a_objListpresentation': Array<ListpresentationRequest>;
+    'a_objListpresentation': Array<ListpresentationRequestCompound>;
 }
 

@@ -13,7 +13,7 @@
  */
 
 
-import { AttemptResponse } from './attempt-response';
+import { AttemptResponseCompound } from './attempt-response-compound';
 import { WebhookResponse } from './webhook-response';
 
 /**
@@ -30,9 +30,9 @@ export interface CommonWebhook {
     'objWebhook': WebhookResponse;
     /**
      * An array containing details of previous attempts that were made to deliver the message. The array is empty if it\'s the first attempt.
-     * @type {Array<AttemptResponse>}
+     * @type {Array<AttemptResponseCompound>}
      * @memberof CommonWebhook
      */
-    'a_objAttempt': Array<AttemptResponse>;
+    'a_objAttempt': Array<AttemptResponseCompound>;
 }
 
