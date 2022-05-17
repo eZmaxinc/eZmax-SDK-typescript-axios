@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -14,13 +14,15 @@
 
 
 import { CommonAudit } from './common-audit';
+import { CustomEzsignfoldertransmissionResponse } from './custom-ezsignfoldertransmission-response';
 import { EzsignbulksendtransmissionResponse } from './ezsignbulksendtransmission-response';
+import { EzsignbulksendtransmissionResponseCompoundAllOf } from './ezsignbulksendtransmission-response-compound-all-of';
 
 /**
  * @type EzsignbulksendtransmissionResponseCompound
  * An Ezsignbulksendtransmission Object and children to create a complete structure
  * @export
  */
-export type EzsignbulksendtransmissionResponseCompound = EzsignbulksendtransmissionResponse;
+export type EzsignbulksendtransmissionResponseCompound = EzsignbulksendtransmissionResponse & EzsignbulksendtransmissionResponseCompoundAllOf;
 
 

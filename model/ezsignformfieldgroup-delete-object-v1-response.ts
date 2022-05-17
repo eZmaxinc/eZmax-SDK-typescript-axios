@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -19,7 +19,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
 
 /**
  * @type EzsignformfieldgroupDeleteObjectV1Response
- * Response for the /1/object/ezsignformfieldgroup/deleteObject API Request
+ * Response for DELETE /1/object/ezsignformfieldgroup/{pkiEzsignformfieldgroupID}
  * @export
  */
 export type EzsignformfieldgroupDeleteObjectV1Response = CommonResponse;

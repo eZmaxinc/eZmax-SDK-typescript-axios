@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -16,7 +16,7 @@
 import { EzsignsignatureRequestCompound } from './ezsignsignature-request-compound';
 
 /**
- * Request for the /2/object/ezsignsignature/createObject API Request
+ * Request for POST /2/object/ezsignsignature
  * @export
  * @interface EzsignsignatureCreateObjectV2Request
  */

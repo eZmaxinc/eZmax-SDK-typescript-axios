@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -26,7 +26,8 @@ export const FieldEEzsignfolderStep = {
     PartiallySigned: 'PartiallySigned',
     Expired: 'Expired',
     Completed: 'Completed',
-    Archived: 'Archived'
+    Archived: 'Archived',
+    Disposed: 'Disposed'
 } as const;
 
 export type FieldEEzsignfolderStep = typeof FieldEEzsignfolderStep[keyof typeof FieldEEzsignfolderStep];

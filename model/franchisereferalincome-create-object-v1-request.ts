@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -17,7 +17,7 @@ import { FranchisereferalincomeRequest } from './franchisereferalincome-request'
 import { FranchisereferalincomeRequestCompound } from './franchisereferalincome-request-compound';
 
 /**
- * Request for the /1/object/franchisereferalincome/createObject API Request
+ * Request for POST /1/object/franchisereferalincome
  * @export
  * @interface FranchisereferalincomeCreateObjectV1Request
  */

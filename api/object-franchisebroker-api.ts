@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -23,6 +23,8 @@ import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } fr
 // @ts-ignore
 import { CommonGetAutocompleteV1Response } from '../model';
 // @ts-ignore
+import { HeaderAcceptLanguage } from '../model';
+// @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
  * ObjectFranchisebrokerApi - axios parameter creator
@@ -35,10 +37,11 @@ export const ObjectFranchisebrokerApiAxiosParamCreator = function (configuration
          * @summary Retrieve Franchisebrokers and IDs
          * @param {'Active' | 'All'} sSelector The type of Franchisebrokers to return
          * @param {string} [sQuery] Allow to filter the returned results
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        franchisebrokerGetAutocompleteV1: async (sSelector: 'Active' | 'All', sQuery?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        franchisebrokerGetAutocompleteV1: async (sSelector: 'Active' | 'All', sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('franchisebrokerGetAutocompleteV1', 'sSelector', sSelector)
             const localVarPath = `/1/object/franchisebroker/getAutocomplete/{sSelector}`
@@ -62,6 +65,10 @@ export const ObjectFranchisebrokerApiAxiosParamCreator = function (configuration
 
             if (sQuery !== undefined) {
                 localVarQueryParameter['sQuery'] = sQuery;
+            }
+
+            if (acceptLanguage !== undefined && acceptLanguage !== null) {
+		localVarHeaderParameter['Accept-Language'] = String(acceptLanguage);
             }
 
 
@@ -106,11 +113,12 @@ export const ObjectFranchisebrokerApiFp = function(configuration?: Configuration
          * @summary Retrieve Franchisebrokers and IDs
          * @param {'Active' | 'All'} sSelector The type of Franchisebrokers to return
          * @param {string} [sQuery] Allow to filter the returned results
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async franchisebrokerGetAutocompleteV1(sSelector: 'Active' | 'All', sQuery?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonGetAutocompleteV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.franchisebrokerGetAutocompleteV1(sSelector, sQuery, options);
+        async franchisebrokerGetAutocompleteV1(sSelector: 'Active' | 'All', sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonGetAutocompleteV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.franchisebrokerGetAutocompleteV1(sSelector, sQuery, acceptLanguage, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -128,11 +136,12 @@ export const ObjectFranchisebrokerApiFactory = function (configuration?: Configu
          * @summary Retrieve Franchisebrokers and IDs
          * @param {'Active' | 'All'} sSelector The type of Franchisebrokers to return
          * @param {string} [sQuery] Allow to filter the returned results
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        franchisebrokerGetAutocompleteV1(sSelector: 'Active' | 'All', sQuery?: string, options?: any): AxiosPromise<CommonGetAutocompleteV1Response> {
-            return localVarFp.franchisebrokerGetAutocompleteV1(sSelector, sQuery, options).then((request) => request(axios, basePath));
+        franchisebrokerGetAutocompleteV1(sSelector: 'Active' | 'All', sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: any): AxiosPromise<CommonGetAutocompleteV1Response> {
+            return localVarFp.franchisebrokerGetAutocompleteV1(sSelector, sQuery, acceptLanguage, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -149,11 +158,12 @@ export class ObjectFranchisebrokerApi extends BaseAPI {
      * @summary Retrieve Franchisebrokers and IDs
      * @param {'Active' | 'All'} sSelector The type of Franchisebrokers to return
      * @param {string} [sQuery] Allow to filter the returned results
+     * @param {HeaderAcceptLanguage} [acceptLanguage] 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ObjectFranchisebrokerApi
      */
-    public franchisebrokerGetAutocompleteV1(sSelector: 'Active' | 'All', sQuery?: string, options?: AxiosRequestConfig) {
-        return ObjectFranchisebrokerApiFp(this.configuration).franchisebrokerGetAutocompleteV1(sSelector, sQuery, options).then((request) => request(this.axios, this.basePath));
+    public franchisebrokerGetAutocompleteV1(sSelector: 'Active' | 'All', sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig) {
+        return ObjectFranchisebrokerApiFp(this.configuration).franchisebrokerGetAutocompleteV1(sSelector, sQuery, acceptLanguage, options).then((request) => request(this.axios, this.basePath));
     }
 }

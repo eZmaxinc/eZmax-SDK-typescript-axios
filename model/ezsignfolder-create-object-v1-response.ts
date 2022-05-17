@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -21,7 +21,7 @@ import { EzsignfolderCreateObjectV1ResponseMPayload } from './ezsignfolder-creat
 
 /**
  * @type EzsignfolderCreateObjectV1Response
- * Response for the /1/object/ezsignfolder/createObject API Request
+ * Response for POST /1/object/ezsignfolder
  * @export
  */
 export type EzsignfolderCreateObjectV1Response = CommonResponse & EzsignfolderCreateObjectV1ResponseAllOf;

@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -16,7 +16,7 @@
 import { EzsigndocumentResponseCompound } from './ezsigndocument-response-compound';
 
 /**
- * Payload for the /1/object/ezsignfolder/{pkiEzsignfolder}/getEzsigndocuments API Request
+ * Payload for GET /1/object/ezsignfolder/{pkiEzsignfolder}/getEzsigndocuments
  * @export
  * @interface EzsignfolderGetEzsigndocumentsV1ResponseMPayload
  */

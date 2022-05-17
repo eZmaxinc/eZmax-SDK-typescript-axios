@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -16,12 +16,12 @@
 import { ActivesessionResponseCompound } from './activesession-response-compound';
 import { ActivesessionResponseCompoundApikey } from './activesession-response-compound-apikey';
 import { ActivesessionResponseCompoundUser } from './activesession-response-compound-user';
-import { FieldEActivesessionSessiontype } from './field-eactivesession-sessiontype';
+import { FieldEActivesessionUsertype } from './field-eactivesession-usertype';
 import { FieldEActivesessionWeekdaystart } from './field-eactivesession-weekdaystart';
 
 /**
  * @type ActivesessionGetCurrentV1ResponseMPayload
- * Payload for the /1/object/activesession/getCurrent API Request
+ * Payload for GET /1/object/activesession/getCurrent
  * @export
  */
 export type ActivesessionGetCurrentV1ResponseMPayload = ActivesessionResponseCompound;

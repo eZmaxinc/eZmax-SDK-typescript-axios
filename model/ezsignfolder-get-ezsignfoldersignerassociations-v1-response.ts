@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -21,7 +21,7 @@ import { EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload } from 
 
 /**
  * @type EzsignfolderGetEzsignfoldersignerassociationsV1Response
- * Response for the /1/object/ezsignfolder/{pkiEzsignfolder}/getEzsignfoldersignerassociations API Request
+ * Response for GET /1/object/ezsignfolder/{pkiEzsignfolder}/getEzsignfoldersignerassociations
  * @export
  */
 export type EzsignfolderGetEzsignfoldersignerassociationsV1Response = CommonResponse & EzsignfolderGetEzsignfoldersignerassociationsV1ResponseAllOf;

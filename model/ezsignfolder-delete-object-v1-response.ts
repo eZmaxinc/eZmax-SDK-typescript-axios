@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -19,7 +19,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
 
 /**
  * @type EzsignfolderDeleteObjectV1Response
- * Response for the /1/object/ezsignfolder/deleteObject API Request
+ * Response for DELETE /1/object/ezsignfolder/{pkiEzsignfolderID}
  * @export
  */
 export type EzsignfolderDeleteObjectV1Response = CommonResponse;

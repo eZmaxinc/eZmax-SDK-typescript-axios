@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -20,7 +20,7 @@ import { FieldEEzsigndocumentStep } from './field-eezsigndocument-step';
 
 /**
  * @type EzsigndocumentGetObjectV1ResponseMPayload
- * Payload for the /1/object/ezsigndocument/getObject API Request
+ * Payload for GET /1/object/ezsigndocument/{pkiEzsigndocumentID}
  * @export
  */
 export type EzsigndocumentGetObjectV1ResponseMPayload = EzsigndocumentResponseCompound;

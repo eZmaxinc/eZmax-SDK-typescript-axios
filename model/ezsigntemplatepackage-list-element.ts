@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -13,7 +13,6 @@
  */
 
 
-import { FieldEEzsigntemplatepackageType } from './field-eezsigntemplatepackage-type';
 
 /**
  * An Ezsigntemplatepackage List Element
@@ -28,35 +27,17 @@ export interface EzsigntemplatepackageListElement {
      */
     'pkiEzsigntemplatepackageID': number;
     /**
-     * The unique ID of the Department.
-     * @type {number}
-     * @memberof EzsigntemplatepackageListElement
-     */
-    'fkiDepartmentID': number | null;
-    /**
-     * The unique ID of the Team
-     * @type {number}
-     * @memberof EzsigntemplatepackageListElement
-     */
-    'fkiTeamID': number | null;
-    /**
      * The unique ID of the Ezsignfoldertype.
      * @type {number}
      * @memberof EzsigntemplatepackageListElement
      */
-    'fkiEzsignfoldertypeID': number | null;
+    'fkiEzsignfoldertypeID': number;
     /**
      * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @type {number}
      * @memberof EzsigntemplatepackageListElement
      */
     'fkiLanguageID': number;
-    /**
-     * 
-     * @type {FieldEEzsigntemplatepackageType}
-     * @memberof EzsigntemplatepackageListElement
-     */
-    'eEzsigntemplatepackageType': FieldEEzsigntemplatepackageType;
     /**
      * The description of the Ezsigntemplatepackage
      * @type {string}
@@ -70,10 +51,22 @@ export interface EzsigntemplatepackageListElement {
      */
     'bEzsigntemplatepackageIsactive': boolean;
     /**
+     * Whether the Ezsignbulksend was automatically modified and needs a manual validation
+     * @type {boolean}
+     * @memberof EzsigntemplatepackageListElement
+     */
+    'bEzsigntemplatepackageNeedvalidation': boolean;
+    /**
      * The total number of Ezsigntemplatepackagemembership in the Ezsigntemplatepackage
      * @type {number}
      * @memberof EzsigntemplatepackageListElement
      */
     'iEzsigntemplatepackagemembership': number;
+    /**
+     * The name of the Ezsignfoldertype in the language of the requester
+     * @type {string}
+     * @memberof EzsigntemplatepackageListElement
+     */
+    'sEzsignfoldertypeNameX': string;
 }
 

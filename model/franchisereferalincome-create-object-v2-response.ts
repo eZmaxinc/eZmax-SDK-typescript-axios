@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -21,7 +21,7 @@ import { FranchisereferalincomeCreateObjectV2ResponseMPayload } from './franchis
 
 /**
  * @type FranchisereferalincomeCreateObjectV2Response
- * Response for the /2/object/franchisereferalincome/createObject API Request
+ * Response for POST /2/object/franchisereferalincome
  * @export
  */
 export type FranchisereferalincomeCreateObjectV2Response = CommonResponse & FranchisereferalincomeCreateObjectV2ResponseAllOf;

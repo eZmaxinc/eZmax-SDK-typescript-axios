@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -21,7 +21,7 @@ import { EzsignbulksendGetListV1ResponseMPayload } from './ezsignbulksend-get-li
 
 /**
  * @type EzsignbulksendGetListV1Response
- * Response for the /1/object/ezsignbulksend/getList API Request
+ * Response for GET /1/object/ezsignbulksend/getList
  * @export
  */
 export type EzsignbulksendGetListV1Response = CommonResponseGetList & EzsignbulksendGetListV1ResponseAllOf;

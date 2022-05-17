@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -21,9 +21,27 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
 // @ts-ignore
+import { CommonGetAutocompleteDisabledV1Response } from '../model';
+// @ts-ignore
 import { CommonResponseError } from '../model';
 // @ts-ignore
+import { EzsigntemplatepackageCreateObjectV1Request } from '../model';
+// @ts-ignore
+import { EzsigntemplatepackageCreateObjectV1Response } from '../model';
+// @ts-ignore
+import { EzsigntemplatepackageDeleteObjectV1Response } from '../model';
+// @ts-ignore
+import { EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Request } from '../model';
+// @ts-ignore
+import { EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response } from '../model';
+// @ts-ignore
+import { EzsigntemplatepackageEditObjectV1Request } from '../model';
+// @ts-ignore
+import { EzsigntemplatepackageEditObjectV1Response } from '../model';
+// @ts-ignore
 import { EzsigntemplatepackageGetListV1Response } from '../model';
+// @ts-ignore
+import { EzsigntemplatepackageGetObjectV1Response } from '../model';
 // @ts-ignore
 import { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
@@ -35,9 +53,313 @@ import { RequestSignature, IHeadersData } from '../api/request-signature';
 export const ObjectEzsigntemplatepackageApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsigntemplatepackageType | Company<br>Department<br>Team<br>User<br>Usergroup |
+         * The endpoint allows to create one or many elements at once.
+         * @summary Create a new Ezsigntemplatepackage
+         * @param {EzsigntemplatepackageCreateObjectV1Request} ezsigntemplatepackageCreateObjectV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigntemplatepackageCreateObjectV1: async (ezsigntemplatepackageCreateObjectV1Request: EzsigntemplatepackageCreateObjectV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'ezsigntemplatepackageCreateObjectV1Request' is not null or undefined
+            assertParamExists('ezsigntemplatepackageCreateObjectV1', 'ezsigntemplatepackageCreateObjectV1Request', ezsigntemplatepackageCreateObjectV1Request)
+            const localVarPath = `/1/object/ezsigntemplatepackage`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(ezsigntemplatepackageCreateObjectV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Delete an existing Ezsigntemplatepackage
+         * @param {number} pkiEzsigntemplatepackageID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigntemplatepackageDeleteObjectV1: async (pkiEzsigntemplatepackageID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiEzsigntemplatepackageID' is not null or undefined
+            assertParamExists('ezsigntemplatepackageDeleteObjectV1', 'pkiEzsigntemplatepackageID', pkiEzsigntemplatepackageID)
+            const localVarPath = `/1/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID}`
+                .replace(`{${"pkiEzsigntemplatepackageID"}}`, encodeURIComponent(String(pkiEzsigntemplatepackageID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'DELETE' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Using this endpoint, you can edit multiple Ezsigntemplatepackagesigners at the same time.
+         * @summary Edit multiple Ezsigntemplatepackagesigners
+         * @param {number} pkiEzsigntemplatepackageID 
+         * @param {EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Request} ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigntemplatepackageEditEzsigntemplatepackagesignersV1: async (pkiEzsigntemplatepackageID: number, ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request: EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiEzsigntemplatepackageID' is not null or undefined
+            assertParamExists('ezsigntemplatepackageEditEzsigntemplatepackagesignersV1', 'pkiEzsigntemplatepackageID', pkiEzsigntemplatepackageID)
+            // verify required parameter 'ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request' is not null or undefined
+            assertParamExists('ezsigntemplatepackageEditEzsigntemplatepackagesignersV1', 'ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request', ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request)
+            const localVarPath = `/1/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID}/editEzsigntemplatepackagesigners`
+                .replace(`{${"pkiEzsigntemplatepackageID"}}`, encodeURIComponent(String(pkiEzsigntemplatepackageID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'PUT' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Edit an existing Ezsigntemplatepackage
+         * @param {number} pkiEzsigntemplatepackageID 
+         * @param {EzsigntemplatepackageEditObjectV1Request} ezsigntemplatepackageEditObjectV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigntemplatepackageEditObjectV1: async (pkiEzsigntemplatepackageID: number, ezsigntemplatepackageEditObjectV1Request: EzsigntemplatepackageEditObjectV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiEzsigntemplatepackageID' is not null or undefined
+            assertParamExists('ezsigntemplatepackageEditObjectV1', 'pkiEzsigntemplatepackageID', pkiEzsigntemplatepackageID)
+            // verify required parameter 'ezsigntemplatepackageEditObjectV1Request' is not null or undefined
+            assertParamExists('ezsigntemplatepackageEditObjectV1', 'ezsigntemplatepackageEditObjectV1Request', ezsigntemplatepackageEditObjectV1Request)
+            const localVarPath = `/1/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID}`
+                .replace(`{${"pkiEzsigntemplatepackageID"}}`, encodeURIComponent(String(pkiEzsigntemplatepackageID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(ezsigntemplatepackageEditObjectV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'PUT' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get the list of Ezsigntemplatepackage to be used in a dropdown or autocomplete control.
+         * @summary Retrieve Ezsigntemplatepackages and IDs
+         * @param {'All' | 'AllMultipleCopiesDisabled'} sSelector The type of Ezsigntemplatepackages to return
+         * @param {string} [sQuery] Allow to filter the returned results
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigntemplatepackageGetAutocompleteV1: async (sSelector: 'All' | 'AllMultipleCopiesDisabled', sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'sSelector' is not null or undefined
+            assertParamExists('ezsigntemplatepackageGetAutocompleteV1', 'sSelector', sSelector)
+            const localVarPath = `/1/object/ezsigntemplatepackage/getAutocomplete/{sSelector}`
+                .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            if (sQuery !== undefined) {
+                localVarQueryParameter['sQuery'] = sQuery;
+            }
+
+            if (acceptLanguage !== undefined && acceptLanguage !== null) {
+		localVarHeaderParameter['Accept-Language'] = String(acceptLanguage);
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsigntemplatepackageType | Company<br>Team<br>User<br>Usergroup |
          * @summary Retrieve Ezsigntemplatepackage list
-         * @param {'pkiEzsigntemplatepackageID_ASC' | 'pkiEzsigntemplatepackageID_DESC' | 'fkiDepartmentID_ASC' | 'fkiDepartmentID_DESC' | 'fkiTeamID_ASC' | 'fkiTeamID_DESC' | 'fkiEzsignfoldertypeID_ASC' | 'fkiEzsignfoldertypeID_DESC' | 'fkiLanguageID_ASC' | 'fkiLanguageID_DESC' | 'eEzsigntemplatepackageType_ASC' | 'eEzsigntemplatepackageType_DESC' | 'sEzsigntemplatepackageDescription_ASC' | 'sEzsigntemplatepackageDescription_DESC' | 'bEzsigntemplatepackageIsactive_ASC' | 'bEzsigntemplatepackageIsactive_DESC' | 'iEzsigntemplatepackagemembership_ASC' | 'iEzsigntemplatepackagemembership_DESC'} [eOrderBy] Specify how you want the results to be sorted
+         * @param {'pkiEzsigntemplatepackageID_ASC' | 'pkiEzsigntemplatepackageID_DESC' | 'fkiTeamID_ASC' | 'fkiTeamID_DESC' | 'fkiEzsignfoldertypeID_ASC' | 'fkiEzsignfoldertypeID_DESC' | 'fkiLanguageID_ASC' | 'fkiLanguageID_DESC' | 'eEzsigntemplatepackageType_ASC' | 'eEzsigntemplatepackageType_DESC' | 'sEzsigntemplatepackageTypedescriptionX_ASC' | 'sEzsigntemplatepackageTypedescriptionX_DESC' | 'sEzsigntemplatepackageDescription_ASC' | 'sEzsigntemplatepackageDescription_DESC' | 'bEzsigntemplatepackageIsactive_ASC' | 'bEzsigntemplatepackageIsactive_DESC' | 'bEzsigntemplatepackageNeedvalidation_ASC' | 'bEzsigntemplatepackageNeedvalidation_DESC' | 'iEzsigntemplatepackagemembership_ASC' | 'iEzsigntemplatepackagemembership_DESC'} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
          * @param {number} [iRowOffset] 
          * @param {HeaderAcceptLanguage} [acceptLanguage] 
@@ -45,7 +367,7 @@ export const ObjectEzsigntemplatepackageApiAxiosParamCreator = function (configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigntemplatepackageGetListV1: async (eOrderBy?: 'pkiEzsigntemplatepackageID_ASC' | 'pkiEzsigntemplatepackageID_DESC' | 'fkiDepartmentID_ASC' | 'fkiDepartmentID_DESC' | 'fkiTeamID_ASC' | 'fkiTeamID_DESC' | 'fkiEzsignfoldertypeID_ASC' | 'fkiEzsignfoldertypeID_DESC' | 'fkiLanguageID_ASC' | 'fkiLanguageID_DESC' | 'eEzsigntemplatepackageType_ASC' | 'eEzsigntemplatepackageType_DESC' | 'sEzsigntemplatepackageDescription_ASC' | 'sEzsigntemplatepackageDescription_DESC' | 'bEzsigntemplatepackageIsactive_ASC' | 'bEzsigntemplatepackageIsactive_DESC' | 'iEzsigntemplatepackagemembership_ASC' | 'iEzsigntemplatepackagemembership_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsigntemplatepackageGetListV1: async (eOrderBy?: 'pkiEzsigntemplatepackageID_ASC' | 'pkiEzsigntemplatepackageID_DESC' | 'fkiTeamID_ASC' | 'fkiTeamID_DESC' | 'fkiEzsignfoldertypeID_ASC' | 'fkiEzsignfoldertypeID_DESC' | 'fkiLanguageID_ASC' | 'fkiLanguageID_DESC' | 'eEzsigntemplatepackageType_ASC' | 'eEzsigntemplatepackageType_DESC' | 'sEzsigntemplatepackageTypedescriptionX_ASC' | 'sEzsigntemplatepackageTypedescriptionX_DESC' | 'sEzsigntemplatepackageDescription_ASC' | 'sEzsigntemplatepackageDescription_DESC' | 'bEzsigntemplatepackageIsactive_ASC' | 'bEzsigntemplatepackageIsactive_DESC' | 'bEzsigntemplatepackageNeedvalidation_ASC' | 'bEzsigntemplatepackageNeedvalidation_DESC' | 'iEzsigntemplatepackagemembership_ASC' | 'iEzsigntemplatepackagemembership_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/1/object/ezsigntemplatepackage/getList`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
@@ -111,6 +433,62 @@ export const ObjectEzsigntemplatepackageApiAxiosParamCreator = function (configu
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * 
+         * @summary Retrieve an existing Ezsigntemplatepackage
+         * @param {number} pkiEzsigntemplatepackageID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigntemplatepackageGetObjectV1: async (pkiEzsigntemplatepackageID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiEzsigntemplatepackageID' is not null or undefined
+            assertParamExists('ezsigntemplatepackageGetObjectV1', 'pkiEzsigntemplatepackageID', pkiEzsigntemplatepackageID)
+            const localVarPath = `/1/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID}`
+                .replace(`{${"pkiEzsigntemplatepackageID"}}`, encodeURIComponent(String(pkiEzsigntemplatepackageID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -122,9 +500,68 @@ export const ObjectEzsigntemplatepackageApiFp = function(configuration?: Configu
     const localVarAxiosParamCreator = ObjectEzsigntemplatepackageApiAxiosParamCreator(configuration)
     return {
         /**
-         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsigntemplatepackageType | Company<br>Department<br>Team<br>User<br>Usergroup |
+         * The endpoint allows to create one or many elements at once.
+         * @summary Create a new Ezsigntemplatepackage
+         * @param {EzsigntemplatepackageCreateObjectV1Request} ezsigntemplatepackageCreateObjectV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsigntemplatepackageCreateObjectV1(ezsigntemplatepackageCreateObjectV1Request: EzsigntemplatepackageCreateObjectV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigntemplatepackageCreateObjectV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigntemplatepackageCreateObjectV1(ezsigntemplatepackageCreateObjectV1Request, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
+         * @summary Delete an existing Ezsigntemplatepackage
+         * @param {number} pkiEzsigntemplatepackageID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsigntemplatepackageDeleteObjectV1(pkiEzsigntemplatepackageID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigntemplatepackageDeleteObjectV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigntemplatepackageDeleteObjectV1(pkiEzsigntemplatepackageID, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Using this endpoint, you can edit multiple Ezsigntemplatepackagesigners at the same time.
+         * @summary Edit multiple Ezsigntemplatepackagesigners
+         * @param {number} pkiEzsigntemplatepackageID 
+         * @param {EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Request} ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsigntemplatepackageEditEzsigntemplatepackagesignersV1(pkiEzsigntemplatepackageID: number, ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request: EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigntemplatepackageEditEzsigntemplatepackagesignersV1(pkiEzsigntemplatepackageID, ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
+         * @summary Edit an existing Ezsigntemplatepackage
+         * @param {number} pkiEzsigntemplatepackageID 
+         * @param {EzsigntemplatepackageEditObjectV1Request} ezsigntemplatepackageEditObjectV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsigntemplatepackageEditObjectV1(pkiEzsigntemplatepackageID: number, ezsigntemplatepackageEditObjectV1Request: EzsigntemplatepackageEditObjectV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigntemplatepackageEditObjectV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigntemplatepackageEditObjectV1(pkiEzsigntemplatepackageID, ezsigntemplatepackageEditObjectV1Request, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Get the list of Ezsigntemplatepackage to be used in a dropdown or autocomplete control.
+         * @summary Retrieve Ezsigntemplatepackages and IDs
+         * @param {'All' | 'AllMultipleCopiesDisabled'} sSelector The type of Ezsigntemplatepackages to return
+         * @param {string} [sQuery] Allow to filter the returned results
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsigntemplatepackageGetAutocompleteV1(sSelector: 'All' | 'AllMultipleCopiesDisabled', sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonGetAutocompleteDisabledV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigntemplatepackageGetAutocompleteV1(sSelector, sQuery, acceptLanguage, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsigntemplatepackageType | Company<br>Team<br>User<br>Usergroup |
          * @summary Retrieve Ezsigntemplatepackage list
-         * @param {'pkiEzsigntemplatepackageID_ASC' | 'pkiEzsigntemplatepackageID_DESC' | 'fkiDepartmentID_ASC' | 'fkiDepartmentID_DESC' | 'fkiTeamID_ASC' | 'fkiTeamID_DESC' | 'fkiEzsignfoldertypeID_ASC' | 'fkiEzsignfoldertypeID_DESC' | 'fkiLanguageID_ASC' | 'fkiLanguageID_DESC' | 'eEzsigntemplatepackageType_ASC' | 'eEzsigntemplatepackageType_DESC' | 'sEzsigntemplatepackageDescription_ASC' | 'sEzsigntemplatepackageDescription_DESC' | 'bEzsigntemplatepackageIsactive_ASC' | 'bEzsigntemplatepackageIsactive_DESC' | 'iEzsigntemplatepackagemembership_ASC' | 'iEzsigntemplatepackagemembership_DESC'} [eOrderBy] Specify how you want the results to be sorted
+         * @param {'pkiEzsigntemplatepackageID_ASC' | 'pkiEzsigntemplatepackageID_DESC' | 'fkiTeamID_ASC' | 'fkiTeamID_DESC' | 'fkiEzsignfoldertypeID_ASC' | 'fkiEzsignfoldertypeID_DESC' | 'fkiLanguageID_ASC' | 'fkiLanguageID_DESC' | 'eEzsigntemplatepackageType_ASC' | 'eEzsigntemplatepackageType_DESC' | 'sEzsigntemplatepackageTypedescriptionX_ASC' | 'sEzsigntemplatepackageTypedescriptionX_DESC' | 'sEzsigntemplatepackageDescription_ASC' | 'sEzsigntemplatepackageDescription_DESC' | 'bEzsigntemplatepackageIsactive_ASC' | 'bEzsigntemplatepackageIsactive_DESC' | 'bEzsigntemplatepackageNeedvalidation_ASC' | 'bEzsigntemplatepackageNeedvalidation_DESC' | 'iEzsigntemplatepackagemembership_ASC' | 'iEzsigntemplatepackagemembership_DESC'} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
          * @param {number} [iRowOffset] 
          * @param {HeaderAcceptLanguage} [acceptLanguage] 
@@ -132,8 +569,19 @@ export const ObjectEzsigntemplatepackageApiFp = function(configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsigntemplatepackageGetListV1(eOrderBy?: 'pkiEzsigntemplatepackageID_ASC' | 'pkiEzsigntemplatepackageID_DESC' | 'fkiDepartmentID_ASC' | 'fkiDepartmentID_DESC' | 'fkiTeamID_ASC' | 'fkiTeamID_DESC' | 'fkiEzsignfoldertypeID_ASC' | 'fkiEzsignfoldertypeID_DESC' | 'fkiLanguageID_ASC' | 'fkiLanguageID_DESC' | 'eEzsigntemplatepackageType_ASC' | 'eEzsigntemplatepackageType_DESC' | 'sEzsigntemplatepackageDescription_ASC' | 'sEzsigntemplatepackageDescription_DESC' | 'bEzsigntemplatepackageIsactive_ASC' | 'bEzsigntemplatepackageIsactive_DESC' | 'iEzsigntemplatepackagemembership_ASC' | 'iEzsigntemplatepackagemembership_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigntemplatepackageGetListV1Response>> {
+        async ezsigntemplatepackageGetListV1(eOrderBy?: 'pkiEzsigntemplatepackageID_ASC' | 'pkiEzsigntemplatepackageID_DESC' | 'fkiTeamID_ASC' | 'fkiTeamID_DESC' | 'fkiEzsignfoldertypeID_ASC' | 'fkiEzsignfoldertypeID_DESC' | 'fkiLanguageID_ASC' | 'fkiLanguageID_DESC' | 'eEzsigntemplatepackageType_ASC' | 'eEzsigntemplatepackageType_DESC' | 'sEzsigntemplatepackageTypedescriptionX_ASC' | 'sEzsigntemplatepackageTypedescriptionX_DESC' | 'sEzsigntemplatepackageDescription_ASC' | 'sEzsigntemplatepackageDescription_DESC' | 'bEzsigntemplatepackageIsactive_ASC' | 'bEzsigntemplatepackageIsactive_DESC' | 'bEzsigntemplatepackageNeedvalidation_ASC' | 'bEzsigntemplatepackageNeedvalidation_DESC' | 'iEzsigntemplatepackagemembership_ASC' | 'iEzsigntemplatepackagemembership_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigntemplatepackageGetListV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigntemplatepackageGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
+         * @summary Retrieve an existing Ezsigntemplatepackage
+         * @param {number} pkiEzsigntemplatepackageID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsigntemplatepackageGetObjectV1(pkiEzsigntemplatepackageID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigntemplatepackageGetObjectV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigntemplatepackageGetObjectV1(pkiEzsigntemplatepackageID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -147,9 +595,63 @@ export const ObjectEzsigntemplatepackageApiFactory = function (configuration?: C
     const localVarFp = ObjectEzsigntemplatepackageApiFp(configuration)
     return {
         /**
-         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsigntemplatepackageType | Company<br>Department<br>Team<br>User<br>Usergroup |
+         * The endpoint allows to create one or many elements at once.
+         * @summary Create a new Ezsigntemplatepackage
+         * @param {EzsigntemplatepackageCreateObjectV1Request} ezsigntemplatepackageCreateObjectV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigntemplatepackageCreateObjectV1(ezsigntemplatepackageCreateObjectV1Request: EzsigntemplatepackageCreateObjectV1Request, options?: any): AxiosPromise<EzsigntemplatepackageCreateObjectV1Response> {
+            return localVarFp.ezsigntemplatepackageCreateObjectV1(ezsigntemplatepackageCreateObjectV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Delete an existing Ezsigntemplatepackage
+         * @param {number} pkiEzsigntemplatepackageID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigntemplatepackageDeleteObjectV1(pkiEzsigntemplatepackageID: number, options?: any): AxiosPromise<EzsigntemplatepackageDeleteObjectV1Response> {
+            return localVarFp.ezsigntemplatepackageDeleteObjectV1(pkiEzsigntemplatepackageID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Using this endpoint, you can edit multiple Ezsigntemplatepackagesigners at the same time.
+         * @summary Edit multiple Ezsigntemplatepackagesigners
+         * @param {number} pkiEzsigntemplatepackageID 
+         * @param {EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Request} ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigntemplatepackageEditEzsigntemplatepackagesignersV1(pkiEzsigntemplatepackageID: number, ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request: EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Request, options?: any): AxiosPromise<EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response> {
+            return localVarFp.ezsigntemplatepackageEditEzsigntemplatepackagesignersV1(pkiEzsigntemplatepackageID, ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Edit an existing Ezsigntemplatepackage
+         * @param {number} pkiEzsigntemplatepackageID 
+         * @param {EzsigntemplatepackageEditObjectV1Request} ezsigntemplatepackageEditObjectV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigntemplatepackageEditObjectV1(pkiEzsigntemplatepackageID: number, ezsigntemplatepackageEditObjectV1Request: EzsigntemplatepackageEditObjectV1Request, options?: any): AxiosPromise<EzsigntemplatepackageEditObjectV1Response> {
+            return localVarFp.ezsigntemplatepackageEditObjectV1(pkiEzsigntemplatepackageID, ezsigntemplatepackageEditObjectV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get the list of Ezsigntemplatepackage to be used in a dropdown or autocomplete control.
+         * @summary Retrieve Ezsigntemplatepackages and IDs
+         * @param {'All' | 'AllMultipleCopiesDisabled'} sSelector The type of Ezsigntemplatepackages to return
+         * @param {string} [sQuery] Allow to filter the returned results
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigntemplatepackageGetAutocompleteV1(sSelector: 'All' | 'AllMultipleCopiesDisabled', sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: any): AxiosPromise<CommonGetAutocompleteDisabledV1Response> {
+            return localVarFp.ezsigntemplatepackageGetAutocompleteV1(sSelector, sQuery, acceptLanguage, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsigntemplatepackageType | Company<br>Team<br>User<br>Usergroup |
          * @summary Retrieve Ezsigntemplatepackage list
-         * @param {'pkiEzsigntemplatepackageID_ASC' | 'pkiEzsigntemplatepackageID_DESC' | 'fkiDepartmentID_ASC' | 'fkiDepartmentID_DESC' | 'fkiTeamID_ASC' | 'fkiTeamID_DESC' | 'fkiEzsignfoldertypeID_ASC' | 'fkiEzsignfoldertypeID_DESC' | 'fkiLanguageID_ASC' | 'fkiLanguageID_DESC' | 'eEzsigntemplatepackageType_ASC' | 'eEzsigntemplatepackageType_DESC' | 'sEzsigntemplatepackageDescription_ASC' | 'sEzsigntemplatepackageDescription_DESC' | 'bEzsigntemplatepackageIsactive_ASC' | 'bEzsigntemplatepackageIsactive_DESC' | 'iEzsigntemplatepackagemembership_ASC' | 'iEzsigntemplatepackagemembership_DESC'} [eOrderBy] Specify how you want the results to be sorted
+         * @param {'pkiEzsigntemplatepackageID_ASC' | 'pkiEzsigntemplatepackageID_DESC' | 'fkiTeamID_ASC' | 'fkiTeamID_DESC' | 'fkiEzsignfoldertypeID_ASC' | 'fkiEzsignfoldertypeID_DESC' | 'fkiLanguageID_ASC' | 'fkiLanguageID_DESC' | 'eEzsigntemplatepackageType_ASC' | 'eEzsigntemplatepackageType_DESC' | 'sEzsigntemplatepackageTypedescriptionX_ASC' | 'sEzsigntemplatepackageTypedescriptionX_DESC' | 'sEzsigntemplatepackageDescription_ASC' | 'sEzsigntemplatepackageDescription_DESC' | 'bEzsigntemplatepackageIsactive_ASC' | 'bEzsigntemplatepackageIsactive_DESC' | 'bEzsigntemplatepackageNeedvalidation_ASC' | 'bEzsigntemplatepackageNeedvalidation_DESC' | 'iEzsigntemplatepackagemembership_ASC' | 'iEzsigntemplatepackagemembership_DESC'} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
          * @param {number} [iRowOffset] 
          * @param {HeaderAcceptLanguage} [acceptLanguage] 
@@ -157,8 +659,18 @@ export const ObjectEzsigntemplatepackageApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigntemplatepackageGetListV1(eOrderBy?: 'pkiEzsigntemplatepackageID_ASC' | 'pkiEzsigntemplatepackageID_DESC' | 'fkiDepartmentID_ASC' | 'fkiDepartmentID_DESC' | 'fkiTeamID_ASC' | 'fkiTeamID_DESC' | 'fkiEzsignfoldertypeID_ASC' | 'fkiEzsignfoldertypeID_DESC' | 'fkiLanguageID_ASC' | 'fkiLanguageID_DESC' | 'eEzsigntemplatepackageType_ASC' | 'eEzsigntemplatepackageType_DESC' | 'sEzsigntemplatepackageDescription_ASC' | 'sEzsigntemplatepackageDescription_DESC' | 'bEzsigntemplatepackageIsactive_ASC' | 'bEzsigntemplatepackageIsactive_DESC' | 'iEzsigntemplatepackagemembership_ASC' | 'iEzsigntemplatepackagemembership_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: any): AxiosPromise<EzsigntemplatepackageGetListV1Response> {
+        ezsigntemplatepackageGetListV1(eOrderBy?: 'pkiEzsigntemplatepackageID_ASC' | 'pkiEzsigntemplatepackageID_DESC' | 'fkiTeamID_ASC' | 'fkiTeamID_DESC' | 'fkiEzsignfoldertypeID_ASC' | 'fkiEzsignfoldertypeID_DESC' | 'fkiLanguageID_ASC' | 'fkiLanguageID_DESC' | 'eEzsigntemplatepackageType_ASC' | 'eEzsigntemplatepackageType_DESC' | 'sEzsigntemplatepackageTypedescriptionX_ASC' | 'sEzsigntemplatepackageTypedescriptionX_DESC' | 'sEzsigntemplatepackageDescription_ASC' | 'sEzsigntemplatepackageDescription_DESC' | 'bEzsigntemplatepackageIsactive_ASC' | 'bEzsigntemplatepackageIsactive_DESC' | 'bEzsigntemplatepackageNeedvalidation_ASC' | 'bEzsigntemplatepackageNeedvalidation_DESC' | 'iEzsigntemplatepackagemembership_ASC' | 'iEzsigntemplatepackagemembership_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: any): AxiosPromise<EzsigntemplatepackageGetListV1Response> {
             return localVarFp.ezsigntemplatepackageGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve an existing Ezsigntemplatepackage
+         * @param {number} pkiEzsigntemplatepackageID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigntemplatepackageGetObjectV1(pkiEzsigntemplatepackageID: number, options?: any): AxiosPromise<EzsigntemplatepackageGetObjectV1Response> {
+            return localVarFp.ezsigntemplatepackageGetObjectV1(pkiEzsigntemplatepackageID, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -171,9 +683,73 @@ export const ObjectEzsigntemplatepackageApiFactory = function (configuration?: C
  */
 export class ObjectEzsigntemplatepackageApi extends BaseAPI {
     /**
-     * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsigntemplatepackageType | Company<br>Department<br>Team<br>User<br>Usergroup |
+     * The endpoint allows to create one or many elements at once.
+     * @summary Create a new Ezsigntemplatepackage
+     * @param {EzsigntemplatepackageCreateObjectV1Request} ezsigntemplatepackageCreateObjectV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectEzsigntemplatepackageApi
+     */
+    public ezsigntemplatepackageCreateObjectV1(ezsigntemplatepackageCreateObjectV1Request: EzsigntemplatepackageCreateObjectV1Request, options?: AxiosRequestConfig) {
+        return ObjectEzsigntemplatepackageApiFp(this.configuration).ezsigntemplatepackageCreateObjectV1(ezsigntemplatepackageCreateObjectV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Delete an existing Ezsigntemplatepackage
+     * @param {number} pkiEzsigntemplatepackageID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectEzsigntemplatepackageApi
+     */
+    public ezsigntemplatepackageDeleteObjectV1(pkiEzsigntemplatepackageID: number, options?: AxiosRequestConfig) {
+        return ObjectEzsigntemplatepackageApiFp(this.configuration).ezsigntemplatepackageDeleteObjectV1(pkiEzsigntemplatepackageID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Using this endpoint, you can edit multiple Ezsigntemplatepackagesigners at the same time.
+     * @summary Edit multiple Ezsigntemplatepackagesigners
+     * @param {number} pkiEzsigntemplatepackageID 
+     * @param {EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Request} ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectEzsigntemplatepackageApi
+     */
+    public ezsigntemplatepackageEditEzsigntemplatepackagesignersV1(pkiEzsigntemplatepackageID: number, ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request: EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Request, options?: AxiosRequestConfig) {
+        return ObjectEzsigntemplatepackageApiFp(this.configuration).ezsigntemplatepackageEditEzsigntemplatepackagesignersV1(pkiEzsigntemplatepackageID, ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Edit an existing Ezsigntemplatepackage
+     * @param {number} pkiEzsigntemplatepackageID 
+     * @param {EzsigntemplatepackageEditObjectV1Request} ezsigntemplatepackageEditObjectV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectEzsigntemplatepackageApi
+     */
+    public ezsigntemplatepackageEditObjectV1(pkiEzsigntemplatepackageID: number, ezsigntemplatepackageEditObjectV1Request: EzsigntemplatepackageEditObjectV1Request, options?: AxiosRequestConfig) {
+        return ObjectEzsigntemplatepackageApiFp(this.configuration).ezsigntemplatepackageEditObjectV1(pkiEzsigntemplatepackageID, ezsigntemplatepackageEditObjectV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Get the list of Ezsigntemplatepackage to be used in a dropdown or autocomplete control.
+     * @summary Retrieve Ezsigntemplatepackages and IDs
+     * @param {'All' | 'AllMultipleCopiesDisabled'} sSelector The type of Ezsigntemplatepackages to return
+     * @param {string} [sQuery] Allow to filter the returned results
+     * @param {HeaderAcceptLanguage} [acceptLanguage] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectEzsigntemplatepackageApi
+     */
+    public ezsigntemplatepackageGetAutocompleteV1(sSelector: 'All' | 'AllMultipleCopiesDisabled', sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig) {
+        return ObjectEzsigntemplatepackageApiFp(this.configuration).ezsigntemplatepackageGetAutocompleteV1(sSelector, sQuery, acceptLanguage, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsigntemplatepackageType | Company<br>Team<br>User<br>Usergroup |
      * @summary Retrieve Ezsigntemplatepackage list
-     * @param {'pkiEzsigntemplatepackageID_ASC' | 'pkiEzsigntemplatepackageID_DESC' | 'fkiDepartmentID_ASC' | 'fkiDepartmentID_DESC' | 'fkiTeamID_ASC' | 'fkiTeamID_DESC' | 'fkiEzsignfoldertypeID_ASC' | 'fkiEzsignfoldertypeID_DESC' | 'fkiLanguageID_ASC' | 'fkiLanguageID_DESC' | 'eEzsigntemplatepackageType_ASC' | 'eEzsigntemplatepackageType_DESC' | 'sEzsigntemplatepackageDescription_ASC' | 'sEzsigntemplatepackageDescription_DESC' | 'bEzsigntemplatepackageIsactive_ASC' | 'bEzsigntemplatepackageIsactive_DESC' | 'iEzsigntemplatepackagemembership_ASC' | 'iEzsigntemplatepackagemembership_DESC'} [eOrderBy] Specify how you want the results to be sorted
+     * @param {'pkiEzsigntemplatepackageID_ASC' | 'pkiEzsigntemplatepackageID_DESC' | 'fkiTeamID_ASC' | 'fkiTeamID_DESC' | 'fkiEzsignfoldertypeID_ASC' | 'fkiEzsignfoldertypeID_DESC' | 'fkiLanguageID_ASC' | 'fkiLanguageID_DESC' | 'eEzsigntemplatepackageType_ASC' | 'eEzsigntemplatepackageType_DESC' | 'sEzsigntemplatepackageTypedescriptionX_ASC' | 'sEzsigntemplatepackageTypedescriptionX_DESC' | 'sEzsigntemplatepackageDescription_ASC' | 'sEzsigntemplatepackageDescription_DESC' | 'bEzsigntemplatepackageIsactive_ASC' | 'bEzsigntemplatepackageIsactive_DESC' | 'bEzsigntemplatepackageNeedvalidation_ASC' | 'bEzsigntemplatepackageNeedvalidation_DESC' | 'iEzsigntemplatepackagemembership_ASC' | 'iEzsigntemplatepackagemembership_DESC'} [eOrderBy] Specify how you want the results to be sorted
      * @param {number} [iRowMax] 
      * @param {number} [iRowOffset] 
      * @param {HeaderAcceptLanguage} [acceptLanguage] 
@@ -182,7 +758,19 @@ export class ObjectEzsigntemplatepackageApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsigntemplatepackageApi
      */
-    public ezsigntemplatepackageGetListV1(eOrderBy?: 'pkiEzsigntemplatepackageID_ASC' | 'pkiEzsigntemplatepackageID_DESC' | 'fkiDepartmentID_ASC' | 'fkiDepartmentID_DESC' | 'fkiTeamID_ASC' | 'fkiTeamID_DESC' | 'fkiEzsignfoldertypeID_ASC' | 'fkiEzsignfoldertypeID_DESC' | 'fkiLanguageID_ASC' | 'fkiLanguageID_DESC' | 'eEzsigntemplatepackageType_ASC' | 'eEzsigntemplatepackageType_DESC' | 'sEzsigntemplatepackageDescription_ASC' | 'sEzsigntemplatepackageDescription_DESC' | 'bEzsigntemplatepackageIsactive_ASC' | 'bEzsigntemplatepackageIsactive_DESC' | 'iEzsigntemplatepackagemembership_ASC' | 'iEzsigntemplatepackagemembership_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig) {
+    public ezsigntemplatepackageGetListV1(eOrderBy?: 'pkiEzsigntemplatepackageID_ASC' | 'pkiEzsigntemplatepackageID_DESC' | 'fkiTeamID_ASC' | 'fkiTeamID_DESC' | 'fkiEzsignfoldertypeID_ASC' | 'fkiEzsignfoldertypeID_DESC' | 'fkiLanguageID_ASC' | 'fkiLanguageID_DESC' | 'eEzsigntemplatepackageType_ASC' | 'eEzsigntemplatepackageType_DESC' | 'sEzsigntemplatepackageTypedescriptionX_ASC' | 'sEzsigntemplatepackageTypedescriptionX_DESC' | 'sEzsigntemplatepackageDescription_ASC' | 'sEzsigntemplatepackageDescription_DESC' | 'bEzsigntemplatepackageIsactive_ASC' | 'bEzsigntemplatepackageIsactive_DESC' | 'bEzsigntemplatepackageNeedvalidation_ASC' | 'bEzsigntemplatepackageNeedvalidation_DESC' | 'iEzsigntemplatepackagemembership_ASC' | 'iEzsigntemplatepackagemembership_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig) {
         return ObjectEzsigntemplatepackageApiFp(this.configuration).ezsigntemplatepackageGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve an existing Ezsigntemplatepackage
+     * @param {number} pkiEzsigntemplatepackageID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectEzsigntemplatepackageApi
+     */
+    public ezsigntemplatepackageGetObjectV1(pkiEzsigntemplatepackageID: number, options?: AxiosRequestConfig) {
+        return ObjectEzsigntemplatepackageApiFp(this.configuration).ezsigntemplatepackageGetObjectV1(pkiEzsigntemplatepackageID, options).then((request) => request(this.axios, this.basePath));
     }
 }

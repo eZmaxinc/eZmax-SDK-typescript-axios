@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -26,13 +26,13 @@ export interface EzsigndocumentlogResponse {
      * @type {number}
      * @memberof EzsigndocumentlogResponse
      */
-    'fkiUserID': number | null;
+    'fkiUserID'?: number;
     /**
      * The unique ID of the Ezsignsigner
      * @type {number}
      * @memberof EzsigndocumentlogResponse
      */
-    'fkiEzsignsignerID': number | null;
+    'fkiEzsignsignerID'?: number;
     /**
      * The date and time at which the event was logged
      * @type {string}

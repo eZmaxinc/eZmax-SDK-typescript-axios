@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -13,7 +13,6 @@
  */
 
 
-import { FieldEEzsignfoldertypePrivacylevel } from './field-eezsignfoldertype-privacylevel';
 
 /**
  * An Ezsignbulksend List Element
@@ -46,11 +45,11 @@ export interface EzsignbulksendListElement {
      */
     'sEzsignfoldertypeNameX': string;
     /**
-     * 
-     * @type {FieldEEzsignfoldertypePrivacylevel}
+     * Whether the Ezsigntemplatepackage was automatically modified and needs a manual validation
+     * @type {boolean}
      * @memberof EzsignbulksendListElement
      */
-    'eEzsignfoldertypePrivacylevel': FieldEEzsignfoldertypePrivacylevel;
+    'bEzsignbulksendNeedvalidation': boolean;
     /**
      * Whether the Ezsignbulksend is active or not
      * @type {boolean}

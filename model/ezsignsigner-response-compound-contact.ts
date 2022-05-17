@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -56,6 +56,12 @@ export interface EzsignsignerResponseCompoundContact {
      * @memberof EzsignsignerResponseCompoundContact
      */
     'sPhoneE164'?: string;
+    /**
+     * The extension of the phone number.  The extension is the \"123\" section in this sample phone number: (514) 990-1516 x123.  It can also be used with international phone numbers
+     * @type {string}
+     * @memberof EzsignsignerResponseCompoundContact
+     */
+    'sPhoneExtension'?: string;
     /**
      * A phone number in E.164 Format
      * @type {string}

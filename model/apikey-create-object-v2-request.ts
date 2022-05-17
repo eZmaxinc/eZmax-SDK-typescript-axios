@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -16,7 +16,7 @@
 import { ApikeyRequestCompound } from './apikey-request-compound';
 
 /**
- * Request for the /2/object/apikey/createObject API Request
+ * Request for POST /2/object/apikey
  * @export
  * @interface ApikeyCreateObjectV2Request
  */

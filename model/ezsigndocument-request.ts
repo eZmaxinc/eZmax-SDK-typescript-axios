@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -27,6 +27,30 @@ export interface EzsigndocumentRequest {
      */
     'pkiEzsigndocumentID'?: number;
     /**
+     * The unique ID of the Ezsignfolder
+     * @type {number}
+     * @memberof EzsigndocumentRequest
+     */
+    'fkiEzsignfolderID': number;
+    /**
+     * The unique ID of the Ezsigntemplate
+     * @type {number}
+     * @memberof EzsigndocumentRequest
+     */
+    'fkiEzsigntemplateID'?: number;
+    /**
+     * The unique ID of the Ezsignfoldersignerassociation
+     * @type {number}
+     * @memberof EzsigndocumentRequest
+     */
+    'fkiEzsignfoldersignerassociationID'?: number;
+    /**
+     * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
+     * @type {number}
+     * @memberof EzsigndocumentRequest
+     */
+    'fkiLanguageID': number;
+    /**
      * Indicates where to look for the document binary content.
      * @type {string}
      * @memberof EzsigndocumentRequest
@@ -37,7 +61,7 @@ export interface EzsigndocumentRequest {
      * @type {string}
      * @memberof EzsigndocumentRequest
      */
-    'eEzsigndocumentFormat': EzsigndocumentRequestEEzsigndocumentFormatEnum;
+    'eEzsigndocumentFormat'?: EzsigndocumentRequestEEzsigndocumentFormatEnum;
     /**
      * The Base64 encoded binary content of the document.  This field is Required when eEzsigndocumentSource = Base64.
      * @type {string}
@@ -63,23 +87,17 @@ export interface EzsigndocumentRequest {
      */
     'sEzsigndocumentPassword'?: string;
     /**
-     * The unique ID of the Ezsignfolder
-     * @type {number}
+     * If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsignformfieldgroups and assign them to the specified **fkiEzsignfoldersignerassociationID**
+     * @type {string}
      * @memberof EzsigndocumentRequest
      */
-    'fkiEzsignfolderID': number;
+    'eEzsigndocumentForm'?: EzsigndocumentRequestEEzsigndocumentFormEnum;
     /**
      * The maximum date and time at which the Ezsigndocument can be signed.
      * @type {string}
      * @memberof EzsigndocumentRequest
      */
     'dtEzsigndocumentDuedate': string;
-    /**
-     * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
-     * @type {number}
-     * @memberof EzsigndocumentRequest
-     */
-    'fkiLanguageID': number;
     /**
      * The name of the document that will be presented to Ezsignfoldersignerassociations
      * @type {string}
@@ -90,6 +108,7 @@ export interface EzsigndocumentRequest {
 
 export const EzsigndocumentRequestEEzsigndocumentSourceEnum = {
     Base64: 'Base64',
+    Ezsigntemplate: 'Ezsigntemplate',
     Url: 'Url'
 } as const;
 
@@ -99,5 +118,11 @@ export const EzsigndocumentRequestEEzsigndocumentFormatEnum = {
 } as const;
 
 export type EzsigndocumentRequestEEzsigndocumentFormatEnum = typeof EzsigndocumentRequestEEzsigndocumentFormatEnum[keyof typeof EzsigndocumentRequestEEzsigndocumentFormatEnum];
+export const EzsigndocumentRequestEEzsigndocumentFormEnum = {
+    Keep: 'Keep',
+    Convert: 'Convert'
+} as const;
+
+export type EzsigndocumentRequestEEzsigndocumentFormEnum = typeof EzsigndocumentRequestEEzsigndocumentFormEnum[keyof typeof EzsigndocumentRequestEEzsigndocumentFormEnum];
 
 

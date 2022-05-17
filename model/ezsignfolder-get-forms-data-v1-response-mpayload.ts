@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -13,14 +13,19 @@
  */
 
 
-import { CustomFormDataDocumentResponse } from './custom-form-data-document-response';
 import { CustomFormsDataFolderResponse } from './custom-forms-data-folder-response';
 
 /**
- * @type EzsignfolderGetFormsDataV1ResponseMPayload
- * Payload for the /1/object/ezsignfolder/{pkiEzsigndocument}/getFormsData API Request
+ * Payload for GET /1/object/ezsignfolder/{pkiEzsigndocument}/getFormsData
  * @export
+ * @interface EzsignfolderGetFormsDataV1ResponseMPayload
  */
-export type EzsignfolderGetFormsDataV1ResponseMPayload = CustomFormsDataFolderResponse;
-
+export interface EzsignfolderGetFormsDataV1ResponseMPayload {
+    /**
+     * 
+     * @type {CustomFormsDataFolderResponse}
+     * @memberof EzsignfolderGetFormsDataV1ResponseMPayload
+     */
+    'objFormsDataFolder': CustomFormsDataFolderResponse;
+}
 

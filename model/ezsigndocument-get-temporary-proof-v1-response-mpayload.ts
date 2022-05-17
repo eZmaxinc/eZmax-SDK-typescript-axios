@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -16,16 +16,16 @@
 import { EzsigndocumentlogResponseCompound } from './ezsigndocumentlog-response-compound';
 
 /**
- * Payload for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getTemporaryProof API Request
+ * Payload for GET /1/object/ezsigndocument/{pkiEzsigndocumentID}/getTemporaryProof
  * @export
  * @interface EzsigndocumentGetTemporaryProofV1ResponseMPayload
  */
 export interface EzsigndocumentGetTemporaryProofV1ResponseMPayload {
     /**
      * 
-     * @type {EzsigndocumentlogResponseCompound}
+     * @type {Array<EzsigndocumentlogResponseCompound>}
      * @memberof EzsigndocumentGetTemporaryProofV1ResponseMPayload
      */
-    'a_objEzsigndocumentlog': EzsigndocumentlogResponseCompound;
+    'a_objEzsigndocumentlog': Array<EzsigndocumentlogResponseCompound>;
 }
 

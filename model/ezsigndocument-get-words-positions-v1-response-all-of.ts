@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -22,7 +22,7 @@ import { CustomWordPositionWordResponse } from './custom-word-position-word-resp
  */
 export interface EzsigndocumentGetWordsPositionsV1ResponseAllOf {
     /**
-     * Payload for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions API Request
+     * Payload for POST /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions
      * @type {Array<CustomWordPositionWordResponse>}
      * @memberof EzsigndocumentGetWordsPositionsV1ResponseAllOf
      */

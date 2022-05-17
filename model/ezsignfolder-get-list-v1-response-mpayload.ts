@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -19,7 +19,7 @@ import { EzsignfolderListElement } from './ezsignfolder-list-element';
 
 /**
  * @type EzsignfolderGetListV1ResponseMPayload
- * Payload for the /1/object/ezsignfolder/getList API Request
+ * Payload for GET /1/object/ezsignfolder/getList
  * @export
  */
 export type EzsignfolderGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload & EzsignfolderGetListV1ResponseMPayloadAllOf;

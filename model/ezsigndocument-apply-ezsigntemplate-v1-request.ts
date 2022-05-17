@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -15,13 +15,13 @@
 
 
 /**
- * Request for the /1/object/ezsigndocument/{pkiEzsigndocumentID}/applyezsigntemplate API Request
+ * Request for POST /1/object/ezsigndocument/{pkiEzsigndocumentID}/applyezsigntemplate
  * @export
  * @interface EzsigndocumentApplyEzsigntemplateV1Request
  */
 export interface EzsigndocumentApplyEzsigntemplateV1Request {
     /**
-     * The unique ID of the Ezsigndocument
+     * The unique ID of the Ezsigntemplate
      * @type {number}
      * @memberof EzsigndocumentApplyEzsigntemplateV1Request
      */

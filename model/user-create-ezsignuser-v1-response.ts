@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -21,7 +21,7 @@ import { UserCreateEzsignuserV1ResponseMPayload } from './user-create-ezsignuser
 
 /**
  * @type UserCreateEzsignuserV1Response
- * Response for the /1/module/user/createEzsignuser API Request
+ * Response for POST /1/module/user/createEzsignuser
  * @export
  */
 export type UserCreateEzsignuserV1Response = CommonResponse & UserCreateEzsignuserV1ResponseAllOf;

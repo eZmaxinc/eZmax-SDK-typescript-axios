@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -21,6 +21,12 @@
  */
 export interface WebhookResponse {
     /**
+     * The customer code assigned to your account
+     * @type {string}
+     * @memberof WebhookResponse
+     */
+    'pksCustomerCode': string;
+    /**
      * The Webhook ID. This value is visible in the admin interface.
      * @type {number}
      * @memberof WebhookResponse
@@ -39,11 +45,11 @@ export interface WebhookResponse {
      */
     'eWebhookEzsignevent'?: WebhookResponseEWebhookEzsigneventEnum;
     /**
-     * The customer code assigned to your account
+     * This Management Event. This property will be set only if the Module is \"Management\".
      * @type {string}
      * @memberof WebhookResponse
      */
-    'pksCustomerCode': string;
+    'eWebhookManagementevent'?: WebhookResponseEWebhookManagementeventEnum;
     /**
      * The url being called
      * @type {string}
@@ -51,17 +57,23 @@ export interface WebhookResponse {
      */
     'sWebhookUrl': string;
     /**
+     * Wheter the webhook received is a manual test or a real event
+     * @type {boolean}
+     * @memberof WebhookResponse
+     */
+    'bWebhookTest': boolean;
+    /**
+     * Wheter the server\'s SSL certificate should be validated or not. Not recommended for production use.
+     * @type {boolean}
+     * @memberof WebhookResponse
+     */
+    'bWebhookSkipsslvalidation': boolean;
+    /**
      * The email that will receive the webhook in case all attempts fail.
      * @type {string}
      * @memberof WebhookResponse
      */
     'sWebhookEmailfailed': string;
-    /**
-     * This Management Event. This property will be set only if the Module is \"Management\".
-     * @type {string}
-     * @memberof WebhookResponse
-     */
-    'eWebhookManagementevent'?: WebhookResponseEWebhookManagementeventEnum;
 }
 
 export const WebhookResponseEWebhookModuleEnum = {

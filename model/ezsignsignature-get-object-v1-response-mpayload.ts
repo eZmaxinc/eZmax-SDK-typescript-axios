@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -15,11 +15,13 @@
 
 import { EzsignsignatureResponseCompound } from './ezsignsignature-response-compound';
 import { EzsignsignaturecustomdateResponseCompound } from './ezsignsignaturecustomdate-response-compound';
+import { FieldEEzsignsignatureFont } from './field-eezsignsignature-font';
+import { FieldEEzsignsignatureTooltipposition } from './field-eezsignsignature-tooltipposition';
 import { FieldEEzsignsignatureType } from './field-eezsignsignature-type';
 
 /**
  * @type EzsignsignatureGetObjectV1ResponseMPayload
- * Payload for the /1/object/ezsignsignature/getObject API Request
+ * Payload for GET /1/object/ezsignsignature/{pkiEzsignsignatureID}
  * @export
  */
 export type EzsignsignatureGetObjectV1ResponseMPayload = EzsignsignatureResponseCompound;

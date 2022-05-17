@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -13,6 +13,8 @@
  */
 
 
+import { FieldEEzsignsignatureFont } from './field-eezsignsignature-font';
+import { FieldEEzsignsignatureTooltipposition } from './field-eezsignsignature-tooltipposition';
 import { FieldEEzsignsignatureType } from './field-eezsignsignature-type';
 
 /**
@@ -27,6 +29,12 @@ export interface EzsignsignatureResponse {
      * @memberof EzsignsignatureResponse
      */
     'pkiEzsignsignatureID': number;
+    /**
+     * The unique ID of the Ezsigndocument
+     * @type {number}
+     * @memberof EzsignsignatureResponse
+     */
+    'fkiEzsigndocumentID': number;
     /**
      * The unique ID of the Ezsignfoldersignerassociation
      * @type {number}
@@ -46,7 +54,7 @@ export interface EzsignsignatureResponse {
      */
     'iEzsignsignatureX': number;
     /**
-     * The Y coordinate (Vertical) where to put the signature block on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the signature block 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
+     * The Y coordinate (Vertical) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
      * @type {number}
      * @memberof EzsignsignatureResponse
      */
@@ -64,10 +72,22 @@ export interface EzsignsignatureResponse {
      */
     'eEzsignsignatureType': FieldEEzsignsignatureType;
     /**
-     * The unique ID of the Ezsigndocument
-     * @type {number}
+     * A tooltip that will be presented to Ezsignsigner about the Ezsignsignature
+     * @type {string}
      * @memberof EzsignsignatureResponse
      */
-    'fkiEzsigndocumentID': number;
+    'tEzsignsignatureTooltip'?: string;
+    /**
+     * 
+     * @type {FieldEEzsignsignatureTooltipposition}
+     * @memberof EzsignsignatureResponse
+     */
+    'eEzsignsignatureTooltipposition'?: FieldEEzsignsignatureTooltipposition;
+    /**
+     * 
+     * @type {FieldEEzsignsignatureFont}
+     * @memberof EzsignsignatureResponse
+     */
+    'eEzsignsignatureFont'?: FieldEEzsignsignatureFont;
 }
 

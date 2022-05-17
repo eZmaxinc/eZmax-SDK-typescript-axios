@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -88,13 +88,13 @@ export interface EzsignfolderResponse {
      * @type {string}
      * @memberof EzsignfolderResponse
      */
-    'dtEzsignfolderDuedate': string;
+    'dtEzsignfolderDuedate'?: string;
     /**
      * The date and time at which the Ezsign folder was sent the last time.
      * @type {string}
      * @memberof EzsignfolderResponse
      */
-    'dtEzsignfolderSentdate': string | null;
+    'dtEzsignfolderSentdate'?: string;
     /**
      * The scheduled date and time at which the Ezsignfolder should be archived.
      * @type {string}

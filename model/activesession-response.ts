@@ -1,7 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
- * eZmax API Definition
+ * eZmax API Definition (Full)
  * This API expose all the functionnalities for the eZmax and eZsign applications.
  *
  * The version of the OpenAPI document: 1.1.7
@@ -13,7 +13,7 @@
  */
 
 
-import { FieldEActivesessionSessiontype } from './field-eactivesession-sessiontype';
+import { FieldEActivesessionUsertype } from './field-eactivesession-usertype';
 import { FieldEActivesessionWeekdaystart } from './field-eactivesession-weekdaystart';
 
 /**
@@ -24,10 +24,10 @@ import { FieldEActivesessionWeekdaystart } from './field-eactivesession-weekdays
 export interface ActivesessionResponse {
     /**
      * 
-     * @type {FieldEActivesessionSessiontype}
+     * @type {FieldEActivesessionUsertype}
      * @memberof ActivesessionResponse
      */
-    'eActivesessionSessiontype': FieldEActivesessionSessiontype;
+    'eActivesessionUsertype': FieldEActivesessionUsertype;
     /**
      * 
      * @type {FieldEActivesessionWeekdaystart}
