@@ -8,6 +8,8 @@ api/module-ezsign-api.ts
 api/module-user-api.ts
 api/object-activesession-api.ts
 api/object-apikey-api.ts
+api/object-billingentityinternal-api.ts
+api/object-branding-api.ts
 api/object-ezsignbulksend-api.ts
 api/object-ezsignbulksenddocumentmapping-api.ts
 api/object-ezsignbulksendsignermapping-api.ts
@@ -32,8 +34,13 @@ api/object-franchisebroker-api.ts
 api/object-franchiseoffice-api.ts
 api/object-franchisereferalincome-api.ts
 api/object-notificationsection-api.ts
+api/object-notificationtest-api.ts
 api/object-period-api.ts
 api/object-secretquestion-api.ts
+api/object-taxassignment-api.ts
+api/object-timezone-api.ts
+api/object-user-api.ts
+api/object-usergroup-api.ts
 api/request-signature.ts
 base.ts
 common.ts
@@ -81,6 +88,8 @@ model/common-response-obj-debug-payload-get-list.ts
 model/common-response-obj-debug-payload.ts
 model/common-response-obj-debug.ts
 model/common-response-obj-sqlquery.ts
+model/common-response-redirect-ssecretquestion-text-x.ts
+model/common-response-warning.ts
 model/common-response.ts
 model/common-webhook.ts
 model/contact-request-compound-all-of.ts
@@ -258,6 +267,9 @@ model/ezsignfolder-create-object-v2-response-all-of.ts
 model/ezsignfolder-create-object-v2-response-mpayload.ts
 model/ezsignfolder-create-object-v2-response.ts
 model/ezsignfolder-delete-object-v1-response.ts
+model/ezsignfolder-dispose-ezsignfolders-v1-request.ts
+model/ezsignfolder-dispose-ezsignfolders-v1-response.ts
+model/ezsignfolder-dispose-v1-response.ts
 model/ezsignfolder-edit-object-v1-request.ts
 model/ezsignfolder-edit-object-v1-response.ts
 model/ezsignfolder-get-actionable-elements-v1-response-all-of.ts
@@ -416,6 +428,7 @@ model/ezsigntemplatedocument-edit-ezsigntemplatesignatures-v1-response-all-of.ts
 model/ezsigntemplatedocument-edit-ezsigntemplatesignatures-v1-response-mpayload.ts
 model/ezsigntemplatedocument-edit-ezsigntemplatesignatures-v1-response.ts
 model/ezsigntemplatedocument-edit-object-v1-request.ts
+model/ezsigntemplatedocument-edit-object-v1-response-all-of.ts
 model/ezsigntemplatedocument-edit-object-v1-response.ts
 model/ezsigntemplatedocument-get-ezsigntemplatedocumentpages-v1-response-all-of.ts
 model/ezsigntemplatedocument-get-ezsigntemplatedocumentpages-v1-response-mpayload.ts
@@ -587,6 +600,7 @@ model/field-eezsigntemplatesignature-tooltipposition.ts
 model/field-eezsigntemplatesignature-type.ts
 model/field-enotificationpreference-status.ts
 model/field-ephone-type.ts
+model/field-euser-ezsignsendreminderfrequency.ts
 model/field-euser-type.ts
 model/franchisereferalincome-create-object-v1-request.ts
 model/franchisereferalincome-create-object-v1-response-all-of.ts
@@ -607,6 +621,9 @@ model/notificationsection-get-notificationtests-v1-response-all-of.ts
 model/notificationsection-get-notificationtests-v1-response-mpayload.ts
 model/notificationsection-get-notificationtests-v1-response.ts
 model/notificationsubsection-response.ts
+model/notificationtest-get-elements-v1-response-all-of.ts
+model/notificationtest-get-elements-v1-response-mpayload.ts
+model/notificationtest-get-elements-v1-response.ts
 model/notificationtest-response.ts
 model/phone-request-compound.ts
 model/phone-request.ts
