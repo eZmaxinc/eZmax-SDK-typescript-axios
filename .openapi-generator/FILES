@@ -43,6 +43,7 @@ api/object-taxassignment-api.ts
 api/object-timezone-api.ts
 api/object-user-api.ts
 api/object-usergroup-api.ts
+api/object-versionhistory-api.ts
 api/object-webhook-api.ts
 api/request-signature.ts
 base.ts
@@ -95,6 +96,9 @@ model/branding-get-list-v1-response.ts
 model/branding-get-object-v1-response-all-of.ts
 model/branding-get-object-v1-response-mpayload.ts
 model/branding-get-object-v1-response.ts
+model/branding-get-object-v2-response-all-of.ts
+model/branding-get-object-v2-response-mpayload.ts
+model/branding-get-object-v2-response.ts
 model/branding-list-element.ts
 model/branding-request-compound.ts
 model/branding-request.ts
@@ -182,6 +186,9 @@ model/ezmaxinvoicing-get-autocomplete-v2-response.ts
 model/ezmaxinvoicing-get-object-v1-response-all-of.ts
 model/ezmaxinvoicing-get-object-v1-response-mpayload.ts
 model/ezmaxinvoicing-get-object-v1-response.ts
+model/ezmaxinvoicing-get-object-v2-response-all-of.ts
+model/ezmaxinvoicing-get-object-v2-response-mpayload.ts
+model/ezmaxinvoicing-get-object-v2-response.ts
 model/ezmaxinvoicing-get-provisional-v1-response-all-of.ts
 model/ezmaxinvoicing-get-provisional-v1-response-mpayload.ts
 model/ezmaxinvoicing-get-provisional-v1-response.ts
@@ -241,6 +248,9 @@ model/ezsignbulksend-get-list-v1-response.ts
 model/ezsignbulksend-get-object-v1-response-all-of.ts
 model/ezsignbulksend-get-object-v1-response-mpayload.ts
 model/ezsignbulksend-get-object-v1-response.ts
+model/ezsignbulksend-get-object-v2-response-all-of.ts
+model/ezsignbulksend-get-object-v2-response-mpayload.ts
+model/ezsignbulksend-get-object-v2-response.ts
 model/ezsignbulksend-list-element.ts
 model/ezsignbulksend-reorder-v1-request.ts
 model/ezsignbulksend-reorder-v1-response.ts
@@ -257,6 +267,9 @@ model/ezsignbulksenddocumentmapping-delete-object-v1-response.ts
 model/ezsignbulksenddocumentmapping-get-object-v1-response-all-of.ts
 model/ezsignbulksenddocumentmapping-get-object-v1-response-mpayload.ts
 model/ezsignbulksenddocumentmapping-get-object-v1-response.ts
+model/ezsignbulksenddocumentmapping-get-object-v2-response-all-of.ts
+model/ezsignbulksenddocumentmapping-get-object-v2-response-mpayload.ts
+model/ezsignbulksenddocumentmapping-get-object-v2-response.ts
 model/ezsignbulksenddocumentmapping-request-compound.ts
 model/ezsignbulksenddocumentmapping-request.ts
 model/ezsignbulksenddocumentmapping-response-compound-all-of.ts
@@ -270,6 +283,9 @@ model/ezsignbulksendsignermapping-delete-object-v1-response.ts
 model/ezsignbulksendsignermapping-get-object-v1-response-all-of.ts
 model/ezsignbulksendsignermapping-get-object-v1-response-mpayload.ts
 model/ezsignbulksendsignermapping-get-object-v1-response.ts
+model/ezsignbulksendsignermapping-get-object-v2-response-all-of.ts
+model/ezsignbulksendsignermapping-get-object-v2-response-mpayload.ts
+model/ezsignbulksendsignermapping-get-object-v2-response.ts
 model/ezsignbulksendsignermapping-request-compound.ts
 model/ezsignbulksendsignermapping-request.ts
 model/ezsignbulksendsignermapping-response-compound.ts
@@ -280,6 +296,9 @@ model/ezsignbulksendtransmission-get-forms-data-v1-response.ts
 model/ezsignbulksendtransmission-get-object-v1-response-all-of.ts
 model/ezsignbulksendtransmission-get-object-v1-response-mpayload.ts
 model/ezsignbulksendtransmission-get-object-v1-response.ts
+model/ezsignbulksendtransmission-get-object-v2-response-all-of.ts
+model/ezsignbulksendtransmission-get-object-v2-response-mpayload.ts
+model/ezsignbulksendtransmission-get-object-v2-response.ts
 model/ezsignbulksendtransmission-response-compound-all-of.ts
 model/ezsignbulksendtransmission-response-compound.ts
 model/ezsignbulksendtransmission-response.ts
@@ -326,6 +345,9 @@ model/ezsigndocument-get-form-data-v1-response.ts
 model/ezsigndocument-get-object-v1-response-all-of.ts
 model/ezsigndocument-get-object-v1-response-mpayload.ts
 model/ezsigndocument-get-object-v1-response.ts
+model/ezsigndocument-get-object-v2-response-all-of.ts
+model/ezsigndocument-get-object-v2-response-mpayload.ts
+model/ezsigndocument-get-object-v2-response.ts
 model/ezsigndocument-get-temporary-proof-v1-response-all-of.ts
 model/ezsigndocument-get-temporary-proof-v1-response-mpayload.ts
 model/ezsigndocument-get-temporary-proof-v1-response.ts
@@ -378,6 +400,9 @@ model/ezsignfolder-get-list-v1-response.ts
 model/ezsignfolder-get-object-v1-response-all-of.ts
 model/ezsignfolder-get-object-v1-response-mpayload.ts
 model/ezsignfolder-get-object-v1-response.ts
+model/ezsignfolder-get-object-v2-response-all-of.ts
+model/ezsignfolder-get-object-v2-response-mpayload.ts
+model/ezsignfolder-get-object-v2-response.ts
 model/ezsignfolder-import-ezsignfoldersignerassociations-v1-request.ts
 model/ezsignfolder-import-ezsignfoldersignerassociations-v1-response-all-of.ts
 model/ezsignfolder-import-ezsignfoldersignerassociations-v1-response-mpayload.ts
@@ -416,6 +441,9 @@ model/ezsignfoldersignerassociation-get-in-person-login-url-v1-response.ts
 model/ezsignfoldersignerassociation-get-object-v1-response-all-of.ts
 model/ezsignfoldersignerassociation-get-object-v1-response-mpayload.ts
 model/ezsignfoldersignerassociation-get-object-v1-response.ts
+model/ezsignfoldersignerassociation-get-object-v2-response-all-of.ts
+model/ezsignfoldersignerassociation-get-object-v2-response-mpayload.ts
+model/ezsignfoldersignerassociation-get-object-v2-response.ts
 model/ezsignfoldersignerassociation-request-compound-all-of.ts
 model/ezsignfoldersignerassociation-request-compound.ts
 model/ezsignfoldersignerassociation-request.ts
@@ -440,6 +468,9 @@ model/ezsignfoldertype-get-list-v1-response.ts
 model/ezsignfoldertype-get-object-v1-response-all-of.ts
 model/ezsignfoldertype-get-object-v1-response-mpayload.ts
 model/ezsignfoldertype-get-object-v1-response.ts
+model/ezsignfoldertype-get-object-v2-response-all-of.ts
+model/ezsignfoldertype-get-object-v2-response-mpayload.ts
+model/ezsignfoldertype-get-object-v2-response.ts
 model/ezsignfoldertype-list-element.ts
 model/ezsignfoldertype-request-compound-all-of.ts
 model/ezsignfoldertype-request-compound.ts
@@ -460,6 +491,9 @@ model/ezsignformfieldgroup-edit-object-v1-response.ts
 model/ezsignformfieldgroup-get-object-v1-response-all-of.ts
 model/ezsignformfieldgroup-get-object-v1-response-mpayload.ts
 model/ezsignformfieldgroup-get-object-v1-response.ts
+model/ezsignformfieldgroup-get-object-v2-response-all-of.ts
+model/ezsignformfieldgroup-get-object-v2-response-mpayload.ts
+model/ezsignformfieldgroup-get-object-v2-response.ts
 model/ezsignformfieldgroup-request-compound-all-of.ts
 model/ezsignformfieldgroup-request-compound.ts
 model/ezsignformfieldgroup-request.ts
@@ -486,6 +520,9 @@ model/ezsignsignature-edit-object-v1-response.ts
 model/ezsignsignature-get-object-v1-response-all-of.ts
 model/ezsignsignature-get-object-v1-response-mpayload.ts
 model/ezsignsignature-get-object-v1-response.ts
+model/ezsignsignature-get-object-v2-response-all-of.ts
+model/ezsignsignature-get-object-v2-response-mpayload.ts
+model/ezsignsignature-get-object-v2-response.ts
 model/ezsignsignature-request-compound-all-of.ts
 model/ezsignsignature-request-compound.ts
 model/ezsignsignature-request.ts
@@ -525,6 +562,9 @@ model/ezsigntemplate-get-list-v1-response.ts
 model/ezsigntemplate-get-object-v1-response-all-of.ts
 model/ezsigntemplate-get-object-v1-response-mpayload.ts
 model/ezsigntemplate-get-object-v1-response.ts
+model/ezsigntemplate-get-object-v2-response-all-of.ts
+model/ezsigntemplate-get-object-v2-response-mpayload.ts
+model/ezsigntemplate-get-object-v2-response.ts
 model/ezsigntemplate-list-element.ts
 model/ezsigntemplate-request-compound.ts
 model/ezsigntemplate-request.ts
@@ -558,6 +598,9 @@ model/ezsigntemplatedocument-get-ezsigntemplatesignatures-v1-response.ts
 model/ezsigntemplatedocument-get-object-v1-response-all-of.ts
 model/ezsigntemplatedocument-get-object-v1-response-mpayload.ts
 model/ezsigntemplatedocument-get-object-v1-response.ts
+model/ezsigntemplatedocument-get-object-v2-response-all-of.ts
+model/ezsigntemplatedocument-get-object-v2-response-mpayload.ts
+model/ezsigntemplatedocument-get-object-v2-response.ts
 model/ezsigntemplatedocument-get-words-positions-v1-request.ts
 model/ezsigntemplatedocument-get-words-positions-v1-response-all-of.ts
 model/ezsigntemplatedocument-get-words-positions-v1-response.ts
@@ -584,6 +627,9 @@ model/ezsigntemplateformfieldgroup-edit-object-v1-response.ts
 model/ezsigntemplateformfieldgroup-get-object-v1-response-all-of.ts
 model/ezsigntemplateformfieldgroup-get-object-v1-response-mpayload.ts
 model/ezsigntemplateformfieldgroup-get-object-v1-response.ts
+model/ezsigntemplateformfieldgroup-get-object-v2-response-all-of.ts
+model/ezsigntemplateformfieldgroup-get-object-v2-response-mpayload.ts
+model/ezsigntemplateformfieldgroup-get-object-v2-response.ts
 model/ezsigntemplateformfieldgroup-request-compound-all-of.ts
 model/ezsigntemplateformfieldgroup-request-compound.ts
 model/ezsigntemplateformfieldgroup-request.ts
@@ -616,6 +662,9 @@ model/ezsigntemplatepackage-get-list-v1-response.ts
 model/ezsigntemplatepackage-get-object-v1-response-all-of.ts
 model/ezsigntemplatepackage-get-object-v1-response-mpayload.ts
 model/ezsigntemplatepackage-get-object-v1-response.ts
+model/ezsigntemplatepackage-get-object-v2-response-all-of.ts
+model/ezsigntemplatepackage-get-object-v2-response-mpayload.ts
+model/ezsigntemplatepackage-get-object-v2-response.ts
 model/ezsigntemplatepackage-list-element.ts
 model/ezsigntemplatepackage-request-compound.ts
 model/ezsigntemplatepackage-request.ts
@@ -630,6 +679,9 @@ model/ezsigntemplatepackagemembership-delete-object-v1-response.ts
 model/ezsigntemplatepackagemembership-get-object-v1-response-all-of.ts
 model/ezsigntemplatepackagemembership-get-object-v1-response-mpayload.ts
 model/ezsigntemplatepackagemembership-get-object-v1-response.ts
+model/ezsigntemplatepackagemembership-get-object-v2-response-all-of.ts
+model/ezsigntemplatepackagemembership-get-object-v2-response-mpayload.ts
+model/ezsigntemplatepackagemembership-get-object-v2-response.ts
 model/ezsigntemplatepackagemembership-request-compound.ts
 model/ezsigntemplatepackagemembership-request.ts
 model/ezsigntemplatepackagemembership-response-compound-all-of.ts
@@ -647,6 +699,9 @@ model/ezsigntemplatepackagesigner-edit-object-v1-response.ts
 model/ezsigntemplatepackagesigner-get-object-v1-response-all-of.ts
 model/ezsigntemplatepackagesigner-get-object-v1-response-mpayload.ts
 model/ezsigntemplatepackagesigner-get-object-v1-response.ts
+model/ezsigntemplatepackagesigner-get-object-v2-response-all-of.ts
+model/ezsigntemplatepackagesigner-get-object-v2-response-mpayload.ts
+model/ezsigntemplatepackagesigner-get-object-v2-response.ts
 model/ezsigntemplatepackagesigner-request-compound.ts
 model/ezsigntemplatepackagesigner-request.ts
 model/ezsigntemplatepackagesigner-response-compound.ts
@@ -661,6 +716,9 @@ model/ezsigntemplatepackagesignermembership-delete-object-v1-response.ts
 model/ezsigntemplatepackagesignermembership-get-object-v1-response-all-of.ts
 model/ezsigntemplatepackagesignermembership-get-object-v1-response-mpayload.ts
 model/ezsigntemplatepackagesignermembership-get-object-v1-response.ts
+model/ezsigntemplatepackagesignermembership-get-object-v2-response-all-of.ts
+model/ezsigntemplatepackagesignermembership-get-object-v2-response-mpayload.ts
+model/ezsigntemplatepackagesignermembership-get-object-v2-response.ts
 model/ezsigntemplatepackagesignermembership-request-compound.ts
 model/ezsigntemplatepackagesignermembership-request.ts
 model/ezsigntemplatepackagesignermembership-response-compound.ts
@@ -675,6 +733,9 @@ model/ezsigntemplatesignature-edit-object-v1-response.ts
 model/ezsigntemplatesignature-get-object-v1-response-all-of.ts
 model/ezsigntemplatesignature-get-object-v1-response-mpayload.ts
 model/ezsigntemplatesignature-get-object-v1-response.ts
+model/ezsigntemplatesignature-get-object-v2-response-all-of.ts
+model/ezsigntemplatesignature-get-object-v2-response-mpayload.ts
+model/ezsigntemplatesignature-get-object-v2-response.ts
 model/ezsigntemplatesignature-request-compound-all-of.ts
 model/ezsigntemplatesignature-request-compound.ts
 model/ezsigntemplatesignature-request.ts
@@ -695,6 +756,9 @@ model/ezsigntemplatesigner-edit-object-v1-response.ts
 model/ezsigntemplatesigner-get-object-v1-response-all-of.ts
 model/ezsigntemplatesigner-get-object-v1-response-mpayload.ts
 model/ezsigntemplatesigner-get-object-v1-response.ts
+model/ezsigntemplatesigner-get-object-v2-response-all-of.ts
+model/ezsigntemplatesigner-get-object-v2-response-mpayload.ts
+model/ezsigntemplatesigner-get-object-v2-response.ts
 model/ezsigntemplatesigner-request-compound.ts
 model/ezsigntemplatesigner-request.ts
 model/ezsigntemplatesigner-response-compound.ts
@@ -736,6 +800,8 @@ model/field-enotificationpreference-status.ts
 model/field-ephone-type.ts
 model/field-euser-ezsignsendreminderfrequency.ts
 model/field-euser-type.ts
+model/field-eversionhistory-type.ts
+model/field-eversionhistory-usertype.ts
 model/field-ewebhook-ezsignevent.ts
 model/field-ewebhook-managementevent.ts
 model/field-ewebhook-module.ts
@@ -759,6 +825,7 @@ model/multilingual-ezmaxinvoicingsummaryinternal-description.ts
 model/multilingual-ezsignfoldertype-name.ts
 model/multilingual-notificationsubsection-name.ts
 model/multilingual-notificationtest-name.ts
+model/multilingual-versionhistory-detail.ts
 model/notificationsection-get-notificationtests-v1-response-all-of.ts
 model/notificationsection-get-notificationtests-v1-response-mpayload.ts
 model/notificationsection-get-notificationtests-v1-response.ts
@@ -795,6 +862,11 @@ model/usergroup-autocomplete-element-response.ts
 model/usergroup-get-autocomplete-v2-response-all-of.ts
 model/usergroup-get-autocomplete-v2-response-mpayload.ts
 model/usergroup-get-autocomplete-v2-response.ts
+model/versionhistory-get-object-v2-response-all-of.ts
+model/versionhistory-get-object-v2-response-mpayload.ts
+model/versionhistory-get-object-v2-response.ts
+model/versionhistory-response-compound.ts
+model/versionhistory-response.ts
 model/webhook-create-object-v1-request.ts
 model/webhook-create-object-v1-response-all-of.ts
 model/webhook-create-object-v1-response-mpayload.ts
@@ -817,9 +889,13 @@ model/webhook-get-list-v1-response.ts
 model/webhook-get-object-v1-response-all-of.ts
 model/webhook-get-object-v1-response-mpayload.ts
 model/webhook-get-object-v1-response.ts
+model/webhook-get-object-v2-response-all-of.ts
+model/webhook-get-object-v2-response-mpayload.ts
+model/webhook-get-object-v2-response.ts
 model/webhook-list-element.ts
 model/webhook-request-compound.ts
 model/webhook-request.ts
+model/webhook-response-compound-all-of.ts
 model/webhook-response-compound.ts
 model/webhook-response.ts
 model/webhook-test-v1-response.ts
