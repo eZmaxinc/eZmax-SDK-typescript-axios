@@ -530,7 +530,6 @@ model/ezsignsignature-response-compound-all-of.ts
 model/ezsignsignature-response-compound.ts
 model/ezsignsignature-response.ts
 model/ezsignsignature-sign-v1-request.ts
-model/ezsignsignature-sign-v1-response-all-of.ts
 model/ezsignsignature-sign-v1-response.ts
 model/ezsignsignaturecustomdate-request-compound.ts
 model/ezsignsignaturecustomdate-request.ts
@@ -805,6 +804,14 @@ model/field-eversionhistory-usertype.ts
 model/field-ewebhook-ezsignevent.ts
 model/field-ewebhook-managementevent.ts
 model/field-ewebhook-module.ts
+model/franchisebroker-autocomplete-element-response.ts
+model/franchisebroker-get-autocomplete-v2-response-all-of.ts
+model/franchisebroker-get-autocomplete-v2-response-mpayload.ts
+model/franchisebroker-get-autocomplete-v2-response.ts
+model/franchiseoffice-autocomplete-element-response.ts
+model/franchiseoffice-get-autocomplete-v2-response-all-of.ts
+model/franchiseoffice-get-autocomplete-v2-response-mpayload.ts
+model/franchiseoffice-get-autocomplete-v2-response.ts
 model/franchisereferalincome-create-object-v1-request.ts
 model/franchisereferalincome-create-object-v1-response-all-of.ts
 model/franchisereferalincome-create-object-v1-response-mpayload.ts
@@ -834,6 +841,10 @@ model/notificationtest-get-elements-v1-response-all-of.ts
 model/notificationtest-get-elements-v1-response-mpayload.ts
 model/notificationtest-get-elements-v1-response.ts
 model/notificationtest-response.ts
+model/period-autocomplete-element-response.ts
+model/period-get-autocomplete-v2-response-all-of.ts
+model/period-get-autocomplete-v2-response-mpayload.ts
+model/period-get-autocomplete-v2-response.ts
 model/phone-request-compound.ts
 model/phone-request.ts
 model/secretquestion-autocomplete-element-response.ts
