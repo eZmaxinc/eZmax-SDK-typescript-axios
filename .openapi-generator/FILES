@@ -422,6 +422,8 @@ model/ezsignfolder-send-v1-request.ts
 model/ezsignfolder-send-v1-response.ts
 model/ezsignfolder-send-v2-request.ts
 model/ezsignfolder-send-v2-response.ts
+model/ezsignfolder-send-v3-request.ts
+model/ezsignfolder-send-v3-response.ts
 model/ezsignfolder-unsend-v1-response.ts
 model/ezsignfoldersignerassociation-create-object-v1-request.ts
 model/ezsignfoldersignerassociation-create-object-v1-response-all-of.ts
@@ -444,8 +446,11 @@ model/ezsignfoldersignerassociation-get-object-v1-response.ts
 model/ezsignfoldersignerassociation-get-object-v2-response-all-of.ts
 model/ezsignfoldersignerassociation-get-object-v2-response-mpayload.ts
 model/ezsignfoldersignerassociation-get-object-v2-response.ts
+model/ezsignfoldersignerassociation-patch-object-v1-request.ts
+model/ezsignfoldersignerassociation-patch-object-v1-response.ts
 model/ezsignfoldersignerassociation-request-compound-all-of.ts
 model/ezsignfoldersignerassociation-request-compound.ts
+model/ezsignfoldersignerassociation-request-patch.ts
 model/ezsignfoldersignerassociation-request.ts
 model/ezsignfoldersignerassociation-response-compound-all-of.ts
 model/ezsignfoldersignerassociation-response-compound-user.ts
