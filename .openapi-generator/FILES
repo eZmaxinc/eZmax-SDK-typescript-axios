@@ -549,6 +549,10 @@ model/ezsignsigner-response-compound-contact.ts
 model/ezsignsigner-response-compound.ts
 model/ezsignsigner-response.ts
 model/ezsigntemplate-autocomplete-element-response.ts
+model/ezsigntemplate-copy-v1-request.ts
+model/ezsigntemplate-copy-v1-response-all-of.ts
+model/ezsigntemplate-copy-v1-response-mpayload.ts
+model/ezsigntemplate-copy-v1-response.ts
 model/ezsigntemplate-create-object-v1-request.ts
 model/ezsigntemplate-create-object-v1-response-all-of.ts
 model/ezsigntemplate-create-object-v1-response-mpayload.ts
