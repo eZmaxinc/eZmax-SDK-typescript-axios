@@ -17,26 +17,33 @@
 import { DefaultObject } from '../base'
 
 /**
- * Payload for GET /1/module/communication/getCommunicationCount
+ * An Emailstatic Object
  * @export
- * @interface CommunicationGetCountV1ResponseMPayload
+ * @interface EmailstaticResponse
  */
-export interface CommunicationGetCountV1ResponseMPayload {
+export interface EmailstaticResponse {
     /**
-     * The count of Communication.
+     * The unique ID of the Emailstatic
      * @type {number}
-     * @memberof CommunicationGetCountV1ResponseMPayload
+     * @memberof EmailstaticResponse
      */
-    'iCommunicationCount': number;
+    'pkiEmailstaticID': number;
+    /**
+     * The email address.
+     * @type {string}
+     * @memberof EmailstaticResponse
+     */
+    'sEmailstaticAddress': string;
 }
 /**
- * A CommunicationGetCountV1ResponseMPayload Object with automatic temp default value
+ * A EmailstaticResponse Object with automatic temp default value
  * Use this object only for create an empty object to assign a response from server
  * @export 
- * @class DefaultObjectCommunicationGetCountV1ResponseMPayload
+ * @class DefaultObjectEmailstaticResponse
  */
-export class DefaultObjectCommunicationGetCountV1ResponseMPayload extends DefaultObject {
-   iCommunicationCount:number = 0
+export class DefaultObjectEmailstaticResponse extends DefaultObject {
+   pkiEmailstaticID:number = 0
+   sEmailstaticAddress:string = ''
 }
 
 

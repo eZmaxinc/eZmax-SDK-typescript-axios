@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import { CommonAudit } from './common-audit';
+// May contain unused imports in some cases
+// @ts-ignore
 import { CommunicationResponse } from './communication-response';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -24,22 +27,19 @@ import { CommunicationResponseCompoundAllOf } from './communication-response-com
 import { CommunicationattachmentResponseCompound } from './communicationattachment-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommunicationexternalimageResponseCompound } from './communicationexternalimage-response-compound';
-// May contain unused imports in some cases
-// @ts-ignore
 import { CommunicationexternalrecipientResponseCompound } from './communicationexternalrecipient-response-compound';
-// May contain unused imports in some cases
-// @ts-ignore
-import { CommunicationimageResponseCompound } from './communicationimage-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
 import { CommunicationrecipientResponseCompound } from './communicationrecipient-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
+import { ComputedECommunicationDirection } from './computed-ecommunication-direction';
+// May contain unused imports in some cases
+// @ts-ignore
 import { CustomContactNameResponse } from './custom-contact-name-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldECommunicationEmailimportance } from './field-ecommunication-emailimportance';
+import { FieldECommunicationImportance } from './field-ecommunication-importance';
 // May contain unused imports in some cases
 // @ts-ignore
 import { FieldECommunicationType } from './field-ecommunication-type';
@@ -62,16 +62,16 @@ export type CommunicationResponseCompound = CommunicationResponse & Communicatio
  */
 export class DefaultObjectCommunicationResponseCompound extends DefaultObject {
    pkiCommunicationID:number = 0
-   eCommunicationEmailimportance?:FieldECommunicationEmailimportance = undefined
+   eCommunicationImportance:FieldECommunicationImportance = 'High'
    eCommunicationType:FieldECommunicationType = 'Email'
    sCommunicationSubject:string = ''
-   dtCommunicationSentdate:string = ''
+   eCommunicationDirection:ComputedECommunicationDirection = 'Outbound'
+   iCommunicationrecipientCount:number = 0
    objContactFrom:Partial<CustomContactNameResponse> = {}
+   objAudit:Partial<CommonAudit> = {}
    a_objCommunicationattachment:Array<CommunicationattachmentResponseCompound> = []
    a_objCommunicationrecipient:Array<CommunicationrecipientResponseCompound> = []
    a_objCommunicationexternalrecipient:Array<CommunicationexternalrecipientResponseCompound> = []
-   a_objCommunicationimage:Array<CommunicationimageResponseCompound> = []
-   a_objCommunicationexternalimage:Array<CommunicationexternalimageResponseCompound> = []
 }
 
 

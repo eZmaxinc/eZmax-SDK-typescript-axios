@@ -18,10 +18,16 @@
 import { CommunicationexternalrecipientResponse } from './communicationexternalrecipient-response';
 // May contain unused imports in some cases
 // @ts-ignore
+import { DescriptionstaticResponseCompound } from './descriptionstatic-response-compound';
+// May contain unused imports in some cases
+// @ts-ignore
+import { EmailstaticResponseCompound } from './emailstatic-response-compound';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FieldECommunicationexternalrecipientType } from './field-ecommunicationexternalrecipient-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PhoneResponseCompound } from './phone-response-compound';
+import { PhonestaticResponseCompound } from './phonestatic-response-compound';
 
 import { DefaultObject } from '../base'
 
@@ -41,10 +47,10 @@ export type CommunicationexternalrecipientResponseCompound = Communicationextern
  */
 export class DefaultObjectCommunicationexternalrecipientResponseCompound extends DefaultObject {
    pkiCommunicationexternalrecipientID:number = 0
-   sEmailAddress?:string = undefined
-   objPhoneSms?:Partial<PhoneResponseCompound> = undefined
    eCommunicationexternalrecipientType:FieldECommunicationexternalrecipientType = 'To'
-   sCommunicationexternalrecipientName:string = ''
+   objDescriptionstatic:Partial<DescriptionstaticResponseCompound> = {}
+   objEmailstatic?:Partial<EmailstaticResponseCompound> = undefined
+   objPhonestatic?:Partial<PhonestaticResponseCompound> = undefined
 }
 
 

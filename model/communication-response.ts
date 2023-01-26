@@ -15,10 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import { CommonAudit } from './common-audit';
+// May contain unused imports in some cases
+// @ts-ignore
+import { ComputedECommunicationDirection } from './computed-ecommunication-direction';
+// May contain unused imports in some cases
+// @ts-ignore
 import { CustomContactNameResponse } from './custom-contact-name-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldECommunicationEmailimportance } from './field-ecommunication-emailimportance';
+import { FieldECommunicationImportance } from './field-ecommunication-importance';
 // May contain unused imports in some cases
 // @ts-ignore
 import { FieldECommunicationType } from './field-ecommunication-type';
@@ -39,10 +45,10 @@ export interface CommunicationResponse {
     'pkiCommunicationID': number;
     /**
      * 
-     * @type {FieldECommunicationEmailimportance}
+     * @type {FieldECommunicationImportance}
      * @memberof CommunicationResponse
      */
-    'eCommunicationEmailimportance'?: FieldECommunicationEmailimportance;
+    'eCommunicationImportance': FieldECommunicationImportance;
     /**
      * 
      * @type {FieldECommunicationType}
@@ -50,23 +56,35 @@ export interface CommunicationResponse {
      */
     'eCommunicationType': FieldECommunicationType;
     /**
-     * The Subject of the Communication
+     * The subject of the Communication
      * @type {string}
      * @memberof CommunicationResponse
      */
     'sCommunicationSubject': string;
     /**
-     * The send date and time at which the Communication was sent.
-     * @type {string}
+     * 
+     * @type {ComputedECommunicationDirection}
      * @memberof CommunicationResponse
      */
-    'dtCommunicationSentdate': string;
+    'eCommunicationDirection': ComputedECommunicationDirection;
+    /**
+     * The count of Communicationrecipient
+     * @type {number}
+     * @memberof CommunicationResponse
+     */
+    'iCommunicationrecipientCount': number;
     /**
      * 
      * @type {CustomContactNameResponse}
      * @memberof CommunicationResponse
      */
     'objContactFrom': CustomContactNameResponse;
+    /**
+     * 
+     * @type {CommonAudit}
+     * @memberof CommunicationResponse
+     */
+    'objAudit': CommonAudit;
 }
 /**
  * A CommunicationResponse Object with automatic temp default value
@@ -76,11 +94,13 @@ export interface CommunicationResponse {
  */
 export class DefaultObjectCommunicationResponse extends DefaultObject {
    pkiCommunicationID:number = 0
-   eCommunicationEmailimportance?:FieldECommunicationEmailimportance = undefined
+   eCommunicationImportance:FieldECommunicationImportance = 'High'
    eCommunicationType:FieldECommunicationType = 'Email'
    sCommunicationSubject:string = ''
-   dtCommunicationSentdate:string = ''
+   eCommunicationDirection:ComputedECommunicationDirection = 'Outbound'
+   iCommunicationrecipientCount:number = 0
    objContactFrom:Partial<CustomContactNameResponse> = {}
+   objAudit:Partial<CommonAudit> = {}
 }
 
 

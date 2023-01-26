@@ -18,13 +18,7 @@
 import { CommunicationattachmentResponseCompound } from './communicationattachment-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommunicationexternalimageResponseCompound } from './communicationexternalimage-response-compound';
-// May contain unused imports in some cases
-// @ts-ignore
 import { CommunicationexternalrecipientResponseCompound } from './communicationexternalrecipient-response-compound';
-// May contain unused imports in some cases
-// @ts-ignore
-import { CommunicationimageResponseCompound } from './communicationimage-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
 import { CommunicationrecipientResponseCompound } from './communicationrecipient-response-compound';
@@ -55,18 +49,6 @@ export interface CommunicationResponseCompoundAllOf {
      * @memberof CommunicationResponseCompoundAllOf
      */
     'a_objCommunicationexternalrecipient': Array<CommunicationexternalrecipientResponseCompound>;
-    /**
-     * 
-     * @type {Array<CommunicationimageResponseCompound>}
-     * @memberof CommunicationResponseCompoundAllOf
-     */
-    'a_objCommunicationimage': Array<CommunicationimageResponseCompound>;
-    /**
-     * 
-     * @type {Array<CommunicationexternalimageResponseCompound>}
-     * @memberof CommunicationResponseCompoundAllOf
-     */
-    'a_objCommunicationexternalimage': Array<CommunicationexternalimageResponseCompound>;
 }
 /**
  * A CommunicationResponseCompoundAllOf Object with automatic temp default value
@@ -78,8 +60,6 @@ export class DefaultObjectCommunicationResponseCompoundAllOf extends DefaultObje
    a_objCommunicationattachment:Array<CommunicationattachmentResponseCompound> = []
    a_objCommunicationrecipient:Array<CommunicationrecipientResponseCompound> = []
    a_objCommunicationexternalrecipient:Array<CommunicationexternalrecipientResponseCompound> = []
-   a_objCommunicationimage:Array<CommunicationimageResponseCompound> = []
-   a_objCommunicationexternalimage:Array<CommunicationexternalimageResponseCompound> = []
 }
 
 

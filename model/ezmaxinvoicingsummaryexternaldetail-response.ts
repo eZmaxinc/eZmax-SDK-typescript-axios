@@ -76,6 +76,12 @@ export interface EzmaxinvoicingsummaryexternaldetailResponse {
      * @memberof EzmaxinvoicingsummaryexternaldetailResponse
      */
     'bEzmaxinvoicingsummaryexternaldetailAdjustment': boolean;
+    /**
+     * The help message of the Ezmaxproduct in the language of the requester
+     * @type {string}
+     * @memberof EzmaxinvoicingsummaryexternaldetailResponse
+     */
+    'tEzmaxproductHelpX': string;
 }
 /**
  * A EzmaxinvoicingsummaryexternaldetailResponse Object with automatic temp default value
@@ -93,6 +99,7 @@ export class DefaultObjectEzmaxinvoicingsummaryexternaldetailResponse extends De
    dEzmaxinvoicingsummaryexternaldetailRebate:string = ''
    dEzmaxinvoicingsummaryexternaldetailTotal:string = ''
    bEzmaxinvoicingsummaryexternaldetailAdjustment:boolean = false
+   tEzmaxproductHelpX:string = ''
 }
 
 

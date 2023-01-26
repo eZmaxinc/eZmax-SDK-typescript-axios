@@ -15,27 +15,27 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommunicationexternalimageResponse } from './communicationexternalimage-response';
+import { DescriptionstaticResponse } from './descriptionstatic-response';
 
 import { DefaultObject } from '../base'
 
 /**
- * @type CommunicationexternalimageResponseCompound
- * A Communicationexternalimage Object
+ * @type DescriptionstaticResponseCompound
+ * A Descriptionstatic Object and children to create a complete structure
  * @export
  */
-export type CommunicationexternalimageResponseCompound = CommunicationexternalimageResponse;
+export type DescriptionstaticResponseCompound = DescriptionstaticResponse;
 
 
 /**
  * @export 
- * A CommunicationexternalimageResponseCompound Object with automatic temp default value
+ * A DescriptionstaticResponseCompound Object with automatic temp default value
  * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectCommunicationexternalimageResponseCompound
+ * @class DefaultObjectDescriptionstaticResponseCompound
  */
-export class DefaultObjectCommunicationexternalimageResponseCompound extends DefaultObject {
-   pkiCommunicationexternalimageID:number = 0
-   sCommunicationexternalimageMD5:string = ''
+export class DefaultObjectDescriptionstaticResponseCompound extends DefaultObject {
+   pkiDescriptionstaticID:number = 0
+   sDescriptionstaticDescription:string = ''
 }
 
 

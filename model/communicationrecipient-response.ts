@@ -15,10 +15,19 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import { DescriptionstaticResponseCompound } from './descriptionstatic-response-compound';
+// May contain unused imports in some cases
+// @ts-ignore
+import { EmailstaticResponseCompound } from './emailstatic-response-compound';
+// May contain unused imports in some cases
+// @ts-ignore
+import { FieldECommunicationrecipientObjecttype } from './field-ecommunicationrecipient-objecttype';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FieldECommunicationrecipientType } from './field-ecommunicationrecipient-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PhoneResponseCompound } from './phone-response-compound';
+import { PhonestaticResponseCompound } from './phonestatic-response-compound';
 
 import { DefaultObject } from '../base'
 
@@ -34,6 +43,12 @@ export interface CommunicationrecipientResponse {
      * @memberof CommunicationrecipientResponse
      */
     'pkiCommunicationrecipientID': number;
+    /**
+     * 
+     * @type {FieldECommunicationrecipientObjecttype}
+     * @memberof CommunicationrecipientResponse
+     */
+    'eCommunicationrecipientObjecttype'?: FieldECommunicationrecipientObjecttype;
     /**
      * The unique ID of the Agent.
      * @type {number}
@@ -83,18 +98,6 @@ export interface CommunicationrecipientResponse {
      */
     'fkiUserID'?: number;
     /**
-     * The email address.
-     * @type {string}
-     * @memberof CommunicationrecipientResponse
-     */
-    'sEmailAddress'?: string;
-    /**
-     * 
-     * @type {FieldECommunicationrecipientType}
-     * @memberof CommunicationrecipientResponse
-     */
-    'eCommunicationrecipientType'?: FieldECommunicationrecipientType;
-    /**
      * The unique ID of the Agentincorporation.
      * @type {number}
      * @memberof CommunicationrecipientResponse
@@ -138,10 +141,28 @@ export interface CommunicationrecipientResponse {
     'fkiSupplierID'?: number;
     /**
      * 
-     * @type {PhoneResponseCompound}
+     * @type {FieldECommunicationrecipientType}
      * @memberof CommunicationrecipientResponse
      */
-    'objPhoneSms'?: PhoneResponseCompound;
+    'eCommunicationrecipientType': FieldECommunicationrecipientType;
+    /**
+     * 
+     * @type {DescriptionstaticResponseCompound}
+     * @memberof CommunicationrecipientResponse
+     */
+    'objDescriptionstatic': DescriptionstaticResponseCompound;
+    /**
+     * 
+     * @type {EmailstaticResponseCompound}
+     * @memberof CommunicationrecipientResponse
+     */
+    'objEmailstatic'?: EmailstaticResponseCompound;
+    /**
+     * 
+     * @type {PhonestaticResponseCompound}
+     * @memberof CommunicationrecipientResponse
+     */
+    'objPhonestatic'?: PhonestaticResponseCompound;
 }
 /**
  * A CommunicationrecipientResponse Object with automatic temp default value
@@ -151,6 +172,7 @@ export interface CommunicationrecipientResponse {
  */
 export class DefaultObjectCommunicationrecipientResponse extends DefaultObject {
    pkiCommunicationrecipientID:number = 0
+   eCommunicationrecipientObjecttype?:FieldECommunicationrecipientObjecttype = undefined
    fkiAgentID?:number = undefined
    fkiBrokerID?:number = undefined
    fkiContactID?:number = undefined
@@ -159,8 +181,6 @@ export class DefaultObjectCommunicationrecipientResponse extends DefaultObject {
    fkiEzsignsignerID?:number = undefined
    fkiFranchiseofficeID?:number = undefined
    fkiUserID?:number = undefined
-   sEmailAddress?:string = undefined
-   eCommunicationrecipientType?:FieldECommunicationrecipientType = undefined
    fkiAgentincorporationID?:number = undefined
    fkiAssistantID?:number = undefined
    fkiExternalbrokerID?:number = undefined
@@ -168,7 +188,10 @@ export class DefaultObjectCommunicationrecipientResponse extends DefaultObject {
    fkiNotaryID?:number = undefined
    fkiRewardmemberID?:number = undefined
    fkiSupplierID?:number = undefined
-   objPhoneSms?:Partial<PhoneResponseCompound> = undefined
+   eCommunicationrecipientType:FieldECommunicationrecipientType = 'To'
+   objDescriptionstatic:Partial<DescriptionstaticResponseCompound> = {}
+   objEmailstatic?:Partial<EmailstaticResponseCompound> = undefined
+   objPhonestatic?:Partial<PhonestaticResponseCompound> = undefined
 }
 
 

@@ -23,7 +23,7 @@ import { DefaultObject } from '../base'
  */
 export interface PeriodAutocompleteElementResponse {
     /**
-     * The period YYYYMM
+     * The YYYYMM of the Period
      * @type {string}
      * @memberof PeriodAutocompleteElementResponse
      */

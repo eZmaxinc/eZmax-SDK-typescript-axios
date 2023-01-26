@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonResponse } from './common-response';
+import { CommonResponseGetList } from './common-response-get-list';
 // May contain unused imports in some cases
 // @ts-ignore
 import { CommonResponseObjDebug } from './common-response-obj-debug';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
+import { CommonResponseObjDebugPayloadGetList } from './common-response-obj-debug-payload-get-list';
 // May contain unused imports in some cases
 // @ts-ignore
 import { CommunicationGetListV1ResponseAllOf } from './communication-get-list-v1-response-all-of';
@@ -33,10 +33,10 @@ import { DefaultObject } from '../base'
 
 /**
  * @type CommunicationGetListV1Response
- * Response for GET /1/module/communication/getList
+ * Response for GET /1/object/communication/getList
  * @export
  */
-export type CommunicationGetListV1Response = CommonResponse & CommunicationGetListV1ResponseAllOf;
+export type CommunicationGetListV1Response = CommonResponseGetList & CommunicationGetListV1ResponseAllOf;
 
 
 /**
@@ -47,7 +47,7 @@ export type CommunicationGetListV1Response = CommonResponse & CommunicationGetLi
  */
 export class DefaultObjectCommunicationGetListV1Response extends DefaultObject {
    mPayload:Partial<CommunicationGetListV1ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
+   objDebugPayload?:Partial<CommonResponseObjDebugPayloadGetList> = undefined
    objDebug?:Partial<CommonResponseObjDebug> = undefined
 }
 

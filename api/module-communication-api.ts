@@ -25,8 +25,6 @@ import { CommonResponseError } from '../model';
 // @ts-ignore
 import { CommunicationGetCountV1Response } from '../model';
 // @ts-ignore
-import { CommunicationGetListV1Response } from '../model';
-// @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
  * ModuleCommunicationApi - axios parameter creator
@@ -35,17 +33,17 @@ import { RequestSignature, IHeadersData } from '../api/request-signature';
 export const ModuleCommunicationApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * Get the number of communication in specified module
-         * @summary Get the number of communication
-         * @param {'Ezsignfolder'} eCommunicationModule Specify the requested module
+         * 
+         * @summary Retrieve Communication count
+         * @param {'Ezsignfolder'} eCommunicationObjecttype The object type for the Communication
          * @param {number} [pkiEzsignfolderID] The unique ID of the Ezsignfolder
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        communicationGetCommunicationCountV1: async (eCommunicationModule: 'Ezsignfolder', pkiEzsignfolderID?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'eCommunicationModule' is not null or undefined
-            assertParamExists('communicationGetCommunicationCountV1', 'eCommunicationModule', eCommunicationModule)
-            const localVarPath = `/1/module/communication/getCommunicationCount`;
+        communicationGetCommunicationCountV1: async (eCommunicationObjecttype: 'Ezsignfolder', pkiEzsignfolderID?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'eCommunicationObjecttype' is not null or undefined
+            assertParamExists('communicationGetCommunicationCountV1', 'eCommunicationObjecttype', eCommunicationObjecttype)
+            const localVarPath = `/1/module/communication/getCount`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -63,72 +61,8 @@ export const ModuleCommunicationApiAxiosParamCreator = function (configuration?:
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-            if (eCommunicationModule !== undefined) {
-                localVarQueryParameter['eCommunicationModule'] = eCommunicationModule;
-            }
-
-            if (pkiEzsignfolderID !== undefined) {
-                localVarQueryParameter['pkiEzsignfolderID'] = pkiEzsignfolderID;
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'GET' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Retrieve communication list
-         * @summary Retrieve communication list
-         * @param {'Ezsignfolder'} eCommunicationModule Specify the requested module
-         * @param {number} [pkiEzsignfolderID] The unique ID of the Ezsignfolder
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        communicationGetCommunicationListV1: async (eCommunicationModule: 'Ezsignfolder', pkiEzsignfolderID?: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'eCommunicationModule' is not null or undefined
-            assertParamExists('communicationGetCommunicationListV1', 'eCommunicationModule', eCommunicationModule)
-            const localVarPath = `/1/module/communication/getCommunicationList`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-            if (eCommunicationModule !== undefined) {
-                localVarQueryParameter['eCommunicationModule'] = eCommunicationModule;
+            if (eCommunicationObjecttype !== undefined) {
+                localVarQueryParameter['eCommunicationObjecttype'] = eCommunicationObjecttype;
             }
 
             if (pkiEzsignfolderID !== undefined) {
@@ -173,27 +107,15 @@ export const ModuleCommunicationApiFp = function(configuration?: Configuration) 
     const localVarAxiosParamCreator = ModuleCommunicationApiAxiosParamCreator(configuration)
     return {
         /**
-         * Get the number of communication in specified module
-         * @summary Get the number of communication
-         * @param {'Ezsignfolder'} eCommunicationModule Specify the requested module
+         * 
+         * @summary Retrieve Communication count
+         * @param {'Ezsignfolder'} eCommunicationObjecttype The object type for the Communication
          * @param {number} [pkiEzsignfolderID] The unique ID of the Ezsignfolder
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async communicationGetCommunicationCountV1(eCommunicationModule: 'Ezsignfolder', pkiEzsignfolderID?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommunicationGetCountV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.communicationGetCommunicationCountV1(eCommunicationModule, pkiEzsignfolderID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * Retrieve communication list
-         * @summary Retrieve communication list
-         * @param {'Ezsignfolder'} eCommunicationModule Specify the requested module
-         * @param {number} [pkiEzsignfolderID] The unique ID of the Ezsignfolder
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async communicationGetCommunicationListV1(eCommunicationModule: 'Ezsignfolder', pkiEzsignfolderID?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommunicationGetListV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.communicationGetCommunicationListV1(eCommunicationModule, pkiEzsignfolderID, options);
+        async communicationGetCommunicationCountV1(eCommunicationObjecttype: 'Ezsignfolder', pkiEzsignfolderID?: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommunicationGetCountV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.communicationGetCommunicationCountV1(eCommunicationObjecttype, pkiEzsignfolderID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -207,26 +129,15 @@ export const ModuleCommunicationApiFactory = function (configuration?: Configura
     const localVarFp = ModuleCommunicationApiFp(configuration)
     return {
         /**
-         * Get the number of communication in specified module
-         * @summary Get the number of communication
-         * @param {'Ezsignfolder'} eCommunicationModule Specify the requested module
+         * 
+         * @summary Retrieve Communication count
+         * @param {'Ezsignfolder'} eCommunicationObjecttype The object type for the Communication
          * @param {number} [pkiEzsignfolderID] The unique ID of the Ezsignfolder
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        communicationGetCommunicationCountV1(eCommunicationModule: 'Ezsignfolder', pkiEzsignfolderID?: number, options?: any): AxiosPromise<CommunicationGetCountV1Response> {
-            return localVarFp.communicationGetCommunicationCountV1(eCommunicationModule, pkiEzsignfolderID, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Retrieve communication list
-         * @summary Retrieve communication list
-         * @param {'Ezsignfolder'} eCommunicationModule Specify the requested module
-         * @param {number} [pkiEzsignfolderID] The unique ID of the Ezsignfolder
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        communicationGetCommunicationListV1(eCommunicationModule: 'Ezsignfolder', pkiEzsignfolderID?: number, options?: any): AxiosPromise<CommunicationGetListV1Response> {
-            return localVarFp.communicationGetCommunicationListV1(eCommunicationModule, pkiEzsignfolderID, options).then((request) => request(axios, basePath));
+        communicationGetCommunicationCountV1(eCommunicationObjecttype: 'Ezsignfolder', pkiEzsignfolderID?: number, options?: any): AxiosPromise<CommunicationGetCountV1Response> {
+            return localVarFp.communicationGetCommunicationCountV1(eCommunicationObjecttype, pkiEzsignfolderID, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -239,28 +150,15 @@ export const ModuleCommunicationApiFactory = function (configuration?: Configura
  */
 export class ModuleCommunicationApi extends BaseAPI {
     /**
-     * Get the number of communication in specified module
-     * @summary Get the number of communication
-     * @param {'Ezsignfolder'} eCommunicationModule Specify the requested module
+     * 
+     * @summary Retrieve Communication count
+     * @param {'Ezsignfolder'} eCommunicationObjecttype The object type for the Communication
      * @param {number} [pkiEzsignfolderID] The unique ID of the Ezsignfolder
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ModuleCommunicationApi
      */
-    public communicationGetCommunicationCountV1(eCommunicationModule: 'Ezsignfolder', pkiEzsignfolderID?: number, options?: AxiosRequestConfig) {
-        return ModuleCommunicationApiFp(this.configuration).communicationGetCommunicationCountV1(eCommunicationModule, pkiEzsignfolderID, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Retrieve communication list
-     * @summary Retrieve communication list
-     * @param {'Ezsignfolder'} eCommunicationModule Specify the requested module
-     * @param {number} [pkiEzsignfolderID] The unique ID of the Ezsignfolder
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ModuleCommunicationApi
-     */
-    public communicationGetCommunicationListV1(eCommunicationModule: 'Ezsignfolder', pkiEzsignfolderID?: number, options?: AxiosRequestConfig) {
-        return ModuleCommunicationApiFp(this.configuration).communicationGetCommunicationListV1(eCommunicationModule, pkiEzsignfolderID, options).then((request) => request(this.axios, this.basePath));
+    public communicationGetCommunicationCountV1(eCommunicationObjecttype: 'Ezsignfolder', pkiEzsignfolderID?: number, options?: AxiosRequestConfig) {
+        return ModuleCommunicationApiFp(this.configuration).communicationGetCommunicationCountV1(eCommunicationObjecttype, pkiEzsignfolderID, options).then((request) => request(this.axios, this.basePath));
     }
 }

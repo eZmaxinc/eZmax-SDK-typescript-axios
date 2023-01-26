@@ -15,28 +15,28 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommunicationimageResponse } from './communicationimage-response';
+import { PhonestaticResponse } from './phonestatic-response';
 
 import { DefaultObject } from '../base'
 
 /**
- * @type CommunicationimageResponseCompound
- * A Communicationimage Object
+ * @type PhonestaticResponseCompound
+ * A Phonestatic Object and children to create a complete structure
  * @export
  */
-export type CommunicationimageResponseCompound = CommunicationimageResponse;
+export type PhonestaticResponseCompound = PhonestaticResponse;
 
 
 /**
  * @export 
- * A CommunicationimageResponseCompound Object with automatic temp default value
+ * A PhonestaticResponseCompound Object with automatic temp default value
  * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectCommunicationimageResponseCompound
+ * @class DefaultObjectPhonestaticResponseCompound
  */
-export class DefaultObjectCommunicationimageResponseCompound extends DefaultObject {
-   pkiCommunicationimageID:number = 0
-   fkiImageID:number = 0
-   sCommunicationimageName?:string = undefined
+export class DefaultObjectPhonestaticResponseCompound extends DefaultObject {
+   pkiPhonestaticID:number = 0
+   sPhonestaticE164?:string = undefined
+   sPhonestaticExtension?:string = undefined
 }
 
 

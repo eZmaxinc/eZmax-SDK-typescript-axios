@@ -88,6 +88,12 @@ export interface EzmaxinvoicingsummaryinternaldetailResponse {
      * @memberof EzmaxinvoicingsummaryinternaldetailResponse
      */
     'bEzmaxinvoicingsummaryinternaldetailAdjustment': boolean;
+    /**
+     * The help message of the Ezmaxproduct in the language of the requester
+     * @type {string}
+     * @memberof EzmaxinvoicingsummaryinternaldetailResponse
+     */
+    'tEzmaxproductHelpX': string;
 }
 /**
  * A EzmaxinvoicingsummaryinternaldetailResponse Object with automatic temp default value
@@ -107,6 +113,7 @@ export class DefaultObjectEzmaxinvoicingsummaryinternaldetailResponse extends De
    dEzmaxinvoicingsummaryinternaldetailRebate:string = ''
    dEzmaxinvoicingsummaryinternaldetailTotal:string = ''
    bEzmaxinvoicingsummaryinternaldetailAdjustment:boolean = false
+   tEzmaxproductHelpX:string = ''
 }
 
 

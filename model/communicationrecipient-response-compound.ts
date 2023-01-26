@@ -18,10 +18,19 @@
 import { CommunicationrecipientResponse } from './communicationrecipient-response';
 // May contain unused imports in some cases
 // @ts-ignore
+import { DescriptionstaticResponseCompound } from './descriptionstatic-response-compound';
+// May contain unused imports in some cases
+// @ts-ignore
+import { EmailstaticResponseCompound } from './emailstatic-response-compound';
+// May contain unused imports in some cases
+// @ts-ignore
+import { FieldECommunicationrecipientObjecttype } from './field-ecommunicationrecipient-objecttype';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FieldECommunicationrecipientType } from './field-ecommunicationrecipient-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PhoneResponseCompound } from './phone-response-compound';
+import { PhonestaticResponseCompound } from './phonestatic-response-compound';
 
 import { DefaultObject } from '../base'
 
@@ -41,6 +50,7 @@ export type CommunicationrecipientResponseCompound = CommunicationrecipientRespo
  */
 export class DefaultObjectCommunicationrecipientResponseCompound extends DefaultObject {
    pkiCommunicationrecipientID:number = 0
+   eCommunicationrecipientObjecttype?:FieldECommunicationrecipientObjecttype = undefined
    fkiAgentID?:number = undefined
    fkiBrokerID?:number = undefined
    fkiContactID?:number = undefined
@@ -49,8 +59,6 @@ export class DefaultObjectCommunicationrecipientResponseCompound extends Default
    fkiEzsignsignerID?:number = undefined
    fkiFranchiseofficeID?:number = undefined
    fkiUserID?:number = undefined
-   sEmailAddress?:string = undefined
-   eCommunicationrecipientType?:FieldECommunicationrecipientType = undefined
    fkiAgentincorporationID?:number = undefined
    fkiAssistantID?:number = undefined
    fkiExternalbrokerID?:number = undefined
@@ -58,7 +66,10 @@ export class DefaultObjectCommunicationrecipientResponseCompound extends Default
    fkiNotaryID?:number = undefined
    fkiRewardmemberID?:number = undefined
    fkiSupplierID?:number = undefined
-   objPhoneSms?:Partial<PhoneResponseCompound> = undefined
+   eCommunicationrecipientType:FieldECommunicationrecipientType = 'To'
+   objDescriptionstatic:Partial<DescriptionstaticResponseCompound> = {}
+   objEmailstatic?:Partial<EmailstaticResponseCompound> = undefined
+   objPhonestatic?:Partial<PhonestaticResponseCompound> = undefined
 }
 
 

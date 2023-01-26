@@ -24,29 +24,29 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommunicationGetCountV1ResponseAllOf } from './communication-get-count-v1-response-all-of';
+import { PaymenttermCreateObjectV1ResponseAllOf } from './paymentterm-create-object-v1-response-all-of';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommunicationGetCountV1ResponseMPayload } from './communication-get-count-v1-response-mpayload';
+import { PaymenttermCreateObjectV1ResponseMPayload } from './paymentterm-create-object-v1-response-mpayload';
 
 import { DefaultObject } from '../base'
 
 /**
- * @type CommunicationGetCountV1Response
- * Response for GET /1/module/communication/getCommunicationCount
+ * @type PaymenttermCreateObjectV1Response
+ * Response for POST /1/object/paymentterm
  * @export
  */
-export type CommunicationGetCountV1Response = CommonResponse & CommunicationGetCountV1ResponseAllOf;
+export type PaymenttermCreateObjectV1Response = CommonResponse & PaymenttermCreateObjectV1ResponseAllOf;
 
 
 /**
  * @export 
- * A CommunicationGetCountV1Response Object with automatic temp default value
+ * A PaymenttermCreateObjectV1Response Object with automatic temp default value
  * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectCommunicationGetCountV1Response
+ * @class DefaultObjectPaymenttermCreateObjectV1Response
  */
-export class DefaultObjectCommunicationGetCountV1Response extends DefaultObject {
-   mPayload:Partial<CommunicationGetCountV1ResponseMPayload> = {}
+export class DefaultObjectPaymenttermCreateObjectV1Response extends DefaultObject {
+   mPayload:Partial<PaymenttermCreateObjectV1ResponseMPayload> = {}
    objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
    objDebug?:Partial<CommonResponseObjDebug> = undefined
 }

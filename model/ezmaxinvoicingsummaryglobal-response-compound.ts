@@ -58,6 +58,7 @@ export class DefaultObjectEzmaxinvoicingsummaryglobalResponseCompound extends De
    dEzmaxinvoicingsummaryglobalPartner?:string = undefined
    dEzmaxinvoicingsummaryglobalNet?:string = undefined
    bEzmaxinvoicingsummaryglobalAdjustment:boolean = false
+   tEzmaxproductHelpX:string = ''
    a_objEzmaxinvoicingcommission?:Array<EzmaxinvoicingcommissionResponseCompound> = undefined
 }
 

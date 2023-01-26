@@ -23,7 +23,11 @@ import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } fr
 // @ts-ignore
 import { CommonResponseError } from '../model';
 // @ts-ignore
+import { CommunicationGetListV1Response } from '../model';
+// @ts-ignore
 import { CommunicationGetObjectV2Response } from '../model';
+// @ts-ignore
+import { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -32,6 +36,85 @@ import { RequestSignature, IHeadersData } from '../api/request-signature';
  */
 export const ObjectCommunicationApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
+        /**
+         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eCommunicationImportance | High<br>Normal<br>Low | | eCommunicationType | Email<br>Fax<br>Sms | | eCommunicationDirection | Inbound<br>Outbound |
+         * @summary Retrieve Communication list
+         * @param {'pkiCommunicationID_ASC' | 'pkiCommunicationID_DESC' | 'fkiEzsignfolderID_ASC' | 'fkiEzsignfolderID_DESC' | 'dtCreatedDate_ASC' | 'dtCreatedDate_DESC' | 'eCommunicationDirection_ASC' | 'eCommunicationDirection_DESC' | 'eCommunicationImportance_ASC' | 'eCommunicationImportance_DESC' | 'eCommunicationType_ASC' | 'eCommunicationType_DESC' | 'iCommunicationrecipientCount_ASC' | 'iCommunicationrecipientCount_DESC' | 'sCommunicationSubject_ASC' | 'sCommunicationSubject_DESC' | 'sCommunicationSender_ASC' | 'sCommunicationSender_DESC' | 'sCommunicationRecipient_ASC' | 'sCommunicationRecipient_DESC'} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        communicationGetListV1: async (eOrderBy?: 'pkiCommunicationID_ASC' | 'pkiCommunicationID_DESC' | 'fkiEzsignfolderID_ASC' | 'fkiEzsignfolderID_DESC' | 'dtCreatedDate_ASC' | 'dtCreatedDate_DESC' | 'eCommunicationDirection_ASC' | 'eCommunicationDirection_DESC' | 'eCommunicationImportance_ASC' | 'eCommunicationImportance_DESC' | 'eCommunicationType_ASC' | 'eCommunicationType_DESC' | 'iCommunicationrecipientCount_ASC' | 'iCommunicationrecipientCount_DESC' | 'sCommunicationSubject_ASC' | 'sCommunicationSubject_DESC' | 'sCommunicationSender_ASC' | 'sCommunicationSender_DESC' | 'sCommunicationRecipient_ASC' | 'sCommunicationRecipient_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/1/object/communication/getList`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            if (eOrderBy !== undefined) {
+                localVarQueryParameter['eOrderBy'] = eOrderBy;
+            }
+
+            if (iRowMax !== undefined) {
+                localVarQueryParameter['iRowMax'] = iRowMax;
+            }
+
+            if (iRowOffset !== undefined) {
+                localVarQueryParameter['iRowOffset'] = iRowOffset;
+            }
+
+            if (sFilter !== undefined) {
+                localVarQueryParameter['sFilter'] = sFilter;
+            }
+
+            if (acceptLanguage != null) {
+                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string' 
+                    ? acceptLanguage 
+                    : JSON.stringify(acceptLanguage);
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
         /**
          * 
          * @summary Retrieve an existing Communication
@@ -99,6 +182,21 @@ export const ObjectCommunicationApiFp = function(configuration?: Configuration) 
     const localVarAxiosParamCreator = ObjectCommunicationApiAxiosParamCreator(configuration)
     return {
         /**
+         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eCommunicationImportance | High<br>Normal<br>Low | | eCommunicationType | Email<br>Fax<br>Sms | | eCommunicationDirection | Inbound<br>Outbound |
+         * @summary Retrieve Communication list
+         * @param {'pkiCommunicationID_ASC' | 'pkiCommunicationID_DESC' | 'fkiEzsignfolderID_ASC' | 'fkiEzsignfolderID_DESC' | 'dtCreatedDate_ASC' | 'dtCreatedDate_DESC' | 'eCommunicationDirection_ASC' | 'eCommunicationDirection_DESC' | 'eCommunicationImportance_ASC' | 'eCommunicationImportance_DESC' | 'eCommunicationType_ASC' | 'eCommunicationType_DESC' | 'iCommunicationrecipientCount_ASC' | 'iCommunicationrecipientCount_DESC' | 'sCommunicationSubject_ASC' | 'sCommunicationSubject_DESC' | 'sCommunicationSender_ASC' | 'sCommunicationSender_DESC' | 'sCommunicationRecipient_ASC' | 'sCommunicationRecipient_DESC'} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async communicationGetListV1(eOrderBy?: 'pkiCommunicationID_ASC' | 'pkiCommunicationID_DESC' | 'fkiEzsignfolderID_ASC' | 'fkiEzsignfolderID_DESC' | 'dtCreatedDate_ASC' | 'dtCreatedDate_DESC' | 'eCommunicationDirection_ASC' | 'eCommunicationDirection_DESC' | 'eCommunicationImportance_ASC' | 'eCommunicationImportance_DESC' | 'eCommunicationType_ASC' | 'eCommunicationType_DESC' | 'iCommunicationrecipientCount_ASC' | 'iCommunicationrecipientCount_DESC' | 'sCommunicationSubject_ASC' | 'sCommunicationSubject_DESC' | 'sCommunicationSender_ASC' | 'sCommunicationSender_DESC' | 'sCommunicationRecipient_ASC' | 'sCommunicationRecipient_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommunicationGetListV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.communicationGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
          * 
          * @summary Retrieve an existing Communication
          * @param {number} pkiCommunicationID 
@@ -120,6 +218,20 @@ export const ObjectCommunicationApiFactory = function (configuration?: Configura
     const localVarFp = ObjectCommunicationApiFp(configuration)
     return {
         /**
+         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eCommunicationImportance | High<br>Normal<br>Low | | eCommunicationType | Email<br>Fax<br>Sms | | eCommunicationDirection | Inbound<br>Outbound |
+         * @summary Retrieve Communication list
+         * @param {'pkiCommunicationID_ASC' | 'pkiCommunicationID_DESC' | 'fkiEzsignfolderID_ASC' | 'fkiEzsignfolderID_DESC' | 'dtCreatedDate_ASC' | 'dtCreatedDate_DESC' | 'eCommunicationDirection_ASC' | 'eCommunicationDirection_DESC' | 'eCommunicationImportance_ASC' | 'eCommunicationImportance_DESC' | 'eCommunicationType_ASC' | 'eCommunicationType_DESC' | 'iCommunicationrecipientCount_ASC' | 'iCommunicationrecipientCount_DESC' | 'sCommunicationSubject_ASC' | 'sCommunicationSubject_DESC' | 'sCommunicationSender_ASC' | 'sCommunicationSender_DESC' | 'sCommunicationRecipient_ASC' | 'sCommunicationRecipient_DESC'} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        communicationGetListV1(eOrderBy?: 'pkiCommunicationID_ASC' | 'pkiCommunicationID_DESC' | 'fkiEzsignfolderID_ASC' | 'fkiEzsignfolderID_DESC' | 'dtCreatedDate_ASC' | 'dtCreatedDate_DESC' | 'eCommunicationDirection_ASC' | 'eCommunicationDirection_DESC' | 'eCommunicationImportance_ASC' | 'eCommunicationImportance_DESC' | 'eCommunicationType_ASC' | 'eCommunicationType_DESC' | 'iCommunicationrecipientCount_ASC' | 'iCommunicationrecipientCount_DESC' | 'sCommunicationSubject_ASC' | 'sCommunicationSubject_DESC' | 'sCommunicationSender_ASC' | 'sCommunicationSender_DESC' | 'sCommunicationRecipient_ASC' | 'sCommunicationRecipient_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: any): AxiosPromise<CommunicationGetListV1Response> {
+            return localVarFp.communicationGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(axios, basePath));
+        },
+        /**
          * 
          * @summary Retrieve an existing Communication
          * @param {number} pkiCommunicationID 
@@ -139,6 +251,22 @@ export const ObjectCommunicationApiFactory = function (configuration?: Configura
  * @extends {BaseAPI}
  */
 export class ObjectCommunicationApi extends BaseAPI {
+    /**
+     * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eCommunicationImportance | High<br>Normal<br>Low | | eCommunicationType | Email<br>Fax<br>Sms | | eCommunicationDirection | Inbound<br>Outbound |
+     * @summary Retrieve Communication list
+     * @param {'pkiCommunicationID_ASC' | 'pkiCommunicationID_DESC' | 'fkiEzsignfolderID_ASC' | 'fkiEzsignfolderID_DESC' | 'dtCreatedDate_ASC' | 'dtCreatedDate_DESC' | 'eCommunicationDirection_ASC' | 'eCommunicationDirection_DESC' | 'eCommunicationImportance_ASC' | 'eCommunicationImportance_DESC' | 'eCommunicationType_ASC' | 'eCommunicationType_DESC' | 'iCommunicationrecipientCount_ASC' | 'iCommunicationrecipientCount_DESC' | 'sCommunicationSubject_ASC' | 'sCommunicationSubject_DESC' | 'sCommunicationSender_ASC' | 'sCommunicationSender_DESC' | 'sCommunicationRecipient_ASC' | 'sCommunicationRecipient_DESC'} [eOrderBy] Specify how you want the results to be sorted
+     * @param {number} [iRowMax] 
+     * @param {number} [iRowOffset] 
+     * @param {HeaderAcceptLanguage} [acceptLanguage] 
+     * @param {string} [sFilter] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectCommunicationApi
+     */
+    public communicationGetListV1(eOrderBy?: 'pkiCommunicationID_ASC' | 'pkiCommunicationID_DESC' | 'fkiEzsignfolderID_ASC' | 'fkiEzsignfolderID_DESC' | 'dtCreatedDate_ASC' | 'dtCreatedDate_DESC' | 'eCommunicationDirection_ASC' | 'eCommunicationDirection_DESC' | 'eCommunicationImportance_ASC' | 'eCommunicationImportance_DESC' | 'eCommunicationType_ASC' | 'eCommunicationType_DESC' | 'iCommunicationrecipientCount_ASC' | 'iCommunicationrecipientCount_DESC' | 'sCommunicationSubject_ASC' | 'sCommunicationSubject_DESC' | 'sCommunicationSender_ASC' | 'sCommunicationSender_DESC' | 'sCommunicationRecipient_ASC' | 'sCommunicationRecipient_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig) {
+        return ObjectCommunicationApiFp(this.configuration).communicationGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(this.axios, this.basePath));
+    }
+
     /**
      * 
      * @summary Retrieve an existing Communication

@@ -15,7 +15,7 @@
 
 
 /**
- * The Type for the Communicationrecipient
+ * The type for the Communicationrecipient
  * @export
  * @enum {string}
  */

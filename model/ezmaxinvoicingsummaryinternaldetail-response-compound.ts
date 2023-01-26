@@ -45,6 +45,7 @@ export class DefaultObjectEzmaxinvoicingsummaryinternaldetailResponseCompound ex
    dEzmaxinvoicingsummaryinternaldetailRebate:string = ''
    dEzmaxinvoicingsummaryinternaldetailTotal:string = ''
    bEzmaxinvoicingsummaryinternaldetailAdjustment:boolean = false
+   tEzmaxproductHelpX:string = ''
 }
 
 

@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomContactNameResponse } from './custom-contact-name-response';
+import { ComputedECommunicationDirection } from './computed-ecommunication-direction';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldECommunicationEmailimportance } from './field-ecommunication-emailimportance';
+import { FieldECommunicationImportance } from './field-ecommunication-importance';
 // May contain unused imports in some cases
 // @ts-ignore
 import { FieldECommunicationType } from './field-ecommunication-type';
@@ -38,11 +38,41 @@ export interface CommunicationListElement {
      */
     'pkiCommunicationID': number;
     /**
-     * 
-     * @type {FieldECommunicationEmailimportance}
+     * The unique ID of the Ezsignfolder
+     * @type {number}
      * @memberof CommunicationListElement
      */
-    'eCommunicationEmailimportance'?: FieldECommunicationEmailimportance;
+    'fkiEzsignfolderID'?: number;
+    /**
+     * The unique ID of the Inscription.
+     * @type {number}
+     * @memberof CommunicationListElement
+     */
+    'fkiInscriptionID'?: number;
+    /**
+     * The unique ID of the Inscriptionnotauthenticated.
+     * @type {number}
+     * @memberof CommunicationListElement
+     */
+    'fkiInscriptionnotauthenticatedID'?: number;
+    /**
+     * The date and time at which the object was created
+     * @type {string}
+     * @memberof CommunicationListElement
+     */
+    'dtCreatedDate': string;
+    /**
+     * 
+     * @type {ComputedECommunicationDirection}
+     * @memberof CommunicationListElement
+     */
+    'eCommunicationDirection': ComputedECommunicationDirection;
+    /**
+     * 
+     * @type {FieldECommunicationImportance}
+     * @memberof CommunicationListElement
+     */
+    'eCommunicationImportance': FieldECommunicationImportance;
     /**
      * 
      * @type {FieldECommunicationType}
@@ -50,23 +80,29 @@ export interface CommunicationListElement {
      */
     'eCommunicationType': FieldECommunicationType;
     /**
-     * The Subject of the Communication
+     * The count of Communicationrecipient
+     * @type {number}
+     * @memberof CommunicationListElement
+     */
+    'iCommunicationrecipientCount': number;
+    /**
+     * The subject of the Communication
      * @type {string}
      * @memberof CommunicationListElement
      */
     'sCommunicationSubject': string;
     /**
-     * The send date and time at which the Communication was sent.
+     * The sender name of the Communication
      * @type {string}
      * @memberof CommunicationListElement
      */
-    'dtCommunicationSentdate': string;
+    'sCommunicationSender': string;
     /**
-     * 
-     * @type {CustomContactNameResponse}
+     * The recipients\' name of the Communication
+     * @type {string}
      * @memberof CommunicationListElement
      */
-    'objContactFrom': CustomContactNameResponse;
+    'sCommunicationRecipient': string;
 }
 /**
  * A CommunicationListElement Object with automatic temp default value
@@ -76,11 +112,17 @@ export interface CommunicationListElement {
  */
 export class DefaultObjectCommunicationListElement extends DefaultObject {
    pkiCommunicationID:number = 0
-   eCommunicationEmailimportance?:FieldECommunicationEmailimportance = undefined
+   fkiEzsignfolderID?:number = undefined
+   fkiInscriptionID?:number = undefined
+   fkiInscriptionnotauthenticatedID?:number = undefined
+   dtCreatedDate:string = ''
+   eCommunicationDirection:ComputedECommunicationDirection = 'Outbound'
+   eCommunicationImportance:FieldECommunicationImportance = 'High'
    eCommunicationType:FieldECommunicationType = 'Email'
+   iCommunicationrecipientCount:number = 0
    sCommunicationSubject:string = ''
-   dtCommunicationSentdate:string = ''
-   objContactFrom:Partial<CustomContactNameResponse> = {}
+   sCommunicationSender:string = ''
+   sCommunicationRecipient:string = ''
 }
 
 

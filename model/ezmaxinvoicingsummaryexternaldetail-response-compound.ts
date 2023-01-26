@@ -43,6 +43,7 @@ export class DefaultObjectEzmaxinvoicingsummaryexternaldetailResponseCompound ex
    dEzmaxinvoicingsummaryexternaldetailRebate:string = ''
    dEzmaxinvoicingsummaryexternaldetailTotal:string = ''
    bEzmaxinvoicingsummaryexternaldetailAdjustment:boolean = false
+   tEzmaxproductHelpX:string = ''
 }
 
 

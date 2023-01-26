@@ -15,18 +15,17 @@
 
 
 /**
- * The importance of Email for the Communication
+ * The direction of the Communication
  * @export
  * @enum {string}
  */
 
-export const FieldECommunicationEmailimportance = {
-    High: 'High',
-    Normal: 'Normal',
-    Low: 'Low'
+export const ComputedECommunicationDirection = {
+    Outbound: 'Outbound',
+    Inbound: 'Inbound'
 } as const;
 
-export type FieldECommunicationEmailimportance = typeof FieldECommunicationEmailimportance[keyof typeof FieldECommunicationEmailimportance];
+export type ComputedECommunicationDirection = typeof ComputedECommunicationDirection[keyof typeof ComputedECommunicationDirection];
 
 
 

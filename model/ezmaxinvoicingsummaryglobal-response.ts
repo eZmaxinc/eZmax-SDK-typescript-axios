@@ -65,13 +65,13 @@ export interface EzmaxinvoicingsummaryglobalResponse {
      */
     'iEzmaxinvoicingsummaryglobalDays': number;
     /**
-     * The The count item calculated
+     * The count item calculated
      * @type {string}
      * @memberof EzmaxinvoicingsummaryglobalResponse
      */
     'dEzmaxinvoicingsummaryglobalCountreal': string;
     /**
-     * The The count item billed
+     * The count item billed
      * @type {string}
      * @memberof EzmaxinvoicingsummaryglobalResponse
      */
@@ -130,6 +130,12 @@ export interface EzmaxinvoicingsummaryglobalResponse {
      * @memberof EzmaxinvoicingsummaryglobalResponse
      */
     'bEzmaxinvoicingsummaryglobalAdjustment': boolean;
+    /**
+     * The help message of the Ezmaxproduct in the language of the requester
+     * @type {string}
+     * @memberof EzmaxinvoicingsummaryglobalResponse
+     */
+    'tEzmaxproductHelpX': string;
 }
 /**
  * A EzmaxinvoicingsummaryglobalResponse Object with automatic temp default value
@@ -156,6 +162,7 @@ export class DefaultObjectEzmaxinvoicingsummaryglobalResponse extends DefaultObj
    dEzmaxinvoicingsummaryglobalPartner?:string = undefined
    dEzmaxinvoicingsummaryglobalNet?:string = undefined
    bEzmaxinvoicingsummaryglobalAdjustment:boolean = false
+   tEzmaxproductHelpX:string = ''
 }
 
 

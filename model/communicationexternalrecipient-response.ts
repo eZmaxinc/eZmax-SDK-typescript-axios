@@ -15,10 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import { DescriptionstaticResponseCompound } from './descriptionstatic-response-compound';
+// May contain unused imports in some cases
+// @ts-ignore
+import { EmailstaticResponseCompound } from './emailstatic-response-compound';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FieldECommunicationexternalrecipientType } from './field-ecommunicationexternalrecipient-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PhoneResponseCompound } from './phone-response-compound';
+import { PhonestaticResponseCompound } from './phonestatic-response-compound';
 
 import { DefaultObject } from '../base'
 
@@ -35,29 +41,29 @@ export interface CommunicationexternalrecipientResponse {
      */
     'pkiCommunicationexternalrecipientID': number;
     /**
-     * The email address.
-     * @type {string}
-     * @memberof CommunicationexternalrecipientResponse
-     */
-    'sEmailAddress'?: string;
-    /**
-     * 
-     * @type {PhoneResponseCompound}
-     * @memberof CommunicationexternalrecipientResponse
-     */
-    'objPhoneSms'?: PhoneResponseCompound;
-    /**
      * 
      * @type {FieldECommunicationexternalrecipientType}
      * @memberof CommunicationexternalrecipientResponse
      */
     'eCommunicationexternalrecipientType': FieldECommunicationexternalrecipientType;
     /**
-     * The Name of the Communicationexternalrecipient
-     * @type {string}
+     * 
+     * @type {DescriptionstaticResponseCompound}
      * @memberof CommunicationexternalrecipientResponse
      */
-    'sCommunicationexternalrecipientName': string;
+    'objDescriptionstatic': DescriptionstaticResponseCompound;
+    /**
+     * 
+     * @type {EmailstaticResponseCompound}
+     * @memberof CommunicationexternalrecipientResponse
+     */
+    'objEmailstatic'?: EmailstaticResponseCompound;
+    /**
+     * 
+     * @type {PhonestaticResponseCompound}
+     * @memberof CommunicationexternalrecipientResponse
+     */
+    'objPhonestatic'?: PhonestaticResponseCompound;
 }
 /**
  * A CommunicationexternalrecipientResponse Object with automatic temp default value
@@ -67,10 +73,10 @@ export interface CommunicationexternalrecipientResponse {
  */
 export class DefaultObjectCommunicationexternalrecipientResponse extends DefaultObject {
    pkiCommunicationexternalrecipientID:number = 0
-   sEmailAddress?:string = undefined
-   objPhoneSms?:Partial<PhoneResponseCompound> = undefined
    eCommunicationexternalrecipientType:FieldECommunicationexternalrecipientType = 'To'
-   sCommunicationexternalrecipientName:string = ''
+   objDescriptionstatic:Partial<DescriptionstaticResponseCompound> = {}
+   objEmailstatic?:Partial<EmailstaticResponseCompound> = undefined
+   objPhonestatic?:Partial<PhonestaticResponseCompound> = undefined
 }
 
 

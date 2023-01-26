@@ -50,6 +50,7 @@ export * from './api/object-franchiseoffice-api';
 export * from './api/object-franchisereferalincome-api';
 export * from './api/object-notificationsection-api';
 export * from './api/object-notificationtest-api';
+export * from './api/object-paymentterm-api';
 export * from './api/object-period-api';
 export * from './api/object-secretquestion-api';
 export * from './api/object-taxassignment-api';

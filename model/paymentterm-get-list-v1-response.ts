@@ -15,39 +15,39 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonResponse } from './common-response';
+import { CommonResponseGetList } from './common-response-get-list';
 // May contain unused imports in some cases
 // @ts-ignore
 import { CommonResponseObjDebug } from './common-response-obj-debug';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
+import { CommonResponseObjDebugPayloadGetList } from './common-response-obj-debug-payload-get-list';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommunicationGetCountV1ResponseAllOf } from './communication-get-count-v1-response-all-of';
+import { PaymenttermGetListV1ResponseAllOf } from './paymentterm-get-list-v1-response-all-of';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommunicationGetCountV1ResponseMPayload } from './communication-get-count-v1-response-mpayload';
+import { PaymenttermGetListV1ResponseMPayload } from './paymentterm-get-list-v1-response-mpayload';
 
 import { DefaultObject } from '../base'
 
 /**
- * @type CommunicationGetCountV1Response
- * Response for GET /1/module/communication/getCommunicationCount
+ * @type PaymenttermGetListV1Response
+ * Response for GET /1/object/paymentterm/getList
  * @export
  */
-export type CommunicationGetCountV1Response = CommonResponse & CommunicationGetCountV1ResponseAllOf;
+export type PaymenttermGetListV1Response = CommonResponseGetList & PaymenttermGetListV1ResponseAllOf;
 
 
 /**
  * @export 
- * A CommunicationGetCountV1Response Object with automatic temp default value
+ * A PaymenttermGetListV1Response Object with automatic temp default value
  * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectCommunicationGetCountV1Response
+ * @class DefaultObjectPaymenttermGetListV1Response
  */
-export class DefaultObjectCommunicationGetCountV1Response extends DefaultObject {
-   mPayload:Partial<CommunicationGetCountV1ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
+export class DefaultObjectPaymenttermGetListV1Response extends DefaultObject {
+   mPayload:Partial<PaymenttermGetListV1ResponseMPayload> = {}
+   objDebugPayload?:Partial<CommonResponseObjDebugPayloadGetList> = undefined
    objDebug?:Partial<CommonResponseObjDebug> = undefined
 }
 

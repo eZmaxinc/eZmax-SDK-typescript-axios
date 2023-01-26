@@ -47,7 +47,7 @@ export interface CustomEzmaxinvoicingEzsigndocumentResponseAllOf {
      */
     'sEzsigndocumentName': string;
     /**
-     * 
+     * Whether you have access to the Ezsignfolder or not
      * @type {boolean}
      * @memberof CustomEzmaxinvoicingEzsigndocumentResponseAllOf
      */

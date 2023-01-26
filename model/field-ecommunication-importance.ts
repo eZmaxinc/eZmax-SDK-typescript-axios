@@ -15,18 +15,18 @@
 
 
 /**
- * The type of the Communication
+ * The importance of the Communication
  * @export
  * @enum {string}
  */
 
-export const FieldECommunicationType = {
-    Email: 'Email',
-    Fax: 'Fax',
-    Sms: 'Sms'
+export const FieldECommunicationImportance = {
+    High: 'High',
+    Normal: 'Normal',
+    Low: 'Low'
 } as const;
 
-export type FieldECommunicationType = typeof FieldECommunicationType[keyof typeof FieldECommunicationType];
+export type FieldECommunicationImportance = typeof FieldECommunicationImportance[keyof typeof FieldECommunicationImportance];
 
 
 

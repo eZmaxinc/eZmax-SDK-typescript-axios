@@ -53,7 +53,7 @@ export interface CustomEzmaxinvoicingEzsignfolderResponseAllOf {
      */
     'bEzsignfolderPaymentused': boolean;
     /**
-     * 
+     * Whether you have access to the Ezsignfolder or not
      * @type {boolean}
      * @memberof CustomEzmaxinvoicingEzsignfolderResponseAllOf
      */

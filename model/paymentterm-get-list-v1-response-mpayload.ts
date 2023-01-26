@@ -18,29 +18,29 @@
 import { CommonGetListV1ResponseMPayload } from './common-get-list-v1-response-mpayload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommunicationGetListV1ResponseMPayloadAllOf } from './communication-get-list-v1-response-mpayload-all-of';
+import { PaymenttermGetListV1ResponseMPayloadAllOf } from './paymentterm-get-list-v1-response-mpayload-all-of';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommunicationListElement } from './communication-list-element';
+import { PaymenttermListElement } from './paymentterm-list-element';
 
 import { DefaultObject } from '../base'
 
 /**
- * @type CommunicationGetListV1ResponseMPayload
- * Payload for GET /1/object/communication/getList
+ * @type PaymenttermGetListV1ResponseMPayload
+ * Payload for GET /1/object/paymentterm/getList
  * @export
  */
-export type CommunicationGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload & CommunicationGetListV1ResponseMPayloadAllOf;
+export type PaymenttermGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload & PaymenttermGetListV1ResponseMPayloadAllOf;
 
 
 /**
  * @export 
- * A CommunicationGetListV1ResponseMPayload Object with automatic temp default value
+ * A PaymenttermGetListV1ResponseMPayload Object with automatic temp default value
  * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectCommunicationGetListV1ResponseMPayload
+ * @class DefaultObjectPaymenttermGetListV1ResponseMPayload
  */
-export class DefaultObjectCommunicationGetListV1ResponseMPayload extends DefaultObject {
-   a_objCommunication:Array<CommunicationListElement> = []
+export class DefaultObjectPaymenttermGetListV1ResponseMPayload extends DefaultObject {
+   a_objPaymentterm:Array<PaymenttermListElement> = []
    iRowReturned:number = 0
    iRowFiltered:number = 0
 }
