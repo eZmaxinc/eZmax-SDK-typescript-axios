@@ -17,8 +17,6 @@
 // @ts-ignore
 import { PaymenttermResponseCompound } from './paymentterm-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for GET /2/object/paymentterm/{pkiPaymenttermID}
  * @export
@@ -33,13 +31,31 @@ export interface PaymenttermGetObjectV2ResponseMPayload {
     'objPaymentterm': PaymenttermResponseCompound;
 }
 /**
- * A PaymenttermGetObjectV2ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectPaymenttermGetObjectV2ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectPaymenttermGetObjectV2ResponseMPayload extends DefaultObject {
-   objPaymentterm:Partial<PaymenttermResponseCompound> = {}
+// @ts-ignore
+import { DataObjectPaymenttermResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectPaymenttermResponseCompound } from './'
+
+/**
+ * @export 
+ * A PaymenttermGetObjectV2ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectPaymenttermGetObjectV2ResponseMPayload
+ */
+export class DataObjectPaymenttermGetObjectV2ResponseMPayload {
+   objPaymentterm:PaymenttermResponseCompound = new DataObjectPaymenttermResponseCompound()
 }
+
+/**
+ * @export 
+ * A PaymenttermGetObjectV2ResponseMPayload Validation Object
+ * @class ValidationObjectPaymenttermGetObjectV2ResponseMPayload
+ */
+export class ValidationObjectPaymenttermGetObjectV2ResponseMPayload {
+   objPaymentterm = new ValidationObjectPaymenttermResponseCompound()
+} 
 
 

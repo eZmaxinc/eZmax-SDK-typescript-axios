@@ -17,8 +17,6 @@
 // @ts-ignore
 import { BrandingAutocompleteElementResponse } from './branding-autocomplete-element-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for POST /2/object/branding/getAutocomplete
  * @export
@@ -33,13 +31,30 @@ export interface BrandingGetAutocompleteV2ResponseMPayload {
     'a_objBranding': Array<BrandingAutocompleteElementResponse>;
 }
 /**
- * A BrandingGetAutocompleteV2ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectBrandingGetAutocompleteV2ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectBrandingGetAutocompleteV2ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A BrandingGetAutocompleteV2ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectBrandingGetAutocompleteV2ResponseMPayload
+ */
+export class DataObjectBrandingGetAutocompleteV2ResponseMPayload {
    a_objBranding:Array<BrandingAutocompleteElementResponse> = []
 }
+
+/**
+ * @export 
+ * A BrandingGetAutocompleteV2ResponseMPayload Validation Object
+ * @class ValidationObjectBrandingGetAutocompleteV2ResponseMPayload
+ */
+export class ValidationObjectBrandingGetAutocompleteV2ResponseMPayload {
+   a_objBranding = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

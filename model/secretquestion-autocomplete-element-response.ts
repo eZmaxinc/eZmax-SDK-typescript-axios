@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A Secretquestion AutocompleteElement Response
  * @export
@@ -42,15 +40,41 @@ export interface SecretquestionAutocompleteElementResponse {
     'bSecretquestionIsactive': boolean;
 }
 /**
- * A SecretquestionAutocompleteElementResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectSecretquestionAutocompleteElementResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectSecretquestionAutocompleteElementResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A SecretquestionAutocompleteElementResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectSecretquestionAutocompleteElementResponse
+ */
+export class DataObjectSecretquestionAutocompleteElementResponse {
    sSecretquestionTextX:string = ''
    pkiSecretquestionID:number = 0
    bSecretquestionIsactive:boolean = false
 }
+
+/**
+ * @export 
+ * A SecretquestionAutocompleteElementResponse Validation Object
+ * @class ValidationObjectSecretquestionAutocompleteElementResponse
+ */
+export class ValidationObjectSecretquestionAutocompleteElementResponse {
+   sSecretquestionTextX = {
+      type: 'string',
+      required: true
+   }
+   pkiSecretquestionID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   bSecretquestionIsactive = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

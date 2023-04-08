@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for POST /1/module/user/createEzsignuser
  * @export
@@ -72,12 +70,17 @@ export interface UserCreateEzsignuserV1Request {
     'sPhoneExtension'?: string;
 }
 /**
- * A UserCreateEzsignuserV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectUserCreateEzsignuserV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectUserCreateEzsignuserV1Request extends DefaultObject {
+
+/**
+ * @export 
+ * A UserCreateEzsignuserV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectUserCreateEzsignuserV1Request
+ */
+export class DataObjectUserCreateEzsignuserV1Request {
    fkiLanguageID:number = 0
    sUserFirstname:string = ''
    sUserLastname:string = ''
@@ -87,5 +90,47 @@ export class DefaultObjectUserCreateEzsignuserV1Request extends DefaultObject {
    sPhoneNumber:string = ''
    sPhoneExtension?:string = undefined
 }
+
+/**
+ * @export 
+ * A UserCreateEzsignuserV1Request Validation Object
+ * @class ValidationObjectUserCreateEzsignuserV1Request
+ */
+export class ValidationObjectUserCreateEzsignuserV1Request {
+   fkiLanguageID = {
+      type: 'integer',
+      minimum: 1,
+      maximum: 2,
+      required: true
+   }
+   sUserFirstname = {
+      type: 'string',
+      required: true
+   }
+   sUserLastname = {
+      type: 'string',
+      required: true
+   }
+   sEmailAddress = {
+      type: 'string',
+      required: true
+   }
+   sPhoneRegion = {
+      type: 'string',
+      required: true
+   }
+   sPhoneExchange = {
+      type: 'string',
+      required: true
+   }
+   sPhoneNumber = {
+      type: 'string',
+      required: true
+   }
+   sPhoneExtension = {
+      type: 'string',
+      required: false
+   }
+} 
 
 

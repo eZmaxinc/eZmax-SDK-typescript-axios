@@ -23,8 +23,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 // @ts-ignore
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsignfolderArchiveV1Response
  * Response for POST /1/object/ezsignfolder/{pkiEzsignfolderID}/archive
@@ -34,14 +32,37 @@ export type EzsignfolderArchiveV1Response = CommonResponse;
 
 
 /**
- * @export 
- * A EzsignfolderArchiveV1Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsignfolderArchiveV1Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfolderArchiveV1Response extends DefaultObject {
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A EzsignfolderArchiveV1Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfolderArchiveV1Response
+ */
+export class DataObjectEzsignfolderArchiveV1Response {
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A EzsignfolderArchiveV1Response Validation Object
+ * @class ValidationObjectEzsignfolderArchiveV1Response
+ */
+export class ValidationObjectEzsignfolderArchiveV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

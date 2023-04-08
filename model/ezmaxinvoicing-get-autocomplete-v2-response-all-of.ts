@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzmaxinvoicingGetAutocompleteV2ResponseMPayload } from './ezmaxinvoicing-get-autocomplete-v2-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface EzmaxinvoicingGetAutocompleteV2ResponseAllOf {
     'mPayload': EzmaxinvoicingGetAutocompleteV2ResponseMPayload;
 }
 /**
- * A EzmaxinvoicingGetAutocompleteV2ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzmaxinvoicingGetAutocompleteV2ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzmaxinvoicingGetAutocompleteV2ResponseAllOf extends DefaultObject {
-   mPayload:Partial<EzmaxinvoicingGetAutocompleteV2ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectEzmaxinvoicingGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectEzmaxinvoicingGetAutocompleteV2ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A EzmaxinvoicingGetAutocompleteV2ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzmaxinvoicingGetAutocompleteV2ResponseAllOf
+ */
+export class DataObjectEzmaxinvoicingGetAutocompleteV2ResponseAllOf {
+   mPayload:EzmaxinvoicingGetAutocompleteV2ResponseMPayload = new DataObjectEzmaxinvoicingGetAutocompleteV2ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A EzmaxinvoicingGetAutocompleteV2ResponseAllOf Validation Object
+ * @class ValidationObjectEzmaxinvoicingGetAutocompleteV2ResponseAllOf
+ */
+export class ValidationObjectEzmaxinvoicingGetAutocompleteV2ResponseAllOf {
+   mPayload = new ValidationObjectEzmaxinvoicingGetAutocompleteV2ResponseMPayload()
+} 
 
 

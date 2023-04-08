@@ -23,8 +23,6 @@ import { CommunicationexternalrecipientResponseCompound } from './communicatione
 // @ts-ignore
 import { CommunicationrecipientResponseCompound } from './communicationrecipient-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -51,15 +49,40 @@ export interface CommunicationResponseCompoundAllOf {
     'a_objCommunicationexternalrecipient': Array<CommunicationexternalrecipientResponseCompound>;
 }
 /**
- * A CommunicationResponseCompoundAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCommunicationResponseCompoundAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCommunicationResponseCompoundAllOf extends DefaultObject {
+
+/**
+ * @export 
+ * A CommunicationResponseCompoundAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCommunicationResponseCompoundAllOf
+ */
+export class DataObjectCommunicationResponseCompoundAllOf {
    a_objCommunicationattachment:Array<CommunicationattachmentResponseCompound> = []
    a_objCommunicationrecipient:Array<CommunicationrecipientResponseCompound> = []
    a_objCommunicationexternalrecipient:Array<CommunicationexternalrecipientResponseCompound> = []
 }
+
+/**
+ * @export 
+ * A CommunicationResponseCompoundAllOf Validation Object
+ * @class ValidationObjectCommunicationResponseCompoundAllOf
+ */
+export class ValidationObjectCommunicationResponseCompoundAllOf {
+   a_objCommunicationattachment = {
+      type: 'array',
+      required: true
+   }
+   a_objCommunicationrecipient = {
+      type: 'array',
+      required: true
+   }
+   a_objCommunicationexternalrecipient = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * An Franchisereferalincome Object
  * @export
@@ -96,12 +94,17 @@ export interface FranchisereferalincomeRequest {
     'sFranchisereferalincomeRemoteid': string;
 }
 /**
- * A FranchisereferalincomeRequest Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectFranchisereferalincomeRequest
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectFranchisereferalincomeRequest extends DefaultObject {
+
+/**
+ * @export 
+ * A FranchisereferalincomeRequest Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectFranchisereferalincomeRequest
+ */
+export class DataObjectFranchisereferalincomeRequest {
    pkiFranchisereferalincomeID?:number = undefined
    fkiFranchisebrokerID:number = 0
    fkiFranchisereferalincomeprogramID:number = 0
@@ -115,5 +118,66 @@ export class DefaultObjectFranchisereferalincomeRequest extends DefaultObject {
    fkiFranchiseofficeID:number = 0
    sFranchisereferalincomeRemoteid:string = ''
 }
+
+/**
+ * @export 
+ * A FranchisereferalincomeRequest Validation Object
+ * @class ValidationObjectFranchisereferalincomeRequest
+ */
+export class ValidationObjectFranchisereferalincomeRequest {
+   pkiFranchisereferalincomeID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiFranchisebrokerID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiFranchisereferalincomeprogramID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiPeriodID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   dFranchisereferalincomeLoan = {
+      type: 'string',
+      required: true
+   }
+   dFranchisereferalincomeFranchiseamount = {
+      type: 'string',
+      required: true
+   }
+   dFranchisereferalincomeFranchisoramount = {
+      type: 'string',
+      required: true
+   }
+   dFranchisereferalincomeAgentamount = {
+      type: 'string',
+      required: true
+   }
+   dtFranchisereferalincomeDisbursed = {
+      type: 'string',
+      required: true
+   }
+   tFranchisereferalincomeComment = {
+      type: 'string',
+      required: true
+   }
+   fkiFranchiseofficeID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sFranchisereferalincomeRemoteid = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

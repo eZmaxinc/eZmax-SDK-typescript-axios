@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignfoldersignerassociationRequestCompound } from './ezsignfoldersignerassociation-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for PUT /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}
  * @export
@@ -33,13 +31,31 @@ export interface EzsignfoldersignerassociationEditObjectV1Request {
     'objEzsignfoldersignerassociation': EzsignfoldersignerassociationRequestCompound;
 }
 /**
- * A EzsignfoldersignerassociationEditObjectV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfoldersignerassociationEditObjectV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfoldersignerassociationEditObjectV1Request extends DefaultObject {
-   objEzsignfoldersignerassociation:Partial<EzsignfoldersignerassociationRequestCompound> = {}
+// @ts-ignore
+import { DataObjectEzsignfoldersignerassociationRequestCompound } from './'
+// @ts-ignore
+import { ValidationObjectEzsignfoldersignerassociationRequestCompound } from './'
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationEditObjectV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfoldersignerassociationEditObjectV1Request
+ */
+export class DataObjectEzsignfoldersignerassociationEditObjectV1Request {
+   objEzsignfoldersignerassociation:EzsignfoldersignerassociationRequestCompound = new DataObjectEzsignfoldersignerassociationRequestCompound()
 }
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationEditObjectV1Request Validation Object
+ * @class ValidationObjectEzsignfoldersignerassociationEditObjectV1Request
+ */
+export class ValidationObjectEzsignfoldersignerassociationEditObjectV1Request {
+   objEzsignfoldersignerassociation = new ValidationObjectEzsignfoldersignerassociationRequestCompound()
+} 
 
 

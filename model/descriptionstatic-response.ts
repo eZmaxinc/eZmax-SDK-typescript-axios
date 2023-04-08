@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A Descriptionstatic Object
  * @export
@@ -36,14 +34,36 @@ export interface DescriptionstaticResponse {
     'sDescriptionstaticDescription': string;
 }
 /**
- * A DescriptionstaticResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectDescriptionstaticResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectDescriptionstaticResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A DescriptionstaticResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectDescriptionstaticResponse
+ */
+export class DataObjectDescriptionstaticResponse {
    pkiDescriptionstaticID:number = 0
    sDescriptionstaticDescription:string = ''
 }
+
+/**
+ * @export 
+ * A DescriptionstaticResponse Validation Object
+ * @class ValidationObjectDescriptionstaticResponse
+ */
+export class ValidationObjectDescriptionstaticResponse {
+   pkiDescriptionstaticID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sDescriptionstaticDescription = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

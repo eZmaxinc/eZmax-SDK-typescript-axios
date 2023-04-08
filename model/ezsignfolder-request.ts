@@ -17,8 +17,6 @@
 // @ts-ignore
 import { FieldEEzsignfolderSendreminderfrequency } from './field-eezsignfolder-sendreminderfrequency';
 
-import { DefaultObject } from '../base'
-
 /**
  * An Ezsignfolder Object
  * @export
@@ -61,20 +59,76 @@ export interface EzsignfolderRequest {
      * @memberof EzsignfolderRequest
      */
     'eEzsignfolderSendreminderfrequency': FieldEEzsignfolderSendreminderfrequency;
+    /**
+     * This field can be used to store an External ID from the client\'s system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format. 
+     * @type {string}
+     * @memberof EzsignfolderRequest
+     */
+    'sEzsignfolderExternalid'?: string;
 }
+
+
 /**
- * A EzsignfolderRequest Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfolderRequest
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfolderRequest extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignfolderRequest Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfolderRequest
+ */
+export class DataObjectEzsignfolderRequest {
    pkiEzsignfolderID?:number = undefined
    fkiEzsignfoldertypeID:number = 0
    fkiEzsigntsarequirementID?:number = undefined
    sEzsignfolderDescription:string = ''
    tEzsignfolderNote:string = ''
    eEzsignfolderSendreminderfrequency:FieldEEzsignfolderSendreminderfrequency = 'None'
+   sEzsignfolderExternalid?:string = undefined
 }
+
+/**
+ * @export 
+ * A EzsignfolderRequest Validation Object
+ * @class ValidationObjectEzsignfolderRequest
+ */
+export class ValidationObjectEzsignfolderRequest {
+   pkiEzsignfolderID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzsignfoldertypeID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsigntsarequirementID = {
+      type: 'integer',
+      minimum: 1,
+      maximum: 3,
+      required: false
+   }
+   sEzsignfolderDescription = {
+      type: 'string',
+      required: true
+   }
+   tEzsignfolderNote = {
+      type: 'string',
+      required: true
+   }
+   eEzsignfolderSendreminderfrequency = {
+      type: 'enum',
+      allowableValues: ['None','Daily','Weekly'],
+      required: true
+   }
+   sEzsignfolderExternalid = {
+      type: 'string',
+      pattern: '/^.{0,64}$/',
+      required: false
+   }
+} 
 
 

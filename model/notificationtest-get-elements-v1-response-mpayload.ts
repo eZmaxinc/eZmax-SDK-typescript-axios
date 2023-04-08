@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for GET /1/object/notificationtest/{pkiNotificationtestID}/getElements
  * @export
@@ -48,16 +46,46 @@ export interface NotificationtestGetElementsV1ResponseMPayload {
     'a_objVariableobject': Array<{ [key: string]: any; }>;
 }
 /**
- * A NotificationtestGetElementsV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectNotificationtestGetElementsV1ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectNotificationtestGetElementsV1ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A NotificationtestGetElementsV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectNotificationtestGetElementsV1ResponseMPayload
+ */
+export class DataObjectNotificationtestGetElementsV1ResponseMPayload {
    pkiNotificationtestID:number = 0
    sNotificationtestFunction:string = ''
    a_sVariableobjectProperty?:Array<string> = undefined
    a_objVariableobject:Array<{ [key: string]: any; }> = []
 }
+
+/**
+ * @export 
+ * A NotificationtestGetElementsV1ResponseMPayload Validation Object
+ * @class ValidationObjectNotificationtestGetElementsV1ResponseMPayload
+ */
+export class ValidationObjectNotificationtestGetElementsV1ResponseMPayload {
+   pkiNotificationtestID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sNotificationtestFunction = {
+      type: 'string',
+      required: true
+   }
+   a_sVariableobjectProperty = {
+      type: 'array',
+      required: false
+   }
+   a_objVariableobject = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

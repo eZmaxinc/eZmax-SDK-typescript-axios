@@ -29,8 +29,6 @@ import { NotificationtestGetElementsV1ResponseAllOf } from './notificationtest-g
 // @ts-ignore
 import { NotificationtestGetElementsV1ResponseMPayload } from './notificationtest-get-elements-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type NotificationtestGetElementsV1Response
  * Response for GET /1/object/notificationtest/{pkiNotificationtestID}/getElements
@@ -40,15 +38,43 @@ export type NotificationtestGetElementsV1Response = CommonResponse & Notificatio
 
 
 /**
- * @export 
- * A NotificationtestGetElementsV1Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectNotificationtestGetElementsV1Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectNotificationtestGetElementsV1Response extends DefaultObject {
-   mPayload:Partial<NotificationtestGetElementsV1ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectNotificationtestGetElementsV1ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectNotificationtestGetElementsV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A NotificationtestGetElementsV1Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectNotificationtestGetElementsV1Response
+ */
+export class DataObjectNotificationtestGetElementsV1Response {
+   mPayload:NotificationtestGetElementsV1ResponseMPayload = new DataObjectNotificationtestGetElementsV1ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A NotificationtestGetElementsV1Response Validation Object
+ * @class ValidationObjectNotificationtestGetElementsV1Response
+ */
+export class ValidationObjectNotificationtestGetElementsV1Response {
+   mPayload = new ValidationObjectNotificationtestGetElementsV1ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

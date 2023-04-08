@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigntemplatepackagesignermembershipRequestCompound } from './ezsigntemplatepackagesignermembership-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for POST /1/object/ezsigntemplatepackagesignermembership
  * @export
@@ -33,13 +31,31 @@ export interface EzsigntemplatepackagesignermembershipCreateObjectV1Request {
     'a_objEzsigntemplatepackagesignermembership': Array<EzsigntemplatepackagesignermembershipRequestCompound>;
 }
 /**
- * A EzsigntemplatepackagesignermembershipCreateObjectV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplatepackagesignermembershipCreateObjectV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatepackagesignermembershipCreateObjectV1Request extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntemplatepackagesignermembershipCreateObjectV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatepackagesignermembershipCreateObjectV1Request
+ */
+export class DataObjectEzsigntemplatepackagesignermembershipCreateObjectV1Request {
    a_objEzsigntemplatepackagesignermembership:Array<EzsigntemplatepackagesignermembershipRequestCompound> = []
 }
+
+/**
+ * @export 
+ * A EzsigntemplatepackagesignermembershipCreateObjectV1Request Validation Object
+ * @class ValidationObjectEzsigntemplatepackagesignermembershipCreateObjectV1Request
+ */
+export class ValidationObjectEzsigntemplatepackagesignermembershipCreateObjectV1Request {
+   a_objEzsigntemplatepackagesignermembership = {
+      type: 'array',
+      minItems: 1,
+      required: true
+   }
+} 
 
 

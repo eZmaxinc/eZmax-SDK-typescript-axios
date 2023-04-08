@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for POST /1/object/franchisereferalincome
  * @export
@@ -30,13 +28,31 @@ export interface FranchisereferalincomeCreateObjectV1ResponseMPayload {
     'a_pkiFranchisereferalincomeID': Array<number>;
 }
 /**
- * A FranchisereferalincomeCreateObjectV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectFranchisereferalincomeCreateObjectV1ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectFranchisereferalincomeCreateObjectV1ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A FranchisereferalincomeCreateObjectV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectFranchisereferalincomeCreateObjectV1ResponseMPayload
+ */
+export class DataObjectFranchisereferalincomeCreateObjectV1ResponseMPayload {
    a_pkiFranchisereferalincomeID:Array<number> = []
 }
+
+/**
+ * @export 
+ * A FranchisereferalincomeCreateObjectV1ResponseMPayload Validation Object
+ * @class ValidationObjectFranchisereferalincomeCreateObjectV1ResponseMPayload
+ */
+export class ValidationObjectFranchisereferalincomeCreateObjectV1ResponseMPayload {
+   a_pkiFranchisereferalincomeID = {
+      type: 'array',
+      minItems: 1,
+      required: true
+   }
+} 
 
 

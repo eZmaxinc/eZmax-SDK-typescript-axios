@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * An Ezsignpage Object
  * @export
@@ -66,12 +64,17 @@ export interface EzsignpageResponse {
     'sComputedImageurl': string;
 }
 /**
- * A EzsignpageResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignpageResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignpageResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignpageResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignpageResponse
+ */
+export class DataObjectEzsignpageResponse {
    pkiEzsignpageID:number = 0
    iEzsignpageWidthimage:number = 0
    iEzsignpageHeightimage:number = 0
@@ -80,5 +83,47 @@ export class DefaultObjectEzsignpageResponse extends DefaultObject {
    iEzsignpagePagenumber:number = 0
    sComputedImageurl:string = ''
 }
+
+/**
+ * @export 
+ * A EzsignpageResponse Validation Object
+ * @class ValidationObjectEzsignpageResponse
+ */
+export class ValidationObjectEzsignpageResponse {
+   pkiEzsignpageID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsignpageWidthimage = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsignpageHeightimage = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsignpageWidthpdf = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsignpageHeightpdf = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsignpagePagenumber = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   sComputedImageurl = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

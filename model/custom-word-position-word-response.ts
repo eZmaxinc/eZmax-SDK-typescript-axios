@@ -17,8 +17,6 @@
 // @ts-ignore
 import { CustomWordPositionOccurenceResponse } from './custom-word-position-occurence-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * A Word Position Object
  * @export
@@ -39,14 +37,35 @@ export interface CustomWordPositionWordResponse {
     'a_objWordPositionOccurence': Array<CustomWordPositionOccurenceResponse>;
 }
 /**
- * A CustomWordPositionWordResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCustomWordPositionWordResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCustomWordPositionWordResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A CustomWordPositionWordResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCustomWordPositionWordResponse
+ */
+export class DataObjectCustomWordPositionWordResponse {
    sWord:string = ''
    a_objWordPositionOccurence:Array<CustomWordPositionOccurenceResponse> = []
 }
+
+/**
+ * @export 
+ * A CustomWordPositionWordResponse Validation Object
+ * @class ValidationObjectCustomWordPositionWordResponse
+ */
+export class ValidationObjectCustomWordPositionWordResponse {
+   sWord = {
+      type: 'string',
+      required: true
+   }
+   a_objWordPositionOccurence = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

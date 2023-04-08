@@ -23,8 +23,6 @@ import { EzsigntemplateGetListV1ResponseMPayloadAllOf } from './ezsigntemplate-g
 // @ts-ignore
 import { EzsigntemplateListElement } from './ezsigntemplate-list-element';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsigntemplateGetListV1ResponseMPayload
  * Payload for GET /1/object/ezsigntemplate/getList
@@ -34,15 +32,40 @@ export type EzsigntemplateGetListV1ResponseMPayload = CommonGetListV1ResponseMPa
 
 
 /**
- * @export 
- * A EzsigntemplateGetListV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsigntemplateGetListV1ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplateGetListV1ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntemplateGetListV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplateGetListV1ResponseMPayload
+ */
+export class DataObjectEzsigntemplateGetListV1ResponseMPayload {
    a_objEzsigntemplate:Array<EzsigntemplateListElement> = []
    iRowReturned:number = 0
    iRowFiltered:number = 0
 }
+
+/**
+ * @export 
+ * A EzsigntemplateGetListV1ResponseMPayload Validation Object
+ * @class ValidationObjectEzsigntemplateGetListV1ResponseMPayload
+ */
+export class ValidationObjectEzsigntemplateGetListV1ResponseMPayload {
+   a_objEzsigntemplate = {
+      type: 'array',
+      required: true
+   }
+   iRowReturned = {
+      type: 'integer',
+      required: true
+   }
+   iRowFiltered = {
+      type: 'integer',
+      required: true
+   }
+} 
 
 

@@ -17,8 +17,6 @@
 // @ts-ignore
 import { WebhookRequestCompound } from './webhook-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for POST /1/object/webhook
  * @export
@@ -33,13 +31,31 @@ export interface WebhookCreateObjectV1Request {
     'a_objWebhook': Array<WebhookRequestCompound>;
 }
 /**
- * A WebhookCreateObjectV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectWebhookCreateObjectV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectWebhookCreateObjectV1Request extends DefaultObject {
+
+/**
+ * @export 
+ * A WebhookCreateObjectV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectWebhookCreateObjectV1Request
+ */
+export class DataObjectWebhookCreateObjectV1Request {
    a_objWebhook:Array<WebhookRequestCompound> = []
 }
+
+/**
+ * @export 
+ * A WebhookCreateObjectV1Request Validation Object
+ * @class ValidationObjectWebhookCreateObjectV1Request
+ */
+export class ValidationObjectWebhookCreateObjectV1Request {
+   a_objWebhook = {
+      type: 'array',
+      minItems: 1,
+      required: true
+   }
+} 
 
 

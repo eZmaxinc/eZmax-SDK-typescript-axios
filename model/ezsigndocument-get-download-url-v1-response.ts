@@ -29,8 +29,6 @@ import { EzsigndocumentGetDownloadUrlV1ResponseAllOf } from './ezsigndocument-ge
 // @ts-ignore
 import { EzsigndocumentGetDownloadUrlV1ResponseMPayload } from './ezsigndocument-get-download-url-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsigndocumentGetDownloadUrlV1Response
  * Response for GET /1/object/ezsigndocument/{pkiEzsigndocument}/getDownloadUrl
@@ -40,15 +38,43 @@ export type EzsigndocumentGetDownloadUrlV1Response = CommonResponse & Ezsigndocu
 
 
 /**
- * @export 
- * A EzsigndocumentGetDownloadUrlV1Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsigndocumentGetDownloadUrlV1Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigndocumentGetDownloadUrlV1Response extends DefaultObject {
-   mPayload:Partial<EzsigndocumentGetDownloadUrlV1ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectEzsigndocumentGetDownloadUrlV1ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsigndocumentGetDownloadUrlV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A EzsigndocumentGetDownloadUrlV1Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigndocumentGetDownloadUrlV1Response
+ */
+export class DataObjectEzsigndocumentGetDownloadUrlV1Response {
+   mPayload:EzsigndocumentGetDownloadUrlV1ResponseMPayload = new DataObjectEzsigndocumentGetDownloadUrlV1ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A EzsigndocumentGetDownloadUrlV1Response Validation Object
+ * @class ValidationObjectEzsigndocumentGetDownloadUrlV1Response
+ */
+export class ValidationObjectEzsigndocumentGetDownloadUrlV1Response {
+   mPayload = new ValidationObjectEzsigndocumentGetDownloadUrlV1ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

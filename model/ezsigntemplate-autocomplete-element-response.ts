@@ -17,8 +17,6 @@
 // @ts-ignore
 import { FieldEEzsignfoldertypePrivacylevel } from './field-eezsignfoldertype-privacylevel';
 
-import { DefaultObject } from '../base'
-
 /**
  * A Ezsigntemplate AutocompleteElement Response
  * @export
@@ -50,17 +48,50 @@ export interface EzsigntemplateAutocompleteElementResponse {
      */
     'bEzsigntemplateIsactive': boolean;
 }
+
+
 /**
- * A EzsigntemplateAutocompleteElementResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplateAutocompleteElementResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplateAutocompleteElementResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntemplateAutocompleteElementResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplateAutocompleteElementResponse
+ */
+export class DataObjectEzsigntemplateAutocompleteElementResponse {
    eEzsignfoldertypePrivacylevel:FieldEEzsignfoldertypePrivacylevel = 'User'
    sEzsigntemplateDescription:string = ''
    pkiEzsigntemplateID:number = 0
    bEzsigntemplateIsactive:boolean = false
 }
+
+/**
+ * @export 
+ * A EzsigntemplateAutocompleteElementResponse Validation Object
+ * @class ValidationObjectEzsigntemplateAutocompleteElementResponse
+ */
+export class ValidationObjectEzsigntemplateAutocompleteElementResponse {
+   eEzsignfoldertypePrivacylevel = {
+      type: 'enum',
+      allowableValues: ['User','Usergroup'],
+      required: true
+   }
+   sEzsigntemplateDescription = {
+      type: 'string',
+      required: true
+   }
+   pkiEzsigntemplateID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   bEzsigntemplateIsactive = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -36,14 +34,35 @@ export interface CustomWebhooklogResponseAllOf {
     'tWebhooklogJson': string;
 }
 /**
- * A CustomWebhooklogResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCustomWebhooklogResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCustomWebhooklogResponseAllOf extends DefaultObject {
+
+/**
+ * @export 
+ * A CustomWebhooklogResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCustomWebhooklogResponseAllOf
+ */
+export class DataObjectCustomWebhooklogResponseAllOf {
    dtWebhooklogDate:string = ''
    tWebhooklogJson:string = ''
 }
+
+/**
+ * @export 
+ * A CustomWebhooklogResponseAllOf Validation Object
+ * @class ValidationObjectCustomWebhooklogResponseAllOf
+ */
+export class ValidationObjectCustomWebhooklogResponseAllOf {
+   dtWebhooklogDate = {
+      type: 'string',
+      required: true
+   }
+   tWebhooklogJson = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

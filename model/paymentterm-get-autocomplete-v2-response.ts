@@ -29,8 +29,6 @@ import { PaymenttermGetAutocompleteV2ResponseAllOf } from './paymentterm-get-aut
 // @ts-ignore
 import { PaymenttermGetAutocompleteV2ResponseMPayload } from './paymentterm-get-autocomplete-v2-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type PaymenttermGetAutocompleteV2Response
  * Response for GET /2/object/paymentterm/getAutocomplete
@@ -40,15 +38,43 @@ export type PaymenttermGetAutocompleteV2Response = CommonResponse & PaymenttermG
 
 
 /**
- * @export 
- * A PaymenttermGetAutocompleteV2Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectPaymenttermGetAutocompleteV2Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectPaymenttermGetAutocompleteV2Response extends DefaultObject {
-   mPayload:Partial<PaymenttermGetAutocompleteV2ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectPaymenttermGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectPaymenttermGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A PaymenttermGetAutocompleteV2Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectPaymenttermGetAutocompleteV2Response
+ */
+export class DataObjectPaymenttermGetAutocompleteV2Response {
+   mPayload:PaymenttermGetAutocompleteV2ResponseMPayload = new DataObjectPaymenttermGetAutocompleteV2ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A PaymenttermGetAutocompleteV2Response Validation Object
+ * @class ValidationObjectPaymenttermGetAutocompleteV2Response
+ */
+export class ValidationObjectPaymenttermGetAutocompleteV2Response {
+   mPayload = new ValidationObjectPaymenttermGetAutocompleteV2ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

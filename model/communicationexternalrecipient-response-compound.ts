@@ -29,8 +29,6 @@ import { FieldECommunicationexternalrecipientType } from './field-ecommunication
 // @ts-ignore
 import { PhonestaticResponseCompound } from './phonestatic-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type CommunicationexternalrecipientResponseCompound
  * A Communicationexternalrecipient Object
@@ -39,18 +37,56 @@ import { DefaultObject } from '../base'
 export type CommunicationexternalrecipientResponseCompound = CommunicationexternalrecipientResponse;
 
 
+
+/**
+ * @import
+ * Imports Child Data Object
+ */
+// @ts-ignore
+import { DataObjectDescriptionstaticResponseCompound } from './'
+// @ts-ignore
+import { DataObjectEmailstaticResponseCompound } from './'
+// @ts-ignore
+import { DataObjectPhonestaticResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectDescriptionstaticResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectEmailstaticResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectPhonestaticResponseCompound } from './'
+
 /**
  * @export 
- * A CommunicationexternalrecipientResponseCompound Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectCommunicationexternalrecipientResponseCompound
+ * A CommunicationexternalrecipientResponseCompound Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCommunicationexternalrecipientResponseCompound
  */
-export class DefaultObjectCommunicationexternalrecipientResponseCompound extends DefaultObject {
+export class DataObjectCommunicationexternalrecipientResponseCompound {
    pkiCommunicationexternalrecipientID:number = 0
    eCommunicationexternalrecipientType:FieldECommunicationexternalrecipientType = 'To'
-   objDescriptionstatic:Partial<DescriptionstaticResponseCompound> = {}
-   objEmailstatic?:Partial<EmailstaticResponseCompound> = undefined
-   objPhonestatic?:Partial<PhonestaticResponseCompound> = undefined
+   objDescriptionstatic:DescriptionstaticResponseCompound = new DataObjectDescriptionstaticResponseCompound()
+   objEmailstatic?:EmailstaticResponseCompound = undefined
+   objPhonestatic?:PhonestaticResponseCompound = undefined
 }
+
+/**
+ * @export 
+ * A CommunicationexternalrecipientResponseCompound Validation Object
+ * @class ValidationObjectCommunicationexternalrecipientResponseCompound
+ */
+export class ValidationObjectCommunicationexternalrecipientResponseCompound {
+   pkiCommunicationexternalrecipientID = {
+      type: 'integer',
+      required: true
+   }
+   eCommunicationexternalrecipientType = {
+      type: 'enum',
+      allowableValues: ['To','Cc','Bcc'],
+      required: true
+   }
+   objDescriptionstatic = new ValidationObjectDescriptionstaticResponseCompound()
+   objEmailstatic = new ValidationObjectEmailstaticResponseCompound()
+   objPhonestatic = new ValidationObjectPhonestaticResponseCompound()
+} 
 
 

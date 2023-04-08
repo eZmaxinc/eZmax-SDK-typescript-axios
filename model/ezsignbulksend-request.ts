@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A Ezsignbulksend Object
  * @export
@@ -66,12 +64,17 @@ export interface EzsignbulksendRequest {
     'bEzsignbulksendIsactive': boolean;
 }
 /**
- * A EzsignbulksendRequest Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignbulksendRequest
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignbulksendRequest extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignbulksendRequest Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignbulksendRequest
+ */
+export class DataObjectEzsignbulksendRequest {
    pkiEzsignbulksendID?:number = undefined
    fkiEzsignfoldertypeID:number = 0
    fkiLanguageID:number = 0
@@ -80,5 +83,45 @@ export class DefaultObjectEzsignbulksendRequest extends DefaultObject {
    bEzsignbulksendNeedvalidation:boolean = false
    bEzsignbulksendIsactive:boolean = false
 }
+
+/**
+ * @export 
+ * A EzsignbulksendRequest Validation Object
+ * @class ValidationObjectEzsignbulksendRequest
+ */
+export class ValidationObjectEzsignbulksendRequest {
+   pkiEzsignbulksendID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzsignfoldertypeID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiLanguageID = {
+      type: 'integer',
+      minimum: 1,
+      maximum: 2,
+      required: true
+   }
+   sEzsignbulksendDescription = {
+      type: 'string',
+      required: true
+   }
+   tEzsignbulksendNote = {
+      type: 'string',
+      required: true
+   }
+   bEzsignbulksendNeedvalidation = {
+      type: 'boolean',
+      required: true
+   }
+   bEzsignbulksendIsactive = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

@@ -20,8 +20,6 @@ import { EzsigndocumentRequest } from './ezsigndocument-request';
 // @ts-ignore
 import { EzsigndocumentRequestCompound } from './ezsigndocument-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for POST /1/object/ezsigndocument
  * @export
@@ -42,14 +40,37 @@ export interface EzsigndocumentCreateObjectV1Request {
     'objEzsigndocumentCompound'?: EzsigndocumentRequestCompound;
 }
 /**
- * A EzsigndocumentCreateObjectV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigndocumentCreateObjectV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigndocumentCreateObjectV1Request extends DefaultObject {
-   objEzsigndocument?:Partial<EzsigndocumentRequest> = undefined
-   objEzsigndocumentCompound?:Partial<EzsigndocumentRequestCompound> = undefined
+// @ts-ignore
+import { DataObjectEzsigndocumentRequest } from './'
+// @ts-ignore
+import { DataObjectEzsigndocumentRequestCompound } from './'
+// @ts-ignore
+import { ValidationObjectEzsigndocumentRequest } from './'
+// @ts-ignore
+import { ValidationObjectEzsigndocumentRequestCompound } from './'
+
+/**
+ * @export 
+ * A EzsigndocumentCreateObjectV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigndocumentCreateObjectV1Request
+ */
+export class DataObjectEzsigndocumentCreateObjectV1Request {
+   objEzsigndocument?:EzsigndocumentRequest = undefined
+   objEzsigndocumentCompound?:EzsigndocumentRequestCompound = undefined
 }
+
+/**
+ * @export 
+ * A EzsigndocumentCreateObjectV1Request Validation Object
+ * @class ValidationObjectEzsigndocumentCreateObjectV1Request
+ */
+export class ValidationObjectEzsigndocumentCreateObjectV1Request {
+   objEzsigndocument = new ValidationObjectEzsigndocumentRequest()
+   objEzsigndocumentCompound = new ValidationObjectEzsigndocumentRequestCompound()
+} 
 
 

@@ -23,8 +23,6 @@ import { FieldEWebhookManagementevent } from './field-ewebhook-managementevent';
 // @ts-ignore
 import { FieldEWebhookModule } from './field-ewebhook-module';
 
-import { DefaultObject } from '../base'
-
 /**
  * A Webhook List Element
  * @export
@@ -86,13 +84,20 @@ export interface WebhookListElement {
      */
     'bWebhookIsactive': boolean;
 }
+
+
 /**
- * A WebhookListElement Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectWebhookListElement
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectWebhookListElement extends DefaultObject {
+
+/**
+ * @export 
+ * A WebhookListElement Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectWebhookListElement
+ */
+export class DataObjectWebhookListElement {
    pkiWebhookID:number = 0
    sWebhookDescription:string = ''
    sWebhookUrl:string = ''
@@ -103,5 +108,52 @@ export class DefaultObjectWebhookListElement extends DefaultObject {
    eWebhookManagementevent?:FieldEWebhookManagementevent = undefined
    bWebhookIsactive:boolean = false
 }
+
+/**
+ * @export 
+ * A WebhookListElement Validation Object
+ * @class ValidationObjectWebhookListElement
+ */
+export class ValidationObjectWebhookListElement {
+   pkiWebhookID = {
+      type: 'integer',
+      required: true
+   }
+   sWebhookDescription = {
+      type: 'string',
+      required: true
+   }
+   sWebhookUrl = {
+      type: 'string',
+      required: true
+   }
+   sWebhookEvent = {
+      type: 'string',
+      required: true
+   }
+   sWebhookEmailfailed = {
+      type: 'string',
+      required: true
+   }
+   eWebhookModule = {
+      type: 'enum',
+      allowableValues: ['Ezsign','Management'],
+      required: true
+   }
+   eWebhookEzsignevent = {
+      type: 'enum',
+      allowableValues: ['DocumentCompleted','FolderCompleted'],
+      required: false
+   }
+   eWebhookManagementevent = {
+      type: 'enum',
+      allowableValues: ['UserCreated'],
+      required: false
+   }
+   bWebhookIsactive = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

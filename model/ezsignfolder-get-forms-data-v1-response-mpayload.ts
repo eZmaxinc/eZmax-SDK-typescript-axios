@@ -17,8 +17,6 @@
 // @ts-ignore
 import { CustomFormsDataFolderResponse } from './custom-forms-data-folder-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for GET /1/object/ezsignfolder/{pkiEzsigndocument}/getFormsData
  * @export
@@ -33,13 +31,31 @@ export interface EzsignfolderGetFormsDataV1ResponseMPayload {
     'objFormsDataFolder': CustomFormsDataFolderResponse;
 }
 /**
- * A EzsignfolderGetFormsDataV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfolderGetFormsDataV1ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfolderGetFormsDataV1ResponseMPayload extends DefaultObject {
-   objFormsDataFolder:Partial<CustomFormsDataFolderResponse> = {}
+// @ts-ignore
+import { DataObjectCustomFormsDataFolderResponse } from './'
+// @ts-ignore
+import { ValidationObjectCustomFormsDataFolderResponse } from './'
+
+/**
+ * @export 
+ * A EzsignfolderGetFormsDataV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfolderGetFormsDataV1ResponseMPayload
+ */
+export class DataObjectEzsignfolderGetFormsDataV1ResponseMPayload {
+   objFormsDataFolder:CustomFormsDataFolderResponse = new DataObjectCustomFormsDataFolderResponse()
 }
+
+/**
+ * @export 
+ * A EzsignfolderGetFormsDataV1ResponseMPayload Validation Object
+ * @class ValidationObjectEzsignfolderGetFormsDataV1ResponseMPayload
+ */
+export class ValidationObjectEzsignfolderGetFormsDataV1ResponseMPayload {
+   objFormsDataFolder = new ValidationObjectCustomFormsDataFolderResponse()
+} 
 
 

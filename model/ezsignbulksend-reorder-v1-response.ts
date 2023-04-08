@@ -23,8 +23,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 // @ts-ignore
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsignbulksendReorderV1Response
  * Response for POST /1/object/ezsignbulksend/{pkiEzsignbulksendID}/reorder
@@ -34,14 +32,37 @@ export type EzsignbulksendReorderV1Response = CommonResponse;
 
 
 /**
- * @export 
- * A EzsignbulksendReorderV1Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsignbulksendReorderV1Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignbulksendReorderV1Response extends DefaultObject {
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A EzsignbulksendReorderV1Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignbulksendReorderV1Response
+ */
+export class DataObjectEzsignbulksendReorderV1Response {
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A EzsignbulksendReorderV1Response Validation Object
+ * @class ValidationObjectEzsignbulksendReorderV1Response
+ */
+export class ValidationObjectEzsignbulksendReorderV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

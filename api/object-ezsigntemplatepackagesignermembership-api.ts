@@ -29,8 +29,6 @@ import { EzsigntemplatepackagesignermembershipCreateObjectV1Response } from '../
 // @ts-ignore
 import { EzsigntemplatepackagesignermembershipDeleteObjectV1Response } from '../model';
 // @ts-ignore
-import { EzsigntemplatepackagesignermembershipGetObjectV1Response } from '../model';
-// @ts-ignore
 import { EzsigntemplatepackagesignermembershipGetObjectV2Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
@@ -159,63 +157,6 @@ export const ObjectEzsigntemplatepackagesignermembershipApiAxiosParamCreator = f
          * @summary Retrieve an existing Ezsigntemplatepackagesignermembership
          * @param {number} pkiEzsigntemplatepackagesignermembershipID 
          * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        ezsigntemplatepackagesignermembershipGetObjectV1: async (pkiEzsigntemplatepackagesignermembershipID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiEzsigntemplatepackagesignermembershipID' is not null or undefined
-            assertParamExists('ezsigntemplatepackagesignermembershipGetObjectV1', 'pkiEzsigntemplatepackagesignermembershipID', pkiEzsigntemplatepackagesignermembershipID)
-            const localVarPath = `/1/object/ezsigntemplatepackagesignermembership/{pkiEzsigntemplatepackagesignermembershipID}`
-                .replace(`{${"pkiEzsigntemplatepackagesignermembershipID"}}`, encodeURIComponent(String(pkiEzsigntemplatepackagesignermembershipID)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'GET' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary Retrieve an existing Ezsigntemplatepackagesignermembership
-         * @param {number} pkiEzsigntemplatepackagesignermembershipID 
-         * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         ezsigntemplatepackagesignermembershipGetObjectV2: async (pkiEzsigntemplatepackagesignermembershipID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -304,18 +245,6 @@ export const ObjectEzsigntemplatepackagesignermembershipApiFp = function(configu
          * @summary Retrieve an existing Ezsigntemplatepackagesignermembership
          * @param {number} pkiEzsigntemplatepackagesignermembershipID 
          * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        async ezsigntemplatepackagesignermembershipGetObjectV1(pkiEzsigntemplatepackagesignermembershipID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigntemplatepackagesignermembershipGetObjectV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigntemplatepackagesignermembershipGetObjectV1(pkiEzsigntemplatepackagesignermembershipID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * 
-         * @summary Retrieve an existing Ezsigntemplatepackagesignermembership
-         * @param {number} pkiEzsigntemplatepackagesignermembershipID 
-         * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         async ezsigntemplatepackagesignermembershipGetObjectV2(pkiEzsigntemplatepackagesignermembershipID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigntemplatepackagesignermembershipGetObjectV2Response>> {
@@ -351,17 +280,6 @@ export const ObjectEzsigntemplatepackagesignermembershipApiFactory = function (c
          */
         ezsigntemplatepackagesignermembershipDeleteObjectV1(pkiEzsigntemplatepackagesignermembershipID: number, options?: any): AxiosPromise<EzsigntemplatepackagesignermembershipDeleteObjectV1Response> {
             return localVarFp.ezsigntemplatepackagesignermembershipDeleteObjectV1(pkiEzsigntemplatepackagesignermembershipID, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary Retrieve an existing Ezsigntemplatepackagesignermembership
-         * @param {number} pkiEzsigntemplatepackagesignermembershipID 
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        ezsigntemplatepackagesignermembershipGetObjectV1(pkiEzsigntemplatepackagesignermembershipID: number, options?: any): AxiosPromise<EzsigntemplatepackagesignermembershipGetObjectV1Response> {
-            return localVarFp.ezsigntemplatepackagesignermembershipGetObjectV1(pkiEzsigntemplatepackagesignermembershipID, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -405,19 +323,6 @@ export class ObjectEzsigntemplatepackagesignermembershipApi extends BaseAPI {
      */
     public ezsigntemplatepackagesignermembershipDeleteObjectV1(pkiEzsigntemplatepackagesignermembershipID: number, options?: AxiosRequestConfig) {
         return ObjectEzsigntemplatepackagesignermembershipApiFp(this.configuration).ezsigntemplatepackagesignermembershipDeleteObjectV1(pkiEzsigntemplatepackagesignermembershipID, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Retrieve an existing Ezsigntemplatepackagesignermembership
-     * @param {number} pkiEzsigntemplatepackagesignermembershipID 
-     * @param {*} [options] Override http request option.
-     * @deprecated
-     * @throws {RequiredError}
-     * @memberof ObjectEzsigntemplatepackagesignermembershipApi
-     */
-    public ezsigntemplatepackagesignermembershipGetObjectV1(pkiEzsigntemplatepackagesignermembershipID: number, options?: AxiosRequestConfig) {
-        return ObjectEzsigntemplatepackagesignermembershipApiFp(this.configuration).ezsigntemplatepackagesignermembershipGetObjectV1(pkiEzsigntemplatepackagesignermembershipID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

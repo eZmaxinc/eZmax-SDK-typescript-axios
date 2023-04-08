@@ -26,8 +26,6 @@ import { EzsignbulksendtransmissionResponse } from './ezsignbulksendtransmission
 // @ts-ignore
 import { EzsignbulksendtransmissionResponseCompoundAllOf } from './ezsignbulksendtransmission-response-compound-all-of';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsignbulksendtransmissionResponseCompound
  * An Ezsignbulksendtransmission Object and children to create a complete structure
@@ -37,18 +35,59 @@ export type EzsignbulksendtransmissionResponseCompound = Ezsignbulksendtransmiss
 
 
 /**
- * @export 
- * A EzsignbulksendtransmissionResponseCompound Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsignbulksendtransmissionResponseCompound
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignbulksendtransmissionResponseCompound extends DefaultObject {
+// @ts-ignore
+import { DataObjectCommonAudit } from './'
+// @ts-ignore
+import { ValidationObjectCommonAudit } from './'
+
+/**
+ * @export 
+ * A EzsignbulksendtransmissionResponseCompound Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignbulksendtransmissionResponseCompound
+ */
+export class DataObjectEzsignbulksendtransmissionResponseCompound {
    pkiEzsignbulksendtransmissionID:number = 0
    fkiEzsignbulksendID:number = 0
    sEzsignbulksendtransmissionDescription:string = ''
    iEzsignbulksendtransmissionErrors:number = 0
-   objAudit:Partial<CommonAudit> = {}
+   objAudit:CommonAudit = new DataObjectCommonAudit()
    a_objEzsignfoldertransmission:Array<CustomEzsignfoldertransmissionResponse> = []
 }
+
+/**
+ * @export 
+ * A EzsignbulksendtransmissionResponseCompound Validation Object
+ * @class ValidationObjectEzsignbulksendtransmissionResponseCompound
+ */
+export class ValidationObjectEzsignbulksendtransmissionResponseCompound {
+   pkiEzsignbulksendtransmissionID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsignbulksendID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sEzsignbulksendtransmissionDescription = {
+      type: 'string',
+      required: true
+   }
+   iEzsignbulksendtransmissionErrors = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   objAudit = new ValidationObjectCommonAudit()
+   a_objEzsignfoldertransmission = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

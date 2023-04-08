@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignbulksendGetListV1ResponseMPayload } from './ezsignbulksend-get-list-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface EzsignbulksendGetListV1ResponseAllOf {
     'mPayload': EzsignbulksendGetListV1ResponseMPayload;
 }
 /**
- * A EzsignbulksendGetListV1ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignbulksendGetListV1ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignbulksendGetListV1ResponseAllOf extends DefaultObject {
-   mPayload:Partial<EzsignbulksendGetListV1ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectEzsignbulksendGetListV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectEzsignbulksendGetListV1ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A EzsignbulksendGetListV1ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignbulksendGetListV1ResponseAllOf
+ */
+export class DataObjectEzsignbulksendGetListV1ResponseAllOf {
+   mPayload:EzsignbulksendGetListV1ResponseMPayload = new DataObjectEzsignbulksendGetListV1ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A EzsignbulksendGetListV1ResponseAllOf Validation Object
+ * @class ValidationObjectEzsignbulksendGetListV1ResponseAllOf
+ */
+export class ValidationObjectEzsignbulksendGetListV1ResponseAllOf {
+   mPayload = new ValidationObjectEzsignbulksendGetListV1ResponseMPayload()
+} 
 
 

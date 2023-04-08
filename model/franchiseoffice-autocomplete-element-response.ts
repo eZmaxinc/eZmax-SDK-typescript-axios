@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A Franchiseoffice AutocompleteElement Response
  * @export
@@ -42,15 +40,41 @@ export interface FranchiseofficeAutocompleteElementResponse {
     'bFranchiseofficeIsactive': boolean;
 }
 /**
- * A FranchiseofficeAutocompleteElementResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectFranchiseofficeAutocompleteElementResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectFranchiseofficeAutocompleteElementResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A FranchiseofficeAutocompleteElementResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectFranchiseofficeAutocompleteElementResponse
+ */
+export class DataObjectFranchiseofficeAutocompleteElementResponse {
    sFranchiseofficeDescription:string = ''
    pkiFranchiseofficeID:number = 0
    bFranchiseofficeIsactive:boolean = false
 }
+
+/**
+ * @export 
+ * A FranchiseofficeAutocompleteElementResponse Validation Object
+ * @class ValidationObjectFranchiseofficeAutocompleteElementResponse
+ */
+export class ValidationObjectFranchiseofficeAutocompleteElementResponse {
+   sFranchiseofficeDescription = {
+      type: 'string',
+      required: true
+   }
+   pkiFranchiseofficeID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   bFranchiseofficeIsactive = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

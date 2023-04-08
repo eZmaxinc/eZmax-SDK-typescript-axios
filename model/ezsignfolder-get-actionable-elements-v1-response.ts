@@ -29,8 +29,6 @@ import { EzsignfolderGetActionableElementsV1ResponseAllOf } from './ezsignfolder
 // @ts-ignore
 import { EzsignfolderGetActionableElementsV1ResponseMPayload } from './ezsignfolder-get-actionable-elements-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsignfolderGetActionableElementsV1Response
  * Response for GET /1/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements
@@ -40,15 +38,43 @@ export type EzsignfolderGetActionableElementsV1Response = CommonResponse & Ezsig
 
 
 /**
- * @export 
- * A EzsignfolderGetActionableElementsV1Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsignfolderGetActionableElementsV1Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfolderGetActionableElementsV1Response extends DefaultObject {
-   mPayload:Partial<EzsignfolderGetActionableElementsV1ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectEzsignfolderGetActionableElementsV1ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsignfolderGetActionableElementsV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A EzsignfolderGetActionableElementsV1Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfolderGetActionableElementsV1Response
+ */
+export class DataObjectEzsignfolderGetActionableElementsV1Response {
+   mPayload:EzsignfolderGetActionableElementsV1ResponseMPayload = new DataObjectEzsignfolderGetActionableElementsV1ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A EzsignfolderGetActionableElementsV1Response Validation Object
+ * @class ValidationObjectEzsignfolderGetActionableElementsV1Response
+ */
+export class ValidationObjectEzsignfolderGetActionableElementsV1Response {
+   mPayload = new ValidationObjectEzsignfolderGetActionableElementsV1ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

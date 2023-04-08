@@ -17,8 +17,6 @@
 // @ts-ignore
 import { WebhookCreateObjectV1ResponseMPayload } from './webhook-create-object-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface WebhookCreateObjectV1ResponseAllOf {
     'mPayload': WebhookCreateObjectV1ResponseMPayload;
 }
 /**
- * A WebhookCreateObjectV1ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectWebhookCreateObjectV1ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectWebhookCreateObjectV1ResponseAllOf extends DefaultObject {
-   mPayload:Partial<WebhookCreateObjectV1ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectWebhookCreateObjectV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectWebhookCreateObjectV1ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A WebhookCreateObjectV1ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectWebhookCreateObjectV1ResponseAllOf
+ */
+export class DataObjectWebhookCreateObjectV1ResponseAllOf {
+   mPayload:WebhookCreateObjectV1ResponseMPayload = new DataObjectWebhookCreateObjectV1ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A WebhookCreateObjectV1ResponseAllOf Validation Object
+ * @class ValidationObjectWebhookCreateObjectV1ResponseAllOf
+ */
+export class ValidationObjectWebhookCreateObjectV1ResponseAllOf {
+   mPayload = new ValidationObjectWebhookCreateObjectV1ResponseMPayload()
+} 
 
 

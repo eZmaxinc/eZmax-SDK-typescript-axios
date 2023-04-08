@@ -29,8 +29,6 @@ import { EzsignfolderCreateObjectV1ResponseAllOf } from './ezsignfolder-create-o
 // @ts-ignore
 import { EzsignfolderCreateObjectV1ResponseMPayload } from './ezsignfolder-create-object-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsignfolderCreateObjectV1Response
  * Response for POST /1/object/ezsignfolder
@@ -40,15 +38,43 @@ export type EzsignfolderCreateObjectV1Response = CommonResponse & EzsignfolderCr
 
 
 /**
- * @export 
- * A EzsignfolderCreateObjectV1Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsignfolderCreateObjectV1Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfolderCreateObjectV1Response extends DefaultObject {
-   mPayload:Partial<EzsignfolderCreateObjectV1ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectEzsignfolderCreateObjectV1ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsignfolderCreateObjectV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A EzsignfolderCreateObjectV1Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfolderCreateObjectV1Response
+ */
+export class DataObjectEzsignfolderCreateObjectV1Response {
+   mPayload:EzsignfolderCreateObjectV1ResponseMPayload = new DataObjectEzsignfolderCreateObjectV1ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A EzsignfolderCreateObjectV1Response Validation Object
+ * @class ValidationObjectEzsignfolderCreateObjectV1Response
+ */
+export class ValidationObjectEzsignfolderCreateObjectV1Response {
+   mPayload = new ValidationObjectEzsignfolderCreateObjectV1ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

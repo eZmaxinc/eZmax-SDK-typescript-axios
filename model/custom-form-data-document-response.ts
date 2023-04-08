@@ -17,8 +17,6 @@
 // @ts-ignore
 import { CustomFormDataSignerResponse } from './custom-form-data-signer-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * A form Data Document Object 
  * @export
@@ -57,17 +55,52 @@ export interface CustomFormDataDocumentResponse {
     'a_objFormDataSigner': Array<CustomFormDataSignerResponse>;
 }
 /**
- * A CustomFormDataDocumentResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCustomFormDataDocumentResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCustomFormDataDocumentResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A CustomFormDataDocumentResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCustomFormDataDocumentResponse
+ */
+export class DataObjectCustomFormDataDocumentResponse {
    pkiEzsigndocumentID:number = 0
    fkiEzsignfolderID:number = 0
    sEzsigndocumentName:string = ''
    dtModifiedDate:string = ''
    a_objFormDataSigner:Array<CustomFormDataSignerResponse> = []
 }
+
+/**
+ * @export 
+ * A CustomFormDataDocumentResponse Validation Object
+ * @class ValidationObjectCustomFormDataDocumentResponse
+ */
+export class ValidationObjectCustomFormDataDocumentResponse {
+   pkiEzsigndocumentID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsignfolderID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sEzsigndocumentName = {
+      type: 'string',
+      required: true
+   }
+   dtModifiedDate = {
+      type: 'string',
+      required: true
+   }
+   a_objFormDataSigner = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

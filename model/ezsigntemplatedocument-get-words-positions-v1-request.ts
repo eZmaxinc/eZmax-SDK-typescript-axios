@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for POST /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getWordsPositions
  * @export
@@ -50,15 +48,41 @@ export type EzsigntemplatedocumentGetWordsPositionsV1RequestEGetEnum = typeof Ez
 
 
 /**
- * A EzsigntemplatedocumentGetWordsPositionsV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplatedocumentGetWordsPositionsV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatedocumentGetWordsPositionsV1Request extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntemplatedocumentGetWordsPositionsV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatedocumentGetWordsPositionsV1Request
+ */
+export class DataObjectEzsigntemplatedocumentGetWordsPositionsV1Request {
    eGet:EzsigntemplatedocumentGetWordsPositionsV1RequestEGetEnum = 'All'
    bWordCaseSensitive:boolean = false
    a_sWord?:Array<string> = undefined
 }
+
+/**
+ * @export 
+ * A EzsigntemplatedocumentGetWordsPositionsV1Request Validation Object
+ * @class ValidationObjectEzsigntemplatedocumentGetWordsPositionsV1Request
+ */
+export class ValidationObjectEzsigntemplatedocumentGetWordsPositionsV1Request {
+   eGet = {
+      type: 'enum',
+      allowableValues: ['All','Words'],
+      required: true
+   }
+   bWordCaseSensitive = {
+      type: 'boolean',
+      required: true
+   }
+   a_sWord = {
+      type: 'array',
+      required: false
+   }
+} 
 
 

@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignbulksendtransmissionGetFormsDataV1ResponseMPayload } from './ezsignbulksendtransmission-get-forms-data-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface EzsignbulksendtransmissionGetFormsDataV1ResponseAllOf {
     'mPayload': EzsignbulksendtransmissionGetFormsDataV1ResponseMPayload;
 }
 /**
- * A EzsignbulksendtransmissionGetFormsDataV1ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignbulksendtransmissionGetFormsDataV1ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignbulksendtransmissionGetFormsDataV1ResponseAllOf extends DefaultObject {
-   mPayload:Partial<EzsignbulksendtransmissionGetFormsDataV1ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectEzsignbulksendtransmissionGetFormsDataV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectEzsignbulksendtransmissionGetFormsDataV1ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A EzsignbulksendtransmissionGetFormsDataV1ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignbulksendtransmissionGetFormsDataV1ResponseAllOf
+ */
+export class DataObjectEzsignbulksendtransmissionGetFormsDataV1ResponseAllOf {
+   mPayload:EzsignbulksendtransmissionGetFormsDataV1ResponseMPayload = new DataObjectEzsignbulksendtransmissionGetFormsDataV1ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A EzsignbulksendtransmissionGetFormsDataV1ResponseAllOf Validation Object
+ * @class ValidationObjectEzsignbulksendtransmissionGetFormsDataV1ResponseAllOf
+ */
+export class ValidationObjectEzsignbulksendtransmissionGetFormsDataV1ResponseAllOf {
+   mPayload = new ValidationObjectEzsignbulksendtransmissionGetFormsDataV1ResponseMPayload()
+} 
 
 

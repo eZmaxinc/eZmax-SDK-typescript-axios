@@ -20,8 +20,6 @@ import { EzsigntemplateResponseCompound } from './ezsigntemplate-response-compou
 // @ts-ignore
 import { EzsigntemplatepackageResponseCompound } from './ezsigntemplatepackage-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for GET /1/module/ezsign/suggestTemplates
  * @export
@@ -42,14 +40,35 @@ export interface EzsignSuggestTemplatesV1ResponseMPayload {
     'a_objEzsigntemplatepackage': Array<EzsigntemplatepackageResponseCompound>;
 }
 /**
- * A EzsignSuggestTemplatesV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignSuggestTemplatesV1ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignSuggestTemplatesV1ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignSuggestTemplatesV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignSuggestTemplatesV1ResponseMPayload
+ */
+export class DataObjectEzsignSuggestTemplatesV1ResponseMPayload {
    a_objEzsigntemplate:Array<EzsigntemplateResponseCompound> = []
    a_objEzsigntemplatepackage:Array<EzsigntemplatepackageResponseCompound> = []
 }
+
+/**
+ * @export 
+ * A EzsignSuggestTemplatesV1ResponseMPayload Validation Object
+ * @class ValidationObjectEzsignSuggestTemplatesV1ResponseMPayload
+ */
+export class ValidationObjectEzsignSuggestTemplatesV1ResponseMPayload {
+   a_objEzsigntemplate = {
+      type: 'array',
+      required: true
+   }
+   a_objEzsigntemplatepackage = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

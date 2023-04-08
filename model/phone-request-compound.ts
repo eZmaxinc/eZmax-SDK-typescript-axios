@@ -20,8 +20,6 @@ import { FieldEPhoneType } from './field-ephone-type';
 // @ts-ignore
 import { PhoneRequest } from './phone-request';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type PhoneRequestCompound
  * A Phone Object and children to create a complete structure
@@ -30,13 +28,19 @@ import { DefaultObject } from '../base'
 export type PhoneRequestCompound = PhoneRequest;
 
 
+
+/**
+ * @import
+ * Imports Child Data Object
+ */
+
 /**
  * @export 
- * A PhoneRequestCompound Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectPhoneRequestCompound
+ * A PhoneRequestCompound Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectPhoneRequestCompound
  */
-export class DefaultObjectPhoneRequestCompound extends DefaultObject {
+export class DataObjectPhoneRequestCompound {
    fkiPhonetypeID:number = 0
    ePhoneType:FieldEPhoneType = 'Local'
    sPhoneRegion?:string = undefined
@@ -45,5 +49,44 @@ export class DefaultObjectPhoneRequestCompound extends DefaultObject {
    sPhoneInternational?:string = undefined
    sPhoneExtension?:string = undefined
 }
+
+/**
+ * @export 
+ * A PhoneRequestCompound Validation Object
+ * @class ValidationObjectPhoneRequestCompound
+ */
+export class ValidationObjectPhoneRequestCompound {
+   fkiPhonetypeID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   ePhoneType = {
+      type: 'enum',
+      allowableValues: ['Local','International'],
+      required: true
+   }
+   sPhoneRegion = {
+      type: 'string',
+      required: false
+   }
+   sPhoneExchange = {
+      type: 'string',
+      required: false
+   }
+   sPhoneNumber = {
+      type: 'string',
+      required: false
+   }
+   sPhoneInternational = {
+      type: 'string',
+      pattern: '/^\+[1-9]\d{1,14}$/',
+      required: false
+   }
+   sPhoneExtension = {
+      type: 'string',
+      required: false
+   }
+} 
 
 

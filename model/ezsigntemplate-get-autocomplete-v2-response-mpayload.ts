@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigntemplateAutocompleteElementResponse } from './ezsigntemplate-autocomplete-element-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for POST /2/object/ezsigntemplate/getAutocomplete
  * @export
@@ -33,13 +31,30 @@ export interface EzsigntemplateGetAutocompleteV2ResponseMPayload {
     'a_objEzsigntemplate': Array<EzsigntemplateAutocompleteElementResponse>;
 }
 /**
- * A EzsigntemplateGetAutocompleteV2ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplateGetAutocompleteV2ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplateGetAutocompleteV2ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntemplateGetAutocompleteV2ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplateGetAutocompleteV2ResponseMPayload
+ */
+export class DataObjectEzsigntemplateGetAutocompleteV2ResponseMPayload {
    a_objEzsigntemplate:Array<EzsigntemplateAutocompleteElementResponse> = []
 }
+
+/**
+ * @export 
+ * A EzsigntemplateGetAutocompleteV2ResponseMPayload Validation Object
+ * @class ValidationObjectEzsigntemplateGetAutocompleteV2ResponseMPayload
+ */
+export class ValidationObjectEzsigntemplateGetAutocompleteV2ResponseMPayload {
+   a_objEzsigntemplate = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

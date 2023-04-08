@@ -300,7 +300,7 @@ export const ObjectPaymenttermApiAxiosParamCreator = function (configuration?: C
         /**
          * 
          * @summary Retrieve Paymentterm list
-         * @param {'pkiPaymenttermID_ASC' | 'pkiPaymenttermID_DESC' | 'sPaymenttermCode_ASC' | 'sPaymenttermCode_DESC' | 'sPaymenttermDescriptionX_ASC' | 'sPaymenttermDescriptionX_DESC' | 'bPaymenttermIsactive_ASC' | 'bPaymenttermIsactive_DESC'} [eOrderBy] Specify how you want the results to be sorted
+         * @param {'pkiPaymenttermID_ASC' | 'pkiPaymenttermID_DESC' | 'sPaymenttermCode_ASC' | 'sPaymenttermCode_DESC' | 'ePaymenttermType_ASC' | 'ePaymenttermType_DESC' | 'iPaymenttermDay_ASC' | 'iPaymenttermDay_DESC' | 'sPaymenttermDescriptionX_ASC' | 'sPaymenttermDescriptionX_DESC' | 'bPaymenttermIsactive_ASC' | 'bPaymenttermIsactive_DESC'} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
          * @param {number} [iRowOffset] 
          * @param {HeaderAcceptLanguage} [acceptLanguage] 
@@ -308,7 +308,7 @@ export const ObjectPaymenttermApiAxiosParamCreator = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        paymenttermGetListV1: async (eOrderBy?: 'pkiPaymenttermID_ASC' | 'pkiPaymenttermID_DESC' | 'sPaymenttermCode_ASC' | 'sPaymenttermCode_DESC' | 'sPaymenttermDescriptionX_ASC' | 'sPaymenttermDescriptionX_DESC' | 'bPaymenttermIsactive_ASC' | 'bPaymenttermIsactive_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        paymenttermGetListV1: async (eOrderBy?: 'pkiPaymenttermID_ASC' | 'pkiPaymenttermID_DESC' | 'sPaymenttermCode_ASC' | 'sPaymenttermCode_DESC' | 'ePaymenttermType_ASC' | 'ePaymenttermType_DESC' | 'iPaymenttermDay_ASC' | 'iPaymenttermDay_DESC' | 'sPaymenttermDescriptionX_ASC' | 'sPaymenttermDescriptionX_DESC' | 'bPaymenttermIsactive_ASC' | 'bPaymenttermIsactive_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/1/object/paymentterm/getList`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
@@ -493,7 +493,7 @@ export const ObjectPaymenttermApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Retrieve Paymentterm list
-         * @param {'pkiPaymenttermID_ASC' | 'pkiPaymenttermID_DESC' | 'sPaymenttermCode_ASC' | 'sPaymenttermCode_DESC' | 'sPaymenttermDescriptionX_ASC' | 'sPaymenttermDescriptionX_DESC' | 'bPaymenttermIsactive_ASC' | 'bPaymenttermIsactive_DESC'} [eOrderBy] Specify how you want the results to be sorted
+         * @param {'pkiPaymenttermID_ASC' | 'pkiPaymenttermID_DESC' | 'sPaymenttermCode_ASC' | 'sPaymenttermCode_DESC' | 'ePaymenttermType_ASC' | 'ePaymenttermType_DESC' | 'iPaymenttermDay_ASC' | 'iPaymenttermDay_DESC' | 'sPaymenttermDescriptionX_ASC' | 'sPaymenttermDescriptionX_DESC' | 'bPaymenttermIsactive_ASC' | 'bPaymenttermIsactive_DESC'} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
          * @param {number} [iRowOffset] 
          * @param {HeaderAcceptLanguage} [acceptLanguage] 
@@ -501,7 +501,7 @@ export const ObjectPaymenttermApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async paymenttermGetListV1(eOrderBy?: 'pkiPaymenttermID_ASC' | 'pkiPaymenttermID_DESC' | 'sPaymenttermCode_ASC' | 'sPaymenttermCode_DESC' | 'sPaymenttermDescriptionX_ASC' | 'sPaymenttermDescriptionX_DESC' | 'bPaymenttermIsactive_ASC' | 'bPaymenttermIsactive_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PaymenttermGetListV1Response>> {
+        async paymenttermGetListV1(eOrderBy?: 'pkiPaymenttermID_ASC' | 'pkiPaymenttermID_DESC' | 'sPaymenttermCode_ASC' | 'sPaymenttermCode_DESC' | 'ePaymenttermType_ASC' | 'ePaymenttermType_DESC' | 'iPaymenttermDay_ASC' | 'iPaymenttermDay_DESC' | 'sPaymenttermDescriptionX_ASC' | 'sPaymenttermDescriptionX_DESC' | 'bPaymenttermIsactive_ASC' | 'bPaymenttermIsactive_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PaymenttermGetListV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.paymenttermGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -573,7 +573,7 @@ export const ObjectPaymenttermApiFactory = function (configuration?: Configurati
         /**
          * 
          * @summary Retrieve Paymentterm list
-         * @param {'pkiPaymenttermID_ASC' | 'pkiPaymenttermID_DESC' | 'sPaymenttermCode_ASC' | 'sPaymenttermCode_DESC' | 'sPaymenttermDescriptionX_ASC' | 'sPaymenttermDescriptionX_DESC' | 'bPaymenttermIsactive_ASC' | 'bPaymenttermIsactive_DESC'} [eOrderBy] Specify how you want the results to be sorted
+         * @param {'pkiPaymenttermID_ASC' | 'pkiPaymenttermID_DESC' | 'sPaymenttermCode_ASC' | 'sPaymenttermCode_DESC' | 'ePaymenttermType_ASC' | 'ePaymenttermType_DESC' | 'iPaymenttermDay_ASC' | 'iPaymenttermDay_DESC' | 'sPaymenttermDescriptionX_ASC' | 'sPaymenttermDescriptionX_DESC' | 'bPaymenttermIsactive_ASC' | 'bPaymenttermIsactive_DESC'} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
          * @param {number} [iRowOffset] 
          * @param {HeaderAcceptLanguage} [acceptLanguage] 
@@ -581,7 +581,7 @@ export const ObjectPaymenttermApiFactory = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        paymenttermGetListV1(eOrderBy?: 'pkiPaymenttermID_ASC' | 'pkiPaymenttermID_DESC' | 'sPaymenttermCode_ASC' | 'sPaymenttermCode_DESC' | 'sPaymenttermDescriptionX_ASC' | 'sPaymenttermDescriptionX_DESC' | 'bPaymenttermIsactive_ASC' | 'bPaymenttermIsactive_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: any): AxiosPromise<PaymenttermGetListV1Response> {
+        paymenttermGetListV1(eOrderBy?: 'pkiPaymenttermID_ASC' | 'pkiPaymenttermID_DESC' | 'sPaymenttermCode_ASC' | 'sPaymenttermCode_DESC' | 'ePaymenttermType_ASC' | 'ePaymenttermType_DESC' | 'iPaymenttermDay_ASC' | 'iPaymenttermDay_DESC' | 'sPaymenttermDescriptionX_ASC' | 'sPaymenttermDescriptionX_DESC' | 'bPaymenttermIsactive_ASC' | 'bPaymenttermIsactive_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: any): AxiosPromise<PaymenttermGetListV1Response> {
             return localVarFp.paymenttermGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(axios, basePath));
         },
         /**
@@ -659,7 +659,7 @@ export class ObjectPaymenttermApi extends BaseAPI {
     /**
      * 
      * @summary Retrieve Paymentterm list
-     * @param {'pkiPaymenttermID_ASC' | 'pkiPaymenttermID_DESC' | 'sPaymenttermCode_ASC' | 'sPaymenttermCode_DESC' | 'sPaymenttermDescriptionX_ASC' | 'sPaymenttermDescriptionX_DESC' | 'bPaymenttermIsactive_ASC' | 'bPaymenttermIsactive_DESC'} [eOrderBy] Specify how you want the results to be sorted
+     * @param {'pkiPaymenttermID_ASC' | 'pkiPaymenttermID_DESC' | 'sPaymenttermCode_ASC' | 'sPaymenttermCode_DESC' | 'ePaymenttermType_ASC' | 'ePaymenttermType_DESC' | 'iPaymenttermDay_ASC' | 'iPaymenttermDay_DESC' | 'sPaymenttermDescriptionX_ASC' | 'sPaymenttermDescriptionX_DESC' | 'bPaymenttermIsactive_ASC' | 'bPaymenttermIsactive_DESC'} [eOrderBy] Specify how you want the results to be sorted
      * @param {number} [iRowMax] 
      * @param {number} [iRowOffset] 
      * @param {HeaderAcceptLanguage} [acceptLanguage] 
@@ -668,7 +668,7 @@ export class ObjectPaymenttermApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectPaymenttermApi
      */
-    public paymenttermGetListV1(eOrderBy?: 'pkiPaymenttermID_ASC' | 'pkiPaymenttermID_DESC' | 'sPaymenttermCode_ASC' | 'sPaymenttermCode_DESC' | 'sPaymenttermDescriptionX_ASC' | 'sPaymenttermDescriptionX_DESC' | 'bPaymenttermIsactive_ASC' | 'bPaymenttermIsactive_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig) {
+    public paymenttermGetListV1(eOrderBy?: 'pkiPaymenttermID_ASC' | 'pkiPaymenttermID_DESC' | 'sPaymenttermCode_ASC' | 'sPaymenttermCode_DESC' | 'ePaymenttermType_ASC' | 'ePaymenttermType_DESC' | 'iPaymenttermDay_ASC' | 'iPaymenttermDay_DESC' | 'sPaymenttermDescriptionX_ASC' | 'sPaymenttermDescriptionX_DESC' | 'bPaymenttermIsactive_ASC' | 'bPaymenttermIsactive_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig) {
         return ObjectPaymenttermApiFp(this.configuration).paymenttermGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(this.axios, this.basePath));
     }
 

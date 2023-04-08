@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Description of the Branding
  * @export
@@ -36,14 +34,35 @@ export interface MultilingualBrandingDescription {
     'sBrandingDescription2'?: string;
 }
 /**
- * A MultilingualBrandingDescription Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectMultilingualBrandingDescription
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectMultilingualBrandingDescription extends DefaultObject {
+
+/**
+ * @export 
+ * A MultilingualBrandingDescription Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectMultilingualBrandingDescription
+ */
+export class DataObjectMultilingualBrandingDescription {
    sBrandingDescription1?:string = undefined
    sBrandingDescription2?:string = undefined
 }
+
+/**
+ * @export 
+ * A MultilingualBrandingDescription Validation Object
+ * @class ValidationObjectMultilingualBrandingDescription
+ */
+export class ValidationObjectMultilingualBrandingDescription {
+   sBrandingDescription1 = {
+      type: 'string',
+      required: false
+   }
+   sBrandingDescription2 = {
+      type: 'string',
+      required: false
+   }
+} 
 
 

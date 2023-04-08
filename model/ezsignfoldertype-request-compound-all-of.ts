@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -36,14 +34,35 @@ export interface EzsignfoldertypeRequestCompoundAllOf {
     'a_fkiUserIDSummary'?: Array<number>;
 }
 /**
- * A EzsignfoldertypeRequestCompoundAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfoldertypeRequestCompoundAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfoldertypeRequestCompoundAllOf extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignfoldertypeRequestCompoundAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfoldertypeRequestCompoundAllOf
+ */
+export class DataObjectEzsignfoldertypeRequestCompoundAllOf {
    a_fkiUserIDSigned?:Array<number> = undefined
    a_fkiUserIDSummary?:Array<number> = undefined
 }
+
+/**
+ * @export 
+ * A EzsignfoldertypeRequestCompoundAllOf Validation Object
+ * @class ValidationObjectEzsignfoldertypeRequestCompoundAllOf
+ */
+export class ValidationObjectEzsignfoldertypeRequestCompoundAllOf {
+   a_fkiUserIDSigned = {
+      type: 'array',
+      required: false
+   }
+   a_fkiUserIDSummary = {
+      type: 'array',
+      required: false
+   }
+} 
 
 

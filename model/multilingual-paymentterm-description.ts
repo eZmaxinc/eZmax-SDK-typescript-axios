@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Description of the Paymentterm
  * @export
@@ -36,14 +34,37 @@ export interface MultilingualPaymenttermDescription {
     'sPaymenttermDescription2'?: string;
 }
 /**
- * A MultilingualPaymenttermDescription Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectMultilingualPaymenttermDescription
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectMultilingualPaymenttermDescription extends DefaultObject {
+
+/**
+ * @export 
+ * A MultilingualPaymenttermDescription Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectMultilingualPaymenttermDescription
+ */
+export class DataObjectMultilingualPaymenttermDescription {
    sPaymenttermDescription1?:string = undefined
    sPaymenttermDescription2?:string = undefined
 }
+
+/**
+ * @export 
+ * A MultilingualPaymenttermDescription Validation Object
+ * @class ValidationObjectMultilingualPaymenttermDescription
+ */
+export class ValidationObjectMultilingualPaymenttermDescription {
+   sPaymenttermDescription1 = {
+      type: 'string',
+      pattern: '/^.{1,40}$/',
+      required: false
+   }
+   sPaymenttermDescription2 = {
+      type: 'string',
+      pattern: '/^.{1,40}$/',
+      required: false
+   }
+} 
 
 

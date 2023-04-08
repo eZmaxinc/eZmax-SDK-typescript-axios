@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A Ezsignbulksendsignermapping Object
  * @export
@@ -48,16 +46,48 @@ export interface EzsignbulksendsignermappingResponse {
     'sEzsignbulksendsignermappingDescription': string;
 }
 /**
- * A EzsignbulksendsignermappingResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignbulksendsignermappingResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignbulksendsignermappingResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignbulksendsignermappingResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignbulksendsignermappingResponse
+ */
+export class DataObjectEzsignbulksendsignermappingResponse {
    pkiEzsignbulksendsignermappingID:number = 0
    fkiEzsignbulksendID:number = 0
    fkiUserID?:number = undefined
    sEzsignbulksendsignermappingDescription:string = ''
 }
+
+/**
+ * @export 
+ * A EzsignbulksendsignermappingResponse Validation Object
+ * @class ValidationObjectEzsignbulksendsignermappingResponse
+ */
+export class ValidationObjectEzsignbulksendsignermappingResponse {
+   pkiEzsignbulksendsignermappingID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsignbulksendID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiUserID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   sEzsignbulksendsignermappingDescription = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

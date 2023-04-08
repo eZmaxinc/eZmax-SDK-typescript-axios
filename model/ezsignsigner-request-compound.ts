@@ -23,8 +23,6 @@ import { EzsignsignerRequestCompoundAllOf } from './ezsignsigner-request-compoun
 // @ts-ignore
 import { EzsignsignerRequestCompoundContact } from './ezsignsigner-request-compound-contact';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsignsignerRequestCompound
  * An Ezsignsigner Object and children to create a complete structure
@@ -44,18 +42,61 @@ export type EzsignsignerRequestCompoundEEzsignsignerLogintypeEnum = typeof Ezsig
 
 
 /**
- * @export 
- * A EzsignsignerRequestCompound Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsignsignerRequestCompound
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignsignerRequestCompound extends DefaultObject {
+// @ts-ignore
+import { DataObjectEzsignsignerRequestCompoundContact } from './'
+// @ts-ignore
+import { ValidationObjectEzsignsignerRequestCompoundContact } from './'
+
+/**
+ * @export 
+ * A EzsignsignerRequestCompound Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignsignerRequestCompound
+ */
+export class DataObjectEzsignsignerRequestCompound {
    fkiUserlogintypeID?:number = undefined
    fkiTaxassignmentID:number = 0
    fkiSecretquestionID?:number = undefined
    eEzsignsignerLogintype?:EzsignsignerRequestCompoundEEzsignsignerLogintypeEnum = undefined
    sEzsignsignerSecretanswer?:string = undefined
-   objContact:Partial<EzsignsignerRequestCompoundContact> = {}
+   objContact:EzsignsignerRequestCompoundContact = new DataObjectEzsignsignerRequestCompoundContact()
 }
+
+/**
+ * @export 
+ * A EzsignsignerRequestCompound Validation Object
+ * @class ValidationObjectEzsignsignerRequestCompound
+ */
+export class ValidationObjectEzsignsignerRequestCompound {
+   fkiUserlogintypeID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiTaxassignmentID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 15,
+      required: true
+   }
+   fkiSecretquestionID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   eEzsignsignerLogintype = {
+      type: 'enum',
+      allowableValues: ['Password','PasswordPhone','PasswordQuestion','InPersonPhone','InPerson'],
+      required: false
+   }
+   sEzsignsignerSecretanswer = {
+      type: 'string',
+      required: false
+   }
+   objContact = new ValidationObjectEzsignsignerRequestCompoundContact()
+} 
 
 

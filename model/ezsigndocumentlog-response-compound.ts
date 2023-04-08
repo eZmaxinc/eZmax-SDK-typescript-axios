@@ -20,8 +20,6 @@ import { EzsigndocumentlogResponse } from './ezsigndocumentlog-response';
 // @ts-ignore
 import { FieldEEzsigndocumentlogType } from './field-eezsigndocumentlog-type';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsigndocumentlogResponseCompound
  * An Ezsigndocumentlog Object and children to create a complete structure
@@ -30,13 +28,19 @@ import { DefaultObject } from '../base'
 export type EzsigndocumentlogResponseCompound = EzsigndocumentlogResponse;
 
 
+
+/**
+ * @import
+ * Imports Child Data Object
+ */
+
 /**
  * @export 
- * A EzsigndocumentlogResponseCompound Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsigndocumentlogResponseCompound
+ * A EzsigndocumentlogResponseCompound Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigndocumentlogResponseCompound
  */
-export class DefaultObjectEzsigndocumentlogResponseCompound extends DefaultObject {
+export class DataObjectEzsigndocumentlogResponseCompound {
    fkiUserID?:number = undefined
    fkiEzsignsignerID?:number = undefined
    dtEzsigndocumentlogDatetime:string = ''
@@ -46,5 +50,48 @@ export class DefaultObjectEzsigndocumentlogResponseCompound extends DefaultObjec
    sEzsigndocumentlogFirstname:string = ''
    sEzsigndocumentlogIP:string = ''
 }
+
+/**
+ * @export 
+ * A EzsigndocumentlogResponseCompound Validation Object
+ * @class ValidationObjectEzsigndocumentlogResponseCompound
+ */
+export class ValidationObjectEzsigndocumentlogResponseCompound {
+   fkiUserID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzsignsignerID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   dtEzsigndocumentlogDatetime = {
+      type: 'string',
+      required: true
+   }
+   eEzsigndocumentlogType = {
+      type: 'enum',
+      allowableValues: ['Clone','Login','Sendcode','Badcode','Goodcode','Authentication','Createpage','Download','Send','Sign','Upload','View','Completion','Changelimitdate','Unsign','ImportFromInstanet','SendEmail','FormCompletion','SignatureAttachmentAdd','SignatureAttachmentValidation','SignatureAttachmentRefused','SignatureAttachmentDeleted','DeclinedToSign','DelayedSendEmail'],
+      required: true
+   }
+   sEzsigndocumentlogDetail = {
+      type: 'string',
+      required: true
+   }
+   sEzsigndocumentlogLastname = {
+      type: 'string',
+      required: true
+   }
+   sEzsigndocumentlogFirstname = {
+      type: 'string',
+      required: true
+   }
+   sEzsigndocumentlogIP = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

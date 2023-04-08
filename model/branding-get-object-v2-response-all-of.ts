@@ -17,8 +17,6 @@
 // @ts-ignore
 import { BrandingGetObjectV2ResponseMPayload } from './branding-get-object-v2-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface BrandingGetObjectV2ResponseAllOf {
     'mPayload': BrandingGetObjectV2ResponseMPayload;
 }
 /**
- * A BrandingGetObjectV2ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectBrandingGetObjectV2ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectBrandingGetObjectV2ResponseAllOf extends DefaultObject {
-   mPayload:Partial<BrandingGetObjectV2ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectBrandingGetObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectBrandingGetObjectV2ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A BrandingGetObjectV2ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectBrandingGetObjectV2ResponseAllOf
+ */
+export class DataObjectBrandingGetObjectV2ResponseAllOf {
+   mPayload:BrandingGetObjectV2ResponseMPayload = new DataObjectBrandingGetObjectV2ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A BrandingGetObjectV2ResponseAllOf Validation Object
+ * @class ValidationObjectBrandingGetObjectV2ResponseAllOf
+ */
+export class ValidationObjectBrandingGetObjectV2ResponseAllOf {
+   mPayload = new ValidationObjectBrandingGetObjectV2ResponseMPayload()
+} 
 
 

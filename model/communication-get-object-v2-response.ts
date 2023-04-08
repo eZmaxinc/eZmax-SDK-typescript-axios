@@ -29,8 +29,6 @@ import { CommunicationGetObjectV2ResponseAllOf } from './communication-get-objec
 // @ts-ignore
 import { CommunicationGetObjectV2ResponseMPayload } from './communication-get-object-v2-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type CommunicationGetObjectV2Response
  * Response for GET /2/object/communication/{pkiCommunicationID}
@@ -40,15 +38,43 @@ export type CommunicationGetObjectV2Response = CommonResponse & CommunicationGet
 
 
 /**
- * @export 
- * A CommunicationGetObjectV2Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectCommunicationGetObjectV2Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCommunicationGetObjectV2Response extends DefaultObject {
-   mPayload:Partial<CommunicationGetObjectV2ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectCommunicationGetObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectCommunicationGetObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A CommunicationGetObjectV2Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCommunicationGetObjectV2Response
+ */
+export class DataObjectCommunicationGetObjectV2Response {
+   mPayload:CommunicationGetObjectV2ResponseMPayload = new DataObjectCommunicationGetObjectV2ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A CommunicationGetObjectV2Response Validation Object
+ * @class ValidationObjectCommunicationGetObjectV2Response
+ */
+export class ValidationObjectCommunicationGetObjectV2Response {
+   mPayload = new ValidationObjectCommunicationGetObjectV2ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

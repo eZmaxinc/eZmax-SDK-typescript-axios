@@ -17,8 +17,6 @@
 // @ts-ignore
 import { FieldEEzsignfolderSendreminderfrequency } from './field-eezsignfolder-sendreminderfrequency';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for POST /1/object/ezsignbulksend/{pkiEzsignbulksendID}/createEzsignbulksendtransmission
  * @export
@@ -68,13 +66,20 @@ export interface EzsignbulksendCreateEzsignbulksendtransmissionV1Request {
      */
     'sCsvBase64': string;
 }
+
+
 /**
- * A EzsignbulksendCreateEzsignbulksendtransmissionV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignbulksendCreateEzsignbulksendtransmissionV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignbulksendCreateEzsignbulksendtransmissionV1Request extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignbulksendCreateEzsignbulksendtransmissionV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignbulksendCreateEzsignbulksendtransmissionV1Request
+ */
+export class DataObjectEzsignbulksendCreateEzsignbulksendtransmissionV1Request {
    fkiUserlogintypeID:number = 0
    fkiEzsigntsarequirementID?:number = undefined
    sEzsignbulksendtransmissionDescription:string = ''
@@ -83,5 +88,45 @@ export class DefaultObjectEzsignbulksendCreateEzsignbulksendtransmissionV1Reques
    tExtraMessage:string = ''
    sCsvBase64:string = ''
 }
+
+/**
+ * @export 
+ * A EzsignbulksendCreateEzsignbulksendtransmissionV1Request Validation Object
+ * @class ValidationObjectEzsignbulksendCreateEzsignbulksendtransmissionV1Request
+ */
+export class ValidationObjectEzsignbulksendCreateEzsignbulksendtransmissionV1Request {
+   fkiUserlogintypeID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsigntsarequirementID = {
+      type: 'integer',
+      minimum: 1,
+      maximum: 3,
+      required: false
+   }
+   sEzsignbulksendtransmissionDescription = {
+      type: 'string',
+      required: true
+   }
+   dtEzsigndocumentDuedate = {
+      type: 'string',
+      required: true
+   }
+   eEzsignfolderSendreminderfrequency = {
+      type: 'enum',
+      allowableValues: ['None','Daily','Weekly'],
+      required: true
+   }
+   tExtraMessage = {
+      type: 'string',
+      required: true
+   }
+   sCsvBase64 = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

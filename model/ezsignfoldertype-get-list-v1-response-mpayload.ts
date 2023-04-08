@@ -23,8 +23,6 @@ import { EzsignfoldertypeGetListV1ResponseMPayloadAllOf } from './ezsignfolderty
 // @ts-ignore
 import { EzsignfoldertypeListElement } from './ezsignfoldertype-list-element';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsignfoldertypeGetListV1ResponseMPayload
  * Payload for GET /1/object/ezsignfoldertype/getList
@@ -34,15 +32,40 @@ export type EzsignfoldertypeGetListV1ResponseMPayload = CommonGetListV1ResponseM
 
 
 /**
- * @export 
- * A EzsignfoldertypeGetListV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsignfoldertypeGetListV1ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfoldertypeGetListV1ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignfoldertypeGetListV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfoldertypeGetListV1ResponseMPayload
+ */
+export class DataObjectEzsignfoldertypeGetListV1ResponseMPayload {
    a_objEzsignfoldertype:Array<EzsignfoldertypeListElement> = []
    iRowReturned:number = 0
    iRowFiltered:number = 0
 }
+
+/**
+ * @export 
+ * A EzsignfoldertypeGetListV1ResponseMPayload Validation Object
+ * @class ValidationObjectEzsignfoldertypeGetListV1ResponseMPayload
+ */
+export class ValidationObjectEzsignfoldertypeGetListV1ResponseMPayload {
+   a_objEzsignfoldertype = {
+      type: 'array',
+      required: true
+   }
+   iRowReturned = {
+      type: 'integer',
+      required: true
+   }
+   iRowFiltered = {
+      type: 'integer',
+      required: true
+   }
+} 
 
 

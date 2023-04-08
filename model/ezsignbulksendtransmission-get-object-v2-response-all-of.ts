@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignbulksendtransmissionGetObjectV2ResponseMPayload } from './ezsignbulksendtransmission-get-object-v2-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface EzsignbulksendtransmissionGetObjectV2ResponseAllOf {
     'mPayload': EzsignbulksendtransmissionGetObjectV2ResponseMPayload;
 }
 /**
- * A EzsignbulksendtransmissionGetObjectV2ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignbulksendtransmissionGetObjectV2ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignbulksendtransmissionGetObjectV2ResponseAllOf extends DefaultObject {
-   mPayload:Partial<EzsignbulksendtransmissionGetObjectV2ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectEzsignbulksendtransmissionGetObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectEzsignbulksendtransmissionGetObjectV2ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A EzsignbulksendtransmissionGetObjectV2ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignbulksendtransmissionGetObjectV2ResponseAllOf
+ */
+export class DataObjectEzsignbulksendtransmissionGetObjectV2ResponseAllOf {
+   mPayload:EzsignbulksendtransmissionGetObjectV2ResponseMPayload = new DataObjectEzsignbulksendtransmissionGetObjectV2ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A EzsignbulksendtransmissionGetObjectV2ResponseAllOf Validation Object
+ * @class ValidationObjectEzsignbulksendtransmissionGetObjectV2ResponseAllOf
+ */
+export class ValidationObjectEzsignbulksendtransmissionGetObjectV2ResponseAllOf {
+   mPayload = new ValidationObjectEzsignbulksendtransmissionGetObjectV2ResponseMPayload()
+} 
 
 

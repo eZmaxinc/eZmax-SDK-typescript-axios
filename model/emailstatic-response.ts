@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * An Emailstatic Object
  * @export
@@ -36,14 +34,36 @@ export interface EmailstaticResponse {
     'sEmailstaticAddress': string;
 }
 /**
- * A EmailstaticResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEmailstaticResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEmailstaticResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A EmailstaticResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEmailstaticResponse
+ */
+export class DataObjectEmailstaticResponse {
    pkiEmailstaticID:number = 0
    sEmailstaticAddress:string = ''
 }
+
+/**
+ * @export 
+ * A EmailstaticResponse Validation Object
+ * @class ValidationObjectEmailstaticResponse
+ */
+export class ValidationObjectEmailstaticResponse {
+   pkiEmailstaticID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sEmailstaticAddress = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

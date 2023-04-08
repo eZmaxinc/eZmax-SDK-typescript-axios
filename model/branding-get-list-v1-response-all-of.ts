@@ -17,8 +17,6 @@
 // @ts-ignore
 import { BrandingGetListV1ResponseMPayload } from './branding-get-list-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface BrandingGetListV1ResponseAllOf {
     'mPayload': BrandingGetListV1ResponseMPayload;
 }
 /**
- * A BrandingGetListV1ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectBrandingGetListV1ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectBrandingGetListV1ResponseAllOf extends DefaultObject {
-   mPayload:Partial<BrandingGetListV1ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectBrandingGetListV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectBrandingGetListV1ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A BrandingGetListV1ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectBrandingGetListV1ResponseAllOf
+ */
+export class DataObjectBrandingGetListV1ResponseAllOf {
+   mPayload:BrandingGetListV1ResponseMPayload = new DataObjectBrandingGetListV1ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A BrandingGetListV1ResponseAllOf Validation Object
+ * @class ValidationObjectBrandingGetListV1ResponseAllOf
+ */
+export class ValidationObjectBrandingGetListV1ResponseAllOf {
+   mPayload = new ValidationObjectBrandingGetListV1ResponseMPayload()
+} 
 
 

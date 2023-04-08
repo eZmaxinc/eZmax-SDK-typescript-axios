@@ -17,8 +17,6 @@
 // @ts-ignore
 import { FieldEUserType } from './field-euser-type';
 
-import { DefaultObject } from '../base'
-
 /**
  * A User AutocompleteElement Response
  * @export
@@ -50,17 +48,50 @@ export interface UserAutocompleteElementResponse {
      */
     'bUserIsactive': boolean;
 }
+
+
 /**
- * A UserAutocompleteElementResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectUserAutocompleteElementResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectUserAutocompleteElementResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A UserAutocompleteElementResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectUserAutocompleteElementResponse
+ */
+export class DataObjectUserAutocompleteElementResponse {
    eUserType:FieldEUserType = 'AgentBroker'
    sUserName:string = ''
    pkiUserID:number = 0
    bUserIsactive:boolean = false
 }
+
+/**
+ * @export 
+ * A UserAutocompleteElementResponse Validation Object
+ * @class ValidationObjectUserAutocompleteElementResponse
+ */
+export class ValidationObjectUserAutocompleteElementResponse {
+   eUserType = {
+      type: 'enum',
+      allowableValues: ['AgentBroker','Assistant','Attendance','Customer','Employee','Ezcom','EzsignSigner','EzsignUser','FranchiseCustomerServer','Normal','RewardAdministration','RewardMember','RewardRepresentative','RewardCustomer','RewardDistributorServer','Supplier','VetrxCustomer','Vetrxcustomergroup','VetrxCustomerServer','VetrxManufacturer','VetrxVendor'],
+      required: true
+   }
+   sUserName = {
+      type: 'string',
+      required: true
+   }
+   pkiUserID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   bUserIsactive = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

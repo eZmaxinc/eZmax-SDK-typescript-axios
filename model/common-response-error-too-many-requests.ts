@@ -17,8 +17,6 @@
 // @ts-ignore
 import { CommonResponseError } from './common-response-error';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type CommonResponseErrorTooManyRequests
  * Generic Error Message
@@ -28,14 +26,35 @@ export type CommonResponseErrorTooManyRequests = CommonResponseError;
 
 
 /**
- * @export 
- * A CommonResponseErrorTooManyRequests Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectCommonResponseErrorTooManyRequests
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCommonResponseErrorTooManyRequests extends DefaultObject {
+
+/**
+ * @export 
+ * A CommonResponseErrorTooManyRequests Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCommonResponseErrorTooManyRequests
+ */
+export class DataObjectCommonResponseErrorTooManyRequests {
    sErrorMessage:string = ''
    eErrorCode:string = ''
 }
+
+/**
+ * @export 
+ * A CommonResponseErrorTooManyRequests Validation Object
+ * @class ValidationObjectCommonResponseErrorTooManyRequests
+ */
+export class ValidationObjectCommonResponseErrorTooManyRequests {
+   sErrorMessage = {
+      type: 'string',
+      required: true
+   }
+   eErrorCode = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

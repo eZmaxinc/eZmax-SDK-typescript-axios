@@ -17,8 +17,6 @@
 // @ts-ignore
 import { BrandingListElement } from './branding-list-element';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,30 @@ export interface BrandingGetListV1ResponseMPayloadAllOf {
     'a_objBranding': Array<BrandingListElement>;
 }
 /**
- * A BrandingGetListV1ResponseMPayloadAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectBrandingGetListV1ResponseMPayloadAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectBrandingGetListV1ResponseMPayloadAllOf extends DefaultObject {
+
+/**
+ * @export 
+ * A BrandingGetListV1ResponseMPayloadAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectBrandingGetListV1ResponseMPayloadAllOf
+ */
+export class DataObjectBrandingGetListV1ResponseMPayloadAllOf {
    a_objBranding:Array<BrandingListElement> = []
 }
+
+/**
+ * @export 
+ * A BrandingGetListV1ResponseMPayloadAllOf Validation Object
+ * @class ValidationObjectBrandingGetListV1ResponseMPayloadAllOf
+ */
+export class ValidationObjectBrandingGetListV1ResponseMPayloadAllOf {
+   a_objBranding = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A Period AutocompleteElement Response
  * @export
@@ -42,15 +40,41 @@ export interface PeriodAutocompleteElementResponse {
     'bPeriodIsactive': boolean;
 }
 /**
- * A PeriodAutocompleteElementResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectPeriodAutocompleteElementResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectPeriodAutocompleteElementResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A PeriodAutocompleteElementResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectPeriodAutocompleteElementResponse
+ */
+export class DataObjectPeriodAutocompleteElementResponse {
    sPeriodYYYYMM:string = ''
    pkiPeriodID:number = 0
    bPeriodIsactive:boolean = false
 }
+
+/**
+ * @export 
+ * A PeriodAutocompleteElementResponse Validation Object
+ * @class ValidationObjectPeriodAutocompleteElementResponse
+ */
+export class ValidationObjectPeriodAutocompleteElementResponse {
+   sPeriodYYYYMM = {
+      type: 'string',
+      required: true
+   }
+   pkiPeriodID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   bPeriodIsactive = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

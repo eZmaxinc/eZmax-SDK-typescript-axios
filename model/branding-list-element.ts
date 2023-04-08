@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A Branding List Element
  * @export
@@ -78,12 +76,17 @@ export interface BrandingListElement {
     'bBrandingIsactive': boolean;
 }
 /**
- * A BrandingListElement Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectBrandingListElement
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectBrandingListElement extends DefaultObject {
+
+/**
+ * @export 
+ * A BrandingListElement Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectBrandingListElement
+ */
+export class DataObjectBrandingListElement {
    pkiBrandingID:number = 0
    sBrandingDescriptionX:string = ''
    iBrandingColortext:number = 0
@@ -94,5 +97,62 @@ export class DefaultObjectBrandingListElement extends DefaultObject {
    iBrandingColorbackgroundsmallbox:number = 0
    bBrandingIsactive:boolean = false
 }
+
+/**
+ * @export 
+ * A BrandingListElement Validation Object
+ * @class ValidationObjectBrandingListElement
+ */
+export class ValidationObjectBrandingListElement {
+   pkiBrandingID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sBrandingDescriptionX = {
+      type: 'string',
+      required: true
+   }
+   iBrandingColortext = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 16777215,
+      required: true
+   }
+   iBrandingColortextlinkbox = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 16777215,
+      required: true
+   }
+   iBrandingColortextbutton = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 16777215,
+      required: true
+   }
+   iBrandingColorbackground = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 16777215,
+      required: true
+   }
+   iBrandingColorbackgroundbutton = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 16777215,
+      required: true
+   }
+   iBrandingColorbackgroundsmallbox = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 16777215,
+      required: true
+   }
+   bBrandingIsactive = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

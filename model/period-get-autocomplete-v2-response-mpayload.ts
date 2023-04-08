@@ -17,8 +17,6 @@
 // @ts-ignore
 import { PeriodAutocompleteElementResponse } from './period-autocomplete-element-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for POST /2/object/period/getAutocomplete
  * @export
@@ -33,13 +31,30 @@ export interface PeriodGetAutocompleteV2ResponseMPayload {
     'a_objPeriod'?: Array<PeriodAutocompleteElementResponse>;
 }
 /**
- * A PeriodGetAutocompleteV2ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectPeriodGetAutocompleteV2ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectPeriodGetAutocompleteV2ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A PeriodGetAutocompleteV2ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectPeriodGetAutocompleteV2ResponseMPayload
+ */
+export class DataObjectPeriodGetAutocompleteV2ResponseMPayload {
    a_objPeriod?:Array<PeriodAutocompleteElementResponse> = undefined
 }
+
+/**
+ * @export 
+ * A PeriodGetAutocompleteV2ResponseMPayload Validation Object
+ * @class ValidationObjectPeriodGetAutocompleteV2ResponseMPayload
+ */
+export class ValidationObjectPeriodGetAutocompleteV2ResponseMPayload {
+   a_objPeriod = {
+      type: 'array',
+      required: false
+   }
+} 
 
 

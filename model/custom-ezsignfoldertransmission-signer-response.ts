@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A form Signer Object in the context of an Ezsignfoldertransmissions
  * @export
@@ -42,15 +40,41 @@ export interface CustomEzsignfoldertransmissionSignerResponse {
     'sContactLastname': string;
 }
 /**
- * A CustomEzsignfoldertransmissionSignerResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCustomEzsignfoldertransmissionSignerResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCustomEzsignfoldertransmissionSignerResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A CustomEzsignfoldertransmissionSignerResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCustomEzsignfoldertransmissionSignerResponse
+ */
+export class DataObjectCustomEzsignfoldertransmissionSignerResponse {
    fkiUserID?:number = undefined
    sContactFirstname:string = ''
    sContactLastname:string = ''
 }
+
+/**
+ * @export 
+ * A CustomEzsignfoldertransmissionSignerResponse Validation Object
+ * @class ValidationObjectCustomEzsignfoldertransmissionSignerResponse
+ */
+export class ValidationObjectCustomEzsignfoldertransmissionSignerResponse {
+   fkiUserID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   sContactFirstname = {
+      type: 'string',
+      required: true
+   }
+   sContactLastname = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

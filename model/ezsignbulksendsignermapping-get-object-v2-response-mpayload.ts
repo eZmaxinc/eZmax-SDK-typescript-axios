@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignbulksendsignermappingResponseCompound } from './ezsignbulksendsignermapping-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for GET /2/object/ezsignbulksendsignermapping/{pkiEzsignbulksendsignermappingID}
  * @export
@@ -33,13 +31,31 @@ export interface EzsignbulksendsignermappingGetObjectV2ResponseMPayload {
     'objEzsignbulksendsignermapping': EzsignbulksendsignermappingResponseCompound;
 }
 /**
- * A EzsignbulksendsignermappingGetObjectV2ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignbulksendsignermappingGetObjectV2ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignbulksendsignermappingGetObjectV2ResponseMPayload extends DefaultObject {
-   objEzsignbulksendsignermapping:Partial<EzsignbulksendsignermappingResponseCompound> = {}
+// @ts-ignore
+import { DataObjectEzsignbulksendsignermappingResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectEzsignbulksendsignermappingResponseCompound } from './'
+
+/**
+ * @export 
+ * A EzsignbulksendsignermappingGetObjectV2ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignbulksendsignermappingGetObjectV2ResponseMPayload
+ */
+export class DataObjectEzsignbulksendsignermappingGetObjectV2ResponseMPayload {
+   objEzsignbulksendsignermapping:EzsignbulksendsignermappingResponseCompound = new DataObjectEzsignbulksendsignermappingResponseCompound()
 }
+
+/**
+ * @export 
+ * A EzsignbulksendsignermappingGetObjectV2ResponseMPayload Validation Object
+ * @class ValidationObjectEzsignbulksendsignermappingGetObjectV2ResponseMPayload
+ */
+export class ValidationObjectEzsignbulksendsignermappingGetObjectV2ResponseMPayload {
+   objEzsignbulksendsignermapping = new ValidationObjectEzsignbulksendsignermappingResponseCompound()
+} 
 
 

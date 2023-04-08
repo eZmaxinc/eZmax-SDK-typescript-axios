@@ -17,8 +17,6 @@
 // @ts-ignore
 import { CommunicationattachmentResponse } from './communicationattachment-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type CommunicationattachmentResponseCompound
  * A Communicationattachment Object
@@ -28,17 +26,53 @@ export type CommunicationattachmentResponseCompound = CommunicationattachmentRes
 
 
 /**
- * @export 
- * A CommunicationattachmentResponseCompound Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectCommunicationattachmentResponseCompound
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCommunicationattachmentResponseCompound extends DefaultObject {
+
+/**
+ * @export 
+ * A CommunicationattachmentResponseCompound Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCommunicationattachmentResponseCompound
+ */
+export class DataObjectCommunicationattachmentResponseCompound {
    pkiCommunicationattachmentID:number = 0
    fkiAttachmentID?:number = undefined
    fkiInvoiceID?:number = undefined
    fkiSalarypreparationID?:number = undefined
    sCommunicationattachmentName:string = ''
 }
+
+/**
+ * @export 
+ * A CommunicationattachmentResponseCompound Validation Object
+ * @class ValidationObjectCommunicationattachmentResponseCompound
+ */
+export class ValidationObjectCommunicationattachmentResponseCompound {
+   pkiCommunicationattachmentID = {
+      type: 'integer',
+      required: true
+   }
+   fkiAttachmentID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiInvoiceID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiSalarypreparationID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   sCommunicationattachmentName = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

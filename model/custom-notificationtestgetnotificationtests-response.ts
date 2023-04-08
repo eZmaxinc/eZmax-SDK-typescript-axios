@@ -26,8 +26,6 @@ import { MultilingualNotificationtestName } from './multilingual-notificationtes
 // @ts-ignore
 import { NotificationtestResponse } from './notificationtest-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type CustomNotificationtestgetnotificationtestsResponse
  * A Notificationtest Object in the context of getNotificationtests
@@ -36,20 +34,66 @@ import { DefaultObject } from '../base'
 export type CustomNotificationtestgetnotificationtestsResponse = CustomNotificationtestgetnotificationtestsResponseAllOf & NotificationtestResponse;
 
 
+
+/**
+ * @import
+ * Imports Child Data Object
+ */
+// @ts-ignore
+import { DataObjectMultilingualNotificationtestName } from './'
+// @ts-ignore
+import { ValidationObjectMultilingualNotificationtestName } from './'
+
 /**
  * @export 
- * A CustomNotificationtestgetnotificationtestsResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectCustomNotificationtestgetnotificationtestsResponse
+ * A CustomNotificationtestgetnotificationtestsResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCustomNotificationtestgetnotificationtestsResponse
  */
-export class DefaultObjectCustomNotificationtestgetnotificationtestsResponse extends DefaultObject {
+export class DataObjectCustomNotificationtestgetnotificationtestsResponse {
    pkiNotificationtestID:number = 0
-   objNotificationtestName:Partial<MultilingualNotificationtestName> = {}
+   objNotificationtestName:MultilingualNotificationtestName = new DataObjectMultilingualNotificationtestName()
    fkiNotificationsubsectionID:number = 0
    sNotificationtestFunction:string = ''
    sNotificationtestNameX:string = ''
    eNotificationpreferenceStatus:FieldENotificationpreferenceStatus = 'Show'
    iNotificationtest:number = 0
 }
+
+/**
+ * @export 
+ * A CustomNotificationtestgetnotificationtestsResponse Validation Object
+ * @class ValidationObjectCustomNotificationtestgetnotificationtestsResponse
+ */
+export class ValidationObjectCustomNotificationtestgetnotificationtestsResponse {
+   pkiNotificationtestID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   objNotificationtestName = new ValidationObjectMultilingualNotificationtestName()
+   fkiNotificationsubsectionID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sNotificationtestFunction = {
+      type: 'string',
+      required: true
+   }
+   sNotificationtestNameX = {
+      type: 'string',
+      required: true
+   }
+   eNotificationpreferenceStatus = {
+      type: 'enum',
+      allowableValues: ['Show','Hide','Pin'],
+      required: true
+   }
+   iNotificationtest = {
+      type: 'integer',
+      required: true
+   }
+} 
 
 

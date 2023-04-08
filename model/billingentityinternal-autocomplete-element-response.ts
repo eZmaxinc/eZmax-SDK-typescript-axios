@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A Billingentityinternal AutocompleteElement Response
  * @export
@@ -42,15 +40,41 @@ export interface BillingentityinternalAutocompleteElementResponse {
     'bBillingentityinternalIsactive': boolean;
 }
 /**
- * A BillingentityinternalAutocompleteElementResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectBillingentityinternalAutocompleteElementResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectBillingentityinternalAutocompleteElementResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A BillingentityinternalAutocompleteElementResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectBillingentityinternalAutocompleteElementResponse
+ */
+export class DataObjectBillingentityinternalAutocompleteElementResponse {
    sBillingentityinternalDescriptionX:string = ''
    pkiBillingentityinternalID:number = 0
    bBillingentityinternalIsactive:boolean = false
 }
+
+/**
+ * @export 
+ * A BillingentityinternalAutocompleteElementResponse Validation Object
+ * @class ValidationObjectBillingentityinternalAutocompleteElementResponse
+ */
+export class ValidationObjectBillingentityinternalAutocompleteElementResponse {
+   sBillingentityinternalDescriptionX = {
+      type: 'string',
+      required: true
+   }
+   pkiBillingentityinternalID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   bBillingentityinternalIsactive = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

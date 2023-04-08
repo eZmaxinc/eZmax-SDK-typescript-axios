@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for POST /2/object/ezsigndocument/{pkiEzsigndocumentID}/applyezsigntemplate
  * @export
@@ -42,15 +40,43 @@ export interface EzsigndocumentApplyEzsigntemplateV2Request {
     'a_pkiEzsignfoldersignerassociationID': Array<number>;
 }
 /**
- * A EzsigndocumentApplyEzsigntemplateV2Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigndocumentApplyEzsigntemplateV2Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigndocumentApplyEzsigntemplateV2Request extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigndocumentApplyEzsigntemplateV2Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigndocumentApplyEzsigntemplateV2Request
+ */
+export class DataObjectEzsigndocumentApplyEzsigntemplateV2Request {
    fkiEzsigntemplateID:number = 0
    a_sEzsigntemplatesigner:Array<string> = []
    a_pkiEzsignfoldersignerassociationID:Array<number> = []
 }
+
+/**
+ * @export 
+ * A EzsigndocumentApplyEzsigntemplateV2Request Validation Object
+ * @class ValidationObjectEzsigndocumentApplyEzsigntemplateV2Request
+ */
+export class ValidationObjectEzsigndocumentApplyEzsigntemplateV2Request {
+   fkiEzsigntemplateID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   a_sEzsigntemplatesigner = {
+      type: 'array',
+      minItems: 1,
+      required: true
+   }
+   a_pkiEzsignfoldersignerassociationID = {
+      type: 'array',
+      minItems: 1,
+      required: true
+   }
+} 
 
 

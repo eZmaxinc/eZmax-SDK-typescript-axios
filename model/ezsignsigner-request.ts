@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * An Ezsignsigner Object
  * @export
@@ -66,17 +64,55 @@ export type EzsignsignerRequestEEzsignsignerLogintypeEnum = typeof EzsignsignerR
 
 
 /**
- * A EzsignsignerRequest Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignsignerRequest
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignsignerRequest extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignsignerRequest Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignsignerRequest
+ */
+export class DataObjectEzsignsignerRequest {
    fkiUserlogintypeID?:number = undefined
    fkiTaxassignmentID:number = 0
    fkiSecretquestionID?:number = undefined
    eEzsignsignerLogintype?:EzsignsignerRequestEEzsignsignerLogintypeEnum = undefined
    sEzsignsignerSecretanswer?:string = undefined
 }
+
+/**
+ * @export 
+ * A EzsignsignerRequest Validation Object
+ * @class ValidationObjectEzsignsignerRequest
+ */
+export class ValidationObjectEzsignsignerRequest {
+   fkiUserlogintypeID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiTaxassignmentID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 15,
+      required: true
+   }
+   fkiSecretquestionID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   eEzsignsignerLogintype = {
+      type: 'enum',
+      allowableValues: ['Password','PasswordPhone','PasswordQuestion','InPersonPhone','InPerson'],
+      required: false
+   }
+   sEzsignsignerSecretanswer = {
+      type: 'string',
+      required: false
+   }
+} 
 
 

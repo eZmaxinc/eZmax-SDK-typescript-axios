@@ -17,8 +17,6 @@
 // @ts-ignore
 import { CustomEzmaxinvoicingEzsignfolderResponseAllOf } from './custom-ezmaxinvoicing-ezsignfolder-response-all-of';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type CustomEzmaxinvoicingEzsignfolderResponse
  * An EzmaxinvoicingEzsignfolder object containing information about the Ezmaxinvoicing for an Ezsignfolder
@@ -28,12 +26,17 @@ export type CustomEzmaxinvoicingEzsignfolderResponse = CustomEzmaxinvoicingEzsig
 
 
 /**
- * @export 
- * A CustomEzmaxinvoicingEzsignfolderResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectCustomEzmaxinvoicingEzsignfolderResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCustomEzmaxinvoicingEzsignfolderResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A CustomEzmaxinvoicingEzsignfolderResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCustomEzmaxinvoicingEzsignfolderResponse
+ */
+export class DataObjectCustomEzmaxinvoicingEzsignfolderResponse {
    fkiEzsignfolderID:number = 0
    sEzsignfolderDescription:string = ''
    bEzsigntsarequirementBillable:boolean = false
@@ -41,5 +44,38 @@ export class DefaultObjectCustomEzmaxinvoicingEzsignfolderResponse extends Defau
    bEzsignfolderPaymentused:boolean = false
    bEzsignfolderAllowed:boolean = false
 }
+
+/**
+ * @export 
+ * A CustomEzmaxinvoicingEzsignfolderResponse Validation Object
+ * @class ValidationObjectCustomEzmaxinvoicingEzsignfolderResponse
+ */
+export class ValidationObjectCustomEzmaxinvoicingEzsignfolderResponse {
+   fkiEzsignfolderID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sEzsignfolderDescription = {
+      type: 'string',
+      required: true
+   }
+   bEzsigntsarequirementBillable = {
+      type: 'boolean',
+      required: true
+   }
+   bEzsignfolderMfaused = {
+      type: 'boolean',
+      required: true
+   }
+   bEzsignfolderPaymentused = {
+      type: 'boolean',
+      required: true
+   }
+   bEzsignfolderAllowed = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignfolderCreateObjectV2ResponseMPayload } from './ezsignfolder-create-object-v2-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface EzsignfolderCreateObjectV2ResponseAllOf {
     'mPayload': EzsignfolderCreateObjectV2ResponseMPayload;
 }
 /**
- * A EzsignfolderCreateObjectV2ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfolderCreateObjectV2ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfolderCreateObjectV2ResponseAllOf extends DefaultObject {
-   mPayload:Partial<EzsignfolderCreateObjectV2ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectEzsignfolderCreateObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectEzsignfolderCreateObjectV2ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A EzsignfolderCreateObjectV2ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfolderCreateObjectV2ResponseAllOf
+ */
+export class DataObjectEzsignfolderCreateObjectV2ResponseAllOf {
+   mPayload:EzsignfolderCreateObjectV2ResponseMPayload = new DataObjectEzsignfolderCreateObjectV2ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A EzsignfolderCreateObjectV2ResponseAllOf Validation Object
+ * @class ValidationObjectEzsignfolderCreateObjectV2ResponseAllOf
+ */
+export class ValidationObjectEzsignfolderCreateObjectV2ResponseAllOf {
+   mPayload = new ValidationObjectEzsignfolderCreateObjectV2ResponseMPayload()
+} 
 
 

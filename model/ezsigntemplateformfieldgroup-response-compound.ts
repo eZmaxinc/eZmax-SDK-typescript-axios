@@ -38,8 +38,6 @@ import { FieldEEzsigntemplateformfieldgroupTooltipposition } from './field-eezsi
 // @ts-ignore
 import { FieldEEzsigntemplateformfieldgroupType } from './field-eezsigntemplateformfieldgroup-type';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsigntemplateformfieldgroupResponseCompound
  * A Ezsigntemplateformfieldgroup Object and children
@@ -48,13 +46,19 @@ import { DefaultObject } from '../base'
 export type EzsigntemplateformfieldgroupResponseCompound = EzsigntemplateformfieldgroupResponse & EzsigntemplateformfieldgroupResponseCompoundAllOf;
 
 
+
+/**
+ * @import
+ * Imports Child Data Object
+ */
+
 /**
  * @export 
- * A EzsigntemplateformfieldgroupResponseCompound Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsigntemplateformfieldgroupResponseCompound
+ * A EzsigntemplateformfieldgroupResponseCompound Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplateformfieldgroupResponseCompound
  */
-export class DefaultObjectEzsigntemplateformfieldgroupResponseCompound extends DefaultObject {
+export class DataObjectEzsigntemplateformfieldgroupResponseCompound {
    pkiEzsigntemplateformfieldgroupID:number = 0
    fkiEzsigntemplatedocumentID:number = 0
    eEzsigntemplateformfieldgroupType:FieldEEzsigntemplateformfieldgroupType = 'Text'
@@ -74,5 +78,94 @@ export class DefaultObjectEzsigntemplateformfieldgroupResponseCompound extends D
    a_objDropdownElement?:Array<CustomDropdownElementResponseCompound> = undefined
    a_objEzsigntemplateformfield:Array<EzsigntemplateformfieldResponseCompound> = []
 }
+
+/**
+ * @export 
+ * A EzsigntemplateformfieldgroupResponseCompound Validation Object
+ * @class ValidationObjectEzsigntemplateformfieldgroupResponseCompound
+ */
+export class ValidationObjectEzsigntemplateformfieldgroupResponseCompound {
+   pkiEzsigntemplateformfieldgroupID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsigntemplatedocumentID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   eEzsigntemplateformfieldgroupType = {
+      type: 'enum',
+      allowableValues: ['Text','Textarea','Dropdown','Radio','Checkbox'],
+      required: true
+   }
+   eEzsigntemplateformfieldgroupSignerrequirement = {
+      type: 'enum',
+      allowableValues: ['All','One'],
+      required: true
+   }
+   sEzsigntemplateformfieldgroupLabel = {
+      type: 'string',
+      required: true
+   }
+   iEzsigntemplateformfieldgroupStep = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   sEzsigntemplateformfieldgroupDefaultvalue = {
+      type: 'string',
+      required: false
+   }
+   iEzsigntemplateformfieldgroupFilledmin = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsigntemplateformfieldgroupFilledmax = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   bEzsigntemplateformfieldgroupReadonly = {
+      type: 'boolean',
+      required: true
+   }
+   iEzsigntemplateformfieldgroupMaxlength = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   bEzsigntemplateformfieldgroupEncrypted = {
+      type: 'boolean',
+      required: false
+   }
+   sEzsigntemplateformfieldgroupRegexp = {
+      type: 'string',
+      required: false
+   }
+   tEzsigntemplateformfieldgroupTooltip = {
+      type: 'string',
+      required: false
+   }
+   eEzsigntemplateformfieldgroupTooltipposition = {
+      type: 'enum',
+      allowableValues: ['TopLeft','TopCenter','TopRight','MiddleLeft','MiddleRight','BottomLeft','BottomCenter','BottomRight'],
+      required: false
+   }
+   a_objEzsigntemplateformfieldgroupsigner = {
+      type: 'array',
+      required: true
+   }
+   a_objDropdownElement = {
+      type: 'array',
+      required: false
+   }
+   a_objEzsigntemplateformfield = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A Contact Object
  * @export
@@ -60,12 +58,17 @@ export interface ContactRequest {
     'dtContactBirthdate'?: string;
 }
 /**
- * A ContactRequest Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectContactRequest
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectContactRequest extends DefaultObject {
+
+/**
+ * @export 
+ * A ContactRequest Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectContactRequest
+ */
+export class DataObjectContactRequest {
    fkiContacttitleID:number = 0
    fkiLanguageID:number = 0
    sContactFirstname:string = ''
@@ -73,5 +76,40 @@ export class DefaultObjectContactRequest extends DefaultObject {
    sContactCompany:string = ''
    dtContactBirthdate?:string = undefined
 }
+
+/**
+ * @export 
+ * A ContactRequest Validation Object
+ * @class ValidationObjectContactRequest
+ */
+export class ValidationObjectContactRequest {
+   fkiContacttitleID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiLanguageID = {
+      type: 'integer',
+      minimum: 1,
+      maximum: 2,
+      required: true
+   }
+   sContactFirstname = {
+      type: 'string',
+      required: true
+   }
+   sContactLastname = {
+      type: 'string',
+      required: true
+   }
+   sContactCompany = {
+      type: 'string',
+      required: true
+   }
+   dtContactBirthdate = {
+      type: 'string',
+      required: false
+   }
+} 
 
 

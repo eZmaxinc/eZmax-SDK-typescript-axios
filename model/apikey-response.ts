@@ -20,8 +20,6 @@ import { CommonAudit } from './common-audit';
 // @ts-ignore
 import { MultilingualApikeyDescription } from './multilingual-apikey-description';
 
-import { DefaultObject } from '../base'
-
 /**
  * An Apikey Object
  * @export
@@ -54,16 +52,48 @@ export interface ApikeyResponse {
     'objAudit': CommonAudit;
 }
 /**
- * A ApikeyResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectApikeyResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectApikeyResponse extends DefaultObject {
-   objApikeyDescription:Partial<MultilingualApikeyDescription> = {}
+// @ts-ignore
+import { DataObjectMultilingualApikeyDescription } from './'
+// @ts-ignore
+import { DataObjectCommonAudit } from './'
+// @ts-ignore
+import { ValidationObjectMultilingualApikeyDescription } from './'
+// @ts-ignore
+import { ValidationObjectCommonAudit } from './'
+
+/**
+ * @export 
+ * A ApikeyResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectApikeyResponse
+ */
+export class DataObjectApikeyResponse {
+   objApikeyDescription:MultilingualApikeyDescription = new DataObjectMultilingualApikeyDescription()
    sComputedToken?:string = undefined
    pkiApikeyID:number = 0
-   objAudit:Partial<CommonAudit> = {}
+   objAudit:CommonAudit = new DataObjectCommonAudit()
 }
+
+/**
+ * @export 
+ * A ApikeyResponse Validation Object
+ * @class ValidationObjectApikeyResponse
+ */
+export class ValidationObjectApikeyResponse {
+   objApikeyDescription = new ValidationObjectMultilingualApikeyDescription()
+   sComputedToken = {
+      type: 'string',
+      required: false
+   }
+   pkiApikeyID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   objAudit = new ValidationObjectCommonAudit()
+} 
 
 

@@ -29,8 +29,6 @@ import { UserCreateEzsignuserV1ResponseAllOf } from './user-create-ezsignuser-v1
 // @ts-ignore
 import { UserCreateEzsignuserV1ResponseMPayload } from './user-create-ezsignuser-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type UserCreateEzsignuserV1Response
  * Response for POST /1/module/user/createEzsignuser
@@ -40,15 +38,43 @@ export type UserCreateEzsignuserV1Response = CommonResponse & UserCreateEzsignus
 
 
 /**
- * @export 
- * A UserCreateEzsignuserV1Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectUserCreateEzsignuserV1Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectUserCreateEzsignuserV1Response extends DefaultObject {
-   mPayload:Partial<UserCreateEzsignuserV1ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectUserCreateEzsignuserV1ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectUserCreateEzsignuserV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A UserCreateEzsignuserV1Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectUserCreateEzsignuserV1Response
+ */
+export class DataObjectUserCreateEzsignuserV1Response {
+   mPayload:UserCreateEzsignuserV1ResponseMPayload = new DataObjectUserCreateEzsignuserV1ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A UserCreateEzsignuserV1Response Validation Object
+ * @class ValidationObjectUserCreateEzsignuserV1Response
+ */
+export class ValidationObjectUserCreateEzsignuserV1Response {
+   mPayload = new ValidationObjectUserCreateEzsignuserV1ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

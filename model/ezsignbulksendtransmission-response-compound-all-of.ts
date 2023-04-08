@@ -17,8 +17,6 @@
 // @ts-ignore
 import { CustomEzsignfoldertransmissionResponse } from './custom-ezsignfoldertransmission-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,30 @@ export interface EzsignbulksendtransmissionResponseCompoundAllOf {
     'a_objEzsignfoldertransmission': Array<CustomEzsignfoldertransmissionResponse>;
 }
 /**
- * A EzsignbulksendtransmissionResponseCompoundAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignbulksendtransmissionResponseCompoundAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignbulksendtransmissionResponseCompoundAllOf extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignbulksendtransmissionResponseCompoundAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignbulksendtransmissionResponseCompoundAllOf
+ */
+export class DataObjectEzsignbulksendtransmissionResponseCompoundAllOf {
    a_objEzsignfoldertransmission:Array<CustomEzsignfoldertransmissionResponse> = []
 }
+
+/**
+ * @export 
+ * A EzsignbulksendtransmissionResponseCompoundAllOf Validation Object
+ * @class ValidationObjectEzsignbulksendtransmissionResponseCompoundAllOf
+ */
+export class ValidationObjectEzsignbulksendtransmissionResponseCompoundAllOf {
+   a_objEzsignfoldertransmission = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

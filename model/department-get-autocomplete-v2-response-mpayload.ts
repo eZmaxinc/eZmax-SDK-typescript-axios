@@ -17,8 +17,6 @@
 // @ts-ignore
 import { DepartmentAutocompleteElementResponse } from './department-autocomplete-element-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for POST /2/object/department/getAutocomplete
  * @export
@@ -33,13 +31,30 @@ export interface DepartmentGetAutocompleteV2ResponseMPayload {
     'a_objDepartment': Array<DepartmentAutocompleteElementResponse>;
 }
 /**
- * A DepartmentGetAutocompleteV2ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectDepartmentGetAutocompleteV2ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectDepartmentGetAutocompleteV2ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A DepartmentGetAutocompleteV2ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectDepartmentGetAutocompleteV2ResponseMPayload
+ */
+export class DataObjectDepartmentGetAutocompleteV2ResponseMPayload {
    a_objDepartment:Array<DepartmentAutocompleteElementResponse> = []
 }
+
+/**
+ * @export 
+ * A DepartmentGetAutocompleteV2ResponseMPayload Validation Object
+ * @class ValidationObjectDepartmentGetAutocompleteV2ResponseMPayload
+ */
+export class ValidationObjectDepartmentGetAutocompleteV2ResponseMPayload {
+   a_objDepartment = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

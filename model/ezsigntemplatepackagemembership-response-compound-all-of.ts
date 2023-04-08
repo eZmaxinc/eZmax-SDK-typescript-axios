@@ -20,8 +20,6 @@ import { EzsigntemplateResponseCompound } from './ezsigntemplate-response-compou
 // @ts-ignore
 import { EzsigntemplatepackagesignermembershipResponseCompound } from './ezsigntemplatepackagesignermembership-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -42,14 +40,36 @@ export interface EzsigntemplatepackagemembershipResponseCompoundAllOf {
     'a_objEzsigntemplatepackagesignermembership': Array<EzsigntemplatepackagesignermembershipResponseCompound>;
 }
 /**
- * A EzsigntemplatepackagemembershipResponseCompoundAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplatepackagemembershipResponseCompoundAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatepackagemembershipResponseCompoundAllOf extends DefaultObject {
-   objEzsigntemplate:Partial<EzsigntemplateResponseCompound> = {}
+// @ts-ignore
+import { DataObjectEzsigntemplateResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectEzsigntemplateResponseCompound } from './'
+
+/**
+ * @export 
+ * A EzsigntemplatepackagemembershipResponseCompoundAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatepackagemembershipResponseCompoundAllOf
+ */
+export class DataObjectEzsigntemplatepackagemembershipResponseCompoundAllOf {
+   objEzsigntemplate:EzsigntemplateResponseCompound = new DataObjectEzsigntemplateResponseCompound()
    a_objEzsigntemplatepackagesignermembership:Array<EzsigntemplatepackagesignermembershipResponseCompound> = []
 }
+
+/**
+ * @export 
+ * A EzsigntemplatepackagemembershipResponseCompoundAllOf Validation Object
+ * @class ValidationObjectEzsigntemplatepackagemembershipResponseCompoundAllOf
+ */
+export class ValidationObjectEzsigntemplatepackagemembershipResponseCompoundAllOf {
+   objEzsigntemplate = new ValidationObjectEzsigntemplateResponseCompound()
+   a_objEzsigntemplatepackagesignermembership = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

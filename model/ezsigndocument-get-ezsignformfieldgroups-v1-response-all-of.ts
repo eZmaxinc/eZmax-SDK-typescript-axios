@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload } from './ezsigndocument-get-ezsignformfieldgroups-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface EzsigndocumentGetEzsignformfieldgroupsV1ResponseAllOf {
     'mPayload': EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload;
 }
 /**
- * A EzsigndocumentGetEzsignformfieldgroupsV1ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigndocumentGetEzsignformfieldgroupsV1ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigndocumentGetEzsignformfieldgroupsV1ResponseAllOf extends DefaultObject {
-   mPayload:Partial<EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectEzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectEzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A EzsigndocumentGetEzsignformfieldgroupsV1ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigndocumentGetEzsignformfieldgroupsV1ResponseAllOf
+ */
+export class DataObjectEzsigndocumentGetEzsignformfieldgroupsV1ResponseAllOf {
+   mPayload:EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload = new DataObjectEzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A EzsigndocumentGetEzsignformfieldgroupsV1ResponseAllOf Validation Object
+ * @class ValidationObjectEzsigndocumentGetEzsignformfieldgroupsV1ResponseAllOf
+ */
+export class ValidationObjectEzsigndocumentGetEzsignformfieldgroupsV1ResponseAllOf {
+   mPayload = new ValidationObjectEzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload()
+} 
 
 

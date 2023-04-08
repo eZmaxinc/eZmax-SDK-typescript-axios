@@ -17,8 +17,6 @@
 // @ts-ignore
 import { DepartmentGetAutocompleteV2ResponseMPayload } from './department-get-autocomplete-v2-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface DepartmentGetAutocompleteV2ResponseAllOf {
     'mPayload': DepartmentGetAutocompleteV2ResponseMPayload;
 }
 /**
- * A DepartmentGetAutocompleteV2ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectDepartmentGetAutocompleteV2ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectDepartmentGetAutocompleteV2ResponseAllOf extends DefaultObject {
-   mPayload:Partial<DepartmentGetAutocompleteV2ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectDepartmentGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectDepartmentGetAutocompleteV2ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A DepartmentGetAutocompleteV2ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectDepartmentGetAutocompleteV2ResponseAllOf
+ */
+export class DataObjectDepartmentGetAutocompleteV2ResponseAllOf {
+   mPayload:DepartmentGetAutocompleteV2ResponseMPayload = new DataObjectDepartmentGetAutocompleteV2ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A DepartmentGetAutocompleteV2ResponseAllOf Validation Object
+ * @class ValidationObjectDepartmentGetAutocompleteV2ResponseAllOf
+ */
+export class ValidationObjectDepartmentGetAutocompleteV2ResponseAllOf {
+   mPayload = new ValidationObjectDepartmentGetAutocompleteV2ResponseMPayload()
+} 
 
 

@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigntemplatepackageResponseCompound } from './ezsigntemplatepackage-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for GET /2/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID}
  * @export
@@ -33,13 +31,31 @@ export interface EzsigntemplatepackageGetObjectV2ResponseMPayload {
     'objEzsigntemplatepackage': EzsigntemplatepackageResponseCompound;
 }
 /**
- * A EzsigntemplatepackageGetObjectV2ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplatepackageGetObjectV2ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatepackageGetObjectV2ResponseMPayload extends DefaultObject {
-   objEzsigntemplatepackage:Partial<EzsigntemplatepackageResponseCompound> = {}
+// @ts-ignore
+import { DataObjectEzsigntemplatepackageResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectEzsigntemplatepackageResponseCompound } from './'
+
+/**
+ * @export 
+ * A EzsigntemplatepackageGetObjectV2ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatepackageGetObjectV2ResponseMPayload
+ */
+export class DataObjectEzsigntemplatepackageGetObjectV2ResponseMPayload {
+   objEzsigntemplatepackage:EzsigntemplatepackageResponseCompound = new DataObjectEzsigntemplatepackageResponseCompound()
 }
+
+/**
+ * @export 
+ * A EzsigntemplatepackageGetObjectV2ResponseMPayload Validation Object
+ * @class ValidationObjectEzsigntemplatepackageGetObjectV2ResponseMPayload
+ */
+export class ValidationObjectEzsigntemplatepackageGetObjectV2ResponseMPayload {
+   objEzsigntemplatepackage = new ValidationObjectEzsigntemplatepackageResponseCompound()
+} 
 
 

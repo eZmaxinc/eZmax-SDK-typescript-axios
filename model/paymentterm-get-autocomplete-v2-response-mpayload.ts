@@ -17,8 +17,6 @@
 // @ts-ignore
 import { PaymenttermAutocompleteElementResponse } from './paymentterm-autocomplete-element-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for POST /2/object/paymentterm/getAutocomplete
  * @export
@@ -33,13 +31,30 @@ export interface PaymenttermGetAutocompleteV2ResponseMPayload {
     'a_objPaymentterm'?: Array<PaymenttermAutocompleteElementResponse>;
 }
 /**
- * A PaymenttermGetAutocompleteV2ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectPaymenttermGetAutocompleteV2ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectPaymenttermGetAutocompleteV2ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A PaymenttermGetAutocompleteV2ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectPaymenttermGetAutocompleteV2ResponseMPayload
+ */
+export class DataObjectPaymenttermGetAutocompleteV2ResponseMPayload {
    a_objPaymentterm?:Array<PaymenttermAutocompleteElementResponse> = undefined
 }
+
+/**
+ * @export 
+ * A PaymenttermGetAutocompleteV2ResponseMPayload Validation Object
+ * @class ValidationObjectPaymenttermGetAutocompleteV2ResponseMPayload
+ */
+export class ValidationObjectPaymenttermGetAutocompleteV2ResponseMPayload {
+   a_objPaymentterm = {
+      type: 'array',
+      required: false
+   }
+} 
 
 

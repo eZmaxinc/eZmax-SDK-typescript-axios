@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigndocumentGetDownloadUrlV1ResponseMPayload } from './ezsigndocument-get-download-url-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface EzsigndocumentGetDownloadUrlV1ResponseAllOf {
     'mPayload': EzsigndocumentGetDownloadUrlV1ResponseMPayload;
 }
 /**
- * A EzsigndocumentGetDownloadUrlV1ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigndocumentGetDownloadUrlV1ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigndocumentGetDownloadUrlV1ResponseAllOf extends DefaultObject {
-   mPayload:Partial<EzsigndocumentGetDownloadUrlV1ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectEzsigndocumentGetDownloadUrlV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectEzsigndocumentGetDownloadUrlV1ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A EzsigndocumentGetDownloadUrlV1ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigndocumentGetDownloadUrlV1ResponseAllOf
+ */
+export class DataObjectEzsigndocumentGetDownloadUrlV1ResponseAllOf {
+   mPayload:EzsigndocumentGetDownloadUrlV1ResponseMPayload = new DataObjectEzsigndocumentGetDownloadUrlV1ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A EzsigndocumentGetDownloadUrlV1ResponseAllOf Validation Object
+ * @class ValidationObjectEzsigndocumentGetDownloadUrlV1ResponseAllOf
+ */
+export class ValidationObjectEzsigndocumentGetDownloadUrlV1ResponseAllOf {
+   mPayload = new ValidationObjectEzsigndocumentGetDownloadUrlV1ResponseMPayload()
+} 
 
 

@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignbulksendsignermappingGetObjectV2ResponseMPayload } from './ezsignbulksendsignermapping-get-object-v2-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface EzsignbulksendsignermappingGetObjectV2ResponseAllOf {
     'mPayload': EzsignbulksendsignermappingGetObjectV2ResponseMPayload;
 }
 /**
- * A EzsignbulksendsignermappingGetObjectV2ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignbulksendsignermappingGetObjectV2ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignbulksendsignermappingGetObjectV2ResponseAllOf extends DefaultObject {
-   mPayload:Partial<EzsignbulksendsignermappingGetObjectV2ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectEzsignbulksendsignermappingGetObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectEzsignbulksendsignermappingGetObjectV2ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A EzsignbulksendsignermappingGetObjectV2ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignbulksendsignermappingGetObjectV2ResponseAllOf
+ */
+export class DataObjectEzsignbulksendsignermappingGetObjectV2ResponseAllOf {
+   mPayload:EzsignbulksendsignermappingGetObjectV2ResponseMPayload = new DataObjectEzsignbulksendsignermappingGetObjectV2ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A EzsignbulksendsignermappingGetObjectV2ResponseAllOf Validation Object
+ * @class ValidationObjectEzsignbulksendsignermappingGetObjectV2ResponseAllOf
+ */
+export class ValidationObjectEzsignbulksendsignermappingGetObjectV2ResponseAllOf {
+   mPayload = new ValidationObjectEzsignbulksendsignermappingGetObjectV2ResponseMPayload()
+} 
 
 

@@ -20,8 +20,6 @@ import { EzsignfoldersignerassociationRequest } from './ezsignfoldersignerassoci
 // @ts-ignore
 import { EzsignfoldersignerassociationRequestCompound } from './ezsignfoldersignerassociation-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for POST /1/object/ezsignfoldersignerassociation
  * @export
@@ -42,14 +40,37 @@ export interface EzsignfoldersignerassociationCreateObjectV1Request {
     'objEzsignfoldersignerassociationCompound'?: EzsignfoldersignerassociationRequestCompound;
 }
 /**
- * A EzsignfoldersignerassociationCreateObjectV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfoldersignerassociationCreateObjectV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfoldersignerassociationCreateObjectV1Request extends DefaultObject {
-   objEzsignfoldersignerassociation?:Partial<EzsignfoldersignerassociationRequest> = undefined
-   objEzsignfoldersignerassociationCompound?:Partial<EzsignfoldersignerassociationRequestCompound> = undefined
+// @ts-ignore
+import { DataObjectEzsignfoldersignerassociationRequest } from './'
+// @ts-ignore
+import { DataObjectEzsignfoldersignerassociationRequestCompound } from './'
+// @ts-ignore
+import { ValidationObjectEzsignfoldersignerassociationRequest } from './'
+// @ts-ignore
+import { ValidationObjectEzsignfoldersignerassociationRequestCompound } from './'
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationCreateObjectV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfoldersignerassociationCreateObjectV1Request
+ */
+export class DataObjectEzsignfoldersignerassociationCreateObjectV1Request {
+   objEzsignfoldersignerassociation?:EzsignfoldersignerassociationRequest = undefined
+   objEzsignfoldersignerassociationCompound?:EzsignfoldersignerassociationRequestCompound = undefined
 }
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationCreateObjectV1Request Validation Object
+ * @class ValidationObjectEzsignfoldersignerassociationCreateObjectV1Request
+ */
+export class ValidationObjectEzsignfoldersignerassociationCreateObjectV1Request {
+   objEzsignfoldersignerassociation = new ValidationObjectEzsignfoldersignerassociationRequest()
+   objEzsignfoldersignerassociationCompound = new ValidationObjectEzsignfoldersignerassociationRequestCompound()
+} 
 
 

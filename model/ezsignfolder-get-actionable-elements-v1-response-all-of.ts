@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignfolderGetActionableElementsV1ResponseMPayload } from './ezsignfolder-get-actionable-elements-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface EzsignfolderGetActionableElementsV1ResponseAllOf {
     'mPayload': EzsignfolderGetActionableElementsV1ResponseMPayload;
 }
 /**
- * A EzsignfolderGetActionableElementsV1ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfolderGetActionableElementsV1ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfolderGetActionableElementsV1ResponseAllOf extends DefaultObject {
-   mPayload:Partial<EzsignfolderGetActionableElementsV1ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectEzsignfolderGetActionableElementsV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectEzsignfolderGetActionableElementsV1ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A EzsignfolderGetActionableElementsV1ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfolderGetActionableElementsV1ResponseAllOf
+ */
+export class DataObjectEzsignfolderGetActionableElementsV1ResponseAllOf {
+   mPayload:EzsignfolderGetActionableElementsV1ResponseMPayload = new DataObjectEzsignfolderGetActionableElementsV1ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A EzsignfolderGetActionableElementsV1ResponseAllOf Validation Object
+ * @class ValidationObjectEzsignfolderGetActionableElementsV1ResponseAllOf
+ */
+export class ValidationObjectEzsignfolderGetActionableElementsV1ResponseAllOf {
+   mPayload = new ValidationObjectEzsignfolderGetActionableElementsV1ResponseMPayload()
+} 
 
 

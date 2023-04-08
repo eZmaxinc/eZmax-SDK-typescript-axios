@@ -17,8 +17,6 @@
 // @ts-ignore
 import { CustomImportEzsigntemplatepackageRelationRequest } from './custom-import-ezsigntemplatepackage-relation-request';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for POST /1/object/ezsignfolder/{pkiEzsignfolderID}/importEzsigntemplatepackage
  * @export
@@ -45,15 +43,41 @@ export interface EzsignfolderImportEzsigntemplatepackageV1Request {
     'a_objImportEzsigntemplatepackageRelation': Array<CustomImportEzsigntemplatepackageRelationRequest>;
 }
 /**
- * A EzsignfolderImportEzsigntemplatepackageV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfolderImportEzsigntemplatepackageV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfolderImportEzsigntemplatepackageV1Request extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignfolderImportEzsigntemplatepackageV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfolderImportEzsigntemplatepackageV1Request
+ */
+export class DataObjectEzsignfolderImportEzsigntemplatepackageV1Request {
    fkiEzsigntemplatepackageID:number = 0
    dtEzsigndocumentDuedate:string = ''
    a_objImportEzsigntemplatepackageRelation:Array<CustomImportEzsigntemplatepackageRelationRequest> = []
 }
+
+/**
+ * @export 
+ * A EzsignfolderImportEzsigntemplatepackageV1Request Validation Object
+ * @class ValidationObjectEzsignfolderImportEzsigntemplatepackageV1Request
+ */
+export class ValidationObjectEzsignfolderImportEzsigntemplatepackageV1Request {
+   fkiEzsigntemplatepackageID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   dtEzsigndocumentDuedate = {
+      type: 'string',
+      required: true
+   }
+   a_objImportEzsigntemplatepackageRelation = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

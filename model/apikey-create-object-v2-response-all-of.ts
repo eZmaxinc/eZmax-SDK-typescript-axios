@@ -17,8 +17,6 @@
 // @ts-ignore
 import { ApikeyCreateObjectV2ResponseMPayload } from './apikey-create-object-v2-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface ApikeyCreateObjectV2ResponseAllOf {
     'mPayload': ApikeyCreateObjectV2ResponseMPayload;
 }
 /**
- * A ApikeyCreateObjectV2ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectApikeyCreateObjectV2ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectApikeyCreateObjectV2ResponseAllOf extends DefaultObject {
-   mPayload:Partial<ApikeyCreateObjectV2ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectApikeyCreateObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectApikeyCreateObjectV2ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A ApikeyCreateObjectV2ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectApikeyCreateObjectV2ResponseAllOf
+ */
+export class DataObjectApikeyCreateObjectV2ResponseAllOf {
+   mPayload:ApikeyCreateObjectV2ResponseMPayload = new DataObjectApikeyCreateObjectV2ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A ApikeyCreateObjectV2ResponseAllOf Validation Object
+ * @class ValidationObjectApikeyCreateObjectV2ResponseAllOf
+ */
+export class ValidationObjectApikeyCreateObjectV2ResponseAllOf {
+   mPayload = new ValidationObjectApikeyCreateObjectV2ResponseMPayload()
+} 
 
 

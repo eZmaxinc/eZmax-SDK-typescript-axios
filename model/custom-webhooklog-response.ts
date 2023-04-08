@@ -17,8 +17,6 @@
 // @ts-ignore
 import { CustomWebhooklogResponseAllOf } from './custom-webhooklog-response-all-of';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type CustomWebhooklogResponse
  * A custom Webhooklog object
@@ -28,14 +26,35 @@ export type CustomWebhooklogResponse = CustomWebhooklogResponseAllOf;
 
 
 /**
- * @export 
- * A CustomWebhooklogResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectCustomWebhooklogResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCustomWebhooklogResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A CustomWebhooklogResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCustomWebhooklogResponse
+ */
+export class DataObjectCustomWebhooklogResponse {
    dtWebhooklogDate:string = ''
    tWebhooklogJson:string = ''
 }
+
+/**
+ * @export 
+ * A CustomWebhooklogResponse Validation Object
+ * @class ValidationObjectCustomWebhooklogResponse
+ */
+export class ValidationObjectCustomWebhooklogResponse {
+   dtWebhooklogDate = {
+      type: 'string',
+      required: true
+   }
+   tWebhooklogJson = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

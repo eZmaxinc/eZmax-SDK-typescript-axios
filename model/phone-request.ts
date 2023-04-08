@@ -17,8 +17,6 @@
 // @ts-ignore
 import { FieldEPhoneType } from './field-ephone-type';
 
-import { DefaultObject } from '../base'
-
 /**
  * A Phone Object
  * @export
@@ -68,13 +66,20 @@ export interface PhoneRequest {
      */
     'sPhoneExtension'?: string;
 }
+
+
 /**
- * A PhoneRequest Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectPhoneRequest
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectPhoneRequest extends DefaultObject {
+
+/**
+ * @export 
+ * A PhoneRequest Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectPhoneRequest
+ */
+export class DataObjectPhoneRequest {
    fkiPhonetypeID:number = 0
    ePhoneType:FieldEPhoneType = 'Local'
    sPhoneRegion?:string = undefined
@@ -83,5 +88,44 @@ export class DefaultObjectPhoneRequest extends DefaultObject {
    sPhoneInternational?:string = undefined
    sPhoneExtension?:string = undefined
 }
+
+/**
+ * @export 
+ * A PhoneRequest Validation Object
+ * @class ValidationObjectPhoneRequest
+ */
+export class ValidationObjectPhoneRequest {
+   fkiPhonetypeID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   ePhoneType = {
+      type: 'enum',
+      allowableValues: ['Local','International'],
+      required: true
+   }
+   sPhoneRegion = {
+      type: 'string',
+      required: false
+   }
+   sPhoneExchange = {
+      type: 'string',
+      required: false
+   }
+   sPhoneNumber = {
+      type: 'string',
+      required: false
+   }
+   sPhoneInternational = {
+      type: 'string',
+      pattern: '/^\+[1-9]\d{1,14}$/',
+      required: false
+   }
+   sPhoneExtension = {
+      type: 'string',
+      required: false
+   }
+} 
 
 

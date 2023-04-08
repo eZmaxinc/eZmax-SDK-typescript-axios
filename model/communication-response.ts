@@ -21,15 +21,19 @@ import { CommonAudit } from './common-audit';
 import { ComputedECommunicationDirection } from './computed-ecommunication-direction';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomContactNameResponse } from './custom-contact-name-response';
+import { DescriptionstaticResponse } from './descriptionstatic-response';
+// May contain unused imports in some cases
+// @ts-ignore
+import { EmailstaticResponse } from './emailstatic-response';
 // May contain unused imports in some cases
 // @ts-ignore
 import { FieldECommunicationImportance } from './field-ecommunication-importance';
 // May contain unused imports in some cases
 // @ts-ignore
 import { FieldECommunicationType } from './field-ecommunication-type';
-
-import { DefaultObject } from '../base'
+// May contain unused imports in some cases
+// @ts-ignore
+import { PhonestaticResponse } from './phonestatic-response';
 
 /**
  * A Communication Object
@@ -62,6 +66,12 @@ export interface CommunicationResponse {
      */
     'sCommunicationSubject': string;
     /**
+     * The url of the body used as body in the Communication
+     * @type {string}
+     * @memberof CommunicationResponse
+     */
+    'sCommunicationBodyurl'?: string;
+    /**
      * 
      * @type {ComputedECommunicationDirection}
      * @memberof CommunicationResponse
@@ -75,10 +85,22 @@ export interface CommunicationResponse {
     'iCommunicationrecipientCount': number;
     /**
      * 
-     * @type {CustomContactNameResponse}
+     * @type {DescriptionstaticResponse}
      * @memberof CommunicationResponse
      */
-    'objContactFrom': CustomContactNameResponse;
+    'objDescriptionstaticSender'?: DescriptionstaticResponse;
+    /**
+     * 
+     * @type {EmailstaticResponse}
+     * @memberof CommunicationResponse
+     */
+    'objEmailstaticSender'?: EmailstaticResponse;
+    /**
+     * 
+     * @type {PhonestaticResponse}
+     * @memberof CommunicationResponse
+     */
+    'objPhonestaticSender'?: PhonestaticResponse;
     /**
      * 
      * @type {CommonAudit}
@@ -86,21 +108,91 @@ export interface CommunicationResponse {
      */
     'objAudit': CommonAudit;
 }
+
+
 /**
- * A CommunicationResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCommunicationResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCommunicationResponse extends DefaultObject {
+// @ts-ignore
+import { DataObjectDescriptionstaticResponse } from './'
+// @ts-ignore
+import { DataObjectEmailstaticResponse } from './'
+// @ts-ignore
+import { DataObjectPhonestaticResponse } from './'
+// @ts-ignore
+import { DataObjectCommonAudit } from './'
+// @ts-ignore
+import { ValidationObjectDescriptionstaticResponse } from './'
+// @ts-ignore
+import { ValidationObjectEmailstaticResponse } from './'
+// @ts-ignore
+import { ValidationObjectPhonestaticResponse } from './'
+// @ts-ignore
+import { ValidationObjectCommonAudit } from './'
+
+/**
+ * @export 
+ * A CommunicationResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCommunicationResponse
+ */
+export class DataObjectCommunicationResponse {
    pkiCommunicationID:number = 0
    eCommunicationImportance:FieldECommunicationImportance = 'High'
    eCommunicationType:FieldECommunicationType = 'Email'
    sCommunicationSubject:string = ''
+   sCommunicationBodyurl?:string = undefined
    eCommunicationDirection:ComputedECommunicationDirection = 'Outbound'
    iCommunicationrecipientCount:number = 0
-   objContactFrom:Partial<CustomContactNameResponse> = {}
-   objAudit:Partial<CommonAudit> = {}
+   objDescriptionstaticSender?:DescriptionstaticResponse = undefined
+   objEmailstaticSender?:EmailstaticResponse = undefined
+   objPhonestaticSender?:PhonestaticResponse = undefined
+   objAudit:CommonAudit = new DataObjectCommonAudit()
 }
+
+/**
+ * @export 
+ * A CommunicationResponse Validation Object
+ * @class ValidationObjectCommunicationResponse
+ */
+export class ValidationObjectCommunicationResponse {
+   pkiCommunicationID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   eCommunicationImportance = {
+      type: 'enum',
+      allowableValues: ['High','Normal','Low'],
+      required: true
+   }
+   eCommunicationType = {
+      type: 'enum',
+      allowableValues: ['Email','Fax','Sms'],
+      required: true
+   }
+   sCommunicationSubject = {
+      type: 'string',
+      required: true
+   }
+   sCommunicationBodyurl = {
+      type: 'string',
+      required: false
+   }
+   eCommunicationDirection = {
+      type: 'enum',
+      allowableValues: ['Outbound','Inbound'],
+      required: true
+   }
+   iCommunicationrecipientCount = {
+      type: 'integer',
+      required: true
+   }
+   objDescriptionstaticSender = new ValidationObjectDescriptionstaticResponse()
+   objEmailstaticSender = new ValidationObjectEmailstaticResponse()
+   objPhonestaticSender = new ValidationObjectPhonestaticResponse()
+   objAudit = new ValidationObjectCommonAudit()
+} 
 
 

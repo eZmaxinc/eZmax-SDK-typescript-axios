@@ -26,8 +26,6 @@ import { EzsignfoldersignerassociationResponseCompoundUser } from './ezsignfolde
 // @ts-ignore
 import { EzsignsignerResponseCompound } from './ezsignsigner-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsignfoldersignerassociationResponseCompound
  * An Ezsignfoldersignerassociation Object
@@ -37,19 +35,64 @@ export type EzsignfoldersignerassociationResponseCompound = Ezsignfoldersigneras
 
 
 /**
- * @export 
- * A EzsignfoldersignerassociationResponseCompound Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsignfoldersignerassociationResponseCompound
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfoldersignerassociationResponseCompound extends DefaultObject {
+// @ts-ignore
+import { DataObjectEzsignfoldersignerassociationResponseCompoundUser } from './'
+// @ts-ignore
+import { DataObjectEzsignsignerResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectEzsignfoldersignerassociationResponseCompoundUser } from './'
+// @ts-ignore
+import { ValidationObjectEzsignsignerResponseCompound } from './'
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationResponseCompound Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfoldersignerassociationResponseCompound
+ */
+export class DataObjectEzsignfoldersignerassociationResponseCompound {
    pkiEzsignfoldersignerassociationID:number = 0
    fkiEzsignfolderID:number = 0
    bEzsignfoldersignerassociationDelayedsend:boolean = false
    bEzsignfoldersignerassociationReceivecopy:boolean = false
    tEzsignfoldersignerassociationMessage:string = ''
-   objUser?:Partial<EzsignfoldersignerassociationResponseCompoundUser> = undefined
-   objEzsignsigner?:Partial<EzsignsignerResponseCompound> = undefined
+   objUser?:EzsignfoldersignerassociationResponseCompoundUser = undefined
+   objEzsignsigner?:EzsignsignerResponseCompound = undefined
 }
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationResponseCompound Validation Object
+ * @class ValidationObjectEzsignfoldersignerassociationResponseCompound
+ */
+export class ValidationObjectEzsignfoldersignerassociationResponseCompound {
+   pkiEzsignfoldersignerassociationID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsignfolderID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   bEzsignfoldersignerassociationDelayedsend = {
+      type: 'boolean',
+      required: true
+   }
+   bEzsignfoldersignerassociationReceivecopy = {
+      type: 'boolean',
+      required: true
+   }
+   tEzsignfoldersignerassociationMessage = {
+      type: 'string',
+      required: true
+   }
+   objUser = new ValidationObjectEzsignfoldersignerassociationResponseCompoundUser()
+   objEzsignsigner = new ValidationObjectEzsignsignerResponseCompound()
+} 
 
 

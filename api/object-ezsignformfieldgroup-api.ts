@@ -33,8 +33,6 @@ import { EzsignformfieldgroupEditObjectV1Request } from '../model';
 // @ts-ignore
 import { EzsignformfieldgroupEditObjectV1Response } from '../model';
 // @ts-ignore
-import { EzsignformfieldgroupGetObjectV1Response } from '../model';
-// @ts-ignore
 import { EzsignformfieldgroupGetObjectV2Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
@@ -225,63 +223,6 @@ export const ObjectEzsignformfieldgroupApiAxiosParamCreator = function (configur
          * @summary Retrieve an existing Ezsignformfieldgroup
          * @param {number} pkiEzsignformfieldgroupID 
          * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        ezsignformfieldgroupGetObjectV1: async (pkiEzsignformfieldgroupID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiEzsignformfieldgroupID' is not null or undefined
-            assertParamExists('ezsignformfieldgroupGetObjectV1', 'pkiEzsignformfieldgroupID', pkiEzsignformfieldgroupID)
-            const localVarPath = `/1/object/ezsignformfieldgroup/{pkiEzsignformfieldgroupID}`
-                .replace(`{${"pkiEzsignformfieldgroupID"}}`, encodeURIComponent(String(pkiEzsignformfieldgroupID)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'GET' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary Retrieve an existing Ezsignformfieldgroup
-         * @param {number} pkiEzsignformfieldgroupID 
-         * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         ezsignformfieldgroupGetObjectV2: async (pkiEzsignformfieldgroupID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -382,18 +323,6 @@ export const ObjectEzsignformfieldgroupApiFp = function(configuration?: Configur
          * @summary Retrieve an existing Ezsignformfieldgroup
          * @param {number} pkiEzsignformfieldgroupID 
          * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        async ezsignformfieldgroupGetObjectV1(pkiEzsignformfieldgroupID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignformfieldgroupGetObjectV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignformfieldgroupGetObjectV1(pkiEzsignformfieldgroupID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * 
-         * @summary Retrieve an existing Ezsignformfieldgroup
-         * @param {number} pkiEzsignformfieldgroupID 
-         * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         async ezsignformfieldgroupGetObjectV2(pkiEzsignformfieldgroupID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignformfieldgroupGetObjectV2Response>> {
@@ -440,17 +369,6 @@ export const ObjectEzsignformfieldgroupApiFactory = function (configuration?: Co
          */
         ezsignformfieldgroupEditObjectV1(pkiEzsignformfieldgroupID: number, ezsignformfieldgroupEditObjectV1Request: EzsignformfieldgroupEditObjectV1Request, options?: any): AxiosPromise<EzsignformfieldgroupEditObjectV1Response> {
             return localVarFp.ezsignformfieldgroupEditObjectV1(pkiEzsignformfieldgroupID, ezsignformfieldgroupEditObjectV1Request, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary Retrieve an existing Ezsignformfieldgroup
-         * @param {number} pkiEzsignformfieldgroupID 
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        ezsignformfieldgroupGetObjectV1(pkiEzsignformfieldgroupID: number, options?: any): AxiosPromise<EzsignformfieldgroupGetObjectV1Response> {
-            return localVarFp.ezsignformfieldgroupGetObjectV1(pkiEzsignformfieldgroupID, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -507,19 +425,6 @@ export class ObjectEzsignformfieldgroupApi extends BaseAPI {
      */
     public ezsignformfieldgroupEditObjectV1(pkiEzsignformfieldgroupID: number, ezsignformfieldgroupEditObjectV1Request: EzsignformfieldgroupEditObjectV1Request, options?: AxiosRequestConfig) {
         return ObjectEzsignformfieldgroupApiFp(this.configuration).ezsignformfieldgroupEditObjectV1(pkiEzsignformfieldgroupID, ezsignformfieldgroupEditObjectV1Request, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Retrieve an existing Ezsignformfieldgroup
-     * @param {number} pkiEzsignformfieldgroupID 
-     * @param {*} [options] Override http request option.
-     * @deprecated
-     * @throws {RequiredError}
-     * @memberof ObjectEzsignformfieldgroupApi
-     */
-    public ezsignformfieldgroupGetObjectV1(pkiEzsignformfieldgroupID: number, options?: AxiosRequestConfig) {
-        return ObjectEzsignformfieldgroupApiFp(this.configuration).ezsignformfieldgroupGetObjectV1(pkiEzsignformfieldgroupID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

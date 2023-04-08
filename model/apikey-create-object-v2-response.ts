@@ -29,8 +29,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 // @ts-ignore
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type ApikeyCreateObjectV2Response
  * Response for POST /2/object/apikey
@@ -40,15 +38,43 @@ export type ApikeyCreateObjectV2Response = ApikeyCreateObjectV2ResponseAllOf & C
 
 
 /**
- * @export 
- * A ApikeyCreateObjectV2Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectApikeyCreateObjectV2Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectApikeyCreateObjectV2Response extends DefaultObject {
-   mPayload:Partial<ApikeyCreateObjectV2ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectApikeyCreateObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectApikeyCreateObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A ApikeyCreateObjectV2Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectApikeyCreateObjectV2Response
+ */
+export class DataObjectApikeyCreateObjectV2Response {
+   mPayload:ApikeyCreateObjectV2ResponseMPayload = new DataObjectApikeyCreateObjectV2ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A ApikeyCreateObjectV2Response Validation Object
+ * @class ValidationObjectApikeyCreateObjectV2Response
+ */
+export class ValidationObjectApikeyCreateObjectV2Response {
+   mPayload = new ValidationObjectApikeyCreateObjectV2ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

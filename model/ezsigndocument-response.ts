@@ -20,8 +20,6 @@ import { CommonAudit } from './common-audit';
 // @ts-ignore
 import { FieldEEzsigndocumentStep } from './field-eezsigndocument-step';
 
-import { DefaultObject } from '../base'
-
 /**
  * An Ezsigndocument Object
  * @export
@@ -137,19 +135,42 @@ export interface EzsigndocumentResponse {
      */
     'bEzsigndocumentEzsignform': boolean;
     /**
+     * If the Ezsigndocument contains signed signatures (From internal or external sources)
+     * @type {boolean}
+     * @memberof EzsigndocumentResponse
+     */
+    'bEzsigndocumentHassignedsignatures': boolean;
+    /**
      * 
      * @type {CommonAudit}
      * @memberof EzsigndocumentResponse
      */
     'objAudit': CommonAudit;
+    /**
+     * This field can be used to store an External ID from the client\'s system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format. 
+     * @type {string}
+     * @memberof EzsigndocumentResponse
+     */
+    'sEzsigndocumentExternalid': string;
 }
+
+
 /**
- * A EzsigndocumentResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigndocumentResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigndocumentResponse extends DefaultObject {
+// @ts-ignore
+import { DataObjectCommonAudit } from './'
+// @ts-ignore
+import { ValidationObjectCommonAudit } from './'
+
+/**
+ * @export 
+ * A EzsigndocumentResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigndocumentResponse
+ */
+export class DataObjectEzsigndocumentResponse {
    fkiEzsignfolderID:number = 0
    fkiEzsignfoldersignerassociationIDDeclinedtosign?:number = undefined
    dtEzsigndocumentDuedate:string = ''
@@ -168,7 +189,109 @@ export class DefaultObjectEzsigndocumentResponse extends DefaultObject {
    tEzsigndocumentDeclinedtosignreason?:string = undefined
    sEzsigndocumentMD5signed:string = ''
    bEzsigndocumentEzsignform:boolean = false
-   objAudit:Partial<CommonAudit> = {}
+   bEzsigndocumentHassignedsignatures:boolean = false
+   objAudit:CommonAudit = new DataObjectCommonAudit()
+   sEzsigndocumentExternalid:string = ''
 }
+
+/**
+ * @export 
+ * A EzsigndocumentResponse Validation Object
+ * @class ValidationObjectEzsigndocumentResponse
+ */
+export class ValidationObjectEzsigndocumentResponse {
+   fkiEzsignfolderID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsignfoldersignerassociationIDDeclinedtosign = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   dtEzsigndocumentDuedate = {
+      type: 'string',
+      required: true
+   }
+   dtEzsignformCompleted = {
+      type: 'string',
+      required: false
+   }
+   fkiLanguageID = {
+      type: 'integer',
+      minimum: 1,
+      maximum: 2,
+      required: true
+   }
+   sEzsigndocumentName = {
+      type: 'string',
+      required: true
+   }
+   pkiEzsigndocumentID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   eEzsigndocumentStep = {
+      type: 'enum',
+      allowableValues: ['Unsent','Unsigned','PartiallySigned','DeclinedToSign','PrematurelyEnded','Completed','Disposed'],
+      required: true
+   }
+   dtEzsigndocumentFirstsend = {
+      type: 'string',
+      required: false
+   }
+   dtEzsigndocumentLastsend = {
+      type: 'string',
+      required: false
+   }
+   iEzsigndocumentOrder = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   iEzsigndocumentPagetotal = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   iEzsigndocumentSignaturesigned = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsigndocumentSignaturetotal = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sEzsigndocumentMD5initial = {
+      type: 'string',
+      required: true
+   }
+   tEzsigndocumentDeclinedtosignreason = {
+      type: 'string',
+      required: false
+   }
+   sEzsigndocumentMD5signed = {
+      type: 'string',
+      required: true
+   }
+   bEzsigndocumentEzsignform = {
+      type: 'boolean',
+      required: true
+   }
+   bEzsigndocumentHassignedsignatures = {
+      type: 'boolean',
+      required: true
+   }
+   objAudit = new ValidationObjectCommonAudit()
+   sEzsigndocumentExternalid = {
+      type: 'string',
+      pattern: '/^.{0,64}$/',
+      required: true
+   }
+} 
 
 

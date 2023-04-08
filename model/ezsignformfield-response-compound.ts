@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignformfieldResponse } from './ezsignformfield-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsignformfieldResponseCompound
  * An Ezsignformfield Object and children to create a complete structure
@@ -28,12 +26,17 @@ export type EzsignformfieldResponseCompound = EzsignformfieldResponse;
 
 
 /**
- * @export 
- * A EzsignformfieldResponseCompound Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsignformfieldResponseCompound
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignformfieldResponseCompound extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignformfieldResponseCompound Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignformfieldResponseCompound
+ */
+export class DataObjectEzsignformfieldResponseCompound {
    pkiEzsignformfieldID:number = 0
    iEzsignpagePagenumber:number = 0
    sEzsignformfieldLabel:string = ''
@@ -45,5 +48,59 @@ export class DefaultObjectEzsignformfieldResponseCompound extends DefaultObject 
    bEzsignformfieldSelected?:boolean = undefined
    sEzsignformfieldEnteredvalue?:string = undefined
 }
+
+/**
+ * @export 
+ * A EzsignformfieldResponseCompound Validation Object
+ * @class ValidationObjectEzsignformfieldResponseCompound
+ */
+export class ValidationObjectEzsignformfieldResponseCompound {
+   pkiEzsignformfieldID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsignpagePagenumber = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   sEzsignformfieldLabel = {
+      type: 'string',
+      required: true
+   }
+   sEzsignformfieldValue = {
+      type: 'string',
+      required: false
+   }
+   iEzsignformfieldX = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsignformfieldY = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsignformfieldWidth = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsignformfieldHeight = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   bEzsignformfieldSelected = {
+      type: 'boolean',
+      required: false
+   }
+   sEzsignformfieldEnteredvalue = {
+      type: 'string',
+      required: false
+   }
+} 
 
 

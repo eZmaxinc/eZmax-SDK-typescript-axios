@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigntsarequirementGetAutocompleteV2ResponseMPayload } from './ezsigntsarequirement-get-autocomplete-v2-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface EzsigntsarequirementGetAutocompleteV2ResponseAllOf {
     'mPayload': EzsigntsarequirementGetAutocompleteV2ResponseMPayload;
 }
 /**
- * A EzsigntsarequirementGetAutocompleteV2ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntsarequirementGetAutocompleteV2ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntsarequirementGetAutocompleteV2ResponseAllOf extends DefaultObject {
-   mPayload:Partial<EzsigntsarequirementGetAutocompleteV2ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectEzsigntsarequirementGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectEzsigntsarequirementGetAutocompleteV2ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A EzsigntsarequirementGetAutocompleteV2ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntsarequirementGetAutocompleteV2ResponseAllOf
+ */
+export class DataObjectEzsigntsarequirementGetAutocompleteV2ResponseAllOf {
+   mPayload:EzsigntsarequirementGetAutocompleteV2ResponseMPayload = new DataObjectEzsigntsarequirementGetAutocompleteV2ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A EzsigntsarequirementGetAutocompleteV2ResponseAllOf Validation Object
+ * @class ValidationObjectEzsigntsarequirementGetAutocompleteV2ResponseAllOf
+ */
+export class ValidationObjectEzsigntsarequirementGetAutocompleteV2ResponseAllOf {
+   mPayload = new ValidationObjectEzsigntsarequirementGetAutocompleteV2ResponseMPayload()
+} 
 
 

@@ -26,8 +26,6 @@ import { PhoneRequestCompound } from './phone-request-compound';
 // @ts-ignore
 import { WebsiteRequestCompound } from './website-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -60,16 +58,45 @@ export interface ContactinformationsRequestCompoundAllOf {
     'a_objWebsite': Array<WebsiteRequestCompound>;
 }
 /**
- * A ContactinformationsRequestCompoundAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectContactinformationsRequestCompoundAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectContactinformationsRequestCompoundAllOf extends DefaultObject {
+
+/**
+ * @export 
+ * A ContactinformationsRequestCompoundAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectContactinformationsRequestCompoundAllOf
+ */
+export class DataObjectContactinformationsRequestCompoundAllOf {
    a_objAddress:Array<AddressRequestCompound> = []
    a_objPhone:Array<PhoneRequestCompound> = []
    a_objEmail:Array<EmailRequestCompound> = []
    a_objWebsite:Array<WebsiteRequestCompound> = []
 }
+
+/**
+ * @export 
+ * A ContactinformationsRequestCompoundAllOf Validation Object
+ * @class ValidationObjectContactinformationsRequestCompoundAllOf
+ */
+export class ValidationObjectContactinformationsRequestCompoundAllOf {
+   a_objAddress = {
+      type: 'array',
+      required: true
+   }
+   a_objPhone = {
+      type: 'array',
+      required: true
+   }
+   a_objEmail = {
+      type: 'array',
+      required: true
+   }
+   a_objWebsite = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

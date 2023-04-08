@@ -17,8 +17,6 @@
 // @ts-ignore
 import { CustomDropdownElementRequest } from './custom-dropdown-element-request';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type CustomDropdownElementRequestCompound
  * A Generic DropdownElement Object and children to create a complete structure
@@ -28,14 +26,35 @@ export type CustomDropdownElementRequestCompound = CustomDropdownElementRequest;
 
 
 /**
- * @export 
- * A CustomDropdownElementRequestCompound Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectCustomDropdownElementRequestCompound
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCustomDropdownElementRequestCompound extends DefaultObject {
+
+/**
+ * @export 
+ * A CustomDropdownElementRequestCompound Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCustomDropdownElementRequestCompound
+ */
+export class DataObjectCustomDropdownElementRequestCompound {
    sLabel:string = ''
    sValue:string = ''
 }
+
+/**
+ * @export 
+ * A CustomDropdownElementRequestCompound Validation Object
+ * @class ValidationObjectCustomDropdownElementRequestCompound
+ */
+export class ValidationObjectCustomDropdownElementRequestCompound {
+   sLabel = {
+      type: 'string',
+      required: true
+   }
+   sValue = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

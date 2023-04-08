@@ -23,8 +23,6 @@ import { FieldEEzsigntemplateformfieldgroupTooltipposition } from './field-eezsi
 // @ts-ignore
 import { FieldEEzsigntemplateformfieldgroupType } from './field-eezsigntemplateformfieldgroup-type';
 
-import { DefaultObject } from '../base'
-
 /**
  * A Ezsigntemplateformfieldgroup Object
  * @export
@@ -122,13 +120,20 @@ export interface EzsigntemplateformfieldgroupRequest {
      */
     'eEzsigntemplateformfieldgroupTooltipposition'?: FieldEEzsigntemplateformfieldgroupTooltipposition;
 }
+
+
 /**
- * A EzsigntemplateformfieldgroupRequest Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplateformfieldgroupRequest
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplateformfieldgroupRequest extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntemplateformfieldgroupRequest Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplateformfieldgroupRequest
+ */
+export class DataObjectEzsigntemplateformfieldgroupRequest {
    pkiEzsigntemplateformfieldgroupID?:number = undefined
    fkiEzsigntemplatedocumentID:number = 0
    eEzsigntemplateformfieldgroupType:FieldEEzsigntemplateformfieldgroupType = 'Text'
@@ -145,5 +150,82 @@ export class DefaultObjectEzsigntemplateformfieldgroupRequest extends DefaultObj
    tEzsigntemplateformfieldgroupTooltip?:string = undefined
    eEzsigntemplateformfieldgroupTooltipposition?:FieldEEzsigntemplateformfieldgroupTooltipposition = undefined
 }
+
+/**
+ * @export 
+ * A EzsigntemplateformfieldgroupRequest Validation Object
+ * @class ValidationObjectEzsigntemplateformfieldgroupRequest
+ */
+export class ValidationObjectEzsigntemplateformfieldgroupRequest {
+   pkiEzsigntemplateformfieldgroupID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzsigntemplatedocumentID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   eEzsigntemplateformfieldgroupType = {
+      type: 'enum',
+      allowableValues: ['Text','Textarea','Dropdown','Radio','Checkbox'],
+      required: true
+   }
+   eEzsigntemplateformfieldgroupSignerrequirement = {
+      type: 'enum',
+      allowableValues: ['All','One'],
+      required: true
+   }
+   sEzsigntemplateformfieldgroupLabel = {
+      type: 'string',
+      required: true
+   }
+   iEzsigntemplateformfieldgroupStep = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   sEzsigntemplateformfieldgroupDefaultvalue = {
+      type: 'string',
+      required: true
+   }
+   iEzsigntemplateformfieldgroupFilledmin = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsigntemplateformfieldgroupFilledmax = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   bEzsigntemplateformfieldgroupReadonly = {
+      type: 'boolean',
+      required: true
+   }
+   iEzsigntemplateformfieldgroupMaxlength = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   bEzsigntemplateformfieldgroupEncrypted = {
+      type: 'boolean',
+      required: false
+   }
+   sEzsigntemplateformfieldgroupRegexp = {
+      type: 'string',
+      required: false
+   }
+   tEzsigntemplateformfieldgroupTooltip = {
+      type: 'string',
+      required: false
+   }
+   eEzsigntemplateformfieldgroupTooltipposition = {
+      type: 'enum',
+      allowableValues: ['TopLeft','TopCenter','TopRight','MiddleLeft','MiddleRight','BottomLeft','BottomCenter','BottomRight'],
+      required: false
+   }
+} 
 
 

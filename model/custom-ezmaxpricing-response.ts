@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A Custom Ezmaxpricing Object
  * @export
@@ -48,16 +46,47 @@ export interface CustomEzmaxpricingResponse {
     'dtEzmaxpricingEnd'?: string;
 }
 /**
- * A CustomEzmaxpricingResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCustomEzmaxpricingResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCustomEzmaxpricingResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A CustomEzmaxpricingResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCustomEzmaxpricingResponse
+ */
+export class DataObjectCustomEzmaxpricingResponse {
    pkiEzmaxpricingID:number = 0
    dEzmaxpricingRebateezsignallagents:string = ''
    dtEzmaxpricingStart:string = ''
    dtEzmaxpricingEnd?:string = undefined
 }
+
+/**
+ * @export 
+ * A CustomEzmaxpricingResponse Validation Object
+ * @class ValidationObjectCustomEzmaxpricingResponse
+ */
+export class ValidationObjectCustomEzmaxpricingResponse {
+   pkiEzmaxpricingID = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   dEzmaxpricingRebateezsignallagents = {
+      type: 'string',
+      pattern: '/^-{0,1}[\d]{1,9}?\.[\d]{2}$/',
+      required: true
+   }
+   dtEzmaxpricingStart = {
+      type: 'string',
+      required: true
+   }
+   dtEzmaxpricingEnd = {
+      type: 'string',
+      required: false
+   }
+} 
 
 

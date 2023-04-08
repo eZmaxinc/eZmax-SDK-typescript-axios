@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignpageResponseCompound } from './ezsignpage-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for GET /1/object/ezsigndocument/{pkiEzsigndocument}/getEzsignpages
  * @export
@@ -33,13 +31,30 @@ export interface EzsigndocumentGetEzsignpagesV1ResponseMPayload {
     'a_objEzsignpage': Array<EzsignpageResponseCompound>;
 }
 /**
- * A EzsigndocumentGetEzsignpagesV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigndocumentGetEzsignpagesV1ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigndocumentGetEzsignpagesV1ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigndocumentGetEzsignpagesV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigndocumentGetEzsignpagesV1ResponseMPayload
+ */
+export class DataObjectEzsigndocumentGetEzsignpagesV1ResponseMPayload {
    a_objEzsignpage:Array<EzsignpageResponseCompound> = []
 }
+
+/**
+ * @export 
+ * A EzsigndocumentGetEzsignpagesV1ResponseMPayload Validation Object
+ * @class ValidationObjectEzsigndocumentGetEzsignpagesV1ResponseMPayload
+ */
+export class ValidationObjectEzsigndocumentGetEzsignpagesV1ResponseMPayload {
+   a_objEzsignpage = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

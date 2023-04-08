@@ -29,8 +29,6 @@ import { EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1ResponseAllOf }
 // @ts-ignore
 import { EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1ResponseMPayload } from './ezsigntemplatedocument-get-ezsigntemplateformfieldgroups-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1Response
  * Response for GET /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocument}/getEzsigntemplateformfieldgroups
@@ -40,15 +38,43 @@ export type EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1Response = C
 
 
 /**
- * @export 
- * A EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1Response extends DefaultObject {
-   mPayload:Partial<EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectEzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1Response
+ */
+export class DataObjectEzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1Response {
+   mPayload:EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1ResponseMPayload = new DataObjectEzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1Response Validation Object
+ * @class ValidationObjectEzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1Response
+ */
+export class ValidationObjectEzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1Response {
+   mPayload = new ValidationObjectEzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzmaxinvoicingsummaryexternaldetailResponseCompound } from './ezmaxinvoicingsummaryexternaldetail-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,30 @@ export interface EzmaxinvoicingsummaryexternalResponseCompoundAllOf {
     'a_objEzmaxinvoicingsummaryexternaldetail': Array<EzmaxinvoicingsummaryexternaldetailResponseCompound>;
 }
 /**
- * A EzmaxinvoicingsummaryexternalResponseCompoundAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzmaxinvoicingsummaryexternalResponseCompoundAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzmaxinvoicingsummaryexternalResponseCompoundAllOf extends DefaultObject {
+
+/**
+ * @export 
+ * A EzmaxinvoicingsummaryexternalResponseCompoundAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzmaxinvoicingsummaryexternalResponseCompoundAllOf
+ */
+export class DataObjectEzmaxinvoicingsummaryexternalResponseCompoundAllOf {
    a_objEzmaxinvoicingsummaryexternaldetail:Array<EzmaxinvoicingsummaryexternaldetailResponseCompound> = []
 }
+
+/**
+ * @export 
+ * A EzmaxinvoicingsummaryexternalResponseCompoundAllOf Validation Object
+ * @class ValidationObjectEzmaxinvoicingsummaryexternalResponseCompoundAllOf
+ */
+export class ValidationObjectEzmaxinvoicingsummaryexternalResponseCompoundAllOf {
+   a_objEzmaxinvoicingsummaryexternaldetail = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

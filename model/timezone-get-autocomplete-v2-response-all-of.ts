@@ -17,8 +17,6 @@
 // @ts-ignore
 import { TimezoneGetAutocompleteV2ResponseMPayload } from './timezone-get-autocomplete-v2-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface TimezoneGetAutocompleteV2ResponseAllOf {
     'mPayload': TimezoneGetAutocompleteV2ResponseMPayload;
 }
 /**
- * A TimezoneGetAutocompleteV2ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectTimezoneGetAutocompleteV2ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectTimezoneGetAutocompleteV2ResponseAllOf extends DefaultObject {
-   mPayload:Partial<TimezoneGetAutocompleteV2ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectTimezoneGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectTimezoneGetAutocompleteV2ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A TimezoneGetAutocompleteV2ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectTimezoneGetAutocompleteV2ResponseAllOf
+ */
+export class DataObjectTimezoneGetAutocompleteV2ResponseAllOf {
+   mPayload:TimezoneGetAutocompleteV2ResponseMPayload = new DataObjectTimezoneGetAutocompleteV2ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A TimezoneGetAutocompleteV2ResponseAllOf Validation Object
+ * @class ValidationObjectTimezoneGetAutocompleteV2ResponseAllOf
+ */
+export class ValidationObjectTimezoneGetAutocompleteV2ResponseAllOf {
+   mPayload = new ValidationObjectTimezoneGetAutocompleteV2ResponseMPayload()
+} 
 
 

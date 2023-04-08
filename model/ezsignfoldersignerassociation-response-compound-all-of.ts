@@ -20,8 +20,6 @@ import { EzsignfoldersignerassociationResponseCompoundUser } from './ezsignfolde
 // @ts-ignore
 import { EzsignsignerResponseCompound } from './ezsignsigner-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -42,14 +40,37 @@ export interface EzsignfoldersignerassociationResponseCompoundAllOf {
     'objEzsignsigner'?: EzsignsignerResponseCompound;
 }
 /**
- * A EzsignfoldersignerassociationResponseCompoundAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfoldersignerassociationResponseCompoundAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfoldersignerassociationResponseCompoundAllOf extends DefaultObject {
-   objUser?:Partial<EzsignfoldersignerassociationResponseCompoundUser> = undefined
-   objEzsignsigner?:Partial<EzsignsignerResponseCompound> = undefined
+// @ts-ignore
+import { DataObjectEzsignfoldersignerassociationResponseCompoundUser } from './'
+// @ts-ignore
+import { DataObjectEzsignsignerResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectEzsignfoldersignerassociationResponseCompoundUser } from './'
+// @ts-ignore
+import { ValidationObjectEzsignsignerResponseCompound } from './'
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationResponseCompoundAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfoldersignerassociationResponseCompoundAllOf
+ */
+export class DataObjectEzsignfoldersignerassociationResponseCompoundAllOf {
+   objUser?:EzsignfoldersignerassociationResponseCompoundUser = undefined
+   objEzsignsigner?:EzsignsignerResponseCompound = undefined
 }
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationResponseCompoundAllOf Validation Object
+ * @class ValidationObjectEzsignfoldersignerassociationResponseCompoundAllOf
+ */
+export class ValidationObjectEzsignfoldersignerassociationResponseCompoundAllOf {
+   objUser = new ValidationObjectEzsignfoldersignerassociationResponseCompoundUser()
+   objEzsignsigner = new ValidationObjectEzsignsignerResponseCompound()
+} 
 
 

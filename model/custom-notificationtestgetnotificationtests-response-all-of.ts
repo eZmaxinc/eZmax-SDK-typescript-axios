@@ -17,8 +17,6 @@
 // @ts-ignore
 import { FieldENotificationpreferenceStatus } from './field-enotificationpreference-status';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -38,15 +36,39 @@ export interface CustomNotificationtestgetnotificationtestsResponseAllOf {
      */
     'iNotificationtest': number;
 }
+
+
 /**
- * A CustomNotificationtestgetnotificationtestsResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCustomNotificationtestgetnotificationtestsResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCustomNotificationtestgetnotificationtestsResponseAllOf extends DefaultObject {
+
+/**
+ * @export 
+ * A CustomNotificationtestgetnotificationtestsResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCustomNotificationtestgetnotificationtestsResponseAllOf
+ */
+export class DataObjectCustomNotificationtestgetnotificationtestsResponseAllOf {
    eNotificationpreferenceStatus:FieldENotificationpreferenceStatus = 'Show'
    iNotificationtest:number = 0
 }
+
+/**
+ * @export 
+ * A CustomNotificationtestgetnotificationtestsResponseAllOf Validation Object
+ * @class ValidationObjectCustomNotificationtestgetnotificationtestsResponseAllOf
+ */
+export class ValidationObjectCustomNotificationtestgetnotificationtestsResponseAllOf {
+   eNotificationpreferenceStatus = {
+      type: 'enum',
+      allowableValues: ['Show','Hide','Pin'],
+      required: true
+   }
+   iNotificationtest = {
+      type: 'integer',
+      required: true
+   }
+} 
 
 

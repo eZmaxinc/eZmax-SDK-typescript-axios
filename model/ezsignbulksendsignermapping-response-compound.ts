@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignbulksendsignermappingResponse } from './ezsignbulksendsignermapping-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsignbulksendsignermappingResponseCompound
  * A Ezsignbulksendsignermapping Object
@@ -28,16 +26,48 @@ export type EzsignbulksendsignermappingResponseCompound = Ezsignbulksendsignerma
 
 
 /**
- * @export 
- * A EzsignbulksendsignermappingResponseCompound Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsignbulksendsignermappingResponseCompound
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignbulksendsignermappingResponseCompound extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignbulksendsignermappingResponseCompound Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignbulksendsignermappingResponseCompound
+ */
+export class DataObjectEzsignbulksendsignermappingResponseCompound {
    pkiEzsignbulksendsignermappingID:number = 0
    fkiEzsignbulksendID:number = 0
    fkiUserID?:number = undefined
    sEzsignbulksendsignermappingDescription:string = ''
 }
+
+/**
+ * @export 
+ * A EzsignbulksendsignermappingResponseCompound Validation Object
+ * @class ValidationObjectEzsignbulksendsignermappingResponseCompound
+ */
+export class ValidationObjectEzsignbulksendsignermappingResponseCompound {
+   pkiEzsignbulksendsignermappingID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsignbulksendID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiUserID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   sEzsignbulksendsignermappingDescription = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

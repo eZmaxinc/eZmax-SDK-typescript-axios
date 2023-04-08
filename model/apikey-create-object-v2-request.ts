@@ -17,8 +17,6 @@
 // @ts-ignore
 import { ApikeyRequestCompound } from './apikey-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for POST /2/object/apikey
  * @export
@@ -33,13 +31,31 @@ export interface ApikeyCreateObjectV2Request {
     'a_objApikey': Array<ApikeyRequestCompound>;
 }
 /**
- * A ApikeyCreateObjectV2Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectApikeyCreateObjectV2Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectApikeyCreateObjectV2Request extends DefaultObject {
+
+/**
+ * @export 
+ * A ApikeyCreateObjectV2Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectApikeyCreateObjectV2Request
+ */
+export class DataObjectApikeyCreateObjectV2Request {
    a_objApikey:Array<ApikeyRequestCompound> = []
 }
+
+/**
+ * @export 
+ * A ApikeyCreateObjectV2Request Validation Object
+ * @class ValidationObjectApikeyCreateObjectV2Request
+ */
+export class ValidationObjectApikeyCreateObjectV2Request {
+   a_objApikey = {
+      type: 'array',
+      minItems: 1,
+      required: true
+   }
+} 
 
 

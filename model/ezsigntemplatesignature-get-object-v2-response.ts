@@ -29,8 +29,6 @@ import { EzsigntemplatesignatureGetObjectV2ResponseAllOf } from './ezsigntemplat
 // @ts-ignore
 import { EzsigntemplatesignatureGetObjectV2ResponseMPayload } from './ezsigntemplatesignature-get-object-v2-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsigntemplatesignatureGetObjectV2Response
  * Response for GET /2/object/ezsigntemplatesignature/{pkiEzsigntemplatesignatureID}
@@ -40,15 +38,43 @@ export type EzsigntemplatesignatureGetObjectV2Response = CommonResponse & Ezsign
 
 
 /**
- * @export 
- * A EzsigntemplatesignatureGetObjectV2Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsigntemplatesignatureGetObjectV2Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatesignatureGetObjectV2Response extends DefaultObject {
-   mPayload:Partial<EzsigntemplatesignatureGetObjectV2ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectEzsigntemplatesignatureGetObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsigntemplatesignatureGetObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A EzsigntemplatesignatureGetObjectV2Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatesignatureGetObjectV2Response
+ */
+export class DataObjectEzsigntemplatesignatureGetObjectV2Response {
+   mPayload:EzsigntemplatesignatureGetObjectV2ResponseMPayload = new DataObjectEzsigntemplatesignatureGetObjectV2ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A EzsigntemplatesignatureGetObjectV2Response Validation Object
+ * @class ValidationObjectEzsigntemplatesignatureGetObjectV2Response
+ */
+export class ValidationObjectEzsigntemplatesignatureGetObjectV2Response {
+   mPayload = new ValidationObjectEzsigntemplatesignatureGetObjectV2ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

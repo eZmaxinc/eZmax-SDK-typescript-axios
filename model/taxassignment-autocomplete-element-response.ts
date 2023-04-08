@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A Taxassignment AutocompleteElement Response
  * @export
@@ -42,15 +40,42 @@ export interface TaxassignmentAutocompleteElementResponse {
     'bTaxassignmentIsactive': boolean;
 }
 /**
- * A TaxassignmentAutocompleteElementResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectTaxassignmentAutocompleteElementResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectTaxassignmentAutocompleteElementResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A TaxassignmentAutocompleteElementResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectTaxassignmentAutocompleteElementResponse
+ */
+export class DataObjectTaxassignmentAutocompleteElementResponse {
    sTaxassignmentDescriptionX:string = ''
    pkiTaxassignmentID:number = 0
    bTaxassignmentIsactive:boolean = false
 }
+
+/**
+ * @export 
+ * A TaxassignmentAutocompleteElementResponse Validation Object
+ * @class ValidationObjectTaxassignmentAutocompleteElementResponse
+ */
+export class ValidationObjectTaxassignmentAutocompleteElementResponse {
+   sTaxassignmentDescriptionX = {
+      type: 'string',
+      required: true
+   }
+   pkiTaxassignmentID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 15,
+      required: true
+   }
+   bTaxassignmentIsactive = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

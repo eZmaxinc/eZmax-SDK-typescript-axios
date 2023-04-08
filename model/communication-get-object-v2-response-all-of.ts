@@ -17,8 +17,6 @@
 // @ts-ignore
 import { CommunicationGetObjectV2ResponseMPayload } from './communication-get-object-v2-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface CommunicationGetObjectV2ResponseAllOf {
     'mPayload': CommunicationGetObjectV2ResponseMPayload;
 }
 /**
- * A CommunicationGetObjectV2ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCommunicationGetObjectV2ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCommunicationGetObjectV2ResponseAllOf extends DefaultObject {
-   mPayload:Partial<CommunicationGetObjectV2ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectCommunicationGetObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommunicationGetObjectV2ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A CommunicationGetObjectV2ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCommunicationGetObjectV2ResponseAllOf
+ */
+export class DataObjectCommunicationGetObjectV2ResponseAllOf {
+   mPayload:CommunicationGetObjectV2ResponseMPayload = new DataObjectCommunicationGetObjectV2ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A CommunicationGetObjectV2ResponseAllOf Validation Object
+ * @class ValidationObjectCommunicationGetObjectV2ResponseAllOf
+ */
+export class ValidationObjectCommunicationGetObjectV2ResponseAllOf {
+   mPayload = new ValidationObjectCommunicationGetObjectV2ResponseMPayload()
+} 
 
 

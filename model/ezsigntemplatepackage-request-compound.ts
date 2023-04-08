@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigntemplatepackageRequest } from './ezsigntemplatepackage-request';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsigntemplatepackageRequestCompound
  * A Ezsigntemplatepackage Object and children
@@ -28,12 +26,17 @@ export type EzsigntemplatepackageRequestCompound = EzsigntemplatepackageRequest;
 
 
 /**
- * @export 
- * A EzsigntemplatepackageRequestCompound Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsigntemplatepackageRequestCompound
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatepackageRequestCompound extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntemplatepackageRequestCompound Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatepackageRequestCompound
+ */
+export class DataObjectEzsigntemplatepackageRequestCompound {
    pkiEzsigntemplatepackageID?:number = undefined
    fkiEzsignfoldertypeID:number = 0
    fkiLanguageID:number = 0
@@ -41,5 +44,41 @@ export class DefaultObjectEzsigntemplatepackageRequestCompound extends DefaultOb
    bEzsigntemplatepackageAdminonly:boolean = false
    bEzsigntemplatepackageIsactive:boolean = false
 }
+
+/**
+ * @export 
+ * A EzsigntemplatepackageRequestCompound Validation Object
+ * @class ValidationObjectEzsigntemplatepackageRequestCompound
+ */
+export class ValidationObjectEzsigntemplatepackageRequestCompound {
+   pkiEzsigntemplatepackageID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzsignfoldertypeID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiLanguageID = {
+      type: 'integer',
+      minimum: 1,
+      maximum: 2,
+      required: true
+   }
+   sEzsigntemplatepackageDescription = {
+      type: 'string',
+      required: true
+   }
+   bEzsigntemplatepackageAdminonly = {
+      type: 'boolean',
+      required: true
+   }
+   bEzsigntemplatepackageIsactive = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

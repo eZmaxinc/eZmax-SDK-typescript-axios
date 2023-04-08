@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignformfieldgroupResponseCompound } from './ezsignformfieldgroup-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for GET /1/object/ezsigndocument/{pkiEzsigndocument}/getEzsignformfieldgroups
  * @export
@@ -33,13 +31,30 @@ export interface EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload {
     'a_objEzsignformfieldgroup': Array<EzsignformfieldgroupResponseCompound>;
 }
 /**
- * A EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload
+ */
+export class DataObjectEzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload {
    a_objEzsignformfieldgroup:Array<EzsignformfieldgroupResponseCompound> = []
 }
+
+/**
+ * @export 
+ * A EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload Validation Object
+ * @class ValidationObjectEzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload
+ */
+export class ValidationObjectEzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload {
+   a_objEzsignformfieldgroup = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

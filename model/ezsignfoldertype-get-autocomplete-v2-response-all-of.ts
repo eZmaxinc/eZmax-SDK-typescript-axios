@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignfoldertypeGetAutocompleteV2ResponseMPayload } from './ezsignfoldertype-get-autocomplete-v2-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface EzsignfoldertypeGetAutocompleteV2ResponseAllOf {
     'mPayload': EzsignfoldertypeGetAutocompleteV2ResponseMPayload;
 }
 /**
- * A EzsignfoldertypeGetAutocompleteV2ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfoldertypeGetAutocompleteV2ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfoldertypeGetAutocompleteV2ResponseAllOf extends DefaultObject {
-   mPayload:Partial<EzsignfoldertypeGetAutocompleteV2ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectEzsignfoldertypeGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectEzsignfoldertypeGetAutocompleteV2ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A EzsignfoldertypeGetAutocompleteV2ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfoldertypeGetAutocompleteV2ResponseAllOf
+ */
+export class DataObjectEzsignfoldertypeGetAutocompleteV2ResponseAllOf {
+   mPayload:EzsignfoldertypeGetAutocompleteV2ResponseMPayload = new DataObjectEzsignfoldertypeGetAutocompleteV2ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A EzsignfoldertypeGetAutocompleteV2ResponseAllOf Validation Object
+ * @class ValidationObjectEzsignfoldertypeGetAutocompleteV2ResponseAllOf
+ */
+export class ValidationObjectEzsignfoldertypeGetAutocompleteV2ResponseAllOf {
+   mPayload = new ValidationObjectEzsignfoldertypeGetAutocompleteV2ResponseMPayload()
+} 
 
 

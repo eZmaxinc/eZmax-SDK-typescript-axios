@@ -29,8 +29,6 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
 // @ts-ignore
 import { CustomAutocompleteElementResponse } from './custom-autocomplete-element-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type CommonGetAutocompleteV1Response
  * Response for GET /1/object/xxx/getAutocomplete
@@ -40,15 +38,42 @@ export type CommonGetAutocompleteV1Response = CommonGetAutocompleteV1ResponseAll
 
 
 /**
- * @export 
- * A CommonGetAutocompleteV1Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectCommonGetAutocompleteV1Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCommonGetAutocompleteV1Response extends DefaultObject {
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A CommonGetAutocompleteV1Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCommonGetAutocompleteV1Response
+ */
+export class DataObjectCommonGetAutocompleteV1Response {
    mPayload:Array<CustomAutocompleteElementResponse> = []
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A CommonGetAutocompleteV1Response Validation Object
+ * @class ValidationObjectCommonGetAutocompleteV1Response
+ */
+export class ValidationObjectCommonGetAutocompleteV1Response {
+   mPayload = {
+      type: 'array',
+      required: true
+   }
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigntemplatepackagesignerRequestCompound } from './ezsigntemplatepackagesigner-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for PUT /1/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID}/editEzsigntemplatepackagesigners
  * @export
@@ -33,13 +31,30 @@ export interface EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Request 
     'a_objEzsigntemplatepackagesigner': Array<EzsigntemplatepackagesignerRequestCompound>;
 }
 /**
- * A EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplatepackageEditEzsigntemplatepackagesignersV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatepackageEditEzsigntemplatepackagesignersV1Request extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatepackageEditEzsigntemplatepackagesignersV1Request
+ */
+export class DataObjectEzsigntemplatepackageEditEzsigntemplatepackagesignersV1Request {
    a_objEzsigntemplatepackagesigner:Array<EzsigntemplatepackagesignerRequestCompound> = []
 }
+
+/**
+ * @export 
+ * A EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Request Validation Object
+ * @class ValidationObjectEzsigntemplatepackageEditEzsigntemplatepackagesignersV1Request
+ */
+export class ValidationObjectEzsigntemplatepackageEditEzsigntemplatepackagesignersV1Request {
+   a_objEzsigntemplatepackagesigner = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

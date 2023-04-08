@@ -29,8 +29,6 @@ import { EzsignSuggestTemplatesV1ResponseAllOf } from './ezsign-suggest-template
 // @ts-ignore
 import { EzsignSuggestTemplatesV1ResponseMPayload } from './ezsign-suggest-templates-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsignSuggestTemplatesV1Response
  * Response for GET /1/module/ezsign/suggestTemplates
@@ -40,15 +38,43 @@ export type EzsignSuggestTemplatesV1Response = CommonResponse & EzsignSuggestTem
 
 
 /**
- * @export 
- * A EzsignSuggestTemplatesV1Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsignSuggestTemplatesV1Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignSuggestTemplatesV1Response extends DefaultObject {
-   mPayload:Partial<EzsignSuggestTemplatesV1ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectEzsignSuggestTemplatesV1ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsignSuggestTemplatesV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A EzsignSuggestTemplatesV1Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignSuggestTemplatesV1Response
+ */
+export class DataObjectEzsignSuggestTemplatesV1Response {
+   mPayload:EzsignSuggestTemplatesV1ResponseMPayload = new DataObjectEzsignSuggestTemplatesV1ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A EzsignSuggestTemplatesV1Response Validation Object
+ * @class ValidationObjectEzsignSuggestTemplatesV1Response
+ */
+export class ValidationObjectEzsignSuggestTemplatesV1Response {
+   mPayload = new ValidationObjectEzsignSuggestTemplatesV1ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

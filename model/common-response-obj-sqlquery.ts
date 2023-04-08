@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Definition of objSQLQuery Object
  * @export
@@ -36,14 +34,35 @@ export interface CommonResponseObjSQLQuery {
     'fDuration': number;
 }
 /**
- * A CommonResponseObjSQLQuery Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCommonResponseObjSQLQuery
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCommonResponseObjSQLQuery extends DefaultObject {
+
+/**
+ * @export 
+ * A CommonResponseObjSQLQuery Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCommonResponseObjSQLQuery
+ */
+export class DataObjectCommonResponseObjSQLQuery {
    sQuery:string = ''
    fDuration:number = 0
 }
+
+/**
+ * @export 
+ * A CommonResponseObjSQLQuery Validation Object
+ * @class ValidationObjectCommonResponseObjSQLQuery
+ */
+export class ValidationObjectCommonResponseObjSQLQuery {
+   sQuery = {
+      type: 'string',
+      required: true
+   }
+   fDuration = {
+      type: 'number',
+      required: true
+   }
+} 
 
 

@@ -17,8 +17,6 @@
 // @ts-ignore
 import { BillingentityinternalAutocompleteElementResponse } from './billingentityinternal-autocomplete-element-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for POST /2/object/billingentityinternal/getAutocomplete
  * @export
@@ -33,13 +31,30 @@ export interface BillingentityinternalGetAutocompleteV2ResponseMPayload {
     'a_objBillingentityinternal': Array<BillingentityinternalAutocompleteElementResponse>;
 }
 /**
- * A BillingentityinternalGetAutocompleteV2ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectBillingentityinternalGetAutocompleteV2ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectBillingentityinternalGetAutocompleteV2ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A BillingentityinternalGetAutocompleteV2ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectBillingentityinternalGetAutocompleteV2ResponseMPayload
+ */
+export class DataObjectBillingentityinternalGetAutocompleteV2ResponseMPayload {
    a_objBillingentityinternal:Array<BillingentityinternalAutocompleteElementResponse> = []
 }
+
+/**
+ * @export 
+ * A BillingentityinternalGetAutocompleteV2ResponseMPayload Validation Object
+ * @class ValidationObjectBillingentityinternalGetAutocompleteV2ResponseMPayload
+ */
+export class ValidationObjectBillingentityinternalGetAutocompleteV2ResponseMPayload {
+   a_objBillingentityinternal = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

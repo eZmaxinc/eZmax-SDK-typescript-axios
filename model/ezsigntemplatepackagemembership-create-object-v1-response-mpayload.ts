@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for POST /1/object/ezsigntemplatepackagemembership
  * @export
@@ -42,15 +40,40 @@ export interface EzsigntemplatepackagemembershipCreateObjectV1ResponseMPayload {
     'bEzsignbulksendNeedvalidation': boolean;
 }
 /**
- * A EzsigntemplatepackagemembershipCreateObjectV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplatepackagemembershipCreateObjectV1ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatepackagemembershipCreateObjectV1ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntemplatepackagemembershipCreateObjectV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatepackagemembershipCreateObjectV1ResponseMPayload
+ */
+export class DataObjectEzsigntemplatepackagemembershipCreateObjectV1ResponseMPayload {
    a_pkiEzsigntemplatepackagemembershipID:Array<number> = []
    bEzsigntemplatepackageNeedvalidation:boolean = false
    bEzsignbulksendNeedvalidation:boolean = false
 }
+
+/**
+ * @export 
+ * A EzsigntemplatepackagemembershipCreateObjectV1ResponseMPayload Validation Object
+ * @class ValidationObjectEzsigntemplatepackagemembershipCreateObjectV1ResponseMPayload
+ */
+export class ValidationObjectEzsigntemplatepackagemembershipCreateObjectV1ResponseMPayload {
+   a_pkiEzsigntemplatepackagemembershipID = {
+      type: 'array',
+      required: true
+   }
+   bEzsigntemplatepackageNeedvalidation = {
+      type: 'boolean',
+      required: true
+   }
+   bEzsignbulksendNeedvalidation = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

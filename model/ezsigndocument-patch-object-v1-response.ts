@@ -23,8 +23,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 // @ts-ignore
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsigndocumentPatchObjectV1Response
  * Response for PATCH /1/object/ezsigndocument/{pkiEzsigndocumentID}
@@ -34,14 +32,37 @@ export type EzsigndocumentPatchObjectV1Response = CommonResponse;
 
 
 /**
- * @export 
- * A EzsigndocumentPatchObjectV1Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsigndocumentPatchObjectV1Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigndocumentPatchObjectV1Response extends DefaultObject {
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A EzsigndocumentPatchObjectV1Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigndocumentPatchObjectV1Response
+ */
+export class DataObjectEzsigndocumentPatchObjectV1Response {
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A EzsigndocumentPatchObjectV1Response Validation Object
+ * @class ValidationObjectEzsigndocumentPatchObjectV1Response
+ */
+export class ValidationObjectEzsigndocumentPatchObjectV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

@@ -23,8 +23,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 // @ts-ignore
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type PaymenttermEditObjectV1Response
  * Response for PUT /1/object/paymentterm/{pkiPaymenttermID}
@@ -34,14 +32,37 @@ export type PaymenttermEditObjectV1Response = CommonResponse;
 
 
 /**
- * @export 
- * A PaymenttermEditObjectV1Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectPaymenttermEditObjectV1Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectPaymenttermEditObjectV1Response extends DefaultObject {
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A PaymenttermEditObjectV1Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectPaymenttermEditObjectV1Response
+ */
+export class DataObjectPaymenttermEditObjectV1Response {
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A PaymenttermEditObjectV1Response Validation Object
+ * @class ValidationObjectPaymenttermEditObjectV1Response
+ */
+export class ValidationObjectPaymenttermEditObjectV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

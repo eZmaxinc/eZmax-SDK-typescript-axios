@@ -17,8 +17,6 @@
 // @ts-ignore
 import { CustomFormsDataFolderResponse } from './custom-forms-data-folder-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for GET/1/object/ezsignbulksend/{pkiEzsignbulksendID}/getFormsData
  * @export
@@ -33,13 +31,30 @@ export interface EzsignbulksendGetFormsDataV1ResponseMPayload {
     'a_objFormsDataFolder': Array<CustomFormsDataFolderResponse>;
 }
 /**
- * A EzsignbulksendGetFormsDataV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignbulksendGetFormsDataV1ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignbulksendGetFormsDataV1ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignbulksendGetFormsDataV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignbulksendGetFormsDataV1ResponseMPayload
+ */
+export class DataObjectEzsignbulksendGetFormsDataV1ResponseMPayload {
    a_objFormsDataFolder:Array<CustomFormsDataFolderResponse> = []
 }
+
+/**
+ * @export 
+ * A EzsignbulksendGetFormsDataV1ResponseMPayload Validation Object
+ * @class ValidationObjectEzsignbulksendGetFormsDataV1ResponseMPayload
+ */
+export class ValidationObjectEzsignbulksendGetFormsDataV1ResponseMPayload {
+   a_objFormsDataFolder = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

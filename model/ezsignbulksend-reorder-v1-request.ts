@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for POST /1/object/ezsignbulksend/{pkiEzsignbulksendID}/reorder
  * @export
@@ -30,13 +28,30 @@ export interface EzsignbulksendReorderV1Request {
     'a_pkiEzsignbulksenddocumentmappingID': Array<number>;
 }
 /**
- * A EzsignbulksendReorderV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignbulksendReorderV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignbulksendReorderV1Request extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignbulksendReorderV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignbulksendReorderV1Request
+ */
+export class DataObjectEzsignbulksendReorderV1Request {
    a_pkiEzsignbulksenddocumentmappingID:Array<number> = []
 }
+
+/**
+ * @export 
+ * A EzsignbulksendReorderV1Request Validation Object
+ * @class ValidationObjectEzsignbulksendReorderV1Request
+ */
+export class ValidationObjectEzsignbulksendReorderV1Request {
+   a_pkiEzsignbulksenddocumentmappingID = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

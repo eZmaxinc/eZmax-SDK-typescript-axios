@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Generic Warning Message
  * @export
@@ -36,14 +34,35 @@ export interface CommonResponseWarning {
     'eWarningCode': string;
 }
 /**
- * A CommonResponseWarning Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCommonResponseWarning
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCommonResponseWarning extends DefaultObject {
+
+/**
+ * @export 
+ * A CommonResponseWarning Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCommonResponseWarning
+ */
+export class DataObjectCommonResponseWarning {
    sWarningMessage:string = ''
    eWarningCode:string = ''
 }
+
+/**
+ * @export 
+ * A CommonResponseWarning Validation Object
+ * @class ValidationObjectCommonResponseWarning
+ */
+export class ValidationObjectCommonResponseWarning {
+   sWarningMessage = {
+      type: 'string',
+      required: true
+   }
+   eWarningCode = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

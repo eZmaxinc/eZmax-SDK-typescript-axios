@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignformfieldgroupRequestCompound } from './ezsignformfieldgroup-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for PUT /1/object/ezsignformfieldgroup/{pkiEzsignfoldersignerassociationID}
  * @export
@@ -33,13 +31,31 @@ export interface EzsignformfieldgroupEditObjectV1Request {
     'objEzsignformfieldgroup': EzsignformfieldgroupRequestCompound;
 }
 /**
- * A EzsignformfieldgroupEditObjectV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignformfieldgroupEditObjectV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignformfieldgroupEditObjectV1Request extends DefaultObject {
-   objEzsignformfieldgroup:Partial<EzsignformfieldgroupRequestCompound> = {}
+// @ts-ignore
+import { DataObjectEzsignformfieldgroupRequestCompound } from './'
+// @ts-ignore
+import { ValidationObjectEzsignformfieldgroupRequestCompound } from './'
+
+/**
+ * @export 
+ * A EzsignformfieldgroupEditObjectV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignformfieldgroupEditObjectV1Request
+ */
+export class DataObjectEzsignformfieldgroupEditObjectV1Request {
+   objEzsignformfieldgroup:EzsignformfieldgroupRequestCompound = new DataObjectEzsignformfieldgroupRequestCompound()
 }
+
+/**
+ * @export 
+ * A EzsignformfieldgroupEditObjectV1Request Validation Object
+ * @class ValidationObjectEzsignformfieldgroupEditObjectV1Request
+ */
+export class ValidationObjectEzsignformfieldgroupEditObjectV1Request {
+   objEzsignformfieldgroup = new ValidationObjectEzsignformfieldgroupRequestCompound()
+} 
 
 

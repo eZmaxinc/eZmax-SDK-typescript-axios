@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A Ezsigntemplatepackagesignermembership Object
  * @export
@@ -54,17 +52,55 @@ export interface EzsigntemplatepackagesignermembershipRequest {
     'iEzsigntemplatepackagesignermembershipCopy'?: number;
 }
 /**
- * A EzsigntemplatepackagesignermembershipRequest Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplatepackagesignermembershipRequest
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatepackagesignermembershipRequest extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntemplatepackagesignermembershipRequest Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatepackagesignermembershipRequest
+ */
+export class DataObjectEzsigntemplatepackagesignermembershipRequest {
    pkiEzsigntemplatepackagesignermembershipID?:number = undefined
    fkiEzsigntemplatepackagemembershipID:number = 0
    fkiEzsigntemplatepackagesignerID:number = 0
    fkiEzsigntemplatesignerID:number = 0
    iEzsigntemplatepackagesignermembershipCopy?:number = undefined
 }
+
+/**
+ * @export 
+ * A EzsigntemplatepackagesignermembershipRequest Validation Object
+ * @class ValidationObjectEzsigntemplatepackagesignermembershipRequest
+ */
+export class ValidationObjectEzsigntemplatepackagesignermembershipRequest {
+   pkiEzsigntemplatepackagesignermembershipID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzsigntemplatepackagemembershipID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsigntemplatepackagesignerID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsigntemplatesignerID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsigntemplatepackagesignermembershipCopy = {
+      type: 'integer',
+      minimum: 1,
+      required: false
+   }
+} 
 
 

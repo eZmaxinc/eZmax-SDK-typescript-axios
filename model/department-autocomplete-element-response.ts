@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A Department AutocompleteElement Response
  * @export
@@ -48,16 +46,46 @@ export interface DepartmentAutocompleteElementResponse {
     'bDepartmentIsactive': boolean;
 }
 /**
- * A DepartmentAutocompleteElementResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectDepartmentAutocompleteElementResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectDepartmentAutocompleteElementResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A DepartmentAutocompleteElementResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectDepartmentAutocompleteElementResponse
+ */
+export class DataObjectDepartmentAutocompleteElementResponse {
    sCompanyNameX:string = ''
    sDepartmentNameX:string = ''
    pkiDepartmentID:number = 0
    bDepartmentIsactive:boolean = false
 }
+
+/**
+ * @export 
+ * A DepartmentAutocompleteElementResponse Validation Object
+ * @class ValidationObjectDepartmentAutocompleteElementResponse
+ */
+export class ValidationObjectDepartmentAutocompleteElementResponse {
+   sCompanyNameX = {
+      type: 'string',
+      required: true
+   }
+   sDepartmentNameX = {
+      type: 'string',
+      required: true
+   }
+   pkiDepartmentID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   bDepartmentIsactive = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

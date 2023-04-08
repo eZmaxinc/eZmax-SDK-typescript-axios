@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -30,13 +28,30 @@ export interface CommonResponseErrorSTemporaryFileUrlAllOf {
     'sTemporaryFileUrl'?: string;
 }
 /**
- * A CommonResponseErrorSTemporaryFileUrlAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCommonResponseErrorSTemporaryFileUrlAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCommonResponseErrorSTemporaryFileUrlAllOf extends DefaultObject {
+
+/**
+ * @export 
+ * A CommonResponseErrorSTemporaryFileUrlAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCommonResponseErrorSTemporaryFileUrlAllOf
+ */
+export class DataObjectCommonResponseErrorSTemporaryFileUrlAllOf {
    sTemporaryFileUrl?:string = undefined
 }
+
+/**
+ * @export 
+ * A CommonResponseErrorSTemporaryFileUrlAllOf Validation Object
+ * @class ValidationObjectCommonResponseErrorSTemporaryFileUrlAllOf
+ */
+export class ValidationObjectCommonResponseErrorSTemporaryFileUrlAllOf {
+   sTemporaryFileUrl = {
+      type: 'string',
+      required: false
+   }
+} 
 
 

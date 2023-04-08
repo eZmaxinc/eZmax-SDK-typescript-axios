@@ -20,8 +20,6 @@ import { EzsignbulksenddocumentmappingResponseCompound } from './ezsignbulksendd
 // @ts-ignore
 import { EzsignbulksendsignermappingResponse } from './ezsignbulksendsignermapping-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -42,14 +40,35 @@ export interface EzsignbulksendResponseCompoundAllOf {
     'a_objEzsignbulksendsignermapping': Array<EzsignbulksendsignermappingResponse>;
 }
 /**
- * A EzsignbulksendResponseCompoundAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignbulksendResponseCompoundAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignbulksendResponseCompoundAllOf extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignbulksendResponseCompoundAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignbulksendResponseCompoundAllOf
+ */
+export class DataObjectEzsignbulksendResponseCompoundAllOf {
    a_objEzsignbulksenddocumentmapping:Array<EzsignbulksenddocumentmappingResponseCompound> = []
    a_objEzsignbulksendsignermapping:Array<EzsignbulksendsignermappingResponse> = []
 }
+
+/**
+ * @export 
+ * A EzsignbulksendResponseCompoundAllOf Validation Object
+ * @class ValidationObjectEzsignbulksendResponseCompoundAllOf
+ */
+export class ValidationObjectEzsignbulksendResponseCompoundAllOf {
+   a_objEzsignbulksenddocumentmapping = {
+      type: 'array',
+      required: true
+   }
+   a_objEzsignbulksendsignermapping = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

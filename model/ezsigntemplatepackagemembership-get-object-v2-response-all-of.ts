@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigntemplatepackagemembershipGetObjectV2ResponseMPayload } from './ezsigntemplatepackagemembership-get-object-v2-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface EzsigntemplatepackagemembershipGetObjectV2ResponseAllOf {
     'mPayload': EzsigntemplatepackagemembershipGetObjectV2ResponseMPayload;
 }
 /**
- * A EzsigntemplatepackagemembershipGetObjectV2ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplatepackagemembershipGetObjectV2ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatepackagemembershipGetObjectV2ResponseAllOf extends DefaultObject {
-   mPayload:Partial<EzsigntemplatepackagemembershipGetObjectV2ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectEzsigntemplatepackagemembershipGetObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectEzsigntemplatepackagemembershipGetObjectV2ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A EzsigntemplatepackagemembershipGetObjectV2ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatepackagemembershipGetObjectV2ResponseAllOf
+ */
+export class DataObjectEzsigntemplatepackagemembershipGetObjectV2ResponseAllOf {
+   mPayload:EzsigntemplatepackagemembershipGetObjectV2ResponseMPayload = new DataObjectEzsigntemplatepackagemembershipGetObjectV2ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A EzsigntemplatepackagemembershipGetObjectV2ResponseAllOf Validation Object
+ * @class ValidationObjectEzsigntemplatepackagemembershipGetObjectV2ResponseAllOf
+ */
+export class ValidationObjectEzsigntemplatepackagemembershipGetObjectV2ResponseAllOf {
+   mPayload = new ValidationObjectEzsigntemplatepackagemembershipGetObjectV2ResponseMPayload()
+} 
 
 

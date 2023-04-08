@@ -23,8 +23,6 @@ import { FieldEWebhookManagementevent } from './field-ewebhook-managementevent';
 // @ts-ignore
 import { FieldEWebhookModule } from './field-ewebhook-module';
 
-import { DefaultObject } from '../base'
-
 /**
  * A webhook object
  * @export
@@ -98,13 +96,20 @@ export interface WebhookResponse {
      */
     'bWebhookSkipsslvalidation': boolean;
 }
+
+
 /**
- * A WebhookResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectWebhookResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectWebhookResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A WebhookResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectWebhookResponse
+ */
+export class DataObjectWebhookResponse {
    pkiWebhookID:number = 0
    sWebhookDescription:string = ''
    fkiEzsignfoldertypeID?:number = undefined
@@ -117,5 +122,61 @@ export class DefaultObjectWebhookResponse extends DefaultObject {
    bWebhookIsactive?:boolean = undefined
    bWebhookSkipsslvalidation:boolean = false
 }
+
+/**
+ * @export 
+ * A WebhookResponse Validation Object
+ * @class ValidationObjectWebhookResponse
+ */
+export class ValidationObjectWebhookResponse {
+   pkiWebhookID = {
+      type: 'integer',
+      required: true
+   }
+   sWebhookDescription = {
+      type: 'string',
+      required: true
+   }
+   fkiEzsignfoldertypeID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   sEzsignfoldertypeNameX = {
+      type: 'string',
+      required: false
+   }
+   eWebhookModule = {
+      type: 'enum',
+      allowableValues: ['Ezsign','Management'],
+      required: true
+   }
+   eWebhookEzsignevent = {
+      type: 'enum',
+      allowableValues: ['DocumentCompleted','FolderCompleted'],
+      required: false
+   }
+   eWebhookManagementevent = {
+      type: 'enum',
+      allowableValues: ['UserCreated'],
+      required: false
+   }
+   sWebhookUrl = {
+      type: 'string',
+      required: true
+   }
+   sWebhookEmailfailed = {
+      type: 'string',
+      required: true
+   }
+   bWebhookIsactive = {
+      type: 'boolean',
+      required: false
+   }
+   bWebhookSkipsslvalidation = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

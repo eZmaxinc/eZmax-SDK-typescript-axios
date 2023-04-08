@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignfolderResponse } from './ezsignfolder-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface WebhookEzsignFolderCompletedAllOf {
     'objEzsignfolder': EzsignfolderResponse;
 }
 /**
- * A WebhookEzsignFolderCompletedAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectWebhookEzsignFolderCompletedAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectWebhookEzsignFolderCompletedAllOf extends DefaultObject {
-   objEzsignfolder:Partial<EzsignfolderResponse> = {}
+// @ts-ignore
+import { DataObjectEzsignfolderResponse } from './'
+// @ts-ignore
+import { ValidationObjectEzsignfolderResponse } from './'
+
+/**
+ * @export 
+ * A WebhookEzsignFolderCompletedAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectWebhookEzsignFolderCompletedAllOf
+ */
+export class DataObjectWebhookEzsignFolderCompletedAllOf {
+   objEzsignfolder:EzsignfolderResponse = new DataObjectEzsignfolderResponse()
 }
+
+/**
+ * @export 
+ * A WebhookEzsignFolderCompletedAllOf Validation Object
+ * @class ValidationObjectWebhookEzsignFolderCompletedAllOf
+ */
+export class ValidationObjectWebhookEzsignFolderCompletedAllOf {
+   objEzsignfolder = new ValidationObjectEzsignfolderResponse()
+} 
 
 

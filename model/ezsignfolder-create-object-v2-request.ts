@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignfolderRequestCompound } from './ezsignfolder-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for POST /2/object/ezsignfolder
  * @export
@@ -33,13 +31,31 @@ export interface EzsignfolderCreateObjectV2Request {
     'a_objEzsignfolder': Array<EzsignfolderRequestCompound>;
 }
 /**
- * A EzsignfolderCreateObjectV2Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfolderCreateObjectV2Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfolderCreateObjectV2Request extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignfolderCreateObjectV2Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfolderCreateObjectV2Request
+ */
+export class DataObjectEzsignfolderCreateObjectV2Request {
    a_objEzsignfolder:Array<EzsignfolderRequestCompound> = []
 }
+
+/**
+ * @export 
+ * A EzsignfolderCreateObjectV2Request Validation Object
+ * @class ValidationObjectEzsignfolderCreateObjectV2Request
+ */
+export class ValidationObjectEzsignfolderCreateObjectV2Request {
+   a_objEzsignfolder = {
+      type: 'array',
+      minItems: 1,
+      required: true
+   }
+} 
 
 

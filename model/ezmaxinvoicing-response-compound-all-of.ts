@@ -41,8 +41,6 @@ import { EzmaxinvoicingsummaryinternalResponseCompound } from './ezmaxinvoicings
 // @ts-ignore
 import { EzmaxinvoicinguserResponseCompound } from './ezmaxinvoicinguser-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -105,14 +103,27 @@ export interface EzmaxinvoicingResponseCompoundAllOf {
     'a_objEzmaxinvoicingezsigndocument': Array<CustomEzmaxinvoicingEzsigndocumentResponse>;
 }
 /**
- * A EzmaxinvoicingResponseCompoundAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzmaxinvoicingResponseCompoundAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzmaxinvoicingResponseCompoundAllOf extends DefaultObject {
-   objEzmaxinvoicingcontract:Partial<EzmaxinvoicingcontractResponseCompound> = {}
-   objEzmaxpricing:Partial<CustomEzmaxpricingResponse> = {}
+// @ts-ignore
+import { DataObjectEzmaxinvoicingcontractResponseCompound } from './'
+// @ts-ignore
+import { DataObjectCustomEzmaxpricingResponse } from './'
+// @ts-ignore
+import { ValidationObjectEzmaxinvoicingcontractResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectCustomEzmaxpricingResponse } from './'
+
+/**
+ * @export 
+ * A EzmaxinvoicingResponseCompoundAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzmaxinvoicingResponseCompoundAllOf
+ */
+export class DataObjectEzmaxinvoicingResponseCompoundAllOf {
+   objEzmaxinvoicingcontract:EzmaxinvoicingcontractResponseCompound = new DataObjectEzmaxinvoicingcontractResponseCompound()
+   objEzmaxpricing:CustomEzmaxpricingResponse = new DataObjectCustomEzmaxpricingResponse()
    a_objEzmaxinvoicingsummaryglobal:Array<EzmaxinvoicingsummaryglobalResponseCompound> = []
    a_objEzmaxinvoicingsummaryexternal:Array<EzmaxinvoicingsummaryexternalResponseCompound> = []
    a_objEzmaxinvoicingsummaryinternal:Array<EzmaxinvoicingsummaryinternalResponseCompound> = []
@@ -121,5 +132,43 @@ export class DefaultObjectEzmaxinvoicingResponseCompoundAllOf extends DefaultObj
    a_objEzmaxinvoicingezsignfolder:Array<CustomEzmaxinvoicingEzsignfolderResponse> = []
    a_objEzmaxinvoicingezsigndocument:Array<CustomEzmaxinvoicingEzsigndocumentResponse> = []
 }
+
+/**
+ * @export 
+ * A EzmaxinvoicingResponseCompoundAllOf Validation Object
+ * @class ValidationObjectEzmaxinvoicingResponseCompoundAllOf
+ */
+export class ValidationObjectEzmaxinvoicingResponseCompoundAllOf {
+   objEzmaxinvoicingcontract = new ValidationObjectEzmaxinvoicingcontractResponseCompound()
+   objEzmaxpricing = new ValidationObjectCustomEzmaxpricingResponse()
+   a_objEzmaxinvoicingsummaryglobal = {
+      type: 'array',
+      required: true
+   }
+   a_objEzmaxinvoicingsummaryexternal = {
+      type: 'array',
+      required: true
+   }
+   a_objEzmaxinvoicingsummaryinternal = {
+      type: 'array',
+      required: true
+   }
+   a_objEzmaxinvoicingagent = {
+      type: 'array',
+      required: true
+   }
+   a_objEzmaxinvoicinguser = {
+      type: 'array',
+      required: true
+   }
+   a_objEzmaxinvoicingezsignfolder = {
+      type: 'array',
+      required: true
+   }
+   a_objEzmaxinvoicingezsigndocument = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

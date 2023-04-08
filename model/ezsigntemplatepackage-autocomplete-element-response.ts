@@ -17,8 +17,6 @@
 // @ts-ignore
 import { FieldEEzsignfoldertypePrivacylevel } from './field-eezsignfoldertype-privacylevel';
 
-import { DefaultObject } from '../base'
-
 /**
  * A Ezsigntemplatepackage AutocompleteElement Response
  * @export
@@ -56,18 +54,55 @@ export interface EzsigntemplatepackageAutocompleteElementResponse {
      */
     'bDisabled': boolean;
 }
+
+
 /**
- * A EzsigntemplatepackageAutocompleteElementResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplatepackageAutocompleteElementResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatepackageAutocompleteElementResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntemplatepackageAutocompleteElementResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatepackageAutocompleteElementResponse
+ */
+export class DataObjectEzsigntemplatepackageAutocompleteElementResponse {
    eEzsignfoldertypePrivacylevel:FieldEEzsignfoldertypePrivacylevel = 'User'
    sEzsigntemplatepackageDescription:string = ''
    pkiEzsigntemplatepackageID:number = 0
    bEzsigntemplatepackageIsactive:boolean = false
    bDisabled:boolean = false
 }
+
+/**
+ * @export 
+ * A EzsigntemplatepackageAutocompleteElementResponse Validation Object
+ * @class ValidationObjectEzsigntemplatepackageAutocompleteElementResponse
+ */
+export class ValidationObjectEzsigntemplatepackageAutocompleteElementResponse {
+   eEzsignfoldertypePrivacylevel = {
+      type: 'enum',
+      allowableValues: ['User','Usergroup'],
+      required: true
+   }
+   sEzsigntemplatepackageDescription = {
+      type: 'string',
+      required: true
+   }
+   pkiEzsigntemplatepackageID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   bEzsigntemplatepackageIsactive = {
+      type: 'boolean',
+      required: true
+   }
+   bDisabled = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

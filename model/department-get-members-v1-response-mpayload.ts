@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for GET /1/object/department/{pkiDepartmentID}/getMembers
  * @export
@@ -48,16 +46,45 @@ export interface DepartmentGetMembersV1ResponseMPayload {
     'a_fkiEmployeeID'?: Array<number>;
 }
 /**
- * A DepartmentGetMembersV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectDepartmentGetMembersV1ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectDepartmentGetMembersV1ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A DepartmentGetMembersV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectDepartmentGetMembersV1ResponseMPayload
+ */
+export class DataObjectDepartmentGetMembersV1ResponseMPayload {
    a_fkiAgentID?:Array<number> = undefined
    a_fkiBrokerID?:Array<number> = undefined
    a_fkiCustomerID?:Array<number> = undefined
    a_fkiEmployeeID?:Array<number> = undefined
 }
+
+/**
+ * @export 
+ * A DepartmentGetMembersV1ResponseMPayload Validation Object
+ * @class ValidationObjectDepartmentGetMembersV1ResponseMPayload
+ */
+export class ValidationObjectDepartmentGetMembersV1ResponseMPayload {
+   a_fkiAgentID = {
+      type: 'array',
+      required: false
+   }
+   a_fkiBrokerID = {
+      type: 'array',
+      required: false
+   }
+   a_fkiCustomerID = {
+      type: 'array',
+      required: false
+   }
+   a_fkiEmployeeID = {
+      type: 'array',
+      required: false
+   }
+} 
 
 

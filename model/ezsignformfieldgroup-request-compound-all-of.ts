@@ -23,8 +23,6 @@ import { EzsignformfieldRequestCompound } from './ezsignformfield-request-compou
 // @ts-ignore
 import { EzsignformfieldgroupsignerRequestCompound } from './ezsignformfieldgroupsigner-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -51,15 +49,40 @@ export interface EzsignformfieldgroupRequestCompoundAllOf {
     'a_objEzsignformfield': Array<EzsignformfieldRequestCompound>;
 }
 /**
- * A EzsignformfieldgroupRequestCompoundAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignformfieldgroupRequestCompoundAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignformfieldgroupRequestCompoundAllOf extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignformfieldgroupRequestCompoundAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignformfieldgroupRequestCompoundAllOf
+ */
+export class DataObjectEzsignformfieldgroupRequestCompoundAllOf {
    a_objEzsignformfieldgroupsigner:Array<EzsignformfieldgroupsignerRequestCompound> = []
    a_objDropdownElement?:Array<CustomDropdownElementRequestCompound> = undefined
    a_objEzsignformfield:Array<EzsignformfieldRequestCompound> = []
 }
+
+/**
+ * @export 
+ * A EzsignformfieldgroupRequestCompoundAllOf Validation Object
+ * @class ValidationObjectEzsignformfieldgroupRequestCompoundAllOf
+ */
+export class ValidationObjectEzsignformfieldgroupRequestCompoundAllOf {
+   a_objEzsignformfieldgroupsigner = {
+      type: 'array',
+      required: true
+   }
+   a_objDropdownElement = {
+      type: 'array',
+      required: false
+   }
+   a_objEzsignformfield = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

@@ -17,8 +17,6 @@
 // @ts-ignore
 import { CommonAudit } from './common-audit';
 
-import { DefaultObject } from '../base'
-
 /**
  * An Ezsignbulksendtransmission Object
  * @export
@@ -57,17 +55,54 @@ export interface EzsignbulksendtransmissionResponse {
     'objAudit': CommonAudit;
 }
 /**
- * A EzsignbulksendtransmissionResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignbulksendtransmissionResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignbulksendtransmissionResponse extends DefaultObject {
+// @ts-ignore
+import { DataObjectCommonAudit } from './'
+// @ts-ignore
+import { ValidationObjectCommonAudit } from './'
+
+/**
+ * @export 
+ * A EzsignbulksendtransmissionResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignbulksendtransmissionResponse
+ */
+export class DataObjectEzsignbulksendtransmissionResponse {
    pkiEzsignbulksendtransmissionID:number = 0
    fkiEzsignbulksendID:number = 0
    sEzsignbulksendtransmissionDescription:string = ''
    iEzsignbulksendtransmissionErrors:number = 0
-   objAudit:Partial<CommonAudit> = {}
+   objAudit:CommonAudit = new DataObjectCommonAudit()
 }
+
+/**
+ * @export 
+ * A EzsignbulksendtransmissionResponse Validation Object
+ * @class ValidationObjectEzsignbulksendtransmissionResponse
+ */
+export class ValidationObjectEzsignbulksendtransmissionResponse {
+   pkiEzsignbulksendtransmissionID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsignbulksendID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sEzsignbulksendtransmissionDescription = {
+      type: 'string',
+      required: true
+   }
+   iEzsignbulksendtransmissionErrors = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   objAudit = new ValidationObjectCommonAudit()
+} 
 
 

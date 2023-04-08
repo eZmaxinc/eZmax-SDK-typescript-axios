@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignbulksendListElement } from './ezsignbulksend-list-element';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,30 @@ export interface EzsignbulksendGetListV1ResponseMPayloadAllOf {
     'a_objEzsignbulksend': Array<EzsignbulksendListElement>;
 }
 /**
- * A EzsignbulksendGetListV1ResponseMPayloadAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignbulksendGetListV1ResponseMPayloadAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignbulksendGetListV1ResponseMPayloadAllOf extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignbulksendGetListV1ResponseMPayloadAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignbulksendGetListV1ResponseMPayloadAllOf
+ */
+export class DataObjectEzsignbulksendGetListV1ResponseMPayloadAllOf {
    a_objEzsignbulksend:Array<EzsignbulksendListElement> = []
 }
+
+/**
+ * @export 
+ * A EzsignbulksendGetListV1ResponseMPayloadAllOf Validation Object
+ * @class ValidationObjectEzsignbulksendGetListV1ResponseMPayloadAllOf
+ */
+export class ValidationObjectEzsignbulksendGetListV1ResponseMPayloadAllOf {
+   a_objEzsignbulksend = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

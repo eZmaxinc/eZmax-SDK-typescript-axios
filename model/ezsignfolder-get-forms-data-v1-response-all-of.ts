@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignfolderGetFormsDataV1ResponseMPayload } from './ezsignfolder-get-forms-data-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface EzsignfolderGetFormsDataV1ResponseAllOf {
     'mPayload': EzsignfolderGetFormsDataV1ResponseMPayload;
 }
 /**
- * A EzsignfolderGetFormsDataV1ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfolderGetFormsDataV1ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfolderGetFormsDataV1ResponseAllOf extends DefaultObject {
-   mPayload:Partial<EzsignfolderGetFormsDataV1ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectEzsignfolderGetFormsDataV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectEzsignfolderGetFormsDataV1ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A EzsignfolderGetFormsDataV1ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfolderGetFormsDataV1ResponseAllOf
+ */
+export class DataObjectEzsignfolderGetFormsDataV1ResponseAllOf {
+   mPayload:EzsignfolderGetFormsDataV1ResponseMPayload = new DataObjectEzsignfolderGetFormsDataV1ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A EzsignfolderGetFormsDataV1ResponseAllOf Validation Object
+ * @class ValidationObjectEzsignfolderGetFormsDataV1ResponseAllOf
+ */
+export class ValidationObjectEzsignfolderGetFormsDataV1ResponseAllOf {
+   mPayload = new ValidationObjectEzsignfolderGetFormsDataV1ResponseMPayload()
+} 
 
 

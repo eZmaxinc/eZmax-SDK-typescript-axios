@@ -23,8 +23,6 @@ import { CommonAudit } from './common-audit';
 // @ts-ignore
 import { MultilingualApikeyDescription } from './multilingual-apikey-description';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type ApikeyResponseCompound
  * An Apikey Object and children to create a complete structure
@@ -34,16 +32,48 @@ export type ApikeyResponseCompound = ApikeyResponse;
 
 
 /**
- * @export 
- * A ApikeyResponseCompound Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectApikeyResponseCompound
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectApikeyResponseCompound extends DefaultObject {
-   objApikeyDescription:Partial<MultilingualApikeyDescription> = {}
+// @ts-ignore
+import { DataObjectMultilingualApikeyDescription } from './'
+// @ts-ignore
+import { DataObjectCommonAudit } from './'
+// @ts-ignore
+import { ValidationObjectMultilingualApikeyDescription } from './'
+// @ts-ignore
+import { ValidationObjectCommonAudit } from './'
+
+/**
+ * @export 
+ * A ApikeyResponseCompound Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectApikeyResponseCompound
+ */
+export class DataObjectApikeyResponseCompound {
+   objApikeyDescription:MultilingualApikeyDescription = new DataObjectMultilingualApikeyDescription()
    sComputedToken?:string = undefined
    pkiApikeyID:number = 0
-   objAudit:Partial<CommonAudit> = {}
+   objAudit:CommonAudit = new DataObjectCommonAudit()
 }
+
+/**
+ * @export 
+ * A ApikeyResponseCompound Validation Object
+ * @class ValidationObjectApikeyResponseCompound
+ */
+export class ValidationObjectApikeyResponseCompound {
+   objApikeyDescription = new ValidationObjectMultilingualApikeyDescription()
+   sComputedToken = {
+      type: 'string',
+      required: false
+   }
+   pkiApikeyID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   objAudit = new ValidationObjectCommonAudit()
+} 
 
 

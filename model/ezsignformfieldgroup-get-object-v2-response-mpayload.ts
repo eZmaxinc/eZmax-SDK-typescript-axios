@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignformfieldgroupResponseCompound } from './ezsignformfieldgroup-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for GET /2/object/ezsignformfieldgroup/{pkiEzsignformfieldgroupID}
  * @export
@@ -33,13 +31,31 @@ export interface EzsignformfieldgroupGetObjectV2ResponseMPayload {
     'objEzsignformfieldgroup': EzsignformfieldgroupResponseCompound;
 }
 /**
- * A EzsignformfieldgroupGetObjectV2ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignformfieldgroupGetObjectV2ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignformfieldgroupGetObjectV2ResponseMPayload extends DefaultObject {
-   objEzsignformfieldgroup:Partial<EzsignformfieldgroupResponseCompound> = {}
+// @ts-ignore
+import { DataObjectEzsignformfieldgroupResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectEzsignformfieldgroupResponseCompound } from './'
+
+/**
+ * @export 
+ * A EzsignformfieldgroupGetObjectV2ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignformfieldgroupGetObjectV2ResponseMPayload
+ */
+export class DataObjectEzsignformfieldgroupGetObjectV2ResponseMPayload {
+   objEzsignformfieldgroup:EzsignformfieldgroupResponseCompound = new DataObjectEzsignformfieldgroupResponseCompound()
 }
+
+/**
+ * @export 
+ * A EzsignformfieldgroupGetObjectV2ResponseMPayload Validation Object
+ * @class ValidationObjectEzsignformfieldgroupGetObjectV2ResponseMPayload
+ */
+export class ValidationObjectEzsignformfieldgroupGetObjectV2ResponseMPayload {
+   objEzsignformfieldgroup = new ValidationObjectEzsignformfieldgroupResponseCompound()
+} 
 
 

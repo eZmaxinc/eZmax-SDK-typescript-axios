@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for POST /1/object/ezsigntemplate/{pkiEzsigntemplateID}/copy
  * @export
@@ -30,13 +28,31 @@ export interface EzsigntemplateCopyV1Request {
     'a_fkiEzsignfoldertypeID': Array<number>;
 }
 /**
- * A EzsigntemplateCopyV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplateCopyV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplateCopyV1Request extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntemplateCopyV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplateCopyV1Request
+ */
+export class DataObjectEzsigntemplateCopyV1Request {
    a_fkiEzsignfoldertypeID:Array<number> = []
 }
+
+/**
+ * @export 
+ * A EzsigntemplateCopyV1Request Validation Object
+ * @class ValidationObjectEzsigntemplateCopyV1Request
+ */
+export class ValidationObjectEzsigntemplateCopyV1Request {
+   a_fkiEzsignfoldertypeID = {
+      type: 'array',
+      minItems: 1,
+      required: true
+   }
+} 
 
 

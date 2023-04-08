@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigndocumentGetEzsignsignaturesV1ResponseMPayload } from './ezsigndocument-get-ezsignsignatures-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface EzsigndocumentGetEzsignsignaturesV1ResponseAllOf {
     'mPayload': EzsigndocumentGetEzsignsignaturesV1ResponseMPayload;
 }
 /**
- * A EzsigndocumentGetEzsignsignaturesV1ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigndocumentGetEzsignsignaturesV1ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigndocumentGetEzsignsignaturesV1ResponseAllOf extends DefaultObject {
-   mPayload:Partial<EzsigndocumentGetEzsignsignaturesV1ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectEzsigndocumentGetEzsignsignaturesV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectEzsigndocumentGetEzsignsignaturesV1ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A EzsigndocumentGetEzsignsignaturesV1ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigndocumentGetEzsignsignaturesV1ResponseAllOf
+ */
+export class DataObjectEzsigndocumentGetEzsignsignaturesV1ResponseAllOf {
+   mPayload:EzsigndocumentGetEzsignsignaturesV1ResponseMPayload = new DataObjectEzsigndocumentGetEzsignsignaturesV1ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A EzsigndocumentGetEzsignsignaturesV1ResponseAllOf Validation Object
+ * @class ValidationObjectEzsigndocumentGetEzsignsignaturesV1ResponseAllOf
+ */
+export class ValidationObjectEzsigndocumentGetEzsignsignaturesV1ResponseAllOf {
+   mPayload = new ValidationObjectEzsigndocumentGetEzsignsignaturesV1ResponseMPayload()
+} 
 
 

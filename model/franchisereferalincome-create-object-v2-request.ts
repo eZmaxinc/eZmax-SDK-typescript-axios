@@ -17,8 +17,6 @@
 // @ts-ignore
 import { FranchisereferalincomeRequestCompound } from './franchisereferalincome-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for POST /2/object/franchisereferalincome
  * @export
@@ -33,13 +31,31 @@ export interface FranchisereferalincomeCreateObjectV2Request {
     'a_objFranchisereferalincome': Array<FranchisereferalincomeRequestCompound>;
 }
 /**
- * A FranchisereferalincomeCreateObjectV2Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectFranchisereferalincomeCreateObjectV2Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectFranchisereferalincomeCreateObjectV2Request extends DefaultObject {
+
+/**
+ * @export 
+ * A FranchisereferalincomeCreateObjectV2Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectFranchisereferalincomeCreateObjectV2Request
+ */
+export class DataObjectFranchisereferalincomeCreateObjectV2Request {
    a_objFranchisereferalincome:Array<FranchisereferalincomeRequestCompound> = []
 }
+
+/**
+ * @export 
+ * A FranchisereferalincomeCreateObjectV2Request Validation Object
+ * @class ValidationObjectFranchisereferalincomeCreateObjectV2Request
+ */
+export class ValidationObjectFranchisereferalincomeCreateObjectV2Request {
+   a_objFranchisereferalincome = {
+      type: 'array',
+      minItems: 1,
+      required: true
+   }
+} 
 
 

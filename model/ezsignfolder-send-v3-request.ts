@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for POST /3/object/ezsignfolder/{pkiEzsignfolderID}/send
  * @export
@@ -42,15 +40,40 @@ export interface EzsignfolderSendV3Request {
     'a_fkiEzsignfoldersignerassociationID': Array<number>;
 }
 /**
- * A EzsignfolderSendV3Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfolderSendV3Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfolderSendV3Request extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignfolderSendV3Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfolderSendV3Request
+ */
+export class DataObjectEzsignfolderSendV3Request {
    tEzsignfolderMessage:string = ''
    dtEzsignfolderDelayedsenddate?:string = undefined
    a_fkiEzsignfoldersignerassociationID:Array<number> = []
 }
+
+/**
+ * @export 
+ * A EzsignfolderSendV3Request Validation Object
+ * @class ValidationObjectEzsignfolderSendV3Request
+ */
+export class ValidationObjectEzsignfolderSendV3Request {
+   tEzsignfolderMessage = {
+      type: 'string',
+      required: true
+   }
+   dtEzsignfolderDelayedsenddate = {
+      type: 'string',
+      required: false
+   }
+   a_fkiEzsignfoldersignerassociationID = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

@@ -17,8 +17,6 @@
 // @ts-ignore
 import { FranchisereferalincomeCreateObjectV1ResponseMPayload } from './franchisereferalincome-create-object-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface FranchisereferalincomeCreateObjectV1ResponseAllOf {
     'mPayload': FranchisereferalincomeCreateObjectV1ResponseMPayload;
 }
 /**
- * A FranchisereferalincomeCreateObjectV1ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectFranchisereferalincomeCreateObjectV1ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectFranchisereferalincomeCreateObjectV1ResponseAllOf extends DefaultObject {
-   mPayload:Partial<FranchisereferalincomeCreateObjectV1ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectFranchisereferalincomeCreateObjectV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectFranchisereferalincomeCreateObjectV1ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A FranchisereferalincomeCreateObjectV1ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectFranchisereferalincomeCreateObjectV1ResponseAllOf
+ */
+export class DataObjectFranchisereferalincomeCreateObjectV1ResponseAllOf {
+   mPayload:FranchisereferalincomeCreateObjectV1ResponseMPayload = new DataObjectFranchisereferalincomeCreateObjectV1ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A FranchisereferalincomeCreateObjectV1ResponseAllOf Validation Object
+ * @class ValidationObjectFranchisereferalincomeCreateObjectV1ResponseAllOf
+ */
+export class ValidationObjectFranchisereferalincomeCreateObjectV1ResponseAllOf {
+   mPayload = new ValidationObjectFranchisereferalincomeCreateObjectV1ResponseMPayload()
+} 
 
 

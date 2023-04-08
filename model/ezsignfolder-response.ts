@@ -23,8 +23,6 @@ import { FieldEEzsignfolderSendreminderfrequency } from './field-eezsignfolder-s
 // @ts-ignore
 import { FieldEEzsignfolderStep } from './field-eezsignfolder-step';
 
-import { DefaultObject } from '../base'
-
 /**
  * An Ezsignfolder Object
  * @export
@@ -151,14 +149,31 @@ export interface EzsignfolderResponse {
      * @memberof EzsignfolderResponse
      */
     'objAudit': CommonAudit;
+    /**
+     * This field can be used to store an External ID from the client\'s system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format. 
+     * @type {string}
+     * @memberof EzsignfolderResponse
+     */
+    'sEzsignfolderExternalid': string;
 }
+
+
 /**
- * A EzsignfolderResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfolderResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfolderResponse extends DefaultObject {
+// @ts-ignore
+import { DataObjectCommonAudit } from './'
+// @ts-ignore
+import { ValidationObjectCommonAudit } from './'
+
+/**
+ * @export 
+ * A EzsignfolderResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfolderResponse
+ */
+export class DataObjectEzsignfolderResponse {
    pkiEzsignfolderID:number = 0
    fkiEzsignfoldertypeID:number = 0
    sEzsignfoldertypeNameX:string = ''
@@ -178,7 +193,105 @@ export class DefaultObjectEzsignfolderResponse extends DefaultObject {
    eEzsignfolderStep:FieldEEzsignfolderStep = 'Unsent'
    dtEzsignfolderClose?:string = undefined
    tEzsignfolderMessage:string = ''
-   objAudit:Partial<CommonAudit> = {}
+   objAudit:CommonAudit = new DataObjectCommonAudit()
+   sEzsignfolderExternalid:string = ''
 }
+
+/**
+ * @export 
+ * A EzsignfolderResponse Validation Object
+ * @class ValidationObjectEzsignfolderResponse
+ */
+export class ValidationObjectEzsignfolderResponse {
+   pkiEzsignfolderID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsignfoldertypeID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sEzsignfoldertypeNameX = {
+      type: 'string',
+      required: true
+   }
+   fkiBillingentityinternalID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sBillingentityinternalDescriptionX = {
+      type: 'string',
+      required: true
+   }
+   fkiEzsigntsarequirementID = {
+      type: 'integer',
+      minimum: 1,
+      maximum: 3,
+      required: true
+   }
+   sEzsigntsarequirementDescriptionX = {
+      type: 'string',
+      required: true
+   }
+   sEzsignfolderDescription = {
+      type: 'string',
+      required: true
+   }
+   tEzsignfolderNote = {
+      type: 'string',
+      required: true
+   }
+   bEzsignfolderIsdisposable = {
+      type: 'boolean',
+      required: true
+   }
+   eEzsignfolderSendreminderfrequency = {
+      type: 'enum',
+      allowableValues: ['None','Daily','Weekly'],
+      required: true
+   }
+   dtEzsignfolderDelayedsenddate = {
+      type: 'string',
+      required: false
+   }
+   dtEzsignfolderDuedate = {
+      type: 'string',
+      required: false
+   }
+   dtEzsignfolderSentdate = {
+      type: 'string',
+      required: false
+   }
+   dtEzsignfolderScheduledarchive = {
+      type: 'string',
+      required: false
+   }
+   dtEzsignfolderScheduleddispose = {
+      type: 'string',
+      required: false
+   }
+   eEzsignfolderStep = {
+      type: 'enum',
+      allowableValues: ['Unsent','PendingSend','Sent','PartiallySigned','Expired','Completed','Archived','Disposed'],
+      required: true
+   }
+   dtEzsignfolderClose = {
+      type: 'string',
+      required: false
+   }
+   tEzsignfolderMessage = {
+      type: 'string',
+      required: true
+   }
+   objAudit = new ValidationObjectCommonAudit()
+   sEzsignfolderExternalid = {
+      type: 'string',
+      pattern: '/^.{0,64}$/',
+      required: true
+   }
+} 
 
 

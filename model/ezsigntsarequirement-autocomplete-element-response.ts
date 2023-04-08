@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A Ezsigntsarequirement AutocompleteElement Response
  * @export
@@ -48,16 +46,47 @@ export interface EzsigntsarequirementAutocompleteElementResponse {
     'bDisabled': boolean;
 }
 /**
- * A EzsigntsarequirementAutocompleteElementResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntsarequirementAutocompleteElementResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntsarequirementAutocompleteElementResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntsarequirementAutocompleteElementResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntsarequirementAutocompleteElementResponse
+ */
+export class DataObjectEzsigntsarequirementAutocompleteElementResponse {
    sEzsigntsarequirementDescriptionX:string = ''
    pkiEzsigntsarequirementID:number = 0
    bEzsigntsarequirementIsactive:boolean = false
    bDisabled:boolean = false
 }
+
+/**
+ * @export 
+ * A EzsigntsarequirementAutocompleteElementResponse Validation Object
+ * @class ValidationObjectEzsigntsarequirementAutocompleteElementResponse
+ */
+export class ValidationObjectEzsigntsarequirementAutocompleteElementResponse {
+   sEzsigntsarequirementDescriptionX = {
+      type: 'string',
+      required: true
+   }
+   pkiEzsigntsarequirementID = {
+      type: 'integer',
+      minimum: 1,
+      maximum: 3,
+      required: true
+   }
+   bEzsigntsarequirementIsactive = {
+      type: 'boolean',
+      required: true
+   }
+   bDisabled = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload } from './ezsigntemplatepackagesignermembership-delete-object-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseAllO
     'mPayload': EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload;
 }
 /**
- * A EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplatepackagesignermembershipDeleteObjectV1ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatepackagesignermembershipDeleteObjectV1ResponseAllOf extends DefaultObject {
-   mPayload:Partial<EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectEzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectEzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatepackagesignermembershipDeleteObjectV1ResponseAllOf
+ */
+export class DataObjectEzsigntemplatepackagesignermembershipDeleteObjectV1ResponseAllOf {
+   mPayload:EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload = new DataObjectEzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseAllOf Validation Object
+ * @class ValidationObjectEzsigntemplatepackagesignermembershipDeleteObjectV1ResponseAllOf
+ */
+export class ValidationObjectEzsigntemplatepackagesignermembershipDeleteObjectV1ResponseAllOf {
+   mPayload = new ValidationObjectEzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload()
+} 
 
 

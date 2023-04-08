@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * An Ezsignsignaturecustomdate Object
  * @export
@@ -48,16 +46,48 @@ export interface EzsignsignaturecustomdateRequest {
     'sEzsignsignaturecustomdateFormat': string;
 }
 /**
- * A EzsignsignaturecustomdateRequest Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignsignaturecustomdateRequest
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignsignaturecustomdateRequest extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignsignaturecustomdateRequest Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignsignaturecustomdateRequest
+ */
+export class DataObjectEzsignsignaturecustomdateRequest {
    pkiEzsignsignaturecustomdateID?:number = undefined
    iEzsignsignaturecustomdateX:number = 0
    iEzsignsignaturecustomdateY:number = 0
    sEzsignsignaturecustomdateFormat:string = ''
 }
+
+/**
+ * @export 
+ * A EzsignsignaturecustomdateRequest Validation Object
+ * @class ValidationObjectEzsignsignaturecustomdateRequest
+ */
+export class ValidationObjectEzsignsignaturecustomdateRequest {
+   pkiEzsignsignaturecustomdateID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   iEzsignsignaturecustomdateX = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsignsignaturecustomdateY = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sEzsignsignaturecustomdateFormat = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

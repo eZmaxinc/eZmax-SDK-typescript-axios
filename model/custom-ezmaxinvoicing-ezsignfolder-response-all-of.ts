@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -60,12 +58,17 @@ export interface CustomEzmaxinvoicingEzsignfolderResponseAllOf {
     'bEzsignfolderAllowed': boolean;
 }
 /**
- * A CustomEzmaxinvoicingEzsignfolderResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCustomEzmaxinvoicingEzsignfolderResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCustomEzmaxinvoicingEzsignfolderResponseAllOf extends DefaultObject {
+
+/**
+ * @export 
+ * A CustomEzmaxinvoicingEzsignfolderResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCustomEzmaxinvoicingEzsignfolderResponseAllOf
+ */
+export class DataObjectCustomEzmaxinvoicingEzsignfolderResponseAllOf {
    fkiEzsignfolderID:number = 0
    sEzsignfolderDescription:string = ''
    bEzsigntsarequirementBillable:boolean = false
@@ -73,5 +76,38 @@ export class DefaultObjectCustomEzmaxinvoicingEzsignfolderResponseAllOf extends 
    bEzsignfolderPaymentused:boolean = false
    bEzsignfolderAllowed:boolean = false
 }
+
+/**
+ * @export 
+ * A CustomEzmaxinvoicingEzsignfolderResponseAllOf Validation Object
+ * @class ValidationObjectCustomEzmaxinvoicingEzsignfolderResponseAllOf
+ */
+export class ValidationObjectCustomEzmaxinvoicingEzsignfolderResponseAllOf {
+   fkiEzsignfolderID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sEzsignfolderDescription = {
+      type: 'string',
+      required: true
+   }
+   bEzsigntsarequirementBillable = {
+      type: 'boolean',
+      required: true
+   }
+   bEzsignfolderMfaused = {
+      type: 'boolean',
+      required: true
+   }
+   bEzsignfolderPaymentused = {
+      type: 'boolean',
+      required: true
+   }
+   bEzsignfolderAllowed = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

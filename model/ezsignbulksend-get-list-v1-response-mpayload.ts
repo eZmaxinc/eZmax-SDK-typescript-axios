@@ -23,8 +23,6 @@ import { EzsignbulksendGetListV1ResponseMPayloadAllOf } from './ezsignbulksend-g
 // @ts-ignore
 import { EzsignbulksendListElement } from './ezsignbulksend-list-element';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsignbulksendGetListV1ResponseMPayload
  * Payload for GET /1/object/ezsignbulksend/getList
@@ -34,15 +32,40 @@ export type EzsignbulksendGetListV1ResponseMPayload = CommonGetListV1ResponseMPa
 
 
 /**
- * @export 
- * A EzsignbulksendGetListV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsignbulksendGetListV1ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignbulksendGetListV1ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignbulksendGetListV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignbulksendGetListV1ResponseMPayload
+ */
+export class DataObjectEzsignbulksendGetListV1ResponseMPayload {
    a_objEzsignbulksend:Array<EzsignbulksendListElement> = []
    iRowReturned:number = 0
    iRowFiltered:number = 0
 }
+
+/**
+ * @export 
+ * A EzsignbulksendGetListV1ResponseMPayload Validation Object
+ * @class ValidationObjectEzsignbulksendGetListV1ResponseMPayload
+ */
+export class ValidationObjectEzsignbulksendGetListV1ResponseMPayload {
+   a_objEzsignbulksend = {
+      type: 'array',
+      required: true
+   }
+   iRowReturned = {
+      type: 'integer',
+      required: true
+   }
+   iRowFiltered = {
+      type: 'integer',
+      required: true
+   }
+} 
 
 

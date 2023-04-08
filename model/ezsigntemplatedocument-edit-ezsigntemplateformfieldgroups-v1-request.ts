@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigntemplateformfieldgroupRequestCompound } from './ezsigntemplateformfieldgroup-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for PUT /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/editEzsigntemplateformfieldgroups
  * @export
@@ -33,13 +31,30 @@ export interface EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Reques
     'a_objEzsigntemplateformfieldgroup': Array<EzsigntemplateformfieldgroupRequestCompound>;
 }
 /**
- * A EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request
+ */
+export class DataObjectEzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request {
    a_objEzsigntemplateformfieldgroup:Array<EzsigntemplateformfieldgroupRequestCompound> = []
 }
+
+/**
+ * @export 
+ * A EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request Validation Object
+ * @class ValidationObjectEzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request
+ */
+export class ValidationObjectEzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request {
+   a_objEzsigntemplateformfieldgroup = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

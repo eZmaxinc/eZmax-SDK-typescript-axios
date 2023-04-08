@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigndocumentGetTemporaryProofV1ResponseMPayload } from './ezsigndocument-get-temporary-proof-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface EzsigndocumentGetTemporaryProofV1ResponseAllOf {
     'mPayload': EzsigndocumentGetTemporaryProofV1ResponseMPayload;
 }
 /**
- * A EzsigndocumentGetTemporaryProofV1ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigndocumentGetTemporaryProofV1ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigndocumentGetTemporaryProofV1ResponseAllOf extends DefaultObject {
-   mPayload:Partial<EzsigndocumentGetTemporaryProofV1ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectEzsigndocumentGetTemporaryProofV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectEzsigndocumentGetTemporaryProofV1ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A EzsigndocumentGetTemporaryProofV1ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigndocumentGetTemporaryProofV1ResponseAllOf
+ */
+export class DataObjectEzsigndocumentGetTemporaryProofV1ResponseAllOf {
+   mPayload:EzsigndocumentGetTemporaryProofV1ResponseMPayload = new DataObjectEzsigndocumentGetTemporaryProofV1ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A EzsigndocumentGetTemporaryProofV1ResponseAllOf Validation Object
+ * @class ValidationObjectEzsigndocumentGetTemporaryProofV1ResponseAllOf
+ */
+export class ValidationObjectEzsigndocumentGetTemporaryProofV1ResponseAllOf {
+   mPayload = new ValidationObjectEzsigndocumentGetTemporaryProofV1ResponseMPayload()
+} 
 
 

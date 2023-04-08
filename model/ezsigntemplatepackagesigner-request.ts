@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A Ezsigntemplatepackagesigner Object
  * @export
@@ -42,15 +40,42 @@ export interface EzsigntemplatepackagesignerRequest {
     'sEzsigntemplatepackagesignerDescription': string;
 }
 /**
- * A EzsigntemplatepackagesignerRequest Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplatepackagesignerRequest
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatepackagesignerRequest extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntemplatepackagesignerRequest Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatepackagesignerRequest
+ */
+export class DataObjectEzsigntemplatepackagesignerRequest {
    pkiEzsigntemplatepackagesignerID?:number = undefined
    fkiEzsigntemplatepackageID:number = 0
    sEzsigntemplatepackagesignerDescription:string = ''
 }
+
+/**
+ * @export 
+ * A EzsigntemplatepackagesignerRequest Validation Object
+ * @class ValidationObjectEzsigntemplatepackagesignerRequest
+ */
+export class ValidationObjectEzsigntemplatepackagesignerRequest {
+   pkiEzsigntemplatepackagesignerID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzsigntemplatepackageID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sEzsigntemplatepackagesignerDescription = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

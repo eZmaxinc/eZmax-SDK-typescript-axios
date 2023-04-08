@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for PUT /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignformfieldgroups
  * @export
@@ -30,13 +28,30 @@ export interface EzsigndocumentEditEzsignformfieldgroupsV1ResponseMPayload {
     'a_pkiEzsignformfieldgroupID': Array<number>;
 }
 /**
- * A EzsigndocumentEditEzsignformfieldgroupsV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigndocumentEditEzsignformfieldgroupsV1ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigndocumentEditEzsignformfieldgroupsV1ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigndocumentEditEzsignformfieldgroupsV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigndocumentEditEzsignformfieldgroupsV1ResponseMPayload
+ */
+export class DataObjectEzsigndocumentEditEzsignformfieldgroupsV1ResponseMPayload {
    a_pkiEzsignformfieldgroupID:Array<number> = []
 }
+
+/**
+ * @export 
+ * A EzsigndocumentEditEzsignformfieldgroupsV1ResponseMPayload Validation Object
+ * @class ValidationObjectEzsigndocumentEditEzsignformfieldgroupsV1ResponseMPayload
+ */
+export class ValidationObjectEzsigndocumentEditEzsignformfieldgroupsV1ResponseMPayload {
+   a_pkiEzsignformfieldgroupID = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

@@ -29,8 +29,6 @@ import { EzsigntemplatepackagesignermembershipCreateObjectV1ResponseAllOf } from
 // @ts-ignore
 import { EzsigntemplatepackagesignermembershipCreateObjectV1ResponseMPayload } from './ezsigntemplatepackagesignermembership-create-object-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsigntemplatepackagesignermembershipCreateObjectV1Response
  * Response for POST /1/object/ezsigntemplatepackagesignermembership
@@ -40,15 +38,43 @@ export type EzsigntemplatepackagesignermembershipCreateObjectV1Response = Common
 
 
 /**
- * @export 
- * A EzsigntemplatepackagesignermembershipCreateObjectV1Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsigntemplatepackagesignermembershipCreateObjectV1Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatepackagesignermembershipCreateObjectV1Response extends DefaultObject {
-   mPayload:Partial<EzsigntemplatepackagesignermembershipCreateObjectV1ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectEzsigntemplatepackagesignermembershipCreateObjectV1ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsigntemplatepackagesignermembershipCreateObjectV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A EzsigntemplatepackagesignermembershipCreateObjectV1Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatepackagesignermembershipCreateObjectV1Response
+ */
+export class DataObjectEzsigntemplatepackagesignermembershipCreateObjectV1Response {
+   mPayload:EzsigntemplatepackagesignermembershipCreateObjectV1ResponseMPayload = new DataObjectEzsigntemplatepackagesignermembershipCreateObjectV1ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A EzsigntemplatepackagesignermembershipCreateObjectV1Response Validation Object
+ * @class ValidationObjectEzsigntemplatepackagesignermembershipCreateObjectV1Response
+ */
+export class ValidationObjectEzsigntemplatepackagesignermembershipCreateObjectV1Response {
+   mPayload = new ValidationObjectEzsigntemplatepackagesignermembershipCreateObjectV1ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

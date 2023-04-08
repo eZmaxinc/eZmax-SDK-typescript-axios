@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigndocumentResponseCompound } from './ezsigndocument-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for POST /1/object/ezsignfolder/{pkiEzsignfolderID}/importEzsigntemplatepackage
  * @export
@@ -33,13 +31,30 @@ export interface EzsignfolderImportEzsigntemplatepackageV1ResponseMPayload {
     'a_objEzsigndocument': Array<EzsigndocumentResponseCompound>;
 }
 /**
- * A EzsignfolderImportEzsigntemplatepackageV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfolderImportEzsigntemplatepackageV1ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfolderImportEzsigntemplatepackageV1ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignfolderImportEzsigntemplatepackageV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfolderImportEzsigntemplatepackageV1ResponseMPayload
+ */
+export class DataObjectEzsignfolderImportEzsigntemplatepackageV1ResponseMPayload {
    a_objEzsigndocument:Array<EzsigndocumentResponseCompound> = []
 }
+
+/**
+ * @export 
+ * A EzsignfolderImportEzsigntemplatepackageV1ResponseMPayload Validation Object
+ * @class ValidationObjectEzsignfolderImportEzsigntemplatepackageV1ResponseMPayload
+ */
+export class ValidationObjectEzsignfolderImportEzsigntemplatepackageV1ResponseMPayload {
+   a_objEzsigndocument = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

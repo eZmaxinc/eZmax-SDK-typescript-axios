@@ -17,8 +17,6 @@
 // @ts-ignore
 import { FieldEEzmaxinvoicinguserVariationezsign } from './field-eezmaxinvoicinguser-variationezsign';
 
-import { DefaultObject } from '../base'
-
 /**
  * A Ezmaxinvoicinguser Object
  * @export
@@ -80,13 +78,20 @@ export interface EzmaxinvoicinguserResponse {
      */
     'eEzmaxinvoicinguserVariationezsign': FieldEEzmaxinvoicinguserVariationezsign;
 }
+
+
 /**
- * A EzmaxinvoicinguserResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzmaxinvoicinguserResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzmaxinvoicinguserResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A EzmaxinvoicinguserResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzmaxinvoicinguserResponse
+ */
+export class DataObjectEzmaxinvoicinguserResponse {
    pkiEzmaxinvoicinguserID?:number = undefined
    fkiEzmaxinvoicingID?:number = undefined
    fkiBillingentityinternalID:number = 0
@@ -97,5 +102,55 @@ export class DefaultObjectEzmaxinvoicinguserResponse extends DefaultObject {
    bEzmaxinvoicinguserBillableezsign:boolean = false
    eEzmaxinvoicinguserVariationezsign:FieldEEzmaxinvoicinguserVariationezsign = 'Charge'
 }
+
+/**
+ * @export 
+ * A EzmaxinvoicinguserResponse Validation Object
+ * @class ValidationObjectEzmaxinvoicinguserResponse
+ */
+export class ValidationObjectEzmaxinvoicinguserResponse {
+   pkiEzmaxinvoicinguserID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzmaxinvoicingID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiBillingentityinternalID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sBillingentityinternalDescriptionX = {
+      type: 'string',
+      required: true
+   }
+   fkiUserID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzmaxinvoicinguserEzsigndocument = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   bEzmaxinvoicinguserEzsignaccount = {
+      type: 'boolean',
+      required: true
+   }
+   bEzmaxinvoicinguserBillableezsign = {
+      type: 'boolean',
+      required: true
+   }
+   eEzmaxinvoicinguserVariationezsign = {
+      type: 'enum',
+      allowableValues: ['Charge','Refund','Same'],
+      required: true
+   }
+} 
 
 

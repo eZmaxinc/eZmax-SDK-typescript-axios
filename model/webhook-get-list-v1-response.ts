@@ -29,8 +29,6 @@ import { WebhookGetListV1ResponseAllOf } from './webhook-get-list-v1-response-al
 // @ts-ignore
 import { WebhookGetListV1ResponseMPayload } from './webhook-get-list-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type WebhookGetListV1Response
  * Response for GET /1/object/webhook/getList
@@ -40,15 +38,43 @@ export type WebhookGetListV1Response = CommonResponseGetList & WebhookGetListV1R
 
 
 /**
- * @export 
- * A WebhookGetListV1Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectWebhookGetListV1Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectWebhookGetListV1Response extends DefaultObject {
-   mPayload:Partial<WebhookGetListV1ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayloadGetList> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectWebhookGetListV1ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayloadGetList } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectWebhookGetListV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayloadGetList } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A WebhookGetListV1Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectWebhookGetListV1Response
+ */
+export class DataObjectWebhookGetListV1Response {
+   mPayload:WebhookGetListV1ResponseMPayload = new DataObjectWebhookGetListV1ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayloadGetList = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A WebhookGetListV1Response Validation Object
+ * @class ValidationObjectWebhookGetListV1Response
+ */
+export class ValidationObjectWebhookGetListV1Response {
+   mPayload = new ValidationObjectWebhookGetListV1ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayloadGetList()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

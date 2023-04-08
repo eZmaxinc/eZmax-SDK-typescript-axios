@@ -20,8 +20,6 @@ import { CommonAudit } from './common-audit';
 // @ts-ignore
 import { FieldEUserType } from './field-euser-type';
 
-import { DefaultObject } from '../base'
-
 /**
  * A User Object
  * @export
@@ -71,20 +69,68 @@ export interface UserResponse {
      */
     'objAudit': CommonAudit;
 }
+
+
 /**
- * A UserResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectUserResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectUserResponse extends DefaultObject {
+// @ts-ignore
+import { DataObjectCommonAudit } from './'
+// @ts-ignore
+import { ValidationObjectCommonAudit } from './'
+
+/**
+ * @export 
+ * A UserResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectUserResponse
+ */
+export class DataObjectUserResponse {
    pkiUserID:number = 0
    fkiLanguageID:number = 0
    eUserType:FieldEUserType = 'AgentBroker'
    sUserFirstname:string = ''
    sUserLastname:string = ''
    sUserLoginname:string = ''
-   objAudit:Partial<CommonAudit> = {}
+   objAudit:CommonAudit = new DataObjectCommonAudit()
 }
+
+/**
+ * @export 
+ * A UserResponse Validation Object
+ * @class ValidationObjectUserResponse
+ */
+export class ValidationObjectUserResponse {
+   pkiUserID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiLanguageID = {
+      type: 'integer',
+      minimum: 1,
+      maximum: 2,
+      required: true
+   }
+   eUserType = {
+      type: 'enum',
+      allowableValues: ['AgentBroker','Assistant','Attendance','Customer','Employee','Ezcom','EzsignSigner','EzsignUser','FranchiseCustomerServer','Normal','RewardAdministration','RewardMember','RewardRepresentative','RewardCustomer','RewardDistributorServer','Supplier','VetrxCustomer','Vetrxcustomergroup','VetrxCustomerServer','VetrxManufacturer','VetrxVendor'],
+      required: true
+   }
+   sUserFirstname = {
+      type: 'string',
+      required: true
+   }
+   sUserLastname = {
+      type: 'string',
+      required: true
+   }
+   sUserLoginname = {
+      type: 'string',
+      required: true
+   }
+   objAudit = new ValidationObjectCommonAudit()
+} 
 
 

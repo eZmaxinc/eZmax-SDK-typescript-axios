@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignfolderListElement } from './ezsignfolder-list-element';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,30 @@ export interface EzsignfolderGetListV1ResponseMPayloadAllOf {
     'a_objEzsignfolder': Array<EzsignfolderListElement>;
 }
 /**
- * A EzsignfolderGetListV1ResponseMPayloadAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfolderGetListV1ResponseMPayloadAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfolderGetListV1ResponseMPayloadAllOf extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignfolderGetListV1ResponseMPayloadAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfolderGetListV1ResponseMPayloadAllOf
+ */
+export class DataObjectEzsignfolderGetListV1ResponseMPayloadAllOf {
    a_objEzsignfolder:Array<EzsignfolderListElement> = []
 }
+
+/**
+ * @export 
+ * A EzsignfolderGetListV1ResponseMPayloadAllOf Validation Object
+ * @class ValidationObjectEzsignfolderGetListV1ResponseMPayloadAllOf
+ */
+export class ValidationObjectEzsignfolderGetListV1ResponseMPayloadAllOf {
+   a_objEzsignfolder = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A Custom ContactName Object
  * @export
@@ -42,15 +40,40 @@ export interface CustomContactNameResponse {
     'sContactCompany'?: string;
 }
 /**
- * A CustomContactNameResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCustomContactNameResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCustomContactNameResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A CustomContactNameResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCustomContactNameResponse
+ */
+export class DataObjectCustomContactNameResponse {
    sContactFirstname?:string = undefined
    sContactLastname?:string = undefined
    sContactCompany?:string = undefined
 }
+
+/**
+ * @export 
+ * A CustomContactNameResponse Validation Object
+ * @class ValidationObjectCustomContactNameResponse
+ */
+export class ValidationObjectCustomContactNameResponse {
+   sContactFirstname = {
+      type: 'string',
+      required: false
+   }
+   sContactLastname = {
+      type: 'string',
+      required: false
+   }
+   sContactCompany = {
+      type: 'string',
+      required: false
+   }
+} 
 
 

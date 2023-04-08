@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigntemplatepackagesignerResponseCompound } from './ezsigntemplatepackagesigner-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for GET /2/object/ezsigntemplatepackagesigner/{pkiEzsigntemplatepackagesignerID}
  * @export
@@ -33,13 +31,31 @@ export interface EzsigntemplatepackagesignerGetObjectV2ResponseMPayload {
     'objEzsigntemplatepackagesigner': EzsigntemplatepackagesignerResponseCompound;
 }
 /**
- * A EzsigntemplatepackagesignerGetObjectV2ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplatepackagesignerGetObjectV2ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatepackagesignerGetObjectV2ResponseMPayload extends DefaultObject {
-   objEzsigntemplatepackagesigner:Partial<EzsigntemplatepackagesignerResponseCompound> = {}
+// @ts-ignore
+import { DataObjectEzsigntemplatepackagesignerResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectEzsigntemplatepackagesignerResponseCompound } from './'
+
+/**
+ * @export 
+ * A EzsigntemplatepackagesignerGetObjectV2ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatepackagesignerGetObjectV2ResponseMPayload
+ */
+export class DataObjectEzsigntemplatepackagesignerGetObjectV2ResponseMPayload {
+   objEzsigntemplatepackagesigner:EzsigntemplatepackagesignerResponseCompound = new DataObjectEzsigntemplatepackagesignerResponseCompound()
 }
+
+/**
+ * @export 
+ * A EzsigntemplatepackagesignerGetObjectV2ResponseMPayload Validation Object
+ * @class ValidationObjectEzsigntemplatepackagesignerGetObjectV2ResponseMPayload
+ */
+export class ValidationObjectEzsigntemplatepackagesignerGetObjectV2ResponseMPayload {
+   objEzsigntemplatepackagesigner = new ValidationObjectEzsigntemplatepackagesignerResponseCompound()
+} 
 
 

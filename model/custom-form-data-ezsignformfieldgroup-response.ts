@@ -17,8 +17,6 @@
 // @ts-ignore
 import { CustomFormDataEzsignformfieldResponse } from './custom-form-data-ezsignformfield-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * An FormDataSigner->Ezsignformfieldgroup Object and children to create a complete structure
  * @export
@@ -39,14 +37,35 @@ export interface CustomFormDataEzsignformfieldgroupResponse {
     'a_objEzsignformfield': Array<CustomFormDataEzsignformfieldResponse>;
 }
 /**
- * A CustomFormDataEzsignformfieldgroupResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCustomFormDataEzsignformfieldgroupResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCustomFormDataEzsignformfieldgroupResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A CustomFormDataEzsignformfieldgroupResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCustomFormDataEzsignformfieldgroupResponse
+ */
+export class DataObjectCustomFormDataEzsignformfieldgroupResponse {
    sEzsignformfieldgroupLabel:string = ''
    a_objEzsignformfield:Array<CustomFormDataEzsignformfieldResponse> = []
 }
+
+/**
+ * @export 
+ * A CustomFormDataEzsignformfieldgroupResponse Validation Object
+ * @class ValidationObjectCustomFormDataEzsignformfieldgroupResponse
+ */
+export class ValidationObjectCustomFormDataEzsignformfieldgroupResponse {
+   sEzsignformfieldgroupLabel = {
+      type: 'string',
+      required: true
+   }
+   a_objEzsignformfield = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

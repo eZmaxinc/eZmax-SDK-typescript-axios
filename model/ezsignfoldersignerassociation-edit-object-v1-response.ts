@@ -23,8 +23,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 // @ts-ignore
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsignfoldersignerassociationEditObjectV1Response
  * Response for PUT /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}
@@ -34,14 +32,37 @@ export type EzsignfoldersignerassociationEditObjectV1Response = CommonResponse;
 
 
 /**
- * @export 
- * A EzsignfoldersignerassociationEditObjectV1Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsignfoldersignerassociationEditObjectV1Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfoldersignerassociationEditObjectV1Response extends DefaultObject {
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationEditObjectV1Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfoldersignerassociationEditObjectV1Response
+ */
+export class DataObjectEzsignfoldersignerassociationEditObjectV1Response {
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationEditObjectV1Response Validation Object
+ * @class ValidationObjectEzsignfoldersignerassociationEditObjectV1Response
+ */
+export class ValidationObjectEzsignfoldersignerassociationEditObjectV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

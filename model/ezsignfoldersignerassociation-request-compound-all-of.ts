@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignsignerRequestCompound } from './ezsignsigner-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface EzsignfoldersignerassociationRequestCompoundAllOf {
     'objEzsignsigner'?: EzsignsignerRequestCompound;
 }
 /**
- * A EzsignfoldersignerassociationRequestCompoundAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfoldersignerassociationRequestCompoundAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfoldersignerassociationRequestCompoundAllOf extends DefaultObject {
-   objEzsignsigner?:Partial<EzsignsignerRequestCompound> = undefined
+// @ts-ignore
+import { DataObjectEzsignsignerRequestCompound } from './'
+// @ts-ignore
+import { ValidationObjectEzsignsignerRequestCompound } from './'
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationRequestCompoundAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfoldersignerassociationRequestCompoundAllOf
+ */
+export class DataObjectEzsignfoldersignerassociationRequestCompoundAllOf {
+   objEzsignsigner?:EzsignsignerRequestCompound = undefined
 }
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationRequestCompoundAllOf Validation Object
+ * @class ValidationObjectEzsignfoldersignerassociationRequestCompoundAllOf
+ */
+export class ValidationObjectEzsignfoldersignerassociationRequestCompoundAllOf {
+   objEzsignsigner = new ValidationObjectEzsignsignerRequestCompound()
+} 
 
 

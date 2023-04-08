@@ -17,8 +17,6 @@
 // @ts-ignore
 import { CustomEzsignfoldersignerassociationstatusResponse } from './custom-ezsignfoldersignerassociationstatus-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -57,17 +55,50 @@ export interface EzsigndocumentResponseCompoundAllOf {
     'a_objEzsignfoldersignerassociationstatus': Array<CustomEzsignfoldersignerassociationstatusResponse>;
 }
 /**
- * A EzsigndocumentResponseCompoundAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigndocumentResponseCompoundAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigndocumentResponseCompoundAllOf extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigndocumentResponseCompoundAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigndocumentResponseCompoundAllOf
+ */
+export class DataObjectEzsigndocumentResponseCompoundAllOf {
    iEzsigndocumentStepformtotal:number = 0
    iEzsigndocumentStepformcurrent:number = 0
    iEzsigndocumentStepsignaturetotal:number = 0
    iEzsigndocumentStepsignatureCurrent:number = 0
    a_objEzsignfoldersignerassociationstatus:Array<CustomEzsignfoldersignerassociationstatusResponse> = []
 }
+
+/**
+ * @export 
+ * A EzsigndocumentResponseCompoundAllOf Validation Object
+ * @class ValidationObjectEzsigndocumentResponseCompoundAllOf
+ */
+export class ValidationObjectEzsigndocumentResponseCompoundAllOf {
+   iEzsigndocumentStepformtotal = {
+      type: 'integer',
+      required: true
+   }
+   iEzsigndocumentStepformcurrent = {
+      type: 'integer',
+      required: true
+   }
+   iEzsigndocumentStepsignaturetotal = {
+      type: 'integer',
+      required: true
+   }
+   iEzsigndocumentStepsignatureCurrent = {
+      type: 'integer',
+      required: true
+   }
+   a_objEzsignfoldersignerassociationstatus = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

@@ -29,8 +29,6 @@ import { EzsigndocumentGetObjectV2ResponseAllOf } from './ezsigndocument-get-obj
 // @ts-ignore
 import { EzsigndocumentGetObjectV2ResponseMPayload } from './ezsigndocument-get-object-v2-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsigndocumentGetObjectV2Response
  * Response for GET /2/object/ezsigndocument/{pkiEzsigndocumentID}
@@ -40,15 +38,43 @@ export type EzsigndocumentGetObjectV2Response = CommonResponse & EzsigndocumentG
 
 
 /**
- * @export 
- * A EzsigndocumentGetObjectV2Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsigndocumentGetObjectV2Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigndocumentGetObjectV2Response extends DefaultObject {
-   mPayload:Partial<EzsigndocumentGetObjectV2ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectEzsigndocumentGetObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsigndocumentGetObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A EzsigndocumentGetObjectV2Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigndocumentGetObjectV2Response
+ */
+export class DataObjectEzsigndocumentGetObjectV2Response {
+   mPayload:EzsigndocumentGetObjectV2ResponseMPayload = new DataObjectEzsigndocumentGetObjectV2ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A EzsigndocumentGetObjectV2Response Validation Object
+ * @class ValidationObjectEzsigndocumentGetObjectV2Response
+ */
+export class ValidationObjectEzsigndocumentGetObjectV2Response {
+   mPayload = new ValidationObjectEzsigndocumentGetObjectV2ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

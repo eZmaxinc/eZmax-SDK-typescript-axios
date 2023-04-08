@@ -17,8 +17,6 @@
 // @ts-ignore
 import { CommonResponseFilter } from './common-response-filter';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -39,14 +37,36 @@ export interface CommonResponseObjDebugPayloadGetListAllOf {
     'a_OrderBy': { [key: string]: string; };
 }
 /**
- * A CommonResponseObjDebugPayloadGetListAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCommonResponseObjDebugPayloadGetListAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCommonResponseObjDebugPayloadGetListAllOf extends DefaultObject {
-   a_Filter:Partial<CommonResponseFilter> = {}
+// @ts-ignore
+import { DataObjectCommonResponseFilter } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseFilter } from './'
+
+/**
+ * @export 
+ * A CommonResponseObjDebugPayloadGetListAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCommonResponseObjDebugPayloadGetListAllOf
+ */
+export class DataObjectCommonResponseObjDebugPayloadGetListAllOf {
+   a_Filter:CommonResponseFilter = new DataObjectCommonResponseFilter()
    a_OrderBy:{ [key: string]: string; } = {}
 }
+
+/**
+ * @export 
+ * A CommonResponseObjDebugPayloadGetListAllOf Validation Object
+ * @class ValidationObjectCommonResponseObjDebugPayloadGetListAllOf
+ */
+export class ValidationObjectCommonResponseObjDebugPayloadGetListAllOf {
+   a_Filter = new ValidationObjectCommonResponseFilter()
+   a_OrderBy = {
+      type: 'object',
+      required: true
+   }
+} 
 
 

@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -54,17 +52,51 @@ export interface CustomEzmaxinvoicingEzsigndocumentResponseAllOf {
     'bEzsignfolderAllowed': boolean;
 }
 /**
- * A CustomEzmaxinvoicingEzsigndocumentResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCustomEzmaxinvoicingEzsigndocumentResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCustomEzmaxinvoicingEzsigndocumentResponseAllOf extends DefaultObject {
+
+/**
+ * @export 
+ * A CustomEzmaxinvoicingEzsigndocumentResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCustomEzmaxinvoicingEzsigndocumentResponseAllOf
+ */
+export class DataObjectCustomEzmaxinvoicingEzsigndocumentResponseAllOf {
    fkiEzsignfolderID:number = 0
    sName:string = ''
    sEzsignfolderDescription:string = ''
    sEzsigndocumentName:string = ''
    bEzsignfolderAllowed:boolean = false
 }
+
+/**
+ * @export 
+ * A CustomEzmaxinvoicingEzsigndocumentResponseAllOf Validation Object
+ * @class ValidationObjectCustomEzmaxinvoicingEzsigndocumentResponseAllOf
+ */
+export class ValidationObjectCustomEzmaxinvoicingEzsigndocumentResponseAllOf {
+   fkiEzsignfolderID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sName = {
+      type: 'string',
+      required: true
+   }
+   sEzsignfolderDescription = {
+      type: 'string',
+      required: true
+   }
+   sEzsigndocumentName = {
+      type: 'string',
+      required: true
+   }
+   bEzsignfolderAllowed = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

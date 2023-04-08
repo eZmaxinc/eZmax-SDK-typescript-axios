@@ -20,8 +20,6 @@ import { EzsigntemplateResponseCompound } from './ezsigntemplate-response-compou
 // @ts-ignore
 import { EzsigntemplatepackageResponseCompound } from './ezsigntemplatepackage-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -42,14 +40,37 @@ export interface EzsignbulksenddocumentmappingResponseCompoundAllOf {
     'objEzsigntemplatepackage'?: EzsigntemplatepackageResponseCompound;
 }
 /**
- * A EzsignbulksenddocumentmappingResponseCompoundAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignbulksenddocumentmappingResponseCompoundAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignbulksenddocumentmappingResponseCompoundAllOf extends DefaultObject {
-   objEzsigntemplate?:Partial<EzsigntemplateResponseCompound> = undefined
-   objEzsigntemplatepackage?:Partial<EzsigntemplatepackageResponseCompound> = undefined
+// @ts-ignore
+import { DataObjectEzsigntemplateResponseCompound } from './'
+// @ts-ignore
+import { DataObjectEzsigntemplatepackageResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectEzsigntemplateResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectEzsigntemplatepackageResponseCompound } from './'
+
+/**
+ * @export 
+ * A EzsignbulksenddocumentmappingResponseCompoundAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignbulksenddocumentmappingResponseCompoundAllOf
+ */
+export class DataObjectEzsignbulksenddocumentmappingResponseCompoundAllOf {
+   objEzsigntemplate?:EzsigntemplateResponseCompound = undefined
+   objEzsigntemplatepackage?:EzsigntemplatepackageResponseCompound = undefined
 }
+
+/**
+ * @export 
+ * A EzsignbulksenddocumentmappingResponseCompoundAllOf Validation Object
+ * @class ValidationObjectEzsignbulksenddocumentmappingResponseCompoundAllOf
+ */
+export class ValidationObjectEzsignbulksenddocumentmappingResponseCompoundAllOf {
+   objEzsigntemplate = new ValidationObjectEzsigntemplateResponseCompound()
+   objEzsigntemplatepackage = new ValidationObjectEzsigntemplatepackageResponseCompound()
+} 
 
 

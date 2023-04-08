@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigntemplateGetListV1ResponseMPayload } from './ezsigntemplate-get-list-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface EzsigntemplateGetListV1ResponseAllOf {
     'mPayload': EzsigntemplateGetListV1ResponseMPayload;
 }
 /**
- * A EzsigntemplateGetListV1ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplateGetListV1ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplateGetListV1ResponseAllOf extends DefaultObject {
-   mPayload:Partial<EzsigntemplateGetListV1ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectEzsigntemplateGetListV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectEzsigntemplateGetListV1ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A EzsigntemplateGetListV1ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplateGetListV1ResponseAllOf
+ */
+export class DataObjectEzsigntemplateGetListV1ResponseAllOf {
+   mPayload:EzsigntemplateGetListV1ResponseMPayload = new DataObjectEzsigntemplateGetListV1ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A EzsigntemplateGetListV1ResponseAllOf Validation Object
+ * @class ValidationObjectEzsigntemplateGetListV1ResponseAllOf
+ */
+export class ValidationObjectEzsigntemplateGetListV1ResponseAllOf {
+   mPayload = new ValidationObjectEzsigntemplateGetListV1ResponseMPayload()
+} 
 
 

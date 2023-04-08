@@ -18,12 +18,13 @@
 import { CommonAudit } from './common-audit';
 // May contain unused imports in some cases
 // @ts-ignore
+import { FieldEPaymenttermType } from './field-epaymentterm-type';
+// May contain unused imports in some cases
+// @ts-ignore
 import { MultilingualPaymenttermDescription } from './multilingual-paymentterm-description';
 // May contain unused imports in some cases
 // @ts-ignore
 import { PaymenttermResponse } from './paymentterm-response';
-
-import { DefaultObject } from '../base'
 
 /**
  * @type PaymenttermResponseCompound
@@ -33,18 +34,68 @@ import { DefaultObject } from '../base'
 export type PaymenttermResponseCompound = PaymenttermResponse;
 
 
+
+/**
+ * @import
+ * Imports Child Data Object
+ */
+// @ts-ignore
+import { DataObjectMultilingualPaymenttermDescription } from './'
+// @ts-ignore
+import { DataObjectCommonAudit } from './'
+// @ts-ignore
+import { ValidationObjectMultilingualPaymenttermDescription } from './'
+// @ts-ignore
+import { ValidationObjectCommonAudit } from './'
+
 /**
  * @export 
- * A PaymenttermResponseCompound Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectPaymenttermResponseCompound
+ * A PaymenttermResponseCompound Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectPaymenttermResponseCompound
  */
-export class DefaultObjectPaymenttermResponseCompound extends DefaultObject {
+export class DataObjectPaymenttermResponseCompound {
    pkiPaymenttermID:number = 0
    sPaymenttermCode:string = ''
-   objPaymenttermDescription:Partial<MultilingualPaymenttermDescription> = {}
+   ePaymenttermType:FieldEPaymenttermType = 'Days'
+   iPaymenttermDay:number = 0
+   objPaymenttermDescription:MultilingualPaymenttermDescription = new DataObjectMultilingualPaymenttermDescription()
    bPaymenttermIsactive:boolean = false
-   objAudit:Partial<CommonAudit> = {}
+   objAudit:CommonAudit = new DataObjectCommonAudit()
 }
+
+/**
+ * @export 
+ * A PaymenttermResponseCompound Validation Object
+ * @class ValidationObjectPaymenttermResponseCompound
+ */
+export class ValidationObjectPaymenttermResponseCompound {
+   pkiPaymenttermID = {
+      type: 'integer',
+      required: true
+   }
+   sPaymenttermCode = {
+      type: 'string',
+      pattern: '/^[A-Z0-9]{1,4}$/',
+      required: true
+   }
+   ePaymenttermType = {
+      type: 'enum',
+      allowableValues: ['Days','Dayofthemonth'],
+      required: true
+   }
+   iPaymenttermDay = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 255,
+      required: true
+   }
+   objPaymenttermDescription = new ValidationObjectMultilingualPaymenttermDescription()
+   bPaymenttermIsactive = {
+      type: 'boolean',
+      required: true
+   }
+   objAudit = new ValidationObjectCommonAudit()
+} 
 
 

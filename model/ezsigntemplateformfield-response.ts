@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * An Ezsigntemplateformfield Object
  * @export
@@ -78,12 +76,17 @@ export interface EzsigntemplateformfieldResponse {
     'bEzsigntemplateformfieldSelected'?: boolean;
 }
 /**
- * A EzsigntemplateformfieldResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplateformfieldResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplateformfieldResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntemplateformfieldResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplateformfieldResponse
+ */
+export class DataObjectEzsigntemplateformfieldResponse {
    pkiEzsigntemplateformfieldID:number = 0
    iEzsigntemplatedocumentpagePagenumber:number = 0
    sEzsigntemplateformfieldLabel:string = ''
@@ -94,5 +97,55 @@ export class DefaultObjectEzsigntemplateformfieldResponse extends DefaultObject 
    iEzsigntemplateformfieldHeight:number = 0
    bEzsigntemplateformfieldSelected?:boolean = undefined
 }
+
+/**
+ * @export 
+ * A EzsigntemplateformfieldResponse Validation Object
+ * @class ValidationObjectEzsigntemplateformfieldResponse
+ */
+export class ValidationObjectEzsigntemplateformfieldResponse {
+   pkiEzsigntemplateformfieldID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsigntemplatedocumentpagePagenumber = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   sEzsigntemplateformfieldLabel = {
+      type: 'string',
+      required: true
+   }
+   sEzsigntemplateformfieldValue = {
+      type: 'string',
+      required: false
+   }
+   iEzsigntemplateformfieldX = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsigntemplateformfieldY = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsigntemplateformfieldWidth = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsigntemplateformfieldHeight = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   bEzsigntemplateformfieldSelected = {
+      type: 'boolean',
+      required: false
+   }
+} 
 
 

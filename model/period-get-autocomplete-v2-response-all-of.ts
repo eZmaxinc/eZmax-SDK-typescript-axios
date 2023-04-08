@@ -17,8 +17,6 @@
 // @ts-ignore
 import { PeriodGetAutocompleteV2ResponseMPayload } from './period-get-autocomplete-v2-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface PeriodGetAutocompleteV2ResponseAllOf {
     'mPayload': PeriodGetAutocompleteV2ResponseMPayload;
 }
 /**
- * A PeriodGetAutocompleteV2ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectPeriodGetAutocompleteV2ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectPeriodGetAutocompleteV2ResponseAllOf extends DefaultObject {
-   mPayload:Partial<PeriodGetAutocompleteV2ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectPeriodGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectPeriodGetAutocompleteV2ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A PeriodGetAutocompleteV2ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectPeriodGetAutocompleteV2ResponseAllOf
+ */
+export class DataObjectPeriodGetAutocompleteV2ResponseAllOf {
+   mPayload:PeriodGetAutocompleteV2ResponseMPayload = new DataObjectPeriodGetAutocompleteV2ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A PeriodGetAutocompleteV2ResponseAllOf Validation Object
+ * @class ValidationObjectPeriodGetAutocompleteV2ResponseAllOf
+ */
+export class ValidationObjectPeriodGetAutocompleteV2ResponseAllOf {
+   mPayload = new ValidationObjectPeriodGetAutocompleteV2ResponseMPayload()
+} 
 
 

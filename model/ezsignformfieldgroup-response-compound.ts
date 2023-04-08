@@ -38,8 +38,6 @@ import { FieldEEzsignformfieldgroupTooltipposition } from './field-eezsignformfi
 // @ts-ignore
 import { FieldEEzsignformfieldgroupType } from './field-eezsignformfieldgroup-type';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsignformfieldgroupResponseCompound
  * An Ezsignformfieldgroup Object and children to create a complete structure
@@ -48,13 +46,19 @@ import { DefaultObject } from '../base'
 export type EzsignformfieldgroupResponseCompound = EzsignformfieldgroupResponse & EzsignformfieldgroupResponseCompoundAllOf;
 
 
+
+/**
+ * @import
+ * Imports Child Data Object
+ */
+
 /**
  * @export 
- * A EzsignformfieldgroupResponseCompound Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsignformfieldgroupResponseCompound
+ * A EzsignformfieldgroupResponseCompound Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignformfieldgroupResponseCompound
  */
-export class DefaultObjectEzsignformfieldgroupResponseCompound extends DefaultObject {
+export class DataObjectEzsignformfieldgroupResponseCompound {
    pkiEzsignformfieldgroupID:number = 0
    fkiEzsigndocumentID:number = 0
    eEzsignformfieldgroupType:FieldEEzsignformfieldgroupType = 'Text'
@@ -74,5 +78,94 @@ export class DefaultObjectEzsignformfieldgroupResponseCompound extends DefaultOb
    a_objDropdownElement?:Array<CustomDropdownElementResponseCompound> = undefined
    a_objEzsignformfieldgroupsigner:Array<EzsignformfieldgroupsignerResponseCompound> = []
 }
+
+/**
+ * @export 
+ * A EzsignformfieldgroupResponseCompound Validation Object
+ * @class ValidationObjectEzsignformfieldgroupResponseCompound
+ */
+export class ValidationObjectEzsignformfieldgroupResponseCompound {
+   pkiEzsignformfieldgroupID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsigndocumentID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   eEzsignformfieldgroupType = {
+      type: 'enum',
+      allowableValues: ['Text','Textarea','Dropdown','Radio','Checkbox'],
+      required: true
+   }
+   eEzsignformfieldgroupSignerrequirement = {
+      type: 'enum',
+      allowableValues: ['All','One'],
+      required: true
+   }
+   sEzsignformfieldgroupLabel = {
+      type: 'string',
+      required: true
+   }
+   iEzsignformfieldgroupStep = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   sEzsignformfieldgroupDefaultvalue = {
+      type: 'string',
+      required: false
+   }
+   iEzsignformfieldgroupFilledmin = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsignformfieldgroupFilledmax = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   bEzsignformfieldgroupReadonly = {
+      type: 'boolean',
+      required: true
+   }
+   iEzsignformfieldgroupMaxlength = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   bEzsignformfieldgroupEncrypted = {
+      type: 'boolean',
+      required: false
+   }
+   sEzsignformfieldgroupRegexp = {
+      type: 'string',
+      required: false
+   }
+   tEzsignformfieldgroupTooltip = {
+      type: 'string',
+      required: false
+   }
+   eEzsignformfieldgroupTooltipposition = {
+      type: 'enum',
+      allowableValues: ['TopLeft','TopCenter','TopRight','MiddleLeft','MiddleRight','BottomLeft','BottomCenter','BottomRight'],
+      required: false
+   }
+   a_objEzsignformfield = {
+      type: 'array',
+      required: true
+   }
+   a_objDropdownElement = {
+      type: 'array',
+      required: false
+   }
+   a_objEzsignformfieldgroupsigner = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

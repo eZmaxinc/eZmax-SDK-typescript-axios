@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignbulksendResponseCompound } from './ezsignbulksend-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for GET /2/object/ezsignbulksend/{pkiEzsignbulksendID}
  * @export
@@ -33,13 +31,31 @@ export interface EzsignbulksendGetObjectV2ResponseMPayload {
     'objEzsignbulksend': EzsignbulksendResponseCompound;
 }
 /**
- * A EzsignbulksendGetObjectV2ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignbulksendGetObjectV2ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignbulksendGetObjectV2ResponseMPayload extends DefaultObject {
-   objEzsignbulksend:Partial<EzsignbulksendResponseCompound> = {}
+// @ts-ignore
+import { DataObjectEzsignbulksendResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectEzsignbulksendResponseCompound } from './'
+
+/**
+ * @export 
+ * A EzsignbulksendGetObjectV2ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignbulksendGetObjectV2ResponseMPayload
+ */
+export class DataObjectEzsignbulksendGetObjectV2ResponseMPayload {
+   objEzsignbulksend:EzsignbulksendResponseCompound = new DataObjectEzsignbulksendResponseCompound()
 }
+
+/**
+ * @export 
+ * A EzsignbulksendGetObjectV2ResponseMPayload Validation Object
+ * @class ValidationObjectEzsignbulksendGetObjectV2ResponseMPayload
+ */
+export class ValidationObjectEzsignbulksendGetObjectV2ResponseMPayload {
+   objEzsignbulksend = new ValidationObjectEzsignbulksendResponseCompound()
+} 
 
 

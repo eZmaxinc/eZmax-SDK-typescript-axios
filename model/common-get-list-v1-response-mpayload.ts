@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Generic List Response
  * @export
@@ -36,14 +34,35 @@ export interface CommonGetListV1ResponseMPayload {
     'iRowFiltered': number;
 }
 /**
- * A CommonGetListV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCommonGetListV1ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCommonGetListV1ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A CommonGetListV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCommonGetListV1ResponseMPayload
+ */
+export class DataObjectCommonGetListV1ResponseMPayload {
    iRowReturned:number = 0
    iRowFiltered:number = 0
 }
+
+/**
+ * @export 
+ * A CommonGetListV1ResponseMPayload Validation Object
+ * @class ValidationObjectCommonGetListV1ResponseMPayload
+ */
+export class ValidationObjectCommonGetListV1ResponseMPayload {
+   iRowReturned = {
+      type: 'integer',
+      required: true
+   }
+   iRowFiltered = {
+      type: 'integer',
+      required: true
+   }
+} 
 
 

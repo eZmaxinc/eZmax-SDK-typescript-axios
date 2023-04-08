@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigntemplatesignaturecustomdateRequest } from './ezsigntemplatesignaturecustomdate-request';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsigntemplatesignaturecustomdateRequestCompound
  * An Ezsigntemplatesignaturecustomdate Object and children to create a complete structure
@@ -28,16 +26,48 @@ export type EzsigntemplatesignaturecustomdateRequestCompound = Ezsigntemplatesig
 
 
 /**
- * @export 
- * A EzsigntemplatesignaturecustomdateRequestCompound Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsigntemplatesignaturecustomdateRequestCompound
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatesignaturecustomdateRequestCompound extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntemplatesignaturecustomdateRequestCompound Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatesignaturecustomdateRequestCompound
+ */
+export class DataObjectEzsigntemplatesignaturecustomdateRequestCompound {
    pkiEzsigntemplatesignaturecustomdateID?:number = undefined
    iEzsigntemplatesignaturecustomdateX:number = 0
    iEzsigntemplatesignaturecustomdateY:number = 0
    sEzsigntemplatesignaturecustomdateFormat:string = ''
 }
+
+/**
+ * @export 
+ * A EzsigntemplatesignaturecustomdateRequestCompound Validation Object
+ * @class ValidationObjectEzsigntemplatesignaturecustomdateRequestCompound
+ */
+export class ValidationObjectEzsigntemplatesignaturecustomdateRequestCompound {
+   pkiEzsigntemplatesignaturecustomdateID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   iEzsigntemplatesignaturecustomdateX = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsigntemplatesignaturecustomdateY = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sEzsigntemplatesignaturecustomdateFormat = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

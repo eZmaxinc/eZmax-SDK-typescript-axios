@@ -20,8 +20,6 @@ import { CommonAudit } from './common-audit';
 // @ts-ignore
 import { FieldEEzmaxinvoicingcontractPaymenttype } from './field-eezmaxinvoicingcontract-paymenttype';
 
-import { DefaultObject } from '../base'
-
 /**
  * A Ezmaxinvoicingcontract Object
  * @export
@@ -83,13 +81,24 @@ export interface EzmaxinvoicingcontractResponse {
      */
     'objAudit': CommonAudit;
 }
+
+
 /**
- * A EzmaxinvoicingcontractResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzmaxinvoicingcontractResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzmaxinvoicingcontractResponse extends DefaultObject {
+// @ts-ignore
+import { DataObjectCommonAudit } from './'
+// @ts-ignore
+import { ValidationObjectCommonAudit } from './'
+
+/**
+ * @export 
+ * A EzmaxinvoicingcontractResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzmaxinvoicingcontractResponse
+ */
+export class DataObjectEzmaxinvoicingcontractResponse {
    pkiEzmaxinvoicingcontractID:number = 0
    eEzmaxinvoicingcontractPaymenttype:FieldEEzmaxinvoicingcontractPaymenttype = 'Cheque'
    iEzmaxinvoicingcontractLength:number = 0
@@ -98,7 +107,53 @@ export class DefaultObjectEzmaxinvoicingcontractResponse extends DefaultObject {
    dEzmaxinvoicingcontractLicense:string = ''
    dEzmaxinvoicingcontract121qa:string = ''
    bEzmaxinvoicingcontractEzsignallagents:boolean = false
-   objAudit:Partial<CommonAudit> = {}
+   objAudit:CommonAudit = new DataObjectCommonAudit()
 }
+
+/**
+ * @export 
+ * A EzmaxinvoicingcontractResponse Validation Object
+ * @class ValidationObjectEzmaxinvoicingcontractResponse
+ */
+export class ValidationObjectEzmaxinvoicingcontractResponse {
+   pkiEzmaxinvoicingcontractID = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   eEzmaxinvoicingcontractPaymenttype = {
+      type: 'enum',
+      allowableValues: ['Cheque','CreditCard','DirectDebit'],
+      required: true
+   }
+   iEzmaxinvoicingcontractLength = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   dtEzmaxinvoicingcontractStart = {
+      type: 'string',
+      required: true
+   }
+   dtEzmaxinvoicingcontractEnd = {
+      type: 'string',
+      required: true
+   }
+   dEzmaxinvoicingcontractLicense = {
+      type: 'string',
+      pattern: '/^-{0,1}[\d]{1,9}?\.[\d]{2}$/',
+      required: true
+   }
+   dEzmaxinvoicingcontract121qa = {
+      type: 'string',
+      pattern: '/^-{0,1}[\d]{1,9}?\.[\d]{2}$/',
+      required: true
+   }
+   bEzmaxinvoicingcontractEzsignallagents = {
+      type: 'boolean',
+      required: true
+   }
+   objAudit = new ValidationObjectCommonAudit()
+} 
 
 

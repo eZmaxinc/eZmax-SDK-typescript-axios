@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigndocumentResponse } from './ezsigndocument-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface WebhookEzsignDocumentCompletedAllOf {
     'objEzsigndocument': EzsigndocumentResponse;
 }
 /**
- * A WebhookEzsignDocumentCompletedAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectWebhookEzsignDocumentCompletedAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectWebhookEzsignDocumentCompletedAllOf extends DefaultObject {
-   objEzsigndocument:Partial<EzsigndocumentResponse> = {}
+// @ts-ignore
+import { DataObjectEzsigndocumentResponse } from './'
+// @ts-ignore
+import { ValidationObjectEzsigndocumentResponse } from './'
+
+/**
+ * @export 
+ * A WebhookEzsignDocumentCompletedAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectWebhookEzsignDocumentCompletedAllOf
+ */
+export class DataObjectWebhookEzsignDocumentCompletedAllOf {
+   objEzsigndocument:EzsigndocumentResponse = new DataObjectEzsigndocumentResponse()
 }
+
+/**
+ * @export 
+ * A WebhookEzsignDocumentCompletedAllOf Validation Object
+ * @class ValidationObjectWebhookEzsignDocumentCompletedAllOf
+ */
+export class ValidationObjectWebhookEzsignDocumentCompletedAllOf {
+   objEzsigndocument = new ValidationObjectEzsigndocumentResponse()
+} 
 
 

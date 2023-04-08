@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignfolderRequestCompound } from './ezsignfolder-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for PUT /1/object/ezsignfolder/{pkiEzsignfolderID}
  * @export
@@ -33,13 +31,31 @@ export interface EzsignfolderEditObjectV1Request {
     'objEzsignfolder': EzsignfolderRequestCompound;
 }
 /**
- * A EzsignfolderEditObjectV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfolderEditObjectV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfolderEditObjectV1Request extends DefaultObject {
-   objEzsignfolder:Partial<EzsignfolderRequestCompound> = {}
+// @ts-ignore
+import { DataObjectEzsignfolderRequestCompound } from './'
+// @ts-ignore
+import { ValidationObjectEzsignfolderRequestCompound } from './'
+
+/**
+ * @export 
+ * A EzsignfolderEditObjectV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfolderEditObjectV1Request
+ */
+export class DataObjectEzsignfolderEditObjectV1Request {
+   objEzsignfolder:EzsignfolderRequestCompound = new DataObjectEzsignfolderRequestCompound()
 }
+
+/**
+ * @export 
+ * A EzsignfolderEditObjectV1Request Validation Object
+ * @class ValidationObjectEzsignfolderEditObjectV1Request
+ */
+export class ValidationObjectEzsignfolderEditObjectV1Request {
+   objEzsignfolder = new ValidationObjectEzsignfolderRequestCompound()
+} 
 
 

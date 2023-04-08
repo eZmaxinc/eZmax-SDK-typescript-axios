@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * An Ezsignformfield Object
  * @export
@@ -36,14 +34,35 @@ export interface CustomFormDataEzsignformfieldResponse {
     'sEzsignformfieldValue': string;
 }
 /**
- * A CustomFormDataEzsignformfieldResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCustomFormDataEzsignformfieldResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCustomFormDataEzsignformfieldResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A CustomFormDataEzsignformfieldResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCustomFormDataEzsignformfieldResponse
+ */
+export class DataObjectCustomFormDataEzsignformfieldResponse {
    sEzsignformfieldLabel:string = ''
    sEzsignformfieldValue:string = ''
 }
+
+/**
+ * @export 
+ * A CustomFormDataEzsignformfieldResponse Validation Object
+ * @class ValidationObjectCustomFormDataEzsignformfieldResponse
+ */
+export class ValidationObjectCustomFormDataEzsignformfieldResponse {
+   sEzsignformfieldLabel = {
+      type: 'string',
+      required: true
+   }
+   sEzsignformfieldValue = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

@@ -29,8 +29,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 // @ts-ignore
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type BillingentityinternalGetAutocompleteV2Response
  * Response for GET /2/object/billingentityinternal/getAutocomplete
@@ -40,15 +38,43 @@ export type BillingentityinternalGetAutocompleteV2Response = Billingentityintern
 
 
 /**
- * @export 
- * A BillingentityinternalGetAutocompleteV2Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectBillingentityinternalGetAutocompleteV2Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectBillingentityinternalGetAutocompleteV2Response extends DefaultObject {
-   mPayload:Partial<BillingentityinternalGetAutocompleteV2ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectBillingentityinternalGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectBillingentityinternalGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A BillingentityinternalGetAutocompleteV2Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectBillingentityinternalGetAutocompleteV2Response
+ */
+export class DataObjectBillingentityinternalGetAutocompleteV2Response {
+   mPayload:BillingentityinternalGetAutocompleteV2ResponseMPayload = new DataObjectBillingentityinternalGetAutocompleteV2ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A BillingentityinternalGetAutocompleteV2Response Validation Object
+ * @class ValidationObjectBillingentityinternalGetAutocompleteV2Response
+ */
+export class ValidationObjectBillingentityinternalGetAutocompleteV2Response {
+   mPayload = new ValidationObjectBillingentityinternalGetAutocompleteV2ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

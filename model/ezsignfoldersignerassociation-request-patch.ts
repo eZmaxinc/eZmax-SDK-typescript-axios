@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * An Ezsignfoldersignerassociation Object
  * @export
@@ -30,13 +28,30 @@ export interface EzsignfoldersignerassociationRequestPatch {
     'tEzsignfoldersignerassociationMessage'?: string;
 }
 /**
- * A EzsignfoldersignerassociationRequestPatch Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfoldersignerassociationRequestPatch
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfoldersignerassociationRequestPatch extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationRequestPatch Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfoldersignerassociationRequestPatch
+ */
+export class DataObjectEzsignfoldersignerassociationRequestPatch {
    tEzsignfoldersignerassociationMessage?:string = undefined
 }
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationRequestPatch Validation Object
+ * @class ValidationObjectEzsignfoldersignerassociationRequestPatch
+ */
+export class ValidationObjectEzsignfoldersignerassociationRequestPatch {
+   tEzsignfoldersignerassociationMessage = {
+      type: 'string',
+      required: false
+   }
+} 
 
 

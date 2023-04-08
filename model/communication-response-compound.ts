@@ -36,15 +36,19 @@ import { CommunicationrecipientResponseCompound } from './communicationrecipient
 import { ComputedECommunicationDirection } from './computed-ecommunication-direction';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomContactNameResponse } from './custom-contact-name-response';
+import { DescriptionstaticResponse } from './descriptionstatic-response';
+// May contain unused imports in some cases
+// @ts-ignore
+import { EmailstaticResponse } from './emailstatic-response';
 // May contain unused imports in some cases
 // @ts-ignore
 import { FieldECommunicationImportance } from './field-ecommunication-importance';
 // May contain unused imports in some cases
 // @ts-ignore
 import { FieldECommunicationType } from './field-ecommunication-type';
-
-import { DefaultObject } from '../base'
+// May contain unused imports in some cases
+// @ts-ignore
+import { PhonestaticResponse } from './phonestatic-response';
 
 /**
  * @type CommunicationResponseCompound
@@ -54,24 +58,105 @@ import { DefaultObject } from '../base'
 export type CommunicationResponseCompound = CommunicationResponse & CommunicationResponseCompoundAllOf;
 
 
+
+/**
+ * @import
+ * Imports Child Data Object
+ */
+// @ts-ignore
+import { DataObjectDescriptionstaticResponse } from './'
+// @ts-ignore
+import { DataObjectEmailstaticResponse } from './'
+// @ts-ignore
+import { DataObjectPhonestaticResponse } from './'
+// @ts-ignore
+import { DataObjectCommonAudit } from './'
+// @ts-ignore
+import { ValidationObjectDescriptionstaticResponse } from './'
+// @ts-ignore
+import { ValidationObjectEmailstaticResponse } from './'
+// @ts-ignore
+import { ValidationObjectPhonestaticResponse } from './'
+// @ts-ignore
+import { ValidationObjectCommonAudit } from './'
+
 /**
  * @export 
- * A CommunicationResponseCompound Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectCommunicationResponseCompound
+ * A CommunicationResponseCompound Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCommunicationResponseCompound
  */
-export class DefaultObjectCommunicationResponseCompound extends DefaultObject {
+export class DataObjectCommunicationResponseCompound {
    pkiCommunicationID:number = 0
    eCommunicationImportance:FieldECommunicationImportance = 'High'
    eCommunicationType:FieldECommunicationType = 'Email'
    sCommunicationSubject:string = ''
+   sCommunicationBodyurl?:string = undefined
    eCommunicationDirection:ComputedECommunicationDirection = 'Outbound'
    iCommunicationrecipientCount:number = 0
-   objContactFrom:Partial<CustomContactNameResponse> = {}
-   objAudit:Partial<CommonAudit> = {}
+   objDescriptionstaticSender?:DescriptionstaticResponse = undefined
+   objEmailstaticSender?:EmailstaticResponse = undefined
+   objPhonestaticSender?:PhonestaticResponse = undefined
+   objAudit:CommonAudit = new DataObjectCommonAudit()
    a_objCommunicationattachment:Array<CommunicationattachmentResponseCompound> = []
    a_objCommunicationrecipient:Array<CommunicationrecipientResponseCompound> = []
    a_objCommunicationexternalrecipient:Array<CommunicationexternalrecipientResponseCompound> = []
 }
+
+/**
+ * @export 
+ * A CommunicationResponseCompound Validation Object
+ * @class ValidationObjectCommunicationResponseCompound
+ */
+export class ValidationObjectCommunicationResponseCompound {
+   pkiCommunicationID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   eCommunicationImportance = {
+      type: 'enum',
+      allowableValues: ['High','Normal','Low'],
+      required: true
+   }
+   eCommunicationType = {
+      type: 'enum',
+      allowableValues: ['Email','Fax','Sms'],
+      required: true
+   }
+   sCommunicationSubject = {
+      type: 'string',
+      required: true
+   }
+   sCommunicationBodyurl = {
+      type: 'string',
+      required: false
+   }
+   eCommunicationDirection = {
+      type: 'enum',
+      allowableValues: ['Outbound','Inbound'],
+      required: true
+   }
+   iCommunicationrecipientCount = {
+      type: 'integer',
+      required: true
+   }
+   objDescriptionstaticSender = new ValidationObjectDescriptionstaticResponse()
+   objEmailstaticSender = new ValidationObjectEmailstaticResponse()
+   objPhonestaticSender = new ValidationObjectPhonestaticResponse()
+   objAudit = new ValidationObjectCommonAudit()
+   a_objCommunicationattachment = {
+      type: 'array',
+      required: true
+   }
+   a_objCommunicationrecipient = {
+      type: 'array',
+      required: true
+   }
+   a_objCommunicationexternalrecipient = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

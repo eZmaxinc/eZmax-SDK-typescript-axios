@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigntemplatepackageRequestCompound } from './ezsigntemplatepackage-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for PUT /1/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID}
  * @export
@@ -33,13 +31,31 @@ export interface EzsigntemplatepackageEditObjectV1Request {
     'objEzsigntemplatepackage': EzsigntemplatepackageRequestCompound;
 }
 /**
- * A EzsigntemplatepackageEditObjectV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplatepackageEditObjectV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatepackageEditObjectV1Request extends DefaultObject {
-   objEzsigntemplatepackage:Partial<EzsigntemplatepackageRequestCompound> = {}
+// @ts-ignore
+import { DataObjectEzsigntemplatepackageRequestCompound } from './'
+// @ts-ignore
+import { ValidationObjectEzsigntemplatepackageRequestCompound } from './'
+
+/**
+ * @export 
+ * A EzsigntemplatepackageEditObjectV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatepackageEditObjectV1Request
+ */
+export class DataObjectEzsigntemplatepackageEditObjectV1Request {
+   objEzsigntemplatepackage:EzsigntemplatepackageRequestCompound = new DataObjectEzsigntemplatepackageRequestCompound()
 }
+
+/**
+ * @export 
+ * A EzsigntemplatepackageEditObjectV1Request Validation Object
+ * @class ValidationObjectEzsigntemplatepackageEditObjectV1Request
+ */
+export class ValidationObjectEzsigntemplatepackageEditObjectV1Request {
+   objEzsigntemplatepackage = new ValidationObjectEzsigntemplatepackageRequestCompound()
+} 
 
 

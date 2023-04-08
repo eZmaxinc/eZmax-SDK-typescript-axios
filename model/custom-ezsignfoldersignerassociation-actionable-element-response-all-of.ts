@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -36,14 +34,35 @@ export interface CustomEzsignfoldersignerassociationActionableElementResponseAll
     'bEzsignfoldersignerassociationHasactionableelementsFuture'?: boolean;
 }
 /**
- * A CustomEzsignfoldersignerassociationActionableElementResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCustomEzsignfoldersignerassociationActionableElementResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCustomEzsignfoldersignerassociationActionableElementResponseAllOf extends DefaultObject {
+
+/**
+ * @export 
+ * A CustomEzsignfoldersignerassociationActionableElementResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCustomEzsignfoldersignerassociationActionableElementResponseAllOf
+ */
+export class DataObjectCustomEzsignfoldersignerassociationActionableElementResponseAllOf {
    bEzsignfoldersignerassociationHasactionableelementsCurrent:boolean = false
    bEzsignfoldersignerassociationHasactionableelementsFuture?:boolean = undefined
 }
+
+/**
+ * @export 
+ * A CustomEzsignfoldersignerassociationActionableElementResponseAllOf Validation Object
+ * @class ValidationObjectCustomEzsignfoldersignerassociationActionableElementResponseAllOf
+ */
+export class ValidationObjectCustomEzsignfoldersignerassociationActionableElementResponseAllOf {
+   bEzsignfoldersignerassociationHasactionableelementsCurrent = {
+      type: 'boolean',
+      required: true
+   }
+   bEzsignfoldersignerassociationHasactionableelementsFuture = {
+      type: 'boolean',
+      required: false
+   }
+} 
 
 

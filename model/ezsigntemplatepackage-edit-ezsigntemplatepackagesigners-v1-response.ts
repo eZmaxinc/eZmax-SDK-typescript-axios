@@ -29,8 +29,6 @@ import { EzsigntemplatepackageEditEzsigntemplatepackagesignersV1ResponseAllOf } 
 // @ts-ignore
 import { EzsigntemplatepackageEditEzsigntemplatepackagesignersV1ResponseMPayload } from './ezsigntemplatepackage-edit-ezsigntemplatepackagesigners-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response
  * Response for PUT /1/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID}/editEzsigntemplatepackagesigners
@@ -40,15 +38,43 @@ export type EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response = Co
 
 
 /**
- * @export 
- * A EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response extends DefaultObject {
-   mPayload:Partial<EzsigntemplatepackageEditEzsigntemplatepackagesignersV1ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectEzsigntemplatepackageEditEzsigntemplatepackagesignersV1ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsigntemplatepackageEditEzsigntemplatepackagesignersV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response
+ */
+export class DataObjectEzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response {
+   mPayload:EzsigntemplatepackageEditEzsigntemplatepackagesignersV1ResponseMPayload = new DataObjectEzsigntemplatepackageEditEzsigntemplatepackagesignersV1ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response Validation Object
+ * @class ValidationObjectEzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response
+ */
+export class ValidationObjectEzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response {
+   mPayload = new ValidationObjectEzsigntemplatepackageEditEzsigntemplatepackagesignersV1ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

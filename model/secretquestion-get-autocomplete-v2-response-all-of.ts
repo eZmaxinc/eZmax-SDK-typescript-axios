@@ -17,8 +17,6 @@
 // @ts-ignore
 import { SecretquestionGetAutocompleteV2ResponseMPayload } from './secretquestion-get-autocomplete-v2-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface SecretquestionGetAutocompleteV2ResponseAllOf {
     'mPayload': SecretquestionGetAutocompleteV2ResponseMPayload;
 }
 /**
- * A SecretquestionGetAutocompleteV2ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectSecretquestionGetAutocompleteV2ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectSecretquestionGetAutocompleteV2ResponseAllOf extends DefaultObject {
-   mPayload:Partial<SecretquestionGetAutocompleteV2ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectSecretquestionGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectSecretquestionGetAutocompleteV2ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A SecretquestionGetAutocompleteV2ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectSecretquestionGetAutocompleteV2ResponseAllOf
+ */
+export class DataObjectSecretquestionGetAutocompleteV2ResponseAllOf {
+   mPayload:SecretquestionGetAutocompleteV2ResponseMPayload = new DataObjectSecretquestionGetAutocompleteV2ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A SecretquestionGetAutocompleteV2ResponseAllOf Validation Object
+ * @class ValidationObjectSecretquestionGetAutocompleteV2ResponseAllOf
+ */
+export class ValidationObjectSecretquestionGetAutocompleteV2ResponseAllOf {
+   mPayload = new ValidationObjectSecretquestionGetAutocompleteV2ResponseMPayload()
+} 
 
 

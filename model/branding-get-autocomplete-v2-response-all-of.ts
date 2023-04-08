@@ -17,8 +17,6 @@
 // @ts-ignore
 import { BrandingGetAutocompleteV2ResponseMPayload } from './branding-get-autocomplete-v2-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface BrandingGetAutocompleteV2ResponseAllOf {
     'mPayload': BrandingGetAutocompleteV2ResponseMPayload;
 }
 /**
- * A BrandingGetAutocompleteV2ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectBrandingGetAutocompleteV2ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectBrandingGetAutocompleteV2ResponseAllOf extends DefaultObject {
-   mPayload:Partial<BrandingGetAutocompleteV2ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectBrandingGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectBrandingGetAutocompleteV2ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A BrandingGetAutocompleteV2ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectBrandingGetAutocompleteV2ResponseAllOf
+ */
+export class DataObjectBrandingGetAutocompleteV2ResponseAllOf {
+   mPayload:BrandingGetAutocompleteV2ResponseMPayload = new DataObjectBrandingGetAutocompleteV2ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A BrandingGetAutocompleteV2ResponseAllOf Validation Object
+ * @class ValidationObjectBrandingGetAutocompleteV2ResponseAllOf
+ */
+export class ValidationObjectBrandingGetAutocompleteV2ResponseAllOf {
+   mPayload = new ValidationObjectBrandingGetAutocompleteV2ResponseMPayload()
+} 
 
 

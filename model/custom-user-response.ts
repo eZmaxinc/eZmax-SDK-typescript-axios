@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A User Object
  * @export
@@ -48,16 +46,46 @@ export interface CustomUserResponse {
     'sEmailAddress': string;
 }
 /**
- * A CustomUserResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCustomUserResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCustomUserResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A CustomUserResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCustomUserResponse
+ */
+export class DataObjectCustomUserResponse {
    pkiUserID:number = 0
    sUserLastname:string = ''
    sUserFirstname:string = ''
    sEmailAddress:string = ''
 }
+
+/**
+ * @export 
+ * A CustomUserResponse Validation Object
+ * @class ValidationObjectCustomUserResponse
+ */
+export class ValidationObjectCustomUserResponse {
+   pkiUserID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sUserLastname = {
+      type: 'string',
+      required: true
+   }
+   sUserFirstname = {
+      type: 'string',
+      required: true
+   }
+   sEmailAddress = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

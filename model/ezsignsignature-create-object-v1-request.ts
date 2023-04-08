@@ -20,8 +20,6 @@ import { EzsignsignatureRequest } from './ezsignsignature-request';
 // @ts-ignore
 import { EzsignsignatureRequestCompound } from './ezsignsignature-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for POST /1/object/ezsignsignature
  * @export
@@ -42,14 +40,37 @@ export interface EzsignsignatureCreateObjectV1Request {
     'objEzsignsignatureCompound'?: EzsignsignatureRequestCompound;
 }
 /**
- * A EzsignsignatureCreateObjectV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignsignatureCreateObjectV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignsignatureCreateObjectV1Request extends DefaultObject {
-   objEzsignsignature?:Partial<EzsignsignatureRequest> = undefined
-   objEzsignsignatureCompound?:Partial<EzsignsignatureRequestCompound> = undefined
+// @ts-ignore
+import { DataObjectEzsignsignatureRequest } from './'
+// @ts-ignore
+import { DataObjectEzsignsignatureRequestCompound } from './'
+// @ts-ignore
+import { ValidationObjectEzsignsignatureRequest } from './'
+// @ts-ignore
+import { ValidationObjectEzsignsignatureRequestCompound } from './'
+
+/**
+ * @export 
+ * A EzsignsignatureCreateObjectV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignsignatureCreateObjectV1Request
+ */
+export class DataObjectEzsignsignatureCreateObjectV1Request {
+   objEzsignsignature?:EzsignsignatureRequest = undefined
+   objEzsignsignatureCompound?:EzsignsignatureRequestCompound = undefined
 }
+
+/**
+ * @export 
+ * A EzsignsignatureCreateObjectV1Request Validation Object
+ * @class ValidationObjectEzsignsignatureCreateObjectV1Request
+ */
+export class ValidationObjectEzsignsignatureCreateObjectV1Request {
+   objEzsignsignature = new ValidationObjectEzsignsignatureRequest()
+   objEzsignsignatureCompound = new ValidationObjectEzsignsignatureRequestCompound()
+} 
 
 

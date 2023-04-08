@@ -20,8 +20,6 @@ import { AttemptResponseCompound } from './attempt-response-compound';
 // @ts-ignore
 import { CustomWebhookResponse } from './custom-webhook-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * This is the base Webhook object
  * @export
@@ -42,14 +40,36 @@ export interface CommonWebhook {
     'a_objAttempt': Array<AttemptResponseCompound>;
 }
 /**
- * A CommonWebhook Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCommonWebhook
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCommonWebhook extends DefaultObject {
-   objWebhook:Partial<CustomWebhookResponse> = {}
+// @ts-ignore
+import { DataObjectCustomWebhookResponse } from './'
+// @ts-ignore
+import { ValidationObjectCustomWebhookResponse } from './'
+
+/**
+ * @export 
+ * A CommonWebhook Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCommonWebhook
+ */
+export class DataObjectCommonWebhook {
+   objWebhook:CustomWebhookResponse = new DataObjectCustomWebhookResponse()
    a_objAttempt:Array<AttemptResponseCompound> = []
 }
+
+/**
+ * @export 
+ * A CommonWebhook Validation Object
+ * @class ValidationObjectCommonWebhook
+ */
+export class ValidationObjectCommonWebhook {
+   objWebhook = new ValidationObjectCustomWebhookResponse()
+   a_objAttempt = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

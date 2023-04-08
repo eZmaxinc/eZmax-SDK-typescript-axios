@@ -17,8 +17,6 @@
 // @ts-ignore
 import { WebhookResponseCompound } from './webhook-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for GET /2/object/webhook/{pkiWebhookID}
  * @export
@@ -33,13 +31,31 @@ export interface WebhookGetObjectV2ResponseMPayload {
     'objWebhook': WebhookResponseCompound;
 }
 /**
- * A WebhookGetObjectV2ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectWebhookGetObjectV2ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectWebhookGetObjectV2ResponseMPayload extends DefaultObject {
-   objWebhook:Partial<WebhookResponseCompound> = {}
+// @ts-ignore
+import { DataObjectWebhookResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectWebhookResponseCompound } from './'
+
+/**
+ * @export 
+ * A WebhookGetObjectV2ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectWebhookGetObjectV2ResponseMPayload
+ */
+export class DataObjectWebhookGetObjectV2ResponseMPayload {
+   objWebhook:WebhookResponseCompound = new DataObjectWebhookResponseCompound()
 }
+
+/**
+ * @export 
+ * A WebhookGetObjectV2ResponseMPayload Validation Object
+ * @class ValidationObjectWebhookGetObjectV2ResponseMPayload
+ */
+export class ValidationObjectWebhookGetObjectV2ResponseMPayload {
+   objWebhook = new ValidationObjectWebhookResponseCompound()
+} 
 
 

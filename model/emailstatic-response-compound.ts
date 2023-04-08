@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EmailstaticResponse } from './emailstatic-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EmailstaticResponseCompound
  * An Emailstatic Object and children to create a complete structure
@@ -28,14 +26,36 @@ export type EmailstaticResponseCompound = EmailstaticResponse;
 
 
 /**
- * @export 
- * A EmailstaticResponseCompound Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEmailstaticResponseCompound
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEmailstaticResponseCompound extends DefaultObject {
+
+/**
+ * @export 
+ * A EmailstaticResponseCompound Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEmailstaticResponseCompound
+ */
+export class DataObjectEmailstaticResponseCompound {
    pkiEmailstaticID:number = 0
    sEmailstaticAddress:string = ''
 }
+
+/**
+ * @export 
+ * A EmailstaticResponseCompound Validation Object
+ * @class ValidationObjectEmailstaticResponseCompound
+ */
+export class ValidationObjectEmailstaticResponseCompound {
+   pkiEmailstaticID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sEmailstaticAddress = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

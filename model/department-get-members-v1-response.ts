@@ -29,8 +29,6 @@ import { DepartmentGetMembersV1ResponseAllOf } from './department-get-members-v1
 // @ts-ignore
 import { DepartmentGetMembersV1ResponseMPayload } from './department-get-members-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type DepartmentGetMembersV1Response
  * Response for GET /1/object/department/{pkiDepartmentID}/getMembers
@@ -40,15 +38,43 @@ export type DepartmentGetMembersV1Response = CommonResponse & DepartmentGetMembe
 
 
 /**
- * @export 
- * A DepartmentGetMembersV1Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectDepartmentGetMembersV1Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectDepartmentGetMembersV1Response extends DefaultObject {
-   mPayload:Partial<DepartmentGetMembersV1ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectDepartmentGetMembersV1ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectDepartmentGetMembersV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A DepartmentGetMembersV1Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectDepartmentGetMembersV1Response
+ */
+export class DataObjectDepartmentGetMembersV1Response {
+   mPayload:DepartmentGetMembersV1ResponseMPayload = new DataObjectDepartmentGetMembersV1ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A DepartmentGetMembersV1Response Validation Object
+ * @class ValidationObjectDepartmentGetMembersV1Response
+ */
+export class ValidationObjectDepartmentGetMembersV1Response {
+   mPayload = new ValidationObjectDepartmentGetMembersV1ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

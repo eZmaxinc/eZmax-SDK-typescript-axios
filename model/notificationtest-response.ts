@@ -17,8 +17,6 @@
 // @ts-ignore
 import { MultilingualNotificationtestName } from './multilingual-notificationtest-name';
 
-import { DefaultObject } from '../base'
-
 /**
  * A Notificationtest Object
  * @export
@@ -57,17 +55,53 @@ export interface NotificationtestResponse {
     'sNotificationtestNameX': string;
 }
 /**
- * A NotificationtestResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectNotificationtestResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectNotificationtestResponse extends DefaultObject {
+// @ts-ignore
+import { DataObjectMultilingualNotificationtestName } from './'
+// @ts-ignore
+import { ValidationObjectMultilingualNotificationtestName } from './'
+
+/**
+ * @export 
+ * A NotificationtestResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectNotificationtestResponse
+ */
+export class DataObjectNotificationtestResponse {
    pkiNotificationtestID:number = 0
-   objNotificationtestName:Partial<MultilingualNotificationtestName> = {}
+   objNotificationtestName:MultilingualNotificationtestName = new DataObjectMultilingualNotificationtestName()
    fkiNotificationsubsectionID:number = 0
    sNotificationtestFunction:string = ''
    sNotificationtestNameX:string = ''
 }
+
+/**
+ * @export 
+ * A NotificationtestResponse Validation Object
+ * @class ValidationObjectNotificationtestResponse
+ */
+export class ValidationObjectNotificationtestResponse {
+   pkiNotificationtestID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   objNotificationtestName = new ValidationObjectMultilingualNotificationtestName()
+   fkiNotificationsubsectionID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sNotificationtestFunction = {
+      type: 'string',
+      required: true
+   }
+   sNotificationtestNameX = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

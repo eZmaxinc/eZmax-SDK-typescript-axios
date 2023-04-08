@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * An Ezsignfoldersignerassociation Object
  * @export
@@ -54,17 +52,53 @@ export interface EzsignfoldersignerassociationRequest {
     'tEzsignfoldersignerassociationMessage'?: string;
 }
 /**
- * A EzsignfoldersignerassociationRequest Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfoldersignerassociationRequest
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfoldersignerassociationRequest extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationRequest Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfoldersignerassociationRequest
+ */
+export class DataObjectEzsignfoldersignerassociationRequest {
    pkiEzsignfoldersignerassociationID?:number = undefined
    fkiUserID?:number = undefined
    fkiEzsignfolderID:number = 0
    bEzsignfoldersignerassociationReceivecopy?:boolean = undefined
    tEzsignfoldersignerassociationMessage?:string = undefined
 }
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationRequest Validation Object
+ * @class ValidationObjectEzsignfoldersignerassociationRequest
+ */
+export class ValidationObjectEzsignfoldersignerassociationRequest {
+   pkiEzsignfoldersignerassociationID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiUserID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzsignfolderID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   bEzsignfoldersignerassociationReceivecopy = {
+      type: 'boolean',
+      required: false
+   }
+   tEzsignfoldersignerassociationMessage = {
+      type: 'string',
+      required: false
+   }
+} 
 
 

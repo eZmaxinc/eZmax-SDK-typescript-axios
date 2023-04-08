@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for POST /1/object/ezsignbulksend
  * @export
@@ -30,13 +28,31 @@ export interface EzsignbulksendCreateObjectV1ResponseMPayload {
     'a_pkiEzsignbulksendID': Array<number>;
 }
 /**
- * A EzsignbulksendCreateObjectV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignbulksendCreateObjectV1ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignbulksendCreateObjectV1ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignbulksendCreateObjectV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignbulksendCreateObjectV1ResponseMPayload
+ */
+export class DataObjectEzsignbulksendCreateObjectV1ResponseMPayload {
    a_pkiEzsignbulksendID:Array<number> = []
 }
+
+/**
+ * @export 
+ * A EzsignbulksendCreateObjectV1ResponseMPayload Validation Object
+ * @class ValidationObjectEzsignbulksendCreateObjectV1ResponseMPayload
+ */
+export class ValidationObjectEzsignbulksendCreateObjectV1ResponseMPayload {
+   a_pkiEzsignbulksendID = {
+      type: 'array',
+      minItems: 1,
+      required: true
+   }
+} 
 
 

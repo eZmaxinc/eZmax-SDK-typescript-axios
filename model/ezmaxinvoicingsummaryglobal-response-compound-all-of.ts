@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzmaxinvoicingcommissionResponseCompound } from './ezmaxinvoicingcommission-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,30 @@ export interface EzmaxinvoicingsummaryglobalResponseCompoundAllOf {
     'a_objEzmaxinvoicingcommission'?: Array<EzmaxinvoicingcommissionResponseCompound>;
 }
 /**
- * A EzmaxinvoicingsummaryglobalResponseCompoundAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzmaxinvoicingsummaryglobalResponseCompoundAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzmaxinvoicingsummaryglobalResponseCompoundAllOf extends DefaultObject {
+
+/**
+ * @export 
+ * A EzmaxinvoicingsummaryglobalResponseCompoundAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzmaxinvoicingsummaryglobalResponseCompoundAllOf
+ */
+export class DataObjectEzmaxinvoicingsummaryglobalResponseCompoundAllOf {
    a_objEzmaxinvoicingcommission?:Array<EzmaxinvoicingcommissionResponseCompound> = undefined
 }
+
+/**
+ * @export 
+ * A EzmaxinvoicingsummaryglobalResponseCompoundAllOf Validation Object
+ * @class ValidationObjectEzmaxinvoicingsummaryglobalResponseCompoundAllOf
+ */
+export class ValidationObjectEzmaxinvoicingsummaryglobalResponseCompoundAllOf {
+   a_objEzmaxinvoicingcommission = {
+      type: 'array',
+      required: false
+   }
+} 
 
 

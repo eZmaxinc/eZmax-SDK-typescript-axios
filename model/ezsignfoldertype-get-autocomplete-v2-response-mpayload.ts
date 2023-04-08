@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignfoldertypeAutocompleteElementResponse } from './ezsignfoldertype-autocomplete-element-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for POST /2/object/ezsignfoldertype/getAutocomplete
  * @export
@@ -33,13 +31,30 @@ export interface EzsignfoldertypeGetAutocompleteV2ResponseMPayload {
     'a_objEzsignfoldertype': Array<EzsignfoldertypeAutocompleteElementResponse>;
 }
 /**
- * A EzsignfoldertypeGetAutocompleteV2ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfoldertypeGetAutocompleteV2ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfoldertypeGetAutocompleteV2ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignfoldertypeGetAutocompleteV2ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfoldertypeGetAutocompleteV2ResponseMPayload
+ */
+export class DataObjectEzsignfoldertypeGetAutocompleteV2ResponseMPayload {
    a_objEzsignfoldertype:Array<EzsignfoldertypeAutocompleteElementResponse> = []
 }
+
+/**
+ * @export 
+ * A EzsignfoldertypeGetAutocompleteV2ResponseMPayload Validation Object
+ * @class ValidationObjectEzsignfoldertypeGetAutocompleteV2ResponseMPayload
+ */
+export class ValidationObjectEzsignfoldertypeGetAutocompleteV2ResponseMPayload {
+   a_objEzsignfoldertype = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

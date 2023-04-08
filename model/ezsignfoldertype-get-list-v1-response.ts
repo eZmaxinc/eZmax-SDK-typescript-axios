@@ -29,8 +29,6 @@ import { EzsignfoldertypeGetListV1ResponseAllOf } from './ezsignfoldertype-get-l
 // @ts-ignore
 import { EzsignfoldertypeGetListV1ResponseMPayload } from './ezsignfoldertype-get-list-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsignfoldertypeGetListV1Response
  * Response for GET /1/object/ezsignfoldertype/getList
@@ -40,15 +38,43 @@ export type EzsignfoldertypeGetListV1Response = CommonResponseGetList & Ezsignfo
 
 
 /**
- * @export 
- * A EzsignfoldertypeGetListV1Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsignfoldertypeGetListV1Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfoldertypeGetListV1Response extends DefaultObject {
-   mPayload:Partial<EzsignfoldertypeGetListV1ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayloadGetList> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectEzsignfoldertypeGetListV1ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayloadGetList } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsignfoldertypeGetListV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayloadGetList } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A EzsignfoldertypeGetListV1Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfoldertypeGetListV1Response
+ */
+export class DataObjectEzsignfoldertypeGetListV1Response {
+   mPayload:EzsignfoldertypeGetListV1ResponseMPayload = new DataObjectEzsignfoldertypeGetListV1ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayloadGetList = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A EzsignfoldertypeGetListV1Response Validation Object
+ * @class ValidationObjectEzsignfoldertypeGetListV1Response
+ */
+export class ValidationObjectEzsignfoldertypeGetListV1Response {
+   mPayload = new ValidationObjectEzsignfoldertypeGetListV1ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayloadGetList()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

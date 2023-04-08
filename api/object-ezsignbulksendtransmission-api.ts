@@ -23,9 +23,9 @@ import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } fr
 // @ts-ignore
 import { CommonResponseError } from '../model';
 // @ts-ignore
-import { EzsignbulksendtransmissionGetFormsDataV1Response } from '../model';
+import { EzsignbulksendtransmissionGetEzsignsignaturesAutomaticV1Response } from '../model';
 // @ts-ignore
-import { EzsignbulksendtransmissionGetObjectV1Response } from '../model';
+import { EzsignbulksendtransmissionGetFormsDataV1Response } from '../model';
 // @ts-ignore
 import { EzsignbulksendtransmissionGetObjectV2Response } from '../model';
 // @ts-ignore
@@ -93,16 +93,16 @@ export const ObjectEzsignbulksendtransmissionApiAxiosParamCreator = function (co
             };
         },
         /**
-         * 
-         * @summary Retrieve an existing Ezsignbulksendtransmission\'s forms data
+         * Return the Ezsignsignatures that can be signed by the current user at the current step in the process
+         * @summary Retrieve an existing Ezsignbulksendtransmission\'s automatic Ezsignsignatures
          * @param {number} pkiEzsignbulksendtransmissionID 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignbulksendtransmissionGetFormsDataV1: async (pkiEzsignbulksendtransmissionID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsignbulksendtransmissionGetEzsignsignaturesAutomaticV1: async (pkiEzsignbulksendtransmissionID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsignbulksendtransmissionID' is not null or undefined
-            assertParamExists('ezsignbulksendtransmissionGetFormsDataV1', 'pkiEzsignbulksendtransmissionID', pkiEzsignbulksendtransmissionID)
-            const localVarPath = `/1/object/ezsignbulksendtransmission/{pkiEzsignbulksendtransmissionID}/getFormsData`
+            assertParamExists('ezsignbulksendtransmissionGetEzsignsignaturesAutomaticV1', 'pkiEzsignbulksendtransmissionID', pkiEzsignbulksendtransmissionID)
+            const localVarPath = `/1/object/ezsignbulksendtransmission/{pkiEzsignbulksendtransmissionID}/getEzsignsignaturesAutomatic`
                 .replace(`{${"pkiEzsignbulksendtransmissionID"}}`, encodeURIComponent(String(pkiEzsignbulksendtransmissionID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
@@ -150,16 +150,15 @@ export const ObjectEzsignbulksendtransmissionApiAxiosParamCreator = function (co
         },
         /**
          * 
-         * @summary Retrieve an existing Ezsignbulksendtransmission
+         * @summary Retrieve an existing Ezsignbulksendtransmission\'s forms data
          * @param {number} pkiEzsignbulksendtransmissionID 
          * @param {*} [options] Override http request option.
-         * @deprecated
          * @throws {RequiredError}
          */
-        ezsignbulksendtransmissionGetObjectV1: async (pkiEzsignbulksendtransmissionID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsignbulksendtransmissionGetFormsDataV1: async (pkiEzsignbulksendtransmissionID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsignbulksendtransmissionID' is not null or undefined
-            assertParamExists('ezsignbulksendtransmissionGetObjectV1', 'pkiEzsignbulksendtransmissionID', pkiEzsignbulksendtransmissionID)
-            const localVarPath = `/1/object/ezsignbulksendtransmission/{pkiEzsignbulksendtransmissionID}`
+            assertParamExists('ezsignbulksendtransmissionGetFormsDataV1', 'pkiEzsignbulksendtransmissionID', pkiEzsignbulksendtransmissionID)
+            const localVarPath = `/1/object/ezsignbulksendtransmission/{pkiEzsignbulksendtransmissionID}/getFormsData`
                 .replace(`{${"pkiEzsignbulksendtransmissionID"}}`, encodeURIComponent(String(pkiEzsignbulksendtransmissionID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
@@ -283,6 +282,17 @@ export const ObjectEzsignbulksendtransmissionApiFp = function(configuration?: Co
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
+         * Return the Ezsignsignatures that can be signed by the current user at the current step in the process
+         * @summary Retrieve an existing Ezsignbulksendtransmission\'s automatic Ezsignsignatures
+         * @param {number} pkiEzsignbulksendtransmissionID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsignbulksendtransmissionGetEzsignsignaturesAutomaticV1(pkiEzsignbulksendtransmissionID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignbulksendtransmissionGetEzsignsignaturesAutomaticV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignbulksendtransmissionGetEzsignsignaturesAutomaticV1(pkiEzsignbulksendtransmissionID, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
          * 
          * @summary Retrieve an existing Ezsignbulksendtransmission\'s forms data
          * @param {number} pkiEzsignbulksendtransmissionID 
@@ -291,18 +301,6 @@ export const ObjectEzsignbulksendtransmissionApiFp = function(configuration?: Co
          */
         async ezsignbulksendtransmissionGetFormsDataV1(pkiEzsignbulksendtransmissionID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignbulksendtransmissionGetFormsDataV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignbulksendtransmissionGetFormsDataV1(pkiEzsignbulksendtransmissionID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * 
-         * @summary Retrieve an existing Ezsignbulksendtransmission
-         * @param {number} pkiEzsignbulksendtransmissionID 
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        async ezsignbulksendtransmissionGetObjectV1(pkiEzsignbulksendtransmissionID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignbulksendtransmissionGetObjectV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignbulksendtransmissionGetObjectV1(pkiEzsignbulksendtransmissionID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -337,6 +335,16 @@ export const ObjectEzsignbulksendtransmissionApiFactory = function (configuratio
             return localVarFp.ezsignbulksendtransmissionGetCsvErrorsV1(pkiEzsignbulksendtransmissionID, options).then((request) => request(axios, basePath));
         },
         /**
+         * Return the Ezsignsignatures that can be signed by the current user at the current step in the process
+         * @summary Retrieve an existing Ezsignbulksendtransmission\'s automatic Ezsignsignatures
+         * @param {number} pkiEzsignbulksendtransmissionID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsignbulksendtransmissionGetEzsignsignaturesAutomaticV1(pkiEzsignbulksendtransmissionID: number, options?: any): AxiosPromise<EzsignbulksendtransmissionGetEzsignsignaturesAutomaticV1Response> {
+            return localVarFp.ezsignbulksendtransmissionGetEzsignsignaturesAutomaticV1(pkiEzsignbulksendtransmissionID, options).then((request) => request(axios, basePath));
+        },
+        /**
          * 
          * @summary Retrieve an existing Ezsignbulksendtransmission\'s forms data
          * @param {number} pkiEzsignbulksendtransmissionID 
@@ -345,17 +353,6 @@ export const ObjectEzsignbulksendtransmissionApiFactory = function (configuratio
          */
         ezsignbulksendtransmissionGetFormsDataV1(pkiEzsignbulksendtransmissionID: number, options?: any): AxiosPromise<EzsignbulksendtransmissionGetFormsDataV1Response> {
             return localVarFp.ezsignbulksendtransmissionGetFormsDataV1(pkiEzsignbulksendtransmissionID, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary Retrieve an existing Ezsignbulksendtransmission
-         * @param {number} pkiEzsignbulksendtransmissionID 
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        ezsignbulksendtransmissionGetObjectV1(pkiEzsignbulksendtransmissionID: number, options?: any): AxiosPromise<EzsignbulksendtransmissionGetObjectV1Response> {
-            return localVarFp.ezsignbulksendtransmissionGetObjectV1(pkiEzsignbulksendtransmissionID, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -390,6 +387,18 @@ export class ObjectEzsignbulksendtransmissionApi extends BaseAPI {
     }
 
     /**
+     * Return the Ezsignsignatures that can be signed by the current user at the current step in the process
+     * @summary Retrieve an existing Ezsignbulksendtransmission\'s automatic Ezsignsignatures
+     * @param {number} pkiEzsignbulksendtransmissionID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectEzsignbulksendtransmissionApi
+     */
+    public ezsignbulksendtransmissionGetEzsignsignaturesAutomaticV1(pkiEzsignbulksendtransmissionID: number, options?: AxiosRequestConfig) {
+        return ObjectEzsignbulksendtransmissionApiFp(this.configuration).ezsignbulksendtransmissionGetEzsignsignaturesAutomaticV1(pkiEzsignbulksendtransmissionID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * 
      * @summary Retrieve an existing Ezsignbulksendtransmission\'s forms data
      * @param {number} pkiEzsignbulksendtransmissionID 
@@ -399,19 +408,6 @@ export class ObjectEzsignbulksendtransmissionApi extends BaseAPI {
      */
     public ezsignbulksendtransmissionGetFormsDataV1(pkiEzsignbulksendtransmissionID: number, options?: AxiosRequestConfig) {
         return ObjectEzsignbulksendtransmissionApiFp(this.configuration).ezsignbulksendtransmissionGetFormsDataV1(pkiEzsignbulksendtransmissionID, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Retrieve an existing Ezsignbulksendtransmission
-     * @param {number} pkiEzsignbulksendtransmissionID 
-     * @param {*} [options] Override http request option.
-     * @deprecated
-     * @throws {RequiredError}
-     * @memberof ObjectEzsignbulksendtransmissionApi
-     */
-    public ezsignbulksendtransmissionGetObjectV1(pkiEzsignbulksendtransmissionID: number, options?: AxiosRequestConfig) {
-        return ObjectEzsignbulksendtransmissionApiFp(this.configuration).ezsignbulksendtransmissionGetObjectV1(pkiEzsignbulksendtransmissionID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

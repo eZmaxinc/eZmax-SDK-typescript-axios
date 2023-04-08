@@ -23,6 +23,7 @@
 export const FieldEActivesessionUsertype = {
     AgentBroker: 'AgentBroker',
     Assistant: 'Assistant',
+    EzsignSigner: 'EzsignSigner',
     EzsignUser: 'EzsignUser',
     Normal: 'Normal'
 } as const;

@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A Ezsignbulksenddocumentmapping Object
  * @export
@@ -48,16 +46,49 @@ export interface EzsignbulksenddocumentmappingRequest {
     'fkiEzsigntemplateID'?: number;
 }
 /**
- * A EzsignbulksenddocumentmappingRequest Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignbulksenddocumentmappingRequest
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignbulksenddocumentmappingRequest extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignbulksenddocumentmappingRequest Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignbulksenddocumentmappingRequest
+ */
+export class DataObjectEzsignbulksenddocumentmappingRequest {
    pkiEzsignbulksenddocumentmappingID?:number = undefined
    fkiEzsignbulksendID:number = 0
    fkiEzsigntemplatepackageID?:number = undefined
    fkiEzsigntemplateID?:number = undefined
 }
+
+/**
+ * @export 
+ * A EzsignbulksenddocumentmappingRequest Validation Object
+ * @class ValidationObjectEzsignbulksenddocumentmappingRequest
+ */
+export class ValidationObjectEzsignbulksenddocumentmappingRequest {
+   pkiEzsignbulksenddocumentmappingID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzsignbulksendID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsigntemplatepackageID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzsigntemplateID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+} 
 
 

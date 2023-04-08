@@ -29,8 +29,6 @@ import { EzsignfoldertypeGetAutocompleteV2ResponseAllOf } from './ezsignfolderty
 // @ts-ignore
 import { EzsignfoldertypeGetAutocompleteV2ResponseMPayload } from './ezsignfoldertype-get-autocomplete-v2-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsignfoldertypeGetAutocompleteV2Response
  * Response for GET /2/object/ezsignfoldertype/getAutocomplete
@@ -40,15 +38,43 @@ export type EzsignfoldertypeGetAutocompleteV2Response = CommonResponse & Ezsignf
 
 
 /**
- * @export 
- * A EzsignfoldertypeGetAutocompleteV2Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsignfoldertypeGetAutocompleteV2Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfoldertypeGetAutocompleteV2Response extends DefaultObject {
-   mPayload:Partial<EzsignfoldertypeGetAutocompleteV2ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectEzsignfoldertypeGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsignfoldertypeGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A EzsignfoldertypeGetAutocompleteV2Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfoldertypeGetAutocompleteV2Response
+ */
+export class DataObjectEzsignfoldertypeGetAutocompleteV2Response {
+   mPayload:EzsignfoldertypeGetAutocompleteV2ResponseMPayload = new DataObjectEzsignfoldertypeGetAutocompleteV2ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A EzsignfoldertypeGetAutocompleteV2Response Validation Object
+ * @class ValidationObjectEzsignfoldertypeGetAutocompleteV2Response
+ */
+export class ValidationObjectEzsignfoldertypeGetAutocompleteV2Response {
+   mPayload = new ValidationObjectEzsignfoldertypeGetAutocompleteV2ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

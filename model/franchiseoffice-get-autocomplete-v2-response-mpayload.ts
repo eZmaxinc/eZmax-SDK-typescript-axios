@@ -17,8 +17,6 @@
 // @ts-ignore
 import { FranchiseofficeAutocompleteElementResponse } from './franchiseoffice-autocomplete-element-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for POST /2/object/franchiseoffice/getAutocomplete
  * @export
@@ -33,13 +31,30 @@ export interface FranchiseofficeGetAutocompleteV2ResponseMPayload {
     'a_objFranchiseoffice'?: Array<FranchiseofficeAutocompleteElementResponse>;
 }
 /**
- * A FranchiseofficeGetAutocompleteV2ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectFranchiseofficeGetAutocompleteV2ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectFranchiseofficeGetAutocompleteV2ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A FranchiseofficeGetAutocompleteV2ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectFranchiseofficeGetAutocompleteV2ResponseMPayload
+ */
+export class DataObjectFranchiseofficeGetAutocompleteV2ResponseMPayload {
    a_objFranchiseoffice?:Array<FranchiseofficeAutocompleteElementResponse> = undefined
 }
+
+/**
+ * @export 
+ * A FranchiseofficeGetAutocompleteV2ResponseMPayload Validation Object
+ * @class ValidationObjectFranchiseofficeGetAutocompleteV2ResponseMPayload
+ */
+export class ValidationObjectFranchiseofficeGetAutocompleteV2ResponseMPayload {
+   a_objFranchiseoffice = {
+      type: 'array',
+      required: false
+   }
+} 
 
 

@@ -17,8 +17,6 @@
 // @ts-ignore
 import { CustomNotificationtestgetnotificationtestsResponse } from './custom-notificationtestgetnotificationtests-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,30 @@ export interface CustomNotificationsubsectiongetnotificationtestsResponseAllOf {
     'a_objNotificationtest': Array<CustomNotificationtestgetnotificationtestsResponse>;
 }
 /**
- * A CustomNotificationsubsectiongetnotificationtestsResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCustomNotificationsubsectiongetnotificationtestsResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCustomNotificationsubsectiongetnotificationtestsResponseAllOf extends DefaultObject {
+
+/**
+ * @export 
+ * A CustomNotificationsubsectiongetnotificationtestsResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCustomNotificationsubsectiongetnotificationtestsResponseAllOf
+ */
+export class DataObjectCustomNotificationsubsectiongetnotificationtestsResponseAllOf {
    a_objNotificationtest:Array<CustomNotificationtestgetnotificationtestsResponse> = []
 }
+
+/**
+ * @export 
+ * A CustomNotificationsubsectiongetnotificationtestsResponseAllOf Validation Object
+ * @class ValidationObjectCustomNotificationsubsectiongetnotificationtestsResponseAllOf
+ */
+export class ValidationObjectCustomNotificationsubsectiongetnotificationtestsResponseAllOf {
+   a_objNotificationtest = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

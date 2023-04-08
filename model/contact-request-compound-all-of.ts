@@ -17,8 +17,6 @@
 // @ts-ignore
 import { ContactinformationsRequestCompound } from './contactinformations-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface ContactRequestCompoundAllOf {
     'objContactinformations': ContactinformationsRequestCompound;
 }
 /**
- * A ContactRequestCompoundAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectContactRequestCompoundAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectContactRequestCompoundAllOf extends DefaultObject {
-   objContactinformations:Partial<ContactinformationsRequestCompound> = {}
+// @ts-ignore
+import { DataObjectContactinformationsRequestCompound } from './'
+// @ts-ignore
+import { ValidationObjectContactinformationsRequestCompound } from './'
+
+/**
+ * @export 
+ * A ContactRequestCompoundAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectContactRequestCompoundAllOf
+ */
+export class DataObjectContactRequestCompoundAllOf {
+   objContactinformations:ContactinformationsRequestCompound = new DataObjectContactinformationsRequestCompound()
 }
+
+/**
+ * @export 
+ * A ContactRequestCompoundAllOf Validation Object
+ * @class ValidationObjectContactRequestCompoundAllOf
+ */
+export class ValidationObjectContactRequestCompoundAllOf {
+   objContactinformations = new ValidationObjectContactinformationsRequestCompound()
+} 
 
 

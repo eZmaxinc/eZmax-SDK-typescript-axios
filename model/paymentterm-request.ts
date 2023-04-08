@@ -15,9 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import { FieldEPaymenttermType } from './field-epaymentterm-type';
+// May contain unused imports in some cases
+// @ts-ignore
 import { MultilingualPaymenttermDescription } from './multilingual-paymentterm-description';
-
-import { DefaultObject } from '../base'
 
 /**
  * A Paymentterm Object
@@ -39,6 +40,18 @@ export interface PaymenttermRequest {
     'sPaymenttermCode': string;
     /**
      * 
+     * @type {FieldEPaymenttermType}
+     * @memberof PaymenttermRequest
+     */
+    'ePaymenttermType': FieldEPaymenttermType;
+    /**
+     * The day of the Paymentterm
+     * @type {number}
+     * @memberof PaymenttermRequest
+     */
+    'iPaymenttermDay': number;
+    /**
+     * 
      * @type {MultilingualPaymenttermDescription}
      * @memberof PaymenttermRequest
      */
@@ -50,17 +63,63 @@ export interface PaymenttermRequest {
      */
     'bPaymenttermIsactive': boolean;
 }
+
+
 /**
- * A PaymenttermRequest Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectPaymenttermRequest
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectPaymenttermRequest extends DefaultObject {
+// @ts-ignore
+import { DataObjectMultilingualPaymenttermDescription } from './'
+// @ts-ignore
+import { ValidationObjectMultilingualPaymenttermDescription } from './'
+
+/**
+ * @export 
+ * A PaymenttermRequest Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectPaymenttermRequest
+ */
+export class DataObjectPaymenttermRequest {
    pkiPaymenttermID?:number = undefined
    sPaymenttermCode:string = ''
-   objPaymenttermDescription:Partial<MultilingualPaymenttermDescription> = {}
+   ePaymenttermType:FieldEPaymenttermType = 'Days'
+   iPaymenttermDay:number = 0
+   objPaymenttermDescription:MultilingualPaymenttermDescription = new DataObjectMultilingualPaymenttermDescription()
    bPaymenttermIsactive:boolean = false
 }
+
+/**
+ * @export 
+ * A PaymenttermRequest Validation Object
+ * @class ValidationObjectPaymenttermRequest
+ */
+export class ValidationObjectPaymenttermRequest {
+   pkiPaymenttermID = {
+      type: 'integer',
+      required: false
+   }
+   sPaymenttermCode = {
+      type: 'string',
+      pattern: '/^[A-Z0-9]{1,4}$/',
+      required: true
+   }
+   ePaymenttermType = {
+      type: 'enum',
+      allowableValues: ['Days','Dayofthemonth'],
+      required: true
+   }
+   iPaymenttermDay = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 255,
+      required: true
+   }
+   objPaymenttermDescription = new ValidationObjectMultilingualPaymenttermDescription()
+   bPaymenttermIsactive = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

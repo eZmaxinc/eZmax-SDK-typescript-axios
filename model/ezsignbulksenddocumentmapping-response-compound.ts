@@ -26,8 +26,6 @@ import { EzsigntemplateResponseCompound } from './ezsigntemplate-response-compou
 // @ts-ignore
 import { EzsigntemplatepackageResponseCompound } from './ezsigntemplatepackage-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsignbulksenddocumentmappingResponseCompound
  * A Ezsignbulksenddocumentmapping Object
@@ -37,19 +35,67 @@ export type EzsignbulksenddocumentmappingResponseCompound = Ezsignbulksenddocume
 
 
 /**
- * @export 
- * A EzsignbulksenddocumentmappingResponseCompound Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsignbulksenddocumentmappingResponseCompound
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignbulksenddocumentmappingResponseCompound extends DefaultObject {
+// @ts-ignore
+import { DataObjectEzsigntemplateResponseCompound } from './'
+// @ts-ignore
+import { DataObjectEzsigntemplatepackageResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectEzsigntemplateResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectEzsigntemplatepackageResponseCompound } from './'
+
+/**
+ * @export 
+ * A EzsignbulksenddocumentmappingResponseCompound Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignbulksenddocumentmappingResponseCompound
+ */
+export class DataObjectEzsignbulksenddocumentmappingResponseCompound {
    pkiEzsignbulksenddocumentmappingID:number = 0
    fkiEzsignbulksendID:number = 0
    fkiEzsigntemplatepackageID?:number = undefined
    fkiEzsigntemplateID?:number = undefined
    iEzsignbulksenddocumentmappingOrder:number = 0
-   objEzsigntemplate?:Partial<EzsigntemplateResponseCompound> = undefined
-   objEzsigntemplatepackage?:Partial<EzsigntemplatepackageResponseCompound> = undefined
+   objEzsigntemplate?:EzsigntemplateResponseCompound = undefined
+   objEzsigntemplatepackage?:EzsigntemplatepackageResponseCompound = undefined
 }
+
+/**
+ * @export 
+ * A EzsignbulksenddocumentmappingResponseCompound Validation Object
+ * @class ValidationObjectEzsignbulksenddocumentmappingResponseCompound
+ */
+export class ValidationObjectEzsignbulksenddocumentmappingResponseCompound {
+   pkiEzsignbulksenddocumentmappingID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsignbulksendID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsigntemplatepackageID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzsigntemplateID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   iEzsignbulksenddocumentmappingOrder = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   objEzsigntemplate = new ValidationObjectEzsigntemplateResponseCompound()
+   objEzsigntemplatepackage = new ValidationObjectEzsigntemplatepackageResponseCompound()
+} 
 
 

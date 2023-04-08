@@ -29,8 +29,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 // @ts-ignore
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type BrandingGetObjectV2Response
  * Response for GET /2/object/branding/{pkiBrandingID}
@@ -40,15 +38,43 @@ export type BrandingGetObjectV2Response = BrandingGetObjectV2ResponseAllOf & Com
 
 
 /**
- * @export 
- * A BrandingGetObjectV2Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectBrandingGetObjectV2Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectBrandingGetObjectV2Response extends DefaultObject {
-   mPayload:Partial<BrandingGetObjectV2ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectBrandingGetObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectBrandingGetObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A BrandingGetObjectV2Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectBrandingGetObjectV2Response
+ */
+export class DataObjectBrandingGetObjectV2Response {
+   mPayload:BrandingGetObjectV2ResponseMPayload = new DataObjectBrandingGetObjectV2ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A BrandingGetObjectV2Response Validation Object
+ * @class ValidationObjectBrandingGetObjectV2Response
+ */
+export class ValidationObjectBrandingGetObjectV2Response {
+   mPayload = new ValidationObjectBrandingGetObjectV2ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

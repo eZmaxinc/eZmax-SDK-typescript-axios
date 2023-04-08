@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigntemplatepackagesignermembershipGetObjectV2ResponseMPayload } from './ezsigntemplatepackagesignermembership-get-object-v2-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface EzsigntemplatepackagesignermembershipGetObjectV2ResponseAllOf {
     'mPayload': EzsigntemplatepackagesignermembershipGetObjectV2ResponseMPayload;
 }
 /**
- * A EzsigntemplatepackagesignermembershipGetObjectV2ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplatepackagesignermembershipGetObjectV2ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatepackagesignermembershipGetObjectV2ResponseAllOf extends DefaultObject {
-   mPayload:Partial<EzsigntemplatepackagesignermembershipGetObjectV2ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectEzsigntemplatepackagesignermembershipGetObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectEzsigntemplatepackagesignermembershipGetObjectV2ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A EzsigntemplatepackagesignermembershipGetObjectV2ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatepackagesignermembershipGetObjectV2ResponseAllOf
+ */
+export class DataObjectEzsigntemplatepackagesignermembershipGetObjectV2ResponseAllOf {
+   mPayload:EzsigntemplatepackagesignermembershipGetObjectV2ResponseMPayload = new DataObjectEzsigntemplatepackagesignermembershipGetObjectV2ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A EzsigntemplatepackagesignermembershipGetObjectV2ResponseAllOf Validation Object
+ * @class ValidationObjectEzsigntemplatepackagesignermembershipGetObjectV2ResponseAllOf
+ */
+export class ValidationObjectEzsigntemplatepackagesignermembershipGetObjectV2ResponseAllOf {
+   mPayload = new ValidationObjectEzsigntemplatepackagesignermembershipGetObjectV2ResponseMPayload()
+} 
 
 

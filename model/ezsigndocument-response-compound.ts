@@ -29,8 +29,6 @@ import { EzsigndocumentResponseCompoundAllOf } from './ezsigndocument-response-c
 // @ts-ignore
 import { FieldEEzsigndocumentStep } from './field-eezsigndocument-step';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsigndocumentResponseCompound
  * An Ezsigndocument Object and children to create a complete structure
@@ -39,13 +37,23 @@ import { DefaultObject } from '../base'
 export type EzsigndocumentResponseCompound = EzsigndocumentResponse & EzsigndocumentResponseCompoundAllOf;
 
 
+
+/**
+ * @import
+ * Imports Child Data Object
+ */
+// @ts-ignore
+import { DataObjectCommonAudit } from './'
+// @ts-ignore
+import { ValidationObjectCommonAudit } from './'
+
 /**
  * @export 
- * A EzsigndocumentResponseCompound Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsigndocumentResponseCompound
+ * A EzsigndocumentResponseCompound Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigndocumentResponseCompound
  */
-export class DefaultObjectEzsigndocumentResponseCompound extends DefaultObject {
+export class DataObjectEzsigndocumentResponseCompound {
    fkiEzsignfolderID:number = 0
    fkiEzsignfoldersignerassociationIDDeclinedtosign?:number = undefined
    dtEzsigndocumentDuedate:string = ''
@@ -64,12 +72,134 @@ export class DefaultObjectEzsigndocumentResponseCompound extends DefaultObject {
    tEzsigndocumentDeclinedtosignreason?:string = undefined
    sEzsigndocumentMD5signed:string = ''
    bEzsigndocumentEzsignform:boolean = false
-   objAudit:Partial<CommonAudit> = {}
+   bEzsigndocumentHassignedsignatures:boolean = false
+   objAudit:CommonAudit = new DataObjectCommonAudit()
+   sEzsigndocumentExternalid:string = ''
    iEzsigndocumentStepformtotal:number = 0
    iEzsigndocumentStepformcurrent:number = 0
    iEzsigndocumentStepsignaturetotal:number = 0
    iEzsigndocumentStepsignatureCurrent:number = 0
    a_objEzsignfoldersignerassociationstatus:Array<CustomEzsignfoldersignerassociationstatusResponse> = []
 }
+
+/**
+ * @export 
+ * A EzsigndocumentResponseCompound Validation Object
+ * @class ValidationObjectEzsigndocumentResponseCompound
+ */
+export class ValidationObjectEzsigndocumentResponseCompound {
+   fkiEzsignfolderID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsignfoldersignerassociationIDDeclinedtosign = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   dtEzsigndocumentDuedate = {
+      type: 'string',
+      required: true
+   }
+   dtEzsignformCompleted = {
+      type: 'string',
+      required: false
+   }
+   fkiLanguageID = {
+      type: 'integer',
+      minimum: 1,
+      maximum: 2,
+      required: true
+   }
+   sEzsigndocumentName = {
+      type: 'string',
+      required: true
+   }
+   pkiEzsigndocumentID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   eEzsigndocumentStep = {
+      type: 'enum',
+      allowableValues: ['Unsent','Unsigned','PartiallySigned','DeclinedToSign','PrematurelyEnded','Completed','Disposed'],
+      required: true
+   }
+   dtEzsigndocumentFirstsend = {
+      type: 'string',
+      required: false
+   }
+   dtEzsigndocumentLastsend = {
+      type: 'string',
+      required: false
+   }
+   iEzsigndocumentOrder = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   iEzsigndocumentPagetotal = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   iEzsigndocumentSignaturesigned = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsigndocumentSignaturetotal = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sEzsigndocumentMD5initial = {
+      type: 'string',
+      required: true
+   }
+   tEzsigndocumentDeclinedtosignreason = {
+      type: 'string',
+      required: false
+   }
+   sEzsigndocumentMD5signed = {
+      type: 'string',
+      required: true
+   }
+   bEzsigndocumentEzsignform = {
+      type: 'boolean',
+      required: true
+   }
+   bEzsigndocumentHassignedsignatures = {
+      type: 'boolean',
+      required: true
+   }
+   objAudit = new ValidationObjectCommonAudit()
+   sEzsigndocumentExternalid = {
+      type: 'string',
+      pattern: '/^.{0,64}$/',
+      required: true
+   }
+   iEzsigndocumentStepformtotal = {
+      type: 'integer',
+      required: true
+   }
+   iEzsigndocumentStepformcurrent = {
+      type: 'integer',
+      required: true
+   }
+   iEzsigndocumentStepsignaturetotal = {
+      type: 'integer',
+      required: true
+   }
+   iEzsigndocumentStepsignatureCurrent = {
+      type: 'integer',
+      required: true
+   }
+   a_objEzsignfoldersignerassociationstatus = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

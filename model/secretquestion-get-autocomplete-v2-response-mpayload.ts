@@ -17,8 +17,6 @@
 // @ts-ignore
 import { SecretquestionAutocompleteElementResponse } from './secretquestion-autocomplete-element-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for POST /2/object/secretquestion/getAutocomplete
  * @export
@@ -33,13 +31,30 @@ export interface SecretquestionGetAutocompleteV2ResponseMPayload {
     'a_objSecretquestion': Array<SecretquestionAutocompleteElementResponse>;
 }
 /**
- * A SecretquestionGetAutocompleteV2ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectSecretquestionGetAutocompleteV2ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectSecretquestionGetAutocompleteV2ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A SecretquestionGetAutocompleteV2ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectSecretquestionGetAutocompleteV2ResponseMPayload
+ */
+export class DataObjectSecretquestionGetAutocompleteV2ResponseMPayload {
    a_objSecretquestion:Array<SecretquestionAutocompleteElementResponse> = []
 }
+
+/**
+ * @export 
+ * A SecretquestionGetAutocompleteV2ResponseMPayload Validation Object
+ * @class ValidationObjectSecretquestionGetAutocompleteV2ResponseMPayload
+ */
+export class ValidationObjectSecretquestionGetAutocompleteV2ResponseMPayload {
+   a_objSecretquestion = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

@@ -17,8 +17,6 @@
 // @ts-ignore
 import { FranchisebrokerGetAutocompleteV2ResponseMPayload } from './franchisebroker-get-autocomplete-v2-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface FranchisebrokerGetAutocompleteV2ResponseAllOf {
     'mPayload': FranchisebrokerGetAutocompleteV2ResponseMPayload;
 }
 /**
- * A FranchisebrokerGetAutocompleteV2ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectFranchisebrokerGetAutocompleteV2ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectFranchisebrokerGetAutocompleteV2ResponseAllOf extends DefaultObject {
-   mPayload:Partial<FranchisebrokerGetAutocompleteV2ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectFranchisebrokerGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectFranchisebrokerGetAutocompleteV2ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A FranchisebrokerGetAutocompleteV2ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectFranchisebrokerGetAutocompleteV2ResponseAllOf
+ */
+export class DataObjectFranchisebrokerGetAutocompleteV2ResponseAllOf {
+   mPayload:FranchisebrokerGetAutocompleteV2ResponseMPayload = new DataObjectFranchisebrokerGetAutocompleteV2ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A FranchisebrokerGetAutocompleteV2ResponseAllOf Validation Object
+ * @class ValidationObjectFranchisebrokerGetAutocompleteV2ResponseAllOf
+ */
+export class ValidationObjectFranchisebrokerGetAutocompleteV2ResponseAllOf {
+   mPayload = new ValidationObjectFranchisebrokerGetAutocompleteV2ResponseMPayload()
+} 
 
 

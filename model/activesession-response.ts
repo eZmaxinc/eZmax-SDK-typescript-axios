@@ -20,8 +20,6 @@ import { FieldEActivesessionUsertype } from './field-eactivesession-usertype';
 // @ts-ignore
 import { FieldEActivesessionWeekdaystart } from './field-eactivesession-weekdaystart';
 
-import { DefaultObject } from '../base'
-
 /**
  * An Activesession Object
  * @export
@@ -83,13 +81,20 @@ export interface ActivesessionResponse {
      */
     'fkiSystemconfigurationtypeID'?: number;
 }
+
+
 /**
- * A ActivesessionResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectActivesessionResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectActivesessionResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A ActivesessionResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectActivesessionResponse
+ */
+export class DataObjectActivesessionResponse {
    eActivesessionUsertype:FieldEActivesessionUsertype = 'AgentBroker'
    eActivesessionWeekdaystart:FieldEActivesessionWeekdaystart = 'Sunday'
    fkiLanguageID:number = 0
@@ -100,5 +105,54 @@ export class DefaultObjectActivesessionResponse extends DefaultObject {
    pksCustomerCode:string = ''
    fkiSystemconfigurationtypeID?:number = undefined
 }
+
+/**
+ * @export 
+ * A ActivesessionResponse Validation Object
+ * @class ValidationObjectActivesessionResponse
+ */
+export class ValidationObjectActivesessionResponse {
+   eActivesessionUsertype = {
+      type: 'enum',
+      allowableValues: ['AgentBroker','Assistant','EzsignSigner','EzsignUser','Normal'],
+      required: true
+   }
+   eActivesessionWeekdaystart = {
+      type: 'enum',
+      allowableValues: ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
+      required: true
+   }
+   fkiLanguageID = {
+      type: 'integer',
+      minimum: 1,
+      maximum: 2,
+      required: true
+   }
+   sCompanyNameX = {
+      type: 'string',
+      required: true
+   }
+   sDepartmentNameX = {
+      type: 'string',
+      required: true
+   }
+   bActivesessionDebug = {
+      type: 'boolean',
+      required: true
+   }
+   bActivesessionIssuperadmin = {
+      type: 'boolean',
+      required: true
+   }
+   pksCustomerCode = {
+      type: 'string',
+      required: true
+   }
+   fkiSystemconfigurationtypeID = {
+      type: 'integer',
+      minimum: 1,
+      required: false
+   }
+} 
 
 

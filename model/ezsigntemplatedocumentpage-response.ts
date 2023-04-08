@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * An Ezsigntemplatedocumentpage Object
  * @export
@@ -66,12 +64,17 @@ export interface EzsigntemplatedocumentpageResponse {
     'sComputedImageurl': string;
 }
 /**
- * A EzsigntemplatedocumentpageResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplatedocumentpageResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatedocumentpageResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntemplatedocumentpageResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatedocumentpageResponse
+ */
+export class DataObjectEzsigntemplatedocumentpageResponse {
    pkiEzsigntemplatedocumentpageID:number = 0
    iEzsigntemplatedocumentpageWidthimage:number = 0
    iEzsigntemplatedocumentpageHeightimage:number = 0
@@ -80,5 +83,47 @@ export class DefaultObjectEzsigntemplatedocumentpageResponse extends DefaultObje
    iEzsigntemplatedocumentpagePagenumber:number = 0
    sComputedImageurl:string = ''
 }
+
+/**
+ * @export 
+ * A EzsigntemplatedocumentpageResponse Validation Object
+ * @class ValidationObjectEzsigntemplatedocumentpageResponse
+ */
+export class ValidationObjectEzsigntemplatedocumentpageResponse {
+   pkiEzsigntemplatedocumentpageID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsigntemplatedocumentpageWidthimage = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsigntemplatedocumentpageHeightimage = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsigntemplatedocumentpageWidthpdf = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsigntemplatedocumentpageHeightpdf = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsigntemplatedocumentpagePagenumber = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   sComputedImageurl = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

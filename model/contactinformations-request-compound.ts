@@ -32,8 +32,6 @@ import { PhoneRequestCompound } from './phone-request-compound';
 // @ts-ignore
 import { WebsiteRequestCompound } from './website-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type ContactinformationsRequestCompound
  * A Contactinformations Object and children to create a complete structure
@@ -43,12 +41,17 @@ export type ContactinformationsRequestCompound = ContactinformationsRequest & Co
 
 
 /**
- * @export 
- * A ContactinformationsRequestCompound Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectContactinformationsRequestCompound
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectContactinformationsRequestCompound extends DefaultObject {
+
+/**
+ * @export 
+ * A ContactinformationsRequestCompound Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectContactinformationsRequestCompound
+ */
+export class DataObjectContactinformationsRequestCompound {
    iAddressDefault:number = 0
    iPhoneDefault:number = 0
    iEmailDefault:number = 0
@@ -58,5 +61,45 @@ export class DefaultObjectContactinformationsRequestCompound extends DefaultObje
    a_objEmail:Array<EmailRequestCompound> = []
    a_objWebsite:Array<WebsiteRequestCompound> = []
 }
+
+/**
+ * @export 
+ * A ContactinformationsRequestCompound Validation Object
+ * @class ValidationObjectContactinformationsRequestCompound
+ */
+export class ValidationObjectContactinformationsRequestCompound {
+   iAddressDefault = {
+      type: 'integer',
+      required: true
+   }
+   iPhoneDefault = {
+      type: 'integer',
+      required: true
+   }
+   iEmailDefault = {
+      type: 'integer',
+      required: true
+   }
+   iWebsiteDefault = {
+      type: 'integer',
+      required: true
+   }
+   a_objAddress = {
+      type: 'array',
+      required: true
+   }
+   a_objPhone = {
+      type: 'array',
+      required: true
+   }
+   a_objEmail = {
+      type: 'array',
+      required: true
+   }
+   a_objWebsite = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

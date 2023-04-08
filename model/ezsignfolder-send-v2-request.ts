@@ -17,8 +17,6 @@
 // @ts-ignore
 import { CustomEzsignfoldersignerassociationmessageRequest } from './custom-ezsignfoldersignerassociationmessage-request';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for POST /2/object/ezsignfolder/{pkiEzsignfolderID}/send
  * @export
@@ -45,15 +43,40 @@ export interface EzsignfolderSendV2Request {
     'a_objEzsignfoldersignerassociationmessage': Array<CustomEzsignfoldersignerassociationmessageRequest>;
 }
 /**
- * A EzsignfolderSendV2Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfolderSendV2Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfolderSendV2Request extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignfolderSendV2Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfolderSendV2Request
+ */
+export class DataObjectEzsignfolderSendV2Request {
    tEzsignfolderMessage:string = ''
    a_fkiEzsignfoldersignerassociationID:Array<number> = []
    a_objEzsignfoldersignerassociationmessage:Array<CustomEzsignfoldersignerassociationmessageRequest> = []
 }
+
+/**
+ * @export 
+ * A EzsignfolderSendV2Request Validation Object
+ * @class ValidationObjectEzsignfolderSendV2Request
+ */
+export class ValidationObjectEzsignfolderSendV2Request {
+   tEzsignfolderMessage = {
+      type: 'string',
+      required: true
+   }
+   a_fkiEzsignfoldersignerassociationID = {
+      type: 'array',
+      required: true
+   }
+   a_objEzsignfoldersignerassociationmessage = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

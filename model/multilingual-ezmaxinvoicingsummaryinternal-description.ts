@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Description of the Ezmaxinvoicingsummaryinternal
  * @export
@@ -36,14 +34,35 @@ export interface MultilingualEzmaxinvoicingsummaryinternalDescription {
     'sEzmaxinvoicingsummaryinternalDescription2'?: string;
 }
 /**
- * A MultilingualEzmaxinvoicingsummaryinternalDescription Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectMultilingualEzmaxinvoicingsummaryinternalDescription
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectMultilingualEzmaxinvoicingsummaryinternalDescription extends DefaultObject {
+
+/**
+ * @export 
+ * A MultilingualEzmaxinvoicingsummaryinternalDescription Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectMultilingualEzmaxinvoicingsummaryinternalDescription
+ */
+export class DataObjectMultilingualEzmaxinvoicingsummaryinternalDescription {
    sEzmaxinvoicingsummaryinternalDescription1?:string = undefined
    sEzmaxinvoicingsummaryinternalDescription2?:string = undefined
 }
+
+/**
+ * @export 
+ * A MultilingualEzmaxinvoicingsummaryinternalDescription Validation Object
+ * @class ValidationObjectMultilingualEzmaxinvoicingsummaryinternalDescription
+ */
+export class ValidationObjectMultilingualEzmaxinvoicingsummaryinternalDescription {
+   sEzmaxinvoicingsummaryinternalDescription1 = {
+      type: 'string',
+      required: false
+   }
+   sEzmaxinvoicingsummaryinternalDescription2 = {
+      type: 'string',
+      required: false
+   }
+} 
 
 

@@ -29,8 +29,6 @@ import { EzsignfolderImportEzsigntemplatepackageV1ResponseAllOf } from './ezsign
 // @ts-ignore
 import { EzsignfolderImportEzsigntemplatepackageV1ResponseMPayload } from './ezsignfolder-import-ezsigntemplatepackage-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsignfolderImportEzsigntemplatepackageV1Response
  * Response for POST/1/object/ezsignfolder/{pkiEzsignfolderID}/importEzsigntemplatepackage
@@ -40,15 +38,43 @@ export type EzsignfolderImportEzsigntemplatepackageV1Response = CommonResponse &
 
 
 /**
- * @export 
- * A EzsignfolderImportEzsigntemplatepackageV1Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsignfolderImportEzsigntemplatepackageV1Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfolderImportEzsigntemplatepackageV1Response extends DefaultObject {
-   mPayload:Partial<EzsignfolderImportEzsigntemplatepackageV1ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectEzsignfolderImportEzsigntemplatepackageV1ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsignfolderImportEzsigntemplatepackageV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A EzsignfolderImportEzsigntemplatepackageV1Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfolderImportEzsigntemplatepackageV1Response
+ */
+export class DataObjectEzsignfolderImportEzsigntemplatepackageV1Response {
+   mPayload:EzsignfolderImportEzsigntemplatepackageV1ResponseMPayload = new DataObjectEzsignfolderImportEzsigntemplatepackageV1ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A EzsignfolderImportEzsigntemplatepackageV1Response Validation Object
+ * @class ValidationObjectEzsignfolderImportEzsigntemplatepackageV1Response
+ */
+export class ValidationObjectEzsignfolderImportEzsigntemplatepackageV1Response {
+   mPayload = new ValidationObjectEzsignfolderImportEzsigntemplatepackageV1ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

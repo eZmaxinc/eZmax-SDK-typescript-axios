@@ -17,8 +17,6 @@
 // @ts-ignore
 import { CustomContactNameResponse } from './custom-contact-name-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface EzmaxinvoicingagentResponseCompoundAllOf {
     'objContactName': CustomContactNameResponse;
 }
 /**
- * A EzmaxinvoicingagentResponseCompoundAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzmaxinvoicingagentResponseCompoundAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzmaxinvoicingagentResponseCompoundAllOf extends DefaultObject {
-   objContactName:Partial<CustomContactNameResponse> = {}
+// @ts-ignore
+import { DataObjectCustomContactNameResponse } from './'
+// @ts-ignore
+import { ValidationObjectCustomContactNameResponse } from './'
+
+/**
+ * @export 
+ * A EzmaxinvoicingagentResponseCompoundAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzmaxinvoicingagentResponseCompoundAllOf
+ */
+export class DataObjectEzmaxinvoicingagentResponseCompoundAllOf {
+   objContactName:CustomContactNameResponse = new DataObjectCustomContactNameResponse()
 }
+
+/**
+ * @export 
+ * A EzmaxinvoicingagentResponseCompoundAllOf Validation Object
+ * @class ValidationObjectEzmaxinvoicingagentResponseCompoundAllOf
+ */
+export class ValidationObjectEzmaxinvoicingagentResponseCompoundAllOf {
+   objContactName = new ValidationObjectCustomContactNameResponse()
+} 
 
 

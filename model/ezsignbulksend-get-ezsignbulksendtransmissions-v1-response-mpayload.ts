@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignbulksendtransmissionResponseCompound } from './ezsignbulksendtransmission-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for GET /1/object/ezsignbulksend/{pkiEzsignbulksend}/getEzsignbulksendtransmissions
  * @export
@@ -33,13 +31,30 @@ export interface EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload 
     'a_objEzsignbulksendtransmission': Array<EzsignbulksendtransmissionResponseCompound>;
 }
 /**
- * A EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload
+ */
+export class DataObjectEzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload {
    a_objEzsignbulksendtransmission:Array<EzsignbulksendtransmissionResponseCompound> = []
 }
+
+/**
+ * @export 
+ * A EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload Validation Object
+ * @class ValidationObjectEzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload
+ */
+export class ValidationObjectEzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload {
+   a_objEzsignbulksendtransmission = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

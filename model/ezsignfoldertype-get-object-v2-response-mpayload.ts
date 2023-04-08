@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignfoldertypeResponseCompound } from './ezsignfoldertype-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for GET /2/object/ezsignfoldertype/{pkiEzsignfoldertypeID}
  * @export
@@ -33,13 +31,31 @@ export interface EzsignfoldertypeGetObjectV2ResponseMPayload {
     'objEzsignfoldertype': EzsignfoldertypeResponseCompound;
 }
 /**
- * A EzsignfoldertypeGetObjectV2ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfoldertypeGetObjectV2ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfoldertypeGetObjectV2ResponseMPayload extends DefaultObject {
-   objEzsignfoldertype:Partial<EzsignfoldertypeResponseCompound> = {}
+// @ts-ignore
+import { DataObjectEzsignfoldertypeResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectEzsignfoldertypeResponseCompound } from './'
+
+/**
+ * @export 
+ * A EzsignfoldertypeGetObjectV2ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfoldertypeGetObjectV2ResponseMPayload
+ */
+export class DataObjectEzsignfoldertypeGetObjectV2ResponseMPayload {
+   objEzsignfoldertype:EzsignfoldertypeResponseCompound = new DataObjectEzsignfoldertypeResponseCompound()
 }
+
+/**
+ * @export 
+ * A EzsignfoldertypeGetObjectV2ResponseMPayload Validation Object
+ * @class ValidationObjectEzsignfoldertypeGetObjectV2ResponseMPayload
+ */
+export class ValidationObjectEzsignfoldertypeGetObjectV2ResponseMPayload {
+   objEzsignfoldertype = new ValidationObjectEzsignfoldertypeResponseCompound()
+} 
 
 

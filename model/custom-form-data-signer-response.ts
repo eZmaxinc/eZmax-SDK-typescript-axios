@@ -17,8 +17,6 @@
 // @ts-ignore
 import { CustomFormDataEzsignformfieldgroupResponse } from './custom-form-data-ezsignformfieldgroup-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * A form Data Signer Object
  * @export
@@ -57,17 +55,52 @@ export interface CustomFormDataSignerResponse {
     'a_objEzsignformfieldgroup': Array<CustomFormDataEzsignformfieldgroupResponse>;
 }
 /**
- * A CustomFormDataSignerResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCustomFormDataSignerResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCustomFormDataSignerResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A CustomFormDataSignerResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCustomFormDataSignerResponse
+ */
+export class DataObjectCustomFormDataSignerResponse {
    fkiEzsignfoldersignerassociationID:number = 0
    fkiUserID?:number = undefined
    sContactFirstname:string = ''
    sContactLastname:string = ''
    a_objEzsignformfieldgroup:Array<CustomFormDataEzsignformfieldgroupResponse> = []
 }
+
+/**
+ * @export 
+ * A CustomFormDataSignerResponse Validation Object
+ * @class ValidationObjectCustomFormDataSignerResponse
+ */
+export class ValidationObjectCustomFormDataSignerResponse {
+   fkiEzsignfoldersignerassociationID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiUserID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   sContactFirstname = {
+      type: 'string',
+      required: true
+   }
+   sContactLastname = {
+      type: 'string',
+      required: true
+   }
+   a_objEzsignformfieldgroup = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

@@ -35,8 +35,6 @@ import { FieldEEzsignsignatureTooltipposition } from './field-eezsignsignature-t
 // @ts-ignore
 import { FieldEEzsignsignatureType } from './field-eezsignsignature-type';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsignsignatureResponseCompound
  * An Ezsignsignature Object and children to create a complete structure
@@ -45,13 +43,19 @@ import { DefaultObject } from '../base'
 export type EzsignsignatureResponseCompound = EzsignsignatureResponse & EzsignsignatureResponseCompoundAllOf;
 
 
+
+/**
+ * @import
+ * Imports Child Data Object
+ */
+
 /**
  * @export 
- * A EzsignsignatureResponseCompound Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsignsignatureResponseCompound
+ * A EzsignsignatureResponseCompound Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignsignatureResponseCompound
  */
-export class DefaultObjectEzsignsignatureResponseCompound extends DefaultObject {
+export class DataObjectEzsignsignatureResponseCompound {
    pkiEzsignsignatureID:number = 0
    fkiEzsigndocumentID:number = 0
    fkiEzsignfoldersignerassociationID:number = 0
@@ -71,5 +75,96 @@ export class DefaultObjectEzsignsignatureResponseCompound extends DefaultObject 
    bEzsignsignatureCustomdate?:boolean = undefined
    a_objEzsignsignaturecustomdate?:Array<EzsignsignaturecustomdateResponseCompound> = undefined
 }
+
+/**
+ * @export 
+ * A EzsignsignatureResponseCompound Validation Object
+ * @class ValidationObjectEzsignsignatureResponseCompound
+ */
+export class ValidationObjectEzsignsignatureResponseCompound {
+   pkiEzsignsignatureID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsigndocumentID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsignfoldersignerassociationID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsignpagePagenumber = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   iEzsignsignatureX = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsignsignatureY = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsignsignatureStep = {
+      type: 'integer',
+      required: true
+   }
+   eEzsignsignatureType = {
+      type: 'enum',
+      allowableValues: ['Acknowledgement','City','Handwritten','Initials','Name','Attachments'],
+      required: true
+   }
+   tEzsignsignatureTooltip = {
+      type: 'string',
+      required: false
+   }
+   eEzsignsignatureTooltipposition = {
+      type: 'enum',
+      allowableValues: ['TopLeft','TopCenter','TopRight','MiddleLeft','MiddleRight','BottomLeft','BottomCenter','BottomRight'],
+      required: false
+   }
+   eEzsignsignatureFont = {
+      type: 'enum',
+      allowableValues: ['Normal','Cursive'],
+      required: false
+   }
+   iEzsignsignatureValidationstep = {
+      type: 'integer',
+      required: false
+   }
+   sEzsignsignatureAttachmentdescription = {
+      type: 'string',
+      required: false
+   }
+   eEzsignsignatureAttachmentnamesource = {
+      type: 'enum',
+      allowableValues: ['Description','Customer','DescriptionCustomer'],
+      required: false
+   }
+   bEzsignsignatureRequired = {
+      type: 'boolean',
+      required: false
+   }
+   fkiEzsignfoldersignerassociationIDValidation = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   bEzsignsignatureCustomdate = {
+      type: 'boolean',
+      required: false
+   }
+   a_objEzsignsignaturecustomdate = {
+      type: 'array',
+      required: false
+   }
+} 
 
 

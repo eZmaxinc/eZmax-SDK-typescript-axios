@@ -20,8 +20,6 @@ import { EzsigntemplatepackagemembershipResponseCompound } from './ezsigntemplat
 // @ts-ignore
 import { EzsigntemplatepackagesignerResponseCompound } from './ezsigntemplatepackagesigner-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -42,14 +40,35 @@ export interface EzsigntemplatepackageResponseCompoundAllOf {
     'a_objEzsigntemplatepackagemembership': Array<EzsigntemplatepackagemembershipResponseCompound>;
 }
 /**
- * A EzsigntemplatepackageResponseCompoundAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplatepackageResponseCompoundAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatepackageResponseCompoundAllOf extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntemplatepackageResponseCompoundAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatepackageResponseCompoundAllOf
+ */
+export class DataObjectEzsigntemplatepackageResponseCompoundAllOf {
    a_objEzsigntemplatepackagesigner:Array<EzsigntemplatepackagesignerResponseCompound> = []
    a_objEzsigntemplatepackagemembership:Array<EzsigntemplatepackagemembershipResponseCompound> = []
 }
+
+/**
+ * @export 
+ * A EzsigntemplatepackageResponseCompoundAllOf Validation Object
+ * @class ValidationObjectEzsigntemplatepackageResponseCompoundAllOf
+ */
+export class ValidationObjectEzsigntemplatepackageResponseCompoundAllOf {
+   a_objEzsigntemplatepackagesigner = {
+      type: 'array',
+      required: true
+   }
+   a_objEzsigntemplatepackagemembership = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

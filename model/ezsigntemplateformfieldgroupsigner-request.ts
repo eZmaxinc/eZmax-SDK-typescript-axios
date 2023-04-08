@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A Ezsigntemplateformfieldgroupsigner Object
  * @export
@@ -36,14 +34,37 @@ export interface EzsigntemplateformfieldgroupsignerRequest {
     'fkiEzsigntemplatesignerID': number;
 }
 /**
- * A EzsigntemplateformfieldgroupsignerRequest Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplateformfieldgroupsignerRequest
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplateformfieldgroupsignerRequest extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntemplateformfieldgroupsignerRequest Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplateformfieldgroupsignerRequest
+ */
+export class DataObjectEzsigntemplateformfieldgroupsignerRequest {
    pkiEzsigntemplateformfieldgroupsignerID?:number = undefined
    fkiEzsigntemplatesignerID:number = 0
 }
+
+/**
+ * @export 
+ * A EzsigntemplateformfieldgroupsignerRequest Validation Object
+ * @class ValidationObjectEzsigntemplateformfieldgroupsignerRequest
+ */
+export class ValidationObjectEzsigntemplateformfieldgroupsignerRequest {
+   pkiEzsigntemplateformfieldgroupsignerID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzsigntemplatesignerID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+} 
 
 

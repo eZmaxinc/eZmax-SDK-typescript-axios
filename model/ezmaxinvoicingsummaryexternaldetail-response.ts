@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A Ezmaxinvoicingsummaryexternaldetail Object
  * @export
@@ -84,12 +82,17 @@ export interface EzmaxinvoicingsummaryexternaldetailResponse {
     'tEzmaxproductHelpX': string;
 }
 /**
- * A EzmaxinvoicingsummaryexternaldetailResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzmaxinvoicingsummaryexternaldetailResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzmaxinvoicingsummaryexternaldetailResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A EzmaxinvoicingsummaryexternaldetailResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzmaxinvoicingsummaryexternaldetailResponse
+ */
+export class DataObjectEzmaxinvoicingsummaryexternaldetailResponse {
    pkiEzmaxinvoicingsummaryexternaldetailID?:number = undefined
    fkiEzmaxinvoicingsummaryexternalID?:number = undefined
    fkiEzmaxproductID:number = 0
@@ -101,5 +104,60 @@ export class DefaultObjectEzmaxinvoicingsummaryexternaldetailResponse extends De
    bEzmaxinvoicingsummaryexternaldetailAdjustment:boolean = false
    tEzmaxproductHelpX:string = ''
 }
+
+/**
+ * @export 
+ * A EzmaxinvoicingsummaryexternaldetailResponse Validation Object
+ * @class ValidationObjectEzmaxinvoicingsummaryexternaldetailResponse
+ */
+export class ValidationObjectEzmaxinvoicingsummaryexternaldetailResponse {
+   pkiEzmaxinvoicingsummaryexternaldetailID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzmaxinvoicingsummaryexternalID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzmaxproductID = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   sEzmaxproductDescriptionX = {
+      type: 'string',
+      required: true
+   }
+   dEzmaxinvoicingsummaryexternaldetailCountreal = {
+      type: 'string',
+      pattern: '/^-{0,1}[\d]{1,6}?\.[\d]{2}$/',
+      required: true
+   }
+   dEzmaxinvoicingsummaryexternaldetailSubtotal = {
+      type: 'string',
+      pattern: '/^-{0,1}[\d]{1,9}?\.[\d]{2}$/',
+      required: true
+   }
+   dEzmaxinvoicingsummaryexternaldetailRebate = {
+      type: 'string',
+      pattern: '/^-{0,1}[\d]{1,9}?\.[\d]{2}$/',
+      required: true
+   }
+   dEzmaxinvoicingsummaryexternaldetailTotal = {
+      type: 'string',
+      pattern: '/^-{0,1}[\d]{1,9}?\.[\d]{2}$/',
+      required: true
+   }
+   bEzmaxinvoicingsummaryexternaldetailAdjustment = {
+      type: 'boolean',
+      required: true
+   }
+   tEzmaxproductHelpX = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

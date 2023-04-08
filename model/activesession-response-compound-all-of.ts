@@ -20,8 +20,6 @@ import { ActivesessionResponseCompoundApikey } from './activesession-response-co
 // @ts-ignore
 import { ActivesessionResponseCompoundUser } from './activesession-response-compound-user';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -60,17 +58,53 @@ export interface ActivesessionResponseCompoundAllOf {
     'a_eModuleInternalname': Array<string>;
 }
 /**
- * A ActivesessionResponseCompoundAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectActivesessionResponseCompoundAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectActivesessionResponseCompoundAllOf extends DefaultObject {
+// @ts-ignore
+import { DataObjectActivesessionResponseCompoundUser } from './'
+// @ts-ignore
+import { DataObjectActivesessionResponseCompoundUser } from './'
+// @ts-ignore
+import { DataObjectActivesessionResponseCompoundApikey } from './'
+// @ts-ignore
+import { ValidationObjectActivesessionResponseCompoundUser } from './'
+// @ts-ignore
+import { ValidationObjectActivesessionResponseCompoundUser } from './'
+// @ts-ignore
+import { ValidationObjectActivesessionResponseCompoundApikey } from './'
+
+/**
+ * @export 
+ * A ActivesessionResponseCompoundAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectActivesessionResponseCompoundAllOf
+ */
+export class DataObjectActivesessionResponseCompoundAllOf {
    a_pkiPermissionID:Array<number> = []
-   objUserReal:Partial<ActivesessionResponseCompoundUser> = {}
-   objUserCloned?:Partial<ActivesessionResponseCompoundUser> = undefined
-   objApikey?:Partial<ActivesessionResponseCompoundApikey> = undefined
+   objUserReal:ActivesessionResponseCompoundUser = new DataObjectActivesessionResponseCompoundUser()
+   objUserCloned?:ActivesessionResponseCompoundUser = undefined
+   objApikey?:ActivesessionResponseCompoundApikey = undefined
    a_eModuleInternalname:Array<string> = []
 }
+
+/**
+ * @export 
+ * A ActivesessionResponseCompoundAllOf Validation Object
+ * @class ValidationObjectActivesessionResponseCompoundAllOf
+ */
+export class ValidationObjectActivesessionResponseCompoundAllOf {
+   a_pkiPermissionID = {
+      type: 'array',
+      required: true
+   }
+   objUserReal = new ValidationObjectActivesessionResponseCompoundUser()
+   objUserCloned = new ValidationObjectActivesessionResponseCompoundUser()
+   objApikey = new ValidationObjectActivesessionResponseCompoundApikey()
+   a_eModuleInternalname = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignformfieldgroupCreateObjectV1ResponseMPayload } from './ezsignformfieldgroup-create-object-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface EzsignformfieldgroupCreateObjectV1ResponseAllOf {
     'mPayload': EzsignformfieldgroupCreateObjectV1ResponseMPayload;
 }
 /**
- * A EzsignformfieldgroupCreateObjectV1ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignformfieldgroupCreateObjectV1ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignformfieldgroupCreateObjectV1ResponseAllOf extends DefaultObject {
-   mPayload:Partial<EzsignformfieldgroupCreateObjectV1ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectEzsignformfieldgroupCreateObjectV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectEzsignformfieldgroupCreateObjectV1ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A EzsignformfieldgroupCreateObjectV1ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignformfieldgroupCreateObjectV1ResponseAllOf
+ */
+export class DataObjectEzsignformfieldgroupCreateObjectV1ResponseAllOf {
+   mPayload:EzsignformfieldgroupCreateObjectV1ResponseMPayload = new DataObjectEzsignformfieldgroupCreateObjectV1ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A EzsignformfieldgroupCreateObjectV1ResponseAllOf Validation Object
+ * @class ValidationObjectEzsignformfieldgroupCreateObjectV1ResponseAllOf
+ */
+export class ValidationObjectEzsignformfieldgroupCreateObjectV1ResponseAllOf {
+   mPayload = new ValidationObjectEzsignformfieldgroupCreateObjectV1ResponseMPayload()
+} 
 
 

@@ -17,8 +17,6 @@
 // @ts-ignore
 import { WebhookGetHistoryV1ResponseMPayload } from './webhook-get-history-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface WebhookGetHistoryV1ResponseAllOf {
     'mPayload': WebhookGetHistoryV1ResponseMPayload;
 }
 /**
- * A WebhookGetHistoryV1ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectWebhookGetHistoryV1ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectWebhookGetHistoryV1ResponseAllOf extends DefaultObject {
-   mPayload:Partial<WebhookGetHistoryV1ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectWebhookGetHistoryV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectWebhookGetHistoryV1ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A WebhookGetHistoryV1ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectWebhookGetHistoryV1ResponseAllOf
+ */
+export class DataObjectWebhookGetHistoryV1ResponseAllOf {
+   mPayload:WebhookGetHistoryV1ResponseMPayload = new DataObjectWebhookGetHistoryV1ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A WebhookGetHistoryV1ResponseAllOf Validation Object
+ * @class ValidationObjectWebhookGetHistoryV1ResponseAllOf
+ */
+export class ValidationObjectWebhookGetHistoryV1ResponseAllOf {
+   mPayload = new ValidationObjectWebhookGetHistoryV1ResponseMPayload()
+} 
 
 

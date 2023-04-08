@@ -20,8 +20,6 @@ import { CommonAudit } from './common-audit';
 // @ts-ignore
 import { FieldEEzsignfoldertypePrivacylevel } from './field-eezsignfoldertype-privacylevel';
 
-import { DefaultObject } from '../base'
-
 /**
  * An Ezsignbulksend Object
  * @export
@@ -95,13 +93,24 @@ export interface EzsignbulksendResponse {
      */
     'objAudit': CommonAudit;
 }
+
+
 /**
- * A EzsignbulksendResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignbulksendResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignbulksendResponse extends DefaultObject {
+// @ts-ignore
+import { DataObjectCommonAudit } from './'
+// @ts-ignore
+import { ValidationObjectCommonAudit } from './'
+
+/**
+ * @export 
+ * A EzsignbulksendResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignbulksendResponse
+ */
+export class DataObjectEzsignbulksendResponse {
    pkiEzsignbulksendID:number = 0
    fkiEzsignfoldertypeID:number = 0
    fkiLanguageID:number = 0
@@ -112,7 +121,61 @@ export class DefaultObjectEzsignbulksendResponse extends DefaultObject {
    tEzsignbulksendNote:string = ''
    bEzsignbulksendNeedvalidation:boolean = false
    bEzsignbulksendIsactive:boolean = false
-   objAudit:Partial<CommonAudit> = {}
+   objAudit:CommonAudit = new DataObjectCommonAudit()
 }
+
+/**
+ * @export 
+ * A EzsignbulksendResponse Validation Object
+ * @class ValidationObjectEzsignbulksendResponse
+ */
+export class ValidationObjectEzsignbulksendResponse {
+   pkiEzsignbulksendID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsignfoldertypeID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiLanguageID = {
+      type: 'integer',
+      minimum: 1,
+      maximum: 2,
+      required: true
+   }
+   sLanguageNameX = {
+      type: 'string',
+      required: true
+   }
+   eEzsignfoldertypePrivacylevel = {
+      type: 'enum',
+      allowableValues: ['User','Usergroup'],
+      required: true
+   }
+   sEzsignfoldertypeNameX = {
+      type: 'string',
+      required: true
+   }
+   sEzsignbulksendDescription = {
+      type: 'string',
+      required: true
+   }
+   tEzsignbulksendNote = {
+      type: 'string',
+      required: true
+   }
+   bEzsignbulksendNeedvalidation = {
+      type: 'boolean',
+      required: true
+   }
+   bEzsignbulksendIsactive = {
+      type: 'boolean',
+      required: true
+   }
+   objAudit = new ValidationObjectCommonAudit()
+} 
 
 

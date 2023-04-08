@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignbulksenddocumentmappingCreateObjectV1ResponseMPayload } from './ezsignbulksenddocumentmapping-create-object-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface EzsignbulksenddocumentmappingCreateObjectV1ResponseAllOf {
     'mPayload': EzsignbulksenddocumentmappingCreateObjectV1ResponseMPayload;
 }
 /**
- * A EzsignbulksenddocumentmappingCreateObjectV1ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignbulksenddocumentmappingCreateObjectV1ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignbulksenddocumentmappingCreateObjectV1ResponseAllOf extends DefaultObject {
-   mPayload:Partial<EzsignbulksenddocumentmappingCreateObjectV1ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectEzsignbulksenddocumentmappingCreateObjectV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectEzsignbulksenddocumentmappingCreateObjectV1ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A EzsignbulksenddocumentmappingCreateObjectV1ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignbulksenddocumentmappingCreateObjectV1ResponseAllOf
+ */
+export class DataObjectEzsignbulksenddocumentmappingCreateObjectV1ResponseAllOf {
+   mPayload:EzsignbulksenddocumentmappingCreateObjectV1ResponseMPayload = new DataObjectEzsignbulksenddocumentmappingCreateObjectV1ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A EzsignbulksenddocumentmappingCreateObjectV1ResponseAllOf Validation Object
+ * @class ValidationObjectEzsignbulksenddocumentmappingCreateObjectV1ResponseAllOf
+ */
+export class ValidationObjectEzsignbulksenddocumentmappingCreateObjectV1ResponseAllOf {
+   mPayload = new ValidationObjectEzsignbulksenddocumentmappingCreateObjectV1ResponseMPayload()
+} 
 
 

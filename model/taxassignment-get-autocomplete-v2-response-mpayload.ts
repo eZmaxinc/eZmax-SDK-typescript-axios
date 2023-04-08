@@ -17,8 +17,6 @@
 // @ts-ignore
 import { TaxassignmentAutocompleteElementResponse } from './taxassignment-autocomplete-element-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for POST /2/object/taxassignment/getAutocomplete
  * @export
@@ -33,13 +31,30 @@ export interface TaxassignmentGetAutocompleteV2ResponseMPayload {
     'a_objTaxassignment': Array<TaxassignmentAutocompleteElementResponse>;
 }
 /**
- * A TaxassignmentGetAutocompleteV2ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectTaxassignmentGetAutocompleteV2ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectTaxassignmentGetAutocompleteV2ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A TaxassignmentGetAutocompleteV2ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectTaxassignmentGetAutocompleteV2ResponseMPayload
+ */
+export class DataObjectTaxassignmentGetAutocompleteV2ResponseMPayload {
    a_objTaxassignment:Array<TaxassignmentAutocompleteElementResponse> = []
 }
+
+/**
+ * @export 
+ * A TaxassignmentGetAutocompleteV2ResponseMPayload Validation Object
+ * @class ValidationObjectTaxassignmentGetAutocompleteV2ResponseMPayload
+ */
+export class ValidationObjectTaxassignmentGetAutocompleteV2ResponseMPayload {
+   a_objTaxassignment = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

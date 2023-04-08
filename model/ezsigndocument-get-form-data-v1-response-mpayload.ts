@@ -17,8 +17,6 @@
 // @ts-ignore
 import { CustomFormDataDocumentResponse } from './custom-form-data-document-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for GET /1/object/ezsigndocument/{pkiEzsigndocument}/getFormData
  * @export
@@ -33,13 +31,31 @@ export interface EzsigndocumentGetFormDataV1ResponseMPayload {
     'objFormDataDocument': CustomFormDataDocumentResponse;
 }
 /**
- * A EzsigndocumentGetFormDataV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigndocumentGetFormDataV1ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigndocumentGetFormDataV1ResponseMPayload extends DefaultObject {
-   objFormDataDocument:Partial<CustomFormDataDocumentResponse> = {}
+// @ts-ignore
+import { DataObjectCustomFormDataDocumentResponse } from './'
+// @ts-ignore
+import { ValidationObjectCustomFormDataDocumentResponse } from './'
+
+/**
+ * @export 
+ * A EzsigndocumentGetFormDataV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigndocumentGetFormDataV1ResponseMPayload
+ */
+export class DataObjectEzsigndocumentGetFormDataV1ResponseMPayload {
+   objFormDataDocument:CustomFormDataDocumentResponse = new DataObjectCustomFormDataDocumentResponse()
 }
+
+/**
+ * @export 
+ * A EzsigndocumentGetFormDataV1ResponseMPayload Validation Object
+ * @class ValidationObjectEzsigndocumentGetFormDataV1ResponseMPayload
+ */
+export class ValidationObjectEzsigndocumentGetFormDataV1ResponseMPayload {
+   objFormDataDocument = new ValidationObjectCustomFormDataDocumentResponse()
+} 
 
 

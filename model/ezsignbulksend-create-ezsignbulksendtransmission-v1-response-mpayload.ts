@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignbulksendtransmissionResponse } from './ezsignbulksendtransmission-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for POST /1/object/ezsignbulksend/{pkiEzsignbulksendID}/createEzsignbulksendtransmission
  * @export
@@ -33,13 +31,31 @@ export interface EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayloa
     'objEzsignbulksendtransmission': EzsignbulksendtransmissionResponse;
 }
 /**
- * A EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayload extends DefaultObject {
-   objEzsignbulksendtransmission:Partial<EzsignbulksendtransmissionResponse> = {}
+// @ts-ignore
+import { DataObjectEzsignbulksendtransmissionResponse } from './'
+// @ts-ignore
+import { ValidationObjectEzsignbulksendtransmissionResponse } from './'
+
+/**
+ * @export 
+ * A EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayload
+ */
+export class DataObjectEzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayload {
+   objEzsignbulksendtransmission:EzsignbulksendtransmissionResponse = new DataObjectEzsignbulksendtransmissionResponse()
 }
+
+/**
+ * @export 
+ * A EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayload Validation Object
+ * @class ValidationObjectEzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayload
+ */
+export class ValidationObjectEzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayload {
+   objEzsignbulksendtransmission = new ValidationObjectEzsignbulksendtransmissionResponse()
+} 
 
 

@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A Ezsigntemplatepackagemembership Object
  * @export
@@ -48,16 +46,49 @@ export interface EzsigntemplatepackagemembershipResponse {
     'iEzsigntemplatepackagemembershipOrder': number;
 }
 /**
- * A EzsigntemplatepackagemembershipResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplatepackagemembershipResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatepackagemembershipResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntemplatepackagemembershipResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatepackagemembershipResponse
+ */
+export class DataObjectEzsigntemplatepackagemembershipResponse {
    pkiEzsigntemplatepackagemembershipID:number = 0
    fkiEzsigntemplatepackageID:number = 0
    fkiEzsigntemplateID:number = 0
    iEzsigntemplatepackagemembershipOrder:number = 0
 }
+
+/**
+ * @export 
+ * A EzsigntemplatepackagemembershipResponse Validation Object
+ * @class ValidationObjectEzsigntemplatepackagemembershipResponse
+ */
+export class ValidationObjectEzsigntemplatepackagemembershipResponse {
+   pkiEzsigntemplatepackagemembershipID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsigntemplatepackageID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsigntemplateID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsigntemplatepackagemembershipOrder = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+} 
 
 

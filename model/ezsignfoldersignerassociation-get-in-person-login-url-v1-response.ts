@@ -29,8 +29,6 @@ import { EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseAllOf } from 
 // @ts-ignore
 import { EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload } from './ezsignfoldersignerassociation-get-in-person-login-url-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsignfoldersignerassociationGetInPersonLoginUrlV1Response
  * Response for GET /1/object/ezsignfoldersignerassociation/getInPersonLoginUrl
@@ -40,15 +38,43 @@ export type EzsignfoldersignerassociationGetInPersonLoginUrlV1Response = CommonR
 
 
 /**
- * @export 
- * A EzsignfoldersignerassociationGetInPersonLoginUrlV1Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsignfoldersignerassociationGetInPersonLoginUrlV1Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfoldersignerassociationGetInPersonLoginUrlV1Response extends DefaultObject {
-   mPayload:Partial<EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectEzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationGetInPersonLoginUrlV1Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfoldersignerassociationGetInPersonLoginUrlV1Response
+ */
+export class DataObjectEzsignfoldersignerassociationGetInPersonLoginUrlV1Response {
+   mPayload:EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload = new DataObjectEzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationGetInPersonLoginUrlV1Response Validation Object
+ * @class ValidationObjectEzsignfoldersignerassociationGetInPersonLoginUrlV1Response
+ */
+export class ValidationObjectEzsignfoldersignerassociationGetInPersonLoginUrlV1Response {
+   mPayload = new ValidationObjectEzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

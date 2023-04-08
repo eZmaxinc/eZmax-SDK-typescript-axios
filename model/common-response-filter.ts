@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Definition of Filters for getList
  * @export
@@ -36,14 +34,35 @@ export interface CommonResponseFilter {
     'a_Enum'?: { [key: string]: { [key: string]: string; }; };
 }
 /**
- * A CommonResponseFilter Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCommonResponseFilter
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCommonResponseFilter extends DefaultObject {
+
+/**
+ * @export 
+ * A CommonResponseFilter Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCommonResponseFilter
+ */
+export class DataObjectCommonResponseFilter {
    a_AutoType?:{ [key: string]: string; } = undefined
    a_Enum?:{ [key: string]: { [key: string]: string; }; } = undefined
 }
+
+/**
+ * @export 
+ * A CommonResponseFilter Validation Object
+ * @class ValidationObjectCommonResponseFilter
+ */
+export class ValidationObjectCommonResponseFilter {
+   a_AutoType = {
+      type: 'object',
+      required: false
+   }
+   a_Enum = {
+      type: 'object',
+      required: false
+   }
+} 
 
 

@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for POST /1/object/ezsignfolder/disposeEzsignfolders
  * @export
@@ -30,13 +28,32 @@ export interface EzsignfolderDisposeEzsignfoldersV1Request {
     'a_pkiEzsignfolderID': Array<number>;
 }
 /**
- * A EzsignfolderDisposeEzsignfoldersV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfolderDisposeEzsignfoldersV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfolderDisposeEzsignfoldersV1Request extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignfolderDisposeEzsignfoldersV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfolderDisposeEzsignfoldersV1Request
+ */
+export class DataObjectEzsignfolderDisposeEzsignfoldersV1Request {
    a_pkiEzsignfolderID:Array<number> = []
 }
+
+/**
+ * @export 
+ * A EzsignfolderDisposeEzsignfoldersV1Request Validation Object
+ * @class ValidationObjectEzsignfolderDisposeEzsignfoldersV1Request
+ */
+export class ValidationObjectEzsignfolderDisposeEzsignfoldersV1Request {
+   a_pkiEzsignfolderID = {
+      type: 'array',
+      minItems: 1,
+      maxItems: 500,
+      required: true
+   }
+} 
 
 

@@ -29,8 +29,6 @@ import { UserResponseCompound } from './user-response-compound';
 // @ts-ignore
 import { WebhookUserUserCreatedAllOf } from './webhook-user-user-created-all-of';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type WebhookUserUserCreated
  * This is the base Webhook object
@@ -40,15 +38,42 @@ export type WebhookUserUserCreated = CommonWebhook & WebhookUserUserCreatedAllOf
 
 
 /**
- * @export 
- * A WebhookUserUserCreated Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectWebhookUserUserCreated
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectWebhookUserUserCreated extends DefaultObject {
-   objUser:Partial<UserResponseCompound> = {}
-   objWebhook:Partial<CustomWebhookResponse> = {}
+// @ts-ignore
+import { DataObjectUserResponseCompound } from './'
+// @ts-ignore
+import { DataObjectCustomWebhookResponse } from './'
+// @ts-ignore
+import { ValidationObjectUserResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectCustomWebhookResponse } from './'
+
+/**
+ * @export 
+ * A WebhookUserUserCreated Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectWebhookUserUserCreated
+ */
+export class DataObjectWebhookUserUserCreated {
+   objUser:UserResponseCompound = new DataObjectUserResponseCompound()
+   objWebhook:CustomWebhookResponse = new DataObjectCustomWebhookResponse()
    a_objAttempt:Array<AttemptResponseCompound> = []
 }
+
+/**
+ * @export 
+ * A WebhookUserUserCreated Validation Object
+ * @class ValidationObjectWebhookUserUserCreated
+ */
+export class ValidationObjectWebhookUserUserCreated {
+   objUser = new ValidationObjectUserResponseCompound()
+   objWebhook = new ValidationObjectCustomWebhookResponse()
+   a_objAttempt = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

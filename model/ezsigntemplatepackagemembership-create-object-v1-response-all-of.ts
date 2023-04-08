@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigntemplatepackagemembershipCreateObjectV1ResponseMPayload } from './ezsigntemplatepackagemembership-create-object-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface EzsigntemplatepackagemembershipCreateObjectV1ResponseAllOf {
     'mPayload': EzsigntemplatepackagemembershipCreateObjectV1ResponseMPayload;
 }
 /**
- * A EzsigntemplatepackagemembershipCreateObjectV1ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplatepackagemembershipCreateObjectV1ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatepackagemembershipCreateObjectV1ResponseAllOf extends DefaultObject {
-   mPayload:Partial<EzsigntemplatepackagemembershipCreateObjectV1ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectEzsigntemplatepackagemembershipCreateObjectV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectEzsigntemplatepackagemembershipCreateObjectV1ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A EzsigntemplatepackagemembershipCreateObjectV1ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatepackagemembershipCreateObjectV1ResponseAllOf
+ */
+export class DataObjectEzsigntemplatepackagemembershipCreateObjectV1ResponseAllOf {
+   mPayload:EzsigntemplatepackagemembershipCreateObjectV1ResponseMPayload = new DataObjectEzsigntemplatepackagemembershipCreateObjectV1ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A EzsigntemplatepackagemembershipCreateObjectV1ResponseAllOf Validation Object
+ * @class ValidationObjectEzsigntemplatepackagemembershipCreateObjectV1ResponseAllOf
+ */
+export class ValidationObjectEzsigntemplatepackagemembershipCreateObjectV1ResponseAllOf {
+   mPayload = new ValidationObjectEzsigntemplatepackagemembershipCreateObjectV1ResponseMPayload()
+} 
 
 

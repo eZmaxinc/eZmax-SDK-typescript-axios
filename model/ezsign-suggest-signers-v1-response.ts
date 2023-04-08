@@ -29,8 +29,6 @@ import { EzsignSuggestSignersV1ResponseAllOf } from './ezsign-suggest-signers-v1
 // @ts-ignore
 import { EzsignSuggestSignersV1ResponseMPayload } from './ezsign-suggest-signers-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsignSuggestSignersV1Response
  * Response for GET /1/module/ezsign/suggestSigners
@@ -40,15 +38,43 @@ export type EzsignSuggestSignersV1Response = CommonResponse & EzsignSuggestSigne
 
 
 /**
- * @export 
- * A EzsignSuggestSignersV1Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsignSuggestSignersV1Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignSuggestSignersV1Response extends DefaultObject {
-   mPayload:Partial<EzsignSuggestSignersV1ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectEzsignSuggestSignersV1ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsignSuggestSignersV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A EzsignSuggestSignersV1Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignSuggestSignersV1Response
+ */
+export class DataObjectEzsignSuggestSignersV1Response {
+   mPayload:EzsignSuggestSignersV1ResponseMPayload = new DataObjectEzsignSuggestSignersV1ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A EzsignSuggestSignersV1Response Validation Object
+ * @class ValidationObjectEzsignSuggestSignersV1Response
+ */
+export class ValidationObjectEzsignSuggestSignersV1Response {
+   mPayload = new ValidationObjectEzsignSuggestSignersV1ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

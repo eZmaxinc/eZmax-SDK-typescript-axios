@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigntemplatesignaturecustomdateResponseCompound } from './ezsigntemplatesignaturecustomdate-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -39,14 +37,35 @@ export interface EzsigntemplatesignatureResponseCompoundAllOf {
     'a_objEzsigntemplatesignaturecustomdate'?: Array<EzsigntemplatesignaturecustomdateResponseCompound>;
 }
 /**
- * A EzsigntemplatesignatureResponseCompoundAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplatesignatureResponseCompoundAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatesignatureResponseCompoundAllOf extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntemplatesignatureResponseCompoundAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatesignatureResponseCompoundAllOf
+ */
+export class DataObjectEzsigntemplatesignatureResponseCompoundAllOf {
    bEzsigntemplatesignatureCustomdate?:boolean = undefined
    a_objEzsigntemplatesignaturecustomdate?:Array<EzsigntemplatesignaturecustomdateResponseCompound> = undefined
 }
+
+/**
+ * @export 
+ * A EzsigntemplatesignatureResponseCompoundAllOf Validation Object
+ * @class ValidationObjectEzsigntemplatesignatureResponseCompoundAllOf
+ */
+export class ValidationObjectEzsigntemplatesignatureResponseCompoundAllOf {
+   bEzsigntemplatesignatureCustomdate = {
+      type: 'boolean',
+      required: false
+   }
+   a_objEzsigntemplatesignaturecustomdate = {
+      type: 'array',
+      required: false
+   }
+} 
 
 

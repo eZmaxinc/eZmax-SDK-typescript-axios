@@ -17,8 +17,6 @@
 // @ts-ignore
 import { PaymenttermRequestCompound } from './paymentterm-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for POST /1/object/paymentterm
  * @export
@@ -33,13 +31,31 @@ export interface PaymenttermCreateObjectV1Request {
     'a_objPaymentterm': Array<PaymenttermRequestCompound>;
 }
 /**
- * A PaymenttermCreateObjectV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectPaymenttermCreateObjectV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectPaymenttermCreateObjectV1Request extends DefaultObject {
+
+/**
+ * @export 
+ * A PaymenttermCreateObjectV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectPaymenttermCreateObjectV1Request
+ */
+export class DataObjectPaymenttermCreateObjectV1Request {
    a_objPaymentterm:Array<PaymenttermRequestCompound> = []
 }
+
+/**
+ * @export 
+ * A PaymenttermCreateObjectV1Request Validation Object
+ * @class ValidationObjectPaymenttermCreateObjectV1Request
+ */
+export class ValidationObjectPaymenttermCreateObjectV1Request {
+   a_objPaymentterm = {
+      type: 'array',
+      minItems: 1,
+      required: true
+   }
+} 
 
 

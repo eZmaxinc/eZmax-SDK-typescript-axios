@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigndocumentlogResponseCompound } from './ezsigndocumentlog-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for GET /1/object/ezsigndocument/{pkiEzsigndocumentID}/getTemporaryProof
  * @export
@@ -33,13 +31,30 @@ export interface EzsigndocumentGetTemporaryProofV1ResponseMPayload {
     'a_objEzsigndocumentlog': Array<EzsigndocumentlogResponseCompound>;
 }
 /**
- * A EzsigndocumentGetTemporaryProofV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigndocumentGetTemporaryProofV1ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigndocumentGetTemporaryProofV1ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigndocumentGetTemporaryProofV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigndocumentGetTemporaryProofV1ResponseMPayload
+ */
+export class DataObjectEzsigndocumentGetTemporaryProofV1ResponseMPayload {
    a_objEzsigndocumentlog:Array<EzsigndocumentlogResponseCompound> = []
 }
+
+/**
+ * @export 
+ * A EzsigndocumentGetTemporaryProofV1ResponseMPayload Validation Object
+ * @class ValidationObjectEzsigndocumentGetTemporaryProofV1ResponseMPayload
+ */
+export class ValidationObjectEzsigndocumentGetTemporaryProofV1ResponseMPayload {
+   a_objEzsigndocumentlog = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

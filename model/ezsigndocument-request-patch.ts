@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * An Ezsigndocument Object
  * @export
@@ -36,14 +34,35 @@ export interface EzsigndocumentRequestPatch {
     'sEzsigndocumentName'?: string;
 }
 /**
- * A EzsigndocumentRequestPatch Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigndocumentRequestPatch
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigndocumentRequestPatch extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigndocumentRequestPatch Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigndocumentRequestPatch
+ */
+export class DataObjectEzsigndocumentRequestPatch {
    dtEzsigndocumentDuedate?:string = undefined
    sEzsigndocumentName?:string = undefined
 }
+
+/**
+ * @export 
+ * A EzsigndocumentRequestPatch Validation Object
+ * @class ValidationObjectEzsigndocumentRequestPatch
+ */
+export class ValidationObjectEzsigndocumentRequestPatch {
+   dtEzsigndocumentDuedate = {
+      type: 'string',
+      required: false
+   }
+   sEzsigndocumentName = {
+      type: 'string',
+      required: false
+   }
+} 
 
 

@@ -17,8 +17,6 @@
 // @ts-ignore
 import { UserAutocompleteElementResponse } from './user-autocomplete-element-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for POST /2/object/user/getAutocomplete
  * @export
@@ -33,13 +31,30 @@ export interface UserGetAutocompleteV2ResponseMPayload {
     'a_objUser': Array<UserAutocompleteElementResponse>;
 }
 /**
- * A UserGetAutocompleteV2ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectUserGetAutocompleteV2ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectUserGetAutocompleteV2ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A UserGetAutocompleteV2ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectUserGetAutocompleteV2ResponseMPayload
+ */
+export class DataObjectUserGetAutocompleteV2ResponseMPayload {
    a_objUser:Array<UserAutocompleteElementResponse> = []
 }
+
+/**
+ * @export 
+ * A UserGetAutocompleteV2ResponseMPayload Validation Object
+ * @class ValidationObjectUserGetAutocompleteV2ResponseMPayload
+ */
+export class ValidationObjectUserGetAutocompleteV2ResponseMPayload {
+   a_objUser = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

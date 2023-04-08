@@ -17,8 +17,6 @@
 // @ts-ignore
 import { CommonResponseWarning } from './common-response-warning';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,30 @@ export interface EzsigntemplatedocumentEditObjectV1ResponseAllOf {
     'a_objWarning'?: Array<CommonResponseWarning>;
 }
 /**
- * A EzsigntemplatedocumentEditObjectV1ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplatedocumentEditObjectV1ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatedocumentEditObjectV1ResponseAllOf extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntemplatedocumentEditObjectV1ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatedocumentEditObjectV1ResponseAllOf
+ */
+export class DataObjectEzsigntemplatedocumentEditObjectV1ResponseAllOf {
    a_objWarning?:Array<CommonResponseWarning> = undefined
 }
+
+/**
+ * @export 
+ * A EzsigntemplatedocumentEditObjectV1ResponseAllOf Validation Object
+ * @class ValidationObjectEzsigntemplatedocumentEditObjectV1ResponseAllOf
+ */
+export class ValidationObjectEzsigntemplatedocumentEditObjectV1ResponseAllOf {
+   a_objWarning = {
+      type: 'array',
+      required: false
+   }
+} 
 
 

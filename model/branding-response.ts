@@ -20,8 +20,6 @@ import { FieldEBrandingLogo } from './field-ebranding-logo';
 // @ts-ignore
 import { MultilingualBrandingDescription } from './multilingual-branding-description';
 
-import { DefaultObject } from '../base'
-
 /**
  * A Branding Object
  * @export
@@ -95,15 +93,26 @@ export interface BrandingResponse {
      */
     'bBrandingIsactive': boolean;
 }
+
+
 /**
- * A BrandingResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectBrandingResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectBrandingResponse extends DefaultObject {
+// @ts-ignore
+import { DataObjectMultilingualBrandingDescription } from './'
+// @ts-ignore
+import { ValidationObjectMultilingualBrandingDescription } from './'
+
+/**
+ * @export 
+ * A BrandingResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectBrandingResponse
+ */
+export class DataObjectBrandingResponse {
    pkiBrandingID:number = 0
-   objBrandingDescription:Partial<MultilingualBrandingDescription> = {}
+   objBrandingDescription:MultilingualBrandingDescription = new DataObjectMultilingualBrandingDescription()
    sBrandingDescriptionX:string = ''
    eBrandingLogo:FieldEBrandingLogo = 'Default'
    iBrandingColortext:number = 0
@@ -114,5 +123,68 @@ export class DefaultObjectBrandingResponse extends DefaultObject {
    iBrandingColorbackgroundsmallbox:number = 0
    bBrandingIsactive:boolean = false
 }
+
+/**
+ * @export 
+ * A BrandingResponse Validation Object
+ * @class ValidationObjectBrandingResponse
+ */
+export class ValidationObjectBrandingResponse {
+   pkiBrandingID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   objBrandingDescription = new ValidationObjectMultilingualBrandingDescription()
+   sBrandingDescriptionX = {
+      type: 'string',
+      required: true
+   }
+   eBrandingLogo = {
+      type: 'enum',
+      allowableValues: ['Default','JPEG','PNG'],
+      required: true
+   }
+   iBrandingColortext = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 16777215,
+      required: true
+   }
+   iBrandingColortextlinkbox = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 16777215,
+      required: true
+   }
+   iBrandingColortextbutton = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 16777215,
+      required: true
+   }
+   iBrandingColorbackground = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 16777215,
+      required: true
+   }
+   iBrandingColorbackgroundbutton = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 16777215,
+      required: true
+   }
+   iBrandingColorbackgroundsmallbox = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 16777215,
+      required: true
+   }
+   bBrandingIsactive = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

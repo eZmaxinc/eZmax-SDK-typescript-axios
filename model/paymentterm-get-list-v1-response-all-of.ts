@@ -17,8 +17,6 @@
 // @ts-ignore
 import { PaymenttermGetListV1ResponseMPayload } from './paymentterm-get-list-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface PaymenttermGetListV1ResponseAllOf {
     'mPayload': PaymenttermGetListV1ResponseMPayload;
 }
 /**
- * A PaymenttermGetListV1ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectPaymenttermGetListV1ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectPaymenttermGetListV1ResponseAllOf extends DefaultObject {
-   mPayload:Partial<PaymenttermGetListV1ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectPaymenttermGetListV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectPaymenttermGetListV1ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A PaymenttermGetListV1ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectPaymenttermGetListV1ResponseAllOf
+ */
+export class DataObjectPaymenttermGetListV1ResponseAllOf {
+   mPayload:PaymenttermGetListV1ResponseMPayload = new DataObjectPaymenttermGetListV1ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A PaymenttermGetListV1ResponseAllOf Validation Object
+ * @class ValidationObjectPaymenttermGetListV1ResponseAllOf
+ */
+export class ValidationObjectPaymenttermGetListV1ResponseAllOf {
+   mPayload = new ValidationObjectPaymenttermGetListV1ResponseMPayload()
+} 
 
 

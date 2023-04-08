@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A Ezmaxinvoicing AutocompleteElement Response
  * @export
@@ -42,15 +40,41 @@ export interface EzmaxinvoicingAutocompleteElementResponse {
     'bEzmaxinvoicingIsactive': boolean;
 }
 /**
- * A EzmaxinvoicingAutocompleteElementResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzmaxinvoicingAutocompleteElementResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzmaxinvoicingAutocompleteElementResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A EzmaxinvoicingAutocompleteElementResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzmaxinvoicingAutocompleteElementResponse
+ */
+export class DataObjectEzmaxinvoicingAutocompleteElementResponse {
    yyyymmEzmaxinvoicing:string = ''
    pkiEzmaxinvoicingID:number = 0
    bEzmaxinvoicingIsactive:boolean = false
 }
+
+/**
+ * @export 
+ * A EzmaxinvoicingAutocompleteElementResponse Validation Object
+ * @class ValidationObjectEzmaxinvoicingAutocompleteElementResponse
+ */
+export class ValidationObjectEzmaxinvoicingAutocompleteElementResponse {
+   yyyymmEzmaxinvoicing = {
+      type: 'string',
+      required: true
+   }
+   pkiEzmaxinvoicingID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   bEzmaxinvoicingIsactive = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

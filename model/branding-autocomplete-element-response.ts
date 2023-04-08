@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Branding AutocompleteElement Response
  * @export
@@ -42,15 +40,41 @@ export interface BrandingAutocompleteElementResponse {
     'bBrandingIsactive': boolean;
 }
 /**
- * A BrandingAutocompleteElementResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectBrandingAutocompleteElementResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectBrandingAutocompleteElementResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A BrandingAutocompleteElementResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectBrandingAutocompleteElementResponse
+ */
+export class DataObjectBrandingAutocompleteElementResponse {
    sBrandingDescriptionX:string = ''
    pkiBrandingID:number = 0
    bBrandingIsactive:boolean = false
 }
+
+/**
+ * @export 
+ * A BrandingAutocompleteElementResponse Validation Object
+ * @class ValidationObjectBrandingAutocompleteElementResponse
+ */
+export class ValidationObjectBrandingAutocompleteElementResponse {
+   sBrandingDescriptionX = {
+      type: 'string',
+      required: true
+   }
+   pkiBrandingID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   bBrandingIsactive = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

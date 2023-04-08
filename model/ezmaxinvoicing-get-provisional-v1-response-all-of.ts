@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzmaxinvoicingGetProvisionalV1ResponseMPayload } from './ezmaxinvoicing-get-provisional-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface EzmaxinvoicingGetProvisionalV1ResponseAllOf {
     'mPayload': EzmaxinvoicingGetProvisionalV1ResponseMPayload;
 }
 /**
- * A EzmaxinvoicingGetProvisionalV1ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzmaxinvoicingGetProvisionalV1ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzmaxinvoicingGetProvisionalV1ResponseAllOf extends DefaultObject {
-   mPayload:Partial<EzmaxinvoicingGetProvisionalV1ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectEzmaxinvoicingGetProvisionalV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectEzmaxinvoicingGetProvisionalV1ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A EzmaxinvoicingGetProvisionalV1ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzmaxinvoicingGetProvisionalV1ResponseAllOf
+ */
+export class DataObjectEzmaxinvoicingGetProvisionalV1ResponseAllOf {
+   mPayload:EzmaxinvoicingGetProvisionalV1ResponseMPayload = new DataObjectEzmaxinvoicingGetProvisionalV1ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A EzmaxinvoicingGetProvisionalV1ResponseAllOf Validation Object
+ * @class ValidationObjectEzmaxinvoicingGetProvisionalV1ResponseAllOf
+ */
+export class ValidationObjectEzmaxinvoicingGetProvisionalV1ResponseAllOf {
+   mPayload = new ValidationObjectEzmaxinvoicingGetProvisionalV1ResponseMPayload()
+} 
 
 

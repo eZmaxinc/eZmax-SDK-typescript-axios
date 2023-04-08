@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for GET /1/object/ezsigndocument/{pkiEzsigndocument}/getDownloadUrl
  * @export
@@ -30,13 +28,30 @@ export interface EzsigndocumentGetDownloadUrlV1ResponseMPayload {
     'sDownloadUrl': string;
 }
 /**
- * A EzsigndocumentGetDownloadUrlV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigndocumentGetDownloadUrlV1ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigndocumentGetDownloadUrlV1ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigndocumentGetDownloadUrlV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigndocumentGetDownloadUrlV1ResponseMPayload
+ */
+export class DataObjectEzsigndocumentGetDownloadUrlV1ResponseMPayload {
    sDownloadUrl:string = ''
 }
+
+/**
+ * @export 
+ * A EzsigndocumentGetDownloadUrlV1ResponseMPayload Validation Object
+ * @class ValidationObjectEzsigndocumentGetDownloadUrlV1ResponseMPayload
+ */
+export class ValidationObjectEzsigndocumentGetDownloadUrlV1ResponseMPayload {
+   sDownloadUrl = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

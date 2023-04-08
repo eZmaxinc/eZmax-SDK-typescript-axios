@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Response for GET /1/customer/{pksCustomerCode}/endpoint
  * @export
@@ -30,13 +28,30 @@ export interface GlobalCustomerGetEndpointV1Response {
     'sEndpointURL': string;
 }
 /**
- * A GlobalCustomerGetEndpointV1Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectGlobalCustomerGetEndpointV1Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectGlobalCustomerGetEndpointV1Response extends DefaultObject {
+
+/**
+ * @export 
+ * A GlobalCustomerGetEndpointV1Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectGlobalCustomerGetEndpointV1Response
+ */
+export class DataObjectGlobalCustomerGetEndpointV1Response {
    sEndpointURL:string = ''
 }
+
+/**
+ * @export 
+ * A GlobalCustomerGetEndpointV1Response Validation Object
+ * @class ValidationObjectGlobalCustomerGetEndpointV1Response
+ */
+export class ValidationObjectGlobalCustomerGetEndpointV1Response {
+   sEndpointURL = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

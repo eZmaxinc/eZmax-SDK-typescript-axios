@@ -17,8 +17,6 @@
 // @ts-ignore
 import { PaymenttermRequestCompound } from './paymentterm-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for PUT /1/object/paymentterm/{pkiPaymenttermID}
  * @export
@@ -33,13 +31,31 @@ export interface PaymenttermEditObjectV1Request {
     'objPaymentterm': PaymenttermRequestCompound;
 }
 /**
- * A PaymenttermEditObjectV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectPaymenttermEditObjectV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectPaymenttermEditObjectV1Request extends DefaultObject {
-   objPaymentterm:Partial<PaymenttermRequestCompound> = {}
+// @ts-ignore
+import { DataObjectPaymenttermRequestCompound } from './'
+// @ts-ignore
+import { ValidationObjectPaymenttermRequestCompound } from './'
+
+/**
+ * @export 
+ * A PaymenttermEditObjectV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectPaymenttermEditObjectV1Request
+ */
+export class DataObjectPaymenttermEditObjectV1Request {
+   objPaymentterm:PaymenttermRequestCompound = new DataObjectPaymenttermRequestCompound()
 }
+
+/**
+ * @export 
+ * A PaymenttermEditObjectV1Request Validation Object
+ * @class ValidationObjectPaymenttermEditObjectV1Request
+ */
+export class ValidationObjectPaymenttermEditObjectV1Request {
+   objPaymentterm = new ValidationObjectPaymenttermRequestCompound()
+} 
 
 

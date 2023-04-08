@@ -29,8 +29,6 @@ import { EzsigntemplatedocumentCreateObjectV1ResponseAllOf } from './ezsigntempl
 // @ts-ignore
 import { EzsigntemplatedocumentCreateObjectV1ResponseMPayload } from './ezsigntemplatedocument-create-object-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsigntemplatedocumentCreateObjectV1Response
  * Response for POST /1/object/ezsigntemplatedocument
@@ -40,15 +38,43 @@ export type EzsigntemplatedocumentCreateObjectV1Response = CommonResponse & Ezsi
 
 
 /**
- * @export 
- * A EzsigntemplatedocumentCreateObjectV1Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsigntemplatedocumentCreateObjectV1Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatedocumentCreateObjectV1Response extends DefaultObject {
-   mPayload:Partial<EzsigntemplatedocumentCreateObjectV1ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectEzsigntemplatedocumentCreateObjectV1ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsigntemplatedocumentCreateObjectV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A EzsigntemplatedocumentCreateObjectV1Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatedocumentCreateObjectV1Response
+ */
+export class DataObjectEzsigntemplatedocumentCreateObjectV1Response {
+   mPayload:EzsigntemplatedocumentCreateObjectV1ResponseMPayload = new DataObjectEzsigntemplatedocumentCreateObjectV1ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A EzsigntemplatedocumentCreateObjectV1Response Validation Object
+ * @class ValidationObjectEzsigntemplatedocumentCreateObjectV1Response
+ */
+export class ValidationObjectEzsigntemplatedocumentCreateObjectV1Response {
+   mPayload = new ValidationObjectEzsigntemplatedocumentCreateObjectV1ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

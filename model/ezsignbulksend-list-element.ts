@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * An Ezsignbulksend List Element
  * @export
@@ -90,12 +88,17 @@ export interface EzsignbulksendListElement {
     'bEzsignbulksendIsactive': boolean;
 }
 /**
- * A EzsignbulksendListElement Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignbulksendListElement
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignbulksendListElement extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignbulksendListElement Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignbulksendListElement
+ */
+export class DataObjectEzsignbulksendListElement {
    pkiEzsignbulksendID:number = 0
    fkiEzsignfoldertypeID:number = 0
    sEzsignbulksendDescription:string = ''
@@ -108,5 +111,59 @@ export class DefaultObjectEzsignbulksendListElement extends DefaultObject {
    iEzsignsignatureSigned:number = 0
    bEzsignbulksendIsactive:boolean = false
 }
+
+/**
+ * @export 
+ * A EzsignbulksendListElement Validation Object
+ * @class ValidationObjectEzsignbulksendListElement
+ */
+export class ValidationObjectEzsignbulksendListElement {
+   pkiEzsignbulksendID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsignfoldertypeID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sEzsignbulksendDescription = {
+      type: 'string',
+      required: true
+   }
+   sEzsignfoldertypeNameX = {
+      type: 'string',
+      required: true
+   }
+   bEzsignbulksendNeedvalidation = {
+      type: 'boolean',
+      required: true
+   }
+   iEzsignbulksendtransmission = {
+      type: 'integer',
+      required: true
+   }
+   iEzsignfolder = {
+      type: 'integer',
+      required: true
+   }
+   iEzsigndocument = {
+      type: 'integer',
+      required: true
+   }
+   iEzsignsignature = {
+      type: 'integer',
+      required: true
+   }
+   iEzsignsignatureSigned = {
+      type: 'integer',
+      required: true
+   }
+   bEzsignbulksendIsactive = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

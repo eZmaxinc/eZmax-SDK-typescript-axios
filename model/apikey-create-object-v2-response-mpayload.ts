@@ -17,8 +17,6 @@
 // @ts-ignore
 import { ApikeyResponseCompound } from './apikey-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for POST /2/object/apikey
  * @export
@@ -33,13 +31,31 @@ export interface ApikeyCreateObjectV2ResponseMPayload {
     'a_objApikey': Array<ApikeyResponseCompound>;
 }
 /**
- * A ApikeyCreateObjectV2ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectApikeyCreateObjectV2ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectApikeyCreateObjectV2ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A ApikeyCreateObjectV2ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectApikeyCreateObjectV2ResponseMPayload
+ */
+export class DataObjectApikeyCreateObjectV2ResponseMPayload {
    a_objApikey:Array<ApikeyResponseCompound> = []
 }
+
+/**
+ * @export 
+ * A ApikeyCreateObjectV2ResponseMPayload Validation Object
+ * @class ValidationObjectApikeyCreateObjectV2ResponseMPayload
+ */
+export class ValidationObjectApikeyCreateObjectV2ResponseMPayload {
+   a_objApikey = {
+      type: 'array',
+      minItems: 1,
+      required: true
+   }
+} 
 
 

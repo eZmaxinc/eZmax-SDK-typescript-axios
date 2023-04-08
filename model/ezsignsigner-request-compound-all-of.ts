@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignsignerRequestCompoundContact } from './ezsignsigner-request-compound-contact';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface EzsignsignerRequestCompoundAllOf {
     'objContact': EzsignsignerRequestCompoundContact;
 }
 /**
- * A EzsignsignerRequestCompoundAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignsignerRequestCompoundAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignsignerRequestCompoundAllOf extends DefaultObject {
-   objContact:Partial<EzsignsignerRequestCompoundContact> = {}
+// @ts-ignore
+import { DataObjectEzsignsignerRequestCompoundContact } from './'
+// @ts-ignore
+import { ValidationObjectEzsignsignerRequestCompoundContact } from './'
+
+/**
+ * @export 
+ * A EzsignsignerRequestCompoundAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignsignerRequestCompoundAllOf
+ */
+export class DataObjectEzsignsignerRequestCompoundAllOf {
+   objContact:EzsignsignerRequestCompoundContact = new DataObjectEzsignsignerRequestCompoundContact()
 }
+
+/**
+ * @export 
+ * A EzsignsignerRequestCompoundAllOf Validation Object
+ * @class ValidationObjectEzsignsignerRequestCompoundAllOf
+ */
+export class ValidationObjectEzsignsignerRequestCompoundAllOf {
+   objContact = new ValidationObjectEzsignsignerRequestCompoundContact()
+} 
 
 

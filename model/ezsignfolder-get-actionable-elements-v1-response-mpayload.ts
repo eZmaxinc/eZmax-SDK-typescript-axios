@@ -20,8 +20,6 @@ import { EzsignformfieldgroupResponseCompound } from './ezsignformfieldgroup-res
 // @ts-ignore
 import { EzsignsignatureResponseCompound } from './ezsignsignature-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for GET /1/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements
  * @export
@@ -42,14 +40,35 @@ export interface EzsignfolderGetActionableElementsV1ResponseMPayload {
     'a_objEzsignformfieldgroup': Array<EzsignformfieldgroupResponseCompound>;
 }
 /**
- * A EzsignfolderGetActionableElementsV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfolderGetActionableElementsV1ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfolderGetActionableElementsV1ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignfolderGetActionableElementsV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfolderGetActionableElementsV1ResponseMPayload
+ */
+export class DataObjectEzsignfolderGetActionableElementsV1ResponseMPayload {
    a_objEzsignsignature:Array<EzsignsignatureResponseCompound> = []
    a_objEzsignformfieldgroup:Array<EzsignformfieldgroupResponseCompound> = []
 }
+
+/**
+ * @export 
+ * A EzsignfolderGetActionableElementsV1ResponseMPayload Validation Object
+ * @class ValidationObjectEzsignfolderGetActionableElementsV1ResponseMPayload
+ */
+export class ValidationObjectEzsignfolderGetActionableElementsV1ResponseMPayload {
+   a_objEzsignsignature = {
+      type: 'array',
+      required: true
+   }
+   a_objEzsignformfieldgroup = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

@@ -20,8 +20,6 @@ import { ApikeyRequest } from './apikey-request';
 // @ts-ignore
 import { MultilingualApikeyDescription } from './multilingual-apikey-description';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type ApikeyRequestCompound
  * An Apikey Object and children to create a complete structure
@@ -31,15 +29,43 @@ export type ApikeyRequestCompound = ApikeyRequest;
 
 
 /**
- * @export 
- * A ApikeyRequestCompound Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectApikeyRequestCompound
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectApikeyRequestCompound extends DefaultObject {
+// @ts-ignore
+import { DataObjectMultilingualApikeyDescription } from './'
+// @ts-ignore
+import { ValidationObjectMultilingualApikeyDescription } from './'
+
+/**
+ * @export 
+ * A ApikeyRequestCompound Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectApikeyRequestCompound
+ */
+export class DataObjectApikeyRequestCompound {
    pkiApikeyID?:number = undefined
    fkiUserID:number = 0
-   objApikeyDescription:Partial<MultilingualApikeyDescription> = {}
+   objApikeyDescription:MultilingualApikeyDescription = new DataObjectMultilingualApikeyDescription()
 }
+
+/**
+ * @export 
+ * A ApikeyRequestCompound Validation Object
+ * @class ValidationObjectApikeyRequestCompound
+ */
+export class ValidationObjectApikeyRequestCompound {
+   pkiApikeyID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiUserID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   objApikeyDescription = new ValidationObjectMultilingualApikeyDescription()
+} 
 
 

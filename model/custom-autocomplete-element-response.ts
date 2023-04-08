@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Generic AutocompleteElement Response
  * @export
@@ -55,17 +53,50 @@ export interface CustomAutocompleteElementResponse {
     'bActive': boolean;
 }
 /**
- * A CustomAutocompleteElementResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCustomAutocompleteElementResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCustomAutocompleteElementResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A CustomAutocompleteElementResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCustomAutocompleteElementResponse
+ */
+export class DataObjectCustomAutocompleteElementResponse {
    sCategory:string = ''
    sLabel:string = ''
    sValue:string = ''
    mValue?:string = undefined
    bActive:boolean = false
 }
+
+/**
+ * @export 
+ * A CustomAutocompleteElementResponse Validation Object
+ * @class ValidationObjectCustomAutocompleteElementResponse
+ */
+export class ValidationObjectCustomAutocompleteElementResponse {
+   sCategory = {
+      type: 'string',
+      required: true
+   }
+   sLabel = {
+      type: 'string',
+      required: true
+   }
+   sValue = {
+      type: 'string',
+      required: true
+   }
+   mValue = {
+      type: 'string',
+      required: false
+   }
+   bActive = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignbulksendCreateObjectV1ResponseMPayload } from './ezsignbulksend-create-object-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface EzsignbulksendCreateObjectV1ResponseAllOf {
     'mPayload': EzsignbulksendCreateObjectV1ResponseMPayload;
 }
 /**
- * A EzsignbulksendCreateObjectV1ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignbulksendCreateObjectV1ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignbulksendCreateObjectV1ResponseAllOf extends DefaultObject {
-   mPayload:Partial<EzsignbulksendCreateObjectV1ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectEzsignbulksendCreateObjectV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectEzsignbulksendCreateObjectV1ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A EzsignbulksendCreateObjectV1ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignbulksendCreateObjectV1ResponseAllOf
+ */
+export class DataObjectEzsignbulksendCreateObjectV1ResponseAllOf {
+   mPayload:EzsignbulksendCreateObjectV1ResponseMPayload = new DataObjectEzsignbulksendCreateObjectV1ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A EzsignbulksendCreateObjectV1ResponseAllOf Validation Object
+ * @class ValidationObjectEzsignbulksendCreateObjectV1ResponseAllOf
+ */
+export class ValidationObjectEzsignbulksendCreateObjectV1ResponseAllOf {
+   mPayload = new ValidationObjectEzsignbulksendCreateObjectV1ResponseMPayload()
+} 
 
 

@@ -29,8 +29,6 @@ import { EzsignfoldertypeGetObjectV2ResponseAllOf } from './ezsignfoldertype-get
 // @ts-ignore
 import { EzsignfoldertypeGetObjectV2ResponseMPayload } from './ezsignfoldertype-get-object-v2-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsignfoldertypeGetObjectV2Response
  * Response for GET /2/object/ezsignfoldertype/{pkiEzsignfoldertypeID}
@@ -40,15 +38,43 @@ export type EzsignfoldertypeGetObjectV2Response = CommonResponse & Ezsignfoldert
 
 
 /**
- * @export 
- * A EzsignfoldertypeGetObjectV2Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsignfoldertypeGetObjectV2Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfoldertypeGetObjectV2Response extends DefaultObject {
-   mPayload:Partial<EzsignfoldertypeGetObjectV2ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectEzsignfoldertypeGetObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsignfoldertypeGetObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A EzsignfoldertypeGetObjectV2Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfoldertypeGetObjectV2Response
+ */
+export class DataObjectEzsignfoldertypeGetObjectV2Response {
+   mPayload:EzsignfoldertypeGetObjectV2ResponseMPayload = new DataObjectEzsignfoldertypeGetObjectV2ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A EzsignfoldertypeGetObjectV2Response Validation Object
+ * @class ValidationObjectEzsignfoldertypeGetObjectV2Response
+ */
+export class ValidationObjectEzsignfoldertypeGetObjectV2Response {
+   mPayload = new ValidationObjectEzsignfoldertypeGetObjectV2ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

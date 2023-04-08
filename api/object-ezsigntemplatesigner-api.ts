@@ -33,8 +33,6 @@ import { EzsigntemplatesignerEditObjectV1Request } from '../model';
 // @ts-ignore
 import { EzsigntemplatesignerEditObjectV1Response } from '../model';
 // @ts-ignore
-import { EzsigntemplatesignerGetObjectV1Response } from '../model';
-// @ts-ignore
 import { EzsigntemplatesignerGetObjectV2Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
@@ -225,63 +223,6 @@ export const ObjectEzsigntemplatesignerApiAxiosParamCreator = function (configur
          * @summary Retrieve an existing Ezsigntemplatesigner
          * @param {number} pkiEzsigntemplatesignerID 
          * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        ezsigntemplatesignerGetObjectV1: async (pkiEzsigntemplatesignerID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiEzsigntemplatesignerID' is not null or undefined
-            assertParamExists('ezsigntemplatesignerGetObjectV1', 'pkiEzsigntemplatesignerID', pkiEzsigntemplatesignerID)
-            const localVarPath = `/1/object/ezsigntemplatesigner/{pkiEzsigntemplatesignerID}`
-                .replace(`{${"pkiEzsigntemplatesignerID"}}`, encodeURIComponent(String(pkiEzsigntemplatesignerID)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'GET' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary Retrieve an existing Ezsigntemplatesigner
-         * @param {number} pkiEzsigntemplatesignerID 
-         * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         ezsigntemplatesignerGetObjectV2: async (pkiEzsigntemplatesignerID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -382,18 +323,6 @@ export const ObjectEzsigntemplatesignerApiFp = function(configuration?: Configur
          * @summary Retrieve an existing Ezsigntemplatesigner
          * @param {number} pkiEzsigntemplatesignerID 
          * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        async ezsigntemplatesignerGetObjectV1(pkiEzsigntemplatesignerID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigntemplatesignerGetObjectV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigntemplatesignerGetObjectV1(pkiEzsigntemplatesignerID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * 
-         * @summary Retrieve an existing Ezsigntemplatesigner
-         * @param {number} pkiEzsigntemplatesignerID 
-         * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         async ezsigntemplatesignerGetObjectV2(pkiEzsigntemplatesignerID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigntemplatesignerGetObjectV2Response>> {
@@ -440,17 +369,6 @@ export const ObjectEzsigntemplatesignerApiFactory = function (configuration?: Co
          */
         ezsigntemplatesignerEditObjectV1(pkiEzsigntemplatesignerID: number, ezsigntemplatesignerEditObjectV1Request: EzsigntemplatesignerEditObjectV1Request, options?: any): AxiosPromise<EzsigntemplatesignerEditObjectV1Response> {
             return localVarFp.ezsigntemplatesignerEditObjectV1(pkiEzsigntemplatesignerID, ezsigntemplatesignerEditObjectV1Request, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary Retrieve an existing Ezsigntemplatesigner
-         * @param {number} pkiEzsigntemplatesignerID 
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        ezsigntemplatesignerGetObjectV1(pkiEzsigntemplatesignerID: number, options?: any): AxiosPromise<EzsigntemplatesignerGetObjectV1Response> {
-            return localVarFp.ezsigntemplatesignerGetObjectV1(pkiEzsigntemplatesignerID, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -507,19 +425,6 @@ export class ObjectEzsigntemplatesignerApi extends BaseAPI {
      */
     public ezsigntemplatesignerEditObjectV1(pkiEzsigntemplatesignerID: number, ezsigntemplatesignerEditObjectV1Request: EzsigntemplatesignerEditObjectV1Request, options?: AxiosRequestConfig) {
         return ObjectEzsigntemplatesignerApiFp(this.configuration).ezsigntemplatesignerEditObjectV1(pkiEzsigntemplatesignerID, ezsigntemplatesignerEditObjectV1Request, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Retrieve an existing Ezsigntemplatesigner
-     * @param {number} pkiEzsigntemplatesignerID 
-     * @param {*} [options] Override http request option.
-     * @deprecated
-     * @throws {RequiredError}
-     * @memberof ObjectEzsigntemplatesignerApi
-     */
-    public ezsigntemplatesignerGetObjectV1(pkiEzsigntemplatesignerID: number, options?: AxiosRequestConfig) {
-        return ObjectEzsigntemplatesignerApiFp(this.configuration).ezsigntemplatesignerGetObjectV1(pkiEzsigntemplatesignerID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

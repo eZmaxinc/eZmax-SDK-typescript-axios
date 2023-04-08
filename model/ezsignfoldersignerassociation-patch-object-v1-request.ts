@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignfoldersignerassociationRequestPatch } from './ezsignfoldersignerassociation-request-patch';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for PATCH /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}
  * @export
@@ -33,13 +31,31 @@ export interface EzsignfoldersignerassociationPatchObjectV1Request {
     'objEzsignfoldersignerassociation': EzsignfoldersignerassociationRequestPatch;
 }
 /**
- * A EzsignfoldersignerassociationPatchObjectV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfoldersignerassociationPatchObjectV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfoldersignerassociationPatchObjectV1Request extends DefaultObject {
-   objEzsignfoldersignerassociation:Partial<EzsignfoldersignerassociationRequestPatch> = {}
+// @ts-ignore
+import { DataObjectEzsignfoldersignerassociationRequestPatch } from './'
+// @ts-ignore
+import { ValidationObjectEzsignfoldersignerassociationRequestPatch } from './'
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationPatchObjectV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfoldersignerassociationPatchObjectV1Request
+ */
+export class DataObjectEzsignfoldersignerassociationPatchObjectV1Request {
+   objEzsignfoldersignerassociation:EzsignfoldersignerassociationRequestPatch = new DataObjectEzsignfoldersignerassociationRequestPatch()
 }
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationPatchObjectV1Request Validation Object
+ * @class ValidationObjectEzsignfoldersignerassociationPatchObjectV1Request
+ */
+export class ValidationObjectEzsignfoldersignerassociationPatchObjectV1Request {
+   objEzsignfoldersignerassociation = new ValidationObjectEzsignfoldersignerassociationRequestPatch()
+} 
 
 

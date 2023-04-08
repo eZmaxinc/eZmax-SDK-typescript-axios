@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Name of the Notificationsubsection
  * @export
@@ -36,14 +34,35 @@ export interface MultilingualNotificationsubsectionName {
     'sNotificationsubsectionName2'?: string;
 }
 /**
- * A MultilingualNotificationsubsectionName Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectMultilingualNotificationsubsectionName
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectMultilingualNotificationsubsectionName extends DefaultObject {
+
+/**
+ * @export 
+ * A MultilingualNotificationsubsectionName Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectMultilingualNotificationsubsectionName
+ */
+export class DataObjectMultilingualNotificationsubsectionName {
    sNotificationsubsectionName1?:string = undefined
    sNotificationsubsectionName2?:string = undefined
 }
+
+/**
+ * @export 
+ * A MultilingualNotificationsubsectionName Validation Object
+ * @class ValidationObjectMultilingualNotificationsubsectionName
+ */
+export class ValidationObjectMultilingualNotificationsubsectionName {
+   sNotificationsubsectionName1 = {
+      type: 'string',
+      required: false
+   }
+   sNotificationsubsectionName2 = {
+      type: 'string',
+      required: false
+   }
+} 
 
 

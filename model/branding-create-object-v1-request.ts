@@ -17,8 +17,6 @@
 // @ts-ignore
 import { BrandingRequestCompound } from './branding-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for POST /1/object/branding
  * @export
@@ -33,13 +31,31 @@ export interface BrandingCreateObjectV1Request {
     'a_objBranding': Array<BrandingRequestCompound>;
 }
 /**
- * A BrandingCreateObjectV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectBrandingCreateObjectV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectBrandingCreateObjectV1Request extends DefaultObject {
+
+/**
+ * @export 
+ * A BrandingCreateObjectV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectBrandingCreateObjectV1Request
+ */
+export class DataObjectBrandingCreateObjectV1Request {
    a_objBranding:Array<BrandingRequestCompound> = []
 }
+
+/**
+ * @export 
+ * A BrandingCreateObjectV1Request Validation Object
+ * @class ValidationObjectBrandingCreateObjectV1Request
+ */
+export class ValidationObjectBrandingCreateObjectV1Request {
+   a_objBranding = {
+      type: 'array',
+      minItems: 1,
+      required: true
+   }
+} 
 
 

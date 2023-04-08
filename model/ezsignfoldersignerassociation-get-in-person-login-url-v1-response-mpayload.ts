@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for GET /1/object/ezsignfoldersignerassociation/getInPersonLoginUrl
  * @export
@@ -30,13 +28,30 @@ export interface EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayl
     'sLoginUrl': string;
 }
 /**
- * A EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload
+ */
+export class DataObjectEzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload {
    sLoginUrl:string = ''
 }
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload Validation Object
+ * @class ValidationObjectEzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload
+ */
+export class ValidationObjectEzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload {
+   sLoginUrl = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

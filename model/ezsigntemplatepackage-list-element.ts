@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * An Ezsigntemplatepackage List Element
  * @export
@@ -72,12 +70,17 @@ export interface EzsigntemplatepackageListElement {
     'bEzsigntemplatepackageIsactive': boolean;
 }
 /**
- * A EzsigntemplatepackageListElement Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplatepackageListElement
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatepackageListElement extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntemplatepackageListElement Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatepackageListElement
+ */
+export class DataObjectEzsigntemplatepackageListElement {
    pkiEzsigntemplatepackageID:number = 0
    fkiEzsignfoldertypeID:number = 0
    fkiLanguageID:number = 0
@@ -87,5 +90,49 @@ export class DefaultObjectEzsigntemplatepackageListElement extends DefaultObject
    sEzsignfoldertypeNameX:string = ''
    bEzsigntemplatepackageIsactive:boolean = false
 }
+
+/**
+ * @export 
+ * A EzsigntemplatepackageListElement Validation Object
+ * @class ValidationObjectEzsigntemplatepackageListElement
+ */
+export class ValidationObjectEzsigntemplatepackageListElement {
+   pkiEzsigntemplatepackageID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsignfoldertypeID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiLanguageID = {
+      type: 'integer',
+      minimum: 1,
+      maximum: 2,
+      required: true
+   }
+   sEzsigntemplatepackageDescription = {
+      type: 'string',
+      required: true
+   }
+   bEzsigntemplatepackageNeedvalidation = {
+      type: 'boolean',
+      required: true
+   }
+   iEzsigntemplatepackagemembership = {
+      type: 'integer',
+      required: true
+   }
+   sEzsignfoldertypeNameX = {
+      type: 'string',
+      required: true
+   }
+   bEzsigntemplatepackageIsactive = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

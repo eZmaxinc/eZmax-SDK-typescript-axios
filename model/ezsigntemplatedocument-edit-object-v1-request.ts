@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigntemplatedocumentRequestCompound } from './ezsigntemplatedocument-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for PUT /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}
  * @export
@@ -33,13 +31,31 @@ export interface EzsigntemplatedocumentEditObjectV1Request {
     'objEzsigntemplatedocument': EzsigntemplatedocumentRequestCompound;
 }
 /**
- * A EzsigntemplatedocumentEditObjectV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplatedocumentEditObjectV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatedocumentEditObjectV1Request extends DefaultObject {
-   objEzsigntemplatedocument:Partial<EzsigntemplatedocumentRequestCompound> = {}
+// @ts-ignore
+import { DataObjectEzsigntemplatedocumentRequestCompound } from './'
+// @ts-ignore
+import { ValidationObjectEzsigntemplatedocumentRequestCompound } from './'
+
+/**
+ * @export 
+ * A EzsigntemplatedocumentEditObjectV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatedocumentEditObjectV1Request
+ */
+export class DataObjectEzsigntemplatedocumentEditObjectV1Request {
+   objEzsigntemplatedocument:EzsigntemplatedocumentRequestCompound = new DataObjectEzsigntemplatedocumentRequestCompound()
 }
+
+/**
+ * @export 
+ * A EzsigntemplatedocumentEditObjectV1Request Validation Object
+ * @class ValidationObjectEzsigntemplatedocumentEditObjectV1Request
+ */
+export class ValidationObjectEzsigntemplatedocumentEditObjectV1Request {
+   objEzsigntemplatedocument = new ValidationObjectEzsigntemplatedocumentRequestCompound()
+} 
 
 

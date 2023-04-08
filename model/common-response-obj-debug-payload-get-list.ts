@@ -23,8 +23,6 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
 // @ts-ignore
 import { CommonResponseObjDebugPayloadGetListAllOf } from './common-response-obj-debug-payload-get-list-all-of';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type CommonResponseObjDebugPayloadGetList
  * This is a debug object containing debugging information on the actual function
@@ -34,17 +32,51 @@ export type CommonResponseObjDebugPayloadGetList = CommonResponseObjDebugPayload
 
 
 /**
- * @export 
- * A CommonResponseObjDebugPayloadGetList Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectCommonResponseObjDebugPayloadGetList
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCommonResponseObjDebugPayloadGetList extends DefaultObject {
+// @ts-ignore
+import { DataObjectCommonResponseFilter } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseFilter } from './'
+
+/**
+ * @export 
+ * A CommonResponseObjDebugPayloadGetList Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCommonResponseObjDebugPayloadGetList
+ */
+export class DataObjectCommonResponseObjDebugPayloadGetList {
    iVersionMin:number = 0
    iVersionMax:number = 0
    a_RequiredPermission:Array<number> = []
-   a_Filter:Partial<CommonResponseFilter> = {}
+   a_Filter:CommonResponseFilter = new DataObjectCommonResponseFilter()
    a_OrderBy:{ [key: string]: string; } = {}
 }
+
+/**
+ * @export 
+ * A CommonResponseObjDebugPayloadGetList Validation Object
+ * @class ValidationObjectCommonResponseObjDebugPayloadGetList
+ */
+export class ValidationObjectCommonResponseObjDebugPayloadGetList {
+   iVersionMin = {
+      type: 'integer',
+      required: true
+   }
+   iVersionMax = {
+      type: 'integer',
+      required: true
+   }
+   a_RequiredPermission = {
+      type: 'array',
+      required: true
+   }
+   a_Filter = new ValidationObjectCommonResponseFilter()
+   a_OrderBy = {
+      type: 'object',
+      required: true
+   }
+} 
 
 

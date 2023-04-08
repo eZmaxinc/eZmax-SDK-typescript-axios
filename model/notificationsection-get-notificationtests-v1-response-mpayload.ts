@@ -17,8 +17,6 @@
 // @ts-ignore
 import { CustomNotificationsubsectiongetnotificationtestsResponse } from './custom-notificationsubsectiongetnotificationtests-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for GET /1/object/notificationsection/{pkiNotificationsectionID}/getNotificationtests
  * @export
@@ -33,13 +31,30 @@ export interface NotificationsectionGetNotificationtestsV1ResponseMPayload {
     'a_objNotificationsubsection': Array<CustomNotificationsubsectiongetnotificationtestsResponse>;
 }
 /**
- * A NotificationsectionGetNotificationtestsV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectNotificationsectionGetNotificationtestsV1ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectNotificationsectionGetNotificationtestsV1ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A NotificationsectionGetNotificationtestsV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectNotificationsectionGetNotificationtestsV1ResponseMPayload
+ */
+export class DataObjectNotificationsectionGetNotificationtestsV1ResponseMPayload {
    a_objNotificationsubsection:Array<CustomNotificationsubsectiongetnotificationtestsResponse> = []
 }
+
+/**
+ * @export 
+ * A NotificationsectionGetNotificationtestsV1ResponseMPayload Validation Object
+ * @class ValidationObjectNotificationsectionGetNotificationtestsV1ResponseMPayload
+ */
+export class ValidationObjectNotificationsectionGetNotificationtestsV1ResponseMPayload {
+   a_objNotificationsubsection = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

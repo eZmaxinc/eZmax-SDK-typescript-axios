@@ -17,8 +17,6 @@
 // @ts-ignore
 import { CustomEzsignsignaturestatusResponse } from './custom-ezsignsignaturestatus-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * A Ezsignfoldersignerassociationstatus Object and children to create a complete structure
  * @export
@@ -51,16 +49,46 @@ export interface CustomEzsignfoldersignerassociationstatusResponse {
     'a_objEzsignsignaturestatus': Array<CustomEzsignsignaturestatusResponse>;
 }
 /**
- * A CustomEzsignfoldersignerassociationstatusResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCustomEzsignfoldersignerassociationstatusResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCustomEzsignfoldersignerassociationstatusResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A CustomEzsignfoldersignerassociationstatusResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCustomEzsignfoldersignerassociationstatusResponse
+ */
+export class DataObjectCustomEzsignfoldersignerassociationstatusResponse {
    fkiEzsignfoldersignerassociationID:number = 0
    sEzsignfoldersignerassociationstatusLastname:string = ''
    sEzsignfoldersignerassociationstatusFirstname:string = ''
    a_objEzsignsignaturestatus:Array<CustomEzsignsignaturestatusResponse> = []
 }
+
+/**
+ * @export 
+ * A CustomEzsignfoldersignerassociationstatusResponse Validation Object
+ * @class ValidationObjectCustomEzsignfoldersignerassociationstatusResponse
+ */
+export class ValidationObjectCustomEzsignfoldersignerassociationstatusResponse {
+   fkiEzsignfoldersignerassociationID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sEzsignfoldersignerassociationstatusLastname = {
+      type: 'string',
+      required: true
+   }
+   sEzsignfoldersignerassociationstatusFirstname = {
+      type: 'string',
+      required: true
+   }
+   a_objEzsignsignaturestatus = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

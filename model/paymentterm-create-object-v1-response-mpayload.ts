@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for POST /1/object/paymentterm
  * @export
@@ -30,13 +28,30 @@ export interface PaymenttermCreateObjectV1ResponseMPayload {
     'a_pkiPaymenttermID': Array<number>;
 }
 /**
- * A PaymenttermCreateObjectV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectPaymenttermCreateObjectV1ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectPaymenttermCreateObjectV1ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A PaymenttermCreateObjectV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectPaymenttermCreateObjectV1ResponseMPayload
+ */
+export class DataObjectPaymenttermCreateObjectV1ResponseMPayload {
    a_pkiPaymenttermID:Array<number> = []
 }
+
+/**
+ * @export 
+ * A PaymenttermCreateObjectV1ResponseMPayload Validation Object
+ * @class ValidationObjectPaymenttermCreateObjectV1ResponseMPayload
+ */
+export class ValidationObjectPaymenttermCreateObjectV1ResponseMPayload {
+   a_pkiPaymenttermID = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

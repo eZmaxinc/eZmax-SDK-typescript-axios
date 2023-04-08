@@ -23,8 +23,6 @@ import { EzmaxinvoicingsummaryexternalResponseCompoundAllOf } from './ezmaxinvoi
 // @ts-ignore
 import { EzmaxinvoicingsummaryexternaldetailResponseCompound } from './ezmaxinvoicingsummaryexternaldetail-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzmaxinvoicingsummaryexternalResponseCompound
  * A Ezmaxinvoicingsummaryexternal Object
@@ -34,12 +32,17 @@ export type EzmaxinvoicingsummaryexternalResponseCompound = Ezmaxinvoicingsummar
 
 
 /**
- * @export 
- * A EzmaxinvoicingsummaryexternalResponseCompound Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzmaxinvoicingsummaryexternalResponseCompound
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzmaxinvoicingsummaryexternalResponseCompound extends DefaultObject {
+
+/**
+ * @export 
+ * A EzmaxinvoicingsummaryexternalResponseCompound Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzmaxinvoicingsummaryexternalResponseCompound
+ */
+export class DataObjectEzmaxinvoicingsummaryexternalResponseCompound {
    pkiEzmaxinvoicingsummaryexternalID?:number = undefined
    fkiEzmaxinvoicingID?:number = undefined
    fkiBillingentityexternalID:number = 0
@@ -47,5 +50,40 @@ export class DefaultObjectEzmaxinvoicingsummaryexternalResponseCompound extends 
    sEzmaxinvoicingsummaryexternalDescription:string = ''
    a_objEzmaxinvoicingsummaryexternaldetail:Array<EzmaxinvoicingsummaryexternaldetailResponseCompound> = []
 }
+
+/**
+ * @export 
+ * A EzmaxinvoicingsummaryexternalResponseCompound Validation Object
+ * @class ValidationObjectEzmaxinvoicingsummaryexternalResponseCompound
+ */
+export class ValidationObjectEzmaxinvoicingsummaryexternalResponseCompound {
+   pkiEzmaxinvoicingsummaryexternalID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzmaxinvoicingID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiBillingentityexternalID = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   sBillingentityexternalDescription = {
+      type: 'string',
+      required: true
+   }
+   sEzmaxinvoicingsummaryexternalDescription = {
+      type: 'string',
+      required: true
+   }
+   a_objEzmaxinvoicingsummaryexternaldetail = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

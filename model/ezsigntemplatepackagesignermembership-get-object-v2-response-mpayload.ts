@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigntemplatepackagesignermembershipResponseCompound } from './ezsigntemplatepackagesignermembership-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for GET /2/object/ezsigntemplatepackagesignermembership/{pkiEzsigntemplatepackagesignermembershipID}
  * @export
@@ -33,13 +31,31 @@ export interface EzsigntemplatepackagesignermembershipGetObjectV2ResponseMPayloa
     'objEzsigntemplatepackagesignermembership': EzsigntemplatepackagesignermembershipResponseCompound;
 }
 /**
- * A EzsigntemplatepackagesignermembershipGetObjectV2ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplatepackagesignermembershipGetObjectV2ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatepackagesignermembershipGetObjectV2ResponseMPayload extends DefaultObject {
-   objEzsigntemplatepackagesignermembership:Partial<EzsigntemplatepackagesignermembershipResponseCompound> = {}
+// @ts-ignore
+import { DataObjectEzsigntemplatepackagesignermembershipResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectEzsigntemplatepackagesignermembershipResponseCompound } from './'
+
+/**
+ * @export 
+ * A EzsigntemplatepackagesignermembershipGetObjectV2ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatepackagesignermembershipGetObjectV2ResponseMPayload
+ */
+export class DataObjectEzsigntemplatepackagesignermembershipGetObjectV2ResponseMPayload {
+   objEzsigntemplatepackagesignermembership:EzsigntemplatepackagesignermembershipResponseCompound = new DataObjectEzsigntemplatepackagesignermembershipResponseCompound()
 }
+
+/**
+ * @export 
+ * A EzsigntemplatepackagesignermembershipGetObjectV2ResponseMPayload Validation Object
+ * @class ValidationObjectEzsigntemplatepackagesignermembershipGetObjectV2ResponseMPayload
+ */
+export class ValidationObjectEzsigntemplatepackagesignermembershipGetObjectV2ResponseMPayload {
+   objEzsigntemplatepackagesignermembership = new ValidationObjectEzsigntemplatepackagesignermembershipResponseCompound()
+} 
 
 

@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for POST /1/object/ezsignfolder/{pkiEzsignfolderID}/reorder
  * @export
@@ -30,13 +28,31 @@ export interface EzsignfolderReorderV1Request {
     'a_pkiEzsigndocumentID': Array<number>;
 }
 /**
- * A EzsignfolderReorderV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfolderReorderV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfolderReorderV1Request extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignfolderReorderV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfolderReorderV1Request
+ */
+export class DataObjectEzsignfolderReorderV1Request {
    a_pkiEzsigndocumentID:Array<number> = []
 }
+
+/**
+ * @export 
+ * A EzsignfolderReorderV1Request Validation Object
+ * @class ValidationObjectEzsignfolderReorderV1Request
+ */
+export class ValidationObjectEzsignfolderReorderV1Request {
+   a_pkiEzsigndocumentID = {
+      type: 'array',
+      minItems: 1,
+      required: true
+   }
+} 
 
 

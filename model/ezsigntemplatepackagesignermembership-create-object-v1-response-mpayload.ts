@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for POST /1/object/ezsigntemplatepackagesignermembership
  * @export
@@ -30,13 +28,31 @@ export interface EzsigntemplatepackagesignermembershipCreateObjectV1ResponseMPay
     'a_pkiEzsigntemplatepackagesignermembershipID': Array<number>;
 }
 /**
- * A EzsigntemplatepackagesignermembershipCreateObjectV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplatepackagesignermembershipCreateObjectV1ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatepackagesignermembershipCreateObjectV1ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntemplatepackagesignermembershipCreateObjectV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatepackagesignermembershipCreateObjectV1ResponseMPayload
+ */
+export class DataObjectEzsigntemplatepackagesignermembershipCreateObjectV1ResponseMPayload {
    a_pkiEzsigntemplatepackagesignermembershipID:Array<number> = []
 }
+
+/**
+ * @export 
+ * A EzsigntemplatepackagesignermembershipCreateObjectV1ResponseMPayload Validation Object
+ * @class ValidationObjectEzsigntemplatepackagesignermembershipCreateObjectV1ResponseMPayload
+ */
+export class ValidationObjectEzsigntemplatepackagesignermembershipCreateObjectV1ResponseMPayload {
+   a_pkiEzsigntemplatepackagesignermembershipID = {
+      type: 'array',
+      minItems: 1,
+      required: true
+   }
+} 
 
 

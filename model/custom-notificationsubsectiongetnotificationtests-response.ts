@@ -26,8 +26,6 @@ import { MultilingualNotificationsubsectionName } from './multilingual-notificat
 // @ts-ignore
 import { NotificationsubsectionResponse } from './notificationsubsection-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type CustomNotificationsubsectiongetnotificationtestsResponse
  * A Notificationsubsection Object in the context of getNotificationtests
@@ -37,18 +35,58 @@ export type CustomNotificationsubsectiongetnotificationtestsResponse = CustomNot
 
 
 /**
- * @export 
- * A CustomNotificationsubsectiongetnotificationtestsResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectCustomNotificationsubsectiongetnotificationtestsResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCustomNotificationsubsectiongetnotificationtestsResponse extends DefaultObject {
+// @ts-ignore
+import { DataObjectMultilingualNotificationsubsectionName } from './'
+// @ts-ignore
+import { ValidationObjectMultilingualNotificationsubsectionName } from './'
+
+/**
+ * @export 
+ * A CustomNotificationsubsectiongetnotificationtestsResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCustomNotificationsubsectiongetnotificationtestsResponse
+ */
+export class DataObjectCustomNotificationsubsectiongetnotificationtestsResponse {
    pkiNotificationsubsectionID:number = 0
    fkiNotificationsectionID:number = 0
-   objNotificationsubsectionName?:Partial<MultilingualNotificationsubsectionName> = undefined
+   objNotificationsubsectionName?:MultilingualNotificationsubsectionName = undefined
    sNotificationsectionNameX?:string = undefined
    sNotificationsubsectionNameX:string = ''
    a_objNotificationtest:Array<CustomNotificationtestgetnotificationtestsResponse> = []
 }
+
+/**
+ * @export 
+ * A CustomNotificationsubsectiongetnotificationtestsResponse Validation Object
+ * @class ValidationObjectCustomNotificationsubsectiongetnotificationtestsResponse
+ */
+export class ValidationObjectCustomNotificationsubsectiongetnotificationtestsResponse {
+   pkiNotificationsubsectionID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiNotificationsectionID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   objNotificationsubsectionName = new ValidationObjectMultilingualNotificationsubsectionName()
+   sNotificationsectionNameX = {
+      type: 'string',
+      required: false
+   }
+   sNotificationsubsectionNameX = {
+      type: 'string',
+      required: true
+   }
+   a_objNotificationtest = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for POST /1/object/ezsigntemplateformfieldgroup
  * @export
@@ -30,13 +28,31 @@ export interface EzsigntemplateformfieldgroupCreateObjectV1ResponseMPayload {
     'a_pkiEzsigntemplateformfieldgroupID': Array<number>;
 }
 /**
- * A EzsigntemplateformfieldgroupCreateObjectV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplateformfieldgroupCreateObjectV1ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplateformfieldgroupCreateObjectV1ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntemplateformfieldgroupCreateObjectV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplateformfieldgroupCreateObjectV1ResponseMPayload
+ */
+export class DataObjectEzsigntemplateformfieldgroupCreateObjectV1ResponseMPayload {
    a_pkiEzsigntemplateformfieldgroupID:Array<number> = []
 }
+
+/**
+ * @export 
+ * A EzsigntemplateformfieldgroupCreateObjectV1ResponseMPayload Validation Object
+ * @class ValidationObjectEzsigntemplateformfieldgroupCreateObjectV1ResponseMPayload
+ */
+export class ValidationObjectEzsigntemplateformfieldgroupCreateObjectV1ResponseMPayload {
+   a_pkiEzsigntemplateformfieldgroupID = {
+      type: 'array',
+      minItems: 1,
+      required: true
+   }
+} 
 
 

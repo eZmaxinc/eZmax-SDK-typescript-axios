@@ -29,8 +29,6 @@ import { FieldEActivesessionUsertype } from './field-eactivesession-usertype';
 // @ts-ignore
 import { FieldEActivesessionWeekdaystart } from './field-eactivesession-weekdaystart';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type ActivesessionGetCurrentV1ResponseMPayload
  * Payload for GET /1/object/activesession/getCurrent
@@ -39,13 +37,31 @@ import { DefaultObject } from '../base'
 export type ActivesessionGetCurrentV1ResponseMPayload = ActivesessionResponseCompound;
 
 
+
+/**
+ * @import
+ * Imports Child Data Object
+ */
+// @ts-ignore
+import { DataObjectActivesessionResponseCompoundUser } from './'
+// @ts-ignore
+import { DataObjectActivesessionResponseCompoundUser } from './'
+// @ts-ignore
+import { DataObjectActivesessionResponseCompoundApikey } from './'
+// @ts-ignore
+import { ValidationObjectActivesessionResponseCompoundUser } from './'
+// @ts-ignore
+import { ValidationObjectActivesessionResponseCompoundUser } from './'
+// @ts-ignore
+import { ValidationObjectActivesessionResponseCompoundApikey } from './'
+
 /**
  * @export 
- * A ActivesessionGetCurrentV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectActivesessionGetCurrentV1ResponseMPayload
+ * A ActivesessionGetCurrentV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectActivesessionGetCurrentV1ResponseMPayload
  */
-export class DefaultObjectActivesessionGetCurrentV1ResponseMPayload extends DefaultObject {
+export class DataObjectActivesessionGetCurrentV1ResponseMPayload {
    eActivesessionUsertype:FieldEActivesessionUsertype = 'AgentBroker'
    eActivesessionWeekdaystart:FieldEActivesessionWeekdaystart = 'Sunday'
    fkiLanguageID:number = 0
@@ -56,10 +72,70 @@ export class DefaultObjectActivesessionGetCurrentV1ResponseMPayload extends Defa
    pksCustomerCode:string = ''
    fkiSystemconfigurationtypeID?:number = undefined
    a_pkiPermissionID:Array<number> = []
-   objUserReal:Partial<ActivesessionResponseCompoundUser> = {}
-   objUserCloned?:Partial<ActivesessionResponseCompoundUser> = undefined
-   objApikey?:Partial<ActivesessionResponseCompoundApikey> = undefined
+   objUserReal:ActivesessionResponseCompoundUser = new DataObjectActivesessionResponseCompoundUser()
+   objUserCloned?:ActivesessionResponseCompoundUser = undefined
+   objApikey?:ActivesessionResponseCompoundApikey = undefined
    a_eModuleInternalname:Array<string> = []
 }
+
+/**
+ * @export 
+ * A ActivesessionGetCurrentV1ResponseMPayload Validation Object
+ * @class ValidationObjectActivesessionGetCurrentV1ResponseMPayload
+ */
+export class ValidationObjectActivesessionGetCurrentV1ResponseMPayload {
+   eActivesessionUsertype = {
+      type: 'enum',
+      allowableValues: ['AgentBroker','Assistant','EzsignSigner','EzsignUser','Normal'],
+      required: true
+   }
+   eActivesessionWeekdaystart = {
+      type: 'enum',
+      allowableValues: ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
+      required: true
+   }
+   fkiLanguageID = {
+      type: 'integer',
+      minimum: 1,
+      maximum: 2,
+      required: true
+   }
+   sCompanyNameX = {
+      type: 'string',
+      required: true
+   }
+   sDepartmentNameX = {
+      type: 'string',
+      required: true
+   }
+   bActivesessionDebug = {
+      type: 'boolean',
+      required: true
+   }
+   bActivesessionIssuperadmin = {
+      type: 'boolean',
+      required: true
+   }
+   pksCustomerCode = {
+      type: 'string',
+      required: true
+   }
+   fkiSystemconfigurationtypeID = {
+      type: 'integer',
+      minimum: 1,
+      required: false
+   }
+   a_pkiPermissionID = {
+      type: 'array',
+      required: true
+   }
+   objUserReal = new ValidationObjectActivesessionResponseCompoundUser()
+   objUserCloned = new ValidationObjectActivesessionResponseCompoundUser()
+   objApikey = new ValidationObjectActivesessionResponseCompoundApikey()
+   a_eModuleInternalname = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

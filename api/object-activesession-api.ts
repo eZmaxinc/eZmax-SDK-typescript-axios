@@ -23,7 +23,13 @@ import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } fr
 // @ts-ignore
 import { ActivesessionGetCurrentV1Response } from '../model';
 // @ts-ignore
+import { ActivesessionGetListV1Response } from '../model';
+// @ts-ignore
+import { CommonResponseError } from '../model';
+// @ts-ignore
 import { CommonResponseRedirectSSecretquestionTextX } from '../model';
+// @ts-ignore
+import { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -84,6 +90,85 @@ export const ObjectActivesessionApiAxiosParamCreator = function (configuration?:
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * 
+         * @summary Retrieve Activesession list
+         * @param {'pkiActivesessionID_ASC' | 'pkiActivesessionID_DESC' | 'fkiUserID_ASC' | 'fkiUserID_DESC' | 'fkiComputerID_ASC' | 'fkiComputerID_DESC' | 'fkiCompanyID_ASC' | 'fkiCompanyID_DESC' | 'fkiDepartmentID_ASC' | 'fkiDepartmentID_DESC' | 'sCompanyNameX_ASC' | 'sCompanyNameX_DESC' | 'sDepartmentNameX_ASC' | 'sDepartmentNameX_DESC' | 'sActivesessionLoginname_ASC' | 'sActivesessionLoginname_DESC' | 'sComputerDescription_ASC' | 'sComputerDescription_DESC' | 'dtActivesessionFirsthit_ASC' | 'dtActivesessionFirsthit_DESC' | 'dtActivesessionLasthit_ASC' | 'dtActivesessionLasthit_DESC' | 'sActivesessionIP_ASC' | 'sActivesessionIP_DESC'} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        activesessionGetListV1: async (eOrderBy?: 'pkiActivesessionID_ASC' | 'pkiActivesessionID_DESC' | 'fkiUserID_ASC' | 'fkiUserID_DESC' | 'fkiComputerID_ASC' | 'fkiComputerID_DESC' | 'fkiCompanyID_ASC' | 'fkiCompanyID_DESC' | 'fkiDepartmentID_ASC' | 'fkiDepartmentID_DESC' | 'sCompanyNameX_ASC' | 'sCompanyNameX_DESC' | 'sDepartmentNameX_ASC' | 'sDepartmentNameX_DESC' | 'sActivesessionLoginname_ASC' | 'sActivesessionLoginname_DESC' | 'sComputerDescription_ASC' | 'sComputerDescription_DESC' | 'dtActivesessionFirsthit_ASC' | 'dtActivesessionFirsthit_DESC' | 'dtActivesessionLasthit_ASC' | 'dtActivesessionLasthit_DESC' | 'sActivesessionIP_ASC' | 'sActivesessionIP_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/1/object/activesession/getList`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            if (eOrderBy !== undefined) {
+                localVarQueryParameter['eOrderBy'] = eOrderBy;
+            }
+
+            if (iRowMax !== undefined) {
+                localVarQueryParameter['iRowMax'] = iRowMax;
+            }
+
+            if (iRowOffset !== undefined) {
+                localVarQueryParameter['iRowOffset'] = iRowOffset;
+            }
+
+            if (sFilter !== undefined) {
+                localVarQueryParameter['sFilter'] = sFilter;
+            }
+
+            if (acceptLanguage != null) {
+                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string' 
+                    ? acceptLanguage 
+                    : JSON.stringify(acceptLanguage);
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -102,6 +187,21 @@ export const ObjectActivesessionApiFp = function(configuration?: Configuration) 
          */
         async activesessionGetCurrentV1(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ActivesessionGetCurrentV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.activesessionGetCurrentV1(options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
+         * @summary Retrieve Activesession list
+         * @param {'pkiActivesessionID_ASC' | 'pkiActivesessionID_DESC' | 'fkiUserID_ASC' | 'fkiUserID_DESC' | 'fkiComputerID_ASC' | 'fkiComputerID_DESC' | 'fkiCompanyID_ASC' | 'fkiCompanyID_DESC' | 'fkiDepartmentID_ASC' | 'fkiDepartmentID_DESC' | 'sCompanyNameX_ASC' | 'sCompanyNameX_DESC' | 'sDepartmentNameX_ASC' | 'sDepartmentNameX_DESC' | 'sActivesessionLoginname_ASC' | 'sActivesessionLoginname_DESC' | 'sComputerDescription_ASC' | 'sComputerDescription_DESC' | 'dtActivesessionFirsthit_ASC' | 'dtActivesessionFirsthit_DESC' | 'dtActivesessionLasthit_ASC' | 'dtActivesessionLasthit_DESC' | 'sActivesessionIP_ASC' | 'sActivesessionIP_DESC'} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async activesessionGetListV1(eOrderBy?: 'pkiActivesessionID_ASC' | 'pkiActivesessionID_DESC' | 'fkiUserID_ASC' | 'fkiUserID_DESC' | 'fkiComputerID_ASC' | 'fkiComputerID_DESC' | 'fkiCompanyID_ASC' | 'fkiCompanyID_DESC' | 'fkiDepartmentID_ASC' | 'fkiDepartmentID_DESC' | 'sCompanyNameX_ASC' | 'sCompanyNameX_DESC' | 'sDepartmentNameX_ASC' | 'sDepartmentNameX_DESC' | 'sActivesessionLoginname_ASC' | 'sActivesessionLoginname_DESC' | 'sComputerDescription_ASC' | 'sComputerDescription_DESC' | 'dtActivesessionFirsthit_ASC' | 'dtActivesessionFirsthit_DESC' | 'dtActivesessionLasthit_ASC' | 'dtActivesessionLasthit_DESC' | 'sActivesessionIP_ASC' | 'sActivesessionIP_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ActivesessionGetListV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.activesessionGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -123,6 +223,20 @@ export const ObjectActivesessionApiFactory = function (configuration?: Configura
         activesessionGetCurrentV1(options?: any): AxiosPromise<ActivesessionGetCurrentV1Response> {
             return localVarFp.activesessionGetCurrentV1(options).then((request) => request(axios, basePath));
         },
+        /**
+         * 
+         * @summary Retrieve Activesession list
+         * @param {'pkiActivesessionID_ASC' | 'pkiActivesessionID_DESC' | 'fkiUserID_ASC' | 'fkiUserID_DESC' | 'fkiComputerID_ASC' | 'fkiComputerID_DESC' | 'fkiCompanyID_ASC' | 'fkiCompanyID_DESC' | 'fkiDepartmentID_ASC' | 'fkiDepartmentID_DESC' | 'sCompanyNameX_ASC' | 'sCompanyNameX_DESC' | 'sDepartmentNameX_ASC' | 'sDepartmentNameX_DESC' | 'sActivesessionLoginname_ASC' | 'sActivesessionLoginname_DESC' | 'sComputerDescription_ASC' | 'sComputerDescription_DESC' | 'dtActivesessionFirsthit_ASC' | 'dtActivesessionFirsthit_DESC' | 'dtActivesessionLasthit_ASC' | 'dtActivesessionLasthit_DESC' | 'sActivesessionIP_ASC' | 'sActivesessionIP_DESC'} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        activesessionGetListV1(eOrderBy?: 'pkiActivesessionID_ASC' | 'pkiActivesessionID_DESC' | 'fkiUserID_ASC' | 'fkiUserID_DESC' | 'fkiComputerID_ASC' | 'fkiComputerID_DESC' | 'fkiCompanyID_ASC' | 'fkiCompanyID_DESC' | 'fkiDepartmentID_ASC' | 'fkiDepartmentID_DESC' | 'sCompanyNameX_ASC' | 'sCompanyNameX_DESC' | 'sDepartmentNameX_ASC' | 'sDepartmentNameX_DESC' | 'sActivesessionLoginname_ASC' | 'sActivesessionLoginname_DESC' | 'sComputerDescription_ASC' | 'sComputerDescription_DESC' | 'dtActivesessionFirsthit_ASC' | 'dtActivesessionFirsthit_DESC' | 'dtActivesessionLasthit_ASC' | 'dtActivesessionLasthit_DESC' | 'sActivesessionIP_ASC' | 'sActivesessionIP_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: any): AxiosPromise<ActivesessionGetListV1Response> {
+            return localVarFp.activesessionGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(axios, basePath));
+        },
     };
 };
 
@@ -142,5 +256,21 @@ export class ObjectActivesessionApi extends BaseAPI {
      */
     public activesessionGetCurrentV1(options?: AxiosRequestConfig) {
         return ObjectActivesessionApiFp(this.configuration).activesessionGetCurrentV1(options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Activesession list
+     * @param {'pkiActivesessionID_ASC' | 'pkiActivesessionID_DESC' | 'fkiUserID_ASC' | 'fkiUserID_DESC' | 'fkiComputerID_ASC' | 'fkiComputerID_DESC' | 'fkiCompanyID_ASC' | 'fkiCompanyID_DESC' | 'fkiDepartmentID_ASC' | 'fkiDepartmentID_DESC' | 'sCompanyNameX_ASC' | 'sCompanyNameX_DESC' | 'sDepartmentNameX_ASC' | 'sDepartmentNameX_DESC' | 'sActivesessionLoginname_ASC' | 'sActivesessionLoginname_DESC' | 'sComputerDescription_ASC' | 'sComputerDescription_DESC' | 'dtActivesessionFirsthit_ASC' | 'dtActivesessionFirsthit_DESC' | 'dtActivesessionLasthit_ASC' | 'dtActivesessionLasthit_DESC' | 'sActivesessionIP_ASC' | 'sActivesessionIP_DESC'} [eOrderBy] Specify how you want the results to be sorted
+     * @param {number} [iRowMax] 
+     * @param {number} [iRowOffset] 
+     * @param {HeaderAcceptLanguage} [acceptLanguage] 
+     * @param {string} [sFilter] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectActivesessionApi
+     */
+    public activesessionGetListV1(eOrderBy?: 'pkiActivesessionID_ASC' | 'pkiActivesessionID_DESC' | 'fkiUserID_ASC' | 'fkiUserID_DESC' | 'fkiComputerID_ASC' | 'fkiComputerID_DESC' | 'fkiCompanyID_ASC' | 'fkiCompanyID_DESC' | 'fkiDepartmentID_ASC' | 'fkiDepartmentID_DESC' | 'sCompanyNameX_ASC' | 'sCompanyNameX_DESC' | 'sDepartmentNameX_ASC' | 'sDepartmentNameX_DESC' | 'sActivesessionLoginname_ASC' | 'sActivesessionLoginname_DESC' | 'sComputerDescription_ASC' | 'sComputerDescription_DESC' | 'dtActivesessionFirsthit_ASC' | 'dtActivesessionFirsthit_DESC' | 'dtActivesessionLasthit_ASC' | 'dtActivesessionLasthit_DESC' | 'sActivesessionIP_ASC' | 'sActivesessionIP_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig) {
+        return ObjectActivesessionApiFp(this.configuration).activesessionGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(this.axios, this.basePath));
     }
 }

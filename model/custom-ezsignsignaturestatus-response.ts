@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A Ezsignsignaturestatus Object and children to create a complete structure
  * @export
@@ -56,16 +54,46 @@ export type CustomEzsignsignaturestatusResponseEEzsignsignaturestatusSteptypeEnu
 
 
 /**
- * A CustomEzsignsignaturestatusResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCustomEzsignsignaturestatusResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCustomEzsignsignaturestatusResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A CustomEzsignsignaturestatusResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCustomEzsignsignaturestatusResponse
+ */
+export class DataObjectCustomEzsignsignaturestatusResponse {
    eEzsignsignaturestatusSteptype:CustomEzsignsignaturestatusResponseEEzsignsignaturestatusSteptypeEnum = 'Form'
    iEzsignsignaturestatusStep:number = 0
    iEzsignsignaturestatusTotal:number = 0
    iEzsignsignaturestatusSigned:number = 0
 }
+
+/**
+ * @export 
+ * A CustomEzsignsignaturestatusResponse Validation Object
+ * @class ValidationObjectCustomEzsignsignaturestatusResponse
+ */
+export class ValidationObjectCustomEzsignsignaturestatusResponse {
+   eEzsignsignaturestatusSteptype = {
+      type: 'enum',
+      allowableValues: ['Form','Signature'],
+      required: true
+   }
+   iEzsignsignaturestatusStep = {
+      type: 'integer',
+      required: true
+   }
+   iEzsignsignaturestatusTotal = {
+      type: 'integer',
+      required: true
+   }
+   iEzsignsignaturestatusSigned = {
+      type: 'integer',
+      required: true
+   }
+} 
 
 

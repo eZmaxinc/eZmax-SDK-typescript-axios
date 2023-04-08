@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigntemplateformfieldgroupResponseCompound } from './ezsigntemplateformfieldgroup-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for GET /2/object/ezsigntemplateformfieldgroup/{pkiEzsigntemplateformfieldgroupID}
  * @export
@@ -33,13 +31,31 @@ export interface EzsigntemplateformfieldgroupGetObjectV2ResponseMPayload {
     'objEzsigntemplateformfieldgroup': EzsigntemplateformfieldgroupResponseCompound;
 }
 /**
- * A EzsigntemplateformfieldgroupGetObjectV2ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplateformfieldgroupGetObjectV2ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplateformfieldgroupGetObjectV2ResponseMPayload extends DefaultObject {
-   objEzsigntemplateformfieldgroup:Partial<EzsigntemplateformfieldgroupResponseCompound> = {}
+// @ts-ignore
+import { DataObjectEzsigntemplateformfieldgroupResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectEzsigntemplateformfieldgroupResponseCompound } from './'
+
+/**
+ * @export 
+ * A EzsigntemplateformfieldgroupGetObjectV2ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplateformfieldgroupGetObjectV2ResponseMPayload
+ */
+export class DataObjectEzsigntemplateformfieldgroupGetObjectV2ResponseMPayload {
+   objEzsigntemplateformfieldgroup:EzsigntemplateformfieldgroupResponseCompound = new DataObjectEzsigntemplateformfieldgroupResponseCompound()
 }
+
+/**
+ * @export 
+ * A EzsigntemplateformfieldgroupGetObjectV2ResponseMPayload Validation Object
+ * @class ValidationObjectEzsigntemplateformfieldgroupGetObjectV2ResponseMPayload
+ */
+export class ValidationObjectEzsigntemplateformfieldgroupGetObjectV2ResponseMPayload {
+   objEzsigntemplateformfieldgroup = new ValidationObjectEzsigntemplateformfieldgroupResponseCompound()
+} 
 
 

@@ -29,8 +29,6 @@ import { UserGetAutocompleteV2ResponseAllOf } from './user-get-autocomplete-v2-r
 // @ts-ignore
 import { UserGetAutocompleteV2ResponseMPayload } from './user-get-autocomplete-v2-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type UserGetAutocompleteV2Response
  * Response for GET /2/object/user/getAutocomplete
@@ -40,15 +38,43 @@ export type UserGetAutocompleteV2Response = CommonResponse & UserGetAutocomplete
 
 
 /**
- * @export 
- * A UserGetAutocompleteV2Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectUserGetAutocompleteV2Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectUserGetAutocompleteV2Response extends DefaultObject {
-   mPayload:Partial<UserGetAutocompleteV2ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectUserGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectUserGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A UserGetAutocompleteV2Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectUserGetAutocompleteV2Response
+ */
+export class DataObjectUserGetAutocompleteV2Response {
+   mPayload:UserGetAutocompleteV2ResponseMPayload = new DataObjectUserGetAutocompleteV2ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A UserGetAutocompleteV2Response Validation Object
+ * @class ValidationObjectUserGetAutocompleteV2Response
+ */
+export class ValidationObjectUserGetAutocompleteV2Response {
+   mPayload = new ValidationObjectUserGetAutocompleteV2ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

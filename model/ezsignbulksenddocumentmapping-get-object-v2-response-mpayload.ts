@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignbulksenddocumentmappingResponseCompound } from './ezsignbulksenddocumentmapping-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for GET /2/object/ezsignbulksenddocumentmapping/{pkiEzsignbulksenddocumentmappingID}
  * @export
@@ -33,13 +31,31 @@ export interface EzsignbulksenddocumentmappingGetObjectV2ResponseMPayload {
     'objEzsignbulksenddocumentmapping': EzsignbulksenddocumentmappingResponseCompound;
 }
 /**
- * A EzsignbulksenddocumentmappingGetObjectV2ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignbulksenddocumentmappingGetObjectV2ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignbulksenddocumentmappingGetObjectV2ResponseMPayload extends DefaultObject {
-   objEzsignbulksenddocumentmapping:Partial<EzsignbulksenddocumentmappingResponseCompound> = {}
+// @ts-ignore
+import { DataObjectEzsignbulksenddocumentmappingResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectEzsignbulksenddocumentmappingResponseCompound } from './'
+
+/**
+ * @export 
+ * A EzsignbulksenddocumentmappingGetObjectV2ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignbulksenddocumentmappingGetObjectV2ResponseMPayload
+ */
+export class DataObjectEzsignbulksenddocumentmappingGetObjectV2ResponseMPayload {
+   objEzsignbulksenddocumentmapping:EzsignbulksenddocumentmappingResponseCompound = new DataObjectEzsignbulksenddocumentmappingResponseCompound()
 }
+
+/**
+ * @export 
+ * A EzsignbulksenddocumentmappingGetObjectV2ResponseMPayload Validation Object
+ * @class ValidationObjectEzsignbulksenddocumentmappingGetObjectV2ResponseMPayload
+ */
+export class ValidationObjectEzsignbulksenddocumentmappingGetObjectV2ResponseMPayload {
+   objEzsignbulksenddocumentmapping = new ValidationObjectEzsignbulksenddocumentmappingResponseCompound()
+} 
 
 

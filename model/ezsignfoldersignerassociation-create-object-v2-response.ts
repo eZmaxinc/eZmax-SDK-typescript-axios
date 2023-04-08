@@ -29,8 +29,6 @@ import { EzsignfoldersignerassociationCreateObjectV2ResponseAllOf } from './ezsi
 // @ts-ignore
 import { EzsignfoldersignerassociationCreateObjectV2ResponseMPayload } from './ezsignfoldersignerassociation-create-object-v2-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsignfoldersignerassociationCreateObjectV2Response
  * Response for POST /2/object/ezsignfoldersignerassociation
@@ -40,15 +38,43 @@ export type EzsignfoldersignerassociationCreateObjectV2Response = CommonResponse
 
 
 /**
- * @export 
- * A EzsignfoldersignerassociationCreateObjectV2Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsignfoldersignerassociationCreateObjectV2Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfoldersignerassociationCreateObjectV2Response extends DefaultObject {
-   mPayload:Partial<EzsignfoldersignerassociationCreateObjectV2ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectEzsignfoldersignerassociationCreateObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsignfoldersignerassociationCreateObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationCreateObjectV2Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfoldersignerassociationCreateObjectV2Response
+ */
+export class DataObjectEzsignfoldersignerassociationCreateObjectV2Response {
+   mPayload:EzsignfoldersignerassociationCreateObjectV2ResponseMPayload = new DataObjectEzsignfoldersignerassociationCreateObjectV2ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationCreateObjectV2Response Validation Object
+ * @class ValidationObjectEzsignfoldersignerassociationCreateObjectV2Response
+ */
+export class ValidationObjectEzsignfoldersignerassociationCreateObjectV2Response {
+   mPayload = new ValidationObjectEzsignfoldersignerassociationCreateObjectV2ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

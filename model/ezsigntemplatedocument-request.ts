@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A Ezsigntemplatedocument Object
  * @export
@@ -104,7 +102,13 @@ export const EzsigntemplatedocumentRequestEEzsigntemplatedocumentSourceEnum = {
 export type EzsigntemplatedocumentRequestEEzsigntemplatedocumentSourceEnum = typeof EzsigntemplatedocumentRequestEEzsigntemplatedocumentSourceEnum[keyof typeof EzsigntemplatedocumentRequestEEzsigntemplatedocumentSourceEnum];
 
 export const EzsigntemplatedocumentRequestEEzsigntemplatedocumentFormatEnum = {
-    Pdf: 'Pdf'
+    Pdf: 'Pdf',
+    Doc: 'Doc',
+    Docx: 'Docx',
+    Xls: 'Xls',
+    Xlsx: 'Xlsx',
+    Ppt: 'Ppt',
+    Pptx: 'Pptx'
 } as const;
 export type EzsigntemplatedocumentRequestEEzsigntemplatedocumentFormatEnum = typeof EzsigntemplatedocumentRequestEEzsigntemplatedocumentFormatEnum[keyof typeof EzsigntemplatedocumentRequestEEzsigntemplatedocumentFormatEnum];
 
@@ -116,12 +120,17 @@ export type EzsigntemplatedocumentRequestEEzsigntemplatedocumentFormEnum = typeo
 
 
 /**
- * A EzsigntemplatedocumentRequest Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplatedocumentRequest
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatedocumentRequest extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntemplatedocumentRequest Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatedocumentRequest
+ */
+export class DataObjectEzsigntemplatedocumentRequest {
    pkiEzsigntemplatedocumentID?:number = undefined
    fkiEzsigntemplateID:number = 0
    fkiEzsigndocumentID?:number = undefined
@@ -135,5 +144,68 @@ export class DefaultObjectEzsigntemplatedocumentRequest extends DefaultObject {
    eEzsigntemplatedocumentForm?:EzsigntemplatedocumentRequestEEzsigntemplatedocumentFormEnum = undefined
    sEzsigntemplatedocumentPassword?:string = undefined
 }
+
+/**
+ * @export 
+ * A EzsigntemplatedocumentRequest Validation Object
+ * @class ValidationObjectEzsigntemplatedocumentRequest
+ */
+export class ValidationObjectEzsigntemplatedocumentRequest {
+   pkiEzsigntemplatedocumentID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzsigntemplateID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsigndocumentID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzsigntemplatesignerID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   sEzsigntemplatedocumentName = {
+      type: 'string',
+      required: true
+   }
+   eEzsigntemplatedocumentSource = {
+      type: 'enum',
+      allowableValues: ['Base64','Url','Ezsigndocument'],
+      required: true
+   }
+   eEzsigntemplatedocumentFormat = {
+      type: 'enum',
+      allowableValues: ['Pdf','Doc','Docx','Xls','Xlsx','Ppt','Pptx'],
+      required: false
+   }
+   sEzsigntemplatedocumentBase64 = {
+      type: 'string',
+      required: false
+   }
+   sEzsigntemplatedocumentUrl = {
+      type: 'string',
+      required: false
+   }
+   bEzsigntemplatedocumentForcerepair = {
+      type: 'boolean',
+      required: false
+   }
+   eEzsigntemplatedocumentForm = {
+      type: 'enum',
+      allowableValues: ['Keep','Convert'],
+      required: false
+   }
+   sEzsigntemplatedocumentPassword = {
+      type: 'string',
+      required: false
+   }
+} 
 
 

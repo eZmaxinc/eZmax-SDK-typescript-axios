@@ -29,8 +29,6 @@ import { FieldECommunicationrecipientType } from './field-ecommunicationrecipien
 // @ts-ignore
 import { PhonestaticResponseCompound } from './phonestatic-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * A Communicationrecipient Object
  * @export
@@ -164,13 +162,32 @@ export interface CommunicationrecipientResponse {
      */
     'objPhonestatic'?: PhonestaticResponseCompound;
 }
+
+
 /**
- * A CommunicationrecipientResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCommunicationrecipientResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCommunicationrecipientResponse extends DefaultObject {
+// @ts-ignore
+import { DataObjectDescriptionstaticResponseCompound } from './'
+// @ts-ignore
+import { DataObjectEmailstaticResponseCompound } from './'
+// @ts-ignore
+import { DataObjectPhonestaticResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectDescriptionstaticResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectEmailstaticResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectPhonestaticResponseCompound } from './'
+
+/**
+ * @export 
+ * A CommunicationrecipientResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCommunicationrecipientResponse
+ */
+export class DataObjectCommunicationrecipientResponse {
    pkiCommunicationrecipientID:number = 0
    eCommunicationrecipientObjecttype?:FieldECommunicationrecipientObjecttype = undefined
    fkiAgentID?:number = undefined
@@ -189,9 +206,110 @@ export class DefaultObjectCommunicationrecipientResponse extends DefaultObject {
    fkiRewardmemberID?:number = undefined
    fkiSupplierID?:number = undefined
    eCommunicationrecipientType:FieldECommunicationrecipientType = 'To'
-   objDescriptionstatic:Partial<DescriptionstaticResponseCompound> = {}
-   objEmailstatic?:Partial<EmailstaticResponseCompound> = undefined
-   objPhonestatic?:Partial<PhonestaticResponseCompound> = undefined
+   objDescriptionstatic:DescriptionstaticResponseCompound = new DataObjectDescriptionstaticResponseCompound()
+   objEmailstatic?:EmailstaticResponseCompound = undefined
+   objPhonestatic?:PhonestaticResponseCompound = undefined
 }
+
+/**
+ * @export 
+ * A CommunicationrecipientResponse Validation Object
+ * @class ValidationObjectCommunicationrecipientResponse
+ */
+export class ValidationObjectCommunicationrecipientResponse {
+   pkiCommunicationrecipientID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   eCommunicationrecipientObjecttype = {
+      type: 'enum',
+      allowableValues: ['Agent','Agentincorporation','Assistant','Broker','Contact','Customer','Employee','Externalbroker','Ezcomagent','Ezcomcompany','Ezsignsigner','Franchiseoffice','Notary','Rewardmember','Supplier','User'],
+      required: false
+   }
+   fkiAgentID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiBrokerID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiContactID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiCustomerID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEmployeeID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzsignsignerID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiFranchiseofficeID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiUserID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiAgentincorporationID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiAssistantID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiExternalbrokerID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzcomagentID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiNotaryID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiRewardmemberID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiSupplierID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   eCommunicationrecipientType = {
+      type: 'enum',
+      allowableValues: ['To','Cc','Bcc'],
+      required: true
+   }
+   objDescriptionstatic = new ValidationObjectDescriptionstaticResponseCompound()
+   objEmailstatic = new ValidationObjectEmailstaticResponseCompound()
+   objPhonestatic = new ValidationObjectPhonestaticResponseCompound()
+} 
 
 

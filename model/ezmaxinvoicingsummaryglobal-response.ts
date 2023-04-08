@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A Ezmaxinvoicingsummaryglobal Object
  * @export
@@ -138,12 +136,17 @@ export interface EzmaxinvoicingsummaryglobalResponse {
     'tEzmaxproductHelpX': string;
 }
 /**
- * A EzmaxinvoicingsummaryglobalResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzmaxinvoicingsummaryglobalResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzmaxinvoicingsummaryglobalResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A EzmaxinvoicingsummaryglobalResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzmaxinvoicingsummaryglobalResponse
+ */
+export class DataObjectEzmaxinvoicingsummaryglobalResponse {
    pkiEzmaxinvoicingsummaryglobalID?:number = undefined
    fkiEzmaxinvoicingID?:number = undefined
    fkiEzmaxproductID:number = 0
@@ -164,5 +167,103 @@ export class DefaultObjectEzmaxinvoicingsummaryglobalResponse extends DefaultObj
    bEzmaxinvoicingsummaryglobalAdjustment:boolean = false
    tEzmaxproductHelpX:string = ''
 }
+
+/**
+ * @export 
+ * A EzmaxinvoicingsummaryglobalResponse Validation Object
+ * @class ValidationObjectEzmaxinvoicingsummaryglobalResponse
+ */
+export class ValidationObjectEzmaxinvoicingsummaryglobalResponse {
+   pkiEzmaxinvoicingsummaryglobalID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzmaxinvoicingID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzmaxproductID = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   sEzmaxproductDescriptionX = {
+      type: 'string',
+      required: true
+   }
+   dtEzmaxinvoicingsummaryglobalStart = {
+      type: 'string',
+      required: true
+   }
+   dtEzmaxinvoicingsummaryglobalEnd = {
+      type: 'string',
+      required: true
+   }
+   iEzmaxinvoicingsummaryglobalDays = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   dEzmaxinvoicingsummaryglobalCountreal = {
+      type: 'string',
+      pattern: '/^-{0,1}[\d]{1,6}?\.[\d]{2}$/',
+      required: true
+   }
+   dEzmaxinvoicingsummaryglobalCountbilled = {
+      type: 'string',
+      pattern: '/^-{0,1}[\d]{1,6}?\.[\d]{2}$/',
+      required: true
+   }
+   dEzmaxinvoicingsummaryglobalSubtotal = {
+      type: 'string',
+      pattern: '/^-{0,1}[\d]{1,9}?\.[\d]{2}$/',
+      required: true
+   }
+   dEzmaxinvoicingsummaryglobalRebateamount = {
+      type: 'string',
+      pattern: '/^-{0,1}[\d]{1,9}?\.[\d]{2}$/',
+      required: true
+   }
+   dEzmaxinvoicingsummaryglobalRebatepercent = {
+      type: 'string',
+      pattern: '/^-{0,1}[\d]{1,3}?\.[\d]{2}$/',
+      required: true
+   }
+   dEzmaxinvoicingsummaryglobalRebatetotal = {
+      type: 'string',
+      pattern: '/^-{0,1}[\d]{1,9}?\.[\d]{2}$/',
+      required: true
+   }
+   dEzmaxinvoicingsummaryglobalTotal = {
+      type: 'string',
+      pattern: '/^-{0,1}[\d]{1,9}?\.[\d]{2}$/',
+      required: true
+   }
+   dEzmaxinvoicingsummaryglobalRepresentative = {
+      type: 'string',
+      pattern: '/^-{0,1}[\d]{1,9}?\.[\d]{2}$/',
+      required: false
+   }
+   dEzmaxinvoicingsummaryglobalPartner = {
+      type: 'string',
+      pattern: '/^-{0,1}[\d]{1,9}?\.[\d]{2}$/',
+      required: false
+   }
+   dEzmaxinvoicingsummaryglobalNet = {
+      type: 'string',
+      pattern: '/^-{0,1}[\d]{1,9}?\.[\d]{2}$/',
+      required: false
+   }
+   bEzmaxinvoicingsummaryglobalAdjustment = {
+      type: 'boolean',
+      required: true
+   }
+   tEzmaxproductHelpX = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

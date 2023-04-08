@@ -17,8 +17,6 @@
 // @ts-ignore
 import { MultilingualEzmaxinvoicingsummaryinternalDescription } from './multilingual-ezmaxinvoicingsummaryinternal-description';
 
-import { DefaultObject } from '../base'
-
 /**
  * A Ezmaxinvoicingsummaryinternal Object
  * @export
@@ -63,18 +61,59 @@ export interface EzmaxinvoicingsummaryinternalResponse {
     'sBillingentityinternalDescriptionX': string;
 }
 /**
- * A EzmaxinvoicingsummaryinternalResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzmaxinvoicingsummaryinternalResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzmaxinvoicingsummaryinternalResponse extends DefaultObject {
+// @ts-ignore
+import { DataObjectMultilingualEzmaxinvoicingsummaryinternalDescription } from './'
+// @ts-ignore
+import { ValidationObjectMultilingualEzmaxinvoicingsummaryinternalDescription } from './'
+
+/**
+ * @export 
+ * A EzmaxinvoicingsummaryinternalResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzmaxinvoicingsummaryinternalResponse
+ */
+export class DataObjectEzmaxinvoicingsummaryinternalResponse {
    pkiEzmaxinvoicingsummaryinternalID?:number = undefined
-   objEzmaxinvoicingsummaryinternalDescription:Partial<MultilingualEzmaxinvoicingsummaryinternalDescription> = {}
+   objEzmaxinvoicingsummaryinternalDescription:MultilingualEzmaxinvoicingsummaryinternalDescription = new DataObjectMultilingualEzmaxinvoicingsummaryinternalDescription()
    sEzmaxinvoicingsummaryinternalDescriptionX:string = ''
    fkiEzmaxinvoicingID?:number = undefined
    fkiBillingentityinternalID:number = 0
    sBillingentityinternalDescriptionX:string = ''
 }
+
+/**
+ * @export 
+ * A EzmaxinvoicingsummaryinternalResponse Validation Object
+ * @class ValidationObjectEzmaxinvoicingsummaryinternalResponse
+ */
+export class ValidationObjectEzmaxinvoicingsummaryinternalResponse {
+   pkiEzmaxinvoicingsummaryinternalID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   objEzmaxinvoicingsummaryinternalDescription = new ValidationObjectMultilingualEzmaxinvoicingsummaryinternalDescription()
+   sEzmaxinvoicingsummaryinternalDescriptionX = {
+      type: 'string',
+      required: true
+   }
+   fkiEzmaxinvoicingID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiBillingentityinternalID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sBillingentityinternalDescriptionX = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

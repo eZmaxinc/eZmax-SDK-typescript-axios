@@ -17,8 +17,6 @@
 // @ts-ignore
 import { TimezoneAutocompleteElementResponse } from './timezone-autocomplete-element-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for POST /2/object/timezone/getAutocomplete
  * @export
@@ -33,13 +31,30 @@ export interface TimezoneGetAutocompleteV2ResponseMPayload {
     'a_objTimezone': Array<TimezoneAutocompleteElementResponse>;
 }
 /**
- * A TimezoneGetAutocompleteV2ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectTimezoneGetAutocompleteV2ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectTimezoneGetAutocompleteV2ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A TimezoneGetAutocompleteV2ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectTimezoneGetAutocompleteV2ResponseMPayload
+ */
+export class DataObjectTimezoneGetAutocompleteV2ResponseMPayload {
    a_objTimezone:Array<TimezoneAutocompleteElementResponse> = []
 }
+
+/**
+ * @export 
+ * A TimezoneGetAutocompleteV2ResponseMPayload Validation Object
+ * @class ValidationObjectTimezoneGetAutocompleteV2ResponseMPayload
+ */
+export class ValidationObjectTimezoneGetAutocompleteV2ResponseMPayload {
+   a_objTimezone = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -30,13 +28,30 @@ export interface BrandingResponseCompoundAllOf {
     'sBrandingLogourl'?: string;
 }
 /**
- * A BrandingResponseCompoundAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectBrandingResponseCompoundAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectBrandingResponseCompoundAllOf extends DefaultObject {
+
+/**
+ * @export 
+ * A BrandingResponseCompoundAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectBrandingResponseCompoundAllOf
+ */
+export class DataObjectBrandingResponseCompoundAllOf {
    sBrandingLogourl?:string = undefined
 }
+
+/**
+ * @export 
+ * A BrandingResponseCompoundAllOf Validation Object
+ * @class ValidationObjectBrandingResponseCompoundAllOf
+ */
+export class ValidationObjectBrandingResponseCompoundAllOf {
+   sBrandingLogourl = {
+      type: 'string',
+      required: false
+   }
+} 
 
 

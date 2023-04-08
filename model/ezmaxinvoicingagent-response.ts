@@ -20,8 +20,6 @@ import { FieldEEzmaxinvoicingagentVariationezmax } from './field-eezmaxinvoicing
 // @ts-ignore
 import { FieldEEzmaxinvoicingagentVariationezsign } from './field-eezmaxinvoicingagent-variationezsign';
 
-import { DefaultObject } from '../base'
-
 /**
  * A Ezmaxinvoicingagent Object
  * @export
@@ -149,13 +147,20 @@ export interface EzmaxinvoicingagentResponse {
      */
     'eEzmaxinvoicingagentVariationezsign': FieldEEzmaxinvoicingagentVariationezsign;
 }
+
+
 /**
- * A EzmaxinvoicingagentResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzmaxinvoicingagentResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzmaxinvoicingagentResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A EzmaxinvoicingagentResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzmaxinvoicingagentResponse
+ */
+export class DataObjectEzmaxinvoicingagentResponse {
    pkiEzmaxinvoicingagentID?:number = undefined
    fkiEzmaxinvoicingID?:number = undefined
    fkiBillingentityinternalID:number = 0
@@ -177,5 +182,109 @@ export class DefaultObjectEzmaxinvoicingagentResponse extends DefaultObject {
    bEzmaxinvoicingagentBillableezsign:boolean = false
    eEzmaxinvoicingagentVariationezsign:FieldEEzmaxinvoicingagentVariationezsign = 'Charge'
 }
+
+/**
+ * @export 
+ * A EzmaxinvoicingagentResponse Validation Object
+ * @class ValidationObjectEzmaxinvoicingagentResponse
+ */
+export class ValidationObjectEzmaxinvoicingagentResponse {
+   pkiEzmaxinvoicingagentID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzmaxinvoicingID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiBillingentityinternalID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sBillingentityinternalDescriptionX = {
+      type: 'string',
+      required: true
+   }
+   fkiAgentID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiBrokerID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   iEzmaxinvoicingagentSession = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzmaxinvoicingagentCloned = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzmaxinvoicingagentInvoice = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzmaxinvoicingagentInscription = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzmaxinvoicingagentInscriptionactive = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzmaxinvoicingagentSale = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzmaxinvoicingagentOtherincome = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzmaxinvoicingagentCommissioncalculation = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzmaxinvoicingagentEzsigndocument = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   bEzmaxinvoicingagentEzsignaccount = {
+      type: 'boolean',
+      required: true
+   }
+   bEzmaxinvoicingagentBillableezmax = {
+      type: 'boolean',
+      required: true
+   }
+   eEzmaxinvoicingagentVariationezmax = {
+      type: 'enum',
+      allowableValues: ['Charge','Refund','Same'],
+      required: true
+   }
+   bEzmaxinvoicingagentBillableezsign = {
+      type: 'boolean',
+      required: true
+   }
+   eEzmaxinvoicingagentVariationezsign = {
+      type: 'enum',
+      allowableValues: ['Charge','Refund','Same'],
+      required: true
+   }
+} 
 
 

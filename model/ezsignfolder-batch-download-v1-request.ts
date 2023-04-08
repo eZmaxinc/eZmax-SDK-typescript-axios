@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for POST /1/object/ezsignfolder/{pkiEzsignfolderID}/batchDownload
  * @export
@@ -45,14 +43,36 @@ export type EzsignfolderBatchDownloadV1RequestAEDocumentTypeEnum = typeof Ezsign
 
 
 /**
- * A EzsignfolderBatchDownloadV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfolderBatchDownloadV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfolderBatchDownloadV1Request extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignfolderBatchDownloadV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfolderBatchDownloadV1Request
+ */
+export class DataObjectEzsignfolderBatchDownloadV1Request {
    a_pkiEzsigndocumentID:Array<number> = []
    a_eDocumentType:Array<EzsignfolderBatchDownloadV1RequestAEDocumentTypeEnum> = ['Signed']
 }
+
+/**
+ * @export 
+ * A EzsignfolderBatchDownloadV1Request Validation Object
+ * @class ValidationObjectEzsignfolderBatchDownloadV1Request
+ */
+export class ValidationObjectEzsignfolderBatchDownloadV1Request {
+   a_pkiEzsigndocumentID = {
+      type: 'array',
+      minItems: 1,
+      required: true
+   }
+   a_eDocumentType = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

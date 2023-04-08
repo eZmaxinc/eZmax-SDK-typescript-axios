@@ -17,8 +17,6 @@
 // @ts-ignore
 import { CustomWordPositionWordResponse } from './custom-word-position-word-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,30 @@ export interface EzsigndocumentGetWordsPositionsV1ResponseAllOf {
     'mPayload': Array<CustomWordPositionWordResponse>;
 }
 /**
- * A EzsigndocumentGetWordsPositionsV1ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigndocumentGetWordsPositionsV1ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigndocumentGetWordsPositionsV1ResponseAllOf extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigndocumentGetWordsPositionsV1ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigndocumentGetWordsPositionsV1ResponseAllOf
+ */
+export class DataObjectEzsigndocumentGetWordsPositionsV1ResponseAllOf {
    mPayload:Array<CustomWordPositionWordResponse> = []
 }
+
+/**
+ * @export 
+ * A EzsigndocumentGetWordsPositionsV1ResponseAllOf Validation Object
+ * @class ValidationObjectEzsigndocumentGetWordsPositionsV1ResponseAllOf
+ */
+export class ValidationObjectEzsigndocumentGetWordsPositionsV1ResponseAllOf {
+   mPayload = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigntemplateformfieldgroupRequestCompound } from './ezsigntemplateformfieldgroup-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for PUT /1/object/ezsigntemplateformfieldgroup/{pkiEzsigntemplateformfieldgroupID}
  * @export
@@ -33,13 +31,31 @@ export interface EzsigntemplateformfieldgroupEditObjectV1Request {
     'objEzsigntemplateformfieldgroup': EzsigntemplateformfieldgroupRequestCompound;
 }
 /**
- * A EzsigntemplateformfieldgroupEditObjectV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplateformfieldgroupEditObjectV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplateformfieldgroupEditObjectV1Request extends DefaultObject {
-   objEzsigntemplateformfieldgroup:Partial<EzsigntemplateformfieldgroupRequestCompound> = {}
+// @ts-ignore
+import { DataObjectEzsigntemplateformfieldgroupRequestCompound } from './'
+// @ts-ignore
+import { ValidationObjectEzsigntemplateformfieldgroupRequestCompound } from './'
+
+/**
+ * @export 
+ * A EzsigntemplateformfieldgroupEditObjectV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplateformfieldgroupEditObjectV1Request
+ */
+export class DataObjectEzsigntemplateformfieldgroupEditObjectV1Request {
+   objEzsigntemplateformfieldgroup:EzsigntemplateformfieldgroupRequestCompound = new DataObjectEzsigntemplateformfieldgroupRequestCompound()
 }
+
+/**
+ * @export 
+ * A EzsigntemplateformfieldgroupEditObjectV1Request Validation Object
+ * @class ValidationObjectEzsigntemplateformfieldgroupEditObjectV1Request
+ */
+export class ValidationObjectEzsigntemplateformfieldgroupEditObjectV1Request {
+   objEzsigntemplateformfieldgroup = new ValidationObjectEzsigntemplateformfieldgroupRequestCompound()
+} 
 
 

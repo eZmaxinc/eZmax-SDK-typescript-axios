@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignbulksendRequestCompound } from './ezsignbulksend-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for PUT /1/object/ezsignbulksend/{pkiEzsignbulksendID}
  * @export
@@ -33,13 +31,31 @@ export interface EzsignbulksendEditObjectV1Request {
     'objEzsignbulksend': EzsignbulksendRequestCompound;
 }
 /**
- * A EzsignbulksendEditObjectV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignbulksendEditObjectV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignbulksendEditObjectV1Request extends DefaultObject {
-   objEzsignbulksend:Partial<EzsignbulksendRequestCompound> = {}
+// @ts-ignore
+import { DataObjectEzsignbulksendRequestCompound } from './'
+// @ts-ignore
+import { ValidationObjectEzsignbulksendRequestCompound } from './'
+
+/**
+ * @export 
+ * A EzsignbulksendEditObjectV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignbulksendEditObjectV1Request
+ */
+export class DataObjectEzsignbulksendEditObjectV1Request {
+   objEzsignbulksend:EzsignbulksendRequestCompound = new DataObjectEzsignbulksendRequestCompound()
 }
+
+/**
+ * @export 
+ * A EzsignbulksendEditObjectV1Request Validation Object
+ * @class ValidationObjectEzsignbulksendEditObjectV1Request
+ */
+export class ValidationObjectEzsignbulksendEditObjectV1Request {
+   objEzsignbulksend = new ValidationObjectEzsignbulksendRequestCompound()
+} 
 
 

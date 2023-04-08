@@ -20,8 +20,6 @@ import { CustomEzsignfoldertransmissionSignerResponse } from './custom-ezsignfol
 // @ts-ignore
 import { FieldEEzsignfolderStep } from './field-eezsignfolder-step';
 
-import { DefaultObject } from '../base'
-
 /**
  * An Ezsignfolder Object in the context of an Ezsignbulksendtransmission
  * @export
@@ -34,6 +32,12 @@ export interface CustomEzsignfoldertransmissionResponse {
      * @memberof CustomEzsignfoldertransmissionResponse
      */
     'pkiEzsignfolderID': number;
+    /**
+     * The description of the Ezsignfolder
+     * @type {string}
+     * @memberof CustomEzsignfoldertransmissionResponse
+     */
+    'sEzsignfolderDescription': string;
     /**
      * 
      * @type {FieldEEzsignfolderStep}
@@ -59,18 +63,60 @@ export interface CustomEzsignfoldertransmissionResponse {
      */
     'a_objEzsignfoldertransmissionSigner': Array<CustomEzsignfoldertransmissionSignerResponse>;
 }
+
+
 /**
- * A CustomEzsignfoldertransmissionResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCustomEzsignfoldertransmissionResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCustomEzsignfoldertransmissionResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A CustomEzsignfoldertransmissionResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCustomEzsignfoldertransmissionResponse
+ */
+export class DataObjectCustomEzsignfoldertransmissionResponse {
    pkiEzsignfolderID:number = 0
+   sEzsignfolderDescription:string = ''
    eEzsignfolderStep:FieldEEzsignfolderStep = 'Unsent'
    iEzsignfolderSignaturetotal:number = 0
    iEzsignfolderSignaturesigned:number = 0
    a_objEzsignfoldertransmissionSigner:Array<CustomEzsignfoldertransmissionSignerResponse> = []
 }
+
+/**
+ * @export 
+ * A CustomEzsignfoldertransmissionResponse Validation Object
+ * @class ValidationObjectCustomEzsignfoldertransmissionResponse
+ */
+export class ValidationObjectCustomEzsignfoldertransmissionResponse {
+   pkiEzsignfolderID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sEzsignfolderDescription = {
+      type: 'string',
+      required: true
+   }
+   eEzsignfolderStep = {
+      type: 'enum',
+      allowableValues: ['Unsent','PendingSend','Sent','PartiallySigned','Expired','Completed','Archived','Disposed'],
+      required: true
+   }
+   iEzsignfolderSignaturetotal = {
+      type: 'integer',
+      required: true
+   }
+   iEzsignfolderSignaturesigned = {
+      type: 'integer',
+      required: true
+   }
+   a_objEzsignfoldertransmissionSigner = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

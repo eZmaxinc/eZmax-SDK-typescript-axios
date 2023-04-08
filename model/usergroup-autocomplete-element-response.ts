@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A Usergroup AutocompleteElement Response
  * @export
@@ -42,15 +40,41 @@ export interface UsergroupAutocompleteElementResponse {
     'bUsergroupIsactive': boolean;
 }
 /**
- * A UsergroupAutocompleteElementResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectUsergroupAutocompleteElementResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectUsergroupAutocompleteElementResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A UsergroupAutocompleteElementResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectUsergroupAutocompleteElementResponse
+ */
+export class DataObjectUsergroupAutocompleteElementResponse {
    sUsergroupNameX:string = ''
    pkiUsergroupID:number = 0
    bUsergroupIsactive:boolean = false
 }
+
+/**
+ * @export 
+ * A UsergroupAutocompleteElementResponse Validation Object
+ * @class ValidationObjectUsergroupAutocompleteElementResponse
+ */
+export class ValidationObjectUsergroupAutocompleteElementResponse {
+   sUsergroupNameX = {
+      type: 'string',
+      required: true
+   }
+   pkiUsergroupID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   bUsergroupIsactive = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

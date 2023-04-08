@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A Ezsigntemplatedocument Object
  * @export
@@ -52,19 +50,66 @@ export interface EzsigntemplatedocumentResponse {
      * @memberof EzsigntemplatedocumentResponse
      */
     'iEzsigntemplatedocumentSignaturetotal': number;
+    /**
+     * If the Ezsigntemplatedocument contains signed signatures (From internal or external sources)
+     * @type {boolean}
+     * @memberof EzsigntemplatedocumentResponse
+     */
+    'bEzsigntemplatedocumentHassignedsignatures': boolean;
 }
 /**
- * A EzsigntemplatedocumentResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplatedocumentResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatedocumentResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntemplatedocumentResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatedocumentResponse
+ */
+export class DataObjectEzsigntemplatedocumentResponse {
    pkiEzsigntemplatedocumentID:number = 0
    fkiEzsigntemplateID:number = 0
    sEzsigntemplatedocumentName:string = ''
    iEzsigntemplatedocumentPagetotal:number = 0
    iEzsigntemplatedocumentSignaturetotal:number = 0
+   bEzsigntemplatedocumentHassignedsignatures:boolean = false
 }
+
+/**
+ * @export 
+ * A EzsigntemplatedocumentResponse Validation Object
+ * @class ValidationObjectEzsigntemplatedocumentResponse
+ */
+export class ValidationObjectEzsigntemplatedocumentResponse {
+   pkiEzsigntemplatedocumentID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsigntemplateID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sEzsigntemplatedocumentName = {
+      type: 'string',
+      required: true
+   }
+   iEzsigntemplatedocumentPagetotal = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   iEzsigntemplatedocumentSignaturetotal = {
+      type: 'integer',
+      required: true
+   }
+   bEzsigntemplatedocumentHassignedsignatures = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

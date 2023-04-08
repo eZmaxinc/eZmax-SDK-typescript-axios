@@ -17,8 +17,6 @@
 // @ts-ignore
 import { NotificationsectionGetNotificationtestsV1ResponseMPayload } from './notificationsection-get-notificationtests-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface NotificationsectionGetNotificationtestsV1ResponseAllOf {
     'mPayload': NotificationsectionGetNotificationtestsV1ResponseMPayload;
 }
 /**
- * A NotificationsectionGetNotificationtestsV1ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectNotificationsectionGetNotificationtestsV1ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectNotificationsectionGetNotificationtestsV1ResponseAllOf extends DefaultObject {
-   mPayload:Partial<NotificationsectionGetNotificationtestsV1ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectNotificationsectionGetNotificationtestsV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectNotificationsectionGetNotificationtestsV1ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A NotificationsectionGetNotificationtestsV1ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectNotificationsectionGetNotificationtestsV1ResponseAllOf
+ */
+export class DataObjectNotificationsectionGetNotificationtestsV1ResponseAllOf {
+   mPayload:NotificationsectionGetNotificationtestsV1ResponseMPayload = new DataObjectNotificationsectionGetNotificationtestsV1ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A NotificationsectionGetNotificationtestsV1ResponseAllOf Validation Object
+ * @class ValidationObjectNotificationsectionGetNotificationtestsV1ResponseAllOf
+ */
+export class ValidationObjectNotificationsectionGetNotificationtestsV1ResponseAllOf {
+   mPayload = new ValidationObjectNotificationsectionGetNotificationtestsV1ResponseMPayload()
+} 
 
 

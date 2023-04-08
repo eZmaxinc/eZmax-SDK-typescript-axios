@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigntemplatesignatureRequestCompound } from './ezsigntemplatesignature-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for PUT /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/editEzsigntemplatesignatures
  * @export
@@ -33,13 +31,30 @@ export interface EzsigntemplatedocumentEditEzsigntemplatesignaturesV1Request {
     'a_objEzsigntemplatesignature': Array<EzsigntemplatesignatureRequestCompound>;
 }
 /**
- * A EzsigntemplatedocumentEditEzsigntemplatesignaturesV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplatedocumentEditEzsigntemplatesignaturesV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatedocumentEditEzsigntemplatesignaturesV1Request extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntemplatedocumentEditEzsigntemplatesignaturesV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatedocumentEditEzsigntemplatesignaturesV1Request
+ */
+export class DataObjectEzsigntemplatedocumentEditEzsigntemplatesignaturesV1Request {
    a_objEzsigntemplatesignature:Array<EzsigntemplatesignatureRequestCompound> = []
 }
+
+/**
+ * @export 
+ * A EzsigntemplatedocumentEditEzsigntemplatesignaturesV1Request Validation Object
+ * @class ValidationObjectEzsigntemplatedocumentEditEzsigntemplatesignaturesV1Request
+ */
+export class ValidationObjectEzsigntemplatedocumentEditEzsigntemplatesignaturesV1Request {
+   a_objEzsigntemplatesignature = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

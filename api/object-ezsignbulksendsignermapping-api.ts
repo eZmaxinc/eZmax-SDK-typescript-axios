@@ -29,8 +29,6 @@ import { EzsignbulksendsignermappingCreateObjectV1Response } from '../model';
 // @ts-ignore
 import { EzsignbulksendsignermappingDeleteObjectV1Response } from '../model';
 // @ts-ignore
-import { EzsignbulksendsignermappingGetObjectV1Response } from '../model';
-// @ts-ignore
 import { EzsignbulksendsignermappingGetObjectV2Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
@@ -159,63 +157,6 @@ export const ObjectEzsignbulksendsignermappingApiAxiosParamCreator = function (c
          * @summary Retrieve an existing Ezsignbulksendsignermapping
          * @param {number} pkiEzsignbulksendsignermappingID 
          * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        ezsignbulksendsignermappingGetObjectV1: async (pkiEzsignbulksendsignermappingID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiEzsignbulksendsignermappingID' is not null or undefined
-            assertParamExists('ezsignbulksendsignermappingGetObjectV1', 'pkiEzsignbulksendsignermappingID', pkiEzsignbulksendsignermappingID)
-            const localVarPath = `/1/object/ezsignbulksendsignermapping/{pkiEzsignbulksendsignermappingID}`
-                .replace(`{${"pkiEzsignbulksendsignermappingID"}}`, encodeURIComponent(String(pkiEzsignbulksendsignermappingID)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'GET' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary Retrieve an existing Ezsignbulksendsignermapping
-         * @param {number} pkiEzsignbulksendsignermappingID 
-         * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         ezsignbulksendsignermappingGetObjectV2: async (pkiEzsignbulksendsignermappingID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -304,18 +245,6 @@ export const ObjectEzsignbulksendsignermappingApiFp = function(configuration?: C
          * @summary Retrieve an existing Ezsignbulksendsignermapping
          * @param {number} pkiEzsignbulksendsignermappingID 
          * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        async ezsignbulksendsignermappingGetObjectV1(pkiEzsignbulksendsignermappingID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignbulksendsignermappingGetObjectV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignbulksendsignermappingGetObjectV1(pkiEzsignbulksendsignermappingID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * 
-         * @summary Retrieve an existing Ezsignbulksendsignermapping
-         * @param {number} pkiEzsignbulksendsignermappingID 
-         * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         async ezsignbulksendsignermappingGetObjectV2(pkiEzsignbulksendsignermappingID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignbulksendsignermappingGetObjectV2Response>> {
@@ -351,17 +280,6 @@ export const ObjectEzsignbulksendsignermappingApiFactory = function (configurati
          */
         ezsignbulksendsignermappingDeleteObjectV1(pkiEzsignbulksendsignermappingID: number, options?: any): AxiosPromise<EzsignbulksendsignermappingDeleteObjectV1Response> {
             return localVarFp.ezsignbulksendsignermappingDeleteObjectV1(pkiEzsignbulksendsignermappingID, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary Retrieve an existing Ezsignbulksendsignermapping
-         * @param {number} pkiEzsignbulksendsignermappingID 
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        ezsignbulksendsignermappingGetObjectV1(pkiEzsignbulksendsignermappingID: number, options?: any): AxiosPromise<EzsignbulksendsignermappingGetObjectV1Response> {
-            return localVarFp.ezsignbulksendsignermappingGetObjectV1(pkiEzsignbulksendsignermappingID, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -405,19 +323,6 @@ export class ObjectEzsignbulksendsignermappingApi extends BaseAPI {
      */
     public ezsignbulksendsignermappingDeleteObjectV1(pkiEzsignbulksendsignermappingID: number, options?: AxiosRequestConfig) {
         return ObjectEzsignbulksendsignermappingApiFp(this.configuration).ezsignbulksendsignermappingDeleteObjectV1(pkiEzsignbulksendsignermappingID, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Retrieve an existing Ezsignbulksendsignermapping
-     * @param {number} pkiEzsignbulksendsignermappingID 
-     * @param {*} [options] Override http request option.
-     * @deprecated
-     * @throws {RequiredError}
-     * @memberof ObjectEzsignbulksendsignermappingApi
-     */
-    public ezsignbulksendsignermappingGetObjectV1(pkiEzsignbulksendsignermappingID: number, options?: AxiosRequestConfig) {
-        return ObjectEzsignbulksendsignermappingApiFp(this.configuration).ezsignbulksendsignermappingGetObjectV1(pkiEzsignbulksendsignermappingID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

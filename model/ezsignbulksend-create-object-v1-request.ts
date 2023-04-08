@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignbulksendRequestCompound } from './ezsignbulksend-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for POST /1/object/ezsignbulksend
  * @export
@@ -33,13 +31,31 @@ export interface EzsignbulksendCreateObjectV1Request {
     'a_objEzsignbulksend': Array<EzsignbulksendRequestCompound>;
 }
 /**
- * A EzsignbulksendCreateObjectV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignbulksendCreateObjectV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignbulksendCreateObjectV1Request extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignbulksendCreateObjectV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignbulksendCreateObjectV1Request
+ */
+export class DataObjectEzsignbulksendCreateObjectV1Request {
    a_objEzsignbulksend:Array<EzsignbulksendRequestCompound> = []
 }
+
+/**
+ * @export 
+ * A EzsignbulksendCreateObjectV1Request Validation Object
+ * @class ValidationObjectEzsignbulksendCreateObjectV1Request
+ */
+export class ValidationObjectEzsignbulksendCreateObjectV1Request {
+   a_objEzsignbulksend = {
+      type: 'array',
+      minItems: 1,
+      required: true
+   }
+} 
 
 

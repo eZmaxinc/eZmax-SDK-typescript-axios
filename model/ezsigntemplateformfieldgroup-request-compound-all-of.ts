@@ -23,8 +23,6 @@ import { EzsigntemplateformfieldRequestCompound } from './ezsigntemplateformfiel
 // @ts-ignore
 import { EzsigntemplateformfieldgroupsignerRequestCompound } from './ezsigntemplateformfieldgroupsigner-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -51,15 +49,40 @@ export interface EzsigntemplateformfieldgroupRequestCompoundAllOf {
     'a_objEzsigntemplateformfield': Array<EzsigntemplateformfieldRequestCompound>;
 }
 /**
- * A EzsigntemplateformfieldgroupRequestCompoundAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplateformfieldgroupRequestCompoundAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplateformfieldgroupRequestCompoundAllOf extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntemplateformfieldgroupRequestCompoundAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplateformfieldgroupRequestCompoundAllOf
+ */
+export class DataObjectEzsigntemplateformfieldgroupRequestCompoundAllOf {
    a_objEzsigntemplateformfieldgroupsigner:Array<EzsigntemplateformfieldgroupsignerRequestCompound> = []
    a_objDropdownElement?:Array<CustomDropdownElementRequestCompound> = undefined
    a_objEzsigntemplateformfield:Array<EzsigntemplateformfieldRequestCompound> = []
 }
+
+/**
+ * @export 
+ * A EzsigntemplateformfieldgroupRequestCompoundAllOf Validation Object
+ * @class ValidationObjectEzsigntemplateformfieldgroupRequestCompoundAllOf
+ */
+export class ValidationObjectEzsigntemplateformfieldgroupRequestCompoundAllOf {
+   a_objEzsigntemplateformfieldgroupsigner = {
+      type: 'array',
+      required: true
+   }
+   a_objDropdownElement = {
+      type: 'array',
+      required: false
+   }
+   a_objEzsigntemplateformfield = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

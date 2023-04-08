@@ -37,7 +37,7 @@ import { EzsignsignatureEditObjectV1Request } from '../model';
 // @ts-ignore
 import { EzsignsignatureEditObjectV1Response } from '../model';
 // @ts-ignore
-import { EzsignsignatureGetObjectV1Response } from '../model';
+import { EzsignsignatureGetEzsignsignaturesAutomaticV1Response } from '../model';
 // @ts-ignore
 import { EzsignsignatureGetObjectV2Response } from '../model';
 // @ts-ignore
@@ -288,18 +288,13 @@ export const ObjectEzsignsignatureApiAxiosParamCreator = function (configuration
             };
         },
         /**
-         * 
-         * @summary Retrieve an existing Ezsignsignature
-         * @param {number} pkiEzsignsignatureID 
+         * Return all the Ezsignsignatures that can be signed by the current user
+         * @summary Retrieve all automatic Ezsignsignatures
          * @param {*} [options] Override http request option.
-         * @deprecated
          * @throws {RequiredError}
          */
-        ezsignsignatureGetObjectV1: async (pkiEzsignsignatureID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiEzsignsignatureID' is not null or undefined
-            assertParamExists('ezsignsignatureGetObjectV1', 'pkiEzsignsignatureID', pkiEzsignsignatureID)
-            const localVarPath = `/1/object/ezsignsignature/{pkiEzsignsignatureID}`
-                .replace(`{${"pkiEzsignsignatureID"}}`, encodeURIComponent(String(pkiEzsignsignatureID)));
+        ezsignsignatureGetEzsignsignaturesAutomaticV1: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/1/object/ezsignsignature/getEzsignsignaturesAutomatic`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -519,15 +514,13 @@ export const ObjectEzsignsignatureApiFp = function(configuration?: Configuration
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * 
-         * @summary Retrieve an existing Ezsignsignature
-         * @param {number} pkiEzsignsignatureID 
+         * Return all the Ezsignsignatures that can be signed by the current user
+         * @summary Retrieve all automatic Ezsignsignatures
          * @param {*} [options] Override http request option.
-         * @deprecated
          * @throws {RequiredError}
          */
-        async ezsignsignatureGetObjectV1(pkiEzsignsignatureID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignsignatureGetObjectV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignsignatureGetObjectV1(pkiEzsignsignatureID, options);
+        async ezsignsignatureGetEzsignsignaturesAutomaticV1(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignsignatureGetEzsignsignaturesAutomaticV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignsignatureGetEzsignsignaturesAutomaticV1(options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -606,15 +599,13 @@ export const ObjectEzsignsignatureApiFactory = function (configuration?: Configu
             return localVarFp.ezsignsignatureEditObjectV1(pkiEzsignsignatureID, ezsignsignatureEditObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
-         * 
-         * @summary Retrieve an existing Ezsignsignature
-         * @param {number} pkiEzsignsignatureID 
+         * Return all the Ezsignsignatures that can be signed by the current user
+         * @summary Retrieve all automatic Ezsignsignatures
          * @param {*} [options] Override http request option.
-         * @deprecated
          * @throws {RequiredError}
          */
-        ezsignsignatureGetObjectV1(pkiEzsignsignatureID: number, options?: any): AxiosPromise<EzsignsignatureGetObjectV1Response> {
-            return localVarFp.ezsignsignatureGetObjectV1(pkiEzsignsignatureID, options).then((request) => request(axios, basePath));
+        ezsignsignatureGetEzsignsignaturesAutomaticV1(options?: any): AxiosPromise<EzsignsignatureGetEzsignsignaturesAutomaticV1Response> {
+            return localVarFp.ezsignsignatureGetEzsignsignaturesAutomaticV1(options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -698,16 +689,14 @@ export class ObjectEzsignsignatureApi extends BaseAPI {
     }
 
     /**
-     * 
-     * @summary Retrieve an existing Ezsignsignature
-     * @param {number} pkiEzsignsignatureID 
+     * Return all the Ezsignsignatures that can be signed by the current user
+     * @summary Retrieve all automatic Ezsignsignatures
      * @param {*} [options] Override http request option.
-     * @deprecated
      * @throws {RequiredError}
      * @memberof ObjectEzsignsignatureApi
      */
-    public ezsignsignatureGetObjectV1(pkiEzsignsignatureID: number, options?: AxiosRequestConfig) {
-        return ObjectEzsignsignatureApiFp(this.configuration).ezsignsignatureGetObjectV1(pkiEzsignsignatureID, options).then((request) => request(this.axios, this.basePath));
+    public ezsignsignatureGetEzsignsignaturesAutomaticV1(options?: AxiosRequestConfig) {
+        return ObjectEzsignsignatureApiFp(this.configuration).ezsignsignatureGetEzsignsignaturesAutomaticV1(options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

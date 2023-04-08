@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A Paymentterm AutocompleteElement Response
  * @export
@@ -42,15 +40,41 @@ export interface PaymenttermAutocompleteElementResponse {
     'bPaymenttermIsactive': boolean;
 }
 /**
- * A PaymenttermAutocompleteElementResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectPaymenttermAutocompleteElementResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectPaymenttermAutocompleteElementResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A PaymenttermAutocompleteElementResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectPaymenttermAutocompleteElementResponse
+ */
+export class DataObjectPaymenttermAutocompleteElementResponse {
    pkiPaymenttermID:number = 0
    sPaymenttermDescriptionX:string = ''
    bPaymenttermIsactive:boolean = false
 }
+
+/**
+ * @export 
+ * A PaymenttermAutocompleteElementResponse Validation Object
+ * @class ValidationObjectPaymenttermAutocompleteElementResponse
+ */
+export class ValidationObjectPaymenttermAutocompleteElementResponse {
+   pkiPaymenttermID = {
+      type: 'integer',
+      required: true
+   }
+   sPaymenttermDescriptionX = {
+      type: 'string',
+      pattern: '/^.{1,40}$/',
+      required: true
+   }
+   bPaymenttermIsactive = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

@@ -13,8 +13,9 @@
  */
 
 
-
-import { DefaultObject } from '../base'
+// May contain unused imports in some cases
+// @ts-ignore
+import { FieldEPaymenttermType } from './field-epaymentterm-type';
 
 /**
  * A Paymentterm List Element
@@ -35,6 +36,18 @@ export interface PaymenttermListElement {
      */
     'sPaymenttermCode': string;
     /**
+     * 
+     * @type {FieldEPaymenttermType}
+     * @memberof PaymenttermListElement
+     */
+    'ePaymenttermType': FieldEPaymenttermType;
+    /**
+     * The day of the Paymentterm
+     * @type {number}
+     * @memberof PaymenttermListElement
+     */
+    'iPaymenttermDay': number;
+    /**
      * The description of the Paymentterm in the language of the requester
      * @type {string}
      * @memberof PaymenttermListElement
@@ -47,17 +60,63 @@ export interface PaymenttermListElement {
      */
     'bPaymenttermIsactive': boolean;
 }
+
+
 /**
- * A PaymenttermListElement Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectPaymenttermListElement
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectPaymenttermListElement extends DefaultObject {
+
+/**
+ * @export 
+ * A PaymenttermListElement Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectPaymenttermListElement
+ */
+export class DataObjectPaymenttermListElement {
    pkiPaymenttermID:number = 0
    sPaymenttermCode:string = ''
+   ePaymenttermType:FieldEPaymenttermType = 'Days'
+   iPaymenttermDay:number = 0
    sPaymenttermDescriptionX:string = ''
    bPaymenttermIsactive:boolean = false
 }
+
+/**
+ * @export 
+ * A PaymenttermListElement Validation Object
+ * @class ValidationObjectPaymenttermListElement
+ */
+export class ValidationObjectPaymenttermListElement {
+   pkiPaymenttermID = {
+      type: 'integer',
+      required: true
+   }
+   sPaymenttermCode = {
+      type: 'string',
+      pattern: '/^[A-Z0-9]{1,4}$/',
+      required: true
+   }
+   ePaymenttermType = {
+      type: 'enum',
+      allowableValues: ['Days','Dayofthemonth'],
+      required: true
+   }
+   iPaymenttermDay = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 255,
+      required: true
+   }
+   sPaymenttermDescriptionX = {
+      type: 'string',
+      pattern: '/^.{1,40}$/',
+      required: true
+   }
+   bPaymenttermIsactive = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

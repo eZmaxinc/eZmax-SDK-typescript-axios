@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * 352 Redirect Message containing secret question
  * @export
@@ -30,13 +28,30 @@ export interface CommonResponseRedirectSSecretquestionTextX {
     'sSecretquestionTextX': string;
 }
 /**
- * A CommonResponseRedirectSSecretquestionTextX Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCommonResponseRedirectSSecretquestionTextX
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCommonResponseRedirectSSecretquestionTextX extends DefaultObject {
+
+/**
+ * @export 
+ * A CommonResponseRedirectSSecretquestionTextX Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCommonResponseRedirectSSecretquestionTextX
+ */
+export class DataObjectCommonResponseRedirectSSecretquestionTextX {
    sSecretquestionTextX:string = ''
 }
+
+/**
+ * @export 
+ * A CommonResponseRedirectSSecretquestionTextX Validation Object
+ * @class ValidationObjectCommonResponseRedirectSSecretquestionTextX
+ */
+export class ValidationObjectCommonResponseRedirectSSecretquestionTextX {
+   sSecretquestionTextX = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

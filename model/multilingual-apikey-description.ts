@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Description of the API Key
  * @export
@@ -36,14 +34,35 @@ export interface MultilingualApikeyDescription {
     'sApikeyDescription2'?: string;
 }
 /**
- * A MultilingualApikeyDescription Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectMultilingualApikeyDescription
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectMultilingualApikeyDescription extends DefaultObject {
+
+/**
+ * @export 
+ * A MultilingualApikeyDescription Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectMultilingualApikeyDescription
+ */
+export class DataObjectMultilingualApikeyDescription {
    sApikeyDescription1?:string = undefined
    sApikeyDescription2?:string = undefined
 }
+
+/**
+ * @export 
+ * A MultilingualApikeyDescription Validation Object
+ * @class ValidationObjectMultilingualApikeyDescription
+ */
+export class ValidationObjectMultilingualApikeyDescription {
+   sApikeyDescription1 = {
+      type: 'string',
+      required: false
+   }
+   sApikeyDescription2 = {
+      type: 'string',
+      required: false
+   }
+} 
 
 

@@ -17,8 +17,6 @@
 // @ts-ignore
 import { CustomAutocompleteElementResponse } from './custom-autocomplete-element-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,30 @@ export interface CommonGetAutocompleteV1ResponseAllOf {
     'mPayload': Array<CustomAutocompleteElementResponse>;
 }
 /**
- * A CommonGetAutocompleteV1ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCommonGetAutocompleteV1ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCommonGetAutocompleteV1ResponseAllOf extends DefaultObject {
+
+/**
+ * @export 
+ * A CommonGetAutocompleteV1ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCommonGetAutocompleteV1ResponseAllOf
+ */
+export class DataObjectCommonGetAutocompleteV1ResponseAllOf {
    mPayload:Array<CustomAutocompleteElementResponse> = []
 }
+
+/**
+ * @export 
+ * A CommonGetAutocompleteV1ResponseAllOf Validation Object
+ * @class ValidationObjectCommonGetAutocompleteV1ResponseAllOf
+ */
+export class ValidationObjectCommonGetAutocompleteV1ResponseAllOf {
+   mPayload = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

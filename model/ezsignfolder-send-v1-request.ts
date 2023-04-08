@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for POST /1/object/ezsignfolder/{pkiEzsignfolderID}/send
  * @export
@@ -30,13 +28,30 @@ export interface EzsignfolderSendV1Request {
     'tExtraMessage': string;
 }
 /**
- * A EzsignfolderSendV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfolderSendV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfolderSendV1Request extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignfolderSendV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfolderSendV1Request
+ */
+export class DataObjectEzsignfolderSendV1Request {
    tExtraMessage:string = ''
 }
+
+/**
+ * @export 
+ * A EzsignfolderSendV1Request Validation Object
+ * @class ValidationObjectEzsignfolderSendV1Request
+ */
+export class ValidationObjectEzsignfolderSendV1Request {
+   tExtraMessage = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

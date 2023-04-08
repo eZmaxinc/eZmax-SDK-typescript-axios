@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * The object used in /1/object/ezsignfolder/{pkiEzsignfolderID}/importEzsigntemplatepackage Request
  * @export
@@ -42,15 +40,42 @@ export interface CustomImportEzsigntemplatepackageRelationRequest {
     'sEzsigntemplatepackagesignerDescription'?: string;
 }
 /**
- * A CustomImportEzsigntemplatepackageRelationRequest Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCustomImportEzsigntemplatepackageRelationRequest
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCustomImportEzsigntemplatepackageRelationRequest extends DefaultObject {
+
+/**
+ * @export 
+ * A CustomImportEzsigntemplatepackageRelationRequest Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCustomImportEzsigntemplatepackageRelationRequest
+ */
+export class DataObjectCustomImportEzsigntemplatepackageRelationRequest {
    fkiEzsigntemplatepackagesignerID?:number = undefined
    fkiEzsignfoldersignerassociationID:number = 0
    sEzsigntemplatepackagesignerDescription?:string = undefined
 }
+
+/**
+ * @export 
+ * A CustomImportEzsigntemplatepackageRelationRequest Validation Object
+ * @class ValidationObjectCustomImportEzsigntemplatepackageRelationRequest
+ */
+export class ValidationObjectCustomImportEzsigntemplatepackageRelationRequest {
+   fkiEzsigntemplatepackagesignerID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzsignfoldersignerassociationID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sEzsigntemplatepackagesignerDescription = {
+      type: 'string',
+      required: false
+   }
+} 
 
 

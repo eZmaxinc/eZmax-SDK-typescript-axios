@@ -23,8 +23,6 @@ import { FieldEEzsignformfieldgroupTooltipposition } from './field-eezsignformfi
 // @ts-ignore
 import { FieldEEzsignformfieldgroupType } from './field-eezsignformfieldgroup-type';
 
-import { DefaultObject } from '../base'
-
 /**
  * An Ezsignformfieldgroup Object
  * @export
@@ -122,13 +120,20 @@ export interface EzsignformfieldgroupResponse {
      */
     'eEzsignformfieldgroupTooltipposition'?: FieldEEzsignformfieldgroupTooltipposition;
 }
+
+
 /**
- * A EzsignformfieldgroupResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignformfieldgroupResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignformfieldgroupResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignformfieldgroupResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignformfieldgroupResponse
+ */
+export class DataObjectEzsignformfieldgroupResponse {
    pkiEzsignformfieldgroupID:number = 0
    fkiEzsigndocumentID:number = 0
    eEzsignformfieldgroupType:FieldEEzsignformfieldgroupType = 'Text'
@@ -145,5 +150,82 @@ export class DefaultObjectEzsignformfieldgroupResponse extends DefaultObject {
    tEzsignformfieldgroupTooltip?:string = undefined
    eEzsignformfieldgroupTooltipposition?:FieldEEzsignformfieldgroupTooltipposition = undefined
 }
+
+/**
+ * @export 
+ * A EzsignformfieldgroupResponse Validation Object
+ * @class ValidationObjectEzsignformfieldgroupResponse
+ */
+export class ValidationObjectEzsignformfieldgroupResponse {
+   pkiEzsignformfieldgroupID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsigndocumentID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   eEzsignformfieldgroupType = {
+      type: 'enum',
+      allowableValues: ['Text','Textarea','Dropdown','Radio','Checkbox'],
+      required: true
+   }
+   eEzsignformfieldgroupSignerrequirement = {
+      type: 'enum',
+      allowableValues: ['All','One'],
+      required: true
+   }
+   sEzsignformfieldgroupLabel = {
+      type: 'string',
+      required: true
+   }
+   iEzsignformfieldgroupStep = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   sEzsignformfieldgroupDefaultvalue = {
+      type: 'string',
+      required: false
+   }
+   iEzsignformfieldgroupFilledmin = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsignformfieldgroupFilledmax = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   bEzsignformfieldgroupReadonly = {
+      type: 'boolean',
+      required: true
+   }
+   iEzsignformfieldgroupMaxlength = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   bEzsignformfieldgroupEncrypted = {
+      type: 'boolean',
+      required: false
+   }
+   sEzsignformfieldgroupRegexp = {
+      type: 'string',
+      required: false
+   }
+   tEzsignformfieldgroupTooltip = {
+      type: 'string',
+      required: false
+   }
+   eEzsignformfieldgroupTooltipposition = {
+      type: 'enum',
+      allowableValues: ['TopLeft','TopCenter','TopRight','MiddleLeft','MiddleRight','BottomLeft','BottomCenter','BottomRight'],
+      required: false
+   }
+} 
 
 

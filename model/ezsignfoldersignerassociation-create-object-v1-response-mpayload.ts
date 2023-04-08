@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for POST /1/object/ezsignfoldersignerassociation
  * @export
@@ -30,13 +28,31 @@ export interface EzsignfoldersignerassociationCreateObjectV1ResponseMPayload {
     'a_pkiEzsignfoldersignerassociationID': Array<number>;
 }
 /**
- * A EzsignfoldersignerassociationCreateObjectV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfoldersignerassociationCreateObjectV1ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfoldersignerassociationCreateObjectV1ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationCreateObjectV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfoldersignerassociationCreateObjectV1ResponseMPayload
+ */
+export class DataObjectEzsignfoldersignerassociationCreateObjectV1ResponseMPayload {
    a_pkiEzsignfoldersignerassociationID:Array<number> = []
 }
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationCreateObjectV1ResponseMPayload Validation Object
+ * @class ValidationObjectEzsignfoldersignerassociationCreateObjectV1ResponseMPayload
+ */
+export class ValidationObjectEzsignfoldersignerassociationCreateObjectV1ResponseMPayload {
+   a_pkiEzsignfoldersignerassociationID = {
+      type: 'array',
+      minItems: 1,
+      required: true
+   }
+} 
 
 

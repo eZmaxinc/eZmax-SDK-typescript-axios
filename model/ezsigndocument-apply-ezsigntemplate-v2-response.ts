@@ -23,8 +23,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 // @ts-ignore
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsigndocumentApplyEzsigntemplateV2Response
  * Response for POST /2/object/ezsigndocument/{pkiEzsigndocument}/applyEzsigntemplate
@@ -34,14 +32,37 @@ export type EzsigndocumentApplyEzsigntemplateV2Response = CommonResponse;
 
 
 /**
- * @export 
- * A EzsigndocumentApplyEzsigntemplateV2Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsigndocumentApplyEzsigntemplateV2Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigndocumentApplyEzsigntemplateV2Response extends DefaultObject {
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A EzsigndocumentApplyEzsigntemplateV2Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigndocumentApplyEzsigntemplateV2Response
+ */
+export class DataObjectEzsigndocumentApplyEzsigntemplateV2Response {
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A EzsigndocumentApplyEzsigntemplateV2Response Validation Object
+ * @class ValidationObjectEzsigndocumentApplyEzsigntemplateV2Response
+ */
+export class ValidationObjectEzsigndocumentApplyEzsigntemplateV2Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

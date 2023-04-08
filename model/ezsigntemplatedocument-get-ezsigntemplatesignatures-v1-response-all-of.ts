@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseMPayload } from './ezsigntemplatedocument-get-ezsigntemplatesignatures-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface EzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseAllO
     'mPayload': EzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseMPayload;
 }
 /**
- * A EzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseAllOf extends DefaultObject {
-   mPayload:Partial<EzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectEzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectEzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A EzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseAllOf
+ */
+export class DataObjectEzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseAllOf {
+   mPayload:EzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseMPayload = new DataObjectEzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A EzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseAllOf Validation Object
+ * @class ValidationObjectEzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseAllOf
+ */
+export class ValidationObjectEzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseAllOf {
+   mPayload = new ValidationObjectEzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseMPayload()
+} 
 
 

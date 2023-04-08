@@ -17,8 +17,6 @@
 // @ts-ignore
 import { TaxassignmentGetAutocompleteV2ResponseMPayload } from './taxassignment-get-autocomplete-v2-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface TaxassignmentGetAutocompleteV2ResponseAllOf {
     'mPayload': TaxassignmentGetAutocompleteV2ResponseMPayload;
 }
 /**
- * A TaxassignmentGetAutocompleteV2ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectTaxassignmentGetAutocompleteV2ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectTaxassignmentGetAutocompleteV2ResponseAllOf extends DefaultObject {
-   mPayload:Partial<TaxassignmentGetAutocompleteV2ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectTaxassignmentGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectTaxassignmentGetAutocompleteV2ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A TaxassignmentGetAutocompleteV2ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectTaxassignmentGetAutocompleteV2ResponseAllOf
+ */
+export class DataObjectTaxassignmentGetAutocompleteV2ResponseAllOf {
+   mPayload:TaxassignmentGetAutocompleteV2ResponseMPayload = new DataObjectTaxassignmentGetAutocompleteV2ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A TaxassignmentGetAutocompleteV2ResponseAllOf Validation Object
+ * @class ValidationObjectTaxassignmentGetAutocompleteV2ResponseAllOf
+ */
+export class ValidationObjectTaxassignmentGetAutocompleteV2ResponseAllOf {
+   mPayload = new ValidationObjectTaxassignmentGetAutocompleteV2ResponseMPayload()
+} 
 
 

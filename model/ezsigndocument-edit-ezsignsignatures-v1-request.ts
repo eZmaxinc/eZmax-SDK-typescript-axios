@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignsignatureRequestCompound } from './ezsignsignature-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for PUT /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignsignatures
  * @export
@@ -33,13 +31,30 @@ export interface EzsigndocumentEditEzsignsignaturesV1Request {
     'a_objEzsignsignature': Array<EzsignsignatureRequestCompound>;
 }
 /**
- * A EzsigndocumentEditEzsignsignaturesV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigndocumentEditEzsignsignaturesV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigndocumentEditEzsignsignaturesV1Request extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigndocumentEditEzsignsignaturesV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigndocumentEditEzsignsignaturesV1Request
+ */
+export class DataObjectEzsigndocumentEditEzsignsignaturesV1Request {
    a_objEzsignsignature:Array<EzsignsignatureRequestCompound> = []
 }
+
+/**
+ * @export 
+ * A EzsigndocumentEditEzsignsignaturesV1Request Validation Object
+ * @class ValidationObjectEzsigndocumentEditEzsignsignaturesV1Request
+ */
+export class ValidationObjectEzsigndocumentEditEzsignsignaturesV1Request {
+   a_objEzsignsignature = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

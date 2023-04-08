@@ -17,8 +17,6 @@
 // @ts-ignore
 import { AddressRequest } from './address-request';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type AddressRequestCompound
  * An Address Object and children to create a complete structure
@@ -28,12 +26,17 @@ export type AddressRequestCompound = AddressRequest;
 
 
 /**
- * @export 
- * A AddressRequestCompound Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectAddressRequestCompound
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectAddressRequestCompound extends DefaultObject {
+
+/**
+ * @export 
+ * A AddressRequestCompound Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectAddressRequestCompound
+ */
+export class DataObjectAddressRequestCompound {
    fkiAddresstypeID:number = 0
    sAddressCivic:string = ''
    sAddressStreet:string = ''
@@ -43,5 +46,48 @@ export class DefaultObjectAddressRequestCompound extends DefaultObject {
    fkiCountryID:number = 0
    sAddressZip:string = ''
 }
+
+/**
+ * @export 
+ * A AddressRequestCompound Validation Object
+ * @class ValidationObjectAddressRequestCompound
+ */
+export class ValidationObjectAddressRequestCompound {
+   fkiAddresstypeID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sAddressCivic = {
+      type: 'string',
+      required: true
+   }
+   sAddressStreet = {
+      type: 'string',
+      required: true
+   }
+   sAddressSuite = {
+      type: 'string',
+      required: true
+   }
+   sAddressCity = {
+      type: 'string',
+      required: true
+   }
+   fkiProvinceID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiCountryID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sAddressZip = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

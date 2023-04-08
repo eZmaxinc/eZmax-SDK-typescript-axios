@@ -29,8 +29,6 @@ import { PaymenttermCreateObjectV1ResponseAllOf } from './paymentterm-create-obj
 // @ts-ignore
 import { PaymenttermCreateObjectV1ResponseMPayload } from './paymentterm-create-object-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type PaymenttermCreateObjectV1Response
  * Response for POST /1/object/paymentterm
@@ -40,15 +38,43 @@ export type PaymenttermCreateObjectV1Response = CommonResponse & PaymenttermCrea
 
 
 /**
- * @export 
- * A PaymenttermCreateObjectV1Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectPaymenttermCreateObjectV1Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectPaymenttermCreateObjectV1Response extends DefaultObject {
-   mPayload:Partial<PaymenttermCreateObjectV1ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectPaymenttermCreateObjectV1ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectPaymenttermCreateObjectV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A PaymenttermCreateObjectV1Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectPaymenttermCreateObjectV1Response
+ */
+export class DataObjectPaymenttermCreateObjectV1Response {
+   mPayload:PaymenttermCreateObjectV1ResponseMPayload = new DataObjectPaymenttermCreateObjectV1ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A PaymenttermCreateObjectV1Response Validation Object
+ * @class ValidationObjectPaymenttermCreateObjectV1Response
+ */
+export class ValidationObjectPaymenttermCreateObjectV1Response {
+   mPayload = new ValidationObjectPaymenttermCreateObjectV1ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

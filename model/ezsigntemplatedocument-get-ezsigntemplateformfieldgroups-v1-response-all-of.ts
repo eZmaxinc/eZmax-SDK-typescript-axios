@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1ResponseMPayload } from './ezsigntemplatedocument-get-ezsigntemplateformfieldgroups-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1Respons
     'mPayload': EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1ResponseMPayload;
 }
 /**
- * A EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1ResponseAllOf extends DefaultObject {
-   mPayload:Partial<EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectEzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectEzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1ResponseAllOf
+ */
+export class DataObjectEzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1ResponseAllOf {
+   mPayload:EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1ResponseMPayload = new DataObjectEzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1ResponseAllOf Validation Object
+ * @class ValidationObjectEzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1ResponseAllOf
+ */
+export class ValidationObjectEzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1ResponseAllOf {
+   mPayload = new ValidationObjectEzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1ResponseMPayload()
+} 
 
 

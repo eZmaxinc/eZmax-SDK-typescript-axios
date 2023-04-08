@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for PUT /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignsignatures
  * @export
@@ -30,13 +28,30 @@ export interface EzsigndocumentEditEzsignsignaturesV1ResponseMPayload {
     'a_pkiEzsignsignatureID': Array<number>;
 }
 /**
- * A EzsigndocumentEditEzsignsignaturesV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigndocumentEditEzsignsignaturesV1ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigndocumentEditEzsignsignaturesV1ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigndocumentEditEzsignsignaturesV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigndocumentEditEzsignsignaturesV1ResponseMPayload
+ */
+export class DataObjectEzsigndocumentEditEzsignsignaturesV1ResponseMPayload {
    a_pkiEzsignsignatureID:Array<number> = []
 }
+
+/**
+ * @export 
+ * A EzsigndocumentEditEzsignsignaturesV1ResponseMPayload Validation Object
+ * @class ValidationObjectEzsigndocumentEditEzsignsignaturesV1ResponseMPayload
+ */
+export class ValidationObjectEzsigndocumentEditEzsignsignaturesV1ResponseMPayload {
+   a_pkiEzsignsignatureID = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

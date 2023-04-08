@@ -20,8 +20,6 @@ import { EzsignfolderRequest } from './ezsignfolder-request';
 // @ts-ignore
 import { EzsignfolderRequestCompound } from './ezsignfolder-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for POST /1/object/ezsignfolder
  * @export
@@ -42,14 +40,37 @@ export interface EzsignfolderCreateObjectV1Request {
     'objEzsignfolderCompound'?: EzsignfolderRequestCompound;
 }
 /**
- * A EzsignfolderCreateObjectV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfolderCreateObjectV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfolderCreateObjectV1Request extends DefaultObject {
-   objEzsignfolder?:Partial<EzsignfolderRequest> = undefined
-   objEzsignfolderCompound?:Partial<EzsignfolderRequestCompound> = undefined
+// @ts-ignore
+import { DataObjectEzsignfolderRequest } from './'
+// @ts-ignore
+import { DataObjectEzsignfolderRequestCompound } from './'
+// @ts-ignore
+import { ValidationObjectEzsignfolderRequest } from './'
+// @ts-ignore
+import { ValidationObjectEzsignfolderRequestCompound } from './'
+
+/**
+ * @export 
+ * A EzsignfolderCreateObjectV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfolderCreateObjectV1Request
+ */
+export class DataObjectEzsignfolderCreateObjectV1Request {
+   objEzsignfolder?:EzsignfolderRequest = undefined
+   objEzsignfolderCompound?:EzsignfolderRequestCompound = undefined
 }
+
+/**
+ * @export 
+ * A EzsignfolderCreateObjectV1Request Validation Object
+ * @class ValidationObjectEzsignfolderCreateObjectV1Request
+ */
+export class ValidationObjectEzsignfolderCreateObjectV1Request {
+   objEzsignfolder = new ValidationObjectEzsignfolderRequest()
+   objEzsignfolderCompound = new ValidationObjectEzsignfolderRequestCompound()
+} 
 
 

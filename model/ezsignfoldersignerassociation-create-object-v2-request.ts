@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignfoldersignerassociationRequestCompound } from './ezsignfoldersignerassociation-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for POST /2/object/ezsignfoldersignerassociation
  * @export
@@ -33,13 +31,31 @@ export interface EzsignfoldersignerassociationCreateObjectV2Request {
     'a_objEzsignfoldersignerassociation': Array<EzsignfoldersignerassociationRequestCompound>;
 }
 /**
- * A EzsignfoldersignerassociationCreateObjectV2Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfoldersignerassociationCreateObjectV2Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfoldersignerassociationCreateObjectV2Request extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationCreateObjectV2Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfoldersignerassociationCreateObjectV2Request
+ */
+export class DataObjectEzsignfoldersignerassociationCreateObjectV2Request {
    a_objEzsignfoldersignerassociation:Array<EzsignfoldersignerassociationRequestCompound> = []
 }
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationCreateObjectV2Request Validation Object
+ * @class ValidationObjectEzsignfoldersignerassociationCreateObjectV2Request
+ */
+export class ValidationObjectEzsignfoldersignerassociationCreateObjectV2Request {
+   a_objEzsignfoldersignerassociation = {
+      type: 'array',
+      minItems: 1,
+      required: true
+   }
+} 
 
 

@@ -23,8 +23,6 @@ import { EzsignfoldersignerassociationResponseCompoundUser } from './ezsignfolde
 // @ts-ignore
 import { EzsignsignerResponseCompound } from './ezsignsigner-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsignfoldersignerassociationGetObjectV1ResponseMPayload
  * Payload for GET /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}
@@ -34,19 +32,64 @@ export type EzsignfoldersignerassociationGetObjectV1ResponseMPayload = Ezsignfol
 
 
 /**
- * @export 
- * A EzsignfoldersignerassociationGetObjectV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsignfoldersignerassociationGetObjectV1ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfoldersignerassociationGetObjectV1ResponseMPayload extends DefaultObject {
+// @ts-ignore
+import { DataObjectEzsignfoldersignerassociationResponseCompoundUser } from './'
+// @ts-ignore
+import { DataObjectEzsignsignerResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectEzsignfoldersignerassociationResponseCompoundUser } from './'
+// @ts-ignore
+import { ValidationObjectEzsignsignerResponseCompound } from './'
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationGetObjectV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfoldersignerassociationGetObjectV1ResponseMPayload
+ */
+export class DataObjectEzsignfoldersignerassociationGetObjectV1ResponseMPayload {
    pkiEzsignfoldersignerassociationID:number = 0
    fkiEzsignfolderID:number = 0
    bEzsignfoldersignerassociationDelayedsend:boolean = false
    bEzsignfoldersignerassociationReceivecopy:boolean = false
    tEzsignfoldersignerassociationMessage:string = ''
-   objUser?:Partial<EzsignfoldersignerassociationResponseCompoundUser> = undefined
-   objEzsignsigner?:Partial<EzsignsignerResponseCompound> = undefined
+   objUser?:EzsignfoldersignerassociationResponseCompoundUser = undefined
+   objEzsignsigner?:EzsignsignerResponseCompound = undefined
 }
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationGetObjectV1ResponseMPayload Validation Object
+ * @class ValidationObjectEzsignfoldersignerassociationGetObjectV1ResponseMPayload
+ */
+export class ValidationObjectEzsignfoldersignerassociationGetObjectV1ResponseMPayload {
+   pkiEzsignfoldersignerassociationID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsignfolderID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   bEzsignfoldersignerassociationDelayedsend = {
+      type: 'boolean',
+      required: true
+   }
+   bEzsignfoldersignerassociationReceivecopy = {
+      type: 'boolean',
+      required: true
+   }
+   tEzsignfoldersignerassociationMessage = {
+      type: 'string',
+      required: true
+   }
+   objUser = new ValidationObjectEzsignfoldersignerassociationResponseCompoundUser()
+   objEzsignsigner = new ValidationObjectEzsignsignerResponseCompound()
+} 
 
 

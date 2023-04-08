@@ -26,8 +26,6 @@ import { FieldEEzsigntemplatesignatureTooltipposition } from './field-eezsigntem
 // @ts-ignore
 import { FieldEEzsigntemplatesignatureType } from './field-eezsigntemplatesignature-type';
 
-import { DefaultObject } from '../base'
-
 /**
  * A Ezsigntemplatesignature Object
  * @export
@@ -131,13 +129,20 @@ export interface EzsigntemplatesignatureRequest {
      */
     'iEzsigntemplatesignatureValidationstep'?: number;
 }
+
+
 /**
- * A EzsigntemplatesignatureRequest Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplatesignatureRequest
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatesignatureRequest extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntemplatesignatureRequest Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatesignatureRequest
+ */
+export class DataObjectEzsigntemplatesignatureRequest {
    pkiEzsigntemplatesignatureID?:number = undefined
    fkiEzsigntemplatedocumentID:number = 0
    fkiEzsigntemplatesignerID:number = 0
@@ -155,5 +160,89 @@ export class DefaultObjectEzsigntemplatesignatureRequest extends DefaultObject {
    sEzsigntemplatesignatureAttachmentdescription?:string = undefined
    iEzsigntemplatesignatureValidationstep?:number = undefined
 }
+
+/**
+ * @export 
+ * A EzsigntemplatesignatureRequest Validation Object
+ * @class ValidationObjectEzsigntemplatesignatureRequest
+ */
+export class ValidationObjectEzsigntemplatesignatureRequest {
+   pkiEzsigntemplatesignatureID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzsigntemplatedocumentID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsigntemplatesignerID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsigntemplatesignerIDValidation = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   iEzsigntemplatedocumentpagePagenumber = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   iEzsigntemplatesignatureX = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsigntemplatesignatureY = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsigntemplatesignatureStep = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   eEzsigntemplatesignatureType = {
+      type: 'enum',
+      allowableValues: ['Acknowledgement','City','Handwritten','Initials','Name','Attachments'],
+      required: true
+   }
+   tEzsigntemplatesignatureTooltip = {
+      type: 'string',
+      required: false
+   }
+   eEzsigntemplatesignatureTooltipposition = {
+      type: 'enum',
+      allowableValues: ['TopLeft','TopCenter','TopRight','MiddleLeft','MiddleRight','BottomLeft','BottomCenter','BottomRight'],
+      required: false
+   }
+   eEzsigntemplatesignatureFont = {
+      type: 'enum',
+      allowableValues: ['Normal','Cursive'],
+      required: false
+   }
+   bEzsigntemplatesignatureRequired = {
+      type: 'boolean',
+      required: false
+   }
+   eEzsigntemplatesignatureAttachmentnamesource = {
+      type: 'enum',
+      allowableValues: ['Description','Customer','DescriptionCustomer'],
+      required: false
+   }
+   sEzsigntemplatesignatureAttachmentdescription = {
+      type: 'string',
+      required: false
+   }
+   iEzsigntemplatesignatureValidationstep = {
+      type: 'integer',
+      required: false
+   }
+} 
 
 

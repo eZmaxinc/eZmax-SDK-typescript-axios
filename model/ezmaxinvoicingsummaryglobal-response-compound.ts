@@ -23,8 +23,6 @@ import { EzmaxinvoicingsummaryglobalResponse } from './ezmaxinvoicingsummaryglob
 // @ts-ignore
 import { EzmaxinvoicingsummaryglobalResponseCompoundAllOf } from './ezmaxinvoicingsummaryglobal-response-compound-all-of';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzmaxinvoicingsummaryglobalResponseCompound
  * A Ezmaxinvoicingsummaryglobal Object
@@ -34,12 +32,17 @@ export type EzmaxinvoicingsummaryglobalResponseCompound = Ezmaxinvoicingsummaryg
 
 
 /**
- * @export 
- * A EzmaxinvoicingsummaryglobalResponseCompound Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzmaxinvoicingsummaryglobalResponseCompound
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzmaxinvoicingsummaryglobalResponseCompound extends DefaultObject {
+
+/**
+ * @export 
+ * A EzmaxinvoicingsummaryglobalResponseCompound Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzmaxinvoicingsummaryglobalResponseCompound
+ */
+export class DataObjectEzmaxinvoicingsummaryglobalResponseCompound {
    pkiEzmaxinvoicingsummaryglobalID?:number = undefined
    fkiEzmaxinvoicingID?:number = undefined
    fkiEzmaxproductID:number = 0
@@ -61,5 +64,107 @@ export class DefaultObjectEzmaxinvoicingsummaryglobalResponseCompound extends De
    tEzmaxproductHelpX:string = ''
    a_objEzmaxinvoicingcommission?:Array<EzmaxinvoicingcommissionResponseCompound> = undefined
 }
+
+/**
+ * @export 
+ * A EzmaxinvoicingsummaryglobalResponseCompound Validation Object
+ * @class ValidationObjectEzmaxinvoicingsummaryglobalResponseCompound
+ */
+export class ValidationObjectEzmaxinvoicingsummaryglobalResponseCompound {
+   pkiEzmaxinvoicingsummaryglobalID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzmaxinvoicingID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzmaxproductID = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   sEzmaxproductDescriptionX = {
+      type: 'string',
+      required: true
+   }
+   dtEzmaxinvoicingsummaryglobalStart = {
+      type: 'string',
+      required: true
+   }
+   dtEzmaxinvoicingsummaryglobalEnd = {
+      type: 'string',
+      required: true
+   }
+   iEzmaxinvoicingsummaryglobalDays = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   dEzmaxinvoicingsummaryglobalCountreal = {
+      type: 'string',
+      pattern: '/^-{0,1}[\d]{1,6}?\.[\d]{2}$/',
+      required: true
+   }
+   dEzmaxinvoicingsummaryglobalCountbilled = {
+      type: 'string',
+      pattern: '/^-{0,1}[\d]{1,6}?\.[\d]{2}$/',
+      required: true
+   }
+   dEzmaxinvoicingsummaryglobalSubtotal = {
+      type: 'string',
+      pattern: '/^-{0,1}[\d]{1,9}?\.[\d]{2}$/',
+      required: true
+   }
+   dEzmaxinvoicingsummaryglobalRebateamount = {
+      type: 'string',
+      pattern: '/^-{0,1}[\d]{1,9}?\.[\d]{2}$/',
+      required: true
+   }
+   dEzmaxinvoicingsummaryglobalRebatepercent = {
+      type: 'string',
+      pattern: '/^-{0,1}[\d]{1,3}?\.[\d]{2}$/',
+      required: true
+   }
+   dEzmaxinvoicingsummaryglobalRebatetotal = {
+      type: 'string',
+      pattern: '/^-{0,1}[\d]{1,9}?\.[\d]{2}$/',
+      required: true
+   }
+   dEzmaxinvoicingsummaryglobalTotal = {
+      type: 'string',
+      pattern: '/^-{0,1}[\d]{1,9}?\.[\d]{2}$/',
+      required: true
+   }
+   dEzmaxinvoicingsummaryglobalRepresentative = {
+      type: 'string',
+      pattern: '/^-{0,1}[\d]{1,9}?\.[\d]{2}$/',
+      required: false
+   }
+   dEzmaxinvoicingsummaryglobalPartner = {
+      type: 'string',
+      pattern: '/^-{0,1}[\d]{1,9}?\.[\d]{2}$/',
+      required: false
+   }
+   dEzmaxinvoicingsummaryglobalNet = {
+      type: 'string',
+      pattern: '/^-{0,1}[\d]{1,9}?\.[\d]{2}$/',
+      required: false
+   }
+   bEzmaxinvoicingsummaryglobalAdjustment = {
+      type: 'boolean',
+      required: true
+   }
+   tEzmaxproductHelpX = {
+      type: 'string',
+      required: true
+   }
+   a_objEzmaxinvoicingcommission = {
+      type: 'array',
+      required: false
+   }
+} 
 
 

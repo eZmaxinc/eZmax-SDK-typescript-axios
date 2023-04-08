@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A Ezsigntemplate Object
  * @export
@@ -54,17 +52,54 @@ export interface EzsigntemplateRequest {
     'bEzsigntemplateAdminonly': boolean;
 }
 /**
- * A EzsigntemplateRequest Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplateRequest
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplateRequest extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntemplateRequest Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplateRequest
+ */
+export class DataObjectEzsigntemplateRequest {
    pkiEzsigntemplateID?:number = undefined
    fkiEzsignfoldertypeID:number = 0
    fkiLanguageID:number = 0
    sEzsigntemplateDescription:string = ''
    bEzsigntemplateAdminonly:boolean = false
 }
+
+/**
+ * @export 
+ * A EzsigntemplateRequest Validation Object
+ * @class ValidationObjectEzsigntemplateRequest
+ */
+export class ValidationObjectEzsigntemplateRequest {
+   pkiEzsigntemplateID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzsignfoldertypeID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiLanguageID = {
+      type: 'integer',
+      minimum: 1,
+      maximum: 2,
+      required: true
+   }
+   sEzsigntemplateDescription = {
+      type: 'string',
+      required: true
+   }
+   bEzsigntemplateAdminonly = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

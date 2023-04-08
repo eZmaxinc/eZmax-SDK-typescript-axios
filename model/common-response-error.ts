@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Generic Error Message
  * @export
@@ -36,14 +34,35 @@ export interface CommonResponseError {
     'eErrorCode': string;
 }
 /**
- * A CommonResponseError Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCommonResponseError
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCommonResponseError extends DefaultObject {
+
+/**
+ * @export 
+ * A CommonResponseError Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCommonResponseError
+ */
+export class DataObjectCommonResponseError {
    sErrorMessage:string = ''
    eErrorCode:string = ''
 }
+
+/**
+ * @export 
+ * A CommonResponseError Validation Object
+ * @class ValidationObjectCommonResponseError
+ */
+export class ValidationObjectCommonResponseError {
+   sErrorMessage = {
+      type: 'string',
+      required: true
+   }
+   eErrorCode = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

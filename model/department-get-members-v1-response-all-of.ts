@@ -17,8 +17,6 @@
 // @ts-ignore
 import { DepartmentGetMembersV1ResponseMPayload } from './department-get-members-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface DepartmentGetMembersV1ResponseAllOf {
     'mPayload': DepartmentGetMembersV1ResponseMPayload;
 }
 /**
- * A DepartmentGetMembersV1ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectDepartmentGetMembersV1ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectDepartmentGetMembersV1ResponseAllOf extends DefaultObject {
-   mPayload:Partial<DepartmentGetMembersV1ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectDepartmentGetMembersV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectDepartmentGetMembersV1ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A DepartmentGetMembersV1ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectDepartmentGetMembersV1ResponseAllOf
+ */
+export class DataObjectDepartmentGetMembersV1ResponseAllOf {
+   mPayload:DepartmentGetMembersV1ResponseMPayload = new DataObjectDepartmentGetMembersV1ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A DepartmentGetMembersV1ResponseAllOf Validation Object
+ * @class ValidationObjectDepartmentGetMembersV1ResponseAllOf
+ */
+export class ValidationObjectDepartmentGetMembersV1ResponseAllOf {
+   mPayload = new ValidationObjectDepartmentGetMembersV1ResponseMPayload()
+} 
 
 

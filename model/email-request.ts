@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * An Email Object
  * @export
@@ -36,14 +34,36 @@ export interface EmailRequest {
     'sEmailAddress': string;
 }
 /**
- * A EmailRequest Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEmailRequest
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEmailRequest extends DefaultObject {
+
+/**
+ * @export 
+ * A EmailRequest Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEmailRequest
+ */
+export class DataObjectEmailRequest {
    fkiEmailtypeID:number = 0
    sEmailAddress:string = ''
 }
+
+/**
+ * @export 
+ * A EmailRequest Validation Object
+ * @class ValidationObjectEmailRequest
+ */
+export class ValidationObjectEmailRequest {
+   fkiEmailtypeID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sEmailAddress = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

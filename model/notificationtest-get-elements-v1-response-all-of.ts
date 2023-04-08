@@ -17,8 +17,6 @@
 // @ts-ignore
 import { NotificationtestGetElementsV1ResponseMPayload } from './notificationtest-get-elements-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface NotificationtestGetElementsV1ResponseAllOf {
     'mPayload': NotificationtestGetElementsV1ResponseMPayload;
 }
 /**
- * A NotificationtestGetElementsV1ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectNotificationtestGetElementsV1ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectNotificationtestGetElementsV1ResponseAllOf extends DefaultObject {
-   mPayload:Partial<NotificationtestGetElementsV1ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectNotificationtestGetElementsV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectNotificationtestGetElementsV1ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A NotificationtestGetElementsV1ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectNotificationtestGetElementsV1ResponseAllOf
+ */
+export class DataObjectNotificationtestGetElementsV1ResponseAllOf {
+   mPayload:NotificationtestGetElementsV1ResponseMPayload = new DataObjectNotificationtestGetElementsV1ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A NotificationtestGetElementsV1ResponseAllOf Validation Object
+ * @class ValidationObjectNotificationtestGetElementsV1ResponseAllOf
+ */
+export class ValidationObjectNotificationtestGetElementsV1ResponseAllOf {
+   mPayload = new ValidationObjectNotificationtestGetElementsV1ResponseMPayload()
+} 
 
 

@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignSuggestSignersV1ResponseMPayload } from './ezsign-suggest-signers-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface EzsignSuggestSignersV1ResponseAllOf {
     'mPayload': EzsignSuggestSignersV1ResponseMPayload;
 }
 /**
- * A EzsignSuggestSignersV1ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignSuggestSignersV1ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignSuggestSignersV1ResponseAllOf extends DefaultObject {
-   mPayload:Partial<EzsignSuggestSignersV1ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectEzsignSuggestSignersV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectEzsignSuggestSignersV1ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A EzsignSuggestSignersV1ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignSuggestSignersV1ResponseAllOf
+ */
+export class DataObjectEzsignSuggestSignersV1ResponseAllOf {
+   mPayload:EzsignSuggestSignersV1ResponseMPayload = new DataObjectEzsignSuggestSignersV1ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A EzsignSuggestSignersV1ResponseAllOf Validation Object
+ * @class ValidationObjectEzsignSuggestSignersV1ResponseAllOf
+ */
+export class ValidationObjectEzsignSuggestSignersV1ResponseAllOf {
+   mPayload = new ValidationObjectEzsignSuggestSignersV1ResponseMPayload()
+} 
 
 

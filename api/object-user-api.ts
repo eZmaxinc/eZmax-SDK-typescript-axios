@@ -21,8 +21,6 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
 // @ts-ignore
-import { CommonGetAutocompleteV1Response } from '../model';
-// @ts-ignore
 import { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
 import { UserGetAutocompleteV2Response } from '../model';
@@ -34,80 +32,6 @@ import { RequestSignature, IHeadersData } from '../api/request-signature';
  */
 export const ObjectUserApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
-        /**
-         * Get the list of User to be used in a dropdown or autocomplete control.
-         * @summary Retrieve Users and IDs
-         * @param {'All' | 'AgentBrokerEmployeeEzsignUserNormal' | 'ClonableUsers' | 'Normal' | 'NormalEzsignSigner'} sSelector The type of Users to return
-         * @param {'All' | 'Active' | 'Inactive'} [eFilterActive] Specify which results we want to display.
-         * @param {string} [sQuery] Allow to filter the returned results
-         * @param {HeaderAcceptLanguage} [acceptLanguage] 
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        userGetAutocompleteV1: async (sSelector: 'All' | 'AgentBrokerEmployeeEzsignUserNormal' | 'ClonableUsers' | 'Normal' | 'NormalEzsignSigner', eFilterActive?: 'All' | 'Active' | 'Inactive', sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'sSelector' is not null or undefined
-            assertParamExists('userGetAutocompleteV1', 'sSelector', sSelector)
-            const localVarPath = `/1/object/user/getAutocomplete/{sSelector}`
-                .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-            if (eFilterActive !== undefined) {
-                localVarQueryParameter['eFilterActive'] = eFilterActive;
-            }
-
-            if (sQuery !== undefined) {
-                localVarQueryParameter['sQuery'] = sQuery;
-            }
-
-            if (acceptLanguage != null) {
-                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string' 
-                    ? acceptLanguage 
-                    : JSON.stringify(acceptLanguage);
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'GET' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
         /**
          * Get the list of User to be used in a dropdown or autocomplete control.
          * @summary Retrieve Users and IDs
@@ -199,21 +123,6 @@ export const ObjectUserApiFp = function(configuration?: Configuration) {
          * @param {string} [sQuery] Allow to filter the returned results
          * @param {HeaderAcceptLanguage} [acceptLanguage] 
          * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        async userGetAutocompleteV1(sSelector: 'All' | 'AgentBrokerEmployeeEzsignUserNormal' | 'ClonableUsers' | 'Normal' | 'NormalEzsignSigner', eFilterActive?: 'All' | 'Active' | 'Inactive', sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonGetAutocompleteV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.userGetAutocompleteV1(sSelector, eFilterActive, sQuery, acceptLanguage, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * Get the list of User to be used in a dropdown or autocomplete control.
-         * @summary Retrieve Users and IDs
-         * @param {'All' | 'AgentBrokerEmployeeEzsignUserNormal' | 'ClonableUsers' | 'Normal' | 'NormalEzsignSigner'} sSelector The type of Users to return
-         * @param {'All' | 'Active' | 'Inactive'} [eFilterActive] Specify which results we want to display.
-         * @param {string} [sQuery] Allow to filter the returned results
-         * @param {HeaderAcceptLanguage} [acceptLanguage] 
-         * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         async userGetAutocompleteV2(sSelector: 'All' | 'AgentBrokerEmployeeEzsignUserNormal' | 'ClonableUsers' | 'Normal' | 'NormalEzsignSigner', eFilterActive?: 'All' | 'Active' | 'Inactive', sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserGetAutocompleteV2Response>> {
@@ -238,20 +147,6 @@ export const ObjectUserApiFactory = function (configuration?: Configuration, bas
          * @param {string} [sQuery] Allow to filter the returned results
          * @param {HeaderAcceptLanguage} [acceptLanguage] 
          * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        userGetAutocompleteV1(sSelector: 'All' | 'AgentBrokerEmployeeEzsignUserNormal' | 'ClonableUsers' | 'Normal' | 'NormalEzsignSigner', eFilterActive?: 'All' | 'Active' | 'Inactive', sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: any): AxiosPromise<CommonGetAutocompleteV1Response> {
-            return localVarFp.userGetAutocompleteV1(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Get the list of User to be used in a dropdown or autocomplete control.
-         * @summary Retrieve Users and IDs
-         * @param {'All' | 'AgentBrokerEmployeeEzsignUserNormal' | 'ClonableUsers' | 'Normal' | 'NormalEzsignSigner'} sSelector The type of Users to return
-         * @param {'All' | 'Active' | 'Inactive'} [eFilterActive] Specify which results we want to display.
-         * @param {string} [sQuery] Allow to filter the returned results
-         * @param {HeaderAcceptLanguage} [acceptLanguage] 
-         * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         userGetAutocompleteV2(sSelector: 'All' | 'AgentBrokerEmployeeEzsignUserNormal' | 'ClonableUsers' | 'Normal' | 'NormalEzsignSigner', eFilterActive?: 'All' | 'Active' | 'Inactive', sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: any): AxiosPromise<UserGetAutocompleteV2Response> {
@@ -267,22 +162,6 @@ export const ObjectUserApiFactory = function (configuration?: Configuration, bas
  * @extends {BaseAPI}
  */
 export class ObjectUserApi extends BaseAPI {
-    /**
-     * Get the list of User to be used in a dropdown or autocomplete control.
-     * @summary Retrieve Users and IDs
-     * @param {'All' | 'AgentBrokerEmployeeEzsignUserNormal' | 'ClonableUsers' | 'Normal' | 'NormalEzsignSigner'} sSelector The type of Users to return
-     * @param {'All' | 'Active' | 'Inactive'} [eFilterActive] Specify which results we want to display.
-     * @param {string} [sQuery] Allow to filter the returned results
-     * @param {HeaderAcceptLanguage} [acceptLanguage] 
-     * @param {*} [options] Override http request option.
-     * @deprecated
-     * @throws {RequiredError}
-     * @memberof ObjectUserApi
-     */
-    public userGetAutocompleteV1(sSelector: 'All' | 'AgentBrokerEmployeeEzsignUserNormal' | 'ClonableUsers' | 'Normal' | 'NormalEzsignSigner', eFilterActive?: 'All' | 'Active' | 'Inactive', sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig) {
-        return ObjectUserApiFp(this.configuration).userGetAutocompleteV1(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(this.axios, this.basePath));
-    }
-
     /**
      * Get the list of User to be used in a dropdown or autocomplete control.
      * @summary Retrieve Users and IDs

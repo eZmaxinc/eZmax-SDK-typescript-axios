@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayload } from './ezsignbulksend-create-ezsignbulksendtransmission-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseAllOf {
     'mPayload': EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayload;
 }
 /**
- * A EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignbulksendCreateEzsignbulksendtransmissionV1ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignbulksendCreateEzsignbulksendtransmissionV1ResponseAllOf extends DefaultObject {
-   mPayload:Partial<EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectEzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectEzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignbulksendCreateEzsignbulksendtransmissionV1ResponseAllOf
+ */
+export class DataObjectEzsignbulksendCreateEzsignbulksendtransmissionV1ResponseAllOf {
+   mPayload:EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayload = new DataObjectEzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseAllOf Validation Object
+ * @class ValidationObjectEzsignbulksendCreateEzsignbulksendtransmissionV1ResponseAllOf
+ */
+export class ValidationObjectEzsignbulksendCreateEzsignbulksendtransmissionV1ResponseAllOf {
+   mPayload = new ValidationObjectEzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayload()
+} 
 
 

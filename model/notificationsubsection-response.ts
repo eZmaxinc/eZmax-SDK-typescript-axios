@@ -17,8 +17,6 @@
 // @ts-ignore
 import { MultilingualNotificationsubsectionName } from './multilingual-notificationsubsection-name';
 
-import { DefaultObject } from '../base'
-
 /**
  * A Notificationsubsection Object
  * @export
@@ -57,17 +55,53 @@ export interface NotificationsubsectionResponse {
     'sNotificationsubsectionNameX': string;
 }
 /**
- * A NotificationsubsectionResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectNotificationsubsectionResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectNotificationsubsectionResponse extends DefaultObject {
+// @ts-ignore
+import { DataObjectMultilingualNotificationsubsectionName } from './'
+// @ts-ignore
+import { ValidationObjectMultilingualNotificationsubsectionName } from './'
+
+/**
+ * @export 
+ * A NotificationsubsectionResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectNotificationsubsectionResponse
+ */
+export class DataObjectNotificationsubsectionResponse {
    pkiNotificationsubsectionID:number = 0
    fkiNotificationsectionID:number = 0
-   objNotificationsubsectionName?:Partial<MultilingualNotificationsubsectionName> = undefined
+   objNotificationsubsectionName?:MultilingualNotificationsubsectionName = undefined
    sNotificationsectionNameX?:string = undefined
    sNotificationsubsectionNameX:string = ''
 }
+
+/**
+ * @export 
+ * A NotificationsubsectionResponse Validation Object
+ * @class ValidationObjectNotificationsubsectionResponse
+ */
+export class ValidationObjectNotificationsubsectionResponse {
+   pkiNotificationsubsectionID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiNotificationsectionID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   objNotificationsubsectionName = new ValidationObjectMultilingualNotificationsubsectionName()
+   sNotificationsectionNameX = {
+      type: 'string',
+      required: false
+   }
+   sNotificationsubsectionNameX = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

@@ -29,8 +29,6 @@ import { FranchiseofficeGetAutocompleteV2ResponseAllOf } from './franchiseoffice
 // @ts-ignore
 import { FranchiseofficeGetAutocompleteV2ResponseMPayload } from './franchiseoffice-get-autocomplete-v2-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type FranchiseofficeGetAutocompleteV2Response
  * Response for GET /2/object/franchiseoffice/getAutocomplete
@@ -40,15 +38,43 @@ export type FranchiseofficeGetAutocompleteV2Response = CommonResponse & Franchis
 
 
 /**
- * @export 
- * A FranchiseofficeGetAutocompleteV2Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectFranchiseofficeGetAutocompleteV2Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectFranchiseofficeGetAutocompleteV2Response extends DefaultObject {
-   mPayload:Partial<FranchiseofficeGetAutocompleteV2ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectFranchiseofficeGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectFranchiseofficeGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A FranchiseofficeGetAutocompleteV2Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectFranchiseofficeGetAutocompleteV2Response
+ */
+export class DataObjectFranchiseofficeGetAutocompleteV2Response {
+   mPayload:FranchiseofficeGetAutocompleteV2ResponseMPayload = new DataObjectFranchiseofficeGetAutocompleteV2ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A FranchiseofficeGetAutocompleteV2Response Validation Object
+ * @class ValidationObjectFranchiseofficeGetAutocompleteV2Response
+ */
+export class ValidationObjectFranchiseofficeGetAutocompleteV2Response {
+   mPayload = new ValidationObjectFranchiseofficeGetAutocompleteV2ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

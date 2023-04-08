@@ -20,8 +20,6 @@ import { FieldEEzsignfolderStep } from './field-eezsignfolder-step';
 // @ts-ignore
 import { FieldEEzsignfoldertypePrivacylevel } from './field-eezsignfoldertype-privacylevel';
 
-import { DefaultObject } from '../base'
-
 /**
  * An Ezsignfolder List Element
  * @export
@@ -107,13 +105,20 @@ export interface EzsignfolderListElement {
      */
     'iEzsignsignatureSigned': number;
 }
+
+
 /**
- * A EzsignfolderListElement Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfolderListElement
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfolderListElement extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignfolderListElement Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfolderListElement
+ */
+export class DataObjectEzsignfolderListElement {
    pkiEzsignfolderID:number = 0
    fkiEzsignfoldertypeID:number = 0
    eEzsignfoldertypePrivacylevel:FieldEEzsignfoldertypePrivacylevel = 'User'
@@ -128,5 +133,69 @@ export class DefaultObjectEzsignfolderListElement extends DefaultObject {
    iEzsignsignature:number = 0
    iEzsignsignatureSigned:number = 0
 }
+
+/**
+ * @export 
+ * A EzsignfolderListElement Validation Object
+ * @class ValidationObjectEzsignfolderListElement
+ */
+export class ValidationObjectEzsignfolderListElement {
+   pkiEzsignfolderID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsignfoldertypeID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   eEzsignfoldertypePrivacylevel = {
+      type: 'enum',
+      allowableValues: ['User','Usergroup'],
+      required: true
+   }
+   sEzsignfoldertypeNameX = {
+      type: 'string',
+      required: true
+   }
+   sEzsignfolderDescription = {
+      type: 'string',
+      required: true
+   }
+   eEzsignfolderStep = {
+      type: 'enum',
+      allowableValues: ['Unsent','PendingSend','Sent','PartiallySigned','Expired','Completed','Archived','Disposed'],
+      required: true
+   }
+   dtCreatedDate = {
+      type: 'string',
+      required: true
+   }
+   dtEzsignfolderSentdate = {
+      type: 'string',
+      required: false
+   }
+   dtEzsignfolderDuedate = {
+      type: 'string',
+      required: false
+   }
+   iEzsigndocument = {
+      type: 'integer',
+      required: true
+   }
+   iEzsigndocumentEdm = {
+      type: 'integer',
+      required: true
+   }
+   iEzsignsignature = {
+      type: 'integer',
+      required: true
+   }
+   iEzsignsignatureSigned = {
+      type: 'integer',
+      required: true
+   }
+} 
 
 

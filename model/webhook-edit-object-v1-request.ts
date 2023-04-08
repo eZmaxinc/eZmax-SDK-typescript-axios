@@ -17,8 +17,6 @@
 // @ts-ignore
 import { WebhookRequestCompound } from './webhook-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for PUT /1/object/webhook/{pkiWebhookID}
  * @export
@@ -33,13 +31,31 @@ export interface WebhookEditObjectV1Request {
     'objWebhook': WebhookRequestCompound;
 }
 /**
- * A WebhookEditObjectV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectWebhookEditObjectV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectWebhookEditObjectV1Request extends DefaultObject {
-   objWebhook:Partial<WebhookRequestCompound> = {}
+// @ts-ignore
+import { DataObjectWebhookRequestCompound } from './'
+// @ts-ignore
+import { ValidationObjectWebhookRequestCompound } from './'
+
+/**
+ * @export 
+ * A WebhookEditObjectV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectWebhookEditObjectV1Request
+ */
+export class DataObjectWebhookEditObjectV1Request {
+   objWebhook:WebhookRequestCompound = new DataObjectWebhookRequestCompound()
 }
+
+/**
+ * @export 
+ * A WebhookEditObjectV1Request Validation Object
+ * @class ValidationObjectWebhookEditObjectV1Request
+ */
+export class ValidationObjectWebhookEditObjectV1Request {
+   objWebhook = new ValidationObjectWebhookRequestCompound()
+} 
 
 

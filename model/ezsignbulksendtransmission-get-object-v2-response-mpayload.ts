@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignbulksendtransmissionResponseCompound } from './ezsignbulksendtransmission-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for GET /2/object/ezsignbulksendtransmission/{pkiEzsignbulksendtransmissionID}
  * @export
@@ -33,13 +31,31 @@ export interface EzsignbulksendtransmissionGetObjectV2ResponseMPayload {
     'objEzsignbulksendtransmission': EzsignbulksendtransmissionResponseCompound;
 }
 /**
- * A EzsignbulksendtransmissionGetObjectV2ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignbulksendtransmissionGetObjectV2ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignbulksendtransmissionGetObjectV2ResponseMPayload extends DefaultObject {
-   objEzsignbulksendtransmission:Partial<EzsignbulksendtransmissionResponseCompound> = {}
+// @ts-ignore
+import { DataObjectEzsignbulksendtransmissionResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectEzsignbulksendtransmissionResponseCompound } from './'
+
+/**
+ * @export 
+ * A EzsignbulksendtransmissionGetObjectV2ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignbulksendtransmissionGetObjectV2ResponseMPayload
+ */
+export class DataObjectEzsignbulksendtransmissionGetObjectV2ResponseMPayload {
+   objEzsignbulksendtransmission:EzsignbulksendtransmissionResponseCompound = new DataObjectEzsignbulksendtransmissionResponseCompound()
 }
+
+/**
+ * @export 
+ * A EzsignbulksendtransmissionGetObjectV2ResponseMPayload Validation Object
+ * @class ValidationObjectEzsignbulksendtransmissionGetObjectV2ResponseMPayload
+ */
+export class ValidationObjectEzsignbulksendtransmissionGetObjectV2ResponseMPayload {
+   objEzsignbulksendtransmission = new ValidationObjectEzsignbulksendtransmissionResponseCompound()
+} 
 
 

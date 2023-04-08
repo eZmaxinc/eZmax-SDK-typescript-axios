@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignformfieldgroupRequestCompound } from './ezsignformfieldgroup-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for POST /1/object/ezsignformfieldgroup
  * @export
@@ -33,13 +31,31 @@ export interface EzsignformfieldgroupCreateObjectV1Request {
     'a_objEzsignformfieldgroup': Array<EzsignformfieldgroupRequestCompound>;
 }
 /**
- * A EzsignformfieldgroupCreateObjectV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignformfieldgroupCreateObjectV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignformfieldgroupCreateObjectV1Request extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignformfieldgroupCreateObjectV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignformfieldgroupCreateObjectV1Request
+ */
+export class DataObjectEzsignformfieldgroupCreateObjectV1Request {
    a_objEzsignformfieldgroup:Array<EzsignformfieldgroupRequestCompound> = []
 }
+
+/**
+ * @export 
+ * A EzsignformfieldgroupCreateObjectV1Request Validation Object
+ * @class ValidationObjectEzsignformfieldgroupCreateObjectV1Request
+ */
+export class ValidationObjectEzsignformfieldgroupCreateObjectV1Request {
+   a_objEzsignformfieldgroup = {
+      type: 'array',
+      minItems: 1,
+      required: true
+   }
+} 
 
 

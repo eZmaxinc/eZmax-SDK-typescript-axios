@@ -29,8 +29,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 // @ts-ignore
 import { CommonResponseObjDebugPayloadGetList } from './common-response-obj-debug-payload-get-list';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type BrandingGetListV1Response
  * Response for GET /1/object/branding/getList
@@ -40,15 +38,43 @@ export type BrandingGetListV1Response = BrandingGetListV1ResponseAllOf & CommonR
 
 
 /**
- * @export 
- * A BrandingGetListV1Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectBrandingGetListV1Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectBrandingGetListV1Response extends DefaultObject {
-   mPayload:Partial<BrandingGetListV1ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayloadGetList> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectBrandingGetListV1ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayloadGetList } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectBrandingGetListV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayloadGetList } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A BrandingGetListV1Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectBrandingGetListV1Response
+ */
+export class DataObjectBrandingGetListV1Response {
+   mPayload:BrandingGetListV1ResponseMPayload = new DataObjectBrandingGetListV1ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayloadGetList = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A BrandingGetListV1Response Validation Object
+ * @class ValidationObjectBrandingGetListV1Response
+ */
+export class ValidationObjectBrandingGetListV1Response {
+   mPayload = new ValidationObjectBrandingGetListV1ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayloadGetList()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

@@ -17,8 +17,6 @@
 // @ts-ignore
 import { CustomFormDataDocumentResponse } from './custom-form-data-document-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * A forms Data Folder Object
  * @export
@@ -45,15 +43,41 @@ export interface CustomFormsDataFolderResponse {
     'a_objFormDataDocument': Array<CustomFormDataDocumentResponse>;
 }
 /**
- * A CustomFormsDataFolderResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCustomFormsDataFolderResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCustomFormsDataFolderResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A CustomFormsDataFolderResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCustomFormsDataFolderResponse
+ */
+export class DataObjectCustomFormsDataFolderResponse {
    pkiEzsignfolderID:number = 0
    sEzsignfolderDescription:string = ''
    a_objFormDataDocument:Array<CustomFormDataDocumentResponse> = []
 }
+
+/**
+ * @export 
+ * A CustomFormsDataFolderResponse Validation Object
+ * @class ValidationObjectCustomFormsDataFolderResponse
+ */
+export class ValidationObjectCustomFormsDataFolderResponse {
+   pkiEzsignfolderID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sEzsignfolderDescription = {
+      type: 'string',
+      required: true
+   }
+   a_objFormDataDocument = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

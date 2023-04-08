@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A Ezsigntemplate List Element
  * @export
@@ -78,12 +76,17 @@ export interface EzsigntemplateListElement {
     'sEzsignfoldertypeNameX': string;
 }
 /**
- * A EzsigntemplateListElement Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplateListElement
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplateListElement extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntemplateListElement Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplateListElement
+ */
+export class DataObjectEzsigntemplateListElement {
    pkiEzsigntemplateID:number = 0
    fkiEzsignfoldertypeID:number = 0
    fkiLanguageID:number = 0
@@ -94,5 +97,54 @@ export class DefaultObjectEzsigntemplateListElement extends DefaultObject {
    bEzsigntemplateIncomplete:boolean = false
    sEzsignfoldertypeNameX:string = ''
 }
+
+/**
+ * @export 
+ * A EzsigntemplateListElement Validation Object
+ * @class ValidationObjectEzsigntemplateListElement
+ */
+export class ValidationObjectEzsigntemplateListElement {
+   pkiEzsigntemplateID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsignfoldertypeID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiLanguageID = {
+      type: 'integer',
+      minimum: 1,
+      maximum: 2,
+      required: true
+   }
+   sEzsigntemplateDescription = {
+      type: 'string',
+      required: true
+   }
+   iEzsigntemplatedocumentPagetotal = {
+      type: 'integer',
+      minimum: 1,
+      required: false
+   }
+   iEzsigntemplateSignaturetotal = {
+      type: 'integer',
+      required: false
+   }
+   iEzsigntemplateFormfieldtotal = {
+      type: 'integer',
+      required: false
+   }
+   bEzsigntemplateIncomplete = {
+      type: 'boolean',
+      required: true
+   }
+   sEzsignfoldertypeNameX = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

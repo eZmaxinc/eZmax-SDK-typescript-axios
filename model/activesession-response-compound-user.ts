@@ -17,8 +17,6 @@
 // @ts-ignore
 import { FieldEUserEzsignsendreminderfrequency } from './field-euser-ezsignsendreminderfrequency';
 
-import { DefaultObject } from '../base'
-
 /**
  * An Activesession->User Object and children to create a complete structure
  * @export
@@ -86,13 +84,20 @@ export interface ActivesessionResponseCompoundUser {
      */
     'iUserListresult': number;
 }
+
+
 /**
- * A ActivesessionResponseCompoundUser Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectActivesessionResponseCompoundUser
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectActivesessionResponseCompoundUser extends DefaultObject {
+
+/**
+ * @export 
+ * A ActivesessionResponseCompoundUser Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectActivesessionResponseCompoundUser
+ */
+export class DataObjectActivesessionResponseCompoundUser {
    pkiUserID:number = 0
    fkiTimezoneID:number = 0
    sAvatarUrl:string = ''
@@ -104,5 +109,59 @@ export class DefaultObjectActivesessionResponseCompoundUser extends DefaultObjec
    bUserInterfacedark:boolean = false
    iUserListresult:number = 0
 }
+
+/**
+ * @export 
+ * A ActivesessionResponseCompoundUser Validation Object
+ * @class ValidationObjectActivesessionResponseCompoundUser
+ */
+export class ValidationObjectActivesessionResponseCompoundUser {
+   pkiUserID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiTimezoneID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sAvatarUrl = {
+      type: 'string',
+      required: true
+   }
+   sUserFirstname = {
+      type: 'string',
+      required: true
+   }
+   sUserLastname = {
+      type: 'string',
+      required: true
+   }
+   sEmailAddress = {
+      type: 'string',
+      required: true
+   }
+   eUserEzsignsendreminderfrequency = {
+      type: 'enum',
+      allowableValues: ['None','Daily','Weekly'],
+      required: true
+   }
+   iUserInterfacecolor = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   bUserInterfacedark = {
+      type: 'boolean',
+      required: true
+   }
+   iUserListresult = {
+      type: 'integer',
+      minimum: 5,
+      maximum: 500,
+      required: true
+   }
+} 
 
 

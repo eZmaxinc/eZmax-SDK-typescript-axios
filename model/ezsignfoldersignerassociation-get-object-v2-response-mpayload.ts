@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignfoldersignerassociationResponseCompound } from './ezsignfoldersignerassociation-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for GET /2/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}
  * @export
@@ -33,13 +31,31 @@ export interface EzsignfoldersignerassociationGetObjectV2ResponseMPayload {
     'objEzsignfoldersignerassociation': EzsignfoldersignerassociationResponseCompound;
 }
 /**
- * A EzsignfoldersignerassociationGetObjectV2ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfoldersignerassociationGetObjectV2ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfoldersignerassociationGetObjectV2ResponseMPayload extends DefaultObject {
-   objEzsignfoldersignerassociation:Partial<EzsignfoldersignerassociationResponseCompound> = {}
+// @ts-ignore
+import { DataObjectEzsignfoldersignerassociationResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectEzsignfoldersignerassociationResponseCompound } from './'
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationGetObjectV2ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfoldersignerassociationGetObjectV2ResponseMPayload
+ */
+export class DataObjectEzsignfoldersignerassociationGetObjectV2ResponseMPayload {
+   objEzsignfoldersignerassociation:EzsignfoldersignerassociationResponseCompound = new DataObjectEzsignfoldersignerassociationResponseCompound()
 }
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationGetObjectV2ResponseMPayload Validation Object
+ * @class ValidationObjectEzsignfoldersignerassociationGetObjectV2ResponseMPayload
+ */
+export class ValidationObjectEzsignfoldersignerassociationGetObjectV2ResponseMPayload {
+   objEzsignfoldersignerassociation = new ValidationObjectEzsignfoldersignerassociationResponseCompound()
+} 
 
 

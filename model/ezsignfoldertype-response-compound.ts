@@ -32,8 +32,6 @@ import { FieldEEzsignfoldertypeSendreminderfrequency } from './field-eezsignfold
 // @ts-ignore
 import { MultilingualEzsignfoldertypeName } from './multilingual-ezsignfoldertype-name';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsignfoldertypeResponseCompound
  * A Ezsignfoldertype Object
@@ -42,15 +40,25 @@ import { DefaultObject } from '../base'
 export type EzsignfoldertypeResponseCompound = EzsignfoldertypeRequestCompoundAllOf & EzsignfoldertypeResponse;
 
 
+
+/**
+ * @import
+ * Imports Child Data Object
+ */
+// @ts-ignore
+import { DataObjectMultilingualEzsignfoldertypeName } from './'
+// @ts-ignore
+import { ValidationObjectMultilingualEzsignfoldertypeName } from './'
+
 /**
  * @export 
- * A EzsignfoldertypeResponseCompound Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsignfoldertypeResponseCompound
+ * A EzsignfoldertypeResponseCompound Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfoldertypeResponseCompound
  */
-export class DefaultObjectEzsignfoldertypeResponseCompound extends DefaultObject {
+export class DataObjectEzsignfoldertypeResponseCompound {
    pkiEzsignfoldertypeID:number = 0
-   objEzsignfoldertypeName:Partial<MultilingualEzsignfoldertypeName> = {}
+   objEzsignfoldertypeName:MultilingualEzsignfoldertypeName = new DataObjectMultilingualEzsignfoldertypeName()
    fkiBrandingID:number = 0
    fkiBillingentityinternalID?:number = undefined
    fkiUsergroupID?:number = undefined
@@ -86,5 +94,170 @@ export class DefaultObjectEzsignfoldertypeResponseCompound extends DefaultObject
    a_fkiUserIDSigned?:Array<number> = undefined
    a_fkiUserIDSummary?:Array<number> = undefined
 }
+
+/**
+ * @export 
+ * A EzsignfoldertypeResponseCompound Validation Object
+ * @class ValidationObjectEzsignfoldertypeResponseCompound
+ */
+export class ValidationObjectEzsignfoldertypeResponseCompound {
+   pkiEzsignfoldertypeID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   objEzsignfoldertypeName = new ValidationObjectMultilingualEzsignfoldertypeName()
+   fkiBrandingID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiBillingentityinternalID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiUsergroupID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiUsergroupIDRestricted = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzsigntsarequirementID = {
+      type: 'integer',
+      minimum: 1,
+      maximum: 3,
+      required: false
+   }
+   sBrandingDescriptionX = {
+      type: 'string',
+      required: true
+   }
+   sBillingentityinternalDescriptionX = {
+      type: 'string',
+      required: false
+   }
+   sEzsigntsarequirementDescriptionX = {
+      type: 'string',
+      required: false
+   }
+   sEmailAddressSigned = {
+      type: 'string',
+      required: false
+   }
+   sEmailAddressSummary = {
+      type: 'string',
+      required: false
+   }
+   sUsergroupNameX = {
+      type: 'string',
+      required: false
+   }
+   sUsergroupNameXRestricted = {
+      type: 'string',
+      required: false
+   }
+   eEzsignfoldertypePrivacylevel = {
+      type: 'enum',
+      allowableValues: ['User','Usergroup'],
+      required: true
+   }
+   eEzsignfoldertypeSendreminderfrequency = {
+      type: 'enum',
+      allowableValues: ['None','Daily','Weekly'],
+      required: false
+   }
+   iEzsignfoldertypeArchivaldays = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 180,
+      required: true
+   }
+   eEzsignfoldertypeDisposal = {
+      type: 'enum',
+      allowableValues: ['No','Manual','Automatic'],
+      required: true
+   }
+   iEzsignfoldertypeDisposaldays = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 9999,
+      required: false
+   }
+   iEzsignfoldertypeDeadlinedays = {
+      type: 'integer',
+      minimum: 1,
+      maximum: 60,
+      required: true
+   }
+   bEzsignfoldertypeSendattatchmentsigner = {
+      type: 'boolean',
+      required: true
+   }
+   bEzsignfoldertypeSendsignedtodocumentowner = {
+      type: 'boolean',
+      required: true
+   }
+   bEzsignfoldertypeSendsignedtofolderowner = {
+      type: 'boolean',
+      required: true
+   }
+   bEzsignfoldertypeSendsignedtofullgroup = {
+      type: 'boolean',
+      required: false
+   }
+   bEzsignfoldertypeSendsignedtolimitedgroup = {
+      type: 'boolean',
+      required: false
+   }
+   bEzsignfoldertypeSendsignedtocolleague = {
+      type: 'boolean',
+      required: true
+   }
+   bEzsignfoldertypeSendsummarytodocumentowner = {
+      type: 'boolean',
+      required: true
+   }
+   bEzsignfoldertypeSendsummarytofolderowner = {
+      type: 'boolean',
+      required: true
+   }
+   bEzsignfoldertypeSendsummarytofullgroup = {
+      type: 'boolean',
+      required: false
+   }
+   bEzsignfoldertypeSendsummarytolimitedgroup = {
+      type: 'boolean',
+      required: false
+   }
+   bEzsignfoldertypeSendsummarytocolleague = {
+      type: 'boolean',
+      required: true
+   }
+   bEzsignfoldertypeIncludeproofsigner = {
+      type: 'boolean',
+      required: true
+   }
+   bEzsignfoldertypeIncludeproofuser = {
+      type: 'boolean',
+      required: true
+   }
+   bEzsignfoldertypeIsactive = {
+      type: 'boolean',
+      required: true
+   }
+   a_fkiUserIDSigned = {
+      type: 'array',
+      required: false
+   }
+   a_fkiUserIDSummary = {
+      type: 'array',
+      required: false
+   }
+} 
 
 

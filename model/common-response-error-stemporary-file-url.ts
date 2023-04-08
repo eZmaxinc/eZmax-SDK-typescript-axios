@@ -20,8 +20,6 @@ import { CommonResponseError } from './common-response-error';
 // @ts-ignore
 import { CommonResponseErrorSTemporaryFileUrlAllOf } from './common-response-error-stemporary-file-url-all-of';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type CommonResponseErrorSTemporaryFileUrl
  * Generic Error Message
@@ -31,15 +29,40 @@ export type CommonResponseErrorSTemporaryFileUrl = CommonResponseError & CommonR
 
 
 /**
- * @export 
- * A CommonResponseErrorSTemporaryFileUrl Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectCommonResponseErrorSTemporaryFileUrl
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCommonResponseErrorSTemporaryFileUrl extends DefaultObject {
+
+/**
+ * @export 
+ * A CommonResponseErrorSTemporaryFileUrl Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCommonResponseErrorSTemporaryFileUrl
+ */
+export class DataObjectCommonResponseErrorSTemporaryFileUrl {
    sTemporaryFileUrl?:string = undefined
    sErrorMessage:string = ''
    eErrorCode:string = ''
 }
+
+/**
+ * @export 
+ * A CommonResponseErrorSTemporaryFileUrl Validation Object
+ * @class ValidationObjectCommonResponseErrorSTemporaryFileUrl
+ */
+export class ValidationObjectCommonResponseErrorSTemporaryFileUrl {
+   sTemporaryFileUrl = {
+      type: 'string',
+      required: false
+   }
+   sErrorMessage = {
+      type: 'string',
+      required: true
+   }
+   eErrorCode = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

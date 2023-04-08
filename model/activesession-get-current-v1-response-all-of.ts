@@ -17,8 +17,6 @@
 // @ts-ignore
 import { ActivesessionGetCurrentV1ResponseMPayload } from './activesession-get-current-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface ActivesessionGetCurrentV1ResponseAllOf {
     'mPayload': ActivesessionGetCurrentV1ResponseMPayload;
 }
 /**
- * A ActivesessionGetCurrentV1ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectActivesessionGetCurrentV1ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectActivesessionGetCurrentV1ResponseAllOf extends DefaultObject {
-   mPayload:Partial<ActivesessionGetCurrentV1ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectActivesessionGetCurrentV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectActivesessionGetCurrentV1ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A ActivesessionGetCurrentV1ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectActivesessionGetCurrentV1ResponseAllOf
+ */
+export class DataObjectActivesessionGetCurrentV1ResponseAllOf {
+   mPayload:ActivesessionGetCurrentV1ResponseMPayload = new DataObjectActivesessionGetCurrentV1ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A ActivesessionGetCurrentV1ResponseAllOf Validation Object
+ * @class ValidationObjectActivesessionGetCurrentV1ResponseAllOf
+ */
+export class ValidationObjectActivesessionGetCurrentV1ResponseAllOf {
+   mPayload = new ValidationObjectActivesessionGetCurrentV1ResponseMPayload()
+} 
 
 

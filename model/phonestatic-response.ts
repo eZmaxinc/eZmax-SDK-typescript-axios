@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A Phonestatic Object
  * @export
@@ -42,15 +40,43 @@ export interface PhonestaticResponse {
     'sPhonestaticExtension'?: string;
 }
 /**
- * A PhonestaticResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectPhonestaticResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectPhonestaticResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A PhonestaticResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectPhonestaticResponse
+ */
+export class DataObjectPhonestaticResponse {
    pkiPhonestaticID:number = 0
    sPhonestaticE164?:string = undefined
    sPhonestaticExtension?:string = undefined
 }
+
+/**
+ * @export 
+ * A PhonestaticResponse Validation Object
+ * @class ValidationObjectPhonestaticResponse
+ */
+export class ValidationObjectPhonestaticResponse {
+   pkiPhonestaticID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sPhonestaticE164 = {
+      type: 'string',
+      pattern: '/^\+[1-9]\d{1,14}$/',
+      required: false
+   }
+   sPhonestaticExtension = {
+      type: 'string',
+      pattern: '/^\d/',
+      required: false
+   }
+} 
 
 

@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A Ezsignfoldersignerassociation->User Object and children to create a complete structure
  * @export
@@ -54,17 +52,53 @@ export interface EzsignfoldersignerassociationResponseCompoundUser {
     'sEmailAddress': string;
 }
 /**
- * A EzsignfoldersignerassociationResponseCompoundUser Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfoldersignerassociationResponseCompoundUser
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfoldersignerassociationResponseCompoundUser extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationResponseCompoundUser Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfoldersignerassociationResponseCompoundUser
+ */
+export class DataObjectEzsignfoldersignerassociationResponseCompoundUser {
    pkiUserID:number = 0
    fkiLanguageID:number = 0
    sUserFirstname:string = ''
    sUserLastname:string = ''
    sEmailAddress:string = ''
 }
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationResponseCompoundUser Validation Object
+ * @class ValidationObjectEzsignfoldersignerassociationResponseCompoundUser
+ */
+export class ValidationObjectEzsignfoldersignerassociationResponseCompoundUser {
+   pkiUserID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiLanguageID = {
+      type: 'integer',
+      minimum: 1,
+      maximum: 2,
+      required: true
+   }
+   sUserFirstname = {
+      type: 'string',
+      required: true
+   }
+   sUserLastname = {
+      type: 'string',
+      required: true
+   }
+   sEmailAddress = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

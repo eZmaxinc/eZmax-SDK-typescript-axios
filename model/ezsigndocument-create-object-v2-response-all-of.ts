@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigndocumentCreateObjectV2ResponseMPayload } from './ezsigndocument-create-object-v2-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface EzsigndocumentCreateObjectV2ResponseAllOf {
     'mPayload': EzsigndocumentCreateObjectV2ResponseMPayload;
 }
 /**
- * A EzsigndocumentCreateObjectV2ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigndocumentCreateObjectV2ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigndocumentCreateObjectV2ResponseAllOf extends DefaultObject {
-   mPayload:Partial<EzsigndocumentCreateObjectV2ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectEzsigndocumentCreateObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectEzsigndocumentCreateObjectV2ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A EzsigndocumentCreateObjectV2ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigndocumentCreateObjectV2ResponseAllOf
+ */
+export class DataObjectEzsigndocumentCreateObjectV2ResponseAllOf {
+   mPayload:EzsigndocumentCreateObjectV2ResponseMPayload = new DataObjectEzsigndocumentCreateObjectV2ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A EzsigndocumentCreateObjectV2ResponseAllOf Validation Object
+ * @class ValidationObjectEzsigndocumentCreateObjectV2ResponseAllOf
+ */
+export class ValidationObjectEzsigndocumentCreateObjectV2ResponseAllOf {
+   mPayload = new ValidationObjectEzsigndocumentCreateObjectV2ResponseMPayload()
+} 
 
 

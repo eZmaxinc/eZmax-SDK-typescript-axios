@@ -23,8 +23,6 @@ import { FieldEWebhookManagementevent } from './field-ewebhook-managementevent';
 // @ts-ignore
 import { FieldEWebhookModule } from './field-ewebhook-module';
 
-import { DefaultObject } from '../base'
-
 /**
  * A Webhook Object
  * @export
@@ -92,13 +90,20 @@ export interface WebhookRequest {
      */
     'bWebhookSkipsslvalidation': boolean;
 }
+
+
 /**
- * A WebhookRequest Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectWebhookRequest
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectWebhookRequest extends DefaultObject {
+
+/**
+ * @export 
+ * A WebhookRequest Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectWebhookRequest
+ */
+export class DataObjectWebhookRequest {
    pkiWebhookID?:number = undefined
    fkiEzsignfoldertypeID?:number = undefined
    sWebhookDescription:string = ''
@@ -110,5 +115,57 @@ export class DefaultObjectWebhookRequest extends DefaultObject {
    bWebhookIsactive:boolean = false
    bWebhookSkipsslvalidation:boolean = false
 }
+
+/**
+ * @export 
+ * A WebhookRequest Validation Object
+ * @class ValidationObjectWebhookRequest
+ */
+export class ValidationObjectWebhookRequest {
+   pkiWebhookID = {
+      type: 'integer',
+      required: false
+   }
+   fkiEzsignfoldertypeID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   sWebhookDescription = {
+      type: 'string',
+      required: true
+   }
+   eWebhookModule = {
+      type: 'enum',
+      allowableValues: ['Ezsign','Management'],
+      required: true
+   }
+   eWebhookEzsignevent = {
+      type: 'enum',
+      allowableValues: ['DocumentCompleted','FolderCompleted'],
+      required: false
+   }
+   eWebhookManagementevent = {
+      type: 'enum',
+      allowableValues: ['UserCreated'],
+      required: false
+   }
+   sWebhookUrl = {
+      type: 'string',
+      required: true
+   }
+   sWebhookEmailfailed = {
+      type: 'string',
+      required: true
+   }
+   bWebhookIsactive = {
+      type: 'boolean',
+      required: true
+   }
+   bWebhookSkipsslvalidation = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

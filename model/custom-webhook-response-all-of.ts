@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -36,14 +34,35 @@ export interface CustomWebhookResponseAllOf {
     'bWebhookTest': boolean;
 }
 /**
- * A CustomWebhookResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCustomWebhookResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCustomWebhookResponseAllOf extends DefaultObject {
+
+/**
+ * @export 
+ * A CustomWebhookResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCustomWebhookResponseAllOf
+ */
+export class DataObjectCustomWebhookResponseAllOf {
    pksCustomerCode:string = ''
    bWebhookTest:boolean = false
 }
+
+/**
+ * @export 
+ * A CustomWebhookResponseAllOf Validation Object
+ * @class ValidationObjectCustomWebhookResponseAllOf
+ */
+export class ValidationObjectCustomWebhookResponseAllOf {
+   pksCustomerCode = {
+      type: 'string',
+      required: true
+   }
+   bWebhookTest = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

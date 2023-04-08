@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzmaxinvoicingsummaryinternaldetailResponse } from './ezmaxinvoicingsummaryinternaldetail-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzmaxinvoicingsummaryinternaldetailResponseCompound
  * A Ezmaxinvoicingsummaryinternaldetail Object
@@ -28,12 +26,17 @@ export type EzmaxinvoicingsummaryinternaldetailResponseCompound = Ezmaxinvoicing
 
 
 /**
- * @export 
- * A EzmaxinvoicingsummaryinternaldetailResponseCompound Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzmaxinvoicingsummaryinternaldetailResponseCompound
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzmaxinvoicingsummaryinternaldetailResponseCompound extends DefaultObject {
+
+/**
+ * @export 
+ * A EzmaxinvoicingsummaryinternaldetailResponseCompound Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzmaxinvoicingsummaryinternaldetailResponseCompound
+ */
+export class DataObjectEzmaxinvoicingsummaryinternaldetailResponseCompound {
    pkiEzmaxinvoicingsummaryinternaldetailID?:number = undefined
    fkiEzmaxinvoicingsummaryinternalID?:number = undefined
    fkiEzmaxproductID:number = 0
@@ -47,5 +50,69 @@ export class DefaultObjectEzmaxinvoicingsummaryinternaldetailResponseCompound ex
    bEzmaxinvoicingsummaryinternaldetailAdjustment:boolean = false
    tEzmaxproductHelpX:string = ''
 }
+
+/**
+ * @export 
+ * A EzmaxinvoicingsummaryinternaldetailResponseCompound Validation Object
+ * @class ValidationObjectEzmaxinvoicingsummaryinternaldetailResponseCompound
+ */
+export class ValidationObjectEzmaxinvoicingsummaryinternaldetailResponseCompound {
+   pkiEzmaxinvoicingsummaryinternaldetailID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzmaxinvoicingsummaryinternalID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzmaxproductID = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   sEzmaxproductDescriptionX = {
+      type: 'string',
+      required: true
+   }
+   fkiBillingentityexternalID = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   sBillingentityexternalDescription = {
+      type: 'string',
+      required: true
+   }
+   dEzmaxinvoicingsummaryinternaldetailCountreal = {
+      type: 'string',
+      pattern: '/^-{0,1}[\d]{1,6}?\.[\d]{2}$/',
+      required: true
+   }
+   dEzmaxinvoicingsummaryinternaldetailSubtotal = {
+      type: 'string',
+      pattern: '/^-{0,1}[\d]{1,9}?\.[\d]{2}$/',
+      required: true
+   }
+   dEzmaxinvoicingsummaryinternaldetailRebate = {
+      type: 'string',
+      pattern: '/^-{0,1}[\d]{1,9}?\.[\d]{2}$/',
+      required: true
+   }
+   dEzmaxinvoicingsummaryinternaldetailTotal = {
+      type: 'string',
+      pattern: '/^-{0,1}[\d]{1,9}?\.[\d]{2}$/',
+      required: true
+   }
+   bEzmaxinvoicingsummaryinternaldetailAdjustment = {
+      type: 'boolean',
+      required: true
+   }
+   tEzmaxproductHelpX = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

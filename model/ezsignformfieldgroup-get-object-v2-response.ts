@@ -29,8 +29,6 @@ import { EzsignformfieldgroupGetObjectV2ResponseAllOf } from './ezsignformfieldg
 // @ts-ignore
 import { EzsignformfieldgroupGetObjectV2ResponseMPayload } from './ezsignformfieldgroup-get-object-v2-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsignformfieldgroupGetObjectV2Response
  * Response for GET /2/object/ezsignformfieldgroup/{pkiEzsignformfieldgroupID}
@@ -40,15 +38,43 @@ export type EzsignformfieldgroupGetObjectV2Response = CommonResponse & Ezsignfor
 
 
 /**
- * @export 
- * A EzsignformfieldgroupGetObjectV2Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsignformfieldgroupGetObjectV2Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignformfieldgroupGetObjectV2Response extends DefaultObject {
-   mPayload:Partial<EzsignformfieldgroupGetObjectV2ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectEzsignformfieldgroupGetObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsignformfieldgroupGetObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A EzsignformfieldgroupGetObjectV2Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignformfieldgroupGetObjectV2Response
+ */
+export class DataObjectEzsignformfieldgroupGetObjectV2Response {
+   mPayload:EzsignformfieldgroupGetObjectV2ResponseMPayload = new DataObjectEzsignformfieldgroupGetObjectV2ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A EzsignformfieldgroupGetObjectV2Response Validation Object
+ * @class ValidationObjectEzsignformfieldgroupGetObjectV2Response
+ */
+export class ValidationObjectEzsignformfieldgroupGetObjectV2Response {
+   mPayload = new ValidationObjectEzsignformfieldgroupGetObjectV2ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

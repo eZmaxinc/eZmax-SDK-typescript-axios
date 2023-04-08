@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload } from './ezsignfolder-get-ezsignfoldersignerassociations-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface EzsignfolderGetEzsignfoldersignerassociationsV1ResponseAllOf {
     'mPayload': EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload;
 }
 /**
- * A EzsignfolderGetEzsignfoldersignerassociationsV1ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfolderGetEzsignfoldersignerassociationsV1ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfolderGetEzsignfoldersignerassociationsV1ResponseAllOf extends DefaultObject {
-   mPayload:Partial<EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectEzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectEzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A EzsignfolderGetEzsignfoldersignerassociationsV1ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfolderGetEzsignfoldersignerassociationsV1ResponseAllOf
+ */
+export class DataObjectEzsignfolderGetEzsignfoldersignerassociationsV1ResponseAllOf {
+   mPayload:EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload = new DataObjectEzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A EzsignfolderGetEzsignfoldersignerassociationsV1ResponseAllOf Validation Object
+ * @class ValidationObjectEzsignfolderGetEzsignfoldersignerassociationsV1ResponseAllOf
+ */
+export class ValidationObjectEzsignfolderGetEzsignfoldersignerassociationsV1ResponseAllOf {
+   mPayload = new ValidationObjectEzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload()
+} 
 
 

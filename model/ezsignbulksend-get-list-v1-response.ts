@@ -29,8 +29,6 @@ import { EzsignbulksendGetListV1ResponseAllOf } from './ezsignbulksend-get-list-
 // @ts-ignore
 import { EzsignbulksendGetListV1ResponseMPayload } from './ezsignbulksend-get-list-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsignbulksendGetListV1Response
  * Response for GET /1/object/ezsignbulksend/getList
@@ -40,15 +38,43 @@ export type EzsignbulksendGetListV1Response = CommonResponseGetList & Ezsignbulk
 
 
 /**
- * @export 
- * A EzsignbulksendGetListV1Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsignbulksendGetListV1Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignbulksendGetListV1Response extends DefaultObject {
-   mPayload:Partial<EzsignbulksendGetListV1ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayloadGetList> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectEzsignbulksendGetListV1ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayloadGetList } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsignbulksendGetListV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayloadGetList } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A EzsignbulksendGetListV1Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignbulksendGetListV1Response
+ */
+export class DataObjectEzsignbulksendGetListV1Response {
+   mPayload:EzsignbulksendGetListV1ResponseMPayload = new DataObjectEzsignbulksendGetListV1ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayloadGetList = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A EzsignbulksendGetListV1Response Validation Object
+ * @class ValidationObjectEzsignbulksendGetListV1Response
+ */
+export class ValidationObjectEzsignbulksendGetListV1Response {
+   mPayload = new ValidationObjectEzsignbulksendGetListV1ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayloadGetList()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

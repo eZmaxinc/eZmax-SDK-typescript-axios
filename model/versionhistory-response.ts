@@ -23,8 +23,6 @@ import { FieldEVersionhistoryUsertype } from './field-eversionhistory-usertype';
 // @ts-ignore
 import { MultilingualVersionhistoryDetail } from './multilingual-versionhistory-detail';
 
-import { DefaultObject } from '../base'
-
 /**
  * A Versionhistory Object
  * @export
@@ -98,24 +96,89 @@ export interface VersionhistoryResponse {
      */
     'bVersionhistoryDraft': boolean;
 }
+
+
 /**
- * A VersionhistoryResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectVersionhistoryResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectVersionhistoryResponse extends DefaultObject {
+// @ts-ignore
+import { DataObjectMultilingualVersionhistoryDetail } from './'
+// @ts-ignore
+import { ValidationObjectMultilingualVersionhistoryDetail } from './'
+
+/**
+ * @export 
+ * A VersionhistoryResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectVersionhistoryResponse
+ */
+export class DataObjectVersionhistoryResponse {
    pkiVersionhistoryID:number = 0
    fkiModuleID?:number = undefined
    fkiModulesectionID?:number = undefined
    sModuleNameX?:string = undefined
    sModulesectionNameX?:string = undefined
    eVersionhistoryUsertype?:FieldEVersionhistoryUsertype = undefined
-   objVersionhistoryDetail:Partial<MultilingualVersionhistoryDetail> = {}
+   objVersionhistoryDetail:MultilingualVersionhistoryDetail = new DataObjectMultilingualVersionhistoryDetail()
    dtVersionhistoryDate:string = ''
    dtVersionhistoryDateend?:string = undefined
    eVersionhistoryType:FieldEVersionhistoryType = 'AgentBroker'
    bVersionhistoryDraft:boolean = false
 }
+
+/**
+ * @export 
+ * A VersionhistoryResponse Validation Object
+ * @class ValidationObjectVersionhistoryResponse
+ */
+export class ValidationObjectVersionhistoryResponse {
+   pkiVersionhistoryID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiModuleID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiModulesectionID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   sModuleNameX = {
+      type: 'string',
+      required: false
+   }
+   sModulesectionNameX = {
+      type: 'string',
+      required: false
+   }
+   eVersionhistoryUsertype = {
+      type: 'enum',
+      allowableValues: ['','AgentBroker','EzsignUser','Normal'],
+      required: false
+   }
+   objVersionhistoryDetail = new ValidationObjectMultilingualVersionhistoryDetail()
+   dtVersionhistoryDate = {
+      type: 'string',
+      required: true
+   }
+   dtVersionhistoryDateend = {
+      type: 'string',
+      required: false
+   }
+   eVersionhistoryType = {
+      type: 'enum',
+      allowableValues: ['AgentBroker','NewFeature','Correction','Modification','ImportantMessage'],
+      required: true
+   }
+   bVersionhistoryDraft = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

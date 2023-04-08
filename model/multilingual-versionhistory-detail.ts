@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Detail of the Versionhistory
  * @export
@@ -36,14 +34,35 @@ export interface MultilingualVersionhistoryDetail {
     'tVersionhistoryDetail2'?: string;
 }
 /**
- * A MultilingualVersionhistoryDetail Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectMultilingualVersionhistoryDetail
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectMultilingualVersionhistoryDetail extends DefaultObject {
+
+/**
+ * @export 
+ * A MultilingualVersionhistoryDetail Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectMultilingualVersionhistoryDetail
+ */
+export class DataObjectMultilingualVersionhistoryDetail {
    tVersionhistoryDetail1?:string = undefined
    tVersionhistoryDetail2?:string = undefined
 }
+
+/**
+ * @export 
+ * A MultilingualVersionhistoryDetail Validation Object
+ * @class ValidationObjectMultilingualVersionhistoryDetail
+ */
+export class ValidationObjectMultilingualVersionhistoryDetail {
+   tVersionhistoryDetail1 = {
+      type: 'string',
+      required: false
+   }
+   tVersionhistoryDetail2 = {
+      type: 'string',
+      required: false
+   }
+} 
 
 

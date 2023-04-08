@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Name of the Notificationtest
  * @export
@@ -36,14 +34,35 @@ export interface MultilingualNotificationtestName {
     'sNotificationtestName2'?: string;
 }
 /**
- * A MultilingualNotificationtestName Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectMultilingualNotificationtestName
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectMultilingualNotificationtestName extends DefaultObject {
+
+/**
+ * @export 
+ * A MultilingualNotificationtestName Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectMultilingualNotificationtestName
+ */
+export class DataObjectMultilingualNotificationtestName {
    sNotificationtestName1?:string = undefined
    sNotificationtestName2?:string = undefined
 }
+
+/**
+ * @export 
+ * A MultilingualNotificationtestName Validation Object
+ * @class ValidationObjectMultilingualNotificationtestName
+ */
+export class ValidationObjectMultilingualNotificationtestName {
+   sNotificationtestName1 = {
+      type: 'string',
+      required: false
+   }
+   sNotificationtestName2 = {
+      type: 'string',
+      required: false
+   }
+} 
 
 

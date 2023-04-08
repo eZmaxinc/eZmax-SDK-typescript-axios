@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for POST /1/module/user/createEzsignuser
  * @export
@@ -36,14 +34,35 @@ export interface UserCreateEzsignuserV1ResponseMPayload {
     'a_sEmailAddressFailure': Array<string>;
 }
 /**
- * A UserCreateEzsignuserV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectUserCreateEzsignuserV1ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectUserCreateEzsignuserV1ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A UserCreateEzsignuserV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectUserCreateEzsignuserV1ResponseMPayload
+ */
+export class DataObjectUserCreateEzsignuserV1ResponseMPayload {
    a_sEmailAddressSuccess:Array<string> = []
    a_sEmailAddressFailure:Array<string> = []
 }
+
+/**
+ * @export 
+ * A UserCreateEzsignuserV1ResponseMPayload Validation Object
+ * @class ValidationObjectUserCreateEzsignuserV1ResponseMPayload
+ */
+export class ValidationObjectUserCreateEzsignuserV1ResponseMPayload {
+   a_sEmailAddressSuccess = {
+      type: 'array',
+      required: true
+   }
+   a_sEmailAddressFailure = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

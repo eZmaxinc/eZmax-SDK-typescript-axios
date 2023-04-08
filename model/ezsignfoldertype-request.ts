@@ -26,8 +26,6 @@ import { FieldEEzsignfoldertypeSendreminderfrequency } from './field-eezsignfold
 // @ts-ignore
 import { MultilingualEzsignfoldertypeName } from './multilingual-ezsignfoldertype-name';
 
-import { DefaultObject } from '../base'
-
 /**
  * A Ezsignfoldertype Object
  * @export
@@ -209,15 +207,26 @@ export interface EzsignfoldertypeRequest {
      */
     'bEzsignfoldertypeIsactive': boolean;
 }
+
+
 /**
- * A EzsignfoldertypeRequest Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfoldertypeRequest
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfoldertypeRequest extends DefaultObject {
+// @ts-ignore
+import { DataObjectMultilingualEzsignfoldertypeName } from './'
+// @ts-ignore
+import { ValidationObjectMultilingualEzsignfoldertypeName } from './'
+
+/**
+ * @export 
+ * A EzsignfoldertypeRequest Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfoldertypeRequest
+ */
+export class DataObjectEzsignfoldertypeRequest {
    pkiEzsignfoldertypeID?:number = undefined
-   objEzsignfoldertypeName:Partial<MultilingualEzsignfoldertypeName> = {}
+   objEzsignfoldertypeName:MultilingualEzsignfoldertypeName = new DataObjectMultilingualEzsignfoldertypeName()
    fkiBrandingID:number = 0
    fkiBillingentityinternalID?:number = undefined
    fkiUsergroupID?:number = undefined
@@ -246,5 +255,142 @@ export class DefaultObjectEzsignfoldertypeRequest extends DefaultObject {
    bEzsignfoldertypeIncludeproofuser:boolean = false
    bEzsignfoldertypeIsactive:boolean = false
 }
+
+/**
+ * @export 
+ * A EzsignfoldertypeRequest Validation Object
+ * @class ValidationObjectEzsignfoldertypeRequest
+ */
+export class ValidationObjectEzsignfoldertypeRequest {
+   pkiEzsignfoldertypeID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   objEzsignfoldertypeName = new ValidationObjectMultilingualEzsignfoldertypeName()
+   fkiBrandingID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiBillingentityinternalID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiUsergroupID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiUsergroupIDRestricted = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzsigntsarequirementID = {
+      type: 'integer',
+      minimum: 1,
+      maximum: 3,
+      required: false
+   }
+   sEmailAddressSigned = {
+      type: 'string',
+      required: false
+   }
+   sEmailAddressSummary = {
+      type: 'string',
+      required: false
+   }
+   eEzsignfoldertypePrivacylevel = {
+      type: 'enum',
+      allowableValues: ['User','Usergroup'],
+      required: true
+   }
+   eEzsignfoldertypeSendreminderfrequency = {
+      type: 'enum',
+      allowableValues: ['None','Daily','Weekly'],
+      required: false
+   }
+   iEzsignfoldertypeArchivaldays = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 180,
+      required: true
+   }
+   eEzsignfoldertypeDisposal = {
+      type: 'enum',
+      allowableValues: ['No','Manual','Automatic'],
+      required: true
+   }
+   iEzsignfoldertypeDisposaldays = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 9999,
+      required: false
+   }
+   iEzsignfoldertypeDeadlinedays = {
+      type: 'integer',
+      minimum: 1,
+      maximum: 60,
+      required: true
+   }
+   bEzsignfoldertypeSendattatchmentsigner = {
+      type: 'boolean',
+      required: true
+   }
+   bEzsignfoldertypeSendsignedtodocumentowner = {
+      type: 'boolean',
+      required: true
+   }
+   bEzsignfoldertypeSendsignedtofolderowner = {
+      type: 'boolean',
+      required: true
+   }
+   bEzsignfoldertypeSendsignedtofullgroup = {
+      type: 'boolean',
+      required: false
+   }
+   bEzsignfoldertypeSendsignedtolimitedgroup = {
+      type: 'boolean',
+      required: false
+   }
+   bEzsignfoldertypeSendsignedtocolleague = {
+      type: 'boolean',
+      required: true
+   }
+   bEzsignfoldertypeSendsummarytodocumentowner = {
+      type: 'boolean',
+      required: true
+   }
+   bEzsignfoldertypeSendsummarytofolderowner = {
+      type: 'boolean',
+      required: true
+   }
+   bEzsignfoldertypeSendsummarytofullgroup = {
+      type: 'boolean',
+      required: false
+   }
+   bEzsignfoldertypeSendsummarytolimitedgroup = {
+      type: 'boolean',
+      required: false
+   }
+   bEzsignfoldertypeSendsummarytocolleague = {
+      type: 'boolean',
+      required: true
+   }
+   bEzsignfoldertypeIncludeproofsigner = {
+      type: 'boolean',
+      required: true
+   }
+   bEzsignfoldertypeIncludeproofuser = {
+      type: 'boolean',
+      required: true
+   }
+   bEzsignfoldertypeIsactive = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

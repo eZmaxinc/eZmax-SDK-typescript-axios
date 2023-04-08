@@ -17,8 +17,6 @@
 // @ts-ignore
 import { MultilingualApikeyDescription } from './multilingual-apikey-description';
 
-import { DefaultObject } from '../base'
-
 /**
  * An Apikey Object
  * @export
@@ -45,15 +43,43 @@ export interface ApikeyRequest {
     'objApikeyDescription': MultilingualApikeyDescription;
 }
 /**
- * A ApikeyRequest Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectApikeyRequest
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectApikeyRequest extends DefaultObject {
+// @ts-ignore
+import { DataObjectMultilingualApikeyDescription } from './'
+// @ts-ignore
+import { ValidationObjectMultilingualApikeyDescription } from './'
+
+/**
+ * @export 
+ * A ApikeyRequest Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectApikeyRequest
+ */
+export class DataObjectApikeyRequest {
    pkiApikeyID?:number = undefined
    fkiUserID:number = 0
-   objApikeyDescription:Partial<MultilingualApikeyDescription> = {}
+   objApikeyDescription:MultilingualApikeyDescription = new DataObjectMultilingualApikeyDescription()
 }
+
+/**
+ * @export 
+ * A ApikeyRequest Validation Object
+ * @class ValidationObjectApikeyRequest
+ */
+export class ValidationObjectApikeyRequest {
+   pkiApikeyID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiUserID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   objApikeyDescription = new ValidationObjectMultilingualApikeyDescription()
+} 
 
 

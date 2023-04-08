@@ -26,8 +26,6 @@ import { FranchisereferalincomeRequest } from './franchisereferalincome-request'
 // @ts-ignore
 import { FranchisereferalincomeRequestCompoundAllOf } from './franchisereferalincome-request-compound-all-of';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type FranchisereferalincomeRequestCompound
  * A Franchisereferalincome Object and children to create a complete structure
@@ -37,12 +35,21 @@ export type FranchisereferalincomeRequestCompound = FranchisereferalincomeReques
 
 
 /**
- * @export 
- * A FranchisereferalincomeRequestCompound Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectFranchisereferalincomeRequestCompound
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectFranchisereferalincomeRequestCompound extends DefaultObject {
+// @ts-ignore
+import { DataObjectAddressRequest } from './'
+// @ts-ignore
+import { ValidationObjectAddressRequest } from './'
+
+/**
+ * @export 
+ * A FranchisereferalincomeRequestCompound Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectFranchisereferalincomeRequestCompound
+ */
+export class DataObjectFranchisereferalincomeRequestCompound {
    pkiFranchisereferalincomeID?:number = undefined
    fkiFranchisebrokerID:number = 0
    fkiFranchisereferalincomeprogramID:number = 0
@@ -55,8 +62,74 @@ export class DefaultObjectFranchisereferalincomeRequestCompound extends DefaultO
    tFranchisereferalincomeComment:string = ''
    fkiFranchiseofficeID:number = 0
    sFranchisereferalincomeRemoteid:string = ''
-   objAddress:Partial<AddressRequest> = {}
+   objAddress:AddressRequest = new DataObjectAddressRequest()
    a_objContact:Array<ContactRequestCompound> = []
 }
+
+/**
+ * @export 
+ * A FranchisereferalincomeRequestCompound Validation Object
+ * @class ValidationObjectFranchisereferalincomeRequestCompound
+ */
+export class ValidationObjectFranchisereferalincomeRequestCompound {
+   pkiFranchisereferalincomeID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiFranchisebrokerID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiFranchisereferalincomeprogramID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiPeriodID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   dFranchisereferalincomeLoan = {
+      type: 'string',
+      required: true
+   }
+   dFranchisereferalincomeFranchiseamount = {
+      type: 'string',
+      required: true
+   }
+   dFranchisereferalincomeFranchisoramount = {
+      type: 'string',
+      required: true
+   }
+   dFranchisereferalincomeAgentamount = {
+      type: 'string',
+      required: true
+   }
+   dtFranchisereferalincomeDisbursed = {
+      type: 'string',
+      required: true
+   }
+   tFranchisereferalincomeComment = {
+      type: 'string',
+      required: true
+   }
+   fkiFranchiseofficeID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sFranchisereferalincomeRemoteid = {
+      type: 'string',
+      required: true
+   }
+   objAddress = new ValidationObjectAddressRequest()
+   a_objContact = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

@@ -17,8 +17,6 @@
 // @ts-ignore
 import { CustomWebhooklogResponse } from './custom-webhooklog-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,30 @@ export interface WebhookGetHistoryV1ResponseMPayloadAllOf {
     'a_objWebhooklog': Array<CustomWebhooklogResponse>;
 }
 /**
- * A WebhookGetHistoryV1ResponseMPayloadAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectWebhookGetHistoryV1ResponseMPayloadAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectWebhookGetHistoryV1ResponseMPayloadAllOf extends DefaultObject {
+
+/**
+ * @export 
+ * A WebhookGetHistoryV1ResponseMPayloadAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectWebhookGetHistoryV1ResponseMPayloadAllOf
+ */
+export class DataObjectWebhookGetHistoryV1ResponseMPayloadAllOf {
    a_objWebhooklog:Array<CustomWebhooklogResponse> = []
 }
+
+/**
+ * @export 
+ * A WebhookGetHistoryV1ResponseMPayloadAllOf Validation Object
+ * @class ValidationObjectWebhookGetHistoryV1ResponseMPayloadAllOf
+ */
+export class ValidationObjectWebhookGetHistoryV1ResponseMPayloadAllOf {
+   a_objWebhooklog = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

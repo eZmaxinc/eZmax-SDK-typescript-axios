@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignfoldersignerassociationGetObjectV2ResponseMPayload } from './ezsignfoldersignerassociation-get-object-v2-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface EzsignfoldersignerassociationGetObjectV2ResponseAllOf {
     'mPayload': EzsignfoldersignerassociationGetObjectV2ResponseMPayload;
 }
 /**
- * A EzsignfoldersignerassociationGetObjectV2ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfoldersignerassociationGetObjectV2ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfoldersignerassociationGetObjectV2ResponseAllOf extends DefaultObject {
-   mPayload:Partial<EzsignfoldersignerassociationGetObjectV2ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectEzsignfoldersignerassociationGetObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectEzsignfoldersignerassociationGetObjectV2ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationGetObjectV2ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfoldersignerassociationGetObjectV2ResponseAllOf
+ */
+export class DataObjectEzsignfoldersignerassociationGetObjectV2ResponseAllOf {
+   mPayload:EzsignfoldersignerassociationGetObjectV2ResponseMPayload = new DataObjectEzsignfoldersignerassociationGetObjectV2ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationGetObjectV2ResponseAllOf Validation Object
+ * @class ValidationObjectEzsignfoldersignerassociationGetObjectV2ResponseAllOf
+ */
+export class ValidationObjectEzsignfoldersignerassociationGetObjectV2ResponseAllOf {
+   mPayload = new ValidationObjectEzsignfoldersignerassociationGetObjectV2ResponseMPayload()
+} 
 
 

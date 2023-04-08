@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignsignatureRequestCompound } from './ezsignsignature-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for POST /2/object/ezsignsignature
  * @export
@@ -33,13 +31,31 @@ export interface EzsignsignatureCreateObjectV2Request {
     'a_objEzsignsignature': Array<EzsignsignatureRequestCompound>;
 }
 /**
- * A EzsignsignatureCreateObjectV2Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignsignatureCreateObjectV2Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignsignatureCreateObjectV2Request extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignsignatureCreateObjectV2Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignsignatureCreateObjectV2Request
+ */
+export class DataObjectEzsignsignatureCreateObjectV2Request {
    a_objEzsignsignature:Array<EzsignsignatureRequestCompound> = []
 }
+
+/**
+ * @export 
+ * A EzsignsignatureCreateObjectV2Request Validation Object
+ * @class ValidationObjectEzsignsignatureCreateObjectV2Request
+ */
+export class ValidationObjectEzsignsignatureCreateObjectV2Request {
+   a_objEzsignsignature = {
+      type: 'array',
+      minItems: 1,
+      required: true
+   }
+} 
 
 

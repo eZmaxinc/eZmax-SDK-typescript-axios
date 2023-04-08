@@ -17,8 +17,6 @@
 // @ts-ignore
 import { PaymenttermListElement } from './paymentterm-list-element';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,30 @@ export interface PaymenttermGetListV1ResponseMPayloadAllOf {
     'a_objPaymentterm': Array<PaymenttermListElement>;
 }
 /**
- * A PaymenttermGetListV1ResponseMPayloadAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectPaymenttermGetListV1ResponseMPayloadAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectPaymenttermGetListV1ResponseMPayloadAllOf extends DefaultObject {
+
+/**
+ * @export 
+ * A PaymenttermGetListV1ResponseMPayloadAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectPaymenttermGetListV1ResponseMPayloadAllOf
+ */
+export class DataObjectPaymenttermGetListV1ResponseMPayloadAllOf {
    a_objPaymentterm:Array<PaymenttermListElement> = []
 }
+
+/**
+ * @export 
+ * A PaymenttermGetListV1ResponseMPayloadAllOf Validation Object
+ * @class ValidationObjectPaymenttermGetListV1ResponseMPayloadAllOf
+ */
+export class ValidationObjectPaymenttermGetListV1ResponseMPayloadAllOf {
+   a_objPaymentterm = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

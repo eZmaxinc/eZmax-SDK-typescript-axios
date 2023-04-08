@@ -29,8 +29,6 @@ import { SecretquestionGetAutocompleteV2ResponseAllOf } from './secretquestion-g
 // @ts-ignore
 import { SecretquestionGetAutocompleteV2ResponseMPayload } from './secretquestion-get-autocomplete-v2-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type SecretquestionGetAutocompleteV2Response
  * Response for GET /2/object/secretquestion/getAutocomplete
@@ -40,15 +38,43 @@ export type SecretquestionGetAutocompleteV2Response = CommonResponse & Secretque
 
 
 /**
- * @export 
- * A SecretquestionGetAutocompleteV2Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectSecretquestionGetAutocompleteV2Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectSecretquestionGetAutocompleteV2Response extends DefaultObject {
-   mPayload:Partial<SecretquestionGetAutocompleteV2ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectSecretquestionGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectSecretquestionGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A SecretquestionGetAutocompleteV2Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectSecretquestionGetAutocompleteV2Response
+ */
+export class DataObjectSecretquestionGetAutocompleteV2Response {
+   mPayload:SecretquestionGetAutocompleteV2ResponseMPayload = new DataObjectSecretquestionGetAutocompleteV2ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A SecretquestionGetAutocompleteV2Response Validation Object
+ * @class ValidationObjectSecretquestionGetAutocompleteV2Response
+ */
+export class ValidationObjectSecretquestionGetAutocompleteV2Response {
+   mPayload = new ValidationObjectSecretquestionGetAutocompleteV2ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigntemplateRequestCompound } from './ezsigntemplate-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for POST /1/object/ezsigntemplate
  * @export
@@ -33,13 +31,31 @@ export interface EzsigntemplateCreateObjectV1Request {
     'a_objEzsigntemplate': Array<EzsigntemplateRequestCompound>;
 }
 /**
- * A EzsigntemplateCreateObjectV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplateCreateObjectV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplateCreateObjectV1Request extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntemplateCreateObjectV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplateCreateObjectV1Request
+ */
+export class DataObjectEzsigntemplateCreateObjectV1Request {
    a_objEzsigntemplate:Array<EzsigntemplateRequestCompound> = []
 }
+
+/**
+ * @export 
+ * A EzsigntemplateCreateObjectV1Request Validation Object
+ * @class ValidationObjectEzsigntemplateCreateObjectV1Request
+ */
+export class ValidationObjectEzsigntemplateCreateObjectV1Request {
+   a_objEzsigntemplate = {
+      type: 'array',
+      minItems: 1,
+      required: true
+   }
+} 
 
 

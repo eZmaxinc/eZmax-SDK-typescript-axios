@@ -29,8 +29,6 @@ import { WebhookGetHistoryV1ResponseAllOf } from './webhook-get-history-v1-respo
 // @ts-ignore
 import { WebhookGetHistoryV1ResponseMPayload } from './webhook-get-history-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type WebhookGetHistoryV1Response
  * Response for GET /1/object/webhook/{pkiWebhookID}/getHistory
@@ -40,15 +38,43 @@ export type WebhookGetHistoryV1Response = CommonResponse & WebhookGetHistoryV1Re
 
 
 /**
- * @export 
- * A WebhookGetHistoryV1Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectWebhookGetHistoryV1Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectWebhookGetHistoryV1Response extends DefaultObject {
-   mPayload:Partial<WebhookGetHistoryV1ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectWebhookGetHistoryV1ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectWebhookGetHistoryV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A WebhookGetHistoryV1Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectWebhookGetHistoryV1Response
+ */
+export class DataObjectWebhookGetHistoryV1Response {
+   mPayload:WebhookGetHistoryV1ResponseMPayload = new DataObjectWebhookGetHistoryV1ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A WebhookGetHistoryV1Response Validation Object
+ * @class ValidationObjectWebhookGetHistoryV1Response
+ */
+export class ValidationObjectWebhookGetHistoryV1Response {
+   mPayload = new ValidationObjectWebhookGetHistoryV1ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

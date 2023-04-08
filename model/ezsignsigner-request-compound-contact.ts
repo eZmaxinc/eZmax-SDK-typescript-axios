@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A Ezsignsigner->Contact Object and children to create a complete structure
  * @export
@@ -80,12 +78,17 @@ export interface EzsignsignerRequestCompoundContact {
     'sPhoneNumberCell'?: string;
 }
 /**
- * A EzsignsignerRequestCompoundContact Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignsignerRequestCompoundContact
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignsignerRequestCompoundContact extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignsignerRequestCompoundContact Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignsignerRequestCompoundContact
+ */
+export class DataObjectEzsignsignerRequestCompoundContact {
    sContactFirstname:string = ''
    sContactLastname:string = ''
    fkiLanguageID:number = 0
@@ -96,5 +99,53 @@ export class DefaultObjectEzsignsignerRequestCompoundContact extends DefaultObje
    sPhoneNumber?:string = undefined
    sPhoneNumberCell?:string = undefined
 }
+
+/**
+ * @export 
+ * A EzsignsignerRequestCompoundContact Validation Object
+ * @class ValidationObjectEzsignsignerRequestCompoundContact
+ */
+export class ValidationObjectEzsignsignerRequestCompoundContact {
+   sContactFirstname = {
+      type: 'string',
+      required: true
+   }
+   sContactLastname = {
+      type: 'string',
+      required: true
+   }
+   fkiLanguageID = {
+      type: 'integer',
+      minimum: 1,
+      maximum: 2,
+      required: true
+   }
+   sEmailAddress = {
+      type: 'string',
+      required: false
+   }
+   sPhoneE164 = {
+      type: 'string',
+      pattern: '/^\+[1-9]\d{1,14}$/',
+      required: false
+   }
+   sPhoneExtension = {
+      type: 'string',
+      required: false
+   }
+   sPhoneE164Cell = {
+      type: 'string',
+      pattern: '/^\+[1-9]\d{1,14}$/',
+      required: false
+   }
+   sPhoneNumber = {
+      type: 'string',
+      required: false
+   }
+   sPhoneNumberCell = {
+      type: 'string',
+      required: false
+   }
+} 
 
 

@@ -17,8 +17,6 @@
 // @ts-ignore
 import { VersionhistoryResponseCompound } from './versionhistory-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for GET /2/object/versionhistory/{pkiVersionhistoryID}
  * @export
@@ -33,13 +31,31 @@ export interface VersionhistoryGetObjectV2ResponseMPayload {
     'objVersionhistory': VersionhistoryResponseCompound;
 }
 /**
- * A VersionhistoryGetObjectV2ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectVersionhistoryGetObjectV2ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectVersionhistoryGetObjectV2ResponseMPayload extends DefaultObject {
-   objVersionhistory:Partial<VersionhistoryResponseCompound> = {}
+// @ts-ignore
+import { DataObjectVersionhistoryResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectVersionhistoryResponseCompound } from './'
+
+/**
+ * @export 
+ * A VersionhistoryGetObjectV2ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectVersionhistoryGetObjectV2ResponseMPayload
+ */
+export class DataObjectVersionhistoryGetObjectV2ResponseMPayload {
+   objVersionhistory:VersionhistoryResponseCompound = new DataObjectVersionhistoryResponseCompound()
 }
+
+/**
+ * @export 
+ * A VersionhistoryGetObjectV2ResponseMPayload Validation Object
+ * @class ValidationObjectVersionhistoryGetObjectV2ResponseMPayload
+ */
+export class ValidationObjectVersionhistoryGetObjectV2ResponseMPayload {
+   objVersionhistory = new ValidationObjectVersionhistoryResponseCompound()
+} 
 
 

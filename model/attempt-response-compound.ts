@@ -17,8 +17,6 @@
 // @ts-ignore
 import { AttemptResponse } from './attempt-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type AttemptResponseCompound
  * An Attempt object and children to create a complete structure
@@ -28,15 +26,40 @@ export type AttemptResponseCompound = AttemptResponse;
 
 
 /**
- * @export 
- * A AttemptResponseCompound Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectAttemptResponseCompound
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectAttemptResponseCompound extends DefaultObject {
+
+/**
+ * @export 
+ * A AttemptResponseCompound Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectAttemptResponseCompound
+ */
+export class DataObjectAttemptResponseCompound {
    dtAttemptStart:string = ''
    sAttemptResult:string = ''
    iAttemptDuration:number = 0
 }
+
+/**
+ * @export 
+ * A AttemptResponseCompound Validation Object
+ * @class ValidationObjectAttemptResponseCompound
+ */
+export class ValidationObjectAttemptResponseCompound {
+   dtAttemptStart = {
+      type: 'string',
+      required: true
+   }
+   sAttemptResult = {
+      type: 'string',
+      required: true
+   }
+   iAttemptDuration = {
+      type: 'integer',
+      required: true
+   }
+} 
 
 

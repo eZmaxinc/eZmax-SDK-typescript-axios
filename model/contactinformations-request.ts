@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A Contactinformations Object
  * @export
@@ -48,16 +46,45 @@ export interface ContactinformationsRequest {
     'iWebsiteDefault': number;
 }
 /**
- * A ContactinformationsRequest Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectContactinformationsRequest
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectContactinformationsRequest extends DefaultObject {
+
+/**
+ * @export 
+ * A ContactinformationsRequest Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectContactinformationsRequest
+ */
+export class DataObjectContactinformationsRequest {
    iAddressDefault:number = 0
    iPhoneDefault:number = 0
    iEmailDefault:number = 0
    iWebsiteDefault:number = 0
 }
+
+/**
+ * @export 
+ * A ContactinformationsRequest Validation Object
+ * @class ValidationObjectContactinformationsRequest
+ */
+export class ValidationObjectContactinformationsRequest {
+   iAddressDefault = {
+      type: 'integer',
+      required: true
+   }
+   iPhoneDefault = {
+      type: 'integer',
+      required: true
+   }
+   iEmailDefault = {
+      type: 'integer',
+      required: true
+   }
+   iWebsiteDefault = {
+      type: 'integer',
+      required: true
+   }
+} 
 
 

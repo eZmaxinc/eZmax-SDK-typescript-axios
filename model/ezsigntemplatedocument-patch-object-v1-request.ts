@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigntemplatedocumentRequestPatch } from './ezsigntemplatedocument-request-patch';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for PATCH /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}
  * @export
@@ -33,13 +31,31 @@ export interface EzsigntemplatedocumentPatchObjectV1Request {
     'objEzsigntemplatedocument': EzsigntemplatedocumentRequestPatch;
 }
 /**
- * A EzsigntemplatedocumentPatchObjectV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplatedocumentPatchObjectV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatedocumentPatchObjectV1Request extends DefaultObject {
-   objEzsigntemplatedocument:Partial<EzsigntemplatedocumentRequestPatch> = {}
+// @ts-ignore
+import { DataObjectEzsigntemplatedocumentRequestPatch } from './'
+// @ts-ignore
+import { ValidationObjectEzsigntemplatedocumentRequestPatch } from './'
+
+/**
+ * @export 
+ * A EzsigntemplatedocumentPatchObjectV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatedocumentPatchObjectV1Request
+ */
+export class DataObjectEzsigntemplatedocumentPatchObjectV1Request {
+   objEzsigntemplatedocument:EzsigntemplatedocumentRequestPatch = new DataObjectEzsigntemplatedocumentRequestPatch()
 }
+
+/**
+ * @export 
+ * A EzsigntemplatedocumentPatchObjectV1Request Validation Object
+ * @class ValidationObjectEzsigntemplatedocumentPatchObjectV1Request
+ */
+export class ValidationObjectEzsigntemplatedocumentPatchObjectV1Request {
+   objEzsigntemplatedocument = new ValidationObjectEzsigntemplatedocumentRequestPatch()
+} 
 
 

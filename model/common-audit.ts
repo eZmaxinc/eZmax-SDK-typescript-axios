@@ -17,8 +17,6 @@
 // @ts-ignore
 import { CommonAuditdetail } from './common-auditdetail';
 
-import { DefaultObject } from '../base'
-
 /**
  * Gives informations about the user that created the object and the last user to have modified it.  If the object was never modified after creation, objAuditdetailModified won\'t be returned. 
  * @export
@@ -39,14 +37,37 @@ export interface CommonAudit {
     'objAuditdetailModified'?: CommonAuditdetail;
 }
 /**
- * A CommonAudit Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCommonAudit
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCommonAudit extends DefaultObject {
-   objAuditdetailCreated:Partial<CommonAuditdetail> = {}
-   objAuditdetailModified?:Partial<CommonAuditdetail> = undefined
+// @ts-ignore
+import { DataObjectCommonAuditdetail } from './'
+// @ts-ignore
+import { DataObjectCommonAuditdetail } from './'
+// @ts-ignore
+import { ValidationObjectCommonAuditdetail } from './'
+// @ts-ignore
+import { ValidationObjectCommonAuditdetail } from './'
+
+/**
+ * @export 
+ * A CommonAudit Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCommonAudit
+ */
+export class DataObjectCommonAudit {
+   objAuditdetailCreated:CommonAuditdetail = new DataObjectCommonAuditdetail()
+   objAuditdetailModified?:CommonAuditdetail = undefined
 }
+
+/**
+ * @export 
+ * A CommonAudit Validation Object
+ * @class ValidationObjectCommonAudit
+ */
+export class ValidationObjectCommonAudit {
+   objAuditdetailCreated = new ValidationObjectCommonAuditdetail()
+   objAuditdetailModified = new ValidationObjectCommonAuditdetail()
+} 
 
 

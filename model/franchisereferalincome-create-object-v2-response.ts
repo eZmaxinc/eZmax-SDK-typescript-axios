@@ -29,8 +29,6 @@ import { FranchisereferalincomeCreateObjectV2ResponseAllOf } from './franchisere
 // @ts-ignore
 import { FranchisereferalincomeCreateObjectV2ResponseMPayload } from './franchisereferalincome-create-object-v2-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type FranchisereferalincomeCreateObjectV2Response
  * Response for POST /2/object/franchisereferalincome
@@ -40,15 +38,43 @@ export type FranchisereferalincomeCreateObjectV2Response = CommonResponse & Fran
 
 
 /**
- * @export 
- * A FranchisereferalincomeCreateObjectV2Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectFranchisereferalincomeCreateObjectV2Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectFranchisereferalincomeCreateObjectV2Response extends DefaultObject {
-   mPayload:Partial<FranchisereferalincomeCreateObjectV2ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectFranchisereferalincomeCreateObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectFranchisereferalincomeCreateObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A FranchisereferalincomeCreateObjectV2Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectFranchisereferalincomeCreateObjectV2Response
+ */
+export class DataObjectFranchisereferalincomeCreateObjectV2Response {
+   mPayload:FranchisereferalincomeCreateObjectV2ResponseMPayload = new DataObjectFranchisereferalincomeCreateObjectV2ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A FranchisereferalincomeCreateObjectV2Response Validation Object
+ * @class ValidationObjectFranchisereferalincomeCreateObjectV2Response
+ */
+export class ValidationObjectFranchisereferalincomeCreateObjectV2Response {
+   mPayload = new ValidationObjectFranchisereferalincomeCreateObjectV2ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

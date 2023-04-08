@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for POST /1/object/ezsignsignature/{pkiEzsignsignatureID}/sign
  * @export
@@ -36,14 +34,35 @@ export interface EzsignsignatureSignV1Request {
     'bIsAutomatic': boolean;
 }
 /**
- * A EzsignsignatureSignV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignsignatureSignV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignsignatureSignV1Request extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignsignatureSignV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignsignatureSignV1Request
+ */
+export class DataObjectEzsignsignatureSignV1Request {
    sValue?:string = undefined
    bIsAutomatic:boolean = false
 }
+
+/**
+ * @export 
+ * A EzsignsignatureSignV1Request Validation Object
+ * @class ValidationObjectEzsignsignatureSignV1Request
+ */
+export class ValidationObjectEzsignsignatureSignV1Request {
+   sValue = {
+      type: 'string',
+      required: false
+   }
+   bIsAutomatic = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

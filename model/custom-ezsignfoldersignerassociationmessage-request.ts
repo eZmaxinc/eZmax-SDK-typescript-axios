@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A custom message Object in the context of an Ezsignfolder\'s send function
  * @export
@@ -36,14 +34,36 @@ export interface CustomEzsignfoldersignerassociationmessageRequest {
     'tEzsignfoldersignerassociationMessage'?: string;
 }
 /**
- * A CustomEzsignfoldersignerassociationmessageRequest Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCustomEzsignfoldersignerassociationmessageRequest
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCustomEzsignfoldersignerassociationmessageRequest extends DefaultObject {
+
+/**
+ * @export 
+ * A CustomEzsignfoldersignerassociationmessageRequest Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCustomEzsignfoldersignerassociationmessageRequest
+ */
+export class DataObjectCustomEzsignfoldersignerassociationmessageRequest {
    fkiEzsignfoldersignerassociationID:number = 0
    tEzsignfoldersignerassociationMessage?:string = undefined
 }
+
+/**
+ * @export 
+ * A CustomEzsignfoldersignerassociationmessageRequest Validation Object
+ * @class ValidationObjectCustomEzsignfoldersignerassociationmessageRequest
+ */
+export class ValidationObjectCustomEzsignfoldersignerassociationmessageRequest {
+   fkiEzsignfoldersignerassociationID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   tEzsignfoldersignerassociationMessage = {
+      type: 'string',
+      required: false
+   }
+} 
 
 

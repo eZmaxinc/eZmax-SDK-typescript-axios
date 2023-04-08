@@ -29,8 +29,6 @@ import { PeriodGetAutocompleteV2ResponseAllOf } from './period-get-autocomplete-
 // @ts-ignore
 import { PeriodGetAutocompleteV2ResponseMPayload } from './period-get-autocomplete-v2-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type PeriodGetAutocompleteV2Response
  * Response for GET /2/object/period/getAutocomplete
@@ -40,15 +38,43 @@ export type PeriodGetAutocompleteV2Response = CommonResponse & PeriodGetAutocomp
 
 
 /**
- * @export 
- * A PeriodGetAutocompleteV2Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectPeriodGetAutocompleteV2Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectPeriodGetAutocompleteV2Response extends DefaultObject {
-   mPayload:Partial<PeriodGetAutocompleteV2ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayload> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectPeriodGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectPeriodGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A PeriodGetAutocompleteV2Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectPeriodGetAutocompleteV2Response
+ */
+export class DataObjectPeriodGetAutocompleteV2Response {
+   mPayload:PeriodGetAutocompleteV2ResponseMPayload = new DataObjectPeriodGetAutocompleteV2ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayload = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A PeriodGetAutocompleteV2Response Validation Object
+ * @class ValidationObjectPeriodGetAutocompleteV2Response
+ */
+export class ValidationObjectPeriodGetAutocompleteV2Response {
+   mPayload = new ValidationObjectPeriodGetAutocompleteV2ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

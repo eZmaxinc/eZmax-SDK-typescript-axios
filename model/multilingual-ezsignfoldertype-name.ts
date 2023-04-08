@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Name of the Ezsignfoldertype
  * @export
@@ -36,14 +34,35 @@ export interface MultilingualEzsignfoldertypeName {
     'sEzsignfoldertypeName2'?: string;
 }
 /**
- * A MultilingualEzsignfoldertypeName Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectMultilingualEzsignfoldertypeName
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectMultilingualEzsignfoldertypeName extends DefaultObject {
+
+/**
+ * @export 
+ * A MultilingualEzsignfoldertypeName Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectMultilingualEzsignfoldertypeName
+ */
+export class DataObjectMultilingualEzsignfoldertypeName {
    sEzsignfoldertypeName1?:string = undefined
    sEzsignfoldertypeName2?:string = undefined
 }
+
+/**
+ * @export 
+ * A MultilingualEzsignfoldertypeName Validation Object
+ * @class ValidationObjectMultilingualEzsignfoldertypeName
+ */
+export class ValidationObjectMultilingualEzsignfoldertypeName {
+   sEzsignfoldertypeName1 = {
+      type: 'string',
+      required: false
+   }
+   sEzsignfoldertypeName2 = {
+      type: 'string',
+      required: false
+   }
+} 
 
 

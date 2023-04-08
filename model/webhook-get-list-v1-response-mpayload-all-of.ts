@@ -17,8 +17,6 @@
 // @ts-ignore
 import { WebhookListElement } from './webhook-list-element';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,30 @@ export interface WebhookGetListV1ResponseMPayloadAllOf {
     'a_objWebhook': Array<WebhookListElement>;
 }
 /**
- * A WebhookGetListV1ResponseMPayloadAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectWebhookGetListV1ResponseMPayloadAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectWebhookGetListV1ResponseMPayloadAllOf extends DefaultObject {
+
+/**
+ * @export 
+ * A WebhookGetListV1ResponseMPayloadAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectWebhookGetListV1ResponseMPayloadAllOf
+ */
+export class DataObjectWebhookGetListV1ResponseMPayloadAllOf {
    a_objWebhook:Array<WebhookListElement> = []
 }
+
+/**
+ * @export 
+ * A WebhookGetListV1ResponseMPayloadAllOf Validation Object
+ * @class ValidationObjectWebhookGetListV1ResponseMPayloadAllOf
+ */
+export class ValidationObjectWebhookGetListV1ResponseMPayloadAllOf {
+   a_objWebhook = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

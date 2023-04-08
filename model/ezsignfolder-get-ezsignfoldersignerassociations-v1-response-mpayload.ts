@@ -17,8 +17,6 @@
 // @ts-ignore
 import { CustomEzsignfoldersignerassociationActionableElementResponse } from './custom-ezsignfoldersignerassociation-actionable-element-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for GET /1/object/ezsignfolder/{pkiEzsignfolder}/getEzsignfoldersignerassociations
  * @export
@@ -33,13 +31,30 @@ export interface EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload
     'a_objEzsignfoldersignerassociation': Array<CustomEzsignfoldersignerassociationActionableElementResponse>;
 }
 /**
- * A EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload
+ */
+export class DataObjectEzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload {
    a_objEzsignfoldersignerassociation:Array<CustomEzsignfoldersignerassociationActionableElementResponse> = []
 }
+
+/**
+ * @export 
+ * A EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload Validation Object
+ * @class ValidationObjectEzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload
+ */
+export class ValidationObjectEzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload {
+   a_objEzsignfoldersignerassociation = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignbulksenddocumentmappingRequest } from './ezsignbulksenddocumentmapping-request';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsignbulksenddocumentmappingRequestCompound
  * A Ezsignbulksenddocumentmapping Object and children
@@ -28,16 +26,49 @@ export type EzsignbulksenddocumentmappingRequestCompound = Ezsignbulksenddocumen
 
 
 /**
- * @export 
- * A EzsignbulksenddocumentmappingRequestCompound Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsignbulksenddocumentmappingRequestCompound
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignbulksenddocumentmappingRequestCompound extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignbulksenddocumentmappingRequestCompound Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignbulksenddocumentmappingRequestCompound
+ */
+export class DataObjectEzsignbulksenddocumentmappingRequestCompound {
    pkiEzsignbulksenddocumentmappingID?:number = undefined
    fkiEzsignbulksendID:number = 0
    fkiEzsigntemplatepackageID?:number = undefined
    fkiEzsigntemplateID?:number = undefined
 }
+
+/**
+ * @export 
+ * A EzsignbulksenddocumentmappingRequestCompound Validation Object
+ * @class ValidationObjectEzsignbulksenddocumentmappingRequestCompound
+ */
+export class ValidationObjectEzsignbulksenddocumentmappingRequestCompound {
+   pkiEzsignbulksenddocumentmappingID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzsignbulksendID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsigntemplatepackageID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzsigntemplateID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+} 
 
 

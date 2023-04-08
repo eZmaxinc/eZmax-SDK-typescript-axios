@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigntemplateRequest } from './ezsigntemplate-request';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsigntemplateRequestCompound
  * A Ezsigntemplate Object and children
@@ -28,17 +26,54 @@ export type EzsigntemplateRequestCompound = EzsigntemplateRequest;
 
 
 /**
- * @export 
- * A EzsigntemplateRequestCompound Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsigntemplateRequestCompound
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplateRequestCompound extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntemplateRequestCompound Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplateRequestCompound
+ */
+export class DataObjectEzsigntemplateRequestCompound {
    pkiEzsigntemplateID?:number = undefined
    fkiEzsignfoldertypeID:number = 0
    fkiLanguageID:number = 0
    sEzsigntemplateDescription:string = ''
    bEzsigntemplateAdminonly:boolean = false
 }
+
+/**
+ * @export 
+ * A EzsigntemplateRequestCompound Validation Object
+ * @class ValidationObjectEzsigntemplateRequestCompound
+ */
+export class ValidationObjectEzsigntemplateRequestCompound {
+   pkiEzsigntemplateID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzsignfoldertypeID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiLanguageID = {
+      type: 'integer',
+      minimum: 1,
+      maximum: 2,
+      required: true
+   }
+   sEzsigntemplateDescription = {
+      type: 'string',
+      required: true
+   }
+   bEzsigntemplateAdminonly = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

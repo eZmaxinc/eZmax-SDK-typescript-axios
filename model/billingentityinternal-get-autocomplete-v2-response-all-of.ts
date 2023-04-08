@@ -17,8 +17,6 @@
 // @ts-ignore
 import { BillingentityinternalGetAutocompleteV2ResponseMPayload } from './billingentityinternal-get-autocomplete-v2-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface BillingentityinternalGetAutocompleteV2ResponseAllOf {
     'mPayload': BillingentityinternalGetAutocompleteV2ResponseMPayload;
 }
 /**
- * A BillingentityinternalGetAutocompleteV2ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectBillingentityinternalGetAutocompleteV2ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectBillingentityinternalGetAutocompleteV2ResponseAllOf extends DefaultObject {
-   mPayload:Partial<BillingentityinternalGetAutocompleteV2ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectBillingentityinternalGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectBillingentityinternalGetAutocompleteV2ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A BillingentityinternalGetAutocompleteV2ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectBillingentityinternalGetAutocompleteV2ResponseAllOf
+ */
+export class DataObjectBillingentityinternalGetAutocompleteV2ResponseAllOf {
+   mPayload:BillingentityinternalGetAutocompleteV2ResponseMPayload = new DataObjectBillingentityinternalGetAutocompleteV2ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A BillingentityinternalGetAutocompleteV2ResponseAllOf Validation Object
+ * @class ValidationObjectBillingentityinternalGetAutocompleteV2ResponseAllOf
+ */
+export class ValidationObjectBillingentityinternalGetAutocompleteV2ResponseAllOf {
+   mPayload = new ValidationObjectBillingentityinternalGetAutocompleteV2ResponseMPayload()
+} 
 
 

@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for POST /1/object/webhook
  * @export
@@ -30,13 +28,31 @@ export interface WebhookCreateObjectV1ResponseMPayload {
     'a_pkiWebhookID': Array<number>;
 }
 /**
- * A WebhookCreateObjectV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectWebhookCreateObjectV1ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectWebhookCreateObjectV1ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A WebhookCreateObjectV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectWebhookCreateObjectV1ResponseMPayload
+ */
+export class DataObjectWebhookCreateObjectV1ResponseMPayload {
    a_pkiWebhookID:Array<number> = []
 }
+
+/**
+ * @export 
+ * A WebhookCreateObjectV1ResponseMPayload Validation Object
+ * @class ValidationObjectWebhookCreateObjectV1ResponseMPayload
+ */
+export class ValidationObjectWebhookCreateObjectV1ResponseMPayload {
+   a_pkiWebhookID = {
+      type: 'array',
+      minItems: 1,
+      required: true
+   }
+} 
 
 

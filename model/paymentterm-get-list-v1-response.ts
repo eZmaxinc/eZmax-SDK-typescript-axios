@@ -29,8 +29,6 @@ import { PaymenttermGetListV1ResponseAllOf } from './paymentterm-get-list-v1-res
 // @ts-ignore
 import { PaymenttermGetListV1ResponseMPayload } from './paymentterm-get-list-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type PaymenttermGetListV1Response
  * Response for GET /1/object/paymentterm/getList
@@ -40,15 +38,43 @@ export type PaymenttermGetListV1Response = CommonResponseGetList & PaymenttermGe
 
 
 /**
- * @export 
- * A PaymenttermGetListV1Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectPaymenttermGetListV1Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectPaymenttermGetListV1Response extends DefaultObject {
-   mPayload:Partial<PaymenttermGetListV1ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayloadGetList> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectPaymenttermGetListV1ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayloadGetList } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectPaymenttermGetListV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayloadGetList } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A PaymenttermGetListV1Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectPaymenttermGetListV1Response
+ */
+export class DataObjectPaymenttermGetListV1Response {
+   mPayload:PaymenttermGetListV1ResponseMPayload = new DataObjectPaymenttermGetListV1ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayloadGetList = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A PaymenttermGetListV1Response Validation Object
+ * @class ValidationObjectPaymenttermGetListV1Response
+ */
+export class ValidationObjectPaymenttermGetListV1Response {
+   mPayload = new ValidationObjectPaymenttermGetListV1ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayloadGetList()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

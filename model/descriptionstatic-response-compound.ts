@@ -17,8 +17,6 @@
 // @ts-ignore
 import { DescriptionstaticResponse } from './descriptionstatic-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type DescriptionstaticResponseCompound
  * A Descriptionstatic Object and children to create a complete structure
@@ -28,14 +26,36 @@ export type DescriptionstaticResponseCompound = DescriptionstaticResponse;
 
 
 /**
- * @export 
- * A DescriptionstaticResponseCompound Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectDescriptionstaticResponseCompound
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectDescriptionstaticResponseCompound extends DefaultObject {
+
+/**
+ * @export 
+ * A DescriptionstaticResponseCompound Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectDescriptionstaticResponseCompound
+ */
+export class DataObjectDescriptionstaticResponseCompound {
    pkiDescriptionstaticID:number = 0
    sDescriptionstaticDescription:string = ''
 }
+
+/**
+ * @export 
+ * A DescriptionstaticResponseCompound Validation Object
+ * @class ValidationObjectDescriptionstaticResponseCompound
+ */
+export class ValidationObjectDescriptionstaticResponseCompound {
+   pkiDescriptionstaticID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sDescriptionstaticDescription = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

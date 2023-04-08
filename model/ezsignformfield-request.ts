@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A Ezsignformfield Object
  * @export
@@ -84,12 +82,17 @@ export interface EzsignformfieldRequest {
     'sEzsignformfieldEnteredvalue'?: string;
 }
 /**
- * A EzsignformfieldRequest Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignformfieldRequest
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignformfieldRequest extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignformfieldRequest Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignformfieldRequest
+ */
+export class DataObjectEzsignformfieldRequest {
    pkiEzsignformfieldID?:number = undefined
    iEzsignpagePagenumber:number = 0
    sEzsignformfieldLabel:string = ''
@@ -101,5 +104,59 @@ export class DefaultObjectEzsignformfieldRequest extends DefaultObject {
    bEzsignformfieldSelected?:boolean = undefined
    sEzsignformfieldEnteredvalue?:string = undefined
 }
+
+/**
+ * @export 
+ * A EzsignformfieldRequest Validation Object
+ * @class ValidationObjectEzsignformfieldRequest
+ */
+export class ValidationObjectEzsignformfieldRequest {
+   pkiEzsignformfieldID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   iEzsignpagePagenumber = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   sEzsignformfieldLabel = {
+      type: 'string',
+      required: true
+   }
+   sEzsignformfieldValue = {
+      type: 'string',
+      required: false
+   }
+   iEzsignformfieldX = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsignformfieldY = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsignformfieldWidth = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsignformfieldHeight = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   bEzsignformfieldSelected = {
+      type: 'boolean',
+      required: false
+   }
+   sEzsignformfieldEnteredvalue = {
+      type: 'string',
+      required: false
+   }
+} 
 
 

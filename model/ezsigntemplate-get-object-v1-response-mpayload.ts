@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import { CommonAudit } from './common-audit';
+// May contain unused imports in some cases
+// @ts-ignore
 import { EzsigntemplateResponseCompound } from './ezsigntemplate-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -22,8 +25,6 @@ import { EzsigntemplatedocumentResponse } from './ezsigntemplatedocument-respons
 // May contain unused imports in some cases
 // @ts-ignore
 import { EzsigntemplatesignerResponseCompound } from './ezsigntemplatesigner-response-compound';
-
-import { DefaultObject } from '../base'
 
 /**
  * @type EzsigntemplateGetObjectV1ResponseMPayload
@@ -34,12 +35,25 @@ export type EzsigntemplateGetObjectV1ResponseMPayload = EzsigntemplateResponseCo
 
 
 /**
- * @export 
- * A EzsigntemplateGetObjectV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsigntemplateGetObjectV1ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplateGetObjectV1ResponseMPayload extends DefaultObject {
+// @ts-ignore
+import { DataObjectCommonAudit } from './'
+// @ts-ignore
+import { DataObjectEzsigntemplatedocumentResponse } from './'
+// @ts-ignore
+import { ValidationObjectCommonAudit } from './'
+// @ts-ignore
+import { ValidationObjectEzsigntemplatedocumentResponse } from './'
+
+/**
+ * @export 
+ * A EzsigntemplateGetObjectV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplateGetObjectV1ResponseMPayload
+ */
+export class DataObjectEzsigntemplateGetObjectV1ResponseMPayload {
    pkiEzsigntemplateID:number = 0
    fkiEzsigntemplatedocumentID?:number = undefined
    fkiEzsignfoldertypeID:number = 0
@@ -48,8 +62,60 @@ export class DefaultObjectEzsigntemplateGetObjectV1ResponseMPayload extends Defa
    sEzsigntemplateDescription:string = ''
    bEzsigntemplateAdminonly:boolean = false
    sEzsignfoldertypeNameX:string = ''
-   objEzsigntemplatedocument?:Partial<EzsigntemplatedocumentResponse> = undefined
+   objAudit:CommonAudit = new DataObjectCommonAudit()
+   objEzsigntemplatedocument?:EzsigntemplatedocumentResponse = undefined
    a_objEzsigntemplatesigner:Array<EzsigntemplatesignerResponseCompound> = []
 }
+
+/**
+ * @export 
+ * A EzsigntemplateGetObjectV1ResponseMPayload Validation Object
+ * @class ValidationObjectEzsigntemplateGetObjectV1ResponseMPayload
+ */
+export class ValidationObjectEzsigntemplateGetObjectV1ResponseMPayload {
+   pkiEzsigntemplateID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsigntemplatedocumentID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzsignfoldertypeID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiLanguageID = {
+      type: 'integer',
+      minimum: 1,
+      maximum: 2,
+      required: true
+   }
+   sLanguageNameX = {
+      type: 'string',
+      required: true
+   }
+   sEzsigntemplateDescription = {
+      type: 'string',
+      required: true
+   }
+   bEzsigntemplateAdminonly = {
+      type: 'boolean',
+      required: true
+   }
+   sEzsignfoldertypeNameX = {
+      type: 'string',
+      required: true
+   }
+   objAudit = new ValidationObjectCommonAudit()
+   objEzsigntemplatedocument = new ValidationObjectEzsigntemplatedocumentResponse()
+   a_objEzsigntemplatesigner = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

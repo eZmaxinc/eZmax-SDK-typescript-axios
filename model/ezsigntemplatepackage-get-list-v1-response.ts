@@ -29,8 +29,6 @@ import { EzsigntemplatepackageGetListV1ResponseAllOf } from './ezsigntemplatepac
 // @ts-ignore
 import { EzsigntemplatepackageGetListV1ResponseMPayload } from './ezsigntemplatepackage-get-list-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsigntemplatepackageGetListV1Response
  * Response for GET /1/object/ezsigntemplatepackage/getList
@@ -40,15 +38,43 @@ export type EzsigntemplatepackageGetListV1Response = CommonResponseGetList & Ezs
 
 
 /**
- * @export 
- * A EzsigntemplatepackageGetListV1Response Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsigntemplatepackageGetListV1Response
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatepackageGetListV1Response extends DefaultObject {
-   mPayload:Partial<EzsigntemplatepackageGetListV1ResponseMPayload> = {}
-   objDebugPayload?:Partial<CommonResponseObjDebugPayloadGetList> = undefined
-   objDebug?:Partial<CommonResponseObjDebug> = undefined
+// @ts-ignore
+import { DataObjectEzsigntemplatepackageGetListV1ResponseMPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayloadGetList } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsigntemplatepackageGetListV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayloadGetList } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+
+/**
+ * @export 
+ * A EzsigntemplatepackageGetListV1Response Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatepackageGetListV1Response
+ */
+export class DataObjectEzsigntemplatepackageGetListV1Response {
+   mPayload:EzsigntemplatepackageGetListV1ResponseMPayload = new DataObjectEzsigntemplatepackageGetListV1ResponseMPayload()
+   objDebugPayload?:CommonResponseObjDebugPayloadGetList = undefined
+   objDebug?:CommonResponseObjDebug = undefined
 }
+
+/**
+ * @export 
+ * A EzsigntemplatepackageGetListV1Response Validation Object
+ * @class ValidationObjectEzsigntemplatepackageGetListV1Response
+ */
+export class ValidationObjectEzsigntemplatepackageGetListV1Response {
+   mPayload = new ValidationObjectEzsigntemplatepackageGetListV1ResponseMPayload()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayloadGetList()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+} 
 
 

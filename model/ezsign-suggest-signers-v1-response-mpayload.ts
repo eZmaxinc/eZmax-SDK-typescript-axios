@@ -20,8 +20,6 @@ import { CustomUserResponse } from './custom-user-response';
 // @ts-ignore
 import { EzsignfoldersignerassociationResponseCompound } from './ezsignfoldersignerassociation-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for GET /1/module/ezsign/suggestSigners
  * @export
@@ -48,15 +46,40 @@ export interface EzsignSuggestSignersV1ResponseMPayload {
     'a_objUser': Array<CustomUserResponse>;
 }
 /**
- * A EzsignSuggestSignersV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignSuggestSignersV1ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignSuggestSignersV1ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignSuggestSignersV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignSuggestSignersV1ResponseMPayload
+ */
+export class DataObjectEzsignSuggestSignersV1ResponseMPayload {
    a_objEzsignfoldersignerassociation:Array<EzsignfoldersignerassociationResponseCompound> = []
    a_objUserTeam:Array<CustomUserResponse> = []
    a_objUser:Array<CustomUserResponse> = []
 }
+
+/**
+ * @export 
+ * A EzsignSuggestSignersV1ResponseMPayload Validation Object
+ * @class ValidationObjectEzsignSuggestSignersV1ResponseMPayload
+ */
+export class ValidationObjectEzsignSuggestSignersV1ResponseMPayload {
+   a_objEzsignfoldersignerassociation = {
+      type: 'array',
+      required: true
+   }
+   a_objUserTeam = {
+      type: 'array',
+      required: true
+   }
+   a_objUser = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

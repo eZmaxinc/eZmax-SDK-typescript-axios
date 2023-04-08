@@ -17,8 +17,6 @@
 // @ts-ignore
 import { CommunicationResponseCompound } from './communication-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for GET /2/object/communication/{pkiCommunicationID}
  * @export
@@ -33,13 +31,31 @@ export interface CommunicationGetObjectV2ResponseMPayload {
     'objCommunication': CommunicationResponseCompound;
 }
 /**
- * A CommunicationGetObjectV2ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCommunicationGetObjectV2ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCommunicationGetObjectV2ResponseMPayload extends DefaultObject {
-   objCommunication:Partial<CommunicationResponseCompound> = {}
+// @ts-ignore
+import { DataObjectCommunicationResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectCommunicationResponseCompound } from './'
+
+/**
+ * @export 
+ * A CommunicationGetObjectV2ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCommunicationGetObjectV2ResponseMPayload
+ */
+export class DataObjectCommunicationGetObjectV2ResponseMPayload {
+   objCommunication:CommunicationResponseCompound = new DataObjectCommunicationResponseCompound()
 }
+
+/**
+ * @export 
+ * A CommunicationGetObjectV2ResponseMPayload Validation Object
+ * @class ValidationObjectCommunicationGetObjectV2ResponseMPayload
+ */
+export class ValidationObjectCommunicationGetObjectV2ResponseMPayload {
+   objCommunication = new ValidationObjectCommunicationResponseCompound()
+} 
 
 

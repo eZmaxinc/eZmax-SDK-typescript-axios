@@ -17,8 +17,6 @@
 // @ts-ignore
 import { UsergroupGetAutocompleteV2ResponseMPayload } from './usergroup-get-autocomplete-v2-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface UsergroupGetAutocompleteV2ResponseAllOf {
     'mPayload': UsergroupGetAutocompleteV2ResponseMPayload;
 }
 /**
- * A UsergroupGetAutocompleteV2ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectUsergroupGetAutocompleteV2ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectUsergroupGetAutocompleteV2ResponseAllOf extends DefaultObject {
-   mPayload:Partial<UsergroupGetAutocompleteV2ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectUsergroupGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectUsergroupGetAutocompleteV2ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A UsergroupGetAutocompleteV2ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectUsergroupGetAutocompleteV2ResponseAllOf
+ */
+export class DataObjectUsergroupGetAutocompleteV2ResponseAllOf {
+   mPayload:UsergroupGetAutocompleteV2ResponseMPayload = new DataObjectUsergroupGetAutocompleteV2ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A UsergroupGetAutocompleteV2ResponseAllOf Validation Object
+ * @class ValidationObjectUsergroupGetAutocompleteV2ResponseAllOf
+ */
+export class ValidationObjectUsergroupGetAutocompleteV2ResponseAllOf {
+   mPayload = new ValidationObjectUsergroupGetAutocompleteV2ResponseMPayload()
+} 
 
 

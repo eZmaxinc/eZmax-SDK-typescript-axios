@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigndocumentRequestCompound } from './ezsigndocument-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for POST /2/object/ezsigndocument
  * @export
@@ -33,13 +31,31 @@ export interface EzsigndocumentCreateObjectV2Request {
     'a_objEzsigndocument': Array<EzsigndocumentRequestCompound>;
 }
 /**
- * A EzsigndocumentCreateObjectV2Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigndocumentCreateObjectV2Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigndocumentCreateObjectV2Request extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigndocumentCreateObjectV2Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigndocumentCreateObjectV2Request
+ */
+export class DataObjectEzsigndocumentCreateObjectV2Request {
    a_objEzsigndocument:Array<EzsigndocumentRequestCompound> = []
 }
+
+/**
+ * @export 
+ * A EzsigndocumentCreateObjectV2Request Validation Object
+ * @class ValidationObjectEzsigndocumentCreateObjectV2Request
+ */
+export class ValidationObjectEzsigndocumentCreateObjectV2Request {
+   a_objEzsigndocument = {
+      type: 'array',
+      minItems: 1,
+      required: true
+   }
+} 
 
 

@@ -23,8 +23,6 @@ import { PaymenttermGetListV1ResponseMPayloadAllOf } from './paymentterm-get-lis
 // @ts-ignore
 import { PaymenttermListElement } from './paymentterm-list-element';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type PaymenttermGetListV1ResponseMPayload
  * Payload for GET /1/object/paymentterm/getList
@@ -34,15 +32,40 @@ export type PaymenttermGetListV1ResponseMPayload = CommonGetListV1ResponseMPaylo
 
 
 /**
- * @export 
- * A PaymenttermGetListV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectPaymenttermGetListV1ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectPaymenttermGetListV1ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A PaymenttermGetListV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectPaymenttermGetListV1ResponseMPayload
+ */
+export class DataObjectPaymenttermGetListV1ResponseMPayload {
    a_objPaymentterm:Array<PaymenttermListElement> = []
    iRowReturned:number = 0
    iRowFiltered:number = 0
 }
+
+/**
+ * @export 
+ * A PaymenttermGetListV1ResponseMPayload Validation Object
+ * @class ValidationObjectPaymenttermGetListV1ResponseMPayload
+ */
+export class ValidationObjectPaymenttermGetListV1ResponseMPayload {
+   a_objPaymentterm = {
+      type: 'array',
+      required: true
+   }
+   iRowReturned = {
+      type: 'integer',
+      required: true
+   }
+   iRowFiltered = {
+      type: 'integer',
+      required: true
+   }
+} 
 
 

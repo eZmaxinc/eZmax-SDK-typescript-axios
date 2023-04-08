@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * An Address Object
  * @export
@@ -72,12 +70,17 @@ export interface AddressRequest {
     'sAddressZip': string;
 }
 /**
- * A AddressRequest Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectAddressRequest
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectAddressRequest extends DefaultObject {
+
+/**
+ * @export 
+ * A AddressRequest Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectAddressRequest
+ */
+export class DataObjectAddressRequest {
    fkiAddresstypeID:number = 0
    sAddressCivic:string = ''
    sAddressStreet:string = ''
@@ -87,5 +90,48 @@ export class DefaultObjectAddressRequest extends DefaultObject {
    fkiCountryID:number = 0
    sAddressZip:string = ''
 }
+
+/**
+ * @export 
+ * A AddressRequest Validation Object
+ * @class ValidationObjectAddressRequest
+ */
+export class ValidationObjectAddressRequest {
+   fkiAddresstypeID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sAddressCivic = {
+      type: 'string',
+      required: true
+   }
+   sAddressStreet = {
+      type: 'string',
+      required: true
+   }
+   sAddressSuite = {
+      type: 'string',
+      required: true
+   }
+   sAddressCity = {
+      type: 'string',
+      required: true
+   }
+   fkiProvinceID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiCountryID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sAddressZip = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

@@ -20,8 +20,6 @@ import { FranchisereferalincomeRequest } from './franchisereferalincome-request'
 // @ts-ignore
 import { FranchisereferalincomeRequestCompound } from './franchisereferalincome-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for POST /1/object/franchisereferalincome
  * @export
@@ -42,14 +40,37 @@ export interface FranchisereferalincomeCreateObjectV1Request {
     'objFranchisereferalincomeCompound'?: FranchisereferalincomeRequestCompound;
 }
 /**
- * A FranchisereferalincomeCreateObjectV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectFranchisereferalincomeCreateObjectV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectFranchisereferalincomeCreateObjectV1Request extends DefaultObject {
-   objFranchisereferalincome?:Partial<FranchisereferalincomeRequest> = undefined
-   objFranchisereferalincomeCompound?:Partial<FranchisereferalincomeRequestCompound> = undefined
+// @ts-ignore
+import { DataObjectFranchisereferalincomeRequest } from './'
+// @ts-ignore
+import { DataObjectFranchisereferalincomeRequestCompound } from './'
+// @ts-ignore
+import { ValidationObjectFranchisereferalincomeRequest } from './'
+// @ts-ignore
+import { ValidationObjectFranchisereferalincomeRequestCompound } from './'
+
+/**
+ * @export 
+ * A FranchisereferalincomeCreateObjectV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectFranchisereferalincomeCreateObjectV1Request
+ */
+export class DataObjectFranchisereferalincomeCreateObjectV1Request {
+   objFranchisereferalincome?:FranchisereferalincomeRequest = undefined
+   objFranchisereferalincomeCompound?:FranchisereferalincomeRequestCompound = undefined
 }
+
+/**
+ * @export 
+ * A FranchisereferalincomeCreateObjectV1Request Validation Object
+ * @class ValidationObjectFranchisereferalincomeCreateObjectV1Request
+ */
+export class ValidationObjectFranchisereferalincomeCreateObjectV1Request {
+   objFranchisereferalincome = new ValidationObjectFranchisereferalincomeRequest()
+   objFranchisereferalincomeCompound = new ValidationObjectFranchisereferalincomeRequestCompound()
+} 
 
 

@@ -17,8 +17,6 @@
 // @ts-ignore
 import { UserResponseCompound } from './user-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface WebhookUserUserCreatedAllOf {
     'objUser': UserResponseCompound;
 }
 /**
- * A WebhookUserUserCreatedAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectWebhookUserUserCreatedAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectWebhookUserUserCreatedAllOf extends DefaultObject {
-   objUser:Partial<UserResponseCompound> = {}
+// @ts-ignore
+import { DataObjectUserResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectUserResponseCompound } from './'
+
+/**
+ * @export 
+ * A WebhookUserUserCreatedAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectWebhookUserUserCreatedAllOf
+ */
+export class DataObjectWebhookUserUserCreatedAllOf {
+   objUser:UserResponseCompound = new DataObjectUserResponseCompound()
 }
+
+/**
+ * @export 
+ * A WebhookUserUserCreatedAllOf Validation Object
+ * @class ValidationObjectWebhookUserUserCreatedAllOf
+ */
+export class ValidationObjectWebhookUserUserCreatedAllOf {
+   objUser = new ValidationObjectUserResponseCompound()
+} 
 
 

@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzmaxinvoicingResponseCompound } from './ezmaxinvoicing-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for GET /2/object/ezmaxinvoicing/{pkiEzmaxinvoicingID}
  * @export
@@ -33,13 +31,31 @@ export interface EzmaxinvoicingGetObjectV2ResponseMPayload {
     'objEzmaxinvoicing': EzmaxinvoicingResponseCompound;
 }
 /**
- * A EzmaxinvoicingGetObjectV2ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzmaxinvoicingGetObjectV2ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzmaxinvoicingGetObjectV2ResponseMPayload extends DefaultObject {
-   objEzmaxinvoicing:Partial<EzmaxinvoicingResponseCompound> = {}
+// @ts-ignore
+import { DataObjectEzmaxinvoicingResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectEzmaxinvoicingResponseCompound } from './'
+
+/**
+ * @export 
+ * A EzmaxinvoicingGetObjectV2ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzmaxinvoicingGetObjectV2ResponseMPayload
+ */
+export class DataObjectEzmaxinvoicingGetObjectV2ResponseMPayload {
+   objEzmaxinvoicing:EzmaxinvoicingResponseCompound = new DataObjectEzmaxinvoicingResponseCompound()
 }
+
+/**
+ * @export 
+ * A EzmaxinvoicingGetObjectV2ResponseMPayload Validation Object
+ * @class ValidationObjectEzmaxinvoicingGetObjectV2ResponseMPayload
+ */
+export class ValidationObjectEzmaxinvoicingGetObjectV2ResponseMPayload {
+   objEzmaxinvoicing = new ValidationObjectEzmaxinvoicingResponseCompound()
+} 
 
 

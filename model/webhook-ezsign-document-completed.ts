@@ -29,8 +29,6 @@ import { EzsigndocumentResponse } from './ezsigndocument-response';
 // @ts-ignore
 import { WebhookEzsignDocumentCompletedAllOf } from './webhook-ezsign-document-completed-all-of';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type WebhookEzsignDocumentCompleted
  * This is the base Webhook object
@@ -40,15 +38,42 @@ export type WebhookEzsignDocumentCompleted = CommonWebhook & WebhookEzsignDocume
 
 
 /**
- * @export 
- * A WebhookEzsignDocumentCompleted Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectWebhookEzsignDocumentCompleted
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectWebhookEzsignDocumentCompleted extends DefaultObject {
-   objEzsigndocument:Partial<EzsigndocumentResponse> = {}
-   objWebhook:Partial<CustomWebhookResponse> = {}
+// @ts-ignore
+import { DataObjectEzsigndocumentResponse } from './'
+// @ts-ignore
+import { DataObjectCustomWebhookResponse } from './'
+// @ts-ignore
+import { ValidationObjectEzsigndocumentResponse } from './'
+// @ts-ignore
+import { ValidationObjectCustomWebhookResponse } from './'
+
+/**
+ * @export 
+ * A WebhookEzsignDocumentCompleted Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectWebhookEzsignDocumentCompleted
+ */
+export class DataObjectWebhookEzsignDocumentCompleted {
+   objEzsigndocument:EzsigndocumentResponse = new DataObjectEzsigndocumentResponse()
+   objWebhook:CustomWebhookResponse = new DataObjectCustomWebhookResponse()
    a_objAttempt:Array<AttemptResponseCompound> = []
 }
+
+/**
+ * @export 
+ * A WebhookEzsignDocumentCompleted Validation Object
+ * @class ValidationObjectWebhookEzsignDocumentCompleted
+ */
+export class ValidationObjectWebhookEzsignDocumentCompleted {
+   objEzsigndocument = new ValidationObjectEzsigndocumentResponse()
+   objWebhook = new ValidationObjectCustomWebhookResponse()
+   a_objAttempt = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

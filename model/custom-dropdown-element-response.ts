@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Generic DropdownElement Response
  * @export
@@ -36,14 +34,35 @@ export interface CustomDropdownElementResponse {
     'sValue': string;
 }
 /**
- * A CustomDropdownElementResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCustomDropdownElementResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCustomDropdownElementResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A CustomDropdownElementResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCustomDropdownElementResponse
+ */
+export class DataObjectCustomDropdownElementResponse {
    sLabel:string = ''
    sValue:string = ''
 }
+
+/**
+ * @export 
+ * A CustomDropdownElementResponse Validation Object
+ * @class ValidationObjectCustomDropdownElementResponse
+ */
+export class ValidationObjectCustomDropdownElementResponse {
+   sLabel = {
+      type: 'string',
+      required: true
+   }
+   sValue = {
+      type: 'string',
+      required: true
+   }
+} 
 
 

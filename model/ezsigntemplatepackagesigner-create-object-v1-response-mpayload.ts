@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for POST /1/object/ezsigntemplatepackagesigner
  * @export
@@ -30,13 +28,31 @@ export interface EzsigntemplatepackagesignerCreateObjectV1ResponseMPayload {
     'a_pkiEzsigntemplatepackagesignerID': Array<number>;
 }
 /**
- * A EzsigntemplatepackagesignerCreateObjectV1ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplatepackagesignerCreateObjectV1ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatepackagesignerCreateObjectV1ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntemplatepackagesignerCreateObjectV1ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatepackagesignerCreateObjectV1ResponseMPayload
+ */
+export class DataObjectEzsigntemplatepackagesignerCreateObjectV1ResponseMPayload {
    a_pkiEzsigntemplatepackagesignerID:Array<number> = []
 }
+
+/**
+ * @export 
+ * A EzsigntemplatepackagesignerCreateObjectV1ResponseMPayload Validation Object
+ * @class ValidationObjectEzsigntemplatepackagesignerCreateObjectV1ResponseMPayload
+ */
+export class ValidationObjectEzsigntemplatepackagesignerCreateObjectV1ResponseMPayload {
+   a_pkiEzsigntemplatepackagesignerID = {
+      type: 'array',
+      minItems: 1,
+      required: true
+   }
+} 
 
 

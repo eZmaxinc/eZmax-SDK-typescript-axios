@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigntemplatepackagemembershipRequest } from './ezsigntemplatepackagemembership-request';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type EzsigntemplatepackagemembershipRequestCompound
  * A Ezsigntemplatepackagemembership Object and children
@@ -28,15 +26,43 @@ export type EzsigntemplatepackagemembershipRequestCompound = Ezsigntemplatepacka
 
 
 /**
- * @export 
- * A EzsigntemplatepackagemembershipRequestCompound Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectEzsigntemplatepackagemembershipRequestCompound
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplatepackagemembershipRequestCompound extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntemplatepackagemembershipRequestCompound Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplatepackagemembershipRequestCompound
+ */
+export class DataObjectEzsigntemplatepackagemembershipRequestCompound {
    pkiEzsigntemplatepackagemembershipID?:number = undefined
    fkiEzsigntemplatepackageID:number = 0
    fkiEzsigntemplateID:number = 0
 }
+
+/**
+ * @export 
+ * A EzsigntemplatepackagemembershipRequestCompound Validation Object
+ * @class ValidationObjectEzsigntemplatepackagemembershipRequestCompound
+ */
+export class ValidationObjectEzsigntemplatepackagemembershipRequestCompound {
+   pkiEzsigntemplatepackagemembershipID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzsigntemplatepackageID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsigntemplateID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+} 
 
 

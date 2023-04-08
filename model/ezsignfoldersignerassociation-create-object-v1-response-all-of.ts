@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignfoldersignerassociationCreateObjectV1ResponseMPayload } from './ezsignfoldersignerassociation-create-object-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface EzsignfoldersignerassociationCreateObjectV1ResponseAllOf {
     'mPayload': EzsignfoldersignerassociationCreateObjectV1ResponseMPayload;
 }
 /**
- * A EzsignfoldersignerassociationCreateObjectV1ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfoldersignerassociationCreateObjectV1ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfoldersignerassociationCreateObjectV1ResponseAllOf extends DefaultObject {
-   mPayload:Partial<EzsignfoldersignerassociationCreateObjectV1ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectEzsignfoldersignerassociationCreateObjectV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectEzsignfoldersignerassociationCreateObjectV1ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationCreateObjectV1ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfoldersignerassociationCreateObjectV1ResponseAllOf
+ */
+export class DataObjectEzsignfoldersignerassociationCreateObjectV1ResponseAllOf {
+   mPayload:EzsignfoldersignerassociationCreateObjectV1ResponseMPayload = new DataObjectEzsignfoldersignerassociationCreateObjectV1ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationCreateObjectV1ResponseAllOf Validation Object
+ * @class ValidationObjectEzsignfoldersignerassociationCreateObjectV1ResponseAllOf
+ */
+export class ValidationObjectEzsignfoldersignerassociationCreateObjectV1ResponseAllOf {
+   mPayload = new ValidationObjectEzsignfoldersignerassociationCreateObjectV1ResponseMPayload()
+} 
 
 

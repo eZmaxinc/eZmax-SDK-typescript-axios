@@ -15,16 +15,18 @@
 
 
 export * from './api/global-customer-api';
-export * from './api/module-communication-api';
+export * from './api/global-ezmaxclient-api';
 export * from './api/module-ezsign-api';
 export * from './api/module-user-api';
 export * from './api/object-activesession-api';
 export * from './api/object-apikey-api';
+export * from './api/object-billingentityexternal-api';
 export * from './api/object-billingentityinternal-api';
 export * from './api/object-branding-api';
 export * from './api/object-communication-api';
 export * from './api/object-department-api';
 export * from './api/object-ezmaxinvoicing-api';
+export * from './api/object-ezmaxproduct-api';
 export * from './api/object-ezsignbulksend-api';
 export * from './api/object-ezsignbulksenddocumentmapping-api';
 export * from './api/object-ezsignbulksendsignermapping-api';
@@ -45,6 +47,7 @@ export * from './api/object-ezsigntemplatepackagesignermembership-api';
 export * from './api/object-ezsigntemplatesignature-api';
 export * from './api/object-ezsigntemplatesigner-api';
 export * from './api/object-ezsigntsarequirement-api';
+export * from './api/object-font-api';
 export * from './api/object-franchisebroker-api';
 export * from './api/object-franchiseoffice-api';
 export * from './api/object-franchisereferalincome-api';
@@ -57,6 +60,7 @@ export * from './api/object-taxassignment-api';
 export * from './api/object-timezone-api';
 export * from './api/object-user-api';
 export * from './api/object-usergroup-api';
+export * from './api/object-variableexpense-api';
 export * from './api/object-versionhistory-api';
 export * from './api/object-webhook-api';
 

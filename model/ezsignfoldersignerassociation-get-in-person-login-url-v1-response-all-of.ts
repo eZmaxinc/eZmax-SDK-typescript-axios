@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload } from './ezsignfoldersignerassociation-get-in-person-login-url-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseAllOf
     'mPayload': EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload;
 }
 /**
- * A EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseAllOf extends DefaultObject {
-   mPayload:Partial<EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectEzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectEzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseAllOf
+ */
+export class DataObjectEzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseAllOf {
+   mPayload:EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload = new DataObjectEzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseAllOf Validation Object
+ * @class ValidationObjectEzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseAllOf
+ */
+export class ValidationObjectEzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseAllOf {
+   mPayload = new ValidationObjectEzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload()
+} 
 
 

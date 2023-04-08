@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * An Attempt object
  * @export
@@ -42,15 +40,40 @@ export interface AttemptResponse {
     'iAttemptDuration': number;
 }
 /**
- * A AttemptResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectAttemptResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectAttemptResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A AttemptResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectAttemptResponse
+ */
+export class DataObjectAttemptResponse {
    dtAttemptStart:string = ''
    sAttemptResult:string = ''
    iAttemptDuration:number = 0
 }
+
+/**
+ * @export 
+ * A AttemptResponse Validation Object
+ * @class ValidationObjectAttemptResponse
+ */
+export class ValidationObjectAttemptResponse {
+   dtAttemptStart = {
+      type: 'string',
+      required: true
+   }
+   sAttemptResult = {
+      type: 'string',
+      required: true
+   }
+   iAttemptDuration = {
+      type: 'integer',
+      required: true
+   }
+} 
 
 

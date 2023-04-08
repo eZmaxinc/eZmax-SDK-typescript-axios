@@ -20,8 +20,6 @@ import { EzsigntemplatedocumentResponse } from './ezsigntemplatedocument-respons
 // @ts-ignore
 import { EzsigntemplatesignerResponseCompound } from './ezsigntemplatesigner-response-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -42,14 +40,36 @@ export interface EzsigntemplateResponseCompoundAllOf {
     'a_objEzsigntemplatesigner': Array<EzsigntemplatesignerResponseCompound>;
 }
 /**
- * A EzsigntemplateResponseCompoundAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplateResponseCompoundAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplateResponseCompoundAllOf extends DefaultObject {
-   objEzsigntemplatedocument?:Partial<EzsigntemplatedocumentResponse> = undefined
+// @ts-ignore
+import { DataObjectEzsigntemplatedocumentResponse } from './'
+// @ts-ignore
+import { ValidationObjectEzsigntemplatedocumentResponse } from './'
+
+/**
+ * @export 
+ * A EzsigntemplateResponseCompoundAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplateResponseCompoundAllOf
+ */
+export class DataObjectEzsigntemplateResponseCompoundAllOf {
+   objEzsigntemplatedocument?:EzsigntemplatedocumentResponse = undefined
    a_objEzsigntemplatesigner:Array<EzsigntemplatesignerResponseCompound> = []
 }
+
+/**
+ * @export 
+ * A EzsigntemplateResponseCompoundAllOf Validation Object
+ * @class ValidationObjectEzsigntemplateResponseCompoundAllOf
+ */
+export class ValidationObjectEzsigntemplateResponseCompoundAllOf {
+   objEzsigntemplatedocument = new ValidationObjectEzsigntemplatedocumentResponse()
+   a_objEzsigntemplatesigner = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigndocumentEditEzsignformfieldgroupsV1ResponseMPayload } from './ezsigndocument-edit-ezsignformfieldgroups-v1-response-mpayload';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,31 @@ export interface EzsigndocumentEditEzsignformfieldgroupsV1ResponseAllOf {
     'mPayload': EzsigndocumentEditEzsignformfieldgroupsV1ResponseMPayload;
 }
 /**
- * A EzsigndocumentEditEzsignformfieldgroupsV1ResponseAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigndocumentEditEzsignformfieldgroupsV1ResponseAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigndocumentEditEzsignformfieldgroupsV1ResponseAllOf extends DefaultObject {
-   mPayload:Partial<EzsigndocumentEditEzsignformfieldgroupsV1ResponseMPayload> = {}
+// @ts-ignore
+import { DataObjectEzsigndocumentEditEzsignformfieldgroupsV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectEzsigndocumentEditEzsignformfieldgroupsV1ResponseMPayload } from './'
+
+/**
+ * @export 
+ * A EzsigndocumentEditEzsignformfieldgroupsV1ResponseAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigndocumentEditEzsignformfieldgroupsV1ResponseAllOf
+ */
+export class DataObjectEzsigndocumentEditEzsignformfieldgroupsV1ResponseAllOf {
+   mPayload:EzsigndocumentEditEzsignformfieldgroupsV1ResponseMPayload = new DataObjectEzsigndocumentEditEzsignformfieldgroupsV1ResponseMPayload()
 }
+
+/**
+ * @export 
+ * A EzsigndocumentEditEzsignformfieldgroupsV1ResponseAllOf Validation Object
+ * @class ValidationObjectEzsigndocumentEditEzsignformfieldgroupsV1ResponseAllOf
+ */
+export class ValidationObjectEzsigndocumentEditEzsignformfieldgroupsV1ResponseAllOf {
+   mPayload = new ValidationObjectEzsigndocumentEditEzsignformfieldgroupsV1ResponseMPayload()
+} 
 
 

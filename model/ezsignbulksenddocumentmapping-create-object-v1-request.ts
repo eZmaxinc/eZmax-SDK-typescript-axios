@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsignbulksenddocumentmappingRequestCompound } from './ezsignbulksenddocumentmapping-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for POST /1/object/ezsignbulksenddocumentmapping
  * @export
@@ -33,13 +31,31 @@ export interface EzsignbulksenddocumentmappingCreateObjectV1Request {
     'a_objEzsignbulksenddocumentmapping': Array<EzsignbulksenddocumentmappingRequestCompound>;
 }
 /**
- * A EzsignbulksenddocumentmappingCreateObjectV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignbulksenddocumentmappingCreateObjectV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignbulksenddocumentmappingCreateObjectV1Request extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignbulksenddocumentmappingCreateObjectV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignbulksenddocumentmappingCreateObjectV1Request
+ */
+export class DataObjectEzsignbulksenddocumentmappingCreateObjectV1Request {
    a_objEzsignbulksenddocumentmapping:Array<EzsignbulksenddocumentmappingRequestCompound> = []
 }
+
+/**
+ * @export 
+ * A EzsignbulksenddocumentmappingCreateObjectV1Request Validation Object
+ * @class ValidationObjectEzsignbulksenddocumentmappingCreateObjectV1Request
+ */
+export class ValidationObjectEzsignbulksenddocumentmappingCreateObjectV1Request {
+   a_objEzsignbulksenddocumentmapping = {
+      type: 'array',
+      minItems: 1,
+      required: true
+   }
+} 
 
 

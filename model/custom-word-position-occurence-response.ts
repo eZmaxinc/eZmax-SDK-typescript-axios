@@ -14,8 +14,6 @@
 
 
 
-import { DefaultObject } from '../base'
-
 /**
  * A Word Position Object
  * @export
@@ -42,15 +40,43 @@ export interface CustomWordPositionOccurenceResponse {
     'iY'?: number;
 }
 /**
- * A CustomWordPositionOccurenceResponse Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCustomWordPositionOccurenceResponse
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCustomWordPositionOccurenceResponse extends DefaultObject {
+
+/**
+ * @export 
+ * A CustomWordPositionOccurenceResponse Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCustomWordPositionOccurenceResponse
+ */
+export class DataObjectCustomWordPositionOccurenceResponse {
    iPage?:number = undefined
    iX?:number = undefined
    iY?:number = undefined
 }
+
+/**
+ * @export 
+ * A CustomWordPositionOccurenceResponse Validation Object
+ * @class ValidationObjectCustomWordPositionOccurenceResponse
+ */
+export class ValidationObjectCustomWordPositionOccurenceResponse {
+   iPage = {
+      type: 'integer',
+      minimum: 1,
+      required: false
+   }
+   iX = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   iY = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+} 
 
 

@@ -17,8 +17,6 @@
 // @ts-ignore
 import { PhonestaticResponse } from './phonestatic-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * @type PhonestaticResponseCompound
  * A Phonestatic Object and children to create a complete structure
@@ -28,15 +26,43 @@ export type PhonestaticResponseCompound = PhonestaticResponse;
 
 
 /**
- * @export 
- * A PhonestaticResponseCompound Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @class DefaultObjectPhonestaticResponseCompound
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectPhonestaticResponseCompound extends DefaultObject {
+
+/**
+ * @export 
+ * A PhonestaticResponseCompound Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectPhonestaticResponseCompound
+ */
+export class DataObjectPhonestaticResponseCompound {
    pkiPhonestaticID:number = 0
    sPhonestaticE164?:string = undefined
    sPhonestaticExtension?:string = undefined
 }
+
+/**
+ * @export 
+ * A PhonestaticResponseCompound Validation Object
+ * @class ValidationObjectPhonestaticResponseCompound
+ */
+export class ValidationObjectPhonestaticResponseCompound {
+   pkiPhonestaticID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sPhonestaticE164 = {
+      type: 'string',
+      pattern: '/^\+[1-9]\d{1,14}$/',
+      required: false
+   }
+   sPhonestaticExtension = {
+      type: 'string',
+      pattern: '/^\d/',
+      required: false
+   }
+} 
 
 

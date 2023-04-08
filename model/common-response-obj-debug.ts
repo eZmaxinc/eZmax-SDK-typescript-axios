@@ -17,8 +17,6 @@
 // @ts-ignore
 import { CommonResponseObjSQLQuery } from './common-response-obj-sqlquery';
 
-import { DefaultObject } from '../base'
-
 /**
  * This is a generic debug object that is returned by all API requests
  * @export
@@ -57,17 +55,50 @@ export interface CommonResponseObjDebug {
     'a_objSQLQuery': Array<CommonResponseObjSQLQuery>;
 }
 /**
- * A CommonResponseObjDebug Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectCommonResponseObjDebug
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectCommonResponseObjDebug extends DefaultObject {
+
+/**
+ * @export 
+ * A CommonResponseObjDebug Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectCommonResponseObjDebug
+ */
+export class DataObjectCommonResponseObjDebug {
    sMemoryUsage:string = ''
    sRunTime:string = ''
    iSQLSelects:number = 0
    iSQLQueries:number = 0
    a_objSQLQuery:Array<CommonResponseObjSQLQuery> = []
 }
+
+/**
+ * @export 
+ * A CommonResponseObjDebug Validation Object
+ * @class ValidationObjectCommonResponseObjDebug
+ */
+export class ValidationObjectCommonResponseObjDebug {
+   sMemoryUsage = {
+      type: 'string',
+      required: true
+   }
+   sRunTime = {
+      type: 'string',
+      required: true
+   }
+   iSQLSelects = {
+      type: 'integer',
+      required: true
+   }
+   iSQLQueries = {
+      type: 'integer',
+      required: true
+   }
+   a_objSQLQuery = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

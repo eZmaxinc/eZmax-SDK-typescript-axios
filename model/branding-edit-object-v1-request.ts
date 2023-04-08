@@ -17,8 +17,6 @@
 // @ts-ignore
 import { BrandingRequestCompound } from './branding-request-compound';
 
-import { DefaultObject } from '../base'
-
 /**
  * Request for PUT /1/object/branding/{pkiBrandingID}
  * @export
@@ -33,13 +31,31 @@ export interface BrandingEditObjectV1Request {
     'objBranding': BrandingRequestCompound;
 }
 /**
- * A BrandingEditObjectV1Request Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectBrandingEditObjectV1Request
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectBrandingEditObjectV1Request extends DefaultObject {
-   objBranding:Partial<BrandingRequestCompound> = {}
+// @ts-ignore
+import { DataObjectBrandingRequestCompound } from './'
+// @ts-ignore
+import { ValidationObjectBrandingRequestCompound } from './'
+
+/**
+ * @export 
+ * A BrandingEditObjectV1Request Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectBrandingEditObjectV1Request
+ */
+export class DataObjectBrandingEditObjectV1Request {
+   objBranding:BrandingRequestCompound = new DataObjectBrandingRequestCompound()
 }
+
+/**
+ * @export 
+ * A BrandingEditObjectV1Request Validation Object
+ * @class ValidationObjectBrandingEditObjectV1Request
+ */
+export class ValidationObjectBrandingEditObjectV1Request {
+   objBranding = new ValidationObjectBrandingRequestCompound()
+} 
 
 

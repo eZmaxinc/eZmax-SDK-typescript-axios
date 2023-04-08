@@ -17,8 +17,6 @@
 // @ts-ignore
 import { FieldEEzsignfoldertypePrivacylevel } from './field-eezsignfoldertype-privacylevel';
 
-import { DefaultObject } from '../base'
-
 /**
  * An Ezsignfoldertype List Element
  * @export
@@ -50,17 +48,50 @@ export interface EzsignfoldertypeListElement {
      */
     'bEzsignfoldertypeIsactive': boolean;
 }
+
+
 /**
- * A EzsignfoldertypeListElement Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsignfoldertypeListElement
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsignfoldertypeListElement extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsignfoldertypeListElement Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsignfoldertypeListElement
+ */
+export class DataObjectEzsignfoldertypeListElement {
    pkiEzsignfoldertypeID:number = 0
    eEzsignfoldertypePrivacylevel:FieldEEzsignfoldertypePrivacylevel = 'User'
    sEzsignfoldertypeNameX:string = ''
    bEzsignfoldertypeIsactive:boolean = false
 }
+
+/**
+ * @export 
+ * A EzsignfoldertypeListElement Validation Object
+ * @class ValidationObjectEzsignfoldertypeListElement
+ */
+export class ValidationObjectEzsignfoldertypeListElement {
+   pkiEzsignfoldertypeID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   eEzsignfoldertypePrivacylevel = {
+      type: 'enum',
+      allowableValues: ['User','Usergroup'],
+      required: true
+   }
+   sEzsignfoldertypeNameX = {
+      type: 'string',
+      required: true
+   }
+   bEzsignfoldertypeIsactive = {
+      type: 'boolean',
+      required: true
+   }
+} 
 
 

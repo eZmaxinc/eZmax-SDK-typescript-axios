@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzmaxinvoicingAutocompleteElementResponse } from './ezmaxinvoicing-autocomplete-element-response';
 
-import { DefaultObject } from '../base'
-
 /**
  * Payload for POST /2/object/ezmaxinvoicing/getAutocomplete
  * @export
@@ -33,13 +31,30 @@ export interface EzmaxinvoicingGetAutocompleteV2ResponseMPayload {
     'a_objEzmaxinvoicing': Array<EzmaxinvoicingAutocompleteElementResponse>;
 }
 /**
- * A EzmaxinvoicingGetAutocompleteV2ResponseMPayload Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzmaxinvoicingGetAutocompleteV2ResponseMPayload
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzmaxinvoicingGetAutocompleteV2ResponseMPayload extends DefaultObject {
+
+/**
+ * @export 
+ * A EzmaxinvoicingGetAutocompleteV2ResponseMPayload Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzmaxinvoicingGetAutocompleteV2ResponseMPayload
+ */
+export class DataObjectEzmaxinvoicingGetAutocompleteV2ResponseMPayload {
    a_objEzmaxinvoicing:Array<EzmaxinvoicingAutocompleteElementResponse> = []
 }
+
+/**
+ * @export 
+ * A EzmaxinvoicingGetAutocompleteV2ResponseMPayload Validation Object
+ * @class ValidationObjectEzmaxinvoicingGetAutocompleteV2ResponseMPayload
+ */
+export class ValidationObjectEzmaxinvoicingGetAutocompleteV2ResponseMPayload {
+   a_objEzmaxinvoicing = {
+      type: 'array',
+      required: true
+   }
+} 
 
 

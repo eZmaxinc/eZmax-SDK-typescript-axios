@@ -17,8 +17,6 @@
 // @ts-ignore
 import { EzsigntemplateListElement } from './ezsigntemplate-list-element';
 
-import { DefaultObject } from '../base'
-
 /**
  * 
  * @export
@@ -33,13 +31,30 @@ export interface EzsigntemplateGetListV1ResponseMPayloadAllOf {
     'a_objEzsigntemplate': Array<EzsigntemplateListElement>;
 }
 /**
- * A EzsigntemplateGetListV1ResponseMPayloadAllOf Object with automatic temp default value
- * Use this object only for create an empty object to assign a response from server
- * @export 
- * @class DefaultObjectEzsigntemplateGetListV1ResponseMPayloadAllOf
+ * @import
+ * Imports Child Data Object
  */
-export class DefaultObjectEzsigntemplateGetListV1ResponseMPayloadAllOf extends DefaultObject {
+
+/**
+ * @export 
+ * A EzsigntemplateGetListV1ResponseMPayloadAllOf Data Object with automatic temporary default value
+ * Use this object only for create an empty data object to assign a response from server
+ * @class DataObjectEzsigntemplateGetListV1ResponseMPayloadAllOf
+ */
+export class DataObjectEzsigntemplateGetListV1ResponseMPayloadAllOf {
    a_objEzsigntemplate:Array<EzsigntemplateListElement> = []
 }
+
+/**
+ * @export 
+ * A EzsigntemplateGetListV1ResponseMPayloadAllOf Validation Object
+ * @class ValidationObjectEzsigntemplateGetListV1ResponseMPayloadAllOf
+ */
+export class ValidationObjectEzsigntemplateGetListV1ResponseMPayloadAllOf {
+   a_objEzsigntemplate = {
+      type: 'array',
+      required: true
+   }
+} 
 
 
