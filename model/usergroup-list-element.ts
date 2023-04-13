@@ -57,11 +57,13 @@ export class DataObjectUsergroupListElement {
 export class ValidationObjectUsergroupListElement {
    pkiUsergroupID = {
       type: 'integer',
-      minimum: 0,
+      minimum: 1,
+      maximum: 255,
       required: true
    }
    sUsergroupNameX = {
       type: 'string',
+      pattern: '/^.{0,50}$/',
       required: true
    }
 } 

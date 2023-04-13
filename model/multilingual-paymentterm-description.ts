@@ -21,13 +21,13 @@
  */
 export interface MultilingualPaymenttermDescription {
     /**
-     * The description of the Paymentterm in french
+     * The description of the Paymentterm in French
      * @type {string}
      * @memberof MultilingualPaymenttermDescription
      */
     'sPaymenttermDescription1'?: string;
     /**
-     * The description of the Paymentterm in english
+     * The description of the Paymentterm in English
      * @type {string}
      * @memberof MultilingualPaymenttermDescription
      */

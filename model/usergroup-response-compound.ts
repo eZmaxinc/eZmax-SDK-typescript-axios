@@ -56,7 +56,8 @@ export class DataObjectUsergroupResponseCompound {
 export class ValidationObjectUsergroupResponseCompound {
    pkiUsergroupID = {
       type: 'integer',
-      minimum: 0,
+      minimum: 1,
+      maximum: 255,
       required: true
    }
    objUsergroupName = new ValidationObjectMultilingualUsergroupName()

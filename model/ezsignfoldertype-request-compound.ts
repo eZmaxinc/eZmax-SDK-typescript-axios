@@ -114,12 +114,14 @@ export class ValidationObjectEzsignfoldertypeRequestCompound {
    }
    fkiUsergroupID = {
       type: 'integer',
-      minimum: 0,
+      minimum: 1,
+      maximum: 255,
       required: false
    }
    fkiUsergroupIDRestricted = {
       type: 'integer',
-      minimum: 0,
+      minimum: 1,
+      maximum: 255,
       required: false
    }
    fkiEzsigntsarequirementID = {

@@ -21,13 +21,13 @@
  */
 export interface MultilingualEzmaxinvoicingsummaryinternalDescription {
     /**
-     * The Ezmaxinvoicingsummaryinternal description in french
+     * The Ezmaxinvoicingsummaryinternal description in French
      * @type {string}
      * @memberof MultilingualEzmaxinvoicingsummaryinternalDescription
      */
     'sEzmaxinvoicingsummaryinternalDescription1'?: string;
     /**
-     * The Ezmaxinvoicingsummaryinternal description in english
+     * The Ezmaxinvoicingsummaryinternal description in English
      * @type {string}
      * @memberof MultilingualEzmaxinvoicingsummaryinternalDescription
      */

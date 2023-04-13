@@ -315,12 +315,14 @@ export class ValidationObjectEzsignfoldertypeResponse {
    }
    fkiUsergroupID = {
       type: 'integer',
-      minimum: 0,
+      minimum: 1,
+      maximum: 255,
       required: false
    }
    fkiUsergroupIDRestricted = {
       type: 'integer',
-      minimum: 0,
+      minimum: 1,
+      maximum: 255,
       required: false
    }
    fkiEzsigntsarequirementID = {
@@ -351,10 +353,12 @@ export class ValidationObjectEzsignfoldertypeResponse {
    }
    sUsergroupNameX = {
       type: 'string',
+      pattern: '/^.{0,50}$/',
       required: false
    }
    sUsergroupNameXRestricted = {
       type: 'string',
+      pattern: '/^.{0,50}$/',
       required: false
    }
    eEzsignfoldertypePrivacylevel = {

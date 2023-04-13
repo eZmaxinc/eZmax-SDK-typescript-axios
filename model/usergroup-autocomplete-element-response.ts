@@ -64,11 +64,13 @@ export class DataObjectUsergroupAutocompleteElementResponse {
 export class ValidationObjectUsergroupAutocompleteElementResponse {
    sUsergroupNameX = {
       type: 'string',
+      pattern: '/^.{0,50}$/',
       required: true
    }
    pkiUsergroupID = {
       type: 'integer',
-      minimum: 0,
+      minimum: 1,
+      maximum: 255,
       required: true
    }
    bUsergroupIsactive = {
