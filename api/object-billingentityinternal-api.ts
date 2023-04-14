@@ -26,8 +26,6 @@ import { BillingentityinternalCreateObjectV1Request } from '../model';
 // @ts-ignore
 import { BillingentityinternalCreateObjectV1Response } from '../model';
 // @ts-ignore
-import { BillingentityinternalDeleteObjectV1Response } from '../model';
-// @ts-ignore
 import { BillingentityinternalEditObjectV1Request } from '../model';
 // @ts-ignore
 import { BillingentityinternalEditObjectV1Response } from '../model';
@@ -94,62 +92,6 @@ export const ObjectBillingentityinternalApiAxiosParamCreator = function (configu
                         authorization: configuration.apiKey as string,
                         secret: secret as string,
                         method: 'POST' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary Delete an existing Billingentityinternal
-         * @param {number} pkiBillingentityinternalID The unique ID of the Billingentityinternal
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        billingentityinternalDeleteObjectV1: async (pkiBillingentityinternalID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiBillingentityinternalID' is not null or undefined
-            assertParamExists('billingentityinternalDeleteObjectV1', 'pkiBillingentityinternalID', pkiBillingentityinternalID)
-            const localVarPath = `/1/object/billingentityinternal/{pkiBillingentityinternalID}`
-                .replace(`{${"pkiBillingentityinternalID"}}`, encodeURIComponent(String(pkiBillingentityinternalID)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'DELETE' as string,
                         url: basePath + toPathString(localVarUrlObj) as string,
                         body: localVarRequestOptions.data || '' as string
                     }
@@ -456,17 +398,6 @@ export const ObjectBillingentityinternalApiFp = function(configuration?: Configu
         },
         /**
          * 
-         * @summary Delete an existing Billingentityinternal
-         * @param {number} pkiBillingentityinternalID The unique ID of the Billingentityinternal
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async billingentityinternalDeleteObjectV1(pkiBillingentityinternalID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BillingentityinternalDeleteObjectV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.billingentityinternalDeleteObjectV1(pkiBillingentityinternalID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * 
          * @summary Edit an existing Billingentityinternal
          * @param {number} pkiBillingentityinternalID The unique ID of the Billingentityinternal
          * @param {BillingentityinternalEditObjectV1Request} billingentityinternalEditObjectV1Request 
@@ -539,16 +470,6 @@ export const ObjectBillingentityinternalApiFactory = function (configuration?: C
         },
         /**
          * 
-         * @summary Delete an existing Billingentityinternal
-         * @param {number} pkiBillingentityinternalID The unique ID of the Billingentityinternal
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        billingentityinternalDeleteObjectV1(pkiBillingentityinternalID: number, options?: any): AxiosPromise<BillingentityinternalDeleteObjectV1Response> {
-            return localVarFp.billingentityinternalDeleteObjectV1(pkiBillingentityinternalID, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
          * @summary Edit an existing Billingentityinternal
          * @param {number} pkiBillingentityinternalID The unique ID of the Billingentityinternal
          * @param {BillingentityinternalEditObjectV1Request} billingentityinternalEditObjectV1Request 
@@ -615,18 +536,6 @@ export class ObjectBillingentityinternalApi extends BaseAPI {
      */
     public billingentityinternalCreateObjectV1(billingentityinternalCreateObjectV1Request: BillingentityinternalCreateObjectV1Request, options?: AxiosRequestConfig) {
         return ObjectBillingentityinternalApiFp(this.configuration).billingentityinternalCreateObjectV1(billingentityinternalCreateObjectV1Request, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Delete an existing Billingentityinternal
-     * @param {number} pkiBillingentityinternalID The unique ID of the Billingentityinternal
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ObjectBillingentityinternalApi
-     */
-    public billingentityinternalDeleteObjectV1(pkiBillingentityinternalID: number, options?: AxiosRequestConfig) {
-        return ObjectBillingentityinternalApiFp(this.configuration).billingentityinternalDeleteObjectV1(pkiBillingentityinternalID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

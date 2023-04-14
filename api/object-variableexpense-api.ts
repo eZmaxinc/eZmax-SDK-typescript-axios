@@ -30,8 +30,6 @@ import { VariableexpenseCreateObjectV1Request } from '../model';
 // @ts-ignore
 import { VariableexpenseCreateObjectV1Response } from '../model';
 // @ts-ignore
-import { VariableexpenseDeleteObjectV1Response } from '../model';
-// @ts-ignore
 import { VariableexpenseEditObjectV1Request } from '../model';
 // @ts-ignore
 import { VariableexpenseEditObjectV1Response } from '../model';
@@ -94,62 +92,6 @@ export const ObjectVariableexpenseApiAxiosParamCreator = function (configuration
                         authorization: configuration.apiKey as string,
                         secret: secret as string,
                         method: 'POST' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary Delete an existing Variableexpense
-         * @param {number} pkiVariableexpenseID The unique ID of the Variableexpense
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        variableexpenseDeleteObjectV1: async (pkiVariableexpenseID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiVariableexpenseID' is not null or undefined
-            assertParamExists('variableexpenseDeleteObjectV1', 'pkiVariableexpenseID', pkiVariableexpenseID)
-            const localVarPath = `/1/object/variableexpense/{pkiVariableexpenseID}`
-                .replace(`{${"pkiVariableexpenseID"}}`, encodeURIComponent(String(pkiVariableexpenseID)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'DELETE' as string,
                         url: basePath + toPathString(localVarUrlObj) as string,
                         body: localVarRequestOptions.data || '' as string
                     }
@@ -456,17 +398,6 @@ export const ObjectVariableexpenseApiFp = function(configuration?: Configuration
         },
         /**
          * 
-         * @summary Delete an existing Variableexpense
-         * @param {number} pkiVariableexpenseID The unique ID of the Variableexpense
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async variableexpenseDeleteObjectV1(pkiVariableexpenseID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VariableexpenseDeleteObjectV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.variableexpenseDeleteObjectV1(pkiVariableexpenseID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * 
          * @summary Edit an existing Variableexpense
          * @param {number} pkiVariableexpenseID The unique ID of the Variableexpense
          * @param {VariableexpenseEditObjectV1Request} variableexpenseEditObjectV1Request 
@@ -539,16 +470,6 @@ export const ObjectVariableexpenseApiFactory = function (configuration?: Configu
         },
         /**
          * 
-         * @summary Delete an existing Variableexpense
-         * @param {number} pkiVariableexpenseID The unique ID of the Variableexpense
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        variableexpenseDeleteObjectV1(pkiVariableexpenseID: number, options?: any): AxiosPromise<VariableexpenseDeleteObjectV1Response> {
-            return localVarFp.variableexpenseDeleteObjectV1(pkiVariableexpenseID, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
          * @summary Edit an existing Variableexpense
          * @param {number} pkiVariableexpenseID The unique ID of the Variableexpense
          * @param {VariableexpenseEditObjectV1Request} variableexpenseEditObjectV1Request 
@@ -615,18 +536,6 @@ export class ObjectVariableexpenseApi extends BaseAPI {
      */
     public variableexpenseCreateObjectV1(variableexpenseCreateObjectV1Request: VariableexpenseCreateObjectV1Request, options?: AxiosRequestConfig) {
         return ObjectVariableexpenseApiFp(this.configuration).variableexpenseCreateObjectV1(variableexpenseCreateObjectV1Request, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Delete an existing Variableexpense
-     * @param {number} pkiVariableexpenseID The unique ID of the Variableexpense
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ObjectVariableexpenseApi
-     */
-    public variableexpenseDeleteObjectV1(pkiVariableexpenseID: number, options?: AxiosRequestConfig) {
-        return ObjectVariableexpenseApiFp(this.configuration).variableexpenseDeleteObjectV1(pkiVariableexpenseID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

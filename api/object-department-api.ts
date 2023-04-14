@@ -22,11 +22,7 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
-// @ts-ignore
 import { DepartmentGetAutocompleteV2Response } from '../model';
-// @ts-ignore
-import { DepartmentGetMembersV1Response } from '../model';
 // @ts-ignore
 import { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
@@ -110,62 +106,6 @@ export const ObjectDepartmentApiAxiosParamCreator = function (configuration?: Co
                 options: localVarRequestOptions,
             };
         },
-        /**
-         * 
-         * @summary Retrieve an existing Department\'s members
-         * @param {number} pkiDepartmentID 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        departmentGetMembersV1: async (pkiDepartmentID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiDepartmentID' is not null or undefined
-            assertParamExists('departmentGetMembersV1', 'pkiDepartmentID', pkiDepartmentID)
-            const localVarPath = `/1/object/department/{pkiDepartmentID}/getMembers`
-                .replace(`{${"pkiDepartmentID"}}`, encodeURIComponent(String(pkiDepartmentID)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'GET' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
     }
 };
 
@@ -188,17 +128,6 @@ export const ObjectDepartmentApiFp = function(configuration?: Configuration) {
          */
         async departmentGetAutocompleteV2(sSelector: 'All' | 'AllButDepartmentZero' | 'Company' | 'CompanyButDepartmentZero', eFilterActive?: 'All' | 'Active' | 'Inactive', sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DepartmentGetAutocompleteV2Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.departmentGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * 
-         * @summary Retrieve an existing Department\'s members
-         * @param {number} pkiDepartmentID 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async departmentGetMembersV1(pkiDepartmentID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DepartmentGetMembersV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.departmentGetMembersV1(pkiDepartmentID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -224,16 +153,6 @@ export const ObjectDepartmentApiFactory = function (configuration?: Configuratio
         departmentGetAutocompleteV2(sSelector: 'All' | 'AllButDepartmentZero' | 'Company' | 'CompanyButDepartmentZero', eFilterActive?: 'All' | 'Active' | 'Inactive', sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: any): AxiosPromise<DepartmentGetAutocompleteV2Response> {
             return localVarFp.departmentGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(axios, basePath));
         },
-        /**
-         * 
-         * @summary Retrieve an existing Department\'s members
-         * @param {number} pkiDepartmentID 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        departmentGetMembersV1(pkiDepartmentID: number, options?: any): AxiosPromise<DepartmentGetMembersV1Response> {
-            return localVarFp.departmentGetMembersV1(pkiDepartmentID, options).then((request) => request(axios, basePath));
-        },
     };
 };
 
@@ -257,17 +176,5 @@ export class ObjectDepartmentApi extends BaseAPI {
      */
     public departmentGetAutocompleteV2(sSelector: 'All' | 'AllButDepartmentZero' | 'Company' | 'CompanyButDepartmentZero', eFilterActive?: 'All' | 'Active' | 'Inactive', sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig) {
         return ObjectDepartmentApiFp(this.configuration).departmentGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Retrieve an existing Department\'s members
-     * @param {number} pkiDepartmentID 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ObjectDepartmentApi
-     */
-    public departmentGetMembersV1(pkiDepartmentID: number, options?: AxiosRequestConfig) {
-        return ObjectDepartmentApiFp(this.configuration).departmentGetMembersV1(pkiDepartmentID, options).then((request) => request(this.axios, this.basePath));
     }
 }

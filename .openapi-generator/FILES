@@ -92,7 +92,6 @@ model/billingentityinternal-create-object-v1-request.ts
 model/billingentityinternal-create-object-v1-response-all-of.ts
 model/billingentityinternal-create-object-v1-response-mpayload.ts
 model/billingentityinternal-create-object-v1-response.ts
-model/billingentityinternal-delete-object-v1-response.ts
 model/billingentityinternal-edit-object-v1-request.ts
 model/billingentityinternal-edit-object-v1-response.ts
 model/billingentityinternal-get-autocomplete-v2-response-all-of.ts
@@ -215,9 +214,6 @@ model/department-autocomplete-element-response.ts
 model/department-get-autocomplete-v2-response-all-of.ts
 model/department-get-autocomplete-v2-response-mpayload.ts
 model/department-get-autocomplete-v2-response.ts
-model/department-get-members-v1-response-all-of.ts
-model/department-get-members-v1-response-mpayload.ts
-model/department-get-members-v1-response.ts
 model/descriptionstatic-response-compound.ts
 model/descriptionstatic-response.ts
 model/email-request-compound.ts
@@ -906,7 +902,6 @@ model/paymentterm-create-object-v1-request.ts
 model/paymentterm-create-object-v1-response-all-of.ts
 model/paymentterm-create-object-v1-response-mpayload.ts
 model/paymentterm-create-object-v1-response.ts
-model/paymentterm-delete-object-v1-response.ts
 model/paymentterm-edit-object-v1-request.ts
 model/paymentterm-edit-object-v1-response.ts
 model/paymentterm-get-autocomplete-v2-response-all-of.ts
@@ -961,7 +956,6 @@ model/usergroup-create-object-v1-request.ts
 model/usergroup-create-object-v1-response-all-of.ts
 model/usergroup-create-object-v1-response-mpayload.ts
 model/usergroup-create-object-v1-response.ts
-model/usergroup-delete-object-v1-response.ts
 model/usergroup-edit-object-v1-request.ts
 model/usergroup-edit-object-v1-response.ts
 model/usergroup-get-autocomplete-v2-response-all-of.ts
@@ -971,9 +965,6 @@ model/usergroup-get-list-v1-response-all-of.ts
 model/usergroup-get-list-v1-response-mpayload-all-of.ts
 model/usergroup-get-list-v1-response-mpayload.ts
 model/usergroup-get-list-v1-response.ts
-model/usergroup-get-members-v1-response-all-of.ts
-model/usergroup-get-members-v1-response-mpayload.ts
-model/usergroup-get-members-v1-response.ts
 model/usergroup-get-object-v2-response-all-of.ts
 model/usergroup-get-object-v2-response-mpayload.ts
 model/usergroup-get-object-v2-response.ts
@@ -987,7 +978,6 @@ model/variableexpense-create-object-v1-request.ts
 model/variableexpense-create-object-v1-response-all-of.ts
 model/variableexpense-create-object-v1-response-mpayload.ts
 model/variableexpense-create-object-v1-response.ts
-model/variableexpense-delete-object-v1-response.ts
 model/variableexpense-edit-object-v1-request.ts
 model/variableexpense-edit-object-v1-response.ts
 model/variableexpense-get-autocomplete-v2-response-all-of.ts

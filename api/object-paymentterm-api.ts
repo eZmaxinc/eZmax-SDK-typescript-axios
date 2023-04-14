@@ -30,8 +30,6 @@ import { PaymenttermCreateObjectV1Request } from '../model';
 // @ts-ignore
 import { PaymenttermCreateObjectV1Response } from '../model';
 // @ts-ignore
-import { PaymenttermDeleteObjectV1Response } from '../model';
-// @ts-ignore
 import { PaymenttermEditObjectV1Request } from '../model';
 // @ts-ignore
 import { PaymenttermEditObjectV1Response } from '../model';
@@ -94,62 +92,6 @@ export const ObjectPaymenttermApiAxiosParamCreator = function (configuration?: C
                         authorization: configuration.apiKey as string,
                         secret: secret as string,
                         method: 'POST' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary Delete an existing Paymentterm
-         * @param {number} pkiPaymenttermID 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        paymenttermDeleteObjectV1: async (pkiPaymenttermID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiPaymenttermID' is not null or undefined
-            assertParamExists('paymenttermDeleteObjectV1', 'pkiPaymenttermID', pkiPaymenttermID)
-            const localVarPath = `/1/object/paymentterm/{pkiPaymenttermID}`
-                .replace(`{${"pkiPaymenttermID"}}`, encodeURIComponent(String(pkiPaymenttermID)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'DELETE' as string,
                         url: basePath + toPathString(localVarUrlObj) as string,
                         body: localVarRequestOptions.data || '' as string
                     }
@@ -456,17 +398,6 @@ export const ObjectPaymenttermApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
-         * @summary Delete an existing Paymentterm
-         * @param {number} pkiPaymenttermID 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async paymenttermDeleteObjectV1(pkiPaymenttermID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PaymenttermDeleteObjectV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.paymenttermDeleteObjectV1(pkiPaymenttermID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * 
          * @summary Edit an existing Paymentterm
          * @param {number} pkiPaymenttermID 
          * @param {PaymenttermEditObjectV1Request} paymenttermEditObjectV1Request 
@@ -539,16 +470,6 @@ export const ObjectPaymenttermApiFactory = function (configuration?: Configurati
         },
         /**
          * 
-         * @summary Delete an existing Paymentterm
-         * @param {number} pkiPaymenttermID 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        paymenttermDeleteObjectV1(pkiPaymenttermID: number, options?: any): AxiosPromise<PaymenttermDeleteObjectV1Response> {
-            return localVarFp.paymenttermDeleteObjectV1(pkiPaymenttermID, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
          * @summary Edit an existing Paymentterm
          * @param {number} pkiPaymenttermID 
          * @param {PaymenttermEditObjectV1Request} paymenttermEditObjectV1Request 
@@ -615,18 +536,6 @@ export class ObjectPaymenttermApi extends BaseAPI {
      */
     public paymenttermCreateObjectV1(paymenttermCreateObjectV1Request: PaymenttermCreateObjectV1Request, options?: AxiosRequestConfig) {
         return ObjectPaymenttermApiFp(this.configuration).paymenttermCreateObjectV1(paymenttermCreateObjectV1Request, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Delete an existing Paymentterm
-     * @param {number} pkiPaymenttermID 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ObjectPaymenttermApi
-     */
-    public paymenttermDeleteObjectV1(pkiPaymenttermID: number, options?: AxiosRequestConfig) {
-        return ObjectPaymenttermApiFp(this.configuration).paymenttermDeleteObjectV1(pkiPaymenttermID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

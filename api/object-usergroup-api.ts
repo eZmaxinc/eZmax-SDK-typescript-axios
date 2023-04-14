@@ -30,8 +30,6 @@ import { UsergroupCreateObjectV1Request } from '../model';
 // @ts-ignore
 import { UsergroupCreateObjectV1Response } from '../model';
 // @ts-ignore
-import { UsergroupDeleteObjectV1Response } from '../model';
-// @ts-ignore
 import { UsergroupEditObjectV1Request } from '../model';
 // @ts-ignore
 import { UsergroupEditObjectV1Response } from '../model';
@@ -39,8 +37,6 @@ import { UsergroupEditObjectV1Response } from '../model';
 import { UsergroupGetAutocompleteV2Response } from '../model';
 // @ts-ignore
 import { UsergroupGetListV1Response } from '../model';
-// @ts-ignore
-import { UsergroupGetMembersV1Response } from '../model';
 // @ts-ignore
 import { UsergroupGetObjectV2Response } from '../model';
 // @ts-ignore
@@ -96,62 +92,6 @@ export const ObjectUsergroupApiAxiosParamCreator = function (configuration?: Con
                         authorization: configuration.apiKey as string,
                         secret: secret as string,
                         method: 'POST' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary Delete an existing Usergroup
-         * @param {number} pkiUsergroupID The unique ID of the Usergroup
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        usergroupDeleteObjectV1: async (pkiUsergroupID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiUsergroupID' is not null or undefined
-            assertParamExists('usergroupDeleteObjectV1', 'pkiUsergroupID', pkiUsergroupID)
-            const localVarPath = `/1/object/usergroup/{pkiUsergroupID}`
-                .replace(`{${"pkiUsergroupID"}}`, encodeURIComponent(String(pkiUsergroupID)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'DELETE' as string,
                         url: basePath + toPathString(localVarUrlObj) as string,
                         body: localVarRequestOptions.data || '' as string
                     }
@@ -381,62 +321,6 @@ export const ObjectUsergroupApiAxiosParamCreator = function (configuration?: Con
         },
         /**
          * 
-         * @summary Retrieve an existing Usergroup\'s members
-         * @param {number} pkiUsergroupID The unique ID of the Usergroup
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        usergroupGetMembersV1: async (pkiUsergroupID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiUsergroupID' is not null or undefined
-            assertParamExists('usergroupGetMembersV1', 'pkiUsergroupID', pkiUsergroupID)
-            const localVarPath = `/1/object/usergroup/{pkiUsergroupID}/getMembers`
-                .replace(`{${"pkiUsergroupID"}}`, encodeURIComponent(String(pkiUsergroupID)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'GET' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
          * @summary Retrieve an existing Usergroup
          * @param {number} pkiUsergroupID The unique ID of the Usergroup
          * @param {*} [options] Override http request option.
@@ -514,17 +398,6 @@ export const ObjectUsergroupApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
-         * @summary Delete an existing Usergroup
-         * @param {number} pkiUsergroupID The unique ID of the Usergroup
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async usergroupDeleteObjectV1(pkiUsergroupID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupDeleteObjectV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.usergroupDeleteObjectV1(pkiUsergroupID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * 
          * @summary Edit an existing Usergroup
          * @param {number} pkiUsergroupID The unique ID of the Usergroup
          * @param {UsergroupEditObjectV1Request} usergroupEditObjectV1Request 
@@ -566,17 +439,6 @@ export const ObjectUsergroupApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
-         * @summary Retrieve an existing Usergroup\'s members
-         * @param {number} pkiUsergroupID The unique ID of the Usergroup
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async usergroupGetMembersV1(pkiUsergroupID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupGetMembersV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.usergroupGetMembersV1(pkiUsergroupID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
-         * 
          * @summary Retrieve an existing Usergroup
          * @param {number} pkiUsergroupID The unique ID of the Usergroup
          * @param {*} [options] Override http request option.
@@ -605,16 +467,6 @@ export const ObjectUsergroupApiFactory = function (configuration?: Configuration
          */
         usergroupCreateObjectV1(usergroupCreateObjectV1Request: UsergroupCreateObjectV1Request, options?: any): AxiosPromise<UsergroupCreateObjectV1Response> {
             return localVarFp.usergroupCreateObjectV1(usergroupCreateObjectV1Request, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary Delete an existing Usergroup
-         * @param {number} pkiUsergroupID The unique ID of the Usergroup
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        usergroupDeleteObjectV1(pkiUsergroupID: number, options?: any): AxiosPromise<UsergroupDeleteObjectV1Response> {
-            return localVarFp.usergroupDeleteObjectV1(pkiUsergroupID, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -656,16 +508,6 @@ export const ObjectUsergroupApiFactory = function (configuration?: Configuration
         },
         /**
          * 
-         * @summary Retrieve an existing Usergroup\'s members
-         * @param {number} pkiUsergroupID The unique ID of the Usergroup
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        usergroupGetMembersV1(pkiUsergroupID: number, options?: any): AxiosPromise<UsergroupGetMembersV1Response> {
-            return localVarFp.usergroupGetMembersV1(pkiUsergroupID, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
          * @summary Retrieve an existing Usergroup
          * @param {number} pkiUsergroupID The unique ID of the Usergroup
          * @param {*} [options] Override http request option.
@@ -694,18 +536,6 @@ export class ObjectUsergroupApi extends BaseAPI {
      */
     public usergroupCreateObjectV1(usergroupCreateObjectV1Request: UsergroupCreateObjectV1Request, options?: AxiosRequestConfig) {
         return ObjectUsergroupApiFp(this.configuration).usergroupCreateObjectV1(usergroupCreateObjectV1Request, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Delete an existing Usergroup
-     * @param {number} pkiUsergroupID The unique ID of the Usergroup
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ObjectUsergroupApi
-     */
-    public usergroupDeleteObjectV1(pkiUsergroupID: number, options?: AxiosRequestConfig) {
-        return ObjectUsergroupApiFp(this.configuration).usergroupDeleteObjectV1(pkiUsergroupID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -750,18 +580,6 @@ export class ObjectUsergroupApi extends BaseAPI {
      */
     public usergroupGetListV1(eOrderBy?: 'pkiUsergroupID_ASC' | 'pkiUsergroupID_DESC' | 'sUsergroupNameX_ASC' | 'sUsergroupNameX_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig) {
         return ObjectUsergroupApiFp(this.configuration).usergroupGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Retrieve an existing Usergroup\'s members
-     * @param {number} pkiUsergroupID The unique ID of the Usergroup
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof ObjectUsergroupApi
-     */
-    public usergroupGetMembersV1(pkiUsergroupID: number, options?: AxiosRequestConfig) {
-        return ObjectUsergroupApiFp(this.configuration).usergroupGetMembersV1(pkiUsergroupID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
