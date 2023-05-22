@@ -119,7 +119,7 @@ export class ValidationObjectSessionhistoryListElement {
    pkiSessionhistoryID = {
       type: 'integer',
       minimum: 1,
-      maximum: 4294967295,
+      maximum: 2147483647,
       required: true
    }
    fkiComputerID = {
