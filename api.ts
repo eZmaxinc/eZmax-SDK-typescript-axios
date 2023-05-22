@@ -16,6 +16,7 @@
 
 export * from './api/global-customer-api';
 export * from './api/global-ezmaxclient-api';
+export * from './api/global-ezmaxcustomer-api';
 export * from './api/module-ezsign-api';
 export * from './api/module-user-api';
 export * from './api/object-activesession-api';
@@ -23,6 +24,7 @@ export * from './api/object-apikey-api';
 export * from './api/object-billingentityexternal-api';
 export * from './api/object-billingentityinternal-api';
 export * from './api/object-branding-api';
+export * from './api/object-clonehistory-api';
 export * from './api/object-communication-api';
 export * from './api/object-department-api';
 export * from './api/object-ezmaxinvoicing-api';
@@ -56,10 +58,12 @@ export * from './api/object-notificationtest-api';
 export * from './api/object-paymentterm-api';
 export * from './api/object-period-api';
 export * from './api/object-secretquestion-api';
+export * from './api/object-sessionhistory-api';
 export * from './api/object-taxassignment-api';
 export * from './api/object-timezone-api';
 export * from './api/object-user-api';
 export * from './api/object-usergroup-api';
+export * from './api/object-userstaged-api';
 export * from './api/object-variableexpense-api';
 export * from './api/object-versionhistory-api';
 export * from './api/object-webhook-api';

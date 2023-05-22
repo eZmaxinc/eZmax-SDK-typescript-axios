@@ -39,6 +39,7 @@ export const GlobalCustomerApiAxiosParamCreator = function (configuration?: Conf
          * @param {string} pksCustomerCode 
          * @param {'appcluster01' | 'ezsignuser'} [sInfrastructureproductCode] The infrastructure product Code  If undefined, \&quot;appcluster01\&quot; is assumed
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         globalCustomerGetEndpointV1: async (pksCustomerCode: string, sInfrastructureproductCode?: 'appcluster01' | 'ezsignuser', options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -110,6 +111,7 @@ export const GlobalCustomerApiFp = function(configuration?: Configuration) {
          * @param {string} pksCustomerCode 
          * @param {'appcluster01' | 'ezsignuser'} [sInfrastructureproductCode] The infrastructure product Code  If undefined, \&quot;appcluster01\&quot; is assumed
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         async globalCustomerGetEndpointV1(pksCustomerCode: string, sInfrastructureproductCode?: 'appcluster01' | 'ezsignuser', options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GlobalCustomerGetEndpointV1Response>> {
@@ -132,6 +134,7 @@ export const GlobalCustomerApiFactory = function (configuration?: Configuration,
          * @param {string} pksCustomerCode 
          * @param {'appcluster01' | 'ezsignuser'} [sInfrastructureproductCode] The infrastructure product Code  If undefined, \&quot;appcluster01\&quot; is assumed
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         globalCustomerGetEndpointV1(pksCustomerCode: string, sInfrastructureproductCode?: 'appcluster01' | 'ezsignuser', options?: any): AxiosPromise<GlobalCustomerGetEndpointV1Response> {
@@ -153,6 +156,7 @@ export class GlobalCustomerApi extends BaseAPI {
      * @param {string} pksCustomerCode 
      * @param {'appcluster01' | 'ezsignuser'} [sInfrastructureproductCode] The infrastructure product Code  If undefined, \&quot;appcluster01\&quot; is assumed
      * @param {*} [options] Override http request option.
+     * @deprecated
      * @throws {RequiredError}
      * @memberof GlobalCustomerApi
      */

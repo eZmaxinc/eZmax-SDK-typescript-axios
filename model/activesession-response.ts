@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import { FieldEActivesessionOrigin } from './field-eactivesession-origin';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FieldEActivesessionUsertype } from './field-eactivesession-usertype';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -32,6 +35,12 @@ export interface ActivesessionResponse {
      * @memberof ActivesessionResponse
      */
     'eActivesessionUsertype': FieldEActivesessionUsertype;
+    /**
+     * 
+     * @type {FieldEActivesessionOrigin}
+     * @memberof ActivesessionResponse
+     */
+    'eActivesessionOrigin': FieldEActivesessionOrigin;
     /**
      * 
      * @type {FieldEActivesessionWeekdaystart}
@@ -96,6 +105,7 @@ export interface ActivesessionResponse {
  */
 export class DataObjectActivesessionResponse {
    eActivesessionUsertype:FieldEActivesessionUsertype = 'AgentBroker'
+   eActivesessionOrigin:FieldEActivesessionOrigin = 'BuiltIn'
    eActivesessionWeekdaystart:FieldEActivesessionWeekdaystart = 'Sunday'
    fkiLanguageID:number = 0
    sCompanyNameX:string = ''
@@ -115,6 +125,11 @@ export class ValidationObjectActivesessionResponse {
    eActivesessionUsertype = {
       type: 'enum',
       allowableValues: ['AgentBroker','Assistant','EzsignSigner','EzsignUser','Normal'],
+      required: true
+   }
+   eActivesessionOrigin = {
+      type: 'enum',
+      allowableValues: ['BuiltIn','External'],
       required: true
    }
    eActivesessionWeekdaystart = {

@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import { CustomContactNameResponse } from './custom-contact-name-response';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FieldEEzsignsignatureAttachmentnamesource } from './field-eezsignsignature-attachmentnamesource';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -128,6 +131,18 @@ export interface EzsignsignatureResponse {
      * @memberof EzsignsignatureResponse
      */
     'fkiEzsignfoldersignerassociationIDValidation'?: number;
+    /**
+     * The date the Ezsignsignature was signed
+     * @type {string}
+     * @memberof EzsignsignatureResponse
+     */
+    'dtEzsignsignatureDate'?: string;
+    /**
+     * 
+     * @type {CustomContactNameResponse}
+     * @memberof EzsignsignatureResponse
+     */
+    'objContactName': CustomContactNameResponse;
 }
 
 
@@ -135,6 +150,10 @@ export interface EzsignsignatureResponse {
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectCustomContactNameResponse } from './'
+// @ts-ignore
+import { ValidationObjectCustomContactNameResponse } from './'
 
 /**
  * @export 
@@ -159,6 +178,8 @@ export class DataObjectEzsignsignatureResponse {
    eEzsignsignatureAttachmentnamesource?:FieldEEzsignsignatureAttachmentnamesource = undefined
    bEzsignsignatureRequired?:boolean = undefined
    fkiEzsignfoldersignerassociationIDValidation?:number = undefined
+   dtEzsignsignatureDate?:string = undefined
+   objContactName:CustomContactNameResponse = new DataObjectCustomContactNameResponse()
 }
 
 /**
@@ -242,6 +263,12 @@ export class ValidationObjectEzsignsignatureResponse {
       minimum: 0,
       required: false
    }
+   dtEzsignsignatureDate = {
+      type: 'string',
+      pattern: '/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/',
+      required: false
+   }
+   objContactName = new ValidationObjectCustomContactNameResponse()
 } 
 
 

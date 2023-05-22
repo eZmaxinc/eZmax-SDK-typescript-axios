@@ -142,7 +142,7 @@ export class ValidationObjectWebhookRequest {
    }
    eWebhookEzsignevent = {
       type: 'enum',
-      allowableValues: ['DocumentCompleted','FolderCompleted'],
+      allowableValues: ['DocumentCompleted','EzsignsignerAcceptclause','EzsignsignerConnect','FolderCompleted'],
       required: false
    }
    eWebhookManagementevent = {

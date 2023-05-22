@@ -243,7 +243,7 @@ export const ObjectUsergroupApiAxiosParamCreator = function (configuration?: Con
         /**
          * 
          * @summary Retrieve Usergroup list
-         * @param {'pkiUsergroupID_ASC' | 'pkiUsergroupID_DESC' | 'sUsergroupNameX_ASC' | 'sUsergroupNameX_DESC'} [eOrderBy] Specify how you want the results to be sorted
+         * @param {'pkiUsergroupID_ASC' | 'pkiUsergroupID_DESC' | 'sUsergroupNameX_ASC' | 'sUsergroupNameX_DESC' | 'iCountUser_ASC' | 'iCountUser_DESC'} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
          * @param {number} [iRowOffset] 
          * @param {HeaderAcceptLanguage} [acceptLanguage] 
@@ -251,7 +251,7 @@ export const ObjectUsergroupApiAxiosParamCreator = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usergroupGetListV1: async (eOrderBy?: 'pkiUsergroupID_ASC' | 'pkiUsergroupID_DESC' | 'sUsergroupNameX_ASC' | 'sUsergroupNameX_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        usergroupGetListV1: async (eOrderBy?: 'pkiUsergroupID_ASC' | 'pkiUsergroupID_DESC' | 'sUsergroupNameX_ASC' | 'sUsergroupNameX_DESC' | 'iCountUser_ASC' | 'iCountUser_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/1/object/usergroup/getList`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
@@ -425,7 +425,7 @@ export const ObjectUsergroupApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Retrieve Usergroup list
-         * @param {'pkiUsergroupID_ASC' | 'pkiUsergroupID_DESC' | 'sUsergroupNameX_ASC' | 'sUsergroupNameX_DESC'} [eOrderBy] Specify how you want the results to be sorted
+         * @param {'pkiUsergroupID_ASC' | 'pkiUsergroupID_DESC' | 'sUsergroupNameX_ASC' | 'sUsergroupNameX_DESC' | 'iCountUser_ASC' | 'iCountUser_DESC'} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
          * @param {number} [iRowOffset] 
          * @param {HeaderAcceptLanguage} [acceptLanguage] 
@@ -433,7 +433,7 @@ export const ObjectUsergroupApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async usergroupGetListV1(eOrderBy?: 'pkiUsergroupID_ASC' | 'pkiUsergroupID_DESC' | 'sUsergroupNameX_ASC' | 'sUsergroupNameX_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupGetListV1Response>> {
+        async usergroupGetListV1(eOrderBy?: 'pkiUsergroupID_ASC' | 'pkiUsergroupID_DESC' | 'sUsergroupNameX_ASC' | 'sUsergroupNameX_DESC' | 'iCountUser_ASC' | 'iCountUser_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupGetListV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.usergroupGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -495,7 +495,7 @@ export const ObjectUsergroupApiFactory = function (configuration?: Configuration
         /**
          * 
          * @summary Retrieve Usergroup list
-         * @param {'pkiUsergroupID_ASC' | 'pkiUsergroupID_DESC' | 'sUsergroupNameX_ASC' | 'sUsergroupNameX_DESC'} [eOrderBy] Specify how you want the results to be sorted
+         * @param {'pkiUsergroupID_ASC' | 'pkiUsergroupID_DESC' | 'sUsergroupNameX_ASC' | 'sUsergroupNameX_DESC' | 'iCountUser_ASC' | 'iCountUser_DESC'} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
          * @param {number} [iRowOffset] 
          * @param {HeaderAcceptLanguage} [acceptLanguage] 
@@ -503,7 +503,7 @@ export const ObjectUsergroupApiFactory = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usergroupGetListV1(eOrderBy?: 'pkiUsergroupID_ASC' | 'pkiUsergroupID_DESC' | 'sUsergroupNameX_ASC' | 'sUsergroupNameX_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: any): AxiosPromise<UsergroupGetListV1Response> {
+        usergroupGetListV1(eOrderBy?: 'pkiUsergroupID_ASC' | 'pkiUsergroupID_DESC' | 'sUsergroupNameX_ASC' | 'sUsergroupNameX_DESC' | 'iCountUser_ASC' | 'iCountUser_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: any): AxiosPromise<UsergroupGetListV1Response> {
             return localVarFp.usergroupGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(axios, basePath));
         },
         /**
@@ -569,7 +569,7 @@ export class ObjectUsergroupApi extends BaseAPI {
     /**
      * 
      * @summary Retrieve Usergroup list
-     * @param {'pkiUsergroupID_ASC' | 'pkiUsergroupID_DESC' | 'sUsergroupNameX_ASC' | 'sUsergroupNameX_DESC'} [eOrderBy] Specify how you want the results to be sorted
+     * @param {'pkiUsergroupID_ASC' | 'pkiUsergroupID_DESC' | 'sUsergroupNameX_ASC' | 'sUsergroupNameX_DESC' | 'iCountUser_ASC' | 'iCountUser_DESC'} [eOrderBy] Specify how you want the results to be sorted
      * @param {number} [iRowMax] 
      * @param {number} [iRowOffset] 
      * @param {HeaderAcceptLanguage} [acceptLanguage] 
@@ -578,7 +578,7 @@ export class ObjectUsergroupApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectUsergroupApi
      */
-    public usergroupGetListV1(eOrderBy?: 'pkiUsergroupID_ASC' | 'pkiUsergroupID_DESC' | 'sUsergroupNameX_ASC' | 'sUsergroupNameX_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig) {
+    public usergroupGetListV1(eOrderBy?: 'pkiUsergroupID_ASC' | 'pkiUsergroupID_DESC' | 'sUsergroupNameX_ASC' | 'sUsergroupNameX_DESC' | 'iCountUser_ASC' | 'iCountUser_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig) {
         return ObjectUsergroupApiFp(this.configuration).usergroupGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(this.axios, this.basePath));
     }
 

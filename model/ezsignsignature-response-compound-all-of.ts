@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import { CustomCreditcardtransactionResponse } from './custom-creditcardtransaction-response';
+// May contain unused imports in some cases
+// @ts-ignore
 import { EzsignsignaturecustomdateResponseCompound } from './ezsignsignaturecustomdate-response-compound';
 
 /**
@@ -35,11 +38,21 @@ export interface EzsignsignatureResponseCompoundAllOf {
      * @memberof EzsignsignatureResponseCompoundAllOf
      */
     'a_objEzsignsignaturecustomdate'?: Array<EzsignsignaturecustomdateResponseCompound>;
+    /**
+     * 
+     * @type {CustomCreditcardtransactionResponse}
+     * @memberof EzsignsignatureResponseCompoundAllOf
+     */
+    'objCreditcardtransaction'?: CustomCreditcardtransactionResponse;
 }
 /**
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectCustomCreditcardtransactionResponse } from './'
+// @ts-ignore
+import { ValidationObjectCustomCreditcardtransactionResponse } from './'
 
 /**
  * @export 
@@ -50,6 +63,7 @@ export interface EzsignsignatureResponseCompoundAllOf {
 export class DataObjectEzsignsignatureResponseCompoundAllOf {
    bEzsignsignatureCustomdate?:boolean = undefined
    a_objEzsignsignaturecustomdate?:Array<EzsignsignaturecustomdateResponseCompound> = undefined
+   objCreditcardtransaction?:CustomCreditcardtransactionResponse = undefined
 }
 
 /**
@@ -66,6 +80,7 @@ export class ValidationObjectEzsignsignatureResponseCompoundAllOf {
       type: 'array',
       required: false
    }
+   objCreditcardtransaction = new ValidationObjectCustomCreditcardtransactionResponse()
 } 
 
 

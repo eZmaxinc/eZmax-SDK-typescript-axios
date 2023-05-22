@@ -58,6 +58,8 @@ import { EzsigndocumentFlattenV1Response } from '../model';
 // @ts-ignore
 import { EzsigndocumentGetActionableElementsV1Response } from '../model';
 // @ts-ignore
+import { EzsigndocumentGetCompletedElementsV1Response } from '../model';
+// @ts-ignore
 import { EzsigndocumentGetDownloadUrlV1Response } from '../model';
 // @ts-ignore
 import { EzsigndocumentGetEzsignannotationsV1Response } from '../model';
@@ -652,6 +654,62 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
             assertParamExists('ezsigndocumentGetActionableElementsV1', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements`
+                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Return the completed Ezsignsignatures, Ezsignformfieldgroups and Ezsignannotations at the current step in the process
+         * @summary Retrieve completed elements for the Ezsigndocument
+         * @param {number} pkiEzsigndocumentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigndocumentGetCompletedElementsV1: async (pkiEzsigndocumentID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
+            assertParamExists('ezsigndocumentGetCompletedElementsV1', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
+            const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/getCompletedElements`
                 .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
@@ -1577,6 +1635,17 @@ export const ObjectEzsigndocumentApiFp = function(configuration?: Configuration)
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
+         * Return the completed Ezsignsignatures, Ezsignformfieldgroups and Ezsignannotations at the current step in the process
+         * @summary Retrieve completed elements for the Ezsigndocument
+         * @param {number} pkiEzsigndocumentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsigndocumentGetCompletedElementsV1(pkiEzsigndocumentID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentGetCompletedElementsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigndocumentGetCompletedElementsV1(pkiEzsigndocumentID, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
          * This endpoint returns URLs to different files that can be downloaded during the signing process.  These links will expire after 5 minutes so the download of the file should be made soon after retrieving the link.
          * @summary Retrieve a URL to download documents.
          * @param {number} pkiEzsigndocumentID 
@@ -1841,6 +1910,16 @@ export const ObjectEzsigndocumentApiFactory = function (configuration?: Configur
          */
         ezsigndocumentGetActionableElementsV1(pkiEzsigndocumentID: number, options?: any): AxiosPromise<EzsigndocumentGetActionableElementsV1Response> {
             return localVarFp.ezsigndocumentGetActionableElementsV1(pkiEzsigndocumentID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Return the completed Ezsignsignatures, Ezsignformfieldgroups and Ezsignannotations at the current step in the process
+         * @summary Retrieve completed elements for the Ezsigndocument
+         * @param {number} pkiEzsigndocumentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigndocumentGetCompletedElementsV1(pkiEzsigndocumentID: number, options?: any): AxiosPromise<EzsigndocumentGetCompletedElementsV1Response> {
+            return localVarFp.ezsigndocumentGetCompletedElementsV1(pkiEzsigndocumentID, options).then((request) => request(axios, basePath));
         },
         /**
          * This endpoint returns URLs to different files that can be downloaded during the signing process.  These links will expire after 5 minutes so the download of the file should be made soon after retrieving the link.
@@ -2113,6 +2192,18 @@ export class ObjectEzsigndocumentApi extends BaseAPI {
      */
     public ezsigndocumentGetActionableElementsV1(pkiEzsigndocumentID: number, options?: AxiosRequestConfig) {
         return ObjectEzsigndocumentApiFp(this.configuration).ezsigndocumentGetActionableElementsV1(pkiEzsigndocumentID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Return the completed Ezsignsignatures, Ezsignformfieldgroups and Ezsignannotations at the current step in the process
+     * @summary Retrieve completed elements for the Ezsigndocument
+     * @param {number} pkiEzsigndocumentID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectEzsigndocumentApi
+     */
+    public ezsigndocumentGetCompletedElementsV1(pkiEzsigndocumentID: number, options?: AxiosRequestConfig) {
+        return ObjectEzsigndocumentApiFp(this.configuration).ezsigndocumentGetCompletedElementsV1(pkiEzsigndocumentID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

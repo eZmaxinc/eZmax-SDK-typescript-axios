@@ -32,6 +32,12 @@ export interface UsergroupListElement {
      * @memberof UsergroupListElement
      */
     'sUsergroupNameX': string;
+    /**
+     * Numer of user in group
+     * @type {number}
+     * @memberof UsergroupListElement
+     */
+    'iCountUser': number;
 }
 /**
  * @import
@@ -47,6 +53,7 @@ export interface UsergroupListElement {
 export class DataObjectUsergroupListElement {
    pkiUsergroupID:number = 0
    sUsergroupNameX:string = ''
+   iCountUser:number = 0
 }
 
 /**
@@ -64,6 +71,12 @@ export class ValidationObjectUsergroupListElement {
    sUsergroupNameX = {
       type: 'string',
       pattern: '/^.{0,50}$/',
+      required: true
+   }
+   iCountUser = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 16777215,
       required: true
    }
 } 

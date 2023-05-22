@@ -15,6 +15,12 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import { CustomContactNameResponse } from './custom-contact-name-response';
+// May contain unused imports in some cases
+// @ts-ignore
+import { CustomCreditcardtransactionResponse } from './custom-creditcardtransaction-response';
+// May contain unused imports in some cases
+// @ts-ignore
 import { EzsignsignatureResponse } from './ezsignsignature-response';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -48,6 +54,14 @@ export type EzsignsignatureResponseCompound = EzsignsignatureResponse & Ezsignsi
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectCustomContactNameResponse } from './'
+// @ts-ignore
+import { DataObjectCustomCreditcardtransactionResponse } from './'
+// @ts-ignore
+import { ValidationObjectCustomContactNameResponse } from './'
+// @ts-ignore
+import { ValidationObjectCustomCreditcardtransactionResponse } from './'
 
 /**
  * @export 
@@ -72,8 +86,11 @@ export class DataObjectEzsignsignatureResponseCompound {
    eEzsignsignatureAttachmentnamesource?:FieldEEzsignsignatureAttachmentnamesource = undefined
    bEzsignsignatureRequired?:boolean = undefined
    fkiEzsignfoldersignerassociationIDValidation?:number = undefined
+   dtEzsignsignatureDate?:string = undefined
+   objContactName:CustomContactNameResponse = new DataObjectCustomContactNameResponse()
    bEzsignsignatureCustomdate?:boolean = undefined
    a_objEzsignsignaturecustomdate?:Array<EzsignsignaturecustomdateResponseCompound> = undefined
+   objCreditcardtransaction?:CustomCreditcardtransactionResponse = undefined
 }
 
 /**
@@ -157,6 +174,12 @@ export class ValidationObjectEzsignsignatureResponseCompound {
       minimum: 0,
       required: false
    }
+   dtEzsignsignatureDate = {
+      type: 'string',
+      pattern: '/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/',
+      required: false
+   }
+   objContactName = new ValidationObjectCustomContactNameResponse()
    bEzsignsignatureCustomdate = {
       type: 'boolean',
       required: false
@@ -165,6 +188,7 @@ export class ValidationObjectEzsignsignatureResponseCompound {
       type: 'array',
       required: false
    }
+   objCreditcardtransaction = new ValidationObjectCustomCreditcardtransactionResponse()
 } 
 
 

@@ -27,6 +27,9 @@ import { ActivesessionResponseCompoundApikey } from './activesession-response-co
 import { ActivesessionResponseCompoundUser } from './activesession-response-compound-user';
 // May contain unused imports in some cases
 // @ts-ignore
+import { FieldEActivesessionOrigin } from './field-eactivesession-origin';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FieldEActivesessionUsertype } from './field-eactivesession-usertype';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -66,6 +69,7 @@ import { ValidationObjectActivesessionResponseCompoundApikey } from './'
  */
 export class DataObjectActivesessionResponseCompound {
    eActivesessionUsertype:FieldEActivesessionUsertype = 'AgentBroker'
+   eActivesessionOrigin:FieldEActivesessionOrigin = 'BuiltIn'
    eActivesessionWeekdaystart:FieldEActivesessionWeekdaystart = 'Sunday'
    fkiLanguageID:number = 0
    sCompanyNameX:string = ''
@@ -90,6 +94,11 @@ export class ValidationObjectActivesessionResponseCompound {
    eActivesessionUsertype = {
       type: 'enum',
       allowableValues: ['AgentBroker','Assistant','EzsignSigner','EzsignUser','Normal'],
+      required: true
+   }
+   eActivesessionOrigin = {
+      type: 'enum',
+      allowableValues: ['BuiltIn','External'],
       required: true
    }
    eActivesessionWeekdaystart = {

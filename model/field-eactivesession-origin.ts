@@ -15,19 +15,17 @@
 
 
 /**
- * This Ezsign Event. This property will be set only if the Module is \"Ezsign\"
+ * The Origin of User for the Activesession
  * @export
  * @enum {string}
  */
 
-export const FieldEWebhookEzsignevent = {
-    DocumentCompleted: 'DocumentCompleted',
-    EzsignsignerAcceptclause: 'EzsignsignerAcceptclause',
-    EzsignsignerConnect: 'EzsignsignerConnect',
-    FolderCompleted: 'FolderCompleted'
+export const FieldEActivesessionOrigin = {
+    BuiltIn: 'BuiltIn',
+    External: 'External'
 } as const;
 
-export type FieldEWebhookEzsignevent = typeof FieldEWebhookEzsignevent[keyof typeof FieldEWebhookEzsignevent];
+export type FieldEActivesessionOrigin = typeof FieldEActivesessionOrigin[keyof typeof FieldEActivesessionOrigin];
 
 
 

@@ -21,17 +21,17 @@
  */
 export interface BillingentityinternalAutocompleteElementResponse {
     /**
-     * The description of the Billingentityinternal in the language of the requester
-     * @type {string}
-     * @memberof BillingentityinternalAutocompleteElementResponse
-     */
-    'sBillingentityinternalDescriptionX': string;
-    /**
      * The unique ID of the Billingentityinternal.
      * @type {number}
      * @memberof BillingentityinternalAutocompleteElementResponse
      */
     'pkiBillingentityinternalID': number;
+    /**
+     * The description of the Billingentityinternal in the language of the requester
+     * @type {string}
+     * @memberof BillingentityinternalAutocompleteElementResponse
+     */
+    'sBillingentityinternalDescriptionX': string;
     /**
      * Whether the Billingentityinternal is active or not
      * @type {boolean}
@@ -51,8 +51,8 @@ export interface BillingentityinternalAutocompleteElementResponse {
  * @class DataObjectBillingentityinternalAutocompleteElementResponse
  */
 export class DataObjectBillingentityinternalAutocompleteElementResponse {
-   sBillingentityinternalDescriptionX:string = ''
    pkiBillingentityinternalID:number = 0
+   sBillingentityinternalDescriptionX:string = ''
    bBillingentityinternalIsactive:boolean = false
 }
 
@@ -62,13 +62,13 @@ export class DataObjectBillingentityinternalAutocompleteElementResponse {
  * @class ValidationObjectBillingentityinternalAutocompleteElementResponse
  */
 export class ValidationObjectBillingentityinternalAutocompleteElementResponse {
-   sBillingentityinternalDescriptionX = {
-      type: 'string',
-      required: true
-   }
    pkiBillingentityinternalID = {
       type: 'integer',
       minimum: 0,
+      required: true
+   }
+   sBillingentityinternalDescriptionX = {
+      type: 'string',
       required: true
    }
    bBillingentityinternalIsactive = {

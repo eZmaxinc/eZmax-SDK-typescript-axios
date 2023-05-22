@@ -5,6 +5,7 @@ README.md
 api.ts
 api/global-customer-api.ts
 api/global-ezmaxclient-api.ts
+api/global-ezmaxcustomer-api.ts
 api/module-ezsign-api.ts
 api/module-user-api.ts
 api/object-activesession-api.ts
@@ -12,6 +13,7 @@ api/object-apikey-api.ts
 api/object-billingentityexternal-api.ts
 api/object-billingentityinternal-api.ts
 api/object-branding-api.ts
+api/object-clonehistory-api.ts
 api/object-communication-api.ts
 api/object-department-api.ts
 api/object-ezmaxinvoicing-api.ts
@@ -45,10 +47,12 @@ api/object-notificationtest-api.ts
 api/object-paymentterm-api.ts
 api/object-period-api.ts
 api/object-secretquestion-api.ts
+api/object-sessionhistory-api.ts
 api/object-taxassignment-api.ts
 api/object-timezone-api.ts
 api/object-user-api.ts
 api/object-usergroup-api.ts
+api/object-userstaged-api.ts
 api/object-variableexpense-api.ts
 api/object-versionhistory-api.ts
 api/object-webhook-api.ts
@@ -132,6 +136,11 @@ model/branding-request.ts
 model/branding-response-compound-all-of.ts
 model/branding-response-compound.ts
 model/branding-response.ts
+model/clonehistory-get-list-v1-response-all-of.ts
+model/clonehistory-get-list-v1-response-mpayload-all-of.ts
+model/clonehistory-get-list-v1-response-mpayload.ts
+model/clonehistory-get-list-v1-response.ts
+model/clonehistory-list-element.ts
 model/common-audit.ts
 model/common-auditdetail.ts
 model/common-get-autocomplete-v1-response-all-of.ts
@@ -174,6 +183,7 @@ model/contactinformations-request.ts
 model/custom-autocomplete-element-response.ts
 model/custom-communication-list-element-response.ts
 model/custom-contact-name-response.ts
+model/custom-creditcardtransaction-response.ts
 model/custom-dropdown-element-request-compound.ts
 model/custom-dropdown-element-request.ts
 model/custom-dropdown-element-response-compound.ts
@@ -369,6 +379,9 @@ model/ezsigndocument-flatten-v1-response.ts
 model/ezsigndocument-get-actionable-elements-v1-response-all-of.ts
 model/ezsigndocument-get-actionable-elements-v1-response-mpayload.ts
 model/ezsigndocument-get-actionable-elements-v1-response.ts
+model/ezsigndocument-get-completed-elements-v1-response-all-of.ts
+model/ezsigndocument-get-completed-elements-v1-response-mpayload.ts
+model/ezsigndocument-get-completed-elements-v1-response.ts
 model/ezsigndocument-get-download-url-v1-response-all-of.ts
 model/ezsigndocument-get-download-url-v1-response-mpayload.ts
 model/ezsigndocument-get-download-url-v1-response.ts
@@ -804,6 +817,7 @@ model/ezsigntsarequirement-autocomplete-element-response.ts
 model/ezsigntsarequirement-get-autocomplete-v2-response-all-of.ts
 model/ezsigntsarequirement-get-autocomplete-v2-response-mpayload.ts
 model/ezsigntsarequirement-get-autocomplete-v2-response.ts
+model/field-eactivesession-origin.ts
 model/field-eactivesession-usertype.ts
 model/field-eactivesession-weekdaystart.ts
 model/field-ebranding-logo.ts
@@ -842,6 +856,7 @@ model/field-eezsigntemplatesignature-type.ts
 model/field-enotificationpreference-status.ts
 model/field-epaymentterm-type.ts
 model/field-ephone-type.ts
+model/field-esessionhistory-endby.ts
 model/field-euser-ezsignsendreminderfrequency.ts
 model/field-euser-type.ts
 model/field-evariableexpense-taxable.ts
@@ -876,6 +891,7 @@ model/franchisereferalincome-request-compound.ts
 model/franchisereferalincome-request.ts
 model/global-customer-get-endpoint-v1-response.ts
 model/global-ezmaxclient-version-v1-response.ts
+model/global-ezmaxcustomer-get-configuration-v1-response.ts
 model/header-accept-language.ts
 model/index.ts
 model/multilingual-apikey-description.ts
@@ -931,6 +947,11 @@ model/secretquestion-autocomplete-element-response.ts
 model/secretquestion-get-autocomplete-v2-response-all-of.ts
 model/secretquestion-get-autocomplete-v2-response-mpayload.ts
 model/secretquestion-get-autocomplete-v2-response.ts
+model/sessionhistory-get-list-v1-response-all-of.ts
+model/sessionhistory-get-list-v1-response-mpayload-all-of.ts
+model/sessionhistory-get-list-v1-response-mpayload.ts
+model/sessionhistory-get-list-v1-response.ts
+model/sessionhistory-list-element.ts
 model/taxassignment-autocomplete-element-response.ts
 model/taxassignment-get-autocomplete-v2-response-all-of.ts
 model/taxassignment-get-autocomplete-v2-response-mpayload.ts
@@ -973,6 +994,19 @@ model/usergroup-request-compound.ts
 model/usergroup-request.ts
 model/usergroup-response-compound.ts
 model/usergroup-response.ts
+model/userstaged-delete-object-v1-response.ts
+model/userstaged-get-list-v1-response-all-of.ts
+model/userstaged-get-list-v1-response-mpayload-all-of.ts
+model/userstaged-get-list-v1-response-mpayload.ts
+model/userstaged-get-list-v1-response.ts
+model/userstaged-get-object-v2-response-all-of.ts
+model/userstaged-get-object-v2-response-mpayload.ts
+model/userstaged-get-object-v2-response.ts
+model/userstaged-list-element.ts
+model/userstaged-map-v1-request.ts
+model/userstaged-map-v1-response.ts
+model/userstaged-response-compound.ts
+model/userstaged-response.ts
 model/variableexpense-autocomplete-element-response.ts
 model/variableexpense-create-object-v1-request.ts
 model/variableexpense-create-object-v1-response-all-of.ts
@@ -1009,6 +1043,9 @@ model/webhook-edit-object-v1-request.ts
 model/webhook-edit-object-v1-response.ts
 model/webhook-ezsign-document-completed-all-of.ts
 model/webhook-ezsign-document-completed.ts
+model/webhook-ezsign-ezsignsigner-acceptclause-all-of.ts
+model/webhook-ezsign-ezsignsigner-acceptclause.ts
+model/webhook-ezsign-ezsignsigner-connect.ts
 model/webhook-ezsign-folder-completed-all-of.ts
 model/webhook-ezsign-folder-completed.ts
 model/webhook-get-history-v1-response-all-of.ts
