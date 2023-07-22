@@ -9,6 +9,7 @@ export interface IFingerprintData {
   method: string
   url: string
   body: string
+  expiration?: number
 }
 
 export interface ISignatureData {
@@ -24,11 +25,13 @@ export interface IHeadersData {
   method: string
   url: string
   body: string
+  expiration?: number
 }
 
 export class RequestSignature {
   public static getFingerprint(fingerprintData: IFingerprintData): string {
-    const contentToHash = `${fingerprintData.method}\n${fingerprintData.url}\n${fingerprintData.body}\n${fingerprintData.authorization}\n${fingerprintData.date}`
+    const expiration = fingerprintData.expiration ? `\n${fingerprintData.expiration}` : ''
+    const contentToHash = `${fingerprintData.method}\n${fingerprintData.url}\n${fingerprintData.body}\n${fingerprintData.authorization}\n${fingerprintData.date}${expiration}`
     
     const md = forge.md.sha256.create()
     md.update(contentToHash)
@@ -57,7 +60,8 @@ export class RequestSignature {
       date: isoDate,
       method: headerData.method,
       url: headerData.url,
-      body: utf8.encode(headerData.body)
+      body: utf8.encode(headerData.body),
+      expiration: headerData.expiration
     })
 
     const signature: string = this.getSignature({
@@ -70,7 +74,8 @@ export class RequestSignature {
     return {
       'Ezmax-Date': isoDate,
       'Ezmax-Fingerprint': fingerprint,
-      'Ezmax-Signature': signature
+      'Ezmax-Signature': signature,
+      ...(headerData.expiration) ? { 'Ezmax-Expiration': headerData.expiration } : {}
     }
   }
 }
