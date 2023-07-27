@@ -33,12 +33,6 @@ export interface EzsignfoldersignerassociationRequest {
      */
     'fkiUserID'?: number;
     /**
-     * The unique ID of the Usergroup
-     * @type {number}
-     * @memberof EzsignfoldersignerassociationRequest
-     */
-    'fkiUsergroupID'?: number;
-    /**
      * The unique ID of the Ezsignsignergroup
      * @type {number}
      * @memberof EzsignfoldersignerassociationRequest
@@ -77,7 +71,6 @@ export interface EzsignfoldersignerassociationRequest {
 export class DataObjectEzsignfoldersignerassociationRequest {
    pkiEzsignfoldersignerassociationID?:number = undefined
    fkiUserID?:number = undefined
-   fkiUsergroupID?:number = undefined
    fkiEzsignsignergroupID?:number = undefined
    fkiEzsignfolderID:number = 0
    bEzsignfoldersignerassociationReceivecopy?:boolean = undefined
@@ -98,12 +91,6 @@ export class ValidationObjectEzsignfoldersignerassociationRequest {
    fkiUserID = {
       type: 'integer',
       minimum: 0,
-      required: false
-   }
-   fkiUsergroupID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 255,
       required: false
    }
    fkiEzsignsignergroupID = {

@@ -49,7 +49,6 @@ import { ValidationObjectEzsignsignerRequestCompound } from './'
 export class DataObjectEzsignfoldersignerassociationRequestCompound {
     pkiEzsignfoldersignerassociationID?:number = undefined
     fkiUserID?:number = undefined
-    fkiUsergroupID?:number = undefined
     fkiEzsignsignergroupID?:number = undefined
     fkiEzsignfolderID:number = 0
     bEzsignfoldersignerassociationReceivecopy?:boolean = undefined
@@ -71,12 +70,6 @@ export class ValidationObjectEzsignfoldersignerassociationRequestCompound {
    fkiUserID = {
       type: 'integer',
       minimum: 0,
-      required: false
-   }
-   fkiUsergroupID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 255,
       required: false
    }
    fkiEzsignsignergroupID = {

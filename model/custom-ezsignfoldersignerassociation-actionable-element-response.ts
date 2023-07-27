@@ -28,9 +28,6 @@ import { EzsignsignerResponseCompound } from './ezsignsigner-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
 import { EzsignsignergroupResponseCompound } from './ezsignsignergroup-response-compound';
-// May contain unused imports in some cases
-// @ts-ignore
-import { UsergroupResponseCompound } from './usergroup-response-compound';
 
 /**
  * @type CustomEzsignfoldersignerassociationActionableElementResponse
@@ -49,15 +46,11 @@ import { DataObjectEzsignsignergroupResponseCompound } from './'
 // @ts-ignore
 import { DataObjectEzsignfoldersignerassociationResponseCompoundUser } from './'
 // @ts-ignore
-import { DataObjectUsergroupResponseCompound } from './'
-// @ts-ignore
 import { DataObjectEzsignsignerResponseCompound } from './'
 // @ts-ignore
 import { ValidationObjectEzsignsignergroupResponseCompound } from './'
 // @ts-ignore
 import { ValidationObjectEzsignfoldersignerassociationResponseCompoundUser } from './'
-// @ts-ignore
-import { ValidationObjectUsergroupResponseCompound } from './'
 // @ts-ignore
 import { ValidationObjectEzsignsignerResponseCompound } from './'
 
@@ -75,7 +68,6 @@ export class DataObjectCustomEzsignfoldersignerassociationActionableElementRespo
     tEzsignfoldersignerassociationMessage:string = ''
     objEzsignsignergroup?:EzsignsignergroupResponseCompound = undefined
     objUser?:EzsignfoldersignerassociationResponseCompoundUser = undefined
-    objUsergroup?:UsergroupResponseCompound = undefined
     objEzsignsigner?:EzsignsignerResponseCompound = undefined
     bEzsignfoldersignerassociationHasactionableelementsCurrent:boolean = false
     bEzsignfoldersignerassociationHasactionableelementsFuture?:boolean = undefined
@@ -111,7 +103,6 @@ export class ValidationObjectCustomEzsignfoldersignerassociationActionableElemen
    }
    objEzsignsignergroup = new ValidationObjectEzsignsignergroupResponseCompound()
    objUser = new ValidationObjectEzsignfoldersignerassociationResponseCompoundUser()
-   objUsergroup = new ValidationObjectUsergroupResponseCompound()
    objEzsignsigner = new ValidationObjectEzsignsignerResponseCompound()
    bEzsignfoldersignerassociationHasactionableelementsCurrent = {
       type: 'boolean',

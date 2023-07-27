@@ -33,14 +33,22 @@ export interface CustomEzsignfoldersignerassociationstatusResponse {
      * The last name of the Ezsignsigner
      * @type {string}
      * @memberof CustomEzsignfoldersignerassociationstatusResponse
+     * @deprecated
      */
     'sEzsignfoldersignerassociationstatusLastname'?: string;
     /**
      * The first name of the Ezsignsigner
      * @type {string}
      * @memberof CustomEzsignfoldersignerassociationstatusResponse
+     * @deprecated
      */
     'sEzsignfoldersignerassociationstatusFirstname'?: string;
+    /**
+     * The description of the Ezsignsigner
+     * @type {string}
+     * @memberof CustomEzsignfoldersignerassociationstatusResponse
+     */
+    'sEzsignfoldersignerassociationstatusDescriptionX'?: string;
     /**
      * 
      * @type {Array<CustomEzsignsignaturestatusResponse>}
@@ -63,6 +71,7 @@ export class DataObjectCustomEzsignfoldersignerassociationstatusResponse {
    fkiEzsignfoldersignerassociationID:number = 0
    sEzsignfoldersignerassociationstatusLastname?:string = undefined
    sEzsignfoldersignerassociationstatusFirstname?:string = undefined
+   sEzsignfoldersignerassociationstatusDescriptionX?:string = undefined
    a_objEzsignsignaturestatus:Array<CustomEzsignsignaturestatusResponse> = []
 }
 
@@ -82,6 +91,10 @@ export class ValidationObjectCustomEzsignfoldersignerassociationstatusResponse {
       required: false
    }
    sEzsignfoldersignerassociationstatusFirstname = {
+      type: 'string',
+      required: false
+   }
+   sEzsignfoldersignerassociationstatusDescriptionX = {
       type: 'string',
       required: false
    }

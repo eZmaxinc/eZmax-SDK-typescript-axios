@@ -22,9 +22,6 @@ import { EzsignsignerResponseCompound } from './ezsignsigner-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
 import { EzsignsignergroupResponseCompound } from './ezsignsignergroup-response-compound';
-// May contain unused imports in some cases
-// @ts-ignore
-import { UsergroupResponseCompound } from './usergroup-response-compound';
 
 /**
  * 
@@ -46,12 +43,6 @@ export interface EzsignfoldersignerassociationResponseCompoundAllOf {
     'objUser'?: EzsignfoldersignerassociationResponseCompoundUser;
     /**
      * 
-     * @type {UsergroupResponseCompound}
-     * @memberof EzsignfoldersignerassociationResponseCompoundAllOf
-     */
-    'objUsergroup'?: UsergroupResponseCompound;
-    /**
-     * 
      * @type {EzsignsignerResponseCompound}
      * @memberof EzsignfoldersignerassociationResponseCompoundAllOf
      */
@@ -66,15 +57,11 @@ import { DataObjectEzsignsignergroupResponseCompound } from './'
 // @ts-ignore
 import { DataObjectEzsignfoldersignerassociationResponseCompoundUser } from './'
 // @ts-ignore
-import { DataObjectUsergroupResponseCompound } from './'
-// @ts-ignore
 import { DataObjectEzsignsignerResponseCompound } from './'
 // @ts-ignore
 import { ValidationObjectEzsignsignergroupResponseCompound } from './'
 // @ts-ignore
 import { ValidationObjectEzsignfoldersignerassociationResponseCompoundUser } from './'
-// @ts-ignore
-import { ValidationObjectUsergroupResponseCompound } from './'
 // @ts-ignore
 import { ValidationObjectEzsignsignerResponseCompound } from './'
 
@@ -87,7 +74,6 @@ import { ValidationObjectEzsignsignerResponseCompound } from './'
 export class DataObjectEzsignfoldersignerassociationResponseCompoundAllOf {
    objEzsignsignergroup?:EzsignsignergroupResponseCompound = undefined
    objUser?:EzsignfoldersignerassociationResponseCompoundUser = undefined
-   objUsergroup?:UsergroupResponseCompound = undefined
    objEzsignsigner?:EzsignsignerResponseCompound = undefined
 }
 
@@ -99,7 +85,6 @@ export class DataObjectEzsignfoldersignerassociationResponseCompoundAllOf {
 export class ValidationObjectEzsignfoldersignerassociationResponseCompoundAllOf {
    objEzsignsignergroup = new ValidationObjectEzsignsignergroupResponseCompound()
    objUser = new ValidationObjectEzsignfoldersignerassociationResponseCompoundUser()
-   objUsergroup = new ValidationObjectUsergroupResponseCompound()
    objEzsignsigner = new ValidationObjectEzsignsignerResponseCompound()
 } 
 

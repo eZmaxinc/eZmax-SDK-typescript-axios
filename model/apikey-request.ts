@@ -47,6 +47,12 @@ export interface ApikeyRequest {
      * @memberof ApikeyRequest
      */
     'bApikeyIsactive'?: boolean;
+    /**
+     * Whether the apikey is signed or not
+     * @type {boolean}
+     * @memberof ApikeyRequest
+     */
+    'bApikeyIssigned'?: boolean;
 }
 /**
  * @import
@@ -68,6 +74,7 @@ export class DataObjectApikeyRequest {
    fkiUserID:number = 0
    objApikeyDescription:MultilingualApikeyDescription = new DataObjectMultilingualApikeyDescription()
    bApikeyIsactive?:boolean = undefined
+   bApikeyIssigned?:boolean = undefined
 }
 
 /**
@@ -88,6 +95,10 @@ export class ValidationObjectApikeyRequest {
    }
    objApikeyDescription = new ValidationObjectMultilingualApikeyDescription()
    bApikeyIsactive = {
+      type: 'boolean',
+      required: false
+   }
+   bApikeyIssigned = {
       type: 'boolean',
       required: false
    }

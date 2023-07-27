@@ -21,6 +21,9 @@ import { ApikeyResponse } from './apikey-response';
 import { CommonAudit } from './common-audit';
 // May contain unused imports in some cases
 // @ts-ignore
+import { CustomContactNameResponse } from './custom-contact-name-response';
+// May contain unused imports in some cases
+// @ts-ignore
 import { MultilingualApikeyDescription } from './multilingual-apikey-description';
 
 /**
@@ -38,9 +41,13 @@ export type ApikeyResponseCompound = ApikeyResponse;
 // @ts-ignore
 import { DataObjectMultilingualApikeyDescription } from './'
 // @ts-ignore
+import { DataObjectCustomContactNameResponse } from './'
+// @ts-ignore
 import { DataObjectCommonAudit } from './'
 // @ts-ignore
 import { ValidationObjectMultilingualApikeyDescription } from './'
+// @ts-ignore
+import { ValidationObjectCustomContactNameResponse } from './'
 // @ts-ignore
 import { ValidationObjectCommonAudit } from './'
 
@@ -54,8 +61,11 @@ export class DataObjectApikeyResponseCompound {
     pkiApikeyID:number = 0
     fkiUserID:number = 0
     objApikeyDescription:MultilingualApikeyDescription = new DataObjectMultilingualApikeyDescription()
-    sComputedToken?:string = undefined
+    objContactName:CustomContactNameResponse = new DataObjectCustomContactNameResponse()
+    sApikeyApikey?:string = undefined
+    sApikeySecret?:string = undefined
     bApikeyIsactive:boolean = false
+    bApikeyIssigned?:boolean = undefined
     objAudit:CommonAudit = new DataObjectCommonAudit()
 }
 
@@ -76,13 +86,22 @@ export class ValidationObjectApikeyResponseCompound {
       required: true
    }
    objApikeyDescription = new ValidationObjectMultilingualApikeyDescription()
-   sComputedToken = {
+   objContactName = new ValidationObjectCustomContactNameResponse()
+   sApikeyApikey = {
+      type: 'string',
+      required: false
+   }
+   sApikeySecret = {
       type: 'string',
       required: false
    }
    bApikeyIsactive = {
       type: 'boolean',
       required: true
+   }
+   bApikeyIssigned = {
+      type: 'boolean',
+      required: false
    }
    objAudit = new ValidationObjectCommonAudit()
 } 

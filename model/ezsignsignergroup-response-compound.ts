@@ -16,6 +16,9 @@
 // May contain unused imports in some cases
 // @ts-ignore
 import { EzsignsignergroupResponse } from './ezsignsignergroup-response';
+// May contain unused imports in some cases
+// @ts-ignore
+import { MultilingualEzsignsignergroupDescription } from './multilingual-ezsignsignergroup-description';
 
 /**
  * @type EzsignsignergroupResponseCompound
@@ -29,6 +32,10 @@ export type EzsignsignergroupResponseCompound = EzsignsignergroupResponse;
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectMultilingualEzsignsignergroupDescription } from './'
+// @ts-ignore
+import { ValidationObjectMultilingualEzsignsignergroupDescription } from './'
 
 /**
  * @export 
@@ -38,6 +45,8 @@ export type EzsignsignergroupResponseCompound = EzsignsignergroupResponse;
  */
 export class DataObjectEzsignsignergroupResponseCompound {
     pkiEzsignsignergroupID:number = 0
+    objEzsignsignergroupDescription:MultilingualEzsignsignergroupDescription = new DataObjectMultilingualEzsignsignergroupDescription()
+    sEzsignsignergroupDescriptionX?:string = undefined
 }
 
 /**
@@ -51,6 +60,11 @@ export class ValidationObjectEzsignsignergroupResponseCompound {
       minimum: 0,
       maximum: 65535,
       required: true
+   }
+   objEzsignsignergroupDescription = new ValidationObjectMultilingualEzsignsignergroupDescription()
+   sEzsignsignergroupDescriptionX = {
+      type: 'string',
+      required: false
    }
 } 
 

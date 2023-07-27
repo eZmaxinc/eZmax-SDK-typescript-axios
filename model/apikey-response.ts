@@ -18,6 +18,9 @@
 import { CommonAudit } from './common-audit';
 // May contain unused imports in some cases
 // @ts-ignore
+import { CustomContactNameResponse } from './custom-contact-name-response';
+// May contain unused imports in some cases
+// @ts-ignore
 import { MultilingualApikeyDescription } from './multilingual-apikey-description';
 
 /**
@@ -45,17 +48,35 @@ export interface ApikeyResponse {
      */
     'objApikeyDescription': MultilingualApikeyDescription;
     /**
-     * The secret token for the API key.  This will be returned only on creation.
+     * 
+     * @type {CustomContactNameResponse}
+     * @memberof ApikeyResponse
+     */
+    'objContactName': CustomContactNameResponse;
+    /**
+     * The Apikey for the API key.  This will be hidden if we are not creating or regenerating the Apikey.
      * @type {string}
      * @memberof ApikeyResponse
      */
-    'sComputedToken'?: string;
+    'sApikeyApikey'?: string;
+    /**
+     * The Secret for the API key.  This will be hidden if we are not creating or regenerating the Apikey.
+     * @type {string}
+     * @memberof ApikeyResponse
+     */
+    'sApikeySecret'?: string;
     /**
      * Whether the apikey is active or not
      * @type {boolean}
      * @memberof ApikeyResponse
      */
     'bApikeyIsactive': boolean;
+    /**
+     * Whether the apikey is signed or not
+     * @type {boolean}
+     * @memberof ApikeyResponse
+     */
+    'bApikeyIssigned'?: boolean;
     /**
      * 
      * @type {CommonAudit}
@@ -70,9 +91,13 @@ export interface ApikeyResponse {
 // @ts-ignore
 import { DataObjectMultilingualApikeyDescription } from './'
 // @ts-ignore
+import { DataObjectCustomContactNameResponse } from './'
+// @ts-ignore
 import { DataObjectCommonAudit } from './'
 // @ts-ignore
 import { ValidationObjectMultilingualApikeyDescription } from './'
+// @ts-ignore
+import { ValidationObjectCustomContactNameResponse } from './'
 // @ts-ignore
 import { ValidationObjectCommonAudit } from './'
 
@@ -86,8 +111,11 @@ export class DataObjectApikeyResponse {
    pkiApikeyID:number = 0
    fkiUserID:number = 0
    objApikeyDescription:MultilingualApikeyDescription = new DataObjectMultilingualApikeyDescription()
-   sComputedToken?:string = undefined
+   objContactName:CustomContactNameResponse = new DataObjectCustomContactNameResponse()
+   sApikeyApikey?:string = undefined
+   sApikeySecret?:string = undefined
    bApikeyIsactive:boolean = false
+   bApikeyIssigned?:boolean = undefined
    objAudit:CommonAudit = new DataObjectCommonAudit()
 }
 
@@ -108,13 +136,22 @@ export class ValidationObjectApikeyResponse {
       required: true
    }
    objApikeyDescription = new ValidationObjectMultilingualApikeyDescription()
-   sComputedToken = {
+   objContactName = new ValidationObjectCustomContactNameResponse()
+   sApikeyApikey = {
+      type: 'string',
+      required: false
+   }
+   sApikeySecret = {
       type: 'string',
       required: false
    }
    bApikeyIsactive = {
       type: 'boolean',
       required: true
+   }
+   bApikeyIssigned = {
+      type: 'boolean',
+      required: false
    }
    objAudit = new ValidationObjectCommonAudit()
 } 

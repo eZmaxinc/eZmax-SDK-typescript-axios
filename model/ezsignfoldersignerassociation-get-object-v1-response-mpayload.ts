@@ -25,9 +25,6 @@ import { EzsignsignerResponseCompound } from './ezsignsigner-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
 import { EzsignsignergroupResponseCompound } from './ezsignsignergroup-response-compound';
-// May contain unused imports in some cases
-// @ts-ignore
-import { UsergroupResponseCompound } from './usergroup-response-compound';
 
 /**
  * @type EzsignfoldersignerassociationGetObjectV1ResponseMPayload
@@ -46,15 +43,11 @@ import { DataObjectEzsignsignergroupResponseCompound } from './'
 // @ts-ignore
 import { DataObjectEzsignfoldersignerassociationResponseCompoundUser } from './'
 // @ts-ignore
-import { DataObjectUsergroupResponseCompound } from './'
-// @ts-ignore
 import { DataObjectEzsignsignerResponseCompound } from './'
 // @ts-ignore
 import { ValidationObjectEzsignsignergroupResponseCompound } from './'
 // @ts-ignore
 import { ValidationObjectEzsignfoldersignerassociationResponseCompoundUser } from './'
-// @ts-ignore
-import { ValidationObjectUsergroupResponseCompound } from './'
 // @ts-ignore
 import { ValidationObjectEzsignsignerResponseCompound } from './'
 
@@ -72,7 +65,6 @@ export class DataObjectEzsignfoldersignerassociationGetObjectV1ResponseMPayload 
     tEzsignfoldersignerassociationMessage:string = ''
     objEzsignsignergroup?:EzsignsignergroupResponseCompound = undefined
     objUser?:EzsignfoldersignerassociationResponseCompoundUser = undefined
-    objUsergroup?:UsergroupResponseCompound = undefined
     objEzsignsigner?:EzsignsignerResponseCompound = undefined
 }
 
@@ -106,7 +98,6 @@ export class ValidationObjectEzsignfoldersignerassociationGetObjectV1ResponseMPa
    }
    objEzsignsignergroup = new ValidationObjectEzsignsignergroupResponseCompound()
    objUser = new ValidationObjectEzsignfoldersignerassociationResponseCompoundUser()
-   objUsergroup = new ValidationObjectUsergroupResponseCompound()
    objEzsignsigner = new ValidationObjectEzsignsignerResponseCompound()
 } 
 

@@ -48,6 +48,7 @@ export class DataObjectApikeyRequestCompound {
     fkiUserID:number = 0
     objApikeyDescription:MultilingualApikeyDescription = new DataObjectMultilingualApikeyDescription()
     bApikeyIsactive?:boolean = undefined
+    bApikeyIssigned?:boolean = undefined
 }
 
 /**
@@ -68,6 +69,10 @@ export class ValidationObjectApikeyRequestCompound {
    }
    objApikeyDescription = new ValidationObjectMultilingualApikeyDescription()
    bApikeyIsactive = {
+      type: 'boolean',
+      required: false
+   }
+   bApikeyIssigned = {
       type: 'boolean',
       required: false
    }

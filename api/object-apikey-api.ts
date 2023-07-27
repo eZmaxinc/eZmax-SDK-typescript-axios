@@ -34,13 +34,23 @@ import { ApikeyEditPermissionsV1Request } from '../model';
 // @ts-ignore
 import { ApikeyEditPermissionsV1Response } from '../model';
 // @ts-ignore
+import { ApikeyGetCorsV1Response } from '../model';
+// @ts-ignore
+import { ApikeyGetListV1Response } from '../model';
+// @ts-ignore
 import { ApikeyGetObjectV2Response } from '../model';
 // @ts-ignore
 import { ApikeyGetPermissionsV1Response } from '../model';
 // @ts-ignore
 import { ApikeyGetSubnetsV1Response } from '../model';
 // @ts-ignore
+import { ApikeyRegenerateV1Request } from '../model';
+// @ts-ignore
+import { ApikeyRegenerateV1Response } from '../model';
+// @ts-ignore
 import { CommonResponseError } from '../model';
+// @ts-ignore
+import { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -233,6 +243,141 @@ export const ObjectApikeyApiAxiosParamCreator = function (configuration?: Config
         },
         /**
          * 
+         * @summary Retrieve an existing Apikey\'s cors
+         * @param {number} pkiApikeyID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apikeyGetCorsV1: async (pkiApikeyID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiApikeyID' is not null or undefined
+            assertParamExists('apikeyGetCorsV1', 'pkiApikeyID', pkiApikeyID)
+            const localVarPath = `/1/object/apikey/{pkiApikeyID}/getCors`
+                .replace(`{${"pkiApikeyID"}}`, encodeURIComponent(String(pkiApikeyID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---|
+         * @summary Retrieve Apikey list
+         * @param {'pkiApikeyID_ASC' | 'pkiApikeyID_DESC' | 'sApikeyDescriptionX_ASC' | 'sApikeyDescriptionX_DESC' | 'bApikeyIssigned_ASC' | 'bApikeyIssigned_DESC' | 'bApikeyIsactive_ASC' | 'bApikeyIsactive_DESC' | 'sUserFirstname_ASC' | 'sUserFirstname_DESC' | 'sUserLastname_ASC' | 'sUserLastname_DESC'} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apikeyGetListV1: async (eOrderBy?: 'pkiApikeyID_ASC' | 'pkiApikeyID_DESC' | 'sApikeyDescriptionX_ASC' | 'sApikeyDescriptionX_DESC' | 'bApikeyIssigned_ASC' | 'bApikeyIssigned_DESC' | 'bApikeyIsactive_ASC' | 'bApikeyIsactive_DESC' | 'sUserFirstname_ASC' | 'sUserFirstname_DESC' | 'sUserLastname_ASC' | 'sUserLastname_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/1/object/apikey/getList`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            if (eOrderBy !== undefined) {
+                localVarQueryParameter['eOrderBy'] = eOrderBy;
+            }
+
+            if (iRowMax !== undefined) {
+                localVarQueryParameter['iRowMax'] = iRowMax;
+            }
+
+            if (iRowOffset !== undefined) {
+                localVarQueryParameter['iRowOffset'] = iRowOffset;
+            }
+
+            if (sFilter !== undefined) {
+                localVarQueryParameter['sFilter'] = sFilter;
+            }
+
+            if (acceptLanguage != null) {
+                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string' 
+                    ? acceptLanguage 
+                    : JSON.stringify(acceptLanguage);
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Retrieve an existing Apikey
          * @param {number} pkiApikeyID The unique ID of the Apikey
          * @param {*} [options] Override http request option.
@@ -399,6 +544,68 @@ export const ObjectApikeyApiAxiosParamCreator = function (configuration?: Config
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * 
+         * @summary Regenerate the Apikey
+         * @param {number} pkiApikeyID 
+         * @param {ApikeyRegenerateV1Request} apikeyRegenerateV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apikeyRegenerateV1: async (pkiApikeyID: number, apikeyRegenerateV1Request: ApikeyRegenerateV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiApikeyID' is not null or undefined
+            assertParamExists('apikeyRegenerateV1', 'pkiApikeyID', pkiApikeyID)
+            // verify required parameter 'apikeyRegenerateV1Request' is not null or undefined
+            assertParamExists('apikeyRegenerateV1', 'apikeyRegenerateV1Request', apikeyRegenerateV1Request)
+            const localVarPath = `/1/object/apikey/{pkiApikeyID}/regenerate`
+                .replace(`{${"pkiApikeyID"}}`, encodeURIComponent(String(pkiApikeyID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(apikeyRegenerateV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -446,6 +653,32 @@ export const ObjectApikeyApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Retrieve an existing Apikey\'s cors
+         * @param {number} pkiApikeyID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async apikeyGetCorsV1(pkiApikeyID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApikeyGetCorsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.apikeyGetCorsV1(pkiApikeyID, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---|
+         * @summary Retrieve Apikey list
+         * @param {'pkiApikeyID_ASC' | 'pkiApikeyID_DESC' | 'sApikeyDescriptionX_ASC' | 'sApikeyDescriptionX_DESC' | 'bApikeyIssigned_ASC' | 'bApikeyIssigned_DESC' | 'bApikeyIsactive_ASC' | 'bApikeyIsactive_DESC' | 'sUserFirstname_ASC' | 'sUserFirstname_DESC' | 'sUserLastname_ASC' | 'sUserLastname_DESC'} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async apikeyGetListV1(eOrderBy?: 'pkiApikeyID_ASC' | 'pkiApikeyID_DESC' | 'sApikeyDescriptionX_ASC' | 'sApikeyDescriptionX_DESC' | 'bApikeyIssigned_ASC' | 'bApikeyIssigned_DESC' | 'bApikeyIsactive_ASC' | 'bApikeyIsactive_DESC' | 'sUserFirstname_ASC' | 'sUserFirstname_DESC' | 'sUserLastname_ASC' | 'sUserLastname_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApikeyGetListV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.apikeyGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
          * @summary Retrieve an existing Apikey
          * @param {number} pkiApikeyID The unique ID of the Apikey
          * @param {*} [options] Override http request option.
@@ -475,6 +708,18 @@ export const ObjectApikeyApiFp = function(configuration?: Configuration) {
          */
         async apikeyGetSubnetsV1(pkiApikeyID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApikeyGetSubnetsV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.apikeyGetSubnetsV1(pkiApikeyID, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
+         * @summary Regenerate the Apikey
+         * @param {number} pkiApikeyID 
+         * @param {ApikeyRegenerateV1Request} apikeyRegenerateV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async apikeyRegenerateV1(pkiApikeyID: number, apikeyRegenerateV1Request: ApikeyRegenerateV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApikeyRegenerateV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.apikeyRegenerateV1(pkiApikeyID, apikeyRegenerateV1Request, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -521,6 +766,30 @@ export const ObjectApikeyApiFactory = function (configuration?: Configuration, b
         },
         /**
          * 
+         * @summary Retrieve an existing Apikey\'s cors
+         * @param {number} pkiApikeyID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apikeyGetCorsV1(pkiApikeyID: number, options?: any): AxiosPromise<ApikeyGetCorsV1Response> {
+            return localVarFp.apikeyGetCorsV1(pkiApikeyID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---|
+         * @summary Retrieve Apikey list
+         * @param {'pkiApikeyID_ASC' | 'pkiApikeyID_DESC' | 'sApikeyDescriptionX_ASC' | 'sApikeyDescriptionX_DESC' | 'bApikeyIssigned_ASC' | 'bApikeyIssigned_DESC' | 'bApikeyIsactive_ASC' | 'bApikeyIsactive_DESC' | 'sUserFirstname_ASC' | 'sUserFirstname_DESC' | 'sUserLastname_ASC' | 'sUserLastname_DESC'} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apikeyGetListV1(eOrderBy?: 'pkiApikeyID_ASC' | 'pkiApikeyID_DESC' | 'sApikeyDescriptionX_ASC' | 'sApikeyDescriptionX_DESC' | 'bApikeyIssigned_ASC' | 'bApikeyIssigned_DESC' | 'bApikeyIsactive_ASC' | 'bApikeyIsactive_DESC' | 'sUserFirstname_ASC' | 'sUserFirstname_DESC' | 'sUserLastname_ASC' | 'sUserLastname_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: any): AxiosPromise<ApikeyGetListV1Response> {
+            return localVarFp.apikeyGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Retrieve an existing Apikey
          * @param {number} pkiApikeyID The unique ID of the Apikey
          * @param {*} [options] Override http request option.
@@ -548,6 +817,17 @@ export const ObjectApikeyApiFactory = function (configuration?: Configuration, b
          */
         apikeyGetSubnetsV1(pkiApikeyID: number, options?: any): AxiosPromise<ApikeyGetSubnetsV1Response> {
             return localVarFp.apikeyGetSubnetsV1(pkiApikeyID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Regenerate the Apikey
+         * @param {number} pkiApikeyID 
+         * @param {ApikeyRegenerateV1Request} apikeyRegenerateV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apikeyRegenerateV1(pkiApikeyID: number, apikeyRegenerateV1Request: ApikeyRegenerateV1Request, options?: any): AxiosPromise<ApikeyRegenerateV1Response> {
+            return localVarFp.apikeyRegenerateV1(pkiApikeyID, apikeyRegenerateV1Request, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -599,6 +879,34 @@ export class ObjectApikeyApi extends BaseAPI {
 
     /**
      * 
+     * @summary Retrieve an existing Apikey\'s cors
+     * @param {number} pkiApikeyID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectApikeyApi
+     */
+    public apikeyGetCorsV1(pkiApikeyID: number, options?: AxiosRequestConfig) {
+        return ObjectApikeyApiFp(this.configuration).apikeyGetCorsV1(pkiApikeyID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---|
+     * @summary Retrieve Apikey list
+     * @param {'pkiApikeyID_ASC' | 'pkiApikeyID_DESC' | 'sApikeyDescriptionX_ASC' | 'sApikeyDescriptionX_DESC' | 'bApikeyIssigned_ASC' | 'bApikeyIssigned_DESC' | 'bApikeyIsactive_ASC' | 'bApikeyIsactive_DESC' | 'sUserFirstname_ASC' | 'sUserFirstname_DESC' | 'sUserLastname_ASC' | 'sUserLastname_DESC'} [eOrderBy] Specify how you want the results to be sorted
+     * @param {number} [iRowMax] 
+     * @param {number} [iRowOffset] 
+     * @param {HeaderAcceptLanguage} [acceptLanguage] 
+     * @param {string} [sFilter] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectApikeyApi
+     */
+    public apikeyGetListV1(eOrderBy?: 'pkiApikeyID_ASC' | 'pkiApikeyID_DESC' | 'sApikeyDescriptionX_ASC' | 'sApikeyDescriptionX_DESC' | 'bApikeyIssigned_ASC' | 'bApikeyIssigned_DESC' | 'bApikeyIsactive_ASC' | 'bApikeyIsactive_DESC' | 'sUserFirstname_ASC' | 'sUserFirstname_DESC' | 'sUserLastname_ASC' | 'sUserLastname_DESC', iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig) {
+        return ObjectApikeyApiFp(this.configuration).apikeyGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
      * @summary Retrieve an existing Apikey
      * @param {number} pkiApikeyID The unique ID of the Apikey
      * @param {*} [options] Override http request option.
@@ -631,5 +939,18 @@ export class ObjectApikeyApi extends BaseAPI {
      */
     public apikeyGetSubnetsV1(pkiApikeyID: number, options?: AxiosRequestConfig) {
         return ObjectApikeyApiFp(this.configuration).apikeyGetSubnetsV1(pkiApikeyID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Regenerate the Apikey
+     * @param {number} pkiApikeyID 
+     * @param {ApikeyRegenerateV1Request} apikeyRegenerateV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectApikeyApi
+     */
+    public apikeyRegenerateV1(pkiApikeyID: number, apikeyRegenerateV1Request: ApikeyRegenerateV1Request, options?: AxiosRequestConfig) {
+        return ObjectApikeyApiFp(this.configuration).apikeyRegenerateV1(pkiApikeyID, apikeyRegenerateV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 }
