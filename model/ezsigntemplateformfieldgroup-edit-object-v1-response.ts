@@ -51,7 +51,7 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectEzsigntemplateformfieldgroupEditObjectV1Response
  */
 export class DataObjectEzsigntemplateformfieldgroupEditObjectV1Response {
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
 }
 

@@ -51,7 +51,7 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectSignatureEditObjectV1Response
  */
 export class DataObjectSignatureEditObjectV1Response {
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
 }
 

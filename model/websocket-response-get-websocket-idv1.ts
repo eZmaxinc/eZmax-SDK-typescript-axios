@@ -70,8 +70,7 @@ export class DataObjectWebsocketResponseGetWebsocketIDV1 {
  */
 export class ValidationObjectWebsocketResponseGetWebsocketIDV1 {
    eWebsocketMessagetype = {
-      type: 'enum',
-      allowableValues: ['Response-GetWebsocketID-V1'],
+      type: 'string',
       required: true
    }
    mPayload = new ValidationObjectWebsocketResponseGetWebsocketIDV1MPayload()

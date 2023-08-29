@@ -15,9 +15,6 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignfoldertypeRequestCompoundAllOf } from './ezsignfoldertype-request-compound-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsignfoldertypeResponse } from './ezsignfoldertype-response';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -37,7 +34,7 @@ import { MultilingualEzsignfoldertypeName } from './multilingual-ezsignfoldertyp
  * A Ezsignfoldertype Object
  * @export
  */
-export type EzsignfoldertypeResponseCompound = EzsignfoldertypeRequestCompoundAllOf & EzsignfoldertypeResponse;
+export type EzsignfoldertypeResponseCompound = EzsignfoldertypeResponse;
 
 
 

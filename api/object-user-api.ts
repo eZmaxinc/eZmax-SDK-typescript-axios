@@ -38,6 +38,8 @@ import { UserEditPermissionsV1Request } from '../model';
 // @ts-ignore
 import { UserEditPermissionsV1Response } from '../model';
 // @ts-ignore
+import { UserGetApikeysV1Response } from '../model';
+// @ts-ignore
 import { UserGetAutocompleteV2Response } from '../model';
 // @ts-ignore
 import { UserGetEffectivePermissionsV1Response } from '../model';
@@ -49,6 +51,8 @@ import { UserGetObjectV2Response } from '../model';
 import { UserGetPermissionsV1Response } from '../model';
 // @ts-ignore
 import { UserGetSubnetsV1Response } from '../model';
+// @ts-ignore
+import { UserSendPasswordResetV1Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -240,16 +244,72 @@ export const ObjectUserApiAxiosParamCreator = function (configuration?: Configur
             };
         },
         /**
+         * 
+         * @summary Retrieve an existing User\'s Apikeys
+         * @param {number} pkiUserID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        userGetApikeysV1: async (pkiUserID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiUserID' is not null or undefined
+            assertParamExists('userGetApikeysV1', 'pkiUserID', pkiUserID)
+            const localVarPath = `/1/object/user/{pkiUserID}/getApikeys`
+                .replace(`{${"pkiUserID"}}`, encodeURIComponent(String(pkiUserID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Get the list of User to be used in a dropdown or autocomplete control.
          * @summary Retrieve Users and IDs
-         * @param {'All' | 'AgentBrokerEmployeeEzsignUserNormal' | 'AgentBrokerEmployeeNormalBuiltIn' | 'ClonableUsers' | 'EzsignuserBuiltIn' | 'Normal' | 'NormalEzsignSigner'} sSelector The type of Users to return
+         * @param {'All' | 'AgentBrokerEmployeeEzsignUserNormal' | 'AgentBrokerEmployeeNormalBuiltIn' | 'AgentBrokerEzsignuserNormal' | 'ClonableUsers' | 'EzsignuserBuiltIn' | 'Normal' | 'NormalEzsignSigner' | 'UsergroupDelegated'} sSelector The type of Users to return
          * @param {'All' | 'Active' | 'Inactive'} [eFilterActive] Specify which results we want to display.
          * @param {string} [sQuery] Allow to filter the returned results
          * @param {HeaderAcceptLanguage} [acceptLanguage] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userGetAutocompleteV2: async (sSelector: 'All' | 'AgentBrokerEmployeeEzsignUserNormal' | 'AgentBrokerEmployeeNormalBuiltIn' | 'ClonableUsers' | 'EzsignuserBuiltIn' | 'Normal' | 'NormalEzsignSigner', eFilterActive?: 'All' | 'Active' | 'Inactive', sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        userGetAutocompleteV2: async (sSelector: 'All' | 'AgentBrokerEmployeeEzsignUserNormal' | 'AgentBrokerEmployeeNormalBuiltIn' | 'AgentBrokerEzsignuserNormal' | 'ClonableUsers' | 'EzsignuserBuiltIn' | 'Normal' | 'NormalEzsignSigner' | 'UsergroupDelegated', eFilterActive?: 'All' | 'Active' | 'Inactive', sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('userGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/user/getAutocomplete/{sSelector}`
@@ -615,6 +675,68 @@ export const ObjectUserApiAxiosParamCreator = function (configuration?: Configur
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * Send the password reset email
+         * @summary Send password reset
+         * @param {number} pkiUserID 
+         * @param {object} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        userSendPasswordResetV1: async (pkiUserID: number, body: object, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiUserID' is not null or undefined
+            assertParamExists('userSendPasswordResetV1', 'pkiUserID', pkiUserID)
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('userSendPasswordResetV1', 'body', body)
+            const localVarPath = `/1/object/user/{pkiUserID}/sendPasswordReset`
+                .replace(`{${"pkiUserID"}}`, encodeURIComponent(String(pkiUserID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -661,16 +783,27 @@ export const ObjectUserApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
+         * 
+         * @summary Retrieve an existing User\'s Apikeys
+         * @param {number} pkiUserID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async userGetApikeysV1(pkiUserID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserGetApikeysV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.userGetApikeysV1(pkiUserID, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
          * Get the list of User to be used in a dropdown or autocomplete control.
          * @summary Retrieve Users and IDs
-         * @param {'All' | 'AgentBrokerEmployeeEzsignUserNormal' | 'AgentBrokerEmployeeNormalBuiltIn' | 'ClonableUsers' | 'EzsignuserBuiltIn' | 'Normal' | 'NormalEzsignSigner'} sSelector The type of Users to return
+         * @param {'All' | 'AgentBrokerEmployeeEzsignUserNormal' | 'AgentBrokerEmployeeNormalBuiltIn' | 'AgentBrokerEzsignuserNormal' | 'ClonableUsers' | 'EzsignuserBuiltIn' | 'Normal' | 'NormalEzsignSigner' | 'UsergroupDelegated'} sSelector The type of Users to return
          * @param {'All' | 'Active' | 'Inactive'} [eFilterActive] Specify which results we want to display.
          * @param {string} [sQuery] Allow to filter the returned results
          * @param {HeaderAcceptLanguage} [acceptLanguage] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async userGetAutocompleteV2(sSelector: 'All' | 'AgentBrokerEmployeeEzsignUserNormal' | 'AgentBrokerEmployeeNormalBuiltIn' | 'ClonableUsers' | 'EzsignuserBuiltIn' | 'Normal' | 'NormalEzsignSigner', eFilterActive?: 'All' | 'Active' | 'Inactive', sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserGetAutocompleteV2Response>> {
+        async userGetAutocompleteV2(sSelector: 'All' | 'AgentBrokerEmployeeEzsignUserNormal' | 'AgentBrokerEmployeeNormalBuiltIn' | 'AgentBrokerEzsignuserNormal' | 'ClonableUsers' | 'EzsignuserBuiltIn' | 'Normal' | 'NormalEzsignSigner' | 'UsergroupDelegated', eFilterActive?: 'All' | 'Active' | 'Inactive', sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserGetAutocompleteV2Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.userGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -733,6 +866,18 @@ export const ObjectUserApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.userGetSubnetsV1(pkiUserID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
+        /**
+         * Send the password reset email
+         * @summary Send password reset
+         * @param {number} pkiUserID 
+         * @param {object} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async userSendPasswordResetV1(pkiUserID: number, body: object, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserSendPasswordResetV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.userSendPasswordResetV1(pkiUserID, body, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
     }
 };
 
@@ -776,16 +921,26 @@ export const ObjectUserApiFactory = function (configuration?: Configuration, bas
             return localVarFp.userEditPermissionsV1(pkiUserID, userEditPermissionsV1Request, options).then((request) => request(axios, basePath));
         },
         /**
+         * 
+         * @summary Retrieve an existing User\'s Apikeys
+         * @param {number} pkiUserID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        userGetApikeysV1(pkiUserID: number, options?: any): AxiosPromise<UserGetApikeysV1Response> {
+            return localVarFp.userGetApikeysV1(pkiUserID, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Get the list of User to be used in a dropdown or autocomplete control.
          * @summary Retrieve Users and IDs
-         * @param {'All' | 'AgentBrokerEmployeeEzsignUserNormal' | 'AgentBrokerEmployeeNormalBuiltIn' | 'ClonableUsers' | 'EzsignuserBuiltIn' | 'Normal' | 'NormalEzsignSigner'} sSelector The type of Users to return
+         * @param {'All' | 'AgentBrokerEmployeeEzsignUserNormal' | 'AgentBrokerEmployeeNormalBuiltIn' | 'AgentBrokerEzsignuserNormal' | 'ClonableUsers' | 'EzsignuserBuiltIn' | 'Normal' | 'NormalEzsignSigner' | 'UsergroupDelegated'} sSelector The type of Users to return
          * @param {'All' | 'Active' | 'Inactive'} [eFilterActive] Specify which results we want to display.
          * @param {string} [sQuery] Allow to filter the returned results
          * @param {HeaderAcceptLanguage} [acceptLanguage] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userGetAutocompleteV2(sSelector: 'All' | 'AgentBrokerEmployeeEzsignUserNormal' | 'AgentBrokerEmployeeNormalBuiltIn' | 'ClonableUsers' | 'EzsignuserBuiltIn' | 'Normal' | 'NormalEzsignSigner', eFilterActive?: 'All' | 'Active' | 'Inactive', sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: any): AxiosPromise<UserGetAutocompleteV2Response> {
+        userGetAutocompleteV2(sSelector: 'All' | 'AgentBrokerEmployeeEzsignUserNormal' | 'AgentBrokerEmployeeNormalBuiltIn' | 'AgentBrokerEzsignuserNormal' | 'ClonableUsers' | 'EzsignuserBuiltIn' | 'Normal' | 'NormalEzsignSigner' | 'UsergroupDelegated', eFilterActive?: 'All' | 'Active' | 'Inactive', sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: any): AxiosPromise<UserGetAutocompleteV2Response> {
             return localVarFp.userGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(axios, basePath));
         },
         /**
@@ -842,6 +997,17 @@ export const ObjectUserApiFactory = function (configuration?: Configuration, bas
         userGetSubnetsV1(pkiUserID: number, options?: any): AxiosPromise<UserGetSubnetsV1Response> {
             return localVarFp.userGetSubnetsV1(pkiUserID, options).then((request) => request(axios, basePath));
         },
+        /**
+         * Send the password reset email
+         * @summary Send password reset
+         * @param {number} pkiUserID 
+         * @param {object} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        userSendPasswordResetV1(pkiUserID: number, body: object, options?: any): AxiosPromise<UserSendPasswordResetV1Response> {
+            return localVarFp.userSendPasswordResetV1(pkiUserID, body, options).then((request) => request(axios, basePath));
+        },
     };
 };
 
@@ -891,9 +1057,21 @@ export class ObjectUserApi extends BaseAPI {
     }
 
     /**
+     * 
+     * @summary Retrieve an existing User\'s Apikeys
+     * @param {number} pkiUserID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectUserApi
+     */
+    public userGetApikeysV1(pkiUserID: number, options?: AxiosRequestConfig) {
+        return ObjectUserApiFp(this.configuration).userGetApikeysV1(pkiUserID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * Get the list of User to be used in a dropdown or autocomplete control.
      * @summary Retrieve Users and IDs
-     * @param {'All' | 'AgentBrokerEmployeeEzsignUserNormal' | 'AgentBrokerEmployeeNormalBuiltIn' | 'ClonableUsers' | 'EzsignuserBuiltIn' | 'Normal' | 'NormalEzsignSigner'} sSelector The type of Users to return
+     * @param {'All' | 'AgentBrokerEmployeeEzsignUserNormal' | 'AgentBrokerEmployeeNormalBuiltIn' | 'AgentBrokerEzsignuserNormal' | 'ClonableUsers' | 'EzsignuserBuiltIn' | 'Normal' | 'NormalEzsignSigner' | 'UsergroupDelegated'} sSelector The type of Users to return
      * @param {'All' | 'Active' | 'Inactive'} [eFilterActive] Specify which results we want to display.
      * @param {string} [sQuery] Allow to filter the returned results
      * @param {HeaderAcceptLanguage} [acceptLanguage] 
@@ -901,7 +1079,7 @@ export class ObjectUserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectUserApi
      */
-    public userGetAutocompleteV2(sSelector: 'All' | 'AgentBrokerEmployeeEzsignUserNormal' | 'AgentBrokerEmployeeNormalBuiltIn' | 'ClonableUsers' | 'EzsignuserBuiltIn' | 'Normal' | 'NormalEzsignSigner', eFilterActive?: 'All' | 'Active' | 'Inactive', sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig) {
+    public userGetAutocompleteV2(sSelector: 'All' | 'AgentBrokerEmployeeEzsignUserNormal' | 'AgentBrokerEmployeeNormalBuiltIn' | 'AgentBrokerEzsignuserNormal' | 'ClonableUsers' | 'EzsignuserBuiltIn' | 'Normal' | 'NormalEzsignSigner' | 'UsergroupDelegated', eFilterActive?: 'All' | 'Active' | 'Inactive', sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig) {
         return ObjectUserApiFp(this.configuration).userGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -967,5 +1145,18 @@ export class ObjectUserApi extends BaseAPI {
      */
     public userGetSubnetsV1(pkiUserID: number, options?: AxiosRequestConfig) {
         return ObjectUserApiFp(this.configuration).userGetSubnetsV1(pkiUserID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Send the password reset email
+     * @summary Send password reset
+     * @param {number} pkiUserID 
+     * @param {object} body 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectUserApi
+     */
+    public userSendPasswordResetV1(pkiUserID: number, body: object, options?: AxiosRequestConfig) {
+        return ObjectUserApiFp(this.configuration).userSendPasswordResetV1(pkiUserID, body, options).then((request) => request(this.axios, this.basePath));
     }
 }

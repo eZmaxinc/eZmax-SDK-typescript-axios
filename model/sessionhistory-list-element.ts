@@ -145,7 +145,7 @@ export class ValidationObjectSessionhistoryListElement {
    }
    eSessionhistoryEndby = {
       type: 'enum',
-      allowableValues: ['Decryption','Hack','Expired','Hijack','DoubleLogon','Garbage','Logoff','BadAuth','Locked','Inactive','InvalidUser','BadUserType','BadIP'],
+      allowableValues: ['Decryption','Hack','Expired','Hijack','DoubleLogon','Garbage','Logoff','BadAuth','Locked','Inactive','InvalidUser','BadUserType','BadIP','ForcedLogoff'],
       required: true
    }
    sComputerDescription = {

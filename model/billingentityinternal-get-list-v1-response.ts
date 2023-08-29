@@ -15,9 +15,6 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { BillingentityinternalGetListV1ResponseAllOf } from './billingentityinternal-get-list-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { BillingentityinternalGetListV1ResponseMPayload } from './billingentityinternal-get-list-v1-response-mpayload';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -34,7 +31,7 @@ import { CommonResponseObjDebugPayloadGetList } from './common-response-obj-debu
  * Response for GET /1/object/billingentityinternal/getList
  * @export
  */
-export type BillingentityinternalGetListV1Response = BillingentityinternalGetListV1ResponseAllOf & CommonResponseGetList;
+export type BillingentityinternalGetListV1Response = CommonResponseGetList;
 
 
 /**
@@ -42,17 +39,17 @@ export type BillingentityinternalGetListV1Response = BillingentityinternalGetLis
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectBillingentityinternalGetListV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayloadGetList } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectBillingentityinternalGetListV1ResponseMPayload } from './'
+import { DataObjectBillingentityinternalGetListV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayloadGetList } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectBillingentityinternalGetListV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectBillingentityinternalGetListV1Response
  */
 export class DataObjectBillingentityinternalGetListV1Response {
-    mPayload:BillingentityinternalGetListV1ResponseMPayload = new DataObjectBillingentityinternalGetListV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayloadGetList = undefined
+    objDebugPayload:CommonResponseObjDebugPayloadGetList = new DataObjectCommonResponseObjDebugPayloadGetList()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:BillingentityinternalGetListV1ResponseMPayload = new DataObjectBillingentityinternalGetListV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectBillingentityinternalGetListV1Response {
  * @class ValidationObjectBillingentityinternalGetListV1Response
  */
 export class ValidationObjectBillingentityinternalGetListV1Response {
-   mPayload = new ValidationObjectBillingentityinternalGetListV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayloadGetList()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectBillingentityinternalGetListV1ResponseMPayload()
 } 
 
 

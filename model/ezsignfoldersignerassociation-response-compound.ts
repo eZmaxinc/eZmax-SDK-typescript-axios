@@ -18,9 +18,6 @@
 import { EzsignfoldersignerassociationResponse } from './ezsignfoldersignerassociation-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignfoldersignerassociationResponseCompoundAllOf } from './ezsignfoldersignerassociation-response-compound-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsignfoldersignerassociationResponseCompoundUser } from './ezsignfoldersignerassociation-response-compound-user';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -34,7 +31,7 @@ import { EzsignsignergroupResponseCompound } from './ezsignsignergroup-response-
  * An Ezsignfoldersignerassociation Object
  * @export
  */
-export type EzsignfoldersignerassociationResponseCompound = EzsignfoldersignerassociationResponse & EzsignfoldersignerassociationResponseCompoundAllOf;
+export type EzsignfoldersignerassociationResponseCompound = EzsignfoldersignerassociationResponse;
 
 
 /**

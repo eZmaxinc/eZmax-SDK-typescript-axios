@@ -51,7 +51,7 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectEzsignfolderDeleteObjectV1Response
  */
 export class DataObjectEzsignfolderDeleteObjectV1Response {
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
 }
 

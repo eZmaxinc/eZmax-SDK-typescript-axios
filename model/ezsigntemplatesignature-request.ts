@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import { EnumTextvalidation } from './enum-textvalidation';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FieldEEzsigntemplatesignatureAttachmentnamesource } from './field-eezsigntemplatesignature-attachmentnamesource';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -75,6 +78,18 @@ export interface EzsigntemplatesignatureRequest {
      */
     'iEzsigntemplatesignatureY': number;
     /**
+     * The width of the Ezsigntemplatesignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsigntemplatesignature to have a width of 2 inches, you would use \"200\" for the iEzsigntemplatesignatureWidth.
+     * @type {number}
+     * @memberof EzsigntemplatesignatureRequest
+     */
+    'iEzsigntemplatesignatureWidth'?: number;
+    /**
+     * The height of the Ezsigntemplatesignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsigntemplatesignature to have an height of 2 inches, you would use \"200\" for the iEzsigntemplatesignatureHeight.
+     * @type {number}
+     * @memberof EzsigntemplatesignatureRequest
+     */
+    'iEzsigntemplatesignatureHeight'?: number;
+    /**
      * The step when the Ezsigntemplatesigner will be invited to sign
      * @type {number}
      * @memberof EzsigntemplatesignatureRequest
@@ -128,6 +143,24 @@ export interface EzsigntemplatesignatureRequest {
      * @memberof EzsigntemplatesignatureRequest
      */
     'iEzsigntemplatesignatureValidationstep'?: number;
+    /**
+     * The maximum length for the value in the Ezsigntemplatesignature  This can only be set if eEzsigntemplatesignatureType is **FieldText** or **FieldTextarea**
+     * @type {number}
+     * @memberof EzsigntemplatesignatureRequest
+     */
+    'iEzsigntemplatesignatureMaxlength'?: number;
+    /**
+     * A regular expression to indicate what values are acceptable for the Ezsigntemplatesignature.  This can only be set if eEzsigntemplatesignatureType is **Text** or **Textarea**
+     * @type {string}
+     * @memberof EzsigntemplatesignatureRequest
+     */
+    'sEzsigntemplatesignatureRegexp'?: string;
+    /**
+     * 
+     * @type {EnumTextvalidation}
+     * @memberof EzsigntemplatesignatureRequest
+     */
+    'eEzsigntemplatesignatureTextvalidation'?: EnumTextvalidation;
 }
 
 
@@ -150,6 +183,8 @@ export class DataObjectEzsigntemplatesignatureRequest {
    iEzsigntemplatedocumentpagePagenumber:number = 0
    iEzsigntemplatesignatureX:number = 0
    iEzsigntemplatesignatureY:number = 0
+   iEzsigntemplatesignatureWidth?:number = undefined
+   iEzsigntemplatesignatureHeight?:number = undefined
    iEzsigntemplatesignatureStep:number = 0
    eEzsigntemplatesignatureType:FieldEEzsigntemplatesignatureType = 'Acknowledgement'
    tEzsigntemplatesignatureTooltip?:string = undefined
@@ -159,6 +194,9 @@ export class DataObjectEzsigntemplatesignatureRequest {
    eEzsigntemplatesignatureAttachmentnamesource?:FieldEEzsigntemplatesignatureAttachmentnamesource = undefined
    sEzsigntemplatesignatureAttachmentdescription?:string = undefined
    iEzsigntemplatesignatureValidationstep?:number = undefined
+   iEzsigntemplatesignatureMaxlength?:number = undefined
+   sEzsigntemplatesignatureRegexp?:string = undefined
+   eEzsigntemplatesignatureTextvalidation?:EnumTextvalidation = undefined
 }
 
 /**
@@ -202,6 +240,16 @@ export class ValidationObjectEzsigntemplatesignatureRequest {
       minimum: 0,
       required: true
    }
+   iEzsigntemplatesignatureWidth = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   iEzsigntemplatesignatureHeight = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
    iEzsigntemplatesignatureStep = {
       type: 'integer',
       minimum: 1,
@@ -209,7 +257,7 @@ export class ValidationObjectEzsigntemplatesignatureRequest {
    }
    eEzsigntemplatesignatureType = {
       type: 'enum',
-      allowableValues: ['Acknowledgement','City','Handwritten','Initials','Name','Attachments'],
+      allowableValues: ['Acknowledgement','City','Handwritten','Initials','Name','Attachments','FieldText','FieldTextarea'],
       required: true
    }
    tEzsigntemplatesignatureTooltip = {
@@ -241,6 +289,21 @@ export class ValidationObjectEzsigntemplatesignatureRequest {
    }
    iEzsigntemplatesignatureValidationstep = {
       type: 'integer',
+      required: false
+   }
+   iEzsigntemplatesignatureMaxlength = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 65535,
+      required: false
+   }
+   sEzsigntemplatesignatureRegexp = {
+      type: 'string',
+      required: false
+   }
+   eEzsigntemplatesignatureTextvalidation = {
+      type: 'enum',
+      allowableValues: ['None','Date (YYYY-MM-DD)','Date (MM/DD/YYYY)','Date (MM/DD/YY)','Date (DD/MM/YYYY)','Date (DD/MM/YY)','Email','Letters','Numbers','Zip','Zip+4','PostalCode','Custom'],
       required: false
    }
 } 

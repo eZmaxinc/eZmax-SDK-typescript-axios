@@ -15,9 +15,6 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomNotificationsubsectiongetnotificationtestsResponseAllOf } from './custom-notificationsubsectiongetnotificationtests-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { CustomNotificationtestgetnotificationtestsResponse } from './custom-notificationtestgetnotificationtests-response';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -31,7 +28,7 @@ import { NotificationsubsectionResponse } from './notificationsubsection-respons
  * A Notificationsubsection Object in the context of getNotificationtests
  * @export
  */
-export type CustomNotificationsubsectiongetnotificationtestsResponse = CustomNotificationsubsectiongetnotificationtestsResponseAllOf & NotificationsubsectionResponse;
+export type CustomNotificationsubsectiongetnotificationtestsResponse = NotificationsubsectionResponse;
 
 
 /**

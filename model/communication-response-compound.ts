@@ -21,9 +21,6 @@ import { CommonAudit } from './common-audit';
 import { CommunicationResponse } from './communication-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommunicationResponseCompoundAllOf } from './communication-response-compound-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { CommunicationattachmentResponseCompound } from './communicationattachment-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -55,7 +52,7 @@ import { PhonestaticResponse } from './phonestatic-response';
  * A Communication Object
  * @export
  */
-export type CommunicationResponseCompound = CommunicationResponse & CommunicationResponseCompoundAllOf;
+export type CommunicationResponseCompound = CommunicationResponse;
 
 
 

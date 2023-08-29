@@ -18,9 +18,6 @@
 import { EzsigntemplatepackageResponse } from './ezsigntemplatepackage-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigntemplatepackageResponseCompoundAllOf } from './ezsigntemplatepackage-response-compound-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsigntemplatepackagemembershipResponseCompound } from './ezsigntemplatepackagemembership-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -31,7 +28,7 @@ import { EzsigntemplatepackagesignerResponseCompound } from './ezsigntemplatepac
  * A Ezsigntemplatepackage Object
  * @export
  */
-export type EzsigntemplatepackageResponseCompound = EzsigntemplatepackageResponse & EzsigntemplatepackageResponseCompoundAllOf;
+export type EzsigntemplatepackageResponseCompound = EzsigntemplatepackageResponse;
 
 
 /**

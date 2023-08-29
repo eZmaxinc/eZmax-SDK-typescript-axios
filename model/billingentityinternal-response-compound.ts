@@ -18,9 +18,6 @@
 import { BillingentityinternalResponse } from './billingentityinternal-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { BillingentityinternalResponseCompoundAllOf } from './billingentityinternal-response-compound-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { BillingentityinternalproductResponseCompound } from './billingentityinternalproduct-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -31,7 +28,7 @@ import { MultilingualBillingentityinternalDescription } from './multilingual-bil
  * A Billingentityinternal Object
  * @export
  */
-export type BillingentityinternalResponseCompound = BillingentityinternalResponse & BillingentityinternalResponseCompoundAllOf;
+export type BillingentityinternalResponseCompound = BillingentityinternalResponse;
 
 
 /**

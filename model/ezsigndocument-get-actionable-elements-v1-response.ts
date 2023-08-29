@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigndocumentGetActionableElementsV1ResponseAllOf } from './ezsigndocument-get-actionable-elements-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsigndocumentGetActionableElementsV1ResponseMPayload } from './ezsigndocument-get-actionable-elements-v1-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { EzsigndocumentGetActionableElementsV1ResponseMPayload } from './ezsignd
  * Response for GET /1/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements
  * @export
  */
-export type EzsigndocumentGetActionableElementsV1Response = CommonResponse & EzsigndocumentGetActionableElementsV1ResponseAllOf;
+export type EzsigndocumentGetActionableElementsV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type EzsigndocumentGetActionableElementsV1Response = CommonResponse & Ezs
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectEzsigndocumentGetActionableElementsV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectEzsigndocumentGetActionableElementsV1ResponseMPayload } from './'
+import { DataObjectEzsigndocumentGetActionableElementsV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsigndocumentGetActionableElementsV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectEzsigndocumentGetActionableElementsV1Response
  */
 export class DataObjectEzsigndocumentGetActionableElementsV1Response {
-    mPayload:EzsigndocumentGetActionableElementsV1ResponseMPayload = new DataObjectEzsigndocumentGetActionableElementsV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:EzsigndocumentGetActionableElementsV1ResponseMPayload = new DataObjectEzsigndocumentGetActionableElementsV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectEzsigndocumentGetActionableElementsV1Response {
  * @class ValidationObjectEzsigndocumentGetActionableElementsV1Response
  */
 export class ValidationObjectEzsigndocumentGetActionableElementsV1Response {
-   mPayload = new ValidationObjectEzsigndocumentGetActionableElementsV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectEzsigndocumentGetActionableElementsV1ResponseMPayload()
 } 
 
 

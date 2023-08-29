@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import { EnumTextvalidation } from './enum-textvalidation';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FieldEEzsignformfieldgroupSignerrequirement } from './field-eezsignformfieldgroup-signerrequirement';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -102,6 +105,12 @@ export interface EzsignformfieldgroupResponse {
      */
     'bEzsignformfieldgroupEncrypted'?: boolean;
     /**
+     * 
+     * @type {EnumTextvalidation}
+     * @memberof EzsignformfieldgroupResponse
+     */
+    'eEzsignformfieldgroupTextvalidation'?: EnumTextvalidation;
+    /**
      * A regular expression to indicate what values are acceptable for the Ezsignformfieldgroup.  This can only be set if eEzsignformfieldgroupType is **Text** or **Textarea**
      * @type {string}
      * @memberof EzsignformfieldgroupResponse
@@ -146,6 +155,7 @@ export class DataObjectEzsignformfieldgroupResponse {
    bEzsignformfieldgroupReadonly:boolean = false
    iEzsignformfieldgroupMaxlength?:number = undefined
    bEzsignformfieldgroupEncrypted?:boolean = undefined
+   eEzsignformfieldgroupTextvalidation?:EnumTextvalidation = undefined
    sEzsignformfieldgroupRegexp?:string = undefined
    tEzsignformfieldgroupTooltip?:string = undefined
    eEzsignformfieldgroupTooltipposition?:FieldEEzsignformfieldgroupTooltipposition = undefined
@@ -207,10 +217,16 @@ export class ValidationObjectEzsignformfieldgroupResponse {
    iEzsignformfieldgroupMaxlength = {
       type: 'integer',
       minimum: 0,
+      maximum: 65535,
       required: false
    }
    bEzsignformfieldgroupEncrypted = {
       type: 'boolean',
+      required: false
+   }
+   eEzsignformfieldgroupTextvalidation = {
+      type: 'enum',
+      allowableValues: ['None','Date (YYYY-MM-DD)','Date (MM/DD/YYYY)','Date (MM/DD/YY)','Date (DD/MM/YYYY)','Date (DD/MM/YY)','Email','Letters','Numbers','Zip','Zip+4','PostalCode','Custom'],
       required: false
    }
    sEzsignformfieldgroupRegexp = {

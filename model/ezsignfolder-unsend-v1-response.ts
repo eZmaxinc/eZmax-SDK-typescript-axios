@@ -51,7 +51,7 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectEzsignfolderUnsendV1Response
  */
 export class DataObjectEzsignfolderUnsendV1Response {
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
 }
 

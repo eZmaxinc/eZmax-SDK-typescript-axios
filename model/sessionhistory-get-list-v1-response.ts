@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayloadGetList } from './common-response-obj-debug-payload-get-list';
 // May contain unused imports in some cases
 // @ts-ignore
-import { SessionhistoryGetListV1ResponseAllOf } from './sessionhistory-get-list-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { SessionhistoryGetListV1ResponseMPayload } from './sessionhistory-get-list-v1-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { SessionhistoryGetListV1ResponseMPayload } from './sessionhistory-get-li
  * Response for GET /1/object/sessionhistory/getList
  * @export
  */
-export type SessionhistoryGetListV1Response = CommonResponseGetList & SessionhistoryGetListV1ResponseAllOf;
+export type SessionhistoryGetListV1Response = CommonResponseGetList;
 
 
 /**
@@ -42,17 +39,17 @@ export type SessionhistoryGetListV1Response = CommonResponseGetList & Sessionhis
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectSessionhistoryGetListV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayloadGetList } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectSessionhistoryGetListV1ResponseMPayload } from './'
+import { DataObjectSessionhistoryGetListV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayloadGetList } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectSessionhistoryGetListV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectSessionhistoryGetListV1Response
  */
 export class DataObjectSessionhistoryGetListV1Response {
-    mPayload:SessionhistoryGetListV1ResponseMPayload = new DataObjectSessionhistoryGetListV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayloadGetList = undefined
+    objDebugPayload:CommonResponseObjDebugPayloadGetList = new DataObjectCommonResponseObjDebugPayloadGetList()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:SessionhistoryGetListV1ResponseMPayload = new DataObjectSessionhistoryGetListV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectSessionhistoryGetListV1Response {
  * @class ValidationObjectSessionhistoryGetListV1Response
  */
 export class ValidationObjectSessionhistoryGetListV1Response {
-   mPayload = new ValidationObjectSessionhistoryGetListV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayloadGetList()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectSessionhistoryGetListV1ResponseMPayload()
 } 
 
 

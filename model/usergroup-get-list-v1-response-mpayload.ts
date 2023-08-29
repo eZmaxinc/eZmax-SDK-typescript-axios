@@ -18,9 +18,6 @@
 import { CommonGetListV1ResponseMPayload } from './common-get-list-v1-response-mpayload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { UsergroupGetListV1ResponseMPayloadAllOf } from './usergroup-get-list-v1-response-mpayload-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { UsergroupListElement } from './usergroup-list-element';
 
 /**
@@ -28,7 +25,7 @@ import { UsergroupListElement } from './usergroup-list-element';
  * Payload for GET /1/object/usergroup/getList
  * @export
  */
-export type UsergroupGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload & UsergroupGetListV1ResponseMPayloadAllOf;
+export type UsergroupGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;
 
 
 /**
@@ -43,9 +40,9 @@ export type UsergroupGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload
  * @class DataObjectUsergroupGetListV1ResponseMPayload
  */
 export class DataObjectUsergroupGetListV1ResponseMPayload {
-    a_objUsergroup:Array<UsergroupListElement> = []
     iRowReturned:number = 0
     iRowFiltered:number = 0
+    a_objUsergroup:Array<UsergroupListElement> = []
 }
 
 /**
@@ -54,16 +51,16 @@ export class DataObjectUsergroupGetListV1ResponseMPayload {
  * @class ValidationObjectUsergroupGetListV1ResponseMPayload
  */
 export class ValidationObjectUsergroupGetListV1ResponseMPayload {
-   a_objUsergroup = {
-      type: 'array',
-      required: true
-   }
    iRowReturned = {
       type: 'integer',
       required: true
    }
    iRowFiltered = {
       type: 'integer',
+      required: true
+   }
+   a_objUsergroup = {
+      type: 'array',
       required: true
    }
 } 

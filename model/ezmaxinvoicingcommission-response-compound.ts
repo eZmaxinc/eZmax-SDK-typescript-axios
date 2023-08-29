@@ -19,16 +19,13 @@ import { CustomContactNameResponse } from './custom-contact-name-response';
 // May contain unused imports in some cases
 // @ts-ignore
 import { EzmaxinvoicingcommissionResponse } from './ezmaxinvoicingcommission-response';
-// May contain unused imports in some cases
-// @ts-ignore
-import { EzmaxinvoicingcommissionResponseCompoundAllOf } from './ezmaxinvoicingcommission-response-compound-all-of';
 
 /**
  * @type EzmaxinvoicingcommissionResponseCompound
  * A Ezmaxinvoicingcommission Object
  * @export
  */
-export type EzmaxinvoicingcommissionResponseCompound = EzmaxinvoicingcommissionResponse & EzmaxinvoicingcommissionResponseCompoundAllOf;
+export type EzmaxinvoicingcommissionResponseCompound = EzmaxinvoicingcommissionResponse;
 
 
 /**

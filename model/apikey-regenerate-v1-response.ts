@@ -15,9 +15,6 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ApikeyRegenerateV1ResponseAllOf } from './apikey-regenerate-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { ApikeyRegenerateV1ResponseMPayload } from './apikey-regenerate-v1-response-mpayload';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -34,7 +31,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for GET /1/object/apikey/{pkiApikeyID}/regenerate
  * @export
  */
-export type ApikeyRegenerateV1Response = ApikeyRegenerateV1ResponseAllOf & CommonResponse;
+export type ApikeyRegenerateV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type ApikeyRegenerateV1Response = ApikeyRegenerateV1ResponseAllOf & Commo
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectApikeyRegenerateV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectApikeyRegenerateV1ResponseMPayload } from './'
+import { DataObjectApikeyRegenerateV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectApikeyRegenerateV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectApikeyRegenerateV1Response
  */
 export class DataObjectApikeyRegenerateV1Response {
-    mPayload:ApikeyRegenerateV1ResponseMPayload = new DataObjectApikeyRegenerateV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:ApikeyRegenerateV1ResponseMPayload = new DataObjectApikeyRegenerateV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectApikeyRegenerateV1Response {
  * @class ValidationObjectApikeyRegenerateV1Response
  */
 export class ValidationObjectApikeyRegenerateV1Response {
-   mPayload = new ValidationObjectApikeyRegenerateV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectApikeyRegenerateV1ResponseMPayload()
 } 
 
 

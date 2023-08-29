@@ -18,9 +18,6 @@
 import { CommonGetListV1ResponseMPayload } from './common-get-list-v1-response-mpayload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { WebhookGetListV1ResponseMPayloadAllOf } from './webhook-get-list-v1-response-mpayload-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { WebhookListElement } from './webhook-list-element';
 
 /**
@@ -28,7 +25,7 @@ import { WebhookListElement } from './webhook-list-element';
  * Payload for GET /1/object/webhook/getList
  * @export
  */
-export type WebhookGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload & WebhookGetListV1ResponseMPayloadAllOf;
+export type WebhookGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;
 
 
 /**
@@ -43,9 +40,9 @@ export type WebhookGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload &
  * @class DataObjectWebhookGetListV1ResponseMPayload
  */
 export class DataObjectWebhookGetListV1ResponseMPayload {
-    a_objWebhook:Array<WebhookListElement> = []
     iRowReturned:number = 0
     iRowFiltered:number = 0
+    a_objWebhook:Array<WebhookListElement> = []
 }
 
 /**
@@ -54,16 +51,16 @@ export class DataObjectWebhookGetListV1ResponseMPayload {
  * @class ValidationObjectWebhookGetListV1ResponseMPayload
  */
 export class ValidationObjectWebhookGetListV1ResponseMPayload {
-   a_objWebhook = {
-      type: 'array',
-      required: true
-   }
    iRowReturned = {
       type: 'integer',
       required: true
    }
    iRowFiltered = {
       type: 'integer',
+      required: true
+   }
+   a_objWebhook = {
+      type: 'array',
       required: true
    }
 } 

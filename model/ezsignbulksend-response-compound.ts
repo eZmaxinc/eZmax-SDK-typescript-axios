@@ -21,9 +21,6 @@ import { CommonAudit } from './common-audit';
 import { EzsignbulksendResponse } from './ezsignbulksend-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignbulksendResponseCompoundAllOf } from './ezsignbulksend-response-compound-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsignbulksenddocumentmappingResponseCompound } from './ezsignbulksenddocumentmapping-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -37,7 +34,7 @@ import { FieldEEzsignfoldertypePrivacylevel } from './field-eezsignfoldertype-pr
  * An Ezsignbulksend Object and children to create a complete structure
  * @export
  */
-export type EzsignbulksendResponseCompound = EzsignbulksendResponse & EzsignbulksendResponseCompoundAllOf;
+export type EzsignbulksendResponseCompound = EzsignbulksendResponse;
 
 
 

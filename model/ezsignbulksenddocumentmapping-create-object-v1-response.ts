@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignbulksenddocumentmappingCreateObjectV1ResponseAllOf } from './ezsignbulksenddocumentmapping-create-object-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsignbulksenddocumentmappingCreateObjectV1ResponseMPayload } from './ezsignbulksenddocumentmapping-create-object-v1-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { EzsignbulksenddocumentmappingCreateObjectV1ResponseMPayload } from './e
  * Response for POST /1/object/ezsignbulksenddocumentmapping
  * @export
  */
-export type EzsignbulksenddocumentmappingCreateObjectV1Response = CommonResponse & EzsignbulksenddocumentmappingCreateObjectV1ResponseAllOf;
+export type EzsignbulksenddocumentmappingCreateObjectV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type EzsignbulksenddocumentmappingCreateObjectV1Response = CommonResponse
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectEzsignbulksenddocumentmappingCreateObjectV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectEzsignbulksenddocumentmappingCreateObjectV1ResponseMPayload } from './'
+import { DataObjectEzsignbulksenddocumentmappingCreateObjectV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsignbulksenddocumentmappingCreateObjectV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectEzsignbulksenddocumentmappingCreateObjectV1Response
  */
 export class DataObjectEzsignbulksenddocumentmappingCreateObjectV1Response {
-    mPayload:EzsignbulksenddocumentmappingCreateObjectV1ResponseMPayload = new DataObjectEzsignbulksenddocumentmappingCreateObjectV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:EzsignbulksenddocumentmappingCreateObjectV1ResponseMPayload = new DataObjectEzsignbulksenddocumentmappingCreateObjectV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectEzsignbulksenddocumentmappingCreateObjectV1Response {
  * @class ValidationObjectEzsignbulksenddocumentmappingCreateObjectV1Response
  */
 export class ValidationObjectEzsignbulksenddocumentmappingCreateObjectV1Response {
-   mPayload = new ValidationObjectEzsignbulksenddocumentmappingCreateObjectV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectEzsignbulksenddocumentmappingCreateObjectV1ResponseMPayload()
 } 
 
 

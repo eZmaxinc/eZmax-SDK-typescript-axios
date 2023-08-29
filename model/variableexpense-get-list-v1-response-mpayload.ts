@@ -18,9 +18,6 @@
 import { CommonGetListV1ResponseMPayload } from './common-get-list-v1-response-mpayload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { VariableexpenseGetListV1ResponseMPayloadAllOf } from './variableexpense-get-list-v1-response-mpayload-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { VariableexpenseListElement } from './variableexpense-list-element';
 
 /**
@@ -28,7 +25,7 @@ import { VariableexpenseListElement } from './variableexpense-list-element';
  * Payload for GET /1/object/variableexpense/getList
  * @export
  */
-export type VariableexpenseGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload & VariableexpenseGetListV1ResponseMPayloadAllOf;
+export type VariableexpenseGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;
 
 
 /**
@@ -43,9 +40,9 @@ export type VariableexpenseGetListV1ResponseMPayload = CommonGetListV1ResponseMP
  * @class DataObjectVariableexpenseGetListV1ResponseMPayload
  */
 export class DataObjectVariableexpenseGetListV1ResponseMPayload {
-    a_objVariableexpense:Array<VariableexpenseListElement> = []
     iRowReturned:number = 0
     iRowFiltered:number = 0
+    a_objVariableexpense:Array<VariableexpenseListElement> = []
 }
 
 /**
@@ -54,16 +51,16 @@ export class DataObjectVariableexpenseGetListV1ResponseMPayload {
  * @class ValidationObjectVariableexpenseGetListV1ResponseMPayload
  */
 export class ValidationObjectVariableexpenseGetListV1ResponseMPayload {
-   a_objVariableexpense = {
-      type: 'array',
-      required: true
-   }
    iRowReturned = {
       type: 'integer',
       required: true
    }
    iRowFiltered = {
       type: 'integer',
+      required: true
+   }
+   a_objVariableexpense = {
+      type: 'array',
       required: true
    }
 } 

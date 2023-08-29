@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { SignatureCreateObjectV1ResponseAllOf } from './signature-create-object-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { SignatureCreateObjectV1ResponseMPayload } from './signature-create-object-v1-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { SignatureCreateObjectV1ResponseMPayload } from './signature-create-obje
  * Response for POST /1/object/signature
  * @export
  */
-export type SignatureCreateObjectV1Response = CommonResponse & SignatureCreateObjectV1ResponseAllOf;
+export type SignatureCreateObjectV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type SignatureCreateObjectV1Response = CommonResponse & SignatureCreateOb
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectSignatureCreateObjectV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectSignatureCreateObjectV1ResponseMPayload } from './'
+import { DataObjectSignatureCreateObjectV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectSignatureCreateObjectV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectSignatureCreateObjectV1Response
  */
 export class DataObjectSignatureCreateObjectV1Response {
-    mPayload:SignatureCreateObjectV1ResponseMPayload = new DataObjectSignatureCreateObjectV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:SignatureCreateObjectV1ResponseMPayload = new DataObjectSignatureCreateObjectV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectSignatureCreateObjectV1Response {
  * @class ValidationObjectSignatureCreateObjectV1Response
  */
 export class ValidationObjectSignatureCreateObjectV1Response {
-   mPayload = new ValidationObjectSignatureCreateObjectV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectSignatureCreateObjectV1ResponseMPayload()
 } 
 
 

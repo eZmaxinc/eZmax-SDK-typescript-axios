@@ -21,9 +21,6 @@ import { EzsigntemplateResponseCompound } from './ezsigntemplate-response-compou
 import { EzsigntemplatepackagemembershipResponse } from './ezsigntemplatepackagemembership-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigntemplatepackagemembershipResponseCompoundAllOf } from './ezsigntemplatepackagemembership-response-compound-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsigntemplatepackagesignermembershipResponseCompound } from './ezsigntemplatepackagesignermembership-response-compound';
 
 /**
@@ -31,7 +28,7 @@ import { EzsigntemplatepackagesignermembershipResponseCompound } from './ezsignt
  * A Ezsigntemplatepackagemembership Object
  * @export
  */
-export type EzsigntemplatepackagemembershipResponseCompound = EzsigntemplatepackagemembershipResponse & EzsigntemplatepackagemembershipResponseCompoundAllOf;
+export type EzsigntemplatepackagemembershipResponseCompound = EzsigntemplatepackagemembershipResponse;
 
 
 /**

@@ -15,9 +15,6 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomNotificationtestgetnotificationtestsResponseAllOf } from './custom-notificationtestgetnotificationtests-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { FieldENotificationpreferenceStatus } from './field-enotificationpreference-status';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -31,7 +28,7 @@ import { NotificationtestResponse } from './notificationtest-response';
  * A Notificationtest Object in the context of getNotificationtests
  * @export
  */
-export type CustomNotificationtestgetnotificationtestsResponse = CustomNotificationtestgetnotificationtestsResponseAllOf & NotificationtestResponse;
+export type CustomNotificationtestgetnotificationtestsResponse = NotificationtestResponse;
 
 
 

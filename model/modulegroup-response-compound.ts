@@ -19,16 +19,13 @@ import { ModuleResponseCompound } from './module-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
 import { ModulegroupResponse } from './modulegroup-response';
-// May contain unused imports in some cases
-// @ts-ignore
-import { ModulegroupResponseCompoundAllOf } from './modulegroup-response-compound-all-of';
 
 /**
  * @type ModulegroupResponseCompound
  * A Modulegroup Object
  * @export
  */
-export type ModulegroupResponseCompound = ModulegroupResponse & ModulegroupResponseCompoundAllOf;
+export type ModulegroupResponseCompound = ModulegroupResponse;
 
 
 /**

@@ -18,9 +18,6 @@
 import { CommonGetListV1ResponseMPayload } from './common-get-list-v1-response-mpayload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PaymenttermGetListV1ResponseMPayloadAllOf } from './paymentterm-get-list-v1-response-mpayload-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { PaymenttermListElement } from './paymentterm-list-element';
 
 /**
@@ -28,7 +25,7 @@ import { PaymenttermListElement } from './paymentterm-list-element';
  * Payload for GET /1/object/paymentterm/getList
  * @export
  */
-export type PaymenttermGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload & PaymenttermGetListV1ResponseMPayloadAllOf;
+export type PaymenttermGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;
 
 
 /**
@@ -43,9 +40,9 @@ export type PaymenttermGetListV1ResponseMPayload = CommonGetListV1ResponseMPaylo
  * @class DataObjectPaymenttermGetListV1ResponseMPayload
  */
 export class DataObjectPaymenttermGetListV1ResponseMPayload {
-    a_objPaymentterm:Array<PaymenttermListElement> = []
     iRowReturned:number = 0
     iRowFiltered:number = 0
+    a_objPaymentterm:Array<PaymenttermListElement> = []
 }
 
 /**
@@ -54,16 +51,16 @@ export class DataObjectPaymenttermGetListV1ResponseMPayload {
  * @class ValidationObjectPaymenttermGetListV1ResponseMPayload
  */
 export class ValidationObjectPaymenttermGetListV1ResponseMPayload {
-   a_objPaymentterm = {
-      type: 'array',
-      required: true
-   }
    iRowReturned = {
       type: 'integer',
       required: true
    }
    iRowFiltered = {
       type: 'integer',
+      required: true
+   }
+   a_objPaymentterm = {
+      type: 'array',
       required: true
    }
 } 

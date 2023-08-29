@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { UsergroupmembershipCreateObjectV1ResponseAllOf } from './usergroupmembership-create-object-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { UsergroupmembershipCreateObjectV1ResponseMPayload } from './usergroupmembership-create-object-v1-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { UsergroupmembershipCreateObjectV1ResponseMPayload } from './usergroupme
  * Response for POST /1/object/usergroupmembership
  * @export
  */
-export type UsergroupmembershipCreateObjectV1Response = CommonResponse & UsergroupmembershipCreateObjectV1ResponseAllOf;
+export type UsergroupmembershipCreateObjectV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type UsergroupmembershipCreateObjectV1Response = CommonResponse & Usergro
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectUsergroupmembershipCreateObjectV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectUsergroupmembershipCreateObjectV1ResponseMPayload } from './'
+import { DataObjectUsergroupmembershipCreateObjectV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectUsergroupmembershipCreateObjectV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectUsergroupmembershipCreateObjectV1Response
  */
 export class DataObjectUsergroupmembershipCreateObjectV1Response {
-    mPayload:UsergroupmembershipCreateObjectV1ResponseMPayload = new DataObjectUsergroupmembershipCreateObjectV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:UsergroupmembershipCreateObjectV1ResponseMPayload = new DataObjectUsergroupmembershipCreateObjectV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectUsergroupmembershipCreateObjectV1Response {
  * @class ValidationObjectUsergroupmembershipCreateObjectV1Response
  */
 export class ValidationObjectUsergroupmembershipCreateObjectV1Response {
-   mPayload = new ValidationObjectUsergroupmembershipCreateObjectV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectUsergroupmembershipCreateObjectV1ResponseMPayload()
 } 
 
 

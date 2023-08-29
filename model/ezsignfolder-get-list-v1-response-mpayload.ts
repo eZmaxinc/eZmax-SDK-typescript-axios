@@ -18,9 +18,6 @@
 import { CommonGetListV1ResponseMPayload } from './common-get-list-v1-response-mpayload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignfolderGetListV1ResponseMPayloadAllOf } from './ezsignfolder-get-list-v1-response-mpayload-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsignfolderListElement } from './ezsignfolder-list-element';
 
 /**
@@ -28,7 +25,7 @@ import { EzsignfolderListElement } from './ezsignfolder-list-element';
  * Payload for GET /1/object/ezsignfolder/getList
  * @export
  */
-export type EzsignfolderGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload & EzsignfolderGetListV1ResponseMPayloadAllOf;
+export type EzsignfolderGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;
 
 
 /**
@@ -43,9 +40,9 @@ export type EzsignfolderGetListV1ResponseMPayload = CommonGetListV1ResponseMPayl
  * @class DataObjectEzsignfolderGetListV1ResponseMPayload
  */
 export class DataObjectEzsignfolderGetListV1ResponseMPayload {
-    a_objEzsignfolder:Array<EzsignfolderListElement> = []
     iRowReturned:number = 0
     iRowFiltered:number = 0
+    a_objEzsignfolder:Array<EzsignfolderListElement> = []
 }
 
 /**
@@ -54,16 +51,16 @@ export class DataObjectEzsignfolderGetListV1ResponseMPayload {
  * @class ValidationObjectEzsignfolderGetListV1ResponseMPayload
  */
 export class ValidationObjectEzsignfolderGetListV1ResponseMPayload {
-   a_objEzsignfolder = {
-      type: 'array',
-      required: true
-   }
    iRowReturned = {
       type: 'integer',
       required: true
    }
    iRowFiltered = {
       type: 'integer',
+      required: true
+   }
+   a_objEzsignfolder = {
+      type: 'array',
       required: true
    }
 } 

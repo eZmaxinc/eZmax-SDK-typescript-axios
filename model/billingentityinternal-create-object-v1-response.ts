@@ -15,9 +15,6 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { BillingentityinternalCreateObjectV1ResponseAllOf } from './billingentityinternal-create-object-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { BillingentityinternalCreateObjectV1ResponseMPayload } from './billingentityinternal-create-object-v1-response-mpayload';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -34,7 +31,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for POST /1/object/billingentityinternal
  * @export
  */
-export type BillingentityinternalCreateObjectV1Response = BillingentityinternalCreateObjectV1ResponseAllOf & CommonResponse;
+export type BillingentityinternalCreateObjectV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type BillingentityinternalCreateObjectV1Response = BillingentityinternalC
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectBillingentityinternalCreateObjectV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectBillingentityinternalCreateObjectV1ResponseMPayload } from './'
+import { DataObjectBillingentityinternalCreateObjectV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectBillingentityinternalCreateObjectV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectBillingentityinternalCreateObjectV1Response
  */
 export class DataObjectBillingentityinternalCreateObjectV1Response {
-    mPayload:BillingentityinternalCreateObjectV1ResponseMPayload = new DataObjectBillingentityinternalCreateObjectV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:BillingentityinternalCreateObjectV1ResponseMPayload = new DataObjectBillingentityinternalCreateObjectV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectBillingentityinternalCreateObjectV1Response {
  * @class ValidationObjectBillingentityinternalCreateObjectV1Response
  */
 export class ValidationObjectBillingentityinternalCreateObjectV1Response {
-   mPayload = new ValidationObjectBillingentityinternalCreateObjectV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectBillingentityinternalCreateObjectV1ResponseMPayload()
 } 
 
 

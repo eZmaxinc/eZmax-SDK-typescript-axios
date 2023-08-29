@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { UsergroupEditPermissionsV1ResponseAllOf } from './usergroup-edit-permissions-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { UsergroupEditPermissionsV1ResponseMPayload } from './usergroup-edit-permissions-v1-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { UsergroupEditPermissionsV1ResponseMPayload } from './usergroup-edit-per
  * Response for PUT /1/object/usergroup/{pkiUsergroupID}/editPermissions
  * @export
  */
-export type UsergroupEditPermissionsV1Response = CommonResponse & UsergroupEditPermissionsV1ResponseAllOf;
+export type UsergroupEditPermissionsV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type UsergroupEditPermissionsV1Response = CommonResponse & UsergroupEditP
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectUsergroupEditPermissionsV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectUsergroupEditPermissionsV1ResponseMPayload } from './'
+import { DataObjectUsergroupEditPermissionsV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectUsergroupEditPermissionsV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectUsergroupEditPermissionsV1Response
  */
 export class DataObjectUsergroupEditPermissionsV1Response {
-    mPayload:UsergroupEditPermissionsV1ResponseMPayload = new DataObjectUsergroupEditPermissionsV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:UsergroupEditPermissionsV1ResponseMPayload = new DataObjectUsergroupEditPermissionsV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectUsergroupEditPermissionsV1Response {
  * @class ValidationObjectUsergroupEditPermissionsV1Response
  */
 export class ValidationObjectUsergroupEditPermissionsV1Response {
-   mPayload = new ValidationObjectUsergroupEditPermissionsV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectUsergroupEditPermissionsV1ResponseMPayload()
 } 
 
 

@@ -15,9 +15,6 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { BrandingCreateObjectV1ResponseAllOf } from './branding-create-object-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { BrandingCreateObjectV1ResponseMPayload } from './branding-create-object-v1-response-mpayload';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -34,7 +31,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for POST /1/object/branding
  * @export
  */
-export type BrandingCreateObjectV1Response = BrandingCreateObjectV1ResponseAllOf & CommonResponse;
+export type BrandingCreateObjectV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type BrandingCreateObjectV1Response = BrandingCreateObjectV1ResponseAllOf
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectBrandingCreateObjectV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectBrandingCreateObjectV1ResponseMPayload } from './'
+import { DataObjectBrandingCreateObjectV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectBrandingCreateObjectV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectBrandingCreateObjectV1Response
  */
 export class DataObjectBrandingCreateObjectV1Response {
-    mPayload:BrandingCreateObjectV1ResponseMPayload = new DataObjectBrandingCreateObjectV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:BrandingCreateObjectV1ResponseMPayload = new DataObjectBrandingCreateObjectV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectBrandingCreateObjectV1Response {
  * @class ValidationObjectBrandingCreateObjectV1Response
  */
 export class ValidationObjectBrandingCreateObjectV1Response {
-   mPayload = new ValidationObjectBrandingCreateObjectV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectBrandingCreateObjectV1ResponseMPayload()
 } 
 
 

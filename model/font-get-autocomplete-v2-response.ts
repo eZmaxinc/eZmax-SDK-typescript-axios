@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FontGetAutocompleteV2ResponseAllOf } from './font-get-autocomplete-v2-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { FontGetAutocompleteV2ResponseMPayload } from './font-get-autocomplete-v2-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { FontGetAutocompleteV2ResponseMPayload } from './font-get-autocomplete-v
  * Response for GET /2/object/font/getAutocomplete
  * @export
  */
-export type FontGetAutocompleteV2Response = CommonResponse & FontGetAutocompleteV2ResponseAllOf;
+export type FontGetAutocompleteV2Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type FontGetAutocompleteV2Response = CommonResponse & FontGetAutocomplete
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectFontGetAutocompleteV2ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectFontGetAutocompleteV2ResponseMPayload } from './'
+import { DataObjectFontGetAutocompleteV2ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectFontGetAutocompleteV2ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectFontGetAutocompleteV2Response
  */
 export class DataObjectFontGetAutocompleteV2Response {
-    mPayload:FontGetAutocompleteV2ResponseMPayload = new DataObjectFontGetAutocompleteV2ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:FontGetAutocompleteV2ResponseMPayload = new DataObjectFontGetAutocompleteV2ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectFontGetAutocompleteV2Response {
  * @class ValidationObjectFontGetAutocompleteV2Response
  */
 export class ValidationObjectFontGetAutocompleteV2Response {
-   mPayload = new ValidationObjectFontGetAutocompleteV2ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectFontGetAutocompleteV2ResponseMPayload()
 } 
 
 

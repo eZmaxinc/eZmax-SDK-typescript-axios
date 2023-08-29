@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseAllOf } from './ezsigntemplatedocument-get-ezsigntemplatedocumentpages-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseMPayload } from './ezsigntemplatedocument-get-ezsigntemplatedocumentpages-v1-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseMPayload 
  * Response for GET /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplatedocumentpages
  * @export
  */
-export type EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1Response = CommonResponse & EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseAllOf;
+export type EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1Response = Com
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectEzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectEzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseMPayload } from './'
+import { DataObjectEzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectEzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1Response
  */
 export class DataObjectEzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1Response {
-    mPayload:EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseMPayload = new DataObjectEzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseMPayload = new DataObjectEzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectEzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1Res
  * @class ValidationObjectEzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1Response
  */
 export class ValidationObjectEzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1Response {
-   mPayload = new ValidationObjectEzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectEzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1ResponseMPayload()
 } 
 
 

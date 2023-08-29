@@ -144,6 +144,12 @@ export interface EzsignsignatureRequest {
      */
     'iEzsignsignatureValidationstep'?: number;
     /**
+     * The maximum length for the value in the Ezsignsignature  This can only be set if eEzsignsignatureType is **FieldText** or **FieldTextarea**
+     * @type {number}
+     * @memberof EzsignsignatureRequest
+     */
+    'iEzsignsignatureMaxlength'?: number;
+    /**
      * 
      * @type {EnumTextvalidation}
      * @memberof EzsignsignatureRequest
@@ -188,6 +194,7 @@ export class DataObjectEzsignsignatureRequest {
    eEzsignsignatureAttachmentnamesource?:FieldEEzsignsignatureAttachmentnamesource = undefined
    sEzsignsignatureAttachmentdescription?:string = undefined
    iEzsignsignatureValidationstep?:number = undefined
+   iEzsignsignatureMaxlength?:number = undefined
    eEzsignsignatureTextvalidation?:EnumTextvalidation = undefined
    sEzsignsignatureRegexp?:string = undefined
 }
@@ -281,6 +288,12 @@ export class ValidationObjectEzsignsignatureRequest {
    }
    iEzsignsignatureValidationstep = {
       type: 'integer',
+      required: false
+   }
+   iEzsignsignatureMaxlength = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 65535,
       required: false
    }
    eEzsignsignatureTextvalidation = {

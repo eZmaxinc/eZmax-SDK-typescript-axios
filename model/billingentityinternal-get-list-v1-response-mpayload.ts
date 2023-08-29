@@ -15,9 +15,6 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { BillingentityinternalGetListV1ResponseMPayloadAllOf } from './billingentityinternal-get-list-v1-response-mpayload-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { BillingentityinternalListElement } from './billingentityinternal-list-element';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -28,7 +25,7 @@ import { CommonGetListV1ResponseMPayload } from './common-get-list-v1-response-m
  * Payload for GET /1/object/billingentityinternal/getList
  * @export
  */
-export type BillingentityinternalGetListV1ResponseMPayload = BillingentityinternalGetListV1ResponseMPayloadAllOf & CommonGetListV1ResponseMPayload;
+export type BillingentityinternalGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;
 
 
 /**
@@ -43,9 +40,9 @@ export type BillingentityinternalGetListV1ResponseMPayload = Billingentityintern
  * @class DataObjectBillingentityinternalGetListV1ResponseMPayload
  */
 export class DataObjectBillingentityinternalGetListV1ResponseMPayload {
-    a_objBillingentityinternal:Array<BillingentityinternalListElement> = []
     iRowReturned:number = 0
     iRowFiltered:number = 0
+    a_objBillingentityinternal:Array<BillingentityinternalListElement> = []
 }
 
 /**
@@ -54,16 +51,16 @@ export class DataObjectBillingentityinternalGetListV1ResponseMPayload {
  * @class ValidationObjectBillingentityinternalGetListV1ResponseMPayload
  */
 export class ValidationObjectBillingentityinternalGetListV1ResponseMPayload {
-   a_objBillingentityinternal = {
-      type: 'array',
-      required: true
-   }
    iRowReturned = {
       type: 'integer',
       required: true
    }
    iRowFiltered = {
       type: 'integer',
+      required: true
+   }
+   a_objBillingentityinternal = {
+      type: 'array',
       required: true
    }
 } 

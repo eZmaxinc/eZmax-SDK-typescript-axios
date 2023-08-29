@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigntemplateCopyV1ResponseAllOf } from './ezsigntemplate-copy-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsigntemplateCopyV1ResponseMPayload } from './ezsigntemplate-copy-v1-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { EzsigntemplateCopyV1ResponseMPayload } from './ezsigntemplate-copy-v1-r
  * Response for POST /1/object/ezsigntemplate/{pkiEzsigntemplateID}/copy
  * @export
  */
-export type EzsigntemplateCopyV1Response = CommonResponse & EzsigntemplateCopyV1ResponseAllOf;
+export type EzsigntemplateCopyV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type EzsigntemplateCopyV1Response = CommonResponse & EzsigntemplateCopyV1
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectEzsigntemplateCopyV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectEzsigntemplateCopyV1ResponseMPayload } from './'
+import { DataObjectEzsigntemplateCopyV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsigntemplateCopyV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectEzsigntemplateCopyV1Response
  */
 export class DataObjectEzsigntemplateCopyV1Response {
-    mPayload:EzsigntemplateCopyV1ResponseMPayload = new DataObjectEzsigntemplateCopyV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:EzsigntemplateCopyV1ResponseMPayload = new DataObjectEzsigntemplateCopyV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectEzsigntemplateCopyV1Response {
  * @class ValidationObjectEzsigntemplateCopyV1Response
  */
 export class ValidationObjectEzsigntemplateCopyV1Response {
-   mPayload = new ValidationObjectEzsigntemplateCopyV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectEzsigntemplateCopyV1ResponseMPayload()
 } 
 
 

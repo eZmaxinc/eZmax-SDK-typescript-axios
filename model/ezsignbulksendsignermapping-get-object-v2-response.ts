@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignbulksendsignermappingGetObjectV2ResponseAllOf } from './ezsignbulksendsignermapping-get-object-v2-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsignbulksendsignermappingGetObjectV2ResponseMPayload } from './ezsignbulksendsignermapping-get-object-v2-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { EzsignbulksendsignermappingGetObjectV2ResponseMPayload } from './ezsign
  * Response for GET /2/object/ezsignbulksendsignermapping/{pkiEzsignbulksendsignermappingID}
  * @export
  */
-export type EzsignbulksendsignermappingGetObjectV2Response = CommonResponse & EzsignbulksendsignermappingGetObjectV2ResponseAllOf;
+export type EzsignbulksendsignermappingGetObjectV2Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type EzsignbulksendsignermappingGetObjectV2Response = CommonResponse & Ez
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectEzsignbulksendsignermappingGetObjectV2ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectEzsignbulksendsignermappingGetObjectV2ResponseMPayload } from './'
+import { DataObjectEzsignbulksendsignermappingGetObjectV2ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsignbulksendsignermappingGetObjectV2ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectEzsignbulksendsignermappingGetObjectV2Response
  */
 export class DataObjectEzsignbulksendsignermappingGetObjectV2Response {
-    mPayload:EzsignbulksendsignermappingGetObjectV2ResponseMPayload = new DataObjectEzsignbulksendsignermappingGetObjectV2ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:EzsignbulksendsignermappingGetObjectV2ResponseMPayload = new DataObjectEzsignbulksendsignermappingGetObjectV2ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectEzsignbulksendsignermappingGetObjectV2Response {
  * @class ValidationObjectEzsignbulksendsignermappingGetObjectV2Response
  */
 export class ValidationObjectEzsignbulksendsignermappingGetObjectV2Response {
-   mPayload = new ValidationObjectEzsignbulksendsignermappingGetObjectV2ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectEzsignbulksendsignermappingGetObjectV2ResponseMPayload()
 } 
 
 

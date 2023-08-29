@@ -90,8 +90,7 @@ export class ValidationObjectCommonFile {
       required: false
    }
    eFileSource = {
-      type: 'enum',
-      allowableValues: ['Base64','Url'],
+      type: 'string',
       required: true
    }
 } 

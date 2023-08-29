@@ -15,9 +15,6 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomWebhookResponseAllOf } from './custom-webhook-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { FieldEWebhookEzsignevent } from './field-ewebhook-ezsignevent';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -34,7 +31,7 @@ import { WebhookResponse } from './webhook-response';
  * A custom Webhook object
  * @export
  */
-export type CustomWebhookResponse = CustomWebhookResponseAllOf & WebhookResponse;
+export type CustomWebhookResponse = WebhookResponse;
 
 
 
@@ -50,8 +47,6 @@ export type CustomWebhookResponse = CustomWebhookResponseAllOf & WebhookResponse
  * @class DataObjectCustomWebhookResponse
  */
 export class DataObjectCustomWebhookResponse {
-    pksCustomerCode:string = ''
-    bWebhookTest:boolean = false
     pkiWebhookID:number = 0
     sWebhookDescription:string = ''
     fkiEzsignfoldertypeID?:number = undefined
@@ -63,6 +58,8 @@ export class DataObjectCustomWebhookResponse {
     sWebhookEmailfailed:string = ''
     bWebhookIsactive?:boolean = undefined
     bWebhookSkipsslvalidation:boolean = false
+    pksCustomerCode:string = ''
+    bWebhookTest:boolean = false
 }
 
 /**
@@ -71,14 +68,6 @@ export class DataObjectCustomWebhookResponse {
  * @class ValidationObjectCustomWebhookResponse
  */
 export class ValidationObjectCustomWebhookResponse {
-   pksCustomerCode = {
-      type: 'string',
-      required: true
-   }
-   bWebhookTest = {
-      type: 'boolean',
-      required: true
-   }
    pkiWebhookID = {
       type: 'integer',
       required: true
@@ -124,6 +113,14 @@ export class ValidationObjectCustomWebhookResponse {
       required: false
    }
    bWebhookSkipsslvalidation = {
+      type: 'boolean',
+      required: true
+   }
+   pksCustomerCode = {
+      type: 'string',
+      required: true
+   }
+   bWebhookTest = {
       type: 'boolean',
       required: true
    }

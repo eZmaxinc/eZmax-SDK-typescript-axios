@@ -26,7 +26,9 @@ export const FieldEEzsigntemplatesignatureType = {
     Handwritten: 'Handwritten',
     Initials: 'Initials',
     Name: 'Name',
-    Attachments: 'Attachments'
+    Attachments: 'Attachments',
+    FieldText: 'FieldText',
+    FieldTextarea: 'FieldTextarea'
 } as const;
 
 export type FieldEEzsigntemplatesignatureType = typeof FieldEEzsigntemplatesignatureType[keyof typeof FieldEEzsigntemplatesignatureType];

@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigndocumentGetCompletedElementsV1ResponseAllOf } from './ezsigndocument-get-completed-elements-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsigndocumentGetCompletedElementsV1ResponseMPayload } from './ezsigndocument-get-completed-elements-v1-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { EzsigndocumentGetCompletedElementsV1ResponseMPayload } from './ezsigndo
  * Response for GET /1/object/ezsigndocument/{pkiEzsigndocumentID}/getCompletedElements
  * @export
  */
-export type EzsigndocumentGetCompletedElementsV1Response = CommonResponse & EzsigndocumentGetCompletedElementsV1ResponseAllOf;
+export type EzsigndocumentGetCompletedElementsV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type EzsigndocumentGetCompletedElementsV1Response = CommonResponse & Ezsi
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectEzsigndocumentGetCompletedElementsV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectEzsigndocumentGetCompletedElementsV1ResponseMPayload } from './'
+import { DataObjectEzsigndocumentGetCompletedElementsV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsigndocumentGetCompletedElementsV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectEzsigndocumentGetCompletedElementsV1Response
  */
 export class DataObjectEzsigndocumentGetCompletedElementsV1Response {
-    mPayload:EzsigndocumentGetCompletedElementsV1ResponseMPayload = new DataObjectEzsigndocumentGetCompletedElementsV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:EzsigndocumentGetCompletedElementsV1ResponseMPayload = new DataObjectEzsigndocumentGetCompletedElementsV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectEzsigndocumentGetCompletedElementsV1Response {
  * @class ValidationObjectEzsigndocumentGetCompletedElementsV1Response
  */
 export class ValidationObjectEzsigndocumentGetCompletedElementsV1Response {
-   mPayload = new ValidationObjectEzsigndocumentGetCompletedElementsV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectEzsigndocumentGetCompletedElementsV1ResponseMPayload()
 } 
 
 

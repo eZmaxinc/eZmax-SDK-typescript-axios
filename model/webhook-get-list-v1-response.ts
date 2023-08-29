@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayloadGetList } from './common-response-obj-debug-payload-get-list';
 // May contain unused imports in some cases
 // @ts-ignore
-import { WebhookGetListV1ResponseAllOf } from './webhook-get-list-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { WebhookGetListV1ResponseMPayload } from './webhook-get-list-v1-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { WebhookGetListV1ResponseMPayload } from './webhook-get-list-v1-response
  * Response for GET /1/object/webhook/getList
  * @export
  */
-export type WebhookGetListV1Response = CommonResponseGetList & WebhookGetListV1ResponseAllOf;
+export type WebhookGetListV1Response = CommonResponseGetList;
 
 
 /**
@@ -42,17 +39,17 @@ export type WebhookGetListV1Response = CommonResponseGetList & WebhookGetListV1R
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectWebhookGetListV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayloadGetList } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectWebhookGetListV1ResponseMPayload } from './'
+import { DataObjectWebhookGetListV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayloadGetList } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectWebhookGetListV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectWebhookGetListV1Response
  */
 export class DataObjectWebhookGetListV1Response {
-    mPayload:WebhookGetListV1ResponseMPayload = new DataObjectWebhookGetListV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayloadGetList = undefined
+    objDebugPayload:CommonResponseObjDebugPayloadGetList = new DataObjectCommonResponseObjDebugPayloadGetList()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:WebhookGetListV1ResponseMPayload = new DataObjectWebhookGetListV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectWebhookGetListV1Response {
  * @class ValidationObjectWebhookGetListV1Response
  */
 export class ValidationObjectWebhookGetListV1Response {
-   mPayload = new ValidationObjectWebhookGetListV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayloadGetList()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectWebhookGetListV1ResponseMPayload()
 } 
 
 

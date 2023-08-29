@@ -18,9 +18,6 @@
 import { BillingentityinternalRequest } from './billingentityinternal-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { BillingentityinternalRequestCompoundAllOf } from './billingentityinternal-request-compound-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { BillingentityinternalproductRequestCompound } from './billingentityinternalproduct-request-compound';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -31,7 +28,7 @@ import { MultilingualBillingentityinternalDescription } from './multilingual-bil
  * A Billingentityinternal Object and children
  * @export
  */
-export type BillingentityinternalRequestCompound = BillingentityinternalRequest & BillingentityinternalRequestCompoundAllOf;
+export type BillingentityinternalRequestCompound = BillingentityinternalRequest;
 
 
 /**

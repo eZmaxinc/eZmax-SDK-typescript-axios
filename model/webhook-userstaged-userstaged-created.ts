@@ -25,16 +25,13 @@ import { CustomWebhookResponse } from './custom-webhook-response';
 // May contain unused imports in some cases
 // @ts-ignore
 import { UserstagedResponseCompound } from './userstaged-response-compound';
-// May contain unused imports in some cases
-// @ts-ignore
-import { WebhookUserstagedUserstagedCreatedAllOf } from './webhook-userstaged-userstaged-created-all-of';
 
 /**
  * @type WebhookUserstagedUserstagedCreated
  * This is the base Webhook object
  * @export
  */
-export type WebhookUserstagedUserstagedCreated = CommonWebhook & WebhookUserstagedUserstagedCreatedAllOf;
+export type WebhookUserstagedUserstagedCreated = CommonWebhook;
 
 
 /**
@@ -42,13 +39,13 @@ export type WebhookUserstagedUserstagedCreated = CommonWebhook & WebhookUserstag
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectUserstagedResponseCompound } from './'
-// @ts-ignore
 import { DataObjectCustomWebhookResponse } from './'
 // @ts-ignore
-import { ValidationObjectUserstagedResponseCompound } from './'
+import { DataObjectUserstagedResponseCompound } from './'
 // @ts-ignore
 import { ValidationObjectCustomWebhookResponse } from './'
+// @ts-ignore
+import { ValidationObjectUserstagedResponseCompound } from './'
 
 /**
  * @export 
@@ -57,9 +54,9 @@ import { ValidationObjectCustomWebhookResponse } from './'
  * @class DataObjectWebhookUserstagedUserstagedCreated
  */
 export class DataObjectWebhookUserstagedUserstagedCreated {
-    objUserstaged:UserstagedResponseCompound = new DataObjectUserstagedResponseCompound()
     objWebhook:CustomWebhookResponse = new DataObjectCustomWebhookResponse()
     a_objAttempt:Array<AttemptResponseCompound> = []
+    objUserstaged:UserstagedResponseCompound = new DataObjectUserstagedResponseCompound()
 }
 
 /**
@@ -68,12 +65,12 @@ export class DataObjectWebhookUserstagedUserstagedCreated {
  * @class ValidationObjectWebhookUserstagedUserstagedCreated
  */
 export class ValidationObjectWebhookUserstagedUserstagedCreated {
-   objUserstaged = new ValidationObjectUserstagedResponseCompound()
    objWebhook = new ValidationObjectCustomWebhookResponse()
    a_objAttempt = {
       type: 'array',
       required: true
    }
+   objUserstaged = new ValidationObjectUserstagedResponseCompound()
 } 
 
 

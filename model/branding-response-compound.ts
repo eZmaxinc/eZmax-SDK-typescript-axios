@@ -18,9 +18,6 @@
 import { BrandingResponse } from './branding-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { BrandingResponseCompoundAllOf } from './branding-response-compound-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { FieldEBrandingLogo } from './field-ebranding-logo';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -31,7 +28,7 @@ import { MultilingualBrandingDescription } from './multilingual-branding-descrip
  * A Branding Object
  * @export
  */
-export type BrandingResponseCompound = BrandingResponse & BrandingResponseCompoundAllOf;
+export type BrandingResponseCompound = BrandingResponse;
 
 
 

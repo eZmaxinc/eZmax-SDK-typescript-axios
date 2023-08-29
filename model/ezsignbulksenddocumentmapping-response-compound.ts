@@ -18,9 +18,6 @@
 import { EzsignbulksenddocumentmappingResponse } from './ezsignbulksenddocumentmapping-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignbulksenddocumentmappingResponseCompoundAllOf } from './ezsignbulksenddocumentmapping-response-compound-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsigntemplateResponseCompound } from './ezsigntemplate-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -31,7 +28,7 @@ import { EzsigntemplatepackageResponseCompound } from './ezsigntemplatepackage-r
  * A Ezsignbulksenddocumentmapping Object
  * @export
  */
-export type EzsignbulksenddocumentmappingResponseCompound = EzsignbulksenddocumentmappingResponse & EzsignbulksenddocumentmappingResponseCompoundAllOf;
+export type EzsignbulksenddocumentmappingResponseCompound = EzsignbulksenddocumentmappingResponse;
 
 
 /**

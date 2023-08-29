@@ -18,9 +18,6 @@
 import { ModulesectionResponse } from './modulesection-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ModulesectionResponseCompoundAllOf } from './modulesection-response-compound-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { PermissionResponseCompound } from './permission-response-compound';
 
 /**
@@ -28,7 +25,7 @@ import { PermissionResponseCompound } from './permission-response-compound';
  * A Modulesection Object
  * @export
  */
-export type ModulesectionResponseCompound = ModulesectionResponse & ModulesectionResponseCompoundAllOf;
+export type ModulesectionResponseCompound = ModulesectionResponse;
 
 
 /**

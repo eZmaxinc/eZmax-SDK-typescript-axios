@@ -15,9 +15,6 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ApikeyGetSubnetsV1ResponseAllOf } from './apikey-get-subnets-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { ApikeyGetSubnetsV1ResponseMPayload } from './apikey-get-subnets-v1-response-mpayload';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -34,7 +31,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for GET /1/object/apikey/{pkiApikeyID}/getSubnets
  * @export
  */
-export type ApikeyGetSubnetsV1Response = ApikeyGetSubnetsV1ResponseAllOf & CommonResponse;
+export type ApikeyGetSubnetsV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type ApikeyGetSubnetsV1Response = ApikeyGetSubnetsV1ResponseAllOf & Commo
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectApikeyGetSubnetsV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectApikeyGetSubnetsV1ResponseMPayload } from './'
+import { DataObjectApikeyGetSubnetsV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectApikeyGetSubnetsV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectApikeyGetSubnetsV1Response
  */
 export class DataObjectApikeyGetSubnetsV1Response {
-    mPayload:ApikeyGetSubnetsV1ResponseMPayload = new DataObjectApikeyGetSubnetsV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:ApikeyGetSubnetsV1ResponseMPayload = new DataObjectApikeyGetSubnetsV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectApikeyGetSubnetsV1Response {
  * @class ValidationObjectApikeyGetSubnetsV1Response
  */
 export class ValidationObjectApikeyGetSubnetsV1Response {
-   mPayload = new ValidationObjectApikeyGetSubnetsV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectApikeyGetSubnetsV1ResponseMPayload()
 } 
 
 

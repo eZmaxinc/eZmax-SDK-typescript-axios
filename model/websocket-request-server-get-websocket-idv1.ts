@@ -56,8 +56,7 @@ export class DataObjectWebsocketRequestServerGetWebsocketIDV1 {
  */
 export class ValidationObjectWebsocketRequestServerGetWebsocketIDV1 {
    eWebsocketMessagetype = {
-      type: 'enum',
-      allowableValues: ['RequestServer-GetWebsocketID-V1'],
+      type: 'string',
       required: true
    }
 } 

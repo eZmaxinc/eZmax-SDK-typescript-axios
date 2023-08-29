@@ -18,9 +18,6 @@
 import { ActivesessionResponse } from './activesession-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ActivesessionResponseCompoundAllOf } from './activesession-response-compound-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { ActivesessionResponseCompoundApikey } from './activesession-response-compound-apikey';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -40,7 +37,7 @@ import { FieldEActivesessionWeekdaystart } from './field-eactivesession-weekdays
  * Payload for GET /1/object/activesession/getCurrent
  * @export
  */
-export type ActivesessionResponseCompound = ActivesessionResponse & ActivesessionResponseCompoundAllOf;
+export type ActivesessionResponseCompound = ActivesessionResponse;
 
 
 

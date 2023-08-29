@@ -25,16 +25,13 @@ import { CustomWebhookResponse } from './custom-webhook-response';
 // May contain unused imports in some cases
 // @ts-ignore
 import { UserResponseCompound } from './user-response-compound';
-// May contain unused imports in some cases
-// @ts-ignore
-import { WebhookUserUserCreatedAllOf } from './webhook-user-user-created-all-of';
 
 /**
  * @type WebhookUserUserCreated
  * This is the base Webhook object
  * @export
  */
-export type WebhookUserUserCreated = CommonWebhook & WebhookUserUserCreatedAllOf;
+export type WebhookUserUserCreated = CommonWebhook;
 
 
 /**
@@ -42,13 +39,13 @@ export type WebhookUserUserCreated = CommonWebhook & WebhookUserUserCreatedAllOf
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectUserResponseCompound } from './'
-// @ts-ignore
 import { DataObjectCustomWebhookResponse } from './'
 // @ts-ignore
-import { ValidationObjectUserResponseCompound } from './'
+import { DataObjectUserResponseCompound } from './'
 // @ts-ignore
 import { ValidationObjectCustomWebhookResponse } from './'
+// @ts-ignore
+import { ValidationObjectUserResponseCompound } from './'
 
 /**
  * @export 
@@ -57,9 +54,9 @@ import { ValidationObjectCustomWebhookResponse } from './'
  * @class DataObjectWebhookUserUserCreated
  */
 export class DataObjectWebhookUserUserCreated {
-    objUser:UserResponseCompound = new DataObjectUserResponseCompound()
     objWebhook:CustomWebhookResponse = new DataObjectCustomWebhookResponse()
     a_objAttempt:Array<AttemptResponseCompound> = []
+    objUser:UserResponseCompound = new DataObjectUserResponseCompound()
 }
 
 /**
@@ -68,12 +65,12 @@ export class DataObjectWebhookUserUserCreated {
  * @class ValidationObjectWebhookUserUserCreated
  */
 export class ValidationObjectWebhookUserUserCreated {
-   objUser = new ValidationObjectUserResponseCompound()
    objWebhook = new ValidationObjectCustomWebhookResponse()
    a_objAttempt = {
       type: 'array',
       required: true
    }
+   objUser = new ValidationObjectUserResponseCompound()
 } 
 
 

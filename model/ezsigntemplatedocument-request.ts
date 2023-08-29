@@ -176,13 +176,11 @@ export class ValidationObjectEzsigntemplatedocumentRequest {
       required: true
    }
    eEzsigntemplatedocumentSource = {
-      type: 'enum',
-      allowableValues: ['Base64','Url','Ezsigndocument'],
+      type: 'string',
       required: true
    }
    eEzsigntemplatedocumentFormat = {
-      type: 'enum',
-      allowableValues: ['Pdf','Doc','Docx','Xls','Xlsx','Ppt','Pptx'],
+      type: 'string',
       required: false
    }
    sEzsigntemplatedocumentBase64 = {
@@ -198,8 +196,7 @@ export class ValidationObjectEzsigntemplatedocumentRequest {
       required: false
    }
    eEzsigntemplatedocumentForm = {
-      type: 'enum',
-      allowableValues: ['Keep','Convert'],
+      type: 'string',
       required: false
    }
    sEzsigntemplatedocumentPassword = {

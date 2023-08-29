@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { SignatureGetObjectV2ResponseAllOf } from './signature-get-object-v2-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { SignatureGetObjectV2ResponseMPayload } from './signature-get-object-v2-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { SignatureGetObjectV2ResponseMPayload } from './signature-get-object-v2-
  * Response for GET /2/object/signature/{pkiSignatureID}
  * @export
  */
-export type SignatureGetObjectV2Response = CommonResponse & SignatureGetObjectV2ResponseAllOf;
+export type SignatureGetObjectV2Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type SignatureGetObjectV2Response = CommonResponse & SignatureGetObjectV2
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectSignatureGetObjectV2ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectSignatureGetObjectV2ResponseMPayload } from './'
+import { DataObjectSignatureGetObjectV2ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectSignatureGetObjectV2ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectSignatureGetObjectV2Response
  */
 export class DataObjectSignatureGetObjectV2Response {
-    mPayload:SignatureGetObjectV2ResponseMPayload = new DataObjectSignatureGetObjectV2ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:SignatureGetObjectV2ResponseMPayload = new DataObjectSignatureGetObjectV2ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectSignatureGetObjectV2Response {
  * @class ValidationObjectSignatureGetObjectV2Response
  */
 export class ValidationObjectSignatureGetObjectV2Response {
-   mPayload = new ValidationObjectSignatureGetObjectV2ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectSignatureGetObjectV2ResponseMPayload()
 } 
 
 

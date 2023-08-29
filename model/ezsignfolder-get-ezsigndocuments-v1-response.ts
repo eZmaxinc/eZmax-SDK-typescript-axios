@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignfolderGetEzsigndocumentsV1ResponseAllOf } from './ezsignfolder-get-ezsigndocuments-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsignfolderGetEzsigndocumentsV1ResponseMPayload } from './ezsignfolder-get-ezsigndocuments-v1-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { EzsignfolderGetEzsigndocumentsV1ResponseMPayload } from './ezsignfolder
  * Response for GET /1/object/ezsignfolder/{pkiEzsignfolder}/getEzsigndocuments
  * @export
  */
-export type EzsignfolderGetEzsigndocumentsV1Response = CommonResponse & EzsignfolderGetEzsigndocumentsV1ResponseAllOf;
+export type EzsignfolderGetEzsigndocumentsV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type EzsignfolderGetEzsigndocumentsV1Response = CommonResponse & Ezsignfo
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectEzsignfolderGetEzsigndocumentsV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectEzsignfolderGetEzsigndocumentsV1ResponseMPayload } from './'
+import { DataObjectEzsignfolderGetEzsigndocumentsV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsignfolderGetEzsigndocumentsV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectEzsignfolderGetEzsigndocumentsV1Response
  */
 export class DataObjectEzsignfolderGetEzsigndocumentsV1Response {
-    mPayload:EzsignfolderGetEzsigndocumentsV1ResponseMPayload = new DataObjectEzsignfolderGetEzsigndocumentsV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:EzsignfolderGetEzsigndocumentsV1ResponseMPayload = new DataObjectEzsignfolderGetEzsigndocumentsV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectEzsignfolderGetEzsigndocumentsV1Response {
  * @class ValidationObjectEzsignfolderGetEzsigndocumentsV1Response
  */
 export class ValidationObjectEzsignfolderGetEzsigndocumentsV1Response {
-   mPayload = new ValidationObjectEzsignfolderGetEzsigndocumentsV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectEzsignfolderGetEzsigndocumentsV1ResponseMPayload()
 } 
 
 

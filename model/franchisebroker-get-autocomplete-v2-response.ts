@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FranchisebrokerGetAutocompleteV2ResponseAllOf } from './franchisebroker-get-autocomplete-v2-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { FranchisebrokerGetAutocompleteV2ResponseMPayload } from './franchisebroker-get-autocomplete-v2-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { FranchisebrokerGetAutocompleteV2ResponseMPayload } from './franchisebro
  * Response for GET /2/object/franchisebroker/getAutocomplete
  * @export
  */
-export type FranchisebrokerGetAutocompleteV2Response = CommonResponse & FranchisebrokerGetAutocompleteV2ResponseAllOf;
+export type FranchisebrokerGetAutocompleteV2Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type FranchisebrokerGetAutocompleteV2Response = CommonResponse & Franchis
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectFranchisebrokerGetAutocompleteV2ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectFranchisebrokerGetAutocompleteV2ResponseMPayload } from './'
+import { DataObjectFranchisebrokerGetAutocompleteV2ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectFranchisebrokerGetAutocompleteV2ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectFranchisebrokerGetAutocompleteV2Response
  */
 export class DataObjectFranchisebrokerGetAutocompleteV2Response {
-    mPayload:FranchisebrokerGetAutocompleteV2ResponseMPayload = new DataObjectFranchisebrokerGetAutocompleteV2ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:FranchisebrokerGetAutocompleteV2ResponseMPayload = new DataObjectFranchisebrokerGetAutocompleteV2ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectFranchisebrokerGetAutocompleteV2Response {
  * @class ValidationObjectFranchisebrokerGetAutocompleteV2Response
  */
 export class ValidationObjectFranchisebrokerGetAutocompleteV2Response {
-   mPayload = new ValidationObjectFranchisebrokerGetAutocompleteV2ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectFranchisebrokerGetAutocompleteV2ResponseMPayload()
 } 
 
 

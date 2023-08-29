@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { NotificationsectionGetNotificationtestsV1ResponseAllOf } from './notificationsection-get-notificationtests-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { NotificationsectionGetNotificationtestsV1ResponseMPayload } from './notificationsection-get-notificationtests-v1-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { NotificationsectionGetNotificationtestsV1ResponseMPayload } from './not
  * Response for GET /1/object/notificationsection/{pkiNotificationsectionID}/getNotificationtests
  * @export
  */
-export type NotificationsectionGetNotificationtestsV1Response = CommonResponse & NotificationsectionGetNotificationtestsV1ResponseAllOf;
+export type NotificationsectionGetNotificationtestsV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type NotificationsectionGetNotificationtestsV1Response = CommonResponse &
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectNotificationsectionGetNotificationtestsV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectNotificationsectionGetNotificationtestsV1ResponseMPayload } from './'
+import { DataObjectNotificationsectionGetNotificationtestsV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectNotificationsectionGetNotificationtestsV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectNotificationsectionGetNotificationtestsV1Response
  */
 export class DataObjectNotificationsectionGetNotificationtestsV1Response {
-    mPayload:NotificationsectionGetNotificationtestsV1ResponseMPayload = new DataObjectNotificationsectionGetNotificationtestsV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:NotificationsectionGetNotificationtestsV1ResponseMPayload = new DataObjectNotificationsectionGetNotificationtestsV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectNotificationsectionGetNotificationtestsV1Response {
  * @class ValidationObjectNotificationsectionGetNotificationtestsV1Response
  */
 export class ValidationObjectNotificationsectionGetNotificationtestsV1Response {
-   mPayload = new ValidationObjectNotificationsectionGetNotificationtestsV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectNotificationsectionGetNotificationtestsV1ResponseMPayload()
 } 
 
 

@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { SystemconfigurationGetObjectV2ResponseAllOf } from './systemconfiguration-get-object-v2-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { SystemconfigurationGetObjectV2ResponseMPayload } from './systemconfiguration-get-object-v2-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { SystemconfigurationGetObjectV2ResponseMPayload } from './systemconfigur
  * Response for GET /2/object/systemconfiguration/{pkiSystemconfigurationID}
  * @export
  */
-export type SystemconfigurationGetObjectV2Response = CommonResponse & SystemconfigurationGetObjectV2ResponseAllOf;
+export type SystemconfigurationGetObjectV2Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type SystemconfigurationGetObjectV2Response = CommonResponse & Systemconf
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectSystemconfigurationGetObjectV2ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectSystemconfigurationGetObjectV2ResponseMPayload } from './'
+import { DataObjectSystemconfigurationGetObjectV2ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectSystemconfigurationGetObjectV2ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectSystemconfigurationGetObjectV2Response
  */
 export class DataObjectSystemconfigurationGetObjectV2Response {
-    mPayload:SystemconfigurationGetObjectV2ResponseMPayload = new DataObjectSystemconfigurationGetObjectV2ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:SystemconfigurationGetObjectV2ResponseMPayload = new DataObjectSystemconfigurationGetObjectV2ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectSystemconfigurationGetObjectV2Response {
  * @class ValidationObjectSystemconfigurationGetObjectV2Response
  */
 export class ValidationObjectSystemconfigurationGetObjectV2Response {
-   mPayload = new ValidationObjectSystemconfigurationGetObjectV2ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectSystemconfigurationGetObjectV2ResponseMPayload()
 } 
 
 

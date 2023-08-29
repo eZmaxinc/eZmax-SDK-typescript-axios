@@ -16,18 +16,20 @@
 // May contain unused imports in some cases
 // @ts-ignore
 import { CustomWebhooklogResponse } from './custom-webhooklog-response';
-// May contain unused imports in some cases
-// @ts-ignore
-import { WebhookGetHistoryV1ResponseMPayloadAllOf } from './webhook-get-history-v1-response-mpayload-all-of';
 
 /**
- * @type WebhookGetHistoryV1ResponseMPayload
  * Payload for GET /1/object/webhook/{pkiWebhookID}/getHistory
  * @export
+ * @interface WebhookGetHistoryV1ResponseMPayload
  */
-export type WebhookGetHistoryV1ResponseMPayload = WebhookGetHistoryV1ResponseMPayloadAllOf;
-
-
+export interface WebhookGetHistoryV1ResponseMPayload {
+    /**
+     * 
+     * @type {Array<CustomWebhooklogResponse>}
+     * @memberof WebhookGetHistoryV1ResponseMPayload
+     */
+    'a_objWebhooklog': Array<CustomWebhooklogResponse>;
+}
 /**
  * @import
  * Imports Child Data Object
@@ -40,7 +42,7 @@ export type WebhookGetHistoryV1ResponseMPayload = WebhookGetHistoryV1ResponseMPa
  * @class DataObjectWebhookGetHistoryV1ResponseMPayload
  */
 export class DataObjectWebhookGetHistoryV1ResponseMPayload {
-    a_objWebhooklog:Array<CustomWebhooklogResponse> = []
+   a_objWebhooklog:Array<CustomWebhooklogResponse> = []
 }
 
 /**

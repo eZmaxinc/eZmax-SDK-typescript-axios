@@ -22,16 +22,13 @@ import { ContactRequestCompound } from './contact-request-compound';
 // May contain unused imports in some cases
 // @ts-ignore
 import { FranchisereferalincomeRequest } from './franchisereferalincome-request';
-// May contain unused imports in some cases
-// @ts-ignore
-import { FranchisereferalincomeRequestCompoundAllOf } from './franchisereferalincome-request-compound-all-of';
 
 /**
  * @type FranchisereferalincomeRequestCompound
  * A Franchisereferalincome Object and children to create a complete structure
  * @export
  */
-export type FranchisereferalincomeRequestCompound = FranchisereferalincomeRequest & FranchisereferalincomeRequestCompoundAllOf;
+export type FranchisereferalincomeRequestCompound = FranchisereferalincomeRequest;
 
 
 /**

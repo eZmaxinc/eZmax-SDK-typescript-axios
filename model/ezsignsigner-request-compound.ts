@@ -18,9 +18,6 @@
 import { EzsignsignerRequest } from './ezsignsigner-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignsignerRequestCompoundAllOf } from './ezsignsigner-request-compound-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsignsignerRequestCompoundContact } from './ezsignsigner-request-compound-contact';
 
 /**
@@ -28,7 +25,7 @@ import { EzsignsignerRequestCompoundContact } from './ezsignsigner-request-compo
  * An Ezsignsigner Object and children to create a complete structure
  * @export
  */
-export type EzsignsignerRequestCompound = EzsignsignerRequest & EzsignsignerRequestCompoundAllOf;
+export type EzsignsignerRequestCompound = EzsignsignerRequest;
 
 
 export const EzsignsignerRequestCompoundEEzsignsignerLogintypeEnum = {
@@ -88,8 +85,7 @@ export class ValidationObjectEzsignsignerRequestCompound {
       required: false
    }
    eEzsignsignerLogintype = {
-      type: 'enum',
-      allowableValues: ['Password','PasswordPhone','PasswordQuestion','InPersonPhone','InPerson'],
+      type: 'string',
       required: false
    }
    sEzsignsignerSecretanswer = {

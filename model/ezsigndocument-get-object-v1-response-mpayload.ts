@@ -18,6 +18,9 @@
 import { CommonAudit } from './common-audit';
 // May contain unused imports in some cases
 // @ts-ignore
+import { ComputedEEzsigndocumentSteptype } from './computed-eezsigndocument-steptype';
+// May contain unused imports in some cases
+// @ts-ignore
 import { CustomEzsignfoldersignerassociationstatusResponse } from './custom-ezsignfoldersignerassociationstatus-response';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -72,6 +75,7 @@ export class DataObjectEzsigndocumentGetObjectV1ResponseMPayload {
     bEzsigndocumentHassignedsignatures?:boolean = undefined
     objAudit?:CommonAudit = undefined
     sEzsigndocumentExternalid?:string = undefined
+    eEzsigndocumentSteptype:ComputedEEzsigndocumentSteptype = 'Form'
     iEzsigndocumentStepformtotal:number = 0
     iEzsigndocumentStepformcurrent:number = 0
     iEzsigndocumentStepsignaturetotal:number = 0
@@ -176,6 +180,11 @@ export class ValidationObjectEzsigndocumentGetObjectV1ResponseMPayload {
       type: 'string',
       pattern: '/^.{0,64}$/',
       required: false
+   }
+   eEzsigndocumentSteptype = {
+      type: 'enum',
+      allowableValues: ['Form','Sign','None'],
+      required: true
    }
    iEzsigndocumentStepformtotal = {
       type: 'integer',

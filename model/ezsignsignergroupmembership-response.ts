@@ -37,19 +37,19 @@ export interface EzsignsignergroupmembershipResponse {
      * @type {number}
      * @memberof EzsignsignergroupmembershipResponse
      */
-    'fkiEzsignsignerID': number;
+    'fkiEzsignsignerID'?: number;
     /**
      * The unique ID of the User
      * @type {number}
      * @memberof EzsignsignergroupmembershipResponse
      */
-    'fkiUserID': number;
+    'fkiUserID'?: number;
     /**
      * The unique ID of the Usergroup
      * @type {number}
      * @memberof EzsignsignergroupmembershipResponse
      */
-    'fkiUsergroupID': number;
+    'fkiUsergroupID'?: number;
 }
 /**
  * @import
@@ -65,9 +65,9 @@ export interface EzsignsignergroupmembershipResponse {
 export class DataObjectEzsignsignergroupmembershipResponse {
    pkiEzsignsignergroupmembershipID:number = 0
    fkiEzsignsignergroupID:number = 0
-   fkiEzsignsignerID:number = 0
-   fkiUserID:number = 0
-   fkiUsergroupID:number = 0
+   fkiEzsignsignerID?:number = undefined
+   fkiUserID?:number = undefined
+   fkiUsergroupID?:number = undefined
 }
 
 /**
@@ -91,18 +91,18 @@ export class ValidationObjectEzsignsignergroupmembershipResponse {
    fkiEzsignsignerID = {
       type: 'integer',
       minimum: 0,
-      required: true
+      required: false
    }
    fkiUserID = {
       type: 'integer',
       minimum: 0,
-      required: true
+      required: false
    }
    fkiUsergroupID = {
       type: 'integer',
       minimum: 0,
       maximum: 255,
-      required: true
+      required: false
    }
 } 
 

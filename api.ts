@@ -76,6 +76,7 @@ export * from './api/object-taxassignment-api';
 export * from './api/object-timezone-api';
 export * from './api/object-user-api';
 export * from './api/object-usergroup-api';
+export * from './api/object-usergroupdelegation-api';
 export * from './api/object-usergroupmembership-api';
 export * from './api/object-userstaged-api';
 export * from './api/object-variableexpense-api';

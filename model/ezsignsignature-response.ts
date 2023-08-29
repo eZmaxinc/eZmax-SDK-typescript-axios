@@ -168,6 +168,12 @@ export interface EzsignsignatureResponse {
      */
     'sEzsignsignatureDescription'?: string;
     /**
+     * The maximum length for the value in the Ezsignsignature  This can only be set if eEzsignsignatureType is **FieldText** or **FieldTextarea**
+     * @type {number}
+     * @memberof EzsignsignatureResponse
+     */
+    'iEzsignsignatureMaxlength'?: number;
+    /**
      * 
      * @type {EnumTextvalidation}
      * @memberof EzsignsignatureResponse
@@ -235,6 +241,7 @@ export class DataObjectEzsignsignatureResponse {
    dtEzsignsignatureDate?:string = undefined
    iEzsignsignatureattachmentCount?:number = undefined
    sEzsignsignatureDescription?:string = undefined
+   iEzsignsignatureMaxlength?:number = undefined
    eEzsignsignatureTextvalidation?:EnumTextvalidation = undefined
    sEzsignsignatureRegexp?:string = undefined
    objContactName:CustomContactNameResponse = new DataObjectCustomContactNameResponse()
@@ -343,6 +350,12 @@ export class ValidationObjectEzsignsignatureResponse {
    }
    sEzsignsignatureDescription = {
       type: 'string',
+      required: false
+   }
+   iEzsignsignatureMaxlength = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 65535,
       required: false
    }
    eEzsignsignatureTextvalidation = {

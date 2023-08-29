@@ -105,8 +105,7 @@ export class ValidationObjectEzsignsignerRequest {
       required: false
    }
    eEzsignsignerLogintype = {
-      type: 'enum',
-      allowableValues: ['Password','PasswordPhone','PasswordQuestion','InPersonPhone','InPerson'],
+      type: 'string',
       required: false
    }
    sEzsignsignerSecretanswer = {

@@ -99,8 +99,7 @@ export class ValidationObjectEzsignsignatureSignV1Request {
       required: false
    }
    eAttachmentsConfirmationDecision = {
-      type: 'enum',
-      allowableValues: ['Accepted','Refused'],
+      type: 'string',
       required: false
    }
    sAttachmentsRefusalReason = {

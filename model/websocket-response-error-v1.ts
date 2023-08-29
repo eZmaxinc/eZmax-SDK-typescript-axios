@@ -70,8 +70,7 @@ export class DataObjectWebsocketResponseErrorV1 {
  */
 export class ValidationObjectWebsocketResponseErrorV1 {
    eWebsocketMessagetype = {
-      type: 'enum',
-      allowableValues: ['Response-Error-V1'],
+      type: 'string',
       required: true
    }
    mPayload = new ValidationObjectWebsocketResponseErrorV1MPayload()

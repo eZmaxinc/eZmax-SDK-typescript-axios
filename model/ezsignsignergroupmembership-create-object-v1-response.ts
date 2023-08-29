@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignsignergroupmembershipCreateObjectV1ResponseAllOf } from './ezsignsignergroupmembership-create-object-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsignsignergroupmembershipCreateObjectV1ResponseMPayload } from './ezsignsignergroupmembership-create-object-v1-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { EzsignsignergroupmembershipCreateObjectV1ResponseMPayload } from './ezs
  * Response for POST /1/object/ezsignsignergroupmembership
  * @export
  */
-export type EzsignsignergroupmembershipCreateObjectV1Response = CommonResponse & EzsignsignergroupmembershipCreateObjectV1ResponseAllOf;
+export type EzsignsignergroupmembershipCreateObjectV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type EzsignsignergroupmembershipCreateObjectV1Response = CommonResponse &
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectEzsignsignergroupmembershipCreateObjectV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectEzsignsignergroupmembershipCreateObjectV1ResponseMPayload } from './'
+import { DataObjectEzsignsignergroupmembershipCreateObjectV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsignsignergroupmembershipCreateObjectV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectEzsignsignergroupmembershipCreateObjectV1Response
  */
 export class DataObjectEzsignsignergroupmembershipCreateObjectV1Response {
-    mPayload:EzsignsignergroupmembershipCreateObjectV1ResponseMPayload = new DataObjectEzsignsignergroupmembershipCreateObjectV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:EzsignsignergroupmembershipCreateObjectV1ResponseMPayload = new DataObjectEzsignsignergroupmembershipCreateObjectV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectEzsignsignergroupmembershipCreateObjectV1Response {
  * @class ValidationObjectEzsignsignergroupmembershipCreateObjectV1Response
  */
 export class ValidationObjectEzsignsignergroupmembershipCreateObjectV1Response {
-   mPayload = new ValidationObjectEzsignsignergroupmembershipCreateObjectV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectEzsignsignergroupmembershipCreateObjectV1ResponseMPayload()
 } 
 
 

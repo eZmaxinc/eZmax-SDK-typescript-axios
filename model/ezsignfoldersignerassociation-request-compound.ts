@@ -18,9 +18,6 @@
 import { EzsignfoldersignerassociationRequest } from './ezsignfoldersignerassociation-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignfoldersignerassociationRequestCompoundAllOf } from './ezsignfoldersignerassociation-request-compound-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsignsignerRequestCompound } from './ezsignsigner-request-compound';
 
 /**
@@ -28,7 +25,7 @@ import { EzsignsignerRequestCompound } from './ezsignsigner-request-compound';
  * An Ezsignfoldersignerassociation Object and children to create a complete structure
  * @export
  */
-export type EzsignfoldersignerassociationRequestCompound = EzsignfoldersignerassociationRequest & EzsignfoldersignerassociationRequestCompoundAllOf;
+export type EzsignfoldersignerassociationRequestCompound = EzsignfoldersignerassociationRequest;
 
 
 /**

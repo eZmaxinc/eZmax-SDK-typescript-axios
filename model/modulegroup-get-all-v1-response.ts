@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ModulegroupGetAllV1ResponseAllOf } from './modulegroup-get-all-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { ModulegroupGetAllV1ResponseMPayload } from './modulegroup-get-all-v1-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { ModulegroupGetAllV1ResponseMPayload } from './modulegroup-get-all-v1-re
  * Response for GET /1/object/modulegroup/getAll
  * @export
  */
-export type ModulegroupGetAllV1Response = CommonResponse & ModulegroupGetAllV1ResponseAllOf;
+export type ModulegroupGetAllV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type ModulegroupGetAllV1Response = CommonResponse & ModulegroupGetAllV1Re
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectModulegroupGetAllV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectModulegroupGetAllV1ResponseMPayload } from './'
+import { DataObjectModulegroupGetAllV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectModulegroupGetAllV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectModulegroupGetAllV1Response
  */
 export class DataObjectModulegroupGetAllV1Response {
-    mPayload:ModulegroupGetAllV1ResponseMPayload = new DataObjectModulegroupGetAllV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:ModulegroupGetAllV1ResponseMPayload = new DataObjectModulegroupGetAllV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectModulegroupGetAllV1Response {
  * @class ValidationObjectModulegroupGetAllV1Response
  */
 export class ValidationObjectModulegroupGetAllV1Response {
-   mPayload = new ValidationObjectModulegroupGetAllV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectModulegroupGetAllV1ResponseMPayload()
 } 
 
 

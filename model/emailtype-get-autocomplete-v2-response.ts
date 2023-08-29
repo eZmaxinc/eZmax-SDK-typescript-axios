@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EmailtypeGetAutocompleteV2ResponseAllOf } from './emailtype-get-autocomplete-v2-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EmailtypeGetAutocompleteV2ResponseMPayload } from './emailtype-get-autocomplete-v2-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { EmailtypeGetAutocompleteV2ResponseMPayload } from './emailtype-get-auto
  * Response for GET /2/object/emailtype/getAutocomplete
  * @export
  */
-export type EmailtypeGetAutocompleteV2Response = CommonResponse & EmailtypeGetAutocompleteV2ResponseAllOf;
+export type EmailtypeGetAutocompleteV2Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type EmailtypeGetAutocompleteV2Response = CommonResponse & EmailtypeGetAu
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectEmailtypeGetAutocompleteV2ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectEmailtypeGetAutocompleteV2ResponseMPayload } from './'
+import { DataObjectEmailtypeGetAutocompleteV2ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEmailtypeGetAutocompleteV2ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectEmailtypeGetAutocompleteV2Response
  */
 export class DataObjectEmailtypeGetAutocompleteV2Response {
-    mPayload:EmailtypeGetAutocompleteV2ResponseMPayload = new DataObjectEmailtypeGetAutocompleteV2ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:EmailtypeGetAutocompleteV2ResponseMPayload = new DataObjectEmailtypeGetAutocompleteV2ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectEmailtypeGetAutocompleteV2Response {
  * @class ValidationObjectEmailtypeGetAutocompleteV2Response
  */
 export class ValidationObjectEmailtypeGetAutocompleteV2Response {
-   mPayload = new ValidationObjectEmailtypeGetAutocompleteV2ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectEmailtypeGetAutocompleteV2ResponseMPayload()
 } 
 
 

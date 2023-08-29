@@ -24,9 +24,6 @@ import { EnumVerticalalignment } from './enum-verticalalignment';
 import { EzsignannotationResponse } from './ezsignannotation-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignannotationResponseCompoundAllOf } from './ezsignannotation-response-compound-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { FieldEEzsignannotationType } from './field-eezsignannotation-type';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -37,7 +34,7 @@ import { TextstylestaticResponseCompound } from './textstylestatic-response-comp
  * A Ezsignannotation Object
  * @export
  */
-export type EzsignannotationResponseCompound = EzsignannotationResponse & EzsignannotationResponseCompoundAllOf;
+export type EzsignannotationResponseCompound = EzsignannotationResponse;
 
 
 

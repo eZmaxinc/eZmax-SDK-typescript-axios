@@ -21,9 +21,6 @@ import { CommonAudit } from './common-audit';
 import { EzsigntemplateResponse } from './ezsigntemplate-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigntemplateResponseCompoundAllOf } from './ezsigntemplate-response-compound-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsigntemplatedocumentResponse } from './ezsigntemplatedocument-response';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -34,7 +31,7 @@ import { EzsigntemplatesignerResponseCompound } from './ezsigntemplatesigner-res
  * A Ezsigntemplate Object
  * @export
  */
-export type EzsigntemplateResponseCompound = EzsigntemplateResponse & EzsigntemplateResponseCompoundAllOf;
+export type EzsigntemplateResponseCompound = EzsigntemplateResponse;
 
 
 /**

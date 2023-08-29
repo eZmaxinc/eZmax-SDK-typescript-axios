@@ -71,8 +71,7 @@ export class DataObjectEzsigndocumentGetWordsPositionsV1Request {
  */
 export class ValidationObjectEzsigndocumentGetWordsPositionsV1Request {
    eGet = {
-      type: 'enum',
-      allowableValues: ['All','Words'],
+      type: 'string',
       required: true
    }
    bWordCaseSensitive = {

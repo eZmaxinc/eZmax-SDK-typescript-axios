@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { VariableexpenseCreateObjectV1ResponseAllOf } from './variableexpense-create-object-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { VariableexpenseCreateObjectV1ResponseMPayload } from './variableexpense-create-object-v1-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { VariableexpenseCreateObjectV1ResponseMPayload } from './variableexpense
  * Response for POST /1/object/variableexpense
  * @export
  */
-export type VariableexpenseCreateObjectV1Response = CommonResponse & VariableexpenseCreateObjectV1ResponseAllOf;
+export type VariableexpenseCreateObjectV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type VariableexpenseCreateObjectV1Response = CommonResponse & Variableexp
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectVariableexpenseCreateObjectV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectVariableexpenseCreateObjectV1ResponseMPayload } from './'
+import { DataObjectVariableexpenseCreateObjectV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectVariableexpenseCreateObjectV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectVariableexpenseCreateObjectV1Response
  */
 export class DataObjectVariableexpenseCreateObjectV1Response {
-    mPayload:VariableexpenseCreateObjectV1ResponseMPayload = new DataObjectVariableexpenseCreateObjectV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:VariableexpenseCreateObjectV1ResponseMPayload = new DataObjectVariableexpenseCreateObjectV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectVariableexpenseCreateObjectV1Response {
  * @class ValidationObjectVariableexpenseCreateObjectV1Response
  */
 export class ValidationObjectVariableexpenseCreateObjectV1Response {
-   mPayload = new ValidationObjectVariableexpenseCreateObjectV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectVariableexpenseCreateObjectV1ResponseMPayload()
 } 
 
 

@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { TimezoneGetAutocompleteV2ResponseAllOf } from './timezone-get-autocomplete-v2-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { TimezoneGetAutocompleteV2ResponseMPayload } from './timezone-get-autocomplete-v2-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { TimezoneGetAutocompleteV2ResponseMPayload } from './timezone-get-autoco
  * Response for GET /2/object/timezone/getAutocomplete
  * @export
  */
-export type TimezoneGetAutocompleteV2Response = CommonResponse & TimezoneGetAutocompleteV2ResponseAllOf;
+export type TimezoneGetAutocompleteV2Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type TimezoneGetAutocompleteV2Response = CommonResponse & TimezoneGetAuto
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectTimezoneGetAutocompleteV2ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectTimezoneGetAutocompleteV2ResponseMPayload } from './'
+import { DataObjectTimezoneGetAutocompleteV2ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectTimezoneGetAutocompleteV2ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectTimezoneGetAutocompleteV2Response
  */
 export class DataObjectTimezoneGetAutocompleteV2Response {
-    mPayload:TimezoneGetAutocompleteV2ResponseMPayload = new DataObjectTimezoneGetAutocompleteV2ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:TimezoneGetAutocompleteV2ResponseMPayload = new DataObjectTimezoneGetAutocompleteV2ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectTimezoneGetAutocompleteV2Response {
  * @class ValidationObjectTimezoneGetAutocompleteV2Response
  */
 export class ValidationObjectTimezoneGetAutocompleteV2Response {
-   mPayload = new ValidationObjectTimezoneGetAutocompleteV2ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectTimezoneGetAutocompleteV2ResponseMPayload()
 } 
 
 

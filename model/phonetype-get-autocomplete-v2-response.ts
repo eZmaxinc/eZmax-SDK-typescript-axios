@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PhonetypeGetAutocompleteV2ResponseAllOf } from './phonetype-get-autocomplete-v2-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { PhonetypeGetAutocompleteV2ResponseMPayload } from './phonetype-get-autocomplete-v2-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { PhonetypeGetAutocompleteV2ResponseMPayload } from './phonetype-get-auto
  * Response for GET /2/object/phonetype/getAutocomplete
  * @export
  */
-export type PhonetypeGetAutocompleteV2Response = CommonResponse & PhonetypeGetAutocompleteV2ResponseAllOf;
+export type PhonetypeGetAutocompleteV2Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type PhonetypeGetAutocompleteV2Response = CommonResponse & PhonetypeGetAu
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectPhonetypeGetAutocompleteV2ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectPhonetypeGetAutocompleteV2ResponseMPayload } from './'
+import { DataObjectPhonetypeGetAutocompleteV2ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectPhonetypeGetAutocompleteV2ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectPhonetypeGetAutocompleteV2Response
  */
 export class DataObjectPhonetypeGetAutocompleteV2Response {
-    mPayload:PhonetypeGetAutocompleteV2ResponseMPayload = new DataObjectPhonetypeGetAutocompleteV2ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:PhonetypeGetAutocompleteV2ResponseMPayload = new DataObjectPhonetypeGetAutocompleteV2ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectPhonetypeGetAutocompleteV2Response {
  * @class ValidationObjectPhonetypeGetAutocompleteV2Response
  */
 export class ValidationObjectPhonetypeGetAutocompleteV2Response {
-   mPayload = new ValidationObjectPhonetypeGetAutocompleteV2ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectPhonetypeGetAutocompleteV2ResponseMPayload()
 } 
 
 

@@ -15,9 +15,6 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { BrandingGetListV1ResponseAllOf } from './branding-get-list-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { BrandingGetListV1ResponseMPayload } from './branding-get-list-v1-response-mpayload';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -34,7 +31,7 @@ import { CommonResponseObjDebugPayloadGetList } from './common-response-obj-debu
  * Response for GET /1/object/branding/getList
  * @export
  */
-export type BrandingGetListV1Response = BrandingGetListV1ResponseAllOf & CommonResponseGetList;
+export type BrandingGetListV1Response = CommonResponseGetList;
 
 
 /**
@@ -42,17 +39,17 @@ export type BrandingGetListV1Response = BrandingGetListV1ResponseAllOf & CommonR
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectBrandingGetListV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayloadGetList } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectBrandingGetListV1ResponseMPayload } from './'
+import { DataObjectBrandingGetListV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayloadGetList } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectBrandingGetListV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectBrandingGetListV1Response
  */
 export class DataObjectBrandingGetListV1Response {
-    mPayload:BrandingGetListV1ResponseMPayload = new DataObjectBrandingGetListV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayloadGetList = undefined
+    objDebugPayload:CommonResponseObjDebugPayloadGetList = new DataObjectCommonResponseObjDebugPayloadGetList()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:BrandingGetListV1ResponseMPayload = new DataObjectBrandingGetListV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectBrandingGetListV1Response {
  * @class ValidationObjectBrandingGetListV1Response
  */
 export class ValidationObjectBrandingGetListV1Response {
-   mPayload = new ValidationObjectBrandingGetListV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayloadGetList()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectBrandingGetListV1ResponseMPayload()
 } 
 
 

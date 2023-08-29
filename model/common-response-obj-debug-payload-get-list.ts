@@ -19,16 +19,13 @@ import { CommonResponseFilter } from './common-response-filter';
 // May contain unused imports in some cases
 // @ts-ignore
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
-// May contain unused imports in some cases
-// @ts-ignore
-import { CommonResponseObjDebugPayloadGetListAllOf } from './common-response-obj-debug-payload-get-list-all-of';
 
 /**
  * @type CommonResponseObjDebugPayloadGetList
  * This is a debug object containing debugging information on the actual function
  * @export
  */
-export type CommonResponseObjDebugPayloadGetList = CommonResponseObjDebugPayload & CommonResponseObjDebugPayloadGetListAllOf;
+export type CommonResponseObjDebugPayloadGetList = CommonResponseObjDebugPayload;
 
 
 /**
@@ -50,6 +47,7 @@ export class DataObjectCommonResponseObjDebugPayloadGetList {
     iVersionMin:number = 0
     iVersionMax:number = 0
     a_RequiredPermission:Array<number> = []
+    bVersionDeprecated:boolean = false
     a_Filter:CommonResponseFilter = new DataObjectCommonResponseFilter()
     a_OrderBy:{ [key: string]: string; } = {}
 }
@@ -70,6 +68,10 @@ export class ValidationObjectCommonResponseObjDebugPayloadGetList {
    }
    a_RequiredPermission = {
       type: 'array',
+      required: true
+   }
+   bVersionDeprecated = {
+      type: 'boolean',
       required: true
    }
    a_Filter = new ValidationObjectCommonResponseFilter()

@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PaymenttermGetObjectV2ResponseAllOf } from './paymentterm-get-object-v2-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { PaymenttermGetObjectV2ResponseMPayload } from './paymentterm-get-object-v2-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { PaymenttermGetObjectV2ResponseMPayload } from './paymentterm-get-object
  * Response for GET /2/object/paymentterm/{pkiPaymenttermID}
  * @export
  */
-export type PaymenttermGetObjectV2Response = CommonResponse & PaymenttermGetObjectV2ResponseAllOf;
+export type PaymenttermGetObjectV2Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type PaymenttermGetObjectV2Response = CommonResponse & PaymenttermGetObje
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectPaymenttermGetObjectV2ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectPaymenttermGetObjectV2ResponseMPayload } from './'
+import { DataObjectPaymenttermGetObjectV2ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectPaymenttermGetObjectV2ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectPaymenttermGetObjectV2Response
  */
 export class DataObjectPaymenttermGetObjectV2Response {
-    mPayload:PaymenttermGetObjectV2ResponseMPayload = new DataObjectPaymenttermGetObjectV2ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:PaymenttermGetObjectV2ResponseMPayload = new DataObjectPaymenttermGetObjectV2ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectPaymenttermGetObjectV2Response {
  * @class ValidationObjectPaymenttermGetObjectV2Response
  */
 export class ValidationObjectPaymenttermGetObjectV2Response {
-   mPayload = new ValidationObjectPaymenttermGetObjectV2ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectPaymenttermGetObjectV2ResponseMPayload()
 } 
 
 

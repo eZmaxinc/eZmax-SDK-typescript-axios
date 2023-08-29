@@ -78,8 +78,7 @@ export class DataObjectCustomEzsignsignaturestatusResponse {
  */
 export class ValidationObjectCustomEzsignsignaturestatusResponse {
    eEzsignsignaturestatusSteptype = {
-      type: 'enum',
-      allowableValues: ['Form','Signature'],
+      type: 'string',
       required: true
    }
    iEzsignsignaturestatusStep = {

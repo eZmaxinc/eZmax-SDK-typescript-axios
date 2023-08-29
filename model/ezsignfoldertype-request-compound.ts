@@ -18,9 +18,6 @@
 import { EzsignfoldertypeRequest } from './ezsignfoldertype-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignfoldertypeRequestCompoundAllOf } from './ezsignfoldertype-request-compound-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { FieldEEzsignfoldertypeDisposal } from './field-eezsignfoldertype-disposal';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -37,7 +34,7 @@ import { MultilingualEzsignfoldertypeName } from './multilingual-ezsignfoldertyp
  * A Ezsignfoldertype Object and children
  * @export
  */
-export type EzsignfoldertypeRequestCompound = EzsignfoldertypeRequest & EzsignfoldertypeRequestCompoundAllOf;
+export type EzsignfoldertypeRequestCompound = EzsignfoldertypeRequest;
 
 
 

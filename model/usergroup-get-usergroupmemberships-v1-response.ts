@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { UsergroupGetUsergroupmembershipsV1ResponseAllOf } from './usergroup-get-usergroupmemberships-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { UsergroupGetUsergroupmembershipsV1ResponseMPayload } from './usergroup-get-usergroupmemberships-v1-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { UsergroupGetUsergroupmembershipsV1ResponseMPayload } from './usergroup-
  * Response for GET /1/object/usergroup/{pkiUsergroupID}/getUsergroupmemberships
  * @export
  */
-export type UsergroupGetUsergroupmembershipsV1Response = CommonResponse & UsergroupGetUsergroupmembershipsV1ResponseAllOf;
+export type UsergroupGetUsergroupmembershipsV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type UsergroupGetUsergroupmembershipsV1Response = CommonResponse & Usergr
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectUsergroupGetUsergroupmembershipsV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectUsergroupGetUsergroupmembershipsV1ResponseMPayload } from './'
+import { DataObjectUsergroupGetUsergroupmembershipsV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectUsergroupGetUsergroupmembershipsV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectUsergroupGetUsergroupmembershipsV1Response
  */
 export class DataObjectUsergroupGetUsergroupmembershipsV1Response {
-    mPayload:UsergroupGetUsergroupmembershipsV1ResponseMPayload = new DataObjectUsergroupGetUsergroupmembershipsV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:UsergroupGetUsergroupmembershipsV1ResponseMPayload = new DataObjectUsergroupGetUsergroupmembershipsV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectUsergroupGetUsergroupmembershipsV1Response {
  * @class ValidationObjectUsergroupGetUsergroupmembershipsV1Response
  */
 export class ValidationObjectUsergroupGetUsergroupmembershipsV1Response {
-   mPayload = new ValidationObjectUsergroupGetUsergroupmembershipsV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectUsergroupGetUsergroupmembershipsV1ResponseMPayload()
 } 
 
 

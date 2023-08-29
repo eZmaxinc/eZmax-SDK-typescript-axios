@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigntemplatesignatureResponse } from './ezsigntemplatesignature-response';
+import { EnumTextvalidation } from './enum-textvalidation';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigntemplatesignatureResponseCompoundAllOf } from './ezsigntemplatesignature-response-compound-all-of';
+import { EzsigntemplatesignatureResponse } from './ezsigntemplatesignature-response';
 // May contain unused imports in some cases
 // @ts-ignore
 import { EzsigntemplatesignaturecustomdateResponseCompound } from './ezsigntemplatesignaturecustomdate-response-compound';
@@ -40,7 +40,7 @@ import { FieldEEzsigntemplatesignatureType } from './field-eezsigntemplatesignat
  * A Ezsigntemplatesignature Object
  * @export
  */
-export type EzsigntemplatesignatureResponseCompound = EzsigntemplatesignatureResponse & EzsigntemplatesignatureResponseCompoundAllOf;
+export type EzsigntemplatesignatureResponseCompound = EzsigntemplatesignatureResponse;
 
 
 
@@ -63,6 +63,8 @@ export class DataObjectEzsigntemplatesignatureResponseCompound {
     iEzsigntemplatedocumentpagePagenumber:number = 0
     iEzsigntemplatesignatureX:number = 0
     iEzsigntemplatesignatureY:number = 0
+    iEzsigntemplatesignatureWidth?:number = undefined
+    iEzsigntemplatesignatureHeight?:number = undefined
     iEzsigntemplatesignatureStep:number = 0
     eEzsigntemplatesignatureType:FieldEEzsigntemplatesignatureType = 'Acknowledgement'
     tEzsigntemplatesignatureTooltip?:string = undefined
@@ -72,6 +74,9 @@ export class DataObjectEzsigntemplatesignatureResponseCompound {
     sEzsigntemplatesignatureAttachmentdescription?:string = undefined
     eEzsigntemplatesignatureAttachmentnamesource?:FieldEEzsigntemplatesignatureAttachmentnamesource = undefined
     bEzsigntemplatesignatureRequired?:boolean = undefined
+    iEzsigntemplatesignatureMaxlength?:number = undefined
+    sEzsigntemplatesignatureRegexp?:string = undefined
+    eEzsigntemplatesignatureTextvalidation?:EnumTextvalidation = undefined
     bEzsigntemplatesignatureCustomdate?:boolean = undefined
     a_objEzsigntemplatesignaturecustomdate?:Array<EzsigntemplatesignaturecustomdateResponseCompound> = undefined
 }
@@ -117,6 +122,16 @@ export class ValidationObjectEzsigntemplatesignatureResponseCompound {
       minimum: 0,
       required: true
    }
+   iEzsigntemplatesignatureWidth = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   iEzsigntemplatesignatureHeight = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
    iEzsigntemplatesignatureStep = {
       type: 'integer',
       minimum: 1,
@@ -124,7 +139,7 @@ export class ValidationObjectEzsigntemplatesignatureResponseCompound {
    }
    eEzsigntemplatesignatureType = {
       type: 'enum',
-      allowableValues: ['Acknowledgement','City','Handwritten','Initials','Name','Attachments'],
+      allowableValues: ['Acknowledgement','City','Handwritten','Initials','Name','Attachments','FieldText','FieldTextarea'],
       required: true
    }
    tEzsigntemplatesignatureTooltip = {
@@ -156,6 +171,21 @@ export class ValidationObjectEzsigntemplatesignatureResponseCompound {
    }
    bEzsigntemplatesignatureRequired = {
       type: 'boolean',
+      required: false
+   }
+   iEzsigntemplatesignatureMaxlength = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 65535,
+      required: false
+   }
+   sEzsigntemplatesignatureRegexp = {
+      type: 'string',
+      required: false
+   }
+   eEzsigntemplatesignatureTextvalidation = {
+      type: 'enum',
+      allowableValues: ['None','Date (YYYY-MM-DD)','Date (MM/DD/YYYY)','Date (MM/DD/YY)','Date (DD/MM/YYYY)','Date (DD/MM/YY)','Email','Letters','Numbers','Zip','Zip+4','PostalCode','Custom'],
       required: false
    }
    bEzsigntemplatesignatureCustomdate = {

@@ -18,9 +18,6 @@
 import { CommonResponseError } from './common-response-error';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonResponseErrorSTemporaryFileUrlAllOf } from './common-response-error-stemporary-file-url-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { FieldEErrorCode } from './field-eerror-code';
 
 /**
@@ -28,7 +25,7 @@ import { FieldEErrorCode } from './field-eerror-code';
  * Generic Error Message
  * @export
  */
-export type CommonResponseErrorSTemporaryFileUrl = CommonResponseError & CommonResponseErrorSTemporaryFileUrlAllOf;
+export type CommonResponseErrorSTemporaryFileUrl = CommonResponseError;
 
 
 
@@ -44,9 +41,9 @@ export type CommonResponseErrorSTemporaryFileUrl = CommonResponseError & CommonR
  * @class DataObjectCommonResponseErrorSTemporaryFileUrl
  */
 export class DataObjectCommonResponseErrorSTemporaryFileUrl {
-    sTemporaryFileUrl?:string = undefined
     sErrorMessage:string = ''
     eErrorCode:FieldEErrorCode = 'BADREQUEST'
+    sTemporaryFileUrl?:string = undefined
 }
 
 /**
@@ -55,10 +52,6 @@ export class DataObjectCommonResponseErrorSTemporaryFileUrl {
  * @class ValidationObjectCommonResponseErrorSTemporaryFileUrl
  */
 export class ValidationObjectCommonResponseErrorSTemporaryFileUrl {
-   sTemporaryFileUrl = {
-      type: 'string',
-      required: false
-   }
    sErrorMessage = {
       type: 'string',
       pattern: '/^.{0,500}$/',
@@ -68,6 +61,10 @@ export class ValidationObjectCommonResponseErrorSTemporaryFileUrl {
       type: 'enum',
       allowableValues: ['BADREQUEST','BADREQUEST_CLOCKSKEW','UNAUTHORIZED_BADAUTH','UNAUTHORIZED_BADMFA','UNAUTHORIZED_EXPIRED','UNAUTHORIZED_REQUEST','FORBIDDEN','FORBIDDEN_CONFIGURATION','FORBIDDEN_MODULE','FORBIDDEN_NOACCESS','FORBIDDEN_PERMISSION','FORBIDDEN_SUBSCRIPTION','FORBIDDEN_USERTYPE','FORBIDDEN_USER_ORIGIN_EXTERNAL','NOTFOUND','NOTFOUND_OBJECT','NOTFOUND_ROUTE','METHODNOTALLOWED','NOTACCEPTABLE_CONTENT','NOTACCEPTABLE_LANGUAGE','UNPROCESSABLEENTITY_ACTIVESESSION_ALREADY_CLONING','UNPROCESSABLEENTITY_CANNOTDELETE','UNPROCESSABLEENTITY_CANNOTMODIFY','UNPROCESSABLEENTITY_CHANGEPASSWORD_INVALID_CURRENT','UNPROCESSABLEENTITY_CHANGEPASSWORD_SAME','UNPROCESSABLEENTITY_DATA_MISSING','UNPROCESSABLEENTITY_DATA_UNIQUE','UNPROCESSABLEENTITY_DATA_VALIDATION','UNPROCESSABLEENTITY_DATA_OUTOFBOUND','UNPROCESSABLEENTITY_DOWNLOAD_ERROR','UNPROCESSABLEENTITY_EZSIGNFORM_VALIDATION','UNPROCESSABLEENTITY_EZSIGNSIGNERCONNECTED','UNPROCESSABLEENTITY_NOTHINGTODO','UNPROCESSABLEENTITY_NOTREADY','UNPROCESSABLEENTITY_PDF_FORM','UNPROCESSABLEENTITY_PDF_SIGNATURE','UNPROCESSABLEENTITY_PDF_FORM_AND_SIGNATURE','UNPROCESSABLEENTITY_PDF_INCOMPATIBLE','UNPROCESSABLEENTITY_PDF_PASSWORD','UNPROCESSABLEENTITY_PDF_WRONG_PASSWORD','UNPROCESSABLEENTITY_PDF_REPAIRABLE','UNPROCESSABLEENTITY_PDF_XFA','UNPROCESSABLEENTITY_TEMPLATE_MISMATCH','UNPROCESSABLEENTITY_UNMODIFIABLE_FIELD','UNPROCESSABLEENTITY_USER_STAGED','TOOMANYREQUESTS','TOOMANYREQUESTS_THIRDPARTY','ERROR_INTERNAL','ERROR_CONFIGURATION','ERROR_NOTIMPLEMENTED'],
       required: true
+   }
+   sTemporaryFileUrl = {
+      type: 'string',
+      required: false
    }
 } 
 

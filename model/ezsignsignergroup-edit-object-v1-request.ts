@@ -28,7 +28,7 @@ export interface EzsignsignergroupEditObjectV1Request {
      * @type {EzsignsignergroupRequestCompound}
      * @memberof EzsignsignergroupEditObjectV1Request
      */
-    'objBranding'?: EzsignsignergroupRequestCompound;
+    'objEzsignsignergroup': EzsignsignergroupRequestCompound;
 }
 /**
  * @import
@@ -46,7 +46,7 @@ import { ValidationObjectEzsignsignergroupRequestCompound } from './'
  * @class DataObjectEzsignsignergroupEditObjectV1Request
  */
 export class DataObjectEzsignsignergroupEditObjectV1Request {
-   objBranding?:EzsignsignergroupRequestCompound = undefined
+   objEzsignsignergroup:EzsignsignergroupRequestCompound = new DataObjectEzsignsignergroupRequestCompound()
 }
 
 /**
@@ -55,7 +55,7 @@ export class DataObjectEzsignsignergroupEditObjectV1Request {
  * @class ValidationObjectEzsignsignergroupEditObjectV1Request
  */
 export class ValidationObjectEzsignsignergroupEditObjectV1Request {
-   objBranding = new ValidationObjectEzsignsignergroupRequestCompound()
+   objEzsignsignergroup = new ValidationObjectEzsignsignergroupRequestCompound()
 } 
 
 

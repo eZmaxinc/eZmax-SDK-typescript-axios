@@ -15,9 +15,6 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ApikeyGetListV1ResponseMPayloadAllOf } from './apikey-get-list-v1-response-mpayload-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { ApikeyListElement } from './apikey-list-element';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -28,7 +25,7 @@ import { CommonGetListV1ResponseMPayload } from './common-get-list-v1-response-m
  * Payload for GET /1/object/apikey/getList
  * @export
  */
-export type ApikeyGetListV1ResponseMPayload = ApikeyGetListV1ResponseMPayloadAllOf & CommonGetListV1ResponseMPayload;
+export type ApikeyGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;
 
 
 /**
@@ -43,9 +40,9 @@ export type ApikeyGetListV1ResponseMPayload = ApikeyGetListV1ResponseMPayloadAll
  * @class DataObjectApikeyGetListV1ResponseMPayload
  */
 export class DataObjectApikeyGetListV1ResponseMPayload {
-    a_objApikey:Array<ApikeyListElement> = []
     iRowReturned:number = 0
     iRowFiltered:number = 0
+    a_objApikey:Array<ApikeyListElement> = []
 }
 
 /**
@@ -54,16 +51,16 @@ export class DataObjectApikeyGetListV1ResponseMPayload {
  * @class ValidationObjectApikeyGetListV1ResponseMPayload
  */
 export class ValidationObjectApikeyGetListV1ResponseMPayload {
-   a_objApikey = {
-      type: 'array',
-      required: true
-   }
    iRowReturned = {
       type: 'integer',
       required: true
    }
    iRowFiltered = {
       type: 'integer',
+      required: true
+   }
+   a_objApikey = {
+      type: 'array',
       required: true
    }
 } 

@@ -27,9 +27,6 @@ import { EnumTextvalidation } from './enum-textvalidation';
 import { EzsignsignatureResponse } from './ezsignsignature-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignsignatureResponseCompoundAllOf } from './ezsignsignature-response-compound-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsignsignaturecustomdateResponseCompound } from './ezsignsignaturecustomdate-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -52,7 +49,7 @@ import { SignatureResponseCompound } from './signature-response-compound';
  * An Ezsignsignature Object and children to create a complete structure
  * @export
  */
-export type EzsignsignatureResponseCompound = EzsignsignatureResponse & EzsignsignatureResponseCompoundAllOf;
+export type EzsignsignatureResponseCompound = EzsignsignatureResponse;
 
 
 
@@ -101,6 +98,7 @@ export class DataObjectEzsignsignatureResponseCompound {
     dtEzsignsignatureDate?:string = undefined
     iEzsignsignatureattachmentCount?:number = undefined
     sEzsignsignatureDescription?:string = undefined
+    iEzsignsignatureMaxlength?:number = undefined
     eEzsignsignatureTextvalidation?:EnumTextvalidation = undefined
     sEzsignsignatureRegexp?:string = undefined
     objContactName:CustomContactNameResponse = new DataObjectCustomContactNameResponse()
@@ -212,6 +210,12 @@ export class ValidationObjectEzsignsignatureResponseCompound {
    }
    sEzsignsignatureDescription = {
       type: 'string',
+      required: false
+   }
+   iEzsignsignatureMaxlength = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 65535,
       required: false
    }
    eEzsignsignatureTextvalidation = {

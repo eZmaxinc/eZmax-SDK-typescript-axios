@@ -217,6 +217,7 @@ export class ValidationObjectEzsignformfieldgroupRequest {
    iEzsignformfieldgroupMaxlength = {
       type: 'integer',
       minimum: 0,
+      maximum: 65535,
       required: false
    }
    bEzsignformfieldgroupEncrypted = {

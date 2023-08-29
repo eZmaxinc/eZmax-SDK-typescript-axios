@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CorsGetObjectV2ResponseAllOf } from './cors-get-object-v2-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { CorsGetObjectV2ResponseMPayload } from './cors-get-object-v2-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { CorsGetObjectV2ResponseMPayload } from './cors-get-object-v2-response-m
  * Response for GET /2/object/cors/{pkiCorsID}
  * @export
  */
-export type CorsGetObjectV2Response = CommonResponse & CorsGetObjectV2ResponseAllOf;
+export type CorsGetObjectV2Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type CorsGetObjectV2Response = CommonResponse & CorsGetObjectV2ResponseAl
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCorsGetObjectV2ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectCorsGetObjectV2ResponseMPayload } from './'
+import { DataObjectCorsGetObjectV2ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectCorsGetObjectV2ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectCorsGetObjectV2Response
  */
 export class DataObjectCorsGetObjectV2Response {
-    mPayload:CorsGetObjectV2ResponseMPayload = new DataObjectCorsGetObjectV2ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:CorsGetObjectV2ResponseMPayload = new DataObjectCorsGetObjectV2ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectCorsGetObjectV2Response {
  * @class ValidationObjectCorsGetObjectV2Response
  */
 export class ValidationObjectCorsGetObjectV2Response {
-   mPayload = new ValidationObjectCorsGetObjectV2ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectCorsGetObjectV2ResponseMPayload()
 } 
 
 

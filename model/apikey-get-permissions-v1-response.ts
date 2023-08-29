@@ -15,9 +15,6 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ApikeyGetPermissionsV1ResponseAllOf } from './apikey-get-permissions-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { ApikeyGetPermissionsV1ResponseMPayload } from './apikey-get-permissions-v1-response-mpayload';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -34,7 +31,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for GET /1/object/apikey/{pkiApikeyID}/getPermissions
  * @export
  */
-export type ApikeyGetPermissionsV1Response = ApikeyGetPermissionsV1ResponseAllOf & CommonResponse;
+export type ApikeyGetPermissionsV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type ApikeyGetPermissionsV1Response = ApikeyGetPermissionsV1ResponseAllOf
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectApikeyGetPermissionsV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectApikeyGetPermissionsV1ResponseMPayload } from './'
+import { DataObjectApikeyGetPermissionsV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectApikeyGetPermissionsV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectApikeyGetPermissionsV1Response
  */
 export class DataObjectApikeyGetPermissionsV1Response {
-    mPayload:ApikeyGetPermissionsV1ResponseMPayload = new DataObjectApikeyGetPermissionsV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:ApikeyGetPermissionsV1ResponseMPayload = new DataObjectApikeyGetPermissionsV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectApikeyGetPermissionsV1Response {
  * @class ValidationObjectApikeyGetPermissionsV1Response
  */
 export class ValidationObjectApikeyGetPermissionsV1Response {
-   mPayload = new ValidationObjectApikeyGetPermissionsV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectApikeyGetPermissionsV1ResponseMPayload()
 } 
 
 

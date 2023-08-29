@@ -15,9 +15,6 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ActivesessionGetListV1ResponseMPayloadAllOf } from './activesession-get-list-v1-response-mpayload-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { ActivesessionListElement } from './activesession-list-element';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -28,7 +25,7 @@ import { CommonGetListV1ResponseMPayload } from './common-get-list-v1-response-m
  * Payload for GET /1/object/activesession/getList
  * @export
  */
-export type ActivesessionGetListV1ResponseMPayload = ActivesessionGetListV1ResponseMPayloadAllOf & CommonGetListV1ResponseMPayload;
+export type ActivesessionGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;
 
 
 /**
@@ -43,9 +40,9 @@ export type ActivesessionGetListV1ResponseMPayload = ActivesessionGetListV1Respo
  * @class DataObjectActivesessionGetListV1ResponseMPayload
  */
 export class DataObjectActivesessionGetListV1ResponseMPayload {
-    a_objActivesession:Array<ActivesessionListElement> = []
     iRowReturned:number = 0
     iRowFiltered:number = 0
+    a_objActivesession:Array<ActivesessionListElement> = []
 }
 
 /**
@@ -54,16 +51,16 @@ export class DataObjectActivesessionGetListV1ResponseMPayload {
  * @class ValidationObjectActivesessionGetListV1ResponseMPayload
  */
 export class ValidationObjectActivesessionGetListV1ResponseMPayload {
-   a_objActivesession = {
-      type: 'array',
-      required: true
-   }
    iRowReturned = {
       type: 'integer',
       required: true
    }
    iRowFiltered = {
       type: 'integer',
+      required: true
+   }
+   a_objActivesession = {
+      type: 'array',
       required: true
    }
 } 

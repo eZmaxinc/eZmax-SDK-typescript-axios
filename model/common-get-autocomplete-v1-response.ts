@@ -15,9 +15,6 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonGetAutocompleteV1ResponseAllOf } from './common-get-autocomplete-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { CommonResponse } from './common-response';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -34,7 +31,7 @@ import { CustomAutocompleteElementResponse } from './custom-autocomplete-element
  * Response for GET /1/object/xxx/getAutocomplete
  * @export
  */
-export type CommonGetAutocompleteV1Response = CommonGetAutocompleteV1ResponseAllOf & CommonResponse;
+export type CommonGetAutocompleteV1Response = CommonResponse;
 
 
 /**
@@ -57,9 +54,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectCommonGetAutocompleteV1Response
  */
 export class DataObjectCommonGetAutocompleteV1Response {
-    mPayload:Array<CustomAutocompleteElementResponse> = []
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:Array<CustomAutocompleteElementResponse> = []
 }
 
 /**
@@ -68,12 +65,12 @@ export class DataObjectCommonGetAutocompleteV1Response {
  * @class ValidationObjectCommonGetAutocompleteV1Response
  */
 export class ValidationObjectCommonGetAutocompleteV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = {
       type: 'array',
       required: true
    }
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
 } 
 
 

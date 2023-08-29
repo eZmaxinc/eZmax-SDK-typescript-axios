@@ -18,9 +18,6 @@
 import { CommonGetListV1ResponseMPayload } from './common-get-list-v1-response-mpayload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignbulksendGetListV1ResponseMPayloadAllOf } from './ezsignbulksend-get-list-v1-response-mpayload-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsignbulksendListElement } from './ezsignbulksend-list-element';
 
 /**
@@ -28,7 +25,7 @@ import { EzsignbulksendListElement } from './ezsignbulksend-list-element';
  * Payload for GET /1/object/ezsignbulksend/getList
  * @export
  */
-export type EzsignbulksendGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload & EzsignbulksendGetListV1ResponseMPayloadAllOf;
+export type EzsignbulksendGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;
 
 
 /**
@@ -43,9 +40,9 @@ export type EzsignbulksendGetListV1ResponseMPayload = CommonGetListV1ResponseMPa
  * @class DataObjectEzsignbulksendGetListV1ResponseMPayload
  */
 export class DataObjectEzsignbulksendGetListV1ResponseMPayload {
-    a_objEzsignbulksend:Array<EzsignbulksendListElement> = []
     iRowReturned:number = 0
     iRowFiltered:number = 0
+    a_objEzsignbulksend:Array<EzsignbulksendListElement> = []
 }
 
 /**
@@ -54,16 +51,16 @@ export class DataObjectEzsignbulksendGetListV1ResponseMPayload {
  * @class ValidationObjectEzsignbulksendGetListV1ResponseMPayload
  */
 export class ValidationObjectEzsignbulksendGetListV1ResponseMPayload {
-   a_objEzsignbulksend = {
-      type: 'array',
-      required: true
-   }
    iRowReturned = {
       type: 'integer',
       required: true
    }
    iRowFiltered = {
       type: 'integer',
+      required: true
+   }
+   a_objEzsignbulksend = {
+      type: 'array',
       required: true
    }
 } 

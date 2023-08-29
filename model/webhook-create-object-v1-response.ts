@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { WebhookCreateObjectV1ResponseAllOf } from './webhook-create-object-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { WebhookCreateObjectV1ResponseMPayload } from './webhook-create-object-v1-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { WebhookCreateObjectV1ResponseMPayload } from './webhook-create-object-v
  * Response for POST /1/object/webhook
  * @export
  */
-export type WebhookCreateObjectV1Response = CommonResponse & WebhookCreateObjectV1ResponseAllOf;
+export type WebhookCreateObjectV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type WebhookCreateObjectV1Response = CommonResponse & WebhookCreateObject
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectWebhookCreateObjectV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectWebhookCreateObjectV1ResponseMPayload } from './'
+import { DataObjectWebhookCreateObjectV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectWebhookCreateObjectV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectWebhookCreateObjectV1Response
  */
 export class DataObjectWebhookCreateObjectV1Response {
-    mPayload:WebhookCreateObjectV1ResponseMPayload = new DataObjectWebhookCreateObjectV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:WebhookCreateObjectV1ResponseMPayload = new DataObjectWebhookCreateObjectV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectWebhookCreateObjectV1Response {
  * @class ValidationObjectWebhookCreateObjectV1Response
  */
 export class ValidationObjectWebhookCreateObjectV1Response {
-   mPayload = new ValidationObjectWebhookCreateObjectV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectWebhookCreateObjectV1ResponseMPayload()
 } 
 
 

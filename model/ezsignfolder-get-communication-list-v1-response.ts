@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayloadGetList } from './common-response-obj-debug-payload-get-list';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignfolderGetCommunicationListV1ResponseAllOf } from './ezsignfolder-get-communication-list-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsignfolderGetCommunicationListV1ResponseMPayload } from './ezsignfolder-get-communication-list-v1-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { EzsignfolderGetCommunicationListV1ResponseMPayload } from './ezsignfold
  * Response for GET /1/object/ezsignfolder/{pkiEzsignfolderID}/getCommunicationList
  * @export
  */
-export type EzsignfolderGetCommunicationListV1Response = CommonResponseGetList & EzsignfolderGetCommunicationListV1ResponseAllOf;
+export type EzsignfolderGetCommunicationListV1Response = CommonResponseGetList;
 
 
 /**
@@ -42,17 +39,17 @@ export type EzsignfolderGetCommunicationListV1Response = CommonResponseGetList &
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectEzsignfolderGetCommunicationListV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayloadGetList } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectEzsignfolderGetCommunicationListV1ResponseMPayload } from './'
+import { DataObjectEzsignfolderGetCommunicationListV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayloadGetList } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsignfolderGetCommunicationListV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectEzsignfolderGetCommunicationListV1Response
  */
 export class DataObjectEzsignfolderGetCommunicationListV1Response {
-    mPayload:EzsignfolderGetCommunicationListV1ResponseMPayload = new DataObjectEzsignfolderGetCommunicationListV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayloadGetList = undefined
+    objDebugPayload:CommonResponseObjDebugPayloadGetList = new DataObjectCommonResponseObjDebugPayloadGetList()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:EzsignfolderGetCommunicationListV1ResponseMPayload = new DataObjectEzsignfolderGetCommunicationListV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectEzsignfolderGetCommunicationListV1Response {
  * @class ValidationObjectEzsignfolderGetCommunicationListV1Response
  */
 export class ValidationObjectEzsignfolderGetCommunicationListV1Response {
-   mPayload = new ValidationObjectEzsignfolderGetCommunicationListV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayloadGetList()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectEzsignfolderGetCommunicationListV1ResponseMPayload()
 } 
 
 

@@ -18,9 +18,6 @@
 import { EzsignsignerResponse } from './ezsignsigner-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignsignerResponseCompoundAllOf } from './ezsignsigner-response-compound-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsignsignerResponseCompoundContact } from './ezsignsigner-response-compound-contact';
 
 /**
@@ -28,7 +25,7 @@ import { EzsignsignerResponseCompoundContact } from './ezsignsigner-response-com
  * An Ezsignsigner Object and children to create a complete structure
  * @export
  */
-export type EzsignsignerResponseCompound = EzsignsignerResponse & EzsignsignerResponseCompoundAllOf;
+export type EzsignsignerResponseCompound = EzsignsignerResponse;
 
 
 /**

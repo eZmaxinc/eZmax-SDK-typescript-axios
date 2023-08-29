@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { UserGetPermissionsV1ResponseAllOf } from './user-get-permissions-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { UserGetPermissionsV1ResponseMPayload } from './user-get-permissions-v1-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { UserGetPermissionsV1ResponseMPayload } from './user-get-permissions-v1-
  * Response for GET /1/object/user/{pkiUserID}/getPermissions
  * @export
  */
-export type UserGetPermissionsV1Response = CommonResponse & UserGetPermissionsV1ResponseAllOf;
+export type UserGetPermissionsV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type UserGetPermissionsV1Response = CommonResponse & UserGetPermissionsV1
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectUserGetPermissionsV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectUserGetPermissionsV1ResponseMPayload } from './'
+import { DataObjectUserGetPermissionsV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectUserGetPermissionsV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectUserGetPermissionsV1Response
  */
 export class DataObjectUserGetPermissionsV1Response {
-    mPayload:UserGetPermissionsV1ResponseMPayload = new DataObjectUserGetPermissionsV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:UserGetPermissionsV1ResponseMPayload = new DataObjectUserGetPermissionsV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectUserGetPermissionsV1Response {
  * @class ValidationObjectUserGetPermissionsV1Response
  */
 export class ValidationObjectUserGetPermissionsV1Response {
-   mPayload = new ValidationObjectUserGetPermissionsV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectUserGetPermissionsV1ResponseMPayload()
 } 
 
 

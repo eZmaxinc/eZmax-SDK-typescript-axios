@@ -13,18 +13,38 @@
  */
 
 
-// May contain unused imports in some cases
-// @ts-ignore
-import { CustomEzsignformfieldRequestAllOf } from './custom-ezsignformfield-request-all-of';
 
 /**
- * @type CustomEzsignformfieldRequest
  * A Custom Ezsignformfield Object to fill an Ezsignform using submitForm
  * @export
+ * @interface CustomEzsignformfieldRequest
  */
-export type CustomEzsignformfieldRequest = CustomEzsignformfieldRequestAllOf;
-
-
+export interface CustomEzsignformfieldRequest {
+    /**
+     * The unique ID of the Ezsignformfield
+     * @type {number}
+     * @memberof CustomEzsignformfieldRequest
+     */
+    'pkiEzsignformfieldID'?: number;
+    /**
+     * The Label for the Ezsignformfield
+     * @type {string}
+     * @memberof CustomEzsignformfieldRequest
+     */
+    'sEzsignformfieldLabel'?: string;
+    /**
+     * Whether the Ezsignformfield is selected or not by default.  This can only be set if eEzsignformfieldgroupType is **Checkbox** or **Radio**
+     * @type {boolean}
+     * @memberof CustomEzsignformfieldRequest
+     */
+    'bEzsignformfieldSelected'?: boolean;
+    /**
+     * This is the value enterred for the Ezsignformfield  This can only be set if eEzsignformfieldgroupType is **Dropdown**, **Text** or **Textarea**
+     * @type {string}
+     * @memberof CustomEzsignformfieldRequest
+     */
+    'sEzsignformfieldEnteredvalue'?: string;
+}
 /**
  * @import
  * Imports Child Data Object
@@ -37,10 +57,10 @@ export type CustomEzsignformfieldRequest = CustomEzsignformfieldRequestAllOf;
  * @class DataObjectCustomEzsignformfieldRequest
  */
 export class DataObjectCustomEzsignformfieldRequest {
-    pkiEzsignformfieldID?:number = undefined
-    sEzsignformfieldLabel?:string = undefined
-    bEzsignformfieldSelected?:boolean = undefined
-    sEzsignformfieldEnteredvalue?:string = undefined
+   pkiEzsignformfieldID?:number = undefined
+   sEzsignformfieldLabel?:string = undefined
+   bEzsignformfieldSelected?:boolean = undefined
+   sEzsignformfieldEnteredvalue?:string = undefined
 }
 
 /**

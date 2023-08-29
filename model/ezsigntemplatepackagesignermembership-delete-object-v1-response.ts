@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseAllOf } from './ezsigntemplatepackagesignermembership-delete-object-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload } from './ezsigntemplatepackagesignermembership-delete-object-v1-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload } f
  * Response for DELETE /1/object/ezsigntemplatepackagesignermembership/{pkiEzsigntemplatepackagesignermembershipID}
  * @export
  */
-export type EzsigntemplatepackagesignermembershipDeleteObjectV1Response = CommonResponse & EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseAllOf;
+export type EzsigntemplatepackagesignermembershipDeleteObjectV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type EzsigntemplatepackagesignermembershipDeleteObjectV1Response = Common
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectEzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectEzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload } from './'
+import { DataObjectEzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectEzsigntemplatepackagesignermembershipDeleteObjectV1Response
  */
 export class DataObjectEzsigntemplatepackagesignermembershipDeleteObjectV1Response {
-    mPayload:EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload = new DataObjectEzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload = new DataObjectEzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectEzsigntemplatepackagesignermembershipDeleteObjectV1Respon
  * @class ValidationObjectEzsigntemplatepackagesignermembershipDeleteObjectV1Response
  */
 export class ValidationObjectEzsigntemplatepackagesignermembershipDeleteObjectV1Response {
-   mPayload = new ValidationObjectEzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectEzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload()
 } 
 
 

@@ -21,9 +21,6 @@ import { AddressRequestCompound } from './address-request-compound';
 import { ContactinformationsRequest } from './contactinformations-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ContactinformationsRequestCompoundAllOf } from './contactinformations-request-compound-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EmailRequestCompound } from './email-request-compound';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -37,7 +34,7 @@ import { WebsiteRequestCompound } from './website-request-compound';
  * A Contactinformations Object and children to create a complete structure
  * @export
  */
-export type ContactinformationsRequestCompound = ContactinformationsRequest & ContactinformationsRequestCompoundAllOf;
+export type ContactinformationsRequestCompound = ContactinformationsRequest;
 
 
 /**

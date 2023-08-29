@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseAllOf } from './ezsigntemplatedocument-edit-ezsigntemplatesignatures-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseMPayload } from './ezsigntemplatedocument-edit-ezsigntemplatesignatures-v1-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { EzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseMPayload } 
  * Response for PUT /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/editEzsigntemplatesignatures
  * @export
  */
-export type EzsigntemplatedocumentEditEzsigntemplatesignaturesV1Response = CommonResponse & EzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseAllOf;
+export type EzsigntemplatedocumentEditEzsigntemplatesignaturesV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type EzsigntemplatedocumentEditEzsigntemplatesignaturesV1Response = Commo
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectEzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectEzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseMPayload } from './'
+import { DataObjectEzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectEzsigntemplatedocumentEditEzsigntemplatesignaturesV1Response
  */
 export class DataObjectEzsigntemplatedocumentEditEzsigntemplatesignaturesV1Response {
-    mPayload:EzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseMPayload = new DataObjectEzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:EzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseMPayload = new DataObjectEzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectEzsigntemplatedocumentEditEzsigntemplatesignaturesV1Respo
  * @class ValidationObjectEzsigntemplatedocumentEditEzsigntemplatesignaturesV1Response
  */
 export class ValidationObjectEzsigntemplatedocumentEditEzsigntemplatesignaturesV1Response {
-   mPayload = new ValidationObjectEzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectEzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseMPayload()
 } 
 
 

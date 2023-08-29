@@ -39,9 +39,9 @@ export type EzsignsignergroupmembershipResponseCompound = Ezsignsignergroupmembe
 export class DataObjectEzsignsignergroupmembershipResponseCompound {
     pkiEzsignsignergroupmembershipID:number = 0
     fkiEzsignsignergroupID:number = 0
-    fkiEzsignsignerID:number = 0
-    fkiUserID:number = 0
-    fkiUsergroupID:number = 0
+    fkiEzsignsignerID?:number = undefined
+    fkiUserID?:number = undefined
+    fkiUsergroupID?:number = undefined
 }
 
 /**
@@ -65,18 +65,18 @@ export class ValidationObjectEzsignsignergroupmembershipResponseCompound {
    fkiEzsignsignerID = {
       type: 'integer',
       minimum: 0,
-      required: true
+      required: false
    }
    fkiUserID = {
       type: 'integer',
       minimum: 0,
-      required: true
+      required: false
    }
    fkiUsergroupID = {
       type: 'integer',
       minimum: 0,
       maximum: 255,
-      required: true
+      required: false
    }
 } 
 

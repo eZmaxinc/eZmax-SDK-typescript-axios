@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseAllOf } from './ezsignbulksend-get-ezsignbulksendtransmissions-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload } from './ezsignbulksend-get-ezsignbulksendtransmissions-v1-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload } from '
  * Response for GET /1/object/ezsignbulksend/{pkiEzsignbulksend}/getEzsignbulksendtransmissions
  * @export
  */
-export type EzsignbulksendGetEzsignbulksendtransmissionsV1Response = CommonResponse & EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseAllOf;
+export type EzsignbulksendGetEzsignbulksendtransmissionsV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type EzsignbulksendGetEzsignbulksendtransmissionsV1Response = CommonRespo
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectEzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectEzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload } from './'
+import { DataObjectEzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectEzsignbulksendGetEzsignbulksendtransmissionsV1Response
  */
 export class DataObjectEzsignbulksendGetEzsignbulksendtransmissionsV1Response {
-    mPayload:EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload = new DataObjectEzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:EzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload = new DataObjectEzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectEzsignbulksendGetEzsignbulksendtransmissionsV1Response {
  * @class ValidationObjectEzsignbulksendGetEzsignbulksendtransmissionsV1Response
  */
 export class ValidationObjectEzsignbulksendGetEzsignbulksendtransmissionsV1Response {
-   mPayload = new ValidationObjectEzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectEzsignbulksendGetEzsignbulksendtransmissionsV1ResponseMPayload()
 } 
 
 

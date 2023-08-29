@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignfolderCreateObjectV2ResponseAllOf } from './ezsignfolder-create-object-v2-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsignfolderCreateObjectV2ResponseMPayload } from './ezsignfolder-create-object-v2-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { EzsignfolderCreateObjectV2ResponseMPayload } from './ezsignfolder-creat
  * Response for POST /2/object/ezsignfolder
  * @export
  */
-export type EzsignfolderCreateObjectV2Response = CommonResponse & EzsignfolderCreateObjectV2ResponseAllOf;
+export type EzsignfolderCreateObjectV2Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type EzsignfolderCreateObjectV2Response = CommonResponse & EzsignfolderCr
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectEzsignfolderCreateObjectV2ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectEzsignfolderCreateObjectV2ResponseMPayload } from './'
+import { DataObjectEzsignfolderCreateObjectV2ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsignfolderCreateObjectV2ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectEzsignfolderCreateObjectV2Response
  */
 export class DataObjectEzsignfolderCreateObjectV2Response {
-    mPayload:EzsignfolderCreateObjectV2ResponseMPayload = new DataObjectEzsignfolderCreateObjectV2ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:EzsignfolderCreateObjectV2ResponseMPayload = new DataObjectEzsignfolderCreateObjectV2ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectEzsignfolderCreateObjectV2Response {
  * @class ValidationObjectEzsignfolderCreateObjectV2Response
  */
 export class ValidationObjectEzsignfolderCreateObjectV2Response {
-   mPayload = new ValidationObjectEzsignfolderCreateObjectV2ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectEzsignfolderCreateObjectV2ResponseMPayload()
 } 
 
 

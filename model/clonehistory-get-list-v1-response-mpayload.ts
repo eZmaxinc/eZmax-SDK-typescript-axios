@@ -15,9 +15,6 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ClonehistoryGetListV1ResponseMPayloadAllOf } from './clonehistory-get-list-v1-response-mpayload-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { ClonehistoryListElement } from './clonehistory-list-element';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -28,7 +25,7 @@ import { CommonGetListV1ResponseMPayload } from './common-get-list-v1-response-m
  * Payload for GET /1/object/clonehistory/getList
  * @export
  */
-export type ClonehistoryGetListV1ResponseMPayload = ClonehistoryGetListV1ResponseMPayloadAllOf & CommonGetListV1ResponseMPayload;
+export type ClonehistoryGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;
 
 
 /**
@@ -43,9 +40,9 @@ export type ClonehistoryGetListV1ResponseMPayload = ClonehistoryGetListV1Respons
  * @class DataObjectClonehistoryGetListV1ResponseMPayload
  */
 export class DataObjectClonehistoryGetListV1ResponseMPayload {
-    a_objClonehistory:Array<ClonehistoryListElement> = []
     iRowReturned:number = 0
     iRowFiltered:number = 0
+    a_objClonehistory:Array<ClonehistoryListElement> = []
 }
 
 /**
@@ -54,16 +51,16 @@ export class DataObjectClonehistoryGetListV1ResponseMPayload {
  * @class ValidationObjectClonehistoryGetListV1ResponseMPayload
  */
 export class ValidationObjectClonehistoryGetListV1ResponseMPayload {
-   a_objClonehistory = {
-      type: 'array',
-      required: true
-   }
    iRowReturned = {
       type: 'integer',
       required: true
    }
    iRowFiltered = {
       type: 'integer',
+      required: true
+   }
+   a_objClonehistory = {
+      type: 'array',
       required: true
    }
 } 

@@ -21,9 +21,6 @@ import { EnumTextvalidation } from './enum-textvalidation';
 import { EzsignsignatureRequest } from './ezsignsignature-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignsignatureRequestCompoundAllOf } from './ezsignsignature-request-compound-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsignsignaturecustomdateRequestCompound } from './ezsignsignaturecustomdate-request-compound';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -43,7 +40,7 @@ import { FieldEEzsignsignatureType } from './field-eezsignsignature-type';
  * An Ezsignsignature Object and children to create a complete structure
  * @export
  */
-export type EzsignsignatureRequestCompound = EzsignsignatureRequest & EzsignsignatureRequestCompoundAllOf;
+export type EzsignsignatureRequestCompound = EzsignsignatureRequest;
 
 
 
@@ -77,6 +74,7 @@ export class DataObjectEzsignsignatureRequestCompound {
     eEzsignsignatureAttachmentnamesource?:FieldEEzsignsignatureAttachmentnamesource = undefined
     sEzsignsignatureAttachmentdescription?:string = undefined
     iEzsignsignatureValidationstep?:number = undefined
+    iEzsignsignatureMaxlength?:number = undefined
     eEzsignsignatureTextvalidation?:EnumTextvalidation = undefined
     sEzsignsignatureRegexp?:string = undefined
     bEzsignsignatureCustomdate?:boolean = undefined
@@ -172,6 +170,12 @@ export class ValidationObjectEzsignsignatureRequestCompound {
    }
    iEzsignsignatureValidationstep = {
       type: 'integer',
+      required: false
+   }
+   iEzsignsignatureMaxlength = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 65535,
       required: false
    }
    eEzsignsignatureTextvalidation = {

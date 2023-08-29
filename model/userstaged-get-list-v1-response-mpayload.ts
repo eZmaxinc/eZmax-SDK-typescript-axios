@@ -18,9 +18,6 @@
 import { CommonGetListV1ResponseMPayload } from './common-get-list-v1-response-mpayload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { UserstagedGetListV1ResponseMPayloadAllOf } from './userstaged-get-list-v1-response-mpayload-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { UserstagedListElement } from './userstaged-list-element';
 
 /**
@@ -28,7 +25,7 @@ import { UserstagedListElement } from './userstaged-list-element';
  * Payload for GET /1/object/userstaged/getList
  * @export
  */
-export type UserstagedGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload & UserstagedGetListV1ResponseMPayloadAllOf;
+export type UserstagedGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;
 
 
 /**
@@ -43,9 +40,9 @@ export type UserstagedGetListV1ResponseMPayload = CommonGetListV1ResponseMPayloa
  * @class DataObjectUserstagedGetListV1ResponseMPayload
  */
 export class DataObjectUserstagedGetListV1ResponseMPayload {
-    a_objUserstaged:Array<UserstagedListElement> = []
     iRowReturned:number = 0
     iRowFiltered:number = 0
+    a_objUserstaged:Array<UserstagedListElement> = []
 }
 
 /**
@@ -54,16 +51,16 @@ export class DataObjectUserstagedGetListV1ResponseMPayload {
  * @class ValidationObjectUserstagedGetListV1ResponseMPayload
  */
 export class ValidationObjectUserstagedGetListV1ResponseMPayload {
-   a_objUserstaged = {
-      type: 'array',
-      required: true
-   }
    iRowReturned = {
       type: 'integer',
       required: true
    }
    iRowFiltered = {
       type: 'integer',
+      required: true
+   }
+   a_objUserstaged = {
+      type: 'array',
       required: true
    }
 } 

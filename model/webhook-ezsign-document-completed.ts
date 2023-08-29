@@ -25,16 +25,13 @@ import { CustomWebhookResponse } from './custom-webhook-response';
 // May contain unused imports in some cases
 // @ts-ignore
 import { EzsigndocumentResponse } from './ezsigndocument-response';
-// May contain unused imports in some cases
-// @ts-ignore
-import { WebhookEzsignDocumentCompletedAllOf } from './webhook-ezsign-document-completed-all-of';
 
 /**
  * @type WebhookEzsignDocumentCompleted
  * This is the base Webhook object
  * @export
  */
-export type WebhookEzsignDocumentCompleted = CommonWebhook & WebhookEzsignDocumentCompletedAllOf;
+export type WebhookEzsignDocumentCompleted = CommonWebhook;
 
 
 /**
@@ -42,13 +39,13 @@ export type WebhookEzsignDocumentCompleted = CommonWebhook & WebhookEzsignDocume
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectEzsigndocumentResponse } from './'
-// @ts-ignore
 import { DataObjectCustomWebhookResponse } from './'
 // @ts-ignore
-import { ValidationObjectEzsigndocumentResponse } from './'
+import { DataObjectEzsigndocumentResponse } from './'
 // @ts-ignore
 import { ValidationObjectCustomWebhookResponse } from './'
+// @ts-ignore
+import { ValidationObjectEzsigndocumentResponse } from './'
 
 /**
  * @export 
@@ -57,9 +54,9 @@ import { ValidationObjectCustomWebhookResponse } from './'
  * @class DataObjectWebhookEzsignDocumentCompleted
  */
 export class DataObjectWebhookEzsignDocumentCompleted {
-    objEzsigndocument:EzsigndocumentResponse = new DataObjectEzsigndocumentResponse()
     objWebhook:CustomWebhookResponse = new DataObjectCustomWebhookResponse()
     a_objAttempt:Array<AttemptResponseCompound> = []
+    objEzsigndocument:EzsigndocumentResponse = new DataObjectEzsigndocumentResponse()
 }
 
 /**
@@ -68,12 +65,12 @@ export class DataObjectWebhookEzsignDocumentCompleted {
  * @class ValidationObjectWebhookEzsignDocumentCompleted
  */
 export class ValidationObjectWebhookEzsignDocumentCompleted {
-   objEzsigndocument = new ValidationObjectEzsigndocumentResponse()
    objWebhook = new ValidationObjectCustomWebhookResponse()
    a_objAttempt = {
       type: 'array',
       required: true
    }
+   objEzsigndocument = new ValidationObjectEzsigndocumentResponse()
 } 
 
 

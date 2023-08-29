@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigndocumentGetObjectV1ResponseAllOf } from './ezsigndocument-get-object-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsigndocumentGetObjectV1ResponseMPayload } from './ezsigndocument-get-object-v1-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { EzsigndocumentGetObjectV1ResponseMPayload } from './ezsigndocument-get-
  * Response for GET /1/object/ezsigndocument/{pkiEzsigndocumentID}
  * @export
  */
-export type EzsigndocumentGetObjectV1Response = CommonResponse & EzsigndocumentGetObjectV1ResponseAllOf;
+export type EzsigndocumentGetObjectV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type EzsigndocumentGetObjectV1Response = CommonResponse & EzsigndocumentG
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectEzsigndocumentGetObjectV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectEzsigndocumentGetObjectV1ResponseMPayload } from './'
+import { DataObjectEzsigndocumentGetObjectV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsigndocumentGetObjectV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectEzsigndocumentGetObjectV1Response
  */
 export class DataObjectEzsigndocumentGetObjectV1Response {
-    mPayload:EzsigndocumentGetObjectV1ResponseMPayload = new DataObjectEzsigndocumentGetObjectV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:EzsigndocumentGetObjectV1ResponseMPayload = new DataObjectEzsigndocumentGetObjectV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectEzsigndocumentGetObjectV1Response {
  * @class ValidationObjectEzsigndocumentGetObjectV1Response
  */
 export class ValidationObjectEzsigndocumentGetObjectV1Response {
-   mPayload = new ValidationObjectEzsigndocumentGetObjectV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectEzsigndocumentGetObjectV1ResponseMPayload()
 } 
 
 

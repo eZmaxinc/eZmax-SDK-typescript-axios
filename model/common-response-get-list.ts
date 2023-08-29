@@ -31,7 +31,7 @@ export interface CommonResponseGetList {
      * @type {CommonResponseObjDebugPayloadGetList}
      * @memberof CommonResponseGetList
      */
-    'objDebugPayload'?: CommonResponseObjDebugPayloadGetList;
+    'objDebugPayload': CommonResponseObjDebugPayloadGetList;
     /**
      * 
      * @type {CommonResponseObjDebug}
@@ -59,7 +59,7 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectCommonResponseGetList
  */
 export class DataObjectCommonResponseGetList {
-   objDebugPayload?:CommonResponseObjDebugPayloadGetList = undefined
+   objDebugPayload:CommonResponseObjDebugPayloadGetList = new DataObjectCommonResponseObjDebugPayloadGetList()
    objDebug?:CommonResponseObjDebug = undefined
 }
 

@@ -18,9 +18,6 @@
 import { CommonGetListV1ResponseMPayload } from './common-get-list-v1-response-mpayload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { SessionhistoryGetListV1ResponseMPayloadAllOf } from './sessionhistory-get-list-v1-response-mpayload-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { SessionhistoryListElement } from './sessionhistory-list-element';
 
 /**
@@ -28,7 +25,7 @@ import { SessionhistoryListElement } from './sessionhistory-list-element';
  * Payload for GET /1/object/sessionhistory/getList
  * @export
  */
-export type SessionhistoryGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload & SessionhistoryGetListV1ResponseMPayloadAllOf;
+export type SessionhistoryGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;
 
 
 /**
@@ -43,9 +40,9 @@ export type SessionhistoryGetListV1ResponseMPayload = CommonGetListV1ResponseMPa
  * @class DataObjectSessionhistoryGetListV1ResponseMPayload
  */
 export class DataObjectSessionhistoryGetListV1ResponseMPayload {
-    a_objSessionhistory:Array<SessionhistoryListElement> = []
     iRowReturned:number = 0
     iRowFiltered:number = 0
+    a_objSessionhistory:Array<SessionhistoryListElement> = []
 }
 
 /**
@@ -54,16 +51,16 @@ export class DataObjectSessionhistoryGetListV1ResponseMPayload {
  * @class ValidationObjectSessionhistoryGetListV1ResponseMPayload
  */
 export class ValidationObjectSessionhistoryGetListV1ResponseMPayload {
-   a_objSessionhistory = {
-      type: 'array',
-      required: true
-   }
    iRowReturned = {
       type: 'integer',
       required: true
    }
    iRowFiltered = {
       type: 'integer',
+      required: true
+   }
+   a_objSessionhistory = {
+      type: 'array',
       required: true
    }
 } 

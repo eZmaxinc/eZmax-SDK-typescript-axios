@@ -15,9 +15,6 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ApikeyGetCorsV1ResponseAllOf } from './apikey-get-cors-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { ApikeyGetCorsV1ResponseMPayload } from './apikey-get-cors-v1-response-mpayload';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -34,7 +31,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for GET /1/object/apikey/{pkiApikeyID}/getCors
  * @export
  */
-export type ApikeyGetCorsV1Response = ApikeyGetCorsV1ResponseAllOf & CommonResponse;
+export type ApikeyGetCorsV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type ApikeyGetCorsV1Response = ApikeyGetCorsV1ResponseAllOf & CommonRespo
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectApikeyGetCorsV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectApikeyGetCorsV1ResponseMPayload } from './'
+import { DataObjectApikeyGetCorsV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectApikeyGetCorsV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectApikeyGetCorsV1Response
  */
 export class DataObjectApikeyGetCorsV1Response {
-    mPayload:ApikeyGetCorsV1ResponseMPayload = new DataObjectApikeyGetCorsV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:ApikeyGetCorsV1ResponseMPayload = new DataObjectApikeyGetCorsV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectApikeyGetCorsV1Response {
  * @class ValidationObjectApikeyGetCorsV1Response
  */
 export class ValidationObjectApikeyGetCorsV1Response {
-   mPayload = new ValidationObjectApikeyGetCorsV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectApikeyGetCorsV1ResponseMPayload()
 } 
 
 

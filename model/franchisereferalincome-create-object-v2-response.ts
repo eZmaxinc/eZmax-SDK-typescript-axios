@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FranchisereferalincomeCreateObjectV2ResponseAllOf } from './franchisereferalincome-create-object-v2-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { FranchisereferalincomeCreateObjectV2ResponseMPayload } from './franchisereferalincome-create-object-v2-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { FranchisereferalincomeCreateObjectV2ResponseMPayload } from './franchis
  * Response for POST /2/object/franchisereferalincome
  * @export
  */
-export type FranchisereferalincomeCreateObjectV2Response = CommonResponse & FranchisereferalincomeCreateObjectV2ResponseAllOf;
+export type FranchisereferalincomeCreateObjectV2Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type FranchisereferalincomeCreateObjectV2Response = CommonResponse & Fran
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectFranchisereferalincomeCreateObjectV2ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectFranchisereferalincomeCreateObjectV2ResponseMPayload } from './'
+import { DataObjectFranchisereferalincomeCreateObjectV2ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectFranchisereferalincomeCreateObjectV2ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectFranchisereferalincomeCreateObjectV2Response
  */
 export class DataObjectFranchisereferalincomeCreateObjectV2Response {
-    mPayload:FranchisereferalincomeCreateObjectV2ResponseMPayload = new DataObjectFranchisereferalincomeCreateObjectV2ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:FranchisereferalincomeCreateObjectV2ResponseMPayload = new DataObjectFranchisereferalincomeCreateObjectV2ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectFranchisereferalincomeCreateObjectV2Response {
  * @class ValidationObjectFranchisereferalincomeCreateObjectV2Response
  */
 export class ValidationObjectFranchisereferalincomeCreateObjectV2Response {
-   mPayload = new ValidationObjectFranchisereferalincomeCreateObjectV2ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectFranchisereferalincomeCreateObjectV2ResponseMPayload()
 } 
 
 

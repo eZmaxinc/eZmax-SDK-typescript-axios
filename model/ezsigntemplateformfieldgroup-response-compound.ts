@@ -18,13 +18,13 @@
 import { CustomDropdownElementResponseCompound } from './custom-dropdown-element-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
+import { EnumTextvalidation } from './enum-textvalidation';
+// May contain unused imports in some cases
+// @ts-ignore
 import { EzsigntemplateformfieldResponseCompound } from './ezsigntemplateformfield-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
 import { EzsigntemplateformfieldgroupResponse } from './ezsigntemplateformfieldgroup-response';
-// May contain unused imports in some cases
-// @ts-ignore
-import { EzsigntemplateformfieldgroupResponseCompoundAllOf } from './ezsigntemplateformfieldgroup-response-compound-all-of';
 // May contain unused imports in some cases
 // @ts-ignore
 import { EzsigntemplateformfieldgroupsignerResponseCompound } from './ezsigntemplateformfieldgroupsigner-response-compound';
@@ -43,7 +43,7 @@ import { FieldEEzsigntemplateformfieldgroupType } from './field-eezsigntemplatef
  * A Ezsigntemplateformfieldgroup Object and children
  * @export
  */
-export type EzsigntemplateformfieldgroupResponseCompound = EzsigntemplateformfieldgroupResponse & EzsigntemplateformfieldgroupResponseCompoundAllOf;
+export type EzsigntemplateformfieldgroupResponseCompound = EzsigntemplateformfieldgroupResponse;
 
 
 
@@ -72,6 +72,7 @@ export class DataObjectEzsigntemplateformfieldgroupResponseCompound {
     iEzsigntemplateformfieldgroupMaxlength?:number = undefined
     bEzsigntemplateformfieldgroupEncrypted?:boolean = undefined
     sEzsigntemplateformfieldgroupRegexp?:string = undefined
+    eEzsigntemplateformfieldgroupTextvalidation?:EnumTextvalidation = undefined
     tEzsigntemplateformfieldgroupTooltip?:string = undefined
     eEzsigntemplateformfieldgroupTooltipposition?:FieldEEzsigntemplateformfieldgroupTooltipposition = undefined
     a_objEzsigntemplateformfieldgroupsigner:Array<EzsigntemplateformfieldgroupsignerResponseCompound> = []
@@ -135,6 +136,7 @@ export class ValidationObjectEzsigntemplateformfieldgroupResponseCompound {
    iEzsigntemplateformfieldgroupMaxlength = {
       type: 'integer',
       minimum: 0,
+      maximum: 65535,
       required: false
    }
    bEzsigntemplateformfieldgroupEncrypted = {
@@ -143,6 +145,11 @@ export class ValidationObjectEzsigntemplateformfieldgroupResponseCompound {
    }
    sEzsigntemplateformfieldgroupRegexp = {
       type: 'string',
+      required: false
+   }
+   eEzsigntemplateformfieldgroupTextvalidation = {
+      type: 'enum',
+      allowableValues: ['None','Date (YYYY-MM-DD)','Date (MM/DD/YYYY)','Date (MM/DD/YY)','Date (DD/MM/YYYY)','Date (DD/MM/YY)','Email','Letters','Numbers','Zip','Zip+4','PostalCode','Custom'],
       required: false
    }
    tEzsigntemplateformfieldgroupTooltip = {

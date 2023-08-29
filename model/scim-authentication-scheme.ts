@@ -82,8 +82,7 @@ export class ValidationObjectScimAuthenticationScheme {
       required: true
    }
    type = {
-      type: 'enum',
-      allowableValues: ['oauth','oauth2','oauthbearertoken','httpbasic','httpdigest'],
+      type: 'string',
       required: true
    }
 } 

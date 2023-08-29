@@ -13,18 +13,50 @@
  */
 
 
-// May contain unused imports in some cases
-// @ts-ignore
-import { CustomEzmaxinvoicingEzsignfolderResponseAllOf } from './custom-ezmaxinvoicing-ezsignfolder-response-all-of';
 
 /**
- * @type CustomEzmaxinvoicingEzsignfolderResponse
  * An EzmaxinvoicingEzsignfolder object containing information about the Ezmaxinvoicing for an Ezsignfolder
  * @export
+ * @interface CustomEzmaxinvoicingEzsignfolderResponse
  */
-export type CustomEzmaxinvoicingEzsignfolderResponse = CustomEzmaxinvoicingEzsignfolderResponseAllOf;
-
-
+export interface CustomEzmaxinvoicingEzsignfolderResponse {
+    /**
+     * The unique ID of the Ezsignfolder
+     * @type {number}
+     * @memberof CustomEzmaxinvoicingEzsignfolderResponse
+     */
+    'fkiEzsignfolderID': number;
+    /**
+     * The description of the Ezsignfolder
+     * @type {string}
+     * @memberof CustomEzmaxinvoicingEzsignfolderResponse
+     */
+    'sEzsignfolderDescription': string;
+    /**
+     * Whether the TSA requirement is billable or not
+     * @type {boolean}
+     * @memberof CustomEzmaxinvoicingEzsignfolderResponse
+     */
+    'bEzsigntsarequirementBillable': boolean;
+    /**
+     * Whether the MFA was used or not for the Ezsignfolder
+     * @type {boolean}
+     * @memberof CustomEzmaxinvoicingEzsignfolderResponse
+     */
+    'bEzsignfolderMfaused': boolean;
+    /**
+     * Whether there was a signature is of type payment
+     * @type {boolean}
+     * @memberof CustomEzmaxinvoicingEzsignfolderResponse
+     */
+    'bEzsignfolderPaymentused': boolean;
+    /**
+     * Whether you have access to the Ezsignfolder or not
+     * @type {boolean}
+     * @memberof CustomEzmaxinvoicingEzsignfolderResponse
+     */
+    'bEzsignfolderAllowed': boolean;
+}
 /**
  * @import
  * Imports Child Data Object
@@ -37,12 +69,12 @@ export type CustomEzmaxinvoicingEzsignfolderResponse = CustomEzmaxinvoicingEzsig
  * @class DataObjectCustomEzmaxinvoicingEzsignfolderResponse
  */
 export class DataObjectCustomEzmaxinvoicingEzsignfolderResponse {
-    fkiEzsignfolderID:number = 0
-    sEzsignfolderDescription:string = ''
-    bEzsigntsarequirementBillable:boolean = false
-    bEzsignfolderMfaused:boolean = false
-    bEzsignfolderPaymentused:boolean = false
-    bEzsignfolderAllowed:boolean = false
+   fkiEzsignfolderID:number = 0
+   sEzsignfolderDescription:string = ''
+   bEzsigntsarequirementBillable:boolean = false
+   bEzsignfolderMfaused:boolean = false
+   bEzsignfolderPaymentused:boolean = false
+   bEzsignfolderAllowed:boolean = false
 }
 
 /**

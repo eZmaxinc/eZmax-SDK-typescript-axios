@@ -18,9 +18,6 @@
 import { EzmaxinvoicingsummaryexternalResponse } from './ezmaxinvoicingsummaryexternal-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzmaxinvoicingsummaryexternalResponseCompoundAllOf } from './ezmaxinvoicingsummaryexternal-response-compound-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzmaxinvoicingsummaryexternaldetailResponseCompound } from './ezmaxinvoicingsummaryexternaldetail-response-compound';
 
 /**
@@ -28,7 +25,7 @@ import { EzmaxinvoicingsummaryexternaldetailResponseCompound } from './ezmaxinvo
  * A Ezmaxinvoicingsummaryexternal Object
  * @export
  */
-export type EzmaxinvoicingsummaryexternalResponseCompound = EzmaxinvoicingsummaryexternalResponse & EzmaxinvoicingsummaryexternalResponseCompoundAllOf;
+export type EzmaxinvoicingsummaryexternalResponseCompound = EzmaxinvoicingsummaryexternalResponse;
 
 
 /**

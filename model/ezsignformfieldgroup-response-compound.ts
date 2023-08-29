@@ -18,13 +18,13 @@
 import { CustomDropdownElementResponseCompound } from './custom-dropdown-element-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
+import { EnumTextvalidation } from './enum-textvalidation';
+// May contain unused imports in some cases
+// @ts-ignore
 import { EzsignformfieldResponseCompound } from './ezsignformfield-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
 import { EzsignformfieldgroupResponse } from './ezsignformfieldgroup-response';
-// May contain unused imports in some cases
-// @ts-ignore
-import { EzsignformfieldgroupResponseCompoundAllOf } from './ezsignformfieldgroup-response-compound-all-of';
 // May contain unused imports in some cases
 // @ts-ignore
 import { EzsignformfieldgroupsignerResponseCompound } from './ezsignformfieldgroupsigner-response-compound';
@@ -43,7 +43,7 @@ import { FieldEEzsignformfieldgroupType } from './field-eezsignformfieldgroup-ty
  * An Ezsignformfieldgroup Object and children to create a complete structure
  * @export
  */
-export type EzsignformfieldgroupResponseCompound = EzsignformfieldgroupResponse & EzsignformfieldgroupResponseCompoundAllOf;
+export type EzsignformfieldgroupResponseCompound = EzsignformfieldgroupResponse;
 
 
 
@@ -71,6 +71,7 @@ export class DataObjectEzsignformfieldgroupResponseCompound {
     bEzsignformfieldgroupReadonly:boolean = false
     iEzsignformfieldgroupMaxlength?:number = undefined
     bEzsignformfieldgroupEncrypted?:boolean = undefined
+    eEzsignformfieldgroupTextvalidation?:EnumTextvalidation = undefined
     sEzsignformfieldgroupRegexp?:string = undefined
     tEzsignformfieldgroupTooltip?:string = undefined
     eEzsignformfieldgroupTooltipposition?:FieldEEzsignformfieldgroupTooltipposition = undefined
@@ -135,10 +136,16 @@ export class ValidationObjectEzsignformfieldgroupResponseCompound {
    iEzsignformfieldgroupMaxlength = {
       type: 'integer',
       minimum: 0,
+      maximum: 65535,
       required: false
    }
    bEzsignformfieldgroupEncrypted = {
       type: 'boolean',
+      required: false
+   }
+   eEzsignformfieldgroupTextvalidation = {
+      type: 'enum',
+      allowableValues: ['None','Date (YYYY-MM-DD)','Date (MM/DD/YYYY)','Date (MM/DD/YY)','Date (DD/MM/YYYY)','Date (DD/MM/YY)','Email','Letters','Numbers','Zip','Zip+4','PostalCode','Custom'],
       required: false
    }
    sEzsignformfieldgroupRegexp = {

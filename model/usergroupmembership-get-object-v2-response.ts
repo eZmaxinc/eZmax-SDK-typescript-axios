@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { UsergroupmembershipGetObjectV2ResponseAllOf } from './usergroupmembership-get-object-v2-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { UsergroupmembershipGetObjectV2ResponseMPayload } from './usergroupmembership-get-object-v2-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { UsergroupmembershipGetObjectV2ResponseMPayload } from './usergroupmembe
  * Response for GET /2/object/usergroupmembership/{pkiUsergroupmembershipID}
  * @export
  */
-export type UsergroupmembershipGetObjectV2Response = CommonResponse & UsergroupmembershipGetObjectV2ResponseAllOf;
+export type UsergroupmembershipGetObjectV2Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type UsergroupmembershipGetObjectV2Response = CommonResponse & Usergroupm
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectUsergroupmembershipGetObjectV2ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectUsergroupmembershipGetObjectV2ResponseMPayload } from './'
+import { DataObjectUsergroupmembershipGetObjectV2ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectUsergroupmembershipGetObjectV2ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectUsergroupmembershipGetObjectV2Response
  */
 export class DataObjectUsergroupmembershipGetObjectV2Response {
-    mPayload:UsergroupmembershipGetObjectV2ResponseMPayload = new DataObjectUsergroupmembershipGetObjectV2ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:UsergroupmembershipGetObjectV2ResponseMPayload = new DataObjectUsergroupmembershipGetObjectV2ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectUsergroupmembershipGetObjectV2Response {
  * @class ValidationObjectUsergroupmembershipGetObjectV2Response
  */
 export class ValidationObjectUsergroupmembershipGetObjectV2Response {
-   mPayload = new ValidationObjectUsergroupmembershipGetObjectV2ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectUsergroupmembershipGetObjectV2ResponseMPayload()
 } 
 
 

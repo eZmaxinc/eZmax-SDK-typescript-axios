@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignfolderGetCommunicationCountV1ResponseAllOf } from './ezsignfolder-get-communication-count-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsignfolderGetCommunicationCountV1ResponseMPayload } from './ezsignfolder-get-communication-count-v1-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { EzsignfolderGetCommunicationCountV1ResponseMPayload } from './ezsignfol
  * Response for GET /1/object/ezsignfolder/{pkiEzsignfolderID}/getCommunicationCount
  * @export
  */
-export type EzsignfolderGetCommunicationCountV1Response = CommonResponse & EzsignfolderGetCommunicationCountV1ResponseAllOf;
+export type EzsignfolderGetCommunicationCountV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type EzsignfolderGetCommunicationCountV1Response = CommonResponse & Ezsig
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectEzsignfolderGetCommunicationCountV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectEzsignfolderGetCommunicationCountV1ResponseMPayload } from './'
+import { DataObjectEzsignfolderGetCommunicationCountV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsignfolderGetCommunicationCountV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectEzsignfolderGetCommunicationCountV1Response
  */
 export class DataObjectEzsignfolderGetCommunicationCountV1Response {
-    mPayload:EzsignfolderGetCommunicationCountV1ResponseMPayload = new DataObjectEzsignfolderGetCommunicationCountV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:EzsignfolderGetCommunicationCountV1ResponseMPayload = new DataObjectEzsignfolderGetCommunicationCountV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectEzsignfolderGetCommunicationCountV1Response {
  * @class ValidationObjectEzsignfolderGetCommunicationCountV1Response
  */
 export class ValidationObjectEzsignfolderGetCommunicationCountV1Response {
-   mPayload = new ValidationObjectEzsignfolderGetCommunicationCountV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectEzsignfolderGetCommunicationCountV1ResponseMPayload()
 } 
 
 

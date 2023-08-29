@@ -25,16 +25,13 @@ import { FieldEWebhookModule } from './field-ewebhook-module';
 // May contain unused imports in some cases
 // @ts-ignore
 import { WebhookResponse } from './webhook-response';
-// May contain unused imports in some cases
-// @ts-ignore
-import { WebhookResponseCompoundAllOf } from './webhook-response-compound-all-of';
 
 /**
  * @type WebhookResponseCompound
  * A Webhook Object
  * @export
  */
-export type WebhookResponseCompound = WebhookResponse & WebhookResponseCompoundAllOf;
+export type WebhookResponseCompound = WebhookResponse;
 
 
 

@@ -13,18 +13,44 @@
  */
 
 
-// May contain unused imports in some cases
-// @ts-ignore
-import { CustomEzmaxinvoicingEzsigndocumentResponseAllOf } from './custom-ezmaxinvoicing-ezsigndocument-response-all-of';
 
 /**
- * @type CustomEzmaxinvoicingEzsigndocumentResponse
  * An EzmaxinvoicingEzsigndocument object containing information about the Ezmaxinvoicing for an Ezsigndocument
  * @export
+ * @interface CustomEzmaxinvoicingEzsigndocumentResponse
  */
-export type CustomEzmaxinvoicingEzsigndocumentResponse = CustomEzmaxinvoicingEzsigndocumentResponseAllOf;
-
-
+export interface CustomEzmaxinvoicingEzsigndocumentResponse {
+    /**
+     * The unique ID of the Ezsignfolder
+     * @type {number}
+     * @memberof CustomEzmaxinvoicingEzsigndocumentResponse
+     */
+    'fkiEzsignfolderID': number;
+    /**
+     * 
+     * @type {string}
+     * @memberof CustomEzmaxinvoicingEzsigndocumentResponse
+     */
+    'sName': string;
+    /**
+     * The description of the Ezsignfolder
+     * @type {string}
+     * @memberof CustomEzmaxinvoicingEzsigndocumentResponse
+     */
+    'sEzsignfolderDescription': string;
+    /**
+     * The name of the document that will be presented to Ezsignfoldersignerassociations
+     * @type {string}
+     * @memberof CustomEzmaxinvoicingEzsigndocumentResponse
+     */
+    'sEzsigndocumentName': string;
+    /**
+     * Whether you have access to the Ezsignfolder or not
+     * @type {boolean}
+     * @memberof CustomEzmaxinvoicingEzsigndocumentResponse
+     */
+    'bEzsignfolderAllowed': boolean;
+}
 /**
  * @import
  * Imports Child Data Object
@@ -37,11 +63,11 @@ export type CustomEzmaxinvoicingEzsigndocumentResponse = CustomEzmaxinvoicingEzs
  * @class DataObjectCustomEzmaxinvoicingEzsigndocumentResponse
  */
 export class DataObjectCustomEzmaxinvoicingEzsigndocumentResponse {
-    fkiEzsignfolderID:number = 0
-    sName:string = ''
-    sEzsignfolderDescription:string = ''
-    sEzsigndocumentName:string = ''
-    bEzsignfolderAllowed:boolean = false
+   fkiEzsignfolderID:number = 0
+   sName:string = ''
+   sEzsignfolderDescription:string = ''
+   sEzsigndocumentName:string = ''
+   bEzsignfolderAllowed:boolean = false
 }
 
 /**

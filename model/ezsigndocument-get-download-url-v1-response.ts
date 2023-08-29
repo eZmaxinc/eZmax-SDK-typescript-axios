@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigndocumentGetDownloadUrlV1ResponseAllOf } from './ezsigndocument-get-download-url-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsigndocumentGetDownloadUrlV1ResponseMPayload } from './ezsigndocument-get-download-url-v1-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { EzsigndocumentGetDownloadUrlV1ResponseMPayload } from './ezsigndocument
  * Response for GET /1/object/ezsigndocument/{pkiEzsigndocument}/getDownloadUrl
  * @export
  */
-export type EzsigndocumentGetDownloadUrlV1Response = CommonResponse & EzsigndocumentGetDownloadUrlV1ResponseAllOf;
+export type EzsigndocumentGetDownloadUrlV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type EzsigndocumentGetDownloadUrlV1Response = CommonResponse & Ezsigndocu
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectEzsigndocumentGetDownloadUrlV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectEzsigndocumentGetDownloadUrlV1ResponseMPayload } from './'
+import { DataObjectEzsigndocumentGetDownloadUrlV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsigndocumentGetDownloadUrlV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectEzsigndocumentGetDownloadUrlV1Response
  */
 export class DataObjectEzsigndocumentGetDownloadUrlV1Response {
-    mPayload:EzsigndocumentGetDownloadUrlV1ResponseMPayload = new DataObjectEzsigndocumentGetDownloadUrlV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:EzsigndocumentGetDownloadUrlV1ResponseMPayload = new DataObjectEzsigndocumentGetDownloadUrlV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectEzsigndocumentGetDownloadUrlV1Response {
  * @class ValidationObjectEzsigndocumentGetDownloadUrlV1Response
  */
 export class ValidationObjectEzsigndocumentGetDownloadUrlV1Response {
-   mPayload = new ValidationObjectEzsigndocumentGetDownloadUrlV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectEzsigndocumentGetDownloadUrlV1ResponseMPayload()
 } 
 
 

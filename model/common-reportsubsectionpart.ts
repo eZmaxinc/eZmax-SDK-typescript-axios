@@ -68,8 +68,7 @@ export class DataObjectCommonReportsubsectionpart {
  */
 export class ValidationObjectCommonReportsubsectionpart {
    eReportsubsectionpartType = {
-      type: 'enum',
-      allowableValues: ['Header','Body','Footer'],
+      type: 'string',
       required: true
    }
    a_objReportrow = {

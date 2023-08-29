@@ -13,18 +13,26 @@
  */
 
 
-// May contain unused imports in some cases
-// @ts-ignore
-import { CustomEzsignformfielderrortestResponseAllOf } from './custom-ezsignformfielderrortest-response-all-of';
 
 /**
- * @type CustomEzsignformfielderrortestResponse
  * A Custom Ezsignformfielderrortest Object to contain the detail of the test error
  * @export
+ * @interface CustomEzsignformfielderrortestResponse
  */
-export type CustomEzsignformfielderrortestResponse = CustomEzsignformfielderrortestResponseAllOf;
-
-
+export interface CustomEzsignformfielderrortestResponse {
+    /**
+     * The name of the test
+     * @type {string}
+     * @memberof CustomEzsignformfielderrortestResponse
+     */
+    'sEzsignformfielderrortestName': string;
+    /**
+     * The detail why the test failed
+     * @type {string}
+     * @memberof CustomEzsignformfielderrortestResponse
+     */
+    'sEzsignformfielderrortestDetail': string;
+}
 /**
  * @import
  * Imports Child Data Object
@@ -37,8 +45,8 @@ export type CustomEzsignformfielderrortestResponse = CustomEzsignformfielderrort
  * @class DataObjectCustomEzsignformfielderrortestResponse
  */
 export class DataObjectCustomEzsignformfielderrortestResponse {
-    sEzsignformfielderrortestName:string = ''
-    sEzsignformfielderrortestDetail:string = ''
+   sEzsignformfielderrortestName:string = ''
+   sEzsignformfielderrortestDetail:string = ''
 }
 
 /**
@@ -54,7 +62,7 @@ export class ValidationObjectCustomEzsignformfielderrortestResponse {
    }
    sEzsignformfielderrortestDetail = {
       type: 'string',
-      pattern: '/^.{0,100}$/',
+      pattern: '/^.{0,255}$/',
       required: true
    }
 } 

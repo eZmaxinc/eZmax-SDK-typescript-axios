@@ -15,19 +15,27 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomEzsignformfielderrorResponseAllOf } from './custom-ezsignformfielderror-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { CustomEzsignformfielderrortestResponse } from './custom-ezsignformfielderrortest-response';
 
 /**
- * @type CustomEzsignformfielderrorResponse
  * A Custom Ezsignformfield Object to contain an error list
  * @export
+ * @interface CustomEzsignformfielderrorResponse
  */
-export type CustomEzsignformfielderrorResponse = CustomEzsignformfielderrorResponseAllOf;
-
-
+export interface CustomEzsignformfielderrorResponse {
+    /**
+     * The Label for the Ezsignformfield
+     * @type {string}
+     * @memberof CustomEzsignformfielderrorResponse
+     */
+    'sEzsignformfieldLabel': string;
+    /**
+     * 
+     * @type {Array<CustomEzsignformfielderrortestResponse>}
+     * @memberof CustomEzsignformfielderrorResponse
+     */
+    'a_objEzsignformfielderrortest': Array<CustomEzsignformfielderrortestResponse>;
+}
 /**
  * @import
  * Imports Child Data Object
@@ -40,8 +48,8 @@ export type CustomEzsignformfielderrorResponse = CustomEzsignformfielderrorRespo
  * @class DataObjectCustomEzsignformfielderrorResponse
  */
 export class DataObjectCustomEzsignformfielderrorResponse {
-    sEzsignformfieldLabel:string = ''
-    a_objEzsignformfielderrortest:Array<CustomEzsignformfielderrortestResponse> = []
+   sEzsignformfieldLabel:string = ''
+   a_objEzsignformfielderrortest:Array<CustomEzsignformfielderrortestResponse> = []
 }
 
 /**

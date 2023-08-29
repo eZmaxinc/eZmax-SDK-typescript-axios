@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CorsCreateObjectV1ResponseAllOf } from './cors-create-object-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { CorsCreateObjectV1ResponseMPayload } from './cors-create-object-v1-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { CorsCreateObjectV1ResponseMPayload } from './cors-create-object-v1-resp
  * Response for POST /1/object/cors
  * @export
  */
-export type CorsCreateObjectV1Response = CommonResponse & CorsCreateObjectV1ResponseAllOf;
+export type CorsCreateObjectV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type CorsCreateObjectV1Response = CommonResponse & CorsCreateObjectV1Resp
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCorsCreateObjectV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectCorsCreateObjectV1ResponseMPayload } from './'
+import { DataObjectCorsCreateObjectV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectCorsCreateObjectV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectCorsCreateObjectV1Response
  */
 export class DataObjectCorsCreateObjectV1Response {
-    mPayload:CorsCreateObjectV1ResponseMPayload = new DataObjectCorsCreateObjectV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:CorsCreateObjectV1ResponseMPayload = new DataObjectCorsCreateObjectV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectCorsCreateObjectV1Response {
  * @class ValidationObjectCorsCreateObjectV1Response
  */
 export class ValidationObjectCorsCreateObjectV1Response {
-   mPayload = new ValidationObjectCorsCreateObjectV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectCorsCreateObjectV1ResponseMPayload()
 } 
 
 

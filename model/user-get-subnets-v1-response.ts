@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { UserGetSubnetsV1ResponseAllOf } from './user-get-subnets-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { UserGetSubnetsV1ResponseMPayload } from './user-get-subnets-v1-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { UserGetSubnetsV1ResponseMPayload } from './user-get-subnets-v1-response
  * Response for GET /1/object/user/{pkiUserID}/getSubnets
  * @export
  */
-export type UserGetSubnetsV1Response = CommonResponse & UserGetSubnetsV1ResponseAllOf;
+export type UserGetSubnetsV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type UserGetSubnetsV1Response = CommonResponse & UserGetSubnetsV1Response
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectUserGetSubnetsV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectUserGetSubnetsV1ResponseMPayload } from './'
+import { DataObjectUserGetSubnetsV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectUserGetSubnetsV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectUserGetSubnetsV1Response
  */
 export class DataObjectUserGetSubnetsV1Response {
-    mPayload:UserGetSubnetsV1ResponseMPayload = new DataObjectUserGetSubnetsV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:UserGetSubnetsV1ResponseMPayload = new DataObjectUserGetSubnetsV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectUserGetSubnetsV1Response {
  * @class ValidationObjectUserGetSubnetsV1Response
  */
 export class ValidationObjectUserGetSubnetsV1Response {
-   mPayload = new ValidationObjectUserGetSubnetsV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectUserGetSubnetsV1ResponseMPayload()
 } 
 
 

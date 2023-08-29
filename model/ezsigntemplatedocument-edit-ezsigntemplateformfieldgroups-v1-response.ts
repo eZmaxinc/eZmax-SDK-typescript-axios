@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1ResponseAllOf } from './ezsigntemplatedocument-edit-ezsigntemplateformfieldgroups-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1ResponseMPayload } from './ezsigntemplatedocument-edit-ezsigntemplateformfieldgroups-v1-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1ResponseMPaylo
  * Response for PUT /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/editEzsigntemplateformfieldgroups
  * @export
  */
-export type EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Response = CommonResponse & EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1ResponseAllOf;
+export type EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Response = 
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectEzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectEzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1ResponseMPayload } from './'
+import { DataObjectEzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectEzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Response
  */
 export class DataObjectEzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Response {
-    mPayload:EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1ResponseMPayload = new DataObjectEzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1ResponseMPayload = new DataObjectEzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectEzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1
  * @class ValidationObjectEzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Response
  */
 export class ValidationObjectEzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Response {
-   mPayload = new ValidationObjectEzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectEzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1ResponseMPayload()
 } 
 
 

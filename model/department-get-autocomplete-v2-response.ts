@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { DepartmentGetAutocompleteV2ResponseAllOf } from './department-get-autocomplete-v2-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { DepartmentGetAutocompleteV2ResponseMPayload } from './department-get-autocomplete-v2-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { DepartmentGetAutocompleteV2ResponseMPayload } from './department-get-au
  * Response for GET /2/object/department/getAutocomplete
  * @export
  */
-export type DepartmentGetAutocompleteV2Response = CommonResponse & DepartmentGetAutocompleteV2ResponseAllOf;
+export type DepartmentGetAutocompleteV2Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type DepartmentGetAutocompleteV2Response = CommonResponse & DepartmentGet
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectDepartmentGetAutocompleteV2ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectDepartmentGetAutocompleteV2ResponseMPayload } from './'
+import { DataObjectDepartmentGetAutocompleteV2ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectDepartmentGetAutocompleteV2ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectDepartmentGetAutocompleteV2Response
  */
 export class DataObjectDepartmentGetAutocompleteV2Response {
-    mPayload:DepartmentGetAutocompleteV2ResponseMPayload = new DataObjectDepartmentGetAutocompleteV2ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:DepartmentGetAutocompleteV2ResponseMPayload = new DataObjectDepartmentGetAutocompleteV2ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectDepartmentGetAutocompleteV2Response {
  * @class ValidationObjectDepartmentGetAutocompleteV2Response
  */
 export class ValidationObjectDepartmentGetAutocompleteV2Response {
-   mPayload = new ValidationObjectDepartmentGetAutocompleteV2ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectDepartmentGetAutocompleteV2ResponseMPayload()
 } 
 
 

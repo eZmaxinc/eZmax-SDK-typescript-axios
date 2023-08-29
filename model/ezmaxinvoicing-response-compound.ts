@@ -30,9 +30,6 @@ import { CustomEzmaxpricingResponse } from './custom-ezmaxpricing-response';
 import { EzmaxinvoicingResponse } from './ezmaxinvoicing-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzmaxinvoicingResponseCompoundAllOf } from './ezmaxinvoicing-response-compound-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzmaxinvoicingagentResponseCompound } from './ezmaxinvoicingagent-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -58,7 +55,7 @@ import { FieldEEzmaxinvoicingPaymenttype } from './field-eezmaxinvoicing-payment
  * A Ezmaxinvoicing Object
  * @export
  */
-export type EzmaxinvoicingResponseCompound = EzmaxinvoicingResponse & EzmaxinvoicingResponseCompoundAllOf;
+export type EzmaxinvoicingResponseCompound = EzmaxinvoicingResponse;
 
 
 

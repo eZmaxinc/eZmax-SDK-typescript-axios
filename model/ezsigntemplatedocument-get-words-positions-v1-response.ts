@@ -25,16 +25,13 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
 // May contain unused imports in some cases
 // @ts-ignore
 import { CustomWordPositionWordResponse } from './custom-word-position-word-response';
-// May contain unused imports in some cases
-// @ts-ignore
-import { EzsigntemplatedocumentGetWordsPositionsV1ResponseAllOf } from './ezsigntemplatedocument-get-words-positions-v1-response-all-of';
 
 /**
  * @type EzsigntemplatedocumentGetWordsPositionsV1Response
  * Response for POST /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getWordsPositions
  * @export
  */
-export type EzsigntemplatedocumentGetWordsPositionsV1Response = CommonResponse & EzsigntemplatedocumentGetWordsPositionsV1ResponseAllOf;
+export type EzsigntemplatedocumentGetWordsPositionsV1Response = CommonResponse;
 
 
 /**
@@ -57,9 +54,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectEzsigntemplatedocumentGetWordsPositionsV1Response
  */
 export class DataObjectEzsigntemplatedocumentGetWordsPositionsV1Response {
-    mPayload:Array<CustomWordPositionWordResponse> = []
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:Array<CustomWordPositionWordResponse> = []
 }
 
 /**
@@ -68,12 +65,12 @@ export class DataObjectEzsigntemplatedocumentGetWordsPositionsV1Response {
  * @class ValidationObjectEzsigntemplatedocumentGetWordsPositionsV1Response
  */
 export class ValidationObjectEzsigntemplatedocumentGetWordsPositionsV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = {
       type: 'array',
       required: true
    }
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
 } 
 
 

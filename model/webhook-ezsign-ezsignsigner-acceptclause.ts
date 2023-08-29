@@ -28,16 +28,13 @@ import { EzsignfolderResponse } from './ezsignfolder-response';
 // May contain unused imports in some cases
 // @ts-ignore
 import { EzsignfoldersignerassociationResponseCompound } from './ezsignfoldersignerassociation-response-compound';
-// May contain unused imports in some cases
-// @ts-ignore
-import { WebhookEzsignEzsignsignerAcceptclauseAllOf } from './webhook-ezsign-ezsignsigner-acceptclause-all-of';
 
 /**
  * @type WebhookEzsignEzsignsignerAcceptclause
  * This is the base Webhook object
  * @export
  */
-export type WebhookEzsignEzsignsignerAcceptclause = CommonWebhook & WebhookEzsignEzsignsignerAcceptclauseAllOf;
+export type WebhookEzsignEzsignsignerAcceptclause = CommonWebhook;
 
 
 /**
@@ -45,17 +42,17 @@ export type WebhookEzsignEzsignsignerAcceptclause = CommonWebhook & WebhookEzsig
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCustomWebhookResponse } from './'
+// @ts-ignore
 import { DataObjectEzsignfolderResponse } from './'
 // @ts-ignore
 import { DataObjectEzsignfoldersignerassociationResponseCompound } from './'
 // @ts-ignore
-import { DataObjectCustomWebhookResponse } from './'
+import { ValidationObjectCustomWebhookResponse } from './'
 // @ts-ignore
 import { ValidationObjectEzsignfolderResponse } from './'
 // @ts-ignore
 import { ValidationObjectEzsignfoldersignerassociationResponseCompound } from './'
-// @ts-ignore
-import { ValidationObjectCustomWebhookResponse } from './'
 
 /**
  * @export 
@@ -64,10 +61,10 @@ import { ValidationObjectCustomWebhookResponse } from './'
  * @class DataObjectWebhookEzsignEzsignsignerAcceptclause
  */
 export class DataObjectWebhookEzsignEzsignsignerAcceptclause {
-    objEzsignfolder?:EzsignfolderResponse = undefined
-    objEzsignfoldersignerassociation:EzsignfoldersignerassociationResponseCompound = new DataObjectEzsignfoldersignerassociationResponseCompound()
     objWebhook:CustomWebhookResponse = new DataObjectCustomWebhookResponse()
     a_objAttempt:Array<AttemptResponseCompound> = []
+    objEzsignfolder?:EzsignfolderResponse = undefined
+    objEzsignfoldersignerassociation:EzsignfoldersignerassociationResponseCompound = new DataObjectEzsignfoldersignerassociationResponseCompound()
 }
 
 /**
@@ -76,13 +73,13 @@ export class DataObjectWebhookEzsignEzsignsignerAcceptclause {
  * @class ValidationObjectWebhookEzsignEzsignsignerAcceptclause
  */
 export class ValidationObjectWebhookEzsignEzsignsignerAcceptclause {
-   objEzsignfolder = new ValidationObjectEzsignfolderResponse()
-   objEzsignfoldersignerassociation = new ValidationObjectEzsignfoldersignerassociationResponseCompound()
    objWebhook = new ValidationObjectCustomWebhookResponse()
    a_objAttempt = {
       type: 'array',
       required: true
    }
+   objEzsignfolder = new ValidationObjectEzsignfolderResponse()
+   objEzsignfoldersignerassociation = new ValidationObjectEzsignfoldersignerassociationResponseCompound()
 } 
 
 

@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { UserstagedCreateUserV1ResponseAllOf } from './userstaged-create-user-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { UserstagedCreateUserV1ResponseMPayload } from './userstaged-create-user-v1-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { UserstagedCreateUserV1ResponseMPayload } from './userstaged-create-user
  * Response for POST /1/object/userstaged/{pkiUserstagedID}/createUser
  * @export
  */
-export type UserstagedCreateUserV1Response = CommonResponse & UserstagedCreateUserV1ResponseAllOf;
+export type UserstagedCreateUserV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type UserstagedCreateUserV1Response = CommonResponse & UserstagedCreateUs
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectUserstagedCreateUserV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectUserstagedCreateUserV1ResponseMPayload } from './'
+import { DataObjectUserstagedCreateUserV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectUserstagedCreateUserV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectUserstagedCreateUserV1Response
  */
 export class DataObjectUserstagedCreateUserV1Response {
-    mPayload:UserstagedCreateUserV1ResponseMPayload = new DataObjectUserstagedCreateUserV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:UserstagedCreateUserV1ResponseMPayload = new DataObjectUserstagedCreateUserV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectUserstagedCreateUserV1Response {
  * @class ValidationObjectUserstagedCreateUserV1Response
  */
 export class ValidationObjectUserstagedCreateUserV1Response {
-   mPayload = new ValidationObjectUserstagedCreateUserV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectUserstagedCreateUserV1ResponseMPayload()
 } 
 
 

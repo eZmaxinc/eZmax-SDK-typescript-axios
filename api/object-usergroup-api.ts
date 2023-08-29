@@ -38,6 +38,10 @@ import { UsergroupEditPermissionsV1Request } from '../model';
 // @ts-ignore
 import { UsergroupEditPermissionsV1Response } from '../model';
 // @ts-ignore
+import { UsergroupEditUsergroupdelegationsV1Request } from '../model';
+// @ts-ignore
+import { UsergroupEditUsergroupdelegationsV1Response } from '../model';
+// @ts-ignore
 import { UsergroupEditUsergroupmembershipsV1Request } from '../model';
 // @ts-ignore
 import { UsergroupEditUsergroupmembershipsV1Response } from '../model';
@@ -49,6 +53,8 @@ import { UsergroupGetListV1Response } from '../model';
 import { UsergroupGetObjectV2Response } from '../model';
 // @ts-ignore
 import { UsergroupGetPermissionsV1Response } from '../model';
+// @ts-ignore
+import { UsergroupGetUsergroupdelegationsV1Response } from '../model';
 // @ts-ignore
 import { UsergroupGetUsergroupmembershipsV1Response } from '../model';
 // @ts-ignore
@@ -219,6 +225,68 @@ export const ObjectUsergroupApiAxiosParamCreator = function (configuration?: Con
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(usergroupEditPermissionsV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'PUT' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Edit multiple Usergroupdelegations
+         * @summary Edit multiple Usergroupdelegations
+         * @param {number} pkiUsergroupID 
+         * @param {UsergroupEditUsergroupdelegationsV1Request} usergroupEditUsergroupdelegationsV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        usergroupEditUsergroupdelegationsV1: async (pkiUsergroupID: number, usergroupEditUsergroupdelegationsV1Request: UsergroupEditUsergroupdelegationsV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiUsergroupID' is not null or undefined
+            assertParamExists('usergroupEditUsergroupdelegationsV1', 'pkiUsergroupID', pkiUsergroupID)
+            // verify required parameter 'usergroupEditUsergroupdelegationsV1Request' is not null or undefined
+            assertParamExists('usergroupEditUsergroupdelegationsV1', 'usergroupEditUsergroupdelegationsV1Request', usergroupEditUsergroupdelegationsV1Request)
+            const localVarPath = `/1/object/usergroup/{pkiUsergroupID}/editUsergroupdelegations`
+                .replace(`{${"pkiUsergroupID"}}`, encodeURIComponent(String(pkiUsergroupID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(usergroupEditUsergroupdelegationsV1Request, localVarRequestOptions, configuration)
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -569,6 +637,62 @@ export const ObjectUsergroupApiAxiosParamCreator = function (configuration?: Con
         },
         /**
          * 
+         * @summary Retrieve an existing Usergroup\'s Usergroupdelegations
+         * @param {number} pkiUsergroupID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        usergroupGetUsergroupdelegationsV1: async (pkiUsergroupID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiUsergroupID' is not null or undefined
+            assertParamExists('usergroupGetUsergroupdelegationsV1', 'pkiUsergroupID', pkiUsergroupID)
+            const localVarPath = `/1/object/usergroup/{pkiUsergroupID}/getUsergroupdelegations`
+                .replace(`{${"pkiUsergroupID"}}`, encodeURIComponent(String(pkiUsergroupID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Retrieve an existing Usergroup\'s Usergroupmemberships
          * @param {number} pkiUsergroupID 
          * @param {*} [options] Override http request option.
@@ -669,6 +793,18 @@ export const ObjectUsergroupApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
+         * Edit multiple Usergroupdelegations
+         * @summary Edit multiple Usergroupdelegations
+         * @param {number} pkiUsergroupID 
+         * @param {UsergroupEditUsergroupdelegationsV1Request} usergroupEditUsergroupdelegationsV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async usergroupEditUsergroupdelegationsV1(pkiUsergroupID: number, usergroupEditUsergroupdelegationsV1Request: UsergroupEditUsergroupdelegationsV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupEditUsergroupdelegationsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.usergroupEditUsergroupdelegationsV1(pkiUsergroupID, usergroupEditUsergroupdelegationsV1Request, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
          * Using this endpoint, you can edit multiple Usergroupmemberships at the same time.
          * @summary Edit multiple Usergroupmemberships
          * @param {number} pkiUsergroupID 
@@ -733,6 +869,17 @@ export const ObjectUsergroupApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Retrieve an existing Usergroup\'s Usergroupdelegations
+         * @param {number} pkiUsergroupID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async usergroupGetUsergroupdelegationsV1(pkiUsergroupID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupGetUsergroupdelegationsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.usergroupGetUsergroupdelegationsV1(pkiUsergroupID, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
          * @summary Retrieve an existing Usergroup\'s Usergroupmemberships
          * @param {number} pkiUsergroupID 
          * @param {*} [options] Override http request option.
@@ -783,6 +930,17 @@ export const ObjectUsergroupApiFactory = function (configuration?: Configuration
          */
         usergroupEditPermissionsV1(pkiUsergroupID: number, usergroupEditPermissionsV1Request: UsergroupEditPermissionsV1Request, options?: any): AxiosPromise<UsergroupEditPermissionsV1Response> {
             return localVarFp.usergroupEditPermissionsV1(pkiUsergroupID, usergroupEditPermissionsV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Edit multiple Usergroupdelegations
+         * @summary Edit multiple Usergroupdelegations
+         * @param {number} pkiUsergroupID 
+         * @param {UsergroupEditUsergroupdelegationsV1Request} usergroupEditUsergroupdelegationsV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        usergroupEditUsergroupdelegationsV1(pkiUsergroupID: number, usergroupEditUsergroupdelegationsV1Request: UsergroupEditUsergroupdelegationsV1Request, options?: any): AxiosPromise<UsergroupEditUsergroupdelegationsV1Response> {
+            return localVarFp.usergroupEditUsergroupdelegationsV1(pkiUsergroupID, usergroupEditUsergroupdelegationsV1Request, options).then((request) => request(axios, basePath));
         },
         /**
          * Using this endpoint, you can edit multiple Usergroupmemberships at the same time.
@@ -844,6 +1002,16 @@ export const ObjectUsergroupApiFactory = function (configuration?: Configuration
         },
         /**
          * 
+         * @summary Retrieve an existing Usergroup\'s Usergroupdelegations
+         * @param {number} pkiUsergroupID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        usergroupGetUsergroupdelegationsV1(pkiUsergroupID: number, options?: any): AxiosPromise<UsergroupGetUsergroupdelegationsV1Response> {
+            return localVarFp.usergroupGetUsergroupdelegationsV1(pkiUsergroupID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Retrieve an existing Usergroup\'s Usergroupmemberships
          * @param {number} pkiUsergroupID 
          * @param {*} [options] Override http request option.
@@ -898,6 +1066,19 @@ export class ObjectUsergroupApi extends BaseAPI {
      */
     public usergroupEditPermissionsV1(pkiUsergroupID: number, usergroupEditPermissionsV1Request: UsergroupEditPermissionsV1Request, options?: AxiosRequestConfig) {
         return ObjectUsergroupApiFp(this.configuration).usergroupEditPermissionsV1(pkiUsergroupID, usergroupEditPermissionsV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Edit multiple Usergroupdelegations
+     * @summary Edit multiple Usergroupdelegations
+     * @param {number} pkiUsergroupID 
+     * @param {UsergroupEditUsergroupdelegationsV1Request} usergroupEditUsergroupdelegationsV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectUsergroupApi
+     */
+    public usergroupEditUsergroupdelegationsV1(pkiUsergroupID: number, usergroupEditUsergroupdelegationsV1Request: UsergroupEditUsergroupdelegationsV1Request, options?: AxiosRequestConfig) {
+        return ObjectUsergroupApiFp(this.configuration).usergroupEditUsergroupdelegationsV1(pkiUsergroupID, usergroupEditUsergroupdelegationsV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -966,6 +1147,18 @@ export class ObjectUsergroupApi extends BaseAPI {
      */
     public usergroupGetPermissionsV1(pkiUsergroupID: number, options?: AxiosRequestConfig) {
         return ObjectUsergroupApiFp(this.configuration).usergroupGetPermissionsV1(pkiUsergroupID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve an existing Usergroup\'s Usergroupdelegations
+     * @param {number} pkiUsergroupID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectUsergroupApi
+     */
+    public usergroupGetUsergroupdelegationsV1(pkiUsergroupID: number, options?: AxiosRequestConfig) {
+        return ObjectUsergroupApiFp(this.configuration).usergroupGetUsergroupdelegationsV1(pkiUsergroupID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

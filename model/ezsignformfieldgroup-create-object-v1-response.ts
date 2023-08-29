@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignformfieldgroupCreateObjectV1ResponseAllOf } from './ezsignformfieldgroup-create-object-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsignformfieldgroupCreateObjectV1ResponseMPayload } from './ezsignformfieldgroup-create-object-v1-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { EzsignformfieldgroupCreateObjectV1ResponseMPayload } from './ezsignform
  * Response for POST /1/object/ezsignformfieldgroup
  * @export
  */
-export type EzsignformfieldgroupCreateObjectV1Response = CommonResponse & EzsignformfieldgroupCreateObjectV1ResponseAllOf;
+export type EzsignformfieldgroupCreateObjectV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type EzsignformfieldgroupCreateObjectV1Response = CommonResponse & Ezsign
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectEzsignformfieldgroupCreateObjectV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectEzsignformfieldgroupCreateObjectV1ResponseMPayload } from './'
+import { DataObjectEzsignformfieldgroupCreateObjectV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsignformfieldgroupCreateObjectV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectEzsignformfieldgroupCreateObjectV1Response
  */
 export class DataObjectEzsignformfieldgroupCreateObjectV1Response {
-    mPayload:EzsignformfieldgroupCreateObjectV1ResponseMPayload = new DataObjectEzsignformfieldgroupCreateObjectV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:EzsignformfieldgroupCreateObjectV1ResponseMPayload = new DataObjectEzsignformfieldgroupCreateObjectV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectEzsignformfieldgroupCreateObjectV1Response {
  * @class ValidationObjectEzsignformfieldgroupCreateObjectV1Response
  */
 export class ValidationObjectEzsignformfieldgroupCreateObjectV1Response {
-   mPayload = new ValidationObjectEzsignformfieldgroupCreateObjectV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectEzsignformfieldgroupCreateObjectV1ResponseMPayload()
 } 
 
 

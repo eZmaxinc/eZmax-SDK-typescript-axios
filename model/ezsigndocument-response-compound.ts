@@ -18,13 +18,13 @@
 import { CommonAudit } from './common-audit';
 // May contain unused imports in some cases
 // @ts-ignore
+import { ComputedEEzsigndocumentSteptype } from './computed-eezsigndocument-steptype';
+// May contain unused imports in some cases
+// @ts-ignore
 import { CustomEzsignfoldersignerassociationstatusResponse } from './custom-ezsignfoldersignerassociationstatus-response';
 // May contain unused imports in some cases
 // @ts-ignore
 import { EzsigndocumentResponse } from './ezsigndocument-response';
-// May contain unused imports in some cases
-// @ts-ignore
-import { EzsigndocumentResponseCompoundAllOf } from './ezsigndocument-response-compound-all-of';
 // May contain unused imports in some cases
 // @ts-ignore
 import { FieldEEzsigndocumentStep } from './field-eezsigndocument-step';
@@ -34,7 +34,7 @@ import { FieldEEzsigndocumentStep } from './field-eezsigndocument-step';
  * An Ezsigndocument Object and children to create a complete structure
  * @export
  */
-export type EzsigndocumentResponseCompound = EzsigndocumentResponse & EzsigndocumentResponseCompoundAllOf;
+export type EzsigndocumentResponseCompound = EzsigndocumentResponse;
 
 
 
@@ -75,6 +75,7 @@ export class DataObjectEzsigndocumentResponseCompound {
     bEzsigndocumentHassignedsignatures?:boolean = undefined
     objAudit?:CommonAudit = undefined
     sEzsigndocumentExternalid?:string = undefined
+    eEzsigndocumentSteptype:ComputedEEzsigndocumentSteptype = 'Form'
     iEzsigndocumentStepformtotal:number = 0
     iEzsigndocumentStepformcurrent:number = 0
     iEzsigndocumentStepsignaturetotal:number = 0
@@ -179,6 +180,11 @@ export class ValidationObjectEzsigndocumentResponseCompound {
       type: 'string',
       pattern: '/^.{0,64}$/',
       required: false
+   }
+   eEzsigndocumentSteptype = {
+      type: 'enum',
+      allowableValues: ['Form','Sign','None'],
+      required: true
    }
    iEzsigndocumentStepformtotal = {
       type: 'integer',

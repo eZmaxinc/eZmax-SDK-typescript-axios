@@ -36,14 +36,14 @@ export const ObjectEzmaxproductApiAxiosParamCreator = function (configuration?: 
         /**
          * Get the list of Ezmaxproduct to be used in a dropdown or autocomplete control.
          * @summary Retrieve Ezmaxproducts and IDs
-         * @param {'All'} sSelector The type of Ezmaxproducts to return
+         * @param {'All' | 'Entitydefault' | 'Entityother'} sSelector The type of Ezmaxproducts to return
          * @param {'All' | 'Active' | 'Inactive'} [eFilterActive] Specify which results we want to display.
          * @param {string} [sQuery] Allow to filter the returned results
          * @param {HeaderAcceptLanguage} [acceptLanguage] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezmaxproductGetAutocompleteV2: async (sSelector: 'All', eFilterActive?: 'All' | 'Active' | 'Inactive', sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezmaxproductGetAutocompleteV2: async (sSelector: 'All' | 'Entitydefault' | 'Entityother', eFilterActive?: 'All' | 'Active' | 'Inactive', sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('ezmaxproductGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/ezmaxproduct/getAutocomplete/{sSelector}`
@@ -119,14 +119,14 @@ export const ObjectEzmaxproductApiFp = function(configuration?: Configuration) {
         /**
          * Get the list of Ezmaxproduct to be used in a dropdown or autocomplete control.
          * @summary Retrieve Ezmaxproducts and IDs
-         * @param {'All'} sSelector The type of Ezmaxproducts to return
+         * @param {'All' | 'Entitydefault' | 'Entityother'} sSelector The type of Ezmaxproducts to return
          * @param {'All' | 'Active' | 'Inactive'} [eFilterActive] Specify which results we want to display.
          * @param {string} [sQuery] Allow to filter the returned results
          * @param {HeaderAcceptLanguage} [acceptLanguage] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezmaxproductGetAutocompleteV2(sSelector: 'All', eFilterActive?: 'All' | 'Active' | 'Inactive', sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzmaxproductGetAutocompleteV2Response>> {
+        async ezmaxproductGetAutocompleteV2(sSelector: 'All' | 'Entitydefault' | 'Entityother', eFilterActive?: 'All' | 'Active' | 'Inactive', sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzmaxproductGetAutocompleteV2Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezmaxproductGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -143,14 +143,14 @@ export const ObjectEzmaxproductApiFactory = function (configuration?: Configurat
         /**
          * Get the list of Ezmaxproduct to be used in a dropdown or autocomplete control.
          * @summary Retrieve Ezmaxproducts and IDs
-         * @param {'All'} sSelector The type of Ezmaxproducts to return
+         * @param {'All' | 'Entitydefault' | 'Entityother'} sSelector The type of Ezmaxproducts to return
          * @param {'All' | 'Active' | 'Inactive'} [eFilterActive] Specify which results we want to display.
          * @param {string} [sQuery] Allow to filter the returned results
          * @param {HeaderAcceptLanguage} [acceptLanguage] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezmaxproductGetAutocompleteV2(sSelector: 'All', eFilterActive?: 'All' | 'Active' | 'Inactive', sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: any): AxiosPromise<EzmaxproductGetAutocompleteV2Response> {
+        ezmaxproductGetAutocompleteV2(sSelector: 'All' | 'Entitydefault' | 'Entityother', eFilterActive?: 'All' | 'Active' | 'Inactive', sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: any): AxiosPromise<EzmaxproductGetAutocompleteV2Response> {
             return localVarFp.ezmaxproductGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(axios, basePath));
         },
     };
@@ -166,7 +166,7 @@ export class ObjectEzmaxproductApi extends BaseAPI {
     /**
      * Get the list of Ezmaxproduct to be used in a dropdown or autocomplete control.
      * @summary Retrieve Ezmaxproducts and IDs
-     * @param {'All'} sSelector The type of Ezmaxproducts to return
+     * @param {'All' | 'Entitydefault' | 'Entityother'} sSelector The type of Ezmaxproducts to return
      * @param {'All' | 'Active' | 'Inactive'} [eFilterActive] Specify which results we want to display.
      * @param {string} [sQuery] Allow to filter the returned results
      * @param {HeaderAcceptLanguage} [acceptLanguage] 
@@ -174,7 +174,7 @@ export class ObjectEzmaxproductApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzmaxproductApi
      */
-    public ezmaxproductGetAutocompleteV2(sSelector: 'All', eFilterActive?: 'All' | 'Active' | 'Inactive', sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig) {
+    public ezmaxproductGetAutocompleteV2(sSelector: 'All' | 'Entitydefault' | 'Entityother', eFilterActive?: 'All' | 'Active' | 'Inactive', sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig) {
         return ObjectEzmaxproductApiFp(this.configuration).ezmaxproductGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(this.axios, this.basePath));
     }
 }

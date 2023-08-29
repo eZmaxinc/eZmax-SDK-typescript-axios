@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { NotificationtestGetElementsV1ResponseAllOf } from './notificationtest-get-elements-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { NotificationtestGetElementsV1ResponseMPayload } from './notificationtest-get-elements-v1-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { NotificationtestGetElementsV1ResponseMPayload } from './notificationtes
  * Response for GET /1/object/notificationtest/{pkiNotificationtestID}/getElements
  * @export
  */
-export type NotificationtestGetElementsV1Response = CommonResponse & NotificationtestGetElementsV1ResponseAllOf;
+export type NotificationtestGetElementsV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type NotificationtestGetElementsV1Response = CommonResponse & Notificatio
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectNotificationtestGetElementsV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectNotificationtestGetElementsV1ResponseMPayload } from './'
+import { DataObjectNotificationtestGetElementsV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectNotificationtestGetElementsV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectNotificationtestGetElementsV1Response
  */
 export class DataObjectNotificationtestGetElementsV1Response {
-    mPayload:NotificationtestGetElementsV1ResponseMPayload = new DataObjectNotificationtestGetElementsV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:NotificationtestGetElementsV1ResponseMPayload = new DataObjectNotificationtestGetElementsV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectNotificationtestGetElementsV1Response {
  * @class ValidationObjectNotificationtestGetElementsV1Response
  */
 export class ValidationObjectNotificationtestGetElementsV1Response {
-   mPayload = new ValidationObjectNotificationtestGetElementsV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectNotificationtestGetElementsV1ResponseMPayload()
 } 
 
 

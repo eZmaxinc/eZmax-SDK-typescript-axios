@@ -15,9 +15,6 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { BrandingGetListV1ResponseMPayloadAllOf } from './branding-get-list-v1-response-mpayload-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { BrandingListElement } from './branding-list-element';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -28,7 +25,7 @@ import { CommonGetListV1ResponseMPayload } from './common-get-list-v1-response-m
  * Payload for GET /1/object/branding/getList
  * @export
  */
-export type BrandingGetListV1ResponseMPayload = BrandingGetListV1ResponseMPayloadAllOf & CommonGetListV1ResponseMPayload;
+export type BrandingGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;
 
 
 /**
@@ -43,9 +40,9 @@ export type BrandingGetListV1ResponseMPayload = BrandingGetListV1ResponseMPayloa
  * @class DataObjectBrandingGetListV1ResponseMPayload
  */
 export class DataObjectBrandingGetListV1ResponseMPayload {
-    a_objBranding:Array<BrandingListElement> = []
     iRowReturned:number = 0
     iRowFiltered:number = 0
+    a_objBranding:Array<BrandingListElement> = []
 }
 
 /**
@@ -54,16 +51,16 @@ export class DataObjectBrandingGetListV1ResponseMPayload {
  * @class ValidationObjectBrandingGetListV1ResponseMPayload
  */
 export class ValidationObjectBrandingGetListV1ResponseMPayload {
-   a_objBranding = {
-      type: 'array',
-      required: true
-   }
    iRowReturned = {
       type: 'integer',
       required: true
    }
    iRowFiltered = {
       type: 'integer',
+      required: true
+   }
+   a_objBranding = {
+      type: 'array',
       required: true
    }
 } 

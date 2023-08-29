@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import { EnumTextvalidation } from './enum-textvalidation';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FieldEEzsigntemplateformfieldgroupSignerrequirement } from './field-eezsigntemplateformfieldgroup-signerrequirement';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -108,6 +111,12 @@ export interface EzsigntemplateformfieldgroupRequest {
      */
     'sEzsigntemplateformfieldgroupRegexp'?: string;
     /**
+     * 
+     * @type {EnumTextvalidation}
+     * @memberof EzsigntemplateformfieldgroupRequest
+     */
+    'eEzsigntemplateformfieldgroupTextvalidation'?: EnumTextvalidation;
+    /**
      * A tooltip that will be presented to Ezsigntemplatesigner about the Ezsigntemplateformfieldgroup
      * @type {string}
      * @memberof EzsigntemplateformfieldgroupRequest
@@ -147,6 +156,7 @@ export class DataObjectEzsigntemplateformfieldgroupRequest {
    iEzsigntemplateformfieldgroupMaxlength?:number = undefined
    bEzsigntemplateformfieldgroupEncrypted?:boolean = undefined
    sEzsigntemplateformfieldgroupRegexp?:string = undefined
+   eEzsigntemplateformfieldgroupTextvalidation?:EnumTextvalidation = undefined
    tEzsigntemplateformfieldgroupTooltip?:string = undefined
    eEzsigntemplateformfieldgroupTooltipposition?:FieldEEzsigntemplateformfieldgroupTooltipposition = undefined
 }
@@ -207,6 +217,7 @@ export class ValidationObjectEzsigntemplateformfieldgroupRequest {
    iEzsigntemplateformfieldgroupMaxlength = {
       type: 'integer',
       minimum: 0,
+      maximum: 65535,
       required: false
    }
    bEzsigntemplateformfieldgroupEncrypted = {
@@ -215,6 +226,11 @@ export class ValidationObjectEzsigntemplateformfieldgroupRequest {
    }
    sEzsigntemplateformfieldgroupRegexp = {
       type: 'string',
+      required: false
+   }
+   eEzsigntemplateformfieldgroupTextvalidation = {
+      type: 'enum',
+      allowableValues: ['None','Date (YYYY-MM-DD)','Date (MM/DD/YYYY)','Date (MM/DD/YY)','Date (DD/MM/YYYY)','Date (DD/MM/YY)','Email','Letters','Numbers','Zip','Zip+4','PostalCode','Custom'],
       required: false
    }
    tEzsigntemplateformfieldgroupTooltip = {

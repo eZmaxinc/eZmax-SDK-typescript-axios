@@ -18,9 +18,6 @@
 import { ContactRequest } from './contact-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ContactRequestCompoundAllOf } from './contact-request-compound-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { ContactinformationsRequestCompound } from './contactinformations-request-compound';
 
 /**
@@ -28,7 +25,7 @@ import { ContactinformationsRequestCompound } from './contactinformations-reques
  * A Contact Object and children to create a complete structure
  * @export
  */
-export type ContactRequestCompound = ContactRequest & ContactRequestCompoundAllOf;
+export type ContactRequestCompound = ContactRequest;
 
 
 /**

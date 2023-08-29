@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignfolderGetFormsDataV1ResponseAllOf } from './ezsignfolder-get-forms-data-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsignfolderGetFormsDataV1ResponseMPayload } from './ezsignfolder-get-forms-data-v1-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { EzsignfolderGetFormsDataV1ResponseMPayload } from './ezsignfolder-get-f
  * Response for GET /1/object/ezsignfolder/{pkiEzsignfolder}/getFormsData
  * @export
  */
-export type EzsignfolderGetFormsDataV1Response = CommonResponse & EzsignfolderGetFormsDataV1ResponseAllOf;
+export type EzsignfolderGetFormsDataV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type EzsignfolderGetFormsDataV1Response = CommonResponse & EzsignfolderGe
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectEzsignfolderGetFormsDataV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectEzsignfolderGetFormsDataV1ResponseMPayload } from './'
+import { DataObjectEzsignfolderGetFormsDataV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsignfolderGetFormsDataV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectEzsignfolderGetFormsDataV1Response
  */
 export class DataObjectEzsignfolderGetFormsDataV1Response {
-    mPayload:EzsignfolderGetFormsDataV1ResponseMPayload = new DataObjectEzsignfolderGetFormsDataV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:EzsignfolderGetFormsDataV1ResponseMPayload = new DataObjectEzsignfolderGetFormsDataV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectEzsignfolderGetFormsDataV1Response {
  * @class ValidationObjectEzsignfolderGetFormsDataV1Response
  */
 export class ValidationObjectEzsignfolderGetFormsDataV1Response {
-   mPayload = new ValidationObjectEzsignfolderGetFormsDataV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectEzsignfolderGetFormsDataV1ResponseMPayload()
 } 
 
 

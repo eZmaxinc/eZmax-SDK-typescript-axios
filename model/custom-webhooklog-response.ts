@@ -13,18 +13,26 @@
  */
 
 
-// May contain unused imports in some cases
-// @ts-ignore
-import { CustomWebhooklogResponseAllOf } from './custom-webhooklog-response-all-of';
 
 /**
- * @type CustomWebhooklogResponse
  * A custom Webhooklog object
  * @export
+ * @interface CustomWebhooklogResponse
  */
-export type CustomWebhooklogResponse = CustomWebhooklogResponseAllOf;
-
-
+export interface CustomWebhooklogResponse {
+    /**
+     * The date and time at which the Webhooklog happened.
+     * @type {string}
+     * @memberof CustomWebhooklogResponse
+     */
+    'dtWebhooklogDate': string;
+    /**
+     * The Json containing the Webhook call and return
+     * @type {string}
+     * @memberof CustomWebhooklogResponse
+     */
+    'tWebhooklogJson': string;
+}
 /**
  * @import
  * Imports Child Data Object
@@ -37,8 +45,8 @@ export type CustomWebhooklogResponse = CustomWebhooklogResponseAllOf;
  * @class DataObjectCustomWebhooklogResponse
  */
 export class DataObjectCustomWebhooklogResponse {
-    dtWebhooklogDate:string = ''
-    tWebhooklogJson:string = ''
+   dtWebhooklogDate:string = ''
+   tWebhooklogJson:string = ''
 }
 
 /**

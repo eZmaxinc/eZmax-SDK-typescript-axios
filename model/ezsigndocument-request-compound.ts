@@ -112,13 +112,11 @@ export class ValidationObjectEzsigndocumentRequestCompound {
       required: true
    }
    eEzsigndocumentSource = {
-      type: 'enum',
-      allowableValues: ['Base64','Ezsigntemplate','Url'],
+      type: 'string',
       required: true
    }
    eEzsigndocumentFormat = {
-      type: 'enum',
-      allowableValues: ['Pdf','Doc','Docx','Xls','Xlsx','Ppt','Pptx'],
+      type: 'string',
       required: false
    }
    sEzsigndocumentBase64 = {
@@ -138,8 +136,7 @@ export class ValidationObjectEzsigndocumentRequestCompound {
       required: false
    }
    eEzsigndocumentForm = {
-      type: 'enum',
-      allowableValues: ['Keep','Convert'],
+      type: 'string',
       required: false
    }
    dtEzsigndocumentDuedate = {

@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigndocumentGetEzsignannotationsV1ResponseAllOf } from './ezsigndocument-get-ezsignannotations-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsigndocumentGetEzsignannotationsV1ResponseMPayload } from './ezsigndocument-get-ezsignannotations-v1-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { EzsigndocumentGetEzsignannotationsV1ResponseMPayload } from './ezsigndo
  * Response for GET /1/object/ezsigndocument/{pkiEzsigndocument}/getEzsignannotations
  * @export
  */
-export type EzsigndocumentGetEzsignannotationsV1Response = CommonResponse & EzsigndocumentGetEzsignannotationsV1ResponseAllOf;
+export type EzsigndocumentGetEzsignannotationsV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type EzsigndocumentGetEzsignannotationsV1Response = CommonResponse & Ezsi
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectEzsigndocumentGetEzsignannotationsV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectEzsigndocumentGetEzsignannotationsV1ResponseMPayload } from './'
+import { DataObjectEzsigndocumentGetEzsignannotationsV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsigndocumentGetEzsignannotationsV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectEzsigndocumentGetEzsignannotationsV1Response
  */
 export class DataObjectEzsigndocumentGetEzsignannotationsV1Response {
-    mPayload:EzsigndocumentGetEzsignannotationsV1ResponseMPayload = new DataObjectEzsigndocumentGetEzsignannotationsV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:EzsigndocumentGetEzsignannotationsV1ResponseMPayload = new DataObjectEzsigndocumentGetEzsignannotationsV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectEzsigndocumentGetEzsignannotationsV1Response {
  * @class ValidationObjectEzsigndocumentGetEzsignannotationsV1Response
  */
 export class ValidationObjectEzsigndocumentGetEzsignannotationsV1Response {
-   mPayload = new ValidationObjectEzsigndocumentGetEzsignannotationsV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectEzsigndocumentGetEzsignannotationsV1ResponseMPayload()
 } 
 
 

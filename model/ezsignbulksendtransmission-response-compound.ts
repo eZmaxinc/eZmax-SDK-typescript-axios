@@ -22,16 +22,13 @@ import { CustomEzsignfoldertransmissionResponse } from './custom-ezsignfoldertra
 // May contain unused imports in some cases
 // @ts-ignore
 import { EzsignbulksendtransmissionResponse } from './ezsignbulksendtransmission-response';
-// May contain unused imports in some cases
-// @ts-ignore
-import { EzsignbulksendtransmissionResponseCompoundAllOf } from './ezsignbulksendtransmission-response-compound-all-of';
 
 /**
  * @type EzsignbulksendtransmissionResponseCompound
  * An Ezsignbulksendtransmission Object and children to create a complete structure
  * @export
  */
-export type EzsignbulksendtransmissionResponseCompound = EzsignbulksendtransmissionResponse & EzsignbulksendtransmissionResponseCompoundAllOf;
+export type EzsignbulksendtransmissionResponseCompound = EzsignbulksendtransmissionResponse;
 
 
 /**

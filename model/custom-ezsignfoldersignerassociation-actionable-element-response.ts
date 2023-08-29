@@ -15,9 +15,6 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomEzsignfoldersignerassociationActionableElementResponseAllOf } from './custom-ezsignfoldersignerassociation-actionable-element-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsignfoldersignerassociationResponseCompound } from './ezsignfoldersignerassociation-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -34,7 +31,7 @@ import { EzsignsignergroupResponseCompound } from './ezsignsignergroup-response-
  * A Ezsignfoldersignerassociation Object with actionable elements
  * @export
  */
-export type CustomEzsignfoldersignerassociationActionableElementResponse = CustomEzsignfoldersignerassociationActionableElementResponseAllOf & EzsignfoldersignerassociationResponseCompound;
+export type CustomEzsignfoldersignerassociationActionableElementResponse = EzsignfoldersignerassociationResponseCompound;
 
 
 /**

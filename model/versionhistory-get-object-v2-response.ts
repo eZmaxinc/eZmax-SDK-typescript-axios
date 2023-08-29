@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { VersionhistoryGetObjectV2ResponseAllOf } from './versionhistory-get-object-v2-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { VersionhistoryGetObjectV2ResponseMPayload } from './versionhistory-get-object-v2-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { VersionhistoryGetObjectV2ResponseMPayload } from './versionhistory-get-
  * Response for GET /2/object/versionhistory/{pkiVersionhistoryID}
  * @export
  */
-export type VersionhistoryGetObjectV2Response = CommonResponse & VersionhistoryGetObjectV2ResponseAllOf;
+export type VersionhistoryGetObjectV2Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type VersionhistoryGetObjectV2Response = CommonResponse & VersionhistoryG
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectVersionhistoryGetObjectV2ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectVersionhistoryGetObjectV2ResponseMPayload } from './'
+import { DataObjectVersionhistoryGetObjectV2ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectVersionhistoryGetObjectV2ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectVersionhistoryGetObjectV2Response
  */
 export class DataObjectVersionhistoryGetObjectV2Response {
-    mPayload:VersionhistoryGetObjectV2ResponseMPayload = new DataObjectVersionhistoryGetObjectV2ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:VersionhistoryGetObjectV2ResponseMPayload = new DataObjectVersionhistoryGetObjectV2ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectVersionhistoryGetObjectV2Response {
  * @class ValidationObjectVersionhistoryGetObjectV2Response
  */
 export class ValidationObjectVersionhistoryGetObjectV2Response {
-   mPayload = new ValidationObjectVersionhistoryGetObjectV2ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectVersionhistoryGetObjectV2ResponseMPayload()
 } 
 
 

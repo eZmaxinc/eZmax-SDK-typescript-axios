@@ -25,16 +25,13 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
 // May contain unused imports in some cases
 // @ts-ignore
 import { CommonResponseWarning } from './common-response-warning';
-// May contain unused imports in some cases
-// @ts-ignore
-import { EzsigntemplatedocumentEditObjectV1ResponseAllOf } from './ezsigntemplatedocument-edit-object-v1-response-all-of';
 
 /**
  * @type EzsigntemplatedocumentEditObjectV1Response
  * Response for PUT /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}
  * @export
  */
-export type EzsigntemplatedocumentEditObjectV1Response = CommonResponse & EzsigntemplatedocumentEditObjectV1ResponseAllOf;
+export type EzsigntemplatedocumentEditObjectV1Response = CommonResponse;
 
 
 /**
@@ -57,7 +54,7 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectEzsigntemplatedocumentEditObjectV1Response
  */
 export class DataObjectEzsigntemplatedocumentEditObjectV1Response {
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
     a_objWarning?:Array<CommonResponseWarning> = undefined
 }

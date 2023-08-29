@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzmaxproductGetAutocompleteV2ResponseAllOf } from './ezmaxproduct-get-autocomplete-v2-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzmaxproductGetAutocompleteV2ResponseMPayload } from './ezmaxproduct-get-autocomplete-v2-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { EzmaxproductGetAutocompleteV2ResponseMPayload } from './ezmaxproduct-ge
  * Response for GET /2/object/ezmaxproduct/getAutocomplete
  * @export
  */
-export type EzmaxproductGetAutocompleteV2Response = CommonResponse & EzmaxproductGetAutocompleteV2ResponseAllOf;
+export type EzmaxproductGetAutocompleteV2Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type EzmaxproductGetAutocompleteV2Response = CommonResponse & Ezmaxproduc
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectEzmaxproductGetAutocompleteV2ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectEzmaxproductGetAutocompleteV2ResponseMPayload } from './'
+import { DataObjectEzmaxproductGetAutocompleteV2ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzmaxproductGetAutocompleteV2ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectEzmaxproductGetAutocompleteV2Response
  */
 export class DataObjectEzmaxproductGetAutocompleteV2Response {
-    mPayload:EzmaxproductGetAutocompleteV2ResponseMPayload = new DataObjectEzmaxproductGetAutocompleteV2ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:EzmaxproductGetAutocompleteV2ResponseMPayload = new DataObjectEzmaxproductGetAutocompleteV2ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectEzmaxproductGetAutocompleteV2Response {
  * @class ValidationObjectEzmaxproductGetAutocompleteV2Response
  */
 export class ValidationObjectEzmaxproductGetAutocompleteV2Response {
-   mPayload = new ValidationObjectEzmaxproductGetAutocompleteV2ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectEzmaxproductGetAutocompleteV2ResponseMPayload()
 } 
 
 

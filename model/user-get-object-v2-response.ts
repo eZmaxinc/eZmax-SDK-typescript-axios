@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { UserGetObjectV2ResponseAllOf } from './user-get-object-v2-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { UserGetObjectV2ResponseMPayload } from './user-get-object-v2-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { UserGetObjectV2ResponseMPayload } from './user-get-object-v2-response-m
  * Response for GET /2/object/user/{pkiUserID}
  * @export
  */
-export type UserGetObjectV2Response = CommonResponse & UserGetObjectV2ResponseAllOf;
+export type UserGetObjectV2Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type UserGetObjectV2Response = CommonResponse & UserGetObjectV2ResponseAl
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectUserGetObjectV2ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectUserGetObjectV2ResponseMPayload } from './'
+import { DataObjectUserGetObjectV2ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectUserGetObjectV2ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectUserGetObjectV2Response
  */
 export class DataObjectUserGetObjectV2Response {
-    mPayload:UserGetObjectV2ResponseMPayload = new DataObjectUserGetObjectV2ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:UserGetObjectV2ResponseMPayload = new DataObjectUserGetObjectV2ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectUserGetObjectV2Response {
  * @class ValidationObjectUserGetObjectV2Response
  */
 export class ValidationObjectUserGetObjectV2Response {
-   mPayload = new ValidationObjectUserGetObjectV2ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectUserGetObjectV2ResponseMPayload()
 } 
 
 

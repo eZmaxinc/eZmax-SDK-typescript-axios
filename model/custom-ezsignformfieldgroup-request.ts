@@ -16,18 +16,32 @@
 // May contain unused imports in some cases
 // @ts-ignore
 import { CustomEzsignformfieldRequest } from './custom-ezsignformfield-request';
-// May contain unused imports in some cases
-// @ts-ignore
-import { CustomEzsignformfieldgroupRequestAllOf } from './custom-ezsignformfieldgroup-request-all-of';
 
 /**
- * @type CustomEzsignformfieldgroupRequest
  * A Custom Ezsignformfieldgroup Object to fill an Ezsignform using submitForm
  * @export
+ * @interface CustomEzsignformfieldgroupRequest
  */
-export type CustomEzsignformfieldgroupRequest = CustomEzsignformfieldgroupRequestAllOf;
-
-
+export interface CustomEzsignformfieldgroupRequest {
+    /**
+     * The unique ID of the Ezsignformfieldgroup
+     * @type {number}
+     * @memberof CustomEzsignformfieldgroupRequest
+     */
+    'pkiEzsignformfieldgroupID'?: number;
+    /**
+     * The Label for the Ezsignformfieldgroup
+     * @type {string}
+     * @memberof CustomEzsignformfieldgroupRequest
+     */
+    'sEzsignformfieldgroupLabel'?: string;
+    /**
+     * An array containing all the values to fill the Ezsignform.
+     * @type {Array<CustomEzsignformfieldRequest>}
+     * @memberof CustomEzsignformfieldgroupRequest
+     */
+    'a_objEzsignformfield': Array<CustomEzsignformfieldRequest>;
+}
 /**
  * @import
  * Imports Child Data Object
@@ -40,9 +54,9 @@ export type CustomEzsignformfieldgroupRequest = CustomEzsignformfieldgroupReques
  * @class DataObjectCustomEzsignformfieldgroupRequest
  */
 export class DataObjectCustomEzsignformfieldgroupRequest {
-    pkiEzsignformfieldgroupID?:number = undefined
-    sEzsignformfieldgroupLabel?:string = undefined
-    a_objEzsignformfield:Array<CustomEzsignformfieldRequest> = []
+   pkiEzsignformfieldgroupID?:number = undefined
+   sEzsignformfieldgroupLabel?:string = undefined
+   a_objEzsignformfield:Array<CustomEzsignformfieldRequest> = []
 }
 
 /**

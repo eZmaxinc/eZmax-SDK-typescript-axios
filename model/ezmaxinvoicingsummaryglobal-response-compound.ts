@@ -19,16 +19,13 @@ import { EzmaxinvoicingcommissionResponseCompound } from './ezmaxinvoicingcommis
 // May contain unused imports in some cases
 // @ts-ignore
 import { EzmaxinvoicingsummaryglobalResponse } from './ezmaxinvoicingsummaryglobal-response';
-// May contain unused imports in some cases
-// @ts-ignore
-import { EzmaxinvoicingsummaryglobalResponseCompoundAllOf } from './ezmaxinvoicingsummaryglobal-response-compound-all-of';
 
 /**
  * @type EzmaxinvoicingsummaryglobalResponseCompound
  * A Ezmaxinvoicingsummaryglobal Object
  * @export
  */
-export type EzmaxinvoicingsummaryglobalResponseCompound = EzmaxinvoicingsummaryglobalResponse & EzmaxinvoicingsummaryglobalResponseCompoundAllOf;
+export type EzmaxinvoicingsummaryglobalResponseCompound = EzmaxinvoicingsummaryglobalResponse;
 
 
 /**

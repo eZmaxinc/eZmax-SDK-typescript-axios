@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigndocumentGetTemporaryProofV1ResponseAllOf } from './ezsigndocument-get-temporary-proof-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsigndocumentGetTemporaryProofV1ResponseMPayload } from './ezsigndocument-get-temporary-proof-v1-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { EzsigndocumentGetTemporaryProofV1ResponseMPayload } from './ezsigndocum
  * Response for GET /1/object/ezsigndocument/{pkiEzsigndocumentID}/getTemporaryProof
  * @export
  */
-export type EzsigndocumentGetTemporaryProofV1Response = CommonResponse & EzsigndocumentGetTemporaryProofV1ResponseAllOf;
+export type EzsigndocumentGetTemporaryProofV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type EzsigndocumentGetTemporaryProofV1Response = CommonResponse & Ezsignd
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectEzsigndocumentGetTemporaryProofV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectEzsigndocumentGetTemporaryProofV1ResponseMPayload } from './'
+import { DataObjectEzsigndocumentGetTemporaryProofV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsigndocumentGetTemporaryProofV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectEzsigndocumentGetTemporaryProofV1Response
  */
 export class DataObjectEzsigndocumentGetTemporaryProofV1Response {
-    mPayload:EzsigndocumentGetTemporaryProofV1ResponseMPayload = new DataObjectEzsigndocumentGetTemporaryProofV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:EzsigndocumentGetTemporaryProofV1ResponseMPayload = new DataObjectEzsigndocumentGetTemporaryProofV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectEzsigndocumentGetTemporaryProofV1Response {
  * @class ValidationObjectEzsigndocumentGetTemporaryProofV1Response
  */
 export class ValidationObjectEzsigndocumentGetTemporaryProofV1Response {
-   mPayload = new ValidationObjectEzsigndocumentGetTemporaryProofV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectEzsigndocumentGetTemporaryProofV1ResponseMPayload()
 } 
 
 

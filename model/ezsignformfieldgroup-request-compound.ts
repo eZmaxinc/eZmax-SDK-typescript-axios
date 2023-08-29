@@ -27,9 +27,6 @@ import { EzsignformfieldRequestCompound } from './ezsignformfield-request-compou
 import { EzsignformfieldgroupRequest } from './ezsignformfieldgroup-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignformfieldgroupRequestCompoundAllOf } from './ezsignformfieldgroup-request-compound-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsignformfieldgroupsignerRequestCompound } from './ezsignformfieldgroupsigner-request-compound';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -46,7 +43,7 @@ import { FieldEEzsignformfieldgroupType } from './field-eezsignformfieldgroup-ty
  * An Ezsignformfieldgroup Object and children to create a complete structure
  * @export
  */
-export type EzsignformfieldgroupRequestCompound = EzsignformfieldgroupRequest & EzsignformfieldgroupRequestCompoundAllOf;
+export type EzsignformfieldgroupRequestCompound = EzsignformfieldgroupRequest;
 
 
 
@@ -139,6 +136,7 @@ export class ValidationObjectEzsignformfieldgroupRequestCompound {
    iEzsignformfieldgroupMaxlength = {
       type: 'integer',
       minimum: 0,
+      maximum: 65535,
       required: false
    }
    bEzsignformfieldgroupEncrypted = {

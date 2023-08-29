@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigndocumentEditEzsignsignaturesV1ResponseAllOf } from './ezsigndocument-edit-ezsignsignatures-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzsigndocumentEditEzsignsignaturesV1ResponseMPayload } from './ezsigndocument-edit-ezsignsignatures-v1-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { EzsigndocumentEditEzsignsignaturesV1ResponseMPayload } from './ezsigndo
  * Response for PUT /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignsignatures
  * @export
  */
-export type EzsigndocumentEditEzsignsignaturesV1Response = CommonResponse & EzsigndocumentEditEzsignsignaturesV1ResponseAllOf;
+export type EzsigndocumentEditEzsignsignaturesV1Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type EzsigndocumentEditEzsignsignaturesV1Response = CommonResponse & Ezsi
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectEzsigndocumentEditEzsignsignaturesV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectEzsigndocumentEditEzsignsignaturesV1ResponseMPayload } from './'
+import { DataObjectEzsigndocumentEditEzsignsignaturesV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsigndocumentEditEzsignsignaturesV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectEzsigndocumentEditEzsignsignaturesV1Response
  */
 export class DataObjectEzsigndocumentEditEzsignsignaturesV1Response {
-    mPayload:EzsigndocumentEditEzsignsignaturesV1ResponseMPayload = new DataObjectEzsigndocumentEditEzsignsignaturesV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:EzsigndocumentEditEzsignsignaturesV1ResponseMPayload = new DataObjectEzsigndocumentEditEzsignsignaturesV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectEzsigndocumentEditEzsignsignaturesV1Response {
  * @class ValidationObjectEzsigndocumentEditEzsignsignaturesV1Response
  */
 export class ValidationObjectEzsigndocumentEditEzsignsignaturesV1Response {
-   mPayload = new ValidationObjectEzsigndocumentEditEzsignsignaturesV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectEzsigndocumentEditEzsignsignaturesV1ResponseMPayload()
 } 
 
 

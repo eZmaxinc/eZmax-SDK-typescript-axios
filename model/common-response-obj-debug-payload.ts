@@ -38,6 +38,12 @@ export interface CommonResponseObjDebugPayload {
      * @memberof CommonResponseObjDebugPayload
      */
     'a_RequiredPermission': Array<number>;
+    /**
+     * Wheter the current route is deprecated or not
+     * @type {boolean}
+     * @memberof CommonResponseObjDebugPayload
+     */
+    'bVersionDeprecated': boolean;
 }
 /**
  * @import
@@ -54,6 +60,7 @@ export class DataObjectCommonResponseObjDebugPayload {
    iVersionMin:number = 0
    iVersionMax:number = 0
    a_RequiredPermission:Array<number> = []
+   bVersionDeprecated:boolean = false
 }
 
 /**
@@ -72,6 +79,10 @@ export class ValidationObjectCommonResponseObjDebugPayload {
    }
    a_RequiredPermission = {
       type: 'array',
+      required: true
+   }
+   bVersionDeprecated = {
+      type: 'boolean',
       required: true
    }
 } 

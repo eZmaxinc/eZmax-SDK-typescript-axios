@@ -24,9 +24,6 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzmaxinvoicingGetObjectV2ResponseAllOf } from './ezmaxinvoicing-get-object-v2-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzmaxinvoicingGetObjectV2ResponseMPayload } from './ezmaxinvoicing-get-object-v2-response-mpayload';
 
 /**
@@ -34,7 +31,7 @@ import { EzmaxinvoicingGetObjectV2ResponseMPayload } from './ezmaxinvoicing-get-
  * Response for GET /2/object/ezmaxinvoicing/{pkiEzmaxinvoicingID}
  * @export
  */
-export type EzmaxinvoicingGetObjectV2Response = CommonResponse & EzmaxinvoicingGetObjectV2ResponseAllOf;
+export type EzmaxinvoicingGetObjectV2Response = CommonResponse;
 
 
 /**
@@ -42,17 +39,17 @@ export type EzmaxinvoicingGetObjectV2Response = CommonResponse & EzmaxinvoicingG
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectEzmaxinvoicingGetObjectV2ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectEzmaxinvoicingGetObjectV2ResponseMPayload } from './'
+import { DataObjectEzmaxinvoicingGetObjectV2ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzmaxinvoicingGetObjectV2ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectEzmaxinvoicingGetObjectV2Response
  */
 export class DataObjectEzmaxinvoicingGetObjectV2Response {
-    mPayload:EzmaxinvoicingGetObjectV2ResponseMPayload = new DataObjectEzmaxinvoicingGetObjectV2ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayload = undefined
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:EzmaxinvoicingGetObjectV2ResponseMPayload = new DataObjectEzmaxinvoicingGetObjectV2ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectEzmaxinvoicingGetObjectV2Response {
  * @class ValidationObjectEzmaxinvoicingGetObjectV2Response
  */
 export class ValidationObjectEzmaxinvoicingGetObjectV2Response {
-   mPayload = new ValidationObjectEzmaxinvoicingGetObjectV2ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectEzmaxinvoicingGetObjectV2ResponseMPayload()
 } 
 
 

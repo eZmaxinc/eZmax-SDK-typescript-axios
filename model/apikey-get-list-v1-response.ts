@@ -15,9 +15,6 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ApikeyGetListV1ResponseAllOf } from './apikey-get-list-v1-response-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { ApikeyGetListV1ResponseMPayload } from './apikey-get-list-v1-response-mpayload';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -34,7 +31,7 @@ import { CommonResponseObjDebugPayloadGetList } from './common-response-obj-debu
  * Response for GET /1/object/apikey/getList
  * @export
  */
-export type ApikeyGetListV1Response = ApikeyGetListV1ResponseAllOf & CommonResponseGetList;
+export type ApikeyGetListV1Response = CommonResponseGetList;
 
 
 /**
@@ -42,17 +39,17 @@ export type ApikeyGetListV1Response = ApikeyGetListV1ResponseAllOf & CommonRespo
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectApikeyGetListV1ResponseMPayload } from './'
-// @ts-ignore
 import { DataObjectCommonResponseObjDebugPayloadGetList } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectApikeyGetListV1ResponseMPayload } from './'
+import { DataObjectApikeyGetListV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayloadGetList } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectApikeyGetListV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -61,9 +58,9 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectApikeyGetListV1Response
  */
 export class DataObjectApikeyGetListV1Response {
-    mPayload:ApikeyGetListV1ResponseMPayload = new DataObjectApikeyGetListV1ResponseMPayload()
-    objDebugPayload?:CommonResponseObjDebugPayloadGetList = undefined
+    objDebugPayload:CommonResponseObjDebugPayloadGetList = new DataObjectCommonResponseObjDebugPayloadGetList()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:ApikeyGetListV1ResponseMPayload = new DataObjectApikeyGetListV1ResponseMPayload()
 }
 
 /**
@@ -72,9 +69,9 @@ export class DataObjectApikeyGetListV1Response {
  * @class ValidationObjectApikeyGetListV1Response
  */
 export class ValidationObjectApikeyGetListV1Response {
-   mPayload = new ValidationObjectApikeyGetListV1ResponseMPayload()
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayloadGetList()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectApikeyGetListV1ResponseMPayload()
 } 
 
 

@@ -18,9 +18,6 @@
 import { CustomContactNameResponse } from './custom-contact-name-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzmaxinvoicingagentResponseCompoundAllOf } from './ezmaxinvoicingagent-response-compound-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzmaxinvoicinguserResponse } from './ezmaxinvoicinguser-response';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -31,7 +28,7 @@ import { FieldEEzmaxinvoicinguserVariationezsign } from './field-eezmaxinvoicing
  * A Ezmaxinvoicinguser Object
  * @export
  */
-export type EzmaxinvoicinguserResponseCompound = EzmaxinvoicingagentResponseCompoundAllOf & EzmaxinvoicinguserResponse;
+export type EzmaxinvoicinguserResponseCompound = EzmaxinvoicinguserResponse;
 
 
 

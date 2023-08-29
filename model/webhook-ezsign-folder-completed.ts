@@ -25,16 +25,13 @@ import { CustomWebhookResponse } from './custom-webhook-response';
 // May contain unused imports in some cases
 // @ts-ignore
 import { EzsignfolderResponse } from './ezsignfolder-response';
-// May contain unused imports in some cases
-// @ts-ignore
-import { WebhookEzsignFolderCompletedAllOf } from './webhook-ezsign-folder-completed-all-of';
 
 /**
  * @type WebhookEzsignFolderCompleted
  * This is the base Webhook object
  * @export
  */
-export type WebhookEzsignFolderCompleted = CommonWebhook & WebhookEzsignFolderCompletedAllOf;
+export type WebhookEzsignFolderCompleted = CommonWebhook;
 
 
 /**
@@ -42,13 +39,13 @@ export type WebhookEzsignFolderCompleted = CommonWebhook & WebhookEzsignFolderCo
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectEzsignfolderResponse } from './'
-// @ts-ignore
 import { DataObjectCustomWebhookResponse } from './'
 // @ts-ignore
-import { ValidationObjectEzsignfolderResponse } from './'
+import { DataObjectEzsignfolderResponse } from './'
 // @ts-ignore
 import { ValidationObjectCustomWebhookResponse } from './'
+// @ts-ignore
+import { ValidationObjectEzsignfolderResponse } from './'
 
 /**
  * @export 
@@ -57,9 +54,9 @@ import { ValidationObjectCustomWebhookResponse } from './'
  * @class DataObjectWebhookEzsignFolderCompleted
  */
 export class DataObjectWebhookEzsignFolderCompleted {
-    objEzsignfolder:EzsignfolderResponse = new DataObjectEzsignfolderResponse()
     objWebhook:CustomWebhookResponse = new DataObjectCustomWebhookResponse()
     a_objAttempt:Array<AttemptResponseCompound> = []
+    objEzsignfolder:EzsignfolderResponse = new DataObjectEzsignfolderResponse()
 }
 
 /**
@@ -68,12 +65,12 @@ export class DataObjectWebhookEzsignFolderCompleted {
  * @class ValidationObjectWebhookEzsignFolderCompleted
  */
 export class ValidationObjectWebhookEzsignFolderCompleted {
-   objEzsignfolder = new ValidationObjectEzsignfolderResponse()
    objWebhook = new ValidationObjectCustomWebhookResponse()
    a_objAttempt = {
       type: 'array',
       required: true
    }
+   objEzsignfolder = new ValidationObjectEzsignfolderResponse()
 } 
 
 

@@ -18,9 +18,6 @@
 import { EzmaxinvoicingsummaryinternalResponse } from './ezmaxinvoicingsummaryinternal-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzmaxinvoicingsummaryinternalResponseCompoundAllOf } from './ezmaxinvoicingsummaryinternal-response-compound-all-of';
-// May contain unused imports in some cases
-// @ts-ignore
 import { EzmaxinvoicingsummaryinternaldetailResponseCompound } from './ezmaxinvoicingsummaryinternaldetail-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -31,7 +28,7 @@ import { MultilingualEzmaxinvoicingsummaryinternalDescription } from './multilin
  * A Ezmaxinvoicingsummaryinternal Object
  * @export
  */
-export type EzmaxinvoicingsummaryinternalResponseCompound = EzmaxinvoicingsummaryinternalResponse & EzmaxinvoicingsummaryinternalResponseCompoundAllOf;
+export type EzmaxinvoicingsummaryinternalResponseCompound = EzmaxinvoicingsummaryinternalResponse;
 
 
 /**
