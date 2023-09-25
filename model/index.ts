@@ -161,6 +161,7 @@ export * from './custom-ezsignfoldersignerassociationmine-response';
 export * from './custom-ezsignfoldersignerassociationstatus-response';
 export * from './custom-ezsignfoldertransmission-response';
 export * from './custom-ezsignfoldertransmission-signer-response';
+export * from './custom-ezsignfoldertype-response';
 export * from './custom-ezsignformfield-request';
 export * from './custom-ezsignformfielderror-response';
 export * from './custom-ezsignformfielderrortest-response';

@@ -243,6 +243,7 @@ model/custom-ezsignfoldersignerassociationmine-response.ts
 model/custom-ezsignfoldersignerassociationstatus-response.ts
 model/custom-ezsignfoldertransmission-response.ts
 model/custom-ezsignfoldertransmission-signer-response.ts
+model/custom-ezsignfoldertype-response.ts
 model/custom-ezsignformfield-request.ts
 model/custom-ezsignformfielderror-response.ts
 model/custom-ezsignformfielderrortest-response.ts
