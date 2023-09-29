@@ -239,7 +239,6 @@ model/custom-ezsigndocument-ezsignsignatures-automatic-response.ts
 model/custom-ezsignfolder-ezsignsignatures-automatic-response.ts
 model/custom-ezsignfoldersignerassociation-actionable-element-response.ts
 model/custom-ezsignfoldersignerassociationmessage-request.ts
-model/custom-ezsignfoldersignerassociationmine-response.ts
 model/custom-ezsignfoldersignerassociationstatus-response.ts
 model/custom-ezsignfoldertransmission-response.ts
 model/custom-ezsignfoldertransmission-signer-response.ts
@@ -455,8 +454,6 @@ model/ezsignfolder-get-ezsigndocuments-v1-response-mpayload.ts
 model/ezsignfolder-get-ezsigndocuments-v1-response.ts
 model/ezsignfolder-get-ezsignfoldersignerassociations-v1-response-mpayload.ts
 model/ezsignfolder-get-ezsignfoldersignerassociations-v1-response.ts
-model/ezsignfolder-get-ezsignfoldersignerassociationsmine-v1-response-mpayload.ts
-model/ezsignfolder-get-ezsignfoldersignerassociationsmine-v1-response.ts
 model/ezsignfolder-get-ezsignsignatures-automatic-v1-response-mpayload.ts
 model/ezsignfolder-get-ezsignsignatures-automatic-v1-response.ts
 model/ezsignfolder-get-forms-data-v1-response-mpayload.ts

@@ -73,6 +73,12 @@ export interface EzsigntemplateformfieldResponseCompound {
      */
     iEzsigntemplateformfieldHeight:number 
     /**
+     * Whether the Ezsigntemplateformfield allows the use of the autocomplete of the browser.  This can only be set if eEzsigntemplateformfieldgroupType is **Text**
+     * @type {boolean}
+     * @memberof EzsigntemplateformfieldResponseCompound
+     */
+    bEzsigntemplateformfieldAutocomplete?:boolean 
+    /**
      * Whether the Ezsigntemplateformfield is selected or not by default.  This can only be set if eEzsigntemplateformfieldgroupType is **Checkbox** or **Radio**
      * @type {boolean}
      * @memberof EzsigntemplateformfieldResponseCompound
@@ -101,6 +107,7 @@ export class DataObjectEzsigntemplateformfieldResponseCompound {
     iEzsigntemplateformfieldY:number = 0
     iEzsigntemplateformfieldWidth:number = 0
     iEzsigntemplateformfieldHeight:number = 0
+    bEzsigntemplateformfieldAutocomplete?:boolean = undefined
     bEzsigntemplateformfieldSelected?:boolean = undefined
 }
 
@@ -147,6 +154,10 @@ export class ValidationObjectEzsigntemplateformfieldResponseCompound {
       type: 'integer',
       minimum: 0,
       required: true
+   }
+   bEzsigntemplateformfieldAutocomplete = {
+      type: 'boolean',
+      required: false
    }
    bEzsigntemplateformfieldSelected = {
       type: 'boolean',

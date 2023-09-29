@@ -69,6 +69,12 @@ export interface EzsignformfieldResponse {
      */
     'iEzsignformfieldHeight': number;
     /**
+     * Whether the Ezsignformfield allows the use of the autocomplete of the browser.  This can only be set if eEzsignformfieldgroupType is **Text**
+     * @type {boolean}
+     * @memberof EzsignformfieldResponse
+     */
+    'bEzsignformfieldAutocomplete'?: boolean;
+    /**
      * Whether the Ezsignformfield is selected or not by default.  This can only be set if eEzsignformfieldgroupType is **Checkbox** or **Radio**
      * @type {boolean}
      * @memberof EzsignformfieldResponse
@@ -101,6 +107,7 @@ export class DataObjectEzsignformfieldResponse {
    iEzsignformfieldY:number = 0
    iEzsignformfieldWidth:number = 0
    iEzsignformfieldHeight:number = 0
+   bEzsignformfieldAutocomplete?:boolean = undefined
    bEzsignformfieldSelected?:boolean = undefined
    sEzsignformfieldEnteredvalue?:string = undefined
 }
@@ -148,6 +155,10 @@ export class ValidationObjectEzsignformfieldResponse {
       type: 'integer',
       minimum: 0,
       required: true
+   }
+   bEzsignformfieldAutocomplete = {
+      type: 'boolean',
+      required: false
    }
    bEzsignformfieldSelected = {
       type: 'boolean',

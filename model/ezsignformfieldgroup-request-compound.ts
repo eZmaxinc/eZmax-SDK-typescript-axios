@@ -86,7 +86,7 @@ export interface EzsignformfieldgroupRequestCompound {
      * @type {string}
      * @memberof EzsignformfieldgroupRequestCompound
      */
-    sEzsignformfieldgroupDefaultvalue:string 
+    sEzsignformfieldgroupDefaultvalue?:string 
     /**
      * The minimum number of Ezsignformfield that must be filled in the Ezsignformfieldgroup
      * @type {number}
@@ -181,7 +181,7 @@ export class DataObjectEzsignformfieldgroupRequestCompound {
     eEzsignformfieldgroupSignerrequirement:FieldEEzsignformfieldgroupSignerrequirement = 'All'
     sEzsignformfieldgroupLabel:string = ''
     iEzsignformfieldgroupStep:number = 0
-    sEzsignformfieldgroupDefaultvalue:string = ''
+    sEzsignformfieldgroupDefaultvalue?:string = undefined
     iEzsignformfieldgroupFilledmin:number = 0
     iEzsignformfieldgroupFilledmax:number = 0
     bEzsignformfieldgroupReadonly:boolean = false
@@ -233,7 +233,7 @@ export class ValidationObjectEzsignformfieldgroupRequestCompound {
    }
    sEzsignformfieldgroupDefaultvalue = {
       type: 'string',
-      required: true
+      required: false
    }
    iEzsignformfieldgroupFilledmin = {
       type: 'integer',

@@ -31,19 +31,19 @@ export interface CustomEzsignfoldertypeResponse {
      * @type {string}
      * @memberof CustomEzsignfoldertypeResponse
      */
-    'sEzsignfoldertypeNameX': string;
+    'sEzsignfoldertypeNameX'?: string;
     /**
      * Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
      * @type {boolean}
      * @memberof CustomEzsignfoldertypeResponse
      */
-    'bEzsignfoldertypeIncludeproofsigner': boolean;
+    'bEzsignfoldertypeIncludeproofsigner'?: boolean;
     /**
      * Whether we include the proof with the signed Ezsigndocument for users
      * @type {boolean}
      * @memberof CustomEzsignfoldertypeResponse
      */
-    'bEzsignfoldertypeIncludeproofuser': boolean;
+    'bEzsignfoldertypeIncludeproofuser'?: boolean;
     /**
      * Wheter if delegation of signature is allowed to another user or not
      * @type {boolean}
@@ -70,9 +70,9 @@ export interface CustomEzsignfoldertypeResponse {
  */
 export class DataObjectCustomEzsignfoldertypeResponse {
    pkiEzsignfoldertypeID:number = 0
-   sEzsignfoldertypeNameX:string = ''
-   bEzsignfoldertypeIncludeproofsigner:boolean = false
-   bEzsignfoldertypeIncludeproofuser:boolean = false
+   sEzsignfoldertypeNameX?:string = undefined
+   bEzsignfoldertypeIncludeproofsigner?:boolean = undefined
+   bEzsignfoldertypeIncludeproofuser?:boolean = undefined
    bEzsignfoldertypeDelegate?:boolean = undefined
    bEzsignfoldertypeReassign?:boolean = undefined
 }
@@ -90,15 +90,15 @@ export class ValidationObjectCustomEzsignfoldertypeResponse {
    }
    sEzsignfoldertypeNameX = {
       type: 'string',
-      required: true
+      required: false
    }
    bEzsignfoldertypeIncludeproofsigner = {
       type: 'boolean',
-      required: true
+      required: false
    }
    bEzsignfoldertypeIncludeproofuser = {
       type: 'boolean',
-      required: true
+      required: false
    }
    bEzsignfoldertypeDelegate = {
       type: 'boolean',
