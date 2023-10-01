@@ -28,7 +28,7 @@ export interface PaymenttermGetAutocompleteV2ResponseMPayload {
      * @type {Array<PaymenttermAutocompleteElementResponse>}
      * @memberof PaymenttermGetAutocompleteV2ResponseMPayload
      */
-    'a_objPaymentterm'?: Array<PaymenttermAutocompleteElementResponse>;
+    'a_objPaymentterm': Array<PaymenttermAutocompleteElementResponse>;
 }
 /**
  * @import
@@ -42,7 +42,7 @@ export interface PaymenttermGetAutocompleteV2ResponseMPayload {
  * @class DataObjectPaymenttermGetAutocompleteV2ResponseMPayload
  */
 export class DataObjectPaymenttermGetAutocompleteV2ResponseMPayload {
-   a_objPaymentterm?:Array<PaymenttermAutocompleteElementResponse> = undefined
+   a_objPaymentterm:Array<PaymenttermAutocompleteElementResponse> = []
 }
 
 /**
@@ -53,7 +53,7 @@ export class DataObjectPaymenttermGetAutocompleteV2ResponseMPayload {
 export class ValidationObjectPaymenttermGetAutocompleteV2ResponseMPayload {
    a_objPaymentterm = {
       type: 'array',
-      required: false
+      required: true
    }
 } 
 

@@ -104,7 +104,7 @@ export interface WebhookResponseCompound {
      * @type {string}
      * @memberof WebhookResponseCompound
      */
-    sWebhookEvent:string 
+    sWebhookEvent?:string 
 }
 
 
@@ -132,7 +132,7 @@ export class DataObjectWebhookResponseCompound {
     sWebhookEmailfailed:string = ''
     bWebhookIsactive?:boolean = undefined
     bWebhookSkipsslvalidation:boolean = false
-    sWebhookEvent:string = ''
+    sWebhookEvent?:string = undefined
 }
 
 /**
@@ -191,7 +191,7 @@ export class ValidationObjectWebhookResponseCompound {
    }
    sWebhookEvent = {
       type: 'string',
-      required: true
+      required: false
    }
 } 
 

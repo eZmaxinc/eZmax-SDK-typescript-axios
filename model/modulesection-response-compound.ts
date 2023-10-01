@@ -56,7 +56,7 @@ export interface ModulesectionResponseCompound {
      * @type {Array<PermissionResponseCompound>}
      * @memberof ModulesectionResponseCompound
      */
-    a_objPermission:Array<PermissionResponseCompound> 
+    a_objPermission?:Array<PermissionResponseCompound> 
 }
 
 
@@ -76,7 +76,7 @@ export class DataObjectModulesectionResponseCompound {
     fkiModuleID:number = 0
     sModulesectionInternalname:string = ''
     sModulesectionNameX:string = ''
-    a_objPermission:Array<PermissionResponseCompound> = []
+    a_objPermission?:Array<PermissionResponseCompound> = undefined
 }
 
 /**
@@ -105,7 +105,7 @@ export class ValidationObjectModulesectionResponseCompound {
    }
    a_objPermission = {
       type: 'array',
-      required: true
+      required: false
    }
 } 
 

@@ -92,7 +92,7 @@ export interface CustomEzsignfoldersignerassociationActionableElementResponse {
      * @type {boolean}
      * @memberof CustomEzsignfoldersignerassociationActionableElementResponse
      */
-    bEzsignfoldersignerassociationHasactionableelementsFuture?:boolean 
+    bEzsignfoldersignerassociationHasactionableelementsFuture:boolean 
 }
 
 
@@ -129,7 +129,7 @@ export class DataObjectCustomEzsignfoldersignerassociationActionableElementRespo
     objUser?:EzsignfoldersignerassociationResponseCompoundUser = undefined
     objEzsignsigner?:EzsignsignerResponseCompound = undefined
     bEzsignfoldersignerassociationHasactionableelementsCurrent:boolean = false
-    bEzsignfoldersignerassociationHasactionableelementsFuture?:boolean = undefined
+    bEzsignfoldersignerassociationHasactionableelementsFuture:boolean = false
 }
 
 /**
@@ -169,7 +169,7 @@ export class ValidationObjectCustomEzsignfoldersignerassociationActionableElemen
    }
    bEzsignfoldersignerassociationHasactionableelementsFuture = {
       type: 'boolean',
-      required: false
+      required: true
    }
 } 
 

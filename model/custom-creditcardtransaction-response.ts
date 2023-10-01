@@ -28,7 +28,7 @@ export interface CustomCreditcardtransactionResponse {
      * @type {FieldECreditcardtypeCodename}
      * @memberof CustomCreditcardtransactionResponse
      */
-    'eCreditcardtypeCodename'?: FieldECreditcardtypeCodename;
+    'eCreditcardtypeCodename': FieldECreditcardtypeCodename;
     /**
      * The amount of the Creditcardtransaction
      * @type {string}
@@ -62,7 +62,7 @@ export interface CustomCreditcardtransactionResponse {
  * @class DataObjectCustomCreditcardtransactionResponse
  */
 export class DataObjectCustomCreditcardtransactionResponse {
-   eCreditcardtypeCodename?:FieldECreditcardtypeCodename = undefined
+   eCreditcardtypeCodename:FieldECreditcardtypeCodename = 'Amex'
    dCreditcardtransactionAmount:string = ''
    sCreditcardtransactionPartiallydecryptednumber:string = ''
    sCreditcardtransactionReferencenumber:string = ''
@@ -77,7 +77,7 @@ export class ValidationObjectCustomCreditcardtransactionResponse {
    eCreditcardtypeCodename = {
       type: 'enum',
       allowableValues: ['Amex','Mastercard','Visa'],
-      required: false
+      required: true
    }
    dCreditcardtransactionAmount = {
       type: 'string',

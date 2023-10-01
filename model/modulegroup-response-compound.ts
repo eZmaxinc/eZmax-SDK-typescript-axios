@@ -44,7 +44,7 @@ export interface ModulegroupResponseCompound {
      * @type {Array<ModuleResponseCompound>}
      * @memberof ModulegroupResponseCompound
      */
-    a_objModule:Array<ModuleResponseCompound> 
+    a_objModule?:Array<ModuleResponseCompound> 
 }
 
 
@@ -62,7 +62,7 @@ export interface ModulegroupResponseCompound {
 export class DataObjectModulegroupResponseCompound {
     pkiModulegroupID:number = 0
     sModulegroupNameX:string = ''
-    a_objModule:Array<ModuleResponseCompound> = []
+    a_objModule?:Array<ModuleResponseCompound> = undefined
 }
 
 /**
@@ -84,7 +84,7 @@ export class ValidationObjectModulegroupResponseCompound {
    }
    a_objModule = {
       type: 'array',
-      required: true
+      required: false
    }
 } 
 

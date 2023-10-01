@@ -28,7 +28,7 @@ export interface PhonetypeGetAutocompleteV2ResponseMPayload {
      * @type {Array<PhonetypeAutocompleteElementResponse>}
      * @memberof PhonetypeGetAutocompleteV2ResponseMPayload
      */
-    'a_objPhonetype'?: Array<PhonetypeAutocompleteElementResponse>;
+    'a_objPhonetype': Array<PhonetypeAutocompleteElementResponse>;
 }
 /**
  * @import
@@ -42,7 +42,7 @@ export interface PhonetypeGetAutocompleteV2ResponseMPayload {
  * @class DataObjectPhonetypeGetAutocompleteV2ResponseMPayload
  */
 export class DataObjectPhonetypeGetAutocompleteV2ResponseMPayload {
-   a_objPhonetype?:Array<PhonetypeAutocompleteElementResponse> = undefined
+   a_objPhonetype:Array<PhonetypeAutocompleteElementResponse> = []
 }
 
 /**
@@ -53,7 +53,7 @@ export class DataObjectPhonetypeGetAutocompleteV2ResponseMPayload {
 export class ValidationObjectPhonetypeGetAutocompleteV2ResponseMPayload {
    a_objPhonetype = {
       type: 'array',
-      required: false
+      required: true
    }
 } 
 

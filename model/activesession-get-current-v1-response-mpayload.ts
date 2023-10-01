@@ -98,7 +98,7 @@ export interface ActivesessionGetCurrentV1ResponseMPayload {
      * @type {number}
      * @memberof ActivesessionGetCurrentV1ResponseMPayload
      */
-    fkiSystemconfigurationtypeID?:number 
+    fkiSystemconfigurationtypeID:number 
     /**
      * The unique ID of the Signature
      * @type {number}
@@ -172,7 +172,7 @@ export class DataObjectActivesessionGetCurrentV1ResponseMPayload {
     bActivesessionDebug:boolean = false
     bActivesessionIssuperadmin:boolean = false
     pksCustomerCode:string = ''
-    fkiSystemconfigurationtypeID?:number = undefined
+    fkiSystemconfigurationtypeID:number = 0
     fkiSignatureID?:number = undefined
     a_pkiPermissionID:Array<number> = []
     objUserReal:ActivesessionResponseCompoundUser = new DataObjectActivesessionResponseCompoundUser()
@@ -231,7 +231,7 @@ export class ValidationObjectActivesessionGetCurrentV1ResponseMPayload {
    fkiSystemconfigurationtypeID = {
       type: 'integer',
       minimum: 1,
-      required: false
+      required: true
    }
    fkiSignatureID = {
       type: 'integer',

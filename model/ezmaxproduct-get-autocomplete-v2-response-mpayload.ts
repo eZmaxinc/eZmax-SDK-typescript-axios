@@ -28,7 +28,7 @@ export interface EzmaxproductGetAutocompleteV2ResponseMPayload {
      * @type {Array<EzmaxproductAutocompleteElementResponse>}
      * @memberof EzmaxproductGetAutocompleteV2ResponseMPayload
      */
-    'a_objEzmaxproduct'?: Array<EzmaxproductAutocompleteElementResponse>;
+    'a_objEzmaxproduct': Array<EzmaxproductAutocompleteElementResponse>;
 }
 /**
  * @import
@@ -42,7 +42,7 @@ export interface EzmaxproductGetAutocompleteV2ResponseMPayload {
  * @class DataObjectEzmaxproductGetAutocompleteV2ResponseMPayload
  */
 export class DataObjectEzmaxproductGetAutocompleteV2ResponseMPayload {
-   a_objEzmaxproduct?:Array<EzmaxproductAutocompleteElementResponse> = undefined
+   a_objEzmaxproduct:Array<EzmaxproductAutocompleteElementResponse> = []
 }
 
 /**
@@ -53,7 +53,7 @@ export class DataObjectEzmaxproductGetAutocompleteV2ResponseMPayload {
 export class ValidationObjectEzmaxproductGetAutocompleteV2ResponseMPayload {
    a_objEzmaxproduct = {
       type: 'array',
-      required: false
+      required: true
    }
 } 
 

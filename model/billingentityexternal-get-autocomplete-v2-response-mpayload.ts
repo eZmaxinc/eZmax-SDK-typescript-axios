@@ -28,7 +28,7 @@ export interface BillingentityexternalGetAutocompleteV2ResponseMPayload {
      * @type {Array<BillingentityexternalAutocompleteElementResponse>}
      * @memberof BillingentityexternalGetAutocompleteV2ResponseMPayload
      */
-    'a_objBillingentityexternal'?: Array<BillingentityexternalAutocompleteElementResponse>;
+    'a_objBillingentityexternal': Array<BillingentityexternalAutocompleteElementResponse>;
 }
 /**
  * @import
@@ -42,7 +42,7 @@ export interface BillingentityexternalGetAutocompleteV2ResponseMPayload {
  * @class DataObjectBillingentityexternalGetAutocompleteV2ResponseMPayload
  */
 export class DataObjectBillingentityexternalGetAutocompleteV2ResponseMPayload {
-   a_objBillingentityexternal?:Array<BillingentityexternalAutocompleteElementResponse> = undefined
+   a_objBillingentityexternal:Array<BillingentityexternalAutocompleteElementResponse> = []
 }
 
 /**
@@ -53,7 +53,7 @@ export class DataObjectBillingentityexternalGetAutocompleteV2ResponseMPayload {
 export class ValidationObjectBillingentityexternalGetAutocompleteV2ResponseMPayload {
    a_objBillingentityexternal = {
       type: 'array',
-      required: false
+      required: true
    }
 } 
 

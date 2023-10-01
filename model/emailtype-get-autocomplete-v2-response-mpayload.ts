@@ -28,7 +28,7 @@ export interface EmailtypeGetAutocompleteV2ResponseMPayload {
      * @type {Array<EmailtypeAutocompleteElementResponse>}
      * @memberof EmailtypeGetAutocompleteV2ResponseMPayload
      */
-    'a_objEmailtype'?: Array<EmailtypeAutocompleteElementResponse>;
+    'a_objEmailtype': Array<EmailtypeAutocompleteElementResponse>;
 }
 /**
  * @import
@@ -42,7 +42,7 @@ export interface EmailtypeGetAutocompleteV2ResponseMPayload {
  * @class DataObjectEmailtypeGetAutocompleteV2ResponseMPayload
  */
 export class DataObjectEmailtypeGetAutocompleteV2ResponseMPayload {
-   a_objEmailtype?:Array<EmailtypeAutocompleteElementResponse> = undefined
+   a_objEmailtype:Array<EmailtypeAutocompleteElementResponse> = []
 }
 
 /**
@@ -53,7 +53,7 @@ export class DataObjectEmailtypeGetAutocompleteV2ResponseMPayload {
 export class ValidationObjectEmailtypeGetAutocompleteV2ResponseMPayload {
    a_objEmailtype = {
       type: 'array',
-      required: false
+      required: true
    }
 } 
 

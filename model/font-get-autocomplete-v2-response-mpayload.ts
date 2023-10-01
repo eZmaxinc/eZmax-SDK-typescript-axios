@@ -28,7 +28,7 @@ export interface FontGetAutocompleteV2ResponseMPayload {
      * @type {Array<FontAutocompleteElementResponse>}
      * @memberof FontGetAutocompleteV2ResponseMPayload
      */
-    'a_objFont'?: Array<FontAutocompleteElementResponse>;
+    'a_objFont': Array<FontAutocompleteElementResponse>;
 }
 /**
  * @import
@@ -42,7 +42,7 @@ export interface FontGetAutocompleteV2ResponseMPayload {
  * @class DataObjectFontGetAutocompleteV2ResponseMPayload
  */
 export class DataObjectFontGetAutocompleteV2ResponseMPayload {
-   a_objFont?:Array<FontAutocompleteElementResponse> = undefined
+   a_objFont:Array<FontAutocompleteElementResponse> = []
 }
 
 /**
@@ -53,7 +53,7 @@ export class DataObjectFontGetAutocompleteV2ResponseMPayload {
 export class ValidationObjectFontGetAutocompleteV2ResponseMPayload {
    a_objFont = {
       type: 'array',
-      required: false
+      required: true
    }
 } 
 

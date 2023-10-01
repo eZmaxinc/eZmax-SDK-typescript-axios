@@ -28,7 +28,7 @@ export interface VariableexpenseGetAutocompleteV2ResponseMPayload {
      * @type {Array<VariableexpenseAutocompleteElementResponse>}
      * @memberof VariableexpenseGetAutocompleteV2ResponseMPayload
      */
-    'a_objVariableexpense'?: Array<VariableexpenseAutocompleteElementResponse>;
+    'a_objVariableexpense': Array<VariableexpenseAutocompleteElementResponse>;
 }
 /**
  * @import
@@ -42,7 +42,7 @@ export interface VariableexpenseGetAutocompleteV2ResponseMPayload {
  * @class DataObjectVariableexpenseGetAutocompleteV2ResponseMPayload
  */
 export class DataObjectVariableexpenseGetAutocompleteV2ResponseMPayload {
-   a_objVariableexpense?:Array<VariableexpenseAutocompleteElementResponse> = undefined
+   a_objVariableexpense:Array<VariableexpenseAutocompleteElementResponse> = []
 }
 
 /**
@@ -53,7 +53,7 @@ export class DataObjectVariableexpenseGetAutocompleteV2ResponseMPayload {
 export class ValidationObjectVariableexpenseGetAutocompleteV2ResponseMPayload {
    a_objVariableexpense = {
       type: 'array',
-      required: false
+      required: true
    }
 } 
 

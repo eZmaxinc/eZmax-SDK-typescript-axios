@@ -28,7 +28,7 @@ export interface CompanyGetAutocompleteV2ResponseMPayload {
      * @type {Array<CompanyAutocompleteElementResponse>}
      * @memberof CompanyGetAutocompleteV2ResponseMPayload
      */
-    'a_objCompany'?: Array<CompanyAutocompleteElementResponse>;
+    'a_objCompany': Array<CompanyAutocompleteElementResponse>;
 }
 /**
  * @import
@@ -42,7 +42,7 @@ export interface CompanyGetAutocompleteV2ResponseMPayload {
  * @class DataObjectCompanyGetAutocompleteV2ResponseMPayload
  */
 export class DataObjectCompanyGetAutocompleteV2ResponseMPayload {
-   a_objCompany?:Array<CompanyAutocompleteElementResponse> = undefined
+   a_objCompany:Array<CompanyAutocompleteElementResponse> = []
 }
 
 /**
@@ -53,7 +53,7 @@ export class DataObjectCompanyGetAutocompleteV2ResponseMPayload {
 export class ValidationObjectCompanyGetAutocompleteV2ResponseMPayload {
    a_objCompany = {
       type: 'array',
-      required: false
+      required: true
    }
 } 
 

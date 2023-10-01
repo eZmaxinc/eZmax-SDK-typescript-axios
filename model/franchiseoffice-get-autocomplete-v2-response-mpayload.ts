@@ -28,7 +28,7 @@ export interface FranchiseofficeGetAutocompleteV2ResponseMPayload {
      * @type {Array<FranchiseofficeAutocompleteElementResponse>}
      * @memberof FranchiseofficeGetAutocompleteV2ResponseMPayload
      */
-    'a_objFranchiseoffice'?: Array<FranchiseofficeAutocompleteElementResponse>;
+    'a_objFranchiseoffice': Array<FranchiseofficeAutocompleteElementResponse>;
 }
 /**
  * @import
@@ -42,7 +42,7 @@ export interface FranchiseofficeGetAutocompleteV2ResponseMPayload {
  * @class DataObjectFranchiseofficeGetAutocompleteV2ResponseMPayload
  */
 export class DataObjectFranchiseofficeGetAutocompleteV2ResponseMPayload {
-   a_objFranchiseoffice?:Array<FranchiseofficeAutocompleteElementResponse> = undefined
+   a_objFranchiseoffice:Array<FranchiseofficeAutocompleteElementResponse> = []
 }
 
 /**
@@ -53,7 +53,7 @@ export class DataObjectFranchiseofficeGetAutocompleteV2ResponseMPayload {
 export class ValidationObjectFranchiseofficeGetAutocompleteV2ResponseMPayload {
    a_objFranchiseoffice = {
       type: 'array',
-      required: false
+      required: true
    }
 } 
 

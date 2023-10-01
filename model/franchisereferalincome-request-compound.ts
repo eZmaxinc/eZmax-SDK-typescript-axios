@@ -107,7 +107,7 @@ export interface FranchisereferalincomeRequestCompound {
      * @type {AddressRequest}
      * @memberof FranchisereferalincomeRequestCompound
      */
-    objAddress:AddressRequest 
+    objAddress?:AddressRequest 
     /**
      * 
      * @type {Array<ContactRequestCompound>}
@@ -145,7 +145,7 @@ export class DataObjectFranchisereferalincomeRequestCompound {
     tFranchisereferalincomeComment:string = ''
     fkiFranchiseofficeID:number = 0
     sFranchisereferalincomeRemoteid:string = ''
-    objAddress:AddressRequest = new DataObjectAddressRequest()
+    objAddress?:AddressRequest = undefined
     a_objContact:Array<ContactRequestCompound> = []
 }
 

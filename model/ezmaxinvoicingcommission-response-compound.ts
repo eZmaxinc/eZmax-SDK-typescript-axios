@@ -80,7 +80,7 @@ export interface EzmaxinvoicingcommissionResponseCompound {
      * @type {CustomContactNameResponse}
      * @memberof EzmaxinvoicingcommissionResponseCompound
      */
-    objContactName:CustomContactNameResponse 
+    objContactName?:CustomContactNameResponse 
 }
 
 
@@ -108,7 +108,7 @@ export class DataObjectEzmaxinvoicingcommissionResponseCompound {
     dtEzmaxinvoicingcommissionEnd:string = ''
     iEzmaxinvoicingcommissionDays:number = 0
     dEzmaxinvoicingcommissionAmount:string = ''
-    objContactName:CustomContactNameResponse = new DataObjectCustomContactNameResponse()
+    objContactName?:CustomContactNameResponse = undefined
 }
 
 /**

@@ -37,7 +37,7 @@ export interface NotificationtestGetElementsV1ResponseMPayload {
      * @type {Array<string>}
      * @memberof NotificationtestGetElementsV1ResponseMPayload
      */
-    'a_sVariableobjectProperty'?: Array<string>;
+    'a_sVariableobjectProperty': Array<string>;
     /**
      * 
      * @type {Array<{ [key: string]: any; }>}
@@ -59,7 +59,7 @@ export interface NotificationtestGetElementsV1ResponseMPayload {
 export class DataObjectNotificationtestGetElementsV1ResponseMPayload {
    pkiNotificationtestID:number = 0
    sNotificationtestFunction:string = ''
-   a_sVariableobjectProperty?:Array<string> = undefined
+   a_sVariableobjectProperty:Array<string> = []
    a_objVariableobject:Array<{ [key: string]: any; }> = []
 }
 
@@ -80,7 +80,7 @@ export class ValidationObjectNotificationtestGetElementsV1ResponseMPayload {
    }
    a_sVariableobjectProperty = {
       type: 'array',
-      required: false
+      required: true
    }
    a_objVariableobject = {
       type: 'array',

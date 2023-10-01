@@ -25,6 +25,7 @@ import { FieldEErrorCode } from './field-eerror-code';
 
 /**
  * @type CommonResponseErrorEzsignformValidation
+ * Generic Error Message
  * @export
  */
 /** export type CommonResponseErrorEzsignformValidation = CommonResponseError; */

@@ -88,7 +88,7 @@ export interface ActivesessionResponse {
      * @type {number}
      * @memberof ActivesessionResponse
      */
-    'fkiSystemconfigurationtypeID'?: number;
+    'fkiSystemconfigurationtypeID': number;
     /**
      * The unique ID of the Signature
      * @type {number}
@@ -119,7 +119,7 @@ export class DataObjectActivesessionResponse {
    bActivesessionDebug:boolean = false
    bActivesessionIssuperadmin:boolean = false
    pksCustomerCode:string = ''
-   fkiSystemconfigurationtypeID?:number = undefined
+   fkiSystemconfigurationtypeID:number = 0
    fkiSignatureID?:number = undefined
 }
 
@@ -173,7 +173,7 @@ export class ValidationObjectActivesessionResponse {
    fkiSystemconfigurationtypeID = {
       type: 'integer',
       minimum: 1,
-      required: false
+      required: true
    }
    fkiSignatureID = {
       type: 'integer',

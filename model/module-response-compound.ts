@@ -68,7 +68,7 @@ export interface ModuleResponseCompound {
      * @type {Array<ModulesectionResponseCompound>}
      * @memberof ModuleResponseCompound
      */
-    a_objModulesection:Array<ModulesectionResponseCompound> 
+    a_objModulesection?:Array<ModulesectionResponseCompound> 
 }
 
 
@@ -90,7 +90,7 @@ export class DataObjectModuleResponseCompound {
     sModuleNameX:string = ''
     bModuleRegistered:boolean = false
     bModuleRegisteredapi:boolean = false
-    a_objModulesection:Array<ModulesectionResponseCompound> = []
+    a_objModulesection?:Array<ModulesectionResponseCompound> = undefined
 }
 
 /**
@@ -128,7 +128,7 @@ export class ValidationObjectModuleResponseCompound {
    }
    a_objModulesection = {
       type: 'array',
-      required: true
+      required: false
    }
 } 
 

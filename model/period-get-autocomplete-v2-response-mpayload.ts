@@ -28,7 +28,7 @@ export interface PeriodGetAutocompleteV2ResponseMPayload {
      * @type {Array<PeriodAutocompleteElementResponse>}
      * @memberof PeriodGetAutocompleteV2ResponseMPayload
      */
-    'a_objPeriod'?: Array<PeriodAutocompleteElementResponse>;
+    'a_objPeriod': Array<PeriodAutocompleteElementResponse>;
 }
 /**
  * @import
@@ -42,7 +42,7 @@ export interface PeriodGetAutocompleteV2ResponseMPayload {
  * @class DataObjectPeriodGetAutocompleteV2ResponseMPayload
  */
 export class DataObjectPeriodGetAutocompleteV2ResponseMPayload {
-   a_objPeriod?:Array<PeriodAutocompleteElementResponse> = undefined
+   a_objPeriod:Array<PeriodAutocompleteElementResponse> = []
 }
 
 /**
@@ -53,7 +53,7 @@ export class DataObjectPeriodGetAutocompleteV2ResponseMPayload {
 export class ValidationObjectPeriodGetAutocompleteV2ResponseMPayload {
    a_objPeriod = {
       type: 'array',
-      required: false
+      required: true
    }
 } 
 

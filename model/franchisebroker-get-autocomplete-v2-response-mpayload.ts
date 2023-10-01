@@ -28,7 +28,7 @@ export interface FranchisebrokerGetAutocompleteV2ResponseMPayload {
      * @type {Array<FranchisebrokerAutocompleteElementResponse>}
      * @memberof FranchisebrokerGetAutocompleteV2ResponseMPayload
      */
-    'a_objFranchisebroker'?: Array<FranchisebrokerAutocompleteElementResponse>;
+    'a_objFranchisebroker': Array<FranchisebrokerAutocompleteElementResponse>;
 }
 /**
  * @import
@@ -42,7 +42,7 @@ export interface FranchisebrokerGetAutocompleteV2ResponseMPayload {
  * @class DataObjectFranchisebrokerGetAutocompleteV2ResponseMPayload
  */
 export class DataObjectFranchisebrokerGetAutocompleteV2ResponseMPayload {
-   a_objFranchisebroker?:Array<FranchisebrokerAutocompleteElementResponse> = undefined
+   a_objFranchisebroker:Array<FranchisebrokerAutocompleteElementResponse> = []
 }
 
 /**
@@ -53,7 +53,7 @@ export class DataObjectFranchisebrokerGetAutocompleteV2ResponseMPayload {
 export class ValidationObjectFranchisebrokerGetAutocompleteV2ResponseMPayload {
    a_objFranchisebroker = {
       type: 'array',
-      required: false
+      required: true
    }
 } 
 
