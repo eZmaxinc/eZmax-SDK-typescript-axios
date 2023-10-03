@@ -52,7 +52,7 @@ export interface EzsignfolderRequest {
      * @type {string}
      * @memberof EzsignfolderRequest
      */
-    'tEzsignfolderNote': string;
+    'tEzsignfolderNote'?: string;
     /**
      * 
      * @type {FieldEEzsignfolderSendreminderfrequency}
@@ -84,7 +84,7 @@ export class DataObjectEzsignfolderRequest {
    fkiEzsignfoldertypeID:number = 0
    fkiEzsigntsarequirementID?:number = undefined
    sEzsignfolderDescription:string = ''
-   tEzsignfolderNote:string = ''
+   tEzsignfolderNote?:string = undefined
    eEzsignfolderSendreminderfrequency:FieldEEzsignfolderSendreminderfrequency = 'None'
    sEzsignfolderExternalid?:string = undefined
 }
@@ -117,7 +117,7 @@ export class ValidationObjectEzsignfolderRequest {
    }
    tEzsignfolderNote = {
       type: 'string',
-      required: true
+      required: false
    }
    eEzsignfolderSendreminderfrequency = {
       type: 'enum',

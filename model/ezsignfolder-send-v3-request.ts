@@ -25,7 +25,7 @@ export interface EzsignfolderSendV3Request {
      * @type {string}
      * @memberof EzsignfolderSendV3Request
      */
-    'tEzsignfolderMessage': string;
+    'tEzsignfolderMessage'?: string;
     /**
      * The date and time at which the Ezsignfolder will be sent in the future.
      * @type {string}
@@ -51,7 +51,7 @@ export interface EzsignfolderSendV3Request {
  * @class DataObjectEzsignfolderSendV3Request
  */
 export class DataObjectEzsignfolderSendV3Request {
-   tEzsignfolderMessage:string = ''
+   tEzsignfolderMessage?:string = undefined
    dtEzsignfolderDelayedsenddate?:string = undefined
    a_fkiEzsignfoldersignerassociationID:Array<number> = []
 }
@@ -64,7 +64,7 @@ export class DataObjectEzsignfolderSendV3Request {
 export class ValidationObjectEzsignfolderSendV3Request {
    tEzsignfolderMessage = {
       type: 'string',
-      required: true
+      required: false
    }
    dtEzsignfolderDelayedsenddate = {
       type: 'string',
