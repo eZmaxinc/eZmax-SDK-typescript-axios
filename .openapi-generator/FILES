@@ -49,6 +49,7 @@ api/object-font-api.ts
 api/object-franchisebroker-api.ts
 api/object-franchiseoffice-api.ts
 api/object-franchisereferalincome-api.ts
+api/object-language-api.ts
 api/object-modulegroup-api.ts
 api/object-notificationsection-api.ts
 api/object-notificationtest-api.ts
@@ -863,6 +864,9 @@ model/global-ezmaxclient-version-v1-response.ts
 model/global-ezmaxcustomer-get-configuration-v1-response.ts
 model/header-accept-language.ts
 model/index.ts
+model/language-autocomplete-element-response.ts
+model/language-get-autocomplete-v2-response-mpayload.ts
+model/language-get-autocomplete-v2-response.ts
 model/module-response-compound.ts
 model/module-response.ts
 model/modulegroup-get-all-v1-response-mpayload.ts

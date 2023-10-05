@@ -60,6 +60,7 @@ export enum EApiOperation {
     'object-franchisebroker-api',
     'object-franchiseoffice-api',
     'object-franchisereferalincome-api',
+    'object-language-api',
     'object-modulegroup-api',
     'object-notificationsection-api',
     'object-notificationtest-api',
@@ -135,6 +136,7 @@ export * from './api/object-font-api';
 export * from './api/object-franchisebroker-api';
 export * from './api/object-franchiseoffice-api';
 export * from './api/object-franchisereferalincome-api';
+export * from './api/object-language-api';
 export * from './api/object-modulegroup-api';
 export * from './api/object-notificationsection-api';
 export * from './api/object-notificationtest-api';
