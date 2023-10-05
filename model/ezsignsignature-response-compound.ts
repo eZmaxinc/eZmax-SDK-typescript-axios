@@ -24,6 +24,9 @@ import { CustomCreditcardtransactionResponse } from './custom-creditcardtransact
 import { EnumTextvalidation } from './enum-textvalidation';
 // May contain unused imports in some cases
 // @ts-ignore
+import { EzsignelementdependencyResponseCompound } from './ezsignelementdependency-response-compound';
+// May contain unused imports in some cases
+// @ts-ignore
 import { EzsignsignatureResponse } from './ezsignsignature-response';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -31,6 +34,9 @@ import { EzsignsignaturecustomdateResponseCompound } from './ezsignsignaturecust
 // May contain unused imports in some cases
 // @ts-ignore
 import { FieldEEzsignsignatureAttachmentnamesource } from './field-eezsignsignature-attachmentnamesource';
+// May contain unused imports in some cases
+// @ts-ignore
+import { FieldEEzsignsignatureDependencyrequirement } from './field-eezsignsignature-dependencyrequirement';
 // May contain unused imports in some cases
 // @ts-ignore
 import { FieldEEzsignsignatureFont } from './field-eezsignsignature-font';
@@ -190,6 +196,12 @@ export interface EzsignsignatureResponseCompound {
      */
     eEzsignsignatureTextvalidation?:EnumTextvalidation 
     /**
+     * 
+     * @type {FieldEEzsignsignatureDependencyrequirement}
+     * @memberof EzsignsignatureResponseCompound
+     */
+    eEzsignsignatureDependencyrequirement?:FieldEEzsignsignatureDependencyrequirement 
+    /**
      * A regular expression to indicate what values are acceptable for the Ezsignsignature.  This can only be set if eEzsignsignatureType is **FieldText** or **FieldTextarea** and eEzsignsignatureTextvalidation is **Custom**
      * @type {string}
      * @memberof EzsignsignatureResponseCompound
@@ -231,6 +243,12 @@ export interface EzsignsignatureResponseCompound {
      * @memberof EzsignsignatureResponseCompound
      */
     objCreditcardtransaction?:CustomCreditcardtransactionResponse 
+    /**
+     * 
+     * @type {Array<EzsignelementdependencyResponseCompound>}
+     * @memberof EzsignsignatureResponseCompound
+     */
+    a_objEzsignelementdependency?:Array<EzsignelementdependencyResponseCompound> 
 }
 
 
@@ -286,6 +304,7 @@ export class DataObjectEzsignsignatureResponseCompound {
     sEzsignsignatureDescription?:string = undefined
     iEzsignsignatureMaxlength?:number = undefined
     eEzsignsignatureTextvalidation?:EnumTextvalidation = undefined
+    eEzsignsignatureDependencyrequirement?:FieldEEzsignsignatureDependencyrequirement = undefined
     sEzsignsignatureRegexp?:string = undefined
     objContactName:CustomContactNameResponse = new DataObjectCustomContactNameResponse()
     objContactNameDelegation?:CustomContactNameResponse = undefined
@@ -293,6 +312,7 @@ export class DataObjectEzsignsignatureResponseCompound {
     bEzsignsignatureCustomdate?:boolean = undefined
     a_objEzsignsignaturecustomdate?:Array<EzsignsignaturecustomdateResponseCompound> = undefined
     objCreditcardtransaction?:CustomCreditcardtransactionResponse = undefined
+    a_objEzsignelementdependency?:Array<EzsignelementdependencyResponseCompound> = undefined
 }
 
 /**
@@ -410,6 +430,11 @@ export class ValidationObjectEzsignsignatureResponseCompound {
       allowableValues: ['None','Date (YYYY-MM-DD)','Date (MM/DD/YYYY)','Date (MM/DD/YY)','Date (DD/MM/YYYY)','Date (DD/MM/YY)','Email','Letters','Numbers','Zip','Zip+4','PostalCode','Custom'],
       required: false
    }
+   eEzsignsignatureDependencyrequirement = {
+      type: 'enum',
+      allowableValues: ['AllOf','AnyOf'],
+      required: false
+   }
    sEzsignsignatureRegexp = {
       type: 'string',
       pattern: '/^\^.*\$$|^$/',
@@ -427,6 +452,10 @@ export class ValidationObjectEzsignsignatureResponseCompound {
       required: false
    }
    objCreditcardtransaction = new ValidationObjectCustomCreditcardtransactionResponse()
+   a_objEzsignelementdependency = {
+      type: 'array',
+      required: false
+   }
 } 
 
 

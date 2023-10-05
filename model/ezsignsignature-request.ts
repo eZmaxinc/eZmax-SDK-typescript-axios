@@ -21,6 +21,9 @@ import { EnumTextvalidation } from './enum-textvalidation';
 import { FieldEEzsignsignatureAttachmentnamesource } from './field-eezsignsignature-attachmentnamesource';
 // May contain unused imports in some cases
 // @ts-ignore
+import { FieldEEzsignsignatureDependencyrequirement } from './field-eezsignsignature-dependencyrequirement';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FieldEEzsignsignatureFont } from './field-eezsignsignature-font';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -161,6 +164,12 @@ export interface EzsignsignatureRequest {
      * @memberof EzsignsignatureRequest
      */
     'sEzsignsignatureRegexp'?: string;
+    /**
+     * 
+     * @type {FieldEEzsignsignatureDependencyrequirement}
+     * @memberof EzsignsignatureRequest
+     */
+    'eEzsignsignatureDependencyrequirement'?: FieldEEzsignsignatureDependencyrequirement;
 }
 
 
@@ -197,6 +206,7 @@ export class DataObjectEzsignsignatureRequest {
    iEzsignsignatureMaxlength?:number = undefined
    eEzsignsignatureTextvalidation?:EnumTextvalidation = undefined
    sEzsignsignatureRegexp?:string = undefined
+   eEzsignsignatureDependencyrequirement?:FieldEEzsignsignatureDependencyrequirement = undefined
 }
 
 /**
@@ -304,6 +314,11 @@ export class ValidationObjectEzsignsignatureRequest {
    sEzsignsignatureRegexp = {
       type: 'string',
       pattern: '/^\^.*\$$|^$/',
+      required: false
+   }
+   eEzsignsignatureDependencyrequirement = {
+      type: 'enum',
+      allowableValues: ['AllOf','AnyOf'],
       required: false
    }
 } 

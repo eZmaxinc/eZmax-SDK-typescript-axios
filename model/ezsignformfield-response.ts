@@ -13,6 +13,9 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import { FieldEEzsignformfieldDependencyrequirement } from './field-eezsignformfield-dependencyrequirement';
 
 /**
  * An Ezsignformfield Object
@@ -86,7 +89,15 @@ export interface EzsignformfieldResponse {
      * @memberof EzsignformfieldResponse
      */
     'sEzsignformfieldEnteredvalue'?: string;
+    /**
+     * 
+     * @type {FieldEEzsignformfieldDependencyrequirement}
+     * @memberof EzsignformfieldResponse
+     */
+    'eEzsignformfieldDependencyrequirement'?: FieldEEzsignformfieldDependencyrequirement;
 }
+
+
 /**
  * @import
  * Imports Child Data Object
@@ -110,6 +121,7 @@ export class DataObjectEzsignformfieldResponse {
    bEzsignformfieldAutocomplete?:boolean = undefined
    bEzsignformfieldSelected?:boolean = undefined
    sEzsignformfieldEnteredvalue?:string = undefined
+   eEzsignformfieldDependencyrequirement?:FieldEEzsignformfieldDependencyrequirement = undefined
 }
 
 /**
@@ -166,6 +178,11 @@ export class ValidationObjectEzsignformfieldResponse {
    }
    sEzsignformfieldEnteredvalue = {
       type: 'string',
+      required: false
+   }
+   eEzsignformfieldDependencyrequirement = {
+      type: 'enum',
+      allowableValues: ['AllOf','AnyOf'],
       required: false
    }
 } 

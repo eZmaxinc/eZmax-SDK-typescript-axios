@@ -46,7 +46,8 @@ export const FieldEEzsigndocumentlogType = {
     DeclinedToSign: 'DeclinedToSign',
     DelayedSendEmail: 'DelayedSendEmail',
     RegeneratePage: 'RegeneratePage',
-    RegeneratePageForm: 'RegeneratePageForm'
+    RegeneratePageForm: 'RegeneratePageForm',
+    Reassign: 'Reassign'
 } as const;
 
 export type FieldEEzsigndocumentlogType = typeof FieldEEzsigndocumentlogType[keyof typeof FieldEEzsigndocumentlogType];

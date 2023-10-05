@@ -24,6 +24,9 @@ import { EnumTextvalidation } from './enum-textvalidation';
 import { FieldEEzsignsignatureAttachmentnamesource } from './field-eezsignsignature-attachmentnamesource';
 // May contain unused imports in some cases
 // @ts-ignore
+import { FieldEEzsignsignatureDependencyrequirement } from './field-eezsignsignature-dependencyrequirement';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FieldEEzsignsignatureFont } from './field-eezsignsignature-font';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -180,6 +183,12 @@ export interface EzsignsignatureResponse {
      */
     'eEzsignsignatureTextvalidation'?: EnumTextvalidation;
     /**
+     * 
+     * @type {FieldEEzsignsignatureDependencyrequirement}
+     * @memberof EzsignsignatureResponse
+     */
+    'eEzsignsignatureDependencyrequirement'?: FieldEEzsignsignatureDependencyrequirement;
+    /**
      * A regular expression to indicate what values are acceptable for the Ezsignsignature.  This can only be set if eEzsignsignatureType is **FieldText** or **FieldTextarea** and eEzsignsignatureTextvalidation is **Custom**
      * @type {string}
      * @memberof EzsignsignatureResponse
@@ -253,6 +262,7 @@ export class DataObjectEzsignsignatureResponse {
    sEzsignsignatureDescription?:string = undefined
    iEzsignsignatureMaxlength?:number = undefined
    eEzsignsignatureTextvalidation?:EnumTextvalidation = undefined
+   eEzsignsignatureDependencyrequirement?:FieldEEzsignsignatureDependencyrequirement = undefined
    sEzsignsignatureRegexp?:string = undefined
    objContactName:CustomContactNameResponse = new DataObjectCustomContactNameResponse()
    objContactNameDelegation?:CustomContactNameResponse = undefined
@@ -372,6 +382,11 @@ export class ValidationObjectEzsignsignatureResponse {
    eEzsignsignatureTextvalidation = {
       type: 'enum',
       allowableValues: ['None','Date (YYYY-MM-DD)','Date (MM/DD/YYYY)','Date (MM/DD/YY)','Date (DD/MM/YYYY)','Date (DD/MM/YY)','Email','Letters','Numbers','Zip','Zip+4','PostalCode','Custom'],
+      required: false
+   }
+   eEzsignsignatureDependencyrequirement = {
+      type: 'enum',
+      allowableValues: ['AllOf','AnyOf'],
       required: false
    }
    sEzsignsignatureRegexp = {

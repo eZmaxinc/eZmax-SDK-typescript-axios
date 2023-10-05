@@ -21,6 +21,9 @@ import { EnumTextvalidation } from './enum-textvalidation';
 import { FieldEEzsigntemplatesignatureAttachmentnamesource } from './field-eezsigntemplatesignature-attachmentnamesource';
 // May contain unused imports in some cases
 // @ts-ignore
+import { FieldEEzsigntemplatesignatureDependencyrequirement } from './field-eezsigntemplatesignature-dependencyrequirement';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FieldEEzsigntemplatesignatureFont } from './field-eezsigntemplatesignature-font';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -161,6 +164,12 @@ export interface EzsigntemplatesignatureRequest {
      * @memberof EzsigntemplatesignatureRequest
      */
     'eEzsigntemplatesignatureTextvalidation'?: EnumTextvalidation;
+    /**
+     * 
+     * @type {FieldEEzsigntemplatesignatureDependencyrequirement}
+     * @memberof EzsigntemplatesignatureRequest
+     */
+    'eEzsigntemplatesignatureDependencyrequirement'?: FieldEEzsigntemplatesignatureDependencyrequirement;
 }
 
 
@@ -197,6 +206,7 @@ export class DataObjectEzsigntemplatesignatureRequest {
    iEzsigntemplatesignatureMaxlength?:number = undefined
    sEzsigntemplatesignatureRegexp?:string = undefined
    eEzsigntemplatesignatureTextvalidation?:EnumTextvalidation = undefined
+   eEzsigntemplatesignatureDependencyrequirement?:FieldEEzsigntemplatesignatureDependencyrequirement = undefined
 }
 
 /**
@@ -305,6 +315,11 @@ export class ValidationObjectEzsigntemplatesignatureRequest {
    eEzsigntemplatesignatureTextvalidation = {
       type: 'enum',
       allowableValues: ['None','Date (YYYY-MM-DD)','Date (MM/DD/YYYY)','Date (MM/DD/YY)','Date (DD/MM/YYYY)','Date (DD/MM/YY)','Email','Letters','Numbers','Zip','Zip+4','PostalCode','Custom'],
+      required: false
+   }
+   eEzsigntemplatesignatureDependencyrequirement = {
+      type: 'enum',
+      allowableValues: ['AllOf','AnyOf'],
       required: false
    }
 } 

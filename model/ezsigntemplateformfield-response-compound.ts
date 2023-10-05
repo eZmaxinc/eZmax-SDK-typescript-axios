@@ -15,7 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import { EzsigntemplateelementdependencyResponseCompound } from './ezsigntemplateelementdependency-response-compound';
+// May contain unused imports in some cases
+// @ts-ignore
 import { EzsigntemplateformfieldResponse } from './ezsigntemplateformfield-response';
+// May contain unused imports in some cases
+// @ts-ignore
+import { FieldEEzsigntemplateformfieldDependencyrequirement } from './field-eezsigntemplateformfield-dependencyrequirement';
 
 /**
  * @type EzsigntemplateformfieldResponseCompound
@@ -84,7 +90,20 @@ export interface EzsigntemplateformfieldResponseCompound {
      * @memberof EzsigntemplateformfieldResponseCompound
      */
     bEzsigntemplateformfieldSelected?:boolean 
+    /**
+     * 
+     * @type {FieldEEzsigntemplateformfieldDependencyrequirement}
+     * @memberof EzsigntemplateformfieldResponseCompound
+     */
+    eEzsigntemplateformfieldDependencyrequirement?:FieldEEzsigntemplateformfieldDependencyrequirement 
+    /**
+     * 
+     * @type {Array<EzsigntemplateelementdependencyResponseCompound>}
+     * @memberof EzsigntemplateformfieldResponseCompound
+     */
+    a_objEzsigntemplateelementdependency?:Array<EzsigntemplateelementdependencyResponseCompound> 
 }
+
 
 
 /**
@@ -109,6 +128,8 @@ export class DataObjectEzsigntemplateformfieldResponseCompound {
     iEzsigntemplateformfieldHeight:number = 0
     bEzsigntemplateformfieldAutocomplete?:boolean = undefined
     bEzsigntemplateformfieldSelected?:boolean = undefined
+    eEzsigntemplateformfieldDependencyrequirement?:FieldEEzsigntemplateformfieldDependencyrequirement = undefined
+    a_objEzsigntemplateelementdependency?:Array<EzsigntemplateelementdependencyResponseCompound> = undefined
 }
 
 /**
@@ -161,6 +182,15 @@ export class ValidationObjectEzsigntemplateformfieldResponseCompound {
    }
    bEzsigntemplateformfieldSelected = {
       type: 'boolean',
+      required: false
+   }
+   eEzsigntemplateformfieldDependencyrequirement = {
+      type: 'enum',
+      allowableValues: ['AllOf','AnyOf'],
+      required: false
+   }
+   a_objEzsigntemplateelementdependency = {
+      type: 'array',
       required: false
    }
 } 

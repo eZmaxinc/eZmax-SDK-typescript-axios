@@ -18,6 +18,9 @@
 import { EnumTextvalidation } from './enum-textvalidation';
 // May contain unused imports in some cases
 // @ts-ignore
+import { EzsigntemplateelementdependencyResponseCompound } from './ezsigntemplateelementdependency-response-compound';
+// May contain unused imports in some cases
+// @ts-ignore
 import { EzsigntemplatesignatureResponse } from './ezsigntemplatesignature-response';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -25,6 +28,9 @@ import { EzsigntemplatesignaturecustomdateResponseCompound } from './ezsigntempl
 // May contain unused imports in some cases
 // @ts-ignore
 import { FieldEEzsigntemplatesignatureAttachmentnamesource } from './field-eezsigntemplatesignature-attachmentnamesource';
+// May contain unused imports in some cases
+// @ts-ignore
+import { FieldEEzsigntemplatesignatureDependencyrequirement } from './field-eezsigntemplatesignature-dependencyrequirement';
 // May contain unused imports in some cases
 // @ts-ignore
 import { FieldEEzsigntemplatesignatureFont } from './field-eezsigntemplatesignature-font';
@@ -169,6 +175,12 @@ export interface EzsigntemplatesignatureResponseCompound {
      */
     eEzsigntemplatesignatureTextvalidation?:EnumTextvalidation 
     /**
+     * 
+     * @type {FieldEEzsigntemplatesignatureDependencyrequirement}
+     * @memberof EzsigntemplatesignatureResponseCompound
+     */
+    eEzsigntemplatesignatureDependencyrequirement?:FieldEEzsigntemplatesignatureDependencyrequirement 
+    /**
      * Whether the Ezsigntemplatesignature has a custom date format or not. (Only possible when eEzsigntemplatesignatureType is **Name** or **Handwritten**)
      * @type {boolean}
      * @memberof EzsigntemplatesignatureResponseCompound
@@ -180,6 +192,12 @@ export interface EzsigntemplatesignatureResponseCompound {
      * @memberof EzsigntemplatesignatureResponseCompound
      */
     a_objEzsigntemplatesignaturecustomdate?:Array<EzsigntemplatesignaturecustomdateResponseCompound> 
+    /**
+     * 
+     * @type {Array<EzsigntemplateelementdependencyResponseCompound>}
+     * @memberof EzsigntemplatesignatureResponseCompound
+     */
+    a_objEzsigntemplateelementdependency?:Array<EzsigntemplateelementdependencyResponseCompound> 
 }
 
 
@@ -217,8 +235,10 @@ export class DataObjectEzsigntemplatesignatureResponseCompound {
     iEzsigntemplatesignatureMaxlength?:number = undefined
     sEzsigntemplatesignatureRegexp?:string = undefined
     eEzsigntemplatesignatureTextvalidation?:EnumTextvalidation = undefined
+    eEzsigntemplatesignatureDependencyrequirement?:FieldEEzsigntemplatesignatureDependencyrequirement = undefined
     bEzsigntemplatesignatureCustomdate?:boolean = undefined
     a_objEzsigntemplatesignaturecustomdate?:Array<EzsigntemplatesignaturecustomdateResponseCompound> = undefined
+    a_objEzsigntemplateelementdependency?:Array<EzsigntemplateelementdependencyResponseCompound> = undefined
 }
 
 /**
@@ -329,11 +349,20 @@ export class ValidationObjectEzsigntemplatesignatureResponseCompound {
       allowableValues: ['None','Date (YYYY-MM-DD)','Date (MM/DD/YYYY)','Date (MM/DD/YY)','Date (DD/MM/YYYY)','Date (DD/MM/YY)','Email','Letters','Numbers','Zip','Zip+4','PostalCode','Custom'],
       required: false
    }
+   eEzsigntemplatesignatureDependencyrequirement = {
+      type: 'enum',
+      allowableValues: ['AllOf','AnyOf'],
+      required: false
+   }
    bEzsigntemplatesignatureCustomdate = {
       type: 'boolean',
       required: false
    }
    a_objEzsigntemplatesignaturecustomdate = {
+      type: 'array',
+      required: false
+   }
+   a_objEzsigntemplateelementdependency = {
       type: 'array',
       required: false
    }

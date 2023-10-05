@@ -15,7 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import { EzsignelementdependencyResponseCompound } from './ezsignelementdependency-response-compound';
+// May contain unused imports in some cases
+// @ts-ignore
 import { EzsignformfieldResponse } from './ezsignformfield-response';
+// May contain unused imports in some cases
+// @ts-ignore
+import { FieldEEzsignformfieldDependencyrequirement } from './field-eezsignformfield-dependencyrequirement';
 
 /**
  * @type EzsignformfieldResponseCompound
@@ -90,7 +96,20 @@ export interface EzsignformfieldResponseCompound {
      * @memberof EzsignformfieldResponseCompound
      */
     sEzsignformfieldEnteredvalue?:string 
+    /**
+     * 
+     * @type {FieldEEzsignformfieldDependencyrequirement}
+     * @memberof EzsignformfieldResponseCompound
+     */
+    eEzsignformfieldDependencyrequirement?:FieldEEzsignformfieldDependencyrequirement 
+    /**
+     * 
+     * @type {Array<EzsignelementdependencyResponseCompound>}
+     * @memberof EzsignformfieldResponseCompound
+     */
+    a_objEzsignelementdependency?:Array<EzsignelementdependencyResponseCompound> 
 }
+
 
 
 /**
@@ -116,6 +135,8 @@ export class DataObjectEzsignformfieldResponseCompound {
     bEzsignformfieldAutocomplete?:boolean = undefined
     bEzsignformfieldSelected?:boolean = undefined
     sEzsignformfieldEnteredvalue?:string = undefined
+    eEzsignformfieldDependencyrequirement?:FieldEEzsignformfieldDependencyrequirement = undefined
+    a_objEzsignelementdependency?:Array<EzsignelementdependencyResponseCompound> = undefined
 }
 
 /**
@@ -172,6 +193,15 @@ export class ValidationObjectEzsignformfieldResponseCompound {
    }
    sEzsignformfieldEnteredvalue = {
       type: 'string',
+      required: false
+   }
+   eEzsignformfieldDependencyrequirement = {
+      type: 'enum',
+      allowableValues: ['AllOf','AnyOf'],
+      required: false
+   }
+   a_objEzsignelementdependency = {
+      type: 'array',
       required: false
    }
 } 
