@@ -118,7 +118,7 @@ export class ValidationObjectEzsigndocumentlogResponse {
    }
    eEzsigndocumentlogType = {
       type: 'enum',
-      allowableValues: ['Clone','Login','Sendcode','Badcode','Goodcode','Authentication','Createpage','Download','Send','Sign','Upload','View','Completion','Changelimitdate','Unsign','ImportFromInstanet','SendEmail','FormCompletion','SignatureAttachmentAdd','SignatureAttachmentValidation','SignatureAttachmentRefused','SignatureAttachmentDeleted','DeclinedToSign','DelayedSendEmail','RegeneratePage','RegeneratePageForm','Reassign'],
+      allowableValues: ['Clone','Login','Sendcode','Badcode','Goodcode','Badresponse','Goodresponse','Authentication','Createpage','Download','Send','Sign','Upload','View','Completion','Changelimitdate','Unsign','ImportFromInstanet','SendEmail','FormCompletion','SignatureAttachmentAdd','SignatureAttachmentValidation','SignatureAttachmentRefused','SignatureAttachmentDeleted','DeclinedToSign','DelayedSendEmail','AnnotationAdded','Flatten','RegeneratePage','RegeneratePageForm','Reassign'],
       required: true
    }
    sEzsigndocumentlogDetail = {

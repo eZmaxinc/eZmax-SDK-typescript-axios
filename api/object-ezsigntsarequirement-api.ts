@@ -191,6 +191,7 @@ export class ObjectEzsigntsarequirementApi extends BaseAPI {
  * @export
  */
 export const EzsigntsarequirementGetAutocompleteV2SSelectorEnum = {
+    All: 'All',
     User: 'User',
     Usergroup: 'Usergroup'
 } as const;

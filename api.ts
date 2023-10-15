@@ -79,6 +79,7 @@ export enum EApiOperation {
     'object-usergroup-api',
     'object-usergroupdelegation-api',
     'object-usergroupmembership-api',
+    'object-userlogintype-api',
     'object-userstaged-api',
     'object-variableexpense-api',
     'object-versionhistory-api',
@@ -155,6 +156,7 @@ export * from './api/object-user-api';
 export * from './api/object-usergroup-api';
 export * from './api/object-usergroupdelegation-api';
 export * from './api/object-usergroupmembership-api';
+export * from './api/object-userlogintype-api';
 export * from './api/object-userstaged-api';
 export * from './api/object-variableexpense-api';
 export * from './api/object-versionhistory-api';

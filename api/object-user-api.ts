@@ -1165,14 +1165,12 @@ export class ObjectUserApi extends BaseAPI {
  * @export
  */
 export const UserGetAutocompleteV2SSelectorEnum = {
-    All: 'All',
     AgentBrokerEmployeeEzsignUserNormal: 'AgentBrokerEmployeeEzsignUserNormal',
     AgentBrokerEmployeeNormalBuiltIn: 'AgentBrokerEmployeeNormalBuiltIn',
     AgentBrokerEzsignuserNormal: 'AgentBrokerEzsignuserNormal',
     ClonableUsers: 'ClonableUsers',
     EzsignuserBuiltIn: 'EzsignuserBuiltIn',
     Normal: 'Normal',
-    NormalEzsignSigner: 'NormalEzsignSigner',
     UsergroupDelegated: 'UsergroupDelegated'
 } as const;
 export type UserGetAutocompleteV2SSelectorEnum = typeof UserGetAutocompleteV2SSelectorEnum[keyof typeof UserGetAutocompleteV2SSelectorEnum];

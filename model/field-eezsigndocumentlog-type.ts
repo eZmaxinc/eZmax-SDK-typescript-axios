@@ -26,6 +26,8 @@ export const FieldEEzsigndocumentlogType = {
     Sendcode: 'Sendcode',
     Badcode: 'Badcode',
     Goodcode: 'Goodcode',
+    Badresponse: 'Badresponse',
+    Goodresponse: 'Goodresponse',
     Authentication: 'Authentication',
     Createpage: 'Createpage',
     Download: 'Download',
@@ -45,6 +47,8 @@ export const FieldEEzsigndocumentlogType = {
     SignatureAttachmentDeleted: 'SignatureAttachmentDeleted',
     DeclinedToSign: 'DeclinedToSign',
     DelayedSendEmail: 'DelayedSendEmail',
+    AnnotationAdded: 'AnnotationAdded',
+    Flatten: 'Flatten',
     RegeneratePage: 'RegeneratePage',
     RegeneratePageForm: 'RegeneratePageForm',
     Reassign: 'Reassign'

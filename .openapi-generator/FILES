@@ -68,6 +68,7 @@ api/object-user-api.ts
 api/object-usergroup-api.ts
 api/object-usergroupdelegation-api.ts
 api/object-usergroupmembership-api.ts
+api/object-userlogintype-api.ts
 api/object-userstaged-api.ts
 api/object-variableexpense-api.ts
 api/object-versionhistory-api.ts
@@ -1082,6 +1083,9 @@ model/usergroupmembership-request-compound.ts
 model/usergroupmembership-request.ts
 model/usergroupmembership-response-compound.ts
 model/usergroupmembership-response.ts
+model/userlogintype-autocomplete-element-response.ts
+model/userlogintype-get-autocomplete-v2-response-mpayload.ts
+model/userlogintype-get-autocomplete-v2-response.ts
 model/userstaged-create-user-v1-response-mpayload.ts
 model/userstaged-create-user-v1-response.ts
 model/userstaged-delete-object-v1-response.ts
