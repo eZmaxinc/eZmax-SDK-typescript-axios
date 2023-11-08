@@ -22,14 +22,17 @@ export enum EApiOperation {
     'module-user-api',
     'object-activesession-api',
     'object-apikey-api',
+    'object-attachment-api',
     'object-billingentityexternal-api',
     'object-billingentityinternal-api',
     'object-branding-api',
+    'object-buyercontract-api',
     'object-clonehistory-api',
     'object-communication-api',
     'object-company-api',
     'object-cors-api',
     'object-department-api',
+    'object-electronicfundstransfer-api',
     'object-emailtype-api',
     'object-ezmaxinvoicing-api',
     'object-ezmaxproduct-api',
@@ -60,14 +63,20 @@ export enum EApiOperation {
     'object-franchisebroker-api',
     'object-franchiseoffice-api',
     'object-franchisereferalincome-api',
+    'object-inscription-api',
+    'object-inscriptionnotauthenticated-api',
+    'object-inscriptiontemp-api',
+    'object-invoice-api',
     'object-language-api',
     'object-modulegroup-api',
     'object-notificationsection-api',
     'object-notificationtest-api',
+    'object-otherincome-api',
     'object-paymentterm-api',
     'object-period-api',
     'object-permission-api',
     'object-phonetype-api',
+    'object-rejectedoffertopurchase-api',
     'object-secretquestion-api',
     'object-sessionhistory-api',
     'object-signature-api',
@@ -99,14 +108,17 @@ export * from './api/module-report-api';
 export * from './api/module-user-api';
 export * from './api/object-activesession-api';
 export * from './api/object-apikey-api';
+export * from './api/object-attachment-api';
 export * from './api/object-billingentityexternal-api';
 export * from './api/object-billingentityinternal-api';
 export * from './api/object-branding-api';
+export * from './api/object-buyercontract-api';
 export * from './api/object-clonehistory-api';
 export * from './api/object-communication-api';
 export * from './api/object-company-api';
 export * from './api/object-cors-api';
 export * from './api/object-department-api';
+export * from './api/object-electronicfundstransfer-api';
 export * from './api/object-emailtype-api';
 export * from './api/object-ezmaxinvoicing-api';
 export * from './api/object-ezmaxproduct-api';
@@ -137,14 +149,20 @@ export * from './api/object-font-api';
 export * from './api/object-franchisebroker-api';
 export * from './api/object-franchiseoffice-api';
 export * from './api/object-franchisereferalincome-api';
+export * from './api/object-inscription-api';
+export * from './api/object-inscriptionnotauthenticated-api';
+export * from './api/object-inscriptiontemp-api';
+export * from './api/object-invoice-api';
 export * from './api/object-language-api';
 export * from './api/object-modulegroup-api';
 export * from './api/object-notificationsection-api';
 export * from './api/object-notificationtest-api';
+export * from './api/object-otherincome-api';
 export * from './api/object-paymentterm-api';
 export * from './api/object-period-api';
 export * from './api/object-permission-api';
 export * from './api/object-phonetype-api';
+export * from './api/object-rejectedoffertopurchase-api';
 export * from './api/object-secretquestion-api';
 export * from './api/object-sessionhistory-api';
 export * from './api/object-signature-api';

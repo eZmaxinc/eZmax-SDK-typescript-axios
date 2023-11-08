@@ -22,35 +22,26 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 // May contain unused imports in some cases
 // @ts-ignore
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
-// May contain unused imports in some cases
-// @ts-ignore
-import { CommunicationGetObjectV2ResponseMPayload } from './communication-get-object-v2-response-mpayload';
 
 /**
- * @type CommunicationGetObjectV2Response
- * Response for GET /2/object/communication/{pkiCommunicationID}
+ * @type AttachmentDownloadV1Response
+ * Response for POST /1/object/ezsignfolder/{pkiEzsignfolderID}/send
  * @export
  */
-/** export type CommunicationGetObjectV2Response = CommonResponse; */
-export interface CommunicationGetObjectV2Response {
+/** export type AttachmentDownloadV1Response = CommonResponse; */
+export interface AttachmentDownloadV1Response {
     /**
      * 
      * @type {CommonResponseObjDebugPayload}
-     * @memberof CommunicationGetObjectV2Response
+     * @memberof AttachmentDownloadV1Response
      */
     objDebugPayload:CommonResponseObjDebugPayload 
     /**
      * 
      * @type {CommonResponseObjDebug}
-     * @memberof CommunicationGetObjectV2Response
+     * @memberof AttachmentDownloadV1Response
      */
     objDebug?:CommonResponseObjDebug 
-    /**
-     * 
-     * @type {CommunicationGetObjectV2ResponseMPayload}
-     * @memberof CommunicationGetObjectV2Response
-     */
-    mPayload:CommunicationGetObjectV2ResponseMPayload 
 }
 
 
@@ -63,35 +54,29 @@ import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { DataObjectCommunicationGetObjectV2ResponseMPayload } from './'
-// @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
-// @ts-ignore
-import { ValidationObjectCommunicationGetObjectV2ResponseMPayload } from './'
 
 /**
  * @export 
- * A CommunicationGetObjectV2Response Data Object with automatic temporary default value
+ * A AttachmentDownloadV1Response Data Object with automatic temporary default value
  * Use this object only for create an empty data object to assign a response from server
- * @class DataObjectCommunicationGetObjectV2Response
+ * @class DataObjectAttachmentDownloadV1Response
  */
-export class DataObjectCommunicationGetObjectV2Response {
+export class DataObjectAttachmentDownloadV1Response {
     objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
-    mPayload:CommunicationGetObjectV2ResponseMPayload = new DataObjectCommunicationGetObjectV2ResponseMPayload()
 }
 
 /**
  * @export 
- * A CommunicationGetObjectV2Response Validation Object
- * @class ValidationObjectCommunicationGetObjectV2Response
+ * A AttachmentDownloadV1Response Validation Object
+ * @class ValidationObjectAttachmentDownloadV1Response
  */
-export class ValidationObjectCommunicationGetObjectV2Response {
+export class ValidationObjectAttachmentDownloadV1Response {
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
-   mPayload = new ValidationObjectCommunicationGetObjectV2ResponseMPayload()
 } 
 
 

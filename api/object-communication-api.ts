@@ -22,9 +22,9 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import { CommunicationSendV1Request } from '../model';
 // @ts-ignore
-import { CommunicationGetObjectV2Response } from '../model';
+import { CommunicationSendV1Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -34,17 +34,16 @@ import { RequestSignature, IHeadersData } from '../api/request-signature';
 export const ObjectCommunicationApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * 
-         * @summary Retrieve an existing Communication
-         * @param {number} pkiCommunicationID 
+         * The endpoint allows to send one or many elements at once.
+         * @summary Send a new Communication
+         * @param {CommunicationSendV1Request} communicationSendV1Request 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        communicationGetObjectV2: async (pkiCommunicationID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiCommunicationID' is not null or undefined
-            assertParamExists('communicationGetObjectV2', 'pkiCommunicationID', pkiCommunicationID)
-            const localVarPath = `/2/object/communication/{pkiCommunicationID}`
-                .replace(`{${"pkiCommunicationID"}}`, encodeURIComponent(String(pkiCommunicationID)));
+        communicationSendV1: async (communicationSendV1Request: CommunicationSendV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'communicationSendV1Request' is not null or undefined
+            assertParamExists('communicationSendV1', 'communicationSendV1Request', communicationSendV1Request)
+            const localVarPath = `/1/object/communication/send`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -55,7 +54,7 @@ export const ObjectCommunicationApiAxiosParamCreator = function (configuration?:
                 baseOptions = configuration.baseOptions;
             }
 
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
@@ -64,9 +63,12 @@ export const ObjectCommunicationApiAxiosParamCreator = function (configuration?:
 
 
     
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(communicationSendV1Request, localVarRequestOptions, configuration)
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -75,7 +77,7 @@ export const ObjectCommunicationApiAxiosParamCreator = function (configuration?:
                     const headers:IHeadersData = {
                         authorization: configuration.apiKey as string,
                         secret: secret as string,
-                        method: 'GET' as string,
+                        method: 'POST' as string,
                         url: basePath + toPathString(localVarUrlObj) as string,
                         body: localVarRequestOptions.data || '' as string
                     }
@@ -100,14 +102,14 @@ export const ObjectCommunicationApiFp = function(configuration?: Configuration) 
     const localVarAxiosParamCreator = ObjectCommunicationApiAxiosParamCreator(configuration)
     return {
         /**
-         * 
-         * @summary Retrieve an existing Communication
-         * @param {number} pkiCommunicationID 
+         * The endpoint allows to send one or many elements at once.
+         * @summary Send a new Communication
+         * @param {CommunicationSendV1Request} communicationSendV1Request 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async communicationGetObjectV2(pkiCommunicationID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommunicationGetObjectV2Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.communicationGetObjectV2(pkiCommunicationID, options);
+        async communicationSendV1(communicationSendV1Request: CommunicationSendV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommunicationSendV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.communicationSendV1(communicationSendV1Request, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -121,14 +123,14 @@ export const ObjectCommunicationApiFactory = function (configuration?: Configura
     const localVarFp = ObjectCommunicationApiFp(configuration)
     return {
         /**
-         * 
-         * @summary Retrieve an existing Communication
-         * @param {number} pkiCommunicationID 
+         * The endpoint allows to send one or many elements at once.
+         * @summary Send a new Communication
+         * @param {CommunicationSendV1Request} communicationSendV1Request 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        communicationGetObjectV2(pkiCommunicationID: number, options?: any): AxiosPromise<CommunicationGetObjectV2Response> {
-            return localVarFp.communicationGetObjectV2(pkiCommunicationID, options).then((request) => request(axios, basePath));
+        communicationSendV1(communicationSendV1Request: CommunicationSendV1Request, options?: any): AxiosPromise<CommunicationSendV1Response> {
+            return localVarFp.communicationSendV1(communicationSendV1Request, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -141,15 +143,15 @@ export const ObjectCommunicationApiFactory = function (configuration?: Configura
  */
 export class ObjectCommunicationApi extends BaseAPI {
     /**
-     * 
-     * @summary Retrieve an existing Communication
-     * @param {number} pkiCommunicationID 
+     * The endpoint allows to send one or many elements at once.
+     * @summary Send a new Communication
+     * @param {CommunicationSendV1Request} communicationSendV1Request 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ObjectCommunicationApi
      */
-    public communicationGetObjectV2(pkiCommunicationID: number, options?: AxiosRequestConfig) {
-        return ObjectCommunicationApiFp(this.configuration).communicationGetObjectV2(pkiCommunicationID, options).then((request) => request(this.axios, this.basePath));
+    public communicationSendV1(communicationSendV1Request: CommunicationSendV1Request, options?: AxiosRequestConfig) {
+        return ObjectCommunicationApiFp(this.configuration).communicationSendV1(communicationSendV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

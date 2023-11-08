@@ -15,7 +15,7 @@
 
 
 /**
- * The type of Communicationexternalrecipient
+ * The type of Communicationexternalrecipient.  Only used when eCommunicationType is **Email**
  * @export
  * @enum {string}
  */

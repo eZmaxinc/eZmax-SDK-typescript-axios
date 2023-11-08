@@ -17,45 +17,33 @@
 /**
  * A Communicationattachment Object
  * @export
- * @interface CommunicationattachmentResponse
+ * @interface CommunicationattachmentRequest
  */
-export interface CommunicationattachmentResponse {
+export interface CommunicationattachmentRequest {
     /**
      * The unique ID of the Communicationattachment
      * @type {number}
-     * @memberof CommunicationattachmentResponse
+     * @memberof CommunicationattachmentRequest
      */
-    'pkiCommunicationattachmentID': number;
+    'pkiCommunicationattachmentID'?: number;
     /**
      * The unique ID of the Attachment.
      * @type {number}
-     * @memberof CommunicationattachmentResponse
+     * @memberof CommunicationattachmentRequest
      */
     'fkiAttachmentID'?: number;
     /**
      * The unique ID of the Invoice.
      * @type {number}
-     * @memberof CommunicationattachmentResponse
+     * @memberof CommunicationattachmentRequest
      */
     'fkiInvoiceID'?: number;
     /**
      * The unique ID of the Salarypreparation.
      * @type {number}
-     * @memberof CommunicationattachmentResponse
+     * @memberof CommunicationattachmentRequest
      */
     'fkiSalarypreparationID'?: number;
-    /**
-     * The name of the Communicationattachment
-     * @type {string}
-     * @memberof CommunicationattachmentResponse
-     */
-    'sCommunicationattachmentName': string;
-    /**
-     * The Url to the requested document.  Url will expire after 3 hours.
-     * @type {string}
-     * @memberof CommunicationattachmentResponse
-     */
-    'sDownloadUrl'?: string;
 }
 /**
  * @import
@@ -64,28 +52,26 @@ export interface CommunicationattachmentResponse {
 
 /**
  * @export 
- * A CommunicationattachmentResponse Data Object with automatic temporary default value
+ * A CommunicationattachmentRequest Data Object with automatic temporary default value
  * Use this object only for create an empty data object to assign a response from server
- * @class DataObjectCommunicationattachmentResponse
+ * @class DataObjectCommunicationattachmentRequest
  */
-export class DataObjectCommunicationattachmentResponse {
-   pkiCommunicationattachmentID:number = 0
+export class DataObjectCommunicationattachmentRequest {
+   pkiCommunicationattachmentID?:number = undefined
    fkiAttachmentID?:number = undefined
    fkiInvoiceID?:number = undefined
    fkiSalarypreparationID?:number = undefined
-   sCommunicationattachmentName:string = ''
-   sDownloadUrl?:string = undefined
 }
 
 /**
  * @export 
- * A CommunicationattachmentResponse Validation Object
- * @class ValidationObjectCommunicationattachmentResponse
+ * A CommunicationattachmentRequest Validation Object
+ * @class ValidationObjectCommunicationattachmentRequest
  */
-export class ValidationObjectCommunicationattachmentResponse {
+export class ValidationObjectCommunicationattachmentRequest {
    pkiCommunicationattachmentID = {
       type: 'integer',
-      required: true
+      required: false
    }
    fkiAttachmentID = {
       type: 'integer',
@@ -100,14 +86,6 @@ export class ValidationObjectCommunicationattachmentResponse {
    fkiSalarypreparationID = {
       type: 'integer',
       minimum: 0,
-      required: false
-   }
-   sCommunicationattachmentName = {
-      type: 'string',
-      required: true
-   }
-   sDownloadUrl = {
-      type: 'string',
       required: false
    }
 } 

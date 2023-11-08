@@ -88,7 +88,7 @@ export interface WebhookResponse {
      * @type {boolean}
      * @memberof WebhookResponse
      */
-    'bWebhookIsactive'?: boolean;
+    'bWebhookIsactive': boolean;
     /**
      * Wheter the server\'s SSL certificate should be validated or not. Not recommended to skip for production use
      * @type {boolean}
@@ -119,7 +119,7 @@ export class DataObjectWebhookResponse {
    eWebhookManagementevent?:FieldEWebhookManagementevent = undefined
    sWebhookUrl:string = ''
    sWebhookEmailfailed:string = ''
-   bWebhookIsactive?:boolean = undefined
+   bWebhookIsactive:boolean = false
    bWebhookSkipsslvalidation:boolean = false
 }
 
@@ -171,7 +171,7 @@ export class ValidationObjectWebhookResponse {
    }
    bWebhookIsactive = {
       type: 'boolean',
-      required: false
+      required: true
    }
    bWebhookSkipsslvalidation = {
       type: 'boolean',
