@@ -288,7 +288,7 @@ export class ValidationObjectEzsignsignatureRequestCompound {
    }
    eEzsignsignatureType = {
       type: 'enum',
-      allowableValues: ['Acknowledgement','City','Handwritten','Initials','Name','Attachments','AttachmentsConfirmation','FieldText','FieldTextarea'],
+      allowableValues: ['Acknowledgement','City','Handwritten','Initials','Name','NameReason','Attachments','AttachmentsConfirmation','FieldText','FieldTextarea'],
       required: true
    }
    fkiEzsigndocumentID = {

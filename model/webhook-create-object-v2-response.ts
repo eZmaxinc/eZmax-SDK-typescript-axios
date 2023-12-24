@@ -22,26 +22,35 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 // May contain unused imports in some cases
 // @ts-ignore
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
+// May contain unused imports in some cases
+// @ts-ignore
+import { WebhookCreateObjectV2ResponseMPayload } from './webhook-create-object-v2-response-mpayload';
 
 /**
- * @type AttachmentDownloadV1Response
- * Response for POST /1/object/ezsignfolder/{pkiEzsignfolderID}/send
+ * @type WebhookCreateObjectV2Response
+ * Response for POST /2/object/webhook
  * @export
  */
-/** export type AttachmentDownloadV1Response = CommonResponse; */
-export interface AttachmentDownloadV1Response {
+/** export type WebhookCreateObjectV2Response = CommonResponse; */
+export interface WebhookCreateObjectV2Response {
     /**
      * 
      * @type {CommonResponseObjDebugPayload}
-     * @memberof AttachmentDownloadV1Response
+     * @memberof WebhookCreateObjectV2Response
      */
     objDebugPayload:CommonResponseObjDebugPayload 
     /**
      * 
      * @type {CommonResponseObjDebug}
-     * @memberof AttachmentDownloadV1Response
+     * @memberof WebhookCreateObjectV2Response
      */
     objDebug?:CommonResponseObjDebug 
+    /**
+     * 
+     * @type {WebhookCreateObjectV2ResponseMPayload}
+     * @memberof WebhookCreateObjectV2Response
+     */
+    mPayload:WebhookCreateObjectV2ResponseMPayload 
 }
 
 
@@ -54,29 +63,35 @@ import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
+import { DataObjectWebhookCreateObjectV2ResponseMPayload } from './'
+// @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectWebhookCreateObjectV2ResponseMPayload } from './'
 
 /**
  * @export 
- * A AttachmentDownloadV1Response Data Object with automatic temporary default value
+ * A WebhookCreateObjectV2Response Data Object with automatic temporary default value
  * Use this object only for create an empty data object to assign a response from server
- * @class DataObjectAttachmentDownloadV1Response
+ * @class DataObjectWebhookCreateObjectV2Response
  */
-export class DataObjectAttachmentDownloadV1Response {
+export class DataObjectWebhookCreateObjectV2Response {
     objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:WebhookCreateObjectV2ResponseMPayload = new DataObjectWebhookCreateObjectV2ResponseMPayload()
 }
 
 /**
  * @export 
- * A AttachmentDownloadV1Response Validation Object
- * @class ValidationObjectAttachmentDownloadV1Response
+ * A WebhookCreateObjectV2Response Validation Object
+ * @class ValidationObjectWebhookCreateObjectV2Response
  */
-export class ValidationObjectAttachmentDownloadV1Response {
+export class ValidationObjectWebhookCreateObjectV2Response {
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectWebhookCreateObjectV2ResponseMPayload()
 } 
 
 

@@ -214,7 +214,7 @@ export class ValidationObjectEzsigntemplateformfieldgroupResponseCompound {
    }
    eEzsigntemplateformfieldgroupType = {
       type: 'enum',
-      allowableValues: ['Text','Textarea','Dropdown','Radio','Checkbox'],
+      allowableValues: ['Text','Textarea','Dropdown','Radio','Checkbox','Number','Date'],
       required: true
    }
    eEzsigntemplateformfieldgroupSignerrequirement = {

@@ -56,7 +56,7 @@ export interface CommunicationexternalrecipientRequestCompound {
      * @type {string}
      * @memberof CommunicationexternalrecipientRequestCompound
      */
-    sCommunicationexternalrecipientName:string 
+    sCommunicationexternalrecipientName?:string 
 }
 
 
@@ -77,7 +77,7 @@ export class DataObjectCommunicationexternalrecipientRequestCompound {
     sEmailAddress?:string = undefined
     sPhoneE164?:string = undefined
     eCommunicationexternalrecipientType?:FieldECommunicationexternalrecipientType = undefined
-    sCommunicationexternalrecipientName:string = ''
+    sCommunicationexternalrecipientName?:string = undefined
 }
 
 /**
@@ -107,7 +107,7 @@ export class ValidationObjectCommunicationexternalrecipientRequestCompound {
    sCommunicationexternalrecipientName = {
       type: 'string',
       pattern: '/^.{0,50}$/',
-      required: true
+      required: false
    }
 } 
 

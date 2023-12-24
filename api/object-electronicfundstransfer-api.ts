@@ -40,9 +40,9 @@ export const ObjectElectronicfundstransferApiAxiosParamCreator = function (confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        eletronicfundstransferGetCommunicationListV1: async (pkiElectronicfundstransferID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        electronicfundstransferGetCommunicationListV1: async (pkiElectronicfundstransferID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiElectronicfundstransferID' is not null or undefined
-            assertParamExists('eletronicfundstransferGetCommunicationListV1', 'pkiElectronicfundstransferID', pkiElectronicfundstransferID)
+            assertParamExists('electronicfundstransferGetCommunicationListV1', 'pkiElectronicfundstransferID', pkiElectronicfundstransferID)
             const localVarPath = `/1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/getCommunicationList`
                 .replace(`{${"pkiElectronicfundstransferID"}}`, encodeURIComponent(String(pkiElectronicfundstransferID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -106,8 +106,8 @@ export const ObjectElectronicfundstransferApiFp = function(configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async eletronicfundstransferGetCommunicationListV1(pkiElectronicfundstransferID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ElectronicfundstransferGetCommunicationListV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.eletronicfundstransferGetCommunicationListV1(pkiElectronicfundstransferID, options);
+        async electronicfundstransferGetCommunicationListV1(pkiElectronicfundstransferID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ElectronicfundstransferGetCommunicationListV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.electronicfundstransferGetCommunicationListV1(pkiElectronicfundstransferID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -127,8 +127,8 @@ export const ObjectElectronicfundstransferApiFactory = function (configuration?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        eletronicfundstransferGetCommunicationListV1(pkiElectronicfundstransferID: number, options?: any): AxiosPromise<ElectronicfundstransferGetCommunicationListV1Response> {
-            return localVarFp.eletronicfundstransferGetCommunicationListV1(pkiElectronicfundstransferID, options).then((request) => request(axios, basePath));
+        electronicfundstransferGetCommunicationListV1(pkiElectronicfundstransferID: number, options?: any): AxiosPromise<ElectronicfundstransferGetCommunicationListV1Response> {
+            return localVarFp.electronicfundstransferGetCommunicationListV1(pkiElectronicfundstransferID, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -148,8 +148,8 @@ export class ObjectElectronicfundstransferApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectElectronicfundstransferApi
      */
-    public eletronicfundstransferGetCommunicationListV1(pkiElectronicfundstransferID: number, options?: AxiosRequestConfig) {
-        return ObjectElectronicfundstransferApiFp(this.configuration).eletronicfundstransferGetCommunicationListV1(pkiElectronicfundstransferID, options).then((request) => request(this.axios, this.basePath));
+    public electronicfundstransferGetCommunicationListV1(pkiElectronicfundstransferID: number, options?: AxiosRequestConfig) {
+        return ObjectElectronicfundstransferApiFp(this.configuration).electronicfundstransferGetCommunicationListV1(pkiElectronicfundstransferID, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

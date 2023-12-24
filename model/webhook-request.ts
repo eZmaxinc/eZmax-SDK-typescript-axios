@@ -84,6 +84,12 @@ export interface WebhookRequest {
      */
     'bWebhookIsactive': boolean;
     /**
+     * Whether the requests will be signed or not
+     * @type {boolean}
+     * @memberof WebhookRequest
+     */
+    'bWebhookIssigned'?: boolean;
+    /**
      * Wheter the server\'s SSL certificate should be validated or not. Not recommended to skip for production use
      * @type {boolean}
      * @memberof WebhookRequest
@@ -113,6 +119,7 @@ export class DataObjectWebhookRequest {
    sWebhookUrl:string = ''
    sWebhookEmailfailed:string = ''
    bWebhookIsactive:boolean = false
+   bWebhookIssigned?:boolean = undefined
    bWebhookSkipsslvalidation:boolean = false
 }
 
@@ -161,6 +168,10 @@ export class ValidationObjectWebhookRequest {
    bWebhookIsactive = {
       type: 'boolean',
       required: true
+   }
+   bWebhookIssigned = {
+      type: 'boolean',
+      required: false
    }
    bWebhookSkipsslvalidation = {
       type: 'boolean',

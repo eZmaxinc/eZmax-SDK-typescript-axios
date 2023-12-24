@@ -150,7 +150,7 @@ export class ValidationObjectCommunicationRequest {
    objCommunicationsender = new ValidationObjectCustomCommunicationsenderRequest()
    sCommunicationSubject = {
       type: 'string',
-      pattern: '/^.{0,150}$/',
+      pattern: '/^.{0,200}$/',
       required: false
    }
    tCommunicationBody = {

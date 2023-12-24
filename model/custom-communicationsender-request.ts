@@ -39,6 +39,12 @@ export interface CustomCommunicationsenderRequest {
      */
     'fkiMailboxsharedID'?: number;
     /**
+     * The unique ID of the Phonelineshared
+     * @type {number}
+     * @memberof CustomCommunicationsenderRequest
+     */
+    'fkiPhonelinesharedID'?: number;
+    /**
      * The unique ID of the User
      * @type {number}
      * @memberof CustomCommunicationsenderRequest
@@ -60,6 +66,7 @@ export class DataObjectCustomCommunicationsenderRequest {
    fkiAgentID?:number = undefined
    fkiBrokerID?:number = undefined
    fkiMailboxsharedID?:number = undefined
+   fkiPhonelinesharedID?:number = undefined
    fkiUserID?:number = undefined
 }
 
@@ -80,6 +87,12 @@ export class ValidationObjectCustomCommunicationsenderRequest {
       required: false
    }
    fkiMailboxsharedID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 255,
+      required: false
+   }
+   fkiPhonelinesharedID = {
       type: 'integer',
       minimum: 0,
       maximum: 255,

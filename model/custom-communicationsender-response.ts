@@ -16,6 +16,12 @@
 // May contain unused imports in some cases
 // @ts-ignore
 import { CustomContactNameResponse } from './custom-contact-name-response';
+// May contain unused imports in some cases
+// @ts-ignore
+import { EmailResponseCompound } from './email-response-compound';
+// May contain unused imports in some cases
+// @ts-ignore
+import { PhoneResponseCompound } from './phone-response-compound';
 
 /**
  * Generic Communicationsender Response
@@ -48,6 +54,12 @@ export interface CustomCommunicationsenderResponse {
      */
     'fkiMailboxsharedID'?: number;
     /**
+     * The unique ID of the Phonelineshared
+     * @type {number}
+     * @memberof CustomCommunicationsenderResponse
+     */
+    'fkiPhonelinesharedID'?: number;
+    /**
      * 
      * @type {string}
      * @memberof CustomCommunicationsenderResponse
@@ -60,24 +72,31 @@ export interface CustomCommunicationsenderResponse {
      */
     'objContactName': CustomContactNameResponse;
     /**
-     * The email address.
-     * @type {string}
+     * 
+     * @type {EmailResponseCompound}
      * @memberof CustomCommunicationsenderResponse
      */
-    'sEmailAddress'?: string;
+    'objEmail'?: EmailResponseCompound;
     /**
-     * A phone number in E.164 Format
-     * @type {string}
+     * 
+     * @type {PhoneResponseCompound}
      * @memberof CustomCommunicationsenderResponse
      */
-    'sPhoneE164'?: string;
+    'objPhoneFax'?: PhoneResponseCompound;
+    /**
+     * 
+     * @type {PhoneResponseCompound}
+     * @memberof CustomCommunicationsenderResponse
+     */
+    'objPhoneSMS'?: PhoneResponseCompound;
 }
 
 export const CustomCommunicationsenderResponseECommunicationsenderObjecttypeEnum = {
     Agent: 'Agent',
     Broker: 'Broker',
     User: 'User',
-    Mailboxshared: 'Mailboxshared'
+    Mailboxshared: 'Mailboxshared',
+    Phonelineshared: 'Phonelineshared'
 } as const;
 export type CustomCommunicationsenderResponseECommunicationsenderObjecttypeEnum = typeof CustomCommunicationsenderResponseECommunicationsenderObjecttypeEnum[keyof typeof CustomCommunicationsenderResponseECommunicationsenderObjecttypeEnum];
 
@@ -89,7 +108,19 @@ export type CustomCommunicationsenderResponseECommunicationsenderObjecttypeEnum 
 // @ts-ignore
 import { DataObjectCustomContactNameResponse } from './'
 // @ts-ignore
+import { DataObjectEmailResponseCompound } from './'
+// @ts-ignore
+import { DataObjectPhoneResponseCompound } from './'
+// @ts-ignore
+import { DataObjectPhoneResponseCompound } from './'
+// @ts-ignore
 import { ValidationObjectCustomContactNameResponse } from './'
+// @ts-ignore
+import { ValidationObjectEmailResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectPhoneResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectPhoneResponseCompound } from './'
 
 /**
  * @export 
@@ -102,10 +133,12 @@ export class DataObjectCustomCommunicationsenderResponse {
    fkiBrokerID?:number = undefined
    fkiUserID?:number = undefined
    fkiMailboxsharedID?:number = undefined
+   fkiPhonelinesharedID?:number = undefined
    eCommunicationsenderObjecttype:CustomCommunicationsenderResponseECommunicationsenderObjecttypeEnum = 'Agent'
    objContactName:CustomContactNameResponse = new DataObjectCustomContactNameResponse()
-   sEmailAddress?:string = undefined
-   sPhoneE164?:string = undefined
+   objEmail?:EmailResponseCompound = undefined
+   objPhoneFax?:PhoneResponseCompound = undefined
+   objPhoneSMS?:PhoneResponseCompound = undefined
 }
 
 /**
@@ -135,20 +168,20 @@ export class ValidationObjectCustomCommunicationsenderResponse {
       maximum: 255,
       required: false
    }
+   fkiPhonelinesharedID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 255,
+      required: false
+   }
    eCommunicationsenderObjecttype = {
       type: 'string',
       required: true
    }
    objContactName = new ValidationObjectCustomContactNameResponse()
-   sEmailAddress = {
-      type: 'string',
-      required: false
-   }
-   sPhoneE164 = {
-      type: 'string',
-      pattern: '/^\+[1-9]\d{1,14}$/',
-      required: false
-   }
+   objEmail = new ValidationObjectEmailResponseCompound()
+   objPhoneFax = new ValidationObjectPhoneResponseCompound()
+   objPhoneSMS = new ValidationObjectPhoneResponseCompound()
 } 
 
 

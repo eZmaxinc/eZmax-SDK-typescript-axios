@@ -24,6 +24,12 @@ import { CommonFile } from './common-file';
  */
 export interface EzsignsignatureSignV1Request {
     /**
+     * The unique ID of the Ezsignsigningreason
+     * @type {number}
+     * @memberof EzsignsignatureSignV1Request
+     */
+    'fkiEzsignsigningreasonID'?: number;
+    /**
      * The value required for the Ezsignsignature.  This can only be set if eEzsignsignatureType is **City**, **FieldText** or **FieldTextarea**
      * @type {string}
      * @memberof EzsignsignatureSignV1Request
@@ -80,6 +86,7 @@ export type EzsignsignatureSignV1RequestEAttachmentsConfirmationDecisionEnum = t
  * @class DataObjectEzsignsignatureSignV1Request
  */
 export class DataObjectEzsignsignatureSignV1Request {
+   fkiEzsignsigningreasonID?:number = undefined
    sValue?:string = undefined
    eAttachmentsConfirmationDecision?:EzsignsignatureSignV1RequestEAttachmentsConfirmationDecisionEnum = undefined
    sAttachmentsRefusalReason?:string = undefined
@@ -94,6 +101,12 @@ export class DataObjectEzsignsignatureSignV1Request {
  * @class ValidationObjectEzsignsignatureSignV1Request
  */
 export class ValidationObjectEzsignsignatureSignV1Request {
+   fkiEzsignsigningreasonID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 255,
+      required: false
+   }
    sValue = {
       type: 'string',
       required: false
@@ -108,7 +121,7 @@ export class ValidationObjectEzsignsignatureSignV1Request {
    }
    sSvg = {
       type: 'string',
-      pattern: '/^.{0,32767}$/',
+      pattern: '/^.{0,65535}$/',
       required: false
    }
    a_objFile = {

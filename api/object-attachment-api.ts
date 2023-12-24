@@ -22,7 +22,9 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
 // @ts-ignore
-import { AttachmentDownloadV1Response } from '../model';
+import { AttachmentGetAttachmentlogsV1Response } from '../model';
+// @ts-ignore
+import { AttachmentGetDownloadUrlV1Response } from '../model';
 // @ts-ignore
 import { CommonResponseError } from '../model';
 // @ts-ignore
@@ -44,6 +46,121 @@ export const ObjectAttachmentApiAxiosParamCreator = function (configuration?: Co
             // verify required parameter 'pkiAttachmentID' is not null or undefined
             assertParamExists('attachmentDownloadV1', 'pkiAttachmentID', pkiAttachmentID)
             const localVarPath = `/1/object/attachment/{pkiAttachmentID}/download`
+                .replace(`{${"pkiAttachmentID"}}`, encodeURIComponent(String(pkiAttachmentID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            // authentication Presigned required
+            // await setApiKeyToObject(localVarQueryParameter, "sAuthorization", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Using this endpoint, you can retrieve the Attachmentlogs of an attachment.
+         * @summary Retrieve the Attachmentlogs
+         * @param {number} pkiAttachmentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        attachmentGetAttachmentlogsV1: async (pkiAttachmentID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiAttachmentID' is not null or undefined
+            assertParamExists('attachmentGetAttachmentlogsV1', 'pkiAttachmentID', pkiAttachmentID)
+            const localVarPath = `/1/object/attachment/{pkiAttachmentID}/getAttachmentlogs`
+                .replace(`{${"pkiAttachmentID"}}`, encodeURIComponent(String(pkiAttachmentID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * This endpoint returns an URL to download the attachment.  These links will expire after 5 minutes so the download of the file should be made soon after retrieving the link.
+         * @summary Retrieve a URL to download attachments.
+         * @param {number} pkiAttachmentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        attachmentGetDownloadUrlV1: async (pkiAttachmentID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiAttachmentID' is not null or undefined
+            assertParamExists('attachmentGetDownloadUrlV1', 'pkiAttachmentID', pkiAttachmentID)
+            const localVarPath = `/1/object/attachment/{pkiAttachmentID}/getDownloadUrl`
                 .replace(`{${"pkiAttachmentID"}}`, encodeURIComponent(String(pkiAttachmentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
@@ -106,8 +223,30 @@ export const ObjectAttachmentApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async attachmentDownloadV1(pkiAttachmentID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AttachmentDownloadV1Response>> {
+        async attachmentDownloadV1(pkiAttachmentID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.attachmentDownloadV1(pkiAttachmentID, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * Using this endpoint, you can retrieve the Attachmentlogs of an attachment.
+         * @summary Retrieve the Attachmentlogs
+         * @param {number} pkiAttachmentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async attachmentGetAttachmentlogsV1(pkiAttachmentID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AttachmentGetAttachmentlogsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.attachmentGetAttachmentlogsV1(pkiAttachmentID, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * This endpoint returns an URL to download the attachment.  These links will expire after 5 minutes so the download of the file should be made soon after retrieving the link.
+         * @summary Retrieve a URL to download attachments.
+         * @param {number} pkiAttachmentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async attachmentGetDownloadUrlV1(pkiAttachmentID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AttachmentGetDownloadUrlV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.attachmentGetDownloadUrlV1(pkiAttachmentID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -127,8 +266,28 @@ export const ObjectAttachmentApiFactory = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        attachmentDownloadV1(pkiAttachmentID: number, options?: any): AxiosPromise<AttachmentDownloadV1Response> {
+        attachmentDownloadV1(pkiAttachmentID: number, options?: any): AxiosPromise<void> {
             return localVarFp.attachmentDownloadV1(pkiAttachmentID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Using this endpoint, you can retrieve the Attachmentlogs of an attachment.
+         * @summary Retrieve the Attachmentlogs
+         * @param {number} pkiAttachmentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        attachmentGetAttachmentlogsV1(pkiAttachmentID: number, options?: any): AxiosPromise<AttachmentGetAttachmentlogsV1Response> {
+            return localVarFp.attachmentGetAttachmentlogsV1(pkiAttachmentID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * This endpoint returns an URL to download the attachment.  These links will expire after 5 minutes so the download of the file should be made soon after retrieving the link.
+         * @summary Retrieve a URL to download attachments.
+         * @param {number} pkiAttachmentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        attachmentGetDownloadUrlV1(pkiAttachmentID: number, options?: any): AxiosPromise<AttachmentGetDownloadUrlV1Response> {
+            return localVarFp.attachmentGetDownloadUrlV1(pkiAttachmentID, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -150,6 +309,30 @@ export class ObjectAttachmentApi extends BaseAPI {
      */
     public attachmentDownloadV1(pkiAttachmentID: number, options?: AxiosRequestConfig) {
         return ObjectAttachmentApiFp(this.configuration).attachmentDownloadV1(pkiAttachmentID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Using this endpoint, you can retrieve the Attachmentlogs of an attachment.
+     * @summary Retrieve the Attachmentlogs
+     * @param {number} pkiAttachmentID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectAttachmentApi
+     */
+    public attachmentGetAttachmentlogsV1(pkiAttachmentID: number, options?: AxiosRequestConfig) {
+        return ObjectAttachmentApiFp(this.configuration).attachmentGetAttachmentlogsV1(pkiAttachmentID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * This endpoint returns an URL to download the attachment.  These links will expire after 5 minutes so the download of the file should be made soon after retrieving the link.
+     * @summary Retrieve a URL to download attachments.
+     * @param {number} pkiAttachmentID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectAttachmentApi
+     */
+    public attachmentGetDownloadUrlV1(pkiAttachmentID: number, options?: AxiosRequestConfig) {
+        return ObjectAttachmentApiFp(this.configuration).attachmentGetDownloadUrlV1(pkiAttachmentID, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

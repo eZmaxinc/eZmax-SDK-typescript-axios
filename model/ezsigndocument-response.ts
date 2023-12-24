@@ -152,6 +152,12 @@ export interface EzsigndocumentResponse {
      * @memberof EzsigndocumentResponse
      */
     'sEzsigndocumentExternalid'?: string;
+    /**
+     * The number of Ezsigndocumentattachment total
+     * @type {number}
+     * @memberof EzsigndocumentResponse
+     */
+    'iEzsigndocumentEzsignsignatureattachmenttotal': number;
 }
 
 
@@ -192,6 +198,7 @@ export class DataObjectEzsigndocumentResponse {
    bEzsigndocumentHassignedsignatures?:boolean = undefined
    objAudit?:CommonAudit = undefined
    sEzsigndocumentExternalid?:string = undefined
+   iEzsigndocumentEzsignsignatureattachmenttotal:number = 0
 }
 
 /**
@@ -291,6 +298,11 @@ export class ValidationObjectEzsigndocumentResponse {
       type: 'string',
       pattern: '/^.{0,64}$/',
       required: false
+   }
+   iEzsigndocumentEzsignsignatureattachmenttotal = {
+      type: 'integer',
+      minimum: 0,
+      required: true
    }
 } 
 

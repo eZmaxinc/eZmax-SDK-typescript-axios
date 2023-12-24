@@ -22,6 +22,7 @@
 
 export const FieldPksEzmaxclientOs = {
     iOS: 'iOS',
+    iPadOS: 'iPadOS',
     macOS: 'macOS',
     Windows: 'Windows'
 } as const;

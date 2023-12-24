@@ -179,7 +179,7 @@ export class ValidationObjectEzsignformfieldgroupRequest {
    }
    eEzsignformfieldgroupType = {
       type: 'enum',
-      allowableValues: ['Text','Textarea','Dropdown','Radio','Checkbox'],
+      allowableValues: ['Text','Textarea','Dropdown','Radio','Checkbox','Number','Date'],
       required: true
    }
    eEzsignformfieldgroupSignerrequirement = {

@@ -33,7 +33,13 @@ export interface CustomEzsignfoldertypeResponse {
      */
     'sEzsignfoldertypeNameX'?: string;
     /**
-     * Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
+     * Whether we send the proof in the email to Ezsignsigner
+     * @type {boolean}
+     * @memberof CustomEzsignfoldertypeResponse
+     */
+    'bEzsignfoldertypeSendproofezsignsigner'?: boolean;
+    /**
+     * THIS FIELD WILL BE DELETED. Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
      * @type {boolean}
      * @memberof CustomEzsignfoldertypeResponse
      */
@@ -44,6 +50,18 @@ export interface CustomEzsignfoldertypeResponse {
      * @memberof CustomEzsignfoldertypeResponse
      */
     'bEzsignfoldertypeIncludeproofuser'?: boolean;
+    /**
+     * Whether we allow the Ezsigndocument to be downloaded by an Ezsignsigner
+     * @type {boolean}
+     * @memberof CustomEzsignfoldertypeResponse
+     */
+    'bEzsignfoldertypeAllowdownloadattachmentezsignsigner'?: boolean;
+    /**
+     * Whether we allow the proof to be downloaded by an Ezsignsigner
+     * @type {boolean}
+     * @memberof CustomEzsignfoldertypeResponse
+     */
+    'bEzsignfoldertypeAllowdownloadproofezsignsigner'?: boolean;
     /**
      * Wheter if delegation of signature is allowed to another user or not
      * @type {boolean}
@@ -71,8 +89,11 @@ export interface CustomEzsignfoldertypeResponse {
 export class DataObjectCustomEzsignfoldertypeResponse {
    pkiEzsignfoldertypeID:number = 0
    sEzsignfoldertypeNameX?:string = undefined
+   bEzsignfoldertypeSendproofezsignsigner?:boolean = undefined
    bEzsignfoldertypeIncludeproofsigner?:boolean = undefined
    bEzsignfoldertypeIncludeproofuser?:boolean = undefined
+   bEzsignfoldertypeAllowdownloadattachmentezsignsigner?:boolean = undefined
+   bEzsignfoldertypeAllowdownloadproofezsignsigner?:boolean = undefined
    bEzsignfoldertypeDelegate?:boolean = undefined
    bEzsignfoldertypeReassign?:boolean = undefined
 }
@@ -92,11 +113,23 @@ export class ValidationObjectCustomEzsignfoldertypeResponse {
       type: 'string',
       required: false
    }
+   bEzsignfoldertypeSendproofezsignsigner = {
+      type: 'boolean',
+      required: false
+   }
    bEzsignfoldertypeIncludeproofsigner = {
       type: 'boolean',
       required: false
    }
    bEzsignfoldertypeIncludeproofuser = {
+      type: 'boolean',
+      required: false
+   }
+   bEzsignfoldertypeAllowdownloadattachmentezsignsigner = {
+      type: 'boolean',
+      required: false
+   }
+   bEzsignfoldertypeAllowdownloadproofezsignsigner = {
       type: 'boolean',
       required: false
    }

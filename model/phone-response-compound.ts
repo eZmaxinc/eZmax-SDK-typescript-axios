@@ -58,6 +58,12 @@ export interface PhoneResponseCompound {
      * @memberof PhoneResponseCompound
      */
     sPhoneExtension?:string 
+    /**
+     * Indicate the phone number is an international phone number.
+     * @type {boolean}
+     * @memberof PhoneResponseCompound
+     */
+    bPhoneInternational?:boolean 
 }
 
 
@@ -79,6 +85,7 @@ export class DataObjectPhoneResponseCompound {
     ePhoneType?:FieldEPhoneType = undefined
     sPhoneE164?:string = undefined
     sPhoneExtension?:string = undefined
+    bPhoneInternational?:boolean = undefined
 }
 
 /**
@@ -109,6 +116,10 @@ export class ValidationObjectPhoneResponseCompound {
    }
    sPhoneExtension = {
       type: 'string',
+      required: false
+   }
+   bPhoneInternational = {
+      type: 'boolean',
       required: false
    }
 } 

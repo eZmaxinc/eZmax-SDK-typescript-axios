@@ -31,6 +31,12 @@ import { FieldEActivesessionUsertype } from './field-eactivesession-usertype';
 // May contain unused imports in some cases
 // @ts-ignore
 import { FieldEActivesessionWeekdaystart } from './field-eactivesession-weekdaystart';
+// May contain unused imports in some cases
+// @ts-ignore
+import { FieldEUserEzsignaccess } from './field-euser-ezsignaccess';
+// May contain unused imports in some cases
+// @ts-ignore
+import { FieldEUserEzsignprepaid } from './field-euser-ezsignprepaid';
 
 /**
  * @type ActivesessionResponseCompound
@@ -106,6 +112,24 @@ export interface ActivesessionResponseCompound {
      */
     fkiSignatureID?:number 
     /**
+     * 
+     * @type {FieldEUserEzsignaccess}
+     * @memberof ActivesessionResponseCompound
+     */
+    eUserEzsignaccess:FieldEUserEzsignaccess 
+    /**
+     * 
+     * @type {FieldEUserEzsignprepaid}
+     * @memberof ActivesessionResponseCompound
+     */
+    eUserEzsignprepaid?:FieldEUserEzsignprepaid 
+    /**
+     * The eZsign prepaid expiration date
+     * @type {string}
+     * @memberof ActivesessionResponseCompound
+     */
+    dtUserEzsignprepaidexpiration?:string 
+    /**
      * An array of permissions granted to the user or api key
      * @type {Array<number>}
      * @memberof ActivesessionResponseCompound
@@ -174,6 +198,9 @@ export class DataObjectActivesessionResponseCompound {
     pksCustomerCode:string = ''
     fkiSystemconfigurationtypeID:number = 0
     fkiSignatureID?:number = undefined
+    eUserEzsignaccess:FieldEUserEzsignaccess = 'No'
+    eUserEzsignprepaid?:FieldEUserEzsignprepaid = undefined
+    dtUserEzsignprepaidexpiration?:string = undefined
     a_pkiPermissionID:Array<number> = []
     objUserReal:ActivesessionResponseCompoundUser = new DataObjectActivesessionResponseCompoundUser()
     objUserCloned?:ActivesessionResponseCompoundUser = undefined
@@ -237,6 +264,21 @@ export class ValidationObjectActivesessionResponseCompound {
       type: 'integer',
       minimum: 0,
       maximum: 16777215,
+      required: false
+   }
+   eUserEzsignaccess = {
+      type: 'enum',
+      allowableValues: ['No','PaidByOffice','PerDocument','Prepaid'],
+      required: true
+   }
+   eUserEzsignprepaid = {
+      type: 'enum',
+      allowableValues: ['Basic','Unlimited','Pro'],
+      required: false
+   }
+   dtUserEzsignprepaidexpiration = {
+      type: 'string',
+      pattern: '/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/',
       required: false
    }
    a_pkiPermissionID = {

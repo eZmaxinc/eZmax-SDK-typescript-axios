@@ -32,6 +32,10 @@ import { WebhookCreateObjectV1Request } from '../model';
 // @ts-ignore
 import { WebhookCreateObjectV1Response } from '../model';
 // @ts-ignore
+import { WebhookCreateObjectV2Request } from '../model';
+// @ts-ignore
+import { WebhookCreateObjectV2Response } from '../model';
+// @ts-ignore
 import { WebhookDeleteObjectV1Response } from '../model';
 // @ts-ignore
 import { WebhookEditObjectV1Request } from '../model';
@@ -43,6 +47,10 @@ import { WebhookGetHistoryV1Response } from '../model';
 import { WebhookGetListV1Response } from '../model';
 // @ts-ignore
 import { WebhookGetObjectV2Response } from '../model';
+// @ts-ignore
+import { WebhookRegenerateApikeyV1Request } from '../model';
+// @ts-ignore
+import { WebhookRegenerateApikeyV1Response } from '../model';
 // @ts-ignore
 import { WebhookTestV1Response } from '../model';
 // @ts-ignore
@@ -58,6 +66,7 @@ export const ObjectWebhookApiAxiosParamCreator = function (configuration?: Confi
          * @summary Create a new Webhook
          * @param {WebhookCreateObjectV1Request} webhookCreateObjectV1Request 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         webhookCreateObjectV1: async (webhookCreateObjectV1Request: WebhookCreateObjectV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -89,6 +98,64 @@ export const ObjectWebhookApiAxiosParamCreator = function (configuration?: Confi
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(webhookCreateObjectV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * The endpoint allows to create one or many elements at once.
+         * @summary Create a new Webhook
+         * @param {WebhookCreateObjectV2Request} webhookCreateObjectV2Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        webhookCreateObjectV2: async (webhookCreateObjectV2Request: WebhookCreateObjectV2Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'webhookCreateObjectV2Request' is not null or undefined
+            assertParamExists('webhookCreateObjectV2', 'webhookCreateObjectV2Request', webhookCreateObjectV2Request)
+            const localVarPath = `/2/object/webhook`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(webhookCreateObjectV2Request, localVarRequestOptions, configuration)
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -429,6 +496,68 @@ export const ObjectWebhookApiAxiosParamCreator = function (configuration?: Confi
         },
         /**
          * 
+         * @summary Regenerate the Apikey
+         * @param {number} pkiWebhookID 
+         * @param {WebhookRegenerateApikeyV1Request} webhookRegenerateApikeyV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        webhookRegenerateApikeyV1: async (pkiWebhookID: number, webhookRegenerateApikeyV1Request: WebhookRegenerateApikeyV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiWebhookID' is not null or undefined
+            assertParamExists('webhookRegenerateApikeyV1', 'pkiWebhookID', pkiWebhookID)
+            // verify required parameter 'webhookRegenerateApikeyV1Request' is not null or undefined
+            assertParamExists('webhookRegenerateApikeyV1', 'webhookRegenerateApikeyV1Request', webhookRegenerateApikeyV1Request)
+            const localVarPath = `/1/object/webhook/{pkiWebhookID}/regenerateApikey`
+                .replace(`{${"pkiWebhookID"}}`, encodeURIComponent(String(pkiWebhookID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(webhookRegenerateApikeyV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Test the Webhook by calling the Url
          * @param {number} pkiWebhookID 
          * @param {object} body 
@@ -504,10 +633,22 @@ export const ObjectWebhookApiFp = function(configuration?: Configuration) {
          * @summary Create a new Webhook
          * @param {WebhookCreateObjectV1Request} webhookCreateObjectV1Request 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         async webhookCreateObjectV1(webhookCreateObjectV1Request: WebhookCreateObjectV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookCreateObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.webhookCreateObjectV1(webhookCreateObjectV1Request, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * The endpoint allows to create one or many elements at once.
+         * @summary Create a new Webhook
+         * @param {WebhookCreateObjectV2Request} webhookCreateObjectV2Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async webhookCreateObjectV2(webhookCreateObjectV2Request: WebhookCreateObjectV2Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookCreateObjectV2Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.webhookCreateObjectV2(webhookCreateObjectV2Request, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -573,6 +714,18 @@ export const ObjectWebhookApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Regenerate the Apikey
+         * @param {number} pkiWebhookID 
+         * @param {WebhookRegenerateApikeyV1Request} webhookRegenerateApikeyV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async webhookRegenerateApikeyV1(pkiWebhookID: number, webhookRegenerateApikeyV1Request: WebhookRegenerateApikeyV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookRegenerateApikeyV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.webhookRegenerateApikeyV1(pkiWebhookID, webhookRegenerateApikeyV1Request, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
          * @summary Test the Webhook by calling the Url
          * @param {number} pkiWebhookID 
          * @param {object} body 
@@ -598,10 +751,21 @@ export const ObjectWebhookApiFactory = function (configuration?: Configuration, 
          * @summary Create a new Webhook
          * @param {WebhookCreateObjectV1Request} webhookCreateObjectV1Request 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         webhookCreateObjectV1(webhookCreateObjectV1Request: WebhookCreateObjectV1Request, options?: any): AxiosPromise<WebhookCreateObjectV1Response> {
             return localVarFp.webhookCreateObjectV1(webhookCreateObjectV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * The endpoint allows to create one or many elements at once.
+         * @summary Create a new Webhook
+         * @param {WebhookCreateObjectV2Request} webhookCreateObjectV2Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        webhookCreateObjectV2(webhookCreateObjectV2Request: WebhookCreateObjectV2Request, options?: any): AxiosPromise<WebhookCreateObjectV2Response> {
+            return localVarFp.webhookCreateObjectV2(webhookCreateObjectV2Request, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -661,6 +825,17 @@ export const ObjectWebhookApiFactory = function (configuration?: Configuration, 
         },
         /**
          * 
+         * @summary Regenerate the Apikey
+         * @param {number} pkiWebhookID 
+         * @param {WebhookRegenerateApikeyV1Request} webhookRegenerateApikeyV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        webhookRegenerateApikeyV1(pkiWebhookID: number, webhookRegenerateApikeyV1Request: WebhookRegenerateApikeyV1Request, options?: any): AxiosPromise<WebhookRegenerateApikeyV1Response> {
+            return localVarFp.webhookRegenerateApikeyV1(pkiWebhookID, webhookRegenerateApikeyV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Test the Webhook by calling the Url
          * @param {number} pkiWebhookID 
          * @param {object} body 
@@ -685,11 +860,24 @@ export class ObjectWebhookApi extends BaseAPI {
      * @summary Create a new Webhook
      * @param {WebhookCreateObjectV1Request} webhookCreateObjectV1Request 
      * @param {*} [options] Override http request option.
+     * @deprecated
      * @throws {RequiredError}
      * @memberof ObjectWebhookApi
      */
     public webhookCreateObjectV1(webhookCreateObjectV1Request: WebhookCreateObjectV1Request, options?: AxiosRequestConfig) {
         return ObjectWebhookApiFp(this.configuration).webhookCreateObjectV1(webhookCreateObjectV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * The endpoint allows to create one or many elements at once.
+     * @summary Create a new Webhook
+     * @param {WebhookCreateObjectV2Request} webhookCreateObjectV2Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectWebhookApi
+     */
+    public webhookCreateObjectV2(webhookCreateObjectV2Request: WebhookCreateObjectV2Request, options?: AxiosRequestConfig) {
+        return ObjectWebhookApiFp(this.configuration).webhookCreateObjectV2(webhookCreateObjectV2Request, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -760,6 +948,19 @@ export class ObjectWebhookApi extends BaseAPI {
 
     /**
      * 
+     * @summary Regenerate the Apikey
+     * @param {number} pkiWebhookID 
+     * @param {WebhookRegenerateApikeyV1Request} webhookRegenerateApikeyV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectWebhookApi
+     */
+    public webhookRegenerateApikeyV1(pkiWebhookID: number, webhookRegenerateApikeyV1Request: WebhookRegenerateApikeyV1Request, options?: AxiosRequestConfig) {
+        return ObjectWebhookApiFp(this.configuration).webhookRegenerateApikeyV1(pkiWebhookID, webhookRegenerateApikeyV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
      * @summary Test the Webhook by calling the Url
      * @param {number} pkiWebhookID 
      * @param {object} body 
@@ -801,6 +1002,8 @@ export const WebhookGetListV1EOrderByEnum = {
     sWebhookUrl_ASC: 'sWebhookUrl_ASC',
     sWebhookUrl_DESC: 'sWebhookUrl_DESC',
     bWebhookIsactive_ASC: 'bWebhookIsactive_ASC',
-    bWebhookIsactive_DESC: 'bWebhookIsactive_DESC'
+    bWebhookIsactive_DESC: 'bWebhookIsactive_DESC',
+    bWebhookIssigned_ASC: 'bWebhookIssigned_ASC',
+    bWebhookIssigned_DESC: 'bWebhookIssigned_DESC'
 } as const;
 export type WebhookGetListV1EOrderByEnum = typeof WebhookGetListV1EOrderByEnum[keyof typeof WebhookGetListV1EOrderByEnum];

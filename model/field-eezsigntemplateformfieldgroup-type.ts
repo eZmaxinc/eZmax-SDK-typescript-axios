@@ -25,7 +25,9 @@ export const FieldEEzsigntemplateformfieldgroupType = {
     Textarea: 'Textarea',
     Dropdown: 'Dropdown',
     Radio: 'Radio',
-    Checkbox: 'Checkbox'
+    Checkbox: 'Checkbox',
+    Number: 'Number',
+    Date: 'Date'
 } as const;
 
 export type FieldEEzsigntemplateformfieldgroupType = typeof FieldEEzsigntemplateformfieldgroupType[keyof typeof FieldEEzsigntemplateformfieldgroupType];

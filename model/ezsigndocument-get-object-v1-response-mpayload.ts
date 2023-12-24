@@ -163,6 +163,12 @@ export interface EzsigndocumentGetObjectV1ResponseMPayload {
      */
     sEzsigndocumentExternalid?:string 
     /**
+     * The number of Ezsigndocumentattachment total
+     * @type {number}
+     * @memberof EzsigndocumentGetObjectV1ResponseMPayload
+     */
+    iEzsigndocumentEzsignsignatureattachmenttotal:number 
+    /**
      * 
      * @type {ComputedEEzsigndocumentSteptype}
      * @memberof EzsigndocumentGetObjectV1ResponseMPayload
@@ -239,6 +245,7 @@ export class DataObjectEzsigndocumentGetObjectV1ResponseMPayload {
     bEzsigndocumentHassignedsignatures?:boolean = undefined
     objAudit?:CommonAudit = undefined
     sEzsigndocumentExternalid?:string = undefined
+    iEzsigndocumentEzsignsignatureattachmenttotal:number = 0
     eEzsigndocumentSteptype:ComputedEEzsigndocumentSteptype = 'Form'
     iEzsigndocumentStepformtotal:number = 0
     iEzsigndocumentStepformcurrent:number = 0
@@ -344,6 +351,11 @@ export class ValidationObjectEzsigndocumentGetObjectV1ResponseMPayload {
       type: 'string',
       pattern: '/^.{0,64}$/',
       required: false
+   }
+   iEzsigndocumentEzsignsignatureattachmenttotal = {
+      type: 'integer',
+      minimum: 0,
+      required: true
    }
    eEzsigndocumentSteptype = {
       type: 'enum',

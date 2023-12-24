@@ -26,6 +26,12 @@ export interface GlobalEzmaxclientVersionV1Response {
      * @memberof GlobalEzmaxclientVersionV1Response
      */
     'sEzmaxclientVersion': string;
+    /**
+     * The latest OS version of the system running the application at the time of release
+     * @type {string}
+     * @memberof GlobalEzmaxclientVersionV1Response
+     */
+    'sEzmaxclientOslatestversion': string;
 }
 /**
  * @import
@@ -40,6 +46,7 @@ export interface GlobalEzmaxclientVersionV1Response {
  */
 export class DataObjectGlobalEzmaxclientVersionV1Response {
    sEzmaxclientVersion:string = ''
+   sEzmaxclientOslatestversion:string = ''
 }
 
 /**
@@ -49,6 +56,10 @@ export class DataObjectGlobalEzmaxclientVersionV1Response {
  */
 export class ValidationObjectGlobalEzmaxclientVersionV1Response {
    sEzmaxclientVersion = {
+      type: 'string',
+      required: true
+   }
+   sEzmaxclientOslatestversion = {
       type: 'string',
       required: true
    }

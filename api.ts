@@ -49,6 +49,7 @@ export enum EApiOperation {
     'object-ezsignsignature-api',
     'object-ezsignsignergroup-api',
     'object-ezsignsignergroupmembership-api',
+    'object-ezsignsigningreason-api',
     'object-ezsigntemplate-api',
     'object-ezsigntemplatedocument-api',
     'object-ezsigntemplateformfieldgroup-api',
@@ -135,6 +136,7 @@ export * from './api/object-ezsignpage-api';
 export * from './api/object-ezsignsignature-api';
 export * from './api/object-ezsignsignergroup-api';
 export * from './api/object-ezsignsignergroupmembership-api';
+export * from './api/object-ezsignsigningreason-api';
 export * from './api/object-ezsigntemplate-api';
 export * from './api/object-ezsigntemplatedocument-api';
 export * from './api/object-ezsigntemplateformfieldgroup-api';

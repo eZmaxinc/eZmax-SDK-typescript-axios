@@ -145,7 +145,7 @@ export class ValidationObjectCustomCommunicationListElementResponse {
    }
    sCommunicationSubject = {
       type: 'string',
-      pattern: '/^.{0,150}$/',
+      pattern: '/^.{0,200}$/',
       required: true
    }
    sCommunicationSender = {

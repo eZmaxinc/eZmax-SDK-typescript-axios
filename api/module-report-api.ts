@@ -63,7 +63,7 @@ export const ModuleReportApiAxiosParamCreator = function (configuration?: Config
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
             // authentication Presigned required
-            await setApiKeyToObject(localVarQueryParameter, "sAuthorization", configuration)
+            // await setApiKeyToObject(localVarQueryParameter, "sAuthorization", configuration)
 
 
     

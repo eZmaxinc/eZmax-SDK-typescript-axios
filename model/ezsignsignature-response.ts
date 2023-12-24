@@ -63,6 +63,18 @@ export interface EzsignsignatureResponse {
      */
     'fkiEzsignfoldersignerassociationID': number;
     /**
+     * The unique ID of the Ezsignsigningreason
+     * @type {number}
+     * @memberof EzsignsignatureResponse
+     */
+    'fkiEzsignsigningreasonID'?: number;
+    /**
+     * The description of the Ezsignsigningreason in the language of the requester
+     * @type {string}
+     * @memberof EzsignsignatureResponse
+     */
+    'sEzsignsigningreasonDescriptionX'?: string;
+    /**
      * The page number in the Ezsigndocument
      * @type {number}
      * @memberof EzsignsignatureResponse
@@ -242,6 +254,8 @@ export class DataObjectEzsignsignatureResponse {
    pkiEzsignsignatureID:number = 0
    fkiEzsigndocumentID:number = 0
    fkiEzsignfoldersignerassociationID:number = 0
+   fkiEzsignsigningreasonID?:number = undefined
+   sEzsignsigningreasonDescriptionX?:string = undefined
    iEzsignpagePagenumber:number = 0
    iEzsignsignatureX:number = 0
    iEzsignsignatureY:number = 0
@@ -290,6 +304,17 @@ export class ValidationObjectEzsignsignatureResponse {
       minimum: 0,
       required: true
    }
+   fkiEzsignsigningreasonID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 255,
+      required: false
+   }
+   sEzsignsigningreasonDescriptionX = {
+      type: 'string',
+      pattern: '/^.{0,50}$/',
+      required: false
+   }
    iEzsignpagePagenumber = {
       type: 'integer',
       minimum: 1,
@@ -321,7 +346,7 @@ export class ValidationObjectEzsignsignatureResponse {
    }
    eEzsignsignatureType = {
       type: 'enum',
-      allowableValues: ['Acknowledgement','City','Handwritten','Initials','Name','Attachments','AttachmentsConfirmation','FieldText','FieldTextarea'],
+      allowableValues: ['Acknowledgement','City','Handwritten','Initials','Name','NameReason','Attachments','AttachmentsConfirmation','FieldText','FieldTextarea'],
       required: true
    }
    tEzsignsignatureTooltip = {

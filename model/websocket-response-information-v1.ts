@@ -30,6 +30,12 @@ export interface WebsocketResponseInformationV1 {
      */
     'eWebsocketMessagetype': WebsocketResponseInformationV1EWebsocketMessagetypeEnum;
     /**
+     * The Channel on which to route the websocket message
+     * @type {string}
+     * @memberof WebsocketResponseInformationV1
+     */
+    'sWebsocketChannel': string;
+    /**
      * 
      * @type {WebsocketResponseInformationV1MPayload}
      * @memberof WebsocketResponseInformationV1
@@ -60,6 +66,7 @@ import { ValidationObjectWebsocketResponseInformationV1MPayload } from './'
  */
 export class DataObjectWebsocketResponseInformationV1 {
    eWebsocketMessagetype:WebsocketResponseInformationV1EWebsocketMessagetypeEnum = 'Response-Information-V1'
+   sWebsocketChannel:string = ''
    mPayload:WebsocketResponseInformationV1MPayload = new DataObjectWebsocketResponseInformationV1MPayload()
 }
 
@@ -71,6 +78,11 @@ export class DataObjectWebsocketResponseInformationV1 {
 export class ValidationObjectWebsocketResponseInformationV1 {
    eWebsocketMessagetype = {
       type: 'string',
+      required: true
+   }
+   sWebsocketChannel = {
+      type: 'string',
+      pattern: '/^[a-zA-Z0-9_@.]{32}$/',
       required: true
    }
    mPayload = new ValidationObjectWebsocketResponseInformationV1MPayload()

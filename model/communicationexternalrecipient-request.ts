@@ -52,7 +52,7 @@ export interface CommunicationexternalrecipientRequest {
      * @type {string}
      * @memberof CommunicationexternalrecipientRequest
      */
-    'sCommunicationexternalrecipientName': string;
+    'sCommunicationexternalrecipientName'?: string;
 }
 
 
@@ -72,7 +72,7 @@ export class DataObjectCommunicationexternalrecipientRequest {
    sEmailAddress?:string = undefined
    sPhoneE164?:string = undefined
    eCommunicationexternalrecipientType?:FieldECommunicationexternalrecipientType = undefined
-   sCommunicationexternalrecipientName:string = ''
+   sCommunicationexternalrecipientName?:string = undefined
 }
 
 /**
@@ -102,7 +102,7 @@ export class ValidationObjectCommunicationexternalrecipientRequest {
    sCommunicationexternalrecipientName = {
       type: 'string',
       pattern: '/^.{0,50}$/',
-      required: true
+      required: false
    }
 } 
 

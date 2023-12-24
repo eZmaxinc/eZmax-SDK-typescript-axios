@@ -169,11 +169,71 @@ export interface EzsignfoldertypeResponseCompound {
      */
     bEzsignfoldertypeReassign?:boolean 
     /**
-     * Whether we send the Ezsigndocument and the proof as attachment in the email
+     * THIS FIELD WILL BE DELETED. Whether we send the Ezsigndocument and the proof as attachment in the email
      * @type {boolean}
      * @memberof EzsignfoldertypeResponseCompound
      */
-    bEzsignfoldertypeSendattatchmentsigner:boolean 
+    bEzsignfoldertypeSendattatchmentsigner?:boolean 
+    /**
+     * Whether we send an email to Ezsignsigner  when document is completed
+     * @type {boolean}
+     * @memberof EzsignfoldertypeResponseCompound
+     */
+    bEzsignfoldertypeSendsignedtoezsignsigner?:boolean 
+    /**
+     * Whether we send an email to User who signed when document is completed
+     * @type {boolean}
+     * @memberof EzsignfoldertypeResponseCompound
+     */
+    bEzsignfoldertypeSendsignedtouser?:boolean 
+    /**
+     * Whether we send the Ezsigndocument in the email to Ezsignsigner
+     * @type {boolean}
+     * @memberof EzsignfoldertypeResponseCompound
+     */
+    bEzsignfoldertypeSendattachmentezsignsigner?:boolean 
+    /**
+     * Whether we send the proof in the email to Ezsignsigner
+     * @type {boolean}
+     * @memberof EzsignfoldertypeResponseCompound
+     */
+    bEzsignfoldertypeSendproofezsignsigner?:boolean 
+    /**
+     * Whether we send the Ezsigndocument in the email to User
+     * @type {boolean}
+     * @memberof EzsignfoldertypeResponseCompound
+     */
+    bEzsignfoldertypeSendattachmentuser?:boolean 
+    /**
+     * Whether we send the proof in the email to User
+     * @type {boolean}
+     * @memberof EzsignfoldertypeResponseCompound
+     */
+    bEzsignfoldertypeSendproofuser?:boolean 
+    /**
+     * Whether we send the proof in the email to external recipient
+     * @type {boolean}
+     * @memberof EzsignfoldertypeResponseCompound
+     */
+    bEzsignfoldertypeSendproofemail?:boolean 
+    /**
+     * Whether we allow the Ezsigndocument to be downloaded by an Ezsignsigner
+     * @type {boolean}
+     * @memberof EzsignfoldertypeResponseCompound
+     */
+    bEzsignfoldertypeAllowdownloadattachmentezsignsigner?:boolean 
+    /**
+     * Whether we allow the proof to be downloaded by an Ezsignsigner
+     * @type {boolean}
+     * @memberof EzsignfoldertypeResponseCompound
+     */
+    bEzsignfoldertypeAllowdownloadproofezsignsigner?:boolean 
+    /**
+     * Whether we send the proof to user and Ezsignsigner who receive all documents.
+     * @type {boolean}
+     * @memberof EzsignfoldertypeResponseCompound
+     */
+    bEzsignfoldertypeSendproofreceivealldocument?:boolean 
     /**
      * Whether we send the signed Ezsigndocument to the Ezsigndocument\'s owner
      * @type {boolean}
@@ -193,7 +253,7 @@ export interface EzsignfoldertypeResponseCompound {
      */
     bEzsignfoldertypeSendsignedtofullgroup?:boolean 
     /**
-     * Whether we send the signed Ezsigndocument to the Usergroup that has acces to only their own Ezsignfolders
+     * THIS FIELD WILL BE DELETED. Whether we send the signed Ezsigndocument to the Usergroup that has acces to only their own Ezsignfolders
      * @type {boolean}
      * @memberof EzsignfoldertypeResponseCompound
      */
@@ -235,11 +295,11 @@ export interface EzsignfoldertypeResponseCompound {
      */
     bEzsignfoldertypeSendsummarytocolleague:boolean 
     /**
-     * Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
+     * THIS FIELD WILL BE DELETED. Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
      * @type {boolean}
      * @memberof EzsignfoldertypeResponseCompound
      */
-    bEzsignfoldertypeIncludeproofsigner:boolean 
+    bEzsignfoldertypeIncludeproofsigner?:boolean 
     /**
      * Whether we include the proof with the signed Ezsigndocument for users
      * @type {boolean}
@@ -306,7 +366,17 @@ export class DataObjectEzsignfoldertypeResponseCompound {
     iEzsignfoldertypeDeadlinedays:number = 0
     bEzsignfoldertypeDelegate?:boolean = undefined
     bEzsignfoldertypeReassign?:boolean = undefined
-    bEzsignfoldertypeSendattatchmentsigner:boolean = false
+    bEzsignfoldertypeSendattatchmentsigner?:boolean = undefined
+    bEzsignfoldertypeSendsignedtoezsignsigner?:boolean = undefined
+    bEzsignfoldertypeSendsignedtouser?:boolean = undefined
+    bEzsignfoldertypeSendattachmentezsignsigner?:boolean = undefined
+    bEzsignfoldertypeSendproofezsignsigner?:boolean = undefined
+    bEzsignfoldertypeSendattachmentuser?:boolean = undefined
+    bEzsignfoldertypeSendproofuser?:boolean = undefined
+    bEzsignfoldertypeSendproofemail?:boolean = undefined
+    bEzsignfoldertypeAllowdownloadattachmentezsignsigner?:boolean = undefined
+    bEzsignfoldertypeAllowdownloadproofezsignsigner?:boolean = undefined
+    bEzsignfoldertypeSendproofreceivealldocument?:boolean = undefined
     bEzsignfoldertypeSendsignedtodocumentowner:boolean = false
     bEzsignfoldertypeSendsignedtofolderowner:boolean = false
     bEzsignfoldertypeSendsignedtofullgroup?:boolean = undefined
@@ -317,7 +387,7 @@ export class DataObjectEzsignfoldertypeResponseCompound {
     bEzsignfoldertypeSendsummarytofullgroup?:boolean = undefined
     bEzsignfoldertypeSendsummarytolimitedgroup?:boolean = undefined
     bEzsignfoldertypeSendsummarytocolleague:boolean = false
-    bEzsignfoldertypeIncludeproofsigner:boolean = false
+    bEzsignfoldertypeIncludeproofsigner?:boolean = undefined
     bEzsignfoldertypeIncludeproofuser:boolean = false
     bEzsignfoldertypeIsactive:boolean = false
     a_fkiUserIDSigned?:Array<number> = undefined
@@ -437,7 +507,47 @@ export class ValidationObjectEzsignfoldertypeResponseCompound {
    }
    bEzsignfoldertypeSendattatchmentsigner = {
       type: 'boolean',
-      required: true
+      required: false
+   }
+   bEzsignfoldertypeSendsignedtoezsignsigner = {
+      type: 'boolean',
+      required: false
+   }
+   bEzsignfoldertypeSendsignedtouser = {
+      type: 'boolean',
+      required: false
+   }
+   bEzsignfoldertypeSendattachmentezsignsigner = {
+      type: 'boolean',
+      required: false
+   }
+   bEzsignfoldertypeSendproofezsignsigner = {
+      type: 'boolean',
+      required: false
+   }
+   bEzsignfoldertypeSendattachmentuser = {
+      type: 'boolean',
+      required: false
+   }
+   bEzsignfoldertypeSendproofuser = {
+      type: 'boolean',
+      required: false
+   }
+   bEzsignfoldertypeSendproofemail = {
+      type: 'boolean',
+      required: false
+   }
+   bEzsignfoldertypeAllowdownloadattachmentezsignsigner = {
+      type: 'boolean',
+      required: false
+   }
+   bEzsignfoldertypeAllowdownloadproofezsignsigner = {
+      type: 'boolean',
+      required: false
+   }
+   bEzsignfoldertypeSendproofreceivealldocument = {
+      type: 'boolean',
+      required: false
    }
    bEzsignfoldertypeSendsignedtodocumentowner = {
       type: 'boolean',
@@ -481,7 +591,7 @@ export class ValidationObjectEzsignfoldertypeResponseCompound {
    }
    bEzsignfoldertypeIncludeproofsigner = {
       type: 'boolean',
-      required: true
+      required: false
    }
    bEzsignfoldertypeIncludeproofuser = {
       type: 'boolean',

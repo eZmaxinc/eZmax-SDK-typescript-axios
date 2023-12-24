@@ -267,7 +267,7 @@ export class ValidationObjectEzsigntemplatesignatureRequest {
    }
    eEzsigntemplatesignatureType = {
       type: 'enum',
-      allowableValues: ['Acknowledgement','City','Handwritten','Initials','Name','Attachments','FieldText','FieldTextarea'],
+      allowableValues: ['Acknowledgement','City','Handwritten','Initials','Name','NameReason','Attachments','FieldText','FieldTextarea'],
       required: true
    }
    tEzsigntemplatesignatureTooltip = {

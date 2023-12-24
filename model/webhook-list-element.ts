@@ -83,6 +83,12 @@ export interface WebhookListElement {
      * @memberof WebhookListElement
      */
     'bWebhookIsactive': boolean;
+    /**
+     * Whether the requests will be signed or not
+     * @type {boolean}
+     * @memberof WebhookListElement
+     */
+    'bWebhookIssigned': boolean;
 }
 
 
@@ -107,6 +113,7 @@ export class DataObjectWebhookListElement {
    eWebhookEzsignevent?:FieldEWebhookEzsignevent = undefined
    eWebhookManagementevent?:FieldEWebhookManagementevent = undefined
    bWebhookIsactive:boolean = false
+   bWebhookIssigned:boolean = false
 }
 
 /**
@@ -151,6 +158,10 @@ export class ValidationObjectWebhookListElement {
       required: false
    }
    bWebhookIsactive = {
+      type: 'boolean',
+      required: true
+   }
+   bWebhookIssigned = {
       type: 'boolean',
       required: true
    }

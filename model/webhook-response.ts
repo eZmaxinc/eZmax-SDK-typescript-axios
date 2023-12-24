@@ -84,11 +84,29 @@ export interface WebhookResponse {
      */
     'sWebhookEmailfailed': string;
     /**
+     * The Apikey for the Webhook.  This will be hidden if we are not creating or regenerating the Apikey.
+     * @type {string}
+     * @memberof WebhookResponse
+     */
+    'sWebhookApikey'?: string;
+    /**
+     * The Secret for the Webhook.  This will be hidden if we are not creating or regenerating the Apikey.
+     * @type {string}
+     * @memberof WebhookResponse
+     */
+    'sWebhookSecret'?: string;
+    /**
      * Whether the Webhook is active or not
      * @type {boolean}
      * @memberof WebhookResponse
      */
     'bWebhookIsactive': boolean;
+    /**
+     * Whether the requests will be signed or not
+     * @type {boolean}
+     * @memberof WebhookResponse
+     */
+    'bWebhookIssigned': boolean;
     /**
      * Wheter the server\'s SSL certificate should be validated or not. Not recommended to skip for production use
      * @type {boolean}
@@ -119,7 +137,10 @@ export class DataObjectWebhookResponse {
    eWebhookManagementevent?:FieldEWebhookManagementevent = undefined
    sWebhookUrl:string = ''
    sWebhookEmailfailed:string = ''
+   sWebhookApikey?:string = undefined
+   sWebhookSecret?:string = undefined
    bWebhookIsactive:boolean = false
+   bWebhookIssigned:boolean = false
    bWebhookSkipsslvalidation:boolean = false
 }
 
@@ -169,7 +190,19 @@ export class ValidationObjectWebhookResponse {
       type: 'string',
       required: true
    }
+   sWebhookApikey = {
+      type: 'string',
+      required: false
+   }
+   sWebhookSecret = {
+      type: 'string',
+      required: false
+   }
    bWebhookIsactive = {
+      type: 'boolean',
+      required: true
+   }
+   bWebhookIssigned = {
       type: 'boolean',
       required: true
    }

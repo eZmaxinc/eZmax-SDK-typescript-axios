@@ -50,6 +50,10 @@ import { EzsignfolderEditObjectV1Response } from '../model';
 // @ts-ignore
 import { EzsignfolderGetActionableElementsV1Response } from '../model';
 // @ts-ignore
+import { EzsignfolderGetAttachmentCountV1Response } from '../model';
+// @ts-ignore
+import { EzsignfolderGetAttachmentsV1Response } from '../model';
+// @ts-ignore
 import { EzsignfolderGetCommunicationCountV1Response } from '../model';
 // @ts-ignore
 import { EzsignfolderGetCommunicationListV1Response } from '../model';
@@ -597,6 +601,118 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'pkiEzsignfolderID' is not null or undefined
             assertParamExists('ezsignfolderGetActionableElementsV1', 'pkiEzsignfolderID', pkiEzsignfolderID)
             const localVarPath = `/1/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements`
+                .replace(`{${"pkiEzsignfolderID"}}`, encodeURIComponent(String(pkiEzsignfolderID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Attachment count
+         * @param {number} pkiEzsignfolderID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsignfolderGetAttachmentCountV1: async (pkiEzsignfolderID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiEzsignfolderID' is not null or undefined
+            assertParamExists('ezsignfolderGetAttachmentCountV1', 'pkiEzsignfolderID', pkiEzsignfolderID)
+            const localVarPath = `/1/object/ezsignfolder/{pkiEzsignfolderID}/getAttachmentCount`
+                .replace(`{${"pkiEzsignfolderID"}}`, encodeURIComponent(String(pkiEzsignfolderID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Ezsignfolder\'s Attachments
+         * @param {number} pkiEzsignfolderID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsignfolderGetAttachmentsV1: async (pkiEzsignfolderID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiEzsignfolderID' is not null or undefined
+            assertParamExists('ezsignfolderGetAttachmentsV1', 'pkiEzsignfolderID', pkiEzsignfolderID)
+            const localVarPath = `/1/object/ezsignfolder/{pkiEzsignfolderID}/getAttachments`
                 .replace(`{${"pkiEzsignfolderID"}}`, encodeURIComponent(String(pkiEzsignfolderID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
@@ -1834,6 +1950,28 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Retrieve Attachment count
+         * @param {number} pkiEzsignfolderID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsignfolderGetAttachmentCountV1(pkiEzsignfolderID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderGetAttachmentCountV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderGetAttachmentCountV1(pkiEzsignfolderID, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
+         * @summary Retrieve Ezsignfolder\'s Attachments
+         * @param {number} pkiEzsignfolderID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsignfolderGetAttachmentsV1(pkiEzsignfolderID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderGetAttachmentsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderGetAttachmentsV1(pkiEzsignfolderID, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
          * @summary Retrieve Communication count
          * @param {number} pkiEzsignfolderID 
          * @param {*} [options] Override http request option.
@@ -2151,6 +2289,26 @@ export const ObjectEzsignfolderApiFactory = function (configuration?: Configurat
         },
         /**
          * 
+         * @summary Retrieve Attachment count
+         * @param {number} pkiEzsignfolderID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsignfolderGetAttachmentCountV1(pkiEzsignfolderID: number, options?: any): AxiosPromise<EzsignfolderGetAttachmentCountV1Response> {
+            return localVarFp.ezsignfolderGetAttachmentCountV1(pkiEzsignfolderID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Ezsignfolder\'s Attachments
+         * @param {number} pkiEzsignfolderID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsignfolderGetAttachmentsV1(pkiEzsignfolderID: number, options?: any): AxiosPromise<EzsignfolderGetAttachmentsV1Response> {
+            return localVarFp.ezsignfolderGetAttachmentsV1(pkiEzsignfolderID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Retrieve Communication count
          * @param {number} pkiEzsignfolderID 
          * @param {*} [options] Override http request option.
@@ -2464,6 +2622,30 @@ export class ObjectEzsignfolderApi extends BaseAPI {
      */
     public ezsignfolderGetActionableElementsV1(pkiEzsignfolderID: number, options?: AxiosRequestConfig) {
         return ObjectEzsignfolderApiFp(this.configuration).ezsignfolderGetActionableElementsV1(pkiEzsignfolderID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Attachment count
+     * @param {number} pkiEzsignfolderID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectEzsignfolderApi
+     */
+    public ezsignfolderGetAttachmentCountV1(pkiEzsignfolderID: number, options?: AxiosRequestConfig) {
+        return ObjectEzsignfolderApiFp(this.configuration).ezsignfolderGetAttachmentCountV1(pkiEzsignfolderID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Ezsignfolder\'s Attachments
+     * @param {number} pkiEzsignfolderID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectEzsignfolderApi
+     */
+    public ezsignfolderGetAttachmentsV1(pkiEzsignfolderID: number, options?: AxiosRequestConfig) {
+        return ObjectEzsignfolderApiFp(this.configuration).ezsignfolderGetAttachmentsV1(pkiEzsignfolderID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

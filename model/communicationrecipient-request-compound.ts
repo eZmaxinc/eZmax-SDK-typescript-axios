@@ -40,17 +40,17 @@ export interface CommunicationrecipientRequestCompound {
      */
     fkiAgentID?:number 
     /**
-     * The unique ID of the Agentincorporation.
-     * @type {number}
-     * @memberof CommunicationrecipientRequestCompound
-     */
-    fkiAgentincorporationID?:number 
-    /**
      * The unique ID of the Broker.
      * @type {number}
      * @memberof CommunicationrecipientRequestCompound
      */
     fkiBrokerID?:number 
+    /**
+     * The unique ID of the Contact
+     * @type {number}
+     * @memberof CommunicationrecipientRequestCompound
+     */
+    fkiContactID?:number 
     /**
      * The unique ID of the Customer.
      * @type {number}
@@ -100,6 +100,18 @@ export interface CommunicationrecipientRequestCompound {
      */
     fkiUserID?:number 
     /**
+     * The unique ID of the Mailboxshared
+     * @type {number}
+     * @memberof CommunicationrecipientRequestCompound
+     */
+    fkiMailboxsharedID?:number 
+    /**
+     * The unique ID of the Phonelineshared
+     * @type {number}
+     * @memberof CommunicationrecipientRequestCompound
+     */
+    fkiPhonelinesharedID?:number 
+    /**
      * 
      * @type {FieldECommunicationrecipientType}
      * @memberof CommunicationrecipientRequestCompound
@@ -123,8 +135,8 @@ export interface CommunicationrecipientRequestCompound {
 export class DataObjectCommunicationrecipientRequestCompound {
     pkiCommunicationrecipientID?:number = undefined
     fkiAgentID?:number = undefined
-    fkiAgentincorporationID?:number = undefined
     fkiBrokerID?:number = undefined
+    fkiContactID?:number = undefined
     fkiCustomerID?:number = undefined
     fkiEmployeeID?:number = undefined
     fkiAssistantID?:number = undefined
@@ -133,6 +145,8 @@ export class DataObjectCommunicationrecipientRequestCompound {
     fkiNotaryID?:number = undefined
     fkiSupplierID?:number = undefined
     fkiUserID?:number = undefined
+    fkiMailboxsharedID?:number = undefined
+    fkiPhonelinesharedID?:number = undefined
     eCommunicationrecipientType?:FieldECommunicationrecipientType = undefined
 }
 
@@ -152,12 +166,12 @@ export class ValidationObjectCommunicationrecipientRequestCompound {
       minimum: 0,
       required: false
    }
-   fkiAgentincorporationID = {
+   fkiBrokerID = {
       type: 'integer',
       minimum: 0,
       required: false
    }
-   fkiBrokerID = {
+   fkiContactID = {
       type: 'integer',
       minimum: 0,
       required: false
@@ -200,6 +214,18 @@ export class ValidationObjectCommunicationrecipientRequestCompound {
    fkiUserID = {
       type: 'integer',
       minimum: 0,
+      required: false
+   }
+   fkiMailboxsharedID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 255,
+      required: false
+   }
+   fkiPhonelinesharedID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 255,
       required: false
    }
    eCommunicationrecipientType = {
