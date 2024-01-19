@@ -74,6 +74,18 @@ export interface CustomEzsignfoldertypeResponse {
      * @memberof CustomEzsignfoldertypeResponse
      */
     'bEzsignfoldertypeReassign'?: boolean;
+    /**
+     * Wheter if Reassignment of signature is allowed by a signatory to another signatory or not
+     * @type {boolean}
+     * @memberof CustomEzsignfoldertypeResponse
+     */
+    'bEzsignfoldertypeReassignezsignsigner'?: boolean;
+    /**
+     * Wheter if Reassignment of signature is allowed by a user to a signatory or another user or not
+     * @type {boolean}
+     * @memberof CustomEzsignfoldertypeResponse
+     */
+    'bEzsignfoldertypeReassignuser'?: boolean;
 }
 /**
  * @import
@@ -96,6 +108,8 @@ export class DataObjectCustomEzsignfoldertypeResponse {
    bEzsignfoldertypeAllowdownloadproofezsignsigner?:boolean = undefined
    bEzsignfoldertypeDelegate?:boolean = undefined
    bEzsignfoldertypeReassign?:boolean = undefined
+   bEzsignfoldertypeReassignezsignsigner?:boolean = undefined
+   bEzsignfoldertypeReassignuser?:boolean = undefined
 }
 
 /**
@@ -138,6 +152,14 @@ export class ValidationObjectCustomEzsignfoldertypeResponse {
       required: false
    }
    bEzsignfoldertypeReassign = {
+      type: 'boolean',
+      required: false
+   }
+   bEzsignfoldertypeReassignezsignsigner = {
+      type: 'boolean',
+      required: false
+   }
+   bEzsignfoldertypeReassignuser = {
       type: 'boolean',
       required: false
    }

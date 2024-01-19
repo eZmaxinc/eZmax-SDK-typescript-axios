@@ -26,6 +26,7 @@ export const FieldEEzsigndocumentStep = {
     PartiallySigned: 'PartiallySigned',
     DeclinedToSign: 'DeclinedToSign',
     PrematurelyEnded: 'PrematurelyEnded',
+    PendingCompletion: 'PendingCompletion',
     Completed: 'Completed',
     Disposed: 'Disposed'
 } as const;

@@ -22,6 +22,12 @@ import { EzsigntemplateformfieldResponse } from './ezsigntemplateformfield-respo
 // May contain unused imports in some cases
 // @ts-ignore
 import { FieldEEzsigntemplateformfieldDependencyrequirement } from './field-eezsigntemplateformfield-dependencyrequirement';
+// May contain unused imports in some cases
+// @ts-ignore
+import { FieldEEzsigntemplateformfieldPositioning } from './field-eezsigntemplateformfield-positioning';
+// May contain unused imports in some cases
+// @ts-ignore
+import { FieldEEzsigntemplateformfieldPositioningoccurence } from './field-eezsigntemplateformfield-positioningoccurence';
 
 /**
  * @type EzsigntemplateformfieldResponseCompound
@@ -36,6 +42,12 @@ export interface EzsigntemplateformfieldResponseCompound {
      * @memberof EzsigntemplateformfieldResponseCompound
      */
     pkiEzsigntemplateformfieldID:number 
+    /**
+     * 
+     * @type {FieldEEzsigntemplateformfieldPositioning}
+     * @memberof EzsigntemplateformfieldResponseCompound
+     */
+    eEzsigntemplateformfieldPositioning?:FieldEEzsigntemplateformfieldPositioning 
     /**
      * The page number in the Ezsigntemplatedocument
      * @type {number}
@@ -59,13 +71,13 @@ export interface EzsigntemplateformfieldResponseCompound {
      * @type {number}
      * @memberof EzsigntemplateformfieldResponseCompound
      */
-    iEzsigntemplateformfieldX:number 
+    iEzsigntemplateformfieldX?:number 
     /**
      * The Y coordinate (Vertical) where to put the Ezsigntemplateformfield on the Ezsigntemplatepage.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplateformfield 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
      * @type {number}
      * @memberof EzsigntemplateformfieldResponseCompound
      */
-    iEzsigntemplateformfieldY:number 
+    iEzsigntemplateformfieldY?:number 
     /**
      * The Width of the Ezsigntemplateformfield in pixels calculated at 100 DPI  The allowed values are varying based on the eEzsigntemplateformfieldgroupType.  | eEzsigntemplateformfieldgroupType | Valid values | | ------------------------- | ------------ | | Checkbox                  | 22           | | Dropdown                  | 22-65535     | | Radio                     | 22           | | Text                      | 22-65535     | | Textarea                  | 22-65535     |
      * @type {number}
@@ -97,6 +109,30 @@ export interface EzsigntemplateformfieldResponseCompound {
      */
     eEzsigntemplateformfieldDependencyrequirement?:FieldEEzsigntemplateformfieldDependencyrequirement 
     /**
+     * The string pattern to search for the positioning. **This is not a regexp**  This will be required if **eEzsigntemplateformfieldPositioning** is set to **PerCoordinates**
+     * @type {string}
+     * @memberof EzsigntemplateformfieldResponseCompound
+     */
+    sEzsigntemplateformfieldPositioningpattern?:string 
+    /**
+     * The offset X  This will be required if **eEzsigntemplateformfieldPositioning** is set to **PerCoordinates**
+     * @type {number}
+     * @memberof EzsigntemplateformfieldResponseCompound
+     */
+    iEzsigntemplateformfieldPositioningoffsetx?:number 
+    /**
+     * The offset Y  This will be required if **eEzsigntemplateformfieldPositioning** is set to **PerCoordinates**
+     * @type {number}
+     * @memberof EzsigntemplateformfieldResponseCompound
+     */
+    iEzsigntemplateformfieldPositioningoffsety?:number 
+    /**
+     * 
+     * @type {FieldEEzsigntemplateformfieldPositioningoccurence}
+     * @memberof EzsigntemplateformfieldResponseCompound
+     */
+    eEzsigntemplateformfieldPositioningoccurence?:FieldEEzsigntemplateformfieldPositioningoccurence 
+    /**
      * 
      * @type {Array<EzsigntemplateelementdependencyResponseCompound>}
      * @memberof EzsigntemplateformfieldResponseCompound
@@ -119,16 +155,21 @@ export interface EzsigntemplateformfieldResponseCompound {
  */
 export class DataObjectEzsigntemplateformfieldResponseCompound {
     pkiEzsigntemplateformfieldID:number = 0
+    eEzsigntemplateformfieldPositioning?:FieldEEzsigntemplateformfieldPositioning = undefined
     iEzsigntemplatedocumentpagePagenumber:number = 0
     sEzsigntemplateformfieldLabel:string = ''
     sEzsigntemplateformfieldValue?:string = undefined
-    iEzsigntemplateformfieldX:number = 0
-    iEzsigntemplateformfieldY:number = 0
+    iEzsigntemplateformfieldX?:number = undefined
+    iEzsigntemplateformfieldY?:number = undefined
     iEzsigntemplateformfieldWidth:number = 0
     iEzsigntemplateformfieldHeight:number = 0
     bEzsigntemplateformfieldAutocomplete?:boolean = undefined
     bEzsigntemplateformfieldSelected?:boolean = undefined
     eEzsigntemplateformfieldDependencyrequirement?:FieldEEzsigntemplateformfieldDependencyrequirement = undefined
+    sEzsigntemplateformfieldPositioningpattern?:string = undefined
+    iEzsigntemplateformfieldPositioningoffsetx?:number = undefined
+    iEzsigntemplateformfieldPositioningoffsety?:number = undefined
+    eEzsigntemplateformfieldPositioningoccurence?:FieldEEzsigntemplateformfieldPositioningoccurence = undefined
     a_objEzsigntemplateelementdependency?:Array<EzsigntemplateelementdependencyResponseCompound> = undefined
 }
 
@@ -142,6 +183,11 @@ export class ValidationObjectEzsigntemplateformfieldResponseCompound {
       type: 'integer',
       minimum: 0,
       required: true
+   }
+   eEzsigntemplateformfieldPositioning = {
+      type: 'enum',
+      allowableValues: ['PerCoordinates','PerPositioningPattern'],
+      required: false
    }
    iEzsigntemplatedocumentpagePagenumber = {
       type: 'integer',
@@ -159,12 +205,12 @@ export class ValidationObjectEzsigntemplateformfieldResponseCompound {
    iEzsigntemplateformfieldX = {
       type: 'integer',
       minimum: 0,
-      required: true
+      required: false
    }
    iEzsigntemplateformfieldY = {
       type: 'integer',
       minimum: 0,
-      required: true
+      required: false
    }
    iEzsigntemplateformfieldWidth = {
       type: 'integer',
@@ -187,6 +233,24 @@ export class ValidationObjectEzsigntemplateformfieldResponseCompound {
    eEzsigntemplateformfieldDependencyrequirement = {
       type: 'enum',
       allowableValues: ['AllOf','AnyOf'],
+      required: false
+   }
+   sEzsigntemplateformfieldPositioningpattern = {
+      type: 'string',
+      pattern: '/^.{0,30}$/',
+      required: false
+   }
+   iEzsigntemplateformfieldPositioningoffsetx = {
+      type: 'integer',
+      required: false
+   }
+   iEzsigntemplateformfieldPositioningoffsety = {
+      type: 'integer',
+      required: false
+   }
+   eEzsigntemplateformfieldPositioningoccurence = {
+      type: 'enum',
+      allowableValues: ['All','First','Last'],
       required: false
    }
    a_objEzsigntemplateelementdependency = {

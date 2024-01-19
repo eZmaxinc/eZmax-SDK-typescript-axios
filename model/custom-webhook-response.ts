@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import { CommonAudit } from './common-audit';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FieldEWebhookEzsignevent } from './field-ewebhook-ezsignevent';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -118,6 +121,12 @@ export interface CustomWebhookResponse {
      */
     bWebhookSkipsslvalidation:boolean 
     /**
+     * 
+     * @type {CommonAudit}
+     * @memberof CustomWebhookResponse
+     */
+    objAudit:CommonAudit 
+    /**
      * The customer code assigned to your account
      * @type {string}
      * @memberof CustomWebhookResponse
@@ -137,6 +146,10 @@ export interface CustomWebhookResponse {
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectCommonAudit } from './'
+// @ts-ignore
+import { ValidationObjectCommonAudit } from './'
 
 /**
  * @export 
@@ -159,6 +172,7 @@ export class DataObjectCustomWebhookResponse {
     bWebhookIsactive:boolean = false
     bWebhookIssigned:boolean = false
     bWebhookSkipsslvalidation:boolean = false
+    objAudit:CommonAudit = new DataObjectCommonAudit()
     pksCustomerCode:string = ''
     bWebhookTest:boolean = false
 }
@@ -229,6 +243,7 @@ export class ValidationObjectCustomWebhookResponse {
       type: 'boolean',
       required: true
    }
+   objAudit = new ValidationObjectCommonAudit()
    pksCustomerCode = {
       type: 'string',
       required: true

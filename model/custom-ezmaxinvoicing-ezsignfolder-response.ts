@@ -27,6 +27,12 @@ export interface CustomEzmaxinvoicingEzsignfolderResponse {
      */
     'fkiEzsignfolderID': number;
     /**
+     * The unique ID of the Billingentityinternal.
+     * @type {number}
+     * @memberof CustomEzmaxinvoicingEzsignfolderResponse
+     */
+    'fkiBillingentityinternalID'?: number;
+    /**
      * The description of the Ezsignfolder
      * @type {string}
      * @memberof CustomEzmaxinvoicingEzsignfolderResponse
@@ -70,6 +76,7 @@ export interface CustomEzmaxinvoicingEzsignfolderResponse {
  */
 export class DataObjectCustomEzmaxinvoicingEzsignfolderResponse {
    fkiEzsignfolderID:number = 0
+   fkiBillingentityinternalID?:number = undefined
    sEzsignfolderDescription:string = ''
    bEzsigntsarequirementBillable:boolean = false
    bEzsignfolderMfaused:boolean = false
@@ -87,6 +94,11 @@ export class ValidationObjectCustomEzmaxinvoicingEzsignfolderResponse {
       type: 'integer',
       minimum: 0,
       required: true
+   }
+   fkiBillingentityinternalID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
    }
    sEzsignfolderDescription = {
       type: 'string',

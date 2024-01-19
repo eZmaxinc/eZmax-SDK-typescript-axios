@@ -74,7 +74,7 @@ export class ValidationObjectCustomEzsignsignatureEzsignsignaturesAutomaticRespo
    }
    eEzsignsignatureType = {
       type: 'enum',
-      allowableValues: ['Acknowledgement','City','Handwritten','Initials','Name','NameReason','Attachments','AttachmentsConfirmation','FieldText','FieldTextarea'],
+      allowableValues: ['Acknowledgement','City','Handwritten','Initials','Name','NameReason','Attachments','AttachmentsConfirmation','FieldText','FieldTextarea','Consultation'],
       required: true
    }
    iEzsignpagePagenumber = {

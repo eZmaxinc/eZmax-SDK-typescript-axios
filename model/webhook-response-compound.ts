@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import { CommonAudit } from './common-audit';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FieldEWebhookEzsignevent } from './field-ewebhook-ezsignevent';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -118,6 +121,12 @@ export interface WebhookResponseCompound {
      */
     bWebhookSkipsslvalidation:boolean 
     /**
+     * 
+     * @type {CommonAudit}
+     * @memberof WebhookResponseCompound
+     */
+    objAudit:CommonAudit 
+    /**
      * The concatenated string to describe the Webhook event
      * @type {string}
      * @memberof WebhookResponseCompound
@@ -131,6 +140,10 @@ export interface WebhookResponseCompound {
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectCommonAudit } from './'
+// @ts-ignore
+import { ValidationObjectCommonAudit } from './'
 
 /**
  * @export 
@@ -153,6 +166,7 @@ export class DataObjectWebhookResponseCompound {
     bWebhookIsactive:boolean = false
     bWebhookIssigned:boolean = false
     bWebhookSkipsslvalidation:boolean = false
+    objAudit:CommonAudit = new DataObjectCommonAudit()
     sWebhookEvent?:string = undefined
 }
 
@@ -222,6 +236,7 @@ export class ValidationObjectWebhookResponseCompound {
       type: 'boolean',
       required: true
    }
+   objAudit = new ValidationObjectCommonAudit()
    sWebhookEvent = {
       type: 'string',
       required: false

@@ -18,6 +18,9 @@
 import { EzsignfoldertypeRequest } from './ezsignfoldertype-request';
 // May contain unused imports in some cases
 // @ts-ignore
+import { FieldEEzsignfoldertypeCompletion } from './field-eezsignfoldertype-completion';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FieldEEzsignfoldertypeDisposal } from './field-eezsignfoldertype-disposal';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -115,6 +118,12 @@ export interface EzsignfoldertypeRequestCompound {
      */
     eEzsignfoldertypeDisposal:FieldEEzsignfoldertypeDisposal 
     /**
+     * 
+     * @type {FieldEEzsignfoldertypeCompletion}
+     * @memberof EzsignfoldertypeRequestCompound
+     */
+    eEzsignfoldertypeCompletion?:FieldEEzsignfoldertypeCompletion 
+    /**
      * The number of days after the archival before the disposal of the Ezsignfolder
      * @type {number}
      * @memberof EzsignfoldertypeRequestCompound
@@ -138,6 +147,18 @@ export interface EzsignfoldertypeRequestCompound {
      * @memberof EzsignfoldertypeRequestCompound
      */
     bEzsignfoldertypeReassign?:boolean 
+    /**
+     * Wheter if Reassignment of signature is allowed by a signatory to another signatory or not
+     * @type {boolean}
+     * @memberof EzsignfoldertypeRequestCompound
+     */
+    bEzsignfoldertypeReassignezsignsigner?:boolean 
+    /**
+     * Wheter if Reassignment of signature is allowed by a user to a signatory or another user or not
+     * @type {boolean}
+     * @memberof EzsignfoldertypeRequestCompound
+     */
+    bEzsignfoldertypeReassignuser?:boolean 
     /**
      * THIS FIELD WILL BE DELETED. Whether we send the Ezsigndocument and the proof as attachment in the email
      * @type {boolean}
@@ -327,10 +348,13 @@ export class DataObjectEzsignfoldertypeRequestCompound {
     eEzsignfoldertypeSendreminderfrequency?:FieldEEzsignfoldertypeSendreminderfrequency = undefined
     iEzsignfoldertypeArchivaldays:number = 0
     eEzsignfoldertypeDisposal:FieldEEzsignfoldertypeDisposal = 'No'
+    eEzsignfoldertypeCompletion?:FieldEEzsignfoldertypeCompletion = undefined
     iEzsignfoldertypeDisposaldays?:number = undefined
     iEzsignfoldertypeDeadlinedays:number = 0
     bEzsignfoldertypeDelegate?:boolean = undefined
     bEzsignfoldertypeReassign?:boolean = undefined
+    bEzsignfoldertypeReassignezsignsigner?:boolean = undefined
+    bEzsignfoldertypeReassignuser?:boolean = undefined
     bEzsignfoldertypeSendattatchmentsigner?:boolean = undefined
     bEzsignfoldertypeSendsignedtoezsignsigner?:boolean = undefined
     bEzsignfoldertypeSendsignedtouser?:boolean = undefined
@@ -428,6 +452,11 @@ export class ValidationObjectEzsignfoldertypeRequestCompound {
       allowableValues: ['No','Manual','Automatic'],
       required: true
    }
+   eEzsignfoldertypeCompletion = {
+      type: 'enum',
+      allowableValues: ['PerEzsigndocument','PerEzsignfolder'],
+      required: false
+   }
    iEzsignfoldertypeDisposaldays = {
       type: 'integer',
       minimum: 0,
@@ -445,6 +474,14 @@ export class ValidationObjectEzsignfoldertypeRequestCompound {
       required: false
    }
    bEzsignfoldertypeReassign = {
+      type: 'boolean',
+      required: false
+   }
+   bEzsignfoldertypeReassignezsignsigner = {
+      type: 'boolean',
+      required: false
+   }
+   bEzsignfoldertypeReassignuser = {
       type: 'boolean',
       required: false
    }

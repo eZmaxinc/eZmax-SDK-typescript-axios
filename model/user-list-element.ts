@@ -89,6 +89,12 @@ export interface UserListElement {
      * @memberof UserListElement
      */
     'sEmailAddress': string;
+    /**
+     * The job title of the user
+     * @type {string}
+     * @memberof UserListElement
+     */
+    'sUserJobtitle'?: string;
 }
 
 
@@ -114,6 +120,7 @@ export class DataObjectUserListElement {
    eUserEzsignaccess:FieldEUserEzsignaccess = 'No'
    dtUserEzsignprepaidexpiration?:string = undefined
    sEmailAddress:string = ''
+   sUserJobtitle?:string = undefined
 }
 
 /**
@@ -167,6 +174,11 @@ export class ValidationObjectUserListElement {
    sEmailAddress = {
       type: 'string',
       required: true
+   }
+   sUserJobtitle = {
+      type: 'string',
+      pattern: '/^.{0,50}$/',
+      required: false
    }
 } 
 

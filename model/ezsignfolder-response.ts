@@ -21,6 +21,9 @@ import { CommonAudit } from './common-audit';
 import { CustomEzsignfoldertypeResponse } from './custom-ezsignfoldertype-response';
 // May contain unused imports in some cases
 // @ts-ignore
+import { FieldEEzsignfolderCompletion } from './field-eezsignfolder-completion';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FieldEEzsignfolderSendreminderfrequency } from './field-eezsignfolder-sendreminderfrequency';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -50,6 +53,12 @@ export interface EzsignfolderResponse {
      * @memberof EzsignfolderResponse
      */
     'objEzsignfoldertype'?: CustomEzsignfoldertypeResponse;
+    /**
+     * 
+     * @type {FieldEEzsignfolderCompletion}
+     * @memberof EzsignfolderResponse
+     */
+    'eEzsignfolderCompletion'?: FieldEEzsignfolderCompletion;
     /**
      * 
      * @type {string}
@@ -191,6 +200,7 @@ export class DataObjectEzsignfolderResponse {
    pkiEzsignfolderID:number = 0
    fkiEzsignfoldertypeID?:number = undefined
    objEzsignfoldertype?:CustomEzsignfoldertypeResponse = undefined
+   eEzsignfolderCompletion?:FieldEEzsignfolderCompletion = undefined
    sEzsignfoldertypeNameX?:string = undefined
    fkiBillingentityinternalID?:number = undefined
    sBillingentityinternalDescriptionX?:string = undefined
@@ -229,6 +239,11 @@ export class ValidationObjectEzsignfolderResponse {
       required: false
    }
    objEzsignfoldertype = new ValidationObjectCustomEzsignfoldertypeResponse()
+   eEzsignfolderCompletion = {
+      type: 'enum',
+      allowableValues: ['PerEzsigndocument','PerEzsignfolder'],
+      required: false
+   }
    sEzsignfoldertypeNameX = {
       type: 'string',
       required: false

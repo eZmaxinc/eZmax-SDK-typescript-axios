@@ -69,6 +69,12 @@ export interface EzsignfolderListElement {
      */
     'dtCreatedDate': string;
     /**
+     * The date and time at which the Ezsignfolder will be sent in the future.
+     * @type {string}
+     * @memberof EzsignfolderListElement
+     */
+    'dtEzsignfolderDelayedsenddate'?: string;
+    /**
      * The date and time at which the Ezsignfolder was sent the last time.
      * @type {string}
      * @memberof EzsignfolderListElement
@@ -126,6 +132,7 @@ export class DataObjectEzsignfolderListElement {
    sEzsignfolderDescription:string = ''
    eEzsignfolderStep:FieldEEzsignfolderStep = 'Unsent'
    dtCreatedDate:string = ''
+   dtEzsignfolderDelayedsenddate?:string = undefined
    dtEzsignfolderSentdate?:string = undefined
    dtEzsignfolderDuedate?:string = undefined
    iEzsigndocument:number = 0
@@ -171,6 +178,10 @@ export class ValidationObjectEzsignfolderListElement {
    dtCreatedDate = {
       type: 'string',
       required: true
+   }
+   dtEzsignfolderDelayedsenddate = {
+      type: 'string',
+      required: false
    }
    dtEzsignfolderSentdate = {
       type: 'string',

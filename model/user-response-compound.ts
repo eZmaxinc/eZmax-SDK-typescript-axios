@@ -208,6 +208,12 @@ export interface UserResponseCompound {
      */
     sUserLoginname:string 
     /**
+     * The job title of the user
+     * @type {string}
+     * @memberof UserResponseCompound
+     */
+    sUserJobtitle?:string 
+    /**
      * 
      * @type {FieldEUserEzsignaccess}
      * @memberof UserResponseCompound
@@ -326,6 +332,7 @@ export class DataObjectUserResponseCompound {
     sUserFirstname:string = ''
     sUserLastname:string = ''
     sUserLoginname:string = ''
+    sUserJobtitle?:string = undefined
     eUserEzsignaccess:FieldEUserEzsignaccess = 'No'
     dtUserLastlogondate?:string = undefined
     dtUserPasswordchanged?:string = undefined
@@ -460,6 +467,11 @@ export class ValidationObjectUserResponseCompound {
       type: 'string',
       pattern: '/^(?:([\w\.-]+@[\w\.-]+\.\w{2,20})|([a-zA-Z0-9]){1,32})$/',
       required: true
+   }
+   sUserJobtitle = {
+      type: 'string',
+      pattern: '/^.{0,50}$/',
+      required: false
    }
    eUserEzsignaccess = {
       type: 'enum',

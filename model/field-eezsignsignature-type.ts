@@ -30,7 +30,8 @@ export const FieldEEzsignsignatureType = {
     Attachments: 'Attachments',
     AttachmentsConfirmation: 'AttachmentsConfirmation',
     FieldText: 'FieldText',
-    FieldTextarea: 'FieldTextarea'
+    FieldTextarea: 'FieldTextarea',
+    Consultation: 'Consultation'
 } as const;
 
 export type FieldEEzsignsignatureType = typeof FieldEEzsignsignatureType[keyof typeof FieldEEzsignsignatureType];

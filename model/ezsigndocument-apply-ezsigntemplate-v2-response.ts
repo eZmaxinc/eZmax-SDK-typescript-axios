@@ -22,6 +22,9 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 // May contain unused imports in some cases
 // @ts-ignore
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
+// May contain unused imports in some cases
+// @ts-ignore
+import { CommonResponseWarning } from './common-response-warning';
 
 /**
  * @type EzsigndocumentApplyEzsigntemplateV2Response
@@ -42,6 +45,12 @@ export interface EzsigndocumentApplyEzsigntemplateV2Response {
      * @memberof EzsigndocumentApplyEzsigntemplateV2Response
      */
     objDebug?:CommonResponseObjDebug 
+    /**
+     * 
+     * @type {Array<CommonResponseWarning>}
+     * @memberof EzsigndocumentApplyEzsigntemplateV2Response
+     */
+    a_objWarning?:Array<CommonResponseWarning> 
 }
 
 
@@ -67,6 +76,7 @@ import { ValidationObjectCommonResponseObjDebug } from './'
 export class DataObjectEzsigndocumentApplyEzsigntemplateV2Response {
     objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    a_objWarning?:Array<CommonResponseWarning> = undefined
 }
 
 /**
@@ -77,6 +87,10 @@ export class DataObjectEzsigndocumentApplyEzsigntemplateV2Response {
 export class ValidationObjectEzsigndocumentApplyEzsigntemplateV2Response {
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   a_objWarning = {
+      type: 'array',
+      required: false
+   }
 } 
 
 

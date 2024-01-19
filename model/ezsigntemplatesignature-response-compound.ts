@@ -36,6 +36,12 @@ import { FieldEEzsigntemplatesignatureDependencyrequirement } from './field-eezs
 import { FieldEEzsigntemplatesignatureFont } from './field-eezsigntemplatesignature-font';
 // May contain unused imports in some cases
 // @ts-ignore
+import { FieldEEzsigntemplatesignaturePositioning } from './field-eezsigntemplatesignature-positioning';
+// May contain unused imports in some cases
+// @ts-ignore
+import { FieldEEzsigntemplatesignaturePositioningoccurence } from './field-eezsigntemplatesignature-positioningoccurence';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FieldEEzsigntemplatesignatureTooltipposition } from './field-eezsigntemplatesignature-tooltipposition';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -73,6 +79,12 @@ export interface EzsigntemplatesignatureResponseCompound {
      */
     fkiEzsigntemplatesignerIDValidation?:number 
     /**
+     * 
+     * @type {FieldEEzsigntemplatesignaturePositioning}
+     * @memberof EzsigntemplatesignatureResponseCompound
+     */
+    eEzsigntemplatesignaturePositioning?:FieldEEzsigntemplatesignaturePositioning 
+    /**
      * The page number in the Ezsigntemplatedocument
      * @type {number}
      * @memberof EzsigntemplatesignatureResponseCompound
@@ -83,13 +95,13 @@ export interface EzsigntemplatesignatureResponseCompound {
      * @type {number}
      * @memberof EzsigntemplatesignatureResponseCompound
      */
-    iEzsigntemplatesignatureX:number 
+    iEzsigntemplatesignatureX?:number 
     /**
      * The Y coordinate (Vertical) where to put the Ezsigntemplatesignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplatesignature 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
      * @type {number}
      * @memberof EzsigntemplatesignatureResponseCompound
      */
-    iEzsigntemplatesignatureY:number 
+    iEzsigntemplatesignatureY?:number 
     /**
      * The width of the Ezsigntemplatesignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsigntemplatesignature to have a width of 2 inches, you would use \"200\" for the iEzsigntemplatesignatureWidth.
      * @type {number}
@@ -181,6 +193,30 @@ export interface EzsigntemplatesignatureResponseCompound {
      */
     eEzsigntemplatesignatureDependencyrequirement?:FieldEEzsigntemplatesignatureDependencyrequirement 
     /**
+     * The string pattern to search for the positioning. **This is not a regexp**  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates**
+     * @type {string}
+     * @memberof EzsigntemplatesignatureResponseCompound
+     */
+    sEzsigntemplatesignaturePositioningpattern?:string 
+    /**
+     * The offset X  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates**
+     * @type {number}
+     * @memberof EzsigntemplatesignatureResponseCompound
+     */
+    iEzsigntemplatesignaturePositioningoffsetx?:number 
+    /**
+     * The offset Y  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates**
+     * @type {number}
+     * @memberof EzsigntemplatesignatureResponseCompound
+     */
+    iEzsigntemplatesignaturePositioningoffsety?:number 
+    /**
+     * 
+     * @type {FieldEEzsigntemplatesignaturePositioningoccurence}
+     * @memberof EzsigntemplatesignatureResponseCompound
+     */
+    eEzsigntemplatesignaturePositioningoccurence?:FieldEEzsigntemplatesignaturePositioningoccurence 
+    /**
      * Whether the Ezsigntemplatesignature has a custom date format or not. (Only possible when eEzsigntemplatesignatureType is **Name** or **Handwritten**)
      * @type {boolean}
      * @memberof EzsigntemplatesignatureResponseCompound
@@ -218,9 +254,10 @@ export class DataObjectEzsigntemplatesignatureResponseCompound {
     fkiEzsigntemplatedocumentID:number = 0
     fkiEzsigntemplatesignerID:number = 0
     fkiEzsigntemplatesignerIDValidation?:number = undefined
+    eEzsigntemplatesignaturePositioning?:FieldEEzsigntemplatesignaturePositioning = undefined
     iEzsigntemplatedocumentpagePagenumber:number = 0
-    iEzsigntemplatesignatureX:number = 0
-    iEzsigntemplatesignatureY:number = 0
+    iEzsigntemplatesignatureX?:number = undefined
+    iEzsigntemplatesignatureY?:number = undefined
     iEzsigntemplatesignatureWidth?:number = undefined
     iEzsigntemplatesignatureHeight?:number = undefined
     iEzsigntemplatesignatureStep:number = 0
@@ -236,6 +273,10 @@ export class DataObjectEzsigntemplatesignatureResponseCompound {
     sEzsigntemplatesignatureRegexp?:string = undefined
     eEzsigntemplatesignatureTextvalidation?:EnumTextvalidation = undefined
     eEzsigntemplatesignatureDependencyrequirement?:FieldEEzsigntemplatesignatureDependencyrequirement = undefined
+    sEzsigntemplatesignaturePositioningpattern?:string = undefined
+    iEzsigntemplatesignaturePositioningoffsetx?:number = undefined
+    iEzsigntemplatesignaturePositioningoffsety?:number = undefined
+    eEzsigntemplatesignaturePositioningoccurence?:FieldEEzsigntemplatesignaturePositioningoccurence = undefined
     bEzsigntemplatesignatureCustomdate?:boolean = undefined
     a_objEzsigntemplatesignaturecustomdate?:Array<EzsigntemplatesignaturecustomdateResponseCompound> = undefined
     a_objEzsigntemplateelementdependency?:Array<EzsigntemplateelementdependencyResponseCompound> = undefined
@@ -267,6 +308,11 @@ export class ValidationObjectEzsigntemplatesignatureResponseCompound {
       minimum: 0,
       required: false
    }
+   eEzsigntemplatesignaturePositioning = {
+      type: 'enum',
+      allowableValues: ['PerCoordinates','PerPositioningPattern'],
+      required: false
+   }
    iEzsigntemplatedocumentpagePagenumber = {
       type: 'integer',
       minimum: 1,
@@ -275,12 +321,12 @@ export class ValidationObjectEzsigntemplatesignatureResponseCompound {
    iEzsigntemplatesignatureX = {
       type: 'integer',
       minimum: 0,
-      required: true
+      required: false
    }
    iEzsigntemplatesignatureY = {
       type: 'integer',
       minimum: 0,
-      required: true
+      required: false
    }
    iEzsigntemplatesignatureWidth = {
       type: 'integer',
@@ -299,7 +345,7 @@ export class ValidationObjectEzsigntemplatesignatureResponseCompound {
    }
    eEzsigntemplatesignatureType = {
       type: 'enum',
-      allowableValues: ['Acknowledgement','City','Handwritten','Initials','Name','NameReason','Attachments','FieldText','FieldTextarea'],
+      allowableValues: ['Acknowledgement','City','Handwritten','Initials','Name','NameReason','Attachments','FieldText','FieldTextarea','Consultation'],
       required: true
    }
    tEzsigntemplatesignatureTooltip = {
@@ -352,6 +398,24 @@ export class ValidationObjectEzsigntemplatesignatureResponseCompound {
    eEzsigntemplatesignatureDependencyrequirement = {
       type: 'enum',
       allowableValues: ['AllOf','AnyOf'],
+      required: false
+   }
+   sEzsigntemplatesignaturePositioningpattern = {
+      type: 'string',
+      pattern: '/^.{0,30}$/',
+      required: false
+   }
+   iEzsigntemplatesignaturePositioningoffsetx = {
+      type: 'integer',
+      required: false
+   }
+   iEzsigntemplatesignaturePositioningoffsety = {
+      type: 'integer',
+      required: false
+   }
+   eEzsigntemplatesignaturePositioningoccurence = {
+      type: 'enum',
+      allowableValues: ['All','First','Last'],
       required: false
    }
    bEzsigntemplatesignatureCustomdate = {

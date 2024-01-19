@@ -32,6 +32,9 @@ export enum EApiOperation {
     'object-company-api',
     'object-cors-api',
     'object-department-api',
+    'object-discussion-api',
+    'object-discussionmembership-api',
+    'object-discussionmessage-api',
     'object-electronicfundstransfer-api',
     'object-emailtype-api',
     'object-ezmaxinvoicing-api',
@@ -40,6 +43,7 @@ export enum EApiOperation {
     'object-ezsignbulksenddocumentmapping-api',
     'object-ezsignbulksendsignermapping-api',
     'object-ezsignbulksendtransmission-api',
+    'object-ezsigndiscussion-api',
     'object-ezsigndocument-api',
     'object-ezsignfolder-api',
     'object-ezsignfoldersignerassociation-api',
@@ -119,6 +123,9 @@ export * from './api/object-communication-api';
 export * from './api/object-company-api';
 export * from './api/object-cors-api';
 export * from './api/object-department-api';
+export * from './api/object-discussion-api';
+export * from './api/object-discussionmembership-api';
+export * from './api/object-discussionmessage-api';
 export * from './api/object-electronicfundstransfer-api';
 export * from './api/object-emailtype-api';
 export * from './api/object-ezmaxinvoicing-api';
@@ -127,6 +134,7 @@ export * from './api/object-ezsignbulksend-api';
 export * from './api/object-ezsignbulksenddocumentmapping-api';
 export * from './api/object-ezsignbulksendsignermapping-api';
 export * from './api/object-ezsignbulksendtransmission-api';
+export * from './api/object-ezsigndiscussion-api';
 export * from './api/object-ezsigndocument-api';
 export * from './api/object-ezsignfolder-api';
 export * from './api/object-ezsignfoldersignerassociation-api';

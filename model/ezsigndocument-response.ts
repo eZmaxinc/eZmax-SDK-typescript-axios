@@ -242,7 +242,7 @@ export class ValidationObjectEzsigndocumentResponse {
    }
    eEzsigndocumentStep = {
       type: 'enum',
-      allowableValues: ['Unsent','Unsigned','PartiallySigned','DeclinedToSign','PrematurelyEnded','Completed','Disposed'],
+      allowableValues: ['Unsent','Unsigned','PartiallySigned','DeclinedToSign','PrematurelyEnded','PendingCompletion','Completed','Disposed'],
       required: true
    }
    dtEzsigndocumentFirstsend = {

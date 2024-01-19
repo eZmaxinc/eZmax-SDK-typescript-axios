@@ -36,6 +36,10 @@ import { EzsigndocumentApplyEzsigntemplateV2Request } from '../model';
 // @ts-ignore
 import { EzsigndocumentApplyEzsigntemplateV2Response } from '../model';
 // @ts-ignore
+import { EzsigndocumentCreateEzsignelementsPositionedByWordV1Request } from '../model';
+// @ts-ignore
+import { EzsigndocumentCreateEzsignelementsPositionedByWordV1Response } from '../model';
+// @ts-ignore
 import { EzsigndocumentCreateObjectV1Request } from '../model';
 // @ts-ignore
 import { EzsigndocumentCreateObjectV1Response } from '../model';
@@ -71,6 +75,8 @@ import { EzsigndocumentGetCompletedElementsV1Response } from '../model';
 import { EzsigndocumentGetDownloadUrlV1Response } from '../model';
 // @ts-ignore
 import { EzsigndocumentGetEzsignannotationsV1Response } from '../model';
+// @ts-ignore
+import { EzsigndocumentGetEzsigndiscussionsV1Response } from '../model';
 // @ts-ignore
 import { EzsigndocumentGetEzsignformfieldgroupsV1Response } from '../model';
 // @ts-ignore
@@ -212,6 +218,68 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ezsigndocumentApplyEzsigntemplateV2Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Using this endpoint, you can create multiple Ezsignsignatures/Ezsignformfieldgroups positioned by word at the same time.
+         * @summary Create multiple Ezsignsignatures/Ezsignformfieldgroups
+         * @param {number} pkiEzsigndocumentID 
+         * @param {EzsigndocumentCreateEzsignelementsPositionedByWordV1Request} ezsigndocumentCreateEzsignelementsPositionedByWordV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigndocumentCreateEzsignelementsPositionedByWordV1: async (pkiEzsigndocumentID: number, ezsigndocumentCreateEzsignelementsPositionedByWordV1Request: EzsigndocumentCreateEzsignelementsPositionedByWordV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
+            assertParamExists('ezsigndocumentCreateEzsignelementsPositionedByWordV1', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
+            // verify required parameter 'ezsigndocumentCreateEzsignelementsPositionedByWordV1Request' is not null or undefined
+            assertParamExists('ezsigndocumentCreateEzsignelementsPositionedByWordV1', 'ezsigndocumentCreateEzsignelementsPositionedByWordV1Request', ezsigndocumentCreateEzsignelementsPositionedByWordV1Request)
+            const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/createEzsignelementsPositionedByWord`
+                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(ezsigndocumentCreateEzsignelementsPositionedByWordV1Request, localVarRequestOptions, configuration)
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -889,7 +957,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
          * This endpoint returns URLs to different files that can be downloaded during the signing process.  These links will expire after 5 minutes so the download of the file should be made soon after retrieving the link.
          * @summary Retrieve a URL to download documents.
          * @param {number} pkiEzsigndocumentID 
-         * @param {EzsigndocumentGetDownloadUrlV1EDocumentTypeEnum} eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. 
+         * @param {EzsigndocumentGetDownloadUrlV1EDocumentTypeEnum} eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied in current document if eEzsignfolderCompletion is PerEzsigndocument.&lt;br&gt;     Is the final document once all signatures were applied in all documents if eEzsignfolderCompletion is PerEzsignfolder. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -956,6 +1024,62 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
             assertParamExists('ezsigndocumentGetEzsignannotationsV1', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignannotations`
+                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve an existing Ezsigndocument\'s Ezsigndiscussions
+         * @param {number} pkiEzsigndocumentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigndocumentGetEzsigndiscussionsV1: async (pkiEzsigndocumentID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
+            assertParamExists('ezsigndocumentGetEzsigndiscussionsV1', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
+            const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsigndiscussions`
                 .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
@@ -1734,6 +1858,18 @@ export const ObjectEzsigndocumentApiFp = function(configuration?: Configuration)
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
+         * Using this endpoint, you can create multiple Ezsignsignatures/Ezsignformfieldgroups positioned by word at the same time.
+         * @summary Create multiple Ezsignsignatures/Ezsignformfieldgroups
+         * @param {number} pkiEzsigndocumentID 
+         * @param {EzsigndocumentCreateEzsignelementsPositionedByWordV1Request} ezsigndocumentCreateEzsignelementsPositionedByWordV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsigndocumentCreateEzsignelementsPositionedByWordV1(pkiEzsigndocumentID: number, ezsigndocumentCreateEzsignelementsPositionedByWordV1Request: EzsigndocumentCreateEzsignelementsPositionedByWordV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentCreateEzsignelementsPositionedByWordV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigndocumentCreateEzsignelementsPositionedByWordV1(pkiEzsigndocumentID, ezsigndocumentCreateEzsignelementsPositionedByWordV1Request, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
          * The endpoint allows to create one or many elements at once.  The array can contain simple (Just the object) or compound (The object and its child) objects.  Creating compound elements allows to reduce the multiple requests to create all child objects.
          * @summary Create a new Ezsigndocument
          * @param {Array<EzsigndocumentCreateObjectV1Request>} ezsigndocumentCreateObjectV1Request 
@@ -1864,7 +2000,7 @@ export const ObjectEzsigndocumentApiFp = function(configuration?: Configuration)
          * This endpoint returns URLs to different files that can be downloaded during the signing process.  These links will expire after 5 minutes so the download of the file should be made soon after retrieving the link.
          * @summary Retrieve a URL to download documents.
          * @param {number} pkiEzsigndocumentID 
-         * @param {EzsigndocumentGetDownloadUrlV1EDocumentTypeEnum} eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. 
+         * @param {EzsigndocumentGetDownloadUrlV1EDocumentTypeEnum} eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied in current document if eEzsignfolderCompletion is PerEzsigndocument.&lt;br&gt;     Is the final document once all signatures were applied in all documents if eEzsignfolderCompletion is PerEzsignfolder. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -1881,6 +2017,17 @@ export const ObjectEzsigndocumentApiFp = function(configuration?: Configuration)
          */
         async ezsigndocumentGetEzsignannotationsV1(pkiEzsigndocumentID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentGetEzsignannotationsV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigndocumentGetEzsignannotationsV1(pkiEzsigndocumentID, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
+         * @summary Retrieve an existing Ezsigndocument\'s Ezsigndiscussions
+         * @param {number} pkiEzsigndocumentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsigndocumentGetEzsigndiscussionsV1(pkiEzsigndocumentID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentGetEzsigndiscussionsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigndocumentGetEzsigndiscussionsV1(pkiEzsigndocumentID, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -2054,6 +2201,17 @@ export const ObjectEzsigndocumentApiFactory = function (configuration?: Configur
             return localVarFp.ezsigndocumentApplyEzsigntemplateV2(pkiEzsigndocumentID, ezsigndocumentApplyEzsigntemplateV2Request, options).then((request) => request(axios, basePath));
         },
         /**
+         * Using this endpoint, you can create multiple Ezsignsignatures/Ezsignformfieldgroups positioned by word at the same time.
+         * @summary Create multiple Ezsignsignatures/Ezsignformfieldgroups
+         * @param {number} pkiEzsigndocumentID 
+         * @param {EzsigndocumentCreateEzsignelementsPositionedByWordV1Request} ezsigndocumentCreateEzsignelementsPositionedByWordV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigndocumentCreateEzsignelementsPositionedByWordV1(pkiEzsigndocumentID: number, ezsigndocumentCreateEzsignelementsPositionedByWordV1Request: EzsigndocumentCreateEzsignelementsPositionedByWordV1Request, options?: any): AxiosPromise<EzsigndocumentCreateEzsignelementsPositionedByWordV1Response> {
+            return localVarFp.ezsigndocumentCreateEzsignelementsPositionedByWordV1(pkiEzsigndocumentID, ezsigndocumentCreateEzsignelementsPositionedByWordV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
          * The endpoint allows to create one or many elements at once.  The array can contain simple (Just the object) or compound (The object and its child) objects.  Creating compound elements allows to reduce the multiple requests to create all child objects.
          * @summary Create a new Ezsigndocument
          * @param {Array<EzsigndocumentCreateObjectV1Request>} ezsigndocumentCreateObjectV1Request 
@@ -2173,7 +2331,7 @@ export const ObjectEzsigndocumentApiFactory = function (configuration?: Configur
          * This endpoint returns URLs to different files that can be downloaded during the signing process.  These links will expire after 5 minutes so the download of the file should be made soon after retrieving the link.
          * @summary Retrieve a URL to download documents.
          * @param {number} pkiEzsigndocumentID 
-         * @param {EzsigndocumentGetDownloadUrlV1EDocumentTypeEnum} eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. 
+         * @param {EzsigndocumentGetDownloadUrlV1EDocumentTypeEnum} eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied in current document if eEzsignfolderCompletion is PerEzsigndocument.&lt;br&gt;     Is the final document once all signatures were applied in all documents if eEzsignfolderCompletion is PerEzsignfolder. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
@@ -2189,6 +2347,16 @@ export const ObjectEzsigndocumentApiFactory = function (configuration?: Configur
          */
         ezsigndocumentGetEzsignannotationsV1(pkiEzsigndocumentID: number, options?: any): AxiosPromise<EzsigndocumentGetEzsignannotationsV1Response> {
             return localVarFp.ezsigndocumentGetEzsignannotationsV1(pkiEzsigndocumentID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve an existing Ezsigndocument\'s Ezsigndiscussions
+         * @param {number} pkiEzsigndocumentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigndocumentGetEzsigndiscussionsV1(pkiEzsigndocumentID: number, options?: any): AxiosPromise<EzsigndocumentGetEzsigndiscussionsV1Response> {
+            return localVarFp.ezsigndocumentGetEzsigndiscussionsV1(pkiEzsigndocumentID, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2353,6 +2521,19 @@ export class ObjectEzsigndocumentApi extends BaseAPI {
     }
 
     /**
+     * Using this endpoint, you can create multiple Ezsignsignatures/Ezsignformfieldgroups positioned by word at the same time.
+     * @summary Create multiple Ezsignsignatures/Ezsignformfieldgroups
+     * @param {number} pkiEzsigndocumentID 
+     * @param {EzsigndocumentCreateEzsignelementsPositionedByWordV1Request} ezsigndocumentCreateEzsignelementsPositionedByWordV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectEzsigndocumentApi
+     */
+    public ezsigndocumentCreateEzsignelementsPositionedByWordV1(pkiEzsigndocumentID: number, ezsigndocumentCreateEzsignelementsPositionedByWordV1Request: EzsigndocumentCreateEzsignelementsPositionedByWordV1Request, options?: AxiosRequestConfig) {
+        return ObjectEzsigndocumentApiFp(this.configuration).ezsigndocumentCreateEzsignelementsPositionedByWordV1(pkiEzsigndocumentID, ezsigndocumentCreateEzsignelementsPositionedByWordV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * The endpoint allows to create one or many elements at once.  The array can contain simple (Just the object) or compound (The object and its child) objects.  Creating compound elements allows to reduce the multiple requests to create all child objects.
      * @summary Create a new Ezsigndocument
      * @param {Array<EzsigndocumentCreateObjectV1Request>} ezsigndocumentCreateObjectV1Request 
@@ -2494,7 +2675,7 @@ export class ObjectEzsigndocumentApi extends BaseAPI {
      * This endpoint returns URLs to different files that can be downloaded during the signing process.  These links will expire after 5 minutes so the download of the file should be made soon after retrieving the link.
      * @summary Retrieve a URL to download documents.
      * @param {number} pkiEzsigndocumentID 
-     * @param {EzsigndocumentGetDownloadUrlV1EDocumentTypeEnum} eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. 
+     * @param {EzsigndocumentGetDownloadUrlV1EDocumentTypeEnum} eDocumentType The type of document to retrieve.  1. **Initial** Is the initial document before any signature were applied. 2. **SignatureReady** Is the version containing the annotations/form to show the signer. 3. **Signed** Is the final document once all signatures were applied in current document if eEzsignfolderCompletion is PerEzsigndocument.&lt;br&gt;     Is the final document once all signatures were applied in all documents if eEzsignfolderCompletion is PerEzsignfolder. 4. **Proofdocument** Is the evidence report. 5. **Proof** Is the complete evidence archive including all of the above and more. 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ObjectEzsigndocumentApi
@@ -2513,6 +2694,18 @@ export class ObjectEzsigndocumentApi extends BaseAPI {
      */
     public ezsigndocumentGetEzsignannotationsV1(pkiEzsigndocumentID: number, options?: AxiosRequestConfig) {
         return ObjectEzsigndocumentApiFp(this.configuration).ezsigndocumentGetEzsignannotationsV1(pkiEzsigndocumentID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve an existing Ezsigndocument\'s Ezsigndiscussions
+     * @param {number} pkiEzsigndocumentID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectEzsigndocumentApi
+     */
+    public ezsigndocumentGetEzsigndiscussionsV1(pkiEzsigndocumentID: number, options?: AxiosRequestConfig) {
+        return ObjectEzsigndocumentApiFp(this.configuration).ezsigndocumentGetEzsigndiscussionsV1(pkiEzsigndocumentID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

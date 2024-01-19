@@ -124,6 +124,12 @@ export interface EzsignsignatureResponseCompound {
      */
     iEzsignsignatureStep:number 
     /**
+     * The step when the Ezsignsigner will be invited to sign
+     * @type {number}
+     * @memberof EzsignsignatureResponseCompound
+     */
+    iEzsignsignatureStepadjusted?:number 
+    /**
      * 
      * @type {FieldEEzsignsignatureType}
      * @memberof EzsignsignatureResponseCompound
@@ -304,6 +310,7 @@ export class DataObjectEzsignsignatureResponseCompound {
     iEzsignsignatureHeight?:number = undefined
     iEzsignsignatureWidth?:number = undefined
     iEzsignsignatureStep:number = 0
+    iEzsignsignatureStepadjusted?:number = undefined
     eEzsignsignatureType:FieldEEzsignsignatureType = 'Acknowledgement'
     tEzsignsignatureTooltip?:string = undefined
     eEzsignsignatureTooltipposition?:FieldEEzsignsignatureTooltipposition = undefined
@@ -390,9 +397,13 @@ export class ValidationObjectEzsignsignatureResponseCompound {
       type: 'integer',
       required: true
    }
+   iEzsignsignatureStepadjusted = {
+      type: 'integer',
+      required: false
+   }
    eEzsignsignatureType = {
       type: 'enum',
-      allowableValues: ['Acknowledgement','City','Handwritten','Initials','Name','NameReason','Attachments','AttachmentsConfirmation','FieldText','FieldTextarea'],
+      allowableValues: ['Acknowledgement','City','Handwritten','Initials','Name','NameReason','Attachments','AttachmentsConfirmation','FieldText','FieldTextarea','Consultation'],
       required: true
    }
    tEzsignsignatureTooltip = {
