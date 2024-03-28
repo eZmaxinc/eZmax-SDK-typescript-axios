@@ -68,6 +68,18 @@ export interface AddressRequest {
      * @memberof AddressRequest
      */
     'sAddressZip': string;
+    /**
+     * The Longitude of the Address
+     * @type {string}
+     * @memberof AddressRequest
+     */
+    'fAddressLongitude'?: string;
+    /**
+     * The Latitude of the Address
+     * @type {string}
+     * @memberof AddressRequest
+     */
+    'fAddressLatitude'?: string;
 }
 /**
  * @import
@@ -89,6 +101,8 @@ export class DataObjectAddressRequest {
    fkiProvinceID:number = 0
    fkiCountryID:number = 0
    sAddressZip:string = ''
+   fAddressLongitude?:string = undefined
+   fAddressLatitude?:string = undefined
 }
 
 /**
@@ -131,6 +145,16 @@ export class ValidationObjectAddressRequest {
    sAddressZip = {
       type: 'string',
       required: true
+   }
+   fAddressLongitude = {
+      type: 'string',
+      pattern: '/^(-?)(180(\.0{1,15})?|((1[0-7]\d)|(\d{1,2}))(\.\d{1,15})?)$/',
+      required: false
+   }
+   fAddressLatitude = {
+      type: 'string',
+      pattern: '/^(-?)(90(\.0{1,15})?|([1-8]?\d(\.\d{1,15})?))$/',
+      required: false
    }
 } 
 

@@ -21,8 +21,9 @@
  */
 
 export const FieldEUserEzsignprepaid = {
+    No: 'No',
     Basic: 'Basic',
-    Unlimited: 'Unlimited',
+    Standard: 'Standard',
     Pro: 'Pro'
 } as const;
 

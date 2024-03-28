@@ -18,6 +18,9 @@
 import { FieldEBrandingLogo } from './field-ebranding-logo';
 // May contain unused imports in some cases
 // @ts-ignore
+import { FieldEBrandingLogointerface } from './field-ebranding-logointerface';
+// May contain unused imports in some cases
+// @ts-ignore
 import { MultilingualBrandingDescription } from './multilingual-branding-description';
 
 /**
@@ -69,6 +72,12 @@ export interface BrandingResponse {
      */
     'eBrandingLogo': FieldEBrandingLogo;
     /**
+     * 
+     * @type {FieldEBrandingLogointerface}
+     * @memberof BrandingResponse
+     */
+    'eBrandingLogointerface'?: FieldEBrandingLogointerface;
+    /**
      * The color of the text. This is a RGB color converted into integer
      * @type {number}
      * @memberof BrandingResponse
@@ -105,6 +114,12 @@ export interface BrandingResponse {
      */
     'iBrandingColorbackgroundsmallbox': number;
     /**
+     * The color of the interface. This is a RGB color converted into integer
+     * @type {number}
+     * @memberof BrandingResponse
+     */
+    'iBrandingInterfacecolor'?: number;
+    /**
      * Whether the Branding is active or not
      * @type {boolean}
      * @memberof BrandingResponse
@@ -136,12 +151,14 @@ export class DataObjectBrandingResponse {
    sBrandingName?:string = undefined
    sEmailAddress?:string = undefined
    eBrandingLogo:FieldEBrandingLogo = 'Default'
+   eBrandingLogointerface?:FieldEBrandingLogointerface = undefined
    iBrandingColortext:number = 0
    iBrandingColortextlinkbox:number = 0
    iBrandingColortextbutton:number = 0
    iBrandingColorbackground:number = 0
    iBrandingColorbackgroundbutton:number = 0
    iBrandingColorbackgroundsmallbox:number = 0
+   iBrandingInterfacecolor?:number = undefined
    bBrandingIsactive:boolean = false
 }
 
@@ -181,6 +198,11 @@ export class ValidationObjectBrandingResponse {
       allowableValues: ['Default','JPEG','PNG'],
       required: true
    }
+   eBrandingLogointerface = {
+      type: 'enum',
+      allowableValues: ['Default','JPEG','PNG'],
+      required: false
+   }
    iBrandingColortext = {
       type: 'integer',
       minimum: 0,
@@ -216,6 +238,12 @@ export class ValidationObjectBrandingResponse {
       minimum: 0,
       maximum: 16777215,
       required: true
+   }
+   iBrandingInterfacecolor = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 16777215,
+      required: false
    }
    bBrandingIsactive = {
       type: 'boolean',

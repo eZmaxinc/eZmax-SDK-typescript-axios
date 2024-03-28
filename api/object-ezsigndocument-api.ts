@@ -36,6 +36,10 @@ import { EzsigndocumentApplyEzsigntemplateV2Request } from '../model';
 // @ts-ignore
 import { EzsigndocumentApplyEzsigntemplateV2Response } from '../model';
 // @ts-ignore
+import { EzsigndocumentApplyEzsigntemplateglobalV1Request } from '../model';
+// @ts-ignore
+import { EzsigndocumentApplyEzsigntemplateglobalV1Response } from '../model';
+// @ts-ignore
 import { EzsigndocumentCreateEzsignelementsPositionedByWordV1Request } from '../model';
 // @ts-ignore
 import { EzsigndocumentCreateEzsignelementsPositionedByWordV1Response } from '../model';
@@ -218,6 +222,68 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ezsigndocumentApplyEzsigntemplateV2Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
+         * @summary Apply an Ezsigntemplateglobal to the Ezsigndocument.
+         * @param {number} pkiEzsigndocumentID 
+         * @param {EzsigndocumentApplyEzsigntemplateglobalV1Request} ezsigndocumentApplyEzsigntemplateglobalV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigndocumentApplyEzsigntemplateglobalV1: async (pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateglobalV1Request: EzsigndocumentApplyEzsigntemplateglobalV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
+            assertParamExists('ezsigndocumentApplyEzsigntemplateglobalV1', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
+            // verify required parameter 'ezsigndocumentApplyEzsigntemplateglobalV1Request' is not null or undefined
+            assertParamExists('ezsigndocumentApplyEzsigntemplateglobalV1', 'ezsigndocumentApplyEzsigntemplateglobalV1Request', ezsigndocumentApplyEzsigntemplateglobalV1Request)
+            const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplateglobal`
+                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(ezsigndocumentApplyEzsigntemplateglobalV1Request, localVarRequestOptions, configuration)
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -1858,6 +1924,18 @@ export const ObjectEzsigndocumentApiFp = function(configuration?: Configuration)
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
+         * This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
+         * @summary Apply an Ezsigntemplateglobal to the Ezsigndocument.
+         * @param {number} pkiEzsigndocumentID 
+         * @param {EzsigndocumentApplyEzsigntemplateglobalV1Request} ezsigndocumentApplyEzsigntemplateglobalV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsigndocumentApplyEzsigntemplateglobalV1(pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateglobalV1Request: EzsigndocumentApplyEzsigntemplateglobalV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentApplyEzsigntemplateglobalV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigndocumentApplyEzsigntemplateglobalV1(pkiEzsigndocumentID, ezsigndocumentApplyEzsigntemplateglobalV1Request, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
          * Using this endpoint, you can create multiple Ezsignsignatures/Ezsignformfieldgroups positioned by word at the same time.
          * @summary Create multiple Ezsignsignatures/Ezsignformfieldgroups
          * @param {number} pkiEzsigndocumentID 
@@ -2201,6 +2279,17 @@ export const ObjectEzsigndocumentApiFactory = function (configuration?: Configur
             return localVarFp.ezsigndocumentApplyEzsigntemplateV2(pkiEzsigndocumentID, ezsigndocumentApplyEzsigntemplateV2Request, options).then((request) => request(axios, basePath));
         },
         /**
+         * This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
+         * @summary Apply an Ezsigntemplateglobal to the Ezsigndocument.
+         * @param {number} pkiEzsigndocumentID 
+         * @param {EzsigndocumentApplyEzsigntemplateglobalV1Request} ezsigndocumentApplyEzsigntemplateglobalV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigndocumentApplyEzsigntemplateglobalV1(pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateglobalV1Request: EzsigndocumentApplyEzsigntemplateglobalV1Request, options?: any): AxiosPromise<EzsigndocumentApplyEzsigntemplateglobalV1Response> {
+            return localVarFp.ezsigndocumentApplyEzsigntemplateglobalV1(pkiEzsigndocumentID, ezsigndocumentApplyEzsigntemplateglobalV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Using this endpoint, you can create multiple Ezsignsignatures/Ezsignformfieldgroups positioned by word at the same time.
          * @summary Create multiple Ezsignsignatures/Ezsignformfieldgroups
          * @param {number} pkiEzsigndocumentID 
@@ -2518,6 +2607,19 @@ export class ObjectEzsigndocumentApi extends BaseAPI {
      */
     public ezsigndocumentApplyEzsigntemplateV2(pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateV2Request: EzsigndocumentApplyEzsigntemplateV2Request, options?: AxiosRequestConfig) {
         return ObjectEzsigndocumentApiFp(this.configuration).ezsigndocumentApplyEzsigntemplateV2(pkiEzsigndocumentID, ezsigndocumentApplyEzsigntemplateV2Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
+     * @summary Apply an Ezsigntemplateglobal to the Ezsigndocument.
+     * @param {number} pkiEzsigndocumentID 
+     * @param {EzsigndocumentApplyEzsigntemplateglobalV1Request} ezsigndocumentApplyEzsigntemplateglobalV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectEzsigndocumentApi
+     */
+    public ezsigndocumentApplyEzsigntemplateglobalV1(pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateglobalV1Request: EzsigndocumentApplyEzsigntemplateglobalV1Request, options?: AxiosRequestConfig) {
+        return ObjectEzsigndocumentApiFp(this.configuration).ezsigndocumentApplyEzsigntemplateglobalV1(pkiEzsigndocumentID, ezsigndocumentApplyEzsigntemplateglobalV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

@@ -70,8 +70,9 @@ export interface CustomEzsignformfieldgroupCreateEzsignelementsPositionedByWordR
      * 
      * @type {FieldEEzsignformfieldgroupSignerrequirement}
      * @memberof CustomEzsignformfieldgroupCreateEzsignelementsPositionedByWordRequest
+     * @deprecated
      */
-    eEzsignformfieldgroupSignerrequirement:FieldEEzsignformfieldgroupSignerrequirement 
+    eEzsignformfieldgroupSignerrequirement?:FieldEEzsignformfieldgroupSignerrequirement 
     /**
      * The Label for the Ezsignformfieldgroup
      * @type {string}
@@ -85,7 +86,7 @@ export interface CustomEzsignformfieldgroupCreateEzsignelementsPositionedByWordR
      */
     iEzsignformfieldgroupStep:number 
     /**
-     * The default value for the Ezsignformfieldgroup
+     * The default value for the Ezsignformfieldgroup  You can use the codes below and they will be replaced at signature time.    | Code | Description | Example | | ------------------------- | ------------ | ------------ | | {sUserFirstname} | The first name of the contact | John | | {sUserLastname} | The last name of the contact | Doe | | {sUserJobtitle} | The job title | Sales Representative | | {sEmailAddress} | The email address | email@example.com | | {sPhoneE164} | A phone number in E.164 Format | +15149901516 | | {sPhoneE164Cell} | A phone number in E.164 Format | +15149901516 |
      * @type {string}
      * @memberof CustomEzsignformfieldgroupCreateEzsignelementsPositionedByWordRequest
      */
@@ -191,7 +192,7 @@ export class DataObjectCustomEzsignformfieldgroupCreateEzsignelementsPositionedB
     pkiEzsignformfieldgroupID?:number = undefined
     fkiEzsigndocumentID:number = 0
     eEzsignformfieldgroupType:FieldEEzsignformfieldgroupType = 'Text'
-    eEzsignformfieldgroupSignerrequirement:FieldEEzsignformfieldgroupSignerrequirement = 'All'
+    eEzsignformfieldgroupSignerrequirement?:FieldEEzsignformfieldgroupSignerrequirement = undefined
     sEzsignformfieldgroupLabel:string = ''
     iEzsignformfieldgroupStep:number = 0
     sEzsignformfieldgroupDefaultvalue?:string = undefined
@@ -234,7 +235,7 @@ export class ValidationObjectCustomEzsignformfieldgroupCreateEzsignelementsPosit
    eEzsignformfieldgroupSignerrequirement = {
       type: 'enum',
       allowableValues: ['All','One'],
-      required: true
+      required: false
    }
    sEzsignformfieldgroupLabel = {
       type: 'string',

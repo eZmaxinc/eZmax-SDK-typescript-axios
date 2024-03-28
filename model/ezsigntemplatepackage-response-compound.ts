@@ -85,6 +85,12 @@ export interface EzsigntemplatepackageResponseCompound {
      */
     sEzsignfoldertypeNameX:string 
     /**
+     * Whether the Ezsigntemplatepackage if allowed to edit or not
+     * @type {boolean}
+     * @memberof EzsigntemplatepackageResponseCompound
+     */
+    bEzsigntemplatepackageEditallowed:boolean 
+    /**
      * 
      * @type {Array<EzsigntemplatepackagesignerResponseCompound>}
      * @memberof EzsigntemplatepackageResponseCompound
@@ -120,6 +126,7 @@ export class DataObjectEzsigntemplatepackageResponseCompound {
     bEzsigntemplatepackageNeedvalidation:boolean = false
     bEzsigntemplatepackageIsactive:boolean = false
     sEzsignfoldertypeNameX:string = ''
+    bEzsigntemplatepackageEditallowed:boolean = false
     a_objEzsigntemplatepackagesigner:Array<EzsigntemplatepackagesignerResponseCompound> = []
     a_objEzsigntemplatepackagemembership:Array<EzsigntemplatepackagemembershipResponseCompound> = []
 }
@@ -138,6 +145,7 @@ export class ValidationObjectEzsigntemplatepackageResponseCompound {
    fkiEzsignfoldertypeID = {
       type: 'integer',
       minimum: 0,
+      maximum: 65535,
       required: true
    }
    fkiLanguageID = {
@@ -168,6 +176,10 @@ export class ValidationObjectEzsigntemplatepackageResponseCompound {
    }
    sEzsignfoldertypeNameX = {
       type: 'string',
+      required: true
+   }
+   bEzsigntemplatepackageEditallowed = {
+      type: 'boolean',
       required: true
    }
    a_objEzsigntemplatepackagesigner = {

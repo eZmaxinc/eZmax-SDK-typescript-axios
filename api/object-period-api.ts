@@ -22,8 +22,6 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
 // @ts-ignore
-import { CommonGetAutocompleteV1Response } from '../model';
-// @ts-ignore
 import { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
 import { PeriodGetAutocompleteV2Response } from '../model';
@@ -35,80 +33,6 @@ import { RequestSignature, IHeadersData } from '../api/request-signature';
  */
 export const ObjectPeriodApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
-        /**
-         * Get the list of Periods to be used in a dropdown or autocomplete control.
-         * @summary Retrieve Periods and IDs
-         * @param {PeriodGetAutocompleteV1SSelectorEnum} sSelector The types of Periods to return
-         * @param {PeriodGetAutocompleteV1EFilterActiveEnum} [eFilterActive] Specify which results we want to display.
-         * @param {string} [sQuery] Allow to filter the returned results
-         * @param {HeaderAcceptLanguage} [acceptLanguage] 
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        periodGetAutocompleteV1: async (sSelector: PeriodGetAutocompleteV1SSelectorEnum, eFilterActive?: PeriodGetAutocompleteV1EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'sSelector' is not null or undefined
-            assertParamExists('periodGetAutocompleteV1', 'sSelector', sSelector)
-            const localVarPath = `/1/object/period/getAutocomplete/{sSelector}`
-                .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-            if (eFilterActive !== undefined) {
-                localVarQueryParameter['eFilterActive'] = eFilterActive;
-            }
-
-            if (sQuery !== undefined) {
-                localVarQueryParameter['sQuery'] = sQuery;
-            }
-
-            if (acceptLanguage != null) {
-                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string' 
-                    ? acceptLanguage 
-                    : JSON.stringify(acceptLanguage);
-            }
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'GET' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
         /**
          * Get the list of Period to be used in a dropdown or autocomplete control.
          * @summary Retrieve Periods and IDs
@@ -193,21 +117,6 @@ export const ObjectPeriodApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = ObjectPeriodApiAxiosParamCreator(configuration)
     return {
         /**
-         * Get the list of Periods to be used in a dropdown or autocomplete control.
-         * @summary Retrieve Periods and IDs
-         * @param {PeriodGetAutocompleteV1SSelectorEnum} sSelector The types of Periods to return
-         * @param {PeriodGetAutocompleteV1EFilterActiveEnum} [eFilterActive] Specify which results we want to display.
-         * @param {string} [sQuery] Allow to filter the returned results
-         * @param {HeaderAcceptLanguage} [acceptLanguage] 
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        async periodGetAutocompleteV1(sSelector: PeriodGetAutocompleteV1SSelectorEnum, eFilterActive?: PeriodGetAutocompleteV1EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonGetAutocompleteV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.periodGetAutocompleteV1(sSelector, eFilterActive, sQuery, acceptLanguage, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
          * Get the list of Period to be used in a dropdown or autocomplete control.
          * @summary Retrieve Periods and IDs
          * @param {PeriodGetAutocompleteV2SSelectorEnum} sSelector The type of Periods to return
@@ -232,20 +141,6 @@ export const ObjectPeriodApiFactory = function (configuration?: Configuration, b
     const localVarFp = ObjectPeriodApiFp(configuration)
     return {
         /**
-         * Get the list of Periods to be used in a dropdown or autocomplete control.
-         * @summary Retrieve Periods and IDs
-         * @param {PeriodGetAutocompleteV1SSelectorEnum} sSelector The types of Periods to return
-         * @param {PeriodGetAutocompleteV1EFilterActiveEnum} [eFilterActive] Specify which results we want to display.
-         * @param {string} [sQuery] Allow to filter the returned results
-         * @param {HeaderAcceptLanguage} [acceptLanguage] 
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        periodGetAutocompleteV1(sSelector: PeriodGetAutocompleteV1SSelectorEnum, eFilterActive?: PeriodGetAutocompleteV1EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: any): AxiosPromise<CommonGetAutocompleteV1Response> {
-            return localVarFp.periodGetAutocompleteV1(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(axios, basePath));
-        },
-        /**
          * Get the list of Period to be used in a dropdown or autocomplete control.
          * @summary Retrieve Periods and IDs
          * @param {PeriodGetAutocompleteV2SSelectorEnum} sSelector The type of Periods to return
@@ -269,22 +164,6 @@ export const ObjectPeriodApiFactory = function (configuration?: Configuration, b
  */
 export class ObjectPeriodApi extends BaseAPI {
     /**
-     * Get the list of Periods to be used in a dropdown or autocomplete control.
-     * @summary Retrieve Periods and IDs
-     * @param {PeriodGetAutocompleteV1SSelectorEnum} sSelector The types of Periods to return
-     * @param {PeriodGetAutocompleteV1EFilterActiveEnum} [eFilterActive] Specify which results we want to display.
-     * @param {string} [sQuery] Allow to filter the returned results
-     * @param {HeaderAcceptLanguage} [acceptLanguage] 
-     * @param {*} [options] Override http request option.
-     * @deprecated
-     * @throws {RequiredError}
-     * @memberof ObjectPeriodApi
-     */
-    public periodGetAutocompleteV1(sSelector: PeriodGetAutocompleteV1SSelectorEnum, eFilterActive?: PeriodGetAutocompleteV1EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig) {
-        return ObjectPeriodApiFp(this.configuration).periodGetAutocompleteV1(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
      * Get the list of Period to be used in a dropdown or autocomplete control.
      * @summary Retrieve Periods and IDs
      * @param {PeriodGetAutocompleteV2SSelectorEnum} sSelector The type of Periods to return
@@ -300,25 +179,6 @@ export class ObjectPeriodApi extends BaseAPI {
     }
 }
 
-/**
- * @export
- */
-export const PeriodGetAutocompleteV1SSelectorEnum = {
-    ActiveNormal: 'ActiveNormal',
-    ActiveNormalAndEndOfYear: 'ActiveNormalAndEndOfYear',
-    AllNormal: 'AllNormal',
-    AllNormalAndEndOfYear: 'AllNormalAndEndOfYear'
-} as const;
-export type PeriodGetAutocompleteV1SSelectorEnum = typeof PeriodGetAutocompleteV1SSelectorEnum[keyof typeof PeriodGetAutocompleteV1SSelectorEnum];
-/**
- * @export
- */
-export const PeriodGetAutocompleteV1EFilterActiveEnum = {
-    All: 'All',
-    Active: 'Active',
-    Inactive: 'Inactive'
-} as const;
-export type PeriodGetAutocompleteV1EFilterActiveEnum = typeof PeriodGetAutocompleteV1EFilterActiveEnum[keyof typeof PeriodGetAutocompleteV1EFilterActiveEnum];
 /**
  * @export
  */

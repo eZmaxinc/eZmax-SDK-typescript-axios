@@ -22,9 +22,15 @@
 
 export const FieldEWebhookEzsignevent = {
     DocumentCompleted: 'DocumentCompleted',
+    DocumentFormCompleted: 'DocumentFormCompleted',
+    DocumentUnsent: 'DocumentUnsent',
     EzsignsignerAcceptclause: 'EzsignsignerAcceptclause',
     EzsignsignerConnect: 'EzsignsignerConnect',
-    FolderCompleted: 'FolderCompleted'
+    FolderCompleted: 'FolderCompleted',
+    FolderDisposed: 'FolderDisposed',
+    FolderSent: 'FolderSent',
+    FolderUnsent: 'FolderUnsent',
+    SignatureSigned: 'SignatureSigned'
 } as const;
 
 export type FieldEWebhookEzsignevent = typeof FieldEWebhookEzsignevent[keyof typeof FieldEWebhookEzsignevent];

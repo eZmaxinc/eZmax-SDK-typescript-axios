@@ -33,6 +33,9 @@ import { FieldEActivesessionUsertype } from './field-eactivesession-usertype';
 import { FieldEActivesessionWeekdaystart } from './field-eactivesession-weekdaystart';
 // May contain unused imports in some cases
 // @ts-ignore
+import { FieldESystemconfigurationEzsignofficeplan } from './field-esystemconfiguration-ezsignofficeplan';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FieldEUserEzsignaccess } from './field-euser-ezsignaccess';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -111,6 +114,18 @@ export interface ActivesessionResponseCompound {
      * @memberof ActivesessionResponseCompound
      */
     fkiSignatureID?:number 
+    /**
+     * Whether if Ezsign is paid by the company or not
+     * @type {boolean}
+     * @memberof ActivesessionResponseCompound
+     */
+    bSystemconfigurationEzsignpaidbyoffice?:boolean 
+    /**
+     * 
+     * @type {FieldESystemconfigurationEzsignofficeplan}
+     * @memberof ActivesessionResponseCompound
+     */
+    eSystemconfigurationEzsignofficeplan?:FieldESystemconfigurationEzsignofficeplan 
     /**
      * 
      * @type {FieldEUserEzsignaccess}
@@ -198,6 +213,8 @@ export class DataObjectActivesessionResponseCompound {
     pksCustomerCode:string = ''
     fkiSystemconfigurationtypeID:number = 0
     fkiSignatureID?:number = undefined
+    bSystemconfigurationEzsignpaidbyoffice?:boolean = undefined
+    eSystemconfigurationEzsignofficeplan?:FieldESystemconfigurationEzsignofficeplan = undefined
     eUserEzsignaccess:FieldEUserEzsignaccess = 'No'
     eUserEzsignprepaid?:FieldEUserEzsignprepaid = undefined
     dtUserEzsignprepaidexpiration?:string = undefined
@@ -266,6 +283,15 @@ export class ValidationObjectActivesessionResponseCompound {
       maximum: 16777215,
       required: false
    }
+   bSystemconfigurationEzsignpaidbyoffice = {
+      type: 'boolean',
+      required: false
+   }
+   eSystemconfigurationEzsignofficeplan = {
+      type: 'enum',
+      allowableValues: ['Standard','Pro'],
+      required: false
+   }
    eUserEzsignaccess = {
       type: 'enum',
       allowableValues: ['No','PaidByOffice','PerDocument','Prepaid'],
@@ -273,7 +299,7 @@ export class ValidationObjectActivesessionResponseCompound {
    }
    eUserEzsignprepaid = {
       type: 'enum',
-      allowableValues: ['Basic','Unlimited','Pro'],
+      allowableValues: ['No','Basic','Standard','Pro'],
       required: false
    }
    dtUserEzsignprepaidexpiration = {

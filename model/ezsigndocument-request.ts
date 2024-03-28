@@ -87,7 +87,7 @@ export interface EzsigndocumentRequest {
      */
     'sEzsigndocumentPassword'?: string;
     /**
-     * If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsignformfieldgroups and assign them to the specified **fkiEzsignfoldersignerassociationID**
+     * If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsignformfieldgroups and assign them to the specified **fkiEzsignfoldersignerassociationID**  **Discard** removes the form from the document.
      * @type {string}
      * @memberof EzsigndocumentRequest
      */
@@ -132,7 +132,8 @@ export type EzsigndocumentRequestEEzsigndocumentFormatEnum = typeof Ezsigndocume
 
 export const EzsigndocumentRequestEEzsigndocumentFormEnum = {
     Keep: 'Keep',
-    Convert: 'Convert'
+    Convert: 'Convert',
+    Discard: 'Discard'
 } as const;
 export type EzsigndocumentRequestEEzsigndocumentFormEnum = typeof EzsigndocumentRequestEEzsigndocumentFormEnum[keyof typeof EzsigndocumentRequestEEzsigndocumentFormEnum];
 

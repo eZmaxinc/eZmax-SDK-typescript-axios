@@ -136,6 +136,7 @@ export class ValidationObjectWebhookRequest {
    fkiEzsignfoldertypeID = {
       type: 'integer',
       minimum: 0,
+      maximum: 65535,
       required: false
    }
    sWebhookDescription = {
@@ -149,7 +150,7 @@ export class ValidationObjectWebhookRequest {
    }
    eWebhookEzsignevent = {
       type: 'enum',
-      allowableValues: ['DocumentCompleted','EzsignsignerAcceptclause','EzsignsignerConnect','FolderCompleted'],
+      allowableValues: ['DocumentCompleted','DocumentFormCompleted','DocumentUnsent','EzsignsignerAcceptclause','EzsignsignerConnect','FolderCompleted','FolderDisposed','FolderSent','FolderUnsent','SignatureSigned'],
       required: false
    }
    eWebhookManagementevent = {

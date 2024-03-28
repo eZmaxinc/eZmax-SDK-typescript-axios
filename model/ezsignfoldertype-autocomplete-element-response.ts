@@ -86,6 +86,7 @@ export class ValidationObjectEzsignfoldertypeAutocompleteElementResponse {
    pkiEzsignfoldertypeID = {
       type: 'integer',
       minimum: 0,
+      maximum: 65535,
       required: true
    }
    bEzsignfoldertypeIsactive = {

@@ -16,6 +16,9 @@
 // May contain unused imports in some cases
 // @ts-ignore
 import { CommonAudit } from './common-audit';
+// May contain unused imports in some cases
+// @ts-ignore
+import { FieldEEzsigntemplateType } from './field-eezsigntemplate-type';
 
 /**
  * A Ezsigntemplate Object
@@ -40,7 +43,7 @@ export interface EzsigntemplateResponse {
      * @type {number}
      * @memberof EzsigntemplateResponse
      */
-    'fkiEzsignfoldertypeID': number;
+    'fkiEzsignfoldertypeID'?: number;
     /**
      * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @type {number}
@@ -60,6 +63,12 @@ export interface EzsigntemplateResponse {
      */
     'sEzsigntemplateDescription': string;
     /**
+     * The filename pattern of the Ezsigntemplate
+     * @type {string}
+     * @memberof EzsigntemplateResponse
+     */
+    'sEzsigntemplateFilenamepattern'?: string;
+    /**
      * Whether the Ezsigntemplate can be accessed by admin users only (eUserType=Normal)
      * @type {boolean}
      * @memberof EzsigntemplateResponse
@@ -70,14 +79,28 @@ export interface EzsigntemplateResponse {
      * @type {string}
      * @memberof EzsigntemplateResponse
      */
-    'sEzsignfoldertypeNameX': string;
+    'sEzsignfoldertypeNameX'?: string;
     /**
      * 
      * @type {CommonAudit}
      * @memberof EzsigntemplateResponse
      */
     'objAudit': CommonAudit;
+    /**
+     * Whether the Ezsigntemplate if allowed to edit or not
+     * @type {boolean}
+     * @memberof EzsigntemplateResponse
+     */
+    'bEzsigntemplateEditallowed': boolean;
+    /**
+     * 
+     * @type {FieldEEzsigntemplateType}
+     * @memberof EzsigntemplateResponse
+     */
+    'eEzsigntemplateType'?: FieldEEzsigntemplateType;
 }
+
+
 /**
  * @import
  * Imports Child Data Object
@@ -96,13 +119,16 @@ import { ValidationObjectCommonAudit } from './'
 export class DataObjectEzsigntemplateResponse {
    pkiEzsigntemplateID:number = 0
    fkiEzsigntemplatedocumentID?:number = undefined
-   fkiEzsignfoldertypeID:number = 0
+   fkiEzsignfoldertypeID?:number = undefined
    fkiLanguageID:number = 0
    sLanguageNameX:string = ''
    sEzsigntemplateDescription:string = ''
+   sEzsigntemplateFilenamepattern?:string = undefined
    bEzsigntemplateAdminonly:boolean = false
-   sEzsignfoldertypeNameX:string = ''
+   sEzsignfoldertypeNameX?:string = undefined
    objAudit:CommonAudit = new DataObjectCommonAudit()
+   bEzsigntemplateEditallowed:boolean = false
+   eEzsigntemplateType?:FieldEEzsigntemplateType = undefined
 }
 
 /**
@@ -124,7 +150,8 @@ export class ValidationObjectEzsigntemplateResponse {
    fkiEzsignfoldertypeID = {
       type: 'integer',
       minimum: 0,
-      required: true
+      maximum: 65535,
+      required: false
    }
    fkiLanguageID = {
       type: 'integer',
@@ -140,15 +167,29 @@ export class ValidationObjectEzsigntemplateResponse {
       type: 'string',
       required: true
    }
+   sEzsigntemplateFilenamepattern = {
+      type: 'string',
+      pattern: '/^.{1,50}$/',
+      required: false
+   }
    bEzsigntemplateAdminonly = {
       type: 'boolean',
       required: true
    }
    sEzsignfoldertypeNameX = {
       type: 'string',
-      required: true
+      required: false
    }
    objAudit = new ValidationObjectCommonAudit()
+   bEzsigntemplateEditallowed = {
+      type: 'boolean',
+      required: true
+   }
+   eEzsigntemplateType = {
+      type: 'enum',
+      allowableValues: ['User','Usergroup','Company'],
+      required: false
+   }
 } 
 
 

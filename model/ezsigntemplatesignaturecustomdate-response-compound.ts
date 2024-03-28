@@ -108,12 +108,10 @@ export class ValidationObjectEzsigntemplatesignaturecustomdateResponseCompound {
    }
    iEzsigntemplatesignaturecustomdateOffsetx = {
       type: 'integer',
-      minimum: 0,
       required: false
    }
    iEzsigntemplatesignaturecustomdateOffsety = {
       type: 'integer',
-      minimum: 0,
       required: false
    }
    sEzsigntemplatesignaturecustomdateFormat = {

@@ -35,6 +35,12 @@ export interface UsergroupResponse {
      * @memberof UsergroupResponse
      */
     'objUsergroupName': MultilingualUsergroupName;
+    /**
+     * The Name of the Usergroup in the language of the requester
+     * @type {string}
+     * @memberof UsergroupResponse
+     */
+    'sUsergroupNameX'?: string;
 }
 /**
  * @import
@@ -54,6 +60,7 @@ import { ValidationObjectMultilingualUsergroupName } from './'
 export class DataObjectUsergroupResponse {
    pkiUsergroupID:number = 0
    objUsergroupName:MultilingualUsergroupName = new DataObjectMultilingualUsergroupName()
+   sUsergroupNameX?:string = undefined
 }
 
 /**
@@ -69,6 +76,11 @@ export class ValidationObjectUsergroupResponse {
       required: true
    }
    objUsergroupName = new ValidationObjectMultilingualUsergroupName()
+   sUsergroupNameX = {
+      type: 'string',
+      pattern: '/^.{0,50}$/',
+      required: false
+   }
 } 
 
 

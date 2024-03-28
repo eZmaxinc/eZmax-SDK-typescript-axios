@@ -118,7 +118,7 @@ export interface EzsignfoldertypeRequest {
      * @type {FieldEEzsignfoldertypeCompletion}
      * @memberof EzsignfoldertypeRequest
      */
-    'eEzsignfoldertypeCompletion'?: FieldEEzsignfoldertypeCompletion;
+    'eEzsignfoldertypeCompletion': FieldEEzsignfoldertypeCompletion;
     /**
      * The number of days after the archival before the disposal of the Ezsignfolder
      * @type {number}
@@ -138,11 +138,11 @@ export interface EzsignfoldertypeRequest {
      */
     'bEzsignfoldertypeDelegate'?: boolean;
     /**
-     * Wheter if Reassignment of signature is allowed to another signatory or not
+     * Wheter if creating a new Discussion is allowed or not
      * @type {boolean}
      * @memberof EzsignfoldertypeRequest
      */
-    'bEzsignfoldertypeReassign'?: boolean;
+    'bEzsignfoldertypeDiscussion'?: boolean;
     /**
      * Wheter if Reassignment of signature is allowed by a signatory to another signatory or not
      * @type {boolean}
@@ -155,12 +155,6 @@ export interface EzsignfoldertypeRequest {
      * @memberof EzsignfoldertypeRequest
      */
     'bEzsignfoldertypeReassignuser'?: boolean;
-    /**
-     * THIS FIELD WILL BE DELETED. Whether we send the Ezsigndocument and the proof as attachment in the email
-     * @type {boolean}
-     * @memberof EzsignfoldertypeRequest
-     */
-    'bEzsignfoldertypeSendattatchmentsigner'?: boolean;
     /**
      * Whether we send an email to Ezsignsigner  when document is completed
      * @type {boolean}
@@ -282,18 +276,6 @@ export interface EzsignfoldertypeRequest {
      */
     'bEzsignfoldertypeSendsummarytocolleague': boolean;
     /**
-     * THIS FIELD WILL BE DELETED. Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
-     * @type {boolean}
-     * @memberof EzsignfoldertypeRequest
-     */
-    'bEzsignfoldertypeIncludeproofsigner'?: boolean;
-    /**
-     * Whether we include the proof with the signed Ezsigndocument for users
-     * @type {boolean}
-     * @memberof EzsignfoldertypeRequest
-     */
-    'bEzsignfoldertypeIncludeproofuser': boolean;
-    /**
      * Whether the Ezsignfoldertype is active or not
      * @type {boolean}
      * @memberof EzsignfoldertypeRequest
@@ -331,14 +313,13 @@ export class DataObjectEzsignfoldertypeRequest {
    eEzsignfoldertypeSendreminderfrequency?:FieldEEzsignfoldertypeSendreminderfrequency = undefined
    iEzsignfoldertypeArchivaldays:number = 0
    eEzsignfoldertypeDisposal:FieldEEzsignfoldertypeDisposal = 'No'
-   eEzsignfoldertypeCompletion?:FieldEEzsignfoldertypeCompletion = undefined
+   eEzsignfoldertypeCompletion:FieldEEzsignfoldertypeCompletion = 'PerEzsigndocument'
    iEzsignfoldertypeDisposaldays?:number = undefined
    iEzsignfoldertypeDeadlinedays:number = 0
    bEzsignfoldertypeDelegate?:boolean = undefined
-   bEzsignfoldertypeReassign?:boolean = undefined
+   bEzsignfoldertypeDiscussion?:boolean = undefined
    bEzsignfoldertypeReassignezsignsigner?:boolean = undefined
    bEzsignfoldertypeReassignuser?:boolean = undefined
-   bEzsignfoldertypeSendattatchmentsigner?:boolean = undefined
    bEzsignfoldertypeSendsignedtoezsignsigner?:boolean = undefined
    bEzsignfoldertypeSendsignedtouser?:boolean = undefined
    bEzsignfoldertypeSendattachmentezsignsigner?:boolean = undefined
@@ -359,8 +340,6 @@ export class DataObjectEzsignfoldertypeRequest {
    bEzsignfoldertypeSendsummarytofullgroup?:boolean = undefined
    bEzsignfoldertypeSendsummarytolimitedgroup?:boolean = undefined
    bEzsignfoldertypeSendsummarytocolleague:boolean = false
-   bEzsignfoldertypeIncludeproofsigner?:boolean = undefined
-   bEzsignfoldertypeIncludeproofuser:boolean = false
    bEzsignfoldertypeIsactive:boolean = false
 }
 
@@ -373,6 +352,7 @@ export class ValidationObjectEzsignfoldertypeRequest {
    pkiEzsignfoldertypeID = {
       type: 'integer',
       minimum: 0,
+      maximum: 65535,
       required: false
    }
    objEzsignfoldertypeName = new ValidationObjectMultilingualEzsignfoldertypeName()
@@ -436,7 +416,7 @@ export class ValidationObjectEzsignfoldertypeRequest {
    eEzsignfoldertypeCompletion = {
       type: 'enum',
       allowableValues: ['PerEzsigndocument','PerEzsignfolder'],
-      required: false
+      required: true
    }
    iEzsignfoldertypeDisposaldays = {
       type: 'integer',
@@ -454,7 +434,7 @@ export class ValidationObjectEzsignfoldertypeRequest {
       type: 'boolean',
       required: false
    }
-   bEzsignfoldertypeReassign = {
+   bEzsignfoldertypeDiscussion = {
       type: 'boolean',
       required: false
    }
@@ -463,10 +443,6 @@ export class ValidationObjectEzsignfoldertypeRequest {
       required: false
    }
    bEzsignfoldertypeReassignuser = {
-      type: 'boolean',
-      required: false
-   }
-   bEzsignfoldertypeSendattatchmentsigner = {
       type: 'boolean',
       required: false
    }
@@ -547,14 +523,6 @@ export class ValidationObjectEzsignfoldertypeRequest {
       required: false
    }
    bEzsignfoldertypeSendsummarytocolleague = {
-      type: 'boolean',
-      required: true
-   }
-   bEzsignfoldertypeIncludeproofsigner = {
-      type: 'boolean',
-      required: false
-   }
-   bEzsignfoldertypeIncludeproofuser = {
       type: 'boolean',
       required: true
    }

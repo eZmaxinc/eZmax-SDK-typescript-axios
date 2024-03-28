@@ -24,6 +24,10 @@ import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } fr
 // @ts-ignore
 import { CommonResponseError } from '../model';
 // @ts-ignore
+import { EzsignfoldersignerassociationCreateEmbeddedUrlV1Request } from '../model';
+// @ts-ignore
+import { EzsignfoldersignerassociationCreateEmbeddedUrlV1Response } from '../model';
+// @ts-ignore
 import { EzsignfoldersignerassociationCreateObjectV1Request } from '../model';
 // @ts-ignore
 import { EzsignfoldersignerassociationCreateObjectV1Response } from '../model';
@@ -57,6 +61,68 @@ import { RequestSignature, IHeadersData } from '../api/request-signature';
  */
 export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
+        /**
+         * This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.
+         * @summary Creates an Url to allow embedded signing
+         * @param {number} pkiEzsignfoldersignerassociationID 
+         * @param {EzsignfoldersignerassociationCreateEmbeddedUrlV1Request} ezsignfoldersignerassociationCreateEmbeddedUrlV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsignfoldersignerassociationCreateEmbeddedUrlV1: async (pkiEzsignfoldersignerassociationID: number, ezsignfoldersignerassociationCreateEmbeddedUrlV1Request: EzsignfoldersignerassociationCreateEmbeddedUrlV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiEzsignfoldersignerassociationID' is not null or undefined
+            assertParamExists('ezsignfoldersignerassociationCreateEmbeddedUrlV1', 'pkiEzsignfoldersignerassociationID', pkiEzsignfoldersignerassociationID)
+            // verify required parameter 'ezsignfoldersignerassociationCreateEmbeddedUrlV1Request' is not null or undefined
+            assertParamExists('ezsignfoldersignerassociationCreateEmbeddedUrlV1', 'ezsignfoldersignerassociationCreateEmbeddedUrlV1Request', ezsignfoldersignerassociationCreateEmbeddedUrlV1Request)
+            const localVarPath = `/1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/createEmbeddedUrl`
+                .replace(`{${"pkiEzsignfoldersignerassociationID"}}`, encodeURIComponent(String(pkiEzsignfoldersignerassociationID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(ezsignfoldersignerassociationCreateEmbeddedUrlV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
         /**
          * The endpoint allows to create one or many elements at once.  The array can contain simple (Just the object) or compound (The object and its child) objects.  Creating compound elements allows to reduce the multiple requests to create all child objects.
          * @summary Create a new Ezsignfoldersignerassociation
@@ -596,6 +662,18 @@ export const ObjectEzsignfoldersignerassociationApiFp = function(configuration?:
     const localVarAxiosParamCreator = ObjectEzsignfoldersignerassociationApiAxiosParamCreator(configuration)
     return {
         /**
+         * This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.
+         * @summary Creates an Url to allow embedded signing
+         * @param {number} pkiEzsignfoldersignerassociationID 
+         * @param {EzsignfoldersignerassociationCreateEmbeddedUrlV1Request} ezsignfoldersignerassociationCreateEmbeddedUrlV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsignfoldersignerassociationCreateEmbeddedUrlV1(pkiEzsignfoldersignerassociationID: number, ezsignfoldersignerassociationCreateEmbeddedUrlV1Request: EzsignfoldersignerassociationCreateEmbeddedUrlV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfoldersignerassociationCreateEmbeddedUrlV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfoldersignerassociationCreateEmbeddedUrlV1(pkiEzsignfoldersignerassociationID, ezsignfoldersignerassociationCreateEmbeddedUrlV1Request, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
          * The endpoint allows to create one or many elements at once.  The array can contain simple (Just the object) or compound (The object and its child) objects.  Creating compound elements allows to reduce the multiple requests to create all child objects.
          * @summary Create a new Ezsignfoldersignerassociation
          * @param {Array<EzsignfoldersignerassociationCreateObjectV1Request>} ezsignfoldersignerassociationCreateObjectV1Request 
@@ -710,6 +788,17 @@ export const ObjectEzsignfoldersignerassociationApiFactory = function (configura
     const localVarFp = ObjectEzsignfoldersignerassociationApiFp(configuration)
     return {
         /**
+         * This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.
+         * @summary Creates an Url to allow embedded signing
+         * @param {number} pkiEzsignfoldersignerassociationID 
+         * @param {EzsignfoldersignerassociationCreateEmbeddedUrlV1Request} ezsignfoldersignerassociationCreateEmbeddedUrlV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsignfoldersignerassociationCreateEmbeddedUrlV1(pkiEzsignfoldersignerassociationID: number, ezsignfoldersignerassociationCreateEmbeddedUrlV1Request: EzsignfoldersignerassociationCreateEmbeddedUrlV1Request, options?: any): AxiosPromise<EzsignfoldersignerassociationCreateEmbeddedUrlV1Response> {
+            return localVarFp.ezsignfoldersignerassociationCreateEmbeddedUrlV1(pkiEzsignfoldersignerassociationID, ezsignfoldersignerassociationCreateEmbeddedUrlV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
          * The endpoint allows to create one or many elements at once.  The array can contain simple (Just the object) or compound (The object and its child) objects.  Creating compound elements allows to reduce the multiple requests to create all child objects.
          * @summary Create a new Ezsignfoldersignerassociation
          * @param {Array<EzsignfoldersignerassociationCreateObjectV1Request>} ezsignfoldersignerassociationCreateObjectV1Request 
@@ -814,6 +903,19 @@ export const ObjectEzsignfoldersignerassociationApiFactory = function (configura
  * @extends {BaseAPI}
  */
 export class ObjectEzsignfoldersignerassociationApi extends BaseAPI {
+    /**
+     * This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.
+     * @summary Creates an Url to allow embedded signing
+     * @param {number} pkiEzsignfoldersignerassociationID 
+     * @param {EzsignfoldersignerassociationCreateEmbeddedUrlV1Request} ezsignfoldersignerassociationCreateEmbeddedUrlV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectEzsignfoldersignerassociationApi
+     */
+    public ezsignfoldersignerassociationCreateEmbeddedUrlV1(pkiEzsignfoldersignerassociationID: number, ezsignfoldersignerassociationCreateEmbeddedUrlV1Request: EzsignfoldersignerassociationCreateEmbeddedUrlV1Request, options?: AxiosRequestConfig) {
+        return ObjectEzsignfoldersignerassociationApiFp(this.configuration).ezsignfoldersignerassociationCreateEmbeddedUrlV1(pkiEzsignfoldersignerassociationID, ezsignfoldersignerassociationCreateEmbeddedUrlV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
     /**
      * The endpoint allows to create one or many elements at once.  The array can contain simple (Just the object) or compound (The object and its child) objects.  Creating compound elements allows to reduce the multiple requests to create all child objects.
      * @summary Create a new Ezsignfoldersignerassociation

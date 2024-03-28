@@ -40,7 +40,7 @@ export interface ActivesessionResponseCompoundUser {
      * @type {string}
      * @memberof ActivesessionResponseCompoundUser
      */
-    'sAvatarUrl': string;
+    'sAvatarUrl'?: string;
     /**
      * The first name of the user
      * @type {string}
@@ -58,7 +58,7 @@ export interface ActivesessionResponseCompoundUser {
      * @type {string}
      * @memberof ActivesessionResponseCompoundUser
      */
-    'sEmailAddress': string;
+    'sEmailAddress'?: string;
     /**
      * 
      * @type {FieldEUserEzsignsendreminderfrequency}
@@ -100,10 +100,10 @@ export interface ActivesessionResponseCompoundUser {
 export class DataObjectActivesessionResponseCompoundUser {
    pkiUserID:number = 0
    fkiTimezoneID:number = 0
-   sAvatarUrl:string = ''
+   sAvatarUrl?:string = undefined
    sUserFirstname:string = ''
    sUserLastname:string = ''
-   sEmailAddress:string = ''
+   sEmailAddress?:string = undefined
    eUserEzsignsendreminderfrequency:FieldEUserEzsignsendreminderfrequency = 'None'
    iUserInterfacecolor:number = 0
    bUserInterfacedark:boolean = false
@@ -128,7 +128,7 @@ export class ValidationObjectActivesessionResponseCompoundUser {
    }
    sAvatarUrl = {
       type: 'string',
-      required: true
+      required: false
    }
    sUserFirstname = {
       type: 'string',
@@ -140,7 +140,7 @@ export class ValidationObjectActivesessionResponseCompoundUser {
    }
    sEmailAddress = {
       type: 'string',
-      required: true
+      required: false
    }
    eUserEzsignsendreminderfrequency = {
       type: 'enum',

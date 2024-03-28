@@ -27,14 +27,17 @@ import { FieldEWebhookManagementevent } from './field-ewebhook-managementevent';
 import { FieldEWebhookModule } from './field-ewebhook-module';
 // May contain unused imports in some cases
 // @ts-ignore
-import { WebhookResponse } from './webhook-response';
+import { WebhookResponseCompound } from './webhook-response-compound';
+// May contain unused imports in some cases
+// @ts-ignore
+import { WebhookheaderResponseCompound } from './webhookheader-response-compound';
 
 /**
  * @type CustomWebhookResponse
  * A custom Webhook object
  * @export
  */
-/** export type CustomWebhookResponse = WebhookResponse; */
+/** export type CustomWebhookResponse = WebhookResponseCompound; */
 export interface CustomWebhookResponse {
     /**
      * The unique ID of the Webhook
@@ -127,6 +130,18 @@ export interface CustomWebhookResponse {
      */
     objAudit:CommonAudit 
     /**
+     * The concatenated string to describe the Webhook event
+     * @type {string}
+     * @memberof CustomWebhookResponse
+     */
+    sWebhookEvent?:string 
+    /**
+     * 
+     * @type {Array<WebhookheaderResponseCompound>}
+     * @memberof CustomWebhookResponse
+     */
+    a_objWebhookheader?:Array<WebhookheaderResponseCompound> 
+    /**
      * The customer code assigned to your account
      * @type {string}
      * @memberof CustomWebhookResponse
@@ -173,6 +188,8 @@ export class DataObjectCustomWebhookResponse {
     bWebhookIssigned:boolean = false
     bWebhookSkipsslvalidation:boolean = false
     objAudit:CommonAudit = new DataObjectCommonAudit()
+    sWebhookEvent?:string = undefined
+    a_objWebhookheader?:Array<WebhookheaderResponseCompound> = undefined
     pksCustomerCode:string = ''
     bWebhookTest:boolean = false
 }
@@ -194,6 +211,7 @@ export class ValidationObjectCustomWebhookResponse {
    fkiEzsignfoldertypeID = {
       type: 'integer',
       minimum: 0,
+      maximum: 65535,
       required: false
    }
    sEzsignfoldertypeNameX = {
@@ -207,7 +225,7 @@ export class ValidationObjectCustomWebhookResponse {
    }
    eWebhookEzsignevent = {
       type: 'enum',
-      allowableValues: ['DocumentCompleted','EzsignsignerAcceptclause','EzsignsignerConnect','FolderCompleted'],
+      allowableValues: ['DocumentCompleted','DocumentFormCompleted','DocumentUnsent','EzsignsignerAcceptclause','EzsignsignerConnect','FolderCompleted','FolderDisposed','FolderSent','FolderUnsent','SignatureSigned'],
       required: false
    }
    eWebhookManagementevent = {
@@ -244,6 +262,14 @@ export class ValidationObjectCustomWebhookResponse {
       required: true
    }
    objAudit = new ValidationObjectCommonAudit()
+   sWebhookEvent = {
+      type: 'string',
+      required: false
+   }
+   a_objWebhookheader = {
+      type: 'array',
+      required: false
+   }
    pksCustomerCode = {
       type: 'string',
       required: true

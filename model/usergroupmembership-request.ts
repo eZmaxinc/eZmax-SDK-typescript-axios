@@ -37,7 +37,13 @@ export interface UsergroupmembershipRequest {
      * @type {number}
      * @memberof UsergroupmembershipRequest
      */
-    'fkiUserID': number;
+    'fkiUserID'?: number;
+    /**
+     * The unique ID of the Usergroupexternal
+     * @type {number}
+     * @memberof UsergroupmembershipRequest
+     */
+    'fkiUsergroupexternalID'?: number;
 }
 /**
  * @import
@@ -53,7 +59,8 @@ export interface UsergroupmembershipRequest {
 export class DataObjectUsergroupmembershipRequest {
    pkiUsergroupmembershipID?:number = undefined
    fkiUsergroupID:number = 0
-   fkiUserID:number = 0
+   fkiUserID?:number = undefined
+   fkiUsergroupexternalID?:number = undefined
 }
 
 /**
@@ -77,7 +84,13 @@ export class ValidationObjectUsergroupmembershipRequest {
    fkiUserID = {
       type: 'integer',
       minimum: 0,
-      required: true
+      required: false
+   }
+   fkiUsergroupexternalID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 255,
+      required: false
    }
 } 
 

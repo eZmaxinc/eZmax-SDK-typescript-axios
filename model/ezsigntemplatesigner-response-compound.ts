@@ -80,6 +80,7 @@ export class ValidationObjectEzsigntemplatesignerResponseCompound {
    }
    sEzsigntemplatesignerDescription = {
       type: 'string',
+      pattern: '/^.{1,50}$/',
       required: true
    }
 } 

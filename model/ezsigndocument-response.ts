@@ -158,6 +158,12 @@ export interface EzsigndocumentResponse {
      * @memberof EzsigndocumentResponse
      */
     'iEzsigndocumentEzsignsignatureattachmenttotal': number;
+    /**
+     * The total number of Ezsigndiscussions
+     * @type {number}
+     * @memberof EzsigndocumentResponse
+     */
+    'iEzsigndocumentEzsigndiscussiontotal': number;
 }
 
 
@@ -199,6 +205,7 @@ export class DataObjectEzsigndocumentResponse {
    objAudit?:CommonAudit = undefined
    sEzsigndocumentExternalid?:string = undefined
    iEzsigndocumentEzsignsignatureattachmenttotal:number = 0
+   iEzsigndocumentEzsigndiscussiontotal:number = 0
 }
 
 /**
@@ -302,6 +309,10 @@ export class ValidationObjectEzsigndocumentResponse {
    iEzsigndocumentEzsignsignatureattachmenttotal = {
       type: 'integer',
       minimum: 0,
+      required: true
+   }
+   iEzsigndocumentEzsigndiscussiontotal = {
+      type: 'integer',
       required: true
    }
 } 

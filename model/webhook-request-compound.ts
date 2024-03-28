@@ -25,6 +25,9 @@ import { FieldEWebhookModule } from './field-ewebhook-module';
 // May contain unused imports in some cases
 // @ts-ignore
 import { WebhookRequest } from './webhook-request';
+// May contain unused imports in some cases
+// @ts-ignore
+import { WebhookheaderRequestCompound } from './webhookheader-request-compound';
 
 /**
  * @type WebhookRequestCompound
@@ -99,6 +102,12 @@ export interface WebhookRequestCompound {
      * @memberof WebhookRequestCompound
      */
     bWebhookSkipsslvalidation:boolean 
+    /**
+     * 
+     * @type {Array<WebhookheaderRequestCompound>}
+     * @memberof WebhookRequestCompound
+     */
+    a_objWebhookheader?:Array<WebhookheaderRequestCompound> 
 }
 
 
@@ -126,6 +135,7 @@ export class DataObjectWebhookRequestCompound {
     bWebhookIsactive:boolean = false
     bWebhookIssigned?:boolean = undefined
     bWebhookSkipsslvalidation:boolean = false
+    a_objWebhookheader?:Array<WebhookheaderRequestCompound> = undefined
 }
 
 /**
@@ -141,6 +151,7 @@ export class ValidationObjectWebhookRequestCompound {
    fkiEzsignfoldertypeID = {
       type: 'integer',
       minimum: 0,
+      maximum: 65535,
       required: false
    }
    sWebhookDescription = {
@@ -154,7 +165,7 @@ export class ValidationObjectWebhookRequestCompound {
    }
    eWebhookEzsignevent = {
       type: 'enum',
-      allowableValues: ['DocumentCompleted','EzsignsignerAcceptclause','EzsignsignerConnect','FolderCompleted'],
+      allowableValues: ['DocumentCompleted','DocumentFormCompleted','DocumentUnsent','EzsignsignerAcceptclause','EzsignsignerConnect','FolderCompleted','FolderDisposed','FolderSent','FolderUnsent','SignatureSigned'],
       required: false
    }
    eWebhookManagementevent = {
@@ -181,6 +192,10 @@ export class ValidationObjectWebhookRequestCompound {
    bWebhookSkipsslvalidation = {
       type: 'boolean',
       required: true
+   }
+   a_objWebhookheader = {
+      type: 'array',
+      required: false
    }
 } 
 

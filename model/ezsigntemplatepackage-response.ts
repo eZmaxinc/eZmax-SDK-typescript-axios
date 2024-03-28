@@ -74,6 +74,12 @@ export interface EzsigntemplatepackageResponse {
      * @memberof EzsigntemplatepackageResponse
      */
     'sEzsignfoldertypeNameX': string;
+    /**
+     * Whether the Ezsigntemplatepackage if allowed to edit or not
+     * @type {boolean}
+     * @memberof EzsigntemplatepackageResponse
+     */
+    'bEzsigntemplatepackageEditallowed': boolean;
 }
 /**
  * @import
@@ -96,6 +102,7 @@ export class DataObjectEzsigntemplatepackageResponse {
    bEzsigntemplatepackageNeedvalidation:boolean = false
    bEzsigntemplatepackageIsactive:boolean = false
    sEzsignfoldertypeNameX:string = ''
+   bEzsigntemplatepackageEditallowed:boolean = false
 }
 
 /**
@@ -112,6 +119,7 @@ export class ValidationObjectEzsigntemplatepackageResponse {
    fkiEzsignfoldertypeID = {
       type: 'integer',
       minimum: 0,
+      maximum: 65535,
       required: true
    }
    fkiLanguageID = {
@@ -142,6 +150,10 @@ export class ValidationObjectEzsigntemplatepackageResponse {
    }
    sEzsignfoldertypeNameX = {
       type: 'string',
+      required: true
+   }
+   bEzsigntemplatepackageEditallowed = {
+      type: 'boolean',
       required: true
    }
 } 

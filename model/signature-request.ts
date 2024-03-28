@@ -63,7 +63,7 @@ export class ValidationObjectSignatureRequest {
    }
    tSignatureSvg = {
       type: 'string',
-      pattern: '/^.{0,65535}$/',
+      pattern: '/^.{60,65535}$/',
       required: true
    }
 } 

@@ -18,6 +18,9 @@
 import { FieldEBrandingLogo } from './field-ebranding-logo';
 // May contain unused imports in some cases
 // @ts-ignore
+import { FieldEBrandingLogointerface } from './field-ebranding-logointerface';
+// May contain unused imports in some cases
+// @ts-ignore
 import { MultilingualBrandingDescription } from './multilingual-branding-description';
 
 /**
@@ -50,6 +53,18 @@ export interface BrandingRequest {
      * @memberof BrandingRequest
      */
     'sBrandingBase64'?: string;
+    /**
+     * 
+     * @type {FieldEBrandingLogointerface}
+     * @memberof BrandingRequest
+     */
+    'eBrandingLogointerface'?: FieldEBrandingLogointerface;
+    /**
+     * The Base64 encoded binary content of the branding logo. This need to match image type selected in eBrandingLogointerface if you supply an image. If you select \'Default\', the logo will be deleted and the default one will be used.
+     * @type {string}
+     * @memberof BrandingRequest
+     */
+    'sBrandingLogointerfaceBase64'?: string;
     /**
      * The color of the text. This is a RGB color converted into integer
      * @type {number}
@@ -86,6 +101,12 @@ export interface BrandingRequest {
      * @memberof BrandingRequest
      */
     'iBrandingColorbackgroundsmallbox': number;
+    /**
+     * The color of the interface. This is a RGB color converted into integer
+     * @type {number}
+     * @memberof BrandingRequest
+     */
+    'iBrandingInterfacecolor'?: number;
     /**
      * The name of the Branding  This value will only be set if you wish to overwrite the default name. If you want to keep the default name, leave this property empty
      * @type {string}
@@ -127,12 +148,15 @@ export class DataObjectBrandingRequest {
    objBrandingDescription:MultilingualBrandingDescription = new DataObjectMultilingualBrandingDescription()
    eBrandingLogo:FieldEBrandingLogo = 'Default'
    sBrandingBase64?:string = undefined
+   eBrandingLogointerface?:FieldEBrandingLogointerface = undefined
+   sBrandingLogointerfaceBase64?:string = undefined
    iBrandingColortext:number = 0
    iBrandingColortextlinkbox:number = 0
    iBrandingColortextbutton:number = 0
    iBrandingColorbackground:number = 0
    iBrandingColorbackgroundbutton:number = 0
    iBrandingColorbackgroundsmallbox:number = 0
+   iBrandingInterfacecolor?:number = undefined
    sBrandingName?:string = undefined
    sEmailAddress?:string = undefined
    bBrandingIsactive:boolean = false
@@ -156,6 +180,15 @@ export class ValidationObjectBrandingRequest {
       required: true
    }
    sBrandingBase64 = {
+      type: 'string',
+      required: false
+   }
+   eBrandingLogointerface = {
+      type: 'enum',
+      allowableValues: ['Default','JPEG','PNG'],
+      required: false
+   }
+   sBrandingLogointerfaceBase64 = {
       type: 'string',
       required: false
    }
@@ -194,6 +227,12 @@ export class ValidationObjectBrandingRequest {
       minimum: 0,
       maximum: 16777215,
       required: true
+   }
+   iBrandingInterfacecolor = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 16777215,
+      required: false
    }
    sBrandingName = {
       type: 'string',

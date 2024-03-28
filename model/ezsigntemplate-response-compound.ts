@@ -25,6 +25,9 @@ import { EzsigntemplatedocumentResponse } from './ezsigntemplatedocument-respons
 // May contain unused imports in some cases
 // @ts-ignore
 import { EzsigntemplatesignerResponseCompound } from './ezsigntemplatesigner-response-compound';
+// May contain unused imports in some cases
+// @ts-ignore
+import { FieldEEzsigntemplateType } from './field-eezsigntemplate-type';
 
 /**
  * @type EzsigntemplateResponseCompound
@@ -50,7 +53,7 @@ export interface EzsigntemplateResponseCompound {
      * @type {number}
      * @memberof EzsigntemplateResponseCompound
      */
-    fkiEzsignfoldertypeID:number 
+    fkiEzsignfoldertypeID?:number 
     /**
      * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @type {number}
@@ -70,6 +73,12 @@ export interface EzsigntemplateResponseCompound {
      */
     sEzsigntemplateDescription:string 
     /**
+     * The filename pattern of the Ezsigntemplate
+     * @type {string}
+     * @memberof EzsigntemplateResponseCompound
+     */
+    sEzsigntemplateFilenamepattern?:string 
+    /**
      * Whether the Ezsigntemplate can be accessed by admin users only (eUserType=Normal)
      * @type {boolean}
      * @memberof EzsigntemplateResponseCompound
@@ -80,13 +89,25 @@ export interface EzsigntemplateResponseCompound {
      * @type {string}
      * @memberof EzsigntemplateResponseCompound
      */
-    sEzsignfoldertypeNameX:string 
+    sEzsignfoldertypeNameX?:string 
     /**
      * 
      * @type {CommonAudit}
      * @memberof EzsigntemplateResponseCompound
      */
     objAudit:CommonAudit 
+    /**
+     * Whether the Ezsigntemplate if allowed to edit or not
+     * @type {boolean}
+     * @memberof EzsigntemplateResponseCompound
+     */
+    bEzsigntemplateEditallowed:boolean 
+    /**
+     * 
+     * @type {FieldEEzsigntemplateType}
+     * @memberof EzsigntemplateResponseCompound
+     */
+    eEzsigntemplateType?:FieldEEzsigntemplateType 
     /**
      * 
      * @type {EzsigntemplatedocumentResponse}
@@ -100,6 +121,7 @@ export interface EzsigntemplateResponseCompound {
      */
     a_objEzsigntemplatesigner:Array<EzsigntemplatesignerResponseCompound> 
 }
+
 
 
 /**
@@ -124,13 +146,16 @@ import { ValidationObjectEzsigntemplatedocumentResponse } from './'
 export class DataObjectEzsigntemplateResponseCompound {
     pkiEzsigntemplateID:number = 0
     fkiEzsigntemplatedocumentID?:number = undefined
-    fkiEzsignfoldertypeID:number = 0
+    fkiEzsignfoldertypeID?:number = undefined
     fkiLanguageID:number = 0
     sLanguageNameX:string = ''
     sEzsigntemplateDescription:string = ''
+    sEzsigntemplateFilenamepattern?:string = undefined
     bEzsigntemplateAdminonly:boolean = false
-    sEzsignfoldertypeNameX:string = ''
+    sEzsignfoldertypeNameX?:string = undefined
     objAudit:CommonAudit = new DataObjectCommonAudit()
+    bEzsigntemplateEditallowed:boolean = false
+    eEzsigntemplateType?:FieldEEzsigntemplateType = undefined
     objEzsigntemplatedocument?:EzsigntemplatedocumentResponse = undefined
     a_objEzsigntemplatesigner:Array<EzsigntemplatesignerResponseCompound> = []
 }
@@ -154,7 +179,8 @@ export class ValidationObjectEzsigntemplateResponseCompound {
    fkiEzsignfoldertypeID = {
       type: 'integer',
       minimum: 0,
-      required: true
+      maximum: 65535,
+      required: false
    }
    fkiLanguageID = {
       type: 'integer',
@@ -170,15 +196,29 @@ export class ValidationObjectEzsigntemplateResponseCompound {
       type: 'string',
       required: true
    }
+   sEzsigntemplateFilenamepattern = {
+      type: 'string',
+      pattern: '/^.{1,50}$/',
+      required: false
+   }
    bEzsigntemplateAdminonly = {
       type: 'boolean',
       required: true
    }
    sEzsignfoldertypeNameX = {
       type: 'string',
-      required: true
+      required: false
    }
    objAudit = new ValidationObjectCommonAudit()
+   bEzsigntemplateEditallowed = {
+      type: 'boolean',
+      required: true
+   }
+   eEzsigntemplateType = {
+      type: 'enum',
+      allowableValues: ['User','Usergroup','Company'],
+      required: false
+   }
    objEzsigntemplatedocument = new ValidationObjectEzsigntemplatedocumentResponse()
    a_objEzsigntemplatesigner = {
       type: 'array',

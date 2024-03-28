@@ -163,6 +163,7 @@ export class ValidationObjectEzsignbulksendResponseCompound {
    fkiEzsignfoldertypeID = {
       type: 'integer',
       minimum: 0,
+      maximum: 65535,
       required: true
    }
    fkiLanguageID = {

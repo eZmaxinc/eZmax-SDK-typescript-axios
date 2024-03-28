@@ -62,7 +62,7 @@ export interface EzsignfolderResponseCompound {
      * @type {FieldEEzsignfolderCompletion}
      * @memberof EzsignfolderResponseCompound
      */
-    eEzsignfolderCompletion?:FieldEEzsignfolderCompletion 
+    eEzsignfolderCompletion:FieldEEzsignfolderCompletion 
     /**
      * 
      * @type {string}
@@ -205,7 +205,7 @@ export class DataObjectEzsignfolderResponseCompound {
     pkiEzsignfolderID:number = 0
     fkiEzsignfoldertypeID?:number = undefined
     objEzsignfoldertype?:CustomEzsignfoldertypeResponse = undefined
-    eEzsignfolderCompletion?:FieldEEzsignfolderCompletion = undefined
+    eEzsignfolderCompletion:FieldEEzsignfolderCompletion = 'PerEzsigndocument'
     sEzsignfoldertypeNameX?:string = undefined
     fkiBillingentityinternalID?:number = undefined
     sBillingentityinternalDescriptionX?:string = undefined
@@ -241,13 +241,14 @@ export class ValidationObjectEzsignfolderResponseCompound {
    fkiEzsignfoldertypeID = {
       type: 'integer',
       minimum: 0,
+      maximum: 65535,
       required: false
    }
    objEzsignfoldertype = new ValidationObjectCustomEzsignfoldertypeResponse()
    eEzsignfolderCompletion = {
       type: 'enum',
       allowableValues: ['PerEzsigndocument','PerEzsignfolder'],
-      required: false
+      required: true
    }
    sEzsignfoldertypeNameX = {
       type: 'string',

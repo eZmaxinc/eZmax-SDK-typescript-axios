@@ -39,18 +39,6 @@ export interface CustomEzsignfoldertypeResponse {
      */
     'bEzsignfoldertypeSendproofezsignsigner'?: boolean;
     /**
-     * THIS FIELD WILL BE DELETED. Whether we include the proof with the signed Ezsigndocument for Ezsignsigners
-     * @type {boolean}
-     * @memberof CustomEzsignfoldertypeResponse
-     */
-    'bEzsignfoldertypeIncludeproofsigner'?: boolean;
-    /**
-     * Whether we include the proof with the signed Ezsigndocument for users
-     * @type {boolean}
-     * @memberof CustomEzsignfoldertypeResponse
-     */
-    'bEzsignfoldertypeIncludeproofuser'?: boolean;
-    /**
      * Whether we allow the Ezsigndocument to be downloaded by an Ezsignsigner
      * @type {boolean}
      * @memberof CustomEzsignfoldertypeResponse
@@ -69,11 +57,11 @@ export interface CustomEzsignfoldertypeResponse {
      */
     'bEzsignfoldertypeDelegate'?: boolean;
     /**
-     * Wheter if Reassignment of signature is allowed to another signatory or not
+     * Wheter if creating a new Discussion is allowed or not
      * @type {boolean}
      * @memberof CustomEzsignfoldertypeResponse
      */
-    'bEzsignfoldertypeReassign'?: boolean;
+    'bEzsignfoldertypeDiscussion'?: boolean;
     /**
      * Wheter if Reassignment of signature is allowed by a signatory to another signatory or not
      * @type {boolean}
@@ -102,12 +90,10 @@ export class DataObjectCustomEzsignfoldertypeResponse {
    pkiEzsignfoldertypeID:number = 0
    sEzsignfoldertypeNameX?:string = undefined
    bEzsignfoldertypeSendproofezsignsigner?:boolean = undefined
-   bEzsignfoldertypeIncludeproofsigner?:boolean = undefined
-   bEzsignfoldertypeIncludeproofuser?:boolean = undefined
    bEzsignfoldertypeAllowdownloadattachmentezsignsigner?:boolean = undefined
    bEzsignfoldertypeAllowdownloadproofezsignsigner?:boolean = undefined
    bEzsignfoldertypeDelegate?:boolean = undefined
-   bEzsignfoldertypeReassign?:boolean = undefined
+   bEzsignfoldertypeDiscussion?:boolean = undefined
    bEzsignfoldertypeReassignezsignsigner?:boolean = undefined
    bEzsignfoldertypeReassignuser?:boolean = undefined
 }
@@ -121,6 +107,7 @@ export class ValidationObjectCustomEzsignfoldertypeResponse {
    pkiEzsignfoldertypeID = {
       type: 'integer',
       minimum: 0,
+      maximum: 65535,
       required: true
    }
    sEzsignfoldertypeNameX = {
@@ -128,14 +115,6 @@ export class ValidationObjectCustomEzsignfoldertypeResponse {
       required: false
    }
    bEzsignfoldertypeSendproofezsignsigner = {
-      type: 'boolean',
-      required: false
-   }
-   bEzsignfoldertypeIncludeproofsigner = {
-      type: 'boolean',
-      required: false
-   }
-   bEzsignfoldertypeIncludeproofuser = {
       type: 'boolean',
       required: false
    }
@@ -151,7 +130,7 @@ export class ValidationObjectCustomEzsignfoldertypeResponse {
       type: 'boolean',
       required: false
    }
-   bEzsignfoldertypeReassign = {
+   bEzsignfoldertypeDiscussion = {
       type: 'boolean',
       required: false
    }

@@ -110,6 +110,30 @@ export interface EzsignfolderListElement {
      * @memberof EzsignfolderListElement
      */
     'iEzsignsignatureSigned': number;
+    /**
+     * The total number of Ezsignformfieldgroup in all Ezsigndocuments in the folder
+     * @type {number}
+     * @memberof EzsignfolderListElement
+     */
+    'iEzsignformfieldgroup': number;
+    /**
+     * The total number of completed Ezsignformfieldgroup in all Ezsigndocuments in the folder
+     * @type {number}
+     * @memberof EzsignfolderListElement
+     */
+    'iEzsignformfieldgroupCompleted': number;
+    /**
+     * Whether the Ezsignform/Ezsignsignatures has dependencies or not
+     * @type {boolean}
+     * @memberof EzsignfolderListElement
+     */
+    'bEzsignformHasdependencies'?: boolean;
+    /**
+     * Whether the Ezsignform/Ezsignsignatures has dependencies or not
+     * @type {string}
+     * @memberof EzsignfolderListElement
+     */
+    'dEzsignfolderCompletedpercentage': string;
 }
 
 
@@ -139,6 +163,10 @@ export class DataObjectEzsignfolderListElement {
    iEzsigndocumentEdm:number = 0
    iEzsignsignature:number = 0
    iEzsignsignatureSigned:number = 0
+   iEzsignformfieldgroup:number = 0
+   iEzsignformfieldgroupCompleted:number = 0
+   bEzsignformHasdependencies?:boolean = undefined
+   dEzsignfolderCompletedpercentage:string = ''
 }
 
 /**
@@ -155,6 +183,7 @@ export class ValidationObjectEzsignfolderListElement {
    fkiEzsignfoldertypeID = {
       type: 'integer',
       minimum: 0,
+      maximum: 65535,
       required: true
    }
    eEzsignfoldertypePrivacylevel = {
@@ -205,6 +234,23 @@ export class ValidationObjectEzsignfolderListElement {
    }
    iEzsignsignatureSigned = {
       type: 'integer',
+      required: true
+   }
+   iEzsignformfieldgroup = {
+      type: 'integer',
+      required: true
+   }
+   iEzsignformfieldgroupCompleted = {
+      type: 'integer',
+      required: true
+   }
+   bEzsignformHasdependencies = {
+      type: 'boolean',
+      required: false
+   }
+   dEzsignfolderCompletedpercentage = {
+      type: 'string',
+      pattern: '/^-{0,1}[\d]{1,3}?\.[\d]{2}$/',
       required: true
    }
 } 

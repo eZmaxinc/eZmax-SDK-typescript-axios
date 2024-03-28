@@ -149,7 +149,7 @@ export class ValidationObjectWebhookListElement {
    }
    eWebhookEzsignevent = {
       type: 'enum',
-      allowableValues: ['DocumentCompleted','EzsignsignerAcceptclause','EzsignsignerConnect','FolderCompleted'],
+      allowableValues: ['DocumentCompleted','DocumentFormCompleted','DocumentUnsent','EzsignsignerAcceptclause','EzsignsignerConnect','FolderCompleted','FolderDisposed','FolderSent','FolderUnsent','SignatureSigned'],
       required: false
    }
    eWebhookManagementevent = {

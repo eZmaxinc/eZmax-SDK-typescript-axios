@@ -30,6 +30,10 @@ import { UserCreateObjectV1Request } from '../model';
 // @ts-ignore
 import { UserCreateObjectV1Response } from '../model';
 // @ts-ignore
+import { UserCreateObjectV2Request } from '../model';
+// @ts-ignore
+import { UserCreateObjectV2Response } from '../model';
+// @ts-ignore
 import { UserEditObjectV1Request } from '../model';
 // @ts-ignore
 import { UserEditObjectV1Response } from '../model';
@@ -51,6 +55,10 @@ import { UserGetObjectV2Response } from '../model';
 import { UserGetPermissionsV1Response } from '../model';
 // @ts-ignore
 import { UserGetSubnetsV1Response } from '../model';
+// @ts-ignore
+import { UserGetUsergroupexternalsV1Response } from '../model';
+// @ts-ignore
+import { UserGetUsergroupsV1Response } from '../model';
 // @ts-ignore
 import { UserSendPasswordResetV1Response } from '../model';
 // @ts-ignore
@@ -97,6 +105,64 @@ export const ObjectUserApiAxiosParamCreator = function (configuration?: Configur
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(userCreateObjectV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * The endpoint allows to create one or many elements at once.
+         * @summary Create a new User
+         * @param {UserCreateObjectV2Request} userCreateObjectV2Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        userCreateObjectV2: async (userCreateObjectV2Request: UserCreateObjectV2Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'userCreateObjectV2Request' is not null or undefined
+            assertParamExists('userCreateObjectV2', 'userCreateObjectV2Request', userCreateObjectV2Request)
+            const localVarPath = `/2/object/user`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(userCreateObjectV2Request, localVarRequestOptions, configuration)
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -676,6 +742,118 @@ export const ObjectUserApiAxiosParamCreator = function (configuration?: Configur
             };
         },
         /**
+         * 
+         * @summary Get User\'s Usergroupexternals
+         * @param {number} pkiUserID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        userGetUsergroupexternalsV1: async (pkiUserID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiUserID' is not null or undefined
+            assertParamExists('userGetUsergroupexternalsV1', 'pkiUserID', pkiUserID)
+            const localVarPath = `/1/object/user/{pkiUserID}/getUsergroupexternals`
+                .replace(`{${"pkiUserID"}}`, encodeURIComponent(String(pkiUserID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Get User\'s Usergroups
+         * @param {number} pkiUserID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        userGetUsergroupsV1: async (pkiUserID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiUserID' is not null or undefined
+            assertParamExists('userGetUsergroupsV1', 'pkiUserID', pkiUserID)
+            const localVarPath = `/1/object/user/{pkiUserID}/getUsergroups`
+                .replace(`{${"pkiUserID"}}`, encodeURIComponent(String(pkiUserID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Send the password reset email
          * @summary Send password reset
          * @param {number} pkiUserID 
@@ -756,6 +934,17 @@ export const ObjectUserApiFp = function(configuration?: Configuration) {
          */
         async userCreateObjectV1(userCreateObjectV1Request: UserCreateObjectV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserCreateObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.userCreateObjectV1(userCreateObjectV1Request, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * The endpoint allows to create one or many elements at once.
+         * @summary Create a new User
+         * @param {UserCreateObjectV2Request} userCreateObjectV2Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async userCreateObjectV2(userCreateObjectV2Request: UserCreateObjectV2Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserCreateObjectV2Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.userCreateObjectV2(userCreateObjectV2Request, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -867,6 +1056,28 @@ export const ObjectUserApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
+         * 
+         * @summary Get User\'s Usergroupexternals
+         * @param {number} pkiUserID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async userGetUsergroupexternalsV1(pkiUserID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserGetUsergroupexternalsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.userGetUsergroupexternalsV1(pkiUserID, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * 
+         * @summary Get User\'s Usergroups
+         * @param {number} pkiUserID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async userGetUsergroupsV1(pkiUserID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserGetUsergroupsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.userGetUsergroupsV1(pkiUserID, options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
          * Send the password reset email
          * @summary Send password reset
          * @param {number} pkiUserID 
@@ -897,6 +1108,16 @@ export const ObjectUserApiFactory = function (configuration?: Configuration, bas
          */
         userCreateObjectV1(userCreateObjectV1Request: UserCreateObjectV1Request, options?: any): AxiosPromise<UserCreateObjectV1Response> {
             return localVarFp.userCreateObjectV1(userCreateObjectV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * The endpoint allows to create one or many elements at once.
+         * @summary Create a new User
+         * @param {UserCreateObjectV2Request} userCreateObjectV2Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        userCreateObjectV2(userCreateObjectV2Request: UserCreateObjectV2Request, options?: any): AxiosPromise<UserCreateObjectV2Response> {
+            return localVarFp.userCreateObjectV2(userCreateObjectV2Request, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -998,6 +1219,26 @@ export const ObjectUserApiFactory = function (configuration?: Configuration, bas
             return localVarFp.userGetSubnetsV1(pkiUserID, options).then((request) => request(axios, basePath));
         },
         /**
+         * 
+         * @summary Get User\'s Usergroupexternals
+         * @param {number} pkiUserID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        userGetUsergroupexternalsV1(pkiUserID: number, options?: any): AxiosPromise<UserGetUsergroupexternalsV1Response> {
+            return localVarFp.userGetUsergroupexternalsV1(pkiUserID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Get User\'s Usergroups
+         * @param {number} pkiUserID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        userGetUsergroupsV1(pkiUserID: number, options?: any): AxiosPromise<UserGetUsergroupsV1Response> {
+            return localVarFp.userGetUsergroupsV1(pkiUserID, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Send the password reset email
          * @summary Send password reset
          * @param {number} pkiUserID 
@@ -1028,6 +1269,18 @@ export class ObjectUserApi extends BaseAPI {
      */
     public userCreateObjectV1(userCreateObjectV1Request: UserCreateObjectV1Request, options?: AxiosRequestConfig) {
         return ObjectUserApiFp(this.configuration).userCreateObjectV1(userCreateObjectV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * The endpoint allows to create one or many elements at once.
+     * @summary Create a new User
+     * @param {UserCreateObjectV2Request} userCreateObjectV2Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectUserApi
+     */
+    public userCreateObjectV2(userCreateObjectV2Request: UserCreateObjectV2Request, options?: AxiosRequestConfig) {
+        return ObjectUserApiFp(this.configuration).userCreateObjectV2(userCreateObjectV2Request, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1145,6 +1398,30 @@ export class ObjectUserApi extends BaseAPI {
      */
     public userGetSubnetsV1(pkiUserID: number, options?: AxiosRequestConfig) {
         return ObjectUserApiFp(this.configuration).userGetSubnetsV1(pkiUserID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Get User\'s Usergroupexternals
+     * @param {number} pkiUserID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectUserApi
+     */
+    public userGetUsergroupexternalsV1(pkiUserID: number, options?: AxiosRequestConfig) {
+        return ObjectUserApiFp(this.configuration).userGetUsergroupexternalsV1(pkiUserID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Get User\'s Usergroups
+     * @param {number} pkiUserID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectUserApi
+     */
+    public userGetUsergroupsV1(pkiUserID: number, options?: AxiosRequestConfig) {
+        return ObjectUserApiFp(this.configuration).userGetUsergroupsV1(pkiUserID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

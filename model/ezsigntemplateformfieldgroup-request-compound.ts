@@ -67,8 +67,9 @@ export interface EzsigntemplateformfieldgroupRequestCompound {
      * 
      * @type {FieldEEzsigntemplateformfieldgroupSignerrequirement}
      * @memberof EzsigntemplateformfieldgroupRequestCompound
+     * @deprecated
      */
-    eEzsigntemplateformfieldgroupSignerrequirement:FieldEEzsigntemplateformfieldgroupSignerrequirement 
+    eEzsigntemplateformfieldgroupSignerrequirement?:FieldEEzsigntemplateformfieldgroupSignerrequirement 
     /**
      * The Label for the Ezsigntemplateformfieldgroup
      * @type {string}
@@ -82,7 +83,7 @@ export interface EzsigntemplateformfieldgroupRequestCompound {
      */
     iEzsigntemplateformfieldgroupStep:number 
     /**
-     * The default value for the Ezsigntemplateformfieldgroup
+     * The default value for the Ezsigntemplateformfieldgroup  You can use the codes below and they will be replaced at signature time.    | Code | Description | Example | | ------------------------- | ------------ | ------------ | | {sUserFirstname} | The first name of the contact | John | | {sUserLastname} | The last name of the contact | Doe | | {sUserJobtitle} | The job title | Sales Representative | | {sEmailAddress} | The email address | email@example.com | | {sPhoneE164} | A phone number in E.164 Format | +15149901516 | | {sPhoneE164Cell} | A phone number in E.164 Format | +15149901516 |
      * @type {string}
      * @memberof EzsigntemplateformfieldgroupRequestCompound
      */
@@ -178,7 +179,7 @@ export class DataObjectEzsigntemplateformfieldgroupRequestCompound {
     pkiEzsigntemplateformfieldgroupID?:number = undefined
     fkiEzsigntemplatedocumentID:number = 0
     eEzsigntemplateformfieldgroupType:FieldEEzsigntemplateformfieldgroupType = 'Text'
-    eEzsigntemplateformfieldgroupSignerrequirement:FieldEEzsigntemplateformfieldgroupSignerrequirement = 'All'
+    eEzsigntemplateformfieldgroupSignerrequirement?:FieldEEzsigntemplateformfieldgroupSignerrequirement = undefined
     sEzsigntemplateformfieldgroupLabel:string = ''
     iEzsigntemplateformfieldgroupStep:number = 0
     sEzsigntemplateformfieldgroupDefaultvalue:string = ''
@@ -220,7 +221,7 @@ export class ValidationObjectEzsigntemplateformfieldgroupRequestCompound {
    eEzsigntemplateformfieldgroupSignerrequirement = {
       type: 'enum',
       allowableValues: ['All','One'],
-      required: true
+      required: false
    }
    sEzsigntemplateformfieldgroupLabel = {
       type: 'string',

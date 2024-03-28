@@ -18,6 +18,9 @@
 import { FieldESystemconfigurationEzsign } from './field-esystemconfiguration-ezsign';
 // May contain unused imports in some cases
 // @ts-ignore
+import { FieldESystemconfigurationEzsignofficeplan } from './field-esystemconfiguration-ezsignofficeplan';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FieldESystemconfigurationLanguage1 } from './field-esystemconfiguration-language1';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -64,8 +67,21 @@ export interface SystemconfigurationRequestCompound {
      * 
      * @type {FieldESystemconfigurationEzsign}
      * @memberof SystemconfigurationRequestCompound
+     * @deprecated
      */
     eSystemconfigurationEzsign?:FieldESystemconfigurationEzsign 
+    /**
+     * 
+     * @type {FieldESystemconfigurationEzsignofficeplan}
+     * @memberof SystemconfigurationRequestCompound
+     */
+    eSystemconfigurationEzsignofficeplan?:FieldESystemconfigurationEzsignofficeplan 
+    /**
+     * Whether if Ezsign is paid by the company or not
+     * @type {boolean}
+     * @memberof SystemconfigurationRequestCompound
+     */
+    bSystemconfigurationEzsignpaidbyoffice?:boolean 
     /**
      * Whether if we allow the creation of personal files in eZsign
      * @type {boolean}
@@ -111,6 +127,8 @@ export class DataObjectSystemconfigurationRequestCompound {
     eSystemconfigurationLanguage1:FieldESystemconfigurationLanguage1 = 'fr_QC'
     eSystemconfigurationLanguage2:FieldESystemconfigurationLanguage2 = 'en_CA'
     eSystemconfigurationEzsign?:FieldESystemconfigurationEzsign = undefined
+    eSystemconfigurationEzsignofficeplan?:FieldESystemconfigurationEzsignofficeplan = undefined
+    bSystemconfigurationEzsignpaidbyoffice?:boolean = undefined
     bSystemconfigurationEzsignpersonnal:boolean = false
     bSystemconfigurationSspr:boolean = false
     dtSystemconfigurationReadonlyexpirationstart?:string = undefined
@@ -147,6 +165,15 @@ export class ValidationObjectSystemconfigurationRequestCompound {
    eSystemconfigurationEzsign = {
       type: 'enum',
       allowableValues: ['No','Yes'],
+      required: false
+   }
+   eSystemconfigurationEzsignofficeplan = {
+      type: 'enum',
+      allowableValues: ['Standard','Pro'],
+      required: false
+   }
+   bSystemconfigurationEzsignpaidbyoffice = {
+      type: 'boolean',
       required: false
    }
    bSystemconfigurationEzsignpersonnal = {

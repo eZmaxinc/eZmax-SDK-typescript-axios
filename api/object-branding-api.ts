@@ -241,7 +241,7 @@ export const ObjectBrandingApiAxiosParamCreator = function (configuration?: Conf
             };
         },
         /**
-         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eBrandingLogo | Default<br>JPEG<br>PNG |
+         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eBrandingLogo | Default<br>JPEG<br>PNG | | eBrandingLogointerface | Default<br>JPEG<br>PNG |
          * @summary Retrieve Branding list
          * @param {BrandingGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -423,7 +423,7 @@ export const ObjectBrandingApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eBrandingLogo | Default<br>JPEG<br>PNG |
+         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eBrandingLogo | Default<br>JPEG<br>PNG | | eBrandingLogointerface | Default<br>JPEG<br>PNG |
          * @summary Retrieve Branding list
          * @param {BrandingGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -493,7 +493,7 @@ export const ObjectBrandingApiFactory = function (configuration?: Configuration,
             return localVarFp.brandingGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(axios, basePath));
         },
         /**
-         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eBrandingLogo | Default<br>JPEG<br>PNG |
+         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eBrandingLogo | Default<br>JPEG<br>PNG | | eBrandingLogointerface | Default<br>JPEG<br>PNG |
          * @summary Retrieve Branding list
          * @param {BrandingGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -567,7 +567,7 @@ export class ObjectBrandingApi extends BaseAPI {
     }
 
     /**
-     * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eBrandingLogo | Default<br>JPEG<br>PNG |
+     * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eBrandingLogo | Default<br>JPEG<br>PNG | | eBrandingLogointerface | Default<br>JPEG<br>PNG |
      * @summary Retrieve Branding list
      * @param {BrandingGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
      * @param {number} [iRowMax] 

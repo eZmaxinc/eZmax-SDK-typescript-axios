@@ -22,10 +22,6 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
 // @ts-ignore
-import { FranchisereferalincomeCreateObjectV1Request } from '../model';
-// @ts-ignore
-import { FranchisereferalincomeCreateObjectV1Response } from '../model';
-// @ts-ignore
 import { FranchisereferalincomeCreateObjectV2Request } from '../model';
 // @ts-ignore
 import { FranchisereferalincomeCreateObjectV2Response } from '../model';
@@ -37,65 +33,6 @@ import { RequestSignature, IHeadersData } from '../api/request-signature';
  */
 export const ObjectFranchisereferalincomeApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
-        /**
-         * The endpoint allows to create one or many elements at once.  The array can contain simple (Just the object) or compound (The object and its child) objects.  Creating compound elements allows to reduce the multiple requests to create all child objects.
-         * @summary Create a new Franchisereferalincome
-         * @param {Array<FranchisereferalincomeCreateObjectV1Request>} franchisereferalincomeCreateObjectV1Request 
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        franchisereferalincomeCreateObjectV1: async (franchisereferalincomeCreateObjectV1Request: Array<FranchisereferalincomeCreateObjectV1Request>, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'franchisereferalincomeCreateObjectV1Request' is not null or undefined
-            assertParamExists('franchisereferalincomeCreateObjectV1', 'franchisereferalincomeCreateObjectV1Request', franchisereferalincomeCreateObjectV1Request)
-            const localVarPath = `/1/object/franchisereferalincome`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(franchisereferalincomeCreateObjectV1Request, localVarRequestOptions, configuration)
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'POST' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
         /**
          * The endpoint allows to create one or many elements at once.
          * @summary Create a new Franchisereferalincome
@@ -165,18 +102,6 @@ export const ObjectFranchisereferalincomeApiFp = function(configuration?: Config
     const localVarAxiosParamCreator = ObjectFranchisereferalincomeApiAxiosParamCreator(configuration)
     return {
         /**
-         * The endpoint allows to create one or many elements at once.  The array can contain simple (Just the object) or compound (The object and its child) objects.  Creating compound elements allows to reduce the multiple requests to create all child objects.
-         * @summary Create a new Franchisereferalincome
-         * @param {Array<FranchisereferalincomeCreateObjectV1Request>} franchisereferalincomeCreateObjectV1Request 
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        async franchisereferalincomeCreateObjectV1(franchisereferalincomeCreateObjectV1Request: Array<FranchisereferalincomeCreateObjectV1Request>, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<FranchisereferalincomeCreateObjectV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.franchisereferalincomeCreateObjectV1(franchisereferalincomeCreateObjectV1Request, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
-        },
-        /**
          * The endpoint allows to create one or many elements at once.
          * @summary Create a new Franchisereferalincome
          * @param {FranchisereferalincomeCreateObjectV2Request} franchisereferalincomeCreateObjectV2Request 
@@ -198,17 +123,6 @@ export const ObjectFranchisereferalincomeApiFactory = function (configuration?: 
     const localVarFp = ObjectFranchisereferalincomeApiFp(configuration)
     return {
         /**
-         * The endpoint allows to create one or many elements at once.  The array can contain simple (Just the object) or compound (The object and its child) objects.  Creating compound elements allows to reduce the multiple requests to create all child objects.
-         * @summary Create a new Franchisereferalincome
-         * @param {Array<FranchisereferalincomeCreateObjectV1Request>} franchisereferalincomeCreateObjectV1Request 
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        franchisereferalincomeCreateObjectV1(franchisereferalincomeCreateObjectV1Request: Array<FranchisereferalincomeCreateObjectV1Request>, options?: any): AxiosPromise<FranchisereferalincomeCreateObjectV1Response> {
-            return localVarFp.franchisereferalincomeCreateObjectV1(franchisereferalincomeCreateObjectV1Request, options).then((request) => request(axios, basePath));
-        },
-        /**
          * The endpoint allows to create one or many elements at once.
          * @summary Create a new Franchisereferalincome
          * @param {FranchisereferalincomeCreateObjectV2Request} franchisereferalincomeCreateObjectV2Request 
@@ -228,19 +142,6 @@ export const ObjectFranchisereferalincomeApiFactory = function (configuration?: 
  * @extends {BaseAPI}
  */
 export class ObjectFranchisereferalincomeApi extends BaseAPI {
-    /**
-     * The endpoint allows to create one or many elements at once.  The array can contain simple (Just the object) or compound (The object and its child) objects.  Creating compound elements allows to reduce the multiple requests to create all child objects.
-     * @summary Create a new Franchisereferalincome
-     * @param {Array<FranchisereferalincomeCreateObjectV1Request>} franchisereferalincomeCreateObjectV1Request 
-     * @param {*} [options] Override http request option.
-     * @deprecated
-     * @throws {RequiredError}
-     * @memberof ObjectFranchisereferalincomeApi
-     */
-    public franchisereferalincomeCreateObjectV1(franchisereferalincomeCreateObjectV1Request: Array<FranchisereferalincomeCreateObjectV1Request>, options?: AxiosRequestConfig) {
-        return ObjectFranchisereferalincomeApiFp(this.configuration).franchisereferalincomeCreateObjectV1(franchisereferalincomeCreateObjectV1Request, options).then((request) => request(this.axios, this.basePath));
-    }
-
     /**
      * The endpoint allows to create one or many elements at once.
      * @summary Create a new Franchisereferalincome

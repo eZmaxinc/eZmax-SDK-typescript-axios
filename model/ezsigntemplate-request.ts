@@ -45,6 +45,12 @@ export interface EzsigntemplateRequest {
      */
     'sEzsigntemplateDescription': string;
     /**
+     * The filename pattern of the Ezsigntemplate
+     * @type {string}
+     * @memberof EzsigntemplateRequest
+     */
+    'sEzsigntemplateFilenamepattern'?: string;
+    /**
      * Whether the Ezsigntemplate can be accessed by admin users only (eUserType=Normal)
      * @type {boolean}
      * @memberof EzsigntemplateRequest
@@ -67,6 +73,7 @@ export class DataObjectEzsigntemplateRequest {
    fkiEzsignfoldertypeID:number = 0
    fkiLanguageID:number = 0
    sEzsigntemplateDescription:string = ''
+   sEzsigntemplateFilenamepattern?:string = undefined
    bEzsigntemplateAdminonly:boolean = false
 }
 
@@ -84,6 +91,7 @@ export class ValidationObjectEzsigntemplateRequest {
    fkiEzsignfoldertypeID = {
       type: 'integer',
       minimum: 0,
+      maximum: 65535,
       required: true
    }
    fkiLanguageID = {
@@ -95,6 +103,11 @@ export class ValidationObjectEzsigntemplateRequest {
    sEzsigntemplateDescription = {
       type: 'string',
       required: true
+   }
+   sEzsigntemplateFilenamepattern = {
+      type: 'string',
+      pattern: '/^.{1,50}$/',
+      required: false
    }
    bEzsigntemplateAdminonly = {
       type: 'boolean',

@@ -37,25 +37,31 @@ export interface UsergroupmembershipResponse {
      * @type {number}
      * @memberof UsergroupmembershipResponse
      */
-    'fkiUserID': number;
+    'fkiUserID'?: number;
+    /**
+     * The unique ID of the Usergroupexternal
+     * @type {number}
+     * @memberof UsergroupmembershipResponse
+     */
+    'fkiUsergroupexternalID'?: number;
     /**
      * The first name of the user
      * @type {string}
      * @memberof UsergroupmembershipResponse
      */
-    'sUserFirstname': string;
+    'sUserFirstname'?: string;
     /**
      * The last name of the user
      * @type {string}
      * @memberof UsergroupmembershipResponse
      */
-    'sUserLastname': string;
+    'sUserLastname'?: string;
     /**
      * The login name of the User.
      * @type {string}
      * @memberof UsergroupmembershipResponse
      */
-    'sUserLoginname': string;
+    'sUserLoginname'?: string;
     /**
      * The email address.
      * @type {string}
@@ -68,6 +74,12 @@ export interface UsergroupmembershipResponse {
      * @memberof UsergroupmembershipResponse
      */
     'sUsergroupNameX': string;
+    /**
+     * The name of the Usergroupexternal
+     * @type {string}
+     * @memberof UsergroupmembershipResponse
+     */
+    'sUsergroupexternalName'?: string;
 }
 /**
  * @import
@@ -83,12 +95,14 @@ export interface UsergroupmembershipResponse {
 export class DataObjectUsergroupmembershipResponse {
    pkiUsergroupmembershipID:number = 0
    fkiUsergroupID:number = 0
-   fkiUserID:number = 0
-   sUserFirstname:string = ''
-   sUserLastname:string = ''
-   sUserLoginname:string = ''
+   fkiUserID?:number = undefined
+   fkiUsergroupexternalID?:number = undefined
+   sUserFirstname?:string = undefined
+   sUserLastname?:string = undefined
+   sUserLoginname?:string = undefined
    sEmailAddress?:string = undefined
    sUsergroupNameX:string = ''
+   sUsergroupexternalName?:string = undefined
 }
 
 /**
@@ -112,20 +126,26 @@ export class ValidationObjectUsergroupmembershipResponse {
    fkiUserID = {
       type: 'integer',
       minimum: 0,
-      required: true
+      required: false
+   }
+   fkiUsergroupexternalID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 255,
+      required: false
    }
    sUserFirstname = {
       type: 'string',
-      required: true
+      required: false
    }
    sUserLastname = {
       type: 'string',
-      required: true
+      required: false
    }
    sUserLoginname = {
       type: 'string',
       pattern: '/^(?:([\w\.-]+@[\w\.-]+\.\w{2,20})|([a-zA-Z0-9]){1,32})$/',
-      required: true
+      required: false
    }
    sEmailAddress = {
       type: 'string',
@@ -135,6 +155,11 @@ export class ValidationObjectUsergroupmembershipResponse {
       type: 'string',
       pattern: '/^.{0,50}$/',
       required: true
+   }
+   sUsergroupexternalName = {
+      type: 'string',
+      pattern: '/^.{0,64}$/',
+      required: false
    }
 } 
 

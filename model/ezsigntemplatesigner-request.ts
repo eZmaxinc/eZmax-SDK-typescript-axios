@@ -74,6 +74,7 @@ export class ValidationObjectEzsigntemplatesignerRequest {
    }
    sEzsigntemplatesignerDescription = {
       type: 'string',
+      pattern: '/^.{1,50}$/',
       required: true
    }
 } 

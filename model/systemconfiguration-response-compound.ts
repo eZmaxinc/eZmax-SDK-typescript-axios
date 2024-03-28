@@ -18,6 +18,9 @@
 import { FieldESystemconfigurationEzsign } from './field-esystemconfiguration-ezsign';
 // May contain unused imports in some cases
 // @ts-ignore
+import { FieldESystemconfigurationEzsignofficeplan } from './field-esystemconfiguration-ezsignofficeplan';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FieldESystemconfigurationLanguage1 } from './field-esystemconfiguration-language1';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -76,14 +79,33 @@ export interface SystemconfigurationResponseCompound {
      * 
      * @type {FieldESystemconfigurationEzsign}
      * @memberof SystemconfigurationResponseCompound
+     * @deprecated
      */
-    eSystemconfigurationEzsign:FieldESystemconfigurationEzsign 
+    eSystemconfigurationEzsign?:FieldESystemconfigurationEzsign 
+    /**
+     * 
+     * @type {FieldESystemconfigurationEzsignofficeplan}
+     * @memberof SystemconfigurationResponseCompound
+     */
+    eSystemconfigurationEzsignofficeplan?:FieldESystemconfigurationEzsignofficeplan 
+    /**
+     * Whether if Ezsign is paid by the company or not
+     * @type {boolean}
+     * @memberof SystemconfigurationResponseCompound
+     */
+    bSystemconfigurationEzsignpaidbyoffice?:boolean 
     /**
      * Whether if we allow the creation of personal files in eZsign
      * @type {boolean}
      * @memberof SystemconfigurationResponseCompound
      */
     bSystemconfigurationEzsignpersonnal:boolean 
+    /**
+     * Whether is Disposal processus is active or not
+     * @type {boolean}
+     * @memberof SystemconfigurationResponseCompound
+     */
+    bSystemconfigurationIsdisposalactive?:boolean 
     /**
      * Whether if we allow SSPR
      * @type {boolean}
@@ -124,8 +146,11 @@ export class DataObjectSystemconfigurationResponseCompound {
     eSystemconfigurationNewexternaluseraction:FieldESystemconfigurationNewexternaluseraction = 'Stage'
     eSystemconfigurationLanguage1:FieldESystemconfigurationLanguage1 = 'fr_QC'
     eSystemconfigurationLanguage2:FieldESystemconfigurationLanguage2 = 'en_CA'
-    eSystemconfigurationEzsign:FieldESystemconfigurationEzsign = 'No'
+    eSystemconfigurationEzsign?:FieldESystemconfigurationEzsign = undefined
+    eSystemconfigurationEzsignofficeplan?:FieldESystemconfigurationEzsignofficeplan = undefined
+    bSystemconfigurationEzsignpaidbyoffice?:boolean = undefined
     bSystemconfigurationEzsignpersonnal:boolean = false
+    bSystemconfigurationIsdisposalactive?:boolean = undefined
     bSystemconfigurationSspr:boolean = false
     dtSystemconfigurationReadonlyexpirationstart?:string = undefined
     dtSystemconfigurationReadonlyexpirationend?:string = undefined
@@ -170,11 +195,24 @@ export class ValidationObjectSystemconfigurationResponseCompound {
    eSystemconfigurationEzsign = {
       type: 'enum',
       allowableValues: ['No','Yes'],
-      required: true
+      required: false
+   }
+   eSystemconfigurationEzsignofficeplan = {
+      type: 'enum',
+      allowableValues: ['Standard','Pro'],
+      required: false
+   }
+   bSystemconfigurationEzsignpaidbyoffice = {
+      type: 'boolean',
+      required: false
    }
    bSystemconfigurationEzsignpersonnal = {
       type: 'boolean',
       required: true
+   }
+   bSystemconfigurationIsdisposalactive = {
+      type: 'boolean',
+      required: false
    }
    bSystemconfigurationSspr = {
       type: 'boolean',

@@ -18,6 +18,9 @@
 import { EzsigntemplateResponseCompound } from './ezsigntemplate-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
+import { EzsigntemplateglobalResponseCompound } from './ezsigntemplateglobal-response-compound';
+// May contain unused imports in some cases
+// @ts-ignore
 import { EzsigntemplatepackageResponseCompound } from './ezsigntemplatepackage-response-compound';
 
 /**
@@ -38,6 +41,12 @@ export interface EzsignSuggestTemplatesV1ResponseMPayload {
      * @memberof EzsignSuggestTemplatesV1ResponseMPayload
      */
     'a_objEzsigntemplatepackage': Array<EzsigntemplatepackageResponseCompound>;
+    /**
+     * 
+     * @type {Array<EzsigntemplateglobalResponseCompound>}
+     * @memberof EzsignSuggestTemplatesV1ResponseMPayload
+     */
+    'a_objEzsigntemplateglobal': Array<EzsigntemplateglobalResponseCompound>;
 }
 /**
  * @import
@@ -53,6 +62,7 @@ export interface EzsignSuggestTemplatesV1ResponseMPayload {
 export class DataObjectEzsignSuggestTemplatesV1ResponseMPayload {
    a_objEzsigntemplate:Array<EzsigntemplateResponseCompound> = []
    a_objEzsigntemplatepackage:Array<EzsigntemplatepackageResponseCompound> = []
+   a_objEzsigntemplateglobal:Array<EzsigntemplateglobalResponseCompound> = []
 }
 
 /**
@@ -66,6 +76,10 @@ export class ValidationObjectEzsignSuggestTemplatesV1ResponseMPayload {
       required: true
    }
    a_objEzsigntemplatepackage = {
+      type: 'array',
+      required: true
+   }
+   a_objEzsigntemplateglobal = {
       type: 'array',
       required: true
    }

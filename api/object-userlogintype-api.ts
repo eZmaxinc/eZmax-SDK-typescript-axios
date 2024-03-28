@@ -37,13 +37,14 @@ export const ObjectUserlogintypeApiAxiosParamCreator = function (configuration?:
          * Get the list of Userlogintype to be used in a dropdown or autocomplete control.
          * @summary Retrieve Userlogintypes and IDs
          * @param {UserlogintypeGetAutocompleteV2SSelectorEnum} sSelector The type of Userlogintypes to return
+         * @param {number} [fkiEzsignfoldertypeID] 
          * @param {UserlogintypeGetAutocompleteV2EFilterActiveEnum} [eFilterActive] Specify which results we want to display.
          * @param {string} [sQuery] Allow to filter the returned results
          * @param {HeaderAcceptLanguage} [acceptLanguage] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userlogintypeGetAutocompleteV2: async (sSelector: UserlogintypeGetAutocompleteV2SSelectorEnum, eFilterActive?: UserlogintypeGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        userlogintypeGetAutocompleteV2: async (sSelector: UserlogintypeGetAutocompleteV2SSelectorEnum, fkiEzsignfoldertypeID?: number, eFilterActive?: UserlogintypeGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('userlogintypeGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/userlogintype/getAutocomplete/{sSelector}`
@@ -64,6 +65,10 @@ export const ObjectUserlogintypeApiAxiosParamCreator = function (configuration?:
 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            if (fkiEzsignfoldertypeID !== undefined) {
+                localVarQueryParameter['fkiEzsignfoldertypeID'] = fkiEzsignfoldertypeID;
+            }
 
             if (eFilterActive !== undefined) {
                 localVarQueryParameter['eFilterActive'] = eFilterActive;
@@ -120,14 +125,15 @@ export const ObjectUserlogintypeApiFp = function(configuration?: Configuration) 
          * Get the list of Userlogintype to be used in a dropdown or autocomplete control.
          * @summary Retrieve Userlogintypes and IDs
          * @param {UserlogintypeGetAutocompleteV2SSelectorEnum} sSelector The type of Userlogintypes to return
+         * @param {number} [fkiEzsignfoldertypeID] 
          * @param {UserlogintypeGetAutocompleteV2EFilterActiveEnum} [eFilterActive] Specify which results we want to display.
          * @param {string} [sQuery] Allow to filter the returned results
          * @param {HeaderAcceptLanguage} [acceptLanguage] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async userlogintypeGetAutocompleteV2(sSelector: UserlogintypeGetAutocompleteV2SSelectorEnum, eFilterActive?: UserlogintypeGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserlogintypeGetAutocompleteV2Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.userlogintypeGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options);
+        async userlogintypeGetAutocompleteV2(sSelector: UserlogintypeGetAutocompleteV2SSelectorEnum, fkiEzsignfoldertypeID?: number, eFilterActive?: UserlogintypeGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserlogintypeGetAutocompleteV2Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.userlogintypeGetAutocompleteV2(sSelector, fkiEzsignfoldertypeID, eFilterActive, sQuery, acceptLanguage, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -144,14 +150,15 @@ export const ObjectUserlogintypeApiFactory = function (configuration?: Configura
          * Get the list of Userlogintype to be used in a dropdown or autocomplete control.
          * @summary Retrieve Userlogintypes and IDs
          * @param {UserlogintypeGetAutocompleteV2SSelectorEnum} sSelector The type of Userlogintypes to return
+         * @param {number} [fkiEzsignfoldertypeID] 
          * @param {UserlogintypeGetAutocompleteV2EFilterActiveEnum} [eFilterActive] Specify which results we want to display.
          * @param {string} [sQuery] Allow to filter the returned results
          * @param {HeaderAcceptLanguage} [acceptLanguage] 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userlogintypeGetAutocompleteV2(sSelector: UserlogintypeGetAutocompleteV2SSelectorEnum, eFilterActive?: UserlogintypeGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: any): AxiosPromise<UserlogintypeGetAutocompleteV2Response> {
-            return localVarFp.userlogintypeGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(axios, basePath));
+        userlogintypeGetAutocompleteV2(sSelector: UserlogintypeGetAutocompleteV2SSelectorEnum, fkiEzsignfoldertypeID?: number, eFilterActive?: UserlogintypeGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: any): AxiosPromise<UserlogintypeGetAutocompleteV2Response> {
+            return localVarFp.userlogintypeGetAutocompleteV2(sSelector, fkiEzsignfoldertypeID, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -167,6 +174,7 @@ export class ObjectUserlogintypeApi extends BaseAPI {
      * Get the list of Userlogintype to be used in a dropdown or autocomplete control.
      * @summary Retrieve Userlogintypes and IDs
      * @param {UserlogintypeGetAutocompleteV2SSelectorEnum} sSelector The type of Userlogintypes to return
+     * @param {number} [fkiEzsignfoldertypeID] 
      * @param {UserlogintypeGetAutocompleteV2EFilterActiveEnum} [eFilterActive] Specify which results we want to display.
      * @param {string} [sQuery] Allow to filter the returned results
      * @param {HeaderAcceptLanguage} [acceptLanguage] 
@@ -174,8 +182,8 @@ export class ObjectUserlogintypeApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectUserlogintypeApi
      */
-    public userlogintypeGetAutocompleteV2(sSelector: UserlogintypeGetAutocompleteV2SSelectorEnum, eFilterActive?: UserlogintypeGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig) {
-        return ObjectUserlogintypeApiFp(this.configuration).userlogintypeGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(this.axios, this.basePath));
+    public userlogintypeGetAutocompleteV2(sSelector: UserlogintypeGetAutocompleteV2SSelectorEnum, fkiEzsignfoldertypeID?: number, eFilterActive?: UserlogintypeGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig) {
+        return ObjectUserlogintypeApiFp(this.configuration).userlogintypeGetAutocompleteV2(sSelector, fkiEzsignfoldertypeID, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
@@ -183,7 +191,8 @@ export class ObjectUserlogintypeApi extends BaseAPI {
  * @export
  */
 export const UserlogintypeGetAutocompleteV2SSelectorEnum = {
-    All: 'All'
+    All: 'All',
+    Ezsignfoldertype: 'Ezsignfoldertype'
 } as const;
 export type UserlogintypeGetAutocompleteV2SSelectorEnum = typeof UserlogintypeGetAutocompleteV2SSelectorEnum[keyof typeof UserlogintypeGetAutocompleteV2SSelectorEnum];
 /**

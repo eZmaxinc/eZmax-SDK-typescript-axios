@@ -31,6 +31,7 @@ export enum EApiOperation {
     'object-communication-api',
     'object-company-api',
     'object-cors-api',
+    'object-country-api',
     'object-department-api',
     'object-discussion-api',
     'object-discussionmembership-api',
@@ -57,6 +58,7 @@ export enum EApiOperation {
     'object-ezsigntemplate-api',
     'object-ezsigntemplatedocument-api',
     'object-ezsigntemplateformfieldgroup-api',
+    'object-ezsigntemplateglobal-api',
     'object-ezsigntemplatepackage-api',
     'object-ezsigntemplatepackagemembership-api',
     'object-ezsigntemplatepackagesigner-api',
@@ -73,6 +75,7 @@ export enum EApiOperation {
     'object-inscriptiontemp-api',
     'object-invoice-api',
     'object-language-api',
+    'object-module-api',
     'object-modulegroup-api',
     'object-notificationsection-api',
     'object-notificationtest-api',
@@ -81,6 +84,7 @@ export enum EApiOperation {
     'object-period-api',
     'object-permission-api',
     'object-phonetype-api',
+    'object-province-api',
     'object-rejectedoffertopurchase-api',
     'object-secretquestion-api',
     'object-sessionhistory-api',
@@ -92,6 +96,7 @@ export enum EApiOperation {
     'object-user-api',
     'object-usergroup-api',
     'object-usergroupdelegation-api',
+    'object-usergroupexternal-api',
     'object-usergroupmembership-api',
     'object-userlogintype-api',
     'object-userstaged-api',
@@ -122,6 +127,7 @@ export * from './api/object-clonehistory-api';
 export * from './api/object-communication-api';
 export * from './api/object-company-api';
 export * from './api/object-cors-api';
+export * from './api/object-country-api';
 export * from './api/object-department-api';
 export * from './api/object-discussion-api';
 export * from './api/object-discussionmembership-api';
@@ -148,6 +154,7 @@ export * from './api/object-ezsignsigningreason-api';
 export * from './api/object-ezsigntemplate-api';
 export * from './api/object-ezsigntemplatedocument-api';
 export * from './api/object-ezsigntemplateformfieldgroup-api';
+export * from './api/object-ezsigntemplateglobal-api';
 export * from './api/object-ezsigntemplatepackage-api';
 export * from './api/object-ezsigntemplatepackagemembership-api';
 export * from './api/object-ezsigntemplatepackagesigner-api';
@@ -164,6 +171,7 @@ export * from './api/object-inscriptionnotauthenticated-api';
 export * from './api/object-inscriptiontemp-api';
 export * from './api/object-invoice-api';
 export * from './api/object-language-api';
+export * from './api/object-module-api';
 export * from './api/object-modulegroup-api';
 export * from './api/object-notificationsection-api';
 export * from './api/object-notificationtest-api';
@@ -172,6 +180,7 @@ export * from './api/object-paymentterm-api';
 export * from './api/object-period-api';
 export * from './api/object-permission-api';
 export * from './api/object-phonetype-api';
+export * from './api/object-province-api';
 export * from './api/object-rejectedoffertopurchase-api';
 export * from './api/object-secretquestion-api';
 export * from './api/object-sessionhistory-api';
@@ -183,6 +192,7 @@ export * from './api/object-timezone-api';
 export * from './api/object-user-api';
 export * from './api/object-usergroup-api';
 export * from './api/object-usergroupdelegation-api';
+export * from './api/object-usergroupexternal-api';
 export * from './api/object-usergroupmembership-api';
 export * from './api/object-userlogintype-api';
 export * from './api/object-userstaged-api';

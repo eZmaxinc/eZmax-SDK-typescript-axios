@@ -41,7 +41,13 @@ export interface UsergroupmembershipRequestCompound {
      * @type {number}
      * @memberof UsergroupmembershipRequestCompound
      */
-    fkiUserID:number 
+    fkiUserID?:number 
+    /**
+     * The unique ID of the Usergroupexternal
+     * @type {number}
+     * @memberof UsergroupmembershipRequestCompound
+     */
+    fkiUsergroupexternalID?:number 
 }
 
 
@@ -59,7 +65,8 @@ export interface UsergroupmembershipRequestCompound {
 export class DataObjectUsergroupmembershipRequestCompound {
     pkiUsergroupmembershipID?:number = undefined
     fkiUsergroupID:number = 0
-    fkiUserID:number = 0
+    fkiUserID?:number = undefined
+    fkiUsergroupexternalID?:number = undefined
 }
 
 /**
@@ -83,7 +90,13 @@ export class ValidationObjectUsergroupmembershipRequestCompound {
    fkiUserID = {
       type: 'integer',
       minimum: 0,
-      required: true
+      required: false
+   }
+   fkiUsergroupexternalID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 255,
+      required: false
    }
 } 
 

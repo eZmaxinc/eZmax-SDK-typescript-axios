@@ -13,6 +13,9 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import { FieldEEzsigntemplateType } from './field-eezsigntemplate-type';
 
 /**
  * A Ezsigntemplate List Element
@@ -31,7 +34,7 @@ export interface EzsigntemplateListElement {
      * @type {number}
      * @memberof EzsigntemplateListElement
      */
-    'fkiEzsignfoldertypeID': number;
+    'fkiEzsignfoldertypeID'?: number;
     /**
      * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @type {number}
@@ -73,8 +76,16 @@ export interface EzsigntemplateListElement {
      * @type {string}
      * @memberof EzsigntemplateListElement
      */
-    'sEzsignfoldertypeNameX': string;
+    'sEzsignfoldertypeNameX'?: string;
+    /**
+     * 
+     * @type {FieldEEzsigntemplateType}
+     * @memberof EzsigntemplateListElement
+     */
+    'eEzsigntemplateType': FieldEEzsigntemplateType;
 }
+
+
 /**
  * @import
  * Imports Child Data Object
@@ -88,14 +99,15 @@ export interface EzsigntemplateListElement {
  */
 export class DataObjectEzsigntemplateListElement {
    pkiEzsigntemplateID:number = 0
-   fkiEzsignfoldertypeID:number = 0
+   fkiEzsignfoldertypeID?:number = undefined
    fkiLanguageID:number = 0
    sEzsigntemplateDescription:string = ''
    iEzsigntemplatedocumentPagetotal?:number = undefined
    iEzsigntemplateSignaturetotal?:number = undefined
    iEzsigntemplateFormfieldtotal?:number = undefined
    bEzsigntemplateIncomplete:boolean = false
-   sEzsignfoldertypeNameX:string = ''
+   sEzsignfoldertypeNameX?:string = undefined
+   eEzsigntemplateType:FieldEEzsigntemplateType = 'User'
 }
 
 /**
@@ -112,7 +124,8 @@ export class ValidationObjectEzsigntemplateListElement {
    fkiEzsignfoldertypeID = {
       type: 'integer',
       minimum: 0,
-      required: true
+      maximum: 65535,
+      required: false
    }
    fkiLanguageID = {
       type: 'integer',
@@ -143,6 +156,11 @@ export class ValidationObjectEzsigntemplateListElement {
    }
    sEzsignfoldertypeNameX = {
       type: 'string',
+      required: false
+   }
+   eEzsigntemplateType = {
+      type: 'enum',
+      allowableValues: ['User','Usergroup','Company'],
       required: true
    }
 } 

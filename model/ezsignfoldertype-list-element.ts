@@ -77,6 +77,7 @@ export class ValidationObjectEzsignfoldertypeListElement {
    pkiEzsignfoldertypeID = {
       type: 'integer',
       minimum: 0,
+      maximum: 65535,
       required: true
    }
    eEzsignfoldertypePrivacylevel = {
