@@ -37,7 +37,7 @@ export interface EzsignfoldersignerassociationCreateEmbeddedUrlV1Request {
      * @type {boolean}
      * @memberof EzsignfoldersignerassociationCreateEmbeddedUrlV1Request
      */
-    'bIsiframe'?: boolean;
+    'bIsIframe'?: boolean;
 }
 /**
  * @import
@@ -53,7 +53,7 @@ export interface EzsignfoldersignerassociationCreateEmbeddedUrlV1Request {
 export class DataObjectEzsignfoldersignerassociationCreateEmbeddedUrlV1Request {
    sReturnUrl?:string = undefined
    sIframedomain?:string = undefined
-   bIsiframe?:boolean = undefined
+   bIsIframe?:boolean = undefined
 }
 
 /**
@@ -72,7 +72,7 @@ export class ValidationObjectEzsignfoldersignerassociationCreateEmbeddedUrlV1Req
       pattern: '/^.{0,2048}$/',
       required: false
    }
-   bIsiframe = {
+   bIsIframe = {
       type: 'boolean',
       required: false
    }
