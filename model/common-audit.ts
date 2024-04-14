@@ -28,12 +28,14 @@ export interface CommonAudit {
      * @type {CommonAuditdetail}
      * @memberof CommonAudit
      */
+    /*'objAuditdetailCreated': CommonAuditdetail;*/
     'objAuditdetailCreated': CommonAuditdetail;
     /**
      * 
      * @type {CommonAuditdetail}
      * @memberof CommonAudit
      */
+    /*'objAuditdetailModified'?: CommonAuditdetail;*/
     'objAuditdetailModified'?: CommonAuditdetail;
 }
 /**

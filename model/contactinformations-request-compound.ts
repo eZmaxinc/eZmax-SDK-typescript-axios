@@ -34,7 +34,7 @@ import { WebsiteRequestCompound } from './website-request-compound';
  * A Contactinformations Object and children to create a complete structure
  * @export
  */
-/** export type ContactinformationsRequestCompound = ContactinformationsRequest; */
+/*export type ContactinformationsRequestCompound = ContactinformationsRequest;*/
 export interface ContactinformationsRequestCompound {
     /**
      * The index in the a_objAddress array (zero based index) representing the Address object that should become the default one.  You can leave the value to 0 if the array is empty.

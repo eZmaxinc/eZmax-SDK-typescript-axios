@@ -28,6 +28,7 @@ export interface BillingentityinternalEditObjectV1Request {
      * @type {BillingentityinternalRequestCompound}
      * @memberof BillingentityinternalEditObjectV1Request
      */
+    /*'objBillingentityinternal': BillingentityinternalRequestCompound;*/
     'objBillingentityinternal': BillingentityinternalRequestCompound;
 }
 /**

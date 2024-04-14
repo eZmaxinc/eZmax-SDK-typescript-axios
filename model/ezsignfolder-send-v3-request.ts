@@ -25,18 +25,21 @@ export interface EzsignfolderSendV3Request {
      * @type {string}
      * @memberof EzsignfolderSendV3Request
      */
+    /*'tEzsignfolderMessage'?: string;*/
     'tEzsignfolderMessage'?: string;
     /**
      * The date and time at which the Ezsignfolder will be sent in the future.
      * @type {string}
      * @memberof EzsignfolderSendV3Request
      */
+    /*'dtEzsignfolderDelayedsenddate'?: string;*/
     'dtEzsignfolderDelayedsenddate'?: string;
     /**
      * 
      * @type {Array<number>}
      * @memberof EzsignfolderSendV3Request
      */
+    /*'a_fkiEzsignfoldersignerassociationID': Array<number>;*/
     'a_fkiEzsignfoldersignerassociationID': Array<number>;
 }
 /**

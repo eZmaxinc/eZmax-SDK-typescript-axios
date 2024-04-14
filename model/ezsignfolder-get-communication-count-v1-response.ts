@@ -31,7 +31,7 @@ import { EzsignfolderGetCommunicationCountV1ResponseMPayload } from './ezsignfol
  * Response for GET /1/object/ezsignfolder/{pkiEzsignfolderID}/getCommunicationCount
  * @export
  */
-/** export type EzsignfolderGetCommunicationCountV1Response = CommonResponse; */
+/*export type EzsignfolderGetCommunicationCountV1Response = CommonResponse;*/
 export interface EzsignfolderGetCommunicationCountV1Response {
     /**
      * 

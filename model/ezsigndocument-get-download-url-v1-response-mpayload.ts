@@ -25,6 +25,7 @@ export interface EzsigndocumentGetDownloadUrlV1ResponseMPayload {
      * @type {string}
      * @memberof EzsigndocumentGetDownloadUrlV1ResponseMPayload
      */
+    /*'sDownloadUrl': string;*/
     'sDownloadUrl': string;
 }
 /**

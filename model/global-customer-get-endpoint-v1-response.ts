@@ -25,6 +25,7 @@ export interface GlobalCustomerGetEndpointV1Response {
      * @type {string}
      * @memberof GlobalCustomerGetEndpointV1Response
      */
+    /*'sEndpointURL': string;*/
     'sEndpointURL': string;
 }
 /**

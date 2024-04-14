@@ -25,24 +25,28 @@ export interface CommonFile {
      * @type {string}
      * @memberof CommonFile
      */
+    /*'sFileName': string;*/
     'sFileName': string;
     /**
      * The URL used to reach the File
      * @type {string}
      * @memberof CommonFile
      */
+    /*'sFileUrl'?: string;*/
     'sFileUrl'?: string;
     /**
      * The Base64 encoded binary content of the File
      * @type {string}
      * @memberof CommonFile
      */
+    /*'sFileBase64'?: string;*/
     'sFileBase64'?: string;
     /**
      * The source of the File
      * @type {string}
      * @memberof CommonFile
      */
+    /*'eFileSource': CommonFileEFileSourceEnum;*/
     'eFileSource': CommonFileEFileSourceEnum;
 }
 

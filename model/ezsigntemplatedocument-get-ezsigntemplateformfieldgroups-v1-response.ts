@@ -31,7 +31,7 @@ import { EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1ResponseMPayloa
  * Response for GET /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocument}/getEzsigntemplateformfieldgroups
  * @export
  */
-/** export type EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1Response = CommonResponse; */
+/*export type EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1Response = CommonResponse;*/
 export interface EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1Response {
     /**
      * 

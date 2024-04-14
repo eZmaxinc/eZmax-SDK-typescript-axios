@@ -14,13 +14,13 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
 import { AttachmentGetAttachmentlogsV1Response } from '../model';
 // @ts-ignore
@@ -42,7 +42,7 @@ export const ObjectAttachmentApiAxiosParamCreator = function (configuration?: Co
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        attachmentDownloadV1: async (pkiAttachmentID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        attachmentDownloadV1: async (pkiAttachmentID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiAttachmentID' is not null or undefined
             assertParamExists('attachmentDownloadV1', 'pkiAttachmentID', pkiAttachmentID)
             const localVarPath = `/1/object/attachment/{pkiAttachmentID}/download`
@@ -50,6 +50,7 @@ export const ObjectAttachmentApiAxiosParamCreator = function (configuration?: Co
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -71,6 +72,7 @@ export const ObjectAttachmentApiAxiosParamCreator = function (configuration?: Co
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -101,7 +103,7 @@ export const ObjectAttachmentApiAxiosParamCreator = function (configuration?: Co
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        attachmentGetAttachmentlogsV1: async (pkiAttachmentID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        attachmentGetAttachmentlogsV1: async (pkiAttachmentID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiAttachmentID' is not null or undefined
             assertParamExists('attachmentGetAttachmentlogsV1', 'pkiAttachmentID', pkiAttachmentID)
             const localVarPath = `/1/object/attachment/{pkiAttachmentID}/getAttachmentlogs`
@@ -109,6 +111,7 @@ export const ObjectAttachmentApiAxiosParamCreator = function (configuration?: Co
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -127,6 +130,7 @@ export const ObjectAttachmentApiAxiosParamCreator = function (configuration?: Co
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -157,7 +161,7 @@ export const ObjectAttachmentApiAxiosParamCreator = function (configuration?: Co
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        attachmentGetDownloadUrlV1: async (pkiAttachmentID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        attachmentGetDownloadUrlV1: async (pkiAttachmentID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiAttachmentID' is not null or undefined
             assertParamExists('attachmentGetDownloadUrlV1', 'pkiAttachmentID', pkiAttachmentID)
             const localVarPath = `/1/object/attachment/{pkiAttachmentID}/getDownloadUrl`
@@ -165,6 +169,7 @@ export const ObjectAttachmentApiAxiosParamCreator = function (configuration?: Co
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -183,6 +188,7 @@ export const ObjectAttachmentApiAxiosParamCreator = function (configuration?: Co
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -223,9 +229,11 @@ export const ObjectAttachmentApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async attachmentDownloadV1(pkiAttachmentID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+        async attachmentDownloadV1(pkiAttachmentID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.attachmentDownloadV1(pkiAttachmentID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectAttachmentApi.attachmentDownloadV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Using this endpoint, you can retrieve the Attachmentlogs of an attachment.
@@ -234,9 +242,11 @@ export const ObjectAttachmentApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async attachmentGetAttachmentlogsV1(pkiAttachmentID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AttachmentGetAttachmentlogsV1Response>> {
+        async attachmentGetAttachmentlogsV1(pkiAttachmentID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AttachmentGetAttachmentlogsV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.attachmentGetAttachmentlogsV1(pkiAttachmentID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectAttachmentApi.attachmentGetAttachmentlogsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * This endpoint returns an URL to download the attachment.  These links will expire after 5 minutes so the download of the file should be made soon after retrieving the link.
@@ -245,9 +255,11 @@ export const ObjectAttachmentApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async attachmentGetDownloadUrlV1(pkiAttachmentID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AttachmentGetDownloadUrlV1Response>> {
+        async attachmentGetDownloadUrlV1(pkiAttachmentID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AttachmentGetDownloadUrlV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.attachmentGetDownloadUrlV1(pkiAttachmentID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectAttachmentApi.attachmentGetDownloadUrlV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -307,7 +319,7 @@ export class ObjectAttachmentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectAttachmentApi
      */
-    public attachmentDownloadV1(pkiAttachmentID: number, options?: AxiosRequestConfig) {
+    public attachmentDownloadV1(pkiAttachmentID: number, options?: RawAxiosRequestConfig) {
         return ObjectAttachmentApiFp(this.configuration).attachmentDownloadV1(pkiAttachmentID, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -319,7 +331,7 @@ export class ObjectAttachmentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectAttachmentApi
      */
-    public attachmentGetAttachmentlogsV1(pkiAttachmentID: number, options?: AxiosRequestConfig) {
+    public attachmentGetAttachmentlogsV1(pkiAttachmentID: number, options?: RawAxiosRequestConfig) {
         return ObjectAttachmentApiFp(this.configuration).attachmentGetAttachmentlogsV1(pkiAttachmentID, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -331,7 +343,7 @@ export class ObjectAttachmentApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectAttachmentApi
      */
-    public attachmentGetDownloadUrlV1(pkiAttachmentID: number, options?: AxiosRequestConfig) {
+    public attachmentGetDownloadUrlV1(pkiAttachmentID: number, options?: RawAxiosRequestConfig) {
         return ObjectAttachmentApiFp(this.configuration).attachmentGetDownloadUrlV1(pkiAttachmentID, options).then((request) => request(this.axios, this.basePath));
     }
 }

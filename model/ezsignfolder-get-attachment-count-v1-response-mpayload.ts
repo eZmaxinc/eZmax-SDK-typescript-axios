@@ -25,6 +25,7 @@ export interface EzsignfolderGetAttachmentCountV1ResponseMPayload {
      * @type {number}
      * @memberof EzsignfolderGetAttachmentCountV1ResponseMPayload
      */
+    /*'iAttachmentCount': number;*/
     'iAttachmentCount': number;
 }
 /**

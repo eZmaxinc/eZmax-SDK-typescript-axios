@@ -34,66 +34,77 @@ export interface ActivesessionResponse {
      * @type {FieldEActivesessionUsertype}
      * @memberof ActivesessionResponse
      */
+    /*'eActivesessionUsertype': FieldEActivesessionUsertype;*/
     'eActivesessionUsertype': FieldEActivesessionUsertype;
     /**
      * 
      * @type {FieldEActivesessionOrigin}
      * @memberof ActivesessionResponse
      */
+    /*'eActivesessionOrigin': FieldEActivesessionOrigin;*/
     'eActivesessionOrigin': FieldEActivesessionOrigin;
     /**
      * 
      * @type {FieldEActivesessionWeekdaystart}
      * @memberof ActivesessionResponse
      */
+    /*'eActivesessionWeekdaystart': FieldEActivesessionWeekdaystart;*/
     'eActivesessionWeekdaystart': FieldEActivesessionWeekdaystart;
     /**
      * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @type {number}
      * @memberof ActivesessionResponse
      */
+    /*'fkiLanguageID': number;*/
     'fkiLanguageID': number;
     /**
      * The Name of the Company in the language of the requester
      * @type {string}
      * @memberof ActivesessionResponse
      */
+    /*'sCompanyNameX': string;*/
     'sCompanyNameX': string;
     /**
      * The Name of the Department in the language of the requester
      * @type {string}
      * @memberof ActivesessionResponse
      */
+    /*'sDepartmentNameX': string;*/
     'sDepartmentNameX': string;
     /**
      * Whether the active session is in debug or not
      * @type {boolean}
      * @memberof ActivesessionResponse
      */
+    /*'bActivesessionDebug': boolean;*/
     'bActivesessionDebug': boolean;
     /**
      * Whether the active session is superadmin or not
      * @type {boolean}
      * @memberof ActivesessionResponse
      */
+    /*'bActivesessionIssuperadmin': boolean;*/
     'bActivesessionIssuperadmin': boolean;
     /**
      * The customer code assigned to your account
      * @type {string}
      * @memberof ActivesessionResponse
      */
+    /*'pksCustomerCode': string;*/
     'pksCustomerCode': string;
     /**
      * The unique ID of the Systemconfigurationtype
      * @type {number}
      * @memberof ActivesessionResponse
      */
+    /*'fkiSystemconfigurationtypeID': number;*/
     'fkiSystemconfigurationtypeID': number;
     /**
      * The unique ID of the Signature
      * @type {number}
      * @memberof ActivesessionResponse
      */
+    /*'fkiSignatureID'?: number;*/
     'fkiSignatureID'?: number;
 }
 

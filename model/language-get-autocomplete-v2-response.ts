@@ -31,7 +31,7 @@ import { LanguageGetAutocompleteV2ResponseMPayload } from './language-get-autoco
  * Response for GET /2/object/language/getAutocomplete
  * @export
  */
-/** export type LanguageGetAutocompleteV2Response = CommonResponse; */
+/*export type LanguageGetAutocompleteV2Response = CommonResponse;*/
 export interface LanguageGetAutocompleteV2Response {
     /**
      * 

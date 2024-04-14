@@ -28,6 +28,7 @@ export interface VariableexpenseGetAutocompleteV2ResponseMPayload {
      * @type {Array<VariableexpenseAutocompleteElementResponse>}
      * @memberof VariableexpenseGetAutocompleteV2ResponseMPayload
      */
+    /*'a_objVariableexpense': Array<VariableexpenseAutocompleteElementResponse>;*/
     'a_objVariableexpense': Array<VariableexpenseAutocompleteElementResponse>;
 }
 /**

@@ -31,7 +31,7 @@ import { EzsignbulksendCreateObjectV1ResponseMPayload } from './ezsignbulksend-c
  * Response for POST /1/object/ezsignbulksend
  * @export
  */
-/** export type EzsignbulksendCreateObjectV1Response = CommonResponse; */
+/*export type EzsignbulksendCreateObjectV1Response = CommonResponse;*/
 export interface EzsignbulksendCreateObjectV1Response {
     /**
      * 

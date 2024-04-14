@@ -28,6 +28,7 @@ export interface BillingentityinternalGetObjectV2ResponseMPayload {
      * @type {BillingentityinternalResponseCompound}
      * @memberof BillingentityinternalGetObjectV2ResponseMPayload
      */
+    /*'objBillingentityinternal': BillingentityinternalResponseCompound;*/
     'objBillingentityinternal': BillingentityinternalResponseCompound;
 }
 /**

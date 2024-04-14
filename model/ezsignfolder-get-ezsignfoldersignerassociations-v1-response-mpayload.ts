@@ -28,6 +28,7 @@ export interface EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload
      * @type {Array<CustomEzsignfoldersignerassociationActionableElementResponse>}
      * @memberof EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload
      */
+    /*'a_objEzsignfoldersignerassociation': Array<CustomEzsignfoldersignerassociationActionableElementResponse>;*/
     'a_objEzsignfoldersignerassociation': Array<CustomEzsignfoldersignerassociationActionableElementResponse>;
 }
 /**

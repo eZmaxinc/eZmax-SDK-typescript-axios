@@ -28,6 +28,7 @@ export interface LanguageGetAutocompleteV2ResponseMPayload {
      * @type {Array<LanguageAutocompleteElementResponse>}
      * @memberof LanguageGetAutocompleteV2ResponseMPayload
      */
+    /*'a_objLanguage': Array<LanguageAutocompleteElementResponse>;*/
     'a_objLanguage': Array<LanguageAutocompleteElementResponse>;
 }
 /**

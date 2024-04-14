@@ -25,30 +25,35 @@ export interface EzsignsignatureattachmentResponse {
      * @type {number}
      * @memberof EzsignsignatureattachmentResponse
      */
+    /*'pkiEzsignsignatureattachmentID': number;*/
     'pkiEzsignsignatureattachmentID': number;
     /**
      * The unique ID of the Ezsignsignature
      * @type {number}
      * @memberof EzsignsignatureattachmentResponse
      */
+    /*'fkiEzsignsignatureID': number;*/
     'fkiEzsignsignatureID': number;
     /**
      * The md5 of the Ezsignsignatureattachment
      * @type {string}
      * @memberof EzsignsignatureattachmentResponse
      */
+    /*'binEzsignsignatureattachmentMD5': string;*/
     'binEzsignsignatureattachmentMD5': string;
     /**
      * The name of the Ezsignsignatureattachment
      * @type {string}
      * @memberof EzsignsignatureattachmentResponse
      */
+    /*'sEzsignsignatureattachmentName': string;*/
     'sEzsignsignatureattachmentName': string;
     /**
      * The Url to the requested document.  Url will expire after 3 hours.
      * @type {string}
      * @memberof EzsignsignatureattachmentResponse
      */
+    /*'sDownloadUrl': string;*/
     'sDownloadUrl': string;
 }
 /**

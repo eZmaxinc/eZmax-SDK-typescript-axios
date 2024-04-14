@@ -34,96 +34,112 @@ export interface EzsigntemplateformfieldResponse {
      * @type {number}
      * @memberof EzsigntemplateformfieldResponse
      */
+    /*'pkiEzsigntemplateformfieldID': number;*/
     'pkiEzsigntemplateformfieldID': number;
     /**
      * 
      * @type {FieldEEzsigntemplateformfieldPositioning}
      * @memberof EzsigntemplateformfieldResponse
      */
+    /*'eEzsigntemplateformfieldPositioning'?: FieldEEzsigntemplateformfieldPositioning;*/
     'eEzsigntemplateformfieldPositioning'?: FieldEEzsigntemplateformfieldPositioning;
     /**
      * The page number in the Ezsigntemplatedocument
      * @type {number}
      * @memberof EzsigntemplateformfieldResponse
      */
+    /*'iEzsigntemplatedocumentpagePagenumber': number;*/
     'iEzsigntemplatedocumentpagePagenumber': number;
     /**
      * The Label for the Ezsigntemplateformfield
      * @type {string}
      * @memberof EzsigntemplateformfieldResponse
      */
+    /*'sEzsigntemplateformfieldLabel': string;*/
     'sEzsigntemplateformfieldLabel': string;
     /**
      * The value for the Ezsigntemplateformfield
      * @type {string}
      * @memberof EzsigntemplateformfieldResponse
      */
+    /*'sEzsigntemplateformfieldValue'?: string;*/
     'sEzsigntemplateformfieldValue'?: string;
     /**
      * The X coordinate (Horizontal) where to put the Ezsigntemplateformfield on the Ezsigntemplatepage.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplateformfield 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
      * @type {number}
      * @memberof EzsigntemplateformfieldResponse
      */
+    /*'iEzsigntemplateformfieldX'?: number;*/
     'iEzsigntemplateformfieldX'?: number;
     /**
      * The Y coordinate (Vertical) where to put the Ezsigntemplateformfield on the Ezsigntemplatepage.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplateformfield 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
      * @type {number}
      * @memberof EzsigntemplateformfieldResponse
      */
+    /*'iEzsigntemplateformfieldY'?: number;*/
     'iEzsigntemplateformfieldY'?: number;
     /**
      * The Width of the Ezsigntemplateformfield in pixels calculated at 100 DPI  The allowed values are varying based on the eEzsigntemplateformfieldgroupType.  | eEzsigntemplateformfieldgroupType | Valid values | | ------------------------- | ------------ | | Checkbox                  | 22           | | Dropdown                  | 22-65535     | | Radio                     | 22           | | Text                      | 22-65535     | | Textarea                  | 22-65535     |
      * @type {number}
      * @memberof EzsigntemplateformfieldResponse
      */
+    /*'iEzsigntemplateformfieldWidth': number;*/
     'iEzsigntemplateformfieldWidth': number;
     /**
      * The Height of the Ezsigntemplateformfield in pixels calculated at 100 DPI  The allowed values are varying based on the eEzsigntemplateformfieldgroupType.  | eEzsigntemplateformfieldgroupType | Valid values | | ------------------------- | ------------ | | Checkbox                  | 22           | | Dropdown                  | 22           | | Radio                     | 22           | | Text                      | 22           | | Textarea                  | 22-65535     | 
      * @type {number}
      * @memberof EzsigntemplateformfieldResponse
      */
+    /*'iEzsigntemplateformfieldHeight': number;*/
     'iEzsigntemplateformfieldHeight': number;
     /**
      * Whether the Ezsigntemplateformfield allows the use of the autocomplete of the browser.  This can only be set if eEzsigntemplateformfieldgroupType is **Text**
      * @type {boolean}
      * @memberof EzsigntemplateformfieldResponse
      */
+    /*'bEzsigntemplateformfieldAutocomplete'?: boolean;*/
     'bEzsigntemplateformfieldAutocomplete'?: boolean;
     /**
      * Whether the Ezsigntemplateformfield is selected or not by default.  This can only be set if eEzsigntemplateformfieldgroupType is **Checkbox** or **Radio**
      * @type {boolean}
      * @memberof EzsigntemplateformfieldResponse
      */
+    /*'bEzsigntemplateformfieldSelected'?: boolean;*/
     'bEzsigntemplateformfieldSelected'?: boolean;
     /**
      * 
      * @type {FieldEEzsigntemplateformfieldDependencyrequirement}
      * @memberof EzsigntemplateformfieldResponse
      */
+    /*'eEzsigntemplateformfieldDependencyrequirement'?: FieldEEzsigntemplateformfieldDependencyrequirement;*/
     'eEzsigntemplateformfieldDependencyrequirement'?: FieldEEzsigntemplateformfieldDependencyrequirement;
     /**
      * The string pattern to search for the positioning. **This is not a regexp**  This will be required if **eEzsigntemplateformfieldPositioning** is set to **PerCoordinates**
      * @type {string}
      * @memberof EzsigntemplateformfieldResponse
      */
+    /*'sEzsigntemplateformfieldPositioningpattern'?: string;*/
     'sEzsigntemplateformfieldPositioningpattern'?: string;
     /**
      * The offset X  This will be required if **eEzsigntemplateformfieldPositioning** is set to **PerCoordinates**
      * @type {number}
      * @memberof EzsigntemplateformfieldResponse
      */
+    /*'iEzsigntemplateformfieldPositioningoffsetx'?: number;*/
     'iEzsigntemplateformfieldPositioningoffsetx'?: number;
     /**
      * The offset Y  This will be required if **eEzsigntemplateformfieldPositioning** is set to **PerCoordinates**
      * @type {number}
      * @memberof EzsigntemplateformfieldResponse
      */
+    /*'iEzsigntemplateformfieldPositioningoffsety'?: number;*/
     'iEzsigntemplateformfieldPositioningoffsety'?: number;
     /**
      * 
      * @type {FieldEEzsigntemplateformfieldPositioningoccurence}
      * @memberof EzsigntemplateformfieldResponse
      */
+    /*'eEzsigntemplateformfieldPositioningoccurence'?: FieldEEzsigntemplateformfieldPositioningoccurence;*/
     'eEzsigntemplateformfieldPositioningoccurence'?: FieldEEzsigntemplateformfieldPositioningoccurence;
 }
 

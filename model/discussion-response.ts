@@ -28,42 +28,49 @@ export interface DiscussionResponse {
      * @type {number}
      * @memberof DiscussionResponse
      */
+    /*'pkiDiscussionID': number;*/
     'pkiDiscussionID': number;
     /**
      * The description of the Discussion
      * @type {string}
      * @memberof DiscussionResponse
      */
+    /*'sDiscussionDescription': string;*/
     'sDiscussionDescription': string;
     /**
      * Whether if it\'s an closed
      * @type {boolean}
      * @memberof DiscussionResponse
      */
+    /*'bDiscussionClosed': boolean;*/
     'bDiscussionClosed': boolean;
     /**
      * The date the Discussion was last read
      * @type {string}
      * @memberof DiscussionResponse
      */
+    /*'dtDiscussionLastread'?: string;*/
     'dtDiscussionLastread'?: string;
     /**
      * The count of Attachment.
      * @type {number}
      * @memberof DiscussionResponse
      */
+    /*'iDiscussionmessageCount': number;*/
     'iDiscussionmessageCount': number;
     /**
      * The count of Attachment.
      * @type {number}
      * @memberof DiscussionResponse
      */
+    /*'iDiscussionmessageCountunread': number;*/
     'iDiscussionmessageCountunread': number;
     /**
      * 
      * @type {CustomDiscussionconfigurationResponse}
      * @memberof DiscussionResponse
      */
+    /*'objDiscussionconfiguration'?: CustomDiscussionconfigurationResponse;*/
     'objDiscussionconfiguration'?: CustomDiscussionconfigurationResponse;
 }
 /**

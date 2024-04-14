@@ -28,6 +28,7 @@ export interface UserGetUsergroupsV1ResponseMPayload {
      * @type {Array<UsergroupResponseCompound>}
      * @memberof UserGetUsergroupsV1ResponseMPayload
      */
+    /*'a_objUsergroup': Array<UsergroupResponseCompound>;*/
     'a_objUsergroup': Array<UsergroupResponseCompound>;
 }
 /**

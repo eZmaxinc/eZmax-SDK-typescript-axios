@@ -25,36 +25,42 @@ export interface ContactRequest {
      * @type {number}
      * @memberof ContactRequest
      */
+    /*'fkiContacttitleID': number;*/
     'fkiContacttitleID': number;
     /**
      * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @type {number}
      * @memberof ContactRequest
      */
+    /*'fkiLanguageID': number;*/
     'fkiLanguageID': number;
     /**
      * The First name of the contact
      * @type {string}
      * @memberof ContactRequest
      */
+    /*'sContactFirstname': string;*/
     'sContactFirstname': string;
     /**
      * The Last name of the contact
      * @type {string}
      * @memberof ContactRequest
      */
+    /*'sContactLastname': string;*/
     'sContactLastname': string;
     /**
      * The Company name of the contact
      * @type {string}
      * @memberof ContactRequest
      */
+    /*'sContactCompany': string;*/
     'sContactCompany': string;
     /**
      * The Birth Date of the contact
      * @type {string}
      * @memberof ContactRequest
      */
+    /*'dtContactBirthdate'?: string;*/
     'dtContactBirthdate'?: string;
 }
 /**

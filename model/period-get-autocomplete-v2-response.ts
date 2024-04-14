@@ -31,7 +31,7 @@ import { PeriodGetAutocompleteV2ResponseMPayload } from './period-get-autocomple
  * Response for GET /2/object/period/getAutocomplete
  * @export
  */
-/** export type PeriodGetAutocompleteV2Response = CommonResponse; */
+/*export type PeriodGetAutocompleteV2Response = CommonResponse;*/
 export interface PeriodGetAutocompleteV2Response {
     /**
      * 

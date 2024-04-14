@@ -25,6 +25,7 @@ export interface WebsocketResponseInformationV1MPayload {
      * @type {string}
      * @memberof WebsocketResponseInformationV1MPayload
      */
+    /*'sInformationMessage': string;*/
     'sInformationMessage': string;
 }
 /**

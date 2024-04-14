@@ -22,7 +22,7 @@ import { EzsignbulksenddocumentmappingRequest } from './ezsignbulksenddocumentma
  * A Ezsignbulksenddocumentmapping Object and children
  * @export
  */
-/** export type EzsignbulksenddocumentmappingRequestCompound = EzsignbulksenddocumentmappingRequest; */
+/*export type EzsignbulksenddocumentmappingRequestCompound = EzsignbulksenddocumentmappingRequest;*/
 export interface EzsignbulksenddocumentmappingRequestCompound {
     /**
      * The unique ID of the Ezsignbulksenddocumentmapping.

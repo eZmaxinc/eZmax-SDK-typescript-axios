@@ -28,6 +28,7 @@ export interface CorsGetObjectV2ResponseMPayload {
      * @type {CorsResponseCompound}
      * @memberof CorsGetObjectV2ResponseMPayload
      */
+    /*'objCors': CorsResponseCompound;*/
     'objCors': CorsResponseCompound;
 }
 /**

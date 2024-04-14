@@ -31,7 +31,7 @@ import { CustomWordPositionWordResponse } from './custom-word-position-word-resp
  * Response for POST /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions
  * @export
  */
-/** export type EzsigndocumentGetWordsPositionsV1Response = CommonResponse; */
+/*export type EzsigndocumentGetWordsPositionsV1Response = CommonResponse;*/
 export interface EzsigndocumentGetWordsPositionsV1Response {
     /**
      * 

@@ -25,72 +25,84 @@ export interface FranchisereferalincomeRequest {
      * @type {number}
      * @memberof FranchisereferalincomeRequest
      */
+    /*'pkiFranchisereferalincomeID'?: number;*/
     'pkiFranchisereferalincomeID'?: number;
     /**
      * The unique ID of the Franchisebroker
      * @type {number}
      * @memberof FranchisereferalincomeRequest
      */
+    /*'fkiFranchisebrokerID': number;*/
     'fkiFranchisebrokerID': number;
     /**
      * The unique ID of the Franchisereferalincomeprogram
      * @type {number}
      * @memberof FranchisereferalincomeRequest
      */
+    /*'fkiFranchisereferalincomeprogramID': number;*/
     'fkiFranchisereferalincomeprogramID': number;
     /**
      * The unique ID of the Period
      * @type {number}
      * @memberof FranchisereferalincomeRequest
      */
+    /*'fkiPeriodID': number;*/
     'fkiPeriodID': number;
     /**
      * The loan amount
      * @type {string}
      * @memberof FranchisereferalincomeRequest
      */
+    /*'dFranchisereferalincomeLoan': string;*/
     'dFranchisereferalincomeLoan': string;
     /**
      * The amount that will be given to the franchise
      * @type {string}
      * @memberof FranchisereferalincomeRequest
      */
+    /*'dFranchisereferalincomeFranchiseamount': string;*/
     'dFranchisereferalincomeFranchiseamount': string;
     /**
      * The amount that will be kept by the franchisor
      * @type {string}
      * @memberof FranchisereferalincomeRequest
      */
+    /*'dFranchisereferalincomeFranchisoramount': string;*/
     'dFranchisereferalincomeFranchisoramount': string;
     /**
      * The amount that will be given to the agent
      * @type {string}
      * @memberof FranchisereferalincomeRequest
      */
+    /*'dFranchisereferalincomeAgentamount': string;*/
     'dFranchisereferalincomeAgentamount': string;
     /**
      * The date the amounts were disbursed
      * @type {string}
      * @memberof FranchisereferalincomeRequest
      */
+    /*'dtFranchisereferalincomeDisbursed': string;*/
     'dtFranchisereferalincomeDisbursed': string;
     /**
      * Comment about the transaction
      * @type {string}
      * @memberof FranchisereferalincomeRequest
      */
+    /*'tFranchisereferalincomeComment': string;*/
     'tFranchisereferalincomeComment': string;
     /**
      * The unique ID of the Franchisereoffice
      * @type {number}
      * @memberof FranchisereferalincomeRequest
      */
+    /*'fkiFranchiseofficeID': number;*/
     'fkiFranchiseofficeID': number;
     /**
      * 
      * @type {string}
      * @memberof FranchisereferalincomeRequest
      */
+    /*'sFranchisereferalincomeRemoteid': string;*/
     'sFranchisereferalincomeRemoteid': string;
 }
 /**

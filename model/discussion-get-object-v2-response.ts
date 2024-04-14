@@ -31,7 +31,7 @@ import { DiscussionGetObjectV2ResponseMPayload } from './discussion-get-object-v
  * Response for GET /2/object/discussion/{pkiDiscussionID}
  * @export
  */
-/** export type DiscussionGetObjectV2Response = CommonResponse; */
+/*export type DiscussionGetObjectV2Response = CommonResponse;*/
 export interface DiscussionGetObjectV2Response {
     /**
      * 

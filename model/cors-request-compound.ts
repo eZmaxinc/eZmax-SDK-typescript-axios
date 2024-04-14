@@ -22,7 +22,7 @@ import { CorsRequest } from './cors-request';
  * A Cors Object and children
  * @export
  */
-/** export type CorsRequestCompound = CorsRequest; */
+/*export type CorsRequestCompound = CorsRequest;*/
 export interface CorsRequestCompound {
     /**
      * The unique ID of the Cors
@@ -81,7 +81,7 @@ export class ValidationObjectCorsRequestCompound {
    }
    sCorsEntryurl = {
       type: 'string',
-      pattern: '/^.{0,2048}$/',
+      pattern: '/^(https|http):\\/\\/[^\s\\/$.?#].[^\s]*$/',
       required: true
    }
 } 

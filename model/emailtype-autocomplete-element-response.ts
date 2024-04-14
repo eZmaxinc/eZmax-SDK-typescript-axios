@@ -25,18 +25,21 @@ export interface EmailtypeAutocompleteElementResponse {
      * @type {number}
      * @memberof EmailtypeAutocompleteElementResponse
      */
+    /*'pkiEmailtypeID': number;*/
     'pkiEmailtypeID': number;
     /**
      * The name of the Emailtype in the language of the requester
      * @type {string}
      * @memberof EmailtypeAutocompleteElementResponse
      */
+    /*'sEmailtypeNameX': string;*/
     'sEmailtypeNameX': string;
     /**
      * Whether the Emailtype is active or not
      * @type {boolean}
      * @memberof EmailtypeAutocompleteElementResponse
      */
+    /*'bEmailtypeIsactive': boolean;*/
     'bEmailtypeIsactive': boolean;
 }
 /**

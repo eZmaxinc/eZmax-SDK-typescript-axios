@@ -28,7 +28,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for PUT /1/object/usergroup/{pkiUsergroupID}
  * @export
  */
-/** export type UsergroupEditObjectV1Response = CommonResponse; */
+/*export type UsergroupEditObjectV1Response = CommonResponse;*/
 export interface UsergroupEditObjectV1Response {
     /**
      * 

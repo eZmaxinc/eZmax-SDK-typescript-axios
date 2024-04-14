@@ -31,7 +31,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for GET /2/object/branding/getAutocomplete
  * @export
  */
-/** export type BrandingGetAutocompleteV2Response = CommonResponse; */
+/*export type BrandingGetAutocompleteV2Response = CommonResponse;*/
 export interface BrandingGetAutocompleteV2Response {
     /**
      * 

@@ -28,42 +28,49 @@ export interface EzsigntemplateRequestV2 {
      * @type {number}
      * @memberof EzsigntemplateRequestV2
      */
+    /*'pkiEzsigntemplateID'?: number;*/
     'pkiEzsigntemplateID'?: number;
     /**
      * The unique ID of the Ezsignfoldertype.
      * @type {number}
      * @memberof EzsigntemplateRequestV2
      */
+    /*'fkiEzsignfoldertypeID'?: number;*/
     'fkiEzsignfoldertypeID'?: number;
     /**
      * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @type {number}
      * @memberof EzsigntemplateRequestV2
      */
+    /*'fkiLanguageID': number;*/
     'fkiLanguageID': number;
     /**
      * The description of the Ezsigntemplate
      * @type {string}
      * @memberof EzsigntemplateRequestV2
      */
+    /*'sEzsigntemplateDescription': string;*/
     'sEzsigntemplateDescription': string;
     /**
      * The filename pattern of the Ezsigntemplate
      * @type {string}
      * @memberof EzsigntemplateRequestV2
      */
+    /*'sEzsigntemplateFilenamepattern'?: string;*/
     'sEzsigntemplateFilenamepattern'?: string;
     /**
      * Whether the Ezsigntemplate can be accessed by admin users only (eUserType=Normal)
      * @type {boolean}
      * @memberof EzsigntemplateRequestV2
      */
+    /*'bEzsigntemplateAdminonly': boolean;*/
     'bEzsigntemplateAdminonly': boolean;
     /**
      * 
      * @type {FieldEEzsigntemplateType}
      * @memberof EzsigntemplateRequestV2
      */
+    /*'eEzsigntemplateType': FieldEEzsigntemplateType;*/
     'eEzsigntemplateType': FieldEEzsigntemplateType;
 }
 

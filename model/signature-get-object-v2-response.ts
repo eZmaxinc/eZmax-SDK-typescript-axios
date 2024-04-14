@@ -31,7 +31,7 @@ import { SignatureGetObjectV2ResponseMPayload } from './signature-get-object-v2-
  * Response for GET /2/object/signature/{pkiSignatureID}
  * @export
  */
-/** export type SignatureGetObjectV2Response = CommonResponse; */
+/*export type SignatureGetObjectV2Response = CommonResponse;*/
 export interface SignatureGetObjectV2Response {
     /**
      * 

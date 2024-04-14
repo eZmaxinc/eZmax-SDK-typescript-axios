@@ -25,12 +25,14 @@ export interface CustomWebhooklogResponse {
      * @type {string}
      * @memberof CustomWebhooklogResponse
      */
+    /*'dtWebhooklogDate': string;*/
     'dtWebhooklogDate': string;
     /**
      * The Json containing the Webhook call and return
      * @type {string}
      * @memberof CustomWebhooklogResponse
      */
+    /*'tWebhooklogJson': string;*/
     'tWebhooklogJson': string;
 }
 /**

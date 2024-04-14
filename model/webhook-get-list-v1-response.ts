@@ -31,7 +31,7 @@ import { WebhookGetListV1ResponseMPayload } from './webhook-get-list-v1-response
  * Response for GET /1/object/webhook/getList
  * @export
  */
-/** export type WebhookGetListV1Response = CommonResponseGetList; */
+/*export type WebhookGetListV1Response = CommonResponseGetList;*/
 export interface WebhookGetListV1Response {
     /**
      * 

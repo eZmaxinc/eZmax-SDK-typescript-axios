@@ -25,30 +25,35 @@ export interface ProvinceAutocompleteElementResponse {
      * @type {number}
      * @memberof ProvinceAutocompleteElementResponse
      */
+    /*'pkiProvinceID': number;*/
     'pkiProvinceID': number;
     /**
      * The unique ID of the Country.  Here are some common values (Complete list must be retrieved from API):  |Value|Description| |-|-| |1|Canada| |2|United-States|
      * @type {number}
      * @memberof ProvinceAutocompleteElementResponse
      */
+    /*'fkiCountryID': number;*/
     'fkiCountryID': number;
     /**
      * The name of the Province in the language of the requester
      * @type {string}
      * @memberof ProvinceAutocompleteElementResponse
      */
+    /*'sProvinceNameX': string;*/
     'sProvinceNameX': string;
     /**
      * The shortname of the Province
      * @type {string}
      * @memberof ProvinceAutocompleteElementResponse
      */
+    /*'sProvinceShortname': string;*/
     'sProvinceShortname': string;
     /**
      * Whether the Province is active or not
      * @type {boolean}
      * @memberof ProvinceAutocompleteElementResponse
      */
+    /*'bProvinceIsactive': boolean;*/
     'bProvinceIsactive': boolean;
 }
 /**

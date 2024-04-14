@@ -28,6 +28,7 @@ export interface UserEditObjectV1Request {
      * @type {UserRequestCompound}
      * @memberof UserEditObjectV1Request
      */
+    /*'objUser': UserRequestCompound;*/
     'objUser': UserRequestCompound;
 }
 /**

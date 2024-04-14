@@ -25,6 +25,7 @@ export interface UsergroupexternalCreateObjectV1ResponseMPayload {
      * @type {Array<number>}
      * @memberof UsergroupexternalCreateObjectV1ResponseMPayload
      */
+    /*'a_pkiUsergroupexternalID': Array<number>;*/
     'a_pkiUsergroupexternalID': Array<number>;
 }
 /**

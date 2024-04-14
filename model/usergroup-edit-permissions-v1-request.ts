@@ -28,6 +28,7 @@ export interface UsergroupEditPermissionsV1Request {
      * @type {Array<PermissionRequestCompound>}
      * @memberof UsergroupEditPermissionsV1Request
      */
+    /*'a_objPermission': Array<PermissionRequestCompound>;*/
     'a_objPermission': Array<PermissionRequestCompound>;
 }
 /**

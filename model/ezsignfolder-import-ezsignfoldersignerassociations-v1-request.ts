@@ -25,6 +25,7 @@ export interface EzsignfolderImportEzsignfoldersignerassociationsV1Request {
      * @type {Set<number>}
      * @memberof EzsignfolderImportEzsignfoldersignerassociationsV1Request
      */
+    /*'a_fkiEzsignfoldersignerassociationID': Set<number>;*/
     'a_fkiEzsignfoldersignerassociationID': Array<number>;
 }
 /**

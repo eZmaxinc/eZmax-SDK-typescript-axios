@@ -22,7 +22,7 @@ import { EzsigntemplatesignaturecustomdateRequest } from './ezsigntemplatesignat
  * An Ezsigntemplatesignaturecustomdate Object and children to create a complete structure
  * @export
  */
-/** export type EzsigntemplatesignaturecustomdateRequestCompound = EzsigntemplatesignaturecustomdateRequest; */
+/*export type EzsigntemplatesignaturecustomdateRequestCompound = EzsigntemplatesignaturecustomdateRequest;*/
 export interface EzsigntemplatesignaturecustomdateRequestCompound {
     /**
      * The unique ID of the Ezsigntemplatesignaturecustomdate

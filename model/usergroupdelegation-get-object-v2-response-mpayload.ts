@@ -28,6 +28,7 @@ export interface UsergroupdelegationGetObjectV2ResponseMPayload {
      * @type {UsergroupdelegationResponseCompound}
      * @memberof UsergroupdelegationGetObjectV2ResponseMPayload
      */
+    /*'objUsergroupdelegation': UsergroupdelegationResponseCompound;*/
     'objUsergroupdelegation': UsergroupdelegationResponseCompound;
 }
 /**

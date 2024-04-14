@@ -31,7 +31,7 @@ import { EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1ResponseMPaylo
  * Response for PUT /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/editEzsigntemplateformfieldgroups
  * @export
  */
-/** export type EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Response = CommonResponse; */
+/*export type EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Response = CommonResponse;*/
 export interface EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Response {
     /**
      * 

@@ -28,60 +28,70 @@ export interface SessionhistoryListElement {
      * @type {number}
      * @memberof SessionhistoryListElement
      */
+    /*'pkiSessionhistoryID': number;*/
     'pkiSessionhistoryID': number;
     /**
      * The unique ID of the Computer
      * @type {number}
      * @memberof SessionhistoryListElement
      */
+    /*'fkiComputerID'?: number;*/
     'fkiComputerID'?: number;
     /**
      * The unique ID of the User
      * @type {number}
      * @memberof SessionhistoryListElement
      */
+    /*'fkiUserID'?: number;*/
     'fkiUserID'?: number;
     /**
      * The first hit of the Sessionhistory
      * @type {string}
      * @memberof SessionhistoryListElement
      */
+    /*'dtSessionhistoryFirsthit': string;*/
     'dtSessionhistoryFirsthit': string;
     /**
      * The last hit of the Sessionhistory
      * @type {string}
      * @memberof SessionhistoryListElement
      */
+    /*'dtSessionhistoryLasthit': string;*/
     'dtSessionhistoryLasthit': string;
     /**
      * 
      * @type {FieldESessionhistoryEndby}
      * @memberof SessionhistoryListElement
      */
+    /*'eSessionhistoryEndby': FieldESessionhistoryEndby;*/
     'eSessionhistoryEndby': FieldESessionhistoryEndby;
     /**
      * The description of the Computer
      * @type {string}
      * @memberof SessionhistoryListElement
      */
+    /*'sComputerDescription'?: string;*/
     'sComputerDescription'?: string;
     /**
      * The duration of the session
      * @type {string}
      * @memberof SessionhistoryListElement
      */
+    /*'sSessionhistoryDuration': string;*/
     'sSessionhistoryDuration': string;
     /**
      * Represent an IP address.
      * @type {string}
      * @memberof SessionhistoryListElement
      */
+    /*'sSessionhistoryIP': string;*/
     'sSessionhistoryIP': string;
     /**
      * The login name of the User.
      * @type {string}
      * @memberof SessionhistoryListElement
      */
+    /*'sUserLoginname'?: string;*/
     'sUserLoginname'?: string;
 }
 
@@ -164,7 +174,7 @@ export class ValidationObjectSessionhistoryListElement {
    }
    sUserLoginname = {
       type: 'string',
-      pattern: '/^(?:([\w\.-]+@[\w\.-]+\.\w{2,20})|([a-zA-Z0-9]){1,32})$/',
+      pattern: '/^(?:([\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/',
       required: false
    }
 } 

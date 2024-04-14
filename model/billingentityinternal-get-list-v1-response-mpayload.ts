@@ -25,7 +25,7 @@ import { CommonGetListV1ResponseMPayload } from './common-get-list-v1-response-m
  * Payload for GET /1/object/billingentityinternal/getList
  * @export
  */
-/** export type BillingentityinternalGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload; */
+/*export type BillingentityinternalGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;*/
 export interface BillingentityinternalGetListV1ResponseMPayload {
     /**
      * The number of rows returned

@@ -31,7 +31,7 @@ import { EmailtypeGetAutocompleteV2ResponseMPayload } from './emailtype-get-auto
  * Response for GET /2/object/emailtype/getAutocomplete
  * @export
  */
-/** export type EmailtypeGetAutocompleteV2Response = CommonResponse; */
+/*export type EmailtypeGetAutocompleteV2Response = CommonResponse;*/
 export interface EmailtypeGetAutocompleteV2Response {
     /**
      * 

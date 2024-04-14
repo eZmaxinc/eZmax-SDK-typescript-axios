@@ -28,6 +28,7 @@ export interface DiscussionmessageCreateObjectV1Request {
      * @type {Array<DiscussionmessageRequestCompound>}
      * @memberof DiscussionmessageCreateObjectV1Request
      */
+    /*'a_objDiscussionmessage': Array<DiscussionmessageRequestCompound>;*/
     'a_objDiscussionmessage': Array<DiscussionmessageRequestCompound>;
 }
 /**

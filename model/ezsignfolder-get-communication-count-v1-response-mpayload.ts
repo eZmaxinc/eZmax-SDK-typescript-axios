@@ -25,6 +25,7 @@ export interface EzsignfolderGetCommunicationCountV1ResponseMPayload {
      * @type {number}
      * @memberof EzsignfolderGetCommunicationCountV1ResponseMPayload
      */
+    /*'iCommunicationCount': number;*/
     'iCommunicationCount': number;
 }
 /**

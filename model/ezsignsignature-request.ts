@@ -43,132 +43,154 @@ export interface EzsignsignatureRequest {
      * @type {number}
      * @memberof EzsignsignatureRequest
      */
+    /*'pkiEzsignsignatureID'?: number;*/
     'pkiEzsignsignatureID'?: number;
     /**
      * The unique ID of the Ezsignfoldersignerassociation
      * @type {number}
      * @memberof EzsignsignatureRequest
      */
+    /*'fkiEzsignfoldersignerassociationID': number;*/
     'fkiEzsignfoldersignerassociationID': number;
     /**
      * The page number in the Ezsigndocument
      * @type {number}
      * @memberof EzsignsignatureRequest
      */
+    /*'iEzsignpagePagenumber': number;*/
     'iEzsignpagePagenumber': number;
     /**
      * The X coordinate (Horizontal) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
      * @type {number}
      * @memberof EzsignsignatureRequest
      */
+    /*'iEzsignsignatureX': number;*/
     'iEzsignsignatureX': number;
     /**
      * The Y coordinate (Vertical) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
      * @type {number}
      * @memberof EzsignsignatureRequest
      */
+    /*'iEzsignsignatureY': number;*/
     'iEzsignsignatureY': number;
     /**
      * The width of the Ezsignsignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsignsignature to have a width of 2 inches, you would use \"200\" for the iEzsignsignatureWidth.
      * @type {number}
      * @memberof EzsignsignatureRequest
      */
+    /*'iEzsignsignatureWidth'?: number;*/
     'iEzsignsignatureWidth'?: number;
     /**
      * The height of the Ezsignsignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsignsignature to have an height of 2 inches, you would use \"200\" for the iEzsignsignatureHeight.
      * @type {number}
      * @memberof EzsignsignatureRequest
      */
+    /*'iEzsignsignatureHeight'?: number;*/
     'iEzsignsignatureHeight'?: number;
     /**
      * The step when the Ezsignsigner will be invited to sign
      * @type {number}
      * @memberof EzsignsignatureRequest
      */
+    /*'iEzsignsignatureStep': number;*/
     'iEzsignsignatureStep': number;
     /**
      * 
      * @type {FieldEEzsignsignatureType}
      * @memberof EzsignsignatureRequest
      */
+    /*'eEzsignsignatureType': FieldEEzsignsignatureType;*/
     'eEzsignsignatureType': FieldEEzsignsignatureType;
     /**
      * The unique ID of the Ezsigndocument
      * @type {number}
      * @memberof EzsignsignatureRequest
      */
+    /*'fkiEzsigndocumentID': number;*/
     'fkiEzsigndocumentID': number;
     /**
      * A tooltip that will be presented to Ezsignsigner about the Ezsignsignature
      * @type {string}
      * @memberof EzsignsignatureRequest
      */
+    /*'tEzsignsignatureTooltip'?: string;*/
     'tEzsignsignatureTooltip'?: string;
     /**
      * 
      * @type {FieldEEzsignsignatureTooltipposition}
      * @memberof EzsignsignatureRequest
      */
+    /*'eEzsignsignatureTooltipposition'?: FieldEEzsignsignatureTooltipposition;*/
     'eEzsignsignatureTooltipposition'?: FieldEEzsignsignatureTooltipposition;
     /**
      * 
      * @type {FieldEEzsignsignatureFont}
      * @memberof EzsignsignatureRequest
      */
+    /*'eEzsignsignatureFont'?: FieldEEzsignsignatureFont;*/
     'eEzsignsignatureFont'?: FieldEEzsignsignatureFont;
     /**
      * The unique ID of the Ezsignfoldersignerassociation
      * @type {number}
      * @memberof EzsignsignatureRequest
      */
+    /*'fkiEzsignfoldersignerassociationIDValidation'?: number;*/
     'fkiEzsignfoldersignerassociationIDValidation'?: number;
     /**
      * Whether the Ezsignsignature is required or not. This field is relevant only with Ezsignsignature with eEzsignsignatureType = Attachments.
      * @type {boolean}
      * @memberof EzsignsignatureRequest
      */
+    /*'bEzsignsignatureRequired'?: boolean;*/
     'bEzsignsignatureRequired'?: boolean;
     /**
      * 
      * @type {FieldEEzsignsignatureAttachmentnamesource}
      * @memberof EzsignsignatureRequest
      */
+    /*'eEzsignsignatureAttachmentnamesource'?: FieldEEzsignsignatureAttachmentnamesource;*/
     'eEzsignsignatureAttachmentnamesource'?: FieldEEzsignsignatureAttachmentnamesource;
     /**
      * The description attached to the attachment name added in Ezsignsignature of eEzsignsignatureType Attachments
      * @type {string}
      * @memberof EzsignsignatureRequest
      */
+    /*'sEzsignsignatureAttachmentdescription'?: string;*/
     'sEzsignsignatureAttachmentdescription'?: string;
     /**
      * The step when the Ezsignsigner will be invited to validate the Ezsignsignature of eEzsignsignatureType Attachments
      * @type {number}
      * @memberof EzsignsignatureRequest
      */
+    /*'iEzsignsignatureValidationstep'?: number;*/
     'iEzsignsignatureValidationstep'?: number;
     /**
      * The maximum length for the value in the Ezsignsignature  This can only be set if eEzsignsignatureType is **FieldText** or **FieldTextarea**
      * @type {number}
      * @memberof EzsignsignatureRequest
      */
+    /*'iEzsignsignatureMaxlength'?: number;*/
     'iEzsignsignatureMaxlength'?: number;
     /**
      * 
      * @type {EnumTextvalidation}
      * @memberof EzsignsignatureRequest
      */
+    /*'eEzsignsignatureTextvalidation'?: EnumTextvalidation;*/
     'eEzsignsignatureTextvalidation'?: EnumTextvalidation;
     /**
      * A regular expression to indicate what values are acceptable for the Ezsignsignature.  This can only be set if eEzsignsignatureType is **FieldText** or **FieldTextarea** and eEzsignsignatureTextvalidation is **Custom**
      * @type {string}
      * @memberof EzsignsignatureRequest
      */
+    /*'sEzsignsignatureRegexp'?: string;*/
     'sEzsignsignatureRegexp'?: string;
     /**
      * 
      * @type {FieldEEzsignsignatureDependencyrequirement}
      * @memberof EzsignsignatureRequest
      */
+    /*'eEzsignsignatureDependencyrequirement'?: FieldEEzsignsignatureDependencyrequirement;*/
     'eEzsignsignatureDependencyrequirement'?: FieldEEzsignsignatureDependencyrequirement;
 }
 

@@ -28,6 +28,7 @@ export interface UsergroupGetUsergroupdelegationsV1ResponseMPayload {
      * @type {Array<UsergroupdelegationResponseCompound>}
      * @memberof UsergroupGetUsergroupdelegationsV1ResponseMPayload
      */
+    /*'a_objUsergroupdelegation': Array<UsergroupdelegationResponseCompound>;*/
     'a_objUsergroupdelegation': Array<UsergroupdelegationResponseCompound>;
 }
 /**

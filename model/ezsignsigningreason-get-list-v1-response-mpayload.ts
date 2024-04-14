@@ -25,7 +25,7 @@ import { EzsignsigningreasonListElement } from './ezsignsigningreason-list-eleme
  * Payload for GET /1/object/ezsignsigningreason/getList
  * @export
  */
-/** export type EzsignsigningreasonGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload; */
+/*export type EzsignsigningreasonGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;*/
 export interface EzsignsigningreasonGetListV1ResponseMPayload {
     /**
      * The number of rows returned

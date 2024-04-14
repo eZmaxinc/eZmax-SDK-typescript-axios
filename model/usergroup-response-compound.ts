@@ -25,7 +25,7 @@ import { UsergroupResponse } from './usergroup-response';
  * A Usergroup Object
  * @export
  */
-/** export type UsergroupResponseCompound = UsergroupResponse; */
+/*export type UsergroupResponseCompound = UsergroupResponse;*/
 export interface UsergroupResponseCompound {
     /**
      * The unique ID of the Usergroup

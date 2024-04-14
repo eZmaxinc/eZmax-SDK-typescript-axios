@@ -25,72 +25,84 @@ export interface EzsigntemplatedocumentRequest {
      * @type {number}
      * @memberof EzsigntemplatedocumentRequest
      */
+    /*'pkiEzsigntemplatedocumentID'?: number;*/
     'pkiEzsigntemplatedocumentID'?: number;
     /**
      * The unique ID of the Ezsigntemplate
      * @type {number}
      * @memberof EzsigntemplatedocumentRequest
      */
+    /*'fkiEzsigntemplateID': number;*/
     'fkiEzsigntemplateID': number;
     /**
      * The unique ID of the Ezsigndocument
      * @type {number}
      * @memberof EzsigntemplatedocumentRequest
      */
+    /*'fkiEzsigndocumentID'?: number;*/
     'fkiEzsigndocumentID'?: number;
     /**
      * The unique ID of the Ezsigntemplatesigner
      * @type {number}
      * @memberof EzsigntemplatedocumentRequest
      */
+    /*'fkiEzsigntemplatesignerID'?: number;*/
     'fkiEzsigntemplatesignerID'?: number;
     /**
      * The name of the Ezsigntemplatedocument.
      * @type {string}
      * @memberof EzsigntemplatedocumentRequest
      */
+    /*'sEzsigntemplatedocumentName': string;*/
     'sEzsigntemplatedocumentName': string;
     /**
      * Indicates where to look for the document binary content.
      * @type {string}
      * @memberof EzsigntemplatedocumentRequest
      */
+    /*'eEzsigntemplatedocumentSource': EzsigntemplatedocumentRequestEEzsigntemplatedocumentSourceEnum;*/
     'eEzsigntemplatedocumentSource': EzsigntemplatedocumentRequestEEzsigntemplatedocumentSourceEnum;
     /**
      * Indicates the format of the template.
      * @type {string}
      * @memberof EzsigntemplatedocumentRequest
      */
+    /*'eEzsigntemplatedocumentFormat'?: EzsigntemplatedocumentRequestEEzsigntemplatedocumentFormatEnum;*/
     'eEzsigntemplatedocumentFormat'?: EzsigntemplatedocumentRequestEEzsigntemplatedocumentFormatEnum;
     /**
      * The Base64 encoded binary content of the document.  This field is Required when eEzsigntemplatedocumentSource = Base64.
      * @type {string}
      * @memberof EzsigntemplatedocumentRequest
      */
+    /*'sEzsigntemplatedocumentBase64'?: string;*/
     'sEzsigntemplatedocumentBase64'?: string;
     /**
      * The url where the document content resides.  This field is Required when eEzsigntemplatedocumentSource = Url.
      * @type {string}
      * @memberof EzsigntemplatedocumentRequest
      */
+    /*'sEzsigntemplatedocumentUrl'?: string;*/
     'sEzsigntemplatedocumentUrl'?: string;
     /**
      * Try to repair the document or flatten it if it cannot be used for electronic signature.
      * @type {boolean}
      * @memberof EzsigntemplatedocumentRequest
      */
+    /*'bEzsigntemplatedocumentForcerepair'?: boolean;*/
     'bEzsigntemplatedocumentForcerepair'?: boolean;
     /**
      * If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsigntemplateformfieldgroups and assign them to the specified **fkiEzsigntemplatesignerID**  **Discard** removes the form from the document
      * @type {string}
      * @memberof EzsigntemplatedocumentRequest
      */
+    /*'eEzsigntemplatedocumentForm'?: EzsigntemplatedocumentRequestEEzsigntemplatedocumentFormEnum;*/
     'eEzsigntemplatedocumentForm'?: EzsigntemplatedocumentRequestEEzsigntemplatedocumentFormEnum;
     /**
      * If the source template is password protected, the password to open/modify it.
      * @type {string}
      * @memberof EzsigntemplatedocumentRequest
      */
+    /*'sEzsigntemplatedocumentPassword'?: string;*/
     'sEzsigntemplatedocumentPassword'?: string;
 }
 

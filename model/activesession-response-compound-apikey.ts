@@ -25,12 +25,14 @@ export interface ActivesessionResponseCompoundApikey {
      * @type {number}
      * @memberof ActivesessionResponseCompoundApikey
      */
+    /*'pkiApikeyID': number;*/
     'pkiApikeyID': number;
     /**
      * The description of the Apikey in the language of the requester
      * @type {string}
      * @memberof ActivesessionResponseCompoundApikey
      */
+    /*'sApikeyDescriptionX': string;*/
     'sApikeyDescriptionX': string;
 }
 /**

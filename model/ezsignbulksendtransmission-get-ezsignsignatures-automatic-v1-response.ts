@@ -31,7 +31,7 @@ import { EzsignbulksendtransmissionGetEzsignsignaturesAutomaticV1ResponseMPayloa
  * Response for GET /1/object/ezsignbulksendtransmission/{pkiEzsignbulksendtransmissionID}/getEzsignsignaturesAutomatic
  * @export
  */
-/** export type EzsignbulksendtransmissionGetEzsignsignaturesAutomaticV1Response = CommonResponse; */
+/*export type EzsignbulksendtransmissionGetEzsignsignaturesAutomaticV1Response = CommonResponse;*/
 export interface EzsignbulksendtransmissionGetEzsignsignaturesAutomaticV1Response {
     /**
      * 

@@ -31,7 +31,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for POST /1/report/xxx/xxx and /1/module/report/getReportFromCache
  * @export
  */
-/** export type CommonGetReportV1Response = CommonResponse; */
+/*export type CommonGetReportV1Response = CommonResponse;*/
 export interface CommonGetReportV1Response {
     /**
      * 

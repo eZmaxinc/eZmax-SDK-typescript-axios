@@ -28,7 +28,7 @@ import { EzsigntemplatepackagesignerResponseCompound } from './ezsigntemplatepac
  * A Ezsigntemplatepackage Object
  * @export
  */
-/** export type EzsigntemplatepackageResponseCompound = EzsigntemplatepackageResponse; */
+/*export type EzsigntemplatepackageResponseCompound = EzsigntemplatepackageResponse;*/
 export interface EzsigntemplatepackageResponseCompound {
     /**
      * The unique ID of the Ezsigntemplatepackage

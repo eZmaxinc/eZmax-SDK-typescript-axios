@@ -28,12 +28,14 @@ export interface CustomFormDataEzsignformfieldgroupResponse {
      * @type {string}
      * @memberof CustomFormDataEzsignformfieldgroupResponse
      */
+    /*'sEzsignformfieldgroupLabel': string;*/
     'sEzsignformfieldgroupLabel': string;
     /**
      * 
      * @type {Array<CustomFormDataEzsignformfieldResponse>}
      * @memberof CustomFormDataEzsignformfieldgroupResponse
      */
+    /*'a_objEzsignformfield': Array<CustomFormDataEzsignformfieldResponse>;*/
     'a_objEzsignformfield': Array<CustomFormDataEzsignformfieldResponse>;
 }
 /**

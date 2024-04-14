@@ -25,24 +25,28 @@ export interface ContactinformationsRequest {
      * @type {number}
      * @memberof ContactinformationsRequest
      */
+    /*'iAddressDefault': number;*/
     'iAddressDefault': number;
     /**
      * The index in the a_objPhone array (zero based index) representing the Phone object that should become the default one.  You can leave the value to 0 if the array is empty.
      * @type {number}
      * @memberof ContactinformationsRequest
      */
+    /*'iPhoneDefault': number;*/
     'iPhoneDefault': number;
     /**
      * The index in the a_objEmail array (zero based index) representing the Email object that should become the default one.  You can leave the value to 0 if the array is empty.
      * @type {number}
      * @memberof ContactinformationsRequest
      */
+    /*'iEmailDefault': number;*/
     'iEmailDefault': number;
     /**
      * The index in the a_objWebsite array (zero based index) representing the Website object that should become the default one.  You can leave the value to 0 if the array is empty.
      * @type {number}
      * @memberof ContactinformationsRequest
      */
+    /*'iWebsiteDefault': number;*/
     'iWebsiteDefault': number;
 }
 /**

@@ -28,6 +28,7 @@ export interface WebhookGetObjectV2ResponseMPayload {
      * @type {WebhookResponseCompound}
      * @memberof WebhookGetObjectV2ResponseMPayload
      */
+    /*'objWebhook': WebhookResponseCompound;*/
     'objWebhook': WebhookResponseCompound;
 }
 /**

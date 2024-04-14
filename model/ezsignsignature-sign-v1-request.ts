@@ -28,42 +28,49 @@ export interface EzsignsignatureSignV1Request {
      * @type {number}
      * @memberof EzsignsignatureSignV1Request
      */
+    /*'fkiEzsignsigningreasonID'?: number;*/
     'fkiEzsignsigningreasonID'?: number;
     /**
      * The value required for the Ezsignsignature.  This can only be set if eEzsignsignatureType is **City**, **FieldText** or **FieldTextarea**
      * @type {string}
      * @memberof EzsignsignatureSignV1Request
      */
+    /*'sValue'?: string;*/
     'sValue'?: string;
     /**
      * Whether the attachment are accepted or refused.  This can only be set if eEzsignsignatureType is **AttachmentsConfirmation**
      * @type {string}
      * @memberof EzsignsignatureSignV1Request
      */
+    /*'eAttachmentsConfirmationDecision'?: EzsignsignatureSignV1RequestEAttachmentsConfirmationDecisionEnum;*/
     'eAttachmentsConfirmationDecision'?: EzsignsignatureSignV1RequestEAttachmentsConfirmationDecisionEnum;
     /**
      * The reason of refused.  This can only be set if eEzsignsignatureType is **AttachmentsConfirmation**
      * @type {string}
      * @memberof EzsignsignatureSignV1Request
      */
+    /*'sAttachmentsRefusalReason'?: string;*/
     'sAttachmentsRefusalReason'?: string;
     /**
      * The SVG of the handwritten signature.  This can only be set if eEzsignsignatureType is **Handwritten** and **bIsAutomatic** is false
      * @type {string}
      * @memberof EzsignsignatureSignV1Request
      */
+    /*'sSvg'?: string;*/
     'sSvg'?: string;
     /**
      * 
      * @type {Array<CommonFile>}
      * @memberof EzsignsignatureSignV1Request
      */
+    /*'a_objFile'?: Array<CommonFile>;*/
     'a_objFile'?: Array<CommonFile>;
     /**
      * Indicates if the Ezsignsignature was part of an automatic process or not.  This can only be true if eEzsignsignatureType is **Acknowledgement**, **City**, **Handwritten**, **Initials**, **Name** or **Stamp**. 
      * @type {boolean}
      * @memberof EzsignsignatureSignV1Request
      */
+    /*'bIsAutomatic': boolean;*/
     'bIsAutomatic': boolean;
 }
 

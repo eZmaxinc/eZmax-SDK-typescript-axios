@@ -34,7 +34,7 @@ import { FieldEEzsigndocumentStep } from './field-eezsigndocument-step';
  * Payload for GET /1/object/ezsigndocument/{pkiEzsigndocumentID}
  * @export
  */
-/** export type EzsigndocumentGetObjectV1ResponseMPayload = EzsigndocumentResponseCompound; */
+/*export type EzsigndocumentGetObjectV1ResponseMPayload = EzsigndocumentResponseCompound;*/
 export interface EzsigndocumentGetObjectV1ResponseMPayload {
     /**
      * The unique ID of the Ezsigndocument
@@ -356,7 +356,7 @@ export class ValidationObjectEzsigndocumentGetObjectV1ResponseMPayload {
    objAudit = new ValidationObjectCommonAudit()
    sEzsigndocumentExternalid = {
       type: 'string',
-      pattern: '/^.{0,64}$/',
+      pattern: '/^.{0,128}$/',
       required: false
    }
    iEzsigndocumentEzsignsignatureattachmenttotal = {

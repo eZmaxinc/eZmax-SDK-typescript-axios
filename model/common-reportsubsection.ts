@@ -28,18 +28,21 @@ export interface CommonReportsubsection {
      * @type {CommonReportsubsectionpart}
      * @memberof CommonReportsubsection
      */
+    /*'objReportsubsectionpartHeader': CommonReportsubsectionpart;*/
     'objReportsubsectionpartHeader': CommonReportsubsectionpart;
     /**
      * 
      * @type {CommonReportsubsectionpart}
      * @memberof CommonReportsubsection
      */
+    /*'objReportsubsectionpartBody': CommonReportsubsectionpart;*/
     'objReportsubsectionpartBody': CommonReportsubsectionpart;
     /**
      * 
      * @type {CommonReportsubsectionpart}
      * @memberof CommonReportsubsection
      */
+    /*'objReportsubsectionpartFooter': CommonReportsubsectionpart;*/
     'objReportsubsectionpartFooter': CommonReportsubsectionpart;
 }
 /**

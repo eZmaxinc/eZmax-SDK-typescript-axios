@@ -28,6 +28,7 @@ export interface CountryGetAutocompleteV2ResponseMPayload {
      * @type {Array<CountryAutocompleteElementResponse>}
      * @memberof CountryGetAutocompleteV2ResponseMPayload
      */
+    /*'a_objCountry': Array<CountryAutocompleteElementResponse>;*/
     'a_objCountry': Array<CountryAutocompleteElementResponse>;
 }
 /**

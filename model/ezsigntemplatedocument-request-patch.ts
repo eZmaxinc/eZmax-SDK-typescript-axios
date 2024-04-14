@@ -25,6 +25,7 @@ export interface EzsigntemplatedocumentRequestPatch {
      * @type {string}
      * @memberof EzsigntemplatedocumentRequestPatch
      */
+    /*'sEzsigntemplatedocumentName'?: string;*/
     'sEzsigntemplatedocumentName'?: string;
 }
 /**

@@ -25,6 +25,7 @@ export interface EzsigndocumentEditEzsignsignaturesV1ResponseMPayload {
      * @type {Array<number>}
      * @memberof EzsigndocumentEditEzsignsignaturesV1ResponseMPayload
      */
+    /*'a_pkiEzsignsignatureID': Array<number>;*/
     'a_pkiEzsignsignatureID': Array<number>;
 }
 /**

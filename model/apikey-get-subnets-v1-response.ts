@@ -31,7 +31,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for GET /1/object/apikey/{pkiApikeyID}/getSubnets
  * @export
  */
-/** export type ApikeyGetSubnetsV1Response = CommonResponse; */
+/*export type ApikeyGetSubnetsV1Response = CommonResponse;*/
 export interface ApikeyGetSubnetsV1Response {
     /**
      * 

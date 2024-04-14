@@ -37,7 +37,7 @@ import { FieldEAttachmentVerified } from './field-eattachment-verified';
  * A Attachment Object
  * @export
  */
-/** export type AttachmentResponseCompound = AttachmentResponse; */
+/*export type AttachmentResponseCompound = AttachmentResponse;*/
 export interface AttachmentResponseCompound {
     /**
      * The unique ID of the Attachment.

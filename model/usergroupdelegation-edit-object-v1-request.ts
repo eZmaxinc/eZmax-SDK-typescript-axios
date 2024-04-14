@@ -28,6 +28,7 @@ export interface UsergroupdelegationEditObjectV1Request {
      * @type {UsergroupdelegationRequestCompound}
      * @memberof UsergroupdelegationEditObjectV1Request
      */
+    /*'objUsergroupdelegation': UsergroupdelegationRequestCompound;*/
     'objUsergroupdelegation': UsergroupdelegationRequestCompound;
 }
 /**

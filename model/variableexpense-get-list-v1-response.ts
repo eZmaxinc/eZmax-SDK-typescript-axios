@@ -31,7 +31,7 @@ import { VariableexpenseGetListV1ResponseMPayload } from './variableexpense-get-
  * Response for GET /1/object/variableexpense/getList
  * @export
  */
-/** export type VariableexpenseGetListV1Response = CommonResponseGetList; */
+/*export type VariableexpenseGetListV1Response = CommonResponseGetList;*/
 export interface VariableexpenseGetListV1Response {
     /**
      * 

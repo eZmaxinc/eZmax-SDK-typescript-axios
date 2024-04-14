@@ -25,7 +25,7 @@ import { SubnetResponse } from './subnet-response';
  * A Subnet Object
  * @export
  */
-/** export type SubnetResponseCompound = SubnetResponse; */
+/*export type SubnetResponseCompound = SubnetResponse;*/
 export interface SubnetResponseCompound {
     /**
      * The unique ID of the Subnet

@@ -25,24 +25,28 @@ export interface UsergroupmembershipRequest {
      * @type {number}
      * @memberof UsergroupmembershipRequest
      */
+    /*'pkiUsergroupmembershipID'?: number;*/
     'pkiUsergroupmembershipID'?: number;
     /**
      * The unique ID of the Usergroup
      * @type {number}
      * @memberof UsergroupmembershipRequest
      */
+    /*'fkiUsergroupID': number;*/
     'fkiUsergroupID': number;
     /**
      * The unique ID of the User
      * @type {number}
      * @memberof UsergroupmembershipRequest
      */
+    /*'fkiUserID'?: number;*/
     'fkiUserID'?: number;
     /**
      * The unique ID of the Usergroupexternal
      * @type {number}
      * @memberof UsergroupmembershipRequest
      */
+    /*'fkiUsergroupexternalID'?: number;*/
     'fkiUsergroupexternalID'?: number;
 }
 /**

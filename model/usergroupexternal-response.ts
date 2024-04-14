@@ -25,18 +25,21 @@ export interface UsergroupexternalResponse {
      * @type {number}
      * @memberof UsergroupexternalResponse
      */
+    /*'pkiUsergroupexternalID': number;*/
     'pkiUsergroupexternalID': number;
     /**
      * The name of the Usergroupexternal
      * @type {string}
      * @memberof UsergroupexternalResponse
      */
+    /*'sUsergroupexternalName': string;*/
     'sUsergroupexternalName': string;
     /**
      * The id of the Usergroupexternal
      * @type {string}
      * @memberof UsergroupexternalResponse
      */
+    /*'sUsergroupexternalID': string;*/
     'sUsergroupexternalID': string;
 }
 /**

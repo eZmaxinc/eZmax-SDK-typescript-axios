@@ -28,6 +28,7 @@ export interface RejectedoffertopurchaseGetCommunicationListV1ResponseMPayload {
      * @type {Array<CustomCommunicationListElementResponse>}
      * @memberof RejectedoffertopurchaseGetCommunicationListV1ResponseMPayload
      */
+    /*'a_objCommunication': Array<CustomCommunicationListElementResponse>;*/
     'a_objCommunication': Array<CustomCommunicationListElementResponse>;
 }
 /**

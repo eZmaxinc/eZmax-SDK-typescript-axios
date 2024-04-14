@@ -28,6 +28,7 @@ export interface EzsignsigningreasonGetAutocompleteV2ResponseMPayload {
      * @type {Array<EzsignsigningreasonAutocompleteElementResponse>}
      * @memberof EzsignsigningreasonGetAutocompleteV2ResponseMPayload
      */
+    /*'a_objEzsignsigningreason': Array<EzsignsigningreasonAutocompleteElementResponse>;*/
     'a_objEzsignsigningreason': Array<EzsignsigningreasonAutocompleteElementResponse>;
 }
 /**

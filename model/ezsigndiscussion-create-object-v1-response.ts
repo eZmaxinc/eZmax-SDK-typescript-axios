@@ -31,7 +31,7 @@ import { EzsigndiscussionCreateObjectV1ResponseMPayload } from './ezsigndiscussi
  * Response for POST /1/object/ezsigndiscussion
  * @export
  */
-/** export type EzsigndiscussionCreateObjectV1Response = CommonResponse; */
+/*export type EzsigndiscussionCreateObjectV1Response = CommonResponse;*/
 export interface EzsigndiscussionCreateObjectV1Response {
     /**
      * 

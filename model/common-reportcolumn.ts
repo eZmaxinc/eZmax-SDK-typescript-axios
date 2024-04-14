@@ -28,12 +28,14 @@ export interface CommonReportcolumn {
      * @type {CommonReportcellstyle}
      * @memberof CommonReportcolumn
      */
+    /*'objReportcellstyleDefault': CommonReportcellstyle;*/
     'objReportcellstyleDefault': CommonReportcellstyle;
     /**
      * The Reportcolumn width in pixels
      * @type {number}
      * @memberof CommonReportcolumn
      */
+    /*'iReportcolumnWidth': number;*/
     'iReportcolumnWidth': number;
 }
 /**

@@ -25,7 +25,7 @@ import { FieldEErrorCode } from './field-eerror-code';
  * Generic Error Message
  * @export
  */
-/** export type CommonResponseErrorSTemporaryFileUrl = CommonResponseError; */
+/*export type CommonResponseErrorSTemporaryFileUrl = CommonResponseError;*/
 export interface CommonResponseErrorSTemporaryFileUrl {
     /**
      * The message giving details about the error
@@ -84,6 +84,7 @@ export class ValidationObjectCommonResponseErrorSTemporaryFileUrl {
    }
    sTemporaryFileUrl = {
       type: 'string',
+      pattern: '/^(https|http):\\/\\/[^\s\\/$.?#].[^\s]*$/',
       required: false
    }
 } 

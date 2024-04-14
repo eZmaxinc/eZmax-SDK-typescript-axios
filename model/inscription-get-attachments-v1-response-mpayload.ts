@@ -28,6 +28,7 @@ export interface InscriptionGetAttachmentsV1ResponseMPayload {
      * @type {Array<CustomAttachmentdocumenttypeResponse>}
      * @memberof InscriptionGetAttachmentsV1ResponseMPayload
      */
+    /*'a_objAttachmentdocumenttype': Array<CustomAttachmentdocumenttypeResponse>;*/
     'a_objAttachmentdocumenttype': Array<CustomAttachmentdocumenttypeResponse>;
 }
 /**

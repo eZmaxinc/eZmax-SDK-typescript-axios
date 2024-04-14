@@ -31,7 +31,7 @@ import { MultilingualApikeyDescription } from './multilingual-apikey-description
  * An Apikey Object and children to create a complete structure
  * @export
  */
-/** export type ApikeyResponseCompound = ApikeyResponse; */
+/*export type ApikeyResponseCompound = ApikeyResponse;*/
 export interface ApikeyResponseCompound {
     /**
      * The unique ID of the Apikey

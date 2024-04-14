@@ -28,54 +28,63 @@ export interface EzmaxinvoicinguserResponse {
      * @type {number}
      * @memberof EzmaxinvoicinguserResponse
      */
+    /*'pkiEzmaxinvoicinguserID'?: number;*/
     'pkiEzmaxinvoicinguserID'?: number;
     /**
      * The unique ID of the Ezmaxinvoicing
      * @type {number}
      * @memberof EzmaxinvoicinguserResponse
      */
+    /*'fkiEzmaxinvoicingID'?: number;*/
     'fkiEzmaxinvoicingID'?: number;
     /**
      * The unique ID of the Billingentityinternal.
      * @type {number}
      * @memberof EzmaxinvoicinguserResponse
      */
+    /*'fkiBillingentityinternalID': number;*/
     'fkiBillingentityinternalID': number;
     /**
      * The description of the Billingentityinternal in the language of the requester
      * @type {string}
      * @memberof EzmaxinvoicinguserResponse
      */
+    /*'sBillingentityinternalDescriptionX': string;*/
     'sBillingentityinternalDescriptionX': string;
     /**
      * The unique ID of the User
      * @type {number}
      * @memberof EzmaxinvoicinguserResponse
      */
+    /*'fkiUserID': number;*/
     'fkiUserID': number;
     /**
      * The number of ezsign documents
      * @type {number}
      * @memberof EzmaxinvoicinguserResponse
      */
+    /*'iEzmaxinvoicinguserEzsigndocument': number;*/
     'iEzmaxinvoicinguserEzsigndocument': number;
     /**
      * Whether there is an eZsign account
      * @type {boolean}
      * @memberof EzmaxinvoicinguserResponse
      */
+    /*'bEzmaxinvoicinguserEzsignaccount': boolean;*/
     'bEzmaxinvoicinguserEzsignaccount': boolean;
     /**
      * Whether it is billable for eZsign
      * @type {boolean}
      * @memberof EzmaxinvoicinguserResponse
      */
+    /*'bEzmaxinvoicinguserBillableezsign': boolean;*/
     'bEzmaxinvoicinguserBillableezsign': boolean;
     /**
      * 
      * @type {FieldEEzmaxinvoicinguserVariationezsign}
      * @memberof EzmaxinvoicinguserResponse
      */
+    /*'eEzmaxinvoicinguserVariationezsign': FieldEEzmaxinvoicinguserVariationezsign;*/
     'eEzmaxinvoicinguserVariationezsign': FieldEEzmaxinvoicinguserVariationezsign;
 }
 

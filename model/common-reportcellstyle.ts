@@ -37,48 +37,56 @@ export interface CommonReportcellstyle {
      * @type {boolean}
      * @memberof CommonReportcellstyle
      */
+    /*'bReportcellstyleBordertop': boolean;*/
     'bReportcellstyleBordertop': boolean;
     /**
      * Whether there is a border at the bottom of the Reportcell
      * @type {boolean}
      * @memberof CommonReportcellstyle
      */
+    /*'bReportcellstyleBorderbottom': boolean;*/
     'bReportcellstyleBorderbottom': boolean;
     /**
      * Whether there is a border at the left of the Reportcell
      * @type {boolean}
      * @memberof CommonReportcellstyle
      */
+    /*'bReportcellstyleBorderleft': boolean;*/
     'bReportcellstyleBorderleft': boolean;
     /**
      * Whether there is a border at the right of the Reportcell
      * @type {boolean}
      * @memberof CommonReportcellstyle
      */
+    /*'bReportcellstyleBorderright': boolean;*/
     'bReportcellstyleBorderright': boolean;
     /**
      * 
      * @type {EnumHorizontalalignment}
      * @memberof CommonReportcellstyle
      */
+    /*'eReportcellHorizontalalignment': EnumHorizontalalignment;*/
     'eReportcellHorizontalalignment': EnumHorizontalalignment;
     /**
      * 
      * @type {EnumVerticalalignment}
      * @memberof CommonReportcellstyle
      */
+    /*'eReportcellVerticalalignment': EnumVerticalalignment;*/
     'eReportcellVerticalalignment': EnumVerticalalignment;
     /**
      * 
      * @type {EnumFontweight}
      * @memberof CommonReportcellstyle
      */
+    /*'eReportcellFontweight': EnumFontweight;*/
     'eReportcellFontweight': EnumFontweight;
     /**
      * 
      * @type {EnumFontunderline}
      * @memberof CommonReportcellstyle
      */
+    /*'eReportcellFontunderline': EnumFontunderline;*/
     'eReportcellFontunderline': EnumFontunderline;
 }
 

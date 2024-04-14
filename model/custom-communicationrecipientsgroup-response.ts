@@ -28,12 +28,14 @@ export interface CustomCommunicationrecipientsgroupResponse {
      * @type {string}
      * @memberof CustomCommunicationrecipientsgroupResponse
      */
+    /*'sCommunicationrecipientsgroupLabel': string;*/
     'sCommunicationrecipientsgroupLabel': string;
     /**
      * 
      * @type {Array<CustomCommunicationrecipientsrecipientResponse>}
      * @memberof CustomCommunicationrecipientsgroupResponse
      */
+    /*'a_objCommunicationrecipientsrecipient': Array<CustomCommunicationrecipientsrecipientResponse>;*/
     'a_objCommunicationrecipientsrecipient': Array<CustomCommunicationrecipientsrecipientResponse>;
 }
 /**

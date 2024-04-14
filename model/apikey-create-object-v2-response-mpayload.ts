@@ -28,6 +28,7 @@ export interface ApikeyCreateObjectV2ResponseMPayload {
      * @type {Array<ApikeyResponseCompound>}
      * @memberof ApikeyCreateObjectV2ResponseMPayload
      */
+    /*'a_objApikey': Array<ApikeyResponseCompound>;*/
     'a_objApikey': Array<ApikeyResponseCompound>;
 }
 /**

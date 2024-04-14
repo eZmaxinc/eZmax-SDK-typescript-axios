@@ -14,13 +14,13 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
 import { CommonResponseError } from '../model';
 // @ts-ignore
@@ -50,13 +50,14 @@ export const ObjectEzsignformfieldgroupApiAxiosParamCreator = function (configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignformfieldgroupCreateObjectV1: async (ezsignformfieldgroupCreateObjectV1Request: EzsignformfieldgroupCreateObjectV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsignformfieldgroupCreateObjectV1: async (ezsignformfieldgroupCreateObjectV1Request: EzsignformfieldgroupCreateObjectV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'ezsignformfieldgroupCreateObjectV1Request' is not null or undefined
             assertParamExists('ezsignformfieldgroupCreateObjectV1', 'ezsignformfieldgroupCreateObjectV1Request', ezsignformfieldgroupCreateObjectV1Request)
             const localVarPath = `/1/object/ezsignformfieldgroup`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -77,6 +78,7 @@ export const ObjectEzsignformfieldgroupApiAxiosParamCreator = function (configur
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ezsignformfieldgroupCreateObjectV1Request, localVarRequestOptions, configuration)
 
@@ -108,7 +110,7 @@ export const ObjectEzsignformfieldgroupApiAxiosParamCreator = function (configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignformfieldgroupDeleteObjectV1: async (pkiEzsignformfieldgroupID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsignformfieldgroupDeleteObjectV1: async (pkiEzsignformfieldgroupID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsignformfieldgroupID' is not null or undefined
             assertParamExists('ezsignformfieldgroupDeleteObjectV1', 'pkiEzsignformfieldgroupID', pkiEzsignformfieldgroupID)
             const localVarPath = `/1/object/ezsignformfieldgroup/{pkiEzsignformfieldgroupID}`
@@ -116,6 +118,7 @@ export const ObjectEzsignformfieldgroupApiAxiosParamCreator = function (configur
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -134,6 +137,7 @@ export const ObjectEzsignformfieldgroupApiAxiosParamCreator = function (configur
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -165,7 +169,7 @@ export const ObjectEzsignformfieldgroupApiAxiosParamCreator = function (configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignformfieldgroupEditObjectV1: async (pkiEzsignformfieldgroupID: number, ezsignformfieldgroupEditObjectV1Request: EzsignformfieldgroupEditObjectV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsignformfieldgroupEditObjectV1: async (pkiEzsignformfieldgroupID: number, ezsignformfieldgroupEditObjectV1Request: EzsignformfieldgroupEditObjectV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsignformfieldgroupID' is not null or undefined
             assertParamExists('ezsignformfieldgroupEditObjectV1', 'pkiEzsignformfieldgroupID', pkiEzsignformfieldgroupID)
             // verify required parameter 'ezsignformfieldgroupEditObjectV1Request' is not null or undefined
@@ -175,6 +179,7 @@ export const ObjectEzsignformfieldgroupApiAxiosParamCreator = function (configur
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -195,6 +200,7 @@ export const ObjectEzsignformfieldgroupApiAxiosParamCreator = function (configur
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ezsignformfieldgroupEditObjectV1Request, localVarRequestOptions, configuration)
 
@@ -226,7 +232,7 @@ export const ObjectEzsignformfieldgroupApiAxiosParamCreator = function (configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignformfieldgroupGetObjectV2: async (pkiEzsignformfieldgroupID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsignformfieldgroupGetObjectV2: async (pkiEzsignformfieldgroupID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsignformfieldgroupID' is not null or undefined
             assertParamExists('ezsignformfieldgroupGetObjectV2', 'pkiEzsignformfieldgroupID', pkiEzsignformfieldgroupID)
             const localVarPath = `/2/object/ezsignformfieldgroup/{pkiEzsignformfieldgroupID}`
@@ -234,6 +240,7 @@ export const ObjectEzsignformfieldgroupApiAxiosParamCreator = function (configur
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -252,6 +259,7 @@ export const ObjectEzsignformfieldgroupApiAxiosParamCreator = function (configur
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -292,9 +300,11 @@ export const ObjectEzsignformfieldgroupApiFp = function(configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignformfieldgroupCreateObjectV1(ezsignformfieldgroupCreateObjectV1Request: EzsignformfieldgroupCreateObjectV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignformfieldgroupCreateObjectV1Response>> {
+        async ezsignformfieldgroupCreateObjectV1(ezsignformfieldgroupCreateObjectV1Request: EzsignformfieldgroupCreateObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignformfieldgroupCreateObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignformfieldgroupCreateObjectV1(ezsignformfieldgroupCreateObjectV1Request, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsignformfieldgroupApi.ezsignformfieldgroupCreateObjectV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -303,9 +313,11 @@ export const ObjectEzsignformfieldgroupApiFp = function(configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignformfieldgroupDeleteObjectV1(pkiEzsignformfieldgroupID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignformfieldgroupDeleteObjectV1Response>> {
+        async ezsignformfieldgroupDeleteObjectV1(pkiEzsignformfieldgroupID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignformfieldgroupDeleteObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignformfieldgroupDeleteObjectV1(pkiEzsignformfieldgroupID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsignformfieldgroupApi.ezsignformfieldgroupDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -315,9 +327,11 @@ export const ObjectEzsignformfieldgroupApiFp = function(configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignformfieldgroupEditObjectV1(pkiEzsignformfieldgroupID: number, ezsignformfieldgroupEditObjectV1Request: EzsignformfieldgroupEditObjectV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignformfieldgroupEditObjectV1Response>> {
+        async ezsignformfieldgroupEditObjectV1(pkiEzsignformfieldgroupID: number, ezsignformfieldgroupEditObjectV1Request: EzsignformfieldgroupEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignformfieldgroupEditObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignformfieldgroupEditObjectV1(pkiEzsignformfieldgroupID, ezsignformfieldgroupEditObjectV1Request, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsignformfieldgroupApi.ezsignformfieldgroupEditObjectV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -326,9 +340,11 @@ export const ObjectEzsignformfieldgroupApiFp = function(configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignformfieldgroupGetObjectV2(pkiEzsignformfieldgroupID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignformfieldgroupGetObjectV2Response>> {
+        async ezsignformfieldgroupGetObjectV2(pkiEzsignformfieldgroupID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignformfieldgroupGetObjectV2Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignformfieldgroupGetObjectV2(pkiEzsignformfieldgroupID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsignformfieldgroupApi.ezsignformfieldgroupGetObjectV2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -399,7 +415,7 @@ export class ObjectEzsignformfieldgroupApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsignformfieldgroupApi
      */
-    public ezsignformfieldgroupCreateObjectV1(ezsignformfieldgroupCreateObjectV1Request: EzsignformfieldgroupCreateObjectV1Request, options?: AxiosRequestConfig) {
+    public ezsignformfieldgroupCreateObjectV1(ezsignformfieldgroupCreateObjectV1Request: EzsignformfieldgroupCreateObjectV1Request, options?: RawAxiosRequestConfig) {
         return ObjectEzsignformfieldgroupApiFp(this.configuration).ezsignformfieldgroupCreateObjectV1(ezsignformfieldgroupCreateObjectV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -411,7 +427,7 @@ export class ObjectEzsignformfieldgroupApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsignformfieldgroupApi
      */
-    public ezsignformfieldgroupDeleteObjectV1(pkiEzsignformfieldgroupID: number, options?: AxiosRequestConfig) {
+    public ezsignformfieldgroupDeleteObjectV1(pkiEzsignformfieldgroupID: number, options?: RawAxiosRequestConfig) {
         return ObjectEzsignformfieldgroupApiFp(this.configuration).ezsignformfieldgroupDeleteObjectV1(pkiEzsignformfieldgroupID, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -424,7 +440,7 @@ export class ObjectEzsignformfieldgroupApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsignformfieldgroupApi
      */
-    public ezsignformfieldgroupEditObjectV1(pkiEzsignformfieldgroupID: number, ezsignformfieldgroupEditObjectV1Request: EzsignformfieldgroupEditObjectV1Request, options?: AxiosRequestConfig) {
+    public ezsignformfieldgroupEditObjectV1(pkiEzsignformfieldgroupID: number, ezsignformfieldgroupEditObjectV1Request: EzsignformfieldgroupEditObjectV1Request, options?: RawAxiosRequestConfig) {
         return ObjectEzsignformfieldgroupApiFp(this.configuration).ezsignformfieldgroupEditObjectV1(pkiEzsignformfieldgroupID, ezsignformfieldgroupEditObjectV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -436,7 +452,7 @@ export class ObjectEzsignformfieldgroupApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsignformfieldgroupApi
      */
-    public ezsignformfieldgroupGetObjectV2(pkiEzsignformfieldgroupID: number, options?: AxiosRequestConfig) {
+    public ezsignformfieldgroupGetObjectV2(pkiEzsignformfieldgroupID: number, options?: RawAxiosRequestConfig) {
         return ObjectEzsignformfieldgroupApiFp(this.configuration).ezsignformfieldgroupGetObjectV2(pkiEzsignformfieldgroupID, options).then((request) => request(this.axios, this.basePath));
     }
 }

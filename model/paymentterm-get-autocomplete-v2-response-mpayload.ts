@@ -28,6 +28,7 @@ export interface PaymenttermGetAutocompleteV2ResponseMPayload {
      * @type {Array<PaymenttermAutocompleteElementResponse>}
      * @memberof PaymenttermGetAutocompleteV2ResponseMPayload
      */
+    /*'a_objPaymentterm': Array<PaymenttermAutocompleteElementResponse>;*/
     'a_objPaymentterm': Array<PaymenttermAutocompleteElementResponse>;
 }
 /**

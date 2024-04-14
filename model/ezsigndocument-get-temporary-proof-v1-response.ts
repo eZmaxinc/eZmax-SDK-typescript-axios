@@ -31,7 +31,7 @@ import { EzsigndocumentGetTemporaryProofV1ResponseMPayload } from './ezsigndocum
  * Response for GET /1/object/ezsigndocument/{pkiEzsigndocumentID}/getTemporaryProof
  * @export
  */
-/** export type EzsigndocumentGetTemporaryProofV1Response = CommonResponse; */
+/*export type EzsigndocumentGetTemporaryProofV1Response = CommonResponse;*/
 export interface EzsigndocumentGetTemporaryProofV1Response {
     /**
      * 

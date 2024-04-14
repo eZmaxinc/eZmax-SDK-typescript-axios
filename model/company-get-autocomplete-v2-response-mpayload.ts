@@ -28,6 +28,7 @@ export interface CompanyGetAutocompleteV2ResponseMPayload {
      * @type {Array<CompanyAutocompleteElementResponse>}
      * @memberof CompanyGetAutocompleteV2ResponseMPayload
      */
+    /*'a_objCompany': Array<CompanyAutocompleteElementResponse>;*/
     'a_objCompany': Array<CompanyAutocompleteElementResponse>;
 }
 /**

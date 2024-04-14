@@ -25,6 +25,7 @@ export interface EzsigndiscussionCreateObjectV1ResponseMPayload {
      * @type {Array<number>}
      * @memberof EzsigndiscussionCreateObjectV1ResponseMPayload
      */
+    /*'a_pkiEzsigndiscussionID': Array<number>;*/
     'a_pkiEzsigndiscussionID': Array<number>;
 }
 /**

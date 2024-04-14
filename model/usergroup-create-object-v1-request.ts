@@ -28,6 +28,7 @@ export interface UsergroupCreateObjectV1Request {
      * @type {Array<UsergroupRequestCompound>}
      * @memberof UsergroupCreateObjectV1Request
      */
+    /*'a_objUsergroup': Array<UsergroupRequestCompound>;*/
     'a_objUsergroup': Array<UsergroupRequestCompound>;
 }
 /**

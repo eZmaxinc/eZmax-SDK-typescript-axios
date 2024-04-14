@@ -25,18 +25,21 @@ export interface TimezoneAutocompleteElementResponse {
      * @type {string}
      * @memberof TimezoneAutocompleteElementResponse
      */
+    /*'sTimezoneName': string;*/
     'sTimezoneName': string;
     /**
      * The unique ID of the Timezone
      * @type {number}
      * @memberof TimezoneAutocompleteElementResponse
      */
+    /*'pkiTimezoneID': number;*/
     'pkiTimezoneID': number;
     /**
      * Whether the Timezone is active or not
      * @type {boolean}
      * @memberof TimezoneAutocompleteElementResponse
      */
+    /*'bTimezoneIsactive': boolean;*/
     'bTimezoneIsactive': boolean;
 }
 /**

@@ -31,7 +31,7 @@ import { EzsignsignatureResponse } from './ezsignsignature-response';
  * This is the base Webhook object
  * @export
  */
-/** export type WebhookEzsignSignatureSigned = CommonWebhook; */
+/*export type WebhookEzsignSignatureSigned = CommonWebhook;*/
 export interface WebhookEzsignSignatureSigned {
     /**
      * 

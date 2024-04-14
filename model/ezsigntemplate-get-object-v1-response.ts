@@ -31,7 +31,7 @@ import { EzsigntemplateGetObjectV1ResponseMPayload } from './ezsigntemplate-get-
  * Response for GET /1/object/ezsigntemplate/{pkiEzsigntemplateID}
  * @export
  */
-/** export type EzsigntemplateGetObjectV1Response = CommonResponse; */
+/*export type EzsigntemplateGetObjectV1Response = CommonResponse;*/
 export interface EzsigntemplateGetObjectV1Response {
     /**
      * 

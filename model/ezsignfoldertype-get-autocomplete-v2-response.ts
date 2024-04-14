@@ -31,7 +31,7 @@ import { EzsignfoldertypeGetAutocompleteV2ResponseMPayload } from './ezsignfolde
  * Response for GET /2/object/ezsignfoldertype/getAutocomplete
  * @export
  */
-/** export type EzsignfoldertypeGetAutocompleteV2Response = CommonResponse; */
+/*export type EzsignfoldertypeGetAutocompleteV2Response = CommonResponse;*/
 export interface EzsignfoldertypeGetAutocompleteV2Response {
     /**
      * 

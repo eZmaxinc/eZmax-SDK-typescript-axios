@@ -25,18 +25,21 @@ export interface UsergroupAutocompleteElementResponse {
      * @type {string}
      * @memberof UsergroupAutocompleteElementResponse
      */
+    /*'sUsergroupNameX': string;*/
     'sUsergroupNameX': string;
     /**
      * The unique ID of the Usergroup
      * @type {number}
      * @memberof UsergroupAutocompleteElementResponse
      */
+    /*'pkiUsergroupID': number;*/
     'pkiUsergroupID': number;
     /**
      * Whether the Usergroup is active or not
      * @type {boolean}
      * @memberof UsergroupAutocompleteElementResponse
      */
+    /*'bUsergroupIsactive': boolean;*/
     'bUsergroupIsactive': boolean;
 }
 /**

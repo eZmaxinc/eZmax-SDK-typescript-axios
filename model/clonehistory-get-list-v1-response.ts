@@ -31,7 +31,7 @@ import { CommonResponseObjDebugPayloadGetList } from './common-response-obj-debu
  * Response for GET /1/object/clonehistory/getList
  * @export
  */
-/** export type ClonehistoryGetListV1Response = CommonResponseGetList; */
+/*export type ClonehistoryGetListV1Response = CommonResponseGetList;*/
 export interface ClonehistoryGetListV1Response {
     /**
      * 

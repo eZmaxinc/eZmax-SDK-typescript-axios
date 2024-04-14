@@ -31,7 +31,7 @@ import { EzsigndocumentGetCompletedElementsV1ResponseMPayload } from './ezsigndo
  * Response for GET /1/object/ezsigndocument/{pkiEzsigndocumentID}/getCompletedElements
  * @export
  */
-/** export type EzsigndocumentGetCompletedElementsV1Response = CommonResponse; */
+/*export type EzsigndocumentGetCompletedElementsV1Response = CommonResponse;*/
 export interface EzsigndocumentGetCompletedElementsV1Response {
     /**
      * 

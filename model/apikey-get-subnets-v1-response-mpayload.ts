@@ -28,6 +28,7 @@ export interface ApikeyGetSubnetsV1ResponseMPayload {
      * @type {Array<SubnetResponseCompound>}
      * @memberof ApikeyGetSubnetsV1ResponseMPayload
      */
+    /*'a_objSubnet': Array<SubnetResponseCompound>;*/
     'a_objSubnet': Array<SubnetResponseCompound>;
 }
 /**

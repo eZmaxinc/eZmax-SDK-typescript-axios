@@ -25,7 +25,7 @@ import { WebhookListElement } from './webhook-list-element';
  * Payload for GET /1/object/webhook/getList
  * @export
  */
-/** export type WebhookGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload; */
+/*export type WebhookGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;*/
 export interface WebhookGetListV1ResponseMPayload {
     /**
      * The number of rows returned

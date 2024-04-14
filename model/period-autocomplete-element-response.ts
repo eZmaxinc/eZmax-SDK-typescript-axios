@@ -25,18 +25,21 @@ export interface PeriodAutocompleteElementResponse {
      * @type {string}
      * @memberof PeriodAutocompleteElementResponse
      */
+    /*'sPeriodYYYYMM': string;*/
     'sPeriodYYYYMM': string;
     /**
      * The unique ID of the Period
      * @type {number}
      * @memberof PeriodAutocompleteElementResponse
      */
+    /*'pkiPeriodID': number;*/
     'pkiPeriodID': number;
     /**
      * Whether the Period is active or not
      * @type {boolean}
      * @memberof PeriodAutocompleteElementResponse
      */
+    /*'bPeriodIsactive': boolean;*/
     'bPeriodIsactive': boolean;
 }
 /**

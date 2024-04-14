@@ -31,7 +31,7 @@ import { CommonResponseWarning } from './common-response-warning';
  * Response for POST /2/object/ezsigndocument/{pkiEzsigndocument}/applyEzsigntemplate
  * @export
  */
-/** export type EzsigndocumentApplyEzsigntemplateV2Response = CommonResponse; */
+/*export type EzsigndocumentApplyEzsigntemplateV2Response = CommonResponse;*/
 export interface EzsigndocumentApplyEzsigntemplateV2Response {
     /**
      * 

@@ -14,13 +14,13 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
 import { BillingentityexternalGetAutocompleteV2Response } from '../model';
 // @ts-ignore
@@ -43,7 +43,7 @@ export const ObjectBillingentityexternalApiAxiosParamCreator = function (configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        billingentityexternalGetAutocompleteV2: async (sSelector: BillingentityexternalGetAutocompleteV2SSelectorEnum, eFilterActive?: BillingentityexternalGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        billingentityexternalGetAutocompleteV2: async (sSelector: BillingentityexternalGetAutocompleteV2SSelectorEnum, eFilterActive?: BillingentityexternalGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('billingentityexternalGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/billingentityexternal/getAutocomplete/{sSelector}`
@@ -51,6 +51,7 @@ export const ObjectBillingentityexternalApiAxiosParamCreator = function (configu
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -74,8 +75,8 @@ export const ObjectBillingentityexternalApiAxiosParamCreator = function (configu
             }
 
             if (acceptLanguage != null) {
-                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string' 
-                    ? acceptLanguage 
+                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
+                    ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
 
@@ -83,6 +84,7 @@ export const ObjectBillingentityexternalApiAxiosParamCreator = function (configu
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -126,9 +128,11 @@ export const ObjectBillingentityexternalApiFp = function(configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async billingentityexternalGetAutocompleteV2(sSelector: BillingentityexternalGetAutocompleteV2SSelectorEnum, eFilterActive?: BillingentityexternalGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BillingentityexternalGetAutocompleteV2Response>> {
+        async billingentityexternalGetAutocompleteV2(sSelector: BillingentityexternalGetAutocompleteV2SSelectorEnum, eFilterActive?: BillingentityexternalGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BillingentityexternalGetAutocompleteV2Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.billingentityexternalGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectBillingentityexternalApi.billingentityexternalGetAutocompleteV2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -174,7 +178,7 @@ export class ObjectBillingentityexternalApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectBillingentityexternalApi
      */
-    public billingentityexternalGetAutocompleteV2(sSelector: BillingentityexternalGetAutocompleteV2SSelectorEnum, eFilterActive?: BillingentityexternalGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig) {
+    public billingentityexternalGetAutocompleteV2(sSelector: BillingentityexternalGetAutocompleteV2SSelectorEnum, eFilterActive?: BillingentityexternalGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig) {
         return ObjectBillingentityexternalApiFp(this.configuration).billingentityexternalGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(this.axios, this.basePath));
     }
 }

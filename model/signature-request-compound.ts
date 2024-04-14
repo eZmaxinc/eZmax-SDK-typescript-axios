@@ -22,7 +22,7 @@ import { SignatureRequest } from './signature-request';
  * A Signature Object and children
  * @export
  */
-/** export type SignatureRequestCompound = SignatureRequest; */
+/*export type SignatureRequestCompound = SignatureRequest;*/
 export interface SignatureRequestCompound {
     /**
      * The unique ID of the Signature

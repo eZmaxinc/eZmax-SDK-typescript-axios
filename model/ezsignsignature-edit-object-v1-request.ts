@@ -28,6 +28,7 @@ export interface EzsignsignatureEditObjectV1Request {
      * @type {EzsignsignatureRequestCompound}
      * @memberof EzsignsignatureEditObjectV1Request
      */
+    /*'objEzsignsignature': EzsignsignatureRequestCompound;*/
     'objEzsignsignature': EzsignsignatureRequestCompound;
 }
 /**

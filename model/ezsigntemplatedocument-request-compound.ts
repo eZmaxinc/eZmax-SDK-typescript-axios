@@ -22,7 +22,7 @@ import { EzsigntemplatedocumentRequest } from './ezsigntemplatedocument-request'
  * A Ezsigntemplatedocument Object and children
  * @export
  */
-/** export type EzsigntemplatedocumentRequestCompound = EzsigntemplatedocumentRequest; */
+/*export type EzsigntemplatedocumentRequestCompound = EzsigntemplatedocumentRequest;*/
 export interface EzsigntemplatedocumentRequestCompound {
     /**
      * The unique ID of the Ezsigntemplatedocument

@@ -25,48 +25,56 @@ export interface EzsigntemplatepackageListElement {
      * @type {number}
      * @memberof EzsigntemplatepackageListElement
      */
+    /*'pkiEzsigntemplatepackageID': number;*/
     'pkiEzsigntemplatepackageID': number;
     /**
      * The unique ID of the Ezsignfoldertype.
      * @type {number}
      * @memberof EzsigntemplatepackageListElement
      */
+    /*'fkiEzsignfoldertypeID': number;*/
     'fkiEzsignfoldertypeID': number;
     /**
      * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @type {number}
      * @memberof EzsigntemplatepackageListElement
      */
+    /*'fkiLanguageID': number;*/
     'fkiLanguageID': number;
     /**
      * The description of the Ezsigntemplatepackage
      * @type {string}
      * @memberof EzsigntemplatepackageListElement
      */
+    /*'sEzsigntemplatepackageDescription': string;*/
     'sEzsigntemplatepackageDescription': string;
     /**
      * Whether the Ezsignbulksend was automatically modified and needs a manual validation
      * @type {boolean}
      * @memberof EzsigntemplatepackageListElement
      */
+    /*'bEzsigntemplatepackageNeedvalidation': boolean;*/
     'bEzsigntemplatepackageNeedvalidation': boolean;
     /**
      * The total number of Ezsigntemplatepackagemembership in the Ezsigntemplatepackage
      * @type {number}
      * @memberof EzsigntemplatepackageListElement
      */
+    /*'iEzsigntemplatepackagemembership': number;*/
     'iEzsigntemplatepackagemembership': number;
     /**
      * The name of the Ezsignfoldertype in the language of the requester
      * @type {string}
      * @memberof EzsigntemplatepackageListElement
      */
+    /*'sEzsignfoldertypeNameX': string;*/
     'sEzsignfoldertypeNameX': string;
     /**
      * Whether the Ezsigntemplatepackage is active or not
      * @type {boolean}
      * @memberof EzsigntemplatepackageListElement
      */
+    /*'bEzsigntemplatepackageIsactive': boolean;*/
     'bEzsigntemplatepackageIsactive': boolean;
 }
 /**

@@ -25,12 +25,14 @@ export interface SignatureResponse {
      * @type {number}
      * @memberof SignatureResponse
      */
+    /*'pkiSignatureID': number;*/
     'pkiSignatureID': number;
     /**
      * The URL of the SVG file for the Signature
      * @type {string}
      * @memberof SignatureResponse
      */
+    /*'sSignatureUrl': string;*/
     'sSignatureUrl': string;
 }
 /**
@@ -63,7 +65,7 @@ export class ValidationObjectSignatureResponse {
    }
    sSignatureUrl = {
       type: 'string',
-      pattern: '/^.{0,2048}$/',
+      pattern: '/^(https|http):\\/\\/[^\s\\/$.?#].[^\s]*$/',
       required: true
    }
 } 

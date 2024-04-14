@@ -28,6 +28,7 @@ export interface CorsEditObjectV1Request {
      * @type {CorsRequestCompound}
      * @memberof CorsEditObjectV1Request
      */
+    /*'objCors': CorsRequestCompound;*/
     'objCors': CorsRequestCompound;
 }
 /**

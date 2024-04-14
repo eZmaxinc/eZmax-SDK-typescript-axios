@@ -31,7 +31,7 @@ import { EzsignfolderImportEzsigntemplatepackageV1ResponseMPayload } from './ezs
  * Response for POST/1/object/ezsignfolder/{pkiEzsignfolderID}/importEzsigntemplatepackage
  * @export
  */
-/** export type EzsignfolderImportEzsigntemplatepackageV1Response = CommonResponse; */
+/*export type EzsignfolderImportEzsigntemplatepackageV1Response = CommonResponse;*/
 export interface EzsignfolderImportEzsigntemplatepackageV1Response {
     /**
      * 

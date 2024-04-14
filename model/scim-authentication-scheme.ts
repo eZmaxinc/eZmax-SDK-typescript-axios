@@ -25,18 +25,21 @@ export interface ScimAuthenticationScheme {
      * @type {string}
      * @memberof ScimAuthenticationScheme
      */
+    /*'description': string;*/
     'description': string;
     /**
      * The common authentication scheme name
      * @type {string}
      * @memberof ScimAuthenticationScheme
      */
+    /*'name': string;*/
     'name': string;
     /**
      * The authentication scheme.
      * @type {string}
      * @memberof ScimAuthenticationScheme
      */
+    /*'type': ScimAuthenticationSchemeTypeEnum;*/
     'type': ScimAuthenticationSchemeTypeEnum;
 }
 

@@ -28,6 +28,7 @@ export interface WebhookGetHistoryV1ResponseMPayload {
      * @type {Array<CustomWebhooklogResponse>}
      * @memberof WebhookGetHistoryV1ResponseMPayload
      */
+    /*'a_objWebhooklog': Array<CustomWebhooklogResponse>;*/
     'a_objWebhooklog': Array<CustomWebhooklogResponse>;
 }
 /**

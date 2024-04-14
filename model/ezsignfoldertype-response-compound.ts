@@ -40,7 +40,7 @@ import { UserlogintypeResponse } from './userlogintype-response';
  * A Ezsignfoldertype Object
  * @export
  */
-/** export type EzsignfoldertypeResponseCompound = EzsignfoldertypeResponse; */
+/*export type EzsignfoldertypeResponseCompound = EzsignfoldertypeResponse;*/
 export interface EzsignfoldertypeResponseCompound {
     /**
      * The unique ID of the Ezsignfoldertype.
@@ -462,10 +462,12 @@ export class ValidationObjectEzsignfoldertypeResponseCompound {
    }
    sEmailAddressSigned = {
       type: 'string',
+      pattern: '/^[\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/',
       required: false
    }
    sEmailAddressSummary = {
       type: 'string',
+      pattern: '/^[\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/',
       required: false
    }
    sUsergroupNameX = {

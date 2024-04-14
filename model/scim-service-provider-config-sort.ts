@@ -25,6 +25,7 @@ export interface ScimServiceProviderConfigSort {
      * @type {boolean}
      * @memberof ScimServiceProviderConfigSort
      */
+    /*'supported': boolean;*/
     'supported': boolean;
 }
 /**

@@ -28,7 +28,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for PATCH /1/object/discussionmessage/{pkiDiscussionmessageID}
  * @export
  */
-/** export type DiscussionmessagePatchObjectV1Response = CommonResponse; */
+/*export type DiscussionmessagePatchObjectV1Response = CommonResponse;*/
 export interface DiscussionmessagePatchObjectV1Response {
     /**
      * 

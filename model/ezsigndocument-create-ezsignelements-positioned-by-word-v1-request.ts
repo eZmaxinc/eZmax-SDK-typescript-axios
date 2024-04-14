@@ -31,12 +31,14 @@ export interface EzsigndocumentCreateEzsignelementsPositionedByWordV1Request {
      * @type {Array<CustomEzsignformfieldgroupCreateEzsignelementsPositionedByWordRequest>}
      * @memberof EzsigndocumentCreateEzsignelementsPositionedByWordV1Request
      */
+    /*'a_objEzsignformfieldgroup': Array<CustomEzsignformfieldgroupCreateEzsignelementsPositionedByWordRequest>;*/
     'a_objEzsignformfieldgroup': Array<CustomEzsignformfieldgroupCreateEzsignelementsPositionedByWordRequest>;
     /**
      * 
      * @type {Array<CustomEzsignsignatureCreateEzsignelementsPositionedByWordRequest>}
      * @memberof EzsigndocumentCreateEzsignelementsPositionedByWordV1Request
      */
+    /*'a_objEzsignsignature': Array<CustomEzsignsignatureCreateEzsignelementsPositionedByWordRequest>;*/
     'a_objEzsignsignature': Array<CustomEzsignsignatureCreateEzsignelementsPositionedByWordRequest>;
 }
 /**

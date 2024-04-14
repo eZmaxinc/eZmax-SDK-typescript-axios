@@ -31,7 +31,7 @@ import { EzsigntemplatesignerCreateObjectV1ResponseMPayload } from './ezsigntemp
  * Response for POST /1/object/ezsigntemplatesigner
  * @export
  */
-/** export type EzsigntemplatesignerCreateObjectV1Response = CommonResponse; */
+/*export type EzsigntemplatesignerCreateObjectV1Response = CommonResponse;*/
 export interface EzsigntemplatesignerCreateObjectV1Response {
     /**
      * 

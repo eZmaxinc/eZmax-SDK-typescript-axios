@@ -28,6 +28,7 @@ export interface InscriptionGetCommunicationListV1ResponseMPayload {
      * @type {Array<CustomCommunicationListElementResponse>}
      * @memberof InscriptionGetCommunicationListV1ResponseMPayload
      */
+    /*'a_objCommunication': Array<CustomCommunicationListElementResponse>;*/
     'a_objCommunication': Array<CustomCommunicationListElementResponse>;
 }
 /**

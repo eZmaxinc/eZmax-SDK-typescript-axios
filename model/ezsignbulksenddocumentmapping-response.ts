@@ -25,30 +25,35 @@ export interface EzsignbulksenddocumentmappingResponse {
      * @type {number}
      * @memberof EzsignbulksenddocumentmappingResponse
      */
+    /*'pkiEzsignbulksenddocumentmappingID': number;*/
     'pkiEzsignbulksenddocumentmappingID': number;
     /**
      * The unique ID of the Ezsignbulksend
      * @type {number}
      * @memberof EzsignbulksenddocumentmappingResponse
      */
+    /*'fkiEzsignbulksendID': number;*/
     'fkiEzsignbulksendID': number;
     /**
      * The unique ID of the Ezsigntemplatepackage
      * @type {number}
      * @memberof EzsignbulksenddocumentmappingResponse
      */
+    /*'fkiEzsigntemplatepackageID'?: number;*/
     'fkiEzsigntemplatepackageID'?: number;
     /**
      * The unique ID of the Ezsigntemplate
      * @type {number}
      * @memberof EzsignbulksenddocumentmappingResponse
      */
+    /*'fkiEzsigntemplateID'?: number;*/
     'fkiEzsigntemplateID'?: number;
     /**
      * The order in which the Ezsigntemplate or Ezsigntemplatepackage will be presented to the signatory in the Ezsignfolder.
      * @type {number}
      * @memberof EzsignbulksenddocumentmappingResponse
      */
+    /*'iEzsignbulksenddocumentmappingOrder': number;*/
     'iEzsignbulksenddocumentmappingOrder': number;
 }
 /**

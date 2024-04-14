@@ -25,12 +25,14 @@ export interface UserCreateEzsignuserV1ResponseMPayload {
      * @type {Array<string>}
      * @memberof UserCreateEzsignuserV1ResponseMPayload
      */
+    /*'a_sEmailAddressSuccess': Array<string>;*/
     'a_sEmailAddressSuccess': Array<string>;
     /**
      * An array of email addresses that failed.
      * @type {Array<string>}
      * @memberof UserCreateEzsignuserV1ResponseMPayload
      */
+    /*'a_sEmailAddressFailure': Array<string>;*/
     'a_sEmailAddressFailure': Array<string>;
 }
 /**

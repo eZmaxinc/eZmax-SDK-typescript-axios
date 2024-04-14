@@ -28,6 +28,7 @@ export interface EzsignsigningreasonEditObjectV1Request {
      * @type {EzsignsigningreasonRequestCompound}
      * @memberof EzsignsigningreasonEditObjectV1Request
      */
+    /*'objEzsignsigningreason': EzsignsigningreasonRequestCompound;*/
     'objEzsignsigningreason': EzsignsigningreasonRequestCompound;
 }
 /**

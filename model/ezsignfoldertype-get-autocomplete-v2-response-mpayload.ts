@@ -28,6 +28,7 @@ export interface EzsignfoldertypeGetAutocompleteV2ResponseMPayload {
      * @type {Array<EzsignfoldertypeAutocompleteElementResponse>}
      * @memberof EzsignfoldertypeGetAutocompleteV2ResponseMPayload
      */
+    /*'a_objEzsignfoldertype': Array<EzsignfoldertypeAutocompleteElementResponse>;*/
     'a_objEzsignfoldertype': Array<EzsignfoldertypeAutocompleteElementResponse>;
 }
 /**

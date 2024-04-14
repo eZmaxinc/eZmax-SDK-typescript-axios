@@ -28,7 +28,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for PUT /1/object/variableexpense/{pkiVariableexpenseID}
  * @export
  */
-/** export type VariableexpenseEditObjectV1Response = CommonResponse; */
+/*export type VariableexpenseEditObjectV1Response = CommonResponse;*/
 export interface VariableexpenseEditObjectV1Response {
     /**
      * 

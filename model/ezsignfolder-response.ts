@@ -40,24 +40,28 @@ export interface EzsignfolderResponse {
      * @type {number}
      * @memberof EzsignfolderResponse
      */
+    /*'pkiEzsignfolderID': number;*/
     'pkiEzsignfolderID': number;
     /**
      * The unique ID of the Ezsignfoldertype.
      * @type {number}
      * @memberof EzsignfolderResponse
      */
+    /*'fkiEzsignfoldertypeID'?: number;*/
     'fkiEzsignfoldertypeID'?: number;
     /**
      * 
      * @type {CustomEzsignfoldertypeResponse}
      * @memberof EzsignfolderResponse
      */
+    /*'objEzsignfoldertype'?: CustomEzsignfoldertypeResponse;*/
     'objEzsignfoldertype'?: CustomEzsignfoldertypeResponse;
     /**
      * 
      * @type {FieldEEzsignfolderCompletion}
      * @memberof EzsignfolderResponse
      */
+    /*'eEzsignfolderCompletion': FieldEEzsignfolderCompletion;*/
     'eEzsignfolderCompletion': FieldEEzsignfolderCompletion;
     /**
      * 
@@ -65,114 +69,133 @@ export interface EzsignfolderResponse {
      * @memberof EzsignfolderResponse
      * @deprecated
      */
+    /*'sEzsignfoldertypeNameX'?: string;*/
     'sEzsignfoldertypeNameX'?: string;
     /**
      * The unique ID of the Billingentityinternal.
      * @type {number}
      * @memberof EzsignfolderResponse
      */
+    /*'fkiBillingentityinternalID'?: number;*/
     'fkiBillingentityinternalID'?: number;
     /**
      * The description of the Billingentityinternal in the language of the requester
      * @type {string}
      * @memberof EzsignfolderResponse
      */
+    /*'sBillingentityinternalDescriptionX'?: string;*/
     'sBillingentityinternalDescriptionX'?: string;
     /**
      * The unique ID of the Ezsigntsarequirement.  Determine if a Time Stamping Authority should add a timestamp on each of the signature. Valid values:  |Value|Description| |-|-| |1|No. TSA Timestamping will requested. This will make all signatures a lot faster since no round-trip to the TSA server will be required. Timestamping will be made using eZsign server\'s time.| |2|Best effort. Timestamping from a Time Stamping Authority will be requested but is not mandatory. In the very improbable case it cannot be completed, the timestamping will be made using eZsign server\'s time. **Additional fee applies**| |3|Mandatory. Timestamping from a Time Stamping Authority will be requested and is mandatory. In the very improbable case it cannot be completed, the signature will fail and the user will be asked to retry. **Additional fee applies**|
      * @type {number}
      * @memberof EzsignfolderResponse
      */
+    /*'fkiEzsigntsarequirementID'?: number;*/
     'fkiEzsigntsarequirementID'?: number;
     /**
      * The description of the Ezsigntsarequirement in the language of the requester
      * @type {string}
      * @memberof EzsignfolderResponse
      */
+    /*'sEzsigntsarequirementDescriptionX'?: string;*/
     'sEzsigntsarequirementDescriptionX'?: string;
     /**
      * The description of the Ezsignfolder
      * @type {string}
      * @memberof EzsignfolderResponse
      */
+    /*'sEzsignfolderDescription': string;*/
     'sEzsignfolderDescription': string;
     /**
      * Note about the Ezsignfolder
      * @type {string}
      * @memberof EzsignfolderResponse
      */
+    /*'tEzsignfolderNote'?: string;*/
     'tEzsignfolderNote'?: string;
     /**
      * If the Ezsigndocument can be disposed
      * @type {boolean}
      * @memberof EzsignfolderResponse
      */
+    /*'bEzsignfolderIsdisposable'?: boolean;*/
     'bEzsignfolderIsdisposable'?: boolean;
     /**
      * 
      * @type {FieldEEzsignfolderSendreminderfrequency}
      * @memberof EzsignfolderResponse
      */
+    /*'eEzsignfolderSendreminderfrequency'?: FieldEEzsignfolderSendreminderfrequency;*/
     'eEzsignfolderSendreminderfrequency'?: FieldEEzsignfolderSendreminderfrequency;
     /**
      * The date and time at which the Ezsignfolder will be sent in the future.
      * @type {string}
      * @memberof EzsignfolderResponse
      */
+    /*'dtEzsignfolderDelayedsenddate'?: string;*/
     'dtEzsignfolderDelayedsenddate'?: string;
     /**
      * The maximum date and time at which the Ezsignfolder can be signed.
      * @type {string}
      * @memberof EzsignfolderResponse
      */
+    /*'dtEzsignfolderDuedate'?: string;*/
     'dtEzsignfolderDuedate'?: string;
     /**
      * The date and time at which the Ezsignfolder was sent the last time.
      * @type {string}
      * @memberof EzsignfolderResponse
      */
+    /*'dtEzsignfolderSentdate'?: string;*/
     'dtEzsignfolderSentdate'?: string;
     /**
      * The scheduled date and time at which the Ezsignfolder should be archived.
      * @type {string}
      * @memberof EzsignfolderResponse
      */
+    /*'dtEzsignfolderScheduledarchive'?: string;*/
     'dtEzsignfolderScheduledarchive'?: string;
     /**
      * The scheduled date at which the Ezsignfolder should be Disposed.
      * @type {string}
      * @memberof EzsignfolderResponse
      */
+    /*'dtEzsignfolderScheduleddispose'?: string;*/
     'dtEzsignfolderScheduleddispose'?: string;
     /**
      * 
      * @type {FieldEEzsignfolderStep}
      * @memberof EzsignfolderResponse
      */
+    /*'eEzsignfolderStep'?: FieldEEzsignfolderStep;*/
     'eEzsignfolderStep'?: FieldEEzsignfolderStep;
     /**
      * The date and time at which the Ezsignfolder was closed. Either by applying the last signature or by completing it prematurely.
      * @type {string}
      * @memberof EzsignfolderResponse
      */
+    /*'dtEzsignfolderClose'?: string;*/
     'dtEzsignfolderClose'?: string;
     /**
      * A custom text message that will be added to the email sent.
      * @type {string}
      * @memberof EzsignfolderResponse
      */
+    /*'tEzsignfolderMessage'?: string;*/
     'tEzsignfolderMessage'?: string;
     /**
      * 
      * @type {CommonAudit}
      * @memberof EzsignfolderResponse
      */
+    /*'objAudit'?: CommonAudit;*/
     'objAudit'?: CommonAudit;
     /**
      * This field can be used to store an External ID from the client\'s system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format. 
      * @type {string}
      * @memberof EzsignfolderResponse
      */
+    /*'sEzsignfolderExternalid'?: string;*/
     'sEzsignfolderExternalid'?: string;
 }
 
@@ -321,7 +344,7 @@ export class ValidationObjectEzsignfolderResponse {
    objAudit = new ValidationObjectCommonAudit()
    sEzsignfolderExternalid = {
       type: 'string',
-      pattern: '/^.{0,64}$/',
+      pattern: '/^.{0,128}$/',
       required: false
    }
 } 

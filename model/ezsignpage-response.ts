@@ -25,42 +25,49 @@ export interface EzsignpageResponse {
      * @type {number}
      * @memberof EzsignpageResponse
      */
+    /*'pkiEzsignpageID': number;*/
     'pkiEzsignpageID': number;
     /**
      * The Width of the page\'s image in pixels calculated at 100 DPI
      * @type {number}
      * @memberof EzsignpageResponse
      */
+    /*'iEzsignpageWidthimage': number;*/
     'iEzsignpageWidthimage': number;
     /**
      * The Height of the page\'s image in pixels calculated at 100 DPI
      * @type {number}
      * @memberof EzsignpageResponse
      */
+    /*'iEzsignpageHeightimage': number;*/
     'iEzsignpageHeightimage': number;
     /**
      * The Width of the page in points calculated at 72 DPI
      * @type {number}
      * @memberof EzsignpageResponse
      */
+    /*'iEzsignpageWidthpdf': number;*/
     'iEzsignpageWidthpdf': number;
     /**
      * The Height of the page in points calculated at 72 DPI
      * @type {number}
      * @memberof EzsignpageResponse
      */
+    /*'iEzsignpageHeightpdf': number;*/
     'iEzsignpageHeightpdf': number;
     /**
      * The page number in the Ezsigndocument
      * @type {number}
      * @memberof EzsignpageResponse
      */
+    /*'iEzsignpagePagenumber': number;*/
     'iEzsignpagePagenumber': number;
     /**
      * The Url to the Ezsignpage\'s rasterized image.  Url will expire after 5 minutes.
      * @type {string}
      * @memberof EzsignpageResponse
      */
+    /*'sComputedImageurl': string;*/
     'sComputedImageurl': string;
 }
 /**

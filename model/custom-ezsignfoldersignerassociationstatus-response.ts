@@ -28,6 +28,7 @@ export interface CustomEzsignfoldersignerassociationstatusResponse {
      * @type {number}
      * @memberof CustomEzsignfoldersignerassociationstatusResponse
      */
+    /*'fkiEzsignfoldersignerassociationID': number;*/
     'fkiEzsignfoldersignerassociationID': number;
     /**
      * The last name of the Ezsignsigner
@@ -35,6 +36,7 @@ export interface CustomEzsignfoldersignerassociationstatusResponse {
      * @memberof CustomEzsignfoldersignerassociationstatusResponse
      * @deprecated
      */
+    /*'sEzsignfoldersignerassociationstatusLastname'?: string;*/
     'sEzsignfoldersignerassociationstatusLastname'?: string;
     /**
      * The first name of the Ezsignsigner
@@ -42,18 +44,21 @@ export interface CustomEzsignfoldersignerassociationstatusResponse {
      * @memberof CustomEzsignfoldersignerassociationstatusResponse
      * @deprecated
      */
+    /*'sEzsignfoldersignerassociationstatusFirstname'?: string;*/
     'sEzsignfoldersignerassociationstatusFirstname'?: string;
     /**
      * The description of the Ezsignsigner
      * @type {string}
      * @memberof CustomEzsignfoldersignerassociationstatusResponse
      */
+    /*'sEzsignfoldersignerassociationstatusDescriptionX'?: string;*/
     'sEzsignfoldersignerassociationstatusDescriptionX'?: string;
     /**
      * 
      * @type {Array<CustomEzsignsignaturestatusResponse>}
      * @memberof CustomEzsignfoldersignerassociationstatusResponse
      */
+    /*'a_objEzsignsignaturestatus': Array<CustomEzsignsignaturestatusResponse>;*/
     'a_objEzsignsignaturestatus': Array<CustomEzsignsignaturestatusResponse>;
 }
 /**

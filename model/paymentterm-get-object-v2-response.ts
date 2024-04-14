@@ -31,7 +31,7 @@ import { PaymenttermGetObjectV2ResponseMPayload } from './paymentterm-get-object
  * Response for GET /2/object/paymentterm/{pkiPaymenttermID}
  * @export
  */
-/** export type PaymenttermGetObjectV2Response = CommonResponse; */
+/*export type PaymenttermGetObjectV2Response = CommonResponse;*/
 export interface PaymenttermGetObjectV2Response {
     /**
      * 

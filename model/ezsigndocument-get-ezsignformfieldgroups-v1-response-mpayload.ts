@@ -28,6 +28,7 @@ export interface EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload {
      * @type {Array<EzsignformfieldgroupResponseCompound>}
      * @memberof EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload
      */
+    /*'a_objEzsignformfieldgroup': Array<EzsignformfieldgroupResponseCompound>;*/
     'a_objEzsignformfieldgroup': Array<EzsignformfieldgroupResponseCompound>;
 }
 /**

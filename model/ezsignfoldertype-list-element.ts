@@ -28,24 +28,28 @@ export interface EzsignfoldertypeListElement {
      * @type {number}
      * @memberof EzsignfoldertypeListElement
      */
+    /*'pkiEzsignfoldertypeID': number;*/
     'pkiEzsignfoldertypeID': number;
     /**
      * 
      * @type {FieldEEzsignfoldertypePrivacylevel}
      * @memberof EzsignfoldertypeListElement
      */
+    /*'eEzsignfoldertypePrivacylevel': FieldEEzsignfoldertypePrivacylevel;*/
     'eEzsignfoldertypePrivacylevel': FieldEEzsignfoldertypePrivacylevel;
     /**
      * The name of the Ezsignfoldertype in the language of the requester
      * @type {string}
      * @memberof EzsignfoldertypeListElement
      */
+    /*'sEzsignfoldertypeNameX': string;*/
     'sEzsignfoldertypeNameX': string;
     /**
      * Whether the Ezsignfoldertype is active or not
      * @type {boolean}
      * @memberof EzsignfoldertypeListElement
      */
+    /*'bEzsignfoldertypeIsactive': boolean;*/
     'bEzsignfoldertypeIsactive': boolean;
 }
 

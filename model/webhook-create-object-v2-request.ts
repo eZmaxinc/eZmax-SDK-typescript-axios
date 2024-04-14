@@ -28,6 +28,7 @@ export interface WebhookCreateObjectV2Request {
      * @type {Array<WebhookRequestCompound>}
      * @memberof WebhookCreateObjectV2Request
      */
+    /*'a_objWebhook': Array<WebhookRequestCompound>;*/
     'a_objWebhook': Array<WebhookRequestCompound>;
 }
 /**

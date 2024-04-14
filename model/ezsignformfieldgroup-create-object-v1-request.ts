@@ -28,6 +28,7 @@ export interface EzsignformfieldgroupCreateObjectV1Request {
      * @type {Array<EzsignformfieldgroupRequestCompound>}
      * @memberof EzsignformfieldgroupCreateObjectV1Request
      */
+    /*'a_objEzsignformfieldgroup': Array<EzsignformfieldgroupRequestCompound>;*/
     'a_objEzsignformfieldgroup': Array<EzsignformfieldgroupRequestCompound>;
 }
 /**

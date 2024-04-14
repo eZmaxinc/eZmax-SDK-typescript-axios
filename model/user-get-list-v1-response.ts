@@ -31,7 +31,7 @@ import { UserGetListV1ResponseMPayload } from './user-get-list-v1-response-mpayl
  * Response for GET /1/object/user/getList
  * @export
  */
-/** export type UserGetListV1Response = CommonResponseGetList; */
+/*export type UserGetListV1Response = CommonResponseGetList;*/
 export interface UserGetListV1Response {
     /**
      * 

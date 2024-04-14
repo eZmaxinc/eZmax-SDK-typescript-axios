@@ -25,6 +25,7 @@ export interface UserstagedMapV1Request {
      * @type {number}
      * @memberof UserstagedMapV1Request
      */
+    /*'fkiUserID': number;*/
     'fkiUserID': number;
 }
 /**

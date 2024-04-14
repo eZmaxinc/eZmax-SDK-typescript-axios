@@ -37,7 +37,7 @@ import { FieldEEzsignfolderStep } from './field-eezsignfolder-step';
  * Payload for GET /1/object/ezsignfolder/{pkiEzsignfolderID}
  * @export
  */
-/** export type EzsignfolderGetObjectV1ResponseMPayload = EzsignfolderResponseCompound; */
+/*export type EzsignfolderGetObjectV1ResponseMPayload = EzsignfolderResponseCompound;*/
 export interface EzsignfolderGetObjectV1ResponseMPayload {
     /**
      * The unique ID of the Ezsignfolder
@@ -326,7 +326,7 @@ export class ValidationObjectEzsignfolderGetObjectV1ResponseMPayload {
    objAudit = new ValidationObjectCommonAudit()
    sEzsignfolderExternalid = {
       type: 'string',
-      pattern: '/^.{0,64}$/',
+      pattern: '/^.{0,128}$/',
       required: false
    }
 } 

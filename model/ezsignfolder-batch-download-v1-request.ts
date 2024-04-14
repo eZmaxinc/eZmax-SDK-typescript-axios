@@ -25,12 +25,14 @@ export interface EzsignfolderBatchDownloadV1Request {
      * @type {Array<number>}
      * @memberof EzsignfolderBatchDownloadV1Request
      */
+    /*'a_pkiEzsigndocumentID': Array<number>;*/
     'a_pkiEzsigndocumentID': Array<number>;
     /**
      * The type of document to retrieve.  1. **Signed** Is the final document once all signatures were applied. 2. **Proofdocument** Is the evidence report. 3. **Proof** Is the complete evidence archive including all of the above and more.
      * @type {Array<string>}
      * @memberof EzsignfolderBatchDownloadV1Request
      */
+    /*'a_eDocumentType': Array<EzsignfolderBatchDownloadV1RequestAEDocumentTypeEnum>;*/
     'a_eDocumentType': Array<EzsignfolderBatchDownloadV1RequestAEDocumentTypeEnum>;
 }
 

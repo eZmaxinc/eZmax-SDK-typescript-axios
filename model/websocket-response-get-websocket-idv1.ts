@@ -28,12 +28,14 @@ export interface WebsocketResponseGetWebsocketIDV1 {
      * @type {string}
      * @memberof WebsocketResponseGetWebsocketIDV1
      */
+    /*'eWebsocketMessagetype': WebsocketResponseGetWebsocketIDV1EWebsocketMessagetypeEnum;*/
     'eWebsocketMessagetype': WebsocketResponseGetWebsocketIDV1EWebsocketMessagetypeEnum;
     /**
      * 
      * @type {WebsocketResponseGetWebsocketIDV1MPayload}
      * @memberof WebsocketResponseGetWebsocketIDV1
      */
+    /*'mPayload': WebsocketResponseGetWebsocketIDV1MPayload;*/
     'mPayload': WebsocketResponseGetWebsocketIDV1MPayload;
 }
 

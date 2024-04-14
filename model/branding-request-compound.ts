@@ -31,7 +31,7 @@ import { MultilingualBrandingDescription } from './multilingual-branding-descrip
  * A Branding Object and children
  * @export
  */
-/** export type BrandingRequestCompound = BrandingRequest; */
+/*export type BrandingRequestCompound = BrandingRequest;*/
 export interface BrandingRequestCompound {
     /**
      * The unique ID of the Branding
@@ -246,6 +246,7 @@ export class ValidationObjectBrandingRequestCompound {
    }
    sEmailAddress = {
       type: 'string',
+      pattern: '/^[\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/',
       required: false
    }
    bBrandingIsactive = {

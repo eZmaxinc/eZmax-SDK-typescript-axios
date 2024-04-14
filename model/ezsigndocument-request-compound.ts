@@ -22,7 +22,7 @@ import { EzsigndocumentRequest } from './ezsigndocument-request';
  * An Ezsigndocument Object and children to create a complete structure
  * @export
  */
-/** export type EzsigndocumentRequestCompound = EzsigndocumentRequest; */
+/*export type EzsigndocumentRequestCompound = EzsigndocumentRequest;*/
 export interface EzsigndocumentRequestCompound {
     /**
      * The unique ID of the Ezsigndocument
@@ -242,7 +242,7 @@ export class ValidationObjectEzsigndocumentRequestCompound {
    }
    sEzsigndocumentExternalid = {
       type: 'string',
-      pattern: '/^.{0,64}$/',
+      pattern: '/^.{0,128}$/',
       required: false
    }
 } 

@@ -25,7 +25,7 @@ import { EzsigndiscussionResponse } from './ezsigndiscussion-response';
  * A Ezsigndiscussion Object
  * @export
  */
-/** export type EzsigndiscussionResponseCompound = EzsigndiscussionResponse; */
+/*export type EzsigndiscussionResponseCompound = EzsigndiscussionResponse;*/
 export interface EzsigndiscussionResponseCompound {
     /**
      * The unique ID of the Ezsigndiscussion

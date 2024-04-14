@@ -22,7 +22,7 @@ import { EzsigntemplatepackagesignermembershipRequest } from './ezsigntemplatepa
  * A Ezsigntemplatepackagesignermembership Object and children
  * @export
  */
-/** export type EzsigntemplatepackagesignermembershipRequestCompound = EzsigntemplatepackagesignermembershipRequest; */
+/*export type EzsigntemplatepackagesignermembershipRequestCompound = EzsigntemplatepackagesignermembershipRequest;*/
 export interface EzsigntemplatepackagesignermembershipRequestCompound {
     /**
      * The unique ID of the Ezsigntemplatepackagesignermembership

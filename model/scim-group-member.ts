@@ -25,24 +25,28 @@ export interface ScimGroupMember {
      * @type {string}
      * @memberof ScimGroupMember
      */
+    /*'value'?: string;*/
     'value'?: string;
     /**
      * 
      * @type {string}
      * @memberof ScimGroupMember
      */
+    /*'display'?: string;*/
     'display'?: string;
     /**
      * 
      * @type {string}
      * @memberof ScimGroupMember
      */
+    /*'type'?: string;*/
     'type'?: string;
     /**
      * 
      * @type {string}
      * @memberof ScimGroupMember
      */
+    /*'$ref'?: string;*/
     '$ref'?: string;
 }
 /**

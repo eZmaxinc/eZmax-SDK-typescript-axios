@@ -46,7 +46,7 @@ import { FieldEEzsignsignatureType } from './field-eezsignsignature-type';
  * An Ezsignsignature Object and children to create a complete structure
  * @export
  */
-/** export type EzsignsignatureRequestCompound = EzsignsignatureRequest; */
+/*export type EzsignsignatureRequestCompound = EzsignsignatureRequest;*/
 export interface EzsignsignatureRequestCompound {
     /**
      * The unique ID of the Ezsignsignature

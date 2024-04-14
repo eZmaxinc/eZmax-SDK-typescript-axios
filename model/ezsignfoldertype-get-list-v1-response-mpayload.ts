@@ -25,7 +25,7 @@ import { EzsignfoldertypeListElement } from './ezsignfoldertype-list-element';
  * Payload for GET /1/object/ezsignfoldertype/getList
  * @export
  */
-/** export type EzsignfoldertypeGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload; */
+/*export type EzsignfoldertypeGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;*/
 export interface EzsignfoldertypeGetListV1ResponseMPayload {
     /**
      * The number of rows returned

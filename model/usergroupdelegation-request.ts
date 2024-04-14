@@ -25,18 +25,21 @@ export interface UsergroupdelegationRequest {
      * @type {number}
      * @memberof UsergroupdelegationRequest
      */
+    /*'pkiUsergroupdelegationID'?: number;*/
     'pkiUsergroupdelegationID'?: number;
     /**
      * The unique ID of the Usergroup
      * @type {number}
      * @memberof UsergroupdelegationRequest
      */
+    /*'fkiUsergroupID': number;*/
     'fkiUsergroupID': number;
     /**
      * The unique ID of the User
      * @type {number}
      * @memberof UsergroupdelegationRequest
      */
+    /*'fkiUserID': number;*/
     'fkiUserID': number;
 }
 /**

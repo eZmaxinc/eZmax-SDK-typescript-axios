@@ -25,7 +25,7 @@ import { VariableexpenseListElement } from './variableexpense-list-element';
  * Payload for GET /1/object/variableexpense/getList
  * @export
  */
-/** export type VariableexpenseGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload; */
+/*export type VariableexpenseGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;*/
 export interface VariableexpenseGetListV1ResponseMPayload {
     /**
      * The number of rows returned

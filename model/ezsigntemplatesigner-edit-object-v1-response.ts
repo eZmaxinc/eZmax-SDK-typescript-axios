@@ -28,7 +28,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for PUT /1/object/ezsigntemplatesigner/{pkiEzsigntemplatesignerID}
  * @export
  */
-/** export type EzsigntemplatesignerEditObjectV1Response = CommonResponse; */
+/*export type EzsigntemplatesignerEditObjectV1Response = CommonResponse;*/
 export interface EzsigntemplatesignerEditObjectV1Response {
     /**
      * 

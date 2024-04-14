@@ -31,7 +31,7 @@ import { SecretquestionGetAutocompleteV2ResponseMPayload } from './secretquestio
  * Response for GET /2/object/secretquestion/getAutocomplete
  * @export
  */
-/** export type SecretquestionGetAutocompleteV2Response = CommonResponse; */
+/*export type SecretquestionGetAutocompleteV2Response = CommonResponse;*/
 export interface SecretquestionGetAutocompleteV2Response {
     /**
      * 

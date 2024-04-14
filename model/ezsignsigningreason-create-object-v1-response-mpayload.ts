@@ -25,6 +25,7 @@ export interface EzsignsigningreasonCreateObjectV1ResponseMPayload {
      * @type {Array<number>}
      * @memberof EzsignsigningreasonCreateObjectV1ResponseMPayload
      */
+    /*'a_pkiEzsignsigningreasonID': Array<number>;*/
     'a_pkiEzsignsigningreasonID': Array<number>;
 }
 /**

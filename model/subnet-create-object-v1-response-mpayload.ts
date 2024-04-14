@@ -25,6 +25,7 @@ export interface SubnetCreateObjectV1ResponseMPayload {
      * @type {Array<number>}
      * @memberof SubnetCreateObjectV1ResponseMPayload
      */
+    /*'a_pkiSubnetID': Array<number>;*/
     'a_pkiSubnetID': Array<number>;
 }
 /**

@@ -31,7 +31,7 @@ import { SignatureCreateObjectV1ResponseMPayload } from './signature-create-obje
  * Response for POST /1/object/signature
  * @export
  */
-/** export type SignatureCreateObjectV1Response = CommonResponse; */
+/*export type SignatureCreateObjectV1Response = CommonResponse;*/
 export interface SignatureCreateObjectV1Response {
     /**
      * 

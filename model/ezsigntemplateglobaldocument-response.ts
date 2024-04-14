@@ -25,24 +25,28 @@ export interface EzsigntemplateglobaldocumentResponse {
      * @type {number}
      * @memberof EzsigntemplateglobaldocumentResponse
      */
+    /*'pkiEzsigntemplateglobaldocumentID': number;*/
     'pkiEzsigntemplateglobaldocumentID': number;
     /**
      * The name of the Ezsigntemplateglobaldocument.
      * @type {string}
      * @memberof EzsigntemplateglobaldocumentResponse
      */
+    /*'sEzsigntemplateglobaldocumentName': string;*/
     'sEzsigntemplateglobaldocumentName': string;
     /**
      * The number of pages in the Ezsigntemplateglobaldocument.
      * @type {number}
      * @memberof EzsigntemplateglobaldocumentResponse
      */
+    /*'iEzsigntemplateglobaldocumentPagetotal': number;*/
     'iEzsigntemplateglobaldocumentPagetotal': number;
     /**
      * The number of total signatures in the Ezsigntemplateglobal.
      * @type {number}
      * @memberof EzsigntemplateglobaldocumentResponse
      */
+    /*'iEzsigntemplateglobaldocumentSignaturetotal': number;*/
     'iEzsigntemplateglobaldocumentSignaturetotal': number;
 }
 /**

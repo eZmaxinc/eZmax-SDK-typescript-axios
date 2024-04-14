@@ -28,6 +28,7 @@ export interface EzsignfolderGetCommunicationrecipientsV1ResponseMPayload {
      * @type {Array<CustomCommunicationrecipientsgroupResponse>}
      * @memberof EzsignfolderGetCommunicationrecipientsV1ResponseMPayload
      */
+    /*'a_objCommunicationrecipientsgroup': Array<CustomCommunicationrecipientsgroupResponse>;*/
     'a_objCommunicationrecipientsgroup': Array<CustomCommunicationrecipientsgroupResponse>;
 }
 /**

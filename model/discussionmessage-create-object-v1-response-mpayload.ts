@@ -25,6 +25,7 @@ export interface DiscussionmessageCreateObjectV1ResponseMPayload {
      * @type {Array<number>}
      * @memberof DiscussionmessageCreateObjectV1ResponseMPayload
      */
+    /*'a_pkiDiscussionmessageID': Array<number>;*/
     'a_pkiDiscussionmessageID': Array<number>;
 }
 /**

@@ -28,6 +28,7 @@ export interface DiscussionmessagePatchObjectV1Request {
      * @type {DiscussionmessageRequestPatch}
      * @memberof DiscussionmessagePatchObjectV1Request
      */
+    /*'objDiscussionmessage': DiscussionmessageRequestPatch;*/
     'objDiscussionmessage': DiscussionmessageRequestPatch;
 }
 /**

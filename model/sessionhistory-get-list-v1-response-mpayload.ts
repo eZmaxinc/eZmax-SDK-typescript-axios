@@ -25,7 +25,7 @@ import { SessionhistoryListElement } from './sessionhistory-list-element';
  * Payload for GET /1/object/sessionhistory/getList
  * @export
  */
-/** export type SessionhistoryGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload; */
+/*export type SessionhistoryGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;*/
 export interface SessionhistoryGetListV1ResponseMPayload {
     /**
      * The number of rows returned

@@ -28,7 +28,7 @@ import { VariableexpenseRequest } from './variableexpense-request';
  * A Variableexpense Object and children
  * @export
  */
-/** export type VariableexpenseRequestCompound = VariableexpenseRequest; */
+/*export type VariableexpenseRequestCompound = VariableexpenseRequest;*/
 export interface VariableexpenseRequestCompound {
     /**
      * The unique ID of the Variableexpense

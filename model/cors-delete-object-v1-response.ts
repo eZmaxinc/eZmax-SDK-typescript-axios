@@ -28,7 +28,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for DELETE /1/object/cors/{pkiCorsID}
  * @export
  */
-/** export type CorsDeleteObjectV1Response = CommonResponse; */
+/*export type CorsDeleteObjectV1Response = CommonResponse;*/
 export interface CorsDeleteObjectV1Response {
     /**
      * 

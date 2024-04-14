@@ -37,90 +37,105 @@ export interface WebhookResponse {
      * @type {number}
      * @memberof WebhookResponse
      */
+    /*'pkiWebhookID': number;*/
     'pkiWebhookID': number;
     /**
      * The description of the Webhook
      * @type {string}
      * @memberof WebhookResponse
      */
+    /*'sWebhookDescription': string;*/
     'sWebhookDescription': string;
     /**
      * The unique ID of the Ezsignfoldertype.
      * @type {number}
      * @memberof WebhookResponse
      */
+    /*'fkiEzsignfoldertypeID'?: number;*/
     'fkiEzsignfoldertypeID'?: number;
     /**
      * The name of the Ezsignfoldertype in the language of the requester
      * @type {string}
      * @memberof WebhookResponse
      */
+    /*'sEzsignfoldertypeNameX'?: string;*/
     'sEzsignfoldertypeNameX'?: string;
     /**
      * 
      * @type {FieldEWebhookModule}
      * @memberof WebhookResponse
      */
+    /*'eWebhookModule': FieldEWebhookModule;*/
     'eWebhookModule': FieldEWebhookModule;
     /**
      * 
      * @type {FieldEWebhookEzsignevent}
      * @memberof WebhookResponse
      */
+    /*'eWebhookEzsignevent'?: FieldEWebhookEzsignevent;*/
     'eWebhookEzsignevent'?: FieldEWebhookEzsignevent;
     /**
      * 
      * @type {FieldEWebhookManagementevent}
      * @memberof WebhookResponse
      */
+    /*'eWebhookManagementevent'?: FieldEWebhookManagementevent;*/
     'eWebhookManagementevent'?: FieldEWebhookManagementevent;
     /**
      * The URL of the Webhook callback
      * @type {string}
      * @memberof WebhookResponse
      */
+    /*'sWebhookUrl': string;*/
     'sWebhookUrl': string;
     /**
      * The email that will receive the Webhook in case all attempts fail
      * @type {string}
      * @memberof WebhookResponse
      */
+    /*'sWebhookEmailfailed': string;*/
     'sWebhookEmailfailed': string;
     /**
      * The Apikey for the Webhook.  This will be hidden if we are not creating or regenerating the Apikey.
      * @type {string}
      * @memberof WebhookResponse
      */
+    /*'sWebhookApikey'?: string;*/
     'sWebhookApikey'?: string;
     /**
      * The Secret for the Webhook.  This will be hidden if we are not creating or regenerating the Apikey.
      * @type {string}
      * @memberof WebhookResponse
      */
+    /*'sWebhookSecret'?: string;*/
     'sWebhookSecret'?: string;
     /**
      * Whether the Webhook is active or not
      * @type {boolean}
      * @memberof WebhookResponse
      */
+    /*'bWebhookIsactive': boolean;*/
     'bWebhookIsactive': boolean;
     /**
      * Whether the requests will be signed or not
      * @type {boolean}
      * @memberof WebhookResponse
      */
+    /*'bWebhookIssigned': boolean;*/
     'bWebhookIssigned': boolean;
     /**
      * Wheter the server\'s SSL certificate should be validated or not. Not recommended to skip for production use
      * @type {boolean}
      * @memberof WebhookResponse
      */
+    /*'bWebhookSkipsslvalidation': boolean;*/
     'bWebhookSkipsslvalidation': boolean;
     /**
      * 
      * @type {CommonAudit}
      * @memberof WebhookResponse
      */
+    /*'objAudit': CommonAudit;*/
     'objAudit': CommonAudit;
 }
 
@@ -199,6 +214,7 @@ export class ValidationObjectWebhookResponse {
    }
    sWebhookUrl = {
       type: 'string',
+      pattern: '/^(https|http):\\/\\/[^\s\\/$.?#].[^\s]*$/',
       required: true
    }
    sWebhookEmailfailed = {

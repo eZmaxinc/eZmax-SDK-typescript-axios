@@ -40,24 +40,28 @@ export interface SystemconfigurationRequest {
      * @type {number}
      * @memberof SystemconfigurationRequest
      */
+    /*'pkiSystemconfigurationID'?: number;*/
     'pkiSystemconfigurationID'?: number;
     /**
      * 
      * @type {FieldESystemconfigurationNewexternaluseraction}
      * @memberof SystemconfigurationRequest
      */
+    /*'eSystemconfigurationNewexternaluseraction': FieldESystemconfigurationNewexternaluseraction;*/
     'eSystemconfigurationNewexternaluseraction': FieldESystemconfigurationNewexternaluseraction;
     /**
      * 
      * @type {FieldESystemconfigurationLanguage1}
      * @memberof SystemconfigurationRequest
      */
+    /*'eSystemconfigurationLanguage1': FieldESystemconfigurationLanguage1;*/
     'eSystemconfigurationLanguage1': FieldESystemconfigurationLanguage1;
     /**
      * 
      * @type {FieldESystemconfigurationLanguage2}
      * @memberof SystemconfigurationRequest
      */
+    /*'eSystemconfigurationLanguage2': FieldESystemconfigurationLanguage2;*/
     'eSystemconfigurationLanguage2': FieldESystemconfigurationLanguage2;
     /**
      * 
@@ -65,42 +69,49 @@ export interface SystemconfigurationRequest {
      * @memberof SystemconfigurationRequest
      * @deprecated
      */
+    /*'eSystemconfigurationEzsign'?: FieldESystemconfigurationEzsign;*/
     'eSystemconfigurationEzsign'?: FieldESystemconfigurationEzsign;
     /**
      * 
      * @type {FieldESystemconfigurationEzsignofficeplan}
      * @memberof SystemconfigurationRequest
      */
+    /*'eSystemconfigurationEzsignofficeplan'?: FieldESystemconfigurationEzsignofficeplan;*/
     'eSystemconfigurationEzsignofficeplan'?: FieldESystemconfigurationEzsignofficeplan;
     /**
      * Whether if Ezsign is paid by the company or not
      * @type {boolean}
      * @memberof SystemconfigurationRequest
      */
+    /*'bSystemconfigurationEzsignpaidbyoffice'?: boolean;*/
     'bSystemconfigurationEzsignpaidbyoffice'?: boolean;
     /**
      * Whether if we allow the creation of personal files in eZsign
      * @type {boolean}
      * @memberof SystemconfigurationRequest
      */
+    /*'bSystemconfigurationEzsignpersonnal': boolean;*/
     'bSystemconfigurationEzsignpersonnal': boolean;
     /**
      * Whether if we allow SSPR
      * @type {boolean}
      * @memberof SystemconfigurationRequest
      */
+    /*'bSystemconfigurationSspr': boolean;*/
     'bSystemconfigurationSspr': boolean;
     /**
      * The start date where the system will be in read only
      * @type {string}
      * @memberof SystemconfigurationRequest
      */
+    /*'dtSystemconfigurationReadonlyexpirationstart'?: string;*/
     'dtSystemconfigurationReadonlyexpirationstart'?: string;
     /**
      * The end date where the system will be in read only
      * @type {string}
      * @memberof SystemconfigurationRequest
      */
+    /*'dtSystemconfigurationReadonlyexpirationend'?: string;*/
     'dtSystemconfigurationReadonlyexpirationend'?: string;
 }
 

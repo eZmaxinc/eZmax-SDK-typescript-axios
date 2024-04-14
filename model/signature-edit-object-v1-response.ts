@@ -28,7 +28,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for PUT /1/object/signature/{pkiSignatureID}
  * @export
  */
-/** export type SignatureEditObjectV1Response = CommonResponse; */
+/*export type SignatureEditObjectV1Response = CommonResponse;*/
 export interface SignatureEditObjectV1Response {
     /**
      * 

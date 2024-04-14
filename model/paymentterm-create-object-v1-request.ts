@@ -28,6 +28,7 @@ export interface PaymenttermCreateObjectV1Request {
      * @type {Array<PaymenttermRequestCompound>}
      * @memberof PaymenttermCreateObjectV1Request
      */
+    /*'a_objPaymentterm': Array<PaymenttermRequestCompound>;*/
     'a_objPaymentterm': Array<PaymenttermRequestCompound>;
 }
 /**

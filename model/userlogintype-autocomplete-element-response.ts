@@ -25,18 +25,21 @@ export interface UserlogintypeAutocompleteElementResponse {
      * @type {number}
      * @memberof UserlogintypeAutocompleteElementResponse
      */
+    /*'pkiUserlogintypeID': number;*/
     'pkiUserlogintypeID': number;
     /**
      * The description of the Userlogintype in the language of the requester
      * @type {string}
      * @memberof UserlogintypeAutocompleteElementResponse
      */
+    /*'sUserlogintypeDescriptionX': string;*/
     'sUserlogintypeDescriptionX': string;
     /**
      * Whether the Userlogintype is active or not
      * @type {boolean}
      * @memberof UserlogintypeAutocompleteElementResponse
      */
+    /*'bUserlogintypeIsactive': boolean;*/
     'bUserlogintypeIsactive': boolean;
 }
 /**

@@ -25,6 +25,7 @@ export interface UsergroupEditUsergroupmembershipsV1ResponseMPayload {
      * @type {Array<number>}
      * @memberof UsergroupEditUsergroupmembershipsV1ResponseMPayload
      */
+    /*'a_pkiUsergroupmembershipID': Array<number>;*/
     'a_pkiUsergroupmembershipID': Array<number>;
 }
 /**

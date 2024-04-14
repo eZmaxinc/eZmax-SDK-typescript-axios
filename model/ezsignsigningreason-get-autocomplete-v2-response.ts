@@ -31,7 +31,7 @@ import { EzsignsigningreasonGetAutocompleteV2ResponseMPayload } from './ezsignsi
  * Response for GET /2/object/ezsignsigningreason/getAutocomplete
  * @export
  */
-/** export type EzsignsigningreasonGetAutocompleteV2Response = CommonResponse; */
+/*export type EzsignsigningreasonGetAutocompleteV2Response = CommonResponse;*/
 export interface EzsignsigningreasonGetAutocompleteV2Response {
     /**
      * 

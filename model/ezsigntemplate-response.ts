@@ -31,72 +31,84 @@ export interface EzsigntemplateResponse {
      * @type {number}
      * @memberof EzsigntemplateResponse
      */
+    /*'pkiEzsigntemplateID': number;*/
     'pkiEzsigntemplateID': number;
     /**
      * The unique ID of the Ezsigntemplatedocument
      * @type {number}
      * @memberof EzsigntemplateResponse
      */
+    /*'fkiEzsigntemplatedocumentID'?: number;*/
     'fkiEzsigntemplatedocumentID'?: number;
     /**
      * The unique ID of the Ezsignfoldertype.
      * @type {number}
      * @memberof EzsigntemplateResponse
      */
+    /*'fkiEzsignfoldertypeID'?: number;*/
     'fkiEzsignfoldertypeID'?: number;
     /**
      * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @type {number}
      * @memberof EzsigntemplateResponse
      */
+    /*'fkiLanguageID': number;*/
     'fkiLanguageID': number;
     /**
      * The Name of the Language in the language of the requester
      * @type {string}
      * @memberof EzsigntemplateResponse
      */
+    /*'sLanguageNameX': string;*/
     'sLanguageNameX': string;
     /**
      * The description of the Ezsigntemplate
      * @type {string}
      * @memberof EzsigntemplateResponse
      */
+    /*'sEzsigntemplateDescription': string;*/
     'sEzsigntemplateDescription': string;
     /**
      * The filename pattern of the Ezsigntemplate
      * @type {string}
      * @memberof EzsigntemplateResponse
      */
+    /*'sEzsigntemplateFilenamepattern'?: string;*/
     'sEzsigntemplateFilenamepattern'?: string;
     /**
      * Whether the Ezsigntemplate can be accessed by admin users only (eUserType=Normal)
      * @type {boolean}
      * @memberof EzsigntemplateResponse
      */
+    /*'bEzsigntemplateAdminonly': boolean;*/
     'bEzsigntemplateAdminonly': boolean;
     /**
      * The name of the Ezsignfoldertype in the language of the requester
      * @type {string}
      * @memberof EzsigntemplateResponse
      */
+    /*'sEzsignfoldertypeNameX'?: string;*/
     'sEzsignfoldertypeNameX'?: string;
     /**
      * 
      * @type {CommonAudit}
      * @memberof EzsigntemplateResponse
      */
+    /*'objAudit': CommonAudit;*/
     'objAudit': CommonAudit;
     /**
      * Whether the Ezsigntemplate if allowed to edit or not
      * @type {boolean}
      * @memberof EzsigntemplateResponse
      */
+    /*'bEzsigntemplateEditallowed': boolean;*/
     'bEzsigntemplateEditallowed': boolean;
     /**
      * 
      * @type {FieldEEzsigntemplateType}
      * @memberof EzsigntemplateResponse
      */
+    /*'eEzsigntemplateType'?: FieldEEzsigntemplateType;*/
     'eEzsigntemplateType'?: FieldEEzsigntemplateType;
 }
 

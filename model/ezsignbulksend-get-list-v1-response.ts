@@ -31,7 +31,7 @@ import { EzsignbulksendGetListV1ResponseMPayload } from './ezsignbulksend-get-li
  * Response for GET /1/object/ezsignbulksend/getList
  * @export
  */
-/** export type EzsignbulksendGetListV1Response = CommonResponseGetList; */
+/*export type EzsignbulksendGetListV1Response = CommonResponseGetList;*/
 export interface EzsignbulksendGetListV1Response {
     /**
      * 

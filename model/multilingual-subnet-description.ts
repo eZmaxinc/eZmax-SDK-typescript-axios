@@ -25,12 +25,14 @@ export interface MultilingualSubnetDescription {
      * @type {string}
      * @memberof MultilingualSubnetDescription
      */
+    /*'sSubnetDescription1'?: string;*/
     'sSubnetDescription1'?: string;
     /**
      * The description of the Subnet in English
      * @type {string}
      * @memberof MultilingualSubnetDescription
      */
+    /*'sSubnetDescription2'?: string;*/
     'sSubnetDescription2'?: string;
 }
 /**

@@ -28,6 +28,7 @@ export interface EzsigndocumentCreateObjectV2Request {
      * @type {Array<EzsigndocumentRequestCompound>}
      * @memberof EzsigndocumentCreateObjectV2Request
      */
+    /*'a_objEzsigndocument': Array<EzsigndocumentRequestCompound>;*/
     'a_objEzsigndocument': Array<EzsigndocumentRequestCompound>;
 }
 /**

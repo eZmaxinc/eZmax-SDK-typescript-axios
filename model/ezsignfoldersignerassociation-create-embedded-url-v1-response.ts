@@ -31,7 +31,7 @@ import { EzsignfoldersignerassociationCreateEmbeddedUrlV1ResponseMPayload } from
  * Response for POST /1/object/ezsignfoldersignerassociation/createEmbeddedUrl
  * @export
  */
-/** export type EzsignfoldersignerassociationCreateEmbeddedUrlV1Response = CommonResponse; */
+/*export type EzsignfoldersignerassociationCreateEmbeddedUrlV1Response = CommonResponse;*/
 export interface EzsignfoldersignerassociationCreateEmbeddedUrlV1Response {
     /**
      * 

@@ -28,6 +28,7 @@ export interface BrandingCreateObjectV1Request {
      * @type {Array<BrandingRequestCompound>}
      * @memberof BrandingCreateObjectV1Request
      */
+    /*'a_objBranding': Array<BrandingRequestCompound>;*/
     'a_objBranding': Array<BrandingRequestCompound>;
 }
 /**

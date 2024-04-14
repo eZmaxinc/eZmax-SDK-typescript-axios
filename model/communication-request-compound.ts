@@ -43,7 +43,7 @@ import { FieldECommunicationType } from './field-ecommunication-type';
  * Request for POST /1/object/communication
  * @export
  */
-/** export type CommunicationRequestCompound = CommunicationRequest; */
+/*export type CommunicationRequestCompound = CommunicationRequest;*/
 export interface CommunicationRequestCompound {
     /**
      * The unique ID of the Communication.

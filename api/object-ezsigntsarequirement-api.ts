@@ -14,13 +14,13 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
 import { EzsigntsarequirementGetAutocompleteV2Response } from '../model';
 // @ts-ignore
@@ -44,7 +44,7 @@ export const ObjectEzsigntsarequirementApiAxiosParamCreator = function (configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigntsarequirementGetAutocompleteV2: async (sSelector: EzsigntsarequirementGetAutocompleteV2SSelectorEnum, fkiEzsignfoldertypeID?: number, eFilterActive?: EzsigntsarequirementGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsigntsarequirementGetAutocompleteV2: async (sSelector: EzsigntsarequirementGetAutocompleteV2SSelectorEnum, fkiEzsignfoldertypeID?: number, eFilterActive?: EzsigntsarequirementGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('ezsigntsarequirementGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/ezsigntsarequirement/getAutocomplete/{sSelector}`
@@ -52,6 +52,7 @@ export const ObjectEzsigntsarequirementApiAxiosParamCreator = function (configur
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -79,8 +80,8 @@ export const ObjectEzsigntsarequirementApiAxiosParamCreator = function (configur
             }
 
             if (acceptLanguage != null) {
-                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string' 
-                    ? acceptLanguage 
+                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
+                    ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
 
@@ -88,6 +89,7 @@ export const ObjectEzsigntsarequirementApiAxiosParamCreator = function (configur
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -132,9 +134,11 @@ export const ObjectEzsigntsarequirementApiFp = function(configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsigntsarequirementGetAutocompleteV2(sSelector: EzsigntsarequirementGetAutocompleteV2SSelectorEnum, fkiEzsignfoldertypeID?: number, eFilterActive?: EzsigntsarequirementGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigntsarequirementGetAutocompleteV2Response>> {
+        async ezsigntsarequirementGetAutocompleteV2(sSelector: EzsigntsarequirementGetAutocompleteV2SSelectorEnum, fkiEzsignfoldertypeID?: number, eFilterActive?: EzsigntsarequirementGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigntsarequirementGetAutocompleteV2Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigntsarequirementGetAutocompleteV2(sSelector, fkiEzsignfoldertypeID, eFilterActive, sQuery, acceptLanguage, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsigntsarequirementApi.ezsigntsarequirementGetAutocompleteV2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -182,7 +186,7 @@ export class ObjectEzsigntsarequirementApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsigntsarequirementApi
      */
-    public ezsigntsarequirementGetAutocompleteV2(sSelector: EzsigntsarequirementGetAutocompleteV2SSelectorEnum, fkiEzsignfoldertypeID?: number, eFilterActive?: EzsigntsarequirementGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig) {
+    public ezsigntsarequirementGetAutocompleteV2(sSelector: EzsigntsarequirementGetAutocompleteV2SSelectorEnum, fkiEzsignfoldertypeID?: number, eFilterActive?: EzsigntsarequirementGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig) {
         return ObjectEzsigntsarequirementApiFp(this.configuration).ezsigntsarequirementGetAutocompleteV2(sSelector, fkiEzsignfoldertypeID, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(this.axios, this.basePath));
     }
 }

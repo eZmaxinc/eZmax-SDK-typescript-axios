@@ -40,366 +40,427 @@ export interface AttachmentResponse {
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'pkiAttachmentID': number;*/
     'pkiAttachmentID': number;
     /**
      * The unique ID of the Computer
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiComputerID'?: number;*/
     'fkiComputerID'?: number;
     /**
      * The unique ID of the Adjustment
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiAdjustmentID'?: number;*/
     'fkiAdjustmentID'?: number;
     /**
      * The unique ID of the Agent.
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiAgentID'?: number;*/
     'fkiAgentID'?: number;
     /**
      * The unique ID of the Bankaccount
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiBankaccountID'?: number;*/
     'fkiBankaccountID'?: number;
     /**
      * The unique ID of the Broker.
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiBrokerID'?: number;*/
     'fkiBrokerID'?: number;
     /**
      * The unique ID of the Commissionadvance
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiCommissionadvanceID'?: number;*/
     'fkiCommissionadvanceID'?: number;
     /**
      * The unique ID of the Communication.
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiCommunicationID'?: number;*/
     'fkiCommunicationID'?: number;
     /**
      * The unique ID of the Customer.
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiCustomerID'?: number;*/
     'fkiCustomerID'?: number;
     /**
      * The unique ID of the Customertemplate
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiCustomertemplateID'?: number;*/
     'fkiCustomertemplateID'?: number;
     /**
      * The unique ID of the Deposit
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiDepositID'?: number;*/
     'fkiDepositID'?: number;
     /**
      * The unique ID of the Deposittransitcheque
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiDeposittransitchequeID'?: number;*/
     'fkiDeposittransitchequeID'?: number;
     /**
      * The unique ID of the Electronicfundstransfer
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiElectronicfundstransferID'?: number;*/
     'fkiElectronicfundstransferID'?: number;
     /**
      * The unique ID of the Employee.
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiEmployeeID'?: number;*/
     'fkiEmployeeID'?: number;
     /**
      * The unique ID of the Externalbroker.
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiExternalbrokerID'?: number;*/
     'fkiExternalbrokerID'?: number;
     /**
      * The unique ID of the Ezcomadvanceserver
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiEzcomadvanceserverID'?: number;*/
     'fkiEzcomadvanceserverID'?: number;
     /**
      * The unique ID of the Ezcomcompany
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiEzcomcompanyID'?: number;*/
     'fkiEzcomcompanyID'?: number;
     /**
      * The unique ID of the Ezsigndocument
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiEzsigndocumentID'?: number;*/
     'fkiEzsigndocumentID'?: number;
     /**
      * The unique ID of the Ghacqcontract
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiGhacqcontractID'?: number;*/
     'fkiGhacqcontractID'?: number;
     /**
      * The unique ID of the Inscription.
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiInscriptionID'?: number;*/
     'fkiInscriptionID'?: number;
     /**
      * The unique ID of the Inscriptiontemp
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiInscriptiontempID'?: number;*/
     'fkiInscriptiontempID'?: number;
     /**
      * The unique ID of the Inscriptionnotauthenticated.
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiInscriptionnotauthenticatedID'?: number;*/
     'fkiInscriptionnotauthenticatedID'?: number;
     /**
      * The unique ID of the Invoice.
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiInvoiceID'?: number;*/
     'fkiInvoiceID'?: number;
     /**
      * The unique ID of the Buyercontract
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiBuyercontractID'?: number;*/
     'fkiBuyercontractID'?: number;
     /**
      * The unique ID of the Franchisebroker
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiFranchisebrokerID'?: number;*/
     'fkiFranchisebrokerID'?: number;
     /**
      * The unique ID of the Franchiseagence
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiFranchiseagenceID'?: number;*/
     'fkiFranchiseagenceID'?: number;
     /**
      * The unique ID of the Franchisereoffice
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiFranchiseofficeID'?: number;*/
     'fkiFranchiseofficeID'?: number;
     /**
      * The unique ID of the Franchisefranchise
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiFranchisefranchiseID'?: number;*/
     'fkiFranchisefranchiseID'?: number;
     /**
      * The unique ID of the Franchisecomplaint
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiFranchisecomplaintID'?: number;*/
     'fkiFranchisecomplaintID'?: number;
     /**
      * The unique ID of the Lead
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiLeadID'?: number;*/
     'fkiLeadID'?: number;
     /**
      * The unique ID of the Marketingprogram
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiMarketingprogramID'?: number;*/
     'fkiMarketingprogramID'?: number;
     /**
      * The unique ID of the Marketingfollow
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiMarketingfollowID'?: number;*/
     'fkiMarketingfollowID'?: number;
     /**
      * The unique ID of the Notary.
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiNotaryID'?: number;*/
     'fkiNotaryID'?: number;
     /**
      * The unique ID of the Officetaxreport
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiOfficetaxreportID'?: number;*/
     'fkiOfficetaxreportID'?: number;
     /**
      * The unique ID of the Otherincome
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiOtherincomeID'?: number;*/
     'fkiOtherincomeID'?: number;
     /**
      * The unique ID of the Paymentpreparation
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiPaymentpreparationID'?: number;*/
     'fkiPaymentpreparationID'?: number;
     /**
      * The unique ID of the Purchase
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiPurchaseID'?: number;*/
     'fkiPurchaseID'?: number;
     /**
      * The unique ID of the Salary
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiSalaryID'?: number;*/
     'fkiSalaryID'?: number;
     /**
      * The unique ID of the Supplier.
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiSupplierID'?: number;*/
     'fkiSupplierID'?: number;
     /**
      * The unique ID of the Tranqcontract
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiTranqcontractID'?: number;*/
     'fkiTranqcontractID'?: number;
     /**
      * The unique ID of the Template
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiTemplateID'?: number;*/
     'fkiTemplateID'?: number;
     /**
      * The unique ID of the Inscriptionchecklist
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiInscriptionchecklistID'?: number;*/
     'fkiInscriptionchecklistID'?: number;
     /**
      * The unique ID of the Folder
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiFolderID'?: number;*/
     'fkiFolderID'?: number;
     /**
      * The unique ID of the Rejectedoffertopurchase
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiRejectedoffertopurchaseID'?: number;*/
     'fkiRejectedoffertopurchaseID'?: number;
     /**
      * The unique ID of the Disclosure
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiDisclosureID'?: number;*/
     'fkiDisclosureID'?: number;
     /**
      * The unique ID of the Reconciliation
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiReconciliationID'?: number;*/
     'fkiReconciliationID'?: number;
     /**
      * The unique ID of the Ezsigndocument
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiEzsigndocumentIDReference'?: number;*/
     'fkiEzsigndocumentIDReference'?: number;
     /**
      * 
      * @type {FieldEAttachmentDocumenttype}
      * @memberof AttachmentResponse
      */
+    /*'eAttachmentDocumenttype': FieldEAttachmentDocumenttype;*/
     'eAttachmentDocumenttype': FieldEAttachmentDocumenttype;
     /**
      * The name of the Attachment
      * @type {string}
      * @memberof AttachmentResponse
      */
+    /*'sAttachmentName': string;*/
     'sAttachmentName': string;
     /**
      * 
      * @type {FieldEAttachmentPrivacy}
      * @memberof AttachmentResponse
      */
+    /*'eAttachmentPrivacy': FieldEAttachmentPrivacy;*/
     'eAttachmentPrivacy': FieldEAttachmentPrivacy;
     /**
      * The unique ID of the User
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiUserIDSpecific'?: number;*/
     'fkiUserIDSpecific'?: number;
     /**
      * 
      * @type {FieldEAttachmentType}
      * @memberof AttachmentResponse
      */
+    /*'eAttachmentType': FieldEAttachmentType;*/
     'eAttachmentType': FieldEAttachmentType;
     /**
      * The size of the Attachment
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'iAttachmentSize': number;*/
     'iAttachmentSize': number;
     /**
      * The edmmoduleflag of the Attachment
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'iAttachmentEDMmoduleflag'?: number;*/
     'iAttachmentEDMmoduleflag'?: number;
     /**
      * The md5 of the Attachment
      * @type {string}
      * @memberof AttachmentResponse
      */
+    /*'sAttachmentMD5': string;*/
     'sAttachmentMD5': string;
     /**
      * Whether if it\'s deleted
      * @type {boolean}
      * @memberof AttachmentResponse
      */
+    /*'bAttachmentDeleted': boolean;*/
     'bAttachmentDeleted': boolean;
     /**
      * Whether if it\'s valid
      * @type {boolean}
      * @memberof AttachmentResponse
      */
+    /*'bAttachmentValid': boolean;*/
     'bAttachmentValid': boolean;
     /**
      * 
      * @type {FieldEAttachmentVerified}
      * @memberof AttachmentResponse
      */
+    /*'eAttachmentVerified': FieldEAttachmentVerified;*/
     'eAttachmentVerified': FieldEAttachmentVerified;
     /**
      * The rejectioncomment of the Attachment
      * @type {string}
      * @memberof AttachmentResponse
      */
+    /*'tAttachmentRejectioncomment'?: string;*/
     'tAttachmentRejectioncomment'?: string;
     /**
      * The unique ID of the User
      * @type {number}
      * @memberof AttachmentResponse
      */
+    /*'fkiUserIDOwner'?: number;*/
     'fkiUserIDOwner'?: number;
     /**
      * 
      * @type {CommonAudit}
      * @memberof AttachmentResponse
      */
+    /*'objAudit'?: CommonAudit;*/
     'objAudit'?: CommonAudit;
 }
 

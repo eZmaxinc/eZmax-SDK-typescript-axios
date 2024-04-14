@@ -28,6 +28,7 @@ export interface VariableexpenseEditObjectV1Request {
      * @type {VariableexpenseRequestCompound}
      * @memberof VariableexpenseEditObjectV1Request
      */
+    /*'objVariableexpense': VariableexpenseRequestCompound;*/
     'objVariableexpense': VariableexpenseRequestCompound;
 }
 /**

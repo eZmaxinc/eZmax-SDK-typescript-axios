@@ -31,7 +31,7 @@ import { EzsignbulksenddocumentmappingCreateObjectV1ResponseMPayload } from './e
  * Response for POST /1/object/ezsignbulksenddocumentmapping
  * @export
  */
-/** export type EzsignbulksenddocumentmappingCreateObjectV1Response = CommonResponse; */
+/*export type EzsignbulksenddocumentmappingCreateObjectV1Response = CommonResponse;*/
 export interface EzsignbulksenddocumentmappingCreateObjectV1Response {
     /**
      * 

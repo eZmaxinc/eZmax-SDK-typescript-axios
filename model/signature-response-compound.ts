@@ -22,7 +22,7 @@ import { SignatureResponse } from './signature-response';
  * A Signature Object
  * @export
  */
-/** export type SignatureResponseCompound = SignatureResponse; */
+/*export type SignatureResponseCompound = SignatureResponse;*/
 export interface SignatureResponseCompound {
     /**
      * The unique ID of the Signature
@@ -69,7 +69,7 @@ export class ValidationObjectSignatureResponseCompound {
    }
    sSignatureUrl = {
       type: 'string',
-      pattern: '/^.{0,2048}$/',
+      pattern: '/^(https|http):\\/\\/[^\s\\/$.?#].[^\s]*$/',
       required: true
    }
 } 

@@ -28,7 +28,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for DELETE /1/object/signature/{pkiSignatureID}
  * @export
  */
-/** export type SignatureDeleteObjectV1Response = CommonResponse; */
+/*export type SignatureDeleteObjectV1Response = CommonResponse;*/
 export interface SignatureDeleteObjectV1Response {
     /**
      * 

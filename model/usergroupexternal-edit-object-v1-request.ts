@@ -28,6 +28,7 @@ export interface UsergroupexternalEditObjectV1Request {
      * @type {UsergroupexternalRequestCompound}
      * @memberof UsergroupexternalEditObjectV1Request
      */
+    /*'objUsergroupexternal': UsergroupexternalRequestCompound;*/
     'objUsergroupexternal': UsergroupexternalRequestCompound;
 }
 /**

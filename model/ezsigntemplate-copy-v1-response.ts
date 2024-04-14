@@ -31,7 +31,7 @@ import { EzsigntemplateCopyV1ResponseMPayload } from './ezsigntemplate-copy-v1-r
  * Response for POST /1/object/ezsigntemplate/{pkiEzsigntemplateID}/copy
  * @export
  */
-/** export type EzsigntemplateCopyV1Response = CommonResponse; */
+/*export type EzsigntemplateCopyV1Response = CommonResponse;*/
 export interface EzsigntemplateCopyV1Response {
     /**
      * 

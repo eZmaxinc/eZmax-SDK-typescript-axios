@@ -25,7 +25,7 @@ import { MultilingualApikeyDescription } from './multilingual-apikey-description
  * An Apikey Object and children to create a complete structure
  * @export
  */
-/** export type ApikeyRequestCompound = ApikeyRequest; */
+/*export type ApikeyRequestCompound = ApikeyRequest;*/
 export interface ApikeyRequestCompound {
     /**
      * The unique ID of the Apikey

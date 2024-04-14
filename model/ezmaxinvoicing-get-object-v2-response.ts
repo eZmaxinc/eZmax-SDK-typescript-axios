@@ -31,7 +31,7 @@ import { EzmaxinvoicingGetObjectV2ResponseMPayload } from './ezmaxinvoicing-get-
  * Response for GET /2/object/ezmaxinvoicing/{pkiEzmaxinvoicingID}
  * @export
  */
-/** export type EzmaxinvoicingGetObjectV2Response = CommonResponse; */
+/*export type EzmaxinvoicingGetObjectV2Response = CommonResponse;*/
 export interface EzmaxinvoicingGetObjectV2Response {
     /**
      * 

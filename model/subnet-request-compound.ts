@@ -25,7 +25,7 @@ import { SubnetRequest } from './subnet-request';
  * A Subnet Object and children
  * @export
  */
-/** export type SubnetRequestCompound = SubnetRequest; */
+/*export type SubnetRequestCompound = SubnetRequest;*/
 export interface SubnetRequestCompound {
     /**
      * The unique ID of the Subnet

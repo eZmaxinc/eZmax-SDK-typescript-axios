@@ -28,6 +28,7 @@ export interface EzsignsignergroupEditEzsignsignergroupmembershipsV1Request {
      * @type {Array<EzsignsignergroupmembershipRequestCompound>}
      * @memberof EzsignsignergroupEditEzsignsignergroupmembershipsV1Request
      */
+    /*'a_objEzsignsignergroupmembership': Array<EzsignsignergroupmembershipRequestCompound>;*/
     'a_objEzsignsignergroupmembership': Array<EzsignsignergroupmembershipRequestCompound>;
 }
 /**

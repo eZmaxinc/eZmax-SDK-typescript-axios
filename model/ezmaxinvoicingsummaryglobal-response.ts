@@ -25,114 +25,133 @@ export interface EzmaxinvoicingsummaryglobalResponse {
      * @type {number}
      * @memberof EzmaxinvoicingsummaryglobalResponse
      */
+    /*'pkiEzmaxinvoicingsummaryglobalID'?: number;*/
     'pkiEzmaxinvoicingsummaryglobalID'?: number;
     /**
      * The unique ID of the Ezmaxinvoicing
      * @type {number}
      * @memberof EzmaxinvoicingsummaryglobalResponse
      */
+    /*'fkiEzmaxinvoicingID'?: number;*/
     'fkiEzmaxinvoicingID'?: number;
     /**
      * The unique ID of the Ezmaxproduct
      * @type {number}
      * @memberof EzmaxinvoicingsummaryglobalResponse
      */
+    /*'fkiEzmaxproductID': number;*/
     'fkiEzmaxproductID': number;
     /**
      * The description of the Ezmaxproduct in the language of the requester
      * @type {string}
      * @memberof EzmaxinvoicingsummaryglobalResponse
      */
+    /*'sEzmaxproductDescriptionX': string;*/
     'sEzmaxproductDescriptionX': string;
     /**
      * The start date for the Ezmaxinvoicingsummaryglobal
      * @type {string}
      * @memberof EzmaxinvoicingsummaryglobalResponse
      */
+    /*'dtEzmaxinvoicingsummaryglobalStart': string;*/
     'dtEzmaxinvoicingsummaryglobalStart': string;
     /**
      * The end date for the Ezmaxinvoicingsummaryglobal
      * @type {string}
      * @memberof EzmaxinvoicingsummaryglobalResponse
      */
+    /*'dtEzmaxinvoicingsummaryglobalEnd': string;*/
     'dtEzmaxinvoicingsummaryglobalEnd': string;
     /**
      * The number of days for the Ezmaxinvoicingsummaryglobal
      * @type {number}
      * @memberof EzmaxinvoicingsummaryglobalResponse
      */
+    /*'iEzmaxinvoicingsummaryglobalDays': number;*/
     'iEzmaxinvoicingsummaryglobalDays': number;
     /**
      * The count item calculated
      * @type {string}
      * @memberof EzmaxinvoicingsummaryglobalResponse
      */
+    /*'dEzmaxinvoicingsummaryglobalCountreal': string;*/
     'dEzmaxinvoicingsummaryglobalCountreal': string;
     /**
      * The count item billed
      * @type {string}
      * @memberof EzmaxinvoicingsummaryglobalResponse
      */
+    /*'dEzmaxinvoicingsummaryglobalCountbilled': string;*/
     'dEzmaxinvoicingsummaryglobalCountbilled': string;
     /**
      * The Ezmaxinvoicingsummaryglobal subtotal
      * @type {string}
      * @memberof EzmaxinvoicingsummaryglobalResponse
      */
+    /*'dEzmaxinvoicingsummaryglobalSubtotal': string;*/
     'dEzmaxinvoicingsummaryglobalSubtotal': string;
     /**
      * The rebate amount for the Ezmaxinvoicingsummaryglobal
      * @type {string}
      * @memberof EzmaxinvoicingsummaryglobalResponse
      */
+    /*'dEzmaxinvoicingsummaryglobalRebateamount': string;*/
     'dEzmaxinvoicingsummaryglobalRebateamount': string;
     /**
      * The rebate percentage of the Ezmaxinvoicingsummaryglobal
      * @type {string}
      * @memberof EzmaxinvoicingsummaryglobalResponse
      */
+    /*'dEzmaxinvoicingsummaryglobalRebatepercent': string;*/
     'dEzmaxinvoicingsummaryglobalRebatepercent': string;
     /**
      * The rebate amount total for the Ezmaxinvoicingsummaryglobal
      * @type {string}
      * @memberof EzmaxinvoicingsummaryglobalResponse
      */
+    /*'dEzmaxinvoicingsummaryglobalRebatetotal': string;*/
     'dEzmaxinvoicingsummaryglobalRebatetotal': string;
     /**
      * The Ezmaxinvoicingsummaryglobal total
      * @type {string}
      * @memberof EzmaxinvoicingsummaryglobalResponse
      */
+    /*'dEzmaxinvoicingsummaryglobalTotal': string;*/
     'dEzmaxinvoicingsummaryglobalTotal': string;
     /**
      * The amount of commission for the representative
      * @type {string}
      * @memberof EzmaxinvoicingsummaryglobalResponse
      */
+    /*'dEzmaxinvoicingsummaryglobalRepresentative'?: string;*/
     'dEzmaxinvoicingsummaryglobalRepresentative'?: string;
     /**
      * The amount of commission for the partner
      * @type {string}
      * @memberof EzmaxinvoicingsummaryglobalResponse
      */
+    /*'dEzmaxinvoicingsummaryglobalPartner'?: string;*/
     'dEzmaxinvoicingsummaryglobalPartner'?: string;
     /**
      * The net amount of the Ezmaxinvoicingsummaryglobal
      * @type {string}
      * @memberof EzmaxinvoicingsummaryglobalResponse
      */
+    /*'dEzmaxinvoicingsummaryglobalNet'?: string;*/
     'dEzmaxinvoicingsummaryglobalNet'?: string;
     /**
      * Whether it is adjustment for the Ezmaxinvoicingsummaryglobal
      * @type {boolean}
      * @memberof EzmaxinvoicingsummaryglobalResponse
      */
+    /*'bEzmaxinvoicingsummaryglobalAdjustment': boolean;*/
     'bEzmaxinvoicingsummaryglobalAdjustment': boolean;
     /**
      * The help message of the Ezmaxproduct in the language of the requester
      * @type {string}
      * @memberof EzmaxinvoicingsummaryglobalResponse
      */
+    /*'tEzmaxproductHelpX': string;*/
     'tEzmaxproductHelpX': string;
 }
 /**

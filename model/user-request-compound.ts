@@ -37,7 +37,7 @@ import { UserRequest } from './user-request';
  * A User Object and children
  * @export
  */
-/** export type UserRequestCompound = UserRequest; */
+/*export type UserRequestCompound = UserRequest;*/
 export interface UserRequestCompound {
     /**
      * The unique ID of the User
@@ -360,7 +360,7 @@ export class ValidationObjectUserRequestCompound {
    }
    sUserLoginname = {
       type: 'string',
-      pattern: '/^(?:([\w\.-]+@[\w\.-]+\.\w{2,20})|([a-zA-Z0-9]){1,32})$/',
+      pattern: '/^(?:([\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/',
       required: true
    }
    sUserJobtitle = {

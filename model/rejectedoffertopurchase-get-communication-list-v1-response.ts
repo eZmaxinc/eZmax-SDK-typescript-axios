@@ -31,7 +31,7 @@ import { RejectedoffertopurchaseGetCommunicationListV1ResponseMPayload } from '.
  * Response for GET /1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/getCommunicationList
  * @export
  */
-/** export type RejectedoffertopurchaseGetCommunicationListV1Response = CommonResponseGetList; */
+/*export type RejectedoffertopurchaseGetCommunicationListV1Response = CommonResponseGetList;*/
 export interface RejectedoffertopurchaseGetCommunicationListV1Response {
     /**
      * 

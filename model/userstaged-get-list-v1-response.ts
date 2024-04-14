@@ -31,7 +31,7 @@ import { UserstagedGetListV1ResponseMPayload } from './userstaged-get-list-v1-re
  * Response for GET /1/object/userstaged/getList
  * @export
  */
-/** export type UserstagedGetListV1Response = CommonResponseGetList; */
+/*export type UserstagedGetListV1Response = CommonResponseGetList;*/
 export interface UserstagedGetListV1Response {
     /**
      * 

@@ -28,6 +28,7 @@ export interface VariableexpenseCreateObjectV1Request {
      * @type {Array<VariableexpenseRequestCompound>}
      * @memberof VariableexpenseCreateObjectV1Request
      */
+    /*'a_objVariableexpense': Array<VariableexpenseRequestCompound>;*/
     'a_objVariableexpense': Array<VariableexpenseRequestCompound>;
 }
 /**

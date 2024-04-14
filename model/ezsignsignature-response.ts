@@ -49,186 +49,217 @@ export interface EzsignsignatureResponse {
      * @type {number}
      * @memberof EzsignsignatureResponse
      */
+    /*'pkiEzsignsignatureID': number;*/
     'pkiEzsignsignatureID': number;
     /**
      * The unique ID of the Ezsigndocument
      * @type {number}
      * @memberof EzsignsignatureResponse
      */
+    /*'fkiEzsigndocumentID': number;*/
     'fkiEzsigndocumentID': number;
     /**
      * The unique ID of the Ezsignfoldersignerassociation
      * @type {number}
      * @memberof EzsignsignatureResponse
      */
+    /*'fkiEzsignfoldersignerassociationID': number;*/
     'fkiEzsignfoldersignerassociationID': number;
     /**
      * The unique ID of the Ezsignsigningreason
      * @type {number}
      * @memberof EzsignsignatureResponse
      */
+    /*'fkiEzsignsigningreasonID'?: number;*/
     'fkiEzsignsigningreasonID'?: number;
     /**
      * The description of the Ezsignsigningreason in the language of the requester
      * @type {string}
      * @memberof EzsignsignatureResponse
      */
+    /*'sEzsignsigningreasonDescriptionX'?: string;*/
     'sEzsignsigningreasonDescriptionX'?: string;
     /**
      * The page number in the Ezsigndocument
      * @type {number}
      * @memberof EzsignsignatureResponse
      */
+    /*'iEzsignpagePagenumber': number;*/
     'iEzsignpagePagenumber': number;
     /**
      * The X coordinate (Horizontal) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
      * @type {number}
      * @memberof EzsignsignatureResponse
      */
+    /*'iEzsignsignatureX': number;*/
     'iEzsignsignatureX': number;
     /**
      * The Y coordinate (Vertical) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
      * @type {number}
      * @memberof EzsignsignatureResponse
      */
+    /*'iEzsignsignatureY': number;*/
     'iEzsignsignatureY': number;
     /**
      * The height of the Ezsignsignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsignsignature to have an height of 2 inches, you would use \"200\" for the iEzsignsignatureHeight.
      * @type {number}
      * @memberof EzsignsignatureResponse
      */
+    /*'iEzsignsignatureHeight'?: number;*/
     'iEzsignsignatureHeight'?: number;
     /**
      * The width of the Ezsignsignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsignsignature to have a width of 2 inches, you would use \"200\" for the iEzsignsignatureWidth.
      * @type {number}
      * @memberof EzsignsignatureResponse
      */
+    /*'iEzsignsignatureWidth'?: number;*/
     'iEzsignsignatureWidth'?: number;
     /**
      * The step when the Ezsignsigner will be invited to sign
      * @type {number}
      * @memberof EzsignsignatureResponse
      */
+    /*'iEzsignsignatureStep': number;*/
     'iEzsignsignatureStep': number;
     /**
      * The step when the Ezsignsigner will be invited to sign
      * @type {number}
      * @memberof EzsignsignatureResponse
      */
+    /*'iEzsignsignatureStepadjusted'?: number;*/
     'iEzsignsignatureStepadjusted'?: number;
     /**
      * 
      * @type {FieldEEzsignsignatureType}
      * @memberof EzsignsignatureResponse
      */
+    /*'eEzsignsignatureType': FieldEEzsignsignatureType;*/
     'eEzsignsignatureType': FieldEEzsignsignatureType;
     /**
      * A tooltip that will be presented to Ezsignsigner about the Ezsignsignature
      * @type {string}
      * @memberof EzsignsignatureResponse
      */
+    /*'tEzsignsignatureTooltip'?: string;*/
     'tEzsignsignatureTooltip'?: string;
     /**
      * 
      * @type {FieldEEzsignsignatureTooltipposition}
      * @memberof EzsignsignatureResponse
      */
+    /*'eEzsignsignatureTooltipposition'?: FieldEEzsignsignatureTooltipposition;*/
     'eEzsignsignatureTooltipposition'?: FieldEEzsignsignatureTooltipposition;
     /**
      * 
      * @type {FieldEEzsignsignatureFont}
      * @memberof EzsignsignatureResponse
      */
+    /*'eEzsignsignatureFont'?: FieldEEzsignsignatureFont;*/
     'eEzsignsignatureFont'?: FieldEEzsignsignatureFont;
     /**
      * The step when the Ezsignsigner will be invited to validate the Ezsignsignature of eEzsignsignatureType Attachments
      * @type {number}
      * @memberof EzsignsignatureResponse
      */
+    /*'iEzsignsignatureValidationstep'?: number;*/
     'iEzsignsignatureValidationstep'?: number;
     /**
      * The description attached to the attachment name added in Ezsignsignature of eEzsignsignatureType Attachments
      * @type {string}
      * @memberof EzsignsignatureResponse
      */
+    /*'sEzsignsignatureAttachmentdescription'?: string;*/
     'sEzsignsignatureAttachmentdescription'?: string;
     /**
      * 
      * @type {FieldEEzsignsignatureAttachmentnamesource}
      * @memberof EzsignsignatureResponse
      */
+    /*'eEzsignsignatureAttachmentnamesource'?: FieldEEzsignsignatureAttachmentnamesource;*/
     'eEzsignsignatureAttachmentnamesource'?: FieldEEzsignsignatureAttachmentnamesource;
     /**
      * Whether the Ezsignsignature is required or not. This field is relevant only with Ezsignsignature with eEzsignsignatureType = Attachments.
      * @type {boolean}
      * @memberof EzsignsignatureResponse
      */
+    /*'bEzsignsignatureRequired'?: boolean;*/
     'bEzsignsignatureRequired'?: boolean;
     /**
      * The unique ID of the Ezsignfoldersignerassociation
      * @type {number}
      * @memberof EzsignsignatureResponse
      */
+    /*'fkiEzsignfoldersignerassociationIDValidation'?: number;*/
     'fkiEzsignfoldersignerassociationIDValidation'?: number;
     /**
      * The date the Ezsignsignature was signed
      * @type {string}
      * @memberof EzsignsignatureResponse
      */
+    /*'dtEzsignsignatureDate'?: string;*/
     'dtEzsignsignatureDate'?: string;
     /**
      * The count of Ezsignsignatureattachment
      * @type {number}
      * @memberof EzsignsignatureResponse
      */
+    /*'iEzsignsignatureattachmentCount'?: number;*/
     'iEzsignsignatureattachmentCount'?: number;
     /**
      * The value entered while signing Ezsignsignature of eEzsignsignatureType **City**, **FieldText** and **FieldTextarea**
      * @type {string}
      * @memberof EzsignsignatureResponse
      */
+    /*'sEzsignsignatureDescription'?: string;*/
     'sEzsignsignatureDescription'?: string;
     /**
      * The maximum length for the value in the Ezsignsignature  This can only be set if eEzsignsignatureType is **FieldText** or **FieldTextarea**
      * @type {number}
      * @memberof EzsignsignatureResponse
      */
+    /*'iEzsignsignatureMaxlength'?: number;*/
     'iEzsignsignatureMaxlength'?: number;
     /**
      * 
      * @type {EnumTextvalidation}
      * @memberof EzsignsignatureResponse
      */
+    /*'eEzsignsignatureTextvalidation'?: EnumTextvalidation;*/
     'eEzsignsignatureTextvalidation'?: EnumTextvalidation;
     /**
      * 
      * @type {FieldEEzsignsignatureDependencyrequirement}
      * @memberof EzsignsignatureResponse
      */
+    /*'eEzsignsignatureDependencyrequirement'?: FieldEEzsignsignatureDependencyrequirement;*/
     'eEzsignsignatureDependencyrequirement'?: FieldEEzsignsignatureDependencyrequirement;
     /**
      * A regular expression to indicate what values are acceptable for the Ezsignsignature.  This can only be set if eEzsignsignatureType is **FieldText** or **FieldTextarea** and eEzsignsignatureTextvalidation is **Custom**
      * @type {string}
      * @memberof EzsignsignatureResponse
      */
+    /*'sEzsignsignatureRegexp'?: string;*/
     'sEzsignsignatureRegexp'?: string;
     /**
      * 
      * @type {CustomContactNameResponse}
      * @memberof EzsignsignatureResponse
      */
+    /*'objContactName': CustomContactNameResponse;*/
     'objContactName': CustomContactNameResponse;
     /**
      * 
      * @type {CustomContactNameResponse}
      * @memberof EzsignsignatureResponse
      */
+    /*'objContactNameDelegation'?: CustomContactNameResponse;*/
     'objContactNameDelegation'?: CustomContactNameResponse;
     /**
      * 
      * @type {SignatureResponseCompound}
      * @memberof EzsignsignatureResponse
      */
+    /*'objSignature'?: SignatureResponseCompound;*/
     'objSignature'?: SignatureResponseCompound;
 }
 

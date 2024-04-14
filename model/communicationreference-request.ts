@@ -25,54 +25,63 @@ export interface CommunicationreferenceRequest {
      * @type {number}
      * @memberof CommunicationreferenceRequest
      */
+    /*'pkiCommunicationreferenceID'?: number;*/
     'pkiCommunicationreferenceID'?: number;
     /**
      * The unique ID of the Buyercontract
      * @type {number}
      * @memberof CommunicationreferenceRequest
      */
+    /*'fkiBuyercontractID'?: number;*/
     'fkiBuyercontractID'?: number;
     /**
      * The unique ID of the Ezsignfolder
      * @type {number}
      * @memberof CommunicationreferenceRequest
      */
+    /*'fkiEzsignfolderID'?: number;*/
     'fkiEzsignfolderID'?: number;
     /**
      * The unique ID of the Inscription.
      * @type {number}
      * @memberof CommunicationreferenceRequest
      */
+    /*'fkiInscriptionID'?: number;*/
     'fkiInscriptionID'?: number;
     /**
      * The unique ID of the Inscriptiontemp
      * @type {number}
      * @memberof CommunicationreferenceRequest
      */
+    /*'fkiInscriptiontempID'?: number;*/
     'fkiInscriptiontempID'?: number;
     /**
      * The unique ID of the Invoice.
      * @type {number}
      * @memberof CommunicationreferenceRequest
      */
+    /*'fkiInvoiceID'?: number;*/
     'fkiInvoiceID'?: number;
     /**
      * The unique ID of the Otherincome
      * @type {number}
      * @memberof CommunicationreferenceRequest
      */
+    /*'fkiOtherincomeID'?: number;*/
     'fkiOtherincomeID'?: number;
     /**
      * The unique ID of the Electronicfundstransfer
      * @type {number}
      * @memberof CommunicationreferenceRequest
      */
+    /*'fkiElectronicfundstransferID'?: number;*/
     'fkiElectronicfundstransferID'?: number;
     /**
      * The unique ID of the Rejectedoffertopurchase
      * @type {number}
      * @memberof CommunicationreferenceRequest
      */
+    /*'fkiRejectedoffertopurchaseID'?: number;*/
     'fkiRejectedoffertopurchaseID'?: number;
 }
 /**

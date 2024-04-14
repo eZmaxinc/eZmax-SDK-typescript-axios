@@ -14,13 +14,13 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
 import { CommonResponseError } from '../model';
 // @ts-ignore
@@ -44,7 +44,7 @@ export const ObjectInscriptionApiAxiosParamCreator = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        inscriptionGetAttachmentsV1: async (pkiInscriptionID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        inscriptionGetAttachmentsV1: async (pkiInscriptionID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiInscriptionID' is not null or undefined
             assertParamExists('inscriptionGetAttachmentsV1', 'pkiInscriptionID', pkiInscriptionID)
             const localVarPath = `/1/object/inscription/{pkiInscriptionID}/getAttachments`
@@ -52,6 +52,7 @@ export const ObjectInscriptionApiAxiosParamCreator = function (configuration?: C
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -70,6 +71,7 @@ export const ObjectInscriptionApiAxiosParamCreator = function (configuration?: C
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -100,7 +102,7 @@ export const ObjectInscriptionApiAxiosParamCreator = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        inscriptionGetCommunicationListV1: async (pkiInscriptionID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        inscriptionGetCommunicationListV1: async (pkiInscriptionID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiInscriptionID' is not null or undefined
             assertParamExists('inscriptionGetCommunicationListV1', 'pkiInscriptionID', pkiInscriptionID)
             const localVarPath = `/1/object/inscription/{pkiInscriptionID}/getCommunicationList`
@@ -108,6 +110,7 @@ export const ObjectInscriptionApiAxiosParamCreator = function (configuration?: C
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -126,6 +129,7 @@ export const ObjectInscriptionApiAxiosParamCreator = function (configuration?: C
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -156,7 +160,7 @@ export const ObjectInscriptionApiAxiosParamCreator = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        inscriptionGetCommunicationsendersV1: async (pkiInscriptionID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        inscriptionGetCommunicationsendersV1: async (pkiInscriptionID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiInscriptionID' is not null or undefined
             assertParamExists('inscriptionGetCommunicationsendersV1', 'pkiInscriptionID', pkiInscriptionID)
             const localVarPath = `/1/object/inscription/{pkiInscriptionID}/getCommunicationsenders`
@@ -164,6 +168,7 @@ export const ObjectInscriptionApiAxiosParamCreator = function (configuration?: C
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -182,6 +187,7 @@ export const ObjectInscriptionApiAxiosParamCreator = function (configuration?: C
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -222,9 +228,11 @@ export const ObjectInscriptionApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async inscriptionGetAttachmentsV1(pkiInscriptionID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InscriptionGetAttachmentsV1Response>> {
+        async inscriptionGetAttachmentsV1(pkiInscriptionID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InscriptionGetAttachmentsV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.inscriptionGetAttachmentsV1(pkiInscriptionID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectInscriptionApi.inscriptionGetAttachmentsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -233,9 +241,11 @@ export const ObjectInscriptionApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async inscriptionGetCommunicationListV1(pkiInscriptionID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InscriptionGetCommunicationListV1Response>> {
+        async inscriptionGetCommunicationListV1(pkiInscriptionID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InscriptionGetCommunicationListV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.inscriptionGetCommunicationListV1(pkiInscriptionID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectInscriptionApi.inscriptionGetCommunicationListV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -244,9 +254,11 @@ export const ObjectInscriptionApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async inscriptionGetCommunicationsendersV1(pkiInscriptionID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InscriptionGetCommunicationsendersV1Response>> {
+        async inscriptionGetCommunicationsendersV1(pkiInscriptionID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InscriptionGetCommunicationsendersV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.inscriptionGetCommunicationsendersV1(pkiInscriptionID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectInscriptionApi.inscriptionGetCommunicationsendersV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -306,7 +318,7 @@ export class ObjectInscriptionApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectInscriptionApi
      */
-    public inscriptionGetAttachmentsV1(pkiInscriptionID: number, options?: AxiosRequestConfig) {
+    public inscriptionGetAttachmentsV1(pkiInscriptionID: number, options?: RawAxiosRequestConfig) {
         return ObjectInscriptionApiFp(this.configuration).inscriptionGetAttachmentsV1(pkiInscriptionID, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -318,7 +330,7 @@ export class ObjectInscriptionApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectInscriptionApi
      */
-    public inscriptionGetCommunicationListV1(pkiInscriptionID: number, options?: AxiosRequestConfig) {
+    public inscriptionGetCommunicationListV1(pkiInscriptionID: number, options?: RawAxiosRequestConfig) {
         return ObjectInscriptionApiFp(this.configuration).inscriptionGetCommunicationListV1(pkiInscriptionID, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -330,7 +342,7 @@ export class ObjectInscriptionApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectInscriptionApi
      */
-    public inscriptionGetCommunicationsendersV1(pkiInscriptionID: number, options?: AxiosRequestConfig) {
+    public inscriptionGetCommunicationsendersV1(pkiInscriptionID: number, options?: RawAxiosRequestConfig) {
         return ObjectInscriptionApiFp(this.configuration).inscriptionGetCommunicationsendersV1(pkiInscriptionID, options).then((request) => request(this.axios, this.basePath));
     }
 }

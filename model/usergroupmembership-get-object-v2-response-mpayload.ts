@@ -28,6 +28,7 @@ export interface UsergroupmembershipGetObjectV2ResponseMPayload {
      * @type {UsergroupmembershipResponseCompound}
      * @memberof UsergroupmembershipGetObjectV2ResponseMPayload
      */
+    /*'objUsergroupmembership': UsergroupmembershipResponseCompound;*/
     'objUsergroupmembership': UsergroupmembershipResponseCompound;
 }
 /**

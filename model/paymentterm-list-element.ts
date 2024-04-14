@@ -28,36 +28,42 @@ export interface PaymenttermListElement {
      * @type {number}
      * @memberof PaymenttermListElement
      */
+    /*'pkiPaymenttermID': number;*/
     'pkiPaymenttermID': number;
     /**
      * The code of the Paymentterm
      * @type {string}
      * @memberof PaymenttermListElement
      */
+    /*'sPaymenttermCode': string;*/
     'sPaymenttermCode': string;
     /**
      * 
      * @type {FieldEPaymenttermType}
      * @memberof PaymenttermListElement
      */
+    /*'ePaymenttermType': FieldEPaymenttermType;*/
     'ePaymenttermType': FieldEPaymenttermType;
     /**
      * The day of the Paymentterm
      * @type {number}
      * @memberof PaymenttermListElement
      */
+    /*'iPaymenttermDay': number;*/
     'iPaymenttermDay': number;
     /**
      * The description of the Paymentterm in the language of the requester
      * @type {string}
      * @memberof PaymenttermListElement
      */
+    /*'sPaymenttermDescriptionX': string;*/
     'sPaymenttermDescriptionX': string;
     /**
      * Whether the Paymentterm is active or not
      * @type {boolean}
      * @memberof PaymenttermListElement
      */
+    /*'bPaymenttermIsactive': boolean;*/
     'bPaymenttermIsactive': boolean;
 }
 

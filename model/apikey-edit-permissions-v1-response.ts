@@ -31,7 +31,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for PUT /1/object/apikey/{pkiApikeyID}/editPermissions
  * @export
  */
-/** export type ApikeyEditPermissionsV1Response = CommonResponse; */
+/*export type ApikeyEditPermissionsV1Response = CommonResponse;*/
 export interface ApikeyEditPermissionsV1Response {
     /**
      * 

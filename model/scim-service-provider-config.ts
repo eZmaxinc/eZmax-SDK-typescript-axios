@@ -46,48 +46,56 @@ export interface ScimServiceProviderConfig {
      * @type {Array<ScimAuthenticationScheme>}
      * @memberof ScimServiceProviderConfig
      */
+    /*'authenticationSchemes': Array<ScimAuthenticationScheme>;*/
     'authenticationSchemes': Array<ScimAuthenticationScheme>;
     /**
      * 
      * @type {ScimServiceProviderConfigBulk}
      * @memberof ScimServiceProviderConfig
      */
+    /*'bulk': ScimServiceProviderConfigBulk;*/
     'bulk': ScimServiceProviderConfigBulk;
     /**
      * 
      * @type {ScimServiceProviderConfigChangePassword}
      * @memberof ScimServiceProviderConfig
      */
+    /*'changePassword': ScimServiceProviderConfigChangePassword;*/
     'changePassword': ScimServiceProviderConfigChangePassword;
     /**
      * An HTTP-addressable URL pointing to the service provider\'s human-consumable help documentation
      * @type {string}
      * @memberof ScimServiceProviderConfig
      */
+    /*'documentationUri': string;*/
     'documentationUri': string;
     /**
      * 
      * @type {ScimServiceProviderConfigEtag}
      * @memberof ScimServiceProviderConfig
      */
+    /*'etag': ScimServiceProviderConfigEtag;*/
     'etag': ScimServiceProviderConfigEtag;
     /**
      * 
      * @type {ScimServiceProviderConfigFilter}
      * @memberof ScimServiceProviderConfig
      */
+    /*'filter': ScimServiceProviderConfigFilter;*/
     'filter': ScimServiceProviderConfigFilter;
     /**
      * 
      * @type {ScimServiceProviderConfigPatch}
      * @memberof ScimServiceProviderConfig
      */
+    /*'patch': ScimServiceProviderConfigPatch;*/
     'patch': ScimServiceProviderConfigPatch;
     /**
      * 
      * @type {ScimServiceProviderConfigSort}
      * @memberof ScimServiceProviderConfig
      */
+    /*'sort': ScimServiceProviderConfigSort;*/
     'sort': ScimServiceProviderConfigSort;
 }
 /**

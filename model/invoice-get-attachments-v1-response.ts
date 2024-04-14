@@ -31,7 +31,7 @@ import { InvoiceGetAttachmentsV1ResponseMPayload } from './invoice-get-attachmen
  * Response for GET /1/object/invoice/{pkiInvoiceID}/getAttachments
  * @export
  */
-/** export type InvoiceGetAttachmentsV1Response = CommonResponse; */
+/*export type InvoiceGetAttachmentsV1Response = CommonResponse;*/
 export interface InvoiceGetAttachmentsV1Response {
     /**
      * 

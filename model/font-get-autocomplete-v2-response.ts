@@ -31,7 +31,7 @@ import { FontGetAutocompleteV2ResponseMPayload } from './font-get-autocomplete-v
  * Response for GET /2/object/font/getAutocomplete
  * @export
  */
-/** export type FontGetAutocompleteV2Response = CommonResponse; */
+/*export type FontGetAutocompleteV2Response = CommonResponse;*/
 export interface FontGetAutocompleteV2Response {
     /**
      * 

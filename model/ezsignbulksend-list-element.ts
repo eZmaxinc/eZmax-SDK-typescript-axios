@@ -25,66 +25,77 @@ export interface EzsignbulksendListElement {
      * @type {number}
      * @memberof EzsignbulksendListElement
      */
+    /*'pkiEzsignbulksendID': number;*/
     'pkiEzsignbulksendID': number;
     /**
      * The unique ID of the Ezsignfoldertype.
      * @type {number}
      * @memberof EzsignbulksendListElement
      */
+    /*'fkiEzsignfoldertypeID': number;*/
     'fkiEzsignfoldertypeID': number;
     /**
      * The description of the Ezsignbulksend
      * @type {string}
      * @memberof EzsignbulksendListElement
      */
+    /*'sEzsignbulksendDescription': string;*/
     'sEzsignbulksendDescription': string;
     /**
      * The name of the Ezsignfoldertype in the language of the requester
      * @type {string}
      * @memberof EzsignbulksendListElement
      */
+    /*'sEzsignfoldertypeNameX': string;*/
     'sEzsignfoldertypeNameX': string;
     /**
      * Whether the Ezsigntemplatepackage was automatically modified and needs a manual validation
      * @type {boolean}
      * @memberof EzsignbulksendListElement
      */
+    /*'bEzsignbulksendNeedvalidation': boolean;*/
     'bEzsignbulksendNeedvalidation': boolean;
     /**
      * The total number of Ezsignbulksendtransmissions in the Ezsignbulksend
      * @type {number}
      * @memberof EzsignbulksendListElement
      */
+    /*'iEzsignbulksendtransmission': number;*/
     'iEzsignbulksendtransmission': number;
     /**
      * The total number of Ezsignfolders in the Ezsignbulksend
      * @type {number}
      * @memberof EzsignbulksendListElement
      */
+    /*'iEzsignfolder': number;*/
     'iEzsignfolder': number;
     /**
      * The total number of Ezsigndocuments in the Ezsignbulksend
      * @type {number}
      * @memberof EzsignbulksendListElement
      */
+    /*'iEzsigndocument': number;*/
     'iEzsigndocument': number;
     /**
      * The total number of Ezsignsignature in the Ezsignbulksend
      * @type {number}
      * @memberof EzsignbulksendListElement
      */
+    /*'iEzsignsignature': number;*/
     'iEzsignsignature': number;
     /**
      * The total number of already signed Ezsignsignature blocks in the Ezsignbulksend
      * @type {number}
      * @memberof EzsignbulksendListElement
      */
+    /*'iEzsignsignatureSigned': number;*/
     'iEzsignsignatureSigned': number;
     /**
      * Whether the Ezsignbulksend is active or not
      * @type {boolean}
      * @memberof EzsignbulksendListElement
      */
+    /*'bEzsignbulksendIsactive': boolean;*/
     'bEzsignbulksendIsactive': boolean;
 }
 /**

@@ -25,12 +25,14 @@ export interface BillingentityinternalListElement {
      * @type {number}
      * @memberof BillingentityinternalListElement
      */
+    /*'pkiBillingentityinternalID': number;*/
     'pkiBillingentityinternalID': number;
     /**
      * The description of the Billingentityinternal in the language of the requester
      * @type {string}
      * @memberof BillingentityinternalListElement
      */
+    /*'sBillingentityinternalDescriptionX': string;*/
     'sBillingentityinternalDescriptionX': string;
 }
 /**

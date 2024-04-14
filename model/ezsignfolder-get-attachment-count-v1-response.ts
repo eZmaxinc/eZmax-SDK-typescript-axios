@@ -31,7 +31,7 @@ import { EzsignfolderGetAttachmentCountV1ResponseMPayload } from './ezsignfolder
  * Response for GET /1/object/ezsignfolder/{pkiEzsignfolderID}/getAttachmentCount
  * @export
  */
-/** export type EzsignfolderGetAttachmentCountV1Response = CommonResponse; */
+/*export type EzsignfolderGetAttachmentCountV1Response = CommonResponse;*/
 export interface EzsignfolderGetAttachmentCountV1Response {
     /**
      * 

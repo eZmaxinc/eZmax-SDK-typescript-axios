@@ -28,6 +28,7 @@ export interface FranchisebrokerGetAutocompleteV2ResponseMPayload {
      * @type {Array<FranchisebrokerAutocompleteElementResponse>}
      * @memberof FranchisebrokerGetAutocompleteV2ResponseMPayload
      */
+    /*'a_objFranchisebroker': Array<FranchisebrokerAutocompleteElementResponse>;*/
     'a_objFranchisebroker': Array<FranchisebrokerAutocompleteElementResponse>;
 }
 /**

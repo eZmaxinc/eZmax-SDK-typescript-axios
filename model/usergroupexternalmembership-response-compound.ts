@@ -22,7 +22,7 @@ import { UsergroupexternalmembershipResponse } from './usergroupexternalmembersh
  * A Usergroupexternalmembership Object
  * @export
  */
-/** export type UsergroupexternalmembershipResponseCompound = UsergroupexternalmembershipResponse; */
+/*export type UsergroupexternalmembershipResponseCompound = UsergroupexternalmembershipResponse;*/
 export interface UsergroupexternalmembershipResponseCompound {
     /**
      * The unique ID of the Usergroupexternalmembership
@@ -130,11 +130,12 @@ export class ValidationObjectUsergroupexternalmembershipResponseCompound {
    }
    sUserLoginname = {
       type: 'string',
-      pattern: '/^(?:([\w\.-]+@[\w\.-]+\.\w{2,20})|([a-zA-Z0-9]){1,32})$/',
+      pattern: '/^(?:([\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/',
       required: true
    }
    sEmailAddress = {
       type: 'string',
+      pattern: '/^[\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/',
       required: true
    }
    sUsergroupexternalName = {

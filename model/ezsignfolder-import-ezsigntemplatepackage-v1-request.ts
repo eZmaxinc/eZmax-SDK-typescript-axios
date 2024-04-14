@@ -28,18 +28,21 @@ export interface EzsignfolderImportEzsigntemplatepackageV1Request {
      * @type {number}
      * @memberof EzsignfolderImportEzsigntemplatepackageV1Request
      */
+    /*'fkiEzsigntemplatepackageID': number;*/
     'fkiEzsigntemplatepackageID': number;
     /**
      * The maximum date and time at which the Ezsigndocument can be signed.
      * @type {string}
      * @memberof EzsignfolderImportEzsigntemplatepackageV1Request
      */
+    /*'dtEzsigndocumentDuedate': string;*/
     'dtEzsigndocumentDuedate': string;
     /**
      * 
      * @type {Array<CustomImportEzsigntemplatepackageRelationRequest>}
      * @memberof EzsignfolderImportEzsigntemplatepackageV1Request
      */
+    /*'a_objImportEzsigntemplatepackageRelation': Array<CustomImportEzsigntemplatepackageRelationRequest>;*/
     'a_objImportEzsigntemplatepackageRelation': Array<CustomImportEzsigntemplatepackageRelationRequest>;
 }
 /**

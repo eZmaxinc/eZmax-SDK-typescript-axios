@@ -25,7 +25,7 @@ import { FieldECommunicationexternalrecipientType } from './field-ecommunication
  * A Communicationexternalrecipient Object and children
  * @export
  */
-/** export type CommunicationexternalrecipientRequestCompound = CommunicationexternalrecipientRequest; */
+/*export type CommunicationexternalrecipientRequestCompound = CommunicationexternalrecipientRequest;*/
 export interface CommunicationexternalrecipientRequestCompound {
     /**
      * The unique ID of the Communicationexternalrecipient
@@ -92,6 +92,7 @@ export class ValidationObjectCommunicationexternalrecipientRequestCompound {
    }
    sEmailAddress = {
       type: 'string',
+      pattern: '/^[\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/',
       required: false
    }
    sPhoneE164 = {

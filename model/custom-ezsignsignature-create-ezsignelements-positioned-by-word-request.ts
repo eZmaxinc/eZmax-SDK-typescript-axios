@@ -49,7 +49,7 @@ import { FieldEEzsignsignatureType } from './field-eezsignsignature-type';
  * An Ezsignsignature Object in the context of an CreateEzsignelementsPositionedByWord path
  * @export
  */
-/** export type CustomEzsignsignatureCreateEzsignelementsPositionedByWordRequest = EzsignsignatureRequestCompound; */
+/*export type CustomEzsignsignatureCreateEzsignelementsPositionedByWordRequest = EzsignsignatureRequestCompound;*/
 export interface CustomEzsignsignatureCreateEzsignelementsPositionedByWordRequest {
     /**
      * The unique ID of the Ezsignsignature

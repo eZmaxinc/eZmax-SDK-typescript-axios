@@ -25,24 +25,28 @@ export interface WebhookheaderResponse {
      * @type {number}
      * @memberof WebhookheaderResponse
      */
+    /*'pkiWebhookheaderID': number;*/
     'pkiWebhookheaderID': number;
     /**
      * The unique ID of the Webhook
      * @type {number}
      * @memberof WebhookheaderResponse
      */
+    /*'fkiWebhookID': number;*/
     'fkiWebhookID': number;
     /**
      * The Name of the Webhookheader
      * @type {string}
      * @memberof WebhookheaderResponse
      */
+    /*'sWebhookheaderName': string;*/
     'sWebhookheaderName': string;
     /**
      * The Value of the Webhookheader
      * @type {string}
      * @memberof WebhookheaderResponse
      */
+    /*'sWebhookheaderValue': string;*/
     'sWebhookheaderValue': string;
 }
 /**

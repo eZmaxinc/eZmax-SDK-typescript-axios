@@ -25,7 +25,7 @@ import { EzsignbulksendListElement } from './ezsignbulksend-list-element';
  * Payload for GET /1/object/ezsignbulksend/getList
  * @export
  */
-/** export type EzsignbulksendGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload; */
+/*export type EzsignbulksendGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;*/
 export interface EzsignbulksendGetListV1ResponseMPayload {
     /**
      * The number of rows returned

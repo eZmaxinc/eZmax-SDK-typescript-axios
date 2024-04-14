@@ -25,18 +25,21 @@ export interface EzsignfoldersignerassociationCreateEmbeddedUrlV1Request {
      * @type {string}
      * @memberof EzsignfoldersignerassociationCreateEmbeddedUrlV1Request
      */
+    /*'sReturnUrl'?: string;*/
     'sReturnUrl'?: string;
     /**
      * Domain protection for the iFrame
      * @type {string}
      * @memberof EzsignfoldersignerassociationCreateEmbeddedUrlV1Request
      */
+    /*'sIframedomain'?: string;*/
     'sIframedomain'?: string;
     /**
      * Whether the url would be in an iFrame or not
      * @type {boolean}
      * @memberof EzsignfoldersignerassociationCreateEmbeddedUrlV1Request
      */
+    /*'bIsIframe'?: boolean;*/
     'bIsIframe'?: boolean;
 }
 /**
@@ -64,12 +67,11 @@ export class DataObjectEzsignfoldersignerassociationCreateEmbeddedUrlV1Request {
 export class ValidationObjectEzsignfoldersignerassociationCreateEmbeddedUrlV1Request {
    sReturnUrl = {
       type: 'string',
-      pattern: '/^.{0,2048}$/',
+      pattern: '/^(https|http):\\/\\/[^\s\\/$.?#].[^\s]*$/',
       required: false
    }
    sIframedomain = {
       type: 'string',
-      pattern: '/^.{0,2048}$/',
       required: false
    }
    bIsIframe = {

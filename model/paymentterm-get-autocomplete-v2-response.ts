@@ -31,7 +31,7 @@ import { PaymenttermGetAutocompleteV2ResponseMPayload } from './paymentterm-get-
  * Response for GET /2/object/paymentterm/getAutocomplete
  * @export
  */
-/** export type PaymenttermGetAutocompleteV2Response = CommonResponse; */
+/*export type PaymenttermGetAutocompleteV2Response = CommonResponse;*/
 export interface PaymenttermGetAutocompleteV2Response {
     /**
      * 

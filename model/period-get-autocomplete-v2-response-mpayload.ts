@@ -28,6 +28,7 @@ export interface PeriodGetAutocompleteV2ResponseMPayload {
      * @type {Array<PeriodAutocompleteElementResponse>}
      * @memberof PeriodGetAutocompleteV2ResponseMPayload
      */
+    /*'a_objPeriod': Array<PeriodAutocompleteElementResponse>;*/
     'a_objPeriod': Array<PeriodAutocompleteElementResponse>;
 }
 /**

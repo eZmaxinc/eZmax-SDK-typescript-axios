@@ -34,18 +34,21 @@ export interface EzsignSuggestTemplatesV1ResponseMPayload {
      * @type {Array<EzsigntemplateResponseCompound>}
      * @memberof EzsignSuggestTemplatesV1ResponseMPayload
      */
+    /*'a_objEzsigntemplate': Array<EzsigntemplateResponseCompound>;*/
     'a_objEzsigntemplate': Array<EzsigntemplateResponseCompound>;
     /**
      * 
      * @type {Array<EzsigntemplatepackageResponseCompound>}
      * @memberof EzsignSuggestTemplatesV1ResponseMPayload
      */
+    /*'a_objEzsigntemplatepackage': Array<EzsigntemplatepackageResponseCompound>;*/
     'a_objEzsigntemplatepackage': Array<EzsigntemplatepackageResponseCompound>;
     /**
      * 
      * @type {Array<EzsigntemplateglobalResponseCompound>}
      * @memberof EzsignSuggestTemplatesV1ResponseMPayload
      */
+    /*'a_objEzsigntemplateglobal': Array<EzsigntemplateglobalResponseCompound>;*/
     'a_objEzsigntemplateglobal': Array<EzsigntemplateglobalResponseCompound>;
 }
 /**

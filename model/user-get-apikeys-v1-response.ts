@@ -31,7 +31,7 @@ import { UserGetApikeysV1ResponseMPayload } from './user-get-apikeys-v1-response
  * Response for GET /1/object/user/{pkiUserID}/getApikeys
  * @export
  */
-/** export type UserGetApikeysV1Response = CommonResponse; */
+/*export type UserGetApikeysV1Response = CommonResponse;*/
 export interface UserGetApikeysV1Response {
     /**
      * 

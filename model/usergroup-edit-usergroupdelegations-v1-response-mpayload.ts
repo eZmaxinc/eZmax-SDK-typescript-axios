@@ -25,6 +25,7 @@ export interface UsergroupEditUsergroupdelegationsV1ResponseMPayload {
      * @type {Array<number>}
      * @memberof UsergroupEditUsergroupdelegationsV1ResponseMPayload
      */
+    /*'a_pkiUsergroupdelegationID': Array<number>;*/
     'a_pkiUsergroupdelegationID': Array<number>;
 }
 /**

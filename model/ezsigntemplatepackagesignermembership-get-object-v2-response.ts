@@ -31,7 +31,7 @@ import { EzsigntemplatepackagesignermembershipGetObjectV2ResponseMPayload } from
  * Response for GET /2/object/ezsigntemplatepackagesignermembership/{pkiEzsigntemplatepackagesignermembershipID}
  * @export
  */
-/** export type EzsigntemplatepackagesignermembershipGetObjectV2Response = CommonResponse; */
+/*export type EzsigntemplatepackagesignermembershipGetObjectV2Response = CommonResponse;*/
 export interface EzsigntemplatepackagesignermembershipGetObjectV2Response {
     /**
      * 

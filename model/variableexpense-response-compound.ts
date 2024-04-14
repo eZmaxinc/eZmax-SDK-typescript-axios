@@ -28,7 +28,7 @@ import { VariableexpenseResponse } from './variableexpense-response';
  * A Variableexpense Object
  * @export
  */
-/** export type VariableexpenseResponseCompound = VariableexpenseResponse; */
+/*export type VariableexpenseResponseCompound = VariableexpenseResponse;*/
 export interface VariableexpenseResponseCompound {
     /**
      * The unique ID of the Variableexpense

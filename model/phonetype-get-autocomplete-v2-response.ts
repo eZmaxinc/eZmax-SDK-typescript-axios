@@ -31,7 +31,7 @@ import { PhonetypeGetAutocompleteV2ResponseMPayload } from './phonetype-get-auto
  * Response for GET /2/object/phonetype/getAutocomplete
  * @export
  */
-/** export type PhonetypeGetAutocompleteV2Response = CommonResponse; */
+/*export type PhonetypeGetAutocompleteV2Response = CommonResponse;*/
 export interface PhonetypeGetAutocompleteV2Response {
     /**
      * 

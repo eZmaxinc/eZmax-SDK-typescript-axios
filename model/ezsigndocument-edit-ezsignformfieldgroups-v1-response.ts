@@ -31,7 +31,7 @@ import { EzsigndocumentEditEzsignformfieldgroupsV1ResponseMPayload } from './ezs
  * Response for PUT /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignformfieldgroups
  * @export
  */
-/** export type EzsigndocumentEditEzsignformfieldgroupsV1Response = CommonResponse; */
+/*export type EzsigndocumentEditEzsignformfieldgroupsV1Response = CommonResponse;*/
 export interface EzsigndocumentEditEzsignformfieldgroupsV1Response {
     /**
      * 

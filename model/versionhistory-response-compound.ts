@@ -31,7 +31,7 @@ import { VersionhistoryResponse } from './versionhistory-response';
  * A Versionhistory Object
  * @export
  */
-/** export type VersionhistoryResponseCompound = VersionhistoryResponse; */
+/*export type VersionhistoryResponseCompound = VersionhistoryResponse;*/
 export interface VersionhistoryResponseCompound {
     /**
      * The unique ID of the Versionhistory

@@ -31,7 +31,7 @@ import { CommonResponseWarning } from './common-response-warning';
  * Response for PUT /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}
  * @export
  */
-/** export type EzsigntemplatedocumentEditObjectV1Response = CommonResponse; */
+/*export type EzsigntemplatedocumentEditObjectV1Response = CommonResponse;*/
 export interface EzsigntemplatedocumentEditObjectV1Response {
     /**
      * 

@@ -28,6 +28,7 @@ export interface SignatureEditObjectV1Request {
      * @type {SignatureRequestCompound}
      * @memberof SignatureEditObjectV1Request
      */
+    /*'objSignature': SignatureRequestCompound;*/
     'objSignature': SignatureRequestCompound;
 }
 /**

@@ -25,66 +25,77 @@ export interface ClonehistoryListElement {
      * @type {number}
      * @memberof ClonehistoryListElement
      */
+    /*'pkiClonehistoryID': number;*/
     'pkiClonehistoryID': number;
     /**
      * The unique ID of the User
      * @type {number}
      * @memberof ClonehistoryListElement
      */
+    /*'fkiUserIDCloning': number;*/
     'fkiUserIDCloning': number;
     /**
      * The unique ID of the User
      * @type {number}
      * @memberof ClonehistoryListElement
      */
+    /*'fkiUserIDCloned': number;*/
     'fkiUserIDCloned': number;
     /**
      * The firsthit of the Clonehistory
      * @type {string}
      * @memberof ClonehistoryListElement
      */
+    /*'dtClonehistoryFirsthit': string;*/
     'dtClonehistoryFirsthit': string;
     /**
      * The lasthit of the Clonehistory
      * @type {string}
      * @memberof ClonehistoryListElement
      */
+    /*'dtClonehistoryLasthit'?: string;*/
     'dtClonehistoryLasthit'?: string;
     /**
      * The login name of the User.
      * @type {string}
      * @memberof ClonehistoryListElement
      */
+    /*'sUserLoginnameCloning': string;*/
     'sUserLoginnameCloning': string;
     /**
      * The first name of the user
      * @type {string}
      * @memberof ClonehistoryListElement
      */
+    /*'sUserFirstnameCloning': string;*/
     'sUserFirstnameCloning': string;
     /**
      * The last name of the user
      * @type {string}
      * @memberof ClonehistoryListElement
      */
+    /*'sUserLastnameCloning': string;*/
     'sUserLastnameCloning': string;
     /**
      * The login name of the User.
      * @type {string}
      * @memberof ClonehistoryListElement
      */
+    /*'sUserLoginnameCloned': string;*/
     'sUserLoginnameCloned': string;
     /**
      * The first name of the user
      * @type {string}
      * @memberof ClonehistoryListElement
      */
+    /*'sUserFirstnameCloned': string;*/
     'sUserFirstnameCloned': string;
     /**
      * The last name of the user
      * @type {string}
      * @memberof ClonehistoryListElement
      */
+    /*'sUserLastnameCloned': string;*/
     'sUserLastnameCloned': string;
 }
 /**
@@ -146,7 +157,7 @@ export class ValidationObjectClonehistoryListElement {
    }
    sUserLoginnameCloning = {
       type: 'string',
-      pattern: '/^(?:([\w\.-]+@[\w\.-]+\.\w{2,20})|([a-zA-Z0-9]){1,32})$/',
+      pattern: '/^(?:([\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/',
       required: true
    }
    sUserFirstnameCloning = {
@@ -159,7 +170,7 @@ export class ValidationObjectClonehistoryListElement {
    }
    sUserLoginnameCloned = {
       type: 'string',
-      pattern: '/^(?:([\w\.-]+@[\w\.-]+\.\w{2,20})|([a-zA-Z0-9]){1,32})$/',
+      pattern: '/^(?:([\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/',
       required: true
    }
    sUserFirstnameCloned = {

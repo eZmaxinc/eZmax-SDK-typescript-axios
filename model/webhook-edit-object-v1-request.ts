@@ -28,6 +28,7 @@ export interface WebhookEditObjectV1Request {
      * @type {WebhookRequestCompound}
      * @memberof WebhookEditObjectV1Request
      */
+    /*'objWebhook': WebhookRequestCompound;*/
     'objWebhook': WebhookRequestCompound;
 }
 /**

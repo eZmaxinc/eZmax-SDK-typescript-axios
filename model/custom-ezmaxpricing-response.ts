@@ -25,24 +25,28 @@ export interface CustomEzmaxpricingResponse {
      * @type {number}
      * @memberof CustomEzmaxpricingResponse
      */
+    /*'pkiEzmaxpricingID': number;*/
     'pkiEzmaxpricingID': number;
     /**
      * The rebate offered when eZsign is taken for all agents
      * @type {string}
      * @memberof CustomEzmaxpricingResponse
      */
+    /*'dEzmaxpricingRebateezsignallagents': string;*/
     'dEzmaxpricingRebateezsignallagents': string;
     /**
      * The start date of the Ezmaxpricing
      * @type {string}
      * @memberof CustomEzmaxpricingResponse
      */
+    /*'dtEzmaxpricingStart': string;*/
     'dtEzmaxpricingStart': string;
     /**
      * The end date of the Ezmaxpricing
      * @type {string}
      * @memberof CustomEzmaxpricingResponse
      */
+    /*'dtEzmaxpricingEnd'?: string;*/
     'dtEzmaxpricingEnd'?: string;
 }
 /**

@@ -34,54 +34,63 @@ export interface ApikeyResponse {
      * @type {number}
      * @memberof ApikeyResponse
      */
+    /*'pkiApikeyID': number;*/
     'pkiApikeyID': number;
     /**
      * The unique ID of the User
      * @type {number}
      * @memberof ApikeyResponse
      */
+    /*'fkiUserID': number;*/
     'fkiUserID': number;
     /**
      * 
      * @type {MultilingualApikeyDescription}
      * @memberof ApikeyResponse
      */
+    /*'objApikeyDescription': MultilingualApikeyDescription;*/
     'objApikeyDescription': MultilingualApikeyDescription;
     /**
      * 
      * @type {CustomContactNameResponse}
      * @memberof ApikeyResponse
      */
+    /*'objContactName': CustomContactNameResponse;*/
     'objContactName': CustomContactNameResponse;
     /**
      * The Apikey for the API key.  This will be hidden if we are not creating or regenerating the Apikey.
      * @type {string}
      * @memberof ApikeyResponse
      */
+    /*'sApikeyApikey'?: string;*/
     'sApikeyApikey'?: string;
     /**
      * The Secret for the API key.  This will be hidden if we are not creating or regenerating the Apikey.
      * @type {string}
      * @memberof ApikeyResponse
      */
+    /*'sApikeySecret'?: string;*/
     'sApikeySecret'?: string;
     /**
      * Whether the apikey is active or not
      * @type {boolean}
      * @memberof ApikeyResponse
      */
+    /*'bApikeyIsactive': boolean;*/
     'bApikeyIsactive': boolean;
     /**
      * Whether the apikey is signed or not
      * @type {boolean}
      * @memberof ApikeyResponse
      */
+    /*'bApikeyIssigned'?: boolean;*/
     'bApikeyIssigned'?: boolean;
     /**
      * 
      * @type {CommonAudit}
      * @memberof ApikeyResponse
      */
+    /*'objAudit': CommonAudit;*/
     'objAudit': CommonAudit;
 }
 /**

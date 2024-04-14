@@ -28,18 +28,21 @@ export interface EzsignsigningreasonResponse {
      * @type {number}
      * @memberof EzsignsigningreasonResponse
      */
+    /*'pkiEzsignsigningreasonID': number;*/
     'pkiEzsignsigningreasonID': number;
     /**
      * 
      * @type {MultilingualEzsignsigningreasonDescription}
      * @memberof EzsignsigningreasonResponse
      */
+    /*'objEzsignsigningreasonDescription': MultilingualEzsignsigningreasonDescription;*/
     'objEzsignsigningreasonDescription': MultilingualEzsignsigningreasonDescription;
     /**
      * Whether the ezsignsigningreason is active or not
      * @type {boolean}
      * @memberof EzsignsigningreasonResponse
      */
+    /*'bEzsignsigningreasonIsactive': boolean;*/
     'bEzsignsigningreasonIsactive': boolean;
 }
 /**

@@ -28,6 +28,7 @@ export interface BillingentityinternalCreateObjectV1Request {
      * @type {Array<BillingentityinternalRequestCompound>}
      * @memberof BillingentityinternalCreateObjectV1Request
      */
+    /*'a_objBillingentityinternal': Array<BillingentityinternalRequestCompound>;*/
     'a_objBillingentityinternal': Array<BillingentityinternalRequestCompound>;
 }
 /**

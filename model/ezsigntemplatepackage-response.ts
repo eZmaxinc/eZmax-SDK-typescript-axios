@@ -25,60 +25,70 @@ export interface EzsigntemplatepackageResponse {
      * @type {number}
      * @memberof EzsigntemplatepackageResponse
      */
+    /*'pkiEzsigntemplatepackageID': number;*/
     'pkiEzsigntemplatepackageID': number;
     /**
      * The unique ID of the Ezsignfoldertype.
      * @type {number}
      * @memberof EzsigntemplatepackageResponse
      */
+    /*'fkiEzsignfoldertypeID': number;*/
     'fkiEzsignfoldertypeID': number;
     /**
      * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @type {number}
      * @memberof EzsigntemplatepackageResponse
      */
+    /*'fkiLanguageID': number;*/
     'fkiLanguageID': number;
     /**
      * The Name of the Language in the language of the requester
      * @type {string}
      * @memberof EzsigntemplatepackageResponse
      */
+    /*'sLanguageNameX': string;*/
     'sLanguageNameX': string;
     /**
      * The description of the Ezsigntemplatepackage
      * @type {string}
      * @memberof EzsigntemplatepackageResponse
      */
+    /*'sEzsigntemplatepackageDescription': string;*/
     'sEzsigntemplatepackageDescription': string;
     /**
      * Whether the Ezsigntemplatepackage can be accessed by admin users only (eUserType=Normal)
      * @type {boolean}
      * @memberof EzsigntemplatepackageResponse
      */
+    /*'bEzsigntemplatepackageAdminonly': boolean;*/
     'bEzsigntemplatepackageAdminonly': boolean;
     /**
      * Whether the Ezsignbulksend was automatically modified and needs a manual validation
      * @type {boolean}
      * @memberof EzsigntemplatepackageResponse
      */
+    /*'bEzsigntemplatepackageNeedvalidation': boolean;*/
     'bEzsigntemplatepackageNeedvalidation': boolean;
     /**
      * Whether the Ezsigntemplatepackage is active or not
      * @type {boolean}
      * @memberof EzsigntemplatepackageResponse
      */
+    /*'bEzsigntemplatepackageIsactive': boolean;*/
     'bEzsigntemplatepackageIsactive': boolean;
     /**
      * The name of the Ezsignfoldertype in the language of the requester
      * @type {string}
      * @memberof EzsigntemplatepackageResponse
      */
+    /*'sEzsignfoldertypeNameX': string;*/
     'sEzsignfoldertypeNameX': string;
     /**
      * Whether the Ezsigntemplatepackage if allowed to edit or not
      * @type {boolean}
      * @memberof EzsigntemplatepackageResponse
      */
+    /*'bEzsigntemplatepackageEditallowed': boolean;*/
     'bEzsigntemplatepackageEditallowed': boolean;
 }
 /**

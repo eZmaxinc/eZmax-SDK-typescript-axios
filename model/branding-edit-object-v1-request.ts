@@ -28,6 +28,7 @@ export interface BrandingEditObjectV1Request {
      * @type {BrandingRequestCompound}
      * @memberof BrandingEditObjectV1Request
      */
+    /*'objBranding': BrandingRequestCompound;*/
     'objBranding': BrandingRequestCompound;
 }
 /**

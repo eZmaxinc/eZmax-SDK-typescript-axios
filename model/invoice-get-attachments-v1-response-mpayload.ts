@@ -28,6 +28,7 @@ export interface InvoiceGetAttachmentsV1ResponseMPayload {
      * @type {Array<CustomAttachmentdocumenttypeResponse>}
      * @memberof InvoiceGetAttachmentsV1ResponseMPayload
      */
+    /*'a_objAttachmentdocumenttype': Array<CustomAttachmentdocumenttypeResponse>;*/
     'a_objAttachmentdocumenttype': Array<CustomAttachmentdocumenttypeResponse>;
 }
 /**

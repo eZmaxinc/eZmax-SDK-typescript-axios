@@ -25,6 +25,7 @@ export interface UserEditPermissionsV1ResponseMPayload {
      * @type {Array<number>}
      * @memberof UserEditPermissionsV1ResponseMPayload
      */
+    /*'a_pkiPermissionID': Array<number>;*/
     'a_pkiPermissionID': Array<number>;
 }
 /**

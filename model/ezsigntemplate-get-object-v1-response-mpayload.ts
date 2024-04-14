@@ -34,7 +34,7 @@ import { FieldEEzsigntemplateType } from './field-eezsigntemplate-type';
  * Payload for GET /1/object/ezsigntemplate/{pkiEzsigntemplateID}
  * @export
  */
-/** export type EzsigntemplateGetObjectV1ResponseMPayload = EzsigntemplateResponseCompound; */
+/*export type EzsigntemplateGetObjectV1ResponseMPayload = EzsigntemplateResponseCompound;*/
 export interface EzsigntemplateGetObjectV1ResponseMPayload {
     /**
      * The unique ID of the Ezsigntemplate

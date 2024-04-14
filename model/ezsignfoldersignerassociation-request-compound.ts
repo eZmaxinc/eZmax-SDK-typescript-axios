@@ -25,7 +25,7 @@ import { EzsignsignerRequestCompound } from './ezsignsigner-request-compound';
  * An Ezsignfoldersignerassociation Object and children to create a complete structure
  * @export
  */
-/** export type EzsignfoldersignerassociationRequestCompound = EzsignfoldersignerassociationRequest; */
+/*export type EzsignfoldersignerassociationRequestCompound = EzsignfoldersignerassociationRequest;*/
 export interface EzsignfoldersignerassociationRequestCompound {
     /**
      * The unique ID of the Ezsignfoldersignerassociation

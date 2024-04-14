@@ -28,6 +28,7 @@ export interface EzsignfolderGetEzsigndocumentsV1ResponseMPayload {
      * @type {Array<EzsigndocumentResponseCompound>}
      * @memberof EzsignfolderGetEzsigndocumentsV1ResponseMPayload
      */
+    /*'a_objEzsigndocument': Array<EzsigndocumentResponseCompound>;*/
     'a_objEzsigndocument': Array<EzsigndocumentResponseCompound>;
 }
 /**

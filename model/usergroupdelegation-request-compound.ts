@@ -22,7 +22,7 @@ import { UsergroupdelegationRequest } from './usergroupdelegation-request';
  * A Usergroupdelegation Object and children
  * @export
  */
-/** export type UsergroupdelegationRequestCompound = UsergroupdelegationRequest; */
+/*export type UsergroupdelegationRequestCompound = UsergroupdelegationRequest;*/
 export interface UsergroupdelegationRequestCompound {
     /**
      * The unique ID of the Usergroupdelegation

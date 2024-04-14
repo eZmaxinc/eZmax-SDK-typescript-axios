@@ -43,7 +43,7 @@ import { UserResponse } from './user-response';
  * A User Object and children to create a complete structure
  * @export
  */
-/** export type UserResponseCompound = UserResponse; */
+/*export type UserResponseCompound = UserResponse;*/
 export interface UserResponseCompound {
     /**
      * The unique ID of the User
@@ -465,7 +465,7 @@ export class ValidationObjectUserResponseCompound {
    }
    sUserLoginname = {
       type: 'string',
-      pattern: '/^(?:([\w\.-]+@[\w\.-]+\.\w{2,20})|([a-zA-Z0-9]){1,32})$/',
+      pattern: '/^(?:([\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/',
       required: true
    }
    sUserJobtitle = {

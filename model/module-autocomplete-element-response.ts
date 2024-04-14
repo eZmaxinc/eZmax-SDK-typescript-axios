@@ -25,18 +25,21 @@ export interface ModuleAutocompleteElementResponse {
      * @type {number}
      * @memberof ModuleAutocompleteElementResponse
      */
+    /*'pkiModuleID': number;*/
     'pkiModuleID': number;
     /**
      * The Name of the Module in the language of the requester
      * @type {string}
      * @memberof ModuleAutocompleteElementResponse
      */
+    /*'sModuleNameX': string;*/
     'sModuleNameX': string;
     /**
      * Whether the Module is active or not
      * @type {boolean}
      * @memberof ModuleAutocompleteElementResponse
      */
+    /*'bModuleIsactive': boolean;*/
     'bModuleIsactive': boolean;
 }
 /**

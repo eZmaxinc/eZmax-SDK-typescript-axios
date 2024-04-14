@@ -28,6 +28,7 @@ export interface EzsignbulksenddocumentmappingGetObjectV2ResponseMPayload {
      * @type {EzsignbulksenddocumentmappingResponseCompound}
      * @memberof EzsignbulksenddocumentmappingGetObjectV2ResponseMPayload
      */
+    /*'objEzsignbulksenddocumentmapping': EzsignbulksenddocumentmappingResponseCompound;*/
     'objEzsignbulksenddocumentmapping': EzsignbulksenddocumentmappingResponseCompound;
 }
 /**

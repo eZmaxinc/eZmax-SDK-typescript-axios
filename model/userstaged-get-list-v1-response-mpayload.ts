@@ -25,7 +25,7 @@ import { UserstagedListElement } from './userstaged-list-element';
  * Payload for GET /1/object/userstaged/getList
  * @export
  */
-/** export type UserstagedGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload; */
+/*export type UserstagedGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;*/
 export interface UserstagedGetListV1ResponseMPayload {
     /**
      * The number of rows returned

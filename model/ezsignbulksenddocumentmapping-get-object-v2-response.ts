@@ -31,7 +31,7 @@ import { EzsignbulksenddocumentmappingGetObjectV2ResponseMPayload } from './ezsi
  * Response for GET /2/object/ezsignbulksenddocumentmapping/{pkiEzsignbulksenddocumentmappingID}
  * @export
  */
-/** export type EzsignbulksenddocumentmappingGetObjectV2Response = CommonResponse; */
+/*export type EzsignbulksenddocumentmappingGetObjectV2Response = CommonResponse;*/
 export interface EzsignbulksenddocumentmappingGetObjectV2Response {
     /**
      * 

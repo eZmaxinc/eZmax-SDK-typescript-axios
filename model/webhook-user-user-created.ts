@@ -31,7 +31,7 @@ import { UserResponseCompound } from './user-response-compound';
  * This is the base Webhook object
  * @export
  */
-/** export type WebhookUserUserCreated = CommonWebhook; */
+/*export type WebhookUserUserCreated = CommonWebhook;*/
 export interface WebhookUserUserCreated {
     /**
      * 

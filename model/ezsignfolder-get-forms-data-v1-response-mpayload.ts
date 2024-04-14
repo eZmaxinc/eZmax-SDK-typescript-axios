@@ -28,6 +28,7 @@ export interface EzsignfolderGetFormsDataV1ResponseMPayload {
      * @type {CustomFormsDataFolderResponse}
      * @memberof EzsignfolderGetFormsDataV1ResponseMPayload
      */
+    /*'objFormsDataFolder': CustomFormsDataFolderResponse;*/
     'objFormsDataFolder': CustomFormsDataFolderResponse;
 }
 /**

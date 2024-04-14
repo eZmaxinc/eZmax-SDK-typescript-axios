@@ -28,30 +28,35 @@ export interface EzsignbulksendtransmissionResponse {
      * @type {number}
      * @memberof EzsignbulksendtransmissionResponse
      */
+    /*'pkiEzsignbulksendtransmissionID': number;*/
     'pkiEzsignbulksendtransmissionID': number;
     /**
      * The unique ID of the Ezsignbulksend
      * @type {number}
      * @memberof EzsignbulksendtransmissionResponse
      */
+    /*'fkiEzsignbulksendID': number;*/
     'fkiEzsignbulksendID': number;
     /**
      * The description of the Ezsignbulksendtransmission
      * @type {string}
      * @memberof EzsignbulksendtransmissionResponse
      */
+    /*'sEzsignbulksendtransmissionDescription': string;*/
     'sEzsignbulksendtransmissionDescription': string;
     /**
      * The number of errors during the Ezsignbulksendtransmission
      * @type {number}
      * @memberof EzsignbulksendtransmissionResponse
      */
+    /*'iEzsignbulksendtransmissionErrors': number;*/
     'iEzsignbulksendtransmissionErrors': number;
     /**
      * 
      * @type {CommonAudit}
      * @memberof EzsignbulksendtransmissionResponse
      */
+    /*'objAudit': CommonAudit;*/
     'objAudit': CommonAudit;
 }
 /**

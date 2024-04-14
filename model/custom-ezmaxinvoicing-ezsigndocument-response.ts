@@ -25,36 +25,42 @@ export interface CustomEzmaxinvoicingEzsigndocumentResponse {
      * @type {number}
      * @memberof CustomEzmaxinvoicingEzsigndocumentResponse
      */
+    /*'fkiEzsignfolderID': number;*/
     'fkiEzsignfolderID': number;
     /**
      * The unique ID of the Billingentityinternal.
      * @type {number}
      * @memberof CustomEzmaxinvoicingEzsigndocumentResponse
      */
+    /*'fkiBillingentityinternalID'?: number;*/
     'fkiBillingentityinternalID'?: number;
     /**
      * 
      * @type {string}
      * @memberof CustomEzmaxinvoicingEzsigndocumentResponse
      */
+    /*'sName': string;*/
     'sName': string;
     /**
      * The description of the Ezsignfolder
      * @type {string}
      * @memberof CustomEzmaxinvoicingEzsigndocumentResponse
      */
+    /*'sEzsignfolderDescription': string;*/
     'sEzsignfolderDescription': string;
     /**
      * The name of the document that will be presented to Ezsignfoldersignerassociations
      * @type {string}
      * @memberof CustomEzmaxinvoicingEzsigndocumentResponse
      */
+    /*'sEzsigndocumentName': string;*/
     'sEzsigndocumentName': string;
     /**
      * Whether you have access to the Ezsignfolder or not
      * @type {boolean}
      * @memberof CustomEzmaxinvoicingEzsigndocumentResponse
      */
+    /*'bEzsignfolderAllowed': boolean;*/
     'bEzsignfolderAllowed': boolean;
 }
 /**

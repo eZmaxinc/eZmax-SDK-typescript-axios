@@ -25,7 +25,7 @@ import { ModulegroupResponse } from './modulegroup-response';
  * A Modulegroup Object
  * @export
  */
-/** export type ModulegroupResponseCompound = ModulegroupResponse; */
+/*export type ModulegroupResponseCompound = ModulegroupResponse;*/
 export interface ModulegroupResponseCompound {
     /**
      * The unique ID of the Modulegroup

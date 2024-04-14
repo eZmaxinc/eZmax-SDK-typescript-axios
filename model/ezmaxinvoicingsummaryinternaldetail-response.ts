@@ -25,72 +25,84 @@ export interface EzmaxinvoicingsummaryinternaldetailResponse {
      * @type {number}
      * @memberof EzmaxinvoicingsummaryinternaldetailResponse
      */
+    /*'pkiEzmaxinvoicingsummaryinternaldetailID'?: number;*/
     'pkiEzmaxinvoicingsummaryinternaldetailID'?: number;
     /**
      * The unique ID of the Ezmaxinvoicingsummaryinternal
      * @type {number}
      * @memberof EzmaxinvoicingsummaryinternaldetailResponse
      */
+    /*'fkiEzmaxinvoicingsummaryinternalID'?: number;*/
     'fkiEzmaxinvoicingsummaryinternalID'?: number;
     /**
      * The unique ID of the Ezmaxproduct
      * @type {number}
      * @memberof EzmaxinvoicingsummaryinternaldetailResponse
      */
+    /*'fkiEzmaxproductID': number;*/
     'fkiEzmaxproductID': number;
     /**
      * The description of the Ezmaxproduct in the language of the requester
      * @type {string}
      * @memberof EzmaxinvoicingsummaryinternaldetailResponse
      */
+    /*'sEzmaxproductDescriptionX': string;*/
     'sEzmaxproductDescriptionX': string;
     /**
      * The unique ID of the Billingentityexternal
      * @type {number}
      * @memberof EzmaxinvoicingsummaryinternaldetailResponse
      */
+    /*'fkiBillingentityexternalID': number;*/
     'fkiBillingentityexternalID': number;
     /**
      * The description of the Billingentityexternal
      * @type {string}
      * @memberof EzmaxinvoicingsummaryinternaldetailResponse
      */
+    /*'sBillingentityexternalDescription': string;*/
     'sBillingentityexternalDescription': string;
     /**
      * The count item invoiced for the product
      * @type {string}
      * @memberof EzmaxinvoicingsummaryinternaldetailResponse
      */
+    /*'dEzmaxinvoicingsummaryinternaldetailCountreal': string;*/
     'dEzmaxinvoicingsummaryinternaldetailCountreal': string;
     /**
      * The subtotal invoiced for the product
      * @type {string}
      * @memberof EzmaxinvoicingsummaryinternaldetailResponse
      */
+    /*'dEzmaxinvoicingsummaryinternaldetailSubtotal': string;*/
     'dEzmaxinvoicingsummaryinternaldetailSubtotal': string;
     /**
      * The rebate for the product
      * @type {string}
      * @memberof EzmaxinvoicingsummaryinternaldetailResponse
      */
+    /*'dEzmaxinvoicingsummaryinternaldetailRebate': string;*/
     'dEzmaxinvoicingsummaryinternaldetailRebate': string;
     /**
      * The total invoiced for the product
      * @type {string}
      * @memberof EzmaxinvoicingsummaryinternaldetailResponse
      */
+    /*'dEzmaxinvoicingsummaryinternaldetailTotal': string;*/
     'dEzmaxinvoicingsummaryinternaldetailTotal': string;
     /**
      * Whether if it\'s an adjustment
      * @type {boolean}
      * @memberof EzmaxinvoicingsummaryinternaldetailResponse
      */
+    /*'bEzmaxinvoicingsummaryinternaldetailAdjustment': boolean;*/
     'bEzmaxinvoicingsummaryinternaldetailAdjustment': boolean;
     /**
      * The help message of the Ezmaxproduct in the language of the requester
      * @type {string}
      * @memberof EzmaxinvoicingsummaryinternaldetailResponse
      */
+    /*'tEzmaxproductHelpX': string;*/
     'tEzmaxproductHelpX': string;
 }
 /**

@@ -25,7 +25,7 @@ import { CommonGetListV1ResponseMPayload } from './common-get-list-v1-response-m
  * Payload for GET /1/object/clonehistory/getList
  * @export
  */
-/** export type ClonehistoryGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload; */
+/*export type ClonehistoryGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;*/
 export interface ClonehistoryGetListV1ResponseMPayload {
     /**
      * The number of rows returned

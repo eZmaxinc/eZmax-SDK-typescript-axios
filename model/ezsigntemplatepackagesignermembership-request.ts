@@ -25,30 +25,35 @@ export interface EzsigntemplatepackagesignermembershipRequest {
      * @type {number}
      * @memberof EzsigntemplatepackagesignermembershipRequest
      */
+    /*'pkiEzsigntemplatepackagesignermembershipID'?: number;*/
     'pkiEzsigntemplatepackagesignermembershipID'?: number;
     /**
      * The unique ID of the Ezsigntemplatepackagemembership
      * @type {number}
      * @memberof EzsigntemplatepackagesignermembershipRequest
      */
+    /*'fkiEzsigntemplatepackagemembershipID': number;*/
     'fkiEzsigntemplatepackagemembershipID': number;
     /**
      * The unique ID of the Ezsigntemplatepackagesigner
      * @type {number}
      * @memberof EzsigntemplatepackagesignermembershipRequest
      */
+    /*'fkiEzsigntemplatepackagesignerID': number;*/
     'fkiEzsigntemplatepackagesignerID': number;
     /**
      * The unique ID of the Ezsigntemplatesigner
      * @type {number}
      * @memberof EzsigntemplatepackagesignermembershipRequest
      */
+    /*'fkiEzsigntemplatesignerID': number;*/
     'fkiEzsigntemplatesignerID': number;
     /**
      * The Copy number in case of multiple copies.
      * @type {number}
      * @memberof EzsigntemplatepackagesignermembershipRequest
      */
+    /*'iEzsigntemplatepackagesignermembershipCopy'?: number;*/
     'iEzsigntemplatepackagesignermembershipCopy'?: number;
 }
 /**

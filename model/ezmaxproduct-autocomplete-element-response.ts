@@ -25,18 +25,21 @@ export interface EzmaxproductAutocompleteElementResponse {
      * @type {number}
      * @memberof EzmaxproductAutocompleteElementResponse
      */
+    /*'pkiEzmaxproductID': number;*/
     'pkiEzmaxproductID': number;
     /**
      * The description of the Ezmaxproduct in the language of the requester
      * @type {string}
      * @memberof EzmaxproductAutocompleteElementResponse
      */
+    /*'sEzmaxproductDescriptionX': string;*/
     'sEzmaxproductDescriptionX': string;
     /**
      * Whether the Ezmaxproduct is active or not
      * @type {boolean}
      * @memberof EzmaxproductAutocompleteElementResponse
      */
+    /*'bEzmaxproductIsactive': boolean;*/
     'bEzmaxproductIsactive': boolean;
 }
 /**

@@ -25,48 +25,56 @@ export interface UsergroupexternalmembershipResponse {
      * @type {number}
      * @memberof UsergroupexternalmembershipResponse
      */
+    /*'pkiUsergroupexternalmembershipID': number;*/
     'pkiUsergroupexternalmembershipID': number;
     /**
      * The unique ID of the Usergroupexternal
      * @type {number}
      * @memberof UsergroupexternalmembershipResponse
      */
+    /*'fkiUsergroupexternalID': number;*/
     'fkiUsergroupexternalID': number;
     /**
      * The unique ID of the User
      * @type {number}
      * @memberof UsergroupexternalmembershipResponse
      */
+    /*'fkiUserID': number;*/
     'fkiUserID': number;
     /**
      * The first name of the user
      * @type {string}
      * @memberof UsergroupexternalmembershipResponse
      */
+    /*'sUserFirstname': string;*/
     'sUserFirstname': string;
     /**
      * The last name of the user
      * @type {string}
      * @memberof UsergroupexternalmembershipResponse
      */
+    /*'sUserLastname': string;*/
     'sUserLastname': string;
     /**
      * The login name of the User.
      * @type {string}
      * @memberof UsergroupexternalmembershipResponse
      */
+    /*'sUserLoginname': string;*/
     'sUserLoginname': string;
     /**
      * The email address.
      * @type {string}
      * @memberof UsergroupexternalmembershipResponse
      */
+    /*'sEmailAddress': string;*/
     'sEmailAddress': string;
     /**
      * The name of the Usergroupexternal
      * @type {string}
      * @memberof UsergroupexternalmembershipResponse
      */
+    /*'sUsergroupexternalName': string;*/
     'sUsergroupexternalName': string;
 }
 /**
@@ -124,11 +132,12 @@ export class ValidationObjectUsergroupexternalmembershipResponse {
    }
    sUserLoginname = {
       type: 'string',
-      pattern: '/^(?:([\w\.-]+@[\w\.-]+\.\w{2,20})|([a-zA-Z0-9]){1,32})$/',
+      pattern: '/^(?:([\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/',
       required: true
    }
    sEmailAddress = {
       type: 'string',
+      pattern: '/^[\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/',
       required: true
    }
    sUsergroupexternalName = {

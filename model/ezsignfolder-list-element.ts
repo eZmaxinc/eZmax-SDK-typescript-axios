@@ -31,108 +31,126 @@ export interface EzsignfolderListElement {
      * @type {number}
      * @memberof EzsignfolderListElement
      */
+    /*'pkiEzsignfolderID': number;*/
     'pkiEzsignfolderID': number;
     /**
      * The unique ID of the Ezsignfoldertype.
      * @type {number}
      * @memberof EzsignfolderListElement
      */
+    /*'fkiEzsignfoldertypeID': number;*/
     'fkiEzsignfoldertypeID': number;
     /**
      * 
      * @type {FieldEEzsignfoldertypePrivacylevel}
      * @memberof EzsignfolderListElement
      */
+    /*'eEzsignfoldertypePrivacylevel': FieldEEzsignfoldertypePrivacylevel;*/
     'eEzsignfoldertypePrivacylevel': FieldEEzsignfoldertypePrivacylevel;
     /**
      * The name of the Ezsignfoldertype in the language of the requester
      * @type {string}
      * @memberof EzsignfolderListElement
      */
+    /*'sEzsignfoldertypeNameX': string;*/
     'sEzsignfoldertypeNameX': string;
     /**
      * The description of the Ezsignfolder
      * @type {string}
      * @memberof EzsignfolderListElement
      */
+    /*'sEzsignfolderDescription': string;*/
     'sEzsignfolderDescription': string;
     /**
      * 
      * @type {FieldEEzsignfolderStep}
      * @memberof EzsignfolderListElement
      */
+    /*'eEzsignfolderStep': FieldEEzsignfolderStep;*/
     'eEzsignfolderStep': FieldEEzsignfolderStep;
     /**
      * The date and time at which the object was created
      * @type {string}
      * @memberof EzsignfolderListElement
      */
+    /*'dtCreatedDate': string;*/
     'dtCreatedDate': string;
     /**
      * The date and time at which the Ezsignfolder will be sent in the future.
      * @type {string}
      * @memberof EzsignfolderListElement
      */
+    /*'dtEzsignfolderDelayedsenddate'?: string;*/
     'dtEzsignfolderDelayedsenddate'?: string;
     /**
      * The date and time at which the Ezsignfolder was sent the last time.
      * @type {string}
      * @memberof EzsignfolderListElement
      */
+    /*'dtEzsignfolderSentdate'?: string;*/
     'dtEzsignfolderSentdate'?: string;
     /**
      * The maximum date and time at which the Ezsignfolder can be signed.
      * @type {string}
      * @memberof EzsignfolderListElement
      */
+    /*'dtEzsignfolderDuedate'?: string;*/
     'dtEzsignfolderDuedate'?: string;
     /**
      * The total number of Ezsigndocument in the folder
      * @type {number}
      * @memberof EzsignfolderListElement
      */
+    /*'iEzsigndocument': number;*/
     'iEzsigndocument': number;
     /**
      * The total number of Ezsigndocument in the folder that were saved in the edm system
      * @type {number}
      * @memberof EzsignfolderListElement
      */
+    /*'iEzsigndocumentEdm': number;*/
     'iEzsigndocumentEdm': number;
     /**
      * The total number of signature blocks in all Ezsigndocuments in the folder
      * @type {number}
      * @memberof EzsignfolderListElement
      */
+    /*'iEzsignsignature': number;*/
     'iEzsignsignature': number;
     /**
      * The total number of already signed signature blocks in all Ezsigndocuments in the folder
      * @type {number}
      * @memberof EzsignfolderListElement
      */
+    /*'iEzsignsignatureSigned': number;*/
     'iEzsignsignatureSigned': number;
     /**
      * The total number of Ezsignformfieldgroup in all Ezsigndocuments in the folder
      * @type {number}
      * @memberof EzsignfolderListElement
      */
+    /*'iEzsignformfieldgroup': number;*/
     'iEzsignformfieldgroup': number;
     /**
      * The total number of completed Ezsignformfieldgroup in all Ezsigndocuments in the folder
      * @type {number}
      * @memberof EzsignfolderListElement
      */
+    /*'iEzsignformfieldgroupCompleted': number;*/
     'iEzsignformfieldgroupCompleted': number;
     /**
      * Whether the Ezsignform/Ezsignsignatures has dependencies or not
      * @type {boolean}
      * @memberof EzsignfolderListElement
      */
+    /*'bEzsignformHasdependencies'?: boolean;*/
     'bEzsignformHasdependencies'?: boolean;
     /**
      * Whether the Ezsignform/Ezsignsignatures has dependencies or not
      * @type {string}
      * @memberof EzsignfolderListElement
      */
+    /*'dEzsignfolderCompletedpercentage': string;*/
     'dEzsignfolderCompletedpercentage': string;
 }
 

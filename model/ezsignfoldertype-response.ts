@@ -43,282 +43,329 @@ export interface EzsignfoldertypeResponse {
      * @type {number}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'pkiEzsignfoldertypeID': number;*/
     'pkiEzsignfoldertypeID': number;
     /**
      * 
      * @type {MultilingualEzsignfoldertypeName}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'objEzsignfoldertypeName': MultilingualEzsignfoldertypeName;*/
     'objEzsignfoldertypeName': MultilingualEzsignfoldertypeName;
     /**
      * The unique ID of the Branding
      * @type {number}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'fkiBrandingID': number;*/
     'fkiBrandingID': number;
     /**
      * The unique ID of the Billingentityinternal.
      * @type {number}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'fkiBillingentityinternalID'?: number;*/
     'fkiBillingentityinternalID'?: number;
     /**
      * The unique ID of the Usergroup
      * @type {number}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'fkiUsergroupID'?: number;*/
     'fkiUsergroupID'?: number;
     /**
      * The unique ID of the Usergroup
      * @type {number}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'fkiUsergroupIDRestricted'?: number;*/
     'fkiUsergroupIDRestricted'?: number;
     /**
      * The unique ID of the Ezsigntsarequirement.  Determine if a Time Stamping Authority should add a timestamp on each of the signature. Valid values:  |Value|Description| |-|-| |1|No. TSA Timestamping will requested. This will make all signatures a lot faster since no round-trip to the TSA server will be required. Timestamping will be made using eZsign server\'s time.| |2|Best effort. Timestamping from a Time Stamping Authority will be requested but is not mandatory. In the very improbable case it cannot be completed, the timestamping will be made using eZsign server\'s time. **Additional fee applies**| |3|Mandatory. Timestamping from a Time Stamping Authority will be requested and is mandatory. In the very improbable case it cannot be completed, the signature will fail and the user will be asked to retry. **Additional fee applies**|
      * @type {number}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'fkiEzsigntsarequirementID'?: number;*/
     'fkiEzsigntsarequirementID'?: number;
     /**
      * The Description of the Branding in the language of the requester
      * @type {string}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'sBrandingDescriptionX': string;*/
     'sBrandingDescriptionX': string;
     /**
      * The description of the Billingentityinternal in the language of the requester
      * @type {string}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'sBillingentityinternalDescriptionX'?: string;*/
     'sBillingentityinternalDescriptionX'?: string;
     /**
      * The description of the Ezsigntsarequirement in the language of the requester
      * @type {string}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'sEzsigntsarequirementDescriptionX'?: string;*/
     'sEzsigntsarequirementDescriptionX'?: string;
     /**
      * The email address.
      * @type {string}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'sEmailAddressSigned'?: string;*/
     'sEmailAddressSigned'?: string;
     /**
      * The email address.
      * @type {string}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'sEmailAddressSummary'?: string;*/
     'sEmailAddressSummary'?: string;
     /**
      * The Name of the Usergroup in the language of the requester
      * @type {string}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'sUsergroupNameX'?: string;*/
     'sUsergroupNameX'?: string;
     /**
      * The Name of the Usergroup in the language of the requester
      * @type {string}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'sUsergroupNameXRestricted'?: string;*/
     'sUsergroupNameXRestricted'?: string;
     /**
      * 
      * @type {FieldEEzsignfoldertypePrivacylevel}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'eEzsignfoldertypePrivacylevel': FieldEEzsignfoldertypePrivacylevel;*/
     'eEzsignfoldertypePrivacylevel': FieldEEzsignfoldertypePrivacylevel;
     /**
      * 
      * @type {FieldEEzsignfoldertypeSendreminderfrequency}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'eEzsignfoldertypeSendreminderfrequency'?: FieldEEzsignfoldertypeSendreminderfrequency;*/
     'eEzsignfoldertypeSendreminderfrequency'?: FieldEEzsignfoldertypeSendreminderfrequency;
     /**
      * The number of days before the archival of Ezsignfolders created using this Ezsignfoldertype
      * @type {number}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'iEzsignfoldertypeArchivaldays': number;*/
     'iEzsignfoldertypeArchivaldays': number;
     /**
      * 
      * @type {FieldEEzsignfoldertypeDisposal}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'eEzsignfoldertypeDisposal': FieldEEzsignfoldertypeDisposal;*/
     'eEzsignfoldertypeDisposal': FieldEEzsignfoldertypeDisposal;
     /**
      * 
      * @type {FieldEEzsignfoldertypeCompletion}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'eEzsignfoldertypeCompletion': FieldEEzsignfoldertypeCompletion;*/
     'eEzsignfoldertypeCompletion': FieldEEzsignfoldertypeCompletion;
     /**
      * The number of days after the archival before the disposal of the Ezsignfolder
      * @type {number}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'iEzsignfoldertypeDisposaldays'?: number;*/
     'iEzsignfoldertypeDisposaldays'?: number;
     /**
      * The number of days to get all Ezsignsignatures
      * @type {number}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'iEzsignfoldertypeDeadlinedays': number;*/
     'iEzsignfoldertypeDeadlinedays': number;
     /**
      * Wheter if delegation of signature is allowed to another user or not
      * @type {boolean}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'bEzsignfoldertypeDelegate'?: boolean;*/
     'bEzsignfoldertypeDelegate'?: boolean;
     /**
      * Wheter if creating a new Discussion is allowed or not
      * @type {boolean}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'bEzsignfoldertypeDiscussion'?: boolean;*/
     'bEzsignfoldertypeDiscussion'?: boolean;
     /**
      * Wheter if Reassignment of signature is allowed by a signatory to another signatory or not
      * @type {boolean}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'bEzsignfoldertypeReassignezsignsigner'?: boolean;*/
     'bEzsignfoldertypeReassignezsignsigner'?: boolean;
     /**
      * Wheter if Reassignment of signature is allowed by a user to a signatory or another user or not
      * @type {boolean}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'bEzsignfoldertypeReassignuser'?: boolean;*/
     'bEzsignfoldertypeReassignuser'?: boolean;
     /**
      * Whether we send an email to Ezsignsigner  when document is completed
      * @type {boolean}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'bEzsignfoldertypeSendsignedtoezsignsigner'?: boolean;*/
     'bEzsignfoldertypeSendsignedtoezsignsigner'?: boolean;
     /**
      * Whether we send an email to User who signed when document is completed
      * @type {boolean}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'bEzsignfoldertypeSendsignedtouser'?: boolean;*/
     'bEzsignfoldertypeSendsignedtouser'?: boolean;
     /**
      * Whether we send the Ezsigndocument in the email to Ezsignsigner
      * @type {boolean}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'bEzsignfoldertypeSendattachmentezsignsigner'?: boolean;*/
     'bEzsignfoldertypeSendattachmentezsignsigner'?: boolean;
     /**
      * Whether we send the proof in the email to Ezsignsigner
      * @type {boolean}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'bEzsignfoldertypeSendproofezsignsigner'?: boolean;*/
     'bEzsignfoldertypeSendproofezsignsigner'?: boolean;
     /**
      * Whether we send the Ezsigndocument in the email to User
      * @type {boolean}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'bEzsignfoldertypeSendattachmentuser'?: boolean;*/
     'bEzsignfoldertypeSendattachmentuser'?: boolean;
     /**
      * Whether we send the proof in the email to User
      * @type {boolean}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'bEzsignfoldertypeSendproofuser'?: boolean;*/
     'bEzsignfoldertypeSendproofuser'?: boolean;
     /**
      * Whether we send the proof in the email to external recipient
      * @type {boolean}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'bEzsignfoldertypeSendproofemail'?: boolean;*/
     'bEzsignfoldertypeSendproofemail'?: boolean;
     /**
      * Whether we allow the Ezsigndocument to be downloaded by an Ezsignsigner
      * @type {boolean}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'bEzsignfoldertypeAllowdownloadattachmentezsignsigner'?: boolean;*/
     'bEzsignfoldertypeAllowdownloadattachmentezsignsigner'?: boolean;
     /**
      * Whether we allow the proof to be downloaded by an Ezsignsigner
      * @type {boolean}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'bEzsignfoldertypeAllowdownloadproofezsignsigner'?: boolean;*/
     'bEzsignfoldertypeAllowdownloadproofezsignsigner'?: boolean;
     /**
      * Whether we send the proof to user and Ezsignsigner who receive all documents.
      * @type {boolean}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'bEzsignfoldertypeSendproofreceivealldocument'?: boolean;*/
     'bEzsignfoldertypeSendproofreceivealldocument'?: boolean;
     /**
      * Whether we send the signed Ezsigndocument to the Ezsigndocument\'s owner
      * @type {boolean}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'bEzsignfoldertypeSendsignedtodocumentowner': boolean;*/
     'bEzsignfoldertypeSendsignedtodocumentowner': boolean;
     /**
      * Whether we send the signed Ezsigndocument to the Ezsignfolder\'s owner
      * @type {boolean}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'bEzsignfoldertypeSendsignedtofolderowner': boolean;*/
     'bEzsignfoldertypeSendsignedtofolderowner': boolean;
     /**
      * Whether we send the signed Ezsigndocument to the Usergroup that has acces to all Ezsignfolders
      * @type {boolean}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'bEzsignfoldertypeSendsignedtofullgroup'?: boolean;*/
     'bEzsignfoldertypeSendsignedtofullgroup'?: boolean;
     /**
      * THIS FIELD WILL BE DELETED. Whether we send the signed Ezsigndocument to the Usergroup that has acces to only their own Ezsignfolders
      * @type {boolean}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'bEzsignfoldertypeSendsignedtolimitedgroup'?: boolean;*/
     'bEzsignfoldertypeSendsignedtolimitedgroup'?: boolean;
     /**
      * Whether we send the signed Ezsigndocument to the colleagues
      * @type {boolean}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'bEzsignfoldertypeSendsignedtocolleague': boolean;*/
     'bEzsignfoldertypeSendsignedtocolleague': boolean;
     /**
      * Whether we send the summary to the Ezsigndocument\'s owner
      * @type {boolean}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'bEzsignfoldertypeSendsummarytodocumentowner': boolean;*/
     'bEzsignfoldertypeSendsummarytodocumentowner': boolean;
     /**
      * Whether we send the summary to the Ezsignfolder\'s owner
      * @type {boolean}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'bEzsignfoldertypeSendsummarytofolderowner': boolean;*/
     'bEzsignfoldertypeSendsummarytofolderowner': boolean;
     /**
      * Whether we send the summary to the Usergroup that has acces to all Ezsignfolders
      * @type {boolean}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'bEzsignfoldertypeSendsummarytofullgroup'?: boolean;*/
     'bEzsignfoldertypeSendsummarytofullgroup'?: boolean;
     /**
      * Whether we send the summary to the Usergroup that has acces to only their own Ezsignfolders
      * @type {boolean}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'bEzsignfoldertypeSendsummarytolimitedgroup'?: boolean;*/
     'bEzsignfoldertypeSendsummarytolimitedgroup'?: boolean;
     /**
      * Whether we send the summary to the colleagues
      * @type {boolean}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'bEzsignfoldertypeSendsummarytocolleague': boolean;*/
     'bEzsignfoldertypeSendsummarytocolleague': boolean;
     /**
      * Whether the Ezsignfoldertype is active or not
      * @type {boolean}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'bEzsignfoldertypeIsactive': boolean;*/
     'bEzsignfoldertypeIsactive': boolean;
     /**
      * 
      * @type {Array<UserlogintypeResponse>}
      * @memberof EzsignfoldertypeResponse
      */
+    /*'a_objUserlogintype': Array<UserlogintypeResponse>;*/
     'a_objUserlogintype': Array<UserlogintypeResponse>;
 }
 
@@ -443,10 +490,12 @@ export class ValidationObjectEzsignfoldertypeResponse {
    }
    sEmailAddressSigned = {
       type: 'string',
+      pattern: '/^[\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/',
       required: false
    }
    sEmailAddressSummary = {
       type: 'string',
+      pattern: '/^[\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/',
       required: false
    }
    sUsergroupNameX = {

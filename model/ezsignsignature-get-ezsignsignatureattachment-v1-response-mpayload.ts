@@ -28,6 +28,7 @@ export interface EzsignsignatureGetEzsignsignatureattachmentV1ResponseMPayload {
      * @type {Array<EzsignsignatureattachmentResponse>}
      * @memberof EzsignsignatureGetEzsignsignatureattachmentV1ResponseMPayload
      */
+    /*'a_objEzsignsignatureattachment': Array<EzsignsignatureattachmentResponse>;*/
     'a_objEzsignsignatureattachment': Array<EzsignsignatureattachmentResponse>;
 }
 /**

@@ -25,6 +25,7 @@ export interface FranchisereferalincomeCreateObjectV2ResponseMPayload {
      * @type {Array<number>}
      * @memberof FranchisereferalincomeCreateObjectV2ResponseMPayload
      */
+    /*'a_pkiFranchisereferalincomeID': Array<number>;*/
     'a_pkiFranchisereferalincomeID': Array<number>;
 }
 /**

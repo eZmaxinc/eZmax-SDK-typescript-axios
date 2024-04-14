@@ -28,6 +28,7 @@ export interface SystemconfigurationGetObjectV2ResponseMPayload {
      * @type {SystemconfigurationResponseCompound}
      * @memberof SystemconfigurationGetObjectV2ResponseMPayload
      */
+    /*'objSystemconfiguration': SystemconfigurationResponseCompound;*/
     'objSystemconfiguration': SystemconfigurationResponseCompound;
 }
 /**

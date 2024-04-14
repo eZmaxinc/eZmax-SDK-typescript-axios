@@ -28,7 +28,7 @@ import { FieldEEzmaxinvoicingcontractPaymenttype } from './field-eezmaxinvoicing
  * A Ezmaxinvoicingcontract Object
  * @export
  */
-/** export type EzmaxinvoicingcontractResponseCompound = EzmaxinvoicingcontractResponse; */
+/*export type EzmaxinvoicingcontractResponseCompound = EzmaxinvoicingcontractResponse;*/
 export interface EzmaxinvoicingcontractResponseCompound {
     /**
      * The unique ID of the Ezmaxinvoicingcontract

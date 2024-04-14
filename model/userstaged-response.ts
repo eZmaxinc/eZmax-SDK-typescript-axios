@@ -25,36 +25,42 @@ export interface UserstagedResponse {
      * @type {number}
      * @memberof UserstagedResponse
      */
+    /*'pkiUserstagedID': number;*/
     'pkiUserstagedID': number;
     /**
      * The unique ID of the Email
      * @type {number}
      * @memberof UserstagedResponse
      */
+    /*'fkiEmailID': number;*/
     'fkiEmailID': number;
     /**
      * The email address.
      * @type {string}
      * @memberof UserstagedResponse
      */
+    /*'sEmailAddress': string;*/
     'sEmailAddress': string;
     /**
      * The firstname of the Userstaged
      * @type {string}
      * @memberof UserstagedResponse
      */
+    /*'sUserstagedFirstname': string;*/
     'sUserstagedFirstname': string;
     /**
      * The lastname of the Userstaged
      * @type {string}
      * @memberof UserstagedResponse
      */
+    /*'sUserstagedLastname': string;*/
     'sUserstagedLastname': string;
     /**
      * The externalid of the Userstaged
      * @type {string}
      * @memberof UserstagedResponse
      */
+    /*'sUserstagedExternalid': string;*/
     'sUserstagedExternalid': string;
 }
 /**
@@ -97,6 +103,7 @@ export class ValidationObjectUserstagedResponse {
    }
    sEmailAddress = {
       type: 'string',
+      pattern: '/^[\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/',
       required: true
    }
    sUserstagedFirstname = {

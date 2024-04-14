@@ -25,42 +25,49 @@ export interface EzsigntemplatedocumentpageResponse {
      * @type {number}
      * @memberof EzsigntemplatedocumentpageResponse
      */
+    /*'pkiEzsigntemplatedocumentpageID': number;*/
     'pkiEzsigntemplatedocumentpageID': number;
     /**
      * The Width of the page\'s image in pixels calculated at 100 DPI
      * @type {number}
      * @memberof EzsigntemplatedocumentpageResponse
      */
+    /*'iEzsigntemplatedocumentpageWidthimage': number;*/
     'iEzsigntemplatedocumentpageWidthimage': number;
     /**
      * The Height of the page\'s image in pixels calculated at 100 DPI
      * @type {number}
      * @memberof EzsigntemplatedocumentpageResponse
      */
+    /*'iEzsigntemplatedocumentpageHeightimage': number;*/
     'iEzsigntemplatedocumentpageHeightimage': number;
     /**
      * The Width of the page in points calculated at 72 DPI
      * @type {number}
      * @memberof EzsigntemplatedocumentpageResponse
      */
+    /*'iEzsigntemplatedocumentpageWidthpdf': number;*/
     'iEzsigntemplatedocumentpageWidthpdf': number;
     /**
      * The Height of the page in points calculated at 72 DPI
      * @type {number}
      * @memberof EzsigntemplatedocumentpageResponse
      */
+    /*'iEzsigntemplatedocumentpageHeightpdf': number;*/
     'iEzsigntemplatedocumentpageHeightpdf': number;
     /**
      * The page number in the Ezsigntemplatedocument
      * @type {number}
      * @memberof EzsigntemplatedocumentpageResponse
      */
+    /*'iEzsigntemplatedocumentpagePagenumber': number;*/
     'iEzsigntemplatedocumentpagePagenumber': number;
     /**
      * The Url to the Ezsigntemplatedocumentpage\'s rasterized image.  Url will expire after 5 minutes.
      * @type {string}
      * @memberof EzsigntemplatedocumentpageResponse
      */
+    /*'sComputedImageurl': string;*/
     'sComputedImageurl': string;
 }
 /**

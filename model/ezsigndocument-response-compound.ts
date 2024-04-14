@@ -34,7 +34,7 @@ import { FieldEEzsigndocumentStep } from './field-eezsigndocument-step';
  * An Ezsigndocument Object and children to create a complete structure
  * @export
  */
-/** export type EzsigndocumentResponseCompound = EzsigndocumentResponse; */
+/*export type EzsigndocumentResponseCompound = EzsigndocumentResponse;*/
 export interface EzsigndocumentResponseCompound {
     /**
      * The unique ID of the Ezsigndocument
@@ -356,7 +356,7 @@ export class ValidationObjectEzsigndocumentResponseCompound {
    objAudit = new ValidationObjectCommonAudit()
    sEzsigndocumentExternalid = {
       type: 'string',
-      pattern: '/^.{0,64}$/',
+      pattern: '/^.{0,128}$/',
       required: false
    }
    iEzsigndocumentEzsignsignatureattachmenttotal = {

@@ -28,6 +28,7 @@ export interface BuyercontractGetCommunicationListV1ResponseMPayload {
      * @type {Array<CustomCommunicationListElementResponse>}
      * @memberof BuyercontractGetCommunicationListV1ResponseMPayload
      */
+    /*'a_objCommunication': Array<CustomCommunicationListElementResponse>;*/
     'a_objCommunication': Array<CustomCommunicationListElementResponse>;
 }
 /**

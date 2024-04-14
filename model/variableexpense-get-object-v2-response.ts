@@ -31,7 +31,7 @@ import { VariableexpenseGetObjectV2ResponseMPayload } from './variableexpense-ge
  * Response for GET /2/object/variableexpense/{pkiVariableexpenseID}
  * @export
  */
-/** export type VariableexpenseGetObjectV2Response = CommonResponse; */
+/*export type VariableexpenseGetObjectV2Response = CommonResponse;*/
 export interface VariableexpenseGetObjectV2Response {
     /**
      * 

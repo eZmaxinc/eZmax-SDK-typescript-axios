@@ -31,7 +31,7 @@ import { EzmaxproductGetAutocompleteV2ResponseMPayload } from './ezmaxproduct-ge
  * Response for GET /2/object/ezmaxproduct/getAutocomplete
  * @export
  */
-/** export type EzmaxproductGetAutocompleteV2Response = CommonResponse; */
+/*export type EzmaxproductGetAutocompleteV2Response = CommonResponse;*/
 export interface EzmaxproductGetAutocompleteV2Response {
     /**
      * 

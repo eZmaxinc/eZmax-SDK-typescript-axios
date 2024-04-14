@@ -31,7 +31,7 @@ import { UserstagedResponseCompound } from './userstaged-response-compound';
  * This is the base Webhook object
  * @export
  */
-/** export type WebhookUserstagedUserstagedCreated = CommonWebhook; */
+/*export type WebhookUserstagedUserstagedCreated = CommonWebhook;*/
 export interface WebhookUserstagedUserstagedCreated {
     /**
      * 

@@ -28,6 +28,7 @@ export interface UserstagedGetObjectV2ResponseMPayload {
      * @type {UserstagedResponseCompound}
      * @memberof UserstagedGetObjectV2ResponseMPayload
      */
+    /*'objUserstaged': UserstagedResponseCompound;*/
     'objUserstaged': UserstagedResponseCompound;
 }
 /**

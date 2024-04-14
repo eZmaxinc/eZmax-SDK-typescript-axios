@@ -25,6 +25,7 @@ export interface VariableexpenseCreateObjectV1ResponseMPayload {
      * @type {Array<number>}
      * @memberof VariableexpenseCreateObjectV1ResponseMPayload
      */
+    /*'a_pkiVariableexpenseID': Array<number>;*/
     'a_pkiVariableexpenseID': Array<number>;
 }
 /**

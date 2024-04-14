@@ -28,6 +28,7 @@ export interface SignatureCreateObjectV1Request {
      * @type {Array<SignatureRequestCompound>}
      * @memberof SignatureCreateObjectV1Request
      */
+    /*'a_objSignature': Array<SignatureRequestCompound>;*/
     'a_objSignature': Array<SignatureRequestCompound>;
 }
 /**

@@ -28,12 +28,14 @@ export interface CustomWordPositionWordResponse {
      * @type {string}
      * @memberof CustomWordPositionWordResponse
      */
+    /*'sWord': string;*/
     'sWord': string;
     /**
      * The found occurences for the seached word
      * @type {Array<CustomWordPositionOccurenceResponse>}
      * @memberof CustomWordPositionWordResponse
      */
+    /*'a_objWordPositionOccurence': Array<CustomWordPositionOccurenceResponse>;*/
     'a_objWordPositionOccurence': Array<CustomWordPositionOccurenceResponse>;
 }
 /**

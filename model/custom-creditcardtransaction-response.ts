@@ -28,24 +28,28 @@ export interface CustomCreditcardtransactionResponse {
      * @type {FieldECreditcardtypeCodename}
      * @memberof CustomCreditcardtransactionResponse
      */
+    /*'eCreditcardtypeCodename': FieldECreditcardtypeCodename;*/
     'eCreditcardtypeCodename': FieldECreditcardtypeCodename;
     /**
      * The amount of the Creditcardtransaction
      * @type {string}
      * @memberof CustomCreditcardtransactionResponse
      */
+    /*'dCreditcardtransactionAmount': string;*/
     'dCreditcardtransactionAmount': string;
     /**
      * The partially decrypted credit card number used in the Creditcardtransaction
      * @type {string}
      * @memberof CustomCreditcardtransactionResponse
      */
+    /*'sCreditcardtransactionPartiallydecryptednumber': string;*/
     'sCreditcardtransactionPartiallydecryptednumber': string;
     /**
      * The reference number on the creditcard service for the Creditcardtransaction
      * @type {string}
      * @memberof CustomCreditcardtransactionResponse
      */
+    /*'sCreditcardtransactionReferencenumber': string;*/
     'sCreditcardtransactionReferencenumber': string;
 }
 

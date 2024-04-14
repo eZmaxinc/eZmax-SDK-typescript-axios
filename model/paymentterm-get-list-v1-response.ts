@@ -31,7 +31,7 @@ import { PaymenttermGetListV1ResponseMPayload } from './paymentterm-get-list-v1-
  * Response for GET /1/object/paymentterm/getList
  * @export
  */
-/** export type PaymenttermGetListV1Response = CommonResponseGetList; */
+/*export type PaymenttermGetListV1Response = CommonResponseGetList;*/
 export interface PaymenttermGetListV1Response {
     /**
      * 

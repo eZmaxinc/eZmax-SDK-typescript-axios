@@ -28,7 +28,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for POST /1/object/ezsigndocument/{pkiEzsigndocument}/flatten
  * @export
  */
-/** export type EzsigndocumentFlattenV1Response = CommonResponse; */
+/*export type EzsigndocumentFlattenV1Response = CommonResponse;*/
 export interface EzsigndocumentFlattenV1Response {
     /**
      * 

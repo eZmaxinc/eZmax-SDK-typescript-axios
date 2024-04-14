@@ -31,7 +31,7 @@ import { NotificationsectionGetNotificationtestsV1ResponseMPayload } from './not
  * Response for GET /1/object/notificationsection/{pkiNotificationsectionID}/getNotificationtests
  * @export
  */
-/** export type NotificationsectionGetNotificationtestsV1Response = CommonResponse; */
+/*export type NotificationsectionGetNotificationtestsV1Response = CommonResponse;*/
 export interface NotificationsectionGetNotificationtestsV1Response {
     /**
      * 

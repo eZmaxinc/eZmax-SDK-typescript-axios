@@ -31,7 +31,7 @@ import { EzsignfolderResponse } from './ezsignfolder-response';
  * This is the base Webhook object
  * @export
  */
-/** export type WebhookEzsignFolderDisposed = CommonWebhook; */
+/*export type WebhookEzsignFolderDisposed = CommonWebhook;*/
 export interface WebhookEzsignFolderDisposed {
     /**
      * 

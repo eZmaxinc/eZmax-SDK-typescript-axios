@@ -28,90 +28,105 @@ export interface CommunicationrecipientRequest {
      * @type {number}
      * @memberof CommunicationrecipientRequest
      */
+    /*'pkiCommunicationrecipientID'?: number;*/
     'pkiCommunicationrecipientID'?: number;
     /**
      * The unique ID of the Agent.
      * @type {number}
      * @memberof CommunicationrecipientRequest
      */
+    /*'fkiAgentID'?: number;*/
     'fkiAgentID'?: number;
     /**
      * The unique ID of the Broker.
      * @type {number}
      * @memberof CommunicationrecipientRequest
      */
+    /*'fkiBrokerID'?: number;*/
     'fkiBrokerID'?: number;
     /**
      * The unique ID of the Contact
      * @type {number}
      * @memberof CommunicationrecipientRequest
      */
+    /*'fkiContactID'?: number;*/
     'fkiContactID'?: number;
     /**
      * The unique ID of the Customer.
      * @type {number}
      * @memberof CommunicationrecipientRequest
      */
+    /*'fkiCustomerID'?: number;*/
     'fkiCustomerID'?: number;
     /**
      * The unique ID of the Employee.
      * @type {number}
      * @memberof CommunicationrecipientRequest
      */
+    /*'fkiEmployeeID'?: number;*/
     'fkiEmployeeID'?: number;
     /**
      * The unique ID of the Assistant.
      * @type {number}
      * @memberof CommunicationrecipientRequest
      */
+    /*'fkiAssistantID'?: number;*/
     'fkiAssistantID'?: number;
     /**
      * The unique ID of the Externalbroker.
      * @type {number}
      * @memberof CommunicationrecipientRequest
      */
+    /*'fkiExternalbrokerID'?: number;*/
     'fkiExternalbrokerID'?: number;
     /**
      * The unique ID of the Ezsignsigner
      * @type {number}
      * @memberof CommunicationrecipientRequest
      */
+    /*'fkiEzsignsignerID'?: number;*/
     'fkiEzsignsignerID'?: number;
     /**
      * The unique ID of the Notary.
      * @type {number}
      * @memberof CommunicationrecipientRequest
      */
+    /*'fkiNotaryID'?: number;*/
     'fkiNotaryID'?: number;
     /**
      * The unique ID of the Supplier.
      * @type {number}
      * @memberof CommunicationrecipientRequest
      */
+    /*'fkiSupplierID'?: number;*/
     'fkiSupplierID'?: number;
     /**
      * The unique ID of the User
      * @type {number}
      * @memberof CommunicationrecipientRequest
      */
+    /*'fkiUserID'?: number;*/
     'fkiUserID'?: number;
     /**
      * The unique ID of the Mailboxshared
      * @type {number}
      * @memberof CommunicationrecipientRequest
      */
+    /*'fkiMailboxsharedID'?: number;*/
     'fkiMailboxsharedID'?: number;
     /**
      * The unique ID of the Phonelineshared
      * @type {number}
      * @memberof CommunicationrecipientRequest
      */
+    /*'fkiPhonelinesharedID'?: number;*/
     'fkiPhonelinesharedID'?: number;
     /**
      * 
      * @type {FieldECommunicationrecipientType}
      * @memberof CommunicationrecipientRequest
      */
+    /*'eCommunicationrecipientType'?: FieldECommunicationrecipientType;*/
     'eCommunicationrecipientType'?: FieldECommunicationrecipientType;
 }
 

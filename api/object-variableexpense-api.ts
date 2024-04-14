@@ -14,13 +14,13 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
 import { CommonResponseError } from '../model';
 // @ts-ignore
@@ -54,13 +54,14 @@ export const ObjectVariableexpenseApiAxiosParamCreator = function (configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        variableexpenseCreateObjectV1: async (variableexpenseCreateObjectV1Request: VariableexpenseCreateObjectV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        variableexpenseCreateObjectV1: async (variableexpenseCreateObjectV1Request: VariableexpenseCreateObjectV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'variableexpenseCreateObjectV1Request' is not null or undefined
             assertParamExists('variableexpenseCreateObjectV1', 'variableexpenseCreateObjectV1Request', variableexpenseCreateObjectV1Request)
             const localVarPath = `/1/object/variableexpense`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -81,6 +82,7 @@ export const ObjectVariableexpenseApiAxiosParamCreator = function (configuration
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(variableexpenseCreateObjectV1Request, localVarRequestOptions, configuration)
 
@@ -113,7 +115,7 @@ export const ObjectVariableexpenseApiAxiosParamCreator = function (configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        variableexpenseEditObjectV1: async (pkiVariableexpenseID: number, variableexpenseEditObjectV1Request: VariableexpenseEditObjectV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        variableexpenseEditObjectV1: async (pkiVariableexpenseID: number, variableexpenseEditObjectV1Request: VariableexpenseEditObjectV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiVariableexpenseID' is not null or undefined
             assertParamExists('variableexpenseEditObjectV1', 'pkiVariableexpenseID', pkiVariableexpenseID)
             // verify required parameter 'variableexpenseEditObjectV1Request' is not null or undefined
@@ -123,6 +125,7 @@ export const ObjectVariableexpenseApiAxiosParamCreator = function (configuration
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -143,6 +146,7 @@ export const ObjectVariableexpenseApiAxiosParamCreator = function (configuration
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(variableexpenseEditObjectV1Request, localVarRequestOptions, configuration)
 
@@ -177,7 +181,7 @@ export const ObjectVariableexpenseApiAxiosParamCreator = function (configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        variableexpenseGetAutocompleteV2: async (sSelector: VariableexpenseGetAutocompleteV2SSelectorEnum, eFilterActive?: VariableexpenseGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        variableexpenseGetAutocompleteV2: async (sSelector: VariableexpenseGetAutocompleteV2SSelectorEnum, eFilterActive?: VariableexpenseGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('variableexpenseGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/variableexpense/getAutocomplete/{sSelector}`
@@ -185,6 +189,7 @@ export const ObjectVariableexpenseApiAxiosParamCreator = function (configuration
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -208,8 +213,8 @@ export const ObjectVariableexpenseApiAxiosParamCreator = function (configuration
             }
 
             if (acceptLanguage != null) {
-                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string' 
-                    ? acceptLanguage 
+                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
+                    ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
 
@@ -217,6 +222,7 @@ export const ObjectVariableexpenseApiAxiosParamCreator = function (configuration
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -251,11 +257,12 @@ export const ObjectVariableexpenseApiAxiosParamCreator = function (configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        variableexpenseGetListV1: async (eOrderBy?: VariableexpenseGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        variableexpenseGetListV1: async (eOrderBy?: VariableexpenseGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/1/object/variableexpense/getList`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -287,8 +294,8 @@ export const ObjectVariableexpenseApiAxiosParamCreator = function (configuration
             }
 
             if (acceptLanguage != null) {
-                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string' 
-                    ? acceptLanguage 
+                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
+                    ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
 
@@ -296,6 +303,7 @@ export const ObjectVariableexpenseApiAxiosParamCreator = function (configuration
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -326,7 +334,7 @@ export const ObjectVariableexpenseApiAxiosParamCreator = function (configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        variableexpenseGetObjectV2: async (pkiVariableexpenseID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        variableexpenseGetObjectV2: async (pkiVariableexpenseID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiVariableexpenseID' is not null or undefined
             assertParamExists('variableexpenseGetObjectV2', 'pkiVariableexpenseID', pkiVariableexpenseID)
             const localVarPath = `/2/object/variableexpense/{pkiVariableexpenseID}`
@@ -334,6 +342,7 @@ export const ObjectVariableexpenseApiAxiosParamCreator = function (configuration
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -352,6 +361,7 @@ export const ObjectVariableexpenseApiAxiosParamCreator = function (configuration
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -392,9 +402,11 @@ export const ObjectVariableexpenseApiFp = function(configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async variableexpenseCreateObjectV1(variableexpenseCreateObjectV1Request: VariableexpenseCreateObjectV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VariableexpenseCreateObjectV1Response>> {
+        async variableexpenseCreateObjectV1(variableexpenseCreateObjectV1Request: VariableexpenseCreateObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VariableexpenseCreateObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.variableexpenseCreateObjectV1(variableexpenseCreateObjectV1Request, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectVariableexpenseApi.variableexpenseCreateObjectV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -404,9 +416,11 @@ export const ObjectVariableexpenseApiFp = function(configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async variableexpenseEditObjectV1(pkiVariableexpenseID: number, variableexpenseEditObjectV1Request: VariableexpenseEditObjectV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VariableexpenseEditObjectV1Response>> {
+        async variableexpenseEditObjectV1(pkiVariableexpenseID: number, variableexpenseEditObjectV1Request: VariableexpenseEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VariableexpenseEditObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.variableexpenseEditObjectV1(pkiVariableexpenseID, variableexpenseEditObjectV1Request, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectVariableexpenseApi.variableexpenseEditObjectV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Get the list of Variableexpense to be used in a dropdown or autocomplete control.
@@ -418,9 +432,11 @@ export const ObjectVariableexpenseApiFp = function(configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async variableexpenseGetAutocompleteV2(sSelector: VariableexpenseGetAutocompleteV2SSelectorEnum, eFilterActive?: VariableexpenseGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VariableexpenseGetAutocompleteV2Response>> {
+        async variableexpenseGetAutocompleteV2(sSelector: VariableexpenseGetAutocompleteV2SSelectorEnum, eFilterActive?: VariableexpenseGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VariableexpenseGetAutocompleteV2Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.variableexpenseGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectVariableexpenseApi.variableexpenseGetAutocompleteV2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eVariableexpenseTaxable | Yes<br>No<br>Included |
@@ -433,9 +449,11 @@ export const ObjectVariableexpenseApiFp = function(configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async variableexpenseGetListV1(eOrderBy?: VariableexpenseGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VariableexpenseGetListV1Response>> {
+        async variableexpenseGetListV1(eOrderBy?: VariableexpenseGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VariableexpenseGetListV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.variableexpenseGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectVariableexpenseApi.variableexpenseGetListV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -444,9 +462,11 @@ export const ObjectVariableexpenseApiFp = function(configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async variableexpenseGetObjectV2(pkiVariableexpenseID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VariableexpenseGetObjectV2Response>> {
+        async variableexpenseGetObjectV2(pkiVariableexpenseID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VariableexpenseGetObjectV2Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.variableexpenseGetObjectV2(pkiVariableexpenseID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectVariableexpenseApi.variableexpenseGetObjectV2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -534,7 +554,7 @@ export class ObjectVariableexpenseApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectVariableexpenseApi
      */
-    public variableexpenseCreateObjectV1(variableexpenseCreateObjectV1Request: VariableexpenseCreateObjectV1Request, options?: AxiosRequestConfig) {
+    public variableexpenseCreateObjectV1(variableexpenseCreateObjectV1Request: VariableexpenseCreateObjectV1Request, options?: RawAxiosRequestConfig) {
         return ObjectVariableexpenseApiFp(this.configuration).variableexpenseCreateObjectV1(variableexpenseCreateObjectV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -547,7 +567,7 @@ export class ObjectVariableexpenseApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectVariableexpenseApi
      */
-    public variableexpenseEditObjectV1(pkiVariableexpenseID: number, variableexpenseEditObjectV1Request: VariableexpenseEditObjectV1Request, options?: AxiosRequestConfig) {
+    public variableexpenseEditObjectV1(pkiVariableexpenseID: number, variableexpenseEditObjectV1Request: VariableexpenseEditObjectV1Request, options?: RawAxiosRequestConfig) {
         return ObjectVariableexpenseApiFp(this.configuration).variableexpenseEditObjectV1(pkiVariableexpenseID, variableexpenseEditObjectV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -562,7 +582,7 @@ export class ObjectVariableexpenseApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectVariableexpenseApi
      */
-    public variableexpenseGetAutocompleteV2(sSelector: VariableexpenseGetAutocompleteV2SSelectorEnum, eFilterActive?: VariableexpenseGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig) {
+    public variableexpenseGetAutocompleteV2(sSelector: VariableexpenseGetAutocompleteV2SSelectorEnum, eFilterActive?: VariableexpenseGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig) {
         return ObjectVariableexpenseApiFp(this.configuration).variableexpenseGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -578,7 +598,7 @@ export class ObjectVariableexpenseApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectVariableexpenseApi
      */
-    public variableexpenseGetListV1(eOrderBy?: VariableexpenseGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig) {
+    public variableexpenseGetListV1(eOrderBy?: VariableexpenseGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig) {
         return ObjectVariableexpenseApiFp(this.configuration).variableexpenseGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -590,7 +610,7 @@ export class ObjectVariableexpenseApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectVariableexpenseApi
      */
-    public variableexpenseGetObjectV2(pkiVariableexpenseID: number, options?: AxiosRequestConfig) {
+    public variableexpenseGetObjectV2(pkiVariableexpenseID: number, options?: RawAxiosRequestConfig) {
         return ObjectVariableexpenseApiFp(this.configuration).variableexpenseGetObjectV2(pkiVariableexpenseID, options).then((request) => request(this.axios, this.basePath));
     }
 }

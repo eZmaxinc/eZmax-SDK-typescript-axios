@@ -43,7 +43,7 @@ import { FieldEEzsigntemplateformfieldgroupType } from './field-eezsigntemplatef
  * A Ezsigntemplateformfieldgroup Object and children
  * @export
  */
-/** export type EzsigntemplateformfieldgroupRequestCompound = EzsigntemplateformfieldgroupRequest; */
+/*export type EzsigntemplateformfieldgroupRequestCompound = EzsigntemplateformfieldgroupRequest;*/
 export interface EzsigntemplateformfieldgroupRequestCompound {
     /**
      * The unique ID of the Ezsigntemplateformfieldgroup

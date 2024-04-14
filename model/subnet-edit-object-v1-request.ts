@@ -28,6 +28,7 @@ export interface SubnetEditObjectV1Request {
      * @type {SubnetRequestCompound}
      * @memberof SubnetEditObjectV1Request
      */
+    /*'objSubnet': SubnetRequestCompound;*/
     'objSubnet': SubnetRequestCompound;
 }
 /**

@@ -22,7 +22,7 @@ import { EzsigntemplateformfieldgroupsignerRequest } from './ezsigntemplateformf
  * An Ezsigntemplateformfieldgroupsigner Object and children to create a complete structure
  * @export
  */
-/** export type EzsigntemplateformfieldgroupsignerRequestCompound = EzsigntemplateformfieldgroupsignerRequest; */
+/*export type EzsigntemplateformfieldgroupsignerRequestCompound = EzsigntemplateformfieldgroupsignerRequest;*/
 export interface EzsigntemplateformfieldgroupsignerRequestCompound {
     /**
      * The unique ID of the Ezsigntemplateformfieldgroupsigner

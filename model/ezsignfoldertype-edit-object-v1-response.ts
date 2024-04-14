@@ -28,7 +28,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for PUT /1/object/ezsignfoldertype/{pkiEzsignfoldertypeID}
  * @export
  */
-/** export type EzsignfoldertypeEditObjectV1Response = CommonResponse; */
+/*export type EzsignfoldertypeEditObjectV1Response = CommonResponse;*/
 export interface EzsignfoldertypeEditObjectV1Response {
     /**
      * 

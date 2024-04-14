@@ -25,6 +25,7 @@ export interface EzsignbulksendReorderV1Request {
      * @type {Array<number>}
      * @memberof EzsignbulksendReorderV1Request
      */
+    /*'a_pkiEzsignbulksenddocumentmappingID': Array<number>;*/
     'a_pkiEzsignbulksenddocumentmappingID': Array<number>;
 }
 /**

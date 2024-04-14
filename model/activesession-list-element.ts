@@ -25,72 +25,84 @@ export interface ActivesessionListElement {
      * @type {number}
      * @memberof ActivesessionListElement
      */
+    /*'pkiActivesessionID': number;*/
     'pkiActivesessionID': number;
     /**
      * The unique ID of the User
      * @type {number}
      * @memberof ActivesessionListElement
      */
+    /*'fkiUserID': number;*/
     'fkiUserID': number;
     /**
      * The unique ID of the Computer
      * @type {number}
      * @memberof ActivesessionListElement
      */
+    /*'fkiComputerID': number;*/
     'fkiComputerID': number;
     /**
      * The unique ID of the Company
      * @type {number}
      * @memberof ActivesessionListElement
      */
+    /*'fkiCompanyID': number;*/
     'fkiCompanyID': number;
     /**
      * The unique ID of the Department
      * @type {number}
      * @memberof ActivesessionListElement
      */
+    /*'fkiDepartmentID': number;*/
     'fkiDepartmentID': number;
     /**
      * The Name of the Company in the language of the requester
      * @type {string}
      * @memberof ActivesessionListElement
      */
+    /*'sCompanyNameX': string;*/
     'sCompanyNameX': string;
     /**
      * The Name of the Department in the language of the requester
      * @type {string}
      * @memberof ActivesessionListElement
      */
+    /*'sDepartmentNameX': string;*/
     'sDepartmentNameX': string;
     /**
      * The loginname of the Activesession
      * @type {string}
      * @memberof ActivesessionListElement
      */
+    /*'sActivesessionLoginname': string;*/
     'sActivesessionLoginname': string;
     /**
      * The description of the Computer
      * @type {string}
      * @memberof ActivesessionListElement
      */
+    /*'sComputerDescription': string;*/
     'sComputerDescription': string;
     /**
      * The first hit of the Activesession
      * @type {string}
      * @memberof ActivesessionListElement
      */
+    /*'dtActivesessionFirsthit': string;*/
     'dtActivesessionFirsthit': string;
     /**
      * The last hit of the Activesession
      * @type {string}
      * @memberof ActivesessionListElement
      */
+    /*'dtActivesessionLasthit': string;*/
     'dtActivesessionLasthit': string;
     /**
      * Represent an IP address.
      * @type {string}
      * @memberof ActivesessionListElement
      */
+    /*'sActivesessionIP': string;*/
     'sActivesessionIP': string;
 }
 /**

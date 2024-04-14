@@ -28,6 +28,7 @@ export interface EzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseMPay
      * @type {Array<EzsigntemplatesignatureResponseCompound>}
      * @memberof EzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseMPayload
      */
+    /*'a_objEzsigntemplatesignature': Array<EzsigntemplatesignatureResponseCompound>;*/
     'a_objEzsigntemplatesignature': Array<EzsigntemplatesignatureResponseCompound>;
 }
 /**

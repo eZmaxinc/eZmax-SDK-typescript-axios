@@ -25,7 +25,7 @@ import { MultilingualEzsignsignergroupDescription } from './multilingual-ezsigns
  * A Ezsignsignergroup Object and children
  * @export
  */
-/** export type EzsignsignergroupRequestCompound = EzsignsignergroupRequest; */
+/*export type EzsignsignergroupRequestCompound = EzsignsignergroupRequest;*/
 export interface EzsignsignergroupRequestCompound {
     /**
      * The unique ID of the Ezsignsignergroup

@@ -25,18 +25,21 @@ export interface FranchisebrokerAutocompleteElementResponse {
      * @type {string}
      * @memberof FranchisebrokerAutocompleteElementResponse
      */
+    /*'sFranchisebrokerName': string;*/
     'sFranchisebrokerName': string;
     /**
      * The unique ID of the Franchisebroker
      * @type {number}
      * @memberof FranchisebrokerAutocompleteElementResponse
      */
+    /*'pkiFranchisebrokerID': number;*/
     'pkiFranchisebrokerID': number;
     /**
      * Whether the Franchisebroker is active or not
      * @type {boolean}
      * @memberof FranchisebrokerAutocompleteElementResponse
      */
+    /*'bFranchisebrokerIsactive': boolean;*/
     'bFranchisebrokerIsactive': boolean;
 }
 /**

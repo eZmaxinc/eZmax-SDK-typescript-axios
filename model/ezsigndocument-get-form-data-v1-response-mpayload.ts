@@ -28,6 +28,7 @@ export interface EzsigndocumentGetFormDataV1ResponseMPayload {
      * @type {CustomFormDataDocumentResponse}
      * @memberof EzsigndocumentGetFormDataV1ResponseMPayload
      */
+    /*'objFormDataDocument': CustomFormDataDocumentResponse;*/
     'objFormDataDocument': CustomFormDataDocumentResponse;
 }
 /**

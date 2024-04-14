@@ -31,12 +31,14 @@ export interface CommonWebhook {
      * @type {CustomWebhookResponse}
      * @memberof CommonWebhook
      */
+    /*'objWebhook': CustomWebhookResponse;*/
     'objWebhook': CustomWebhookResponse;
     /**
      * An array containing details of previous attempts that were made to deliver the message. The array is empty if it\'s the first attempt.
      * @type {Array<AttemptResponseCompound>}
      * @memberof CommonWebhook
      */
+    /*'a_objAttempt': Array<AttemptResponseCompound>;*/
     'a_objAttempt': Array<AttemptResponseCompound>;
 }
 /**

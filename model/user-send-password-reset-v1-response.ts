@@ -28,7 +28,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for POST /1/object/user/{pkiUserID}/sendPasswordReset
  * @export
  */
-/** export type UserSendPasswordResetV1Response = CommonResponse; */
+/*export type UserSendPasswordResetV1Response = CommonResponse;*/
 export interface UserSendPasswordResetV1Response {
     /**
      * 

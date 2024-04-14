@@ -31,7 +31,7 @@ import { UsergroupdelegationGetObjectV2ResponseMPayload } from './usergroupdeleg
  * Response for GET /2/object/usergroupdelegation/{pkiUsergroupdelegationID}
  * @export
  */
-/** export type UsergroupdelegationGetObjectV2Response = CommonResponse; */
+/*export type UsergroupdelegationGetObjectV2Response = CommonResponse;*/
 export interface UsergroupdelegationGetObjectV2Response {
     /**
      * 

@@ -28,18 +28,21 @@ export interface UsergroupResponse {
      * @type {number}
      * @memberof UsergroupResponse
      */
+    /*'pkiUsergroupID': number;*/
     'pkiUsergroupID': number;
     /**
      * 
      * @type {MultilingualUsergroupName}
      * @memberof UsergroupResponse
      */
+    /*'objUsergroupName': MultilingualUsergroupName;*/
     'objUsergroupName': MultilingualUsergroupName;
     /**
      * The Name of the Usergroup in the language of the requester
      * @type {string}
      * @memberof UsergroupResponse
      */
+    /*'sUsergroupNameX'?: string;*/
     'sUsergroupNameX'?: string;
 }
 /**

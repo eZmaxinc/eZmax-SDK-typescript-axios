@@ -28,12 +28,14 @@ export interface CommonReportsubsectionpart {
      * @type {string}
      * @memberof CommonReportsubsectionpart
      */
+    /*'eReportsubsectionpartType': CommonReportsubsectionpartEReportsubsectionpartTypeEnum;*/
     'eReportsubsectionpartType': CommonReportsubsectionpartEReportsubsectionpartTypeEnum;
     /**
      * 
      * @type {Array<CommonReportrow>}
      * @memberof CommonReportsubsectionpart
      */
+    /*'a_objReportrow': Array<CommonReportrow>;*/
     'a_objReportrow': Array<CommonReportrow>;
 }
 

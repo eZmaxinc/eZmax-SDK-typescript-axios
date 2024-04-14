@@ -25,6 +25,7 @@ export interface CommonResponseRedirectSSecretquestionTextX {
      * @type {string}
      * @memberof CommonResponseRedirectSSecretquestionTextX
      */
+    /*'sSecretquestionTextX': string;*/
     'sSecretquestionTextX': string;
 }
 /**

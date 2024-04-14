@@ -28,7 +28,7 @@ import { FranchisereferalincomeRequest } from './franchisereferalincome-request'
  * A Franchisereferalincome Object and children to create a complete structure
  * @export
  */
-/** export type FranchisereferalincomeRequestCompound = FranchisereferalincomeRequest; */
+/*export type FranchisereferalincomeRequestCompound = FranchisereferalincomeRequest;*/
 export interface FranchisereferalincomeRequestCompound {
     /**
      * The unique ID of the Franchisereferalincome

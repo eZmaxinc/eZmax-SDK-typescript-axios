@@ -28,6 +28,7 @@ export interface TaxassignmentGetAutocompleteV2ResponseMPayload {
      * @type {Array<TaxassignmentAutocompleteElementResponse>}
      * @memberof TaxassignmentGetAutocompleteV2ResponseMPayload
      */
+    /*'a_objTaxassignment': Array<TaxassignmentAutocompleteElementResponse>;*/
     'a_objTaxassignment': Array<TaxassignmentAutocompleteElementResponse>;
 }
 /**

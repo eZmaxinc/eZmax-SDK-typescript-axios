@@ -22,7 +22,7 @@ import { TextstylestaticResponse } from './textstylestatic-response';
  * A Textstylestatic Object
  * @export
  */
-/** export type TextstylestaticResponseCompound = TextstylestaticResponse; */
+/*export type TextstylestaticResponseCompound = TextstylestaticResponse;*/
 export interface TextstylestaticResponseCompound {
     /**
      * The unique ID of the Textstylestatic

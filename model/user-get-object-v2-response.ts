@@ -31,7 +31,7 @@ import { UserGetObjectV2ResponseMPayload } from './user-get-object-v2-response-m
  * Response for GET /2/object/user/{pkiUserID}
  * @export
  */
-/** export type UserGetObjectV2Response = CommonResponse; */
+/*export type UserGetObjectV2Response = CommonResponse;*/
 export interface UserGetObjectV2Response {
     /**
      * 

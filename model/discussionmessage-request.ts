@@ -25,24 +25,28 @@ export interface DiscussionmessageRequest {
      * @type {number}
      * @memberof DiscussionmessageRequest
      */
+    /*'pkiDiscussionmessageID'?: number;*/
     'pkiDiscussionmessageID'?: number;
     /**
      * The unique ID of the Discussion
      * @type {number}
      * @memberof DiscussionmessageRequest
      */
+    /*'fkiDiscussionID': number;*/
     'fkiDiscussionID': number;
     /**
      * The unique ID of the Discussionmembership
      * @type {number}
      * @memberof DiscussionmessageRequest
      */
+    /*'fkiDiscussionmembershipIDActionrequired'?: number;*/
     'fkiDiscussionmembershipIDActionrequired'?: number;
     /**
      * The content of the Discussionmessage
      * @type {string}
      * @memberof DiscussionmessageRequest
      */
+    /*'tDiscussionmessageContent': string;*/
     'tDiscussionmessageContent': string;
 }
 /**

@@ -28,7 +28,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for POST /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociation}/forceDisconnect
  * @export
  */
-/** export type EzsignfoldersignerassociationForceDisconnectV1Response = CommonResponse; */
+/*export type EzsignfoldersignerassociationForceDisconnectV1Response = CommonResponse;*/
 export interface EzsignfoldersignerassociationForceDisconnectV1Response {
     /**
      * 

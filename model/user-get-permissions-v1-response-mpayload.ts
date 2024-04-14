@@ -28,6 +28,7 @@ export interface UserGetPermissionsV1ResponseMPayload {
      * @type {Array<ModulegroupResponseCompound>}
      * @memberof UserGetPermissionsV1ResponseMPayload
      */
+    /*'a_objModulegroup': Array<ModulegroupResponseCompound>;*/
     'a_objModulegroup': Array<ModulegroupResponseCompound>;
 }
 /**

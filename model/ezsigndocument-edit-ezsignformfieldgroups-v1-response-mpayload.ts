@@ -25,6 +25,7 @@ export interface EzsigndocumentEditEzsignformfieldgroupsV1ResponseMPayload {
      * @type {Array<number>}
      * @memberof EzsigndocumentEditEzsignformfieldgroupsV1ResponseMPayload
      */
+    /*'a_pkiEzsignformfieldgroupID': Array<number>;*/
     'a_pkiEzsignformfieldgroupID': Array<number>;
 }
 /**

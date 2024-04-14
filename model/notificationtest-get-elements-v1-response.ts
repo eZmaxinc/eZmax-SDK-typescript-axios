@@ -31,7 +31,7 @@ import { NotificationtestGetElementsV1ResponseMPayload } from './notificationtes
  * Response for GET /1/object/notificationtest/{pkiNotificationtestID}/getElements
  * @export
  */
-/** export type NotificationtestGetElementsV1Response = CommonResponse; */
+/*export type NotificationtestGetElementsV1Response = CommonResponse;*/
 export interface NotificationtestGetElementsV1Response {
     /**
      * 

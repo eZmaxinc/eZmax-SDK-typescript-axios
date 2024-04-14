@@ -34,7 +34,7 @@ import { FieldEEzsigntemplateglobalSupplier } from './field-eezsigntemplategloba
  * A Ezsigntemplateglobal Object
  * @export
  */
-/** export type EzsigntemplateglobalResponseCompound = EzsigntemplateglobalResponse; */
+/*export type EzsigntemplateglobalResponseCompound = EzsigntemplateglobalResponse;*/
 export interface EzsigntemplateglobalResponseCompound {
     /**
      * The unique ID of the Ezsigntemplateglobal

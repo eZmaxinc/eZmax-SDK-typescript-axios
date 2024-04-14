@@ -25,24 +25,28 @@ export interface NotificationtestGetElementsV1ResponseMPayload {
      * @type {number}
      * @memberof NotificationtestGetElementsV1ResponseMPayload
      */
+    /*'pkiNotificationtestID': number;*/
     'pkiNotificationtestID': number;
     /**
      * The function name of the Notificationtest
      * @type {string}
      * @memberof NotificationtestGetElementsV1ResponseMPayload
      */
+    /*'sNotificationtestFunction': string;*/
     'sNotificationtestFunction': string;
     /**
      * 
      * @type {Array<string>}
      * @memberof NotificationtestGetElementsV1ResponseMPayload
      */
+    /*'a_sVariableobjectProperty': Array<string>;*/
     'a_sVariableobjectProperty': Array<string>;
     /**
      * 
      * @type {Array<{ [key: string]: any; }>}
      * @memberof NotificationtestGetElementsV1ResponseMPayload
      */
+    /*'a_objVariableobject': Array<{ [key: string]: any; }>;*/
     'a_objVariableobject': Array<{ [key: string]: any; }>;
 }
 /**

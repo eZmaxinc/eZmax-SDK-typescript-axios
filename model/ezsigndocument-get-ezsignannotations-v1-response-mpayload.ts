@@ -28,6 +28,7 @@ export interface EzsigndocumentGetEzsignannotationsV1ResponseMPayload {
      * @type {Array<EzsignannotationResponseCompound>}
      * @memberof EzsigndocumentGetEzsignannotationsV1ResponseMPayload
      */
+    /*'a_objEzsignannotation': Array<EzsignannotationResponseCompound>;*/
     'a_objEzsignannotation': Array<EzsignannotationResponseCompound>;
 }
 /**

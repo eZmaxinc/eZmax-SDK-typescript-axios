@@ -25,6 +25,7 @@ export interface CommunicationCreateObjectV1ResponseMPayload {
      * @type {Array<number>}
      * @memberof CommunicationCreateObjectV1ResponseMPayload
      */
+    /*'a_pkiCommunicationID': Array<number>;*/
     'a_pkiCommunicationID': Array<number>;
 }
 /**

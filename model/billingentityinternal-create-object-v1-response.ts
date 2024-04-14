@@ -31,7 +31,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for POST /1/object/billingentityinternal
  * @export
  */
-/** export type BillingentityinternalCreateObjectV1Response = CommonResponse; */
+/*export type BillingentityinternalCreateObjectV1Response = CommonResponse;*/
 export interface BillingentityinternalCreateObjectV1Response {
     /**
      * 

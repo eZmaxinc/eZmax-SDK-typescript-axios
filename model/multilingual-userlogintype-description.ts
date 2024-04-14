@@ -25,12 +25,14 @@ export interface MultilingualUserlogintypeDescription {
      * @type {string}
      * @memberof MultilingualUserlogintypeDescription
      */
+    /*'sUserlogintypeDescription1'?: string;*/
     'sUserlogintypeDescription1'?: string;
     /**
      * The description of the Userlogintype in English
      * @type {string}
      * @memberof MultilingualUserlogintypeDescription
      */
+    /*'sUserlogintypeDescription2'?: string;*/
     'sUserlogintypeDescription2'?: string;
 }
 /**

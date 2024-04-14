@@ -25,18 +25,21 @@ export interface VariableexpenseAutocompleteElementResponse {
      * @type {string}
      * @memberof VariableexpenseAutocompleteElementResponse
      */
+    /*'sVariableexpenseDescriptionX': string;*/
     'sVariableexpenseDescriptionX': string;
     /**
      * The unique ID of the Variableexpense
      * @type {number}
      * @memberof VariableexpenseAutocompleteElementResponse
      */
+    /*'pkiVariableexpenseID': number;*/
     'pkiVariableexpenseID': number;
     /**
      * Whether the variableexpense is active or not
      * @type {boolean}
      * @memberof VariableexpenseAutocompleteElementResponse
      */
+    /*'bVariableexpenseIsactive': boolean;*/
     'bVariableexpenseIsactive': boolean;
 }
 /**

@@ -22,7 +22,7 @@ import { UserstagedResponse } from './userstaged-response';
  * A Userstaged Object
  * @export
  */
-/** export type UserstagedResponseCompound = UserstagedResponse; */
+/*export type UserstagedResponseCompound = UserstagedResponse;*/
 export interface UserstagedResponseCompound {
     /**
      * The unique ID of the Userstaged
@@ -103,6 +103,7 @@ export class ValidationObjectUserstagedResponseCompound {
    }
    sEmailAddress = {
       type: 'string',
+      pattern: '/^[\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/',
       required: true
    }
    sUserstagedFirstname = {

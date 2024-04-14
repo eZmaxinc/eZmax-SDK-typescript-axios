@@ -34,7 +34,7 @@ import { FieldEEzsigntemplateformfieldPositioningoccurence } from './field-eezsi
  * An Ezsigntemplateformfield Object and children to create a complete structure
  * @export
  */
-/** export type EzsigntemplateformfieldRequestCompound = EzsigntemplateformfieldRequest; */
+/*export type EzsigntemplateformfieldRequestCompound = EzsigntemplateformfieldRequest;*/
 export interface EzsigntemplateformfieldRequestCompound {
     /**
      * The unique ID of the Ezsigntemplateformfield

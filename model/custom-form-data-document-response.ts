@@ -28,30 +28,35 @@ export interface CustomFormDataDocumentResponse {
      * @type {number}
      * @memberof CustomFormDataDocumentResponse
      */
+    /*'pkiEzsigndocumentID': number;*/
     'pkiEzsigndocumentID': number;
     /**
      * The unique ID of the Ezsignfolder
      * @type {number}
      * @memberof CustomFormDataDocumentResponse
      */
+    /*'fkiEzsignfolderID': number;*/
     'fkiEzsignfolderID': number;
     /**
      * The name of the document that will be presented to Ezsignfoldersignerassociations
      * @type {string}
      * @memberof CustomFormDataDocumentResponse
      */
+    /*'sEzsigndocumentName': string;*/
     'sEzsigndocumentName': string;
     /**
      * The date and time at which the object was last modified
      * @type {string}
      * @memberof CustomFormDataDocumentResponse
      */
+    /*'dtModifiedDate': string;*/
     'dtModifiedDate': string;
     /**
      * 
      * @type {Array<CustomFormDataSignerResponse>}
      * @memberof CustomFormDataDocumentResponse
      */
+    /*'a_objFormDataSigner': Array<CustomFormDataSignerResponse>;*/
     'a_objFormDataSigner': Array<CustomFormDataSignerResponse>;
 }
 /**

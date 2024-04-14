@@ -22,7 +22,7 @@ import { EzsignbulksendRequest } from './ezsignbulksend-request';
  * A Ezsignbulksend Object and children
  * @export
  */
-/** export type EzsignbulksendRequestCompound = EzsignbulksendRequest; */
+/*export type EzsignbulksendRequestCompound = EzsignbulksendRequest;*/
 export interface EzsignbulksendRequestCompound {
     /**
      * The unique ID of the Ezsignbulksend

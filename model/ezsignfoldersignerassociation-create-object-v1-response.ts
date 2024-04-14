@@ -31,7 +31,7 @@ import { EzsignfoldersignerassociationCreateObjectV1ResponseMPayload } from './e
  * Response for POST /1/object/ezsignfoldersignerassociation
  * @export
  */
-/** export type EzsignfoldersignerassociationCreateObjectV1Response = CommonResponse; */
+/*export type EzsignfoldersignerassociationCreateObjectV1Response = CommonResponse;*/
 export interface EzsignfoldersignerassociationCreateObjectV1Response {
     /**
      * 

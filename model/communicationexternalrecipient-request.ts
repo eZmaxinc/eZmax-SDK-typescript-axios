@@ -28,30 +28,35 @@ export interface CommunicationexternalrecipientRequest {
      * @type {number}
      * @memberof CommunicationexternalrecipientRequest
      */
+    /*'pkiCommunicationexternalrecipientID'?: number;*/
     'pkiCommunicationexternalrecipientID'?: number;
     /**
      * The email address.
      * @type {string}
      * @memberof CommunicationexternalrecipientRequest
      */
+    /*'sEmailAddress'?: string;*/
     'sEmailAddress'?: string;
     /**
      * A phone number in E.164 Format
      * @type {string}
      * @memberof CommunicationexternalrecipientRequest
      */
+    /*'sPhoneE164'?: string;*/
     'sPhoneE164'?: string;
     /**
      * 
      * @type {FieldECommunicationexternalrecipientType}
      * @memberof CommunicationexternalrecipientRequest
      */
+    /*'eCommunicationexternalrecipientType'?: FieldECommunicationexternalrecipientType;*/
     'eCommunicationexternalrecipientType'?: FieldECommunicationexternalrecipientType;
     /**
      * The name of the Communicationexternalrecipient
      * @type {string}
      * @memberof CommunicationexternalrecipientRequest
      */
+    /*'sCommunicationexternalrecipientName'?: string;*/
     'sCommunicationexternalrecipientName'?: string;
 }
 
@@ -87,6 +92,7 @@ export class ValidationObjectCommunicationexternalrecipientRequest {
    }
    sEmailAddress = {
       type: 'string',
+      pattern: '/^[\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/',
       required: false
    }
    sPhoneE164 = {

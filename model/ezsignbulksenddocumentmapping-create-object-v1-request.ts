@@ -28,6 +28,7 @@ export interface EzsignbulksenddocumentmappingCreateObjectV1Request {
      * @type {Array<EzsignbulksenddocumentmappingRequestCompound>}
      * @memberof EzsignbulksenddocumentmappingCreateObjectV1Request
      */
+    /*'a_objEzsignbulksenddocumentmapping': Array<EzsignbulksenddocumentmappingRequestCompound>;*/
     'a_objEzsignbulksenddocumentmapping': Array<EzsignbulksenddocumentmappingRequestCompound>;
 }
 /**

@@ -25,42 +25,49 @@ export interface CustomEzmaxinvoicingEzsignfolderResponse {
      * @type {number}
      * @memberof CustomEzmaxinvoicingEzsignfolderResponse
      */
+    /*'fkiEzsignfolderID': number;*/
     'fkiEzsignfolderID': number;
     /**
      * The unique ID of the Billingentityinternal.
      * @type {number}
      * @memberof CustomEzmaxinvoicingEzsignfolderResponse
      */
+    /*'fkiBillingentityinternalID'?: number;*/
     'fkiBillingentityinternalID'?: number;
     /**
      * The description of the Ezsignfolder
      * @type {string}
      * @memberof CustomEzmaxinvoicingEzsignfolderResponse
      */
+    /*'sEzsignfolderDescription': string;*/
     'sEzsignfolderDescription': string;
     /**
      * Whether the TSA requirement is billable or not
      * @type {boolean}
      * @memberof CustomEzmaxinvoicingEzsignfolderResponse
      */
+    /*'bEzsigntsarequirementBillable': boolean;*/
     'bEzsigntsarequirementBillable': boolean;
     /**
      * Whether the MFA was used or not for the Ezsignfolder
      * @type {boolean}
      * @memberof CustomEzmaxinvoicingEzsignfolderResponse
      */
+    /*'bEzsignfolderMfaused': boolean;*/
     'bEzsignfolderMfaused': boolean;
     /**
      * Whether there was a signature is of type payment
      * @type {boolean}
      * @memberof CustomEzmaxinvoicingEzsignfolderResponse
      */
+    /*'bEzsignfolderPaymentused': boolean;*/
     'bEzsignfolderPaymentused': boolean;
     /**
      * Whether you have access to the Ezsignfolder or not
      * @type {boolean}
      * @memberof CustomEzmaxinvoicingEzsignfolderResponse
      */
+    /*'bEzsignfolderAllowed': boolean;*/
     'bEzsignfolderAllowed': boolean;
 }
 /**

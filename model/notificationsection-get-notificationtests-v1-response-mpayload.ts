@@ -28,6 +28,7 @@ export interface NotificationsectionGetNotificationtestsV1ResponseMPayload {
      * @type {Array<CustomNotificationsubsectiongetnotificationtestsResponse>}
      * @memberof NotificationsectionGetNotificationtestsV1ResponseMPayload
      */
+    /*'a_objNotificationsubsection': Array<CustomNotificationsubsectiongetnotificationtestsResponse>;*/
     'a_objNotificationsubsection': Array<CustomNotificationsubsectiongetnotificationtestsResponse>;
 }
 /**

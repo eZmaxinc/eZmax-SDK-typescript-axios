@@ -52,7 +52,7 @@ import { FieldEEzsigntemplatesignatureType } from './field-eezsigntemplatesignat
  * A Ezsigntemplatesignature Object
  * @export
  */
-/** export type EzsigntemplatesignatureResponseCompound = EzsigntemplatesignatureResponse; */
+/*export type EzsigntemplatesignatureResponseCompound = EzsigntemplatesignatureResponse;*/
 export interface EzsigntemplatesignatureResponseCompound {
     /**
      * The unique ID of the Ezsigntemplatesignature

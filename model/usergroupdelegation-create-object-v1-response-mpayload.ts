@@ -25,6 +25,7 @@ export interface UsergroupdelegationCreateObjectV1ResponseMPayload {
      * @type {Array<number>}
      * @memberof UsergroupdelegationCreateObjectV1ResponseMPayload
      */
+    /*'a_pkiUsergroupdelegationID': Array<number>;*/
     'a_pkiUsergroupdelegationID': Array<number>;
 }
 /**

@@ -31,7 +31,7 @@ import { EzsignsignatureCreateObjectV2ResponseMPayload } from './ezsignsignature
  * Response for POST /2/object/ezsignsignature
  * @export
  */
-/** export type EzsignsignatureCreateObjectV2Response = CommonResponse; */
+/*export type EzsignsignatureCreateObjectV2Response = CommonResponse;*/
 export interface EzsignsignatureCreateObjectV2Response {
     /**
      * 

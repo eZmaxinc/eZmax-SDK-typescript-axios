@@ -25,24 +25,28 @@ export interface EzsigntemplatepackagemembershipResponse {
      * @type {number}
      * @memberof EzsigntemplatepackagemembershipResponse
      */
+    /*'pkiEzsigntemplatepackagemembershipID': number;*/
     'pkiEzsigntemplatepackagemembershipID': number;
     /**
      * The unique ID of the Ezsigntemplatepackage
      * @type {number}
      * @memberof EzsigntemplatepackagemembershipResponse
      */
+    /*'fkiEzsigntemplatepackageID': number;*/
     'fkiEzsigntemplatepackageID': number;
     /**
      * The unique ID of the Ezsigntemplate
      * @type {number}
      * @memberof EzsigntemplatepackagemembershipResponse
      */
+    /*'fkiEzsigntemplateID': number;*/
     'fkiEzsigntemplateID': number;
     /**
      * The order in which the Ezsigntemplate will be imported when using an Ezsigntemplatepackage.
      * @type {number}
      * @memberof EzsigntemplatepackagemembershipResponse
      */
+    /*'iEzsigntemplatepackagemembershipOrder': number;*/
     'iEzsigntemplatepackagemembershipOrder': number;
 }
 /**

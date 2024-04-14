@@ -25,12 +25,14 @@ export interface MultilingualBillingentityinternalDescription {
      * @type {string}
      * @memberof MultilingualBillingentityinternalDescription
      */
+    /*'sBillingentityinternalDescription1'?: string;*/
     'sBillingentityinternalDescription1'?: string;
     /**
      * The description of the Billingentityinternal in English
      * @type {string}
      * @memberof MultilingualBillingentityinternalDescription
      */
+    /*'sBillingentityinternalDescription2'?: string;*/
     'sBillingentityinternalDescription2'?: string;
 }
 /**

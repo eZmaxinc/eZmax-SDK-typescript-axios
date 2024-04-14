@@ -28,6 +28,7 @@ export interface PermissionCreateObjectV1Request {
      * @type {Array<PermissionRequestCompound>}
      * @memberof PermissionCreateObjectV1Request
      */
+    /*'a_objPermission': Array<PermissionRequestCompound>;*/
     'a_objPermission': Array<PermissionRequestCompound>;
 }
 /**

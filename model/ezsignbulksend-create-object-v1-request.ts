@@ -28,6 +28,7 @@ export interface EzsignbulksendCreateObjectV1Request {
      * @type {Array<EzsignbulksendRequestCompound>}
      * @memberof EzsignbulksendCreateObjectV1Request
      */
+    /*'a_objEzsignbulksend': Array<EzsignbulksendRequestCompound>;*/
     'a_objEzsignbulksend': Array<EzsignbulksendRequestCompound>;
 }
 /**

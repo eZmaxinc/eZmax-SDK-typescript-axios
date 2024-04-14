@@ -25,48 +25,56 @@ export interface EzmaxinvoicingcommissionResponse {
      * @type {number}
      * @memberof EzmaxinvoicingcommissionResponse
      */
+    /*'pkiEzmaxinvoicingcommissionID'?: number;*/
     'pkiEzmaxinvoicingcommissionID'?: number;
     /**
      * The unique ID of the Ezmaxinvoicingsummaryglobal
      * @type {number}
      * @memberof EzmaxinvoicingcommissionResponse
      */
+    /*'fkiEzmaxinvoicingsummaryglobalID'?: number;*/
     'fkiEzmaxinvoicingsummaryglobalID'?: number;
     /**
      * The unique ID of the Ezmaxpartner
      * @type {number}
      * @memberof EzmaxinvoicingcommissionResponse
      */
+    /*'fkiEzmaxpartnerID'?: number;*/
     'fkiEzmaxpartnerID'?: number;
     /**
      * The unique ID of the Ezmaxrepresentative
      * @type {number}
      * @memberof EzmaxinvoicingcommissionResponse
      */
+    /*'fkiEzmaxrepresentativeID'?: number;*/
     'fkiEzmaxrepresentativeID'?: number;
     /**
      * The start date for the Ezmaxinvoicingcommission
      * @type {string}
      * @memberof EzmaxinvoicingcommissionResponse
      */
+    /*'dtEzmaxinvoicingcommissionStart': string;*/
     'dtEzmaxinvoicingcommissionStart': string;
     /**
      * The end date for the Ezmaxinvoicingcommission
      * @type {string}
      * @memberof EzmaxinvoicingcommissionResponse
      */
+    /*'dtEzmaxinvoicingcommissionEnd': string;*/
     'dtEzmaxinvoicingcommissionEnd': string;
     /**
      * This is the number of days during the month on which the Ezmaxinvoigcommission applies
      * @type {number}
      * @memberof EzmaxinvoicingcommissionResponse
      */
+    /*'iEzmaxinvoicingcommissionDays': number;*/
     'iEzmaxinvoicingcommissionDays': number;
     /**
      * The amount of Ezmaxinvoicingcommission
      * @type {string}
      * @memberof EzmaxinvoicingcommissionResponse
      */
+    /*'dEzmaxinvoicingcommissionAmount': string;*/
     'dEzmaxinvoicingcommissionAmount': string;
 }
 /**

@@ -25,54 +25,63 @@ export interface CustomEzsignfoldertypeResponse {
      * @type {number}
      * @memberof CustomEzsignfoldertypeResponse
      */
+    /*'pkiEzsignfoldertypeID': number;*/
     'pkiEzsignfoldertypeID': number;
     /**
      * The name of the Ezsignfoldertype in the language of the requester
      * @type {string}
      * @memberof CustomEzsignfoldertypeResponse
      */
+    /*'sEzsignfoldertypeNameX'?: string;*/
     'sEzsignfoldertypeNameX'?: string;
     /**
      * Whether we send the proof in the email to Ezsignsigner
      * @type {boolean}
      * @memberof CustomEzsignfoldertypeResponse
      */
+    /*'bEzsignfoldertypeSendproofezsignsigner'?: boolean;*/
     'bEzsignfoldertypeSendproofezsignsigner'?: boolean;
     /**
      * Whether we allow the Ezsigndocument to be downloaded by an Ezsignsigner
      * @type {boolean}
      * @memberof CustomEzsignfoldertypeResponse
      */
+    /*'bEzsignfoldertypeAllowdownloadattachmentezsignsigner'?: boolean;*/
     'bEzsignfoldertypeAllowdownloadattachmentezsignsigner'?: boolean;
     /**
      * Whether we allow the proof to be downloaded by an Ezsignsigner
      * @type {boolean}
      * @memberof CustomEzsignfoldertypeResponse
      */
+    /*'bEzsignfoldertypeAllowdownloadproofezsignsigner'?: boolean;*/
     'bEzsignfoldertypeAllowdownloadproofezsignsigner'?: boolean;
     /**
      * Wheter if delegation of signature is allowed to another user or not
      * @type {boolean}
      * @memberof CustomEzsignfoldertypeResponse
      */
+    /*'bEzsignfoldertypeDelegate'?: boolean;*/
     'bEzsignfoldertypeDelegate'?: boolean;
     /**
      * Wheter if creating a new Discussion is allowed or not
      * @type {boolean}
      * @memberof CustomEzsignfoldertypeResponse
      */
+    /*'bEzsignfoldertypeDiscussion'?: boolean;*/
     'bEzsignfoldertypeDiscussion'?: boolean;
     /**
      * Wheter if Reassignment of signature is allowed by a signatory to another signatory or not
      * @type {boolean}
      * @memberof CustomEzsignfoldertypeResponse
      */
+    /*'bEzsignfoldertypeReassignezsignsigner'?: boolean;*/
     'bEzsignfoldertypeReassignezsignsigner'?: boolean;
     /**
      * Wheter if Reassignment of signature is allowed by a user to a signatory or another user or not
      * @type {boolean}
      * @memberof CustomEzsignfoldertypeResponse
      */
+    /*'bEzsignfoldertypeReassignuser'?: boolean;*/
     'bEzsignfoldertypeReassignuser'?: boolean;
 }
 /**

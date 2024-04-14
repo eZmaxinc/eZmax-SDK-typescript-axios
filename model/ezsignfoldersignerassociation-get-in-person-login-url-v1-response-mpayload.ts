@@ -25,6 +25,7 @@ export interface EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayl
      * @type {string}
      * @memberof EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload
      */
+    /*'sLoginUrl': string;*/
     'sLoginUrl': string;
 }
 /**

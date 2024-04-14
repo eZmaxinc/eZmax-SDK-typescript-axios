@@ -31,7 +31,7 @@ import { ModulegroupGetAllV1ResponseMPayload } from './modulegroup-get-all-v1-re
  * Response for GET /1/object/modulegroup/getAll
  * @export
  */
-/** export type ModulegroupGetAllV1Response = CommonResponse; */
+/*export type ModulegroupGetAllV1Response = CommonResponse;*/
 export interface ModulegroupGetAllV1Response {
     /**
      * 

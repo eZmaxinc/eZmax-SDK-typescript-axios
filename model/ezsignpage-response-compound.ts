@@ -22,7 +22,7 @@ import { EzsignpageResponse } from './ezsignpage-response';
  * An Ezsignpage Object and children to create a complete structure
  * @export
  */
-/** export type EzsignpageResponseCompound = EzsignpageResponse; */
+/*export type EzsignpageResponseCompound = EzsignpageResponse;*/
 export interface EzsignpageResponseCompound {
     /**
      * The unique ID of the Ezsignpage

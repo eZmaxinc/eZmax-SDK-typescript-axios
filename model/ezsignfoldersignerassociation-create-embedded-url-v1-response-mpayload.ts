@@ -25,6 +25,7 @@ export interface EzsignfoldersignerassociationCreateEmbeddedUrlV1ResponseMPayloa
      * @type {string}
      * @memberof EzsignfoldersignerassociationCreateEmbeddedUrlV1ResponseMPayload
      */
+    /*'sEmbeddedUrl': string;*/
     'sEmbeddedUrl': string;
 }
 /**

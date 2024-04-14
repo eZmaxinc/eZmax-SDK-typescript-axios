@@ -28,42 +28,49 @@ export interface EzsigndiscussionResponse {
      * @type {number}
      * @memberof EzsigndiscussionResponse
      */
+    /*'pkiEzsigndiscussionID': number;*/
     'pkiEzsigndiscussionID': number;
     /**
      * The unique ID of the Ezsignpage
      * @type {number}
      * @memberof EzsigndiscussionResponse
      */
+    /*'fkiEzsignpageID': number;*/
     'fkiEzsignpageID': number;
     /**
      * The unique ID of the Discussion
      * @type {number}
      * @memberof EzsigndiscussionResponse
      */
+    /*'fkiDiscussionID': number;*/
     'fkiDiscussionID': number;
     /**
      * The x of the Ezsigndiscussion
      * @type {number}
      * @memberof EzsigndiscussionResponse
      */
+    /*'iEzsigndiscussionX': number;*/
     'iEzsigndiscussionX': number;
     /**
      * The y of the Ezsigndiscussion
      * @type {number}
      * @memberof EzsigndiscussionResponse
      */
+    /*'iEzsigndiscussionY': number;*/
     'iEzsigndiscussionY': number;
     /**
      * The page number in the Ezsigndocument for the Ezsigndiscussion
      * @type {number}
      * @memberof EzsigndiscussionResponse
      */
+    /*'iEzsigndiscussionPagenumber': number;*/
     'iEzsigndiscussionPagenumber': number;
     /**
      * 
      * @type {DiscussionResponseCompound}
      * @memberof EzsigndiscussionResponse
      */
+    /*'objDiscussion': DiscussionResponseCompound;*/
     'objDiscussion': DiscussionResponseCompound;
 }
 /**

@@ -55,7 +55,7 @@ import { SignatureResponseCompound } from './signature-response-compound';
  * An Ezsignsignature Object and children to create a complete structure
  * @export
  */
-/** export type EzsignsignatureResponseCompound = EzsignsignatureResponse; */
+/*export type EzsignsignatureResponseCompound = EzsignsignatureResponse;*/
 export interface EzsignsignatureResponseCompound {
     /**
      * The unique ID of the Ezsignsignature

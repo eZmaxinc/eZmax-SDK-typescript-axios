@@ -25,6 +25,7 @@ export interface EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response
      * @type {Array<number>}
      * @memberof EzsigntemplatepackageEditEzsigntemplatepackagesignersV1ResponseMPayload
      */
+    /*'a_pkiEzsigntemplatepackagesignerID': Array<number>;*/
     'a_pkiEzsigntemplatepackagesignerID': Array<number>;
 }
 /**

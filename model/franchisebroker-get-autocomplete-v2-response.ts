@@ -31,7 +31,7 @@ import { FranchisebrokerGetAutocompleteV2ResponseMPayload } from './franchisebro
  * Response for GET /2/object/franchisebroker/getAutocomplete
  * @export
  */
-/** export type FranchisebrokerGetAutocompleteV2Response = CommonResponse; */
+/*export type FranchisebrokerGetAutocompleteV2Response = CommonResponse;*/
 export interface FranchisebrokerGetAutocompleteV2Response {
     /**
      * 

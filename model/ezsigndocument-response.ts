@@ -31,138 +31,161 @@ export interface EzsigndocumentResponse {
      * @type {number}
      * @memberof EzsigndocumentResponse
      */
+    /*'pkiEzsigndocumentID': number;*/
     'pkiEzsigndocumentID': number;
     /**
      * The unique ID of the Ezsignfolder
      * @type {number}
      * @memberof EzsigndocumentResponse
      */
+    /*'fkiEzsignfolderID': number;*/
     'fkiEzsignfolderID': number;
     /**
      * The unique ID of the Ezsignfoldersignerassociation
      * @type {number}
      * @memberof EzsigndocumentResponse
      */
+    /*'fkiEzsignfoldersignerassociationIDDeclinedtosign'?: number;*/
     'fkiEzsignfoldersignerassociationIDDeclinedtosign'?: number;
     /**
      * The maximum date and time at which the Ezsigndocument can be signed.
      * @type {string}
      * @memberof EzsigndocumentResponse
      */
+    /*'dtEzsigndocumentDuedate': string;*/
     'dtEzsigndocumentDuedate': string;
     /**
      * The date and time at which the Ezsignform has been completed.
      * @type {string}
      * @memberof EzsigndocumentResponse
      */
+    /*'dtEzsignformCompleted'?: string;*/
     'dtEzsignformCompleted'?: string;
     /**
      * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @type {number}
      * @memberof EzsigndocumentResponse
      */
+    /*'fkiLanguageID'?: number;*/
     'fkiLanguageID'?: number;
     /**
      * The name of the document that will be presented to Ezsignfoldersignerassociations
      * @type {string}
      * @memberof EzsigndocumentResponse
      */
+    /*'sEzsigndocumentName': string;*/
     'sEzsigndocumentName': string;
     /**
      * 
      * @type {FieldEEzsigndocumentStep}
      * @memberof EzsigndocumentResponse
      */
+    /*'eEzsigndocumentStep': FieldEEzsigndocumentStep;*/
     'eEzsigndocumentStep': FieldEEzsigndocumentStep;
     /**
      * The date and time when the Ezsigndocument was first sent.
      * @type {string}
      * @memberof EzsigndocumentResponse
      */
+    /*'dtEzsigndocumentFirstsend'?: string;*/
     'dtEzsigndocumentFirstsend'?: string;
     /**
      * The date and time when the Ezsigndocument was sent the last time.
      * @type {string}
      * @memberof EzsigndocumentResponse
      */
+    /*'dtEzsigndocumentLastsend'?: string;*/
     'dtEzsigndocumentLastsend'?: string;
     /**
      * The order in which the Ezsigndocument will be presented to the signatory in the Ezsignfolder.
      * @type {number}
      * @memberof EzsigndocumentResponse
      */
+    /*'iEzsigndocumentOrder': number;*/
     'iEzsigndocumentOrder': number;
     /**
      * The number of pages in the Ezsigndocument.
      * @type {number}
      * @memberof EzsigndocumentResponse
      */
+    /*'iEzsigndocumentPagetotal': number;*/
     'iEzsigndocumentPagetotal': number;
     /**
      * The number of signatures that were signed in the document.
      * @type {number}
      * @memberof EzsigndocumentResponse
      */
+    /*'iEzsigndocumentSignaturesigned': number;*/
     'iEzsigndocumentSignaturesigned': number;
     /**
      * The number of total signatures that were requested in the Ezsigndocument.
      * @type {number}
      * @memberof EzsigndocumentResponse
      */
+    /*'iEzsigndocumentSignaturetotal': number;*/
     'iEzsigndocumentSignaturetotal': number;
     /**
      * MD5 Hash of the initial PDF Document before signatures were applied to it.
      * @type {string}
      * @memberof EzsigndocumentResponse
      */
+    /*'sEzsigndocumentMD5initial'?: string;*/
     'sEzsigndocumentMD5initial'?: string;
     /**
      * A custom text message that will contain the refusal message if the Ezsigndocument is declined to sign
      * @type {string}
      * @memberof EzsigndocumentResponse
      */
+    /*'tEzsigndocumentDeclinedtosignreason'?: string;*/
     'tEzsigndocumentDeclinedtosignreason'?: string;
     /**
      * MD5 Hash of the final PDF Document after all signatures were applied to it.
      * @type {string}
      * @memberof EzsigndocumentResponse
      */
+    /*'sEzsigndocumentMD5signed'?: string;*/
     'sEzsigndocumentMD5signed'?: string;
     /**
      * If the Ezsigndocument contains an Ezsignform or not
      * @type {boolean}
      * @memberof EzsigndocumentResponse
      */
+    /*'bEzsigndocumentEzsignform'?: boolean;*/
     'bEzsigndocumentEzsignform'?: boolean;
     /**
      * If the Ezsigndocument contains signed signatures (From internal or external sources)
      * @type {boolean}
      * @memberof EzsigndocumentResponse
      */
+    /*'bEzsigndocumentHassignedsignatures'?: boolean;*/
     'bEzsigndocumentHassignedsignatures'?: boolean;
     /**
      * 
      * @type {CommonAudit}
      * @memberof EzsigndocumentResponse
      */
+    /*'objAudit'?: CommonAudit;*/
     'objAudit'?: CommonAudit;
     /**
      * This field can be used to store an External ID from the client\'s system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format. 
      * @type {string}
      * @memberof EzsigndocumentResponse
      */
+    /*'sEzsigndocumentExternalid'?: string;*/
     'sEzsigndocumentExternalid'?: string;
     /**
      * The number of Ezsigndocumentattachment total
      * @type {number}
      * @memberof EzsigndocumentResponse
      */
+    /*'iEzsigndocumentEzsignsignatureattachmenttotal': number;*/
     'iEzsigndocumentEzsignsignatureattachmenttotal': number;
     /**
      * The total number of Ezsigndiscussions
      * @type {number}
      * @memberof EzsigndocumentResponse
      */
+    /*'iEzsigndocumentEzsigndiscussiontotal': number;*/
     'iEzsigndocumentEzsigndiscussiontotal': number;
 }
 
@@ -303,7 +326,7 @@ export class ValidationObjectEzsigndocumentResponse {
    objAudit = new ValidationObjectCommonAudit()
    sEzsigndocumentExternalid = {
       type: 'string',
-      pattern: '/^.{0,64}$/',
+      pattern: '/^.{0,128}$/',
       required: false
    }
    iEzsigndocumentEzsignsignatureattachmenttotal = {

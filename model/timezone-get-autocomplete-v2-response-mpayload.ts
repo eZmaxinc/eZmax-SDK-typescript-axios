@@ -28,6 +28,7 @@ export interface TimezoneGetAutocompleteV2ResponseMPayload {
      * @type {Array<TimezoneAutocompleteElementResponse>}
      * @memberof TimezoneGetAutocompleteV2ResponseMPayload
      */
+    /*'a_objTimezone': Array<TimezoneAutocompleteElementResponse>;*/
     'a_objTimezone': Array<TimezoneAutocompleteElementResponse>;
 }
 /**

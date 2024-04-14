@@ -25,18 +25,21 @@ export interface ScimServiceProviderConfigBulk {
      * @type {boolean}
      * @memberof ScimServiceProviderConfigBulk
      */
+    /*'supported': boolean;*/
     'supported': boolean;
     /**
      * An integer value specifying the maximum number of operations.
      * @type {number}
      * @memberof ScimServiceProviderConfigBulk
      */
+    /*'maxOperations': number;*/
     'maxOperations': number;
     /**
      * An integer value specifying the maximum payload size in bytes.
      * @type {number}
      * @memberof ScimServiceProviderConfigBulk
      */
+    /*'maxPayloadSize': number;*/
     'maxPayloadSize': number;
 }
 /**

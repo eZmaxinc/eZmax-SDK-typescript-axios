@@ -28,6 +28,7 @@ export interface EzsignfoldertypeGetObjectV3ResponseMPayload {
      * @type {EzsignfoldertypeResponseCompoundV3}
      * @memberof EzsignfoldertypeGetObjectV3ResponseMPayload
      */
+    /*'objEzsignfoldertype': EzsignfoldertypeResponseCompoundV3;*/
     'objEzsignfoldertype': EzsignfoldertypeResponseCompoundV3;
 }
 /**

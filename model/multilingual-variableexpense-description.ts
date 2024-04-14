@@ -25,12 +25,14 @@ export interface MultilingualVariableexpenseDescription {
      * @type {string}
      * @memberof MultilingualVariableexpenseDescription
      */
+    /*'sVariableexpenseDescription1'?: string;*/
     'sVariableexpenseDescription1'?: string;
     /**
      * The description of the Variableexpense in English
      * @type {string}
      * @memberof MultilingualVariableexpenseDescription
      */
+    /*'sVariableexpenseDescription2'?: string;*/
     'sVariableexpenseDescription2'?: string;
 }
 /**

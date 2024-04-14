@@ -25,18 +25,21 @@ export interface EzsignsigningreasonListElement {
      * @type {number}
      * @memberof EzsignsigningreasonListElement
      */
+    /*'pkiEzsignsigningreasonID': number;*/
     'pkiEzsignsigningreasonID': number;
     /**
      * The description of the Ezsignsigningreason in the language of the requester
      * @type {string}
      * @memberof EzsignsigningreasonListElement
      */
+    /*'sEzsignsigningreasonDescriptionX': string;*/
     'sEzsignsigningreasonDescriptionX': string;
     /**
      * Whether the ezsignsigningreason is active or not
      * @type {boolean}
      * @memberof EzsignsigningreasonListElement
      */
+    /*'bEzsignsigningreasonIsactive': boolean;*/
     'bEzsignsigningreasonIsactive': boolean;
 }
 /**

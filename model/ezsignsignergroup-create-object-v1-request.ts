@@ -28,6 +28,7 @@ export interface EzsignsignergroupCreateObjectV1Request {
      * @type {Array<EzsignsignergroupRequestCompound>}
      * @memberof EzsignsignergroupCreateObjectV1Request
      */
+    /*'a_objEzsignsignergroup': Array<EzsignsignergroupRequestCompound>;*/
     'a_objEzsignsignergroup': Array<EzsignsignergroupRequestCompound>;
 }
 /**

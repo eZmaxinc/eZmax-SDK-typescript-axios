@@ -31,7 +31,7 @@ import { WebhookCreateObjectV2ResponseMPayload } from './webhook-create-object-v
  * Response for POST /2/object/webhook
  * @export
  */
-/** export type WebhookCreateObjectV2Response = CommonResponse; */
+/*export type WebhookCreateObjectV2Response = CommonResponse;*/
 export interface WebhookCreateObjectV2Response {
     /**
      * 

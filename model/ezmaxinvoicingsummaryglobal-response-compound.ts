@@ -25,7 +25,7 @@ import { EzmaxinvoicingsummaryglobalResponse } from './ezmaxinvoicingsummaryglob
  * A Ezmaxinvoicingsummaryglobal Object
  * @export
  */
-/** export type EzmaxinvoicingsummaryglobalResponseCompound = EzmaxinvoicingsummaryglobalResponse; */
+/*export type EzmaxinvoicingsummaryglobalResponseCompound = EzmaxinvoicingsummaryglobalResponse;*/
 export interface EzmaxinvoicingsummaryglobalResponseCompound {
     /**
      * The unique ID of the Ezmaxinvoicingsummaryglobal

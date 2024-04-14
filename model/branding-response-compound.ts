@@ -31,7 +31,7 @@ import { MultilingualBrandingDescription } from './multilingual-branding-descrip
  * A Branding Object
  * @export
  */
-/** export type BrandingResponseCompound = BrandingResponse; */
+/*export type BrandingResponseCompound = BrandingResponse;*/
 export interface BrandingResponseCompound {
     /**
      * The unique ID of the Branding
@@ -210,6 +210,7 @@ export class ValidationObjectBrandingResponseCompound {
    }
    sEmailAddress = {
       type: 'string',
+      pattern: '/^[\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/',
       required: false
    }
    eBrandingLogo = {
@@ -270,10 +271,12 @@ export class ValidationObjectBrandingResponseCompound {
    }
    sBrandingLogourl = {
       type: 'string',
+      pattern: '/^(https|http):\\/\\/[^\s\\/$.?#].[^\s]*$/',
       required: false
    }
    sBrandingLogointerfaceurl = {
       type: 'string',
+      pattern: '/^(https|http):\\/\\/[^\s\\/$.?#].[^\s]*$/',
       required: false
    }
 } 

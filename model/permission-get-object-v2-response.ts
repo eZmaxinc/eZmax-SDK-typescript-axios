@@ -31,7 +31,7 @@ import { PermissionGetObjectV2ResponseMPayload } from './permission-get-object-v
  * Response for GET /2/object/permission/{pkiPermissionID}
  * @export
  */
-/** export type PermissionGetObjectV2Response = CommonResponse; */
+/*export type PermissionGetObjectV2Response = CommonResponse;*/
 export interface PermissionGetObjectV2Response {
     /**
      * 

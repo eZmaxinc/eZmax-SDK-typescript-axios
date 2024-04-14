@@ -28,6 +28,7 @@ export interface SecretquestionGetAutocompleteV2ResponseMPayload {
      * @type {Array<SecretquestionAutocompleteElementResponse>}
      * @memberof SecretquestionGetAutocompleteV2ResponseMPayload
      */
+    /*'a_objSecretquestion': Array<SecretquestionAutocompleteElementResponse>;*/
     'a_objSecretquestion': Array<SecretquestionAutocompleteElementResponse>;
 }
 /**

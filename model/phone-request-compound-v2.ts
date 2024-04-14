@@ -22,7 +22,7 @@ import { PhoneRequestV2 } from './phone-request-v2';
  * A Phone Object and children to create a complete structure
  * @export
  */
-/** export type PhoneRequestCompoundV2 = PhoneRequestV2; */
+/*export type PhoneRequestCompoundV2 = PhoneRequestV2;*/
 export interface PhoneRequestCompoundV2 {
     /**
      * The unique ID of the Phone.

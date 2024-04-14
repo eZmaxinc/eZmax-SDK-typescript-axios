@@ -28,7 +28,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for PUT /1/object/branding/{pkiBrandingID}
  * @export
  */
-/** export type BrandingEditObjectV1Response = CommonResponse; */
+/*export type BrandingEditObjectV1Response = CommonResponse;*/
 export interface BrandingEditObjectV1Response {
     /**
      * 

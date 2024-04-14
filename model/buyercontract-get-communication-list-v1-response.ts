@@ -31,7 +31,7 @@ import { CommonResponseObjDebugPayloadGetList } from './common-response-obj-debu
  * Response for GET /1/object/buyercontract/{pkiBuyercontractID}/getCommunicationList
  * @export
  */
-/** export type BuyercontractGetCommunicationListV1Response = CommonResponseGetList; */
+/*export type BuyercontractGetCommunicationListV1Response = CommonResponseGetList;*/
 export interface BuyercontractGetCommunicationListV1Response {
     /**
      * 

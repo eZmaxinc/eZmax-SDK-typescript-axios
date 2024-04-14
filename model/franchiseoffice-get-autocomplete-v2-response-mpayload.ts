@@ -28,6 +28,7 @@ export interface FranchiseofficeGetAutocompleteV2ResponseMPayload {
      * @type {Array<FranchiseofficeAutocompleteElementResponse>}
      * @memberof FranchiseofficeGetAutocompleteV2ResponseMPayload
      */
+    /*'a_objFranchiseoffice': Array<FranchiseofficeAutocompleteElementResponse>;*/
     'a_objFranchiseoffice': Array<FranchiseofficeAutocompleteElementResponse>;
 }
 /**

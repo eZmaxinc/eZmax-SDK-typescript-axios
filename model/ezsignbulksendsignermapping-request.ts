@@ -25,24 +25,28 @@ export interface EzsignbulksendsignermappingRequest {
      * @type {number}
      * @memberof EzsignbulksendsignermappingRequest
      */
+    /*'pkiEzsignbulksendsignermappingID'?: number;*/
     'pkiEzsignbulksendsignermappingID'?: number;
     /**
      * The unique ID of the Ezsignbulksend
      * @type {number}
      * @memberof EzsignbulksendsignermappingRequest
      */
+    /*'fkiEzsignbulksendID': number;*/
     'fkiEzsignbulksendID': number;
     /**
      * The unique ID of the User
      * @type {number}
      * @memberof EzsignbulksendsignermappingRequest
      */
+    /*'fkiUserID'?: number;*/
     'fkiUserID'?: number;
     /**
      * The description of the Ezsignbulksendsignermapping
      * @type {string}
      * @memberof EzsignbulksendsignermappingRequest
      */
+    /*'sEzsignbulksendsignermappingDescription': string;*/
     'sEzsignbulksendsignermappingDescription': string;
 }
 /**

@@ -31,54 +31,63 @@ export interface DiscussionmessageResponse {
      * @type {number}
      * @memberof DiscussionmessageResponse
      */
+    /*'pkiDiscussionmessageID': number;*/
     'pkiDiscussionmessageID': number;
     /**
      * The unique ID of the Discussion
      * @type {number}
      * @memberof DiscussionmessageResponse
      */
+    /*'fkiDiscussionID': number;*/
     'fkiDiscussionID': number;
     /**
      * The unique ID of the Discussionmembership
      * @type {number}
      * @memberof DiscussionmessageResponse
      */
+    /*'fkiDiscussionmembershipID'?: number;*/
     'fkiDiscussionmembershipID'?: number;
     /**
      * The unique ID of the Discussionmembership
      * @type {number}
      * @memberof DiscussionmessageResponse
      */
+    /*'fkiDiscussionmembershipIDActionrequired'?: number;*/
     'fkiDiscussionmembershipIDActionrequired'?: number;
     /**
      * 
      * @type {FieldEDiscussionmessageStatus}
      * @memberof DiscussionmessageResponse
      */
+    /*'eDiscussionmessageStatus': FieldEDiscussionmessageStatus;*/
     'eDiscussionmessageStatus': FieldEDiscussionmessageStatus;
     /**
      * The content of the Discussionmessage
      * @type {string}
      * @memberof DiscussionmessageResponse
      */
+    /*'tDiscussionmessageContent': string;*/
     'tDiscussionmessageContent': string;
     /**
      * The name the creator of the Discussionmessage.
      * @type {string}
      * @memberof DiscussionmessageResponse
      */
+    /*'sDiscussionmessageCreatorname': string;*/
     'sDiscussionmessageCreatorname': string;
     /**
      * The name the Actionrequired of the Discussionmessage.
      * @type {string}
      * @memberof DiscussionmessageResponse
      */
+    /*'sDiscussionmessageActionrequiredname'?: string;*/
     'sDiscussionmessageActionrequiredname'?: string;
     /**
      * 
      * @type {CommonAudit}
      * @memberof DiscussionmessageResponse
      */
+    /*'objAudit': CommonAudit;*/
     'objAudit': CommonAudit;
 }
 

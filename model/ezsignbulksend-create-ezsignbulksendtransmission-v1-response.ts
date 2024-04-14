@@ -31,7 +31,7 @@ import { EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayload } from
  * Response for POST /1/object/ezsignbulksend/{pkiEzsignbulksendID}/createEzsignbulksendtransmission
  * @export
  */
-/** export type EzsignbulksendCreateEzsignbulksendtransmissionV1Response = CommonResponse; */
+/*export type EzsignbulksendCreateEzsignbulksendtransmissionV1Response = CommonResponse;*/
 export interface EzsignbulksendCreateEzsignbulksendtransmissionV1Response {
     /**
      * 

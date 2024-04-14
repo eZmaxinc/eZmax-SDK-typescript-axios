@@ -25,12 +25,14 @@ export interface ScimServiceProviderConfigFilter {
      * @type {boolean}
      * @memberof ScimServiceProviderConfigFilter
      */
+    /*'supported': boolean;*/
     'supported': boolean;
     /**
      * An integer value specifying the maximum number of resources returned in a response.
      * @type {number}
      * @memberof ScimServiceProviderConfigFilter
      */
+    /*'maxResults': number;*/
     'maxResults': number;
 }
 /**

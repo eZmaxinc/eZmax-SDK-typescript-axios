@@ -14,13 +14,13 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
 import { CommonResponseError } from '../model';
 // @ts-ignore
@@ -50,13 +50,14 @@ export const ObjectUsergroupmembershipApiAxiosParamCreator = function (configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usergroupmembershipCreateObjectV1: async (usergroupmembershipCreateObjectV1Request: UsergroupmembershipCreateObjectV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        usergroupmembershipCreateObjectV1: async (usergroupmembershipCreateObjectV1Request: UsergroupmembershipCreateObjectV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'usergroupmembershipCreateObjectV1Request' is not null or undefined
             assertParamExists('usergroupmembershipCreateObjectV1', 'usergroupmembershipCreateObjectV1Request', usergroupmembershipCreateObjectV1Request)
             const localVarPath = `/1/object/usergroupmembership`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -77,6 +78,7 @@ export const ObjectUsergroupmembershipApiAxiosParamCreator = function (configura
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(usergroupmembershipCreateObjectV1Request, localVarRequestOptions, configuration)
 
@@ -108,7 +110,7 @@ export const ObjectUsergroupmembershipApiAxiosParamCreator = function (configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usergroupmembershipDeleteObjectV1: async (pkiUsergroupmembershipID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        usergroupmembershipDeleteObjectV1: async (pkiUsergroupmembershipID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiUsergroupmembershipID' is not null or undefined
             assertParamExists('usergroupmembershipDeleteObjectV1', 'pkiUsergroupmembershipID', pkiUsergroupmembershipID)
             const localVarPath = `/1/object/usergroupmembership/{pkiUsergroupmembershipID}`
@@ -116,6 +118,7 @@ export const ObjectUsergroupmembershipApiAxiosParamCreator = function (configura
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -134,6 +137,7 @@ export const ObjectUsergroupmembershipApiAxiosParamCreator = function (configura
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -165,7 +169,7 @@ export const ObjectUsergroupmembershipApiAxiosParamCreator = function (configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usergroupmembershipEditObjectV1: async (pkiUsergroupmembershipID: number, usergroupmembershipEditObjectV1Request: UsergroupmembershipEditObjectV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        usergroupmembershipEditObjectV1: async (pkiUsergroupmembershipID: number, usergroupmembershipEditObjectV1Request: UsergroupmembershipEditObjectV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiUsergroupmembershipID' is not null or undefined
             assertParamExists('usergroupmembershipEditObjectV1', 'pkiUsergroupmembershipID', pkiUsergroupmembershipID)
             // verify required parameter 'usergroupmembershipEditObjectV1Request' is not null or undefined
@@ -175,6 +179,7 @@ export const ObjectUsergroupmembershipApiAxiosParamCreator = function (configura
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -195,6 +200,7 @@ export const ObjectUsergroupmembershipApiAxiosParamCreator = function (configura
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(usergroupmembershipEditObjectV1Request, localVarRequestOptions, configuration)
 
@@ -226,7 +232,7 @@ export const ObjectUsergroupmembershipApiAxiosParamCreator = function (configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usergroupmembershipGetObjectV2: async (pkiUsergroupmembershipID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        usergroupmembershipGetObjectV2: async (pkiUsergroupmembershipID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiUsergroupmembershipID' is not null or undefined
             assertParamExists('usergroupmembershipGetObjectV2', 'pkiUsergroupmembershipID', pkiUsergroupmembershipID)
             const localVarPath = `/2/object/usergroupmembership/{pkiUsergroupmembershipID}`
@@ -234,6 +240,7 @@ export const ObjectUsergroupmembershipApiAxiosParamCreator = function (configura
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -252,6 +259,7 @@ export const ObjectUsergroupmembershipApiAxiosParamCreator = function (configura
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -292,9 +300,11 @@ export const ObjectUsergroupmembershipApiFp = function(configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async usergroupmembershipCreateObjectV1(usergroupmembershipCreateObjectV1Request: UsergroupmembershipCreateObjectV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupmembershipCreateObjectV1Response>> {
+        async usergroupmembershipCreateObjectV1(usergroupmembershipCreateObjectV1Request: UsergroupmembershipCreateObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupmembershipCreateObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.usergroupmembershipCreateObjectV1(usergroupmembershipCreateObjectV1Request, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectUsergroupmembershipApi.usergroupmembershipCreateObjectV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -303,9 +313,11 @@ export const ObjectUsergroupmembershipApiFp = function(configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async usergroupmembershipDeleteObjectV1(pkiUsergroupmembershipID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupmembershipDeleteObjectV1Response>> {
+        async usergroupmembershipDeleteObjectV1(pkiUsergroupmembershipID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupmembershipDeleteObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.usergroupmembershipDeleteObjectV1(pkiUsergroupmembershipID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectUsergroupmembershipApi.usergroupmembershipDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -315,9 +327,11 @@ export const ObjectUsergroupmembershipApiFp = function(configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async usergroupmembershipEditObjectV1(pkiUsergroupmembershipID: number, usergroupmembershipEditObjectV1Request: UsergroupmembershipEditObjectV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupmembershipEditObjectV1Response>> {
+        async usergroupmembershipEditObjectV1(pkiUsergroupmembershipID: number, usergroupmembershipEditObjectV1Request: UsergroupmembershipEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupmembershipEditObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.usergroupmembershipEditObjectV1(pkiUsergroupmembershipID, usergroupmembershipEditObjectV1Request, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectUsergroupmembershipApi.usergroupmembershipEditObjectV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -326,9 +340,11 @@ export const ObjectUsergroupmembershipApiFp = function(configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async usergroupmembershipGetObjectV2(pkiUsergroupmembershipID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupmembershipGetObjectV2Response>> {
+        async usergroupmembershipGetObjectV2(pkiUsergroupmembershipID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupmembershipGetObjectV2Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.usergroupmembershipGetObjectV2(pkiUsergroupmembershipID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectUsergroupmembershipApi.usergroupmembershipGetObjectV2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -399,7 +415,7 @@ export class ObjectUsergroupmembershipApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectUsergroupmembershipApi
      */
-    public usergroupmembershipCreateObjectV1(usergroupmembershipCreateObjectV1Request: UsergroupmembershipCreateObjectV1Request, options?: AxiosRequestConfig) {
+    public usergroupmembershipCreateObjectV1(usergroupmembershipCreateObjectV1Request: UsergroupmembershipCreateObjectV1Request, options?: RawAxiosRequestConfig) {
         return ObjectUsergroupmembershipApiFp(this.configuration).usergroupmembershipCreateObjectV1(usergroupmembershipCreateObjectV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -411,7 +427,7 @@ export class ObjectUsergroupmembershipApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectUsergroupmembershipApi
      */
-    public usergroupmembershipDeleteObjectV1(pkiUsergroupmembershipID: number, options?: AxiosRequestConfig) {
+    public usergroupmembershipDeleteObjectV1(pkiUsergroupmembershipID: number, options?: RawAxiosRequestConfig) {
         return ObjectUsergroupmembershipApiFp(this.configuration).usergroupmembershipDeleteObjectV1(pkiUsergroupmembershipID, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -424,7 +440,7 @@ export class ObjectUsergroupmembershipApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectUsergroupmembershipApi
      */
-    public usergroupmembershipEditObjectV1(pkiUsergroupmembershipID: number, usergroupmembershipEditObjectV1Request: UsergroupmembershipEditObjectV1Request, options?: AxiosRequestConfig) {
+    public usergroupmembershipEditObjectV1(pkiUsergroupmembershipID: number, usergroupmembershipEditObjectV1Request: UsergroupmembershipEditObjectV1Request, options?: RawAxiosRequestConfig) {
         return ObjectUsergroupmembershipApiFp(this.configuration).usergroupmembershipEditObjectV1(pkiUsergroupmembershipID, usergroupmembershipEditObjectV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -436,7 +452,7 @@ export class ObjectUsergroupmembershipApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectUsergroupmembershipApi
      */
-    public usergroupmembershipGetObjectV2(pkiUsergroupmembershipID: number, options?: AxiosRequestConfig) {
+    public usergroupmembershipGetObjectV2(pkiUsergroupmembershipID: number, options?: RawAxiosRequestConfig) {
         return ObjectUsergroupmembershipApiFp(this.configuration).usergroupmembershipGetObjectV2(pkiUsergroupmembershipID, options).then((request) => request(this.axios, this.basePath));
     }
 }

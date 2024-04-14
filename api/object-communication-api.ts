@@ -14,13 +14,13 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
 import { CommunicationSendV1Request } from '../model';
 // @ts-ignore
@@ -40,13 +40,14 @@ export const ObjectCommunicationApiAxiosParamCreator = function (configuration?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        communicationSendV1: async (communicationSendV1Request: CommunicationSendV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        communicationSendV1: async (communicationSendV1Request: CommunicationSendV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'communicationSendV1Request' is not null or undefined
             assertParamExists('communicationSendV1', 'communicationSendV1Request', communicationSendV1Request)
             const localVarPath = `/1/object/communication/send`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -67,6 +68,7 @@ export const ObjectCommunicationApiAxiosParamCreator = function (configuration?:
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(communicationSendV1Request, localVarRequestOptions, configuration)
 
@@ -108,9 +110,11 @@ export const ObjectCommunicationApiFp = function(configuration?: Configuration) 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async communicationSendV1(communicationSendV1Request: CommunicationSendV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommunicationSendV1Response>> {
+        async communicationSendV1(communicationSendV1Request: CommunicationSendV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommunicationSendV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.communicationSendV1(communicationSendV1Request, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectCommunicationApi.communicationSendV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -150,7 +154,7 @@ export class ObjectCommunicationApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectCommunicationApi
      */
-    public communicationSendV1(communicationSendV1Request: CommunicationSendV1Request, options?: AxiosRequestConfig) {
+    public communicationSendV1(communicationSendV1Request: CommunicationSendV1Request, options?: RawAxiosRequestConfig) {
         return ObjectCommunicationApiFp(this.configuration).communicationSendV1(communicationSendV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 }

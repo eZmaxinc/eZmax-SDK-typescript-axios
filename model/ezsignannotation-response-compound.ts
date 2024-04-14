@@ -34,7 +34,7 @@ import { TextstylestaticResponseCompound } from './textstylestatic-response-comp
  * A Ezsignannotation Object
  * @export
  */
-/** export type EzsignannotationResponseCompound = EzsignannotationResponse; */
+/*export type EzsignannotationResponseCompound = EzsignannotationResponse;*/
 export interface EzsignannotationResponseCompound {
     /**
      * The unique ID of the Ezsignannotation

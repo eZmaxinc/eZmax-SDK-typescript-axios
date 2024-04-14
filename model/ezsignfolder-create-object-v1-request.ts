@@ -31,12 +31,14 @@ export interface EzsignfolderCreateObjectV1Request {
      * @type {EzsignfolderRequest}
      * @memberof EzsignfolderCreateObjectV1Request
      */
+    /*'objEzsignfolder'?: EzsignfolderRequest;*/
     'objEzsignfolder'?: EzsignfolderRequest;
     /**
      * 
      * @type {EzsignfolderRequestCompound}
      * @memberof EzsignfolderCreateObjectV1Request
      */
+    /*'objEzsignfolderCompound'?: EzsignfolderRequestCompound;*/
     'objEzsignfolderCompound'?: EzsignfolderRequestCompound;
 }
 /**

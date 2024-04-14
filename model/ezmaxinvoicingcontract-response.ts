@@ -31,54 +31,63 @@ export interface EzmaxinvoicingcontractResponse {
      * @type {number}
      * @memberof EzmaxinvoicingcontractResponse
      */
+    /*'pkiEzmaxinvoicingcontractID': number;*/
     'pkiEzmaxinvoicingcontractID': number;
     /**
      * 
      * @type {FieldEEzmaxinvoicingcontractPaymenttype}
      * @memberof EzmaxinvoicingcontractResponse
      */
+    /*'eEzmaxinvoicingcontractPaymenttype': FieldEEzmaxinvoicingcontractPaymenttype;*/
     'eEzmaxinvoicingcontractPaymenttype': FieldEEzmaxinvoicingcontractPaymenttype;
     /**
      * The length in years of the Ezmaxinvoicingcontract
      * @type {number}
      * @memberof EzmaxinvoicingcontractResponse
      */
+    /*'iEzmaxinvoicingcontractLength': number;*/
     'iEzmaxinvoicingcontractLength': number;
     /**
      * The start date of the Ezmaxinvoicingcontract
      * @type {string}
      * @memberof EzmaxinvoicingcontractResponse
      */
+    /*'dtEzmaxinvoicingcontractStart': string;*/
     'dtEzmaxinvoicingcontractStart': string;
     /**
      * The end date of the Ezmaxinvoicingcontract
      * @type {string}
      * @memberof EzmaxinvoicingcontractResponse
      */
+    /*'dtEzmaxinvoicingcontractEnd': string;*/
     'dtEzmaxinvoicingcontractEnd': string;
     /**
      * The price of the license
      * @type {string}
      * @memberof EzmaxinvoicingcontractResponse
      */
+    /*'dEzmaxinvoicingcontractLicense': string;*/
     'dEzmaxinvoicingcontractLicense': string;
     /**
      * The price for 121QA
      * @type {string}
      * @memberof EzmaxinvoicingcontractResponse
      */
+    /*'dEzmaxinvoicingcontract121qa': string;*/
     'dEzmaxinvoicingcontract121qa': string;
     /**
      * Whether eZsign is for all agents
      * @type {boolean}
      * @memberof EzmaxinvoicingcontractResponse
      */
+    /*'bEzmaxinvoicingcontractEzsignallagents': boolean;*/
     'bEzmaxinvoicingcontractEzsignallagents': boolean;
     /**
      * 
      * @type {CommonAudit}
      * @memberof EzmaxinvoicingcontractResponse
      */
+    /*'objAudit': CommonAudit;*/
     'objAudit': CommonAudit;
 }
 

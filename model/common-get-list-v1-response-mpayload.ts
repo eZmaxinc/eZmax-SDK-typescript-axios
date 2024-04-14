@@ -25,12 +25,14 @@ export interface CommonGetListV1ResponseMPayload {
      * @type {number}
      * @memberof CommonGetListV1ResponseMPayload
      */
+    /*'iRowReturned': number;*/
     'iRowReturned': number;
     /**
      * The number of rows matching your filters (if any) or the total number of rows
      * @type {number}
      * @memberof CommonGetListV1ResponseMPayload
      */
+    /*'iRowFiltered': number;*/
     'iRowFiltered': number;
 }
 /**

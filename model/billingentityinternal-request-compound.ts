@@ -28,7 +28,7 @@ import { MultilingualBillingentityinternalDescription } from './multilingual-bil
  * A Billingentityinternal Object and children
  * @export
  */
-/** export type BillingentityinternalRequestCompound = BillingentityinternalRequest; */
+/*export type BillingentityinternalRequestCompound = BillingentityinternalRequest;*/
 export interface BillingentityinternalRequestCompound {
     /**
      * The unique ID of the Billingentityinternal.

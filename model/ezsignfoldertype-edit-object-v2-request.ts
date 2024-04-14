@@ -28,6 +28,7 @@ export interface EzsignfoldertypeEditObjectV2Request {
      * @type {EzsignfoldertypeRequestCompoundV2}
      * @memberof EzsignfoldertypeEditObjectV2Request
      */
+    /*'objEzsignfoldertype': EzsignfoldertypeRequestCompoundV2;*/
     'objEzsignfoldertype': EzsignfoldertypeRequestCompoundV2;
 }
 /**

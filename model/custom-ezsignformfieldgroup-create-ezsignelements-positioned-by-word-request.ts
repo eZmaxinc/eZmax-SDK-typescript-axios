@@ -46,7 +46,7 @@ import { FieldEEzsignformfieldgroupType } from './field-eezsignformfieldgroup-ty
  * An Ezsignformfieldgroup Object in the context of a createEzsignelementsPositionedByWord path
  * @export
  */
-/** export type CustomEzsignformfieldgroupCreateEzsignelementsPositionedByWordRequest = EzsignformfieldgroupRequestCompound; */
+/*export type CustomEzsignformfieldgroupCreateEzsignelementsPositionedByWordRequest = EzsignformfieldgroupRequestCompound;*/
 export interface CustomEzsignformfieldgroupCreateEzsignelementsPositionedByWordRequest {
     /**
      * The unique ID of the Ezsignformfieldgroup

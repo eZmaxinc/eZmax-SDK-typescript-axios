@@ -28,60 +28,70 @@ export interface ActivesessionResponseCompoundUser {
      * @type {number}
      * @memberof ActivesessionResponseCompoundUser
      */
+    /*'pkiUserID': number;*/
     'pkiUserID': number;
     /**
      * The unique ID of the Timezone
      * @type {number}
      * @memberof ActivesessionResponseCompoundUser
      */
+    /*'fkiTimezoneID': number;*/
     'fkiTimezoneID': number;
     /**
      * The url of the picture used as avatar
      * @type {string}
      * @memberof ActivesessionResponseCompoundUser
      */
+    /*'sAvatarUrl'?: string;*/
     'sAvatarUrl'?: string;
     /**
      * The first name of the user
      * @type {string}
      * @memberof ActivesessionResponseCompoundUser
      */
+    /*'sUserFirstname': string;*/
     'sUserFirstname': string;
     /**
      * The last name of the user
      * @type {string}
      * @memberof ActivesessionResponseCompoundUser
      */
+    /*'sUserLastname': string;*/
     'sUserLastname': string;
     /**
      * The email address.
      * @type {string}
      * @memberof ActivesessionResponseCompoundUser
      */
+    /*'sEmailAddress'?: string;*/
     'sEmailAddress'?: string;
     /**
      * 
      * @type {FieldEUserEzsignsendreminderfrequency}
      * @memberof ActivesessionResponseCompoundUser
      */
+    /*'eUserEzsignsendreminderfrequency': FieldEUserEzsignsendreminderfrequency;*/
     'eUserEzsignsendreminderfrequency': FieldEUserEzsignsendreminderfrequency;
     /**
      * The int32 representation of the interface color. For example, RGB color #39435B would be 3752795
      * @type {number}
      * @memberof ActivesessionResponseCompoundUser
      */
+    /*'iUserInterfacecolor': number;*/
     'iUserInterfacecolor': number;
     /**
      * Whether to use a dark mode interface
      * @type {boolean}
      * @memberof ActivesessionResponseCompoundUser
      */
+    /*'bUserInterfacedark': boolean;*/
     'bUserInterfacedark': boolean;
     /**
      * The number of rows to return by default in lists
      * @type {number}
      * @memberof ActivesessionResponseCompoundUser
      */
+    /*'iUserListresult': number;*/
     'iUserListresult': number;
 }
 
@@ -128,6 +138,7 @@ export class ValidationObjectActivesessionResponseCompoundUser {
    }
    sAvatarUrl = {
       type: 'string',
+      pattern: '/^(https|http):\\/\\/[^\s\\/$.?#].[^\s]*$/',
       required: false
    }
    sUserFirstname = {
@@ -140,6 +151,7 @@ export class ValidationObjectActivesessionResponseCompoundUser {
    }
    sEmailAddress = {
       type: 'string',
+      pattern: '/^[\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/',
       required: false
    }
    eUserEzsignsendreminderfrequency = {

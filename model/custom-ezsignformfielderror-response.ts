@@ -28,12 +28,14 @@ export interface CustomEzsignformfielderrorResponse {
      * @type {string}
      * @memberof CustomEzsignformfielderrorResponse
      */
+    /*'sEzsignformfieldLabel': string;*/
     'sEzsignformfieldLabel': string;
     /**
      * 
      * @type {Array<CustomEzsignformfielderrortestResponse>}
      * @memberof CustomEzsignformfielderrorResponse
      */
+    /*'a_objEzsignformfielderrortest': Array<CustomEzsignformfielderrortestResponse>;*/
     'a_objEzsignformfielderrortest': Array<CustomEzsignformfielderrortestResponse>;
 }
 /**

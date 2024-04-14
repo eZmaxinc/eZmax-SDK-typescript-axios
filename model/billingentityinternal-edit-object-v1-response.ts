@@ -28,7 +28,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for PUT /1/object/billingentityinternal/{pkiBillingentityinternalID}
  * @export
  */
-/** export type BillingentityinternalEditObjectV1Response = CommonResponse; */
+/*export type BillingentityinternalEditObjectV1Response = CommonResponse;*/
 export interface BillingentityinternalEditObjectV1Response {
     /**
      * 

@@ -22,7 +22,7 @@ import { WebhookheaderRequest } from './webhookheader-request';
  * A Webhookheader Object
  * @export
  */
-/** export type WebhookheaderRequestCompound = WebhookheaderRequest; */
+/*export type WebhookheaderRequestCompound = WebhookheaderRequest;*/
 export interface WebhookheaderRequestCompound {
     /**
      * The unique ID of the Webhookheader

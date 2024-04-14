@@ -25,18 +25,21 @@ export interface CompanyAutocompleteElementResponse {
      * @type {number}
      * @memberof CompanyAutocompleteElementResponse
      */
+    /*'pkiCompanyID': number;*/
     'pkiCompanyID': number;
     /**
      * The Name of the Company in the language of the requester
      * @type {string}
      * @memberof CompanyAutocompleteElementResponse
      */
+    /*'sCompanyNameX': string;*/
     'sCompanyNameX': string;
     /**
      * Whether the Company is active or not
      * @type {boolean}
      * @memberof CompanyAutocompleteElementResponse
      */
+    /*'bCompanyIsactive': boolean;*/
     'bCompanyIsactive': boolean;
 }
 /**

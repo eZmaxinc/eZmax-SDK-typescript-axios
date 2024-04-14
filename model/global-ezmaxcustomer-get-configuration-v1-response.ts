@@ -25,30 +25,35 @@ export interface GlobalEzmaxcustomerGetConfigurationV1Response {
      * @type {string}
      * @memberof GlobalEzmaxcustomerGetConfigurationV1Response
      */
+    /*'sInfrastructureregionCode': string;*/
     'sInfrastructureregionCode': string;
     /**
      * The region code
      * @type {string}
      * @memberof GlobalEzmaxcustomerGetConfigurationV1Response
      */
+    /*'sInfrastructureregionCodeWeb': string;*/
     'sInfrastructureregionCodeWeb': string;
     /**
      * The environment type Description
      * @type {string}
      * @memberof GlobalEzmaxcustomerGetConfigurationV1Response
      */
+    /*'sInfrastructureenvironmenttypeDescription': string;*/
     'sInfrastructureenvironmenttypeDescription': string;
     /**
      * The ID of the client in Cognito
      * @type {string}
      * @memberof GlobalEzmaxcustomerGetConfigurationV1Response
      */
+    /*'sCognitoClientIDExternal'?: string;*/
     'sCognitoClientIDExternal'?: string;
     /**
      * The ID of the client in Cognito
      * @type {string}
      * @memberof GlobalEzmaxcustomerGetConfigurationV1Response
      */
+    /*'sCognitoClientIDEzmaxpublic': string;*/
     'sCognitoClientIDEzmaxpublic': string;
 }
 /**

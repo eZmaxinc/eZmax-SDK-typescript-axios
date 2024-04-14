@@ -25,24 +25,28 @@ export interface DepartmentAutocompleteElementResponse {
      * @type {string}
      * @memberof DepartmentAutocompleteElementResponse
      */
+    /*'sCompanyNameX': string;*/
     'sCompanyNameX': string;
     /**
      * The Name of the Department in the language of the requester
      * @type {string}
      * @memberof DepartmentAutocompleteElementResponse
      */
+    /*'sDepartmentNameX': string;*/
     'sDepartmentNameX': string;
     /**
      * The unique ID of the Department
      * @type {number}
      * @memberof DepartmentAutocompleteElementResponse
      */
+    /*'pkiDepartmentID': number;*/
     'pkiDepartmentID': number;
     /**
      * Whether the Department is active or not
      * @type {boolean}
      * @memberof DepartmentAutocompleteElementResponse
      */
+    /*'bDepartmentIsactive': boolean;*/
     'bDepartmentIsactive': boolean;
 }
 /**

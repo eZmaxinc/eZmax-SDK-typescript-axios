@@ -25,6 +25,7 @@ export interface WebhookRegenerateApikeyV1Request {
      * @type {boolean}
      * @memberof WebhookRegenerateApikeyV1Request
      */
+    /*'bWebhookIssigned'?: boolean;*/
     'bWebhookIssigned'?: boolean;
 }
 /**

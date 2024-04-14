@@ -25,24 +25,28 @@ export interface CountryAutocompleteElementResponse {
      * @type {number}
      * @memberof CountryAutocompleteElementResponse
      */
+    /*'pkiCountryID': number;*/
     'pkiCountryID': number;
     /**
      * The name of the Country in the language of the requester
      * @type {string}
      * @memberof CountryAutocompleteElementResponse
      */
+    /*'sCountryNameX': string;*/
     'sCountryNameX': string;
     /**
      * The shortname of the Country
      * @type {string}
      * @memberof CountryAutocompleteElementResponse
      */
+    /*'sCountryShortname': string;*/
     'sCountryShortname': string;
     /**
      * Whether the Country is active or not
      * @type {boolean}
      * @memberof CountryAutocompleteElementResponse
      */
+    /*'bCountryIsactive': boolean;*/
     'bCountryIsactive': boolean;
 }
 /**

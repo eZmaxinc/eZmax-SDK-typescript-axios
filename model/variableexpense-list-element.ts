@@ -28,30 +28,35 @@ export interface VariableexpenseListElement {
      * @type {number}
      * @memberof VariableexpenseListElement
      */
+    /*'pkiVariableexpenseID': number;*/
     'pkiVariableexpenseID': number;
     /**
      * The code of the Variableexpense
      * @type {string}
      * @memberof VariableexpenseListElement
      */
+    /*'sVariableexpenseCode'?: string;*/
     'sVariableexpenseCode'?: string;
     /**
      * The description of the Variableexpense in the language of the requester
      * @type {string}
      * @memberof VariableexpenseListElement
      */
+    /*'sVariableexpenseDescriptionX'?: string;*/
     'sVariableexpenseDescriptionX'?: string;
     /**
      * 
      * @type {FieldEVariableexpenseTaxable}
      * @memberof VariableexpenseListElement
      */
+    /*'eVariableexpenseTaxable'?: FieldEVariableexpenseTaxable;*/
     'eVariableexpenseTaxable'?: FieldEVariableexpenseTaxable;
     /**
      * Whether the variableexpense is active or not
      * @type {boolean}
      * @memberof VariableexpenseListElement
      */
+    /*'bVariableexpenseIsactive'?: boolean;*/
     'bVariableexpenseIsactive'?: boolean;
 }
 

@@ -31,7 +31,7 @@ import { UsergroupexternalGetAutocompleteV2ResponseMPayload } from './usergroupe
  * Response for GET /2/object/usergroupexternal/getAutocomplete
  * @export
  */
-/** export type UsergroupexternalGetAutocompleteV2Response = CommonResponse; */
+/*export type UsergroupexternalGetAutocompleteV2Response = CommonResponse;*/
 export interface UsergroupexternalGetAutocompleteV2Response {
     /**
      * 

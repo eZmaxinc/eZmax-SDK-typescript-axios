@@ -25,7 +25,7 @@ import { EzmaxinvoicingcommissionResponse } from './ezmaxinvoicingcommission-res
  * A Ezmaxinvoicingcommission Object
  * @export
  */
-/** export type EzmaxinvoicingcommissionResponseCompound = EzmaxinvoicingcommissionResponse; */
+/*export type EzmaxinvoicingcommissionResponseCompound = EzmaxinvoicingcommissionResponse;*/
 export interface EzmaxinvoicingcommissionResponseCompound {
     /**
      * The unique ID of the Ezmaxinvoicingcommission

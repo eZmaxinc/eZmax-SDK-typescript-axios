@@ -31,7 +31,7 @@ import { SubnetGetObjectV2ResponseMPayload } from './subnet-get-object-v2-respon
  * Response for GET /2/object/subnet/{pkiSubnetID}
  * @export
  */
-/** export type SubnetGetObjectV2Response = CommonResponse; */
+/*export type SubnetGetObjectV2Response = CommonResponse;*/
 export interface SubnetGetObjectV2Response {
     /**
      * 

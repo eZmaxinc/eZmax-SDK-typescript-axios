@@ -22,7 +22,7 @@ import { CustomDropdownElementRequest } from './custom-dropdown-element-request'
  * A Generic DropdownElement Object and children to create a complete structure
  * @export
  */
-/** export type CustomDropdownElementRequestCompound = CustomDropdownElementRequest; */
+/*export type CustomDropdownElementRequestCompound = CustomDropdownElementRequest;*/
 export interface CustomDropdownElementRequestCompound {
     /**
      * The Description of the element

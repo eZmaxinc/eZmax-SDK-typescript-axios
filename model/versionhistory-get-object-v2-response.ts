@@ -31,7 +31,7 @@ import { VersionhistoryGetObjectV2ResponseMPayload } from './versionhistory-get-
  * Response for GET /2/object/versionhistory/{pkiVersionhistoryID}
  * @export
  */
-/** export type VersionhistoryGetObjectV2Response = CommonResponse; */
+/*export type VersionhistoryGetObjectV2Response = CommonResponse;*/
 export interface VersionhistoryGetObjectV2Response {
     /**
      * 

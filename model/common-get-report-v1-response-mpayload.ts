@@ -28,6 +28,7 @@ export interface CommonGetReportV1ResponseMPayload {
      * @type {CommonReportgroup}
      * @memberof CommonGetReportV1ResponseMPayload
      */
+    /*'objReportgroup': CommonReportgroup;*/
     'objReportgroup': CommonReportgroup;
 }
 /**

@@ -28,6 +28,7 @@ export interface ApikeyGetCorsV1ResponseMPayload {
      * @type {Array<CorsResponseCompound>}
      * @memberof ApikeyGetCorsV1ResponseMPayload
      */
+    /*'a_objCors': Array<CorsResponseCompound>;*/
     'a_objCors': Array<CorsResponseCompound>;
 }
 /**

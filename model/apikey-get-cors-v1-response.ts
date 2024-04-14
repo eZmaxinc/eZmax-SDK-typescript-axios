@@ -31,7 +31,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for GET /1/object/apikey/{pkiApikeyID}/getCors
  * @export
  */
-/** export type ApikeyGetCorsV1Response = CommonResponse; */
+/*export type ApikeyGetCorsV1Response = CommonResponse;*/
 export interface ApikeyGetCorsV1Response {
     /**
      * 

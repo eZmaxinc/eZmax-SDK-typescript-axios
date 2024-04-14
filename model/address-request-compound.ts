@@ -22,7 +22,7 @@ import { AddressRequest } from './address-request';
  * An Address Object and children to create a complete structure
  * @export
  */
-/** export type AddressRequestCompound = AddressRequest; */
+/*export type AddressRequestCompound = AddressRequest;*/
 export interface AddressRequestCompound {
     /**
      * The unique ID of the Addresstype.  Valid values:  |Value|Description| |-|-| |1|Office| |2|Home| |3|Real Estate Invoice| |4|Invoicing| |5|Shipping|

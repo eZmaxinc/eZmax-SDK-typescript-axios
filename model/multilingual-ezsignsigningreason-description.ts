@@ -25,12 +25,14 @@ export interface MultilingualEzsignsigningreasonDescription {
      * @type {string}
      * @memberof MultilingualEzsignsigningreasonDescription
      */
+    /*'sEzsignsigningreasonDescription1'?: string;*/
     'sEzsignsigningreasonDescription1'?: string;
     /**
      * The description of the Ezsignsigningreason in English
      * @type {string}
      * @memberof MultilingualEzsignsigningreasonDescription
      */
+    /*'sEzsignsigningreasonDescription2'?: string;*/
     'sEzsignsigningreasonDescription2'?: string;
 }
 /**

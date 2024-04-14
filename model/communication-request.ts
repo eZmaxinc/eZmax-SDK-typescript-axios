@@ -34,60 +34,70 @@ export interface CommunicationRequest {
      * @type {number}
      * @memberof CommunicationRequest
      */
+    /*'pkiCommunicationID'?: number;*/
     'pkiCommunicationID'?: number;
     /**
      * 
      * @type {FieldECommunicationImportance}
      * @memberof CommunicationRequest
      */
+    /*'eCommunicationImportance'?: FieldECommunicationImportance;*/
     'eCommunicationImportance'?: FieldECommunicationImportance;
     /**
      * 
      * @type {FieldECommunicationType}
      * @memberof CommunicationRequest
      */
+    /*'eCommunicationType': FieldECommunicationType;*/
     'eCommunicationType': FieldECommunicationType;
     /**
      * 
      * @type {CustomCommunicationsenderRequest}
      * @memberof CommunicationRequest
      */
+    /*'objCommunicationsender'?: CustomCommunicationsenderRequest;*/
     'objCommunicationsender'?: CustomCommunicationsenderRequest;
     /**
      * The subject of the Communication
      * @type {string}
      * @memberof CommunicationRequest
      */
+    /*'sCommunicationSubject'?: string;*/
     'sCommunicationSubject'?: string;
     /**
      * The Body of the Communication
      * @type {string}
      * @memberof CommunicationRequest
      */
+    /*'tCommunicationBody': string;*/
     'tCommunicationBody': string;
     /**
      * Whether the Communication is private or not
      * @type {boolean}
      * @memberof CommunicationRequest
      */
+    /*'bCommunicationPrivate': boolean;*/
     'bCommunicationPrivate': boolean;
     /**
      * How the attachment should be included in the email.   Only used if eCommunicationType is **Email**
      * @type {string}
      * @memberof CommunicationRequest
      */
+    /*'eCommunicationAttachmenttype'?: CommunicationRequestECommunicationAttachmenttypeEnum;*/
     'eCommunicationAttachmenttype'?: CommunicationRequestECommunicationAttachmenttypeEnum;
     /**
      * The number of days before the attachment link expired.   Only used if eCommunicationType is **Email** and eCommunicationattachmentType is **Link**
      * @type {number}
      * @memberof CommunicationRequest
      */
+    /*'iCommunicationAttachmentlinkexpiration'?: number;*/
     'iCommunicationAttachmentlinkexpiration'?: number;
     /**
      * Whether we ask for a read receipt or not.
      * @type {boolean}
      * @memberof CommunicationRequest
      */
+    /*'bCommunicationReadreceipt'?: boolean;*/
     'bCommunicationReadreceipt'?: boolean;
 }
 

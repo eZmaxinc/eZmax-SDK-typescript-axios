@@ -22,7 +22,7 @@ import { UsergroupexternalRequest } from './usergroupexternal-request';
  * A Usergroupexternal Object and children
  * @export
  */
-/** export type UsergroupexternalRequestCompound = UsergroupexternalRequest; */
+/*export type UsergroupexternalRequestCompound = UsergroupexternalRequest;*/
 export interface UsergroupexternalRequestCompound {
     /**
      * The unique ID of the Usergroupexternal

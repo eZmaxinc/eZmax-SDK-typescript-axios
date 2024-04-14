@@ -28,6 +28,7 @@ export interface BrandingGetObjectV2ResponseMPayload {
      * @type {BrandingResponseCompound}
      * @memberof BrandingGetObjectV2ResponseMPayload
      */
+    /*'objBranding': BrandingResponseCompound;*/
     'objBranding': BrandingResponseCompound;
 }
 /**

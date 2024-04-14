@@ -31,7 +31,7 @@ import { CorsCreateObjectV1ResponseMPayload } from './cors-create-object-v1-resp
  * Response for POST /1/object/cors
  * @export
  */
-/** export type CorsCreateObjectV1Response = CommonResponse; */
+/*export type CorsCreateObjectV1Response = CommonResponse;*/
 export interface CorsCreateObjectV1Response {
     /**
      * 

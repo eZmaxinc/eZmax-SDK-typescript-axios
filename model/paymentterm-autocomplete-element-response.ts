@@ -25,18 +25,21 @@ export interface PaymenttermAutocompleteElementResponse {
      * @type {number}
      * @memberof PaymenttermAutocompleteElementResponse
      */
+    /*'pkiPaymenttermID': number;*/
     'pkiPaymenttermID': number;
     /**
      * The description of the Paymentterm in the language of the requester
      * @type {string}
      * @memberof PaymenttermAutocompleteElementResponse
      */
+    /*'sPaymenttermDescriptionX': string;*/
     'sPaymenttermDescriptionX': string;
     /**
      * Whether the Paymentterm is active or not
      * @type {boolean}
      * @memberof PaymenttermAutocompleteElementResponse
      */
+    /*'bPaymenttermIsactive': boolean;*/
     'bPaymenttermIsactive': boolean;
 }
 /**

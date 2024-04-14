@@ -25,18 +25,21 @@ export interface CustomWordPositionOccurenceResponse {
      * @type {number}
      * @memberof CustomWordPositionOccurenceResponse
      */
+    /*'iPage'?: number;*/
     'iPage'?: number;
     /**
      * The X coordinate (Horizontal) where the Word occurence was found.  Coordinate is calculated at 100dpi (dot per inch).
      * @type {number}
      * @memberof CustomWordPositionOccurenceResponse
      */
+    /*'iX'?: number;*/
     'iX'?: number;
     /**
      * The Y coordinate (Vertical) where the Word occurence was found.  Coordinate is calculated at 100dpi (dot per inch).
      * @type {number}
      * @memberof CustomWordPositionOccurenceResponse
      */
+    /*'iY'?: number;*/
     'iY'?: number;
 }
 /**

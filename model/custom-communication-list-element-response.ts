@@ -34,54 +34,63 @@ export interface CustomCommunicationListElementResponse {
      * @type {number}
      * @memberof CustomCommunicationListElementResponse
      */
+    /*'pkiCommunicationID': number;*/
     'pkiCommunicationID': number;
     /**
      * The date and time at which the object was created
      * @type {string}
      * @memberof CustomCommunicationListElementResponse
      */
+    /*'dtCreatedDate': string;*/
     'dtCreatedDate': string;
     /**
      * 
      * @type {ComputedECommunicationDirection}
      * @memberof CustomCommunicationListElementResponse
      */
+    /*'eCommunicationDirection': ComputedECommunicationDirection;*/
     'eCommunicationDirection': ComputedECommunicationDirection;
     /**
      * 
      * @type {FieldECommunicationImportance}
      * @memberof CustomCommunicationListElementResponse
      */
+    /*'eCommunicationImportance': FieldECommunicationImportance;*/
     'eCommunicationImportance': FieldECommunicationImportance;
     /**
      * 
      * @type {FieldECommunicationType}
      * @memberof CustomCommunicationListElementResponse
      */
+    /*'eCommunicationType': FieldECommunicationType;*/
     'eCommunicationType': FieldECommunicationType;
     /**
      * The count of Communicationrecipient
      * @type {number}
      * @memberof CustomCommunicationListElementResponse
      */
+    /*'iCommunicationrecipientCount': number;*/
     'iCommunicationrecipientCount': number;
     /**
      * The subject of the Communication
      * @type {string}
      * @memberof CustomCommunicationListElementResponse
      */
+    /*'sCommunicationSubject': string;*/
     'sCommunicationSubject': string;
     /**
      * The sender name of the Communication
      * @type {string}
      * @memberof CustomCommunicationListElementResponse
      */
+    /*'sCommunicationSender': string;*/
     'sCommunicationSender': string;
     /**
      * The recipients\' name of the Communication
      * @type {string}
      * @memberof CustomCommunicationListElementResponse
      */
+    /*'sCommunicationRecipient': string;*/
     'sCommunicationRecipient': string;
 }
 

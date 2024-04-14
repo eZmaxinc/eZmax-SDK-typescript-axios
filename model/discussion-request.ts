@@ -25,18 +25,21 @@ export interface DiscussionRequest {
      * @type {number}
      * @memberof DiscussionRequest
      */
+    /*'pkiDiscussionID'?: number;*/
     'pkiDiscussionID'?: number;
     /**
      * The description of the Discussion
      * @type {string}
      * @memberof DiscussionRequest
      */
+    /*'sDiscussionDescription': string;*/
     'sDiscussionDescription': string;
     /**
      * Whether if it\'s an closed
      * @type {boolean}
      * @memberof DiscussionRequest
      */
+    /*'bDiscussionClosed'?: boolean;*/
     'bDiscussionClosed'?: boolean;
 }
 /**

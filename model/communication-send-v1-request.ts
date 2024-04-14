@@ -28,6 +28,7 @@ export interface CommunicationSendV1Request {
      * @type {Array<CommunicationRequestCompound>}
      * @memberof CommunicationSendV1Request
      */
+    /*'a_objCommunication': Array<CommunicationRequestCompound>;*/
     'a_objCommunication': Array<CommunicationRequestCompound>;
 }
 /**

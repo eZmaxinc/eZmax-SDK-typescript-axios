@@ -28,7 +28,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for DELETE /1/object/subnet/{pkiSubnetID}
  * @export
  */
-/** export type SubnetDeleteObjectV1Response = CommonResponse; */
+/*export type SubnetDeleteObjectV1Response = CommonResponse;*/
 export interface SubnetDeleteObjectV1Response {
     /**
      * 

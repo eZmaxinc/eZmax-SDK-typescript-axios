@@ -25,12 +25,14 @@ export interface CommonResponseWarning {
      * @type {string}
      * @memberof CommonResponseWarning
      */
+    /*'sWarningMessage': string;*/
     'sWarningMessage': string;
     /**
      * The warning code. See documentation for valid values
      * @type {string}
      * @memberof CommonResponseWarning
      */
+    /*'eWarningCode': string;*/
     'eWarningCode': string;
 }
 /**

@@ -28,6 +28,7 @@ export interface EzsigntemplatepackagesignermembershipCreateObjectV1Request {
      * @type {Array<EzsigntemplatepackagesignermembershipRequestCompound>}
      * @memberof EzsigntemplatepackagesignermembershipCreateObjectV1Request
      */
+    /*'a_objEzsigntemplatepackagesignermembership': Array<EzsigntemplatepackagesignermembershipRequestCompound>;*/
     'a_objEzsigntemplatepackagesignermembership': Array<EzsigntemplatepackagesignermembershipRequestCompound>;
 }
 /**

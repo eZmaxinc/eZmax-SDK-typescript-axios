@@ -31,7 +31,7 @@ import { SubnetCreateObjectV1ResponseMPayload } from './subnet-create-object-v1-
  * Response for POST /1/object/subnet
  * @export
  */
-/** export type SubnetCreateObjectV1Response = CommonResponse; */
+/*export type SubnetCreateObjectV1Response = CommonResponse;*/
 export interface SubnetCreateObjectV1Response {
     /**
      * 

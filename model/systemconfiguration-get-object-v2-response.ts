@@ -31,7 +31,7 @@ import { SystemconfigurationGetObjectV2ResponseMPayload } from './systemconfigur
  * Response for GET /2/object/systemconfiguration/{pkiSystemconfigurationID}
  * @export
  */
-/** export type SystemconfigurationGetObjectV2Response = CommonResponse; */
+/*export type SystemconfigurationGetObjectV2Response = CommonResponse;*/
 export interface SystemconfigurationGetObjectV2Response {
     /**
      * 

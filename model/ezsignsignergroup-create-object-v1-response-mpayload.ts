@@ -25,6 +25,7 @@ export interface EzsignsignergroupCreateObjectV1ResponseMPayload {
      * @type {Array<number>}
      * @memberof EzsignsignergroupCreateObjectV1ResponseMPayload
      */
+    /*'a_pkiEzsignsignergroupID': Array<number>;*/
     'a_pkiEzsignsignergroupID': Array<number>;
 }
 /**

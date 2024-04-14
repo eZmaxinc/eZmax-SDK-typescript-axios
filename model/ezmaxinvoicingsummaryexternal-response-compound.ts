@@ -25,7 +25,7 @@ import { EzmaxinvoicingsummaryexternaldetailResponseCompound } from './ezmaxinvo
  * A Ezmaxinvoicingsummaryexternal Object
  * @export
  */
-/** export type EzmaxinvoicingsummaryexternalResponseCompound = EzmaxinvoicingsummaryexternalResponse; */
+/*export type EzmaxinvoicingsummaryexternalResponseCompound = EzmaxinvoicingsummaryexternalResponse;*/
 export interface EzmaxinvoicingsummaryexternalResponseCompound {
     /**
      * The unique ID of the Ezmaxinvoicingsummaryexternal

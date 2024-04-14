@@ -25,36 +25,42 @@ export interface ModuleResponse {
      * @type {number}
      * @memberof ModuleResponse
      */
+    /*'pkiModuleID': number;*/
     'pkiModuleID': number;
     /**
      * The unique ID of the Modulegroup
      * @type {number}
      * @memberof ModuleResponse
      */
+    /*'fkiModulegroupID': number;*/
     'fkiModulegroupID': number;
     /**
      * The Internal name of the Module.  This is theoretically an enum field but there are so many possibles values we decided not to list them all.
      * @type {string}
      * @memberof ModuleResponse
      */
+    /*'eModuleInternalname': string;*/
     'eModuleInternalname': string;
     /**
      * The Name of the Module in the language of the requester
      * @type {string}
      * @memberof ModuleResponse
      */
+    /*'sModuleNameX': string;*/
     'sModuleNameX': string;
     /**
      * Whether the Module is registered or not
      * @type {boolean}
      * @memberof ModuleResponse
      */
+    /*'bModuleRegistered': boolean;*/
     'bModuleRegistered': boolean;
     /**
      * Whether the Module is registered or not for api use
      * @type {boolean}
      * @memberof ModuleResponse
      */
+    /*'bModuleRegisteredapi': boolean;*/
     'bModuleRegisteredapi': boolean;
 }
 /**

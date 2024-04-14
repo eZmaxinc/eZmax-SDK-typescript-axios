@@ -14,13 +14,13 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
 import { CommonGetReportV1Response } from '../model';
 // @ts-ignore
@@ -40,7 +40,7 @@ export const ModuleReportApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        reportGetReportFromCacheV1: async (sReportgroupCacheID: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        reportGetReportFromCacheV1: async (sReportgroupCacheID: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sReportgroupCacheID' is not null or undefined
             assertParamExists('reportGetReportFromCacheV1', 'sReportgroupCacheID', sReportgroupCacheID)
             const localVarPath = `/1/module/report/getReportFromCache/{sReportgroupCacheID}`
@@ -48,6 +48,7 @@ export const ModuleReportApiAxiosParamCreator = function (configuration?: Config
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -69,6 +70,7 @@ export const ModuleReportApiAxiosParamCreator = function (configuration?: Config
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -109,9 +111,11 @@ export const ModuleReportApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async reportGetReportFromCacheV1(sReportgroupCacheID: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonGetReportV1Response>> {
+        async reportGetReportFromCacheV1(sReportgroupCacheID: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonGetReportV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.reportGetReportFromCacheV1(sReportgroupCacheID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ModuleReportApi.reportGetReportFromCacheV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -151,7 +155,7 @@ export class ModuleReportApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ModuleReportApi
      */
-    public reportGetReportFromCacheV1(sReportgroupCacheID: string, options?: AxiosRequestConfig) {
+    public reportGetReportFromCacheV1(sReportgroupCacheID: string, options?: RawAxiosRequestConfig) {
         return ModuleReportApiFp(this.configuration).reportGetReportFromCacheV1(sReportgroupCacheID, options).then((request) => request(this.axios, this.basePath));
     }
 }

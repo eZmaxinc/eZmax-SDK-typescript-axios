@@ -34,66 +34,77 @@ export interface UserListElement {
      * @type {number}
      * @memberof UserListElement
      */
+    /*'pkiUserID': number;*/
     'pkiUserID': number;
     /**
      * The first name of the user
      * @type {string}
      * @memberof UserListElement
      */
+    /*'sUserFirstname': string;*/
     'sUserFirstname': string;
     /**
      * The last name of the user
      * @type {string}
      * @memberof UserListElement
      */
+    /*'sUserLastname': string;*/
     'sUserLastname': string;
     /**
      * The login name of the User.
      * @type {string}
      * @memberof UserListElement
      */
+    /*'sUserLoginname': string;*/
     'sUserLoginname': string;
     /**
      * Whether the User is active or not
      * @type {boolean}
      * @memberof UserListElement
      */
+    /*'bUserIsactive': boolean;*/
     'bUserIsactive': boolean;
     /**
      * 
      * @type {FieldEUserType}
      * @memberof UserListElement
      */
+    /*'eUserType': FieldEUserType;*/
     'eUserType': FieldEUserType;
     /**
      * 
      * @type {FieldEUserOrigin}
      * @memberof UserListElement
      */
+    /*'eUserOrigin': FieldEUserOrigin;*/
     'eUserOrigin': FieldEUserOrigin;
     /**
      * 
      * @type {FieldEUserEzsignaccess}
      * @memberof UserListElement
      */
+    /*'eUserEzsignaccess': FieldEUserEzsignaccess;*/
     'eUserEzsignaccess': FieldEUserEzsignaccess;
     /**
      * The eZsign prepaid expiration date
      * @type {string}
      * @memberof UserListElement
      */
+    /*'dtUserEzsignprepaidexpiration'?: string;*/
     'dtUserEzsignprepaidexpiration'?: string;
     /**
      * The email address.
      * @type {string}
      * @memberof UserListElement
      */
+    /*'sEmailAddress': string;*/
     'sEmailAddress': string;
     /**
      * The job title of the user
      * @type {string}
      * @memberof UserListElement
      */
+    /*'sUserJobtitle'?: string;*/
     'sUserJobtitle'?: string;
 }
 
@@ -144,7 +155,7 @@ export class ValidationObjectUserListElement {
    }
    sUserLoginname = {
       type: 'string',
-      pattern: '/^(?:([\w\.-]+@[\w\.-]+\.\w{2,20})|([a-zA-Z0-9]){1,32})$/',
+      pattern: '/^(?:([\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/',
       required: true
    }
    bUserIsactive = {
@@ -173,6 +184,7 @@ export class ValidationObjectUserListElement {
    }
    sEmailAddress = {
       type: 'string',
+      pattern: '/^[\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/',
       required: true
    }
    sUserJobtitle = {

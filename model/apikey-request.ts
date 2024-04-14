@@ -28,30 +28,35 @@ export interface ApikeyRequest {
      * @type {number}
      * @memberof ApikeyRequest
      */
+    /*'pkiApikeyID'?: number;*/
     'pkiApikeyID'?: number;
     /**
      * The unique ID of the User
      * @type {number}
      * @memberof ApikeyRequest
      */
+    /*'fkiUserID': number;*/
     'fkiUserID': number;
     /**
      * 
      * @type {MultilingualApikeyDescription}
      * @memberof ApikeyRequest
      */
+    /*'objApikeyDescription': MultilingualApikeyDescription;*/
     'objApikeyDescription': MultilingualApikeyDescription;
     /**
      * Whether the apikey is active or not
      * @type {boolean}
      * @memberof ApikeyRequest
      */
+    /*'bApikeyIsactive'?: boolean;*/
     'bApikeyIsactive'?: boolean;
     /**
      * Whether the apikey is signed or not
      * @type {boolean}
      * @memberof ApikeyRequest
      */
+    /*'bApikeyIssigned'?: boolean;*/
     'bApikeyIssigned'?: boolean;
 }
 /**

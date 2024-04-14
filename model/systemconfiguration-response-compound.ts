@@ -37,7 +37,7 @@ import { SystemconfigurationResponse } from './systemconfiguration-response';
  * A Systemconfiguration Object
  * @export
  */
-/** export type SystemconfigurationResponseCompound = SystemconfigurationResponse; */
+/*export type SystemconfigurationResponseCompound = SystemconfigurationResponse;*/
 export interface SystemconfigurationResponseCompound {
     /**
      * The unique ID of the Systemconfiguration

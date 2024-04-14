@@ -25,6 +25,7 @@ export interface EzsigntemplateCopyV1Request {
      * @type {Array<number>}
      * @memberof EzsigntemplateCopyV1Request
      */
+    /*'a_fkiEzsignfoldertypeID': Array<number>;*/
     'a_fkiEzsignfoldertypeID': Array<number>;
 }
 /**

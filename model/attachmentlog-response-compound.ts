@@ -25,7 +25,7 @@ import { FieldEAttachmentlogType } from './field-eattachmentlog-type';
  * A Attachmentlog Object
  * @export
  */
-/** export type AttachmentlogResponseCompound = AttachmentlogResponse; */
+/*export type AttachmentlogResponseCompound = AttachmentlogResponse;*/
 export interface AttachmentlogResponseCompound {
     /**
      * The unique ID of the Attachment.

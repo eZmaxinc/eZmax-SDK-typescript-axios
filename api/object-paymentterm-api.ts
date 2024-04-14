@@ -14,13 +14,13 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
 import { CommonResponseError } from '../model';
 // @ts-ignore
@@ -54,13 +54,14 @@ export const ObjectPaymenttermApiAxiosParamCreator = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        paymenttermCreateObjectV1: async (paymenttermCreateObjectV1Request: PaymenttermCreateObjectV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        paymenttermCreateObjectV1: async (paymenttermCreateObjectV1Request: PaymenttermCreateObjectV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'paymenttermCreateObjectV1Request' is not null or undefined
             assertParamExists('paymenttermCreateObjectV1', 'paymenttermCreateObjectV1Request', paymenttermCreateObjectV1Request)
             const localVarPath = `/1/object/paymentterm`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -81,6 +82,7 @@ export const ObjectPaymenttermApiAxiosParamCreator = function (configuration?: C
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(paymenttermCreateObjectV1Request, localVarRequestOptions, configuration)
 
@@ -113,7 +115,7 @@ export const ObjectPaymenttermApiAxiosParamCreator = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        paymenttermEditObjectV1: async (pkiPaymenttermID: number, paymenttermEditObjectV1Request: PaymenttermEditObjectV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        paymenttermEditObjectV1: async (pkiPaymenttermID: number, paymenttermEditObjectV1Request: PaymenttermEditObjectV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiPaymenttermID' is not null or undefined
             assertParamExists('paymenttermEditObjectV1', 'pkiPaymenttermID', pkiPaymenttermID)
             // verify required parameter 'paymenttermEditObjectV1Request' is not null or undefined
@@ -123,6 +125,7 @@ export const ObjectPaymenttermApiAxiosParamCreator = function (configuration?: C
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -143,6 +146,7 @@ export const ObjectPaymenttermApiAxiosParamCreator = function (configuration?: C
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(paymenttermEditObjectV1Request, localVarRequestOptions, configuration)
 
@@ -177,7 +181,7 @@ export const ObjectPaymenttermApiAxiosParamCreator = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        paymenttermGetAutocompleteV2: async (sSelector: PaymenttermGetAutocompleteV2SSelectorEnum, eFilterActive?: PaymenttermGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        paymenttermGetAutocompleteV2: async (sSelector: PaymenttermGetAutocompleteV2SSelectorEnum, eFilterActive?: PaymenttermGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('paymenttermGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/paymentterm/getAutocomplete/{sSelector}`
@@ -185,6 +189,7 @@ export const ObjectPaymenttermApiAxiosParamCreator = function (configuration?: C
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -208,8 +213,8 @@ export const ObjectPaymenttermApiAxiosParamCreator = function (configuration?: C
             }
 
             if (acceptLanguage != null) {
-                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string' 
-                    ? acceptLanguage 
+                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
+                    ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
 
@@ -217,6 +222,7 @@ export const ObjectPaymenttermApiAxiosParamCreator = function (configuration?: C
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -251,11 +257,12 @@ export const ObjectPaymenttermApiAxiosParamCreator = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        paymenttermGetListV1: async (eOrderBy?: PaymenttermGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        paymenttermGetListV1: async (eOrderBy?: PaymenttermGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/1/object/paymentterm/getList`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -287,8 +294,8 @@ export const ObjectPaymenttermApiAxiosParamCreator = function (configuration?: C
             }
 
             if (acceptLanguage != null) {
-                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string' 
-                    ? acceptLanguage 
+                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
+                    ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
 
@@ -296,6 +303,7 @@ export const ObjectPaymenttermApiAxiosParamCreator = function (configuration?: C
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -326,7 +334,7 @@ export const ObjectPaymenttermApiAxiosParamCreator = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        paymenttermGetObjectV2: async (pkiPaymenttermID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        paymenttermGetObjectV2: async (pkiPaymenttermID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiPaymenttermID' is not null or undefined
             assertParamExists('paymenttermGetObjectV2', 'pkiPaymenttermID', pkiPaymenttermID)
             const localVarPath = `/2/object/paymentterm/{pkiPaymenttermID}`
@@ -334,6 +342,7 @@ export const ObjectPaymenttermApiAxiosParamCreator = function (configuration?: C
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -352,6 +361,7 @@ export const ObjectPaymenttermApiAxiosParamCreator = function (configuration?: C
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -392,9 +402,11 @@ export const ObjectPaymenttermApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async paymenttermCreateObjectV1(paymenttermCreateObjectV1Request: PaymenttermCreateObjectV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PaymenttermCreateObjectV1Response>> {
+        async paymenttermCreateObjectV1(paymenttermCreateObjectV1Request: PaymenttermCreateObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PaymenttermCreateObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.paymenttermCreateObjectV1(paymenttermCreateObjectV1Request, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectPaymenttermApi.paymenttermCreateObjectV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -404,9 +416,11 @@ export const ObjectPaymenttermApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async paymenttermEditObjectV1(pkiPaymenttermID: number, paymenttermEditObjectV1Request: PaymenttermEditObjectV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PaymenttermEditObjectV1Response>> {
+        async paymenttermEditObjectV1(pkiPaymenttermID: number, paymenttermEditObjectV1Request: PaymenttermEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PaymenttermEditObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.paymenttermEditObjectV1(pkiPaymenttermID, paymenttermEditObjectV1Request, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectPaymenttermApi.paymenttermEditObjectV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Get the list of Paymentterm to be used in a dropdown or autocomplete control.
@@ -418,9 +432,11 @@ export const ObjectPaymenttermApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async paymenttermGetAutocompleteV2(sSelector: PaymenttermGetAutocompleteV2SSelectorEnum, eFilterActive?: PaymenttermGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PaymenttermGetAutocompleteV2Response>> {
+        async paymenttermGetAutocompleteV2(sSelector: PaymenttermGetAutocompleteV2SSelectorEnum, eFilterActive?: PaymenttermGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PaymenttermGetAutocompleteV2Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.paymenttermGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectPaymenttermApi.paymenttermGetAutocompleteV2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -433,9 +449,11 @@ export const ObjectPaymenttermApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async paymenttermGetListV1(eOrderBy?: PaymenttermGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PaymenttermGetListV1Response>> {
+        async paymenttermGetListV1(eOrderBy?: PaymenttermGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PaymenttermGetListV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.paymenttermGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectPaymenttermApi.paymenttermGetListV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -444,9 +462,11 @@ export const ObjectPaymenttermApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async paymenttermGetObjectV2(pkiPaymenttermID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PaymenttermGetObjectV2Response>> {
+        async paymenttermGetObjectV2(pkiPaymenttermID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PaymenttermGetObjectV2Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.paymenttermGetObjectV2(pkiPaymenttermID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectPaymenttermApi.paymenttermGetObjectV2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -534,7 +554,7 @@ export class ObjectPaymenttermApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectPaymenttermApi
      */
-    public paymenttermCreateObjectV1(paymenttermCreateObjectV1Request: PaymenttermCreateObjectV1Request, options?: AxiosRequestConfig) {
+    public paymenttermCreateObjectV1(paymenttermCreateObjectV1Request: PaymenttermCreateObjectV1Request, options?: RawAxiosRequestConfig) {
         return ObjectPaymenttermApiFp(this.configuration).paymenttermCreateObjectV1(paymenttermCreateObjectV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -547,7 +567,7 @@ export class ObjectPaymenttermApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectPaymenttermApi
      */
-    public paymenttermEditObjectV1(pkiPaymenttermID: number, paymenttermEditObjectV1Request: PaymenttermEditObjectV1Request, options?: AxiosRequestConfig) {
+    public paymenttermEditObjectV1(pkiPaymenttermID: number, paymenttermEditObjectV1Request: PaymenttermEditObjectV1Request, options?: RawAxiosRequestConfig) {
         return ObjectPaymenttermApiFp(this.configuration).paymenttermEditObjectV1(pkiPaymenttermID, paymenttermEditObjectV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -562,7 +582,7 @@ export class ObjectPaymenttermApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectPaymenttermApi
      */
-    public paymenttermGetAutocompleteV2(sSelector: PaymenttermGetAutocompleteV2SSelectorEnum, eFilterActive?: PaymenttermGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig) {
+    public paymenttermGetAutocompleteV2(sSelector: PaymenttermGetAutocompleteV2SSelectorEnum, eFilterActive?: PaymenttermGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig) {
         return ObjectPaymenttermApiFp(this.configuration).paymenttermGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -578,7 +598,7 @@ export class ObjectPaymenttermApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectPaymenttermApi
      */
-    public paymenttermGetListV1(eOrderBy?: PaymenttermGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig) {
+    public paymenttermGetListV1(eOrderBy?: PaymenttermGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig) {
         return ObjectPaymenttermApiFp(this.configuration).paymenttermGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -590,7 +610,7 @@ export class ObjectPaymenttermApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectPaymenttermApi
      */
-    public paymenttermGetObjectV2(pkiPaymenttermID: number, options?: AxiosRequestConfig) {
+    public paymenttermGetObjectV2(pkiPaymenttermID: number, options?: RawAxiosRequestConfig) {
         return ObjectPaymenttermApiFp(this.configuration).paymenttermGetObjectV2(pkiPaymenttermID, options).then((request) => request(this.axios, this.basePath));
     }
 }

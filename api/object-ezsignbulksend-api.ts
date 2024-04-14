@@ -14,13 +14,13 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
 import { CommonResponseError } from '../model';
 // @ts-ignore
@@ -69,7 +69,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignbulksendCreateEzsignbulksendtransmissionV1: async (pkiEzsignbulksendID: number, ezsignbulksendCreateEzsignbulksendtransmissionV1Request: EzsignbulksendCreateEzsignbulksendtransmissionV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsignbulksendCreateEzsignbulksendtransmissionV1: async (pkiEzsignbulksendID: number, ezsignbulksendCreateEzsignbulksendtransmissionV1Request: EzsignbulksendCreateEzsignbulksendtransmissionV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsignbulksendID' is not null or undefined
             assertParamExists('ezsignbulksendCreateEzsignbulksendtransmissionV1', 'pkiEzsignbulksendID', pkiEzsignbulksendID)
             // verify required parameter 'ezsignbulksendCreateEzsignbulksendtransmissionV1Request' is not null or undefined
@@ -79,6 +79,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -99,6 +100,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ezsignbulksendCreateEzsignbulksendtransmissionV1Request, localVarRequestOptions, configuration)
 
@@ -130,13 +132,14 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignbulksendCreateObjectV1: async (ezsignbulksendCreateObjectV1Request: EzsignbulksendCreateObjectV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsignbulksendCreateObjectV1: async (ezsignbulksendCreateObjectV1Request: EzsignbulksendCreateObjectV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'ezsignbulksendCreateObjectV1Request' is not null or undefined
             assertParamExists('ezsignbulksendCreateObjectV1', 'ezsignbulksendCreateObjectV1Request', ezsignbulksendCreateObjectV1Request)
             const localVarPath = `/1/object/ezsignbulksend`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -157,6 +160,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ezsignbulksendCreateObjectV1Request, localVarRequestOptions, configuration)
 
@@ -188,7 +192,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignbulksendDeleteObjectV1: async (pkiEzsignbulksendID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsignbulksendDeleteObjectV1: async (pkiEzsignbulksendID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsignbulksendID' is not null or undefined
             assertParamExists('ezsignbulksendDeleteObjectV1', 'pkiEzsignbulksendID', pkiEzsignbulksendID)
             const localVarPath = `/1/object/ezsignbulksend/{pkiEzsignbulksendID}`
@@ -196,6 +200,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -214,6 +219,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -245,7 +251,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignbulksendEditObjectV1: async (pkiEzsignbulksendID: number, ezsignbulksendEditObjectV1Request: EzsignbulksendEditObjectV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsignbulksendEditObjectV1: async (pkiEzsignbulksendID: number, ezsignbulksendEditObjectV1Request: EzsignbulksendEditObjectV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsignbulksendID' is not null or undefined
             assertParamExists('ezsignbulksendEditObjectV1', 'pkiEzsignbulksendID', pkiEzsignbulksendID)
             // verify required parameter 'ezsignbulksendEditObjectV1Request' is not null or undefined
@@ -255,6 +261,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -275,6 +282,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ezsignbulksendEditObjectV1Request, localVarRequestOptions, configuration)
 
@@ -307,7 +315,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignbulksendGetCsvTemplateV1: async (pkiEzsignbulksendID: number, eCsvSeparator: EzsignbulksendGetCsvTemplateV1ECsvSeparatorEnum, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsignbulksendGetCsvTemplateV1: async (pkiEzsignbulksendID: number, eCsvSeparator: EzsignbulksendGetCsvTemplateV1ECsvSeparatorEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsignbulksendID' is not null or undefined
             assertParamExists('ezsignbulksendGetCsvTemplateV1', 'pkiEzsignbulksendID', pkiEzsignbulksendID)
             // verify required parameter 'eCsvSeparator' is not null or undefined
@@ -317,6 +325,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -339,6 +348,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -369,7 +379,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignbulksendGetEzsignbulksendtransmissionsV1: async (pkiEzsignbulksendID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsignbulksendGetEzsignbulksendtransmissionsV1: async (pkiEzsignbulksendID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsignbulksendID' is not null or undefined
             assertParamExists('ezsignbulksendGetEzsignbulksendtransmissionsV1', 'pkiEzsignbulksendID', pkiEzsignbulksendID)
             const localVarPath = `/1/object/ezsignbulksend/{pkiEzsignbulksendID}/getEzsignbulksendtransmissions`
@@ -377,6 +387,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -395,6 +406,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -425,7 +437,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignbulksendGetEzsignsignaturesAutomaticV1: async (pkiEzsignbulksendID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsignbulksendGetEzsignsignaturesAutomaticV1: async (pkiEzsignbulksendID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsignbulksendID' is not null or undefined
             assertParamExists('ezsignbulksendGetEzsignsignaturesAutomaticV1', 'pkiEzsignbulksendID', pkiEzsignbulksendID)
             const localVarPath = `/1/object/ezsignbulksend/{pkiEzsignbulksendID}/getEzsignsignaturesAutomatic`
@@ -433,6 +445,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -451,6 +464,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -481,7 +495,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignbulksendGetFormsDataV1: async (pkiEzsignbulksendID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsignbulksendGetFormsDataV1: async (pkiEzsignbulksendID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsignbulksendID' is not null or undefined
             assertParamExists('ezsignbulksendGetFormsDataV1', 'pkiEzsignbulksendID', pkiEzsignbulksendID)
             const localVarPath = `/1/object/ezsignbulksend/{pkiEzsignbulksendID}/getFormsData`
@@ -489,6 +503,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -507,6 +522,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -541,11 +557,12 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignbulksendGetListV1: async (eOrderBy?: EzsignbulksendGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsignbulksendGetListV1: async (eOrderBy?: EzsignbulksendGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/1/object/ezsignbulksend/getList`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -577,8 +594,8 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
             }
 
             if (acceptLanguage != null) {
-                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string' 
-                    ? acceptLanguage 
+                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
+                    ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
 
@@ -586,6 +603,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -616,7 +634,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignbulksendGetObjectV2: async (pkiEzsignbulksendID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsignbulksendGetObjectV2: async (pkiEzsignbulksendID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsignbulksendID' is not null or undefined
             assertParamExists('ezsignbulksendGetObjectV2', 'pkiEzsignbulksendID', pkiEzsignbulksendID)
             const localVarPath = `/2/object/ezsignbulksend/{pkiEzsignbulksendID}`
@@ -624,6 +642,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -642,6 +661,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -673,7 +693,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignbulksendReorderV1: async (pkiEzsignbulksendID: number, ezsignbulksendReorderV1Request: EzsignbulksendReorderV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsignbulksendReorderV1: async (pkiEzsignbulksendID: number, ezsignbulksendReorderV1Request: EzsignbulksendReorderV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsignbulksendID' is not null or undefined
             assertParamExists('ezsignbulksendReorderV1', 'pkiEzsignbulksendID', pkiEzsignbulksendID)
             // verify required parameter 'ezsignbulksendReorderV1Request' is not null or undefined
@@ -683,6 +703,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -703,6 +724,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ezsignbulksendReorderV1Request, localVarRequestOptions, configuration)
 
@@ -745,9 +767,11 @@ export const ObjectEzsignbulksendApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignbulksendCreateEzsignbulksendtransmissionV1(pkiEzsignbulksendID: number, ezsignbulksendCreateEzsignbulksendtransmissionV1Request: EzsignbulksendCreateEzsignbulksendtransmissionV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignbulksendCreateEzsignbulksendtransmissionV1Response>> {
+        async ezsignbulksendCreateEzsignbulksendtransmissionV1(pkiEzsignbulksendID: number, ezsignbulksendCreateEzsignbulksendtransmissionV1Request: EzsignbulksendCreateEzsignbulksendtransmissionV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignbulksendCreateEzsignbulksendtransmissionV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignbulksendCreateEzsignbulksendtransmissionV1(pkiEzsignbulksendID, ezsignbulksendCreateEzsignbulksendtransmissionV1Request, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsignbulksendApi.ezsignbulksendCreateEzsignbulksendtransmissionV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * The endpoint allows to create one or many elements at once.
@@ -756,9 +780,11 @@ export const ObjectEzsignbulksendApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignbulksendCreateObjectV1(ezsignbulksendCreateObjectV1Request: EzsignbulksendCreateObjectV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignbulksendCreateObjectV1Response>> {
+        async ezsignbulksendCreateObjectV1(ezsignbulksendCreateObjectV1Request: EzsignbulksendCreateObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignbulksendCreateObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignbulksendCreateObjectV1(ezsignbulksendCreateObjectV1Request, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsignbulksendApi.ezsignbulksendCreateObjectV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -767,9 +793,11 @@ export const ObjectEzsignbulksendApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignbulksendDeleteObjectV1(pkiEzsignbulksendID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignbulksendDeleteObjectV1Response>> {
+        async ezsignbulksendDeleteObjectV1(pkiEzsignbulksendID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignbulksendDeleteObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignbulksendDeleteObjectV1(pkiEzsignbulksendID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsignbulksendApi.ezsignbulksendDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -779,9 +807,11 @@ export const ObjectEzsignbulksendApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignbulksendEditObjectV1(pkiEzsignbulksendID: number, ezsignbulksendEditObjectV1Request: EzsignbulksendEditObjectV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignbulksendEditObjectV1Response>> {
+        async ezsignbulksendEditObjectV1(pkiEzsignbulksendID: number, ezsignbulksendEditObjectV1Request: EzsignbulksendEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignbulksendEditObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignbulksendEditObjectV1(pkiEzsignbulksendID, ezsignbulksendEditObjectV1Request, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsignbulksendApi.ezsignbulksendEditObjectV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -791,9 +821,11 @@ export const ObjectEzsignbulksendApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignbulksendGetCsvTemplateV1(pkiEzsignbulksendID: number, eCsvSeparator: EzsignbulksendGetCsvTemplateV1ECsvSeparatorEnum, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
+        async ezsignbulksendGetCsvTemplateV1(pkiEzsignbulksendID: number, eCsvSeparator: EzsignbulksendGetCsvTemplateV1ECsvSeparatorEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignbulksendGetCsvTemplateV1(pkiEzsignbulksendID, eCsvSeparator, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsignbulksendApi.ezsignbulksendGetCsvTemplateV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -802,9 +834,11 @@ export const ObjectEzsignbulksendApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignbulksendGetEzsignbulksendtransmissionsV1(pkiEzsignbulksendID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignbulksendGetEzsignbulksendtransmissionsV1Response>> {
+        async ezsignbulksendGetEzsignbulksendtransmissionsV1(pkiEzsignbulksendID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignbulksendGetEzsignbulksendtransmissionsV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignbulksendGetEzsignbulksendtransmissionsV1(pkiEzsignbulksendID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsignbulksendApi.ezsignbulksendGetEzsignbulksendtransmissionsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Return the Ezsignsignatures that can be signed by the current user at the current step in the process
@@ -813,9 +847,11 @@ export const ObjectEzsignbulksendApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignbulksendGetEzsignsignaturesAutomaticV1(pkiEzsignbulksendID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignbulksendGetEzsignsignaturesAutomaticV1Response>> {
+        async ezsignbulksendGetEzsignsignaturesAutomaticV1(pkiEzsignbulksendID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignbulksendGetEzsignsignaturesAutomaticV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignbulksendGetEzsignsignaturesAutomaticV1(pkiEzsignbulksendID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsignbulksendApi.ezsignbulksendGetEzsignsignaturesAutomaticV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -824,9 +860,11 @@ export const ObjectEzsignbulksendApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignbulksendGetFormsDataV1(pkiEzsignbulksendID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignbulksendGetFormsDataV1Response>> {
+        async ezsignbulksendGetFormsDataV1(pkiEzsignbulksendID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignbulksendGetFormsDataV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignbulksendGetFormsDataV1(pkiEzsignbulksendID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsignbulksendApi.ezsignbulksendGetFormsDataV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfoldertypePrivacylevel | User<br>Usergroup |
@@ -839,9 +877,11 @@ export const ObjectEzsignbulksendApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignbulksendGetListV1(eOrderBy?: EzsignbulksendGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignbulksendGetListV1Response>> {
+        async ezsignbulksendGetListV1(eOrderBy?: EzsignbulksendGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignbulksendGetListV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignbulksendGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsignbulksendApi.ezsignbulksendGetListV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -850,9 +890,11 @@ export const ObjectEzsignbulksendApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignbulksendGetObjectV2(pkiEzsignbulksendID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignbulksendGetObjectV2Response>> {
+        async ezsignbulksendGetObjectV2(pkiEzsignbulksendID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignbulksendGetObjectV2Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignbulksendGetObjectV2(pkiEzsignbulksendID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsignbulksendApi.ezsignbulksendGetObjectV2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -862,9 +904,11 @@ export const ObjectEzsignbulksendApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignbulksendReorderV1(pkiEzsignbulksendID: number, ezsignbulksendReorderV1Request: EzsignbulksendReorderV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignbulksendReorderV1Response>> {
+        async ezsignbulksendReorderV1(pkiEzsignbulksendID: number, ezsignbulksendReorderV1Request: EzsignbulksendReorderV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignbulksendReorderV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignbulksendReorderV1(pkiEzsignbulksendID, ezsignbulksendReorderV1Request, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsignbulksendApi.ezsignbulksendReorderV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -1013,7 +1057,7 @@ export class ObjectEzsignbulksendApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsignbulksendApi
      */
-    public ezsignbulksendCreateEzsignbulksendtransmissionV1(pkiEzsignbulksendID: number, ezsignbulksendCreateEzsignbulksendtransmissionV1Request: EzsignbulksendCreateEzsignbulksendtransmissionV1Request, options?: AxiosRequestConfig) {
+    public ezsignbulksendCreateEzsignbulksendtransmissionV1(pkiEzsignbulksendID: number, ezsignbulksendCreateEzsignbulksendtransmissionV1Request: EzsignbulksendCreateEzsignbulksendtransmissionV1Request, options?: RawAxiosRequestConfig) {
         return ObjectEzsignbulksendApiFp(this.configuration).ezsignbulksendCreateEzsignbulksendtransmissionV1(pkiEzsignbulksendID, ezsignbulksendCreateEzsignbulksendtransmissionV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1025,7 +1069,7 @@ export class ObjectEzsignbulksendApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsignbulksendApi
      */
-    public ezsignbulksendCreateObjectV1(ezsignbulksendCreateObjectV1Request: EzsignbulksendCreateObjectV1Request, options?: AxiosRequestConfig) {
+    public ezsignbulksendCreateObjectV1(ezsignbulksendCreateObjectV1Request: EzsignbulksendCreateObjectV1Request, options?: RawAxiosRequestConfig) {
         return ObjectEzsignbulksendApiFp(this.configuration).ezsignbulksendCreateObjectV1(ezsignbulksendCreateObjectV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1037,7 +1081,7 @@ export class ObjectEzsignbulksendApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsignbulksendApi
      */
-    public ezsignbulksendDeleteObjectV1(pkiEzsignbulksendID: number, options?: AxiosRequestConfig) {
+    public ezsignbulksendDeleteObjectV1(pkiEzsignbulksendID: number, options?: RawAxiosRequestConfig) {
         return ObjectEzsignbulksendApiFp(this.configuration).ezsignbulksendDeleteObjectV1(pkiEzsignbulksendID, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1050,7 +1094,7 @@ export class ObjectEzsignbulksendApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsignbulksendApi
      */
-    public ezsignbulksendEditObjectV1(pkiEzsignbulksendID: number, ezsignbulksendEditObjectV1Request: EzsignbulksendEditObjectV1Request, options?: AxiosRequestConfig) {
+    public ezsignbulksendEditObjectV1(pkiEzsignbulksendID: number, ezsignbulksendEditObjectV1Request: EzsignbulksendEditObjectV1Request, options?: RawAxiosRequestConfig) {
         return ObjectEzsignbulksendApiFp(this.configuration).ezsignbulksendEditObjectV1(pkiEzsignbulksendID, ezsignbulksendEditObjectV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1063,7 +1107,7 @@ export class ObjectEzsignbulksendApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsignbulksendApi
      */
-    public ezsignbulksendGetCsvTemplateV1(pkiEzsignbulksendID: number, eCsvSeparator: EzsignbulksendGetCsvTemplateV1ECsvSeparatorEnum, options?: AxiosRequestConfig) {
+    public ezsignbulksendGetCsvTemplateV1(pkiEzsignbulksendID: number, eCsvSeparator: EzsignbulksendGetCsvTemplateV1ECsvSeparatorEnum, options?: RawAxiosRequestConfig) {
         return ObjectEzsignbulksendApiFp(this.configuration).ezsignbulksendGetCsvTemplateV1(pkiEzsignbulksendID, eCsvSeparator, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1075,7 +1119,7 @@ export class ObjectEzsignbulksendApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsignbulksendApi
      */
-    public ezsignbulksendGetEzsignbulksendtransmissionsV1(pkiEzsignbulksendID: number, options?: AxiosRequestConfig) {
+    public ezsignbulksendGetEzsignbulksendtransmissionsV1(pkiEzsignbulksendID: number, options?: RawAxiosRequestConfig) {
         return ObjectEzsignbulksendApiFp(this.configuration).ezsignbulksendGetEzsignbulksendtransmissionsV1(pkiEzsignbulksendID, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1087,7 +1131,7 @@ export class ObjectEzsignbulksendApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsignbulksendApi
      */
-    public ezsignbulksendGetEzsignsignaturesAutomaticV1(pkiEzsignbulksendID: number, options?: AxiosRequestConfig) {
+    public ezsignbulksendGetEzsignsignaturesAutomaticV1(pkiEzsignbulksendID: number, options?: RawAxiosRequestConfig) {
         return ObjectEzsignbulksendApiFp(this.configuration).ezsignbulksendGetEzsignsignaturesAutomaticV1(pkiEzsignbulksendID, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1099,7 +1143,7 @@ export class ObjectEzsignbulksendApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsignbulksendApi
      */
-    public ezsignbulksendGetFormsDataV1(pkiEzsignbulksendID: number, options?: AxiosRequestConfig) {
+    public ezsignbulksendGetFormsDataV1(pkiEzsignbulksendID: number, options?: RawAxiosRequestConfig) {
         return ObjectEzsignbulksendApiFp(this.configuration).ezsignbulksendGetFormsDataV1(pkiEzsignbulksendID, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1115,7 +1159,7 @@ export class ObjectEzsignbulksendApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsignbulksendApi
      */
-    public ezsignbulksendGetListV1(eOrderBy?: EzsignbulksendGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig) {
+    public ezsignbulksendGetListV1(eOrderBy?: EzsignbulksendGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig) {
         return ObjectEzsignbulksendApiFp(this.configuration).ezsignbulksendGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1127,7 +1171,7 @@ export class ObjectEzsignbulksendApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsignbulksendApi
      */
-    public ezsignbulksendGetObjectV2(pkiEzsignbulksendID: number, options?: AxiosRequestConfig) {
+    public ezsignbulksendGetObjectV2(pkiEzsignbulksendID: number, options?: RawAxiosRequestConfig) {
         return ObjectEzsignbulksendApiFp(this.configuration).ezsignbulksendGetObjectV2(pkiEzsignbulksendID, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -1140,7 +1184,7 @@ export class ObjectEzsignbulksendApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsignbulksendApi
      */
-    public ezsignbulksendReorderV1(pkiEzsignbulksendID: number, ezsignbulksendReorderV1Request: EzsignbulksendReorderV1Request, options?: AxiosRequestConfig) {
+    public ezsignbulksendReorderV1(pkiEzsignbulksendID: number, ezsignbulksendReorderV1Request: EzsignbulksendReorderV1Request, options?: RawAxiosRequestConfig) {
         return ObjectEzsignbulksendApiFp(this.configuration).ezsignbulksendReorderV1(pkiEzsignbulksendID, ezsignbulksendReorderV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 }

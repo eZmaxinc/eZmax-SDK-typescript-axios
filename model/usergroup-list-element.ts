@@ -25,18 +25,21 @@ export interface UsergroupListElement {
      * @type {number}
      * @memberof UsergroupListElement
      */
+    /*'pkiUsergroupID': number;*/
     'pkiUsergroupID': number;
     /**
      * The Name of the Usergroup in the language of the requester
      * @type {string}
      * @memberof UsergroupListElement
      */
+    /*'sUsergroupNameX': string;*/
     'sUsergroupNameX': string;
     /**
      * Number of users in group
      * @type {number}
      * @memberof UsergroupListElement
      */
+    /*'iCountUser': number;*/
     'iCountUser': number;
 }
 /**

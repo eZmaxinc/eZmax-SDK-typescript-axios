@@ -25,18 +25,21 @@ export interface EzsigntemplatedocumentGetWordsPositionsV1Request {
      * @type {string}
      * @memberof EzsigntemplatedocumentGetWordsPositionsV1Request
      */
+    /*'eGet': EzsigntemplatedocumentGetWordsPositionsV1RequestEGetEnum;*/
     'eGet': EzsigntemplatedocumentGetWordsPositionsV1RequestEGetEnum;
     /**
      * IF *true*, words will be searched case-sensitive and results will be returned case-sensitive. IF *false*, words will be searched case-insensitive and results will be returned case-insensitive.
      * @type {boolean}
      * @memberof EzsigntemplatedocumentGetWordsPositionsV1Request
      */
+    /*'bWordCaseSensitive': boolean;*/
     'bWordCaseSensitive': boolean;
     /**
      * Array of words to find in the document
      * @type {Array<string>}
      * @memberof EzsigntemplatedocumentGetWordsPositionsV1Request
      */
+    /*'a_sWord'?: Array<string>;*/
     'a_sWord'?: Array<string>;
 }
 

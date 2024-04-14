@@ -31,7 +31,7 @@ import { UserGetSubnetsV1ResponseMPayload } from './user-get-subnets-v1-response
  * Response for GET /1/object/user/{pkiUserID}/getSubnets
  * @export
  */
-/** export type UserGetSubnetsV1Response = CommonResponse; */
+/*export type UserGetSubnetsV1Response = CommonResponse;*/
 export interface UserGetSubnetsV1Response {
     /**
      * 

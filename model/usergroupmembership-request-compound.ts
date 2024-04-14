@@ -22,7 +22,7 @@ import { UsergroupmembershipRequest } from './usergroupmembership-request';
  * A Usergroupmembership Object and children
  * @export
  */
-/** export type UsergroupmembershipRequestCompound = UsergroupmembershipRequest; */
+/*export type UsergroupmembershipRequestCompound = UsergroupmembershipRequest;*/
 export interface UsergroupmembershipRequestCompound {
     /**
      * The unique ID of the Usergroupmembership

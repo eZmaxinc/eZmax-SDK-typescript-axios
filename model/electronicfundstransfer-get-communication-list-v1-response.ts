@@ -31,7 +31,7 @@ import { ElectronicfundstransferGetCommunicationListV1ResponseMPayload } from '.
  * Response for GET /1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/getCommunicationList
  * @export
  */
-/** export type ElectronicfundstransferGetCommunicationListV1Response = CommonResponseGetList; */
+/*export type ElectronicfundstransferGetCommunicationListV1Response = CommonResponseGetList;*/
 export interface ElectronicfundstransferGetCommunicationListV1Response {
     /**
      * 

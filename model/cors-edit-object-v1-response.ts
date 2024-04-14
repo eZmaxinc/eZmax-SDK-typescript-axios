@@ -28,7 +28,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for PUT /1/object/cors/{pkiCorsID}
  * @export
  */
-/** export type CorsEditObjectV1Response = CommonResponse; */
+/*export type CorsEditObjectV1Response = CommonResponse;*/
 export interface CorsEditObjectV1Response {
     /**
      * 

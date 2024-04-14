@@ -31,7 +31,7 @@ import { PaymenttermResponse } from './paymentterm-response';
  * A Paymentterm Object
  * @export
  */
-/** export type PaymenttermResponseCompound = PaymenttermResponse; */
+/*export type PaymenttermResponseCompound = PaymenttermResponse;*/
 export interface PaymenttermResponseCompound {
     /**
      * The unique ID of the Paymentterm

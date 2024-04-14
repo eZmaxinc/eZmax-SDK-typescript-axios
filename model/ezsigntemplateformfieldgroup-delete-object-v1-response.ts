@@ -28,7 +28,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for DELETE /1/object/ezsigntemplateformfieldgroup/{pkiEzsigntemplateformfieldgroupID}
  * @export
  */
-/** export type EzsigntemplateformfieldgroupDeleteObjectV1Response = CommonResponse; */
+/*export type EzsigntemplateformfieldgroupDeleteObjectV1Response = CommonResponse;*/
 export interface EzsigntemplateformfieldgroupDeleteObjectV1Response {
     /**
      * 

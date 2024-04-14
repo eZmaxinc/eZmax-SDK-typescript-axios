@@ -25,36 +25,42 @@ export interface EzsignfoldersignerassociationRequest {
      * @type {number}
      * @memberof EzsignfoldersignerassociationRequest
      */
+    /*'pkiEzsignfoldersignerassociationID'?: number;*/
     'pkiEzsignfoldersignerassociationID'?: number;
     /**
      * The unique ID of the User
      * @type {number}
      * @memberof EzsignfoldersignerassociationRequest
      */
+    /*'fkiUserID'?: number;*/
     'fkiUserID'?: number;
     /**
      * The unique ID of the Ezsignsignergroup
      * @type {number}
      * @memberof EzsignfoldersignerassociationRequest
      */
+    /*'fkiEzsignsignergroupID'?: number;*/
     'fkiEzsignsignergroupID'?: number;
     /**
      * The unique ID of the Ezsignfolder
      * @type {number}
      * @memberof EzsignfoldersignerassociationRequest
      */
+    /*'fkiEzsignfolderID': number;*/
     'fkiEzsignfolderID': number;
     /**
      * If this flag is true. The signatory will receive a copy of every signed Ezsigndocument even if it ain\'t required to sign the document.
      * @type {boolean}
      * @memberof EzsignfoldersignerassociationRequest
      */
+    /*'bEzsignfoldersignerassociationReceivecopy'?: boolean;*/
     'bEzsignfoldersignerassociationReceivecopy'?: boolean;
     /**
      * A custom text message that will be added to the email sent.
      * @type {string}
      * @memberof EzsignfoldersignerassociationRequest
      */
+    /*'tEzsignfoldersignerassociationMessage'?: string;*/
     'tEzsignfoldersignerassociationMessage'?: string;
 }
 /**

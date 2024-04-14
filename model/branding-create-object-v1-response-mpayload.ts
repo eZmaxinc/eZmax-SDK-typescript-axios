@@ -25,6 +25,7 @@ export interface BrandingCreateObjectV1ResponseMPayload {
      * @type {Array<number>}
      * @memberof BrandingCreateObjectV1ResponseMPayload
      */
+    /*'a_pkiBrandingID': Array<number>;*/
     'a_pkiBrandingID': Array<number>;
 }
 /**

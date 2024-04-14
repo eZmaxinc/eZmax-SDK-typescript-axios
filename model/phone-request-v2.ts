@@ -25,24 +25,28 @@ export interface PhoneRequestV2 {
      * @type {number}
      * @memberof PhoneRequestV2
      */
+    /*'pkiPhoneID'?: number;*/
     'pkiPhoneID'?: number;
     /**
      * The unique ID of the Phonetype.  Valid values:  |Value|Description| |-|-| |1|Office| |2|Home| |3|Mobile| |4|Fax| |5|Pager| |6|Toll Free|
      * @type {number}
      * @memberof PhoneRequestV2
      */
+    /*'fkiPhonetypeID': number;*/
     'fkiPhonetypeID': number;
     /**
      * The extension of the phone number.  The extension is the \"123\" section in this sample phone number: (514) 990-1516 x123.  It can also be used with international phone numbers
      * @type {string}
      * @memberof PhoneRequestV2
      */
+    /*'sPhoneExtension'?: string;*/
     'sPhoneExtension'?: string;
     /**
      * A phone number in E.164 Format
      * @type {string}
      * @memberof PhoneRequestV2
      */
+    /*'sPhoneE164'?: string;*/
     'sPhoneE164'?: string;
 }
 /**

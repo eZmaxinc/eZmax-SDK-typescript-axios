@@ -22,7 +22,7 @@ import { EzsignformfieldgroupsignerResponse } from './ezsignformfieldgroupsigner
  * An Ezsignformfieldgroupsigner Object and children to create a complete structure
  * @export
  */
-/** export type EzsignformfieldgroupsignerResponseCompound = EzsignformfieldgroupsignerResponse; */
+/*export type EzsignformfieldgroupsignerResponseCompound = EzsignformfieldgroupsignerResponse;*/
 export interface EzsignformfieldgroupsignerResponseCompound {
     /**
      * The unique ID of the Ezsignformfieldgroupsigner

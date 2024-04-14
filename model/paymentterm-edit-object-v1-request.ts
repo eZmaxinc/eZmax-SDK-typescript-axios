@@ -28,6 +28,7 @@ export interface PaymenttermEditObjectV1Request {
      * @type {PaymenttermRequestCompound}
      * @memberof PaymenttermEditObjectV1Request
      */
+    /*'objPaymentterm': PaymenttermRequestCompound;*/
     'objPaymentterm': PaymenttermRequestCompound;
 }
 /**

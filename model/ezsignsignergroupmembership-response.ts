@@ -25,30 +25,35 @@ export interface EzsignsignergroupmembershipResponse {
      * @type {number}
      * @memberof EzsignsignergroupmembershipResponse
      */
+    /*'pkiEzsignsignergroupmembershipID': number;*/
     'pkiEzsignsignergroupmembershipID': number;
     /**
      * The unique ID of the Ezsignsignergroup
      * @type {number}
      * @memberof EzsignsignergroupmembershipResponse
      */
+    /*'fkiEzsignsignergroupID': number;*/
     'fkiEzsignsignergroupID': number;
     /**
      * The unique ID of the Ezsignsigner
      * @type {number}
      * @memberof EzsignsignergroupmembershipResponse
      */
+    /*'fkiEzsignsignerID'?: number;*/
     'fkiEzsignsignerID'?: number;
     /**
      * The unique ID of the User
      * @type {number}
      * @memberof EzsignsignergroupmembershipResponse
      */
+    /*'fkiUserID'?: number;*/
     'fkiUserID'?: number;
     /**
      * The unique ID of the Usergroup
      * @type {number}
      * @memberof EzsignsignergroupmembershipResponse
      */
+    /*'fkiUsergroupID'?: number;*/
     'fkiUsergroupID'?: number;
 }
 /**

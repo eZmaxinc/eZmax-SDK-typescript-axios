@@ -28,6 +28,7 @@ export interface EzsigndocumentGetObjectV2ResponseMPayload {
      * @type {EzsigndocumentResponseCompound}
      * @memberof EzsigndocumentGetObjectV2ResponseMPayload
      */
+    /*'objEzsigndocument': EzsigndocumentResponseCompound;*/
     'objEzsigndocument': EzsigndocumentResponseCompound;
 }
 /**

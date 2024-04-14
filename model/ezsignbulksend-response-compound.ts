@@ -34,7 +34,7 @@ import { FieldEEzsignfoldertypePrivacylevel } from './field-eezsignfoldertype-pr
  * An Ezsignbulksend Object and children to create a complete structure
  * @export
  */
-/** export type EzsignbulksendResponseCompound = EzsignbulksendResponse; */
+/*export type EzsignbulksendResponseCompound = EzsignbulksendResponse;*/
 export interface EzsignbulksendResponseCompound {
     /**
      * The unique ID of the Ezsignbulksend

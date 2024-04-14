@@ -28,6 +28,7 @@ export interface InvoiceGetCommunicationListV1ResponseMPayload {
      * @type {Array<CustomCommunicationListElementResponse>}
      * @memberof InvoiceGetCommunicationListV1ResponseMPayload
      */
+    /*'a_objCommunication': Array<CustomCommunicationListElementResponse>;*/
     'a_objCommunication': Array<CustomCommunicationListElementResponse>;
 }
 /**

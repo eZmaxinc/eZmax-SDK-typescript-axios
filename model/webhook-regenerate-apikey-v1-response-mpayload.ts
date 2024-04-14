@@ -28,6 +28,7 @@ export interface WebhookRegenerateApikeyV1ResponseMPayload {
      * @type {WebhookResponseCompound}
      * @memberof WebhookRegenerateApikeyV1ResponseMPayload
      */
+    /*'objWebhook': WebhookResponseCompound;*/
     'objWebhook': WebhookResponseCompound;
 }
 /**

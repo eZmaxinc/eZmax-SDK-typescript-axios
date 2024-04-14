@@ -28,6 +28,7 @@ export interface EzsigndocumentPatchObjectV1Request {
      * @type {EzsigndocumentRequestPatch}
      * @memberof EzsigndocumentPatchObjectV1Request
      */
+    /*'objEzsigndocument': EzsigndocumentRequestPatch;*/
     'objEzsigndocument': EzsigndocumentRequestPatch;
 }
 /**

@@ -28,7 +28,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for POST /1/object/ezsignfolder/{pkiEzsignfolderID}/reorder
  * @export
  */
-/** export type EzsignfolderReorderV1Response = CommonResponse; */
+/*export type EzsignfolderReorderV1Response = CommonResponse;*/
 export interface EzsignfolderReorderV1Response {
     /**
      * 

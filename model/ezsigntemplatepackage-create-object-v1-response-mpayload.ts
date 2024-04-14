@@ -25,6 +25,7 @@ export interface EzsigntemplatepackageCreateObjectV1ResponseMPayload {
      * @type {Array<number>}
      * @memberof EzsigntemplatepackageCreateObjectV1ResponseMPayload
      */
+    /*'a_pkiEzsigntemplatepackageID': Array<number>;*/
     'a_pkiEzsigntemplatepackageID': Array<number>;
 }
 /**

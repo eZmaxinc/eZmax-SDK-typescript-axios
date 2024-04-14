@@ -28,48 +28,56 @@ export interface EzsigndocumentlogResponse {
      * @type {number}
      * @memberof EzsigndocumentlogResponse
      */
+    /*'fkiUserID'?: number;*/
     'fkiUserID'?: number;
     /**
      * The unique ID of the Ezsignsigner
      * @type {number}
      * @memberof EzsigndocumentlogResponse
      */
+    /*'fkiEzsignsignerID'?: number;*/
     'fkiEzsignsignerID'?: number;
     /**
      * The date and time at which the event was logged
      * @type {string}
      * @memberof EzsigndocumentlogResponse
      */
+    /*'dtEzsigndocumentlogDatetime': string;*/
     'dtEzsigndocumentlogDatetime': string;
     /**
      * 
      * @type {FieldEEzsigndocumentlogType}
      * @memberof EzsigndocumentlogResponse
      */
+    /*'eEzsigndocumentlogType': FieldEEzsigndocumentlogType;*/
     'eEzsigndocumentlogType': FieldEEzsigndocumentlogType;
     /**
      * The detail of the Ezsigndocumentlog
      * @type {string}
      * @memberof EzsigndocumentlogResponse
      */
+    /*'sEzsigndocumentlogDetail': string;*/
     'sEzsigndocumentlogDetail': string;
     /**
      * The last name of the User or Ezsignsigner
      * @type {string}
      * @memberof EzsigndocumentlogResponse
      */
+    /*'sEzsigndocumentlogLastname': string;*/
     'sEzsigndocumentlogLastname': string;
     /**
      * The first name of the User or Ezsignsigner
      * @type {string}
      * @memberof EzsigndocumentlogResponse
      */
+    /*'sEzsigndocumentlogFirstname': string;*/
     'sEzsigndocumentlogFirstname': string;
     /**
      * Represent an IP address.
      * @type {string}
      * @memberof EzsigndocumentlogResponse
      */
+    /*'sEzsigndocumentlogIP': string;*/
     'sEzsigndocumentlogIP': string;
 }
 

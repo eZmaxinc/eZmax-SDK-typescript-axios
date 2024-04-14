@@ -14,13 +14,13 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
 import { CommonResponseError } from '../model';
 // @ts-ignore
@@ -44,13 +44,14 @@ export const ObjectDiscussionmembershipApiAxiosParamCreator = function (configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        discussionmembershipCreateObjectV1: async (discussionmembershipCreateObjectV1Request: DiscussionmembershipCreateObjectV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        discussionmembershipCreateObjectV1: async (discussionmembershipCreateObjectV1Request: DiscussionmembershipCreateObjectV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'discussionmembershipCreateObjectV1Request' is not null or undefined
             assertParamExists('discussionmembershipCreateObjectV1', 'discussionmembershipCreateObjectV1Request', discussionmembershipCreateObjectV1Request)
             const localVarPath = `/1/object/discussionmembership`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -71,6 +72,7 @@ export const ObjectDiscussionmembershipApiAxiosParamCreator = function (configur
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(discussionmembershipCreateObjectV1Request, localVarRequestOptions, configuration)
 
@@ -102,7 +104,7 @@ export const ObjectDiscussionmembershipApiAxiosParamCreator = function (configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        discussionmembershipDeleteObjectV1: async (pkiDiscussionmembershipID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        discussionmembershipDeleteObjectV1: async (pkiDiscussionmembershipID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiDiscussionmembershipID' is not null or undefined
             assertParamExists('discussionmembershipDeleteObjectV1', 'pkiDiscussionmembershipID', pkiDiscussionmembershipID)
             const localVarPath = `/1/object/discussionmembership/{pkiDiscussionmembershipID}`
@@ -110,6 +112,7 @@ export const ObjectDiscussionmembershipApiAxiosParamCreator = function (configur
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -128,6 +131,7 @@ export const ObjectDiscussionmembershipApiAxiosParamCreator = function (configur
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -168,9 +172,11 @@ export const ObjectDiscussionmembershipApiFp = function(configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async discussionmembershipCreateObjectV1(discussionmembershipCreateObjectV1Request: DiscussionmembershipCreateObjectV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DiscussionmembershipCreateObjectV1Response>> {
+        async discussionmembershipCreateObjectV1(discussionmembershipCreateObjectV1Request: DiscussionmembershipCreateObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DiscussionmembershipCreateObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.discussionmembershipCreateObjectV1(discussionmembershipCreateObjectV1Request, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectDiscussionmembershipApi.discussionmembershipCreateObjectV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -179,9 +185,11 @@ export const ObjectDiscussionmembershipApiFp = function(configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async discussionmembershipDeleteObjectV1(pkiDiscussionmembershipID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DiscussionmembershipDeleteObjectV1Response>> {
+        async discussionmembershipDeleteObjectV1(pkiDiscussionmembershipID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DiscussionmembershipDeleteObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.discussionmembershipDeleteObjectV1(pkiDiscussionmembershipID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectDiscussionmembershipApi.discussionmembershipDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -231,7 +239,7 @@ export class ObjectDiscussionmembershipApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectDiscussionmembershipApi
      */
-    public discussionmembershipCreateObjectV1(discussionmembershipCreateObjectV1Request: DiscussionmembershipCreateObjectV1Request, options?: AxiosRequestConfig) {
+    public discussionmembershipCreateObjectV1(discussionmembershipCreateObjectV1Request: DiscussionmembershipCreateObjectV1Request, options?: RawAxiosRequestConfig) {
         return ObjectDiscussionmembershipApiFp(this.configuration).discussionmembershipCreateObjectV1(discussionmembershipCreateObjectV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -243,7 +251,7 @@ export class ObjectDiscussionmembershipApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectDiscussionmembershipApi
      */
-    public discussionmembershipDeleteObjectV1(pkiDiscussionmembershipID: number, options?: AxiosRequestConfig) {
+    public discussionmembershipDeleteObjectV1(pkiDiscussionmembershipID: number, options?: RawAxiosRequestConfig) {
         return ObjectDiscussionmembershipApiFp(this.configuration).discussionmembershipDeleteObjectV1(pkiDiscussionmembershipID, options).then((request) => request(this.axios, this.basePath));
     }
 }

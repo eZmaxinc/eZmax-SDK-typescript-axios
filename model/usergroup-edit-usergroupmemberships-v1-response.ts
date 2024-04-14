@@ -31,7 +31,7 @@ import { UsergroupEditUsergroupmembershipsV1ResponseMPayload } from './usergroup
  * Response for PUT /1/object/usergroup/{pkiUsergroupID}/editUsergroupmemberships
  * @export
  */
-/** export type UsergroupEditUsergroupmembershipsV1Response = CommonResponse; */
+/*export type UsergroupEditUsergroupmembershipsV1Response = CommonResponse;*/
 export interface UsergroupEditUsergroupmembershipsV1Response {
     /**
      * 

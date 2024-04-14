@@ -28,7 +28,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for PUT /1/object/systemconfiguration/{pkiSystemconfigurationID}
  * @export
  */
-/** export type SystemconfigurationEditObjectV1Response = CommonResponse; */
+/*export type SystemconfigurationEditObjectV1Response = CommonResponse;*/
 export interface SystemconfigurationEditObjectV1Response {
     /**
      * 

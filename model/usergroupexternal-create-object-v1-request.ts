@@ -28,6 +28,7 @@ export interface UsergroupexternalCreateObjectV1Request {
      * @type {Array<UsergroupexternalRequestCompound>}
      * @memberof UsergroupexternalCreateObjectV1Request
      */
+    /*'a_objUsergroupexternal': Array<UsergroupexternalRequestCompound>;*/
     'a_objUsergroupexternal': Array<UsergroupexternalRequestCompound>;
 }
 /**

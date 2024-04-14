@@ -31,7 +31,7 @@ import { EzmaxinvoicingGetProvisionalV1ResponseMPayload } from './ezmaxinvoicing
  * Response for GET /1/object/ezmaxinvoicing/getProvisional
  * @export
  */
-/** export type EzmaxinvoicingGetProvisionalV1Response = CommonResponse; */
+/*export type EzmaxinvoicingGetProvisionalV1Response = CommonResponse;*/
 export interface EzmaxinvoicingGetProvisionalV1Response {
     /**
      * 

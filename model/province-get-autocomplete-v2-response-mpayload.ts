@@ -28,6 +28,7 @@ export interface ProvinceGetAutocompleteV2ResponseMPayload {
      * @type {Array<ProvinceAutocompleteElementResponse>}
      * @memberof ProvinceGetAutocompleteV2ResponseMPayload
      */
+    /*'a_objProvince': Array<ProvinceAutocompleteElementResponse>;*/
     'a_objProvince': Array<ProvinceAutocompleteElementResponse>;
 }
 /**

@@ -25,7 +25,7 @@ import { FieldEErrorCode } from './field-eerror-code';
  * Generic Error Message
  * @export
  */
-/** export type CommonResponseErrorTooManyRequests = CommonResponseError; */
+/*export type CommonResponseErrorTooManyRequests = CommonResponseError;*/
 export interface CommonResponseErrorTooManyRequests {
     /**
      * The message giving details about the error

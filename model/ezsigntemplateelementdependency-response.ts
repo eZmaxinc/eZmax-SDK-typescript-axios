@@ -31,54 +31,63 @@ export interface EzsigntemplateelementdependencyResponse {
      * @type {number}
      * @memberof EzsigntemplateelementdependencyResponse
      */
+    /*'pkiEzsigntemplateelementdependencyID': number;*/
     'pkiEzsigntemplateelementdependencyID': number;
     /**
      * The unique ID of the Ezsigntemplateformfield
      * @type {number}
      * @memberof EzsigntemplateelementdependencyResponse
      */
+    /*'fkiEzsigntemplateformfieldID'?: number;*/
     'fkiEzsigntemplateformfieldID'?: number;
     /**
      * The unique ID of the Ezsigntemplatesignature
      * @type {number}
      * @memberof EzsigntemplateelementdependencyResponse
      */
+    /*'fkiEzsigntemplatesignatureID'?: number;*/
     'fkiEzsigntemplatesignatureID'?: number;
     /**
      * The unique ID of the Ezsigntemplateformfield
      * @type {number}
      * @memberof EzsigntemplateelementdependencyResponse
      */
+    /*'fkiEzsigntemplateformfieldIDValidation'?: number;*/
     'fkiEzsigntemplateformfieldIDValidation'?: number;
     /**
      * The unique ID of the Ezsigntemplateformfieldgroup
      * @type {number}
      * @memberof EzsigntemplateelementdependencyResponse
      */
+    /*'fkiEzsigntemplateformfieldgroupIDValidation'?: number;*/
     'fkiEzsigntemplateformfieldgroupIDValidation'?: number;
     /**
      * 
      * @type {FieldEEzsigntemplateelementdependencyValidation}
      * @memberof EzsigntemplateelementdependencyResponse
      */
+    /*'eEzsigntemplateelementdependencyValidation': FieldEEzsigntemplateelementdependencyValidation;*/
     'eEzsigntemplateelementdependencyValidation': FieldEEzsigntemplateelementdependencyValidation;
     /**
      * Whether if it\'s selected or not when using eEzsigntemplateelementdependencyValidation = Selected
      * @type {boolean}
      * @memberof EzsigntemplateelementdependencyResponse
      */
+    /*'bEzsigntemplateelementdependencySelected'?: boolean;*/
     'bEzsigntemplateelementdependencySelected'?: boolean;
     /**
      * 
      * @type {FieldEEzsigntemplateelementdependencyOperator}
      * @memberof EzsigntemplateelementdependencyResponse
      */
+    /*'eEzsigntemplateelementdependencyOperator'?: FieldEEzsigntemplateelementdependencyOperator;*/
     'eEzsigntemplateelementdependencyOperator'?: FieldEEzsigntemplateelementdependencyOperator;
     /**
      * The value of the Ezsignelementdependency
      * @type {string}
      * @memberof EzsigntemplateelementdependencyResponse
      */
+    /*'sEzsigntemplateelementdependencyValue'?: string;*/
     'sEzsigntemplateelementdependencyValue'?: string;
 }
 

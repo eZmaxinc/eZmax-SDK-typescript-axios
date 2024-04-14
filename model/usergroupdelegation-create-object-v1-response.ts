@@ -31,7 +31,7 @@ import { UsergroupdelegationCreateObjectV1ResponseMPayload } from './usergroupde
  * Response for POST /1/object/usergroupdelegation
  * @export
  */
-/** export type UsergroupdelegationCreateObjectV1Response = CommonResponse; */
+/*export type UsergroupdelegationCreateObjectV1Response = CommonResponse;*/
 export interface UsergroupdelegationCreateObjectV1Response {
     /**
      * 

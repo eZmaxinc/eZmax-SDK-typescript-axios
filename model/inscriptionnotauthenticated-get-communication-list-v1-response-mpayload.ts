@@ -28,6 +28,7 @@ export interface InscriptionnotauthenticatedGetCommunicationListV1ResponseMPaylo
      * @type {Array<CustomCommunicationListElementResponse>}
      * @memberof InscriptionnotauthenticatedGetCommunicationListV1ResponseMPayload
      */
+    /*'a_objCommunication': Array<CustomCommunicationListElementResponse>;*/
     'a_objCommunication': Array<CustomCommunicationListElementResponse>;
 }
 /**

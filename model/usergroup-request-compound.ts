@@ -25,7 +25,7 @@ import { UsergroupRequest } from './usergroup-request';
  * A Usergroup Object and children
  * @export
  */
-/** export type UsergroupRequestCompound = UsergroupRequest; */
+/*export type UsergroupRequestCompound = UsergroupRequest;*/
 export interface UsergroupRequestCompound {
     /**
      * The unique ID of the Usergroup

@@ -25,12 +25,14 @@ export interface MultilingualUsergroupName {
      * @type {string}
      * @memberof MultilingualUsergroupName
      */
+    /*'sUsergroupName1'?: string;*/
     'sUsergroupName1'?: string;
     /**
      * The name of the Usergroup in English
      * @type {string}
      * @memberof MultilingualUsergroupName
      */
+    /*'sUsergroupName2'?: string;*/
     'sUsergroupName2'?: string;
 }
 /**

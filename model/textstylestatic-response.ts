@@ -25,48 +25,56 @@ export interface TextstylestaticResponse {
      * @type {number}
      * @memberof TextstylestaticResponse
      */
+    /*'pkiTextstylestaticID'?: number;*/
     'pkiTextstylestaticID'?: number;
     /**
      * The unique ID of the Font
      * @type {number}
      * @memberof TextstylestaticResponse
      */
+    /*'fkiFontID': number;*/
     'fkiFontID': number;
     /**
      * Whether the Textstylestatic is Bold or not
      * @type {boolean}
      * @memberof TextstylestaticResponse
      */
+    /*'bTextstylestaticBold': boolean;*/
     'bTextstylestaticBold': boolean;
     /**
      * Whether the Textstylestatic is Underline or not
      * @type {boolean}
      * @memberof TextstylestaticResponse
      */
+    /*'bTextstylestaticUnderline': boolean;*/
     'bTextstylestaticUnderline': boolean;
     /**
      * Whether the Textstylestatic is Italic or not
      * @type {boolean}
      * @memberof TextstylestaticResponse
      */
+    /*'bTextstylestaticItalic': boolean;*/
     'bTextstylestaticItalic': boolean;
     /**
      * Whether the Textstylestatic is Strikethrough or not
      * @type {boolean}
      * @memberof TextstylestaticResponse
      */
+    /*'bTextstylestaticStrikethrough': boolean;*/
     'bTextstylestaticStrikethrough': boolean;
     /**
      * The int32 representation of the Fontcolor. For example, RGB color #39435B would be 3752795
      * @type {number}
      * @memberof TextstylestaticResponse
      */
+    /*'iTextstylestaticFontcolor': number;*/
     'iTextstylestaticFontcolor': number;
     /**
      * The Size for the Font of the Textstylestatic
      * @type {number}
      * @memberof TextstylestaticResponse
      */
+    /*'iTextstylestaticSize': number;*/
     'iTextstylestaticSize': number;
 }
 /**

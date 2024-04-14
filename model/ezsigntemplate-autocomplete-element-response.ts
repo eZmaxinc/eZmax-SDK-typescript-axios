@@ -28,24 +28,28 @@ export interface EzsigntemplateAutocompleteElementResponse {
      * @type {FieldEEzsignfoldertypePrivacylevel}
      * @memberof EzsigntemplateAutocompleteElementResponse
      */
+    /*'eEzsignfoldertypePrivacylevel': FieldEEzsignfoldertypePrivacylevel;*/
     'eEzsignfoldertypePrivacylevel': FieldEEzsignfoldertypePrivacylevel;
     /**
      * The description of the Ezsigntemplate
      * @type {string}
      * @memberof EzsigntemplateAutocompleteElementResponse
      */
+    /*'sEzsigntemplateDescription': string;*/
     'sEzsigntemplateDescription': string;
     /**
      * The unique ID of the Ezsigntemplate
      * @type {number}
      * @memberof EzsigntemplateAutocompleteElementResponse
      */
+    /*'pkiEzsigntemplateID': number;*/
     'pkiEzsigntemplateID': number;
     /**
      * Whether the Ezsigntemplate is active or not
      * @type {boolean}
      * @memberof EzsigntemplateAutocompleteElementResponse
      */
+    /*'bEzsigntemplateIsactive': boolean;*/
     'bEzsigntemplateIsactive': boolean;
 }
 

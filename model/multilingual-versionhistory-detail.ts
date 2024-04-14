@@ -25,12 +25,14 @@ export interface MultilingualVersionhistoryDetail {
      * @type {string}
      * @memberof MultilingualVersionhistoryDetail
      */
+    /*'tVersionhistoryDetail1'?: string;*/
     'tVersionhistoryDetail1'?: string;
     /**
      * Detail of the Versionhistory in English
      * @type {string}
      * @memberof MultilingualVersionhistoryDetail
      */
+    /*'tVersionhistoryDetail2'?: string;*/
     'tVersionhistoryDetail2'?: string;
 }
 /**

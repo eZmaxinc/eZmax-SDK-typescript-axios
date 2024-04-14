@@ -14,13 +14,13 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
 import { CommonResponseError } from '../model';
 // @ts-ignore
@@ -46,13 +46,14 @@ export const ObjectEzsigndiscussionApiAxiosParamCreator = function (configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigndiscussionCreateObjectV1: async (ezsigndiscussionCreateObjectV1Request: EzsigndiscussionCreateObjectV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsigndiscussionCreateObjectV1: async (ezsigndiscussionCreateObjectV1Request: EzsigndiscussionCreateObjectV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'ezsigndiscussionCreateObjectV1Request' is not null or undefined
             assertParamExists('ezsigndiscussionCreateObjectV1', 'ezsigndiscussionCreateObjectV1Request', ezsigndiscussionCreateObjectV1Request)
             const localVarPath = `/1/object/ezsigndiscussion`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -73,6 +74,7 @@ export const ObjectEzsigndiscussionApiAxiosParamCreator = function (configuratio
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ezsigndiscussionCreateObjectV1Request, localVarRequestOptions, configuration)
 
@@ -104,7 +106,7 @@ export const ObjectEzsigndiscussionApiAxiosParamCreator = function (configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigndiscussionDeleteObjectV1: async (pkiEzsigndiscussionID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsigndiscussionDeleteObjectV1: async (pkiEzsigndiscussionID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsigndiscussionID' is not null or undefined
             assertParamExists('ezsigndiscussionDeleteObjectV1', 'pkiEzsigndiscussionID', pkiEzsigndiscussionID)
             const localVarPath = `/1/object/ezsigndiscussion/{pkiEzsigndiscussionID}`
@@ -112,6 +114,7 @@ export const ObjectEzsigndiscussionApiAxiosParamCreator = function (configuratio
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -130,6 +133,7 @@ export const ObjectEzsigndiscussionApiAxiosParamCreator = function (configuratio
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -160,7 +164,7 @@ export const ObjectEzsigndiscussionApiAxiosParamCreator = function (configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigndiscussionGetObjectV2: async (pkiEzsigndiscussionID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsigndiscussionGetObjectV2: async (pkiEzsigndiscussionID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsigndiscussionID' is not null or undefined
             assertParamExists('ezsigndiscussionGetObjectV2', 'pkiEzsigndiscussionID', pkiEzsigndiscussionID)
             const localVarPath = `/2/object/ezsigndiscussion/{pkiEzsigndiscussionID}`
@@ -168,6 +172,7 @@ export const ObjectEzsigndiscussionApiAxiosParamCreator = function (configuratio
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -186,6 +191,7 @@ export const ObjectEzsigndiscussionApiAxiosParamCreator = function (configuratio
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -226,9 +232,11 @@ export const ObjectEzsigndiscussionApiFp = function(configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsigndiscussionCreateObjectV1(ezsigndiscussionCreateObjectV1Request: EzsigndiscussionCreateObjectV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndiscussionCreateObjectV1Response>> {
+        async ezsigndiscussionCreateObjectV1(ezsigndiscussionCreateObjectV1Request: EzsigndiscussionCreateObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndiscussionCreateObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigndiscussionCreateObjectV1(ezsigndiscussionCreateObjectV1Request, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsigndiscussionApi.ezsigndiscussionCreateObjectV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -237,9 +245,11 @@ export const ObjectEzsigndiscussionApiFp = function(configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsigndiscussionDeleteObjectV1(pkiEzsigndiscussionID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndiscussionDeleteObjectV1Response>> {
+        async ezsigndiscussionDeleteObjectV1(pkiEzsigndiscussionID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndiscussionDeleteObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigndiscussionDeleteObjectV1(pkiEzsigndiscussionID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsigndiscussionApi.ezsigndiscussionDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -248,9 +258,11 @@ export const ObjectEzsigndiscussionApiFp = function(configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsigndiscussionGetObjectV2(pkiEzsigndiscussionID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndiscussionGetObjectV2Response>> {
+        async ezsigndiscussionGetObjectV2(pkiEzsigndiscussionID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndiscussionGetObjectV2Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigndiscussionGetObjectV2(pkiEzsigndiscussionID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsigndiscussionApi.ezsigndiscussionGetObjectV2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -310,7 +322,7 @@ export class ObjectEzsigndiscussionApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsigndiscussionApi
      */
-    public ezsigndiscussionCreateObjectV1(ezsigndiscussionCreateObjectV1Request: EzsigndiscussionCreateObjectV1Request, options?: AxiosRequestConfig) {
+    public ezsigndiscussionCreateObjectV1(ezsigndiscussionCreateObjectV1Request: EzsigndiscussionCreateObjectV1Request, options?: RawAxiosRequestConfig) {
         return ObjectEzsigndiscussionApiFp(this.configuration).ezsigndiscussionCreateObjectV1(ezsigndiscussionCreateObjectV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -322,7 +334,7 @@ export class ObjectEzsigndiscussionApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsigndiscussionApi
      */
-    public ezsigndiscussionDeleteObjectV1(pkiEzsigndiscussionID: number, options?: AxiosRequestConfig) {
+    public ezsigndiscussionDeleteObjectV1(pkiEzsigndiscussionID: number, options?: RawAxiosRequestConfig) {
         return ObjectEzsigndiscussionApiFp(this.configuration).ezsigndiscussionDeleteObjectV1(pkiEzsigndiscussionID, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -334,7 +346,7 @@ export class ObjectEzsigndiscussionApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsigndiscussionApi
      */
-    public ezsigndiscussionGetObjectV2(pkiEzsigndiscussionID: number, options?: AxiosRequestConfig) {
+    public ezsigndiscussionGetObjectV2(pkiEzsigndiscussionID: number, options?: RawAxiosRequestConfig) {
         return ObjectEzsigndiscussionApiFp(this.configuration).ezsigndiscussionGetObjectV2(pkiEzsigndiscussionID, options).then((request) => request(this.axios, this.basePath));
     }
 }

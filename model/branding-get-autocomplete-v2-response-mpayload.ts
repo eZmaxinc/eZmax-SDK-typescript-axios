@@ -28,6 +28,7 @@ export interface BrandingGetAutocompleteV2ResponseMPayload {
      * @type {Array<BrandingAutocompleteElementResponse>}
      * @memberof BrandingGetAutocompleteV2ResponseMPayload
      */
+    /*'a_objBranding': Array<BrandingAutocompleteElementResponse>;*/
     'a_objBranding': Array<BrandingAutocompleteElementResponse>;
 }
 /**

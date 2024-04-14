@@ -28,6 +28,7 @@ export interface DepartmentGetAutocompleteV2ResponseMPayload {
      * @type {Array<DepartmentAutocompleteElementResponse>}
      * @memberof DepartmentGetAutocompleteV2ResponseMPayload
      */
+    /*'a_objDepartment': Array<DepartmentAutocompleteElementResponse>;*/
     'a_objDepartment': Array<DepartmentAutocompleteElementResponse>;
 }
 /**

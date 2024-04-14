@@ -25,6 +25,7 @@ export interface ScimServiceProviderConfigPatch {
      * @type {boolean}
      * @memberof ScimServiceProviderConfigPatch
      */
+    /*'supported': boolean;*/
     'supported': boolean;
 }
 /**

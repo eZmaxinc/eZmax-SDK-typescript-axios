@@ -25,18 +25,21 @@ export interface PhonetypeAutocompleteElementResponse {
      * @type {number}
      * @memberof PhonetypeAutocompleteElementResponse
      */
+    /*'pkiPhonetypeID': number;*/
     'pkiPhonetypeID': number;
     /**
      * The name of the Phonetype in the language of the requester
      * @type {string}
      * @memberof PhonetypeAutocompleteElementResponse
      */
+    /*'sPhonetypeNameX': string;*/
     'sPhonetypeNameX': string;
     /**
      * Whether the Phonetype is active or not
      * @type {boolean}
      * @memberof PhonetypeAutocompleteElementResponse
      */
+    /*'bPhonetypeIsactive': boolean;*/
     'bPhonetypeIsactive': boolean;
 }
 /**

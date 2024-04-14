@@ -22,7 +22,7 @@ import { UsergroupexternalResponse } from './usergroupexternal-response';
  * A Usergroupexternal Object
  * @export
  */
-/** export type UsergroupexternalResponseCompound = UsergroupexternalResponse; */
+/*export type UsergroupexternalResponseCompound = UsergroupexternalResponse;*/
 export interface UsergroupexternalResponseCompound {
     /**
      * The unique ID of the Usergroupexternal

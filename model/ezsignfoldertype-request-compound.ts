@@ -37,7 +37,7 @@ import { MultilingualEzsignfoldertypeName } from './multilingual-ezsignfoldertyp
  * A Ezsignfoldertype Object and children
  * @export
  */
-/** export type EzsignfoldertypeRequestCompound = EzsignfoldertypeRequest; */
+/*export type EzsignfoldertypeRequestCompound = EzsignfoldertypeRequest;*/
 export interface EzsignfoldertypeRequestCompound {
     /**
      * The unique ID of the Ezsignfoldertype.
@@ -405,10 +405,12 @@ export class ValidationObjectEzsignfoldertypeRequestCompound {
    }
    sEmailAddressSigned = {
       type: 'string',
+      pattern: '/^[\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/',
       required: false
    }
    sEmailAddressSummary = {
       type: 'string',
+      pattern: '/^[\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/',
       required: false
    }
    eEzsignfoldertypePrivacylevel = {

@@ -25,18 +25,21 @@ export interface BrandingAutocompleteElementResponse {
      * @type {string}
      * @memberof BrandingAutocompleteElementResponse
      */
+    /*'sBrandingDescriptionX': string;*/
     'sBrandingDescriptionX': string;
     /**
      * The unique ID of the Branding
      * @type {number}
      * @memberof BrandingAutocompleteElementResponse
      */
+    /*'pkiBrandingID': number;*/
     'pkiBrandingID': number;
     /**
      * Whether the Branding is active or not
      * @type {boolean}
      * @memberof BrandingAutocompleteElementResponse
      */
+    /*'bBrandingIsactive': boolean;*/
     'bBrandingIsactive': boolean;
 }
 /**

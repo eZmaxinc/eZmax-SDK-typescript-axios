@@ -37,7 +37,7 @@ import { SystemconfigurationRequest } from './systemconfiguration-request';
  * A Systemconfiguration Object and children
  * @export
  */
-/** export type SystemconfigurationRequestCompound = SystemconfigurationRequest; */
+/*export type SystemconfigurationRequestCompound = SystemconfigurationRequest;*/
 export interface SystemconfigurationRequestCompound {
     /**
      * The unique ID of the Systemconfiguration

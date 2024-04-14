@@ -25,6 +25,7 @@ export interface BillingentityinternalCreateObjectV1ResponseMPayload {
      * @type {Array<number>}
      * @memberof BillingentityinternalCreateObjectV1ResponseMPayload
      */
+    /*'a_pkiBillingentityinternalID': Array<number>;*/
     'a_pkiBillingentityinternalID': Array<number>;
 }
 /**

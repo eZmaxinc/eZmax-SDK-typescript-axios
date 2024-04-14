@@ -28,6 +28,7 @@ export interface CorsCreateObjectV1Request {
      * @type {Array<CorsRequestCompound>}
      * @memberof CorsCreateObjectV1Request
      */
+    /*'a_objCors': Array<CorsRequestCompound>;*/
     'a_objCors': Array<CorsRequestCompound>;
 }
 /**

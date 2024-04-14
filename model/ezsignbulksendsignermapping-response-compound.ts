@@ -22,7 +22,7 @@ import { EzsignbulksendsignermappingResponse } from './ezsignbulksendsignermappi
  * A Ezsignbulksendsignermapping Object
  * @export
  */
-/** export type EzsignbulksendsignermappingResponseCompound = EzsignbulksendsignermappingResponse; */
+/*export type EzsignbulksendsignermappingResponseCompound = EzsignbulksendsignermappingResponse;*/
 export interface EzsignbulksendsignermappingResponseCompound {
     /**
      * The unique ID of the Ezsignbulksendsignermapping

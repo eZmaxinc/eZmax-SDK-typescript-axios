@@ -28,7 +28,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for DELETE /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}
  * @export
  */
-/** export type EzsignfoldersignerassociationDeleteObjectV1Response = CommonResponse; */
+/*export type EzsignfoldersignerassociationDeleteObjectV1Response = CommonResponse;*/
 export interface EzsignfoldersignerassociationDeleteObjectV1Response {
     /**
      * 

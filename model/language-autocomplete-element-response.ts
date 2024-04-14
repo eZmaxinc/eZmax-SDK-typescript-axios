@@ -25,18 +25,21 @@ export interface LanguageAutocompleteElementResponse {
      * @type {number}
      * @memberof LanguageAutocompleteElementResponse
      */
+    /*'pkiLanguageID': number;*/
     'pkiLanguageID': number;
     /**
      * The Name of the Language in the language of the requester
      * @type {string}
      * @memberof LanguageAutocompleteElementResponse
      */
+    /*'sLanguageNameX': string;*/
     'sLanguageNameX': string;
     /**
      * Whether the Language is active or not
      * @type {boolean}
      * @memberof LanguageAutocompleteElementResponse
      */
+    /*'bLanguageIsactive': boolean;*/
     'bLanguageIsactive': boolean;
 }
 /**

@@ -28,30 +28,35 @@ export interface NotificationsubsectionResponse {
      * @type {number}
      * @memberof NotificationsubsectionResponse
      */
+    /*'pkiNotificationsubsectionID': number;*/
     'pkiNotificationsubsectionID': number;
     /**
      * The unique ID of the Notificationsection
      * @type {number}
      * @memberof NotificationsubsectionResponse
      */
+    /*'fkiNotificationsectionID': number;*/
     'fkiNotificationsectionID': number;
     /**
      * 
      * @type {MultilingualNotificationsubsectionName}
      * @memberof NotificationsubsectionResponse
      */
+    /*'objNotificationsubsectionName'?: MultilingualNotificationsubsectionName;*/
     'objNotificationsubsectionName'?: MultilingualNotificationsubsectionName;
     /**
      * The name of the Notificationsection in the language of the requester
      * @type {string}
      * @memberof NotificationsubsectionResponse
      */
+    /*'sNotificationsectionNameX'?: string;*/
     'sNotificationsectionNameX'?: string;
     /**
      * The name of the Notificationsubsection in the language of the requester
      * @type {string}
      * @memberof NotificationsubsectionResponse
      */
+    /*'sNotificationsubsectionNameX': string;*/
     'sNotificationsubsectionNameX': string;
 }
 /**

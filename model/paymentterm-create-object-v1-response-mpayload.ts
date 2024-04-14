@@ -25,6 +25,7 @@ export interface PaymenttermCreateObjectV1ResponseMPayload {
      * @type {Array<number>}
      * @memberof PaymenttermCreateObjectV1ResponseMPayload
      */
+    /*'a_pkiPaymenttermID': Array<number>;*/
     'a_pkiPaymenttermID': Array<number>;
 }
 /**

@@ -31,7 +31,7 @@ import { UserGetUsergroupsV1ResponseMPayload } from './user-get-usergroups-v1-re
  * Response for GET /1/object/user/{pkiUserID}/getUsergroups
  * @export
  */
-/** export type UserGetUsergroupsV1Response = CommonResponse; */
+/*export type UserGetUsergroupsV1Response = CommonResponse;*/
 export interface UserGetUsergroupsV1Response {
     /**
      * 

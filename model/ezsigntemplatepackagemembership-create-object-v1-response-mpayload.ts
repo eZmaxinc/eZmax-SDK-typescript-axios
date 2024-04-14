@@ -25,18 +25,21 @@ export interface EzsigntemplatepackagemembershipCreateObjectV1ResponseMPayload {
      * @type {Array<number>}
      * @memberof EzsigntemplatepackagemembershipCreateObjectV1ResponseMPayload
      */
+    /*'a_pkiEzsigntemplatepackagemembershipID': Array<number>;*/
     'a_pkiEzsigntemplatepackagemembershipID': Array<number>;
     /**
      * Whether the Ezsignbulksend was automatically modified and needs a manual validation
      * @type {boolean}
      * @memberof EzsigntemplatepackagemembershipCreateObjectV1ResponseMPayload
      */
+    /*'bEzsigntemplatepackageNeedvalidation': boolean;*/
     'bEzsigntemplatepackageNeedvalidation': boolean;
     /**
      * Whether the Ezsigntemplatepackage was automatically modified and needs a manual validation
      * @type {boolean}
      * @memberof EzsigntemplatepackagemembershipCreateObjectV1ResponseMPayload
      */
+    /*'bEzsignbulksendNeedvalidation': boolean;*/
     'bEzsignbulksendNeedvalidation': boolean;
 }
 /**

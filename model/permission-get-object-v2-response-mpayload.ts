@@ -28,6 +28,7 @@ export interface PermissionGetObjectV2ResponseMPayload {
      * @type {PermissionResponseCompound}
      * @memberof PermissionGetObjectV2ResponseMPayload
      */
+    /*'objPermission': PermissionResponseCompound;*/
     'objPermission': PermissionResponseCompound;
 }
 /**

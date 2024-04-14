@@ -25,12 +25,14 @@ export interface ModulegroupResponse {
      * @type {number}
      * @memberof ModulegroupResponse
      */
+    /*'pkiModulegroupID': number;*/
     'pkiModulegroupID': number;
     /**
      * The name of the Modulegroup in the language of the requester
      * @type {string}
      * @memberof ModulegroupResponse
      */
+    /*'sModulegroupNameX': string;*/
     'sModulegroupNameX': string;
 }
 /**

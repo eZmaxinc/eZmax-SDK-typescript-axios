@@ -31,7 +31,7 @@ import { FieldEEzmaxinvoicingagentVariationezsign } from './field-eezmaxinvoicin
  * A Ezmaxinvoicingagent Object
  * @export
  */
-/** export type EzmaxinvoicingagentResponseCompound = EzmaxinvoicingagentResponse; */
+/*export type EzmaxinvoicingagentResponseCompound = EzmaxinvoicingagentResponse;*/
 export interface EzmaxinvoicingagentResponseCompound {
     /**
      * The unique ID of the Ezmaxinvoicingagent

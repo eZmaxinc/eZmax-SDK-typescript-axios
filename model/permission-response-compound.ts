@@ -22,7 +22,7 @@ import { PermissionResponse } from './permission-response';
  * A Permission Object and children to create a complete structure
  * @export
  */
-/** export type PermissionResponseCompound = PermissionResponse; */
+/*export type PermissionResponseCompound = PermissionResponse;*/
 export interface PermissionResponseCompound {
     /**
      * The unique ID of the Permission

@@ -28,6 +28,7 @@ export interface EzsigndocumentGetEzsigndiscussionsV1ResponseMPayload {
      * @type {Array<EzsigndiscussionResponse>}
      * @memberof EzsigndocumentGetEzsigndiscussionsV1ResponseMPayload
      */
+    /*'a_objEzsigndiscussion': Array<EzsigndiscussionResponse>;*/
     'a_objEzsigndiscussion': Array<EzsigndiscussionResponse>;
 }
 /**

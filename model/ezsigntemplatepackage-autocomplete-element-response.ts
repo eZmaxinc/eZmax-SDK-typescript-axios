@@ -28,30 +28,35 @@ export interface EzsigntemplatepackageAutocompleteElementResponse {
      * @type {FieldEEzsignfoldertypePrivacylevel}
      * @memberof EzsigntemplatepackageAutocompleteElementResponse
      */
+    /*'eEzsignfoldertypePrivacylevel': FieldEEzsignfoldertypePrivacylevel;*/
     'eEzsignfoldertypePrivacylevel': FieldEEzsignfoldertypePrivacylevel;
     /**
      * The description of the Ezsigntemplatepackage
      * @type {string}
      * @memberof EzsigntemplatepackageAutocompleteElementResponse
      */
+    /*'sEzsigntemplatepackageDescription': string;*/
     'sEzsigntemplatepackageDescription': string;
     /**
      * The unique ID of the Ezsigntemplatepackage
      * @type {number}
      * @memberof EzsigntemplatepackageAutocompleteElementResponse
      */
+    /*'pkiEzsigntemplatepackageID': number;*/
     'pkiEzsigntemplatepackageID': number;
     /**
      * Whether the Ezsigntemplatepackage is active or not
      * @type {boolean}
      * @memberof EzsigntemplatepackageAutocompleteElementResponse
      */
+    /*'bEzsigntemplatepackageIsactive': boolean;*/
     'bEzsigntemplatepackageIsactive': boolean;
     /**
      * Indicates if the element is disabled in the context
      * @type {boolean}
      * @memberof EzsigntemplatepackageAutocompleteElementResponse
      */
+    /*'bDisabled': boolean;*/
     'bDisabled': boolean;
 }
 

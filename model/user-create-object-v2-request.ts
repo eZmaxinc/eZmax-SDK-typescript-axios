@@ -28,6 +28,7 @@ export interface UserCreateObjectV2Request {
      * @type {Array<UserRequestCompoundV2>}
      * @memberof UserCreateObjectV2Request
      */
+    /*'a_objUser': Array<UserRequestCompoundV2>;*/
     'a_objUser': Array<UserRequestCompoundV2>;
 }
 /**

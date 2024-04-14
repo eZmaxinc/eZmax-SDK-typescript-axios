@@ -25,12 +25,14 @@ export interface CustomFormDataEzsignformfieldResponse {
      * @type {string}
      * @memberof CustomFormDataEzsignformfieldResponse
      */
+    /*'sEzsignformfieldLabel': string;*/
     'sEzsignformfieldLabel': string;
     /**
      * The value for the Ezsignformfield  This can only be set if eEzsignformfieldgroupType is Checkbox or Radio
      * @type {string}
      * @memberof CustomFormDataEzsignformfieldResponse
      */
+    /*'sEzsignformfieldValue': string;*/
     'sEzsignformfieldValue': string;
 }
 /**

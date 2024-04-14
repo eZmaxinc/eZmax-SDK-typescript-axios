@@ -25,6 +25,7 @@ export interface EzsigndocumentDeclineToSignV1Request {
      * @type {string}
      * @memberof EzsigndocumentDeclineToSignV1Request
      */
+    /*'sReason': string;*/
     'sReason': string;
 }
 /**

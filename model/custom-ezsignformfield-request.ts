@@ -25,24 +25,28 @@ export interface CustomEzsignformfieldRequest {
      * @type {number}
      * @memberof CustomEzsignformfieldRequest
      */
+    /*'pkiEzsignformfieldID'?: number;*/
     'pkiEzsignformfieldID'?: number;
     /**
      * The Label for the Ezsignformfield
      * @type {string}
      * @memberof CustomEzsignformfieldRequest
      */
+    /*'sEzsignformfieldLabel'?: string;*/
     'sEzsignformfieldLabel'?: string;
     /**
      * Whether the Ezsignformfield is selected or not by default.  This can only be set if eEzsignformfieldgroupType is **Checkbox** or **Radio**
      * @type {boolean}
      * @memberof CustomEzsignformfieldRequest
      */
+    /*'bEzsignformfieldSelected'?: boolean;*/
     'bEzsignformfieldSelected'?: boolean;
     /**
      * This is the value enterred for the Ezsignformfield  This can only be set if eEzsignformfieldgroupType is **Dropdown**, **Text** or **Textarea**
      * @type {string}
      * @memberof CustomEzsignformfieldRequest
      */
+    /*'sEzsignformfieldEnteredvalue'?: string;*/
     'sEzsignformfieldEnteredvalue'?: string;
 }
 /**

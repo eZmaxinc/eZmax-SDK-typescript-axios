@@ -22,7 +22,7 @@ import { EzsigntemplatedocumentpageResponse } from './ezsigntemplatedocumentpage
  * An Ezsigntemplatedocumentpage Object and children to create a complete structure
  * @export
  */
-/** export type EzsigntemplatedocumentpageResponseCompound = EzsigntemplatedocumentpageResponse; */
+/*export type EzsigntemplatedocumentpageResponseCompound = EzsigntemplatedocumentpageResponse;*/
 export interface EzsigntemplatedocumentpageResponseCompound {
     /**
      * The unique ID of the Ezsigntemplatedocumentpage

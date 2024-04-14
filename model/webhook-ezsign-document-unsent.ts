@@ -31,7 +31,7 @@ import { EzsigndocumentResponse } from './ezsigndocument-response';
  * This is the base Webhook object
  * @export
  */
-/** export type WebhookEzsignDocumentUnsent = CommonWebhook; */
+/*export type WebhookEzsignDocumentUnsent = CommonWebhook;*/
 export interface WebhookEzsignDocumentUnsent {
     /**
      * 

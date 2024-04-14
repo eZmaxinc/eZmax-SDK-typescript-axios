@@ -22,7 +22,7 @@ import { CommunicationreferenceRequest } from './communicationreference-request'
  * A Communicationreference Object and children
  * @export
  */
-/** export type CommunicationreferenceRequestCompound = CommunicationreferenceRequest; */
+/*export type CommunicationreferenceRequestCompound = CommunicationreferenceRequest;*/
 export interface CommunicationreferenceRequestCompound {
     /**
      * The unique ID of the Communicationreference

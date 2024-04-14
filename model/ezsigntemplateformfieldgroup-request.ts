@@ -37,18 +37,21 @@ export interface EzsigntemplateformfieldgroupRequest {
      * @type {number}
      * @memberof EzsigntemplateformfieldgroupRequest
      */
+    /*'pkiEzsigntemplateformfieldgroupID'?: number;*/
     'pkiEzsigntemplateformfieldgroupID'?: number;
     /**
      * The unique ID of the Ezsigntemplatedocument
      * @type {number}
      * @memberof EzsigntemplateformfieldgroupRequest
      */
+    /*'fkiEzsigntemplatedocumentID': number;*/
     'fkiEzsigntemplatedocumentID': number;
     /**
      * 
      * @type {FieldEEzsigntemplateformfieldgroupType}
      * @memberof EzsigntemplateformfieldgroupRequest
      */
+    /*'eEzsigntemplateformfieldgroupType': FieldEEzsigntemplateformfieldgroupType;*/
     'eEzsigntemplateformfieldgroupType': FieldEEzsigntemplateformfieldgroupType;
     /**
      * 
@@ -56,78 +59,91 @@ export interface EzsigntemplateformfieldgroupRequest {
      * @memberof EzsigntemplateformfieldgroupRequest
      * @deprecated
      */
+    /*'eEzsigntemplateformfieldgroupSignerrequirement'?: FieldEEzsigntemplateformfieldgroupSignerrequirement;*/
     'eEzsigntemplateformfieldgroupSignerrequirement'?: FieldEEzsigntemplateformfieldgroupSignerrequirement;
     /**
      * The Label for the Ezsigntemplateformfieldgroup
      * @type {string}
      * @memberof EzsigntemplateformfieldgroupRequest
      */
+    /*'sEzsigntemplateformfieldgroupLabel': string;*/
     'sEzsigntemplateformfieldgroupLabel': string;
     /**
      * The step when the Ezsigntemplatesigner will be invited to fill the form fields
      * @type {number}
      * @memberof EzsigntemplateformfieldgroupRequest
      */
+    /*'iEzsigntemplateformfieldgroupStep': number;*/
     'iEzsigntemplateformfieldgroupStep': number;
     /**
      * The default value for the Ezsigntemplateformfieldgroup  You can use the codes below and they will be replaced at signature time.    | Code | Description | Example | | ------------------------- | ------------ | ------------ | | {sUserFirstname} | The first name of the contact | John | | {sUserLastname} | The last name of the contact | Doe | | {sUserJobtitle} | The job title | Sales Representative | | {sEmailAddress} | The email address | email@example.com | | {sPhoneE164} | A phone number in E.164 Format | +15149901516 | | {sPhoneE164Cell} | A phone number in E.164 Format | +15149901516 |
      * @type {string}
      * @memberof EzsigntemplateformfieldgroupRequest
      */
+    /*'sEzsigntemplateformfieldgroupDefaultvalue': string;*/
     'sEzsigntemplateformfieldgroupDefaultvalue': string;
     /**
      * The minimum number of Ezsigntemplateformfield that must be filled in the Ezsigntemplateformfieldgroup
      * @type {number}
      * @memberof EzsigntemplateformfieldgroupRequest
      */
+    /*'iEzsigntemplateformfieldgroupFilledmin': number;*/
     'iEzsigntemplateformfieldgroupFilledmin': number;
     /**
      * The maximum number of Ezsigntemplateformfield that must be filled in the Ezsigntemplateformfieldgroup
      * @type {number}
      * @memberof EzsigntemplateformfieldgroupRequest
      */
+    /*'iEzsigntemplateformfieldgroupFilledmax': number;*/
     'iEzsigntemplateformfieldgroupFilledmax': number;
     /**
      * Whether the Ezsigntemplateformfieldgroup is read only or not.
      * @type {boolean}
      * @memberof EzsigntemplateformfieldgroupRequest
      */
+    /*'bEzsigntemplateformfieldgroupReadonly': boolean;*/
     'bEzsigntemplateformfieldgroupReadonly': boolean;
     /**
      * The maximum length for the value in the Ezsigntemplateformfieldgroup  This can only be set if eEzsigntemplateformfieldgroupType is **Text** or **Textarea**
      * @type {number}
      * @memberof EzsigntemplateformfieldgroupRequest
      */
+    /*'iEzsigntemplateformfieldgroupMaxlength'?: number;*/
     'iEzsigntemplateformfieldgroupMaxlength'?: number;
     /**
      * Whether the Ezsigntemplateformfieldgroup is encrypted in the database or not. Encrypted values are not displayed on the Ezsigndocument. This can only be set if eEzsigntemplateformfieldgroupType is **Text** or **Textarea**
      * @type {boolean}
      * @memberof EzsigntemplateformfieldgroupRequest
      */
+    /*'bEzsigntemplateformfieldgroupEncrypted'?: boolean;*/
     'bEzsigntemplateformfieldgroupEncrypted'?: boolean;
     /**
      * A regular expression to indicate what values are acceptable for the Ezsigntemplateformfieldgroup.  This can only be set if eEzsigntemplateformfieldgroupType is **Text** or **Textarea**
      * @type {string}
      * @memberof EzsigntemplateformfieldgroupRequest
      */
+    /*'sEzsigntemplateformfieldgroupRegexp'?: string;*/
     'sEzsigntemplateformfieldgroupRegexp'?: string;
     /**
      * 
      * @type {EnumTextvalidation}
      * @memberof EzsigntemplateformfieldgroupRequest
      */
+    /*'eEzsigntemplateformfieldgroupTextvalidation'?: EnumTextvalidation;*/
     'eEzsigntemplateformfieldgroupTextvalidation'?: EnumTextvalidation;
     /**
      * A tooltip that will be presented to Ezsigntemplatesigner about the Ezsigntemplateformfieldgroup
      * @type {string}
      * @memberof EzsigntemplateformfieldgroupRequest
      */
+    /*'tEzsigntemplateformfieldgroupTooltip'?: string;*/
     'tEzsigntemplateformfieldgroupTooltip'?: string;
     /**
      * 
      * @type {FieldEEzsigntemplateformfieldgroupTooltipposition}
      * @memberof EzsigntemplateformfieldgroupRequest
      */
+    /*'eEzsigntemplateformfieldgroupTooltipposition'?: FieldEEzsigntemplateformfieldgroupTooltipposition;*/
     'eEzsigntemplateformfieldgroupTooltipposition'?: FieldEEzsigntemplateformfieldgroupTooltipposition;
 }
 

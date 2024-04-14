@@ -25,36 +25,42 @@ export interface ApikeyListElement {
      * @type {number}
      * @memberof ApikeyListElement
      */
+    /*'pkiApikeyID': number;*/
     'pkiApikeyID': number;
     /**
      * The description of the Apikey in the language of the requester
      * @type {string}
      * @memberof ApikeyListElement
      */
+    /*'sApikeyDescriptionX': string;*/
     'sApikeyDescriptionX': string;
     /**
      * The first name of the user
      * @type {string}
      * @memberof ApikeyListElement
      */
+    /*'sUserFirstname': string;*/
     'sUserFirstname': string;
     /**
      * The last name of the user
      * @type {string}
      * @memberof ApikeyListElement
      */
+    /*'sUserLastname': string;*/
     'sUserLastname': string;
     /**
      * Whether the apikey is active or not
      * @type {boolean}
      * @memberof ApikeyListElement
      */
+    /*'bApikeyIsactive': boolean;*/
     'bApikeyIsactive': boolean;
     /**
      * Whether the apikey is signed or not
      * @type {boolean}
      * @memberof ApikeyListElement
      */
+    /*'bApikeyIssigned': boolean;*/
     'bApikeyIssigned': boolean;
 }
 /**

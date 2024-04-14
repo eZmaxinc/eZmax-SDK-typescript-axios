@@ -28,6 +28,7 @@ export interface ApikeyRegenerateV1ResponseMPayload {
      * @type {ApikeyResponseCompound}
      * @memberof ApikeyRegenerateV1ResponseMPayload
      */
+    /*'objApikey': ApikeyResponseCompound;*/
     'objApikey': ApikeyResponseCompound;
 }
 /**

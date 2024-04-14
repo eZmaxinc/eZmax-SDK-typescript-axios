@@ -28,7 +28,7 @@ import { FieldEErrorCode } from './field-eerror-code';
  * Generic Error Message
  * @export
  */
-/** export type CommonResponseErrorEzsignformValidation = CommonResponseError; */
+/*export type CommonResponseErrorEzsignformValidation = CommonResponseError;*/
 export interface CommonResponseErrorEzsignformValidation {
     /**
      * The message giving details about the error

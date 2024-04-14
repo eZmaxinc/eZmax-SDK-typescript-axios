@@ -28,6 +28,7 @@ export interface InscriptionGetCommunicationsendersV1ResponseMPayload {
      * @type {Array<CustomCommunicationsenderResponse>}
      * @memberof InscriptionGetCommunicationsendersV1ResponseMPayload
      */
+    /*'a_objCommunicationsenders': Array<CustomCommunicationsenderResponse>;*/
     'a_objCommunicationsenders': Array<CustomCommunicationsenderResponse>;
 }
 /**

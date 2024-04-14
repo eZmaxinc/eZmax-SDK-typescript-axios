@@ -28,6 +28,7 @@ export interface AttachmentGetAttachmentlogsV1ResponseMPayload {
      * @type {Array<AttachmentlogResponseCompound>}
      * @memberof AttachmentGetAttachmentlogsV1ResponseMPayload
      */
+    /*'a_objAttachmentlog': Array<AttachmentlogResponseCompound>;*/
     'a_objAttachmentlog': Array<AttachmentlogResponseCompound>;
 }
 /**

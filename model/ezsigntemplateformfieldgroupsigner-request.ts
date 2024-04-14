@@ -25,12 +25,14 @@ export interface EzsigntemplateformfieldgroupsignerRequest {
      * @type {number}
      * @memberof EzsigntemplateformfieldgroupsignerRequest
      */
+    /*'pkiEzsigntemplateformfieldgroupsignerID'?: number;*/
     'pkiEzsigntemplateformfieldgroupsignerID'?: number;
     /**
      * The unique ID of the Ezsigntemplatesigner
      * @type {number}
      * @memberof EzsigntemplateformfieldgroupsignerRequest
      */
+    /*'fkiEzsigntemplatesignerID': number;*/
     'fkiEzsigntemplatesignerID': number;
 }
 /**

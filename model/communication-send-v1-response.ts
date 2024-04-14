@@ -31,7 +31,7 @@ import { CommunicationCreateObjectV1ResponseMPayload } from './communication-cre
  * Response for POST /1/object/communication
  * @export
  */
-/** export type CommunicationSendV1Response = CommonResponse; */
+/*export type CommunicationSendV1Response = CommonResponse;*/
 export interface CommunicationSendV1Response {
     /**
      * 

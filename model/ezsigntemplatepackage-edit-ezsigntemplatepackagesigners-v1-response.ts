@@ -31,7 +31,7 @@ import { EzsigntemplatepackageEditEzsigntemplatepackagesignersV1ResponseMPayload
  * Response for PUT /1/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID}/editEzsigntemplatepackagesigners
  * @export
  */
-/** export type EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response = CommonResponse; */
+/*export type EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response = CommonResponse;*/
 export interface EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response {
     /**
      * 

@@ -31,7 +31,7 @@ import { UsergroupGetListV1ResponseMPayload } from './usergroup-get-list-v1-resp
  * Response for GET /1/object/usergroup/getList
  * @export
  */
-/** export type UsergroupGetListV1Response = CommonResponseGetList; */
+/*export type UsergroupGetListV1Response = CommonResponseGetList;*/
 export interface UsergroupGetListV1Response {
     /**
      * 

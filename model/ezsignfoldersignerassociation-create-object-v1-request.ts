@@ -31,12 +31,14 @@ export interface EzsignfoldersignerassociationCreateObjectV1Request {
      * @type {EzsignfoldersignerassociationRequest}
      * @memberof EzsignfoldersignerassociationCreateObjectV1Request
      */
+    /*'objEzsignfoldersignerassociation'?: EzsignfoldersignerassociationRequest;*/
     'objEzsignfoldersignerassociation'?: EzsignfoldersignerassociationRequest;
     /**
      * 
      * @type {EzsignfoldersignerassociationRequestCompound}
      * @memberof EzsignfoldersignerassociationCreateObjectV1Request
      */
+    /*'objEzsignfoldersignerassociationCompound'?: EzsignfoldersignerassociationRequestCompound;*/
     'objEzsignfoldersignerassociationCompound'?: EzsignfoldersignerassociationRequestCompound;
 }
 /**

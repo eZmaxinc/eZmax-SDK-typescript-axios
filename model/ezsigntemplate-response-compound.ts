@@ -34,7 +34,7 @@ import { FieldEEzsigntemplateType } from './field-eezsigntemplate-type';
  * A Ezsigntemplate Object
  * @export
  */
-/** export type EzsigntemplateResponseCompound = EzsigntemplateResponse; */
+/*export type EzsigntemplateResponseCompound = EzsigntemplateResponse;*/
 export interface EzsigntemplateResponseCompound {
     /**
      * The unique ID of the Ezsigntemplate

@@ -31,12 +31,14 @@ export interface EzsignsignatureGetEzsignsignaturesAutomaticV1ResponseMPayload {
      * @type {Set<FieldEEzsignsignatureType>}
      * @memberof EzsignsignatureGetEzsignsignaturesAutomaticV1ResponseMPayload
      */
+    /*'a_eEzsignsignatureType': Set<FieldEEzsignsignatureType>;*/
     'a_eEzsignsignatureType': Array<FieldEEzsignsignatureType>;
     /**
      * 
      * @type {Array<CustomEzsignfolderEzsignsignaturesAutomaticResponse>}
      * @memberof EzsignsignatureGetEzsignsignaturesAutomaticV1ResponseMPayload
      */
+    /*'a_objEzsignfolder': Array<CustomEzsignfolderEzsignsignaturesAutomaticResponse>;*/
     'a_objEzsignfolder': Array<CustomEzsignfolderEzsignsignaturesAutomaticResponse>;
 }
 /**

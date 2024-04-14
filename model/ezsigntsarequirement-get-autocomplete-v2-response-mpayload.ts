@@ -28,6 +28,7 @@ export interface EzsigntsarequirementGetAutocompleteV2ResponseMPayload {
      * @type {Array<EzsigntsarequirementAutocompleteElementResponse>}
      * @memberof EzsigntsarequirementGetAutocompleteV2ResponseMPayload
      */
+    /*'a_objEzsigntsarequirement': Array<EzsigntsarequirementAutocompleteElementResponse>;*/
     'a_objEzsigntsarequirement': Array<EzsigntsarequirementAutocompleteElementResponse>;
 }
 /**

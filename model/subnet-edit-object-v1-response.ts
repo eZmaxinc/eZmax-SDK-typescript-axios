@@ -28,7 +28,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for PUT /1/object/subnet/{pkiSubnetID}
  * @export
  */
-/** export type SubnetEditObjectV1Response = CommonResponse; */
+/*export type SubnetEditObjectV1Response = CommonResponse;*/
 export interface SubnetEditObjectV1Response {
     /**
      * 

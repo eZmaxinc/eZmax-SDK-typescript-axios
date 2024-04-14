@@ -28,30 +28,35 @@ export interface ScimUserList {
      * @type {number}
      * @memberof ScimUserList
      */
+    /*'totalResults'?: number;*/
     'totalResults'?: number;
     /**
      * 
      * @type {number}
      * @memberof ScimUserList
      */
+    /*'itemsPerPage'?: number;*/
     'itemsPerPage'?: number;
     /**
      * 
      * @type {number}
      * @memberof ScimUserList
      */
+    /*'startIndex'?: number;*/
     'startIndex'?: number;
     /**
      * 
      * @type {Array<string>}
      * @memberof ScimUserList
      */
+    /*'schemas'?: Array<string>;*/
     'schemas'?: Array<string>;
     /**
      * 
      * @type {Array<ScimUser>}
      * @memberof ScimUserList
      */
+    /*'Resources'?: Array<ScimUser>;*/
     'Resources'?: Array<ScimUser>;
 }
 /**

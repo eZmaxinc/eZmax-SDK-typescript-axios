@@ -31,7 +31,7 @@ import { UserCreateEzsignuserV1ResponseMPayload } from './user-create-ezsignuser
  * Response for POST /1/module/user/createEzsignuser
  * @export
  */
-/** export type UserCreateEzsignuserV1Response = CommonResponse; */
+/*export type UserCreateEzsignuserV1Response = CommonResponse;*/
 export interface UserCreateEzsignuserV1Response {
     /**
      * 

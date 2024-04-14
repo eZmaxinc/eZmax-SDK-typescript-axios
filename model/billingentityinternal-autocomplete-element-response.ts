@@ -25,18 +25,21 @@ export interface BillingentityinternalAutocompleteElementResponse {
      * @type {number}
      * @memberof BillingentityinternalAutocompleteElementResponse
      */
+    /*'pkiBillingentityinternalID': number;*/
     'pkiBillingentityinternalID': number;
     /**
      * The description of the Billingentityinternal in the language of the requester
      * @type {string}
      * @memberof BillingentityinternalAutocompleteElementResponse
      */
+    /*'sBillingentityinternalDescriptionX': string;*/
     'sBillingentityinternalDescriptionX': string;
     /**
      * Whether the Billingentityinternal is active or not
      * @type {boolean}
      * @memberof BillingentityinternalAutocompleteElementResponse
      */
+    /*'bBillingentityinternalIsactive': boolean;*/
     'bBillingentityinternalIsactive': boolean;
 }
 /**

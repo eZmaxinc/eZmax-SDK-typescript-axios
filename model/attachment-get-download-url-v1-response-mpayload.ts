@@ -25,6 +25,7 @@ export interface AttachmentGetDownloadUrlV1ResponseMPayload {
      * @type {string}
      * @memberof AttachmentGetDownloadUrlV1ResponseMPayload
      */
+    /*'sDownloadUrl': string;*/
     'sDownloadUrl': string;
 }
 /**

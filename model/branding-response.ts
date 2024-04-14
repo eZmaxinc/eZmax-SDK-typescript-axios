@@ -34,96 +34,112 @@ export interface BrandingResponse {
      * @type {number}
      * @memberof BrandingResponse
      */
+    /*'pkiBrandingID': number;*/
     'pkiBrandingID': number;
     /**
      * The unique ID of the Email
      * @type {number}
      * @memberof BrandingResponse
      */
+    /*'fkiEmailID'?: number;*/
     'fkiEmailID'?: number;
     /**
      * 
      * @type {MultilingualBrandingDescription}
      * @memberof BrandingResponse
      */
+    /*'objBrandingDescription': MultilingualBrandingDescription;*/
     'objBrandingDescription': MultilingualBrandingDescription;
     /**
      * The Description of the Branding in the language of the requester
      * @type {string}
      * @memberof BrandingResponse
      */
+    /*'sBrandingDescriptionX': string;*/
     'sBrandingDescriptionX': string;
     /**
      * The name of the Branding  This value will only be set if you wish to overwrite the default name. If you want to keep the default name, leave this property empty
      * @type {string}
      * @memberof BrandingResponse
      */
+    /*'sBrandingName'?: string;*/
     'sBrandingName'?: string;
     /**
      * The email address.
      * @type {string}
      * @memberof BrandingResponse
      */
+    /*'sEmailAddress'?: string;*/
     'sEmailAddress'?: string;
     /**
      * 
      * @type {FieldEBrandingLogo}
      * @memberof BrandingResponse
      */
+    /*'eBrandingLogo': FieldEBrandingLogo;*/
     'eBrandingLogo': FieldEBrandingLogo;
     /**
      * 
      * @type {FieldEBrandingLogointerface}
      * @memberof BrandingResponse
      */
+    /*'eBrandingLogointerface'?: FieldEBrandingLogointerface;*/
     'eBrandingLogointerface'?: FieldEBrandingLogointerface;
     /**
      * The color of the text. This is a RGB color converted into integer
      * @type {number}
      * @memberof BrandingResponse
      */
+    /*'iBrandingColortext': number;*/
     'iBrandingColortext': number;
     /**
      * The color of the text in the link box. This is a RGB color converted into integer
      * @type {number}
      * @memberof BrandingResponse
      */
+    /*'iBrandingColortextlinkbox': number;*/
     'iBrandingColortextlinkbox': number;
     /**
      * The color of the text in the button. This is a RGB color converted into integer
      * @type {number}
      * @memberof BrandingResponse
      */
+    /*'iBrandingColortextbutton': number;*/
     'iBrandingColortextbutton': number;
     /**
      * The color of the background. This is a RGB color converted into integer
      * @type {number}
      * @memberof BrandingResponse
      */
+    /*'iBrandingColorbackground': number;*/
     'iBrandingColorbackground': number;
     /**
      * The color of the background of the button. This is a RGB color converted into integer
      * @type {number}
      * @memberof BrandingResponse
      */
+    /*'iBrandingColorbackgroundbutton': number;*/
     'iBrandingColorbackgroundbutton': number;
     /**
      * The color of the background of the small box. This is a RGB color converted into integer
      * @type {number}
      * @memberof BrandingResponse
      */
+    /*'iBrandingColorbackgroundsmallbox': number;*/
     'iBrandingColorbackgroundsmallbox': number;
     /**
      * The color of the interface. This is a RGB color converted into integer
      * @type {number}
      * @memberof BrandingResponse
      */
+    /*'iBrandingInterfacecolor'?: number;*/
     'iBrandingInterfacecolor'?: number;
     /**
      * Whether the Branding is active or not
      * @type {boolean}
      * @memberof BrandingResponse
      */
+    /*'bBrandingIsactive': boolean;*/
     'bBrandingIsactive': boolean;
 }
 
@@ -191,6 +207,7 @@ export class ValidationObjectBrandingResponse {
    }
    sEmailAddress = {
       type: 'string',
+      pattern: '/^[\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/',
       required: false
    }
    eBrandingLogo = {

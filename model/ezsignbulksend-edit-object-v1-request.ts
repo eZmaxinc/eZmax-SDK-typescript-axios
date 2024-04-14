@@ -28,6 +28,7 @@ export interface EzsignbulksendEditObjectV1Request {
      * @type {EzsignbulksendRequestCompound}
      * @memberof EzsignbulksendEditObjectV1Request
      */
+    /*'objEzsignbulksend': EzsignbulksendRequestCompound;*/
     'objEzsignbulksend': EzsignbulksendRequestCompound;
 }
 /**

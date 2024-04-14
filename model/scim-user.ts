@@ -28,24 +28,28 @@ export interface ScimUser {
      * @type {string}
      * @memberof ScimUser
      */
+    /*'id'?: string;*/
     'id'?: string;
     /**
      * A service provider\'s unique identifier for the user, typically used by the user to directly authenticate to the service provider.  Often displayed to the user as their unique identifier within the system (as opposed to \"id\" or \"externalId\", which are generally opaque and not user-friendly identifiers).  Each User MUST include a non-empty userName value.  This identifier MUST be unique across the service provider\'s entire set of Users.  This attribute is REQUIRED and is case insensitive.
      * @type {string}
      * @memberof ScimUser
      */
+    /*'userName': string;*/
     'userName': string;
     /**
      * 
      * @type {string}
      * @memberof ScimUser
      */
+    /*'displayName'?: string;*/
     'displayName'?: string;
     /**
      * 
      * @type {Array<ScimEmail>}
      * @memberof ScimUser
      */
+    /*'emails'?: Array<ScimEmail>;*/
     'emails'?: Array<ScimEmail>;
 }
 /**

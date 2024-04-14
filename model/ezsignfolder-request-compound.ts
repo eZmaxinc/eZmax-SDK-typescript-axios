@@ -25,7 +25,7 @@ import { FieldEEzsignfolderSendreminderfrequency } from './field-eezsignfolder-s
  * An Ezsignfolder Object and children to create a complete structure
  * @export
  */
-/** export type EzsignfolderRequestCompound = EzsignfolderRequest; */
+/*export type EzsignfolderRequestCompound = EzsignfolderRequest;*/
 export interface EzsignfolderRequestCompound {
     /**
      * The unique ID of the Ezsignfolder
@@ -132,7 +132,7 @@ export class ValidationObjectEzsignfolderRequestCompound {
    }
    sEzsignfolderExternalid = {
       type: 'string',
-      pattern: '/^.{0,64}$/',
+      pattern: '/^.{0,128}$/',
       required: false
    }
 } 

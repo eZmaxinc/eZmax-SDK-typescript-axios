@@ -28,18 +28,21 @@ export interface CustomEzsignsignatureEzsignsignaturesAutomaticResponse {
      * @type {number}
      * @memberof CustomEzsignsignatureEzsignsignaturesAutomaticResponse
      */
+    /*'pkiEzsignsignatureID': number;*/
     'pkiEzsignsignatureID': number;
     /**
      * 
      * @type {FieldEEzsignsignatureType}
      * @memberof CustomEzsignsignatureEzsignsignaturesAutomaticResponse
      */
+    /*'eEzsignsignatureType': FieldEEzsignsignatureType;*/
     'eEzsignsignatureType': FieldEEzsignsignatureType;
     /**
      * The page number in the Ezsigndocument
      * @type {number}
      * @memberof CustomEzsignsignatureEzsignsignaturesAutomaticResponse
      */
+    /*'iEzsignpagePagenumber': number;*/
     'iEzsignpagePagenumber': number;
 }
 

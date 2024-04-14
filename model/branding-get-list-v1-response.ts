@@ -31,7 +31,7 @@ import { CommonResponseObjDebugPayloadGetList } from './common-response-obj-debu
  * Response for GET /1/object/branding/getList
  * @export
  */
-/** export type BrandingGetListV1Response = CommonResponseGetList; */
+/*export type BrandingGetListV1Response = CommonResponseGetList;*/
 export interface BrandingGetListV1Response {
     /**
      * 

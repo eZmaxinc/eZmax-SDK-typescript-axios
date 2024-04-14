@@ -31,7 +31,7 @@ import { PermissionCreateObjectV1ResponseMPayload } from './permission-create-ob
  * Response for POST /1/object/permission
  * @export
  */
-/** export type PermissionCreateObjectV1Response = CommonResponse; */
+/*export type PermissionCreateObjectV1Response = CommonResponse;*/
 export interface PermissionCreateObjectV1Response {
     /**
      * 

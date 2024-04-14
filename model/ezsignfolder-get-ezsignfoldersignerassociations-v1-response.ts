@@ -31,7 +31,7 @@ import { EzsignfolderGetEzsignfoldersignerassociationsV1ResponseMPayload } from 
  * Response for GET /1/object/ezsignfolder/{pkiEzsignfolder}/getEzsignfoldersignerassociations
  * @export
  */
-/** export type EzsignfolderGetEzsignfoldersignerassociationsV1Response = CommonResponse; */
+/*export type EzsignfolderGetEzsignfoldersignerassociationsV1Response = CommonResponse;*/
 export interface EzsignfolderGetEzsignfoldersignerassociationsV1Response {
     /**
      * 

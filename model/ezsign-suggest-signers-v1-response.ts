@@ -31,7 +31,7 @@ import { EzsignSuggestSignersV1ResponseMPayload } from './ezsign-suggest-signers
  * Response for GET /1/module/ezsign/suggestSigners
  * @export
  */
-/** export type EzsignSuggestSignersV1Response = CommonResponse; */
+/*export type EzsignSuggestSignersV1Response = CommonResponse;*/
 export interface EzsignSuggestSignersV1Response {
     /**
      * 

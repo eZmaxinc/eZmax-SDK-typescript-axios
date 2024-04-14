@@ -25,6 +25,7 @@ export interface CorsCreateObjectV1ResponseMPayload {
      * @type {Array<number>}
      * @memberof CorsCreateObjectV1ResponseMPayload
      */
+    /*'a_pkiCorsID': Array<number>;*/
     'a_pkiCorsID': Array<number>;
 }
 /**

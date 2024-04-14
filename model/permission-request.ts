@@ -25,36 +25,42 @@ export interface PermissionRequest {
      * @type {number}
      * @memberof PermissionRequest
      */
+    /*'pkiPermissionID'?: number;*/
     'pkiPermissionID'?: number;
     /**
      * The unique ID of the User
      * @type {number}
      * @memberof PermissionRequest
      */
+    /*'fkiUserID'?: number;*/
     'fkiUserID'?: number;
     /**
      * The unique ID of the Apikey
      * @type {number}
      * @memberof PermissionRequest
      */
+    /*'fkiApikeyID'?: number;*/
     'fkiApikeyID'?: number;
     /**
      * The unique ID of the Usergroup
      * @type {number}
      * @memberof PermissionRequest
      */
+    /*'fkiUsergroupID'?: number;*/
     'fkiUsergroupID'?: number;
     /**
      * The unique ID of the Company
      * @type {number}
      * @memberof PermissionRequest
      */
+    /*'fkiCompanyID'?: number;*/
     'fkiCompanyID'?: number;
     /**
      * The unique ID of the Modulesection
      * @type {number}
      * @memberof PermissionRequest
      */
+    /*'fkiModulesectionID': number;*/
     'fkiModulesectionID': number;
 }
 /**

@@ -28,7 +28,7 @@ import { NotificationsubsectionResponse } from './notificationsubsection-respons
  * A Notificationsubsection Object in the context of getNotificationtests
  * @export
  */
-/** export type CustomNotificationsubsectiongetnotificationtestsResponse = NotificationsubsectionResponse; */
+/*export type CustomNotificationsubsectiongetnotificationtestsResponse = NotificationsubsectionResponse;*/
 export interface CustomNotificationsubsectiongetnotificationtestsResponse {
     /**
      * The unique ID of the Notificationsubsection

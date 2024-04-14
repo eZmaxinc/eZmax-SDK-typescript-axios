@@ -31,7 +31,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for GET /2/object/billingentityinternal/{pkiBillingentityinternalID}
  * @export
  */
-/** export type BillingentityinternalGetObjectV2Response = CommonResponse; */
+/*export type BillingentityinternalGetObjectV2Response = CommonResponse;*/
 export interface BillingentityinternalGetObjectV2Response {
     /**
      * 

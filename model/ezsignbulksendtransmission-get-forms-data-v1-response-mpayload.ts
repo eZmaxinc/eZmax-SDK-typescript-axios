@@ -28,6 +28,7 @@ export interface EzsignbulksendtransmissionGetFormsDataV1ResponseMPayload {
      * @type {Array<CustomFormsDataFolderResponse>}
      * @memberof EzsignbulksendtransmissionGetFormsDataV1ResponseMPayload
      */
+    /*'a_objFormsDataFolder': Array<CustomFormsDataFolderResponse>;*/
     'a_objFormsDataFolder': Array<CustomFormsDataFolderResponse>;
 }
 /**

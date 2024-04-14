@@ -25,7 +25,7 @@ import { FieldEEzsigntemplateType } from './field-eezsigntemplate-type';
  * A Ezsigntemplate Object and children
  * @export
  */
-/** export type EzsigntemplateRequestCompoundV2 = EzsigntemplateRequestV2; */
+/*export type EzsigntemplateRequestCompoundV2 = EzsigntemplateRequestV2;*/
 export interface EzsigntemplateRequestCompoundV2 {
     /**
      * The unique ID of the Ezsigntemplate

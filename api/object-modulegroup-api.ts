@@ -14,13 +14,13 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
 import { ModulegroupGetAllV1Response } from '../model';
 // @ts-ignore
@@ -38,7 +38,7 @@ export const ObjectModulegroupApiAxiosParamCreator = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        modulegroupGetAllV1: async (eContext: ModulegroupGetAllV1EContextEnum, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        modulegroupGetAllV1: async (eContext: ModulegroupGetAllV1EContextEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'eContext' is not null or undefined
             assertParamExists('modulegroupGetAllV1', 'eContext', eContext)
             const localVarPath = `/1/object/modulegroup/getAll/{eContext}`
@@ -46,6 +46,7 @@ export const ObjectModulegroupApiAxiosParamCreator = function (configuration?: C
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -64,6 +65,7 @@ export const ObjectModulegroupApiAxiosParamCreator = function (configuration?: C
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -104,9 +106,11 @@ export const ObjectModulegroupApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async modulegroupGetAllV1(eContext: ModulegroupGetAllV1EContextEnum, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ModulegroupGetAllV1Response>> {
+        async modulegroupGetAllV1(eContext: ModulegroupGetAllV1EContextEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ModulegroupGetAllV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.modulegroupGetAllV1(eContext, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectModulegroupApi.modulegroupGetAllV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -146,7 +150,7 @@ export class ObjectModulegroupApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectModulegroupApi
      */
-    public modulegroupGetAllV1(eContext: ModulegroupGetAllV1EContextEnum, options?: AxiosRequestConfig) {
+    public modulegroupGetAllV1(eContext: ModulegroupGetAllV1EContextEnum, options?: RawAxiosRequestConfig) {
         return ObjectModulegroupApiFp(this.configuration).modulegroupGetAllV1(eContext, options).then((request) => request(this.axios, this.basePath));
     }
 }

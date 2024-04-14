@@ -31,7 +31,7 @@ import { CountryGetAutocompleteV2ResponseMPayload } from './country-get-autocomp
  * Response for GET /2/object/country/getAutocomplete
  * @export
  */
-/** export type CountryGetAutocompleteV2Response = CommonResponse; */
+/*export type CountryGetAutocompleteV2Response = CommonResponse;*/
 export interface CountryGetAutocompleteV2Response {
     /**
      * 

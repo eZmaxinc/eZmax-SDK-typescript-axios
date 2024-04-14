@@ -25,18 +25,21 @@ export interface FranchiseofficeAutocompleteElementResponse {
      * @type {string}
      * @memberof FranchiseofficeAutocompleteElementResponse
      */
+    /*'sFranchiseofficeDescription': string;*/
     'sFranchiseofficeDescription': string;
     /**
      * The unique ID of the Franchisereoffice
      * @type {number}
      * @memberof FranchiseofficeAutocompleteElementResponse
      */
+    /*'pkiFranchiseofficeID': number;*/
     'pkiFranchiseofficeID': number;
     /**
      * Whether the Franchiseoffice is active or not
      * @type {boolean}
      * @memberof FranchiseofficeAutocompleteElementResponse
      */
+    /*'bFranchiseofficeIsactive': boolean;*/
     'bFranchiseofficeIsactive': boolean;
 }
 /**

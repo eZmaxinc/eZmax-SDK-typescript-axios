@@ -28,7 +28,7 @@ import { MultilingualEzmaxinvoicingsummaryinternalDescription } from './multilin
  * A Ezmaxinvoicingsummaryinternal Object
  * @export
  */
-/** export type EzmaxinvoicingsummaryinternalResponseCompound = EzmaxinvoicingsummaryinternalResponse; */
+/*export type EzmaxinvoicingsummaryinternalResponseCompound = EzmaxinvoicingsummaryinternalResponse;*/
 export interface EzmaxinvoicingsummaryinternalResponseCompound {
     /**
      * The unique ID of the Ezmaxinvoicingsummaryinternal

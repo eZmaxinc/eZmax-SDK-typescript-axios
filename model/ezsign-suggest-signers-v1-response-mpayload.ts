@@ -31,18 +31,21 @@ export interface EzsignSuggestSignersV1ResponseMPayload {
      * @type {Array<EzsignfoldersignerassociationResponseCompound>}
      * @memberof EzsignSuggestSignersV1ResponseMPayload
      */
+    /*'a_objEzsignfoldersignerassociation': Array<EzsignfoldersignerassociationResponseCompound>;*/
     'a_objEzsignfoldersignerassociation': Array<EzsignfoldersignerassociationResponseCompound>;
     /**
      * 
      * @type {Array<CustomUserResponse>}
      * @memberof EzsignSuggestSignersV1ResponseMPayload
      */
+    /*'a_objUserTeam': Array<CustomUserResponse>;*/
     'a_objUserTeam': Array<CustomUserResponse>;
     /**
      * 
      * @type {Array<CustomUserResponse>}
      * @memberof EzsignSuggestSignersV1ResponseMPayload
      */
+    /*'a_objUser': Array<CustomUserResponse>;*/
     'a_objUser': Array<CustomUserResponse>;
 }
 /**

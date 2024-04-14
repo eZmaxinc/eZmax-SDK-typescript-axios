@@ -28,6 +28,7 @@ export interface EzsignfoldersignerassociationEditObjectV1Request {
      * @type {EzsignfoldersignerassociationRequestCompound}
      * @memberof EzsignfoldersignerassociationEditObjectV1Request
      */
+    /*'objEzsignfoldersignerassociation': EzsignfoldersignerassociationRequestCompound;*/
     'objEzsignfoldersignerassociation': EzsignfoldersignerassociationRequestCompound;
 }
 /**

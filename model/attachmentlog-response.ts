@@ -28,30 +28,35 @@ export interface AttachmentlogResponse {
      * @type {number}
      * @memberof AttachmentlogResponse
      */
+    /*'fkiAttachmentID': number;*/
     'fkiAttachmentID': number;
     /**
      * The unique ID of the User
      * @type {number}
      * @memberof AttachmentlogResponse
      */
+    /*'fkiUserID': number;*/
     'fkiUserID': number;
     /**
      * The created date
      * @type {string}
      * @memberof AttachmentlogResponse
      */
+    /*'dtAttachmentlogDatetime': string;*/
     'dtAttachmentlogDatetime': string;
     /**
      * 
      * @type {FieldEAttachmentlogType}
      * @memberof AttachmentlogResponse
      */
+    /*'eAttachmentlogType': FieldEAttachmentlogType;*/
     'eAttachmentlogType': FieldEAttachmentlogType;
     /**
      * The additionnal detail
      * @type {string}
      * @memberof AttachmentlogResponse
      */
+    /*'sAttachmentlogDetail'?: string;*/
     'sAttachmentlogDetail'?: string;
 }
 

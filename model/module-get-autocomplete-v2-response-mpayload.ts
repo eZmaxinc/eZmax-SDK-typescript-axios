@@ -28,6 +28,7 @@ export interface ModuleGetAutocompleteV2ResponseMPayload {
      * @type {Array<ModuleAutocompleteElementResponse>}
      * @memberof ModuleGetAutocompleteV2ResponseMPayload
      */
+    /*'a_objModule': Array<ModuleAutocompleteElementResponse>;*/
     'a_objModule': Array<ModuleAutocompleteElementResponse>;
 }
 /**

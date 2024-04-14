@@ -28,6 +28,7 @@ export interface SubnetGetObjectV2ResponseMPayload {
      * @type {SubnetResponseCompound}
      * @memberof SubnetGetObjectV2ResponseMPayload
      */
+    /*'objSubnet': SubnetResponseCompound;*/
     'objSubnet': SubnetResponseCompound;
 }
 /**

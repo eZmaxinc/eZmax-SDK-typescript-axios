@@ -28,6 +28,7 @@ export interface EzmaxinvoicingGetAutocompleteV2ResponseMPayload {
      * @type {Array<EzmaxinvoicingAutocompleteElementResponse>}
      * @memberof EzmaxinvoicingGetAutocompleteV2ResponseMPayload
      */
+    /*'a_objEzmaxinvoicing': Array<EzmaxinvoicingAutocompleteElementResponse>;*/
     'a_objEzmaxinvoicing': Array<EzmaxinvoicingAutocompleteElementResponse>;
 }
 /**

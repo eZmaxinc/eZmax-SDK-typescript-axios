@@ -31,12 +31,14 @@ export interface EzsignfolderGetActionableElementsV1ResponseMPayload {
      * @type {Array<EzsignsignatureResponseCompound>}
      * @memberof EzsignfolderGetActionableElementsV1ResponseMPayload
      */
+    /*'a_objEzsignsignature': Array<EzsignsignatureResponseCompound>;*/
     'a_objEzsignsignature': Array<EzsignsignatureResponseCompound>;
     /**
      * 
      * @type {Array<EzsignformfieldgroupResponseCompound>}
      * @memberof EzsignfolderGetActionableElementsV1ResponseMPayload
      */
+    /*'a_objEzsignformfieldgroup': Array<EzsignformfieldgroupResponseCompound>;*/
     'a_objEzsignformfieldgroup': Array<EzsignformfieldgroupResponseCompound>;
 }
 /**

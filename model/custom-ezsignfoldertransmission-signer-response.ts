@@ -25,18 +25,21 @@ export interface CustomEzsignfoldertransmissionSignerResponse {
      * @type {number}
      * @memberof CustomEzsignfoldertransmissionSignerResponse
      */
+    /*'fkiUserID'?: number;*/
     'fkiUserID'?: number;
     /**
      * The First name of the contact
      * @type {string}
      * @memberof CustomEzsignfoldertransmissionSignerResponse
      */
+    /*'sContactFirstname': string;*/
     'sContactFirstname': string;
     /**
      * The Last name of the contact
      * @type {string}
      * @memberof CustomEzsignfoldertransmissionSignerResponse
      */
+    /*'sContactLastname': string;*/
     'sContactLastname': string;
 }
 /**

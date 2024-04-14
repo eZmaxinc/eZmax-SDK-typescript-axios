@@ -25,6 +25,7 @@ export interface EzsigntemplatepackagesignermembershipCreateObjectV1ResponseMPay
      * @type {Array<number>}
      * @memberof EzsigntemplatepackagesignermembershipCreateObjectV1ResponseMPayload
      */
+    /*'a_pkiEzsigntemplatepackagesignermembershipID': Array<number>;*/
     'a_pkiEzsigntemplatepackagesignermembershipID': Array<number>;
 }
 /**

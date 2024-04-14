@@ -25,6 +25,7 @@ export interface PermissionCreateObjectV1ResponseMPayload {
      * @type {Array<number>}
      * @memberof PermissionCreateObjectV1ResponseMPayload
      */
+    /*'a_pkiPermissionID': Array<number>;*/
     'a_pkiPermissionID': Array<number>;
 }
 /**

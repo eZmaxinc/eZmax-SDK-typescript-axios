@@ -28,18 +28,21 @@ export interface WebsocketResponseErrorV1 {
      * @type {string}
      * @memberof WebsocketResponseErrorV1
      */
+    /*'eWebsocketMessagetype': WebsocketResponseErrorV1EWebsocketMessagetypeEnum;*/
     'eWebsocketMessagetype': WebsocketResponseErrorV1EWebsocketMessagetypeEnum;
     /**
      * The Channel on which to route the websocket message
      * @type {string}
      * @memberof WebsocketResponseErrorV1
      */
+    /*'sWebsocketChannel': string;*/
     'sWebsocketChannel': string;
     /**
      * 
      * @type {WebsocketResponseErrorV1MPayload}
      * @memberof WebsocketResponseErrorV1
      */
+    /*'mPayload': WebsocketResponseErrorV1MPayload;*/
     'mPayload': WebsocketResponseErrorV1MPayload;
 }
 

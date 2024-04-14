@@ -25,6 +25,7 @@ export interface EzsignfoldersignerassociationRequestPatch {
      * @type {string}
      * @memberof EzsignfoldersignerassociationRequestPatch
      */
+    /*'tEzsignfoldersignerassociationMessage'?: string;*/
     'tEzsignfoldersignerassociationMessage'?: string;
 }
 /**

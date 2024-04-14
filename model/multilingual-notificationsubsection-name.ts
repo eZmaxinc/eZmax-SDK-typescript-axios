@@ -25,12 +25,14 @@ export interface MultilingualNotificationsubsectionName {
      * @type {string}
      * @memberof MultilingualNotificationsubsectionName
      */
+    /*'sNotificationsubsectionName1'?: string;*/
     'sNotificationsubsectionName1'?: string;
     /**
      * The name of the Notificationsubsection in English
      * @type {string}
      * @memberof MultilingualNotificationsubsectionName
      */
+    /*'sNotificationsubsectionName2'?: string;*/
     'sNotificationsubsectionName2'?: string;
 }
 /**

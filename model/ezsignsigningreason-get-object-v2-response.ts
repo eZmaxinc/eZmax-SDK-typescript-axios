@@ -31,7 +31,7 @@ import { EzsignsigningreasonGetObjectV2ResponseMPayload } from './ezsignsigningr
  * Response for GET /2/object/ezsignsigningreason/{pkiEzsignsigningreasonID}
  * @export
  */
-/** export type EzsignsigningreasonGetObjectV2Response = CommonResponse; */
+/*export type EzsignsigningreasonGetObjectV2Response = CommonResponse;*/
 export interface EzsignsigningreasonGetObjectV2Response {
     /**
      * 

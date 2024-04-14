@@ -34,120 +34,140 @@ export interface CustomCommunicationrecipientsrecipientResponse {
      * @type {number}
      * @memberof CustomCommunicationrecipientsrecipientResponse
      */
+    /*'fkiAgentID'?: number;*/
     'fkiAgentID'?: number;
     /**
      * The unique ID of the Broker.
      * @type {number}
      * @memberof CustomCommunicationrecipientsrecipientResponse
      */
+    /*'fkiBrokerID'?: number;*/
     'fkiBrokerID'?: number;
     /**
      * The unique ID of the Contact
      * @type {number}
      * @memberof CustomCommunicationrecipientsrecipientResponse
      */
+    /*'fkiContactID'?: number;*/
     'fkiContactID'?: number;
     /**
      * The unique ID of the Customer.
      * @type {number}
      * @memberof CustomCommunicationrecipientsrecipientResponse
      */
+    /*'fkiCustomerID'?: number;*/
     'fkiCustomerID'?: number;
     /**
      * The unique ID of the Employee.
      * @type {number}
      * @memberof CustomCommunicationrecipientsrecipientResponse
      */
+    /*'fkiEmployeeID'?: number;*/
     'fkiEmployeeID'?: number;
     /**
      * The unique ID of the Ezsignsigner
      * @type {number}
      * @memberof CustomCommunicationrecipientsrecipientResponse
      */
+    /*'fkiEzsignsignerID'?: number;*/
     'fkiEzsignsignerID'?: number;
     /**
      * The unique ID of the Franchisereoffice
      * @type {number}
      * @memberof CustomCommunicationrecipientsrecipientResponse
      */
+    /*'fkiFranchiseofficeID'?: number;*/
     'fkiFranchiseofficeID'?: number;
     /**
      * The unique ID of the User
      * @type {number}
      * @memberof CustomCommunicationrecipientsrecipientResponse
      */
+    /*'fkiUserID'?: number;*/
     'fkiUserID'?: number;
     /**
      * The unique ID of the Agentincorporation.
      * @type {number}
      * @memberof CustomCommunicationrecipientsrecipientResponse
      */
+    /*'fkiAgentincorporationID'?: number;*/
     'fkiAgentincorporationID'?: number;
     /**
      * The unique ID of the Assistant.
      * @type {number}
      * @memberof CustomCommunicationrecipientsrecipientResponse
      */
+    /*'fkiAssistantID'?: number;*/
     'fkiAssistantID'?: number;
     /**
      * The unique ID of the Externalbroker.
      * @type {number}
      * @memberof CustomCommunicationrecipientsrecipientResponse
      */
+    /*'fkiExternalbrokerID'?: number;*/
     'fkiExternalbrokerID'?: number;
     /**
      * The unique ID of the Ezcomagent.
      * @type {number}
      * @memberof CustomCommunicationrecipientsrecipientResponse
      */
+    /*'fkiEzcomagentID'?: number;*/
     'fkiEzcomagentID'?: number;
     /**
      * The unique ID of the Notary.
      * @type {number}
      * @memberof CustomCommunicationrecipientsrecipientResponse
      */
+    /*'fkiNotaryID'?: number;*/
     'fkiNotaryID'?: number;
     /**
      * The unique ID of the Rewardmember.
      * @type {number}
      * @memberof CustomCommunicationrecipientsrecipientResponse
      */
+    /*'fkiRewardmemberID'?: number;*/
     'fkiRewardmemberID'?: number;
     /**
      * The unique ID of the Supplier.
      * @type {number}
      * @memberof CustomCommunicationrecipientsrecipientResponse
      */
+    /*'fkiSupplierID'?: number;*/
     'fkiSupplierID'?: number;
     /**
      * 
      * @type {string}
      * @memberof CustomCommunicationrecipientsrecipientResponse
      */
+    /*'eCommunicationrecipientsrecipientObjecttype': CustomCommunicationrecipientsrecipientResponseECommunicationrecipientsrecipientObjecttypeEnum;*/
     'eCommunicationrecipientsrecipientObjecttype': CustomCommunicationrecipientsrecipientResponseECommunicationrecipientsrecipientObjecttypeEnum;
     /**
      * 
      * @type {CustomContactNameResponse}
      * @memberof CustomCommunicationrecipientsrecipientResponse
      */
+    /*'objContactName': CustomContactNameResponse;*/
     'objContactName': CustomContactNameResponse;
     /**
      * 
      * @type {EmailResponseCompound}
      * @memberof CustomCommunicationrecipientsrecipientResponse
      */
+    /*'objEmail'?: EmailResponseCompound;*/
     'objEmail'?: EmailResponseCompound;
     /**
      * 
      * @type {PhoneResponseCompound}
      * @memberof CustomCommunicationrecipientsrecipientResponse
      */
+    /*'objPhoneFax'?: PhoneResponseCompound;*/
     'objPhoneFax'?: PhoneResponseCompound;
     /**
      * 
      * @type {PhoneResponseCompound}
      * @memberof CustomCommunicationrecipientsrecipientResponse
      */
+    /*'objPhoneSMS'?: PhoneResponseCompound;*/
     'objPhoneSMS'?: PhoneResponseCompound;
 }
 

@@ -28,18 +28,21 @@ export interface UserlogintypeResponse {
      * @type {number}
      * @memberof UserlogintypeResponse
      */
+    /*'pkiUserlogintypeID': number;*/
     'pkiUserlogintypeID': number;
     /**
      * 
      * @type {MultilingualUserlogintypeDescription}
      * @memberof UserlogintypeResponse
      */
+    /*'objUserlogintypeDescription': MultilingualUserlogintypeDescription;*/
     'objUserlogintypeDescription': MultilingualUserlogintypeDescription;
     /**
      * The description of the Userlogintype in the language of the requester
      * @type {string}
      * @memberof UserlogintypeResponse
      */
+    /*'sUserlogintypeDescriptionX': string;*/
     'sUserlogintypeDescriptionX': string;
 }
 /**

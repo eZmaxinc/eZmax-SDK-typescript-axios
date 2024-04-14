@@ -28,7 +28,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for GET /1/object/discussion/{pkiDiscussionID}/updateDiscussionreadstatus
  * @export
  */
-/** export type DiscussionUpdateDiscussionreadstatusV1Response = CommonResponse; */
+/*export type DiscussionUpdateDiscussionreadstatusV1Response = CommonResponse;*/
 export interface DiscussionUpdateDiscussionreadstatusV1Response {
     /**
      * 

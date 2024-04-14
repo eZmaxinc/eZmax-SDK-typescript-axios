@@ -25,12 +25,14 @@ export interface GlobalEzmaxclientVersionV1Response {
      * @type {string}
      * @memberof GlobalEzmaxclientVersionV1Response
      */
+    /*'sEzmaxclientVersion': string;*/
     'sEzmaxclientVersion': string;
     /**
      * The latest OS version of the system running the application at the time of release
      * @type {string}
      * @memberof GlobalEzmaxclientVersionV1Response
      */
+    /*'sEzmaxclientOslatestversion': string;*/
     'sEzmaxclientOslatestversion': string;
 }
 /**

@@ -28,12 +28,14 @@ export interface WebsocketResponseErrorV1MPayload {
      * @type {string}
      * @memberof WebsocketResponseErrorV1MPayload
      */
+    /*'sErrorMessage': string;*/
     'sErrorMessage': string;
     /**
      * 
      * @type {FieldEErrorCode}
      * @memberof WebsocketResponseErrorV1MPayload
      */
+    /*'eErrorCode': FieldEErrorCode;*/
     'eErrorCode': FieldEErrorCode;
 }
 

@@ -22,7 +22,7 @@ import { EmailResponse } from './email-response';
  * An Email Object and children to create a complete structure
  * @export
  */
-/** export type EmailResponseCompound = EmailResponse; */
+/*export type EmailResponseCompound = EmailResponse;*/
 export interface EmailResponseCompound {
     /**
      * The unique ID of the Email
@@ -81,6 +81,7 @@ export class ValidationObjectEmailResponseCompound {
    }
    sEmailAddress = {
       type: 'string',
+      pattern: '/^[\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/',
       required: true
    }
 } 

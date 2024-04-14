@@ -25,42 +25,49 @@ export interface EzsignbulksendRequest {
      * @type {number}
      * @memberof EzsignbulksendRequest
      */
+    /*'pkiEzsignbulksendID'?: number;*/
     'pkiEzsignbulksendID'?: number;
     /**
      * The unique ID of the Ezsignfoldertype.
      * @type {number}
      * @memberof EzsignbulksendRequest
      */
+    /*'fkiEzsignfoldertypeID': number;*/
     'fkiEzsignfoldertypeID': number;
     /**
      * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @type {number}
      * @memberof EzsignbulksendRequest
      */
+    /*'fkiLanguageID': number;*/
     'fkiLanguageID': number;
     /**
      * The description of the Ezsignbulksend
      * @type {string}
      * @memberof EzsignbulksendRequest
      */
+    /*'sEzsignbulksendDescription': string;*/
     'sEzsignbulksendDescription': string;
     /**
      * Note about the Ezsignbulksend
      * @type {string}
      * @memberof EzsignbulksendRequest
      */
+    /*'tEzsignbulksendNote': string;*/
     'tEzsignbulksendNote': string;
     /**
      * Whether the Ezsigntemplatepackage was automatically modified and needs a manual validation
      * @type {boolean}
      * @memberof EzsignbulksendRequest
      */
+    /*'bEzsignbulksendNeedvalidation': boolean;*/
     'bEzsignbulksendNeedvalidation': boolean;
     /**
      * Whether the Ezsignbulksend is active or not
      * @type {boolean}
      * @memberof EzsignbulksendRequest
      */
+    /*'bEzsignbulksendIsactive': boolean;*/
     'bEzsignbulksendIsactive': boolean;
 }
 /**

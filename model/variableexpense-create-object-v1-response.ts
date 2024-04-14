@@ -31,7 +31,7 @@ import { VariableexpenseCreateObjectV1ResponseMPayload } from './variableexpense
  * Response for POST /1/object/variableexpense
  * @export
  */
-/** export type VariableexpenseCreateObjectV1Response = CommonResponse; */
+/*export type VariableexpenseCreateObjectV1Response = CommonResponse;*/
 export interface VariableexpenseCreateObjectV1Response {
     /**
      * 

@@ -28,36 +28,42 @@ export interface EzmaxinvoicingsummaryinternalResponse {
      * @type {number}
      * @memberof EzmaxinvoicingsummaryinternalResponse
      */
+    /*'pkiEzmaxinvoicingsummaryinternalID'?: number;*/
     'pkiEzmaxinvoicingsummaryinternalID'?: number;
     /**
      * 
      * @type {MultilingualEzmaxinvoicingsummaryinternalDescription}
      * @memberof EzmaxinvoicingsummaryinternalResponse
      */
+    /*'objEzmaxinvoicingsummaryinternalDescription': MultilingualEzmaxinvoicingsummaryinternalDescription;*/
     'objEzmaxinvoicingsummaryinternalDescription': MultilingualEzmaxinvoicingsummaryinternalDescription;
     /**
      * The Ezmaxinvoicingsummaryinternal description in the language of the requester
      * @type {string}
      * @memberof EzmaxinvoicingsummaryinternalResponse
      */
+    /*'sEzmaxinvoicingsummaryinternalDescriptionX': string;*/
     'sEzmaxinvoicingsummaryinternalDescriptionX': string;
     /**
      * The unique ID of the Ezmaxinvoicing
      * @type {number}
      * @memberof EzmaxinvoicingsummaryinternalResponse
      */
+    /*'fkiEzmaxinvoicingID'?: number;*/
     'fkiEzmaxinvoicingID'?: number;
     /**
      * The unique ID of the Billingentityinternal.
      * @type {number}
      * @memberof EzmaxinvoicingsummaryinternalResponse
      */
+    /*'fkiBillingentityinternalID': number;*/
     'fkiBillingentityinternalID': number;
     /**
      * The description of the Billingentityinternal in the language of the requester
      * @type {string}
      * @memberof EzmaxinvoicingsummaryinternalResponse
      */
+    /*'sBillingentityinternalDescriptionX': string;*/
     'sBillingentityinternalDescriptionX': string;
 }
 /**

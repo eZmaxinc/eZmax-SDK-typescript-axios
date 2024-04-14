@@ -22,7 +22,7 @@ import { WebsiteRequest } from './website-request';
  * A Website Object and children to create a complete structure
  * @export
  */
-/** export type WebsiteRequestCompound = WebsiteRequest; */
+/*export type WebsiteRequestCompound = WebsiteRequest;*/
 export interface WebsiteRequestCompound {
     /**
      * The unique ID of the Websitetype.  Valid values:  |Value|Description| |-|-| |1|Website| |2|Twitter| |3|Facebook| |4|Survey|

@@ -25,42 +25,49 @@ export interface DiscussionmembershipResponse {
      * @type {number}
      * @memberof DiscussionmembershipResponse
      */
+    /*'pkiDiscussionmembershipID': number;*/
     'pkiDiscussionmembershipID': number;
     /**
      * The unique ID of the Discussion
      * @type {number}
      * @memberof DiscussionmembershipResponse
      */
+    /*'fkiDiscussionID': number;*/
     'fkiDiscussionID': number;
     /**
      * The unique ID of the User
      * @type {number}
      * @memberof DiscussionmembershipResponse
      */
+    /*'fkiUserID'?: number;*/
     'fkiUserID'?: number;
     /**
      * The unique ID of the Usergroup
      * @type {number}
      * @memberof DiscussionmembershipResponse
      */
+    /*'fkiUsergroupID'?: number;*/
     'fkiUsergroupID'?: number;
     /**
      * The unique ID of the Modulesection
      * @type {number}
      * @memberof DiscussionmembershipResponse
      */
+    /*'fkiModulesectionID'?: number;*/
     'fkiModulesectionID'?: number;
     /**
      * The Description containing the detail of who the Discussionmembership refers to
      * @type {string}
      * @memberof DiscussionmembershipResponse
      */
+    /*'sDiscussionmembershipDescription': string;*/
     'sDiscussionmembershipDescription': string;
     /**
      * The joined date of the Discussionmembership
      * @type {string}
      * @memberof DiscussionmembershipResponse
      */
+    /*'dtDiscussionmembershipJoined': string;*/
     'dtDiscussionmembershipJoined': string;
 }
 /**

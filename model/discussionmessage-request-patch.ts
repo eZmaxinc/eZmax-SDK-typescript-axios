@@ -25,12 +25,14 @@ export interface DiscussionmessageRequestPatch {
      * @type {number}
      * @memberof DiscussionmessageRequestPatch
      */
+    /*'fkiDiscussionmembershipIDActionrequired'?: number;*/
     'fkiDiscussionmembershipIDActionrequired'?: number;
     /**
      * The content of the Discussionmessage
      * @type {string}
      * @memberof DiscussionmessageRequestPatch
      */
+    /*'tDiscussionmessageContent'?: string;*/
     'tDiscussionmessageContent'?: string;
 }
 /**

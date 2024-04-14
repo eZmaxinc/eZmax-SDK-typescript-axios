@@ -31,7 +31,7 @@ import { EzsignfolderGetEzsignsignaturesAutomaticV1ResponseMPayload } from './ez
  * Response for GET /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsignsignaturesAutomatic
  * @export
  */
-/** export type EzsignfolderGetEzsignsignaturesAutomaticV1Response = CommonResponse; */
+/*export type EzsignfolderGetEzsignsignaturesAutomaticV1Response = CommonResponse;*/
 export interface EzsignfolderGetEzsignsignaturesAutomaticV1Response {
     /**
      * 

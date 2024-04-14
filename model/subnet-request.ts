@@ -28,36 +28,42 @@ export interface SubnetRequest {
      * @type {number}
      * @memberof SubnetRequest
      */
+    /*'pkiSubnetID'?: number;*/
     'pkiSubnetID'?: number;
     /**
      * The unique ID of the User
      * @type {number}
      * @memberof SubnetRequest
      */
+    /*'fkiUserID'?: number;*/
     'fkiUserID'?: number;
     /**
      * The unique ID of the Apikey
      * @type {number}
      * @memberof SubnetRequest
      */
+    /*'fkiApikeyID'?: number;*/
     'fkiApikeyID'?: number;
     /**
      * 
      * @type {MultilingualSubnetDescription}
      * @memberof SubnetRequest
      */
+    /*'objSubnetDescription': MultilingualSubnetDescription;*/
     'objSubnetDescription': MultilingualSubnetDescription;
     /**
      * The network of the Subnet in integer form. For example 8.8.8.0 would be 134744064
      * @type {number}
      * @memberof SubnetRequest
      */
+    /*'iSubnetNetwork': number;*/
     'iSubnetNetwork': number;
     /**
      * The mask of the Subnet  in integer form. For example 255.255.255.0 would be 4294967040
      * @type {number}
      * @memberof SubnetRequest
      */
+    /*'iSubnetMask': number;*/
     'iSubnetMask': number;
 }
 /**

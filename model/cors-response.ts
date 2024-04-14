@@ -25,18 +25,21 @@ export interface CorsResponse {
      * @type {number}
      * @memberof CorsResponse
      */
+    /*'pkiCorsID': number;*/
     'pkiCorsID': number;
     /**
      * The unique ID of the Apikey
      * @type {number}
      * @memberof CorsResponse
      */
+    /*'fkiApikeyID': number;*/
     'fkiApikeyID': number;
     /**
      * The entryurl of the Cors
      * @type {string}
      * @memberof CorsResponse
      */
+    /*'sCorsEntryurl': string;*/
     'sCorsEntryurl': string;
 }
 /**
@@ -75,7 +78,7 @@ export class ValidationObjectCorsResponse {
    }
    sCorsEntryurl = {
       type: 'string',
-      pattern: '/^.{0,2048}$/',
+      pattern: '/^(https|http):\\/\\/[^\s\\/$.?#].[^\s]*$/',
       required: true
    }
 } 

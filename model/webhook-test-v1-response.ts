@@ -28,7 +28,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for POST /1/object/webhook/{pkiWebhookID}/test
  * @export
  */
-/** export type WebhookTestV1Response = CommonResponse; */
+/*export type WebhookTestV1Response = CommonResponse;*/
 export interface WebhookTestV1Response {
     /**
      * 

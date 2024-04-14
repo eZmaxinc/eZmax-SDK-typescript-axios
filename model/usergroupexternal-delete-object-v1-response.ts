@@ -28,7 +28,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for DELETE /1/object/usergroupexternal/{pkiUsergroupexternalID}
  * @export
  */
-/** export type UsergroupexternalDeleteObjectV1Response = CommonResponse; */
+/*export type UsergroupexternalDeleteObjectV1Response = CommonResponse;*/
 export interface UsergroupexternalDeleteObjectV1Response {
     /**
      * 

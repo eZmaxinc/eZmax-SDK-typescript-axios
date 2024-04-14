@@ -25,18 +25,21 @@ export interface BillingentityinternalproductRequest {
      * @type {number}
      * @memberof BillingentityinternalproductRequest
      */
+    /*'pkiBillingentityinternalproductID'?: number;*/
     'pkiBillingentityinternalproductID'?: number;
     /**
      * The unique ID of the Ezmaxproduct
      * @type {number}
      * @memberof BillingentityinternalproductRequest
      */
+    /*'fkiEzmaxproductID': number;*/
     'fkiEzmaxproductID': number;
     /**
      * The unique ID of the Billingentityexternal
      * @type {number}
      * @memberof BillingentityinternalproductRequest
      */
+    /*'fkiBillingentityexternalID': number;*/
     'fkiBillingentityexternalID': number;
 }
 /**

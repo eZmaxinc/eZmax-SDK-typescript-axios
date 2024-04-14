@@ -28,6 +28,7 @@ export interface ApikeyCreateObjectV2Request {
      * @type {Array<ApikeyRequestCompound>}
      * @memberof ApikeyCreateObjectV2Request
      */
+    /*'a_objApikey': Array<ApikeyRequestCompound>;*/
     'a_objApikey': Array<ApikeyRequestCompound>;
 }
 /**

@@ -25,6 +25,7 @@ export interface ScimServiceProviderConfigChangePassword {
      * @type {boolean}
      * @memberof ScimServiceProviderConfigChangePassword
      */
+    /*'supported': boolean;*/
     'supported': boolean;
 }
 /**

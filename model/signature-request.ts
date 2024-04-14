@@ -25,12 +25,14 @@ export interface SignatureRequest {
      * @type {number}
      * @memberof SignatureRequest
      */
+    /*'pkiSignatureID'?: number;*/
     'pkiSignatureID'?: number;
     /**
      * The svg of the Signature
      * @type {string}
      * @memberof SignatureRequest
      */
+    /*'tSignatureSvg': string;*/
     'tSignatureSvg': string;
 }
 /**

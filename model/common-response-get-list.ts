@@ -31,12 +31,14 @@ export interface CommonResponseGetList {
      * @type {CommonResponseObjDebugPayloadGetList}
      * @memberof CommonResponseGetList
      */
+    /*'objDebugPayload': CommonResponseObjDebugPayloadGetList;*/
     'objDebugPayload': CommonResponseObjDebugPayloadGetList;
     /**
      * 
      * @type {CommonResponseObjDebug}
      * @memberof CommonResponseGetList
      */
+    /*'objDebug'?: CommonResponseObjDebug;*/
     'objDebug'?: CommonResponseObjDebug;
 }
 /**

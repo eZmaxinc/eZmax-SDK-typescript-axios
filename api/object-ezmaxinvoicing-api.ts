@@ -14,13 +14,13 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
 import { CommonResponseError } from '../model';
 // @ts-ignore
@@ -49,7 +49,7 @@ export const ObjectEzmaxinvoicingApiAxiosParamCreator = function (configuration?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezmaxinvoicingGetAutocompleteV2: async (sSelector: EzmaxinvoicingGetAutocompleteV2SSelectorEnum, eFilterActive?: EzmaxinvoicingGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezmaxinvoicingGetAutocompleteV2: async (sSelector: EzmaxinvoicingGetAutocompleteV2SSelectorEnum, eFilterActive?: EzmaxinvoicingGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('ezmaxinvoicingGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/ezmaxinvoicing/getAutocomplete/{sSelector}`
@@ -57,6 +57,7 @@ export const ObjectEzmaxinvoicingApiAxiosParamCreator = function (configuration?
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -80,8 +81,8 @@ export const ObjectEzmaxinvoicingApiAxiosParamCreator = function (configuration?
             }
 
             if (acceptLanguage != null) {
-                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string' 
-                    ? acceptLanguage 
+                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
+                    ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
 
@@ -89,6 +90,7 @@ export const ObjectEzmaxinvoicingApiAxiosParamCreator = function (configuration?
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -119,7 +121,7 @@ export const ObjectEzmaxinvoicingApiAxiosParamCreator = function (configuration?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezmaxinvoicingGetObjectV2: async (pkiEzmaxinvoicingID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezmaxinvoicingGetObjectV2: async (pkiEzmaxinvoicingID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzmaxinvoicingID' is not null or undefined
             assertParamExists('ezmaxinvoicingGetObjectV2', 'pkiEzmaxinvoicingID', pkiEzmaxinvoicingID)
             const localVarPath = `/2/object/ezmaxinvoicing/{pkiEzmaxinvoicingID}`
@@ -127,6 +129,7 @@ export const ObjectEzmaxinvoicingApiAxiosParamCreator = function (configuration?
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -145,6 +148,7 @@ export const ObjectEzmaxinvoicingApiAxiosParamCreator = function (configuration?
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -174,11 +178,12 @@ export const ObjectEzmaxinvoicingApiAxiosParamCreator = function (configuration?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezmaxinvoicingGetProvisionalV1: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezmaxinvoicingGetProvisionalV1: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/1/object/ezmaxinvoicing/getProvisional`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -197,6 +202,7 @@ export const ObjectEzmaxinvoicingApiAxiosParamCreator = function (configuration?
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -240,9 +246,11 @@ export const ObjectEzmaxinvoicingApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezmaxinvoicingGetAutocompleteV2(sSelector: EzmaxinvoicingGetAutocompleteV2SSelectorEnum, eFilterActive?: EzmaxinvoicingGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzmaxinvoicingGetAutocompleteV2Response>> {
+        async ezmaxinvoicingGetAutocompleteV2(sSelector: EzmaxinvoicingGetAutocompleteV2SSelectorEnum, eFilterActive?: EzmaxinvoicingGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzmaxinvoicingGetAutocompleteV2Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezmaxinvoicingGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzmaxinvoicingApi.ezmaxinvoicingGetAutocompleteV2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -251,9 +259,11 @@ export const ObjectEzmaxinvoicingApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezmaxinvoicingGetObjectV2(pkiEzmaxinvoicingID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzmaxinvoicingGetObjectV2Response>> {
+        async ezmaxinvoicingGetObjectV2(pkiEzmaxinvoicingID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzmaxinvoicingGetObjectV2Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezmaxinvoicingGetObjectV2(pkiEzmaxinvoicingID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzmaxinvoicingApi.ezmaxinvoicingGetObjectV2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -261,9 +271,11 @@ export const ObjectEzmaxinvoicingApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezmaxinvoicingGetProvisionalV1(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzmaxinvoicingGetProvisionalV1Response>> {
+        async ezmaxinvoicingGetProvisionalV1(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzmaxinvoicingGetProvisionalV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezmaxinvoicingGetProvisionalV1(options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzmaxinvoicingApi.ezmaxinvoicingGetProvisionalV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -328,7 +340,7 @@ export class ObjectEzmaxinvoicingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzmaxinvoicingApi
      */
-    public ezmaxinvoicingGetAutocompleteV2(sSelector: EzmaxinvoicingGetAutocompleteV2SSelectorEnum, eFilterActive?: EzmaxinvoicingGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig) {
+    public ezmaxinvoicingGetAutocompleteV2(sSelector: EzmaxinvoicingGetAutocompleteV2SSelectorEnum, eFilterActive?: EzmaxinvoicingGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig) {
         return ObjectEzmaxinvoicingApiFp(this.configuration).ezmaxinvoicingGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -340,7 +352,7 @@ export class ObjectEzmaxinvoicingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzmaxinvoicingApi
      */
-    public ezmaxinvoicingGetObjectV2(pkiEzmaxinvoicingID: number, options?: AxiosRequestConfig) {
+    public ezmaxinvoicingGetObjectV2(pkiEzmaxinvoicingID: number, options?: RawAxiosRequestConfig) {
         return ObjectEzmaxinvoicingApiFp(this.configuration).ezmaxinvoicingGetObjectV2(pkiEzmaxinvoicingID, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -351,7 +363,7 @@ export class ObjectEzmaxinvoicingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzmaxinvoicingApi
      */
-    public ezmaxinvoicingGetProvisionalV1(options?: AxiosRequestConfig) {
+    public ezmaxinvoicingGetProvisionalV1(options?: RawAxiosRequestConfig) {
         return ObjectEzmaxinvoicingApiFp(this.configuration).ezmaxinvoicingGetProvisionalV1(options).then((request) => request(this.axios, this.basePath));
     }
 }

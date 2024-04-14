@@ -28,30 +28,35 @@ export interface CommonResponseObjDebug {
      * @type {string}
      * @memberof CommonResponseObjDebug
      */
+    /*'sMemoryUsage': string;*/
     'sMemoryUsage': string;
     /**
      * The total server execution time of the API request execution. Formatted as a human readable string
      * @type {string}
      * @memberof CommonResponseObjDebug
      */
+    /*'sRunTime': string;*/
     'sRunTime': string;
     /**
      * The number of SQL SELECT queries that were sent to the database server during the API request execution
      * @type {number}
      * @memberof CommonResponseObjDebug
      */
+    /*'iSQLSelects': number;*/
     'iSQLSelects': number;
     /**
      * The number of SQL INSERT/UPDATE/DELETE queries that were sent to the database server during the API request execution
      * @type {number}
      * @memberof CommonResponseObjDebug
      */
+    /*'iSQLQueries': number;*/
     'iSQLQueries': number;
     /**
      * An array of the SQL Queries that were executed during the API request execution
      * @type {Array<CommonResponseObjSQLQuery>}
      * @memberof CommonResponseObjDebug
      */
+    /*'a_objSQLQuery': Array<CommonResponseObjSQLQuery>;*/
     'a_objSQLQuery': Array<CommonResponseObjSQLQuery>;
 }
 /**

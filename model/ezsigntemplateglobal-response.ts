@@ -31,60 +31,70 @@ export interface EzsigntemplateglobalResponse {
      * @type {number}
      * @memberof EzsigntemplateglobalResponse
      */
+    /*'pkiEzsigntemplateglobalID': number;*/
     'pkiEzsigntemplateglobalID': number;
     /**
      * The unique ID of the Ezsigntemplateglobaldocument
      * @type {number}
      * @memberof EzsigntemplateglobalResponse
      */
+    /*'fkiEzsigntemplateglobaldocumentID': number;*/
     'fkiEzsigntemplateglobaldocumentID': number;
     /**
      * The unique ID of the Module
      * @type {number}
      * @memberof EzsigntemplateglobalResponse
      */
+    /*'fkiModuleID': number;*/
     'fkiModuleID': number;
     /**
      * The Name of the Module in the language of the requester
      * @type {string}
      * @memberof EzsigntemplateglobalResponse
      */
+    /*'sModuleNameX'?: string;*/
     'sModuleNameX'?: string;
     /**
      * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @type {number}
      * @memberof EzsigntemplateglobalResponse
      */
+    /*'fkiLanguageID': number;*/
     'fkiLanguageID': number;
     /**
      * The Name of the Language in the language of the requester
      * @type {string}
      * @memberof EzsigntemplateglobalResponse
      */
+    /*'sLanguageNameX': string;*/
     'sLanguageNameX': string;
     /**
      * 
      * @type {FieldEEzsigntemplateglobalModule}
      * @memberof EzsigntemplateglobalResponse
      */
+    /*'eEzsigntemplateglobalModule': FieldEEzsigntemplateglobalModule;*/
     'eEzsigntemplateglobalModule': FieldEEzsigntemplateglobalModule;
     /**
      * 
      * @type {FieldEEzsigntemplateglobalSupplier}
      * @memberof EzsigntemplateglobalResponse
      */
+    /*'eEzsigntemplateglobalSupplier': FieldEEzsigntemplateglobalSupplier;*/
     'eEzsigntemplateglobalSupplier': FieldEEzsigntemplateglobalSupplier;
     /**
      * The Code of the Ezsigntemplateglobal
      * @type {string}
      * @memberof EzsigntemplateglobalResponse
      */
+    /*'sEzsigntemplateglobalCode': string;*/
     'sEzsigntemplateglobalCode': string;
     /**
      * The description of the Ezsigntemplate
      * @type {string}
      * @memberof EzsigntemplateglobalResponse
      */
+    /*'sEzsigntemplateglobalDescription': string;*/
     'sEzsigntemplateglobalDescription': string;
 }
 

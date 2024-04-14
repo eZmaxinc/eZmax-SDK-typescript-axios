@@ -14,13 +14,13 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
 import { CommonResponseError } from '../model';
 // @ts-ignore
@@ -45,7 +45,7 @@ export const ObjectSystemconfigurationApiAxiosParamCreator = function (configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        systemconfigurationEditObjectV1: async (pkiSystemconfigurationID: number, systemconfigurationEditObjectV1Request: SystemconfigurationEditObjectV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        systemconfigurationEditObjectV1: async (pkiSystemconfigurationID: number, systemconfigurationEditObjectV1Request: SystemconfigurationEditObjectV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiSystemconfigurationID' is not null or undefined
             assertParamExists('systemconfigurationEditObjectV1', 'pkiSystemconfigurationID', pkiSystemconfigurationID)
             // verify required parameter 'systemconfigurationEditObjectV1Request' is not null or undefined
@@ -55,6 +55,7 @@ export const ObjectSystemconfigurationApiAxiosParamCreator = function (configura
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -75,6 +76,7 @@ export const ObjectSystemconfigurationApiAxiosParamCreator = function (configura
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(systemconfigurationEditObjectV1Request, localVarRequestOptions, configuration)
 
@@ -106,7 +108,7 @@ export const ObjectSystemconfigurationApiAxiosParamCreator = function (configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        systemconfigurationGetObjectV2: async (pkiSystemconfigurationID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        systemconfigurationGetObjectV2: async (pkiSystemconfigurationID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiSystemconfigurationID' is not null or undefined
             assertParamExists('systemconfigurationGetObjectV2', 'pkiSystemconfigurationID', pkiSystemconfigurationID)
             const localVarPath = `/2/object/systemconfiguration/{pkiSystemconfigurationID}`
@@ -114,6 +116,7 @@ export const ObjectSystemconfigurationApiAxiosParamCreator = function (configura
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -132,6 +135,7 @@ export const ObjectSystemconfigurationApiAxiosParamCreator = function (configura
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -173,9 +177,11 @@ export const ObjectSystemconfigurationApiFp = function(configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async systemconfigurationEditObjectV1(pkiSystemconfigurationID: number, systemconfigurationEditObjectV1Request: SystemconfigurationEditObjectV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SystemconfigurationEditObjectV1Response>> {
+        async systemconfigurationEditObjectV1(pkiSystemconfigurationID: number, systemconfigurationEditObjectV1Request: SystemconfigurationEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SystemconfigurationEditObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.systemconfigurationEditObjectV1(pkiSystemconfigurationID, systemconfigurationEditObjectV1Request, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectSystemconfigurationApi.systemconfigurationEditObjectV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -184,9 +190,11 @@ export const ObjectSystemconfigurationApiFp = function(configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async systemconfigurationGetObjectV2(pkiSystemconfigurationID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SystemconfigurationGetObjectV2Response>> {
+        async systemconfigurationGetObjectV2(pkiSystemconfigurationID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SystemconfigurationGetObjectV2Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.systemconfigurationGetObjectV2(pkiSystemconfigurationID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectSystemconfigurationApi.systemconfigurationGetObjectV2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -238,7 +246,7 @@ export class ObjectSystemconfigurationApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectSystemconfigurationApi
      */
-    public systemconfigurationEditObjectV1(pkiSystemconfigurationID: number, systemconfigurationEditObjectV1Request: SystemconfigurationEditObjectV1Request, options?: AxiosRequestConfig) {
+    public systemconfigurationEditObjectV1(pkiSystemconfigurationID: number, systemconfigurationEditObjectV1Request: SystemconfigurationEditObjectV1Request, options?: RawAxiosRequestConfig) {
         return ObjectSystemconfigurationApiFp(this.configuration).systemconfigurationEditObjectV1(pkiSystemconfigurationID, systemconfigurationEditObjectV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -250,7 +258,7 @@ export class ObjectSystemconfigurationApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectSystemconfigurationApi
      */
-    public systemconfigurationGetObjectV2(pkiSystemconfigurationID: number, options?: AxiosRequestConfig) {
+    public systemconfigurationGetObjectV2(pkiSystemconfigurationID: number, options?: RawAxiosRequestConfig) {
         return ObjectSystemconfigurationApiFp(this.configuration).systemconfigurationGetObjectV2(pkiSystemconfigurationID, options).then((request) => request(this.axios, this.basePath));
     }
 }

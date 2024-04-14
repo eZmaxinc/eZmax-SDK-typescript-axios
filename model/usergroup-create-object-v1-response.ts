@@ -31,7 +31,7 @@ import { UsergroupCreateObjectV1ResponseMPayload } from './usergroup-create-obje
  * Response for POST /1/object/usergroup
  * @export
  */
-/** export type UsergroupCreateObjectV1Response = CommonResponse; */
+/*export type UsergroupCreateObjectV1Response = CommonResponse;*/
 export interface UsergroupCreateObjectV1Response {
     /**
      * 

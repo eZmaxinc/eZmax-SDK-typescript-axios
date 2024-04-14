@@ -40,36 +40,42 @@ export interface SystemconfigurationResponse {
      * @type {number}
      * @memberof SystemconfigurationResponse
      */
+    /*'pkiSystemconfigurationID': number;*/
     'pkiSystemconfigurationID': number;
     /**
      * The unique ID of the Systemconfigurationtype
      * @type {number}
      * @memberof SystemconfigurationResponse
      */
+    /*'fkiSystemconfigurationtypeID': number;*/
     'fkiSystemconfigurationtypeID': number;
     /**
      * The description of the Systemconfigurationtype in the language of the requester
      * @type {string}
      * @memberof SystemconfigurationResponse
      */
+    /*'sSystemconfigurationtypeDescriptionX': string;*/
     'sSystemconfigurationtypeDescriptionX': string;
     /**
      * 
      * @type {FieldESystemconfigurationNewexternaluseraction}
      * @memberof SystemconfigurationResponse
      */
+    /*'eSystemconfigurationNewexternaluseraction': FieldESystemconfigurationNewexternaluseraction;*/
     'eSystemconfigurationNewexternaluseraction': FieldESystemconfigurationNewexternaluseraction;
     /**
      * 
      * @type {FieldESystemconfigurationLanguage1}
      * @memberof SystemconfigurationResponse
      */
+    /*'eSystemconfigurationLanguage1': FieldESystemconfigurationLanguage1;*/
     'eSystemconfigurationLanguage1': FieldESystemconfigurationLanguage1;
     /**
      * 
      * @type {FieldESystemconfigurationLanguage2}
      * @memberof SystemconfigurationResponse
      */
+    /*'eSystemconfigurationLanguage2': FieldESystemconfigurationLanguage2;*/
     'eSystemconfigurationLanguage2': FieldESystemconfigurationLanguage2;
     /**
      * 
@@ -77,48 +83,56 @@ export interface SystemconfigurationResponse {
      * @memberof SystemconfigurationResponse
      * @deprecated
      */
+    /*'eSystemconfigurationEzsign'?: FieldESystemconfigurationEzsign;*/
     'eSystemconfigurationEzsign'?: FieldESystemconfigurationEzsign;
     /**
      * 
      * @type {FieldESystemconfigurationEzsignofficeplan}
      * @memberof SystemconfigurationResponse
      */
+    /*'eSystemconfigurationEzsignofficeplan'?: FieldESystemconfigurationEzsignofficeplan;*/
     'eSystemconfigurationEzsignofficeplan'?: FieldESystemconfigurationEzsignofficeplan;
     /**
      * Whether if Ezsign is paid by the company or not
      * @type {boolean}
      * @memberof SystemconfigurationResponse
      */
+    /*'bSystemconfigurationEzsignpaidbyoffice'?: boolean;*/
     'bSystemconfigurationEzsignpaidbyoffice'?: boolean;
     /**
      * Whether if we allow the creation of personal files in eZsign
      * @type {boolean}
      * @memberof SystemconfigurationResponse
      */
+    /*'bSystemconfigurationEzsignpersonnal': boolean;*/
     'bSystemconfigurationEzsignpersonnal': boolean;
     /**
      * Whether is Disposal processus is active or not
      * @type {boolean}
      * @memberof SystemconfigurationResponse
      */
+    /*'bSystemconfigurationIsdisposalactive'?: boolean;*/
     'bSystemconfigurationIsdisposalactive'?: boolean;
     /**
      * Whether if we allow SSPR
      * @type {boolean}
      * @memberof SystemconfigurationResponse
      */
+    /*'bSystemconfigurationSspr': boolean;*/
     'bSystemconfigurationSspr': boolean;
     /**
      * The start date where the system will be in read only
      * @type {string}
      * @memberof SystemconfigurationResponse
      */
+    /*'dtSystemconfigurationReadonlyexpirationstart'?: string;*/
     'dtSystemconfigurationReadonlyexpirationstart'?: string;
     /**
      * The end date where the system will be in read only
      * @type {string}
      * @memberof SystemconfigurationResponse
      */
+    /*'dtSystemconfigurationReadonlyexpirationend'?: string;*/
     'dtSystemconfigurationReadonlyexpirationend'?: string;
 }
 

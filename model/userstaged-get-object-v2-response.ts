@@ -31,7 +31,7 @@ import { UserstagedGetObjectV2ResponseMPayload } from './userstaged-get-object-v
  * Response for GET /2/object/userstaged/{pkiUserstagedID}
  * @export
  */
-/** export type UserstagedGetObjectV2Response = CommonResponse; */
+/*export type UserstagedGetObjectV2Response = CommonResponse;*/
 export interface UserstagedGetObjectV2Response {
     /**
      * 

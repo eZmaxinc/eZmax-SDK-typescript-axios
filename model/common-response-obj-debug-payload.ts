@@ -25,25 +25,36 @@ export interface CommonResponseObjDebugPayload {
      * @type {number}
      * @memberof CommonResponseObjDebugPayload
      */
+    /*'iVersionMin': number;*/
     'iVersionMin': number;
     /**
      * The maximum version of the function that can be called
      * @type {number}
      * @memberof CommonResponseObjDebugPayload
      */
+    /*'iVersionMax': number;*/
     'iVersionMax': number;
     /**
      * An array of permissions required to access this function.  If the value \"0\" is present in the array, anyone can call this function.  You must have one of the permission to access the function. You don\'t need to have all of them.
      * @type {Array<number>}
      * @memberof CommonResponseObjDebugPayload
      */
+    /*'a_RequiredPermission': Array<number>;*/
     'a_RequiredPermission': Array<number>;
     /**
      * Wheter the current route is deprecated or not
      * @type {boolean}
      * @memberof CommonResponseObjDebugPayload
      */
+    /*'bVersionDeprecated': boolean;*/
     'bVersionDeprecated': boolean;
+    /**
+     * Represent a Date Time. The timezone is the one configured in the User\'s profile.
+     * @type {string}
+     * @memberof CommonResponseObjDebugPayload
+     */
+    /*'dtResponseDate': string;*/
+    'dtResponseDate': string;
 }
 /**
  * @import
@@ -61,6 +72,7 @@ export class DataObjectCommonResponseObjDebugPayload {
    iVersionMax:number = 0
    a_RequiredPermission:Array<number> = []
    bVersionDeprecated:boolean = false
+   dtResponseDate:string = ''
 }
 
 /**
@@ -83,6 +95,10 @@ export class ValidationObjectCommonResponseObjDebugPayload {
    }
    bVersionDeprecated = {
       type: 'boolean',
+      required: true
+   }
+   dtResponseDate = {
+      type: 'string',
       required: true
    }
 } 

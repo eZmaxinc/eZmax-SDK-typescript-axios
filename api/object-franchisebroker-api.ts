@@ -14,13 +14,13 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
 import { FranchisebrokerGetAutocompleteV2Response } from '../model';
 // @ts-ignore
@@ -43,7 +43,7 @@ export const ObjectFranchisebrokerApiAxiosParamCreator = function (configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        franchisebrokerGetAutocompleteV2: async (sSelector: FranchisebrokerGetAutocompleteV2SSelectorEnum, eFilterActive?: FranchisebrokerGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        franchisebrokerGetAutocompleteV2: async (sSelector: FranchisebrokerGetAutocompleteV2SSelectorEnum, eFilterActive?: FranchisebrokerGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('franchisebrokerGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/franchisebroker/getAutocomplete/{sSelector}`
@@ -51,6 +51,7 @@ export const ObjectFranchisebrokerApiAxiosParamCreator = function (configuration
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -74,8 +75,8 @@ export const ObjectFranchisebrokerApiAxiosParamCreator = function (configuration
             }
 
             if (acceptLanguage != null) {
-                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string' 
-                    ? acceptLanguage 
+                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
+                    ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
 
@@ -83,6 +84,7 @@ export const ObjectFranchisebrokerApiAxiosParamCreator = function (configuration
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -126,9 +128,11 @@ export const ObjectFranchisebrokerApiFp = function(configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async franchisebrokerGetAutocompleteV2(sSelector: FranchisebrokerGetAutocompleteV2SSelectorEnum, eFilterActive?: FranchisebrokerGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<FranchisebrokerGetAutocompleteV2Response>> {
+        async franchisebrokerGetAutocompleteV2(sSelector: FranchisebrokerGetAutocompleteV2SSelectorEnum, eFilterActive?: FranchisebrokerGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<FranchisebrokerGetAutocompleteV2Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.franchisebrokerGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectFranchisebrokerApi.franchisebrokerGetAutocompleteV2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -174,7 +178,7 @@ export class ObjectFranchisebrokerApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectFranchisebrokerApi
      */
-    public franchisebrokerGetAutocompleteV2(sSelector: FranchisebrokerGetAutocompleteV2SSelectorEnum, eFilterActive?: FranchisebrokerGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig) {
+    public franchisebrokerGetAutocompleteV2(sSelector: FranchisebrokerGetAutocompleteV2SSelectorEnum, eFilterActive?: FranchisebrokerGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig) {
         return ObjectFranchisebrokerApiFp(this.configuration).franchisebrokerGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(this.axios, this.basePath));
     }
 }

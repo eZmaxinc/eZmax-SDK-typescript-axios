@@ -28,18 +28,21 @@ export interface ScimGroup {
      * @type {string}
      * @memberof ScimGroup
      */
+    /*'id'?: string;*/
     'id'?: string;
     /**
      * The Name of the Usergroup in the language of the requester
      * @type {string}
      * @memberof ScimGroup
      */
+    /*'displayName': string;*/
     'displayName': string;
     /**
      * 
      * @type {Array<ScimGroupMember>}
      * @memberof ScimGroup
      */
+    /*'members'?: Array<ScimGroupMember>;*/
     'members'?: Array<ScimGroupMember>;
 }
 /**

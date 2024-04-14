@@ -49,162 +49,189 @@ export interface EzsigntemplatesignatureResponse {
      * @type {number}
      * @memberof EzsigntemplatesignatureResponse
      */
+    /*'pkiEzsigntemplatesignatureID': number;*/
     'pkiEzsigntemplatesignatureID': number;
     /**
      * The unique ID of the Ezsigntemplatedocument
      * @type {number}
      * @memberof EzsigntemplatesignatureResponse
      */
+    /*'fkiEzsigntemplatedocumentID': number;*/
     'fkiEzsigntemplatedocumentID': number;
     /**
      * The unique ID of the Ezsigntemplatesigner
      * @type {number}
      * @memberof EzsigntemplatesignatureResponse
      */
+    /*'fkiEzsigntemplatesignerID': number;*/
     'fkiEzsigntemplatesignerID': number;
     /**
      * The unique ID of the Ezsigntemplatesigner
      * @type {number}
      * @memberof EzsigntemplatesignatureResponse
      */
+    /*'fkiEzsigntemplatesignerIDValidation'?: number;*/
     'fkiEzsigntemplatesignerIDValidation'?: number;
     /**
      * 
      * @type {FieldEEzsigntemplatesignaturePositioning}
      * @memberof EzsigntemplatesignatureResponse
      */
+    /*'eEzsigntemplatesignaturePositioning'?: FieldEEzsigntemplatesignaturePositioning;*/
     'eEzsigntemplatesignaturePositioning'?: FieldEEzsigntemplatesignaturePositioning;
     /**
      * The page number in the Ezsigntemplatedocument
      * @type {number}
      * @memberof EzsigntemplatesignatureResponse
      */
+    /*'iEzsigntemplatedocumentpagePagenumber': number;*/
     'iEzsigntemplatedocumentpagePagenumber': number;
     /**
      * The X coordinate (Horizontal) where to put the Ezsigntemplatesignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplatesignature 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
      * @type {number}
      * @memberof EzsigntemplatesignatureResponse
      */
+    /*'iEzsigntemplatesignatureX'?: number;*/
     'iEzsigntemplatesignatureX'?: number;
     /**
      * The Y coordinate (Vertical) where to put the Ezsigntemplatesignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplatesignature 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
      * @type {number}
      * @memberof EzsigntemplatesignatureResponse
      */
+    /*'iEzsigntemplatesignatureY'?: number;*/
     'iEzsigntemplatesignatureY'?: number;
     /**
      * The width of the Ezsigntemplatesignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsigntemplatesignature to have a width of 2 inches, you would use \"200\" for the iEzsigntemplatesignatureWidth.
      * @type {number}
      * @memberof EzsigntemplatesignatureResponse
      */
+    /*'iEzsigntemplatesignatureWidth'?: number;*/
     'iEzsigntemplatesignatureWidth'?: number;
     /**
      * The height of the Ezsigntemplatesignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsigntemplatesignature to have an height of 2 inches, you would use \"200\" for the iEzsigntemplatesignatureHeight.
      * @type {number}
      * @memberof EzsigntemplatesignatureResponse
      */
+    /*'iEzsigntemplatesignatureHeight'?: number;*/
     'iEzsigntemplatesignatureHeight'?: number;
     /**
      * The step when the Ezsigntemplatesigner will be invited to sign
      * @type {number}
      * @memberof EzsigntemplatesignatureResponse
      */
+    /*'iEzsigntemplatesignatureStep': number;*/
     'iEzsigntemplatesignatureStep': number;
     /**
      * 
      * @type {FieldEEzsigntemplatesignatureType}
      * @memberof EzsigntemplatesignatureResponse
      */
+    /*'eEzsigntemplatesignatureType': FieldEEzsigntemplatesignatureType;*/
     'eEzsigntemplatesignatureType': FieldEEzsigntemplatesignatureType;
     /**
      * A tooltip that will be presented to Ezsigntemplatesigner about the Ezsigntemplatesignature
      * @type {string}
      * @memberof EzsigntemplatesignatureResponse
      */
+    /*'tEzsigntemplatesignatureTooltip'?: string;*/
     'tEzsigntemplatesignatureTooltip'?: string;
     /**
      * 
      * @type {FieldEEzsigntemplatesignatureTooltipposition}
      * @memberof EzsigntemplatesignatureResponse
      */
+    /*'eEzsigntemplatesignatureTooltipposition'?: FieldEEzsigntemplatesignatureTooltipposition;*/
     'eEzsigntemplatesignatureTooltipposition'?: FieldEEzsigntemplatesignatureTooltipposition;
     /**
      * 
      * @type {FieldEEzsigntemplatesignatureFont}
      * @memberof EzsigntemplatesignatureResponse
      */
+    /*'eEzsigntemplatesignatureFont'?: FieldEEzsigntemplatesignatureFont;*/
     'eEzsigntemplatesignatureFont'?: FieldEEzsigntemplatesignatureFont;
     /**
      * The step when the Ezsigntemplatesigner will be invited to validate the Ezsigntemplatesignature of eEzsigntemplatesignatureType Attachments
      * @type {number}
      * @memberof EzsigntemplatesignatureResponse
      */
+    /*'iEzsigntemplatesignatureValidationstep'?: number;*/
     'iEzsigntemplatesignatureValidationstep'?: number;
     /**
      * The description attached to the attachment name added in Ezsigntemplatesignature of eEzsigntemplatesignatureType Attachments
      * @type {string}
      * @memberof EzsigntemplatesignatureResponse
      */
+    /*'sEzsigntemplatesignatureAttachmentdescription'?: string;*/
     'sEzsigntemplatesignatureAttachmentdescription'?: string;
     /**
      * 
      * @type {FieldEEzsigntemplatesignatureAttachmentnamesource}
      * @memberof EzsigntemplatesignatureResponse
      */
+    /*'eEzsigntemplatesignatureAttachmentnamesource'?: FieldEEzsigntemplatesignatureAttachmentnamesource;*/
     'eEzsigntemplatesignatureAttachmentnamesource'?: FieldEEzsigntemplatesignatureAttachmentnamesource;
     /**
      * Whether the Ezsigntemplatesignature is required or not. This field is relevant only with Ezsigntemplatesignature with eEzsigntemplatesignatureType = Attachments.
      * @type {boolean}
      * @memberof EzsigntemplatesignatureResponse
      */
+    /*'bEzsigntemplatesignatureRequired'?: boolean;*/
     'bEzsigntemplatesignatureRequired'?: boolean;
     /**
      * The maximum length for the value in the Ezsigntemplatesignature  This can only be set if eEzsigntemplatesignatureType is **FieldText** or **FieldTextarea**
      * @type {number}
      * @memberof EzsigntemplatesignatureResponse
      */
+    /*'iEzsigntemplatesignatureMaxlength'?: number;*/
     'iEzsigntemplatesignatureMaxlength'?: number;
     /**
      * A regular expression to indicate what values are acceptable for the Ezsigntemplatesignature.  This can only be set if eEzsigntemplatesignatureType is **Text** or **Textarea**
      * @type {string}
      * @memberof EzsigntemplatesignatureResponse
      */
+    /*'sEzsigntemplatesignatureRegexp'?: string;*/
     'sEzsigntemplatesignatureRegexp'?: string;
     /**
      * 
      * @type {EnumTextvalidation}
      * @memberof EzsigntemplatesignatureResponse
      */
+    /*'eEzsigntemplatesignatureTextvalidation'?: EnumTextvalidation;*/
     'eEzsigntemplatesignatureTextvalidation'?: EnumTextvalidation;
     /**
      * 
      * @type {FieldEEzsigntemplatesignatureDependencyrequirement}
      * @memberof EzsigntemplatesignatureResponse
      */
+    /*'eEzsigntemplatesignatureDependencyrequirement'?: FieldEEzsigntemplatesignatureDependencyrequirement;*/
     'eEzsigntemplatesignatureDependencyrequirement'?: FieldEEzsigntemplatesignatureDependencyrequirement;
     /**
      * The string pattern to search for the positioning. **This is not a regexp**  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates**
      * @type {string}
      * @memberof EzsigntemplatesignatureResponse
      */
+    /*'sEzsigntemplatesignaturePositioningpattern'?: string;*/
     'sEzsigntemplatesignaturePositioningpattern'?: string;
     /**
      * The offset X  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates**
      * @type {number}
      * @memberof EzsigntemplatesignatureResponse
      */
+    /*'iEzsigntemplatesignaturePositioningoffsetx'?: number;*/
     'iEzsigntemplatesignaturePositioningoffsetx'?: number;
     /**
      * The offset Y  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates**
      * @type {number}
      * @memberof EzsigntemplatesignatureResponse
      */
+    /*'iEzsigntemplatesignaturePositioningoffsety'?: number;*/
     'iEzsigntemplatesignaturePositioningoffsety'?: number;
     /**
      * 
      * @type {FieldEEzsigntemplatesignaturePositioningoccurence}
      * @memberof EzsigntemplatesignatureResponse
      */
+    /*'eEzsigntemplatesignaturePositioningoccurence'?: FieldEEzsigntemplatesignaturePositioningoccurence;*/
     'eEzsigntemplatesignaturePositioningoccurence'?: FieldEEzsigntemplatesignaturePositioningoccurence;
 }
 

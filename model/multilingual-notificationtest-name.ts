@@ -25,12 +25,14 @@ export interface MultilingualNotificationtestName {
      * @type {string}
      * @memberof MultilingualNotificationtestName
      */
+    /*'sNotificationtestName1'?: string;*/
     'sNotificationtestName1'?: string;
     /**
      * The name of the Notificationtest in English
      * @type {string}
      * @memberof MultilingualNotificationtestName
      */
+    /*'sNotificationtestName2'?: string;*/
     'sNotificationtestName2'?: string;
 }
 /**

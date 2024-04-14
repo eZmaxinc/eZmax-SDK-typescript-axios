@@ -25,7 +25,7 @@ import { FieldECommunicationrecipientType } from './field-ecommunicationrecipien
  * A Communicationrecipient Object and children
  * @export
  */
-/** export type CommunicationrecipientRequestCompound = CommunicationrecipientRequest; */
+/*export type CommunicationrecipientRequestCompound = CommunicationrecipientRequest;*/
 export interface CommunicationrecipientRequestCompound {
     /**
      * The unique ID of the Communicationrecipient.

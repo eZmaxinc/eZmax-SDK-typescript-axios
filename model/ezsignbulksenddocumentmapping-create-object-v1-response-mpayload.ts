@@ -25,6 +25,7 @@ export interface EzsignbulksenddocumentmappingCreateObjectV1ResponseMPayload {
      * @type {Array<number>}
      * @memberof EzsignbulksenddocumentmappingCreateObjectV1ResponseMPayload
      */
+    /*'a_pkiEzsignbulksenddocumentmappingID': Array<number>;*/
     'a_pkiEzsignbulksenddocumentmappingID': Array<number>;
 }
 /**

@@ -31,7 +31,7 @@ import { EzsignfolderCreateObjectV2ResponseMPayload } from './ezsignfolder-creat
  * Response for POST /2/object/ezsignfolder
  * @export
  */
-/** export type EzsignfolderCreateObjectV2Response = CommonResponse; */
+/*export type EzsignfolderCreateObjectV2Response = CommonResponse;*/
 export interface EzsignfolderCreateObjectV2Response {
     /**
      * 

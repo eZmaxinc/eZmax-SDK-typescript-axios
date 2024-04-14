@@ -25,42 +25,49 @@ export interface CommonAuditdetail {
      * @type {number}
      * @memberof CommonAuditdetail
      */
+    /*'fkiUserID': number;*/
     'fkiUserID': number;
     /**
      * The unique ID of the Apikey
      * @type {number}
      * @memberof CommonAuditdetail
      */
+    /*'fkiApikeyID'?: number;*/
     'fkiApikeyID'?: number;
     /**
      * The login name of the User.
      * @type {string}
      * @memberof CommonAuditdetail
      */
+    /*'sUserLoginname': string;*/
     'sUserLoginname': string;
     /**
      * The last name of the user
      * @type {string}
      * @memberof CommonAuditdetail
      */
+    /*'sUserLastname': string;*/
     'sUserLastname': string;
     /**
      * The first name of the user
      * @type {string}
      * @memberof CommonAuditdetail
      */
+    /*'sUserFirstname': string;*/
     'sUserFirstname': string;
     /**
      * The description of the Apikey in the language of the requester
      * @type {string}
      * @memberof CommonAuditdetail
      */
+    /*'sApikeyDescriptionX'?: string;*/
     'sApikeyDescriptionX'?: string;
     /**
      * Represent a Date Time. The timezone is the one configured in the User\'s profile.
      * @type {string}
      * @memberof CommonAuditdetail
      */
+    /*'dtAuditdetailDate': string;*/
     'dtAuditdetailDate': string;
 }
 /**
@@ -102,7 +109,7 @@ export class ValidationObjectCommonAuditdetail {
    }
    sUserLoginname = {
       type: 'string',
-      pattern: '/^(?:([\w\.-]+@[\w\.-]+\.\w{2,20})|([a-zA-Z0-9]){1,32})$/',
+      pattern: '/^(?:([\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/',
       required: true
    }
    sUserLastname = {

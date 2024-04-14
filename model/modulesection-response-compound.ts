@@ -25,7 +25,7 @@ import { PermissionResponseCompound } from './permission-response-compound';
  * A Modulesection Object
  * @export
  */
-/** export type ModulesectionResponseCompound = ModulesectionResponse; */
+/*export type ModulesectionResponseCompound = ModulesectionResponse;*/
 export interface ModulesectionResponseCompound {
     /**
      * The unique ID of the Modulesection

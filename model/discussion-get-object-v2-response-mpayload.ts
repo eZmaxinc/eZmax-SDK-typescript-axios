@@ -28,6 +28,7 @@ export interface DiscussionGetObjectV2ResponseMPayload {
      * @type {DiscussionResponseCompound}
      * @memberof DiscussionGetObjectV2ResponseMPayload
      */
+    /*'objDiscussion': DiscussionResponseCompound;*/
     'objDiscussion': DiscussionResponseCompound;
 }
 /**

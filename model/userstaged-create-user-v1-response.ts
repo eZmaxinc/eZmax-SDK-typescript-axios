@@ -31,7 +31,7 @@ import { UserstagedCreateUserV1ResponseMPayload } from './userstaged-create-user
  * Response for POST /1/object/userstaged/{pkiUserstagedID}/createUser
  * @export
  */
-/** export type UserstagedCreateUserV1Response = CommonResponse; */
+/*export type UserstagedCreateUserV1Response = CommonResponse;*/
 export interface UserstagedCreateUserV1Response {
     /**
      * 

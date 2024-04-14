@@ -25,7 +25,7 @@ import { EzsigntemplateListElement } from './ezsigntemplate-list-element';
  * Payload for GET /1/object/ezsigntemplate/getList
  * @export
  */
-/** export type EzsigntemplateGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload; */
+/*export type EzsigntemplateGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;*/
 export interface EzsigntemplateGetListV1ResponseMPayload {
     /**
      * The number of rows returned

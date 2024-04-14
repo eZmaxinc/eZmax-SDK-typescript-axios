@@ -28,6 +28,7 @@ export interface EzmaxproductGetAutocompleteV2ResponseMPayload {
      * @type {Array<EzmaxproductAutocompleteElementResponse>}
      * @memberof EzmaxproductGetAutocompleteV2ResponseMPayload
      */
+    /*'a_objEzmaxproduct': Array<EzmaxproductAutocompleteElementResponse>;*/
     'a_objEzmaxproduct': Array<EzmaxproductAutocompleteElementResponse>;
 }
 /**

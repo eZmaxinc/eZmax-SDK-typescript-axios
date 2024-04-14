@@ -25,6 +25,7 @@ export interface SignatureCreateObjectV1ResponseMPayload {
      * @type {Array<number>}
      * @memberof SignatureCreateObjectV1ResponseMPayload
      */
+    /*'a_pkiSignatureID': Array<number>;*/
     'a_pkiSignatureID': Array<number>;
 }
 /**

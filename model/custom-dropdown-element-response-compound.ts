@@ -22,7 +22,7 @@ import { CustomDropdownElementResponse } from './custom-dropdown-element-respons
  * A Generic DropdownElement Object and children to create a complete structure
  * @export
  */
-/** export type CustomDropdownElementResponseCompound = CustomDropdownElementResponse; */
+/*export type CustomDropdownElementResponseCompound = CustomDropdownElementResponse;*/
 export interface CustomDropdownElementResponseCompound {
     /**
      * The Description of the element

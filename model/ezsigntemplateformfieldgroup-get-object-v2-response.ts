@@ -31,7 +31,7 @@ import { EzsigntemplateformfieldgroupGetObjectV2ResponseMPayload } from './ezsig
  * Response for GET /2/object/ezsigntemplateformfieldgroup/{pkiEzsigntemplateformfieldgroupID}
  * @export
  */
-/** export type EzsigntemplateformfieldgroupGetObjectV2Response = CommonResponse; */
+/*export type EzsigntemplateformfieldgroupGetObjectV2Response = CommonResponse;*/
 export interface EzsigntemplateformfieldgroupGetObjectV2Response {
     /**
      * 

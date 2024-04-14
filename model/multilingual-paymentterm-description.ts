@@ -25,12 +25,14 @@ export interface MultilingualPaymenttermDescription {
      * @type {string}
      * @memberof MultilingualPaymenttermDescription
      */
+    /*'sPaymenttermDescription1'?: string;*/
     'sPaymenttermDescription1'?: string;
     /**
      * The description of the Paymentterm in English
      * @type {string}
      * @memberof MultilingualPaymenttermDescription
      */
+    /*'sPaymenttermDescription2'?: string;*/
     'sPaymenttermDescription2'?: string;
 }
 /**

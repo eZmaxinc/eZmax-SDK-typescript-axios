@@ -25,24 +25,28 @@ export interface CommunicationattachmentRequest {
      * @type {number}
      * @memberof CommunicationattachmentRequest
      */
+    /*'pkiCommunicationattachmentID'?: number;*/
     'pkiCommunicationattachmentID'?: number;
     /**
      * The unique ID of the Attachment.
      * @type {number}
      * @memberof CommunicationattachmentRequest
      */
+    /*'fkiAttachmentID'?: number;*/
     'fkiAttachmentID'?: number;
     /**
      * The unique ID of the Invoice.
      * @type {number}
      * @memberof CommunicationattachmentRequest
      */
+    /*'fkiInvoiceID'?: number;*/
     'fkiInvoiceID'?: number;
     /**
      * The unique ID of the Salarypreparation.
      * @type {number}
      * @memberof CommunicationattachmentRequest
      */
+    /*'fkiSalarypreparationID'?: number;*/
     'fkiSalarypreparationID'?: number;
 }
 /**

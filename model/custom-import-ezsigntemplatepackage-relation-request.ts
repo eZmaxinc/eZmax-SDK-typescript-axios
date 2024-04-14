@@ -25,18 +25,21 @@ export interface CustomImportEzsigntemplatepackageRelationRequest {
      * @type {number}
      * @memberof CustomImportEzsigntemplatepackageRelationRequest
      */
+    /*'fkiEzsigntemplatepackagesignerID'?: number;*/
     'fkiEzsigntemplatepackagesignerID'?: number;
     /**
      * The unique ID of the Ezsignfoldersignerassociation
      * @type {number}
      * @memberof CustomImportEzsigntemplatepackageRelationRequest
      */
+    /*'fkiEzsignfoldersignerassociationID': number;*/
     'fkiEzsignfoldersignerassociationID': number;
     /**
      * The description of the Ezsigntemplatepackagesigner
      * @type {string}
      * @memberof CustomImportEzsigntemplatepackageRelationRequest
      */
+    /*'sEzsigntemplatepackagesignerDescription'?: string;*/
     'sEzsigntemplatepackagesignerDescription'?: string;
 }
 /**

@@ -28,42 +28,49 @@ export interface EzsignbulksendCreateEzsignbulksendtransmissionV1Request {
      * @type {number}
      * @memberof EzsignbulksendCreateEzsignbulksendtransmissionV1Request
      */
+    /*'fkiUserlogintypeID': number;*/
     'fkiUserlogintypeID': number;
     /**
      * The unique ID of the Ezsigntsarequirement.  Determine if a Time Stamping Authority should add a timestamp on each of the signature. Valid values:  |Value|Description| |-|-| |1|No. TSA Timestamping will requested. This will make all signatures a lot faster since no round-trip to the TSA server will be required. Timestamping will be made using eZsign server\'s time.| |2|Best effort. Timestamping from a Time Stamping Authority will be requested but is not mandatory. In the very improbable case it cannot be completed, the timestamping will be made using eZsign server\'s time. **Additional fee applies**| |3|Mandatory. Timestamping from a Time Stamping Authority will be requested and is mandatory. In the very improbable case it cannot be completed, the signature will fail and the user will be asked to retry. **Additional fee applies**|
      * @type {number}
      * @memberof EzsignbulksendCreateEzsignbulksendtransmissionV1Request
      */
+    /*'fkiEzsigntsarequirementID'?: number;*/
     'fkiEzsigntsarequirementID'?: number;
     /**
      * The description of the Ezsignbulksendtransmission
      * @type {string}
      * @memberof EzsignbulksendCreateEzsignbulksendtransmissionV1Request
      */
+    /*'sEzsignbulksendtransmissionDescription': string;*/
     'sEzsignbulksendtransmissionDescription': string;
     /**
      * The maximum date and time at which the Ezsigndocument can be signed.
      * @type {string}
      * @memberof EzsignbulksendCreateEzsignbulksendtransmissionV1Request
      */
+    /*'dtEzsigndocumentDuedate': string;*/
     'dtEzsigndocumentDuedate': string;
     /**
      * 
      * @type {FieldEEzsignfolderSendreminderfrequency}
      * @memberof EzsignbulksendCreateEzsignbulksendtransmissionV1Request
      */
+    /*'eEzsignfolderSendreminderfrequency': FieldEEzsignfolderSendreminderfrequency;*/
     'eEzsignfolderSendreminderfrequency': FieldEEzsignfolderSendreminderfrequency;
     /**
      * A custom text message that will be added to the email sent.
      * @type {string}
      * @memberof EzsignbulksendCreateEzsignbulksendtransmissionV1Request
      */
+    /*'tExtraMessage': string;*/
     'tExtraMessage': string;
     /**
      * The Base64 encoded binary content of the CSV file.
      * @type {string}
      * @memberof EzsignbulksendCreateEzsignbulksendtransmissionV1Request
      */
+    /*'sCsvBase64': string;*/
     'sCsvBase64': string;
 }
 

@@ -31,7 +31,7 @@ import { DiscussionmessageResponseCompound } from './discussionmessage-response-
  * A Discussion Object
  * @export
  */
-/** export type DiscussionResponseCompound = DiscussionResponse; */
+/*export type DiscussionResponseCompound = DiscussionResponse;*/
 export interface DiscussionResponseCompound {
     /**
      * The unique ID of the Discussion

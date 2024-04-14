@@ -28,7 +28,7 @@ import { PaymenttermRequest } from './paymentterm-request';
  * A Paymentterm Object and children
  * @export
  */
-/** export type PaymenttermRequestCompound = PaymenttermRequest; */
+/*export type PaymenttermRequestCompound = PaymenttermRequest;*/
 export interface PaymenttermRequestCompound {
     /**
      * The unique ID of the Paymentterm

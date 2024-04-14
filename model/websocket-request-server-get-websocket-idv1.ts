@@ -25,6 +25,7 @@ export interface WebsocketRequestServerGetWebsocketIDV1 {
      * @type {string}
      * @memberof WebsocketRequestServerGetWebsocketIDV1
      */
+    /*'eWebsocketMessagetype': WebsocketRequestServerGetWebsocketIDV1EWebsocketMessagetypeEnum;*/
     'eWebsocketMessagetype': WebsocketRequestServerGetWebsocketIDV1EWebsocketMessagetypeEnum;
 }
 

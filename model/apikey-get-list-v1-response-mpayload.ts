@@ -25,7 +25,7 @@ import { CommonGetListV1ResponseMPayload } from './common-get-list-v1-response-m
  * Payload for GET /1/object/apikey/getList
  * @export
  */
-/** export type ApikeyGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload; */
+/*export type ApikeyGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;*/
 export interface ApikeyGetListV1ResponseMPayload {
     /**
      * The number of rows returned

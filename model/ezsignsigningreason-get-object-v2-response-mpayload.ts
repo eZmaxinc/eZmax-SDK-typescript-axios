@@ -28,6 +28,7 @@ export interface EzsignsigningreasonGetObjectV2ResponseMPayload {
      * @type {EzsignsigningreasonResponseCompound}
      * @memberof EzsignsigningreasonGetObjectV2ResponseMPayload
      */
+    /*'objEzsignsigningreason': EzsignsigningreasonResponseCompound;*/
     'objEzsignsigningreason': EzsignsigningreasonResponseCompound;
 }
 /**

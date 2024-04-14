@@ -28,18 +28,21 @@ export interface CustomEzsignformfieldgroupRequest {
      * @type {number}
      * @memberof CustomEzsignformfieldgroupRequest
      */
+    /*'pkiEzsignformfieldgroupID'?: number;*/
     'pkiEzsignformfieldgroupID'?: number;
     /**
      * The Label for the Ezsignformfieldgroup
      * @type {string}
      * @memberof CustomEzsignformfieldgroupRequest
      */
+    /*'sEzsignformfieldgroupLabel'?: string;*/
     'sEzsignformfieldgroupLabel'?: string;
     /**
      * An array containing all the values to fill the Ezsignform.
      * @type {Array<CustomEzsignformfieldRequest>}
      * @memberof CustomEzsignformfieldgroupRequest
      */
+    /*'a_objEzsignformfield': Array<CustomEzsignformfieldRequest>;*/
     'a_objEzsignformfield': Array<CustomEzsignformfieldRequest>;
 }
 /**

@@ -31,54 +31,63 @@ export interface EzsignelementdependencyRequest {
      * @type {number}
      * @memberof EzsignelementdependencyRequest
      */
+    /*'pkiEzsignelementdependencyID'?: number;*/
     'pkiEzsignelementdependencyID'?: number;
     /**
      * The unique ID of the Ezsignformfield
      * @type {number}
      * @memberof EzsignelementdependencyRequest
      */
+    /*'fkiEzsignformfieldIDValidation'?: number;*/
     'fkiEzsignformfieldIDValidation'?: number;
     /**
      * The unique ID of the Ezsignformfieldgroup
      * @type {number}
      * @memberof EzsignelementdependencyRequest
      */
+    /*'fkiEzsignformfieldgroupIDValidation'?: number;*/
     'fkiEzsignformfieldgroupIDValidation'?: number;
     /**
      * The Label for the Ezsignformfieldgroup
      * @type {string}
      * @memberof EzsignelementdependencyRequest
      */
+    /*'sEzsignelementdependencyEzsignformfieldgrouplabel'?: string;*/
     'sEzsignelementdependencyEzsignformfieldgrouplabel'?: string;
     /**
      * The Label for the Ezsignformfield
      * @type {string}
      * @memberof EzsignelementdependencyRequest
      */
+    /*'sEzsignelementdependencyEzsignformfieldlabel'?: string;*/
     'sEzsignelementdependencyEzsignformfieldlabel'?: string;
     /**
      * 
      * @type {FieldEEzsignelementdependencyValidation}
      * @memberof EzsignelementdependencyRequest
      */
+    /*'eEzsignelementdependencyValidation': FieldEEzsignelementdependencyValidation;*/
     'eEzsignelementdependencyValidation': FieldEEzsignelementdependencyValidation;
     /**
      * Whether if it\'s selected or not when using eEzsignelementdependencyValidation = Selected
      * @type {boolean}
      * @memberof EzsignelementdependencyRequest
      */
+    /*'bEzsignelementdependencySelected'?: boolean;*/
     'bEzsignelementdependencySelected'?: boolean;
     /**
      * 
      * @type {FieldEEzsignelementdependencyOperator}
      * @memberof EzsignelementdependencyRequest
      */
+    /*'eEzsignelementdependencyOperator'?: FieldEEzsignelementdependencyOperator;*/
     'eEzsignelementdependencyOperator'?: FieldEEzsignelementdependencyOperator;
     /**
      * The value of the Ezsignelementdependency
      * @type {string}
      * @memberof EzsignelementdependencyRequest
      */
+    /*'sEzsignelementdependencyValue'?: string;*/
     'sEzsignelementdependencyValue'?: string;
 }
 

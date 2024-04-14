@@ -28,6 +28,7 @@ export interface EzsignfoldersignerassociationGetObjectV2ResponseMPayload {
      * @type {EzsignfoldersignerassociationResponseCompound}
      * @memberof EzsignfoldersignerassociationGetObjectV2ResponseMPayload
      */
+    /*'objEzsignfoldersignerassociation': EzsignfoldersignerassociationResponseCompound;*/
     'objEzsignfoldersignerassociation': EzsignfoldersignerassociationResponseCompound;
 }
 /**

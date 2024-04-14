@@ -34,60 +34,70 @@ export interface WebhookListElement {
      * @type {number}
      * @memberof WebhookListElement
      */
+    /*'pkiWebhookID': number;*/
     'pkiWebhookID': number;
     /**
      * The description of the Webhook
      * @type {string}
      * @memberof WebhookListElement
      */
+    /*'sWebhookDescription': string;*/
     'sWebhookDescription': string;
     /**
      * The URL of the Webhook callback
      * @type {string}
      * @memberof WebhookListElement
      */
+    /*'sWebhookUrl': string;*/
     'sWebhookUrl': string;
     /**
      * The concatenated string to describe the Webhook event
      * @type {string}
      * @memberof WebhookListElement
      */
+    /*'sWebhookEvent': string;*/
     'sWebhookEvent': string;
     /**
      * The email that will receive the Webhook in case all attempts fail
      * @type {string}
      * @memberof WebhookListElement
      */
+    /*'sWebhookEmailfailed': string;*/
     'sWebhookEmailfailed': string;
     /**
      * 
      * @type {FieldEWebhookModule}
      * @memberof WebhookListElement
      */
+    /*'eWebhookModule': FieldEWebhookModule;*/
     'eWebhookModule': FieldEWebhookModule;
     /**
      * 
      * @type {FieldEWebhookEzsignevent}
      * @memberof WebhookListElement
      */
+    /*'eWebhookEzsignevent'?: FieldEWebhookEzsignevent;*/
     'eWebhookEzsignevent'?: FieldEWebhookEzsignevent;
     /**
      * 
      * @type {FieldEWebhookManagementevent}
      * @memberof WebhookListElement
      */
+    /*'eWebhookManagementevent'?: FieldEWebhookManagementevent;*/
     'eWebhookManagementevent'?: FieldEWebhookManagementevent;
     /**
      * Whether the Webhook is active or not
      * @type {boolean}
      * @memberof WebhookListElement
      */
+    /*'bWebhookIsactive': boolean;*/
     'bWebhookIsactive': boolean;
     /**
      * Whether the requests will be signed or not
      * @type {boolean}
      * @memberof WebhookListElement
      */
+    /*'bWebhookIssigned': boolean;*/
     'bWebhookIssigned': boolean;
 }
 
@@ -132,6 +142,7 @@ export class ValidationObjectWebhookListElement {
    }
    sWebhookUrl = {
       type: 'string',
+      pattern: '/^(https|http):\\/\\/[^\s\\/$.?#].[^\s]*$/',
       required: true
    }
    sWebhookEvent = {

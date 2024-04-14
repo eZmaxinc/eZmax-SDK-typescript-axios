@@ -25,7 +25,7 @@ import { PhoneRequest } from './phone-request';
  * A Phone Object and children to create a complete structure
  * @export
  */
-/** export type PhoneRequestCompound = PhoneRequest; */
+/*export type PhoneRequestCompound = PhoneRequest;*/
 export interface PhoneRequestCompound {
     /**
      * The unique ID of the Phone.

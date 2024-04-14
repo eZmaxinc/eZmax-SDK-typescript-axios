@@ -28,18 +28,21 @@ export interface CustomFormsDataFolderResponse {
      * @type {number}
      * @memberof CustomFormsDataFolderResponse
      */
+    /*'pkiEzsignfolderID': number;*/
     'pkiEzsignfolderID': number;
     /**
      * The description of the Ezsignfolder
      * @type {string}
      * @memberof CustomFormsDataFolderResponse
      */
+    /*'sEzsignfolderDescription': string;*/
     'sEzsignfolderDescription': string;
     /**
      * 
      * @type {Array<CustomFormDataDocumentResponse>}
      * @memberof CustomFormsDataFolderResponse
      */
+    /*'a_objFormDataDocument': Array<CustomFormDataDocumentResponse>;*/
     'a_objFormDataDocument': Array<CustomFormDataDocumentResponse>;
 }
 /**

@@ -31,7 +31,7 @@ import { PaymenttermCreateObjectV1ResponseMPayload } from './paymentterm-create-
  * Response for POST /1/object/paymentterm
  * @export
  */
-/** export type PaymenttermCreateObjectV1Response = CommonResponse; */
+/*export type PaymenttermCreateObjectV1Response = CommonResponse;*/
 export interface PaymenttermCreateObjectV1Response {
     /**
      * 

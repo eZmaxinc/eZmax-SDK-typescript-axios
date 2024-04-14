@@ -31,7 +31,7 @@ import { SessionhistoryGetListV1ResponseMPayload } from './sessionhistory-get-li
  * Response for GET /1/object/sessionhistory/getList
  * @export
  */
-/** export type SessionhistoryGetListV1Response = CommonResponseGetList; */
+/*export type SessionhistoryGetListV1Response = CommonResponseGetList;*/
 export interface SessionhistoryGetListV1Response {
     /**
      * 

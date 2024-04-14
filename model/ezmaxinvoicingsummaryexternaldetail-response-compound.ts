@@ -22,7 +22,7 @@ import { EzmaxinvoicingsummaryexternaldetailResponse } from './ezmaxinvoicingsum
  * A Ezmaxinvoicingsummaryexternaldetail Object
  * @export
  */
-/** export type EzmaxinvoicingsummaryexternaldetailResponseCompound = EzmaxinvoicingsummaryexternaldetailResponse; */
+/*export type EzmaxinvoicingsummaryexternaldetailResponseCompound = EzmaxinvoicingsummaryexternaldetailResponse;*/
 export interface EzmaxinvoicingsummaryexternaldetailResponseCompound {
     /**
      * The unique ID of the Ezmaxinvoicingsummaryexternaldetail

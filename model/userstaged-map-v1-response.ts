@@ -28,7 +28,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for POST /1/object/userstaged/{pkiUserstagedID}/map
  * @export
  */
-/** export type UserstagedMapV1Response = CommonResponse; */
+/*export type UserstagedMapV1Response = CommonResponse;*/
 export interface UserstagedMapV1Response {
     /**
      * 

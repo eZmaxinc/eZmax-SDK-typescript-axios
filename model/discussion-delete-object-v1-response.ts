@@ -28,7 +28,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for DELETE /1/object/discussion/{pkiDiscussionID}
  * @export
  */
-/** export type DiscussionDeleteObjectV1Response = CommonResponse; */
+/*export type DiscussionDeleteObjectV1Response = CommonResponse;*/
 export interface DiscussionDeleteObjectV1Response {
     /**
      * 

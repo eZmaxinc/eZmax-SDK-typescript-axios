@@ -25,6 +25,7 @@ export interface EzsignfolderCreateObjectV2ResponseMPayload {
      * @type {Array<number>}
      * @memberof EzsignfolderCreateObjectV2ResponseMPayload
      */
+    /*'a_pkiEzsignfolderID': Array<number>;*/
     'a_pkiEzsignfolderID': Array<number>;
 }
 /**

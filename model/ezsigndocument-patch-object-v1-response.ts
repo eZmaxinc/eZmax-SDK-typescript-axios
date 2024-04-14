@@ -28,7 +28,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for PATCH /1/object/ezsigndocument/{pkiEzsigndocumentID}
  * @export
  */
-/** export type EzsigndocumentPatchObjectV1Response = CommonResponse; */
+/*export type EzsigndocumentPatchObjectV1Response = CommonResponse;*/
 export interface EzsigndocumentPatchObjectV1Response {
     /**
      * 

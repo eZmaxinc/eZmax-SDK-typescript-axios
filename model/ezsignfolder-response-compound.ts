@@ -37,7 +37,7 @@ import { FieldEEzsignfolderStep } from './field-eezsignfolder-step';
  * An Ezsignfolder Object and children to create a complete structure
  * @export
  */
-/** export type EzsignfolderResponseCompound = EzsignfolderResponse; */
+/*export type EzsignfolderResponseCompound = EzsignfolderResponse;*/
 export interface EzsignfolderResponseCompound {
     /**
      * The unique ID of the Ezsignfolder
@@ -326,7 +326,7 @@ export class ValidationObjectEzsignfolderResponseCompound {
    objAudit = new ValidationObjectCommonAudit()
    sEzsignfolderExternalid = {
       type: 'string',
-      pattern: '/^.{0,64}$/',
+      pattern: '/^.{0,128}$/',
       required: false
    }
 } 

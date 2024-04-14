@@ -28,6 +28,7 @@ export interface PhonetypeGetAutocompleteV2ResponseMPayload {
      * @type {Array<PhonetypeAutocompleteElementResponse>}
      * @memberof PhonetypeGetAutocompleteV2ResponseMPayload
      */
+    /*'a_objPhonetype': Array<PhonetypeAutocompleteElementResponse>;*/
     'a_objPhonetype': Array<PhonetypeAutocompleteElementResponse>;
 }
 /**

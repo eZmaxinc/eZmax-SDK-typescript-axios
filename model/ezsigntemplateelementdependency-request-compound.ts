@@ -28,7 +28,7 @@ import { FieldEEzsigntemplateelementdependencyValidation } from './field-eezsign
  * An Ezsigntemplateelementdependency Object and children to create a complete structure
  * @export
  */
-/** export type EzsigntemplateelementdependencyRequestCompound = EzsigntemplateelementdependencyRequest; */
+/*export type EzsigntemplateelementdependencyRequestCompound = EzsigntemplateelementdependencyRequest;*/
 export interface EzsigntemplateelementdependencyRequestCompound {
     /**
      * The unique ID of the Ezsigntemplateelementdependency

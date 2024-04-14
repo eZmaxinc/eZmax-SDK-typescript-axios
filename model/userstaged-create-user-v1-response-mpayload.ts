@@ -25,6 +25,7 @@ export interface UserstagedCreateUserV1ResponseMPayload {
      * @type {number}
      * @memberof UserstagedCreateUserV1ResponseMPayload
      */
+    /*'pkiUserID': number;*/
     'pkiUserID': number;
 }
 /**

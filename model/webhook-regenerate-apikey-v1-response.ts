@@ -31,7 +31,7 @@ import { WebhookRegenerateApikeyV1ResponseMPayload } from './webhook-regenerate-
  * Response for POST /1/object/webhook/{pkiWebhookID}/regenerateApikey
  * @export
  */
-/** export type WebhookRegenerateApikeyV1Response = CommonResponse; */
+/*export type WebhookRegenerateApikeyV1Response = CommonResponse;*/
 export interface WebhookRegenerateApikeyV1Response {
     /**
      * 

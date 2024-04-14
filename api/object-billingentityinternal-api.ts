@@ -14,13 +14,13 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
 import { BillingentityinternalCreateObjectV1Request } from '../model';
 // @ts-ignore
@@ -54,13 +54,14 @@ export const ObjectBillingentityinternalApiAxiosParamCreator = function (configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        billingentityinternalCreateObjectV1: async (billingentityinternalCreateObjectV1Request: BillingentityinternalCreateObjectV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        billingentityinternalCreateObjectV1: async (billingentityinternalCreateObjectV1Request: BillingentityinternalCreateObjectV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'billingentityinternalCreateObjectV1Request' is not null or undefined
             assertParamExists('billingentityinternalCreateObjectV1', 'billingentityinternalCreateObjectV1Request', billingentityinternalCreateObjectV1Request)
             const localVarPath = `/1/object/billingentityinternal`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -81,6 +82,7 @@ export const ObjectBillingentityinternalApiAxiosParamCreator = function (configu
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(billingentityinternalCreateObjectV1Request, localVarRequestOptions, configuration)
 
@@ -113,7 +115,7 @@ export const ObjectBillingentityinternalApiAxiosParamCreator = function (configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        billingentityinternalEditObjectV1: async (pkiBillingentityinternalID: number, billingentityinternalEditObjectV1Request: BillingentityinternalEditObjectV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        billingentityinternalEditObjectV1: async (pkiBillingentityinternalID: number, billingentityinternalEditObjectV1Request: BillingentityinternalEditObjectV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiBillingentityinternalID' is not null or undefined
             assertParamExists('billingentityinternalEditObjectV1', 'pkiBillingentityinternalID', pkiBillingentityinternalID)
             // verify required parameter 'billingentityinternalEditObjectV1Request' is not null or undefined
@@ -123,6 +125,7 @@ export const ObjectBillingentityinternalApiAxiosParamCreator = function (configu
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -143,6 +146,7 @@ export const ObjectBillingentityinternalApiAxiosParamCreator = function (configu
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(billingentityinternalEditObjectV1Request, localVarRequestOptions, configuration)
 
@@ -177,7 +181,7 @@ export const ObjectBillingentityinternalApiAxiosParamCreator = function (configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        billingentityinternalGetAutocompleteV2: async (sSelector: BillingentityinternalGetAutocompleteV2SSelectorEnum, eFilterActive?: BillingentityinternalGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        billingentityinternalGetAutocompleteV2: async (sSelector: BillingentityinternalGetAutocompleteV2SSelectorEnum, eFilterActive?: BillingentityinternalGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('billingentityinternalGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/billingentityinternal/getAutocomplete/{sSelector}`
@@ -185,6 +189,7 @@ export const ObjectBillingentityinternalApiAxiosParamCreator = function (configu
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -208,8 +213,8 @@ export const ObjectBillingentityinternalApiAxiosParamCreator = function (configu
             }
 
             if (acceptLanguage != null) {
-                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string' 
-                    ? acceptLanguage 
+                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
+                    ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
 
@@ -217,6 +222,7 @@ export const ObjectBillingentityinternalApiAxiosParamCreator = function (configu
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -251,11 +257,12 @@ export const ObjectBillingentityinternalApiAxiosParamCreator = function (configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        billingentityinternalGetListV1: async (eOrderBy?: BillingentityinternalGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        billingentityinternalGetListV1: async (eOrderBy?: BillingentityinternalGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/1/object/billingentityinternal/getList`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -287,8 +294,8 @@ export const ObjectBillingentityinternalApiAxiosParamCreator = function (configu
             }
 
             if (acceptLanguage != null) {
-                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string' 
-                    ? acceptLanguage 
+                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
+                    ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
 
@@ -296,6 +303,7 @@ export const ObjectBillingentityinternalApiAxiosParamCreator = function (configu
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -326,7 +334,7 @@ export const ObjectBillingentityinternalApiAxiosParamCreator = function (configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        billingentityinternalGetObjectV2: async (pkiBillingentityinternalID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        billingentityinternalGetObjectV2: async (pkiBillingentityinternalID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiBillingentityinternalID' is not null or undefined
             assertParamExists('billingentityinternalGetObjectV2', 'pkiBillingentityinternalID', pkiBillingentityinternalID)
             const localVarPath = `/2/object/billingentityinternal/{pkiBillingentityinternalID}`
@@ -334,6 +342,7 @@ export const ObjectBillingentityinternalApiAxiosParamCreator = function (configu
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -352,6 +361,7 @@ export const ObjectBillingentityinternalApiAxiosParamCreator = function (configu
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -392,9 +402,11 @@ export const ObjectBillingentityinternalApiFp = function(configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async billingentityinternalCreateObjectV1(billingentityinternalCreateObjectV1Request: BillingentityinternalCreateObjectV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BillingentityinternalCreateObjectV1Response>> {
+        async billingentityinternalCreateObjectV1(billingentityinternalCreateObjectV1Request: BillingentityinternalCreateObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BillingentityinternalCreateObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.billingentityinternalCreateObjectV1(billingentityinternalCreateObjectV1Request, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectBillingentityinternalApi.billingentityinternalCreateObjectV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -404,9 +416,11 @@ export const ObjectBillingentityinternalApiFp = function(configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async billingentityinternalEditObjectV1(pkiBillingentityinternalID: number, billingentityinternalEditObjectV1Request: BillingentityinternalEditObjectV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BillingentityinternalEditObjectV1Response>> {
+        async billingentityinternalEditObjectV1(pkiBillingentityinternalID: number, billingentityinternalEditObjectV1Request: BillingentityinternalEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BillingentityinternalEditObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.billingentityinternalEditObjectV1(pkiBillingentityinternalID, billingentityinternalEditObjectV1Request, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectBillingentityinternalApi.billingentityinternalEditObjectV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Get the list of Billingentityinternal to be used in a dropdown or autocomplete control.
@@ -418,9 +432,11 @@ export const ObjectBillingentityinternalApiFp = function(configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async billingentityinternalGetAutocompleteV2(sSelector: BillingentityinternalGetAutocompleteV2SSelectorEnum, eFilterActive?: BillingentityinternalGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BillingentityinternalGetAutocompleteV2Response>> {
+        async billingentityinternalGetAutocompleteV2(sSelector: BillingentityinternalGetAutocompleteV2SSelectorEnum, eFilterActive?: BillingentityinternalGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BillingentityinternalGetAutocompleteV2Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.billingentityinternalGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectBillingentityinternalApi.billingentityinternalGetAutocompleteV2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -433,9 +449,11 @@ export const ObjectBillingentityinternalApiFp = function(configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async billingentityinternalGetListV1(eOrderBy?: BillingentityinternalGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BillingentityinternalGetListV1Response>> {
+        async billingentityinternalGetListV1(eOrderBy?: BillingentityinternalGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BillingentityinternalGetListV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.billingentityinternalGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectBillingentityinternalApi.billingentityinternalGetListV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -444,9 +462,11 @@ export const ObjectBillingentityinternalApiFp = function(configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async billingentityinternalGetObjectV2(pkiBillingentityinternalID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BillingentityinternalGetObjectV2Response>> {
+        async billingentityinternalGetObjectV2(pkiBillingentityinternalID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BillingentityinternalGetObjectV2Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.billingentityinternalGetObjectV2(pkiBillingentityinternalID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectBillingentityinternalApi.billingentityinternalGetObjectV2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -534,7 +554,7 @@ export class ObjectBillingentityinternalApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectBillingentityinternalApi
      */
-    public billingentityinternalCreateObjectV1(billingentityinternalCreateObjectV1Request: BillingentityinternalCreateObjectV1Request, options?: AxiosRequestConfig) {
+    public billingentityinternalCreateObjectV1(billingentityinternalCreateObjectV1Request: BillingentityinternalCreateObjectV1Request, options?: RawAxiosRequestConfig) {
         return ObjectBillingentityinternalApiFp(this.configuration).billingentityinternalCreateObjectV1(billingentityinternalCreateObjectV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -547,7 +567,7 @@ export class ObjectBillingentityinternalApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectBillingentityinternalApi
      */
-    public billingentityinternalEditObjectV1(pkiBillingentityinternalID: number, billingentityinternalEditObjectV1Request: BillingentityinternalEditObjectV1Request, options?: AxiosRequestConfig) {
+    public billingentityinternalEditObjectV1(pkiBillingentityinternalID: number, billingentityinternalEditObjectV1Request: BillingentityinternalEditObjectV1Request, options?: RawAxiosRequestConfig) {
         return ObjectBillingentityinternalApiFp(this.configuration).billingentityinternalEditObjectV1(pkiBillingentityinternalID, billingentityinternalEditObjectV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -562,7 +582,7 @@ export class ObjectBillingentityinternalApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectBillingentityinternalApi
      */
-    public billingentityinternalGetAutocompleteV2(sSelector: BillingentityinternalGetAutocompleteV2SSelectorEnum, eFilterActive?: BillingentityinternalGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig) {
+    public billingentityinternalGetAutocompleteV2(sSelector: BillingentityinternalGetAutocompleteV2SSelectorEnum, eFilterActive?: BillingentityinternalGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig) {
         return ObjectBillingentityinternalApiFp(this.configuration).billingentityinternalGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -578,7 +598,7 @@ export class ObjectBillingentityinternalApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectBillingentityinternalApi
      */
-    public billingentityinternalGetListV1(eOrderBy?: BillingentityinternalGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig) {
+    public billingentityinternalGetListV1(eOrderBy?: BillingentityinternalGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig) {
         return ObjectBillingentityinternalApiFp(this.configuration).billingentityinternalGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -590,7 +610,7 @@ export class ObjectBillingentityinternalApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectBillingentityinternalApi
      */
-    public billingentityinternalGetObjectV2(pkiBillingentityinternalID: number, options?: AxiosRequestConfig) {
+    public billingentityinternalGetObjectV2(pkiBillingentityinternalID: number, options?: RawAxiosRequestConfig) {
         return ObjectBillingentityinternalApiFp(this.configuration).billingentityinternalGetObjectV2(pkiBillingentityinternalID, options).then((request) => request(this.axios, this.basePath));
     }
 }

@@ -28,6 +28,7 @@ export interface EzsignfoldersignerassociationPatchObjectV1Request {
      * @type {EzsignfoldersignerassociationRequestPatch}
      * @memberof EzsignfoldersignerassociationPatchObjectV1Request
      */
+    /*'objEzsignfoldersignerassociation': EzsignfoldersignerassociationRequestPatch;*/
     'objEzsignfoldersignerassociation': EzsignfoldersignerassociationRequestPatch;
 }
 /**

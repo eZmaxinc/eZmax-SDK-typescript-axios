@@ -31,7 +31,7 @@ import { DepartmentGetAutocompleteV2ResponseMPayload } from './department-get-au
  * Response for GET /2/object/department/getAutocomplete
  * @export
  */
-/** export type DepartmentGetAutocompleteV2Response = CommonResponse; */
+/*export type DepartmentGetAutocompleteV2Response = CommonResponse;*/
 export interface DepartmentGetAutocompleteV2Response {
     /**
      * 

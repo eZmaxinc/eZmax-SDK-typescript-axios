@@ -31,7 +31,7 @@ import { EzsigndocumentGetActionableElementsV1ResponseMPayload } from './ezsignd
  * Response for GET /1/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements
  * @export
  */
-/** export type EzsigndocumentGetActionableElementsV1Response = CommonResponse; */
+/*export type EzsigndocumentGetActionableElementsV1Response = CommonResponse;*/
 export interface EzsigndocumentGetActionableElementsV1Response {
     /**
      * 

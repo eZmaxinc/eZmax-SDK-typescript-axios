@@ -25,12 +25,14 @@ export interface MultilingualEzmaxinvoicingsummaryinternalDescription {
      * @type {string}
      * @memberof MultilingualEzmaxinvoicingsummaryinternalDescription
      */
+    /*'sEzmaxinvoicingsummaryinternalDescription1'?: string;*/
     'sEzmaxinvoicingsummaryinternalDescription1'?: string;
     /**
      * The Ezmaxinvoicingsummaryinternal description in English
      * @type {string}
      * @memberof MultilingualEzmaxinvoicingsummaryinternalDescription
      */
+    /*'sEzmaxinvoicingsummaryinternalDescription2'?: string;*/
     'sEzmaxinvoicingsummaryinternalDescription2'?: string;
 }
 /**

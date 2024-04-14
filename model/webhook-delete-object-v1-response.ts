@@ -28,7 +28,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for DELETE /1/object/webhook/{pkiWebhookID}
  * @export
  */
-/** export type WebhookDeleteObjectV1Response = CommonResponse; */
+/*export type WebhookDeleteObjectV1Response = CommonResponse;*/
 export interface WebhookDeleteObjectV1Response {
     /**
      * 

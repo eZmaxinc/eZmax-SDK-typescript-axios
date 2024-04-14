@@ -34,60 +34,70 @@ export interface CustomCommunicationsenderResponse {
      * @type {number}
      * @memberof CustomCommunicationsenderResponse
      */
+    /*'fkiAgentID'?: number;*/
     'fkiAgentID'?: number;
     /**
      * The unique ID of the Broker.
      * @type {number}
      * @memberof CustomCommunicationsenderResponse
      */
+    /*'fkiBrokerID'?: number;*/
     'fkiBrokerID'?: number;
     /**
      * The unique ID of the User
      * @type {number}
      * @memberof CustomCommunicationsenderResponse
      */
+    /*'fkiUserID'?: number;*/
     'fkiUserID'?: number;
     /**
      * The unique ID of the Mailboxshared
      * @type {number}
      * @memberof CustomCommunicationsenderResponse
      */
+    /*'fkiMailboxsharedID'?: number;*/
     'fkiMailboxsharedID'?: number;
     /**
      * The unique ID of the Phonelineshared
      * @type {number}
      * @memberof CustomCommunicationsenderResponse
      */
+    /*'fkiPhonelinesharedID'?: number;*/
     'fkiPhonelinesharedID'?: number;
     /**
      * 
      * @type {string}
      * @memberof CustomCommunicationsenderResponse
      */
+    /*'eCommunicationsenderObjecttype': CustomCommunicationsenderResponseECommunicationsenderObjecttypeEnum;*/
     'eCommunicationsenderObjecttype': CustomCommunicationsenderResponseECommunicationsenderObjecttypeEnum;
     /**
      * 
      * @type {CustomContactNameResponse}
      * @memberof CustomCommunicationsenderResponse
      */
+    /*'objContactName': CustomContactNameResponse;*/
     'objContactName': CustomContactNameResponse;
     /**
      * 
      * @type {EmailResponseCompound}
      * @memberof CustomCommunicationsenderResponse
      */
+    /*'objEmail'?: EmailResponseCompound;*/
     'objEmail'?: EmailResponseCompound;
     /**
      * 
      * @type {PhoneResponseCompound}
      * @memberof CustomCommunicationsenderResponse
      */
+    /*'objPhoneFax'?: PhoneResponseCompound;*/
     'objPhoneFax'?: PhoneResponseCompound;
     /**
      * 
      * @type {PhoneResponseCompound}
      * @memberof CustomCommunicationsenderResponse
      */
+    /*'objPhoneSMS'?: PhoneResponseCompound;*/
     'objPhoneSMS'?: PhoneResponseCompound;
 }
 

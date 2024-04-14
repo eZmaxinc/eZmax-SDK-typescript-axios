@@ -28,6 +28,7 @@ export interface EzsigntemplatepackagesignerEditObjectV1Request {
      * @type {EzsigntemplatepackagesignerRequestCompound}
      * @memberof EzsigntemplatepackagesignerEditObjectV1Request
      */
+    /*'objEzsigntemplatepackagesigner': EzsigntemplatepackagesignerRequestCompound;*/
     'objEzsigntemplatepackagesigner': EzsigntemplatepackagesignerRequestCompound;
 }
 /**

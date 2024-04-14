@@ -28,6 +28,7 @@ export interface CommonReport {
      * @type {Array<CommonReportsection>}
      * @memberof CommonReport
      */
+    /*'a_objReportsection': Array<CommonReportsection>;*/
     'a_objReportsection': Array<CommonReportsection>;
 }
 /**

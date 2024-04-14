@@ -25,24 +25,28 @@ export interface CustomCreateEzsignelementsPositionedByWordRequest {
      * @type {string}
      * @memberof CustomCreateEzsignelementsPositionedByWordRequest
      */
+    /*'sCreateezsignelementspositionedbywordPattern': string;*/
     'sCreateezsignelementspositionedbywordPattern': string;
     /**
      * The X offset
      * @type {number}
      * @memberof CustomCreateEzsignelementsPositionedByWordRequest
      */
+    /*'iCreateezsignelementspositionedbywordOffsetx': number;*/
     'iCreateezsignelementspositionedbywordOffsetx': number;
     /**
      * The Y offset
      * @type {number}
      * @memberof CustomCreateEzsignelementsPositionedByWordRequest
      */
+    /*'iCreateezsignelementspositionedbywordOffsety': number;*/
     'iCreateezsignelementspositionedbywordOffsety': number;
     /**
      * The occurance in the search to add the ezsign element
      * @type {string}
      * @memberof CustomCreateEzsignelementsPositionedByWordRequest
      */
+    /*'eCreateezsignelementspositionedbywordOccurance': CustomCreateEzsignelementsPositionedByWordRequestECreateezsignelementspositionedbywordOccuranceEnum;*/
     'eCreateezsignelementspositionedbywordOccurance': CustomCreateEzsignelementsPositionedByWordRequestECreateezsignelementspositionedbywordOccuranceEnum;
 }
 

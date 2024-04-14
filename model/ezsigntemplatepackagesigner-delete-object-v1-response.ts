@@ -31,7 +31,7 @@ import { EzsigntemplatepackagesignerDeleteObjectV1ResponseMPayload } from './ezs
  * Response for DELETE /1/object/ezsigntemplatepackagesigner/{pkiEzsigntemplatepackagesignerID}
  * @export
  */
-/** export type EzsigntemplatepackagesignerDeleteObjectV1Response = CommonResponse; */
+/*export type EzsigntemplatepackagesignerDeleteObjectV1Response = CommonResponse;*/
 export interface EzsigntemplatepackagesignerDeleteObjectV1Response {
     /**
      * 

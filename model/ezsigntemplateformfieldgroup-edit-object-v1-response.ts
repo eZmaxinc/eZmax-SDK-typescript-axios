@@ -28,7 +28,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for PUT /1/object/ezsigntemplateformfieldgroup/{pkiEzsigntemplateformfieldgroupID}
  * @export
  */
-/** export type EzsigntemplateformfieldgroupEditObjectV1Response = CommonResponse; */
+/*export type EzsigntemplateformfieldgroupEditObjectV1Response = CommonResponse;*/
 export interface EzsigntemplateformfieldgroupEditObjectV1Response {
     /**
      * 

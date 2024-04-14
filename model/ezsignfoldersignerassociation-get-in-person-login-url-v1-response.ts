@@ -31,7 +31,7 @@ import { EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload } fr
  * Response for GET /1/object/ezsignfoldersignerassociation/getInPersonLoginUrl
  * @export
  */
-/** export type EzsignfoldersignerassociationGetInPersonLoginUrlV1Response = CommonResponse; */
+/*export type EzsignfoldersignerassociationGetInPersonLoginUrlV1Response = CommonResponse;*/
 export interface EzsignfoldersignerassociationGetInPersonLoginUrlV1Response {
     /**
      * 

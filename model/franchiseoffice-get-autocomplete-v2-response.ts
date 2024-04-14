@@ -31,7 +31,7 @@ import { FranchiseofficeGetAutocompleteV2ResponseMPayload } from './franchiseoff
  * Response for GET /2/object/franchiseoffice/getAutocomplete
  * @export
  */
-/** export type FranchiseofficeGetAutocompleteV2Response = CommonResponse; */
+/*export type FranchiseofficeGetAutocompleteV2Response = CommonResponse;*/
 export interface FranchiseofficeGetAutocompleteV2Response {
     /**
      * 

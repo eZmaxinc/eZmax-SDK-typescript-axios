@@ -28,6 +28,7 @@ export interface FontGetAutocompleteV2ResponseMPayload {
      * @type {Array<FontAutocompleteElementResponse>}
      * @memberof FontGetAutocompleteV2ResponseMPayload
      */
+    /*'a_objFont': Array<FontAutocompleteElementResponse>;*/
     'a_objFont': Array<FontAutocompleteElementResponse>;
 }
 /**

@@ -28,6 +28,7 @@ export interface VariableexpenseGetObjectV2ResponseMPayload {
      * @type {VariableexpenseResponseCompound}
      * @memberof VariableexpenseGetObjectV2ResponseMPayload
      */
+    /*'objVariableexpense': VariableexpenseResponseCompound;*/
     'objVariableexpense': VariableexpenseResponseCompound;
 }
 /**

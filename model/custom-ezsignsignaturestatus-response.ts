@@ -25,24 +25,28 @@ export interface CustomEzsignsignaturestatusResponse {
      * @type {string}
      * @memberof CustomEzsignsignaturestatusResponse
      */
+    /*'eEzsignsignaturestatusSteptype': CustomEzsignsignaturestatusResponseEEzsignsignaturestatusSteptypeEnum;*/
     'eEzsignsignaturestatusSteptype': CustomEzsignsignaturestatusResponseEEzsignsignaturestatusSteptypeEnum;
     /**
      * The step at which the Ezsignsigner will be invited to sign or fill the form fields
      * @type {number}
      * @memberof CustomEzsignsignaturestatusResponse
      */
+    /*'iEzsignsignaturestatusStep': number;*/
     'iEzsignsignaturestatusStep': number;
     /**
      * The total number of signature or form fields the Ezsignsigner must process at the current step
      * @type {number}
      * @memberof CustomEzsignsignaturestatusResponse
      */
+    /*'iEzsignsignaturestatusTotal': number;*/
     'iEzsignsignaturestatusTotal': number;
     /**
      * The number of signature or form fields the Ezsignsigner has already processed at the current step
      * @type {number}
      * @memberof CustomEzsignsignaturestatusResponse
      */
+    /*'iEzsignsignaturestatusSigned': number;*/
     'iEzsignsignaturestatusSigned': number;
 }
 

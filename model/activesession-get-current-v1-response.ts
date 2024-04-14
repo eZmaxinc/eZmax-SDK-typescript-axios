@@ -31,7 +31,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for GET /1/object/activesession/getCurrent
  * @export
  */
-/** export type ActivesessionGetCurrentV1Response = CommonResponse; */
+/*export type ActivesessionGetCurrentV1Response = CommonResponse;*/
 export interface ActivesessionGetCurrentV1Response {
     /**
      * 

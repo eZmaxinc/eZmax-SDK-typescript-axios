@@ -28,6 +28,7 @@ export interface ApikeyEditPermissionsV1Request {
      * @type {Array<PermissionRequestCompound>}
      * @memberof ApikeyEditPermissionsV1Request
      */
+    /*'a_objPermission': Array<PermissionRequestCompound>;*/
     'a_objPermission': Array<PermissionRequestCompound>;
 }
 /**

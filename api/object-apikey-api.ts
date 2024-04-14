@@ -14,13 +14,13 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
 import { ApikeyCreateObjectV2Request } from '../model';
 // @ts-ignore
@@ -66,13 +66,14 @@ export const ObjectApikeyApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apikeyCreateObjectV2: async (apikeyCreateObjectV2Request: ApikeyCreateObjectV2Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        apikeyCreateObjectV2: async (apikeyCreateObjectV2Request: ApikeyCreateObjectV2Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'apikeyCreateObjectV2Request' is not null or undefined
             assertParamExists('apikeyCreateObjectV2', 'apikeyCreateObjectV2Request', apikeyCreateObjectV2Request)
             const localVarPath = `/2/object/apikey`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -93,6 +94,7 @@ export const ObjectApikeyApiAxiosParamCreator = function (configuration?: Config
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(apikeyCreateObjectV2Request, localVarRequestOptions, configuration)
 
@@ -125,7 +127,7 @@ export const ObjectApikeyApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apikeyEditObjectV1: async (pkiApikeyID: number, apikeyEditObjectV1Request: ApikeyEditObjectV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        apikeyEditObjectV1: async (pkiApikeyID: number, apikeyEditObjectV1Request: ApikeyEditObjectV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiApikeyID' is not null or undefined
             assertParamExists('apikeyEditObjectV1', 'pkiApikeyID', pkiApikeyID)
             // verify required parameter 'apikeyEditObjectV1Request' is not null or undefined
@@ -135,6 +137,7 @@ export const ObjectApikeyApiAxiosParamCreator = function (configuration?: Config
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -155,6 +158,7 @@ export const ObjectApikeyApiAxiosParamCreator = function (configuration?: Config
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(apikeyEditObjectV1Request, localVarRequestOptions, configuration)
 
@@ -187,7 +191,7 @@ export const ObjectApikeyApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apikeyEditPermissionsV1: async (pkiApikeyID: number, apikeyEditPermissionsV1Request: ApikeyEditPermissionsV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        apikeyEditPermissionsV1: async (pkiApikeyID: number, apikeyEditPermissionsV1Request: ApikeyEditPermissionsV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiApikeyID' is not null or undefined
             assertParamExists('apikeyEditPermissionsV1', 'pkiApikeyID', pkiApikeyID)
             // verify required parameter 'apikeyEditPermissionsV1Request' is not null or undefined
@@ -197,6 +201,7 @@ export const ObjectApikeyApiAxiosParamCreator = function (configuration?: Config
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -217,6 +222,7 @@ export const ObjectApikeyApiAxiosParamCreator = function (configuration?: Config
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(apikeyEditPermissionsV1Request, localVarRequestOptions, configuration)
 
@@ -248,7 +254,7 @@ export const ObjectApikeyApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apikeyGetCorsV1: async (pkiApikeyID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        apikeyGetCorsV1: async (pkiApikeyID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiApikeyID' is not null or undefined
             assertParamExists('apikeyGetCorsV1', 'pkiApikeyID', pkiApikeyID)
             const localVarPath = `/1/object/apikey/{pkiApikeyID}/getCors`
@@ -256,6 +262,7 @@ export const ObjectApikeyApiAxiosParamCreator = function (configuration?: Config
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -274,6 +281,7 @@ export const ObjectApikeyApiAxiosParamCreator = function (configuration?: Config
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -308,11 +316,12 @@ export const ObjectApikeyApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apikeyGetListV1: async (eOrderBy?: ApikeyGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        apikeyGetListV1: async (eOrderBy?: ApikeyGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/1/object/apikey/getList`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -344,8 +353,8 @@ export const ObjectApikeyApiAxiosParamCreator = function (configuration?: Config
             }
 
             if (acceptLanguage != null) {
-                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string' 
-                    ? acceptLanguage 
+                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
+                    ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
 
@@ -353,6 +362,7 @@ export const ObjectApikeyApiAxiosParamCreator = function (configuration?: Config
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -383,7 +393,7 @@ export const ObjectApikeyApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apikeyGetObjectV2: async (pkiApikeyID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        apikeyGetObjectV2: async (pkiApikeyID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiApikeyID' is not null or undefined
             assertParamExists('apikeyGetObjectV2', 'pkiApikeyID', pkiApikeyID)
             const localVarPath = `/2/object/apikey/{pkiApikeyID}`
@@ -391,6 +401,7 @@ export const ObjectApikeyApiAxiosParamCreator = function (configuration?: Config
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -409,6 +420,7 @@ export const ObjectApikeyApiAxiosParamCreator = function (configuration?: Config
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -439,7 +451,7 @@ export const ObjectApikeyApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apikeyGetPermissionsV1: async (pkiApikeyID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        apikeyGetPermissionsV1: async (pkiApikeyID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiApikeyID' is not null or undefined
             assertParamExists('apikeyGetPermissionsV1', 'pkiApikeyID', pkiApikeyID)
             const localVarPath = `/1/object/apikey/{pkiApikeyID}/getPermissions`
@@ -447,6 +459,7 @@ export const ObjectApikeyApiAxiosParamCreator = function (configuration?: Config
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -465,6 +478,7 @@ export const ObjectApikeyApiAxiosParamCreator = function (configuration?: Config
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -495,7 +509,7 @@ export const ObjectApikeyApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apikeyGetSubnetsV1: async (pkiApikeyID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        apikeyGetSubnetsV1: async (pkiApikeyID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiApikeyID' is not null or undefined
             assertParamExists('apikeyGetSubnetsV1', 'pkiApikeyID', pkiApikeyID)
             const localVarPath = `/1/object/apikey/{pkiApikeyID}/getSubnets`
@@ -503,6 +517,7 @@ export const ObjectApikeyApiAxiosParamCreator = function (configuration?: Config
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -521,6 +536,7 @@ export const ObjectApikeyApiAxiosParamCreator = function (configuration?: Config
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -552,7 +568,7 @@ export const ObjectApikeyApiAxiosParamCreator = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apikeyRegenerateV1: async (pkiApikeyID: number, apikeyRegenerateV1Request: ApikeyRegenerateV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        apikeyRegenerateV1: async (pkiApikeyID: number, apikeyRegenerateV1Request: ApikeyRegenerateV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiApikeyID' is not null or undefined
             assertParamExists('apikeyRegenerateV1', 'pkiApikeyID', pkiApikeyID)
             // verify required parameter 'apikeyRegenerateV1Request' is not null or undefined
@@ -562,6 +578,7 @@ export const ObjectApikeyApiAxiosParamCreator = function (configuration?: Config
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -582,6 +599,7 @@ export const ObjectApikeyApiAxiosParamCreator = function (configuration?: Config
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(apikeyRegenerateV1Request, localVarRequestOptions, configuration)
 
@@ -623,9 +641,11 @@ export const ObjectApikeyApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async apikeyCreateObjectV2(apikeyCreateObjectV2Request: ApikeyCreateObjectV2Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApikeyCreateObjectV2Response>> {
+        async apikeyCreateObjectV2(apikeyCreateObjectV2Request: ApikeyCreateObjectV2Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApikeyCreateObjectV2Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.apikeyCreateObjectV2(apikeyCreateObjectV2Request, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectApikeyApi.apikeyCreateObjectV2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -635,9 +655,11 @@ export const ObjectApikeyApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async apikeyEditObjectV1(pkiApikeyID: number, apikeyEditObjectV1Request: ApikeyEditObjectV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApikeyEditObjectV1Response>> {
+        async apikeyEditObjectV1(pkiApikeyID: number, apikeyEditObjectV1Request: ApikeyEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApikeyEditObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.apikeyEditObjectV1(pkiApikeyID, apikeyEditObjectV1Request, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectApikeyApi.apikeyEditObjectV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Using this endpoint, you can edit multiple Permissions at the same time.
@@ -647,9 +669,11 @@ export const ObjectApikeyApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async apikeyEditPermissionsV1(pkiApikeyID: number, apikeyEditPermissionsV1Request: ApikeyEditPermissionsV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApikeyEditPermissionsV1Response>> {
+        async apikeyEditPermissionsV1(pkiApikeyID: number, apikeyEditPermissionsV1Request: ApikeyEditPermissionsV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApikeyEditPermissionsV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.apikeyEditPermissionsV1(pkiApikeyID, apikeyEditPermissionsV1Request, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectApikeyApi.apikeyEditPermissionsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -658,9 +682,11 @@ export const ObjectApikeyApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async apikeyGetCorsV1(pkiApikeyID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApikeyGetCorsV1Response>> {
+        async apikeyGetCorsV1(pkiApikeyID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApikeyGetCorsV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.apikeyGetCorsV1(pkiApikeyID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectApikeyApi.apikeyGetCorsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---|
@@ -673,9 +699,11 @@ export const ObjectApikeyApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async apikeyGetListV1(eOrderBy?: ApikeyGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApikeyGetListV1Response>> {
+        async apikeyGetListV1(eOrderBy?: ApikeyGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApikeyGetListV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.apikeyGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectApikeyApi.apikeyGetListV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -684,9 +712,11 @@ export const ObjectApikeyApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async apikeyGetObjectV2(pkiApikeyID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApikeyGetObjectV2Response>> {
+        async apikeyGetObjectV2(pkiApikeyID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApikeyGetObjectV2Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.apikeyGetObjectV2(pkiApikeyID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectApikeyApi.apikeyGetObjectV2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -695,9 +725,11 @@ export const ObjectApikeyApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async apikeyGetPermissionsV1(pkiApikeyID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApikeyGetPermissionsV1Response>> {
+        async apikeyGetPermissionsV1(pkiApikeyID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApikeyGetPermissionsV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.apikeyGetPermissionsV1(pkiApikeyID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectApikeyApi.apikeyGetPermissionsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -706,9 +738,11 @@ export const ObjectApikeyApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async apikeyGetSubnetsV1(pkiApikeyID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApikeyGetSubnetsV1Response>> {
+        async apikeyGetSubnetsV1(pkiApikeyID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApikeyGetSubnetsV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.apikeyGetSubnetsV1(pkiApikeyID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectApikeyApi.apikeyGetSubnetsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -718,9 +752,11 @@ export const ObjectApikeyApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async apikeyRegenerateV1(pkiApikeyID: number, apikeyRegenerateV1Request: ApikeyRegenerateV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApikeyRegenerateV1Response>> {
+        async apikeyRegenerateV1(pkiApikeyID: number, apikeyRegenerateV1Request: ApikeyRegenerateV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApikeyRegenerateV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.apikeyRegenerateV1(pkiApikeyID, apikeyRegenerateV1Request, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectApikeyApi.apikeyRegenerateV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -847,7 +883,7 @@ export class ObjectApikeyApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectApikeyApi
      */
-    public apikeyCreateObjectV2(apikeyCreateObjectV2Request: ApikeyCreateObjectV2Request, options?: AxiosRequestConfig) {
+    public apikeyCreateObjectV2(apikeyCreateObjectV2Request: ApikeyCreateObjectV2Request, options?: RawAxiosRequestConfig) {
         return ObjectApikeyApiFp(this.configuration).apikeyCreateObjectV2(apikeyCreateObjectV2Request, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -860,7 +896,7 @@ export class ObjectApikeyApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectApikeyApi
      */
-    public apikeyEditObjectV1(pkiApikeyID: number, apikeyEditObjectV1Request: ApikeyEditObjectV1Request, options?: AxiosRequestConfig) {
+    public apikeyEditObjectV1(pkiApikeyID: number, apikeyEditObjectV1Request: ApikeyEditObjectV1Request, options?: RawAxiosRequestConfig) {
         return ObjectApikeyApiFp(this.configuration).apikeyEditObjectV1(pkiApikeyID, apikeyEditObjectV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -873,7 +909,7 @@ export class ObjectApikeyApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectApikeyApi
      */
-    public apikeyEditPermissionsV1(pkiApikeyID: number, apikeyEditPermissionsV1Request: ApikeyEditPermissionsV1Request, options?: AxiosRequestConfig) {
+    public apikeyEditPermissionsV1(pkiApikeyID: number, apikeyEditPermissionsV1Request: ApikeyEditPermissionsV1Request, options?: RawAxiosRequestConfig) {
         return ObjectApikeyApiFp(this.configuration).apikeyEditPermissionsV1(pkiApikeyID, apikeyEditPermissionsV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -885,7 +921,7 @@ export class ObjectApikeyApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectApikeyApi
      */
-    public apikeyGetCorsV1(pkiApikeyID: number, options?: AxiosRequestConfig) {
+    public apikeyGetCorsV1(pkiApikeyID: number, options?: RawAxiosRequestConfig) {
         return ObjectApikeyApiFp(this.configuration).apikeyGetCorsV1(pkiApikeyID, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -901,7 +937,7 @@ export class ObjectApikeyApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectApikeyApi
      */
-    public apikeyGetListV1(eOrderBy?: ApikeyGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig) {
+    public apikeyGetListV1(eOrderBy?: ApikeyGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig) {
         return ObjectApikeyApiFp(this.configuration).apikeyGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -913,7 +949,7 @@ export class ObjectApikeyApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectApikeyApi
      */
-    public apikeyGetObjectV2(pkiApikeyID: number, options?: AxiosRequestConfig) {
+    public apikeyGetObjectV2(pkiApikeyID: number, options?: RawAxiosRequestConfig) {
         return ObjectApikeyApiFp(this.configuration).apikeyGetObjectV2(pkiApikeyID, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -925,7 +961,7 @@ export class ObjectApikeyApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectApikeyApi
      */
-    public apikeyGetPermissionsV1(pkiApikeyID: number, options?: AxiosRequestConfig) {
+    public apikeyGetPermissionsV1(pkiApikeyID: number, options?: RawAxiosRequestConfig) {
         return ObjectApikeyApiFp(this.configuration).apikeyGetPermissionsV1(pkiApikeyID, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -937,7 +973,7 @@ export class ObjectApikeyApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectApikeyApi
      */
-    public apikeyGetSubnetsV1(pkiApikeyID: number, options?: AxiosRequestConfig) {
+    public apikeyGetSubnetsV1(pkiApikeyID: number, options?: RawAxiosRequestConfig) {
         return ObjectApikeyApiFp(this.configuration).apikeyGetSubnetsV1(pkiApikeyID, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -950,7 +986,7 @@ export class ObjectApikeyApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectApikeyApi
      */
-    public apikeyRegenerateV1(pkiApikeyID: number, apikeyRegenerateV1Request: ApikeyRegenerateV1Request, options?: AxiosRequestConfig) {
+    public apikeyRegenerateV1(pkiApikeyID: number, apikeyRegenerateV1Request: ApikeyRegenerateV1Request, options?: RawAxiosRequestConfig) {
         return ObjectApikeyApiFp(this.configuration).apikeyRegenerateV1(pkiApikeyID, apikeyRegenerateV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 }

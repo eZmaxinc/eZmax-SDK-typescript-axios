@@ -25,6 +25,7 @@ export interface WebsocketResponseGetWebsocketIDV1MPayload {
      * @type {string}
      * @memberof WebsocketResponseGetWebsocketIDV1MPayload
      */
+    /*'sWebsocketID': string;*/
     'sWebsocketID': string;
 }
 /**

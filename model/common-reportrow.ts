@@ -28,12 +28,14 @@ export interface CommonReportrow {
      * @type {Array<CommonReportcell>}
      * @memberof CommonReportrow
      */
+    /*'a_objReportcell': Array<CommonReportcell>;*/
     'a_objReportcell': Array<CommonReportcell>;
     /**
      * The reportrow height in pixels
      * @type {number}
      * @memberof CommonReportrow
      */
+    /*'iReportrowHeight': number;*/
     'iReportrowHeight': number;
 }
 /**

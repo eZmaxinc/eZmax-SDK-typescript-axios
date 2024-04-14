@@ -25,7 +25,7 @@ import { PaymenttermListElement } from './paymentterm-list-element';
  * Payload for GET /1/object/paymentterm/getList
  * @export
  */
-/** export type PaymenttermGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload; */
+/*export type PaymenttermGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;*/
 export interface PaymenttermGetListV1ResponseMPayload {
     /**
      * The number of rows returned

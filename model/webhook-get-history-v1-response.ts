@@ -31,7 +31,7 @@ import { WebhookGetHistoryV1ResponseMPayload } from './webhook-get-history-v1-re
  * Response for GET /1/object/webhook/{pkiWebhookID}/getHistory
  * @export
  */
-/** export type WebhookGetHistoryV1Response = CommonResponse; */
+/*export type WebhookGetHistoryV1Response = CommonResponse;*/
 export interface WebhookGetHistoryV1Response {
     /**
      * 

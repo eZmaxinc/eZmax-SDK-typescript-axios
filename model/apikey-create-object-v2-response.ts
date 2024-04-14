@@ -31,7 +31,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for POST /2/object/apikey
  * @export
  */
-/** export type ApikeyCreateObjectV2Response = CommonResponse; */
+/*export type ApikeyCreateObjectV2Response = CommonResponse;*/
 export interface ApikeyCreateObjectV2Response {
     /**
      * 

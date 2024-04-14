@@ -28,6 +28,7 @@ export interface EzsigndocumentEditEzsignsignaturesV1Request {
      * @type {Array<EzsignsignatureRequestCompound>}
      * @memberof EzsigndocumentEditEzsignsignaturesV1Request
      */
+    /*'a_objEzsignsignature': Array<EzsignsignatureRequestCompound>;*/
     'a_objEzsignsignature': Array<EzsignsignatureRequestCompound>;
 }
 /**

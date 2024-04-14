@@ -31,7 +31,7 @@ import { InvoiceGetCommunicationListV1ResponseMPayload } from './invoice-get-com
  * Response for GET /1/object/invoice/{pkiInvoiceID}/getCommunicationList
  * @export
  */
-/** export type InvoiceGetCommunicationListV1Response = CommonResponseGetList; */
+/*export type InvoiceGetCommunicationListV1Response = CommonResponseGetList;*/
 export interface InvoiceGetCommunicationListV1Response {
     /**
      * 

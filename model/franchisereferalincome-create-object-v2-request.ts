@@ -28,6 +28,7 @@ export interface FranchisereferalincomeCreateObjectV2Request {
      * @type {Array<FranchisereferalincomeRequestCompound>}
      * @memberof FranchisereferalincomeCreateObjectV2Request
      */
+    /*'a_objFranchisereferalincome': Array<FranchisereferalincomeRequestCompound>;*/
     'a_objFranchisereferalincome': Array<FranchisereferalincomeRequestCompound>;
 }
 /**

@@ -14,13 +14,13 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
 import { CommonResponseError } from '../model';
 // @ts-ignore
@@ -42,7 +42,7 @@ export const GlobalCustomerApiAxiosParamCreator = function (configuration?: Conf
          * @deprecated
          * @throws {RequiredError}
          */
-        globalCustomerGetEndpointV1: async (pksCustomerCode: string, sInfrastructureproductCode?: GlobalCustomerGetEndpointV1SInfrastructureproductCodeEnum, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        globalCustomerGetEndpointV1: async (pksCustomerCode: string, sInfrastructureproductCode?: GlobalCustomerGetEndpointV1SInfrastructureproductCodeEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pksCustomerCode' is not null or undefined
             assertParamExists('globalCustomerGetEndpointV1', 'pksCustomerCode', pksCustomerCode)
             const localVarPath = `/1/customer/{pksCustomerCode}/endpoint`
@@ -50,6 +50,7 @@ export const GlobalCustomerApiAxiosParamCreator = function (configuration?: Conf
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -69,6 +70,7 @@ export const GlobalCustomerApiAxiosParamCreator = function (configuration?: Conf
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -111,9 +113,11 @@ export const GlobalCustomerApiFp = function(configuration?: Configuration) {
          * @deprecated
          * @throws {RequiredError}
          */
-        async globalCustomerGetEndpointV1(pksCustomerCode: string, sInfrastructureproductCode?: GlobalCustomerGetEndpointV1SInfrastructureproductCodeEnum, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GlobalCustomerGetEndpointV1Response>> {
+        async globalCustomerGetEndpointV1(pksCustomerCode: string, sInfrastructureproductCode?: GlobalCustomerGetEndpointV1SInfrastructureproductCodeEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<GlobalCustomerGetEndpointV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.globalCustomerGetEndpointV1(pksCustomerCode, sInfrastructureproductCode, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['GlobalCustomerApi.globalCustomerGetEndpointV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -157,7 +161,7 @@ export class GlobalCustomerApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof GlobalCustomerApi
      */
-    public globalCustomerGetEndpointV1(pksCustomerCode: string, sInfrastructureproductCode?: GlobalCustomerGetEndpointV1SInfrastructureproductCodeEnum, options?: AxiosRequestConfig) {
+    public globalCustomerGetEndpointV1(pksCustomerCode: string, sInfrastructureproductCode?: GlobalCustomerGetEndpointV1SInfrastructureproductCodeEnum, options?: RawAxiosRequestConfig) {
         return GlobalCustomerApiFp(this.configuration).globalCustomerGetEndpointV1(pksCustomerCode, sInfrastructureproductCode, options).then((request) => request(this.axios, this.basePath));
     }
 }

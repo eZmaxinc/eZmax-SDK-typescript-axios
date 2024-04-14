@@ -25,18 +25,21 @@ export interface CommonResponseFilter {
      * @type {{ [key: string]: string; }}
      * @memberof CommonResponseFilter
      */
+    /*'a_AutoType'?: { [key: string]: string; };*/
     'a_AutoType'?: { [key: string]: string; };
     /**
      * List of computed filters that can be used in *sFilter* (Automatic types)
      * @type {{ [key: string]: string; }}
      * @memberof CommonResponseFilter
      */
+    /*'a_AutoTypeHaving'?: { [key: string]: string; };*/
     'a_AutoTypeHaving'?: { [key: string]: string; };
     /**
      * List of filters that can be used in *sFilter* (Enum types)
      * @type {{ [key: string]: { [key: string]: string; }; }}
      * @memberof CommonResponseFilter
      */
+    /*'a_Enum'?: { [key: string]: { [key: string]: string; }; };*/
     'a_Enum'?: { [key: string]: { [key: string]: string; }; };
 }
 /**

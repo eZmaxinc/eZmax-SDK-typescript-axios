@@ -25,6 +25,7 @@ export interface UserCreateObjectV2ResponseMPayload {
      * @type {Array<number>}
      * @memberof UserCreateObjectV2ResponseMPayload
      */
+    /*'a_pkiUserID': Array<number>;*/
     'a_pkiUserID': Array<number>;
 }
 /**

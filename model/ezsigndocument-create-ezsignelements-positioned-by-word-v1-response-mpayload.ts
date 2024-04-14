@@ -25,12 +25,14 @@ export interface EzsigndocumentCreateEzsignelementsPositionedByWordV1ResponseMPa
      * @type {Array<number>}
      * @memberof EzsigndocumentCreateEzsignelementsPositionedByWordV1ResponseMPayload
      */
+    /*'a_pkiEzsignsignatureID': Array<number>;*/
     'a_pkiEzsignsignatureID': Array<number>;
     /**
      * 
      * @type {Array<number>}
      * @memberof EzsigndocumentCreateEzsignelementsPositionedByWordV1ResponseMPayload
      */
+    /*'a_pkiEzsignformfieldgroupID': Array<number>;*/
     'a_pkiEzsignformfieldgroupID': Array<number>;
 }
 /**

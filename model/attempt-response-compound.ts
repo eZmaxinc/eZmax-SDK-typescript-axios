@@ -22,7 +22,7 @@ import { AttemptResponse } from './attempt-response';
  * An Attempt object and children to create a complete structure
  * @export
  */
-/** export type AttemptResponseCompound = AttemptResponse; */
+/*export type AttemptResponseCompound = AttemptResponse;*/
 export interface AttemptResponseCompound {
     /**
      * Represent a Date Time. The timezone is the one configured in the User\'s profile.

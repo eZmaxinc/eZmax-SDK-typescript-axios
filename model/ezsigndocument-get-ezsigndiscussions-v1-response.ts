@@ -31,7 +31,7 @@ import { EzsigndocumentGetEzsigndiscussionsV1ResponseMPayload } from './ezsigndo
  * Response for GET /1/object/ezsigndocument/{pkiEzsigndocument}/getEzsigndiscussions
  * @export
  */
-/** export type EzsigndocumentGetEzsigndiscussionsV1Response = CommonResponse; */
+/*export type EzsigndocumentGetEzsigndiscussionsV1Response = CommonResponse;*/
 export interface EzsigndocumentGetEzsigndiscussionsV1Response {
     /**
      * 

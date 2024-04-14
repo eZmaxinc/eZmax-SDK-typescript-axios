@@ -28,6 +28,7 @@ export interface EzsignfolderGetAttachmentsV1ResponseMPayload {
      * @type {Array<CustomAttachmentdocumenttypeResponse>}
      * @memberof EzsignfolderGetAttachmentsV1ResponseMPayload
      */
+    /*'a_objAttachmentdocumenttype': Array<CustomAttachmentdocumenttypeResponse>;*/
     'a_objAttachmentdocumenttype': Array<CustomAttachmentdocumenttypeResponse>;
 }
 /**

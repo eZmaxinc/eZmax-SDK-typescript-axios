@@ -14,13 +14,13 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
 import { CommonResponseError } from '../model';
 // @ts-ignore
@@ -42,7 +42,7 @@ export const ObjectInvoiceApiAxiosParamCreator = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        invoiceGetAttachmentsV1: async (pkiInvoiceID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        invoiceGetAttachmentsV1: async (pkiInvoiceID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiInvoiceID' is not null or undefined
             assertParamExists('invoiceGetAttachmentsV1', 'pkiInvoiceID', pkiInvoiceID)
             const localVarPath = `/1/object/invoice/{pkiInvoiceID}/getAttachments`
@@ -50,6 +50,7 @@ export const ObjectInvoiceApiAxiosParamCreator = function (configuration?: Confi
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -68,6 +69,7 @@ export const ObjectInvoiceApiAxiosParamCreator = function (configuration?: Confi
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -98,7 +100,7 @@ export const ObjectInvoiceApiAxiosParamCreator = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        invoiceGetCommunicationListV1: async (pkiInvoiceID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        invoiceGetCommunicationListV1: async (pkiInvoiceID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiInvoiceID' is not null or undefined
             assertParamExists('invoiceGetCommunicationListV1', 'pkiInvoiceID', pkiInvoiceID)
             const localVarPath = `/1/object/invoice/{pkiInvoiceID}/getCommunicationList`
@@ -106,6 +108,7 @@ export const ObjectInvoiceApiAxiosParamCreator = function (configuration?: Confi
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -124,6 +127,7 @@ export const ObjectInvoiceApiAxiosParamCreator = function (configuration?: Confi
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -164,9 +168,11 @@ export const ObjectInvoiceApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async invoiceGetAttachmentsV1(pkiInvoiceID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InvoiceGetAttachmentsV1Response>> {
+        async invoiceGetAttachmentsV1(pkiInvoiceID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InvoiceGetAttachmentsV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.invoiceGetAttachmentsV1(pkiInvoiceID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectInvoiceApi.invoiceGetAttachmentsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -175,9 +181,11 @@ export const ObjectInvoiceApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async invoiceGetCommunicationListV1(pkiInvoiceID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InvoiceGetCommunicationListV1Response>> {
+        async invoiceGetCommunicationListV1(pkiInvoiceID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InvoiceGetCommunicationListV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.invoiceGetCommunicationListV1(pkiInvoiceID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectInvoiceApi.invoiceGetCommunicationListV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -227,7 +235,7 @@ export class ObjectInvoiceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectInvoiceApi
      */
-    public invoiceGetAttachmentsV1(pkiInvoiceID: number, options?: AxiosRequestConfig) {
+    public invoiceGetAttachmentsV1(pkiInvoiceID: number, options?: RawAxiosRequestConfig) {
         return ObjectInvoiceApiFp(this.configuration).invoiceGetAttachmentsV1(pkiInvoiceID, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -239,7 +247,7 @@ export class ObjectInvoiceApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectInvoiceApi
      */
-    public invoiceGetCommunicationListV1(pkiInvoiceID: number, options?: AxiosRequestConfig) {
+    public invoiceGetCommunicationListV1(pkiInvoiceID: number, options?: RawAxiosRequestConfig) {
         return ObjectInvoiceApiFp(this.configuration).invoiceGetCommunicationListV1(pkiInvoiceID, options).then((request) => request(this.axios, this.basePath));
     }
 }

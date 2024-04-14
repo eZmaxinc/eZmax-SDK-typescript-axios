@@ -28,6 +28,7 @@ export interface EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Reques
      * @type {Array<EzsigntemplateformfieldgroupRequestCompound>}
      * @memberof EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request
      */
+    /*'a_objEzsigntemplateformfieldgroup': Array<EzsigntemplateformfieldgroupRequestCompound>;*/
     'a_objEzsigntemplateformfieldgroup': Array<EzsigntemplateformfieldgroupRequestCompound>;
 }
 /**

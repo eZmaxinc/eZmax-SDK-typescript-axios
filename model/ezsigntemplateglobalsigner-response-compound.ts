@@ -22,7 +22,7 @@ import { EzsigntemplateglobalsignerResponse } from './ezsigntemplateglobalsigner
  * A Ezsigntemplateglobalsigner Object
  * @export
  */
-/** export type EzsigntemplateglobalsignerResponseCompound = EzsigntemplateglobalsignerResponse; */
+/*export type EzsigntemplateglobalsignerResponseCompound = EzsigntemplateglobalsignerResponse;*/
 export interface EzsigntemplateglobalsignerResponseCompound {
     /**
      * The unique ID of the Ezsigntemplateglobalsigner

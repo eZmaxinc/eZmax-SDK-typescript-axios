@@ -25,12 +25,14 @@ export interface EzsigntemplatepackagesignerDeleteObjectV1ResponseMPayload {
      * @type {boolean}
      * @memberof EzsigntemplatepackagesignerDeleteObjectV1ResponseMPayload
      */
+    /*'bEzsigntemplatepackageNeedvalidation': boolean;*/
     'bEzsigntemplatepackageNeedvalidation': boolean;
     /**
      * Whether the Ezsigntemplatepackage was automatically modified and needs a manual validation
      * @type {boolean}
      * @memberof EzsigntemplatepackagesignerDeleteObjectV1ResponseMPayload
      */
+    /*'bEzsignbulksendNeedvalidation': boolean;*/
     'bEzsignbulksendNeedvalidation': boolean;
 }
 /**

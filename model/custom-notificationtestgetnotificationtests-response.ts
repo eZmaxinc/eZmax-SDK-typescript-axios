@@ -28,7 +28,7 @@ import { NotificationtestResponse } from './notificationtest-response';
  * A Notificationtest Object in the context of getNotificationtests
  * @export
  */
-/** export type CustomNotificationtestgetnotificationtestsResponse = NotificationtestResponse; */
+/*export type CustomNotificationtestgetnotificationtestsResponse = NotificationtestResponse;*/
 export interface CustomNotificationtestgetnotificationtestsResponse {
     /**
      * The unique ID of the Notificationtest

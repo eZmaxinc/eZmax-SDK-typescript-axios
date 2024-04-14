@@ -31,36 +31,42 @@ export interface PaymenttermRequest {
      * @type {number}
      * @memberof PaymenttermRequest
      */
+    /*'pkiPaymenttermID'?: number;*/
     'pkiPaymenttermID'?: number;
     /**
      * The code of the Paymentterm
      * @type {string}
      * @memberof PaymenttermRequest
      */
+    /*'sPaymenttermCode': string;*/
     'sPaymenttermCode': string;
     /**
      * 
      * @type {FieldEPaymenttermType}
      * @memberof PaymenttermRequest
      */
+    /*'ePaymenttermType': FieldEPaymenttermType;*/
     'ePaymenttermType': FieldEPaymenttermType;
     /**
      * The day of the Paymentterm
      * @type {number}
      * @memberof PaymenttermRequest
      */
+    /*'iPaymenttermDay': number;*/
     'iPaymenttermDay': number;
     /**
      * 
      * @type {MultilingualPaymenttermDescription}
      * @memberof PaymenttermRequest
      */
+    /*'objPaymenttermDescription': MultilingualPaymenttermDescription;*/
     'objPaymenttermDescription': MultilingualPaymenttermDescription;
     /**
      * Whether the Paymentterm is active or not
      * @type {boolean}
      * @memberof PaymenttermRequest
      */
+    /*'bPaymenttermIsactive': boolean;*/
     'bPaymenttermIsactive': boolean;
 }
 

@@ -28,6 +28,7 @@ export interface EzsigntemplateGetAutocompleteV2ResponseMPayload {
      * @type {Array<EzsigntemplateAutocompleteElementResponse>}
      * @memberof EzsigntemplateGetAutocompleteV2ResponseMPayload
      */
+    /*'a_objEzsigntemplate': Array<EzsigntemplateAutocompleteElementResponse>;*/
     'a_objEzsigntemplate': Array<EzsigntemplateAutocompleteElementResponse>;
 }
 /**

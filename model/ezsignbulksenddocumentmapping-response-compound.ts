@@ -28,7 +28,7 @@ import { EzsigntemplatepackageResponseCompound } from './ezsigntemplatepackage-r
  * A Ezsignbulksenddocumentmapping Object
  * @export
  */
-/** export type EzsignbulksenddocumentmappingResponseCompound = EzsignbulksenddocumentmappingResponse; */
+/*export type EzsignbulksenddocumentmappingResponseCompound = EzsignbulksenddocumentmappingResponse;*/
 export interface EzsignbulksenddocumentmappingResponseCompound {
     /**
      * The unique ID of the Ezsignbulksenddocumentmapping.

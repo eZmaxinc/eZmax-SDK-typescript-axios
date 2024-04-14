@@ -25,6 +25,7 @@ export interface ScimServiceProviderConfigEtag {
      * @type {boolean}
      * @memberof ScimServiceProviderConfigEtag
      */
+    /*'supported': boolean;*/
     'supported': boolean;
 }
 /**

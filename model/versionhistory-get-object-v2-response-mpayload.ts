@@ -28,6 +28,7 @@ export interface VersionhistoryGetObjectV2ResponseMPayload {
      * @type {VersionhistoryResponseCompound}
      * @memberof VersionhistoryGetObjectV2ResponseMPayload
      */
+    /*'objVersionhistory': VersionhistoryResponseCompound;*/
     'objVersionhistory': VersionhistoryResponseCompound;
 }
 /**

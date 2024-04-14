@@ -28,6 +28,7 @@ export interface BillingentityexternalGetAutocompleteV2ResponseMPayload {
      * @type {Array<BillingentityexternalAutocompleteElementResponse>}
      * @memberof BillingentityexternalGetAutocompleteV2ResponseMPayload
      */
+    /*'a_objBillingentityexternal': Array<BillingentityexternalAutocompleteElementResponse>;*/
     'a_objBillingentityexternal': Array<BillingentityexternalAutocompleteElementResponse>;
 }
 /**

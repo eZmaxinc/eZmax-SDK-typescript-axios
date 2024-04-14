@@ -46,7 +46,7 @@ import { FieldEUserEzsignprepaid } from './field-euser-ezsignprepaid';
  * Payload for GET /1/object/activesession/getCurrent
  * @export
  */
-/** export type ActivesessionResponseCompound = ActivesessionResponse; */
+/*export type ActivesessionResponseCompound = ActivesessionResponse;*/
 export interface ActivesessionResponseCompound {
     /**
      * 

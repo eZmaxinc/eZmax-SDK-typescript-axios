@@ -31,12 +31,14 @@ export interface EzsigndocumentCreateObjectV1Request {
      * @type {EzsigndocumentRequest}
      * @memberof EzsigndocumentCreateObjectV1Request
      */
+    /*'objEzsigndocument'?: EzsigndocumentRequest;*/
     'objEzsigndocument'?: EzsigndocumentRequest;
     /**
      * 
      * @type {EzsigndocumentRequestCompound}
      * @memberof EzsigndocumentCreateObjectV1Request
      */
+    /*'objEzsigndocumentCompound'?: EzsigndocumentRequestCompound;*/
     'objEzsigndocumentCompound'?: EzsigndocumentRequestCompound;
 }
 /**

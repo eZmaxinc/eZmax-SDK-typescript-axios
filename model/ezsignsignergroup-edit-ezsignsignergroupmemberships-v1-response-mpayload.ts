@@ -25,6 +25,7 @@ export interface EzsignsignergroupEditEzsignsignergroupmembershipsV1ResponseMPay
      * @type {Array<number>}
      * @memberof EzsignsignergroupEditEzsignsignergroupmembershipsV1ResponseMPayload
      */
+    /*'a_pkiEzsignsignergroupmembershipID': Array<number>;*/
     'a_pkiEzsignsignergroupmembershipID': Array<number>;
 }
 /**

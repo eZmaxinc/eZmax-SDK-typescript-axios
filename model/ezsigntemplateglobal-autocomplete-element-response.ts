@@ -25,18 +25,21 @@ export interface EzsigntemplateglobalAutocompleteElementResponse {
      * @type {number}
      * @memberof EzsigntemplateglobalAutocompleteElementResponse
      */
+    /*'pkiEzsigntemplateglobalID': number;*/
     'pkiEzsigntemplateglobalID': number;
     /**
      * The description of the Ezsigntemplate
      * @type {string}
      * @memberof EzsigntemplateglobalAutocompleteElementResponse
      */
+    /*'sEzsigntemplateglobalDescription': string;*/
     'sEzsigntemplateglobalDescription': string;
     /**
      * Whether the Ezsigntemplate is active or not
      * @type {boolean}
      * @memberof EzsigntemplateglobalAutocompleteElementResponse
      */
+    /*'bEzsigntemplateglobalIsactive': boolean;*/
     'bEzsigntemplateglobalIsactive': boolean;
 }
 /**

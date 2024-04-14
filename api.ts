@@ -32,6 +32,8 @@ export enum EApiOperation {
     'object-company-api',
     'object-cors-api',
     'object-country-api',
+    'object-creditcardclient-api',
+    'object-creditcardtype-api',
     'object-department-api',
     'object-discussion-api',
     'object-discussionmembership-api',
@@ -128,6 +130,8 @@ export * from './api/object-communication-api';
 export * from './api/object-company-api';
 export * from './api/object-cors-api';
 export * from './api/object-country-api';
+export * from './api/object-creditcardclient-api';
+export * from './api/object-creditcardtype-api';
 export * from './api/object-department-api';
 export * from './api/object-discussion-api';
 export * from './api/object-discussionmembership-api';

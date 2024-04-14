@@ -25,42 +25,49 @@ export interface BillingentityinternalproductResponse {
      * @type {number}
      * @memberof BillingentityinternalproductResponse
      */
+    /*'pkiBillingentityinternalproductID': number;*/
     'pkiBillingentityinternalproductID': number;
     /**
      * The unique ID of the Billingentityinternal.
      * @type {number}
      * @memberof BillingentityinternalproductResponse
      */
+    /*'fkiBillingentityinternalID': number;*/
     'fkiBillingentityinternalID': number;
     /**
      * The description of the Billingentityinternal in the language of the requester
      * @type {string}
      * @memberof BillingentityinternalproductResponse
      */
+    /*'sBillingentityinternalDescriptionX': string;*/
     'sBillingentityinternalDescriptionX': string;
     /**
      * The unique ID of the Ezmaxproduct
      * @type {number}
      * @memberof BillingentityinternalproductResponse
      */
+    /*'fkiEzmaxproductID': number;*/
     'fkiEzmaxproductID': number;
     /**
      * The description of the Ezmaxproduct in the language of the requester
      * @type {string}
      * @memberof BillingentityinternalproductResponse
      */
+    /*'sEzmaxproductDescriptionX': string;*/
     'sEzmaxproductDescriptionX': string;
     /**
      * The unique ID of the Billingentityexternal
      * @type {number}
      * @memberof BillingentityinternalproductResponse
      */
+    /*'fkiBillingentityexternalID': number;*/
     'fkiBillingentityexternalID': number;
     /**
      * The description of the Billingentityexternal
      * @type {string}
      * @memberof BillingentityinternalproductResponse
      */
+    /*'sBillingentityexternalDescription': string;*/
     'sBillingentityexternalDescription': string;
 }
 /**

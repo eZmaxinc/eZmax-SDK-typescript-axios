@@ -28,7 +28,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for POST /1/object/ezsigndocument/{pkiEzsigndocumentID}/submitEzsignform
  * @export
  */
-/** export type EzsigndocumentSubmitEzsignformV1Response = CommonResponse; */
+/*export type EzsigndocumentSubmitEzsignformV1Response = CommonResponse;*/
 export interface EzsigndocumentSubmitEzsignformV1Response {
     /**
      * 

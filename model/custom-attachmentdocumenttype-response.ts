@@ -31,12 +31,14 @@ export interface CustomAttachmentdocumenttypeResponse {
      * @type {FieldEAttachmentDocumenttype}
      * @memberof CustomAttachmentdocumenttypeResponse
      */
+    /*'eAttachmentDocumenttype': FieldEAttachmentDocumenttype;*/
     'eAttachmentDocumenttype': FieldEAttachmentDocumenttype;
     /**
      * 
      * @type {Array<CustomAttachmentResponse>}
      * @memberof CustomAttachmentdocumenttypeResponse
      */
+    /*'a_objAttachment': Array<CustomAttachmentResponse>;*/
     'a_objAttachment': Array<CustomAttachmentResponse>;
 }
 

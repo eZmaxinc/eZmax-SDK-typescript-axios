@@ -14,13 +14,13 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
 import { CommonResponseError } from '../model';
 // @ts-ignore
@@ -54,13 +54,14 @@ export const ObjectEzsignsigningreasonApiAxiosParamCreator = function (configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignsigningreasonCreateObjectV1: async (ezsignsigningreasonCreateObjectV1Request: EzsignsigningreasonCreateObjectV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsignsigningreasonCreateObjectV1: async (ezsignsigningreasonCreateObjectV1Request: EzsignsigningreasonCreateObjectV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'ezsignsigningreasonCreateObjectV1Request' is not null or undefined
             assertParamExists('ezsignsigningreasonCreateObjectV1', 'ezsignsigningreasonCreateObjectV1Request', ezsignsigningreasonCreateObjectV1Request)
             const localVarPath = `/1/object/ezsignsigningreason`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -81,6 +82,7 @@ export const ObjectEzsignsigningreasonApiAxiosParamCreator = function (configura
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ezsignsigningreasonCreateObjectV1Request, localVarRequestOptions, configuration)
 
@@ -113,7 +115,7 @@ export const ObjectEzsignsigningreasonApiAxiosParamCreator = function (configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignsigningreasonEditObjectV1: async (pkiEzsignsigningreasonID: number, ezsignsigningreasonEditObjectV1Request: EzsignsigningreasonEditObjectV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsignsigningreasonEditObjectV1: async (pkiEzsignsigningreasonID: number, ezsignsigningreasonEditObjectV1Request: EzsignsigningreasonEditObjectV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsignsigningreasonID' is not null or undefined
             assertParamExists('ezsignsigningreasonEditObjectV1', 'pkiEzsignsigningreasonID', pkiEzsignsigningreasonID)
             // verify required parameter 'ezsignsigningreasonEditObjectV1Request' is not null or undefined
@@ -123,6 +125,7 @@ export const ObjectEzsignsigningreasonApiAxiosParamCreator = function (configura
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -143,6 +146,7 @@ export const ObjectEzsignsigningreasonApiAxiosParamCreator = function (configura
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ezsignsigningreasonEditObjectV1Request, localVarRequestOptions, configuration)
 
@@ -177,7 +181,7 @@ export const ObjectEzsignsigningreasonApiAxiosParamCreator = function (configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignsigningreasonGetAutocompleteV2: async (sSelector: EzsignsigningreasonGetAutocompleteV2SSelectorEnum, eFilterActive?: EzsignsigningreasonGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsignsigningreasonGetAutocompleteV2: async (sSelector: EzsignsigningreasonGetAutocompleteV2SSelectorEnum, eFilterActive?: EzsignsigningreasonGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('ezsignsigningreasonGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/ezsignsigningreason/getAutocomplete/{sSelector}`
@@ -185,6 +189,7 @@ export const ObjectEzsignsigningreasonApiAxiosParamCreator = function (configura
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -208,8 +213,8 @@ export const ObjectEzsignsigningreasonApiAxiosParamCreator = function (configura
             }
 
             if (acceptLanguage != null) {
-                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string' 
-                    ? acceptLanguage 
+                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
+                    ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
 
@@ -217,6 +222,7 @@ export const ObjectEzsignsigningreasonApiAxiosParamCreator = function (configura
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -251,11 +257,12 @@ export const ObjectEzsignsigningreasonApiAxiosParamCreator = function (configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignsigningreasonGetListV1: async (eOrderBy?: EzsignsigningreasonGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsignsigningreasonGetListV1: async (eOrderBy?: EzsignsigningreasonGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/1/object/ezsignsigningreason/getList`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -287,8 +294,8 @@ export const ObjectEzsignsigningreasonApiAxiosParamCreator = function (configura
             }
 
             if (acceptLanguage != null) {
-                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string' 
-                    ? acceptLanguage 
+                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
+                    ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
 
@@ -296,6 +303,7 @@ export const ObjectEzsignsigningreasonApiAxiosParamCreator = function (configura
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -326,7 +334,7 @@ export const ObjectEzsignsigningreasonApiAxiosParamCreator = function (configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignsigningreasonGetObjectV2: async (pkiEzsignsigningreasonID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsignsigningreasonGetObjectV2: async (pkiEzsignsigningreasonID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsignsigningreasonID' is not null or undefined
             assertParamExists('ezsignsigningreasonGetObjectV2', 'pkiEzsignsigningreasonID', pkiEzsignsigningreasonID)
             const localVarPath = `/2/object/ezsignsigningreason/{pkiEzsignsigningreasonID}`
@@ -334,6 +342,7 @@ export const ObjectEzsignsigningreasonApiAxiosParamCreator = function (configura
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -352,6 +361,7 @@ export const ObjectEzsignsigningreasonApiAxiosParamCreator = function (configura
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -392,9 +402,11 @@ export const ObjectEzsignsigningreasonApiFp = function(configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignsigningreasonCreateObjectV1(ezsignsigningreasonCreateObjectV1Request: EzsignsigningreasonCreateObjectV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignsigningreasonCreateObjectV1Response>> {
+        async ezsignsigningreasonCreateObjectV1(ezsignsigningreasonCreateObjectV1Request: EzsignsigningreasonCreateObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignsigningreasonCreateObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignsigningreasonCreateObjectV1(ezsignsigningreasonCreateObjectV1Request, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsignsigningreasonApi.ezsignsigningreasonCreateObjectV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -404,9 +416,11 @@ export const ObjectEzsignsigningreasonApiFp = function(configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignsigningreasonEditObjectV1(pkiEzsignsigningreasonID: number, ezsignsigningreasonEditObjectV1Request: EzsignsigningreasonEditObjectV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignsigningreasonEditObjectV1Response>> {
+        async ezsignsigningreasonEditObjectV1(pkiEzsignsigningreasonID: number, ezsignsigningreasonEditObjectV1Request: EzsignsigningreasonEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignsigningreasonEditObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignsigningreasonEditObjectV1(pkiEzsignsigningreasonID, ezsignsigningreasonEditObjectV1Request, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsignsigningreasonApi.ezsignsigningreasonEditObjectV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Get the list of Ezsignsigningreason to be used in a dropdown or autocomplete control.
@@ -418,9 +432,11 @@ export const ObjectEzsignsigningreasonApiFp = function(configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignsigningreasonGetAutocompleteV2(sSelector: EzsignsigningreasonGetAutocompleteV2SSelectorEnum, eFilterActive?: EzsignsigningreasonGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignsigningreasonGetAutocompleteV2Response>> {
+        async ezsignsigningreasonGetAutocompleteV2(sSelector: EzsignsigningreasonGetAutocompleteV2SSelectorEnum, eFilterActive?: EzsignsigningreasonGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignsigningreasonGetAutocompleteV2Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignsigningreasonGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsignsigningreasonApi.ezsignsigningreasonGetAutocompleteV2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -433,9 +449,11 @@ export const ObjectEzsignsigningreasonApiFp = function(configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignsigningreasonGetListV1(eOrderBy?: EzsignsigningreasonGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignsigningreasonGetListV1Response>> {
+        async ezsignsigningreasonGetListV1(eOrderBy?: EzsignsigningreasonGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignsigningreasonGetListV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignsigningreasonGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsignsigningreasonApi.ezsignsigningreasonGetListV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -444,9 +462,11 @@ export const ObjectEzsignsigningreasonApiFp = function(configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignsigningreasonGetObjectV2(pkiEzsignsigningreasonID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignsigningreasonGetObjectV2Response>> {
+        async ezsignsigningreasonGetObjectV2(pkiEzsignsigningreasonID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignsigningreasonGetObjectV2Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignsigningreasonGetObjectV2(pkiEzsignsigningreasonID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsignsigningreasonApi.ezsignsigningreasonGetObjectV2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -534,7 +554,7 @@ export class ObjectEzsignsigningreasonApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsignsigningreasonApi
      */
-    public ezsignsigningreasonCreateObjectV1(ezsignsigningreasonCreateObjectV1Request: EzsignsigningreasonCreateObjectV1Request, options?: AxiosRequestConfig) {
+    public ezsignsigningreasonCreateObjectV1(ezsignsigningreasonCreateObjectV1Request: EzsignsigningreasonCreateObjectV1Request, options?: RawAxiosRequestConfig) {
         return ObjectEzsignsigningreasonApiFp(this.configuration).ezsignsigningreasonCreateObjectV1(ezsignsigningreasonCreateObjectV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -547,7 +567,7 @@ export class ObjectEzsignsigningreasonApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsignsigningreasonApi
      */
-    public ezsignsigningreasonEditObjectV1(pkiEzsignsigningreasonID: number, ezsignsigningreasonEditObjectV1Request: EzsignsigningreasonEditObjectV1Request, options?: AxiosRequestConfig) {
+    public ezsignsigningreasonEditObjectV1(pkiEzsignsigningreasonID: number, ezsignsigningreasonEditObjectV1Request: EzsignsigningreasonEditObjectV1Request, options?: RawAxiosRequestConfig) {
         return ObjectEzsignsigningreasonApiFp(this.configuration).ezsignsigningreasonEditObjectV1(pkiEzsignsigningreasonID, ezsignsigningreasonEditObjectV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -562,7 +582,7 @@ export class ObjectEzsignsigningreasonApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsignsigningreasonApi
      */
-    public ezsignsigningreasonGetAutocompleteV2(sSelector: EzsignsigningreasonGetAutocompleteV2SSelectorEnum, eFilterActive?: EzsignsigningreasonGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig) {
+    public ezsignsigningreasonGetAutocompleteV2(sSelector: EzsignsigningreasonGetAutocompleteV2SSelectorEnum, eFilterActive?: EzsignsigningreasonGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig) {
         return ObjectEzsignsigningreasonApiFp(this.configuration).ezsignsigningreasonGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -578,7 +598,7 @@ export class ObjectEzsignsigningreasonApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsignsigningreasonApi
      */
-    public ezsignsigningreasonGetListV1(eOrderBy?: EzsignsigningreasonGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig) {
+    public ezsignsigningreasonGetListV1(eOrderBy?: EzsignsigningreasonGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig) {
         return ObjectEzsignsigningreasonApiFp(this.configuration).ezsignsigningreasonGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -590,7 +610,7 @@ export class ObjectEzsignsigningreasonApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsignsigningreasonApi
      */
-    public ezsignsigningreasonGetObjectV2(pkiEzsignsigningreasonID: number, options?: AxiosRequestConfig) {
+    public ezsignsigningreasonGetObjectV2(pkiEzsignsigningreasonID: number, options?: RawAxiosRequestConfig) {
         return ObjectEzsignsigningreasonApiFp(this.configuration).ezsignsigningreasonGetObjectV2(pkiEzsignsigningreasonID, options).then((request) => request(this.axios, this.basePath));
     }
 }

@@ -25,7 +25,7 @@ import { UsergroupexternalListElement } from './usergroupexternal-list-element';
  * Payload for GET /1/object/usergroupexternal/getList
  * @export
  */
-/** export type UsergroupexternalGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload; */
+/*export type UsergroupexternalGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;*/
 export interface UsergroupexternalGetListV1ResponseMPayload {
     /**
      * The number of rows returned

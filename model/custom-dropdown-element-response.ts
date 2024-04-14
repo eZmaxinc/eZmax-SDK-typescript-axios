@@ -25,12 +25,14 @@ export interface CustomDropdownElementResponse {
      * @type {string}
      * @memberof CustomDropdownElementResponse
      */
+    /*'sLabel': string;*/
     'sLabel': string;
     /**
      * The Value of the element
      * @type {string}
      * @memberof CustomDropdownElementResponse
      */
+    /*'sValue': string;*/
     'sValue': string;
 }
 /**

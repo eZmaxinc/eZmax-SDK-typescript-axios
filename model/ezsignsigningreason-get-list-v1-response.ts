@@ -31,7 +31,7 @@ import { EzsignsigningreasonGetListV1ResponseMPayload } from './ezsignsigningrea
  * Response for GET /1/object/ezsignsigningreason/getList
  * @export
  */
-/** export type EzsignsigningreasonGetListV1Response = CommonResponseGetList; */
+/*export type EzsignsigningreasonGetListV1Response = CommonResponseGetList;*/
 export interface EzsignsigningreasonGetListV1Response {
     /**
      * 

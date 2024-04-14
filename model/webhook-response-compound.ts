@@ -37,7 +37,7 @@ import { WebhookheaderResponseCompound } from './webhookheader-response-compound
  * A Webhook Object
  * @export
  */
-/** export type WebhookResponseCompound = WebhookResponse; */
+/*export type WebhookResponseCompound = WebhookResponse;*/
 export interface WebhookResponseCompound {
     /**
      * The unique ID of the Webhook
@@ -221,6 +221,7 @@ export class ValidationObjectWebhookResponseCompound {
    }
    sWebhookUrl = {
       type: 'string',
+      pattern: '/^(https|http):\\/\\/[^\s\\/$.?#].[^\s]*$/',
       required: true
    }
    sWebhookEmailfailed = {

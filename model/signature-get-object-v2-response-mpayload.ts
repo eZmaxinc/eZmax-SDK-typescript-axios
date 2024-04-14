@@ -28,6 +28,7 @@ export interface SignatureGetObjectV2ResponseMPayload {
      * @type {SignatureResponseCompound}
      * @memberof SignatureGetObjectV2ResponseMPayload
      */
+    /*'objSignature': SignatureResponseCompound;*/
     'objSignature': SignatureResponseCompound;
 }
 /**

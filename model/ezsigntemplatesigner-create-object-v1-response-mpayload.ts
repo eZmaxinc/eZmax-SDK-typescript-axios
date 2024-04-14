@@ -25,18 +25,21 @@ export interface EzsigntemplatesignerCreateObjectV1ResponseMPayload {
      * @type {Array<number>}
      * @memberof EzsigntemplatesignerCreateObjectV1ResponseMPayload
      */
+    /*'a_pkiEzsigntemplatesignerID': Array<number>;*/
     'a_pkiEzsigntemplatesignerID': Array<number>;
     /**
      * Whether the Ezsignbulksend was automatically modified and needs a manual validation
      * @type {boolean}
      * @memberof EzsigntemplatesignerCreateObjectV1ResponseMPayload
      */
+    /*'bEzsigntemplatepackageNeedvalidation': boolean;*/
     'bEzsigntemplatepackageNeedvalidation': boolean;
     /**
      * Whether the Ezsigntemplatepackage was automatically modified and needs a manual validation
      * @type {boolean}
      * @memberof EzsigntemplatesignerCreateObjectV1ResponseMPayload
      */
+    /*'bEzsignbulksendNeedvalidation': boolean;*/
     'bEzsignbulksendNeedvalidation': boolean;
 }
 /**

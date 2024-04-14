@@ -25,6 +25,7 @@ export interface DiscussionUpdateDiscussionreadstatusV1Request {
      * @type {string}
      * @memberof DiscussionUpdateDiscussionreadstatusV1Request
      */
+    /*'dtDiscussionreadstatusDate'?: string;*/
     'dtDiscussionreadstatusDate'?: string;
 }
 /**

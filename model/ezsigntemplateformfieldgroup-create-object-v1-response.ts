@@ -31,7 +31,7 @@ import { EzsigntemplateformfieldgroupCreateObjectV1ResponseMPayload } from './ez
  * Response for POST /1/object/ezsigntemplateformfieldgroup
  * @export
  */
-/** export type EzsigntemplateformfieldgroupCreateObjectV1Response = CommonResponse; */
+/*export type EzsigntemplateformfieldgroupCreateObjectV1Response = CommonResponse;*/
 export interface EzsigntemplateformfieldgroupCreateObjectV1Response {
     /**
      * 

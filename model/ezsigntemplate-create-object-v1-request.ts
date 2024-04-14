@@ -28,6 +28,7 @@ export interface EzsigntemplateCreateObjectV1Request {
      * @type {Array<EzsigntemplateRequestCompound>}
      * @memberof EzsigntemplateCreateObjectV1Request
      */
+    /*'a_objEzsigntemplate': Array<EzsigntemplateRequestCompound>;*/
     'a_objEzsigntemplate': Array<EzsigntemplateRequestCompound>;
 }
 /**

@@ -28,12 +28,14 @@ export interface CommonResponseError {
      * @type {string}
      * @memberof CommonResponseError
      */
+    /*'sErrorMessage': string;*/
     'sErrorMessage': string;
     /**
      * 
      * @type {FieldEErrorCode}
      * @memberof CommonResponseError
      */
+    /*'eErrorCode': FieldEErrorCode;*/
     'eErrorCode': FieldEErrorCode;
 }
 

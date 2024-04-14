@@ -22,7 +22,7 @@ import { DiscussionmembershipResponse } from './discussionmembership-response';
  * A Discussionmembership Object and children
  * @export
  */
-/** export type DiscussionmembershipResponseCompound = DiscussionmembershipResponse; */
+/*export type DiscussionmembershipResponseCompound = DiscussionmembershipResponse;*/
 export interface DiscussionmembershipResponseCompound {
     /**
      * The unique ID of the Discussionmembership

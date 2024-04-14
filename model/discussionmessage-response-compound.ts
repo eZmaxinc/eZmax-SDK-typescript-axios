@@ -28,7 +28,7 @@ import { FieldEDiscussionmessageStatus } from './field-ediscussionmessage-status
  * A Discussionmessage Object and children
  * @export
  */
-/** export type DiscussionmessageResponseCompound = DiscussionmessageResponse; */
+/*export type DiscussionmessageResponseCompound = DiscussionmessageResponse;*/
 export interface DiscussionmessageResponseCompound {
     /**
      * The unique ID of the Discussionmessage

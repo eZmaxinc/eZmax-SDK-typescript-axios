@@ -28,6 +28,7 @@ export interface ApikeyEditObjectV1Request {
      * @type {ApikeyRequestCompound}
      * @memberof ApikeyEditObjectV1Request
      */
+    /*'objApikey': ApikeyRequestCompound;*/
     'objApikey': ApikeyRequestCompound;
 }
 /**

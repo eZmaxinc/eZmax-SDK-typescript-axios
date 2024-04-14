@@ -31,7 +31,7 @@ import { TimezoneGetAutocompleteV2ResponseMPayload } from './timezone-get-autoco
  * Response for GET /2/object/timezone/getAutocomplete
  * @export
  */
-/** export type TimezoneGetAutocompleteV2Response = CommonResponse; */
+/*export type TimezoneGetAutocompleteV2Response = CommonResponse;*/
 export interface TimezoneGetAutocompleteV2Response {
     /**
      * 

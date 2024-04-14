@@ -28,7 +28,7 @@ import { EzsignbulksendtransmissionResponse } from './ezsignbulksendtransmission
  * An Ezsignbulksendtransmission Object and children to create a complete structure
  * @export
  */
-/** export type EzsignbulksendtransmissionResponseCompound = EzsignbulksendtransmissionResponse; */
+/*export type EzsignbulksendtransmissionResponseCompound = EzsignbulksendtransmissionResponse;*/
 export interface EzsignbulksendtransmissionResponseCompound {
     /**
      * The unique ID of the Ezsignbulksendtransmission

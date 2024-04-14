@@ -25,6 +25,7 @@ export interface EzsignformfieldgroupCreateObjectV1ResponseMPayload {
      * @type {Array<number>}
      * @memberof EzsignformfieldgroupCreateObjectV1ResponseMPayload
      */
+    /*'a_pkiEzsignformfieldgroupID': Array<number>;*/
     'a_pkiEzsignformfieldgroupID': Array<number>;
 }
 /**

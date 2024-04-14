@@ -28,18 +28,21 @@ export interface CustomEzsigndocumentEzsignsignaturesAutomaticResponse {
      * @type {number}
      * @memberof CustomEzsigndocumentEzsignsignaturesAutomaticResponse
      */
+    /*'pkiEzsigndocumentID': number;*/
     'pkiEzsigndocumentID': number;
     /**
      * The name of the document that will be presented to Ezsignfoldersignerassociations
      * @type {string}
      * @memberof CustomEzsigndocumentEzsignsignaturesAutomaticResponse
      */
+    /*'sEzsigndocumentName': string;*/
     'sEzsigndocumentName': string;
     /**
      * 
      * @type {Array<CustomEzsignsignatureEzsignsignaturesAutomaticResponse>}
      * @memberof CustomEzsigndocumentEzsignsignaturesAutomaticResponse
      */
+    /*'a_objEzsignsignature': Array<CustomEzsignsignatureEzsignsignaturesAutomaticResponse>;*/
     'a_objEzsignsignature': Array<CustomEzsignsignatureEzsignsignaturesAutomaticResponse>;
 }
 /**

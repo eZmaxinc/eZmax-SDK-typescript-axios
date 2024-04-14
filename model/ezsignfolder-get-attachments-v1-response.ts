@@ -31,7 +31,7 @@ import { EzsignfolderGetAttachmentsV1ResponseMPayload } from './ezsignfolder-get
  * Response for GET /1/object/ezsignfolder/{pkiEzsignfolderID}/getAttachments
  * @export
  */
-/** export type EzsignfolderGetAttachmentsV1Response = CommonResponse; */
+/*export type EzsignfolderGetAttachmentsV1Response = CommonResponse;*/
 export interface EzsignfolderGetAttachmentsV1Response {
     /**
      * 

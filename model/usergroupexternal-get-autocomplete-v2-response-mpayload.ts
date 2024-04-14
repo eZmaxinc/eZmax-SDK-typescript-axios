@@ -28,6 +28,7 @@ export interface UsergroupexternalGetAutocompleteV2ResponseMPayload {
      * @type {Array<UsergroupexternalAutocompleteElementResponse>}
      * @memberof UsergroupexternalGetAutocompleteV2ResponseMPayload
      */
+    /*'a_objUsergroupexternal': Array<UsergroupexternalAutocompleteElementResponse>;*/
     'a_objUsergroupexternal': Array<UsergroupexternalAutocompleteElementResponse>;
 }
 /**

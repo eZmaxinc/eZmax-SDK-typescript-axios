@@ -31,7 +31,7 @@ import { InscriptionGetAttachmentsV1ResponseMPayload } from './inscription-get-a
  * Response for GET /1/object/inscription/{pkiInscriptionID}/getAttachments
  * @export
  */
-/** export type InscriptionGetAttachmentsV1Response = CommonResponse; */
+/*export type InscriptionGetAttachmentsV1Response = CommonResponse;*/
 export interface InscriptionGetAttachmentsV1Response {
     /**
      * 

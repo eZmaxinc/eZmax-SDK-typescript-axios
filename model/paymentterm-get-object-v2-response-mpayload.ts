@@ -28,6 +28,7 @@ export interface PaymenttermGetObjectV2ResponseMPayload {
      * @type {PaymenttermResponseCompound}
      * @memberof PaymenttermGetObjectV2ResponseMPayload
      */
+    /*'objPaymentterm': PaymenttermResponseCompound;*/
     'objPaymentterm': PaymenttermResponseCompound;
 }
 /**

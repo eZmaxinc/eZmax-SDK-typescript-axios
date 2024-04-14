@@ -28,18 +28,21 @@ export interface EzsignsignergroupRequest {
      * @type {number}
      * @memberof EzsignsignergroupRequest
      */
+    /*'pkiEzsignsignergroupID'?: number;*/
     'pkiEzsignsignergroupID'?: number;
     /**
      * The unique ID of the Ezsignfolder
      * @type {number}
      * @memberof EzsignsignergroupRequest
      */
+    /*'fkiEzsignfolderID': number;*/
     'fkiEzsignfolderID': number;
     /**
      * 
      * @type {MultilingualEzsignsignergroupDescription}
      * @memberof EzsignsignergroupRequest
      */
+    /*'objEzsignsignergroupDescription': MultilingualEzsignsignergroupDescription;*/
     'objEzsignsignergroupDescription': MultilingualEzsignsignergroupDescription;
 }
 /**

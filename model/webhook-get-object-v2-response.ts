@@ -31,7 +31,7 @@ import { WebhookGetObjectV2ResponseMPayload } from './webhook-get-object-v2-resp
  * Response for GET /2/object/webhook/{pkiWebhookID}
  * @export
  */
-/** export type WebhookGetObjectV2Response = CommonResponse; */
+/*export type WebhookGetObjectV2Response = CommonResponse;*/
 export interface WebhookGetObjectV2Response {
     /**
      * 

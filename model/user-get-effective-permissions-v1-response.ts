@@ -31,7 +31,7 @@ import { UserGetEffectivePermissionsV1ResponseMPayload } from './user-get-effect
  * Response for GET /1/object/user/{pkiUserID}/getEffectivePermissions
  * @export
  */
-/** export type UserGetEffectivePermissionsV1Response = CommonResponse; */
+/*export type UserGetEffectivePermissionsV1Response = CommonResponse;*/
 export interface UserGetEffectivePermissionsV1Response {
     /**
      * 

@@ -31,7 +31,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for GET /1/object/attachment/{pkiAttachmentID}/getDownloadUrl
  * @export
  */
-/** export type AttachmentGetDownloadUrlV1Response = CommonResponse; */
+/*export type AttachmentGetDownloadUrlV1Response = CommonResponse;*/
 export interface AttachmentGetDownloadUrlV1Response {
     /**
      * 

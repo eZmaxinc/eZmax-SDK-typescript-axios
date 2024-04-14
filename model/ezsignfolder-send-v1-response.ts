@@ -28,7 +28,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for GET /1/object/attachment/{pkiAttachmentID}/download
  * @export
  */
-/** export type EzsignfolderSendV1Response = CommonResponse; */
+/*export type EzsignfolderSendV1Response = CommonResponse;*/
 export interface EzsignfolderSendV1Response {
     /**
      * 

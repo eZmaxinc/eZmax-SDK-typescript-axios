@@ -31,7 +31,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for GET /2/object/branding/{pkiBrandingID}
  * @export
  */
-/** export type BrandingGetObjectV2Response = CommonResponse; */
+/*export type BrandingGetObjectV2Response = CommonResponse;*/
 export interface BrandingGetObjectV2Response {
     /**
      * 

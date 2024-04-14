@@ -25,6 +25,7 @@ export interface EzsignfolderReorderV1Request {
      * @type {Array<number>}
      * @memberof EzsignfolderReorderV1Request
      */
+    /*'a_pkiEzsigndocumentID': Array<number>;*/
     'a_pkiEzsigndocumentID': Array<number>;
 }
 /**

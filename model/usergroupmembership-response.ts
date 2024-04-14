@@ -25,60 +25,70 @@ export interface UsergroupmembershipResponse {
      * @type {number}
      * @memberof UsergroupmembershipResponse
      */
+    /*'pkiUsergroupmembershipID': number;*/
     'pkiUsergroupmembershipID': number;
     /**
      * The unique ID of the Usergroup
      * @type {number}
      * @memberof UsergroupmembershipResponse
      */
+    /*'fkiUsergroupID': number;*/
     'fkiUsergroupID': number;
     /**
      * The unique ID of the User
      * @type {number}
      * @memberof UsergroupmembershipResponse
      */
+    /*'fkiUserID'?: number;*/
     'fkiUserID'?: number;
     /**
      * The unique ID of the Usergroupexternal
      * @type {number}
      * @memberof UsergroupmembershipResponse
      */
+    /*'fkiUsergroupexternalID'?: number;*/
     'fkiUsergroupexternalID'?: number;
     /**
      * The first name of the user
      * @type {string}
      * @memberof UsergroupmembershipResponse
      */
+    /*'sUserFirstname'?: string;*/
     'sUserFirstname'?: string;
     /**
      * The last name of the user
      * @type {string}
      * @memberof UsergroupmembershipResponse
      */
+    /*'sUserLastname'?: string;*/
     'sUserLastname'?: string;
     /**
      * The login name of the User.
      * @type {string}
      * @memberof UsergroupmembershipResponse
      */
+    /*'sUserLoginname'?: string;*/
     'sUserLoginname'?: string;
     /**
      * The email address.
      * @type {string}
      * @memberof UsergroupmembershipResponse
      */
+    /*'sEmailAddress'?: string;*/
     'sEmailAddress'?: string;
     /**
      * The Name of the Usergroup in the language of the requester
      * @type {string}
      * @memberof UsergroupmembershipResponse
      */
+    /*'sUsergroupNameX': string;*/
     'sUsergroupNameX': string;
     /**
      * The name of the Usergroupexternal
      * @type {string}
      * @memberof UsergroupmembershipResponse
      */
+    /*'sUsergroupexternalName'?: string;*/
     'sUsergroupexternalName'?: string;
 }
 /**
@@ -144,11 +154,12 @@ export class ValidationObjectUsergroupmembershipResponse {
    }
    sUserLoginname = {
       type: 'string',
-      pattern: '/^(?:([\w\.-]+@[\w\.-]+\.\w{2,20})|([a-zA-Z0-9]){1,32})$/',
+      pattern: '/^(?:([\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/',
       required: false
    }
    sEmailAddress = {
       type: 'string',
+      pattern: '/^[\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/',
       required: false
    }
    sUsergroupNameX = {

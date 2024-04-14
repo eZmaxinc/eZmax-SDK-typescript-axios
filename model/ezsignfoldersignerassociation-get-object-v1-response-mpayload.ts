@@ -31,7 +31,7 @@ import { EzsignsignergroupResponseCompound } from './ezsignsignergroup-response-
  * Payload for GET /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}
  * @export
  */
-/** export type EzsignfoldersignerassociationGetObjectV1ResponseMPayload = EzsignfoldersignerassociationResponseCompound; */
+/*export type EzsignfoldersignerassociationGetObjectV1ResponseMPayload = EzsignfoldersignerassociationResponseCompound;*/
 export interface EzsignfoldersignerassociationGetObjectV1ResponseMPayload {
     /**
      * The unique ID of the Ezsignfoldersignerassociation
@@ -63,6 +63,12 @@ export interface EzsignfoldersignerassociationGetObjectV1ResponseMPayload {
      * @memberof EzsignfoldersignerassociationGetObjectV1ResponseMPayload
      */
     tEzsignfoldersignerassociationMessage:string 
+    /**
+     * If the Ezsignfoldersignerassociation is allowed to sign in person or not
+     * @type {boolean}
+     * @memberof EzsignfoldersignerassociationGetObjectV1ResponseMPayload
+     */
+    bEzsignfoldersignerassociationAllowsigninginperson:boolean 
     /**
      * 
      * @type {EzsignsignergroupResponseCompound}
@@ -113,6 +119,7 @@ export class DataObjectEzsignfoldersignerassociationGetObjectV1ResponseMPayload 
     bEzsignfoldersignerassociationDelayedsend:boolean = false
     bEzsignfoldersignerassociationReceivecopy:boolean = false
     tEzsignfoldersignerassociationMessage:string = ''
+    bEzsignfoldersignerassociationAllowsigninginperson:boolean = false
     objEzsignsignergroup?:EzsignsignergroupResponseCompound = undefined
     objUser?:EzsignfoldersignerassociationResponseCompoundUser = undefined
     objEzsignsigner?:EzsignsignerResponseCompound = undefined
@@ -144,6 +151,10 @@ export class ValidationObjectEzsignfoldersignerassociationGetObjectV1ResponseMPa
    }
    tEzsignfoldersignerassociationMessage = {
       type: 'string',
+      required: true
+   }
+   bEzsignfoldersignerassociationAllowsigninginperson = {
+      type: 'boolean',
       required: true
    }
    objEzsignsignergroup = new ValidationObjectEzsignsignergroupResponseCompound()

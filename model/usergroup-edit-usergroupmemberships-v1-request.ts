@@ -28,6 +28,7 @@ export interface UsergroupEditUsergroupmembershipsV1Request {
      * @type {Array<UsergroupmembershipRequestCompound>}
      * @memberof UsergroupEditUsergroupmembershipsV1Request
      */
+    /*'a_objUsergroupmembership': Array<UsergroupmembershipRequestCompound>;*/
     'a_objUsergroupmembership': Array<UsergroupmembershipRequestCompound>;
 }
 /**

@@ -14,13 +14,13 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
 import { CommonResponseError } from '../model';
 // @ts-ignore
@@ -60,13 +60,14 @@ export const ObjectUsergroupexternalApiAxiosParamCreator = function (configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usergroupexternalCreateObjectV1: async (usergroupexternalCreateObjectV1Request: UsergroupexternalCreateObjectV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        usergroupexternalCreateObjectV1: async (usergroupexternalCreateObjectV1Request: UsergroupexternalCreateObjectV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'usergroupexternalCreateObjectV1Request' is not null or undefined
             assertParamExists('usergroupexternalCreateObjectV1', 'usergroupexternalCreateObjectV1Request', usergroupexternalCreateObjectV1Request)
             const localVarPath = `/1/object/usergroupexternal`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -87,6 +88,7 @@ export const ObjectUsergroupexternalApiAxiosParamCreator = function (configurati
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(usergroupexternalCreateObjectV1Request, localVarRequestOptions, configuration)
 
@@ -118,7 +120,7 @@ export const ObjectUsergroupexternalApiAxiosParamCreator = function (configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usergroupexternalDeleteObjectV1: async (pkiUsergroupexternalID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        usergroupexternalDeleteObjectV1: async (pkiUsergroupexternalID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiUsergroupexternalID' is not null or undefined
             assertParamExists('usergroupexternalDeleteObjectV1', 'pkiUsergroupexternalID', pkiUsergroupexternalID)
             const localVarPath = `/1/object/usergroupexternal/{pkiUsergroupexternalID}`
@@ -126,6 +128,7 @@ export const ObjectUsergroupexternalApiAxiosParamCreator = function (configurati
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -144,6 +147,7 @@ export const ObjectUsergroupexternalApiAxiosParamCreator = function (configurati
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -175,7 +179,7 @@ export const ObjectUsergroupexternalApiAxiosParamCreator = function (configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usergroupexternalEditObjectV1: async (pkiUsergroupexternalID: number, usergroupexternalEditObjectV1Request: UsergroupexternalEditObjectV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        usergroupexternalEditObjectV1: async (pkiUsergroupexternalID: number, usergroupexternalEditObjectV1Request: UsergroupexternalEditObjectV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiUsergroupexternalID' is not null or undefined
             assertParamExists('usergroupexternalEditObjectV1', 'pkiUsergroupexternalID', pkiUsergroupexternalID)
             // verify required parameter 'usergroupexternalEditObjectV1Request' is not null or undefined
@@ -185,6 +189,7 @@ export const ObjectUsergroupexternalApiAxiosParamCreator = function (configurati
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -205,6 +210,7 @@ export const ObjectUsergroupexternalApiAxiosParamCreator = function (configurati
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(usergroupexternalEditObjectV1Request, localVarRequestOptions, configuration)
 
@@ -239,7 +245,7 @@ export const ObjectUsergroupexternalApiAxiosParamCreator = function (configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usergroupexternalGetAutocompleteV2: async (sSelector: UsergroupexternalGetAutocompleteV2SSelectorEnum, eFilterActive?: UsergroupexternalGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        usergroupexternalGetAutocompleteV2: async (sSelector: UsergroupexternalGetAutocompleteV2SSelectorEnum, eFilterActive?: UsergroupexternalGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('usergroupexternalGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/usergroupexternal/getAutocomplete/{sSelector}`
@@ -247,6 +253,7 @@ export const ObjectUsergroupexternalApiAxiosParamCreator = function (configurati
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -270,8 +277,8 @@ export const ObjectUsergroupexternalApiAxiosParamCreator = function (configurati
             }
 
             if (acceptLanguage != null) {
-                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string' 
-                    ? acceptLanguage 
+                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
+                    ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
 
@@ -279,6 +286,7 @@ export const ObjectUsergroupexternalApiAxiosParamCreator = function (configurati
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -313,11 +321,12 @@ export const ObjectUsergroupexternalApiAxiosParamCreator = function (configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usergroupexternalGetListV1: async (eOrderBy?: UsergroupexternalGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        usergroupexternalGetListV1: async (eOrderBy?: UsergroupexternalGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/1/object/usergroupexternal/getList`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -349,8 +358,8 @@ export const ObjectUsergroupexternalApiAxiosParamCreator = function (configurati
             }
 
             if (acceptLanguage != null) {
-                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string' 
-                    ? acceptLanguage 
+                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
+                    ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
 
@@ -358,6 +367,7 @@ export const ObjectUsergroupexternalApiAxiosParamCreator = function (configurati
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -388,7 +398,7 @@ export const ObjectUsergroupexternalApiAxiosParamCreator = function (configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usergroupexternalGetObjectV2: async (pkiUsergroupexternalID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        usergroupexternalGetObjectV2: async (pkiUsergroupexternalID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiUsergroupexternalID' is not null or undefined
             assertParamExists('usergroupexternalGetObjectV2', 'pkiUsergroupexternalID', pkiUsergroupexternalID)
             const localVarPath = `/2/object/usergroupexternal/{pkiUsergroupexternalID}`
@@ -396,6 +406,7 @@ export const ObjectUsergroupexternalApiAxiosParamCreator = function (configurati
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -414,6 +425,7 @@ export const ObjectUsergroupexternalApiAxiosParamCreator = function (configurati
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -444,7 +456,7 @@ export const ObjectUsergroupexternalApiAxiosParamCreator = function (configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usergroupexternalGetUsergroupexternalmembershipsV1: async (pkiUsergroupexternalID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        usergroupexternalGetUsergroupexternalmembershipsV1: async (pkiUsergroupexternalID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiUsergroupexternalID' is not null or undefined
             assertParamExists('usergroupexternalGetUsergroupexternalmembershipsV1', 'pkiUsergroupexternalID', pkiUsergroupexternalID)
             const localVarPath = `/1/object/usergroupexternal/{pkiUsergroupexternalID}/getUsergroupexternalmemberships`
@@ -452,6 +464,7 @@ export const ObjectUsergroupexternalApiAxiosParamCreator = function (configurati
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -470,6 +483,7 @@ export const ObjectUsergroupexternalApiAxiosParamCreator = function (configurati
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -500,7 +514,7 @@ export const ObjectUsergroupexternalApiAxiosParamCreator = function (configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usergroupexternalGetUsergroupsV1: async (pkiUsergroupexternalID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        usergroupexternalGetUsergroupsV1: async (pkiUsergroupexternalID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiUsergroupexternalID' is not null or undefined
             assertParamExists('usergroupexternalGetUsergroupsV1', 'pkiUsergroupexternalID', pkiUsergroupexternalID)
             const localVarPath = `/1/object/usergroupexternal/{pkiUsergroupexternalID}/getUsergroups`
@@ -508,6 +522,7 @@ export const ObjectUsergroupexternalApiAxiosParamCreator = function (configurati
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -526,6 +541,7 @@ export const ObjectUsergroupexternalApiAxiosParamCreator = function (configurati
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -566,9 +582,11 @@ export const ObjectUsergroupexternalApiFp = function(configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async usergroupexternalCreateObjectV1(usergroupexternalCreateObjectV1Request: UsergroupexternalCreateObjectV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupexternalCreateObjectV1Response>> {
+        async usergroupexternalCreateObjectV1(usergroupexternalCreateObjectV1Request: UsergroupexternalCreateObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupexternalCreateObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.usergroupexternalCreateObjectV1(usergroupexternalCreateObjectV1Request, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectUsergroupexternalApi.usergroupexternalCreateObjectV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -577,9 +595,11 @@ export const ObjectUsergroupexternalApiFp = function(configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async usergroupexternalDeleteObjectV1(pkiUsergroupexternalID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupexternalDeleteObjectV1Response>> {
+        async usergroupexternalDeleteObjectV1(pkiUsergroupexternalID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupexternalDeleteObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.usergroupexternalDeleteObjectV1(pkiUsergroupexternalID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectUsergroupexternalApi.usergroupexternalDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -589,9 +609,11 @@ export const ObjectUsergroupexternalApiFp = function(configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async usergroupexternalEditObjectV1(pkiUsergroupexternalID: number, usergroupexternalEditObjectV1Request: UsergroupexternalEditObjectV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupexternalEditObjectV1Response>> {
+        async usergroupexternalEditObjectV1(pkiUsergroupexternalID: number, usergroupexternalEditObjectV1Request: UsergroupexternalEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupexternalEditObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.usergroupexternalEditObjectV1(pkiUsergroupexternalID, usergroupexternalEditObjectV1Request, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectUsergroupexternalApi.usergroupexternalEditObjectV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Get the list of Usergroupexternal to be used in a dropdown or autocomplete control.
@@ -603,9 +625,11 @@ export const ObjectUsergroupexternalApiFp = function(configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async usergroupexternalGetAutocompleteV2(sSelector: UsergroupexternalGetAutocompleteV2SSelectorEnum, eFilterActive?: UsergroupexternalGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupexternalGetAutocompleteV2Response>> {
+        async usergroupexternalGetAutocompleteV2(sSelector: UsergroupexternalGetAutocompleteV2SSelectorEnum, eFilterActive?: UsergroupexternalGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupexternalGetAutocompleteV2Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.usergroupexternalGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectUsergroupexternalApi.usergroupexternalGetAutocompleteV2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -618,9 +642,11 @@ export const ObjectUsergroupexternalApiFp = function(configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async usergroupexternalGetListV1(eOrderBy?: UsergroupexternalGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupexternalGetListV1Response>> {
+        async usergroupexternalGetListV1(eOrderBy?: UsergroupexternalGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupexternalGetListV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.usergroupexternalGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectUsergroupexternalApi.usergroupexternalGetListV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -629,9 +655,11 @@ export const ObjectUsergroupexternalApiFp = function(configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async usergroupexternalGetObjectV2(pkiUsergroupexternalID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupexternalGetObjectV2Response>> {
+        async usergroupexternalGetObjectV2(pkiUsergroupexternalID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupexternalGetObjectV2Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.usergroupexternalGetObjectV2(pkiUsergroupexternalID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectUsergroupexternalApi.usergroupexternalGetObjectV2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -640,9 +668,11 @@ export const ObjectUsergroupexternalApiFp = function(configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async usergroupexternalGetUsergroupexternalmembershipsV1(pkiUsergroupexternalID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupexternalGetUsergroupexternalmembershipsV1Response>> {
+        async usergroupexternalGetUsergroupexternalmembershipsV1(pkiUsergroupexternalID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupexternalGetUsergroupexternalmembershipsV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.usergroupexternalGetUsergroupexternalmembershipsV1(pkiUsergroupexternalID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectUsergroupexternalApi.usergroupexternalGetUsergroupexternalmembershipsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -651,9 +681,11 @@ export const ObjectUsergroupexternalApiFp = function(configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async usergroupexternalGetUsergroupsV1(pkiUsergroupexternalID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupexternalGetUsergroupsV1Response>> {
+        async usergroupexternalGetUsergroupsV1(pkiUsergroupexternalID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupexternalGetUsergroupsV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.usergroupexternalGetUsergroupsV1(pkiUsergroupexternalID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectUsergroupexternalApi.usergroupexternalGetUsergroupsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -771,7 +803,7 @@ export class ObjectUsergroupexternalApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectUsergroupexternalApi
      */
-    public usergroupexternalCreateObjectV1(usergroupexternalCreateObjectV1Request: UsergroupexternalCreateObjectV1Request, options?: AxiosRequestConfig) {
+    public usergroupexternalCreateObjectV1(usergroupexternalCreateObjectV1Request: UsergroupexternalCreateObjectV1Request, options?: RawAxiosRequestConfig) {
         return ObjectUsergroupexternalApiFp(this.configuration).usergroupexternalCreateObjectV1(usergroupexternalCreateObjectV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -783,7 +815,7 @@ export class ObjectUsergroupexternalApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectUsergroupexternalApi
      */
-    public usergroupexternalDeleteObjectV1(pkiUsergroupexternalID: number, options?: AxiosRequestConfig) {
+    public usergroupexternalDeleteObjectV1(pkiUsergroupexternalID: number, options?: RawAxiosRequestConfig) {
         return ObjectUsergroupexternalApiFp(this.configuration).usergroupexternalDeleteObjectV1(pkiUsergroupexternalID, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -796,7 +828,7 @@ export class ObjectUsergroupexternalApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectUsergroupexternalApi
      */
-    public usergroupexternalEditObjectV1(pkiUsergroupexternalID: number, usergroupexternalEditObjectV1Request: UsergroupexternalEditObjectV1Request, options?: AxiosRequestConfig) {
+    public usergroupexternalEditObjectV1(pkiUsergroupexternalID: number, usergroupexternalEditObjectV1Request: UsergroupexternalEditObjectV1Request, options?: RawAxiosRequestConfig) {
         return ObjectUsergroupexternalApiFp(this.configuration).usergroupexternalEditObjectV1(pkiUsergroupexternalID, usergroupexternalEditObjectV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -811,7 +843,7 @@ export class ObjectUsergroupexternalApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectUsergroupexternalApi
      */
-    public usergroupexternalGetAutocompleteV2(sSelector: UsergroupexternalGetAutocompleteV2SSelectorEnum, eFilterActive?: UsergroupexternalGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig) {
+    public usergroupexternalGetAutocompleteV2(sSelector: UsergroupexternalGetAutocompleteV2SSelectorEnum, eFilterActive?: UsergroupexternalGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig) {
         return ObjectUsergroupexternalApiFp(this.configuration).usergroupexternalGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -827,7 +859,7 @@ export class ObjectUsergroupexternalApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectUsergroupexternalApi
      */
-    public usergroupexternalGetListV1(eOrderBy?: UsergroupexternalGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig) {
+    public usergroupexternalGetListV1(eOrderBy?: UsergroupexternalGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig) {
         return ObjectUsergroupexternalApiFp(this.configuration).usergroupexternalGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -839,7 +871,7 @@ export class ObjectUsergroupexternalApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectUsergroupexternalApi
      */
-    public usergroupexternalGetObjectV2(pkiUsergroupexternalID: number, options?: AxiosRequestConfig) {
+    public usergroupexternalGetObjectV2(pkiUsergroupexternalID: number, options?: RawAxiosRequestConfig) {
         return ObjectUsergroupexternalApiFp(this.configuration).usergroupexternalGetObjectV2(pkiUsergroupexternalID, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -851,7 +883,7 @@ export class ObjectUsergroupexternalApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectUsergroupexternalApi
      */
-    public usergroupexternalGetUsergroupexternalmembershipsV1(pkiUsergroupexternalID: number, options?: AxiosRequestConfig) {
+    public usergroupexternalGetUsergroupexternalmembershipsV1(pkiUsergroupexternalID: number, options?: RawAxiosRequestConfig) {
         return ObjectUsergroupexternalApiFp(this.configuration).usergroupexternalGetUsergroupexternalmembershipsV1(pkiUsergroupexternalID, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -863,7 +895,7 @@ export class ObjectUsergroupexternalApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectUsergroupexternalApi
      */
-    public usergroupexternalGetUsergroupsV1(pkiUsergroupexternalID: number, options?: AxiosRequestConfig) {
+    public usergroupexternalGetUsergroupsV1(pkiUsergroupexternalID: number, options?: RawAxiosRequestConfig) {
         return ObjectUsergroupexternalApiFp(this.configuration).usergroupexternalGetUsergroupsV1(pkiUsergroupexternalID, options).then((request) => request(this.axios, this.basePath));
     }
 }

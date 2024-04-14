@@ -28,12 +28,14 @@ export interface UsergroupRequest {
      * @type {number}
      * @memberof UsergroupRequest
      */
+    /*'pkiUsergroupID'?: number;*/
     'pkiUsergroupID'?: number;
     /**
      * 
      * @type {MultilingualUsergroupName}
      * @memberof UsergroupRequest
      */
+    /*'objUsergroupName': MultilingualUsergroupName;*/
     'objUsergroupName': MultilingualUsergroupName;
 }
 /**

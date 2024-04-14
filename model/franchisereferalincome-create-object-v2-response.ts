@@ -31,7 +31,7 @@ import { FranchisereferalincomeCreateObjectV2ResponseMPayload } from './franchis
  * Response for POST /2/object/franchisereferalincome
  * @export
  */
-/** export type FranchisereferalincomeCreateObjectV2Response = CommonResponse; */
+/*export type FranchisereferalincomeCreateObjectV2Response = CommonResponse;*/
 export interface FranchisereferalincomeCreateObjectV2Response {
     /**
      * 

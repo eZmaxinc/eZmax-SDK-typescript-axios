@@ -28,6 +28,7 @@ export interface UsergroupexternalGetUsergroupexternalmembershipsV1ResponseMPayl
      * @type {Array<UsergroupexternalmembershipResponseCompound>}
      * @memberof UsergroupexternalGetUsergroupexternalmembershipsV1ResponseMPayload
      */
+    /*'a_objUsergroupexternalmembership': Array<UsergroupexternalmembershipResponseCompound>;*/
     'a_objUsergroupexternalmembership': Array<UsergroupexternalmembershipResponseCompound>;
 }
 /**

@@ -28,7 +28,7 @@ import { FieldEEzsignformfieldDependencyrequirement } from './field-eezsignformf
  * An Ezsignformfield Object and children to create a complete structure
  * @export
  */
-/** export type EzsignformfieldResponseCompound = EzsignformfieldResponse; */
+/*export type EzsignformfieldResponseCompound = EzsignformfieldResponse;*/
 export interface EzsignformfieldResponseCompound {
     /**
      * The unique ID of the Ezsignformfield

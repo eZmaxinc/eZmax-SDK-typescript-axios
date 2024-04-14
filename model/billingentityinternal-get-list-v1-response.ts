@@ -31,7 +31,7 @@ import { CommonResponseObjDebugPayloadGetList } from './common-response-obj-debu
  * Response for GET /1/object/billingentityinternal/getList
  * @export
  */
-/** export type BillingentityinternalGetListV1Response = CommonResponseGetList; */
+/*export type BillingentityinternalGetListV1Response = CommonResponseGetList;*/
 export interface BillingentityinternalGetListV1Response {
     /**
      * 

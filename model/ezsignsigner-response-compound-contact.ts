@@ -25,48 +25,56 @@ export interface EzsignsignerResponseCompoundContact {
      * @type {number}
      * @memberof EzsignsignerResponseCompoundContact
      */
+    /*'pkiContactID': number;*/
     'pkiContactID': number;
     /**
      * The First name of the contact
      * @type {string}
      * @memberof EzsignsignerResponseCompoundContact
      */
+    /*'sContactFirstname': string;*/
     'sContactFirstname': string;
     /**
      * The Last name of the contact
      * @type {string}
      * @memberof EzsignsignerResponseCompoundContact
      */
+    /*'sContactLastname': string;*/
     'sContactLastname': string;
     /**
      * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @type {number}
      * @memberof EzsignsignerResponseCompoundContact
      */
+    /*'fkiLanguageID': number;*/
     'fkiLanguageID': number;
     /**
      * The email address.
      * @type {string}
      * @memberof EzsignsignerResponseCompoundContact
      */
+    /*'sEmailAddress'?: string;*/
     'sEmailAddress'?: string;
     /**
      * A phone number in E.164 Format
      * @type {string}
      * @memberof EzsignsignerResponseCompoundContact
      */
+    /*'sPhoneE164'?: string;*/
     'sPhoneE164'?: string;
     /**
      * The extension of the phone number.  The extension is the \"123\" section in this sample phone number: (514) 990-1516 x123.  It can also be used with international phone numbers
      * @type {string}
      * @memberof EzsignsignerResponseCompoundContact
      */
+    /*'sPhoneExtension'?: string;*/
     'sPhoneExtension'?: string;
     /**
      * A phone number in E.164 Format
      * @type {string}
      * @memberof EzsignsignerResponseCompoundContact
      */
+    /*'sPhoneE164Cell'?: string;*/
     'sPhoneE164Cell'?: string;
 }
 /**
@@ -118,6 +126,7 @@ export class ValidationObjectEzsignsignerResponseCompoundContact {
    }
    sEmailAddress = {
       type: 'string',
+      pattern: '/^[\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/',
       required: false
    }
    sPhoneE164 = {

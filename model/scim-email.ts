@@ -25,12 +25,14 @@ export interface ScimEmail {
      * @type {string}
      * @memberof ScimEmail
      */
+    /*'value'?: string;*/
     'value'?: string;
     /**
      * 
      * @type {boolean}
      * @memberof ScimEmail
      */
+    /*'primary'?: boolean;*/
     'primary'?: boolean;
 }
 /**
@@ -57,6 +59,7 @@ export class DataObjectScimEmail {
 export class ValidationObjectScimEmail {
    value = {
       type: 'string',
+      pattern: '/^[\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/',
       required: false
    }
    primary = {

@@ -28,6 +28,7 @@ export interface ApikeyGetPermissionsV1ResponseMPayload {
      * @type {Array<ModulegroupResponseCompound>}
      * @memberof ApikeyGetPermissionsV1ResponseMPayload
      */
+    /*'a_objModulegroup': Array<ModulegroupResponseCompound>;*/
     'a_objModulegroup': Array<ModulegroupResponseCompound>;
 }
 /**

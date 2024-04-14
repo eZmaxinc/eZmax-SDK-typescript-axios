@@ -25,12 +25,14 @@ export interface CustomEzsignformfielderrortestResponse {
      * @type {string}
      * @memberof CustomEzsignformfielderrortestResponse
      */
+    /*'sEzsignformfielderrortestName': string;*/
     'sEzsignformfielderrortestName': string;
     /**
      * The detail why the test failed
      * @type {string}
      * @memberof CustomEzsignformfielderrortestResponse
      */
+    /*'sEzsignformfielderrortestDetail': string;*/
     'sEzsignformfielderrortestDetail': string;
 }
 /**

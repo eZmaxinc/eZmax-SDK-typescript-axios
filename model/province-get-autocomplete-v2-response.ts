@@ -31,7 +31,7 @@ import { ProvinceGetAutocompleteV2ResponseMPayload } from './province-get-autoco
  * Response for GET /2/object/province/getAutocomplete
  * @export
  */
-/** export type ProvinceGetAutocompleteV2Response = CommonResponse; */
+/*export type ProvinceGetAutocompleteV2Response = CommonResponse;*/
 export interface ProvinceGetAutocompleteV2Response {
     /**
      * 

@@ -22,7 +22,7 @@ import { EzsignsignergroupmembershipResponse } from './ezsignsignergroupmembersh
  * A Ezsignsignergroupmembership Object
  * @export
  */
-/** export type EzsignsignergroupmembershipResponseCompound = EzsignsignergroupmembershipResponse; */
+/*export type EzsignsignergroupmembershipResponseCompound = EzsignsignergroupmembershipResponse;*/
 export interface EzsignsignergroupmembershipResponseCompound {
     /**
      * The unique ID of the Ezsignsignergroupmembership

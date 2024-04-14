@@ -25,6 +25,7 @@ export interface EzsignfolderDisposeEzsignfoldersV1Request {
      * @type {Array<number>}
      * @memberof EzsignfolderDisposeEzsignfoldersV1Request
      */
+    /*'a_pkiEzsignfolderID': Array<number>;*/
     'a_pkiEzsignfolderID': Array<number>;
 }
 /**

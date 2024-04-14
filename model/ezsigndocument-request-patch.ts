@@ -25,12 +25,14 @@ export interface EzsigndocumentRequestPatch {
      * @type {string}
      * @memberof EzsigndocumentRequestPatch
      */
+    /*'dtEzsigndocumentDuedate'?: string;*/
     'dtEzsigndocumentDuedate'?: string;
     /**
      * The name of the document that will be presented to Ezsignfoldersignerassociations
      * @type {string}
      * @memberof EzsigndocumentRequestPatch
      */
+    /*'sEzsigndocumentName'?: string;*/
     'sEzsigndocumentName'?: string;
 }
 /**

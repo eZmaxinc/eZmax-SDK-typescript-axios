@@ -28,6 +28,7 @@ export interface EzsigntemplatepackagesignerGetObjectV2ResponseMPayload {
      * @type {EzsigntemplatepackagesignerResponseCompound}
      * @memberof EzsigntemplatepackagesignerGetObjectV2ResponseMPayload
      */
+    /*'objEzsigntemplatepackagesigner': EzsigntemplatepackagesignerResponseCompound;*/
     'objEzsigntemplatepackagesigner': EzsigntemplatepackagesignerResponseCompound;
 }
 /**

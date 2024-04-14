@@ -14,13 +14,13 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
 import { ScimServiceProviderConfig } from '../model';
 // @ts-ignore
@@ -37,11 +37,12 @@ export const ScimServiceProviderConfigApiAxiosParamCreator = function (configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        serviceProviderConfigGetObjectScimV2: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        serviceProviderConfigGetObjectScimV2: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/2/scim/ServiceProviderConfig`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -57,6 +58,7 @@ export const ScimServiceProviderConfigApiAxiosParamCreator = function (configura
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -96,9 +98,11 @@ export const ScimServiceProviderConfigApiFp = function(configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async serviceProviderConfigGetObjectScimV2(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ScimServiceProviderConfig>> {
+        async serviceProviderConfigGetObjectScimV2(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ScimServiceProviderConfig>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.serviceProviderConfigGetObjectScimV2(options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ScimServiceProviderConfigApi.serviceProviderConfigGetObjectScimV2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -136,7 +140,7 @@ export class ScimServiceProviderConfigApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ScimServiceProviderConfigApi
      */
-    public serviceProviderConfigGetObjectScimV2(options?: AxiosRequestConfig) {
+    public serviceProviderConfigGetObjectScimV2(options?: RawAxiosRequestConfig) {
         return ScimServiceProviderConfigApiFp(this.configuration).serviceProviderConfigGetObjectScimV2(options).then((request) => request(this.axios, this.basePath));
     }
 }

@@ -25,6 +25,7 @@ export interface EzsignfolderSendV1Request {
      * @type {string}
      * @memberof EzsignfolderSendV1Request
      */
+    /*'tExtraMessage': string;*/
     'tExtraMessage': string;
 }
 /**

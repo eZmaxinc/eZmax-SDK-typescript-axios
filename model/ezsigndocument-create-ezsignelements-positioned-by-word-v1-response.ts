@@ -31,7 +31,7 @@ import { EzsigndocumentCreateEzsignelementsPositionedByWordV1ResponseMPayload } 
  * Response for POST /1/object/ezsigndocument/{pkiEzsigndocumentID}/createEzsignelementsPositionedByWord
  * @export
  */
-/** export type EzsigndocumentCreateEzsignelementsPositionedByWordV1Response = CommonResponse; */
+/*export type EzsigndocumentCreateEzsignelementsPositionedByWordV1Response = CommonResponse;*/
 export interface EzsigndocumentCreateEzsignelementsPositionedByWordV1Response {
     /**
      * 

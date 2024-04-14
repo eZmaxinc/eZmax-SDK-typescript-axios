@@ -28,6 +28,7 @@ export interface EzsignfolderCreateObjectV2Request {
      * @type {Array<EzsignfolderRequestCompound>}
      * @memberof EzsignfolderCreateObjectV2Request
      */
+    /*'a_objEzsignfolder': Array<EzsignfolderRequestCompound>;*/
     'a_objEzsignfolder': Array<EzsignfolderRequestCompound>;
 }
 /**

@@ -31,7 +31,7 @@ import { CorsGetObjectV2ResponseMPayload } from './cors-get-object-v2-response-m
  * Response for GET /2/object/cors/{pkiCorsID}
  * @export
  */
-/** export type CorsGetObjectV2Response = CommonResponse; */
+/*export type CorsGetObjectV2Response = CommonResponse;*/
 export interface CorsGetObjectV2Response {
     /**
      * 

@@ -25,48 +25,56 @@ export interface UsergroupdelegationResponse {
      * @type {number}
      * @memberof UsergroupdelegationResponse
      */
+    /*'pkiUsergroupdelegationID': number;*/
     'pkiUsergroupdelegationID': number;
     /**
      * The unique ID of the Usergroup
      * @type {number}
      * @memberof UsergroupdelegationResponse
      */
+    /*'fkiUsergroupID': number;*/
     'fkiUsergroupID': number;
     /**
      * The unique ID of the User
      * @type {number}
      * @memberof UsergroupdelegationResponse
      */
+    /*'fkiUserID': number;*/
     'fkiUserID': number;
     /**
      * The first name of the user
      * @type {string}
      * @memberof UsergroupdelegationResponse
      */
+    /*'sUserFirstname': string;*/
     'sUserFirstname': string;
     /**
      * The last name of the user
      * @type {string}
      * @memberof UsergroupdelegationResponse
      */
+    /*'sUserLastname': string;*/
     'sUserLastname': string;
     /**
      * The login name of the User.
      * @type {string}
      * @memberof UsergroupdelegationResponse
      */
+    /*'sUserLoginname': string;*/
     'sUserLoginname': string;
     /**
      * The email address.
      * @type {string}
      * @memberof UsergroupdelegationResponse
      */
+    /*'sEmailAddress'?: string;*/
     'sEmailAddress'?: string;
     /**
      * The Name of the Usergroup in the language of the requester
      * @type {string}
      * @memberof UsergroupdelegationResponse
      */
+    /*'sUsergroupNameX': string;*/
     'sUsergroupNameX': string;
 }
 /**
@@ -124,11 +132,12 @@ export class ValidationObjectUsergroupdelegationResponse {
    }
    sUserLoginname = {
       type: 'string',
-      pattern: '/^(?:([\w\.-]+@[\w\.-]+\.\w{2,20})|([a-zA-Z0-9]){1,32})$/',
+      pattern: '/^(?:([\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/',
       required: true
    }
    sEmailAddress = {
       type: 'string',
+      pattern: '/^[\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/',
       required: false
    }
    sUsergroupNameX = {

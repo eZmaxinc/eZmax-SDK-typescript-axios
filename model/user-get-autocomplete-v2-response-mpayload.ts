@@ -28,6 +28,7 @@ export interface UserGetAutocompleteV2ResponseMPayload {
      * @type {Array<UserAutocompleteElementResponse>}
      * @memberof UserGetAutocompleteV2ResponseMPayload
      */
+    /*'a_objUser': Array<UserAutocompleteElementResponse>;*/
     'a_objUser': Array<UserAutocompleteElementResponse>;
 }
 /**

@@ -25,6 +25,7 @@ export interface ApikeyRegenerateV1Request {
      * @type {boolean}
      * @memberof ApikeyRegenerateV1Request
      */
+    /*'bApikeyIssigned'?: boolean;*/
     'bApikeyIssigned'?: boolean;
 }
 /**

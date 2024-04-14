@@ -25,12 +25,14 @@ export interface MultilingualEzsignfoldertypeName {
      * @type {string}
      * @memberof MultilingualEzsignfoldertypeName
      */
+    /*'sEzsignfoldertypeName1'?: string;*/
     'sEzsignfoldertypeName1'?: string;
     /**
      * The name of the Ezsignfoldertype in English
      * @type {string}
      * @memberof MultilingualEzsignfoldertypeName
      */
+    /*'sEzsignfoldertypeName2'?: string;*/
     'sEzsignfoldertypeName2'?: string;
 }
 /**

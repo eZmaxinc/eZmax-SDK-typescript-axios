@@ -31,7 +31,7 @@ import { EzsignsignergroupResponseCompound } from './ezsignsignergroup-response-
  * An Ezsignfoldersignerassociation Object
  * @export
  */
-/** export type EzsignfoldersignerassociationResponseCompound = EzsignfoldersignerassociationResponse; */
+/*export type EzsignfoldersignerassociationResponseCompound = EzsignfoldersignerassociationResponse;*/
 export interface EzsignfoldersignerassociationResponseCompound {
     /**
      * The unique ID of the Ezsignfoldersignerassociation
@@ -63,6 +63,12 @@ export interface EzsignfoldersignerassociationResponseCompound {
      * @memberof EzsignfoldersignerassociationResponseCompound
      */
     tEzsignfoldersignerassociationMessage:string 
+    /**
+     * If the Ezsignfoldersignerassociation is allowed to sign in person or not
+     * @type {boolean}
+     * @memberof EzsignfoldersignerassociationResponseCompound
+     */
+    bEzsignfoldersignerassociationAllowsigninginperson:boolean 
     /**
      * 
      * @type {EzsignsignergroupResponseCompound}
@@ -113,6 +119,7 @@ export class DataObjectEzsignfoldersignerassociationResponseCompound {
     bEzsignfoldersignerassociationDelayedsend:boolean = false
     bEzsignfoldersignerassociationReceivecopy:boolean = false
     tEzsignfoldersignerassociationMessage:string = ''
+    bEzsignfoldersignerassociationAllowsigninginperson:boolean = false
     objEzsignsignergroup?:EzsignsignergroupResponseCompound = undefined
     objUser?:EzsignfoldersignerassociationResponseCompoundUser = undefined
     objEzsignsigner?:EzsignsignerResponseCompound = undefined
@@ -144,6 +151,10 @@ export class ValidationObjectEzsignfoldersignerassociationResponseCompound {
    }
    tEzsignfoldersignerassociationMessage = {
       type: 'string',
+      required: true
+   }
+   bEzsignfoldersignerassociationAllowsigninginperson = {
+      type: 'boolean',
       required: true
    }
    objEzsignsignergroup = new ValidationObjectEzsignsignergroupResponseCompound()

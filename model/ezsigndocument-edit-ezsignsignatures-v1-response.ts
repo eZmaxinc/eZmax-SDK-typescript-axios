@@ -31,7 +31,7 @@ import { EzsigndocumentEditEzsignsignaturesV1ResponseMPayload } from './ezsigndo
  * Response for PUT /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignsignatures
  * @export
  */
-/** export type EzsigndocumentEditEzsignsignaturesV1Response = CommonResponse; */
+/*export type EzsigndocumentEditEzsignsignaturesV1Response = CommonResponse;*/
 export interface EzsigndocumentEditEzsignsignaturesV1Response {
     /**
      * 

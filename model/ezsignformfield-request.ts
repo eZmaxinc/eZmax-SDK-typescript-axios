@@ -28,72 +28,84 @@ export interface EzsignformfieldRequest {
      * @type {number}
      * @memberof EzsignformfieldRequest
      */
+    /*'pkiEzsignformfieldID'?: number;*/
     'pkiEzsignformfieldID'?: number;
     /**
      * The page number in the Ezsigndocument
      * @type {number}
      * @memberof EzsignformfieldRequest
      */
+    /*'iEzsignpagePagenumber': number;*/
     'iEzsignpagePagenumber': number;
     /**
      * The Label for the Ezsignformfield
      * @type {string}
      * @memberof EzsignformfieldRequest
      */
+    /*'sEzsignformfieldLabel': string;*/
     'sEzsignformfieldLabel': string;
     /**
      * The value for the Ezsignformfield  This can only be set if eEzsignformfieldgroupType is Checkbox or Radio
      * @type {string}
      * @memberof EzsignformfieldRequest
      */
+    /*'sEzsignformfieldValue'?: string;*/
     'sEzsignformfieldValue'?: string;
     /**
      * The X coordinate (Horizontal) where to put the Ezsignformfield on the Ezsignpage.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignformfield 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
      * @type {number}
      * @memberof EzsignformfieldRequest
      */
+    /*'iEzsignformfieldX': number;*/
     'iEzsignformfieldX': number;
     /**
      * The Y coordinate (Vertical) where to put the Ezsignformfield on the Ezsignpage.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignformfield 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
      * @type {number}
      * @memberof EzsignformfieldRequest
      */
+    /*'iEzsignformfieldY': number;*/
     'iEzsignformfieldY': number;
     /**
      * The Width of the Ezsignformfield in pixels calculated at 100 DPI  The allowed values are varying based on the eEzsignformfieldgroupType.  | eEzsignformfieldgroupType | Valid values | | ------------------------- | ------------ | | Checkbox                  | 22           | | Dropdown                  | 22-65535     | | Radio                     | 22           | | Text                      | 22-65535     | | Textarea                  | 22-65535     |
      * @type {number}
      * @memberof EzsignformfieldRequest
      */
+    /*'iEzsignformfieldWidth': number;*/
     'iEzsignformfieldWidth': number;
     /**
      * The Height of the Ezsignformfield in pixels calculated at 100 DPI  The allowed values are varying based on the eEzsignformfieldgroupType.  | eEzsignformfieldgroupType | Valid values | | ------------------------- | ------------ | | Checkbox                  | 22           | | Dropdown                  | 22           | | Radio                     | 22           | | Text                      | 22           | | Textarea                  | 22-65535     | 
      * @type {number}
      * @memberof EzsignformfieldRequest
      */
+    /*'iEzsignformfieldHeight': number;*/
     'iEzsignformfieldHeight': number;
     /**
      * Whether the Ezsignformfield allows the use of the autocomplete of the browser.  This can only be set if eEzsignformfieldgroupType is **Text**
      * @type {boolean}
      * @memberof EzsignformfieldRequest
      */
+    /*'bEzsignformfieldAutocomplete'?: boolean;*/
     'bEzsignformfieldAutocomplete'?: boolean;
     /**
      * Whether the Ezsignformfield is selected or not by default.  This can only be set if eEzsignformfieldgroupType is **Checkbox** or **Radio**
      * @type {boolean}
      * @memberof EzsignformfieldRequest
      */
+    /*'bEzsignformfieldSelected'?: boolean;*/
     'bEzsignformfieldSelected'?: boolean;
     /**
      * This is the value enterred for the Ezsignformfield  This can only be set if eEzsignformfieldgroupType is **Dropdown**, **Text** or **Textarea**
      * @type {string}
      * @memberof EzsignformfieldRequest
      */
+    /*'sEzsignformfieldEnteredvalue'?: string;*/
     'sEzsignformfieldEnteredvalue'?: string;
     /**
      * 
      * @type {FieldEEzsignformfieldDependencyrequirement}
      * @memberof EzsignformfieldRequest
      */
+    /*'eEzsignformfieldDependencyrequirement'?: FieldEEzsignformfieldDependencyrequirement;*/
     'eEzsignformfieldDependencyrequirement'?: FieldEEzsignformfieldDependencyrequirement;
 }
 

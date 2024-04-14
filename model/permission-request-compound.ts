@@ -22,7 +22,7 @@ import { PermissionRequest } from './permission-request';
  * A Permission Object and children to create a complete structure
  * @export
  */
-/** export type PermissionRequestCompound = PermissionRequest; */
+/*export type PermissionRequestCompound = PermissionRequest;*/
 export interface PermissionRequestCompound {
     /**
      * The unique ID of the Permission

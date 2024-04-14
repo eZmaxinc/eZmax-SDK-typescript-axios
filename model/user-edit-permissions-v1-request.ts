@@ -28,6 +28,7 @@ export interface UserEditPermissionsV1Request {
      * @type {Array<PermissionRequestCompound>}
      * @memberof UserEditPermissionsV1Request
      */
+    /*'a_objPermission': Array<PermissionRequestCompound>;*/
     'a_objPermission': Array<PermissionRequestCompound>;
 }
 /**

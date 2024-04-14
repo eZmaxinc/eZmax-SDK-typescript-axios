@@ -14,13 +14,13 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
 import { BrandingCreateObjectV1Request } from '../model';
 // @ts-ignore
@@ -54,13 +54,14 @@ export const ObjectBrandingApiAxiosParamCreator = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        brandingCreateObjectV1: async (brandingCreateObjectV1Request: BrandingCreateObjectV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        brandingCreateObjectV1: async (brandingCreateObjectV1Request: BrandingCreateObjectV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'brandingCreateObjectV1Request' is not null or undefined
             assertParamExists('brandingCreateObjectV1', 'brandingCreateObjectV1Request', brandingCreateObjectV1Request)
             const localVarPath = `/1/object/branding`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -81,6 +82,7 @@ export const ObjectBrandingApiAxiosParamCreator = function (configuration?: Conf
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(brandingCreateObjectV1Request, localVarRequestOptions, configuration)
 
@@ -113,7 +115,7 @@ export const ObjectBrandingApiAxiosParamCreator = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        brandingEditObjectV1: async (pkiBrandingID: number, brandingEditObjectV1Request: BrandingEditObjectV1Request, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        brandingEditObjectV1: async (pkiBrandingID: number, brandingEditObjectV1Request: BrandingEditObjectV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiBrandingID' is not null or undefined
             assertParamExists('brandingEditObjectV1', 'pkiBrandingID', pkiBrandingID)
             // verify required parameter 'brandingEditObjectV1Request' is not null or undefined
@@ -123,6 +125,7 @@ export const ObjectBrandingApiAxiosParamCreator = function (configuration?: Conf
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -143,6 +146,7 @@ export const ObjectBrandingApiAxiosParamCreator = function (configuration?: Conf
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(brandingEditObjectV1Request, localVarRequestOptions, configuration)
 
@@ -177,7 +181,7 @@ export const ObjectBrandingApiAxiosParamCreator = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        brandingGetAutocompleteV2: async (sSelector: BrandingGetAutocompleteV2SSelectorEnum, eFilterActive?: BrandingGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        brandingGetAutocompleteV2: async (sSelector: BrandingGetAutocompleteV2SSelectorEnum, eFilterActive?: BrandingGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('brandingGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/branding/getAutocomplete/{sSelector}`
@@ -185,6 +189,7 @@ export const ObjectBrandingApiAxiosParamCreator = function (configuration?: Conf
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -208,8 +213,8 @@ export const ObjectBrandingApiAxiosParamCreator = function (configuration?: Conf
             }
 
             if (acceptLanguage != null) {
-                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string' 
-                    ? acceptLanguage 
+                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
+                    ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
 
@@ -217,6 +222,7 @@ export const ObjectBrandingApiAxiosParamCreator = function (configuration?: Conf
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -251,11 +257,12 @@ export const ObjectBrandingApiAxiosParamCreator = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        brandingGetListV1: async (eOrderBy?: BrandingGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        brandingGetListV1: async (eOrderBy?: BrandingGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/1/object/branding/getList`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -287,8 +294,8 @@ export const ObjectBrandingApiAxiosParamCreator = function (configuration?: Conf
             }
 
             if (acceptLanguage != null) {
-                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string' 
-                    ? acceptLanguage 
+                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
+                    ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
 
@@ -296,6 +303,7 @@ export const ObjectBrandingApiAxiosParamCreator = function (configuration?: Conf
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -326,7 +334,7 @@ export const ObjectBrandingApiAxiosParamCreator = function (configuration?: Conf
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        brandingGetObjectV2: async (pkiBrandingID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        brandingGetObjectV2: async (pkiBrandingID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiBrandingID' is not null or undefined
             assertParamExists('brandingGetObjectV2', 'pkiBrandingID', pkiBrandingID)
             const localVarPath = `/2/object/branding/{pkiBrandingID}`
@@ -334,6 +342,7 @@ export const ObjectBrandingApiAxiosParamCreator = function (configuration?: Conf
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -352,6 +361,7 @@ export const ObjectBrandingApiAxiosParamCreator = function (configuration?: Conf
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -392,9 +402,11 @@ export const ObjectBrandingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async brandingCreateObjectV1(brandingCreateObjectV1Request: BrandingCreateObjectV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BrandingCreateObjectV1Response>> {
+        async brandingCreateObjectV1(brandingCreateObjectV1Request: BrandingCreateObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BrandingCreateObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.brandingCreateObjectV1(brandingCreateObjectV1Request, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectBrandingApi.brandingCreateObjectV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -404,9 +416,11 @@ export const ObjectBrandingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async brandingEditObjectV1(pkiBrandingID: number, brandingEditObjectV1Request: BrandingEditObjectV1Request, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BrandingEditObjectV1Response>> {
+        async brandingEditObjectV1(pkiBrandingID: number, brandingEditObjectV1Request: BrandingEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BrandingEditObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.brandingEditObjectV1(pkiBrandingID, brandingEditObjectV1Request, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectBrandingApi.brandingEditObjectV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Get the list of Branding to be used in a dropdown or autocomplete control.
@@ -418,9 +432,11 @@ export const ObjectBrandingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async brandingGetAutocompleteV2(sSelector: BrandingGetAutocompleteV2SSelectorEnum, eFilterActive?: BrandingGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BrandingGetAutocompleteV2Response>> {
+        async brandingGetAutocompleteV2(sSelector: BrandingGetAutocompleteV2SSelectorEnum, eFilterActive?: BrandingGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BrandingGetAutocompleteV2Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.brandingGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectBrandingApi.brandingGetAutocompleteV2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eBrandingLogo | Default<br>JPEG<br>PNG | | eBrandingLogointerface | Default<br>JPEG<br>PNG |
@@ -433,9 +449,11 @@ export const ObjectBrandingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async brandingGetListV1(eOrderBy?: BrandingGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BrandingGetListV1Response>> {
+        async brandingGetListV1(eOrderBy?: BrandingGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BrandingGetListV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.brandingGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectBrandingApi.brandingGetListV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -444,9 +462,11 @@ export const ObjectBrandingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async brandingGetObjectV2(pkiBrandingID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BrandingGetObjectV2Response>> {
+        async brandingGetObjectV2(pkiBrandingID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BrandingGetObjectV2Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.brandingGetObjectV2(pkiBrandingID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectBrandingApi.brandingGetObjectV2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -534,7 +554,7 @@ export class ObjectBrandingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectBrandingApi
      */
-    public brandingCreateObjectV1(brandingCreateObjectV1Request: BrandingCreateObjectV1Request, options?: AxiosRequestConfig) {
+    public brandingCreateObjectV1(brandingCreateObjectV1Request: BrandingCreateObjectV1Request, options?: RawAxiosRequestConfig) {
         return ObjectBrandingApiFp(this.configuration).brandingCreateObjectV1(brandingCreateObjectV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -547,7 +567,7 @@ export class ObjectBrandingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectBrandingApi
      */
-    public brandingEditObjectV1(pkiBrandingID: number, brandingEditObjectV1Request: BrandingEditObjectV1Request, options?: AxiosRequestConfig) {
+    public brandingEditObjectV1(pkiBrandingID: number, brandingEditObjectV1Request: BrandingEditObjectV1Request, options?: RawAxiosRequestConfig) {
         return ObjectBrandingApiFp(this.configuration).brandingEditObjectV1(pkiBrandingID, brandingEditObjectV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -562,7 +582,7 @@ export class ObjectBrandingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectBrandingApi
      */
-    public brandingGetAutocompleteV2(sSelector: BrandingGetAutocompleteV2SSelectorEnum, eFilterActive?: BrandingGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig) {
+    public brandingGetAutocompleteV2(sSelector: BrandingGetAutocompleteV2SSelectorEnum, eFilterActive?: BrandingGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig) {
         return ObjectBrandingApiFp(this.configuration).brandingGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -578,7 +598,7 @@ export class ObjectBrandingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectBrandingApi
      */
-    public brandingGetListV1(eOrderBy?: BrandingGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: AxiosRequestConfig) {
+    public brandingGetListV1(eOrderBy?: BrandingGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig) {
         return ObjectBrandingApiFp(this.configuration).brandingGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -590,7 +610,7 @@ export class ObjectBrandingApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectBrandingApi
      */
-    public brandingGetObjectV2(pkiBrandingID: number, options?: AxiosRequestConfig) {
+    public brandingGetObjectV2(pkiBrandingID: number, options?: RawAxiosRequestConfig) {
         return ObjectBrandingApiFp(this.configuration).brandingGetObjectV2(pkiBrandingID, options).then((request) => request(this.axios, this.basePath));
     }
 }

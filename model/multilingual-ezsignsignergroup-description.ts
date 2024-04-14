@@ -25,12 +25,14 @@ export interface MultilingualEzsignsignergroupDescription {
      * @type {string}
      * @memberof MultilingualEzsignsignergroupDescription
      */
+    /*'sEzsignsignergroupDescription1'?: string;*/
     'sEzsignsignergroupDescription1'?: string;
     /**
      * The description of the Ezsignsignergroup in English
      * @type {string}
      * @memberof MultilingualEzsignsignergroupDescription
      */
+    /*'sEzsignsignergroupDescription2'?: string;*/
     'sEzsignsignergroupDescription2'?: string;
 }
 /**

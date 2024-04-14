@@ -31,7 +31,7 @@ import { EzsignfoldertypeGetObjectV2ResponseMPayload } from './ezsignfoldertype-
  * Response for GET /2/object/ezsignfoldertype/{pkiEzsignfoldertypeID}
  * @export
  */
-/** export type EzsignfoldertypeGetObjectV2Response = CommonResponse; */
+/*export type EzsignfoldertypeGetObjectV2Response = CommonResponse;*/
 export interface EzsignfoldertypeGetObjectV2Response {
     /**
      * 

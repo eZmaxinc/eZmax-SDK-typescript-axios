@@ -25,7 +25,7 @@ import { FieldEEzsigndocumentlogType } from './field-eezsigndocumentlog-type';
  * An Ezsigndocumentlog Object and children to create a complete structure
  * @export
  */
-/** export type EzsigndocumentlogResponseCompound = EzsigndocumentlogResponse; */
+/*export type EzsigndocumentlogResponseCompound = EzsigndocumentlogResponse;*/
 export interface EzsigndocumentlogResponseCompound {
     /**
      * The unique ID of the User

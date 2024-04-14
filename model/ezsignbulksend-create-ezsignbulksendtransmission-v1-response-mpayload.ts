@@ -28,6 +28,7 @@ export interface EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayloa
      * @type {EzsignbulksendtransmissionResponse}
      * @memberof EzsignbulksendCreateEzsignbulksendtransmissionV1ResponseMPayload
      */
+    /*'objEzsignbulksendtransmission': EzsignbulksendtransmissionResponse;*/
     'objEzsignbulksendtransmission': EzsignbulksendtransmissionResponse;
 }
 /**

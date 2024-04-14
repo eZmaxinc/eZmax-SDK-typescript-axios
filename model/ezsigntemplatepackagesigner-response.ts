@@ -25,18 +25,21 @@ export interface EzsigntemplatepackagesignerResponse {
      * @type {number}
      * @memberof EzsigntemplatepackagesignerResponse
      */
+    /*'pkiEzsigntemplatepackagesignerID': number;*/
     'pkiEzsigntemplatepackagesignerID': number;
     /**
      * The unique ID of the Ezsigntemplatepackage
      * @type {number}
      * @memberof EzsigntemplatepackagesignerResponse
      */
+    /*'fkiEzsigntemplatepackageID': number;*/
     'fkiEzsigntemplatepackageID': number;
     /**
      * The description of the Ezsigntemplatepackagesigner
      * @type {string}
      * @memberof EzsigntemplatepackagesignerResponse
      */
+    /*'sEzsigntemplatepackagesignerDescription': string;*/
     'sEzsigntemplatepackagesignerDescription': string;
 }
 /**

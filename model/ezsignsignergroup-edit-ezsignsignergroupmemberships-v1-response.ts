@@ -31,7 +31,7 @@ import { EzsignsignergroupEditEzsignsignergroupmembershipsV1ResponseMPayload } f
  * Response for PUT /1/object/ezsignsignergroup/{pkiEzsignsignergroupID}/editEzsignsignergroupmemberships
  * @export
  */
-/** export type EzsignsignergroupEditEzsignsignergroupmembershipsV1Response = CommonResponse; */
+/*export type EzsignsignergroupEditEzsignsignergroupmembershipsV1Response = CommonResponse;*/
 export interface EzsignsignergroupEditEzsignsignergroupmembershipsV1Response {
     /**
      * 

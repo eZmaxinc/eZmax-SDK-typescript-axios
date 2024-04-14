@@ -31,7 +31,7 @@ import { OtherincomeGetCommunicationListV1ResponseMPayload } from './otherincome
  * Response for GET /1/object/otherincome/{pkiOtherincomeID}/getCommunicationList
  * @export
  */
-/** export type OtherincomeGetCommunicationListV1Response = CommonResponseGetList; */
+/*export type OtherincomeGetCommunicationListV1Response = CommonResponseGetList;*/
 export interface OtherincomeGetCommunicationListV1Response {
     /**
      * 

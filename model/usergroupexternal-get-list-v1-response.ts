@@ -31,7 +31,7 @@ import { UsergroupexternalGetListV1ResponseMPayload } from './usergroupexternal-
  * Response for GET /1/object/usergroupexternal/getList
  * @export
  */
-/** export type UsergroupexternalGetListV1Response = CommonResponseGetList; */
+/*export type UsergroupexternalGetListV1Response = CommonResponseGetList;*/
 export interface UsergroupexternalGetListV1Response {
     /**
      * 

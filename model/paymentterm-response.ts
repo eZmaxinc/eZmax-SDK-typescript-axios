@@ -34,42 +34,49 @@ export interface PaymenttermResponse {
      * @type {number}
      * @memberof PaymenttermResponse
      */
+    /*'pkiPaymenttermID': number;*/
     'pkiPaymenttermID': number;
     /**
      * The code of the Paymentterm
      * @type {string}
      * @memberof PaymenttermResponse
      */
+    /*'sPaymenttermCode': string;*/
     'sPaymenttermCode': string;
     /**
      * 
      * @type {FieldEPaymenttermType}
      * @memberof PaymenttermResponse
      */
+    /*'ePaymenttermType': FieldEPaymenttermType;*/
     'ePaymenttermType': FieldEPaymenttermType;
     /**
      * The day of the Paymentterm
      * @type {number}
      * @memberof PaymenttermResponse
      */
+    /*'iPaymenttermDay': number;*/
     'iPaymenttermDay': number;
     /**
      * 
      * @type {MultilingualPaymenttermDescription}
      * @memberof PaymenttermResponse
      */
+    /*'objPaymenttermDescription': MultilingualPaymenttermDescription;*/
     'objPaymenttermDescription': MultilingualPaymenttermDescription;
     /**
      * Whether the Paymentterm is active or not
      * @type {boolean}
      * @memberof PaymenttermResponse
      */
+    /*'bPaymenttermIsactive': boolean;*/
     'bPaymenttermIsactive': boolean;
     /**
      * 
      * @type {CommonAudit}
      * @memberof PaymenttermResponse
      */
+    /*'objAudit': CommonAudit;*/
     'objAudit': CommonAudit;
 }
 

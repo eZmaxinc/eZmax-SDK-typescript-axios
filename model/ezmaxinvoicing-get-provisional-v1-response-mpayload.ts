@@ -55,7 +55,7 @@ import { FieldEEzmaxinvoicingPaymenttype } from './field-eezmaxinvoicing-payment
  * Payload for GET /1/object/ezmaxinvoicing/getProvisional
  * @export
  */
-/** export type EzmaxinvoicingGetProvisionalV1ResponseMPayload = EzmaxinvoicingResponseCompound; */
+/*export type EzmaxinvoicingGetProvisionalV1ResponseMPayload = EzmaxinvoicingResponseCompound;*/
 export interface EzmaxinvoicingGetProvisionalV1ResponseMPayload {
     /**
      * The unique ID of the Ezmaxinvoicing

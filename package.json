@@ -18,13 +18,13 @@
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsc ",
+    "build": "tsc",
     "prepare": "npm run build"
   },
   "dependencies": {
     "node-forge": "^1.2.1",
     "utf8": "^3.0.0",
-    "axios": "^0.27.2"
+    "axios": "^1.6.1"
   },
   "devDependencies": {
     "@types/node-forge": "^1.0.0",

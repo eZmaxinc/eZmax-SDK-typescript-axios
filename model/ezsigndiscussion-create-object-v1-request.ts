@@ -28,6 +28,7 @@ export interface EzsigndiscussionCreateObjectV1Request {
      * @type {Array<EzsigndiscussionRequestCompound>}
      * @memberof EzsigndiscussionCreateObjectV1Request
      */
+    /*'a_objEzsigndiscussion': Array<EzsigndiscussionRequestCompound>;*/
     'a_objEzsigndiscussion': Array<EzsigndiscussionRequestCompound>;
 }
 /**

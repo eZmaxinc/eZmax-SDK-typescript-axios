@@ -28,7 +28,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for DELETE /1/object/permission/{pkiPermissionID}
  * @export
  */
-/** export type PermissionDeleteObjectV1Response = CommonResponse; */
+/*export type PermissionDeleteObjectV1Response = CommonResponse;*/
 export interface PermissionDeleteObjectV1Response {
     /**
      * 

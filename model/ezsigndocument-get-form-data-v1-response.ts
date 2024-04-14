@@ -31,7 +31,7 @@ import { EzsigndocumentGetFormDataV1ResponseMPayload } from './ezsigndocument-ge
  * Response for GET /1/object/ezsigndocument/{pkiEzsigndocument}/getFormData
  * @export
  */
-/** export type EzsigndocumentGetFormDataV1Response = CommonResponse; */
+/*export type EzsigndocumentGetFormDataV1Response = CommonResponse;*/
 export interface EzsigndocumentGetFormDataV1Response {
     /**
      * 

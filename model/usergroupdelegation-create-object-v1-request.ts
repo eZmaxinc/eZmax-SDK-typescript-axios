@@ -28,6 +28,7 @@ export interface UsergroupdelegationCreateObjectV1Request {
      * @type {Array<UsergroupdelegationRequestCompound>}
      * @memberof UsergroupdelegationCreateObjectV1Request
      */
+    /*'a_objUsergroupdelegation': Array<UsergroupdelegationRequestCompound>;*/
     'a_objUsergroupdelegation': Array<UsergroupdelegationRequestCompound>;
 }
 /**

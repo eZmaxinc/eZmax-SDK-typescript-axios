@@ -22,7 +22,7 @@ import { EzsigntemplatepackageRequest } from './ezsigntemplatepackage-request';
  * A Ezsigntemplatepackage Object and children
  * @export
  */
-/** export type EzsigntemplatepackageRequestCompound = EzsigntemplatepackageRequest; */
+/*export type EzsigntemplatepackageRequestCompound = EzsigntemplatepackageRequest;*/
 export interface EzsigntemplatepackageRequestCompound {
     /**
      * The unique ID of the Ezsigntemplatepackage

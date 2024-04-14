@@ -31,7 +31,7 @@ import { EzsignSuggestTemplatesV1ResponseMPayload } from './ezsign-suggest-templ
  * Response for GET /1/module/ezsign/suggestTemplates
  * @export
  */
-/** export type EzsignSuggestTemplatesV1Response = CommonResponse; */
+/*export type EzsignSuggestTemplatesV1Response = CommonResponse;*/
 export interface EzsignSuggestTemplatesV1Response {
     /**
      * 

@@ -28,30 +28,35 @@ export interface NotificationtestResponse {
      * @type {number}
      * @memberof NotificationtestResponse
      */
+    /*'pkiNotificationtestID': number;*/
     'pkiNotificationtestID': number;
     /**
      * 
      * @type {MultilingualNotificationtestName}
      * @memberof NotificationtestResponse
      */
+    /*'objNotificationtestName': MultilingualNotificationtestName;*/
     'objNotificationtestName': MultilingualNotificationtestName;
     /**
      * The unique ID of the Notificationsubsection
      * @type {number}
      * @memberof NotificationtestResponse
      */
+    /*'fkiNotificationsubsectionID': number;*/
     'fkiNotificationsubsectionID': number;
     /**
      * The function name of the Notificationtest
      * @type {string}
      * @memberof NotificationtestResponse
      */
+    /*'sNotificationtestFunction': string;*/
     'sNotificationtestFunction': string;
     /**
      * The name of the Notificationtest in the language of the requester
      * @type {string}
      * @memberof NotificationtestResponse
      */
+    /*'sNotificationtestNameX': string;*/
     'sNotificationtestNameX': string;
 }
 /**

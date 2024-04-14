@@ -31,7 +31,7 @@ import { EzsignfoldertypeGetListV1ResponseMPayload } from './ezsignfoldertype-ge
  * Response for GET /1/object/ezsignfoldertype/getList
  * @export
  */
-/** export type EzsignfoldertypeGetListV1Response = CommonResponseGetList; */
+/*export type EzsignfoldertypeGetListV1Response = CommonResponseGetList;*/
 export interface EzsignfoldertypeGetListV1Response {
     /**
      * 

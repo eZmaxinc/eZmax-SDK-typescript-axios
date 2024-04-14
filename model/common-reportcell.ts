@@ -25,12 +25,14 @@ export interface CommonReportcell {
      * @type {number}
      * @memberof CommonReportcell
      */
+    /*'iReportcellColumnspan': number;*/
     'iReportcellColumnspan': number;
     /**
      * The number of Reportrows the Reportcell spans
      * @type {number}
      * @memberof CommonReportcell
      */
+    /*'iReportcellRowspan': number;*/
     'iReportcellRowspan': number;
 }
 /**

@@ -28,6 +28,7 @@ export interface EzsigndiscussionGetObjectV2ResponseMPayload {
      * @type {EzsigndiscussionResponseCompound}
      * @memberof EzsigndiscussionGetObjectV2ResponseMPayload
      */
+    /*'objEzsigndiscussion': EzsigndiscussionResponseCompound;*/
     'objEzsigndiscussion': EzsigndiscussionResponseCompound;
 }
 /**

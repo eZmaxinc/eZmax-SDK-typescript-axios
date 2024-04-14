@@ -25,18 +25,21 @@ export interface FontAutocompleteElementResponse {
      * @type {string}
      * @memberof FontAutocompleteElementResponse
      */
+    /*'sFontName': string;*/
     'sFontName': string;
     /**
      * The unique ID of the Font
      * @type {number}
      * @memberof FontAutocompleteElementResponse
      */
+    /*'pkiFontID': number;*/
     'pkiFontID': number;
     /**
      * Whether the Font is active or not
      * @type {boolean}
      * @memberof FontAutocompleteElementResponse
      */
+    /*'bFontIsactive': boolean;*/
     'bFontIsactive': boolean;
 }
 /**

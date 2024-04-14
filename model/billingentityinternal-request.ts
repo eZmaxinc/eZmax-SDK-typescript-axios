@@ -28,12 +28,14 @@ export interface BillingentityinternalRequest {
      * @type {number}
      * @memberof BillingentityinternalRequest
      */
+    /*'pkiBillingentityinternalID'?: number;*/
     'pkiBillingentityinternalID'?: number;
     /**
      * 
      * @type {MultilingualBillingentityinternalDescription}
      * @memberof BillingentityinternalRequest
      */
+    /*'objBillingentityinternalDescription': MultilingualBillingentityinternalDescription;*/
     'objBillingentityinternalDescription': MultilingualBillingentityinternalDescription;
 }
 /**

@@ -28,6 +28,7 @@ export interface SystemconfigurationEditObjectV1Request {
      * @type {SystemconfigurationRequestCompound}
      * @memberof SystemconfigurationEditObjectV1Request
      */
+    /*'objSystemconfiguration': SystemconfigurationRequestCompound;*/
     'objSystemconfiguration': SystemconfigurationRequestCompound;
 }
 /**

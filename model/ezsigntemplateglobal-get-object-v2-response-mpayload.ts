@@ -28,6 +28,7 @@ export interface EzsigntemplateglobalGetObjectV2ResponseMPayload {
      * @type {EzsigntemplateglobalResponseCompound}
      * @memberof EzsigntemplateglobalGetObjectV2ResponseMPayload
      */
+    /*'objEzsigntemplateglobal': EzsigntemplateglobalResponseCompound;*/
     'objEzsigntemplateglobal': EzsigntemplateglobalResponseCompound;
 }
 /**

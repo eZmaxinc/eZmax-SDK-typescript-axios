@@ -22,7 +22,7 @@ import { CorsResponse } from './cors-response';
  * A Cors Object
  * @export
  */
-/** export type CorsResponseCompound = CorsResponse; */
+/*export type CorsResponseCompound = CorsResponse;*/
 export interface CorsResponseCompound {
     /**
      * The unique ID of the Cors
@@ -81,7 +81,7 @@ export class ValidationObjectCorsResponseCompound {
    }
    sCorsEntryurl = {
       type: 'string',
-      pattern: '/^.{0,2048}$/',
+      pattern: '/^(https|http):\\/\\/[^\s\\/$.?#].[^\s]*$/',
       required: true
    }
 } 

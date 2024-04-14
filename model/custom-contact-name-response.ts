@@ -25,18 +25,21 @@ export interface CustomContactNameResponse {
      * @type {string}
      * @memberof CustomContactNameResponse
      */
+    /*'sContactFirstname'?: string;*/
     'sContactFirstname'?: string;
     /**
      * The Last name of the contact
      * @type {string}
      * @memberof CustomContactNameResponse
      */
+    /*'sContactLastname'?: string;*/
     'sContactLastname'?: string;
     /**
      * The Company name of the contact
      * @type {string}
      * @memberof CustomContactNameResponse
      */
+    /*'sContactCompany'?: string;*/
     'sContactCompany'?: string;
 }
 /**

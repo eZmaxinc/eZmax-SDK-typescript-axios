@@ -28,6 +28,7 @@ export interface EzmaxinvoicingGetObjectV2ResponseMPayload {
      * @type {EzmaxinvoicingResponseCompound}
      * @memberof EzmaxinvoicingGetObjectV2ResponseMPayload
      */
+    /*'objEzmaxinvoicing': EzmaxinvoicingResponseCompound;*/
     'objEzmaxinvoicing': EzmaxinvoicingResponseCompound;
 }
 /**

@@ -22,7 +22,7 @@ import { CommunicationattachmentRequest } from './communicationattachment-reques
  * A Communicationattachment Object and children
  * @export
  */
-/** export type CommunicationattachmentRequestCompound = CommunicationattachmentRequest; */
+/*export type CommunicationattachmentRequestCompound = CommunicationattachmentRequest;*/
 export interface CommunicationattachmentRequestCompound {
     /**
      * The unique ID of the Communicationattachment

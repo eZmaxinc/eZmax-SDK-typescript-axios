@@ -25,7 +25,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * This is a debug object containing debugging information on the actual function
  * @export
  */
-/** export type CommonResponseObjDebugPayloadGetList = CommonResponseObjDebugPayload; */
+/*export type CommonResponseObjDebugPayloadGetList = CommonResponseObjDebugPayload;*/
 export interface CommonResponseObjDebugPayloadGetList {
     /**
      * The minimum version of the function that can be called
@@ -51,6 +51,12 @@ export interface CommonResponseObjDebugPayloadGetList {
      * @memberof CommonResponseObjDebugPayloadGetList
      */
     bVersionDeprecated:boolean 
+    /**
+     * Represent a Date Time. The timezone is the one configured in the User\'s profile.
+     * @type {string}
+     * @memberof CommonResponseObjDebugPayloadGetList
+     */
+    dtResponseDate:string 
     /**
      * 
      * @type {CommonResponseFilter}
@@ -98,6 +104,7 @@ export class DataObjectCommonResponseObjDebugPayloadGetList {
     iVersionMax:number = 0
     a_RequiredPermission:Array<number> = []
     bVersionDeprecated:boolean = false
+    dtResponseDate:string = ''
     a_Filter:CommonResponseFilter = new DataObjectCommonResponseFilter()
     a_OrderBy:{ [key: string]: string; } = {}
     iRowMax:number = 0
@@ -124,6 +131,10 @@ export class ValidationObjectCommonResponseObjDebugPayloadGetList {
    }
    bVersionDeprecated = {
       type: 'boolean',
+      required: true
+   }
+   dtResponseDate = {
+      type: 'string',
       required: true
    }
    a_Filter = new ValidationObjectCommonResponseFilter()

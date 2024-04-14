@@ -31,7 +31,7 @@ import { EzsignbulksendtransmissionGetFormsDataV1ResponseMPayload } from './ezsi
  * Response for GET /1/object/ezsignbulksendtransmission/{pkiEzsignbulksendtransmissionID}/getFormsData
  * @export
  */
-/** export type EzsignbulksendtransmissionGetFormsDataV1Response = CommonResponse; */
+/*export type EzsignbulksendtransmissionGetFormsDataV1Response = CommonResponse;*/
 export interface EzsignbulksendtransmissionGetFormsDataV1Response {
     /**
      * 

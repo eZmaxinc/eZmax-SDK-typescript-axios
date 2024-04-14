@@ -25,7 +25,7 @@ import { EzsigndiscussionRequest } from './ezsigndiscussion-request';
  * A Ezsigndiscussion Object and children
  * @export
  */
-/** export type EzsigndiscussionRequestCompound = EzsigndiscussionRequest; */
+/*export type EzsigndiscussionRequestCompound = EzsigndiscussionRequest;*/
 export interface EzsigndiscussionRequestCompound {
     /**
      * The unique ID of the Ezsigndiscussion

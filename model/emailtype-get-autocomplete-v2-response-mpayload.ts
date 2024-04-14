@@ -28,6 +28,7 @@ export interface EmailtypeGetAutocompleteV2ResponseMPayload {
      * @type {Array<EmailtypeAutocompleteElementResponse>}
      * @memberof EmailtypeGetAutocompleteV2ResponseMPayload
      */
+    /*'a_objEmailtype': Array<EmailtypeAutocompleteElementResponse>;*/
     'a_objEmailtype': Array<EmailtypeAutocompleteElementResponse>;
 }
 /**

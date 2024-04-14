@@ -25,7 +25,7 @@ import { UserListElement } from './user-list-element';
  * Payload for GET /1/object/user/getList
  * @export
  */
-/** export type UserGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload; */
+/*export type UserGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;*/
 export interface UserGetListV1ResponseMPayload {
     /**
      * The number of rows returned

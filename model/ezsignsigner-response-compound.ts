@@ -25,7 +25,7 @@ import { EzsignsignerResponseCompoundContact } from './ezsignsigner-response-com
  * An Ezsignsigner Object and children to create a complete structure
  * @export
  */
-/** export type EzsignsignerResponseCompound = EzsignsignerResponse; */
+/*export type EzsignsignerResponseCompound = EzsignsignerResponse;*/
 export interface EzsignsignerResponseCompound {
     /**
      * The unique ID of the Ezsignsigner

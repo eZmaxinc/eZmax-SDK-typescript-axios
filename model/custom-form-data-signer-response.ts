@@ -28,30 +28,35 @@ export interface CustomFormDataSignerResponse {
      * @type {number}
      * @memberof CustomFormDataSignerResponse
      */
+    /*'fkiEzsignfoldersignerassociationID': number;*/
     'fkiEzsignfoldersignerassociationID': number;
     /**
      * The unique ID of the User
      * @type {number}
      * @memberof CustomFormDataSignerResponse
      */
+    /*'fkiUserID'?: number;*/
     'fkiUserID'?: number;
     /**
      * The First name of the contact
      * @type {string}
      * @memberof CustomFormDataSignerResponse
      */
+    /*'sContactFirstname': string;*/
     'sContactFirstname': string;
     /**
      * The Last name of the contact
      * @type {string}
      * @memberof CustomFormDataSignerResponse
      */
+    /*'sContactLastname': string;*/
     'sContactLastname': string;
     /**
      * 
      * @type {Array<CustomFormDataEzsignformfieldgroupResponse>}
      * @memberof CustomFormDataSignerResponse
      */
+    /*'a_objEzsignformfieldgroup': Array<CustomFormDataEzsignformfieldgroupResponse>;*/
     'a_objEzsignformfieldgroup': Array<CustomFormDataEzsignformfieldgroupResponse>;
 }
 /**

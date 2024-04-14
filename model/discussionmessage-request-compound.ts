@@ -22,7 +22,7 @@ import { DiscussionmessageRequest } from './discussionmessage-request';
  * A Discussionmessage Object and children
  * @export
  */
-/** export type DiscussionmessageRequestCompound = DiscussionmessageRequest; */
+/*export type DiscussionmessageRequestCompound = DiscussionmessageRequest;*/
 export interface DiscussionmessageRequestCompound {
     /**
      * The unique ID of the Discussionmessage

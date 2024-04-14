@@ -25,18 +25,21 @@ export interface EzmaxinvoicingAutocompleteElementResponse {
      * @type {string}
      * @memberof EzmaxinvoicingAutocompleteElementResponse
      */
+    /*'yyyymmEzmaxinvoicing': string;*/
     'yyyymmEzmaxinvoicing': string;
     /**
      * The unique ID of the Ezmaxinvoicing
      * @type {number}
      * @memberof EzmaxinvoicingAutocompleteElementResponse
      */
+    /*'pkiEzmaxinvoicingID': number;*/
     'pkiEzmaxinvoicingID': number;
     /**
      * Whether the Ezmaxinvoicing is active or not
      * @type {boolean}
      * @memberof EzmaxinvoicingAutocompleteElementResponse
      */
+    /*'bEzmaxinvoicingIsactive': boolean;*/
     'bEzmaxinvoicingIsactive': boolean;
 }
 /**

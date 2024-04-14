@@ -22,7 +22,7 @@ import { EmailRequest } from './email-request';
  * An Email Object and children to create a complete structure
  * @export
  */
-/** export type EmailRequestCompound = EmailRequest; */
+/*export type EmailRequestCompound = EmailRequest;*/
 export interface EmailRequestCompound {
     /**
      * The unique ID of the Email
@@ -81,6 +81,7 @@ export class ValidationObjectEmailRequestCompound {
    }
    sEmailAddress = {
       type: 'string',
+      pattern: '/^[\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/',
       required: true
    }
 } 

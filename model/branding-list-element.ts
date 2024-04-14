@@ -25,54 +25,63 @@ export interface BrandingListElement {
      * @type {number}
      * @memberof BrandingListElement
      */
+    /*'pkiBrandingID': number;*/
     'pkiBrandingID': number;
     /**
      * The Description of the Branding in the language of the requester
      * @type {string}
      * @memberof BrandingListElement
      */
+    /*'sBrandingDescriptionX': string;*/
     'sBrandingDescriptionX': string;
     /**
      * The color of the text. This is a RGB color converted into integer
      * @type {number}
      * @memberof BrandingListElement
      */
+    /*'iBrandingColortext': number;*/
     'iBrandingColortext': number;
     /**
      * The color of the text in the link box. This is a RGB color converted into integer
      * @type {number}
      * @memberof BrandingListElement
      */
+    /*'iBrandingColortextlinkbox': number;*/
     'iBrandingColortextlinkbox': number;
     /**
      * The color of the text in the button. This is a RGB color converted into integer
      * @type {number}
      * @memberof BrandingListElement
      */
+    /*'iBrandingColortextbutton': number;*/
     'iBrandingColortextbutton': number;
     /**
      * The color of the background. This is a RGB color converted into integer
      * @type {number}
      * @memberof BrandingListElement
      */
+    /*'iBrandingColorbackground': number;*/
     'iBrandingColorbackground': number;
     /**
      * The color of the background of the button. This is a RGB color converted into integer
      * @type {number}
      * @memberof BrandingListElement
      */
+    /*'iBrandingColorbackgroundbutton': number;*/
     'iBrandingColorbackgroundbutton': number;
     /**
      * The color of the background of the small box. This is a RGB color converted into integer
      * @type {number}
      * @memberof BrandingListElement
      */
+    /*'iBrandingColorbackgroundsmallbox': number;*/
     'iBrandingColorbackgroundsmallbox': number;
     /**
      * Whether the Branding is active or not
      * @type {boolean}
      * @memberof BrandingListElement
      */
+    /*'bBrandingIsactive': boolean;*/
     'bBrandingIsactive': boolean;
 }
 /**

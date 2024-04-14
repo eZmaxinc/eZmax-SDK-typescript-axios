@@ -25,7 +25,7 @@ import { ModulesectionResponseCompound } from './modulesection-response-compound
  * A Module Object
  * @export
  */
-/** export type ModuleResponseCompound = ModuleResponse; */
+/*export type ModuleResponseCompound = ModuleResponse;*/
 export interface ModuleResponseCompound {
     /**
      * The unique ID of the Module

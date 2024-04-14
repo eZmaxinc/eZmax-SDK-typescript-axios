@@ -25,36 +25,42 @@ export interface EzsigntemplateRequest {
      * @type {number}
      * @memberof EzsigntemplateRequest
      */
+    /*'pkiEzsigntemplateID'?: number;*/
     'pkiEzsigntemplateID'?: number;
     /**
      * The unique ID of the Ezsignfoldertype.
      * @type {number}
      * @memberof EzsigntemplateRequest
      */
+    /*'fkiEzsignfoldertypeID': number;*/
     'fkiEzsignfoldertypeID': number;
     /**
      * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @type {number}
      * @memberof EzsigntemplateRequest
      */
+    /*'fkiLanguageID': number;*/
     'fkiLanguageID': number;
     /**
      * The description of the Ezsigntemplate
      * @type {string}
      * @memberof EzsigntemplateRequest
      */
+    /*'sEzsigntemplateDescription': string;*/
     'sEzsigntemplateDescription': string;
     /**
      * The filename pattern of the Ezsigntemplate
      * @type {string}
      * @memberof EzsigntemplateRequest
      */
+    /*'sEzsigntemplateFilenamepattern'?: string;*/
     'sEzsigntemplateFilenamepattern'?: string;
     /**
      * Whether the Ezsigntemplate can be accessed by admin users only (eUserType=Normal)
      * @type {boolean}
      * @memberof EzsigntemplateRequest
      */
+    /*'bEzsigntemplateAdminonly': boolean;*/
     'bEzsigntemplateAdminonly': boolean;
 }
 /**

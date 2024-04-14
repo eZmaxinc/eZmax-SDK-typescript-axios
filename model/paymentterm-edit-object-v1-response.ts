@@ -28,7 +28,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for PUT /1/object/paymentterm/{pkiPaymenttermID}
  * @export
  */
-/** export type PaymenttermEditObjectV1Response = CommonResponse; */
+/*export type PaymenttermEditObjectV1Response = CommonResponse;*/
 export interface PaymenttermEditObjectV1Response {
     /**
      * 

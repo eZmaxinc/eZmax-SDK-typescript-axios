@@ -25,30 +25,35 @@ export interface CustomDiscussionconfigurationResponse {
      * @type {boolean}
      * @memberof CustomDiscussionconfigurationResponse
      */
+    /*'bDiscussionconfigurationCompletehistorywhenadded': boolean;*/
     'bDiscussionconfigurationCompletehistorywhenadded': boolean;
     /**
      * If the the creation of the Discussion is allowed or not
      * @type {boolean}
      * @memberof CustomDiscussionconfigurationResponse
      */
+    /*'bDiscussionconfigurationCreateallowed': boolean;*/
     'bDiscussionconfigurationCreateallowed': boolean;
     /**
      * If the the destruction of the Discussion is allowed or not
      * @type {boolean}
      * @memberof CustomDiscussionconfigurationResponse
      */
+    /*'bDiscussionconfigurationDeleteallowed': boolean;*/
     'bDiscussionconfigurationDeleteallowed': boolean;
     /**
      * If the the destruction of the Discussionmessage is allowed or not
      * @type {boolean}
      * @memberof CustomDiscussionconfigurationResponse
      */
+    /*'bDiscussionconfigurationDeletediscussionmessageallowed': boolean;*/
     'bDiscussionconfigurationDeletediscussionmessageallowed': boolean;
     /**
      * If the the creation of the Discussionmessage is allowed or not
      * @type {boolean}
      * @memberof CustomDiscussionconfigurationResponse
      */
+    /*'bDiscussionconfigurationEditdiscussionmessageallowed': boolean;*/
     'bDiscussionconfigurationEditdiscussionmessageallowed': boolean;
 }
 /**

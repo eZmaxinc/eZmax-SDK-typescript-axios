@@ -28,6 +28,7 @@ export interface ModulegroupGetAllV1ResponseMPayload {
      * @type {Array<ModulegroupResponseCompound>}
      * @memberof ModulegroupGetAllV1ResponseMPayload
      */
+    /*'a_objModulegroup': Array<ModulegroupResponseCompound>;*/
     'a_objModulegroup': Array<ModulegroupResponseCompound>;
 }
 /**

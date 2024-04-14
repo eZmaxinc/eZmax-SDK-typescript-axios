@@ -31,7 +31,7 @@ import { CommonResponseObjDebugPayloadGetList } from './common-response-obj-debu
  * Response for GET /1/object/activesession/getList
  * @export
  */
-/** export type ActivesessionGetListV1Response = CommonResponseGetList; */
+/*export type ActivesessionGetListV1Response = CommonResponseGetList;*/
 export interface ActivesessionGetListV1Response {
     /**
      * 

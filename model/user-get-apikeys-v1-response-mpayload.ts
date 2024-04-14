@@ -28,6 +28,7 @@ export interface UserGetApikeysV1ResponseMPayload {
      * @type {Array<ApikeyResponseCompound>}
      * @memberof UserGetApikeysV1ResponseMPayload
      */
+    /*'a_objApikey': Array<ApikeyResponseCompound>;*/
     'a_objApikey': Array<ApikeyResponseCompound>;
 }
 /**

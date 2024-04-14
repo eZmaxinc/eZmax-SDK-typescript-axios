@@ -25,7 +25,7 @@ import { ContactinformationsRequestCompound } from './contactinformations-reques
  * A Contact Object and children to create a complete structure
  * @export
  */
-/** export type ContactRequestCompound = ContactRequest; */
+/*export type ContactRequestCompound = ContactRequest;*/
 export interface ContactRequestCompound {
     /**
      * The unique ID of the Contacttitle.  Valid values:  |Value|Description| |-|-| |1|Ms.| |2|Mr.| |4|(Blank)| |5|Me (For Notaries)|

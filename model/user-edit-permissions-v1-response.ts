@@ -31,7 +31,7 @@ import { UserEditPermissionsV1ResponseMPayload } from './user-edit-permissions-v
  * Response for PUT /1/object/user/{pkiUserID}/editPermissions
  * @export
  */
-/** export type UserEditPermissionsV1Response = CommonResponse; */
+/*export type UserEditPermissionsV1Response = CommonResponse;*/
 export interface UserEditPermissionsV1Response {
     /**
      * 

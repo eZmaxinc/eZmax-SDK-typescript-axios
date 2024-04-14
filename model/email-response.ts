@@ -25,18 +25,21 @@ export interface EmailResponse {
      * @type {number}
      * @memberof EmailResponse
      */
+    /*'pkiEmailID': number;*/
     'pkiEmailID': number;
     /**
      * The unique ID of the Emailtype.  Valid values:  |Value|Description| |-|-| |1|Office| |2|Home|
      * @type {number}
      * @memberof EmailResponse
      */
+    /*'fkiEmailtypeID': number;*/
     'fkiEmailtypeID': number;
     /**
      * The email address.
      * @type {string}
      * @memberof EmailResponse
      */
+    /*'sEmailAddress': string;*/
     'sEmailAddress': string;
 }
 /**
@@ -75,6 +78,7 @@ export class ValidationObjectEmailResponse {
    }
    sEmailAddress = {
       type: 'string',
+      pattern: '/^[\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/',
       required: true
    }
 } 

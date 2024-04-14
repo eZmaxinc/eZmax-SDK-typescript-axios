@@ -28,12 +28,14 @@ export interface EzsigndocumentSubmitEzsignformV1Request {
      * @type {boolean}
      * @memberof EzsigndocumentSubmitEzsignformV1Request
      */
+    /*'bEzsignformIsdraft': boolean;*/
     'bEzsignformIsdraft': boolean;
     /**
      * 
      * @type {Array<CustomEzsignformfieldgroupRequest>}
      * @memberof EzsigndocumentSubmitEzsignformV1Request
      */
+    /*'a_objEzsignformfieldgroup': Array<CustomEzsignformfieldgroupRequest>;*/
     'a_objEzsignformfieldgroup': Array<CustomEzsignformfieldgroupRequest>;
 }
 /**

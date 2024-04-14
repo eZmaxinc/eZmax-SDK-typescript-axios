@@ -31,12 +31,14 @@ export interface CustomCommunicationattachmentRequest {
      * @type {CommunicationattachmentRequestCompound}
      * @memberof CustomCommunicationattachmentRequest
      */
+    /*'objCommunicationattachment'?: CommunicationattachmentRequestCompound;*/
     'objCommunicationattachment'?: CommunicationattachmentRequestCompound;
     /**
      * 
      * @type {CommonFile}
      * @memberof CustomCommunicationattachmentRequest
      */
+    /*'objCommunicationexternalattachment'?: CommonFile;*/
     'objCommunicationexternalattachment'?: CommonFile;
 }
 /**

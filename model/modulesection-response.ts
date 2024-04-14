@@ -25,24 +25,28 @@ export interface ModulesectionResponse {
      * @type {number}
      * @memberof ModulesectionResponse
      */
+    /*'pkiModulesectionID': number;*/
     'pkiModulesectionID': number;
     /**
      * The unique ID of the Module
      * @type {number}
      * @memberof ModulesectionResponse
      */
+    /*'fkiModuleID': number;*/
     'fkiModuleID': number;
     /**
      * The Internal name of the Module section.
      * @type {string}
      * @memberof ModulesectionResponse
      */
+    /*'sModulesectionInternalname': string;*/
     'sModulesectionInternalname': string;
     /**
      * The Name of the Modulesection in the language of the requester
      * @type {string}
      * @memberof ModulesectionResponse
      */
+    /*'sModulesectionNameX': string;*/
     'sModulesectionNameX': string;
 }
 /**

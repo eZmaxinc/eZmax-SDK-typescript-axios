@@ -31,7 +31,7 @@ import { DiscussionmembershipCreateObjectV1ResponseMPayload } from './discussion
  * Response for POST /1/object/discussionmembership
  * @export
  */
-/** export type DiscussionmembershipCreateObjectV1Response = CommonResponse; */
+/*export type DiscussionmembershipCreateObjectV1Response = CommonResponse;*/
 export interface DiscussionmembershipCreateObjectV1Response {
     /**
      * 

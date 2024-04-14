@@ -34,7 +34,7 @@ import { EzsignfoldersignerassociationResponseCompound } from './ezsignfoldersig
  * This is the base Webhook object
  * @export
  */
-/** export type WebhookEzsignEzsignsignerAcceptclause = CommonWebhook; */
+/*export type WebhookEzsignEzsignsignerAcceptclause = CommonWebhook;*/
 export interface WebhookEzsignEzsignsignerAcceptclause {
     /**
      * 

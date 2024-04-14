@@ -31,7 +31,7 @@ import { EzsignbulksendGetEzsignsignaturesAutomaticV1ResponseMPayload } from './
  * Response for GET /1/object/ezsignbulksend/{pkiEzsignbulksendID}/getEzsignsignaturesAutomatic
  * @export
  */
-/** export type EzsignbulksendGetEzsignsignaturesAutomaticV1Response = CommonResponse; */
+/*export type EzsignbulksendGetEzsignsignaturesAutomaticV1Response = CommonResponse;*/
 export interface EzsignbulksendGetEzsignsignaturesAutomaticV1Response {
     /**
      * 

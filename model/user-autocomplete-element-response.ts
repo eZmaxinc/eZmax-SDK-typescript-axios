@@ -28,24 +28,28 @@ export interface UserAutocompleteElementResponse {
      * @type {FieldEUserType}
      * @memberof UserAutocompleteElementResponse
      */
+    /*'eUserType': FieldEUserType;*/
     'eUserType': FieldEUserType;
     /**
      * The description of the User in the language of the requester
      * @type {string}
      * @memberof UserAutocompleteElementResponse
      */
+    /*'sUserName': string;*/
     'sUserName': string;
     /**
      * The unique ID of the User
      * @type {number}
      * @memberof UserAutocompleteElementResponse
      */
+    /*'pkiUserID': number;*/
     'pkiUserID': number;
     /**
      * Whether the User is active or not
      * @type {boolean}
      * @memberof UserAutocompleteElementResponse
      */
+    /*'bUserIsactive': boolean;*/
     'bUserIsactive': boolean;
 }
 

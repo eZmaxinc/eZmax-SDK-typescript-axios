@@ -22,7 +22,7 @@ import { BillingentityinternalproductResponse } from './billingentityinternalpro
  * A Billingentityinternalproduct Object
  * @export
  */
-/** export type BillingentityinternalproductResponseCompound = BillingentityinternalproductResponse; */
+/*export type BillingentityinternalproductResponseCompound = BillingentityinternalproductResponse;*/
 export interface BillingentityinternalproductResponseCompound {
     /**
      * The unique ID of the Billingentityinternalproduct

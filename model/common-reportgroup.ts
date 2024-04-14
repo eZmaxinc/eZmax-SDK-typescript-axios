@@ -31,12 +31,14 @@ export interface CommonReportgroup {
      * @type {Array<CommonReport>}
      * @memberof CommonReportgroup
      */
+    /*'a_objReport': Array<CommonReport>;*/
     'a_objReport': Array<CommonReport>;
     /**
      * 
      * @type {Array<CommonReportcellstyle>}
      * @memberof CommonReportgroup
      */
+    /*'a_objReportcellstyleCustom': Array<CommonReportcellstyle>;*/
     'a_objReportcellstyleCustom': Array<CommonReportcellstyle>;
 }
 /**

@@ -28,6 +28,7 @@ export interface UserGetObjectV2ResponseMPayload {
      * @type {UserResponseCompound}
      * @memberof UserGetObjectV2ResponseMPayload
      */
+    /*'objUser': UserResponseCompound;*/
     'objUser': UserResponseCompound;
 }
 /**

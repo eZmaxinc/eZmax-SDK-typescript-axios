@@ -34,30 +34,35 @@ export interface CommonReportsection {
      * @type {Array<CommonReportsubsection>}
      * @memberof CommonReportsection
      */
+    /*'a_objReportsubsection': Array<CommonReportsubsection>;*/
     'a_objReportsubsection': Array<CommonReportsubsection>;
     /**
      * 
      * @type {Array<CommonReportcolumn>}
      * @memberof CommonReportsection
      */
+    /*'a_objReportcolumn': Array<CommonReportcolumn>;*/
     'a_objReportcolumn': Array<CommonReportcolumn>;
     /**
      * 
      * @type {EnumHorizontalalignment}
      * @memberof CommonReportsection
      */
+    /*'eReportsectionHorizontalalignment': EnumHorizontalalignment;*/
     'eReportsectionHorizontalalignment': EnumHorizontalalignment;
     /**
      * The number of Reportcolumns in the Reportsection
      * @type {number}
      * @memberof CommonReportsection
      */
+    /*'iReportsectionColumncount': number;*/
     'iReportsectionColumncount': number;
     /**
      * The combined width of all the Reportcolumns in the Reportsection
      * @type {number}
      * @memberof CommonReportsection
      */
+    /*'iReportsectionWidth': number;*/
     'iReportsectionWidth': number;
 }
 

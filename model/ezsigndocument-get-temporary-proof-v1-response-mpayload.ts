@@ -28,6 +28,7 @@ export interface EzsigndocumentGetTemporaryProofV1ResponseMPayload {
      * @type {Array<EzsigndocumentlogResponseCompound>}
      * @memberof EzsigndocumentGetTemporaryProofV1ResponseMPayload
      */
+    /*'a_objEzsigndocumentlog': Array<EzsigndocumentlogResponseCompound>;*/
     'a_objEzsigndocumentlog': Array<EzsigndocumentlogResponseCompound>;
 }
 /**

@@ -31,7 +31,7 @@ import { EzsigntemplateglobalGetAutocompleteV2ResponseMPayload } from './ezsignt
  * Response for GET /2/object/ezsigntemplateglobal/getAutocomplete
  * @export
  */
-/** export type EzsigntemplateglobalGetAutocompleteV2Response = CommonResponse; */
+/*export type EzsigntemplateglobalGetAutocompleteV2Response = CommonResponse;*/
 export interface EzsigntemplateglobalGetAutocompleteV2Response {
     /**
      * 

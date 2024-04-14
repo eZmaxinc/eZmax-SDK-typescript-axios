@@ -25,7 +25,7 @@ import { MultilingualEzsignsigningreasonDescription } from './multilingual-ezsig
  * A Ezsignsigningreason Object
  * @export
  */
-/** export type EzsignsigningreasonResponseCompound = EzsignsigningreasonResponse; */
+/*export type EzsignsigningreasonResponseCompound = EzsignsigningreasonResponse;*/
 export interface EzsignsigningreasonResponseCompound {
     /**
      * The unique ID of the Ezsignsigningreason

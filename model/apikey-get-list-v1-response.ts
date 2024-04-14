@@ -31,7 +31,7 @@ import { CommonResponseObjDebugPayloadGetList } from './common-response-obj-debu
  * Response for GET /1/object/apikey/getList
  * @export
  */
-/** export type ApikeyGetListV1Response = CommonResponseGetList; */
+/*export type ApikeyGetListV1Response = CommonResponseGetList;*/
 export interface ApikeyGetListV1Response {
     /**
      * 

@@ -31,7 +31,7 @@ import { EzsigndiscussionGetObjectV2ResponseMPayload } from './ezsigndiscussion-
  * Response for GET /2/object/ezsigndiscussion/{pkiEzsigndiscussionID}
  * @export
  */
-/** export type EzsigndiscussionGetObjectV2Response = CommonResponse; */
+/*export type EzsigndiscussionGetObjectV2Response = CommonResponse;*/
 export interface EzsigndiscussionGetObjectV2Response {
     /**
      * 

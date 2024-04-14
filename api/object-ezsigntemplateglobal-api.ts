@@ -14,13 +14,13 @@
 
 
 import type { Configuration } from '../configuration';
-import type { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
+import type { AxiosPromise, AxiosInstance, RawAxiosRequestConfig } from 'axios';
 import globalAxios from 'axios';
 // Some imports not used depending on template conditions
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
 import { CommonResponseError } from '../model';
 // @ts-ignore
@@ -47,7 +47,7 @@ export const ObjectEzsigntemplateglobalApiAxiosParamCreator = function (configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigntemplateglobalGetAutocompleteV2: async (sSelector: EzsigntemplateglobalGetAutocompleteV2SSelectorEnum, eFilterActive?: EzsigntemplateglobalGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsigntemplateglobalGetAutocompleteV2: async (sSelector: EzsigntemplateglobalGetAutocompleteV2SSelectorEnum, eFilterActive?: EzsigntemplateglobalGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('ezsigntemplateglobalGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/ezsigntemplateglobal/getAutocomplete/{sSelector}`
@@ -55,6 +55,7 @@ export const ObjectEzsigntemplateglobalApiAxiosParamCreator = function (configur
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -78,8 +79,8 @@ export const ObjectEzsigntemplateglobalApiAxiosParamCreator = function (configur
             }
 
             if (acceptLanguage != null) {
-                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string' 
-                    ? acceptLanguage 
+                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
+                    ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
 
@@ -87,6 +88,7 @@ export const ObjectEzsigntemplateglobalApiAxiosParamCreator = function (configur
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -117,7 +119,7 @@ export const ObjectEzsigntemplateglobalApiAxiosParamCreator = function (configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigntemplateglobalGetObjectV2: async (pkiEzsigntemplateglobalID: number, options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsigntemplateglobalGetObjectV2: async (pkiEzsigntemplateglobalID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsigntemplateglobalID' is not null or undefined
             assertParamExists('ezsigntemplateglobalGetObjectV2', 'pkiEzsigntemplateglobalID', pkiEzsigntemplateglobalID)
             const localVarPath = `/2/object/ezsigntemplateglobal/{pkiEzsigntemplateglobalID}`
@@ -125,6 +127,7 @@ export const ObjectEzsigntemplateglobalApiAxiosParamCreator = function (configur
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             const localVarUrlObj = new URL(localVarPath, basePath);
 
             let baseOptions;
@@ -143,6 +146,7 @@ export const ObjectEzsigntemplateglobalApiAxiosParamCreator = function (configur
     
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
 
             // Signature
@@ -186,9 +190,11 @@ export const ObjectEzsigntemplateglobalApiFp = function(configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsigntemplateglobalGetAutocompleteV2(sSelector: EzsigntemplateglobalGetAutocompleteV2SSelectorEnum, eFilterActive?: EzsigntemplateglobalGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigntemplateglobalGetAutocompleteV2Response>> {
+        async ezsigntemplateglobalGetAutocompleteV2(sSelector: EzsigntemplateglobalGetAutocompleteV2SSelectorEnum, eFilterActive?: EzsigntemplateglobalGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigntemplateglobalGetAutocompleteV2Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigntemplateglobalGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsigntemplateglobalApi.ezsigntemplateglobalGetAutocompleteV2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
          * 
@@ -197,9 +203,11 @@ export const ObjectEzsigntemplateglobalApiFp = function(configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsigntemplateglobalGetObjectV2(pkiEzsigntemplateglobalID: number, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigntemplateglobalGetObjectV2Response>> {
+        async ezsigntemplateglobalGetObjectV2(pkiEzsigntemplateglobalID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigntemplateglobalGetObjectV2Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigntemplateglobalGetObjectV2(pkiEzsigntemplateglobalID, options);
-            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsigntemplateglobalApi.ezsigntemplateglobalGetObjectV2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
@@ -255,7 +263,7 @@ export class ObjectEzsigntemplateglobalApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsigntemplateglobalApi
      */
-    public ezsigntemplateglobalGetAutocompleteV2(sSelector: EzsigntemplateglobalGetAutocompleteV2SSelectorEnum, eFilterActive?: EzsigntemplateglobalGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: AxiosRequestConfig) {
+    public ezsigntemplateglobalGetAutocompleteV2(sSelector: EzsigntemplateglobalGetAutocompleteV2SSelectorEnum, eFilterActive?: EzsigntemplateglobalGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig) {
         return ObjectEzsigntemplateglobalApiFp(this.configuration).ezsigntemplateglobalGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(this.axios, this.basePath));
     }
 
@@ -267,7 +275,7 @@ export class ObjectEzsigntemplateglobalApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ObjectEzsigntemplateglobalApi
      */
-    public ezsigntemplateglobalGetObjectV2(pkiEzsigntemplateglobalID: number, options?: AxiosRequestConfig) {
+    public ezsigntemplateglobalGetObjectV2(pkiEzsigntemplateglobalID: number, options?: RawAxiosRequestConfig) {
         return ObjectEzsigntemplateglobalApiFp(this.configuration).ezsigntemplateglobalGetObjectV2(pkiEzsigntemplateglobalID, options).then((request) => request(this.axios, this.basePath));
     }
 }

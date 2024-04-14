@@ -25,18 +25,21 @@ export interface EzsigndocumentApplyEzsigntemplateglobalV1Request {
      * @type {number}
      * @memberof EzsigndocumentApplyEzsigntemplateglobalV1Request
      */
+    /*'fkiEzsigntemplateglobalID': number;*/
     'fkiEzsigntemplateglobalID': number;
     /**
      * 
      * @type {Array<string>}
      * @memberof EzsigndocumentApplyEzsigntemplateglobalV1Request
      */
+    /*'a_sEzsigntemplateglobalsigner': Array<string>;*/
     'a_sEzsigntemplateglobalsigner': Array<string>;
     /**
      * 
      * @type {Array<number>}
      * @memberof EzsigndocumentApplyEzsigntemplateglobalV1Request
      */
+    /*'a_pkiEzsignfoldersignerassociationID': Array<number>;*/
     'a_pkiEzsignfoldersignerassociationID': Array<number>;
 }
 /**

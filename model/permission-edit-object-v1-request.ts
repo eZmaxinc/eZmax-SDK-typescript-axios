@@ -28,6 +28,7 @@ export interface PermissionEditObjectV1Request {
      * @type {PermissionRequestCompound}
      * @memberof PermissionEditObjectV1Request
      */
+    /*'objPermission': PermissionRequestCompound;*/
     'objPermission': PermissionRequestCompound;
 }
 /**

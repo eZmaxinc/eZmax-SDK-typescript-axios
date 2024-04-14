@@ -25,6 +25,7 @@ export interface EzsignfolderImportEzsignfoldersignerassociationsV1ResponseMPayl
      * @type {Array<number>}
      * @memberof EzsignfolderImportEzsignfoldersignerassociationsV1ResponseMPayload
      */
+    /*'a_pkiEzsignfoldersignerassociationID': Array<number>;*/
     'a_pkiEzsignfoldersignerassociationID': Array<number>;
 }
 /**

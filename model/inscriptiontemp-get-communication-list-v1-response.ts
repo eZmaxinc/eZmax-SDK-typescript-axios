@@ -31,7 +31,7 @@ import { InscriptiontempGetCommunicationListV1ResponseMPayload } from './inscrip
  * Response for GET /1/object/inscriptiontemp/{pkiInscriptiontempID}/getCommunicationList
  * @export
  */
-/** export type InscriptiontempGetCommunicationListV1Response = CommonResponseGetList; */
+/*export type InscriptiontempGetCommunicationListV1Response = CommonResponseGetList;*/
 export interface InscriptiontempGetCommunicationListV1Response {
     /**
      * 

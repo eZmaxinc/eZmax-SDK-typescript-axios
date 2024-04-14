@@ -28,6 +28,7 @@ export interface SubnetCreateObjectV1Request {
      * @type {Array<SubnetRequestCompound>}
      * @memberof SubnetCreateObjectV1Request
      */
+    /*'a_objSubnet': Array<SubnetRequestCompound>;*/
     'a_objSubnet': Array<SubnetRequestCompound>;
 }
 /**

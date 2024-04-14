@@ -31,7 +31,7 @@ import { UsergroupGetPermissionsV1ResponseMPayload } from './usergroup-get-permi
  * Response for GET /1/object/usergroup/{pkiUsergroupID}/getPermissions
  * @export
  */
-/** export type UsergroupGetPermissionsV1Response = CommonResponse; */
+/*export type UsergroupGetPermissionsV1Response = CommonResponse;*/
 export interface UsergroupGetPermissionsV1Response {
     /**
      * 

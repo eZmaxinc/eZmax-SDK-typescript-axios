@@ -28,6 +28,7 @@ export interface EzsignsigningreasonCreateObjectV1Request {
      * @type {Array<EzsignsigningreasonRequestCompound>}
      * @memberof EzsignsigningreasonCreateObjectV1Request
      */
+    /*'a_objEzsignsigningreason': Array<EzsignsigningreasonRequestCompound>;*/
     'a_objEzsignsigningreason': Array<EzsignsigningreasonRequestCompound>;
 }
 /**

@@ -31,7 +31,7 @@ import { CommonResponseObjDebugPayload } from './common-response-obj-debug-paylo
  * Response for POST /1/object/branding
  * @export
  */
-/** export type BrandingCreateObjectV1Response = CommonResponse; */
+/*export type BrandingCreateObjectV1Response = CommonResponse;*/
 export interface BrandingCreateObjectV1Response {
     /**
      * 

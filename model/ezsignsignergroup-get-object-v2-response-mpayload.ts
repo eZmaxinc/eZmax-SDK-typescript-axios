@@ -28,6 +28,7 @@ export interface EzsignsignergroupGetObjectV2ResponseMPayload {
      * @type {EzsignsignergroupResponseCompound}
      * @memberof EzsignsignergroupGetObjectV2ResponseMPayload
      */
+    /*'objEzsignsignergroup': EzsignsignergroupResponseCompound;*/
     'objEzsignsignergroup': EzsignsignergroupResponseCompound;
 }
 /**

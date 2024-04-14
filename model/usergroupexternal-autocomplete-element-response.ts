@@ -25,18 +25,21 @@ export interface UsergroupexternalAutocompleteElementResponse {
      * @type {number}
      * @memberof UsergroupexternalAutocompleteElementResponse
      */
+    /*'pkiUsergroupexternalID': number;*/
     'pkiUsergroupexternalID': number;
     /**
      * The name of the Usergroupexternal
      * @type {string}
      * @memberof UsergroupexternalAutocompleteElementResponse
      */
+    /*'sUsergroupexternalName': string;*/
     'sUsergroupexternalName': string;
     /**
      * Whether the Usergroupexternal is active or not
      * @type {boolean}
      * @memberof UsergroupexternalAutocompleteElementResponse
      */
+    /*'bUsergroupexternalIsactive': boolean;*/
     'bUsergroupexternalIsactive': boolean;
 }
 /**

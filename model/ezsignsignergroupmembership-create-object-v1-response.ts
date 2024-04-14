@@ -31,7 +31,7 @@ import { EzsignsignergroupmembershipCreateObjectV1ResponseMPayload } from './ezs
  * Response for POST /1/object/ezsignsignergroupmembership
  * @export
  */
-/** export type EzsignsignergroupmembershipCreateObjectV1Response = CommonResponse; */
+/*export type EzsignsignergroupmembershipCreateObjectV1Response = CommonResponse;*/
 export interface EzsignsignergroupmembershipCreateObjectV1Response {
     /**
      * 

@@ -25,12 +25,14 @@ export interface MultilingualBrandingDescription {
      * @type {string}
      * @memberof MultilingualBrandingDescription
      */
+    /*'sBrandingDescription1'?: string;*/
     'sBrandingDescription1'?: string;
     /**
      * The description of the Branding in English
      * @type {string}
      * @memberof MultilingualBrandingDescription
      */
+    /*'sBrandingDescription2'?: string;*/
     'sBrandingDescription2'?: string;
 }
 /**

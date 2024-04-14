@@ -25,30 +25,35 @@ export interface EzmaxinvoicingsummaryexternalResponse {
      * @type {number}
      * @memberof EzmaxinvoicingsummaryexternalResponse
      */
+    /*'pkiEzmaxinvoicingsummaryexternalID'?: number;*/
     'pkiEzmaxinvoicingsummaryexternalID'?: number;
     /**
      * The unique ID of the Ezmaxinvoicing
      * @type {number}
      * @memberof EzmaxinvoicingsummaryexternalResponse
      */
+    /*'fkiEzmaxinvoicingID'?: number;*/
     'fkiEzmaxinvoicingID'?: number;
     /**
      * The unique ID of the Billingentityexternal
      * @type {number}
      * @memberof EzmaxinvoicingsummaryexternalResponse
      */
+    /*'fkiBillingentityexternalID': number;*/
     'fkiBillingentityexternalID': number;
     /**
      * The description of the Billingentityexternal
      * @type {string}
      * @memberof EzmaxinvoicingsummaryexternalResponse
      */
+    /*'sBillingentityexternalDescription': string;*/
     'sBillingentityexternalDescription': string;
     /**
      * The description of the Ezmaxinvoicingsummaryexternal
      * @type {string}
      * @memberof EzmaxinvoicingsummaryexternalResponse
      */
+    /*'sEzmaxinvoicingsummaryexternalDescription': string;*/
     'sEzmaxinvoicingsummaryexternalDescription': string;
 }
 /**

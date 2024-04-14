@@ -25,12 +25,14 @@ export interface DiscussionRequestPatch {
      * @type {string}
      * @memberof DiscussionRequestPatch
      */
+    /*'sDiscussionDescription'?: string;*/
     'sDiscussionDescription'?: string;
     /**
      * Whether if it\'s an closed
      * @type {boolean}
      * @memberof DiscussionRequestPatch
      */
+    /*'bDiscussionClosed'?: boolean;*/
     'bDiscussionClosed'?: boolean;
 }
 /**

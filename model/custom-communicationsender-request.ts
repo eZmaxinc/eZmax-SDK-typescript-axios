@@ -25,30 +25,35 @@ export interface CustomCommunicationsenderRequest {
      * @type {number}
      * @memberof CustomCommunicationsenderRequest
      */
+    /*'fkiAgentID'?: number;*/
     'fkiAgentID'?: number;
     /**
      * The unique ID of the Broker.
      * @type {number}
      * @memberof CustomCommunicationsenderRequest
      */
+    /*'fkiBrokerID'?: number;*/
     'fkiBrokerID'?: number;
     /**
      * The unique ID of the Mailboxshared
      * @type {number}
      * @memberof CustomCommunicationsenderRequest
      */
+    /*'fkiMailboxsharedID'?: number;*/
     'fkiMailboxsharedID'?: number;
     /**
      * The unique ID of the Phonelineshared
      * @type {number}
      * @memberof CustomCommunicationsenderRequest
      */
+    /*'fkiPhonelinesharedID'?: number;*/
     'fkiPhonelinesharedID'?: number;
     /**
      * The unique ID of the User
      * @type {number}
      * @memberof CustomCommunicationsenderRequest
      */
+    /*'fkiUserID'?: number;*/
     'fkiUserID'?: number;
 }
 /**
