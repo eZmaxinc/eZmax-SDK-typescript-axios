@@ -85,7 +85,7 @@ export class ValidationObjectWebsocketResponseInformationV1 {
    }
    sWebsocketChannel = {
       type: 'string',
-      pattern: '/^[a-zA-Z0-9_@.]{32}$/',
+      pattern: /^[a-zA-Z0-9_@.]{32}$/,
       required: true
    }
    mPayload = new ValidationObjectWebsocketResponseInformationV1MPayload()

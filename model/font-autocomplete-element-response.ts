@@ -67,7 +67,7 @@ export class DataObjectFontAutocompleteElementResponse {
 export class ValidationObjectFontAutocompleteElementResponse {
    sFontName = {
       type: 'string',
-      pattern: '/^.{0,50}$/',
+      pattern: /^.{0,50}$/,
       required: true
    }
    pkiFontID = {

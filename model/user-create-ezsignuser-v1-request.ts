@@ -124,7 +124,7 @@ export class ValidationObjectUserCreateEzsignuserV1Request {
    }
    sEmailAddress = {
       type: 'string',
-      pattern: '/^[\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/',
+      pattern: /^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/,
       required: true
    }
    sPhoneRegion = {

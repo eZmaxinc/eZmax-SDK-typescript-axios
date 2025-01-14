@@ -24,7 +24,19 @@ import { ActivesessionResponseCompoundApikey } from './activesession-response-co
 import { ActivesessionResponseCompoundUser } from './activesession-response-compound-user';
 // May contain unused imports in some cases
 // @ts-ignore
+import { FieldEActivesessionEzsign } from './field-eactivesession-ezsign';
+// May contain unused imports in some cases
+// @ts-ignore
+import { FieldEActivesessionEzsignaccess } from './field-eactivesession-ezsignaccess';
+// May contain unused imports in some cases
+// @ts-ignore
+import { FieldEActivesessionEzsignprepaid } from './field-eactivesession-ezsignprepaid';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FieldEActivesessionOrigin } from './field-eactivesession-origin';
+// May contain unused imports in some cases
+// @ts-ignore
+import { FieldEActivesessionRealestateinprogress } from './field-eactivesession-realestateinprogress';
 // May contain unused imports in some cases
 // @ts-ignore
 import { FieldEActivesessionUsertype } from './field-eactivesession-usertype';
@@ -97,6 +109,54 @@ export interface ActivesessionResponseCompound {
      */
     bActivesessionIssuperadmin:boolean 
     /**
+     * Can access attachment when we clone a user
+     * @type {boolean}
+     * @memberof ActivesessionResponseCompound
+     */
+    bActivesessionAttachment?:boolean 
+    /**
+     * Can access canafe when we clone a user
+     * @type {boolean}
+     * @memberof ActivesessionResponseCompound
+     */
+    bActivesessionCanafe?:boolean 
+    /**
+     * Can access financial element when we clone a user
+     * @type {boolean}
+     * @memberof ActivesessionResponseCompound
+     */
+    bActivesessionFinancial?:boolean 
+    /**
+     * Can access closed realestate folders when we clone a user
+     * @type {boolean}
+     * @memberof ActivesessionResponseCompound
+     */
+    bActivesessionRealestatecompleted?:boolean 
+    /**
+     * 
+     * @type {FieldEActivesessionEzsign}
+     * @memberof ActivesessionResponseCompound
+     */
+    eActivesessionEzsign?:FieldEActivesessionEzsign 
+    /**
+     * 
+     * @type {FieldEActivesessionEzsignaccess}
+     * @memberof ActivesessionResponseCompound
+     */
+    eActivesessionEzsignaccess:FieldEActivesessionEzsignaccess 
+    /**
+     * 
+     * @type {FieldEActivesessionEzsignprepaid}
+     * @memberof ActivesessionResponseCompound
+     */
+    eActivesessionEzsignprepaid?:FieldEActivesessionEzsignprepaid 
+    /**
+     * 
+     * @type {FieldEActivesessionRealestateinprogress}
+     * @memberof ActivesessionResponseCompound
+     */
+    eActivesessionRealestateinprogress?:FieldEActivesessionRealestateinprogress 
+    /**
      * The customer code assigned to your account
      * @type {string}
      * @memberof ActivesessionResponseCompound
@@ -114,6 +174,12 @@ export interface ActivesessionResponseCompound {
      * @memberof ActivesessionResponseCompound
      */
     fkiSignatureID?:number 
+    /**
+     * The unique ID of the Ezsignuser
+     * @type {number}
+     * @memberof ActivesessionResponseCompound
+     */
+    fkiEzsignuserID?:number 
     /**
      * Whether if Ezsign is paid by the company or not
      * @type {boolean}
@@ -138,6 +204,12 @@ export interface ActivesessionResponseCompound {
      * @memberof ActivesessionResponseCompound
      */
     eUserEzsignprepaid?:FieldEUserEzsignprepaid 
+    /**
+     * Whether the User\'s eZsign subscription is a trial
+     * @type {boolean}
+     * @memberof ActivesessionResponseCompound
+     */
+    bUserEzsigntrial?:boolean 
     /**
      * The eZsign prepaid expiration date
      * @type {string}
@@ -210,13 +282,23 @@ export class DataObjectActivesessionResponseCompound {
     sDepartmentNameX:string = ''
     bActivesessionDebug:boolean = false
     bActivesessionIssuperadmin:boolean = false
+    bActivesessionAttachment?:boolean = undefined
+    bActivesessionCanafe?:boolean = undefined
+    bActivesessionFinancial?:boolean = undefined
+    bActivesessionRealestatecompleted?:boolean = undefined
+    eActivesessionEzsign?:FieldEActivesessionEzsign = undefined
+    eActivesessionEzsignaccess:FieldEActivesessionEzsignaccess = 'No'
+    eActivesessionEzsignprepaid?:FieldEActivesessionEzsignprepaid = undefined
+    eActivesessionRealestateinprogress?:FieldEActivesessionRealestateinprogress = undefined
     pksCustomerCode:string = ''
     fkiSystemconfigurationtypeID:number = 0
     fkiSignatureID?:number = undefined
+    fkiEzsignuserID?:number = undefined
     bSystemconfigurationEzsignpaidbyoffice?:boolean = undefined
     eSystemconfigurationEzsignofficeplan?:FieldESystemconfigurationEzsignofficeplan = undefined
     eUserEzsignaccess:FieldEUserEzsignaccess = 'No'
     eUserEzsignprepaid?:FieldEUserEzsignprepaid = undefined
+    bUserEzsigntrial?:boolean = undefined
     dtUserEzsignprepaidexpiration?:string = undefined
     a_pkiPermissionID:Array<number> = []
     objUserReal:ActivesessionResponseCompoundUser = new DataObjectActivesessionResponseCompoundUser()
@@ -268,8 +350,46 @@ export class ValidationObjectActivesessionResponseCompound {
       type: 'boolean',
       required: true
    }
+   bActivesessionAttachment = {
+      type: 'boolean',
+      required: false
+   }
+   bActivesessionCanafe = {
+      type: 'boolean',
+      required: false
+   }
+   bActivesessionFinancial = {
+      type: 'boolean',
+      required: false
+   }
+   bActivesessionRealestatecompleted = {
+      type: 'boolean',
+      required: false
+   }
+   eActivesessionEzsign = {
+      type: 'enum',
+      allowableValues: ['No','Read','Modify','Full'],
+      required: false
+   }
+   eActivesessionEzsignaccess = {
+      type: 'enum',
+      allowableValues: ['No','PaidByOffice','PerDocument','Prepaid'],
+      required: true
+   }
+   eActivesessionEzsignprepaid = {
+      type: 'enum',
+      allowableValues: ['No','Basic','Standard','Pro'],
+      required: false
+   }
+   eActivesessionRealestateinprogress = {
+      type: 'enum',
+      allowableValues: ['No','Read','Modify','Create'],
+      required: false
+   }
    pksCustomerCode = {
       type: 'string',
+      minLength: 2,
+      maxLength: 6,
       required: true
    }
    fkiSystemconfigurationtypeID = {
@@ -281,6 +401,12 @@ export class ValidationObjectActivesessionResponseCompound {
       type: 'integer',
       minimum: 0,
       maximum: 16777215,
+      required: false
+   }
+   fkiEzsignuserID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 65535,
       required: false
    }
    bSystemconfigurationEzsignpaidbyoffice = {
@@ -302,9 +428,13 @@ export class ValidationObjectActivesessionResponseCompound {
       allowableValues: ['No','Basic','Standard','Pro'],
       required: false
    }
+   bUserEzsigntrial = {
+      type: 'boolean',
+      required: false
+   }
    dtUserEzsignprepaidexpiration = {
       type: 'string',
-      pattern: '/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/',
+      pattern: /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/,
       required: false
    }
    a_pkiPermissionID = {

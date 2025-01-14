@@ -146,12 +146,33 @@ export interface EzsignfolderListElement {
     /*'bEzsignformHasdependencies'?: boolean;*/
     'bEzsignformHasdependencies'?: boolean;
     /**
-     * Whether the Ezsignform/Ezsignsignatures has dependencies or not
+     * Percentage of Ezsignform/Ezsignsignatures has completed
      * @type {string}
      * @memberof EzsignfolderListElement
      */
     /*'dEzsignfolderCompletedpercentage': string;*/
     'dEzsignfolderCompletedpercentage': string;
+    /**
+     * Percentage of Ezsignform has completed
+     * @type {string}
+     * @memberof EzsignfolderListElement
+     */
+    /*'dEzsignfolderFormcompletedpercentage': string;*/
+    'dEzsignfolderFormcompletedpercentage': string;
+    /**
+     * Percentage of Ezsignsignatures has signed
+     * @type {string}
+     * @memberof EzsignfolderListElement
+     */
+    /*'dEzsignfolderSignaturecompletedpercentage': string;*/
+    'dEzsignfolderSignaturecompletedpercentage': string;
+    /**
+     * Whether the Ezsignfolder has an Ezsignsignatures that need to be signed or an Ezsignformfieldgroups that need to be filled by the current user
+     * @type {boolean}
+     * @memberof EzsignfolderListElement
+     */
+    /*'bEzsignfolderSigner'?: boolean;*/
+    'bEzsignfolderSigner'?: boolean;
 }
 
 
@@ -185,6 +206,9 @@ export class DataObjectEzsignfolderListElement {
    iEzsignformfieldgroupCompleted:number = 0
    bEzsignformHasdependencies?:boolean = undefined
    dEzsignfolderCompletedpercentage:string = ''
+   dEzsignfolderFormcompletedpercentage:string = ''
+   dEzsignfolderSignaturecompletedpercentage:string = ''
+   bEzsignfolderSigner?:boolean = undefined
 }
 
 /**
@@ -215,6 +239,7 @@ export class ValidationObjectEzsignfolderListElement {
    }
    sEzsignfolderDescription = {
       type: 'string',
+      pattern: /^.{0,75}$/,
       required: true
    }
    eEzsignfolderStep = {
@@ -268,8 +293,22 @@ export class ValidationObjectEzsignfolderListElement {
    }
    dEzsignfolderCompletedpercentage = {
       type: 'string',
-      pattern: '/^-{0,1}[\d]{1,3}?\.[\d]{2}$/',
+      pattern: /^-{0,1}[\d]{1,3}?\.[\d]{2}$/,
       required: true
+   }
+   dEzsignfolderFormcompletedpercentage = {
+      type: 'string',
+      pattern: /^-{0,1}[\d]{1,3}?\.[\d]{2}$/,
+      required: true
+   }
+   dEzsignfolderSignaturecompletedpercentage = {
+      type: 'string',
+      pattern: /^-{0,1}[\d]{1,3}?\.[\d]{2}$/,
+      required: true
+   }
+   bEzsignfolderSigner = {
+      type: 'boolean',
+      required: false
    }
 } 
 

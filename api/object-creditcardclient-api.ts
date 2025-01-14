@@ -24,6 +24,8 @@ import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, ope
 // @ts-ignore
 import { CommonResponseError } from '../model';
 // @ts-ignore
+import { CommonResponseErrorCreditcardValidation } from '../model';
+// @ts-ignore
 import { CreditcardclientCreateObjectV1Request } from '../model';
 // @ts-ignore
 import { CreditcardclientCreateObjectV1Response } from '../model';
@@ -39,6 +41,10 @@ import { CreditcardclientGetAutocompleteV2Response } from '../model';
 import { CreditcardclientGetListV1Response } from '../model';
 // @ts-ignore
 import { CreditcardclientGetObjectV2Response } from '../model';
+// @ts-ignore
+import { CreditcardclientPatchObjectV1Request } from '../model';
+// @ts-ignore
+import { CreditcardclientPatchObjectV1Response } from '../model';
 // @ts-ignore
 import { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
@@ -445,6 +451,70 @@ export const ObjectCreditcardclientApiAxiosParamCreator = function (configuratio
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * 
+         * @summary Patch an existing Creditcardclient
+         * @param {number} pkiCreditcardclientID The unique ID of the Creditcardclient
+         * @param {CreditcardclientPatchObjectV1Request} creditcardclientPatchObjectV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        creditcardclientPatchObjectV1: async (pkiCreditcardclientID: number, creditcardclientPatchObjectV1Request: CreditcardclientPatchObjectV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiCreditcardclientID' is not null or undefined
+            assertParamExists('creditcardclientPatchObjectV1', 'pkiCreditcardclientID', pkiCreditcardclientID)
+            // verify required parameter 'creditcardclientPatchObjectV1Request' is not null or undefined
+            assertParamExists('creditcardclientPatchObjectV1', 'creditcardclientPatchObjectV1Request', creditcardclientPatchObjectV1Request)
+            const localVarPath = `/1/object/creditcardclient/{pkiCreditcardclientID}`
+                .replace(`{${"pkiCreditcardclientID"}}`, encodeURIComponent(String(pkiCreditcardclientID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(creditcardclientPatchObjectV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'PATCH' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -541,6 +611,20 @@ export const ObjectCreditcardclientApiFp = function(configuration?: Configuratio
             const localVarOperationServerBasePath = operationServerMap['ObjectCreditcardclientApi.creditcardclientGetObjectV2']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
+        /**
+         * 
+         * @summary Patch an existing Creditcardclient
+         * @param {number} pkiCreditcardclientID The unique ID of the Creditcardclient
+         * @param {CreditcardclientPatchObjectV1Request} creditcardclientPatchObjectV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async creditcardclientPatchObjectV1(pkiCreditcardclientID: number, creditcardclientPatchObjectV1Request: CreditcardclientPatchObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreditcardclientPatchObjectV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.creditcardclientPatchObjectV1(pkiCreditcardclientID, creditcardclientPatchObjectV1Request, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectCreditcardclientApi.creditcardclientPatchObjectV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
     }
 };
 
@@ -618,6 +702,17 @@ export const ObjectCreditcardclientApiFactory = function (configuration?: Config
          */
         creditcardclientGetObjectV2(pkiCreditcardclientID: number, options?: any): AxiosPromise<CreditcardclientGetObjectV2Response> {
             return localVarFp.creditcardclientGetObjectV2(pkiCreditcardclientID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Patch an existing Creditcardclient
+         * @param {number} pkiCreditcardclientID The unique ID of the Creditcardclient
+         * @param {CreditcardclientPatchObjectV1Request} creditcardclientPatchObjectV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        creditcardclientPatchObjectV1(pkiCreditcardclientID: number, creditcardclientPatchObjectV1Request: CreditcardclientPatchObjectV1Request, options?: any): AxiosPromise<CreditcardclientPatchObjectV1Response> {
+            return localVarFp.creditcardclientPatchObjectV1(pkiCreditcardclientID, creditcardclientPatchObjectV1Request, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -708,6 +803,19 @@ export class ObjectCreditcardclientApi extends BaseAPI {
     public creditcardclientGetObjectV2(pkiCreditcardclientID: number, options?: RawAxiosRequestConfig) {
         return ObjectCreditcardclientApiFp(this.configuration).creditcardclientGetObjectV2(pkiCreditcardclientID, options).then((request) => request(this.axios, this.basePath));
     }
+
+    /**
+     * 
+     * @summary Patch an existing Creditcardclient
+     * @param {number} pkiCreditcardclientID The unique ID of the Creditcardclient
+     * @param {CreditcardclientPatchObjectV1Request} creditcardclientPatchObjectV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectCreditcardclientApi
+     */
+    public creditcardclientPatchObjectV1(pkiCreditcardclientID: number, creditcardclientPatchObjectV1Request: CreditcardclientPatchObjectV1Request, options?: RawAxiosRequestConfig) {
+        return ObjectCreditcardclientApiFp(this.configuration).creditcardclientPatchObjectV1(pkiCreditcardclientID, creditcardclientPatchObjectV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
 }
 
 /**
@@ -734,6 +842,8 @@ export const CreditcardclientGetListV1EOrderByEnum = {
     pkiCreditcardclientID_DESC: 'pkiCreditcardclientID_DESC',
     fkiCreditcarddetailID_ASC: 'fkiCreditcarddetailID_ASC',
     fkiCreditcarddetailID_DESC: 'fkiCreditcarddetailID_DESC',
+    fkiCreditcardtypeID_ASC: 'fkiCreditcardtypeID_ASC',
+    fkiCreditcardtypeID_DESC: 'fkiCreditcardtypeID_DESC',
     bCreditcardclientrelationIsdefault_ASC: 'bCreditcardclientrelationIsdefault_ASC',
     bCreditcardclientrelationIsdefault_DESC: 'bCreditcardclientrelationIsdefault_DESC',
     sCreditcardclientDescription_ASC: 'sCreditcardclientDescription_ASC',
@@ -742,8 +852,6 @@ export const CreditcardclientGetListV1EOrderByEnum = {
     bCreditcardclientIsactive_DESC: 'bCreditcardclientIsactive_DESC',
     bCreditcardclientAllowedagencypayment_ASC: 'bCreditcardclientAllowedagencypayment_ASC',
     bCreditcardclientAllowedagencypayment_DESC: 'bCreditcardclientAllowedagencypayment_DESC',
-    bCreditcardclientAllowedroyallepageprotection_ASC: 'bCreditcardclientAllowedroyallepageprotection_ASC',
-    bCreditcardclientAllowedroyallepageprotection_DESC: 'bCreditcardclientAllowedroyallepageprotection_DESC',
     bCreditcardclientAllowedtranquillit_ASC: 'bCreditcardclientAllowedtranquillit_ASC',
     bCreditcardclientAllowedtranquillit_DESC: 'bCreditcardclientAllowedtranquillit_DESC',
     iCreditcarddetailExpirationmonth_ASC: 'iCreditcarddetailExpirationmonth_ASC',

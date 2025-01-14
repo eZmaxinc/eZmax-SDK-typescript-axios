@@ -187,7 +187,10 @@ export class ObjectFontApi extends BaseAPI {
  * @export
  */
 export const FontGetAutocompleteV2SSelectorEnum = {
-    All: 'All'
+    All: 'All',
+    Ezsignannotation: 'Ezsignannotation',
+    Ezsignformfield: 'Ezsignformfield',
+    Ezsignsignature: 'Ezsignsignature'
 } as const;
 export type FontGetAutocompleteV2SSelectorEnum = typeof FontGetAutocompleteV2SSelectorEnum[keyof typeof FontGetAutocompleteV2SSelectorEnum];
 /**

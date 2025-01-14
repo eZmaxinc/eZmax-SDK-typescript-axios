@@ -360,12 +360,12 @@ export class ValidationObjectUserRequestCompound {
    }
    sUserLoginname = {
       type: 'string',
-      pattern: '/^(?:([\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/',
+      pattern: /^(?:([\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/,
       required: true
    }
    sUserJobtitle = {
       type: 'string',
-      pattern: '/^.{0,50}$/',
+      pattern: /^.{0,50}$/,
       required: false
    }
    eUserEzsignaccess = {

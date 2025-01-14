@@ -196,7 +196,8 @@ export class ObjectUserlogintypeApi extends BaseAPI {
  */
 export const UserlogintypeGetAutocompleteV2SSelectorEnum = {
     All: 'All',
-    Ezsignfoldertype: 'Ezsignfoldertype'
+    Ezsignfoldertype: 'Ezsignfoldertype',
+    Ezsigntemplatepublic: 'Ezsigntemplatepublic'
 } as const;
 export type UserlogintypeGetAutocompleteV2SSelectorEnum = typeof UserlogintypeGetAutocompleteV2SSelectorEnum[keyof typeof UserlogintypeGetAutocompleteV2SSelectorEnum];
 /**

@@ -57,6 +57,13 @@ export interface EzsignfolderResponse {
     /*'objEzsignfoldertype'?: CustomEzsignfoldertypeResponse;*/
     'objEzsignfoldertype'?: CustomEzsignfoldertypeResponse;
     /**
+     * The unique ID of the Timezone
+     * @type {number}
+     * @memberof EzsignfolderResponse
+     */
+    /*'fkiTimezoneID'?: number;*/
+    'fkiTimezoneID'?: number;
+    /**
      * 
      * @type {FieldEEzsignfolderCompletion}
      * @memberof EzsignfolderResponse
@@ -124,9 +131,24 @@ export interface EzsignfolderResponse {
      * 
      * @type {FieldEEzsignfolderSendreminderfrequency}
      * @memberof EzsignfolderResponse
+     * @deprecated
      */
     /*'eEzsignfolderSendreminderfrequency'?: FieldEEzsignfolderSendreminderfrequency;*/
     'eEzsignfolderSendreminderfrequency'?: FieldEEzsignfolderSendreminderfrequency;
+    /**
+     * The number of days before the the first reminder sending
+     * @type {number}
+     * @memberof EzsignfolderResponse
+     */
+    /*'iEzsignfolderSendreminderfirstdays'?: number;*/
+    'iEzsignfolderSendreminderfirstdays'?: number;
+    /**
+     * The number of days after the first reminder sending
+     * @type {number}
+     * @memberof EzsignfolderResponse
+     */
+    /*'iEzsignfolderSendreminderotherdays'?: number;*/
+    'iEzsignfolderSendreminderotherdays'?: number;
     /**
      * The date and time at which the Ezsignfolder will be sent in the future.
      * @type {string}
@@ -223,6 +245,7 @@ export class DataObjectEzsignfolderResponse {
    pkiEzsignfolderID:number = 0
    fkiEzsignfoldertypeID?:number = undefined
    objEzsignfoldertype?:CustomEzsignfoldertypeResponse = undefined
+   fkiTimezoneID?:number = undefined
    eEzsignfolderCompletion:FieldEEzsignfolderCompletion = 'PerEzsigndocument'
    sEzsignfoldertypeNameX?:string = undefined
    fkiBillingentityinternalID?:number = undefined
@@ -233,6 +256,8 @@ export class DataObjectEzsignfolderResponse {
    tEzsignfolderNote?:string = undefined
    bEzsignfolderIsdisposable?:boolean = undefined
    eEzsignfolderSendreminderfrequency?:FieldEEzsignfolderSendreminderfrequency = undefined
+   iEzsignfolderSendreminderfirstdays?:number = undefined
+   iEzsignfolderSendreminderotherdays?:number = undefined
    dtEzsignfolderDelayedsenddate?:string = undefined
    dtEzsignfolderDuedate?:string = undefined
    dtEzsignfolderSentdate?:string = undefined
@@ -263,6 +288,11 @@ export class ValidationObjectEzsignfolderResponse {
       required: false
    }
    objEzsignfoldertype = new ValidationObjectCustomEzsignfoldertypeResponse()
+   fkiTimezoneID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
    eEzsignfolderCompletion = {
       type: 'enum',
       allowableValues: ['PerEzsigndocument','PerEzsignfolder'],
@@ -293,6 +323,7 @@ export class ValidationObjectEzsignfolderResponse {
    }
    sEzsignfolderDescription = {
       type: 'string',
+      pattern: /^.{0,75}$/,
       required: true
    }
    tEzsignfolderNote = {
@@ -306,6 +337,18 @@ export class ValidationObjectEzsignfolderResponse {
    eEzsignfolderSendreminderfrequency = {
       type: 'enum',
       allowableValues: ['None','Daily','Weekly'],
+      required: false
+   }
+   iEzsignfolderSendreminderfirstdays = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 255,
+      required: false
+   }
+   iEzsignfolderSendreminderotherdays = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 255,
       required: false
    }
    dtEzsignfolderDelayedsenddate = {
@@ -344,7 +387,7 @@ export class ValidationObjectEzsignfolderResponse {
    objAudit = new ValidationObjectCommonAudit()
    sEzsignfolderExternalid = {
       type: 'string',
-      pattern: '/^.{0,128}$/',
+      pattern: /^.{0,128}$/,
       required: false
    }
 } 

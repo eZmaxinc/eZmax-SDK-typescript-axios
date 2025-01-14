@@ -78,7 +78,7 @@ export class ValidationObjectCorsRequest {
    }
    sCorsEntryurl = {
       type: 'string',
-      pattern: '/^(https|http):\\/\\/[^\s\\/$.?#].[^\s]*$/',
+      pattern: /^(https|http):\/\/[^\s\/$.?#].[^\s]*$/,
       required: true
    }
 } 

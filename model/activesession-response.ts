@@ -15,7 +15,19 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import { FieldEActivesessionEzsign } from './field-eactivesession-ezsign';
+// May contain unused imports in some cases
+// @ts-ignore
+import { FieldEActivesessionEzsignaccess } from './field-eactivesession-ezsignaccess';
+// May contain unused imports in some cases
+// @ts-ignore
+import { FieldEActivesessionEzsignprepaid } from './field-eactivesession-ezsignprepaid';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FieldEActivesessionOrigin } from './field-eactivesession-origin';
+// May contain unused imports in some cases
+// @ts-ignore
+import { FieldEActivesessionRealestateinprogress } from './field-eactivesession-realestateinprogress';
 // May contain unused imports in some cases
 // @ts-ignore
 import { FieldEActivesessionUsertype } from './field-eactivesession-usertype';
@@ -86,6 +98,62 @@ export interface ActivesessionResponse {
     /*'bActivesessionIssuperadmin': boolean;*/
     'bActivesessionIssuperadmin': boolean;
     /**
+     * Can access attachment when we clone a user
+     * @type {boolean}
+     * @memberof ActivesessionResponse
+     */
+    /*'bActivesessionAttachment'?: boolean;*/
+    'bActivesessionAttachment'?: boolean;
+    /**
+     * Can access canafe when we clone a user
+     * @type {boolean}
+     * @memberof ActivesessionResponse
+     */
+    /*'bActivesessionCanafe'?: boolean;*/
+    'bActivesessionCanafe'?: boolean;
+    /**
+     * Can access financial element when we clone a user
+     * @type {boolean}
+     * @memberof ActivesessionResponse
+     */
+    /*'bActivesessionFinancial'?: boolean;*/
+    'bActivesessionFinancial'?: boolean;
+    /**
+     * Can access closed realestate folders when we clone a user
+     * @type {boolean}
+     * @memberof ActivesessionResponse
+     */
+    /*'bActivesessionRealestatecompleted'?: boolean;*/
+    'bActivesessionRealestatecompleted'?: boolean;
+    /**
+     * 
+     * @type {FieldEActivesessionEzsign}
+     * @memberof ActivesessionResponse
+     */
+    /*'eActivesessionEzsign'?: FieldEActivesessionEzsign;*/
+    'eActivesessionEzsign'?: FieldEActivesessionEzsign;
+    /**
+     * 
+     * @type {FieldEActivesessionEzsignaccess}
+     * @memberof ActivesessionResponse
+     */
+    /*'eActivesessionEzsignaccess': FieldEActivesessionEzsignaccess;*/
+    'eActivesessionEzsignaccess': FieldEActivesessionEzsignaccess;
+    /**
+     * 
+     * @type {FieldEActivesessionEzsignprepaid}
+     * @memberof ActivesessionResponse
+     */
+    /*'eActivesessionEzsignprepaid'?: FieldEActivesessionEzsignprepaid;*/
+    'eActivesessionEzsignprepaid'?: FieldEActivesessionEzsignprepaid;
+    /**
+     * 
+     * @type {FieldEActivesessionRealestateinprogress}
+     * @memberof ActivesessionResponse
+     */
+    /*'eActivesessionRealestateinprogress'?: FieldEActivesessionRealestateinprogress;*/
+    'eActivesessionRealestateinprogress'?: FieldEActivesessionRealestateinprogress;
+    /**
      * The customer code assigned to your account
      * @type {string}
      * @memberof ActivesessionResponse
@@ -129,6 +197,14 @@ export class DataObjectActivesessionResponse {
    sDepartmentNameX:string = ''
    bActivesessionDebug:boolean = false
    bActivesessionIssuperadmin:boolean = false
+   bActivesessionAttachment?:boolean = undefined
+   bActivesessionCanafe?:boolean = undefined
+   bActivesessionFinancial?:boolean = undefined
+   bActivesessionRealestatecompleted?:boolean = undefined
+   eActivesessionEzsign?:FieldEActivesessionEzsign = undefined
+   eActivesessionEzsignaccess:FieldEActivesessionEzsignaccess = 'No'
+   eActivesessionEzsignprepaid?:FieldEActivesessionEzsignprepaid = undefined
+   eActivesessionRealestateinprogress?:FieldEActivesessionRealestateinprogress = undefined
    pksCustomerCode:string = ''
    fkiSystemconfigurationtypeID:number = 0
    fkiSignatureID?:number = undefined
@@ -177,8 +253,46 @@ export class ValidationObjectActivesessionResponse {
       type: 'boolean',
       required: true
    }
+   bActivesessionAttachment = {
+      type: 'boolean',
+      required: false
+   }
+   bActivesessionCanafe = {
+      type: 'boolean',
+      required: false
+   }
+   bActivesessionFinancial = {
+      type: 'boolean',
+      required: false
+   }
+   bActivesessionRealestatecompleted = {
+      type: 'boolean',
+      required: false
+   }
+   eActivesessionEzsign = {
+      type: 'enum',
+      allowableValues: ['No','Read','Modify','Full'],
+      required: false
+   }
+   eActivesessionEzsignaccess = {
+      type: 'enum',
+      allowableValues: ['No','PaidByOffice','PerDocument','Prepaid'],
+      required: true
+   }
+   eActivesessionEzsignprepaid = {
+      type: 'enum',
+      allowableValues: ['No','Basic','Standard','Pro'],
+      required: false
+   }
+   eActivesessionRealestateinprogress = {
+      type: 'enum',
+      allowableValues: ['No','Read','Modify','Create'],
+      required: false
+   }
    pksCustomerCode = {
       type: 'string',
+      minLength: 2,
+      maxLength: 6,
       required: true
    }
    fkiSystemconfigurationtypeID = {

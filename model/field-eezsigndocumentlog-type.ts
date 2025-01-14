@@ -39,8 +39,10 @@ export const FieldEEzsigndocumentlogType = {
     Changelimitdate: 'Changelimitdate',
     Unsign: 'Unsign',
     ImportFromInstanet: 'ImportFromInstanet',
+    CreatedFromEzsigntemplatepublic: 'CreatedFromEzsigntemplatepublic',
     SendEmail: 'SendEmail',
     FormCompletion: 'FormCompletion',
+    FormSaveAsDraft: 'FormSaveAsDraft',
     SignatureAttachmentAdd: 'SignatureAttachmentAdd',
     SignatureAttachmentValidation: 'SignatureAttachmentValidation',
     SignatureAttachmentRefused: 'SignatureAttachmentRefused',
@@ -51,7 +53,8 @@ export const FieldEEzsigndocumentlogType = {
     Flatten: 'Flatten',
     RegeneratePage: 'RegeneratePage',
     RegeneratePageForm: 'RegeneratePageForm',
-    Reassign: 'Reassign'
+    Reassign: 'Reassign',
+    DocumentCompletion: 'DocumentCompletion'
 } as const;
 
 export type FieldEEzsigndocumentlogType = typeof FieldEEzsigndocumentlogType[keyof typeof FieldEEzsigndocumentlogType];

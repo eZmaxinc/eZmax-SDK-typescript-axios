@@ -37,6 +37,12 @@ export interface TextstylestaticResponseCompound {
      */
     fkiFontID:number 
     /**
+     * The name of the Font
+     * @type {string}
+     * @memberof TextstylestaticResponseCompound
+     */
+    sFontName:string 
+    /**
      * Whether the Textstylestatic is Bold or not
      * @type {boolean}
      * @memberof TextstylestaticResponseCompound
@@ -89,6 +95,7 @@ export interface TextstylestaticResponseCompound {
 export class DataObjectTextstylestaticResponseCompound {
     pkiTextstylestaticID?:number = undefined
     fkiFontID:number = 0
+    sFontName:string = ''
     bTextstylestaticBold:boolean = false
     bTextstylestaticUnderline:boolean = false
     bTextstylestaticItalic:boolean = false
@@ -111,6 +118,11 @@ export class ValidationObjectTextstylestaticResponseCompound {
    fkiFontID = {
       type: 'integer',
       minimum: 0,
+      required: true
+   }
+   sFontName = {
+      type: 'string',
+      pattern: /^.{0,50}$/,
       required: true
    }
    bTextstylestaticBold = {

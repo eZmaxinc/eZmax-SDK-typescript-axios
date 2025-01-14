@@ -139,6 +139,8 @@ export class ValidationObjectEzsigntemplateelementdependencyRequest {
    }
    sEzsigntemplateelementdependencyEzsigntemplateformfieldgrouplabel = {
       type: 'string',
+      minLength: 1,
+      maxLength: 50,
       required: false
    }
    sEzsigntemplateelementdependencyEzsigntemplateformfieldlabel = {
@@ -161,7 +163,7 @@ export class ValidationObjectEzsigntemplateelementdependencyRequest {
    }
    sEzsigntemplateelementdependencyValue = {
       type: 'string',
-      pattern: '/^.{0,50}$/',
+      pattern: /^.{0,50}$/,
       required: false
    }
 } 

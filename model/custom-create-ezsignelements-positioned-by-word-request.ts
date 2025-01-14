@@ -84,7 +84,7 @@ export class DataObjectCustomCreateEzsignelementsPositionedByWordRequest {
 export class ValidationObjectCustomCreateEzsignelementsPositionedByWordRequest {
    sCreateezsignelementspositionedbywordPattern = {
       type: 'string',
-      pattern: '/^.{1,35}$/',
+      pattern: /^.{1,35}$/,
       required: true
    }
    iCreateezsignelementspositionedbywordOffsetx = {

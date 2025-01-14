@@ -51,7 +51,7 @@ export class DataObjectWebsocketResponseGetWebsocketIDV1MPayload {
 export class ValidationObjectWebsocketResponseGetWebsocketIDV1MPayload {
    sWebsocketID = {
       type: 'string',
-      pattern: '/^[a-zA-Z0-9_-]{15}&#x3D;$/',
+      pattern: /^[a-zA-Z0-9_-]{15}=$/,
       required: true
    }
 } 

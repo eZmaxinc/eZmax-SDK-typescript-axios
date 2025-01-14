@@ -51,7 +51,7 @@ export class DataObjectDiscussionUpdateDiscussionreadstatusV1Request {
 export class ValidationObjectDiscussionUpdateDiscussionreadstatusV1Request {
    dtDiscussionreadstatusDate = {
       type: 'string',
-      pattern: '/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/',
+      pattern: /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/,
       required: false
    }
 } 

@@ -37,11 +37,11 @@ export interface CreditcarddetailResponseCompound {
      */
     fkiCreditcardtypeID:number 
     /**
-     * The numbermasked of the Creditcarddetail
-     * @type {string}
+     * The last digits of the Creditcarddetail
+     * @type {number}
      * @memberof CreditcarddetailResponseCompound
      */
-    sCreditcarddetailNumbermasked:string 
+    iCreditcarddetailLastdigits:number 
     /**
      * The expirationmonth of the Creditcarddetail
      * @type {number}
@@ -89,7 +89,7 @@ export interface CreditcarddetailResponseCompound {
 export class DataObjectCreditcarddetailResponseCompound {
     pkiCreditcarddetailID:number = 0
     fkiCreditcardtypeID:number = 0
-    sCreditcarddetailNumbermasked:string = ''
+    iCreditcarddetailLastdigits:number = 0
     iCreditcarddetailExpirationmonth:number = 0
     iCreditcarddetailExpirationyear:number = 0
     sCreditcarddetailCivic:string = ''
@@ -115,9 +115,10 @@ export class ValidationObjectCreditcarddetailResponseCompound {
       maximum: 255,
       required: true
    }
-   sCreditcarddetailNumbermasked = {
-      type: 'string',
-      pattern: '/^.{0,50}$/',
+   iCreditcarddetailLastdigits = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 9999,
       required: true
    }
    iCreditcarddetailExpirationmonth = {
@@ -134,17 +135,17 @@ export class ValidationObjectCreditcarddetailResponseCompound {
    }
    sCreditcarddetailCivic = {
       type: 'string',
-      pattern: '/^.{0,8}$/',
+      pattern: /^[\d]{1,8}$/,
       required: true
    }
    sCreditcarddetailStreet = {
       type: 'string',
-      pattern: '/^.{0,40}$/',
+      pattern: /^.{1,19}$/,
       required: true
    }
    sCreditcarddetailZip = {
       type: 'string',
-      pattern: '/^.{0,10}$/',
+      pattern: /^.{0,9}$/,
       required: true
    }
 } 

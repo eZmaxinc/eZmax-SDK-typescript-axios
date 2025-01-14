@@ -100,7 +100,7 @@ export class ValidationObjectPaymenttermListElement {
    }
    sPaymenttermCode = {
       type: 'string',
-      pattern: '/^[A-Z0-9]{1,4}$/',
+      pattern: /^[A-Z0-9]{1,4}$/,
       required: true
    }
    ePaymenttermType = {
@@ -116,7 +116,7 @@ export class ValidationObjectPaymenttermListElement {
    }
    sPaymenttermDescriptionX = {
       type: 'string',
-      pattern: '/^.{1,40}$/',
+      pattern: /^.{1,40}$/,
       required: true
    }
    bPaymenttermIsactive = {

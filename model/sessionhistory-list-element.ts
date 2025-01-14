@@ -145,12 +145,12 @@ export class ValidationObjectSessionhistoryListElement {
    }
    dtSessionhistoryFirsthit = {
       type: 'string',
-      pattern: '/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/',
+      pattern: /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/,
       required: true
    }
    dtSessionhistoryLasthit = {
       type: 'string',
-      pattern: '/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/',
+      pattern: /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/,
       required: true
    }
    eSessionhistoryEndby = {
@@ -160,12 +160,12 @@ export class ValidationObjectSessionhistoryListElement {
    }
    sComputerDescription = {
       type: 'string',
-      pattern: '/^.{0,50}$/',
+      pattern: /^.{0,50}$/,
       required: false
    }
    sSessionhistoryDuration = {
       type: 'string',
-      pattern: '/^(0[0-9]{1}|\d{2,}):([0-5][0-9]):([0-5][0-9])$/',
+      pattern: /^(0[0-9]{1}|\d{2,}):([0-5][0-9]):([0-5][0-9])$/,
       required: true
    }
    sSessionhistoryIP = {
@@ -174,7 +174,7 @@ export class ValidationObjectSessionhistoryListElement {
    }
    sUserLoginname = {
       type: 'string',
-      pattern: '/^(?:([\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/',
+      pattern: /^(?:([\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/,
       required: false
    }
 } 

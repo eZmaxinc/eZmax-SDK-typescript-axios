@@ -59,12 +59,12 @@ export class DataObjectMultilingualBillingentityinternalDescription {
 export class ValidationObjectMultilingualBillingentityinternalDescription {
    sBillingentityinternalDescription1 = {
       type: 'string',
-      pattern: '/^.{0,70}$/',
+      pattern: /^.{0,70}$/,
       required: false
    }
    sBillingentityinternalDescription2 = {
       type: 'string',
-      pattern: '/^.{0,70}$/',
+      pattern: /^.{0,70}$/,
       required: false
    }
 } 

@@ -59,10 +59,12 @@ export class DataObjectMultilingualEzmaxinvoicingsummaryinternalDescription {
 export class ValidationObjectMultilingualEzmaxinvoicingsummaryinternalDescription {
    sEzmaxinvoicingsummaryinternalDescription1 = {
       type: 'string',
+      maxLength: 70,
       required: false
    }
    sEzmaxinvoicingsummaryinternalDescription2 = {
       type: 'string',
+      maxLength: 70,
       required: false
    }
 } 

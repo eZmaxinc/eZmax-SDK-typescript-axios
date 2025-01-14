@@ -46,6 +46,12 @@ export interface SystemconfigurationRequestCompound {
      */
     pkiSystemconfigurationID?:number 
     /**
+     * The unique ID of the Branding
+     * @type {number}
+     * @memberof SystemconfigurationRequestCompound
+     */
+    fkiBrandingID?:number 
+    /**
      * 
      * @type {FieldESystemconfigurationNewexternaluseraction}
      * @memberof SystemconfigurationRequestCompound
@@ -123,6 +129,7 @@ export interface SystemconfigurationRequestCompound {
  */
 export class DataObjectSystemconfigurationRequestCompound {
     pkiSystemconfigurationID?:number = undefined
+    fkiBrandingID?:number = undefined
     eSystemconfigurationNewexternaluseraction:FieldESystemconfigurationNewexternaluseraction = 'Stage'
     eSystemconfigurationLanguage1:FieldESystemconfigurationLanguage1 = 'fr_QC'
     eSystemconfigurationLanguage2:FieldESystemconfigurationLanguage2 = 'en_CA'
@@ -145,6 +152,11 @@ export class ValidationObjectSystemconfigurationRequestCompound {
       type: 'integer',
       minimum: 1,
       maximum: 1,
+      required: false
+   }
+   fkiBrandingID = {
+      type: 'integer',
+      minimum: 0,
       required: false
    }
    eSystemconfigurationNewexternaluseraction = {
@@ -186,12 +198,12 @@ export class ValidationObjectSystemconfigurationRequestCompound {
    }
    dtSystemconfigurationReadonlyexpirationstart = {
       type: 'string',
-      pattern: '/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/',
+      pattern: /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/,
       required: false
    }
    dtSystemconfigurationReadonlyexpirationend = {
       type: 'string',
-      pattern: '/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/',
+      pattern: /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/,
       required: false
    }
 } 

@@ -64,7 +64,7 @@ export class DataObjectWebsocketResponseErrorV1MPayload {
 export class ValidationObjectWebsocketResponseErrorV1MPayload {
    sErrorMessage = {
       type: 'string',
-      pattern: '/^.{0,500}$/',
+      pattern: /^.{0,500}$/,
       required: true
    }
    eErrorCode = {

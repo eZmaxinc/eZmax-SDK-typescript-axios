@@ -105,6 +105,7 @@ export class ValidationObjectCustomEzmaxinvoicingEzsigndocumentResponse {
    }
    sEzsignfolderDescription = {
       type: 'string',
+      pattern: /^.{0,75}$/,
       required: true
    }
    sEzsigndocumentName = {

@@ -74,7 +74,7 @@ export class ValidationObjectScimGroup {
    }
    displayName = {
       type: 'string',
-      pattern: '/^.{0,50}$/',
+      pattern: /^.{0,50}$/,
       required: true
    }
    members = {

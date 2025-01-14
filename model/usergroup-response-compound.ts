@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import { EmailRequest } from './email-request';
+// May contain unused imports in some cases
+// @ts-ignore
 import { MultilingualUsergroupName } from './multilingual-usergroup-name';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -45,6 +48,12 @@ export interface UsergroupResponseCompound {
      * @memberof UsergroupResponseCompound
      */
     sUsergroupNameX?:string 
+    /**
+     * 
+     * @type {EmailRequest}
+     * @memberof UsergroupResponseCompound
+     */
+    objEmail?:EmailRequest 
 }
 
 
@@ -55,7 +64,11 @@ export interface UsergroupResponseCompound {
 // @ts-ignore
 import { DataObjectMultilingualUsergroupName } from './'
 // @ts-ignore
+import { DataObjectEmailRequest } from './'
+// @ts-ignore
 import { ValidationObjectMultilingualUsergroupName } from './'
+// @ts-ignore
+import { ValidationObjectEmailRequest } from './'
 
 /**
  * @export 
@@ -67,6 +80,7 @@ export class DataObjectUsergroupResponseCompound {
     pkiUsergroupID:number = 0
     objUsergroupName:MultilingualUsergroupName = new DataObjectMultilingualUsergroupName()
     sUsergroupNameX?:string = undefined
+    objEmail?:EmailRequest = undefined
 }
 
 /**
@@ -84,9 +98,10 @@ export class ValidationObjectUsergroupResponseCompound {
    objUsergroupName = new ValidationObjectMultilingualUsergroupName()
    sUsergroupNameX = {
       type: 'string',
-      pattern: '/^.{0,50}$/',
+      pattern: /^.{0,50}$/,
       required: false
    }
+   objEmail = new ValidationObjectEmailRequest()
 } 
 
 

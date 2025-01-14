@@ -73,7 +73,7 @@ export class ValidationObjectUsergroupexternalAutocompleteElementResponse {
    }
    sUsergroupexternalName = {
       type: 'string',
-      pattern: '/^.{0,64}$/',
+      pattern: /^.{0,64}$/,
       required: true
    }
    bUsergroupexternalIsactive = {

@@ -131,12 +131,12 @@ export class ValidationObjectEzsignsignerRequestCompoundContact {
    }
    sEmailAddress = {
       type: 'string',
-      pattern: '/^[\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/',
+      pattern: /^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/,
       required: false
    }
    sPhoneE164 = {
       type: 'string',
-      pattern: '/^\+[1-9]\d{1,14}$/',
+      pattern: /^\+[1-9]\d{1,14}$/,
       required: false
    }
    sPhoneExtension = {
@@ -145,7 +145,7 @@ export class ValidationObjectEzsignsignerRequestCompoundContact {
    }
    sPhoneE164Cell = {
       type: 'string',
-      pattern: '/^\+[1-9]\d{1,14}$/',
+      pattern: /^\+[1-9]\d{1,14}$/,
       required: false
    }
    sPhoneNumber = {

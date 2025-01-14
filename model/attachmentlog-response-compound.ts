@@ -98,7 +98,7 @@ export class ValidationObjectAttachmentlogResponseCompound {
    }
    dtAttachmentlogDatetime = {
       type: 'string',
-      pattern: '/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/',
+      pattern: /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/,
       required: true
    }
    eAttachmentlogType = {
@@ -108,7 +108,7 @@ export class ValidationObjectAttachmentlogResponseCompound {
    }
    sAttachmentlogDetail = {
       type: 'string',
-      pattern: '/^.{0,75}$/',
+      pattern: /^.{0,75}$/,
       required: false
    }
 } 

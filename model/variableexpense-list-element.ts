@@ -94,12 +94,12 @@ export class ValidationObjectVariableexpenseListElement {
    }
    sVariableexpenseCode = {
       type: 'string',
-      pattern: '/^.{0,5}$/',
+      pattern: /^.{0,5}$/,
       required: false
    }
    sVariableexpenseDescriptionX = {
       type: 'string',
-      pattern: '/^.{0,40}$/',
+      pattern: /^.{0,40}$/,
       required: false
    }
    eVariableexpenseTaxable = {

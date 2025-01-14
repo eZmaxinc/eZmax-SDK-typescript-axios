@@ -83,7 +83,7 @@ export interface EzsignformfieldgroupRequestCompound {
      */
     iEzsignformfieldgroupStep:number 
     /**
-     * The default value for the Ezsignformfieldgroup  You can use the codes below and they will be replaced at signature time.    | Code | Description | Example | | ------------------------- | ------------ | ------------ | | {sUserFirstname} | The first name of the contact | John | | {sUserLastname} | The last name of the contact | Doe | | {sUserJobtitle} | The job title | Sales Representative | | {sEmailAddress} | The email address | email@example.com | | {sPhoneE164} | A phone number in E.164 Format | +15149901516 | | {sPhoneE164Cell} | A phone number in E.164 Format | +15149901516 |
+     * The default value for the Ezsignformfieldgroup  You can use the codes below and they will be replaced at signature time.    | Code | Description | Example | | ------------------------- | ------------ | ------------ | | {sUserFirstname} | The first name of the contact | John | | {sUserLastname} | The last name of the contact | Doe | | {sUserJobtitle} | The job title | Sales Representative | | {sCompany} | Company name | eZmax Solutions Inc. | | {sEmailAddress} | The email address | email@example.com | | {sPhoneE164} | A phone number in E.164 Format | +15149901516 | | {sPhoneE164Cell} | A phone number in E.164 Format | +15149901516 |
      * @type {string}
      * @memberof EzsignformfieldgroupRequestCompound
      */
@@ -124,6 +124,12 @@ export interface EzsignformfieldgroupRequestCompound {
      * @memberof EzsignformfieldgroupRequestCompound
      */
     sEzsignformfieldgroupRegexp?:string 
+    /**
+     * Description of validation rule. Show by signatory.
+     * @type {string}
+     * @memberof EzsignformfieldgroupRequestCompound
+     */
+    sEzsignformfieldgroupTextvalidationcustommessage?:string 
     /**
      * A tooltip that will be presented to Ezsignsigner about the Ezsignformfieldgroup
      * @type {string}
@@ -189,6 +195,7 @@ export class DataObjectEzsignformfieldgroupRequestCompound {
     iEzsignformfieldgroupMaxlength?:number = undefined
     bEzsignformfieldgroupEncrypted?:boolean = undefined
     sEzsignformfieldgroupRegexp?:string = undefined
+    sEzsignformfieldgroupTextvalidationcustommessage?:string = undefined
     tEzsignformfieldgroupTooltip?:string = undefined
     eEzsignformfieldgroupTooltipposition?:FieldEEzsignformfieldgroupTooltipposition = undefined
     eEzsignformfieldgroupTextvalidation?:EnumTextvalidation = undefined
@@ -225,6 +232,8 @@ export class ValidationObjectEzsignformfieldgroupRequestCompound {
    }
    sEzsignformfieldgroupLabel = {
       type: 'string',
+      minLength: 1,
+      maxLength: 50,
       required: true
    }
    iEzsignformfieldgroupStep = {
@@ -262,7 +271,13 @@ export class ValidationObjectEzsignformfieldgroupRequestCompound {
    }
    sEzsignformfieldgroupRegexp = {
       type: 'string',
-      pattern: '/^\^.*\$$|^$/',
+      pattern: /^\^.*\$$|^$/,
+      required: false
+   }
+   sEzsignformfieldgroupTextvalidationcustommessage = {
+      type: 'string',
+      minLength: 0,
+      maxLength: 50,
       required: false
    }
    tEzsignformfieldgroupTooltip = {

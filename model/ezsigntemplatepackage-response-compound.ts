@@ -43,11 +43,23 @@ export interface EzsigntemplatepackageResponseCompound {
      */
     fkiEzsignfoldertypeID:number 
     /**
+     * The unique ID of the Ezdoctemplatedocument
+     * @type {number}
+     * @memberof EzsigntemplatepackageResponseCompound
+     */
+    fkiEzdoctemplatedocumentID?:number 
+    /**
      * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @type {number}
      * @memberof EzsigntemplatepackageResponseCompound
      */
     fkiLanguageID:number 
+    /**
+     * The name of the Ezdoctemplatedocument in the language of the requester
+     * @type {string}
+     * @memberof EzsigntemplatepackageResponseCompound
+     */
+    sEzdoctemplatedocumentNameX?:string 
     /**
      * The Name of the Language in the language of the requester
      * @type {string}
@@ -119,7 +131,9 @@ export interface EzsigntemplatepackageResponseCompound {
 export class DataObjectEzsigntemplatepackageResponseCompound {
     pkiEzsigntemplatepackageID:number = 0
     fkiEzsignfoldertypeID:number = 0
+    fkiEzdoctemplatedocumentID?:number = undefined
     fkiLanguageID:number = 0
+    sEzdoctemplatedocumentNameX?:string = undefined
     sLanguageNameX:string = ''
     sEzsigntemplatepackageDescription:string = ''
     bEzsigntemplatepackageAdminonly:boolean = false
@@ -148,11 +162,22 @@ export class ValidationObjectEzsigntemplatepackageResponseCompound {
       maximum: 65535,
       required: true
    }
+   fkiEzdoctemplatedocumentID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 65535,
+      required: false
+   }
    fkiLanguageID = {
       type: 'integer',
       minimum: 1,
       maximum: 2,
       required: true
+   }
+   sEzdoctemplatedocumentNameX = {
+      type: 'string',
+      pattern: /^.{0,50}$/,
+      required: false
    }
    sLanguageNameX = {
       type: 'string',
@@ -160,6 +185,7 @@ export class ValidationObjectEzsigntemplatepackageResponseCompound {
    }
    sEzsigntemplatepackageDescription = {
       type: 'string',
+      pattern: /^.{0,80}$/,
       required: true
    }
    bEzsigntemplatepackageAdminonly = {

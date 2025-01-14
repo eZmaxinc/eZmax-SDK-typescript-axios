@@ -22,7 +22,13 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
+import { BuyercontractGetCommunicationCountV1Response } from '../model';
+// @ts-ignore
 import { BuyercontractGetCommunicationListV1Response } from '../model';
+// @ts-ignore
+import { BuyercontractGetCommunicationrecipientsV1Response } from '../model';
+// @ts-ignore
+import { BuyercontractGetCommunicationsendersV1Response } from '../model';
 // @ts-ignore
 import { CommonResponseError } from '../model';
 // @ts-ignore
@@ -35,6 +41,64 @@ export const ObjectBuyercontractApiAxiosParamCreator = function (configuration?:
     return {
         /**
          * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiBuyercontractID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        buyercontractGetCommunicationCountV1: async (pkiBuyercontractID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiBuyercontractID' is not null or undefined
+            assertParamExists('buyercontractGetCommunicationCountV1', 'pkiBuyercontractID', pkiBuyercontractID)
+            const localVarPath = `/1/object/buyercontract/{pkiBuyercontractID}/getCommunicationCount`
+                .replace(`{${"pkiBuyercontractID"}}`, encodeURIComponent(String(pkiBuyercontractID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Retrieve Communication list
          * @param {number} pkiBuyercontractID 
          * @param {*} [options] Override http request option.
@@ -44,6 +108,122 @@ export const ObjectBuyercontractApiAxiosParamCreator = function (configuration?:
             // verify required parameter 'pkiBuyercontractID' is not null or undefined
             assertParamExists('buyercontractGetCommunicationListV1', 'pkiBuyercontractID', pkiBuyercontractID)
             const localVarPath = `/1/object/buyercontract/{pkiBuyercontractID}/getCommunicationList`
+                .replace(`{${"pkiBuyercontractID"}}`, encodeURIComponent(String(pkiBuyercontractID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Buyercontract\'s Communicationrecipient
+         * @param {number} pkiBuyercontractID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        buyercontractGetCommunicationrecipientsV1: async (pkiBuyercontractID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiBuyercontractID' is not null or undefined
+            assertParamExists('buyercontractGetCommunicationrecipientsV1', 'pkiBuyercontractID', pkiBuyercontractID)
+            const localVarPath = `/1/object/buyercontract/{pkiBuyercontractID}/getCommunicationrecipients`
+                .replace(`{${"pkiBuyercontractID"}}`, encodeURIComponent(String(pkiBuyercontractID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Buyercontract\'s Communicationsender
+         * @param {number} pkiBuyercontractID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        buyercontractGetCommunicationsendersV1: async (pkiBuyercontractID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiBuyercontractID' is not null or undefined
+            assertParamExists('buyercontractGetCommunicationsendersV1', 'pkiBuyercontractID', pkiBuyercontractID)
+            const localVarPath = `/1/object/buyercontract/{pkiBuyercontractID}/getCommunicationsenders`
                 .replace(`{${"pkiBuyercontractID"}}`, encodeURIComponent(String(pkiBuyercontractID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
@@ -103,6 +283,19 @@ export const ObjectBuyercontractApiFp = function(configuration?: Configuration) 
     return {
         /**
          * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiBuyercontractID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async buyercontractGetCommunicationCountV1(pkiBuyercontractID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BuyercontractGetCommunicationCountV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.buyercontractGetCommunicationCountV1(pkiBuyercontractID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectBuyercontractApi.buyercontractGetCommunicationCountV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Retrieve Communication list
          * @param {number} pkiBuyercontractID 
          * @param {*} [options] Override http request option.
@@ -112,6 +305,32 @@ export const ObjectBuyercontractApiFp = function(configuration?: Configuration) 
             const localVarAxiosArgs = await localVarAxiosParamCreator.buyercontractGetCommunicationListV1(pkiBuyercontractID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectBuyercontractApi.buyercontractGetCommunicationListV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Buyercontract\'s Communicationrecipient
+         * @param {number} pkiBuyercontractID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async buyercontractGetCommunicationrecipientsV1(pkiBuyercontractID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BuyercontractGetCommunicationrecipientsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.buyercontractGetCommunicationrecipientsV1(pkiBuyercontractID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectBuyercontractApi.buyercontractGetCommunicationrecipientsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Buyercontract\'s Communicationsender
+         * @param {number} pkiBuyercontractID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async buyercontractGetCommunicationsendersV1(pkiBuyercontractID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BuyercontractGetCommunicationsendersV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.buyercontractGetCommunicationsendersV1(pkiBuyercontractID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectBuyercontractApi.buyercontractGetCommunicationsendersV1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -126,6 +345,16 @@ export const ObjectBuyercontractApiFactory = function (configuration?: Configura
     return {
         /**
          * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiBuyercontractID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        buyercontractGetCommunicationCountV1(pkiBuyercontractID: number, options?: any): AxiosPromise<BuyercontractGetCommunicationCountV1Response> {
+            return localVarFp.buyercontractGetCommunicationCountV1(pkiBuyercontractID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Retrieve Communication list
          * @param {number} pkiBuyercontractID 
          * @param {*} [options] Override http request option.
@@ -133,6 +362,26 @@ export const ObjectBuyercontractApiFactory = function (configuration?: Configura
          */
         buyercontractGetCommunicationListV1(pkiBuyercontractID: number, options?: any): AxiosPromise<BuyercontractGetCommunicationListV1Response> {
             return localVarFp.buyercontractGetCommunicationListV1(pkiBuyercontractID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Buyercontract\'s Communicationrecipient
+         * @param {number} pkiBuyercontractID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        buyercontractGetCommunicationrecipientsV1(pkiBuyercontractID: number, options?: any): AxiosPromise<BuyercontractGetCommunicationrecipientsV1Response> {
+            return localVarFp.buyercontractGetCommunicationrecipientsV1(pkiBuyercontractID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Buyercontract\'s Communicationsender
+         * @param {number} pkiBuyercontractID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        buyercontractGetCommunicationsendersV1(pkiBuyercontractID: number, options?: any): AxiosPromise<BuyercontractGetCommunicationsendersV1Response> {
+            return localVarFp.buyercontractGetCommunicationsendersV1(pkiBuyercontractID, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -146,6 +395,18 @@ export const ObjectBuyercontractApiFactory = function (configuration?: Configura
 export class ObjectBuyercontractApi extends BaseAPI {
     /**
      * 
+     * @summary Retrieve Communication count
+     * @param {number} pkiBuyercontractID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectBuyercontractApi
+     */
+    public buyercontractGetCommunicationCountV1(pkiBuyercontractID: number, options?: RawAxiosRequestConfig) {
+        return ObjectBuyercontractApiFp(this.configuration).buyercontractGetCommunicationCountV1(pkiBuyercontractID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
      * @summary Retrieve Communication list
      * @param {number} pkiBuyercontractID 
      * @param {*} [options] Override http request option.
@@ -154,6 +415,30 @@ export class ObjectBuyercontractApi extends BaseAPI {
      */
     public buyercontractGetCommunicationListV1(pkiBuyercontractID: number, options?: RawAxiosRequestConfig) {
         return ObjectBuyercontractApiFp(this.configuration).buyercontractGetCommunicationListV1(pkiBuyercontractID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Buyercontract\'s Communicationrecipient
+     * @param {number} pkiBuyercontractID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectBuyercontractApi
+     */
+    public buyercontractGetCommunicationrecipientsV1(pkiBuyercontractID: number, options?: RawAxiosRequestConfig) {
+        return ObjectBuyercontractApiFp(this.configuration).buyercontractGetCommunicationrecipientsV1(pkiBuyercontractID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Buyercontract\'s Communicationsender
+     * @param {number} pkiBuyercontractID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectBuyercontractApi
+     */
+    public buyercontractGetCommunicationsendersV1(pkiBuyercontractID: number, options?: RawAxiosRequestConfig) {
+        return ObjectBuyercontractApiFp(this.configuration).buyercontractGetCommunicationsendersV1(pkiBuyercontractID, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

@@ -59,7 +59,7 @@ export class DataObjectDiscussionRequestPatch {
 export class ValidationObjectDiscussionRequestPatch {
    sDiscussionDescription = {
       type: 'string',
-      pattern: '/^.{0,75}$/',
+      pattern: /^.{0,75}$/,
       required: false
    }
    bDiscussionClosed = {

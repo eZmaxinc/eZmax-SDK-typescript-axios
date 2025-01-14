@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import { EmailRequest } from './email-request';
+// May contain unused imports in some cases
+// @ts-ignore
 import { MultilingualUsergroupName } from './multilingual-usergroup-name';
 
 /**
@@ -32,6 +35,13 @@ export interface UsergroupRequest {
     'pkiUsergroupID'?: number;
     /**
      * 
+     * @type {EmailRequest}
+     * @memberof UsergroupRequest
+     */
+    /*'objEmail'?: EmailRequest;*/
+    'objEmail'?: EmailRequest;
+    /**
+     * 
      * @type {MultilingualUsergroupName}
      * @memberof UsergroupRequest
      */
@@ -43,7 +53,11 @@ export interface UsergroupRequest {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectEmailRequest } from './'
+// @ts-ignore
 import { DataObjectMultilingualUsergroupName } from './'
+// @ts-ignore
+import { ValidationObjectEmailRequest } from './'
 // @ts-ignore
 import { ValidationObjectMultilingualUsergroupName } from './'
 
@@ -55,6 +69,7 @@ import { ValidationObjectMultilingualUsergroupName } from './'
  */
 export class DataObjectUsergroupRequest {
    pkiUsergroupID?:number = undefined
+   objEmail?:EmailRequest = undefined
    objUsergroupName:MultilingualUsergroupName = new DataObjectMultilingualUsergroupName()
 }
 
@@ -70,6 +85,7 @@ export class ValidationObjectUsergroupRequest {
       maximum: 255,
       required: false
    }
+   objEmail = new ValidationObjectEmailRequest()
    objUsergroupName = new ValidationObjectMultilingualUsergroupName()
 } 
 

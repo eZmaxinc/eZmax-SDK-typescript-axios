@@ -48,6 +48,10 @@ import { WebhookRegenerateApikeyV1Request } from '../model';
 // @ts-ignore
 import { WebhookRegenerateApikeyV1Response } from '../model';
 // @ts-ignore
+import { WebhookSendWebhookV1Request } from '../model';
+// @ts-ignore
+import { WebhookSendWebhookV1Response } from '../model';
+// @ts-ignore
 import { WebhookTestV1Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
@@ -509,6 +513,66 @@ export const ObjectWebhookApiAxiosParamCreator = function (configuration?: Confi
         },
         /**
          * 
+         * @summary Emit a Webhook event
+         * @param {WebhookSendWebhookV1Request} webhookSendWebhookV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        webhookSendWebhookV1: async (webhookSendWebhookV1Request: WebhookSendWebhookV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'webhookSendWebhookV1Request' is not null or undefined
+            assertParamExists('webhookSendWebhookV1', 'webhookSendWebhookV1Request', webhookSendWebhookV1Request)
+            const localVarPath = `/1/object/webhook/sendWebhook`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(webhookSendWebhookV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Test the Webhook by calling the Url
          * @param {number} pkiWebhookID 
          * @param {object} body 
@@ -681,6 +745,19 @@ export const ObjectWebhookApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Emit a Webhook event
+         * @param {WebhookSendWebhookV1Request} webhookSendWebhookV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async webhookSendWebhookV1(webhookSendWebhookV1Request: WebhookSendWebhookV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookSendWebhookV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.webhookSendWebhookV1(webhookSendWebhookV1Request, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectWebhookApi.webhookSendWebhookV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Test the Webhook by calling the Url
          * @param {number} pkiWebhookID 
          * @param {object} body 
@@ -779,6 +856,16 @@ export const ObjectWebhookApiFactory = function (configuration?: Configuration, 
          */
         webhookRegenerateApikeyV1(pkiWebhookID: number, webhookRegenerateApikeyV1Request: WebhookRegenerateApikeyV1Request, options?: any): AxiosPromise<WebhookRegenerateApikeyV1Response> {
             return localVarFp.webhookRegenerateApikeyV1(pkiWebhookID, webhookRegenerateApikeyV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Emit a Webhook event
+         * @param {WebhookSendWebhookV1Request} webhookSendWebhookV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        webhookSendWebhookV1(webhookSendWebhookV1Request: WebhookSendWebhookV1Request, options?: any): AxiosPromise<WebhookSendWebhookV1Response> {
+            return localVarFp.webhookSendWebhookV1(webhookSendWebhookV1Request, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -890,6 +977,18 @@ export class ObjectWebhookApi extends BaseAPI {
      */
     public webhookRegenerateApikeyV1(pkiWebhookID: number, webhookRegenerateApikeyV1Request: WebhookRegenerateApikeyV1Request, options?: RawAxiosRequestConfig) {
         return ObjectWebhookApiFp(this.configuration).webhookRegenerateApikeyV1(pkiWebhookID, webhookRegenerateApikeyV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Emit a Webhook event
+     * @param {WebhookSendWebhookV1Request} webhookSendWebhookV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectWebhookApi
+     */
+    public webhookSendWebhookV1(webhookSendWebhookV1Request: WebhookSendWebhookV1Request, options?: RawAxiosRequestConfig) {
+        return ObjectWebhookApiFp(this.configuration).webhookSendWebhookV1(webhookSendWebhookV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

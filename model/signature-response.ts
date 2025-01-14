@@ -28,12 +28,26 @@ export interface SignatureResponse {
     /*'pkiSignatureID': number;*/
     'pkiSignatureID': number;
     /**
+     * The unique ID of the Font
+     * @type {number}
+     * @memberof SignatureResponse
+     */
+    /*'fkiFontID'?: number;*/
+    'fkiFontID'?: number;
+    /**
      * The URL of the SVG file for the Signature
      * @type {string}
      * @memberof SignatureResponse
      */
-    /*'sSignatureUrl': string;*/
-    'sSignatureUrl': string;
+    /*'sSignatureUrl'?: string;*/
+    'sSignatureUrl'?: string;
+    /**
+     * The URL of the SVG file for the Initials
+     * @type {string}
+     * @memberof SignatureResponse
+     */
+    /*'sSignatureUrlinitials'?: string;*/
+    'sSignatureUrlinitials'?: string;
 }
 /**
  * @import
@@ -48,7 +62,9 @@ export interface SignatureResponse {
  */
 export class DataObjectSignatureResponse {
    pkiSignatureID:number = 0
-   sSignatureUrl:string = ''
+   fkiFontID?:number = undefined
+   sSignatureUrl?:string = undefined
+   sSignatureUrlinitials?:string = undefined
 }
 
 /**
@@ -63,10 +79,20 @@ export class ValidationObjectSignatureResponse {
       maximum: 16777215,
       required: true
    }
+   fkiFontID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
    sSignatureUrl = {
       type: 'string',
-      pattern: '/^(https|http):\\/\\/[^\s\\/$.?#].[^\s]*$/',
-      required: true
+      pattern: /^(https|http):\/\/[^\s\/$.?#].[^\s]*$/,
+      required: false
+   }
+   sSignatureUrlinitials = {
+      type: 'string',
+      pattern: /^(https|http):\/\/[^\s\/$.?#].[^\s]*$/,
+      required: false
    }
 } 
 

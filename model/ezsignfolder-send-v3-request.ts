@@ -13,6 +13,9 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import { FieldEEzsignfolderMessageorder } from './field-eezsignfolder-messageorder';
 
 /**
  * Request for POST /3/object/ezsignfolder/{pkiEzsignfolderID}/send
@@ -28,6 +31,13 @@ export interface EzsignfolderSendV3Request {
     /*'tEzsignfolderMessage'?: string;*/
     'tEzsignfolderMessage'?: string;
     /**
+     * 
+     * @type {FieldEEzsignfolderMessageorder}
+     * @memberof EzsignfolderSendV3Request
+     */
+    /*'eEzsignfolderMessageorder'?: FieldEEzsignfolderMessageorder;*/
+    'eEzsignfolderMessageorder'?: FieldEEzsignfolderMessageorder;
+    /**
      * The date and time at which the Ezsignfolder will be sent in the future.
      * @type {string}
      * @memberof EzsignfolderSendV3Request
@@ -42,6 +52,8 @@ export interface EzsignfolderSendV3Request {
     /*'a_fkiEzsignfoldersignerassociationID': Array<number>;*/
     'a_fkiEzsignfoldersignerassociationID': Array<number>;
 }
+
+
 /**
  * @import
  * Imports Child Data Object
@@ -55,6 +67,7 @@ export interface EzsignfolderSendV3Request {
  */
 export class DataObjectEzsignfolderSendV3Request {
    tEzsignfolderMessage?:string = undefined
+   eEzsignfolderMessageorder?:FieldEEzsignfolderMessageorder = undefined
    dtEzsignfolderDelayedsenddate?:string = undefined
    a_fkiEzsignfoldersignerassociationID:Array<number> = []
 }
@@ -67,6 +80,11 @@ export class DataObjectEzsignfolderSendV3Request {
 export class ValidationObjectEzsignfolderSendV3Request {
    tEzsignfolderMessage = {
       type: 'string',
+      required: false
+   }
+   eEzsignfolderMessageorder = {
+      type: 'enum',
+      allowableValues: ['GlobalFirst','PrivateFirst'],
       required: false
    }
    dtEzsignfolderDelayedsenddate = {

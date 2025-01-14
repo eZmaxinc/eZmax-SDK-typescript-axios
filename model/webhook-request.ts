@@ -37,6 +37,13 @@ export interface WebhookRequest {
     /*'pkiWebhookID'?: number;*/
     'pkiWebhookID'?: number;
     /**
+     * The unique ID of the Authenticationexternal
+     * @type {number}
+     * @memberof WebhookRequest
+     */
+    /*'fkiAuthenticationexternalID'?: number;*/
+    'fkiAuthenticationexternalID'?: number;
+    /**
      * The unique ID of the Ezsignfoldertype.
      * @type {number}
      * @memberof WebhookRequest
@@ -122,6 +129,7 @@ export interface WebhookRequest {
  */
 export class DataObjectWebhookRequest {
    pkiWebhookID?:number = undefined
+   fkiAuthenticationexternalID?:number = undefined
    fkiEzsignfoldertypeID?:number = undefined
    sWebhookDescription:string = ''
    eWebhookModule:FieldEWebhookModule = 'Ezsign'
@@ -142,6 +150,12 @@ export class DataObjectWebhookRequest {
 export class ValidationObjectWebhookRequest {
    pkiWebhookID = {
       type: 'integer',
+      required: false
+   }
+   fkiAuthenticationexternalID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 255,
       required: false
    }
    fkiEzsignfoldertypeID = {
@@ -171,7 +185,7 @@ export class ValidationObjectWebhookRequest {
    }
    sWebhookUrl = {
       type: 'string',
-      pattern: '/^(https|http):\\/\\/[^\s\\/$.?#].[^\s]*$/',
+      pattern: /^(https|http):\/\/[^\s\/$.?#].[^\s]*$/,
       required: true
    }
    sWebhookEmailfailed = {

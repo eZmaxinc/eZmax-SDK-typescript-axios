@@ -48,6 +48,13 @@ export interface CustomEzsignsignaturestatusResponse {
      */
     /*'iEzsignsignaturestatusSigned': number;*/
     'iEzsignsignaturestatusSigned': number;
+    /**
+     * The number of signature or form fields the Ezsignsigner need to sign or fill under current conditions.
+     * @type {number}
+     * @memberof CustomEzsignsignaturestatusResponse
+     */
+    /*'iEzsignsignaturestatusConditional': number;*/
+    'iEzsignsignaturestatusConditional': number;
 }
 
 export const CustomEzsignsignaturestatusResponseEEzsignsignaturestatusSteptypeEnum = {
@@ -73,6 +80,7 @@ export class DataObjectCustomEzsignsignaturestatusResponse {
    iEzsignsignaturestatusStep:number = 0
    iEzsignsignaturestatusTotal:number = 0
    iEzsignsignaturestatusSigned:number = 0
+   iEzsignsignaturestatusConditional:number = 0
 }
 
 /**
@@ -94,6 +102,10 @@ export class ValidationObjectCustomEzsignsignaturestatusResponse {
       required: true
    }
    iEzsignsignaturestatusSigned = {
+      type: 'integer',
+      required: true
+   }
+   iEzsignsignaturestatusConditional = {
       type: 'integer',
       required: true
    }

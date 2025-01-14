@@ -34,6 +34,10 @@ import { ApikeyEditPermissionsV1Request } from '../model';
 // @ts-ignore
 import { ApikeyEditPermissionsV1Response } from '../model';
 // @ts-ignore
+import { ApikeyGenerateDelegatedCredentialsV1Request } from '../model';
+// @ts-ignore
+import { ApikeyGenerateDelegatedCredentialsV1Response } from '../model';
+// @ts-ignore
 import { ApikeyGetCorsV1Response } from '../model';
 // @ts-ignore
 import { ApikeyGetListV1Response } from '../model';
@@ -234,6 +238,66 @@ export const ObjectApikeyApiAxiosParamCreator = function (configuration?: Config
                         authorization: configuration.apiKey as string,
                         secret: secret as string,
                         method: 'PUT' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Generate a delegated credentials
+         * @param {ApikeyGenerateDelegatedCredentialsV1Request} apikeyGenerateDelegatedCredentialsV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apikeyGenerateDelegatedCredentialsV1: async (apikeyGenerateDelegatedCredentialsV1Request: ApikeyGenerateDelegatedCredentialsV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'apikeyGenerateDelegatedCredentialsV1Request' is not null or undefined
+            assertParamExists('apikeyGenerateDelegatedCredentialsV1', 'apikeyGenerateDelegatedCredentialsV1Request', apikeyGenerateDelegatedCredentialsV1Request)
+            const localVarPath = `/1/object/apikey/generateDelegatedCredentials`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(apikeyGenerateDelegatedCredentialsV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
                         url: basePath + toPathString(localVarUrlObj) as string,
                         body: localVarRequestOptions.data || '' as string
                     }
@@ -677,6 +741,19 @@ export const ObjectApikeyApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Generate a delegated credentials
+         * @param {ApikeyGenerateDelegatedCredentialsV1Request} apikeyGenerateDelegatedCredentialsV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async apikeyGenerateDelegatedCredentialsV1(apikeyGenerateDelegatedCredentialsV1Request: ApikeyGenerateDelegatedCredentialsV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApikeyGenerateDelegatedCredentialsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.apikeyGenerateDelegatedCredentialsV1(apikeyGenerateDelegatedCredentialsV1Request, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectApikeyApi.apikeyGenerateDelegatedCredentialsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Retrieve an existing Apikey\'s cors
          * @param {number} pkiApikeyID 
          * @param {*} [options] Override http request option.
@@ -802,6 +879,16 @@ export const ObjectApikeyApiFactory = function (configuration?: Configuration, b
         },
         /**
          * 
+         * @summary Generate a delegated credentials
+         * @param {ApikeyGenerateDelegatedCredentialsV1Request} apikeyGenerateDelegatedCredentialsV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apikeyGenerateDelegatedCredentialsV1(apikeyGenerateDelegatedCredentialsV1Request: ApikeyGenerateDelegatedCredentialsV1Request, options?: any): AxiosPromise<ApikeyGenerateDelegatedCredentialsV1Response> {
+            return localVarFp.apikeyGenerateDelegatedCredentialsV1(apikeyGenerateDelegatedCredentialsV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Retrieve an existing Apikey\'s cors
          * @param {number} pkiApikeyID 
          * @param {*} [options] Override http request option.
@@ -911,6 +998,18 @@ export class ObjectApikeyApi extends BaseAPI {
      */
     public apikeyEditPermissionsV1(pkiApikeyID: number, apikeyEditPermissionsV1Request: ApikeyEditPermissionsV1Request, options?: RawAxiosRequestConfig) {
         return ObjectApikeyApiFp(this.configuration).apikeyEditPermissionsV1(pkiApikeyID, apikeyEditPermissionsV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Generate a delegated credentials
+     * @param {ApikeyGenerateDelegatedCredentialsV1Request} apikeyGenerateDelegatedCredentialsV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectApikeyApi
+     */
+    public apikeyGenerateDelegatedCredentialsV1(apikeyGenerateDelegatedCredentialsV1Request: ApikeyGenerateDelegatedCredentialsV1Request, options?: RawAxiosRequestConfig) {
+        return ObjectApikeyApiFp(this.configuration).apikeyGenerateDelegatedCredentialsV1(apikeyGenerateDelegatedCredentialsV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

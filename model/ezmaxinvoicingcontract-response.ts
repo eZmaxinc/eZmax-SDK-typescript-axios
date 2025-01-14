@@ -150,12 +150,12 @@ export class ValidationObjectEzmaxinvoicingcontractResponse {
    }
    dEzmaxinvoicingcontractLicense = {
       type: 'string',
-      pattern: '/^-{0,1}[\d]{1,9}?\.[\d]{2}$/',
+      pattern: /^-{0,1}[\d]{1,9}?\.[\d]{2}$/,
       required: true
    }
    dEzmaxinvoicingcontract121qa = {
       type: 'string',
-      pattern: '/^-{0,1}[\d]{1,9}?\.[\d]{2}$/',
+      pattern: /^-{0,1}[\d]{1,9}?\.[\d]{2}$/,
       required: true
    }
    bEzmaxinvoicingcontractEzsignallagents = {

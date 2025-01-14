@@ -80,12 +80,12 @@ export class ValidationObjectCountryAutocompleteElementResponse {
    }
    sCountryNameX = {
       type: 'string',
-      pattern: '/^.{0,40}$/',
+      pattern: /^.{0,40}$/,
       required: true
    }
    sCountryShortname = {
       type: 'string',
-      pattern: '/^.{1,3}$/',
+      pattern: /^.{1,3}$/,
       required: true
    }
    bCountryIsactive = {

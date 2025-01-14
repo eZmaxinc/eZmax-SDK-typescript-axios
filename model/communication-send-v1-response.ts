@@ -24,7 +24,7 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommunicationCreateObjectV1ResponseMPayload } from './communication-create-object-v1-response-mpayload';
+import { CommunicationSendV1ResponseMPayload } from './communication-send-v1-response-mpayload';
 
 /**
  * @type CommunicationSendV1Response
@@ -47,10 +47,10 @@ export interface CommunicationSendV1Response {
     objDebug?:CommonResponseObjDebug 
     /**
      * 
-     * @type {CommunicationCreateObjectV1ResponseMPayload}
+     * @type {CommunicationSendV1ResponseMPayload}
      * @memberof CommunicationSendV1Response
      */
-    mPayload:CommunicationCreateObjectV1ResponseMPayload 
+    mPayload:CommunicationSendV1ResponseMPayload 
 }
 
 
@@ -63,13 +63,13 @@ import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { DataObjectCommunicationCreateObjectV1ResponseMPayload } from './'
+import { DataObjectCommunicationSendV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectCommunicationCreateObjectV1ResponseMPayload } from './'
+import { ValidationObjectCommunicationSendV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -80,7 +80,7 @@ import { ValidationObjectCommunicationCreateObjectV1ResponseMPayload } from './'
 export class DataObjectCommunicationSendV1Response {
     objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
-    mPayload:CommunicationCreateObjectV1ResponseMPayload = new DataObjectCommunicationCreateObjectV1ResponseMPayload()
+    mPayload:CommunicationSendV1ResponseMPayload = new DataObjectCommunicationSendV1ResponseMPayload()
 }
 
 /**
@@ -91,7 +91,7 @@ export class DataObjectCommunicationSendV1Response {
 export class ValidationObjectCommunicationSendV1Response {
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
-   mPayload = new ValidationObjectCommunicationCreateObjectV1ResponseMPayload()
+   mPayload = new ValidationObjectCommunicationSendV1ResponseMPayload()
 } 
 
 

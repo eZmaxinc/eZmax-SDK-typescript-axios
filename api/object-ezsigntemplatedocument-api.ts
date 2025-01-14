@@ -30,6 +30,10 @@ import { EzsigntemplatedocumentCreateObjectV1Request } from '../model';
 // @ts-ignore
 import { EzsigntemplatedocumentCreateObjectV1Response } from '../model';
 // @ts-ignore
+import { EzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Request } from '../model';
+// @ts-ignore
+import { EzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Response } from '../model';
+// @ts-ignore
 import { EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Request } from '../model';
 // @ts-ignore
 import { EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Response } from '../model';
@@ -42,7 +46,13 @@ import { EzsigntemplatedocumentEditObjectV1Request } from '../model';
 // @ts-ignore
 import { EzsigntemplatedocumentEditObjectV1Response } from '../model';
 // @ts-ignore
+import { EzsigntemplatedocumentExtractTextV1Request } from '../model';
+// @ts-ignore
+import { EzsigntemplatedocumentExtractTextV1Response } from '../model';
+// @ts-ignore
 import { EzsigntemplatedocumentFlattenV1Response } from '../model';
+// @ts-ignore
+import { EzsigntemplatedocumentGetEzsigntemplatedocumentpagerecognitionsV1Response } from '../model';
 // @ts-ignore
 import { EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1Response } from '../model';
 // @ts-ignore
@@ -114,6 +124,70 @@ export const ObjectEzsigntemplatedocumentApiAxiosParamCreator = function (config
                         authorization: configuration.apiKey as string,
                         secret: secret as string,
                         method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Edit multiple Ezsigntemplatedocumentpagerecognitions
+         * @summary Edit multiple Ezsigntemplatedocumentpagerecognitions
+         * @param {number} pkiEzsigntemplatedocumentID 
+         * @param {EzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Request} ezsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1: async (pkiEzsigntemplatedocumentID: number, ezsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Request: EzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiEzsigntemplatedocumentID' is not null or undefined
+            assertParamExists('ezsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1', 'pkiEzsigntemplatedocumentID', pkiEzsigntemplatedocumentID)
+            // verify required parameter 'ezsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Request' is not null or undefined
+            assertParamExists('ezsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1', 'ezsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Request', ezsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Request)
+            const localVarPath = `/1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/editEzsigntemplatedocumentpagerecognitions`
+                .replace(`{${"pkiEzsigntemplatedocumentID"}}`, encodeURIComponent(String(pkiEzsigntemplatedocumentID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(ezsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'PUT' as string,
                         url: basePath + toPathString(localVarUrlObj) as string,
                         body: localVarRequestOptions.data || '' as string
                     }
@@ -320,6 +394,70 @@ export const ObjectEzsigntemplatedocumentApiAxiosParamCreator = function (config
             };
         },
         /**
+         * Extract text from Ezsigntemplatedocument area
+         * @summary Extract text from Ezsigntemplatedocument area
+         * @param {number} pkiEzsigntemplatedocumentID 
+         * @param {EzsigntemplatedocumentExtractTextV1Request} ezsigntemplatedocumentExtractTextV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigntemplatedocumentExtractTextV1: async (pkiEzsigntemplatedocumentID: number, ezsigntemplatedocumentExtractTextV1Request: EzsigntemplatedocumentExtractTextV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiEzsigntemplatedocumentID' is not null or undefined
+            assertParamExists('ezsigntemplatedocumentExtractTextV1', 'pkiEzsigntemplatedocumentID', pkiEzsigntemplatedocumentID)
+            // verify required parameter 'ezsigntemplatedocumentExtractTextV1Request' is not null or undefined
+            assertParamExists('ezsigntemplatedocumentExtractTextV1', 'ezsigntemplatedocumentExtractTextV1Request', ezsigntemplatedocumentExtractTextV1Request)
+            const localVarPath = `/1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/extractText`
+                .replace(`{${"pkiEzsigntemplatedocumentID"}}`, encodeURIComponent(String(pkiEzsigntemplatedocumentID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(ezsigntemplatedocumentExtractTextV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Flatten an Ezsigntemplatedocument signatures, forms and annotations. This process finalizes the PDF so that the forms and annotations become part of the document content and cannot be edited.
          * @summary Flatten
          * @param {number} pkiEzsigntemplatedocumentID 
@@ -370,6 +508,64 @@ export const ObjectEzsigntemplatedocumentApiAxiosParamCreator = function (config
                         authorization: configuration.apiKey as string,
                         secret: secret as string,
                         method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve an existing Ezsigntemplatedocument\'s Ezsigntemplatedocumentpagerecognitions
+         * @param {number} pkiEzsigntemplatedocumentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigntemplatedocumentGetEzsigntemplatedocumentpagerecognitionsV1: async (pkiEzsigntemplatedocumentID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiEzsigntemplatedocumentID' is not null or undefined
+            assertParamExists('ezsigntemplatedocumentGetEzsigntemplatedocumentpagerecognitionsV1', 'pkiEzsigntemplatedocumentID', pkiEzsigntemplatedocumentID)
+            const localVarPath = `/1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplatedocumentpagerecognitions`
+                .replace(`{${"pkiEzsigntemplatedocumentID"}}`, encodeURIComponent(String(pkiEzsigntemplatedocumentID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
                         url: basePath + toPathString(localVarUrlObj) as string,
                         body: localVarRequestOptions.data || '' as string
                     }
@@ -767,6 +963,20 @@ export const ObjectEzsigntemplatedocumentApiFp = function(configuration?: Config
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
+         * Edit multiple Ezsigntemplatedocumentpagerecognitions
+         * @summary Edit multiple Ezsigntemplatedocumentpagerecognitions
+         * @param {number} pkiEzsigntemplatedocumentID 
+         * @param {EzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Request} ezsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1(pkiEzsigntemplatedocumentID: number, ezsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Request: EzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1(pkiEzsigntemplatedocumentID, ezsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Request, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsigntemplatedocumentApi.ezsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * Using this endpoint, you can edit multiple Ezsigntemplateformfieldgroups at the same time.
          * @summary Edit multiple Ezsigntemplateformfieldgroups
          * @param {number} pkiEzsigntemplatedocumentID 
@@ -809,6 +1019,20 @@ export const ObjectEzsigntemplatedocumentApiFp = function(configuration?: Config
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
+         * Extract text from Ezsigntemplatedocument area
+         * @summary Extract text from Ezsigntemplatedocument area
+         * @param {number} pkiEzsigntemplatedocumentID 
+         * @param {EzsigntemplatedocumentExtractTextV1Request} ezsigntemplatedocumentExtractTextV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsigntemplatedocumentExtractTextV1(pkiEzsigntemplatedocumentID: number, ezsigntemplatedocumentExtractTextV1Request: EzsigntemplatedocumentExtractTextV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigntemplatedocumentExtractTextV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigntemplatedocumentExtractTextV1(pkiEzsigntemplatedocumentID, ezsigntemplatedocumentExtractTextV1Request, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsigntemplatedocumentApi.ezsigntemplatedocumentExtractTextV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * Flatten an Ezsigntemplatedocument signatures, forms and annotations. This process finalizes the PDF so that the forms and annotations become part of the document content and cannot be edited.
          * @summary Flatten
          * @param {number} pkiEzsigntemplatedocumentID 
@@ -820,6 +1044,19 @@ export const ObjectEzsigntemplatedocumentApiFp = function(configuration?: Config
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigntemplatedocumentFlattenV1(pkiEzsigntemplatedocumentID, body, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsigntemplatedocumentApi.ezsigntemplatedocumentFlattenV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve an existing Ezsigntemplatedocument\'s Ezsigntemplatedocumentpagerecognitions
+         * @param {number} pkiEzsigntemplatedocumentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsigntemplatedocumentGetEzsigntemplatedocumentpagerecognitionsV1(pkiEzsigntemplatedocumentID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigntemplatedocumentGetEzsigntemplatedocumentpagerecognitionsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigntemplatedocumentGetEzsigntemplatedocumentpagerecognitionsV1(pkiEzsigntemplatedocumentID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsigntemplatedocumentApi.ezsigntemplatedocumentGetEzsigntemplatedocumentpagerecognitionsV1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -923,6 +1160,17 @@ export const ObjectEzsigntemplatedocumentApiFactory = function (configuration?: 
             return localVarFp.ezsigntemplatedocumentCreateObjectV1(ezsigntemplatedocumentCreateObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
+         * Edit multiple Ezsigntemplatedocumentpagerecognitions
+         * @summary Edit multiple Ezsigntemplatedocumentpagerecognitions
+         * @param {number} pkiEzsigntemplatedocumentID 
+         * @param {EzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Request} ezsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1(pkiEzsigntemplatedocumentID: number, ezsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Request: EzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Request, options?: any): AxiosPromise<EzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Response> {
+            return localVarFp.ezsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1(pkiEzsigntemplatedocumentID, ezsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Using this endpoint, you can edit multiple Ezsigntemplateformfieldgroups at the same time.
          * @summary Edit multiple Ezsigntemplateformfieldgroups
          * @param {number} pkiEzsigntemplatedocumentID 
@@ -956,6 +1204,17 @@ export const ObjectEzsigntemplatedocumentApiFactory = function (configuration?: 
             return localVarFp.ezsigntemplatedocumentEditObjectV1(pkiEzsigntemplatedocumentID, ezsigntemplatedocumentEditObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
+         * Extract text from Ezsigntemplatedocument area
+         * @summary Extract text from Ezsigntemplatedocument area
+         * @param {number} pkiEzsigntemplatedocumentID 
+         * @param {EzsigntemplatedocumentExtractTextV1Request} ezsigntemplatedocumentExtractTextV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigntemplatedocumentExtractTextV1(pkiEzsigntemplatedocumentID: number, ezsigntemplatedocumentExtractTextV1Request: EzsigntemplatedocumentExtractTextV1Request, options?: any): AxiosPromise<EzsigntemplatedocumentExtractTextV1Response> {
+            return localVarFp.ezsigntemplatedocumentExtractTextV1(pkiEzsigntemplatedocumentID, ezsigntemplatedocumentExtractTextV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Flatten an Ezsigntemplatedocument signatures, forms and annotations. This process finalizes the PDF so that the forms and annotations become part of the document content and cannot be edited.
          * @summary Flatten
          * @param {number} pkiEzsigntemplatedocumentID 
@@ -965,6 +1224,16 @@ export const ObjectEzsigntemplatedocumentApiFactory = function (configuration?: 
          */
         ezsigntemplatedocumentFlattenV1(pkiEzsigntemplatedocumentID: number, body: object, options?: any): AxiosPromise<EzsigntemplatedocumentFlattenV1Response> {
             return localVarFp.ezsigntemplatedocumentFlattenV1(pkiEzsigntemplatedocumentID, body, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve an existing Ezsigntemplatedocument\'s Ezsigntemplatedocumentpagerecognitions
+         * @param {number} pkiEzsigntemplatedocumentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigntemplatedocumentGetEzsigntemplatedocumentpagerecognitionsV1(pkiEzsigntemplatedocumentID: number, options?: any): AxiosPromise<EzsigntemplatedocumentGetEzsigntemplatedocumentpagerecognitionsV1Response> {
+            return localVarFp.ezsigntemplatedocumentGetEzsigntemplatedocumentpagerecognitionsV1(pkiEzsigntemplatedocumentID, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -1051,6 +1320,19 @@ export class ObjectEzsigntemplatedocumentApi extends BaseAPI {
     }
 
     /**
+     * Edit multiple Ezsigntemplatedocumentpagerecognitions
+     * @summary Edit multiple Ezsigntemplatedocumentpagerecognitions
+     * @param {number} pkiEzsigntemplatedocumentID 
+     * @param {EzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Request} ezsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectEzsigntemplatedocumentApi
+     */
+    public ezsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1(pkiEzsigntemplatedocumentID: number, ezsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Request: EzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Request, options?: RawAxiosRequestConfig) {
+        return ObjectEzsigntemplatedocumentApiFp(this.configuration).ezsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1(pkiEzsigntemplatedocumentID, ezsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * Using this endpoint, you can edit multiple Ezsigntemplateformfieldgroups at the same time.
      * @summary Edit multiple Ezsigntemplateformfieldgroups
      * @param {number} pkiEzsigntemplatedocumentID 
@@ -1090,6 +1372,19 @@ export class ObjectEzsigntemplatedocumentApi extends BaseAPI {
     }
 
     /**
+     * Extract text from Ezsigntemplatedocument area
+     * @summary Extract text from Ezsigntemplatedocument area
+     * @param {number} pkiEzsigntemplatedocumentID 
+     * @param {EzsigntemplatedocumentExtractTextV1Request} ezsigntemplatedocumentExtractTextV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectEzsigntemplatedocumentApi
+     */
+    public ezsigntemplatedocumentExtractTextV1(pkiEzsigntemplatedocumentID: number, ezsigntemplatedocumentExtractTextV1Request: EzsigntemplatedocumentExtractTextV1Request, options?: RawAxiosRequestConfig) {
+        return ObjectEzsigntemplatedocumentApiFp(this.configuration).ezsigntemplatedocumentExtractTextV1(pkiEzsigntemplatedocumentID, ezsigntemplatedocumentExtractTextV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * Flatten an Ezsigntemplatedocument signatures, forms and annotations. This process finalizes the PDF so that the forms and annotations become part of the document content and cannot be edited.
      * @summary Flatten
      * @param {number} pkiEzsigntemplatedocumentID 
@@ -1100,6 +1395,18 @@ export class ObjectEzsigntemplatedocumentApi extends BaseAPI {
      */
     public ezsigntemplatedocumentFlattenV1(pkiEzsigntemplatedocumentID: number, body: object, options?: RawAxiosRequestConfig) {
         return ObjectEzsigntemplatedocumentApiFp(this.configuration).ezsigntemplatedocumentFlattenV1(pkiEzsigntemplatedocumentID, body, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve an existing Ezsigntemplatedocument\'s Ezsigntemplatedocumentpagerecognitions
+     * @param {number} pkiEzsigntemplatedocumentID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectEzsigntemplatedocumentApi
+     */
+    public ezsigntemplatedocumentGetEzsigntemplatedocumentpagerecognitionsV1(pkiEzsigntemplatedocumentID: number, options?: RawAxiosRequestConfig) {
+        return ObjectEzsigntemplatedocumentApiFp(this.configuration).ezsigntemplatedocumentGetEzsigntemplatedocumentpagerecognitionsV1(pkiEzsigntemplatedocumentID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

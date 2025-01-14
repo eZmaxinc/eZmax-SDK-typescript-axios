@@ -22,6 +22,9 @@ import { CommonResponseObjDebug } from './common-response-obj-debug';
 // May contain unused imports in some cases
 // @ts-ignore
 import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
+// May contain unused imports in some cases
+// @ts-ignore
+import { EzsignsignatureSignV1ResponseMPayload } from './ezsignsignature-sign-v1-response-mpayload';
 
 /**
  * @type EzsignsignatureSignV1Response
@@ -42,6 +45,12 @@ export interface EzsignsignatureSignV1Response {
      * @memberof EzsignsignatureSignV1Response
      */
     objDebug?:CommonResponseObjDebug 
+    /**
+     * 
+     * @type {EzsignsignatureSignV1ResponseMPayload}
+     * @memberof EzsignsignatureSignV1Response
+     */
+    mPayload:EzsignsignatureSignV1ResponseMPayload 
 }
 
 
@@ -54,9 +63,13 @@ import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
+import { DataObjectEzsignsignatureSignV1ResponseMPayload } from './'
+// @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsignsignatureSignV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -67,6 +80,7 @@ import { ValidationObjectCommonResponseObjDebug } from './'
 export class DataObjectEzsignsignatureSignV1Response {
     objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:EzsignsignatureSignV1ResponseMPayload = new DataObjectEzsignsignatureSignV1ResponseMPayload()
 }
 
 /**
@@ -77,6 +91,7 @@ export class DataObjectEzsignsignatureSignV1Response {
 export class ValidationObjectEzsignsignatureSignV1Response {
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectEzsignsignatureSignV1ResponseMPayload()
 } 
 
 

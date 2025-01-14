@@ -71,7 +71,7 @@ export class ValidationObjectPaymenttermAutocompleteElementResponse {
    }
    sPaymenttermDescriptionX = {
       type: 'string',
-      pattern: '/^.{1,40}$/',
+      pattern: /^.{1,40}$/,
       required: true
    }
    bPaymenttermIsactive = {

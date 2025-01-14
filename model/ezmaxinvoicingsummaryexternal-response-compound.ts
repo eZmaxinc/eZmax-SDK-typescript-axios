@@ -113,6 +113,7 @@ export class ValidationObjectEzmaxinvoicingsummaryexternalResponseCompound {
    }
    sEzmaxinvoicingsummaryexternalDescription = {
       type: 'string',
+      maxLength: 70,
       required: true
    }
    a_objEzmaxinvoicingsummaryexternaldetail = {

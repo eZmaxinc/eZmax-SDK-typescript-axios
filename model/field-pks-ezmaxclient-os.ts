@@ -21,6 +21,7 @@
  */
 
 export const FieldPksEzmaxclientOs = {
+    Android: 'Android',
     iOS: 'iOS',
     iPadOS: 'iPadOS',
     macOS: 'macOS',

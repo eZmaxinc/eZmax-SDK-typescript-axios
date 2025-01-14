@@ -59,12 +59,12 @@ export class DataObjectMultilingualUsergroupName {
 export class ValidationObjectMultilingualUsergroupName {
    sUsergroupName1 = {
       type: 'string',
-      pattern: '/^.{0,50}$/',
+      pattern: /^.{0,50}$/,
       required: false
    }
    sUsergroupName2 = {
       type: 'string',
-      pattern: '/^.{0,50}$/',
+      pattern: /^.{0,50}$/,
       required: false
    }
 } 

@@ -36,6 +36,8 @@ import { SignatureEditObjectV1Response } from '../model';
 // @ts-ignore
 import { SignatureGetObjectV2Response } from '../model';
 // @ts-ignore
+import { SignatureGetObjectV3Response } from '../model';
+// @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
  * ObjectSignatureApi - axios parameter creator
@@ -230,12 +232,187 @@ export const ObjectSignatureApiAxiosParamCreator = function (configuration?: Con
          * @summary Retrieve an existing Signature
          * @param {number} pkiSignatureID The unique ID of the Signature
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         signatureGetObjectV2: async (pkiSignatureID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiSignatureID' is not null or undefined
             assertParamExists('signatureGetObjectV2', 'pkiSignatureID', pkiSignatureID)
             const localVarPath = `/2/object/signature/{pkiSignatureID}`
+                .replace(`{${"pkiSignatureID"}}`, encodeURIComponent(String(pkiSignatureID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve an existing Signature
+         * @param {number} pkiSignatureID The unique ID of the Signature
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        signatureGetObjectV3: async (pkiSignatureID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiSignatureID' is not null or undefined
+            assertParamExists('signatureGetObjectV3', 'pkiSignatureID', pkiSignatureID)
+            const localVarPath = `/3/object/signature/{pkiSignatureID}`
+                .replace(`{${"pkiSignatureID"}}`, encodeURIComponent(String(pkiSignatureID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve an existing Signature initial SVG
+         * @param {number} pkiSignatureID The unique ID of the Signature
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        signatureGetSVGInitialsV1: async (pkiSignatureID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiSignatureID' is not null or undefined
+            assertParamExists('signatureGetSVGInitialsV1', 'pkiSignatureID', pkiSignatureID)
+            const localVarPath = `/1/object/signature/{pkiSignatureID}/getSVGInitials`
+                .replace(`{${"pkiSignatureID"}}`, encodeURIComponent(String(pkiSignatureID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve an existing Signature SVG
+         * @param {number} pkiSignatureID The unique ID of the Signature
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        signatureGetSVGSignatureV1: async (pkiSignatureID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiSignatureID' is not null or undefined
+            assertParamExists('signatureGetSVGSignatureV1', 'pkiSignatureID', pkiSignatureID)
+            const localVarPath = `/1/object/signature/{pkiSignatureID}/getSVGSignature`
                 .replace(`{${"pkiSignatureID"}}`, encodeURIComponent(String(pkiSignatureID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
@@ -338,12 +515,52 @@ export const ObjectSignatureApiFp = function(configuration?: Configuration) {
          * @summary Retrieve an existing Signature
          * @param {number} pkiSignatureID The unique ID of the Signature
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         async signatureGetObjectV2(pkiSignatureID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SignatureGetObjectV2Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.signatureGetObjectV2(pkiSignatureID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectSignatureApi.signatureGetObjectV2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve an existing Signature
+         * @param {number} pkiSignatureID The unique ID of the Signature
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async signatureGetObjectV3(pkiSignatureID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SignatureGetObjectV3Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.signatureGetObjectV3(pkiSignatureID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectSignatureApi.signatureGetObjectV3']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve an existing Signature initial SVG
+         * @param {number} pkiSignatureID The unique ID of the Signature
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async signatureGetSVGInitialsV1(pkiSignatureID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.signatureGetSVGInitialsV1(pkiSignatureID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectSignatureApi.signatureGetSVGInitialsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve an existing Signature SVG
+         * @param {number} pkiSignatureID The unique ID of the Signature
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async signatureGetSVGSignatureV1(pkiSignatureID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.signatureGetSVGSignatureV1(pkiSignatureID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectSignatureApi.signatureGetSVGSignatureV1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -392,10 +609,41 @@ export const ObjectSignatureApiFactory = function (configuration?: Configuration
          * @summary Retrieve an existing Signature
          * @param {number} pkiSignatureID The unique ID of the Signature
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         signatureGetObjectV2(pkiSignatureID: number, options?: any): AxiosPromise<SignatureGetObjectV2Response> {
             return localVarFp.signatureGetObjectV2(pkiSignatureID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve an existing Signature
+         * @param {number} pkiSignatureID The unique ID of the Signature
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        signatureGetObjectV3(pkiSignatureID: number, options?: any): AxiosPromise<SignatureGetObjectV3Response> {
+            return localVarFp.signatureGetObjectV3(pkiSignatureID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve an existing Signature initial SVG
+         * @param {number} pkiSignatureID The unique ID of the Signature
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        signatureGetSVGInitialsV1(pkiSignatureID: number, options?: any): AxiosPromise<void> {
+            return localVarFp.signatureGetSVGInitialsV1(pkiSignatureID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve an existing Signature SVG
+         * @param {number} pkiSignatureID The unique ID of the Signature
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        signatureGetSVGSignatureV1(pkiSignatureID: number, options?: any): AxiosPromise<void> {
+            return localVarFp.signatureGetSVGSignatureV1(pkiSignatureID, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -449,11 +697,48 @@ export class ObjectSignatureApi extends BaseAPI {
      * @summary Retrieve an existing Signature
      * @param {number} pkiSignatureID The unique ID of the Signature
      * @param {*} [options] Override http request option.
+     * @deprecated
      * @throws {RequiredError}
      * @memberof ObjectSignatureApi
      */
     public signatureGetObjectV2(pkiSignatureID: number, options?: RawAxiosRequestConfig) {
         return ObjectSignatureApiFp(this.configuration).signatureGetObjectV2(pkiSignatureID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve an existing Signature
+     * @param {number} pkiSignatureID The unique ID of the Signature
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectSignatureApi
+     */
+    public signatureGetObjectV3(pkiSignatureID: number, options?: RawAxiosRequestConfig) {
+        return ObjectSignatureApiFp(this.configuration).signatureGetObjectV3(pkiSignatureID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve an existing Signature initial SVG
+     * @param {number} pkiSignatureID The unique ID of the Signature
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectSignatureApi
+     */
+    public signatureGetSVGInitialsV1(pkiSignatureID: number, options?: RawAxiosRequestConfig) {
+        return ObjectSignatureApiFp(this.configuration).signatureGetSVGInitialsV1(pkiSignatureID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve an existing Signature SVG
+     * @param {number} pkiSignatureID The unique ID of the Signature
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectSignatureApi
+     */
+    public signatureGetSVGSignatureV1(pkiSignatureID: number, options?: RawAxiosRequestConfig) {
+        return ObjectSignatureApiFp(this.configuration).signatureGetSVGSignatureV1(pkiSignatureID, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

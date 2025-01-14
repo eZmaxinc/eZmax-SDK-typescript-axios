@@ -75,6 +75,8 @@ export class ValidationObjectCustomEzsignformfieldgroupRequest {
    }
    sEzsignformfieldgroupLabel = {
       type: 'string',
+      minLength: 1,
+      maxLength: 50,
       required: false
    }
    a_objEzsignformfield = {

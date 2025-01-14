@@ -24,6 +24,9 @@ import { EnumTextvalidation } from './enum-textvalidation';
 import { FieldEEzsignsignatureAttachmentnamesource } from './field-eezsignsignature-attachmentnamesource';
 // May contain unused imports in some cases
 // @ts-ignore
+import { FieldEEzsignsignatureConsultationtrigger } from './field-eezsignsignature-consultationtrigger';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FieldEEzsignsignatureDependencyrequirement } from './field-eezsignsignature-dependencyrequirement';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -72,6 +75,13 @@ export interface EzsignsignatureResponse {
      */
     /*'fkiEzsignsigningreasonID'?: number;*/
     'fkiEzsignsigningreasonID'?: number;
+    /**
+     * The unique ID of the Font
+     * @type {number}
+     * @memberof EzsignsignatureResponse
+     */
+    /*'fkiFontID'?: number;*/
+    'fkiFontID'?: number;
     /**
      * The description of the Ezsignsigningreason in the language of the requester
      * @type {string}
@@ -178,7 +188,28 @@ export interface EzsignsignatureResponse {
     /*'eEzsignsignatureAttachmentnamesource'?: FieldEEzsignsignatureAttachmentnamesource;*/
     'eEzsignsignatureAttachmentnamesource'?: FieldEEzsignsignatureAttachmentnamesource;
     /**
-     * Whether the Ezsignsignature is required or not. This field is relevant only with Ezsignsignature with eEzsignsignatureType = Attachments.
+     * 
+     * @type {FieldEEzsignsignatureConsultationtrigger}
+     * @memberof EzsignsignatureResponse
+     */
+    /*'eEzsignsignatureConsultationtrigger'?: FieldEEzsignsignatureConsultationtrigger;*/
+    'eEzsignsignatureConsultationtrigger'?: FieldEEzsignsignatureConsultationtrigger;
+    /**
+     * Whether the Ezsignsignature must be handwritten or not when eEzsignsignatureType = Signature.
+     * @type {boolean}
+     * @memberof EzsignsignatureResponse
+     */
+    /*'bEzsignsignatureHandwritten'?: boolean;*/
+    'bEzsignsignatureHandwritten'?: boolean;
+    /**
+     * Whether the Ezsignsignature must include a reason or not when eEzsignsignatureType = Signature.
+     * @type {boolean}
+     * @memberof EzsignsignatureResponse
+     */
+    /*'bEzsignsignatureReason'?: boolean;*/
+    'bEzsignsignatureReason'?: boolean;
+    /**
+     * Whether the Ezsignsignature is required or not. This field is relevant only with Ezsignsignature with eEzsignsignatureType = Attachments, Text or Textarea.
      * @type {boolean}
      * @memberof EzsignsignatureResponse
      */
@@ -227,12 +258,26 @@ export interface EzsignsignatureResponse {
     /*'eEzsignsignatureTextvalidation'?: EnumTextvalidation;*/
     'eEzsignsignatureTextvalidation'?: EnumTextvalidation;
     /**
+     * Description of validation rule. Show by signatory.
+     * @type {string}
+     * @memberof EzsignsignatureResponse
+     */
+    /*'sEzsignsignatureTextvalidationcustommessage'?: string;*/
+    'sEzsignsignatureTextvalidationcustommessage'?: string;
+    /**
      * 
      * @type {FieldEEzsignsignatureDependencyrequirement}
      * @memberof EzsignsignatureResponse
      */
     /*'eEzsignsignatureDependencyrequirement'?: FieldEEzsignsignatureDependencyrequirement;*/
     'eEzsignsignatureDependencyrequirement'?: FieldEEzsignsignatureDependencyrequirement;
+    /**
+     * The default value for the Ezsignsignature  You can use the codes below and they will be replaced at signature time.    | Code | Description | Example | | ------------------------- | ------------ | ------------ | | {sUserFirstname} | The first name of the contact | John | | {sUserLastname} | The last name of the contact | Doe | | {sUserJobtitle} | The job title | Sales Representative | | {sCompany} | Company name | eZmax Solutions Inc. | | {sEmailAddress} | The email address | email@example.com | | {sPhoneE164} | A phone number in E.164 Format | +15149901516 | | {sPhoneE164Cell} | A phone number in E.164 Format | +15149901516 |
+     * @type {string}
+     * @memberof EzsignsignatureResponse
+     */
+    /*'sEzsignsignatureDefaultvalue'?: string;*/
+    'sEzsignsignatureDefaultvalue'?: string;
     /**
      * A regular expression to indicate what values are acceptable for the Ezsignsignature.  This can only be set if eEzsignsignatureType is **FieldText** or **FieldTextarea** and eEzsignsignatureTextvalidation is **Custom**
      * @type {string}
@@ -292,6 +337,7 @@ export class DataObjectEzsignsignatureResponse {
    fkiEzsigndocumentID:number = 0
    fkiEzsignfoldersignerassociationID:number = 0
    fkiEzsignsigningreasonID?:number = undefined
+   fkiFontID?:number = undefined
    sEzsignsigningreasonDescriptionX?:string = undefined
    iEzsignpagePagenumber:number = 0
    iEzsignsignatureX:number = 0
@@ -307,6 +353,9 @@ export class DataObjectEzsignsignatureResponse {
    iEzsignsignatureValidationstep?:number = undefined
    sEzsignsignatureAttachmentdescription?:string = undefined
    eEzsignsignatureAttachmentnamesource?:FieldEEzsignsignatureAttachmentnamesource = undefined
+   eEzsignsignatureConsultationtrigger?:FieldEEzsignsignatureConsultationtrigger = undefined
+   bEzsignsignatureHandwritten?:boolean = undefined
+   bEzsignsignatureReason?:boolean = undefined
    bEzsignsignatureRequired?:boolean = undefined
    fkiEzsignfoldersignerassociationIDValidation?:number = undefined
    dtEzsignsignatureDate?:string = undefined
@@ -314,7 +363,9 @@ export class DataObjectEzsignsignatureResponse {
    sEzsignsignatureDescription?:string = undefined
    iEzsignsignatureMaxlength?:number = undefined
    eEzsignsignatureTextvalidation?:EnumTextvalidation = undefined
+   sEzsignsignatureTextvalidationcustommessage?:string = undefined
    eEzsignsignatureDependencyrequirement?:FieldEEzsignsignatureDependencyrequirement = undefined
+   sEzsignsignatureDefaultvalue?:string = undefined
    sEzsignsignatureRegexp?:string = undefined
    objContactName:CustomContactNameResponse = new DataObjectCustomContactNameResponse()
    objContactNameDelegation?:CustomContactNameResponse = undefined
@@ -348,9 +399,14 @@ export class ValidationObjectEzsignsignatureResponse {
       maximum: 255,
       required: false
    }
+   fkiFontID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
    sEzsignsigningreasonDescriptionX = {
       type: 'string',
-      pattern: '/^.{0,50}$/',
+      pattern: /^.{0,50}$/,
       required: false
    }
    iEzsignpagePagenumber = {
@@ -388,7 +444,7 @@ export class ValidationObjectEzsignsignatureResponse {
    }
    eEzsignsignatureType = {
       type: 'enum',
-      allowableValues: ['Acknowledgement','City','Handwritten','Initials','Name','NameReason','Attachments','AttachmentsConfirmation','FieldText','FieldTextarea','Consultation'],
+      allowableValues: ['Acknowledgement','City','Handwritten','Initials','Name','NameReason','Attachments','AttachmentsConfirmation','FieldText','FieldTextarea','Consultation','Signature'],
       required: true
    }
    tEzsignsignatureTooltip = {
@@ -418,6 +474,19 @@ export class ValidationObjectEzsignsignatureResponse {
       allowableValues: ['Description','Customer','DescriptionCustomer'],
       required: false
    }
+   eEzsignsignatureConsultationtrigger = {
+      type: 'enum',
+      allowableValues: ['Automatic','Manual'],
+      required: false
+   }
+   bEzsignsignatureHandwritten = {
+      type: 'boolean',
+      required: false
+   }
+   bEzsignsignatureReason = {
+      type: 'boolean',
+      required: false
+   }
    bEzsignsignatureRequired = {
       type: 'boolean',
       required: false
@@ -429,7 +498,7 @@ export class ValidationObjectEzsignsignatureResponse {
    }
    dtEzsignsignatureDate = {
       type: 'string',
-      pattern: '/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/',
+      pattern: /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/,
       required: false
    }
    iEzsignsignatureattachmentCount = {
@@ -451,14 +520,24 @@ export class ValidationObjectEzsignsignatureResponse {
       allowableValues: ['None','Date (YYYY-MM-DD)','Date (MM/DD/YYYY)','Date (MM/DD/YY)','Date (DD/MM/YYYY)','Date (DD/MM/YY)','Email','Letters','Numbers','Zip','Zip+4','PostalCode','Custom'],
       required: false
    }
+   sEzsignsignatureTextvalidationcustommessage = {
+      type: 'string',
+      minLength: 0,
+      maxLength: 50,
+      required: false
+   }
    eEzsignsignatureDependencyrequirement = {
       type: 'enum',
       allowableValues: ['AllOf','AnyOf'],
       required: false
    }
+   sEzsignsignatureDefaultvalue = {
+      type: 'string',
+      required: false
+   }
    sEzsignsignatureRegexp = {
       type: 'string',
-      pattern: '/^\^.*\$$|^$/',
+      pattern: /^\^.*\$$|^$/,
       required: false
    }
    objContactName = new ValidationObjectCustomContactNameResponse()

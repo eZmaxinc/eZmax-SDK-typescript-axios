@@ -76,12 +76,12 @@ export class ValidationObjectUsergroupexternalRequestCompound {
    }
    sUsergroupexternalName = {
       type: 'string',
-      pattern: '/^.{0,64}$/',
+      pattern: /^.{0,64}$/,
       required: true
    }
    sUsergroupexternalID = {
       type: 'string',
-      pattern: '/^.{0,64}$/',
+      pattern: /^.{0,64}$/,
       required: true
    }
 } 

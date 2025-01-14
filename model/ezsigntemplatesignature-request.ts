@@ -21,6 +21,9 @@ import { EnumTextvalidation } from './enum-textvalidation';
 import { FieldEEzsigntemplatesignatureAttachmentnamesource } from './field-eezsigntemplatesignature-attachmentnamesource';
 // May contain unused imports in some cases
 // @ts-ignore
+import { FieldEEzsigntemplatesignatureConsultationtrigger } from './field-eezsigntemplatesignature-consultationtrigger';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FieldEEzsigntemplatesignatureDependencyrequirement } from './field-eezsigntemplatesignature-dependencyrequirement';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -72,6 +75,20 @@ export interface EzsigntemplatesignatureRequest {
      */
     /*'fkiEzsigntemplatesignerIDValidation'?: number;*/
     'fkiEzsigntemplatesignerIDValidation'?: number;
+    /**
+     * Whether the Ezsigntemplatesignature must be handwritten or not when eEzsigntemplatesignatureType = Signature.
+     * @type {boolean}
+     * @memberof EzsigntemplatesignatureRequest
+     */
+    /*'bEzsigntemplatesignatureHandwritten'?: boolean;*/
+    'bEzsigntemplatesignatureHandwritten'?: boolean;
+    /**
+     * Whether the Ezsigntemplatesignature must include a reason or not when eEzsigntemplatesignatureType = Signature.
+     * @type {boolean}
+     * @memberof EzsigntemplatesignatureRequest
+     */
+    /*'bEzsigntemplatesignatureReason'?: boolean;*/
+    'bEzsigntemplatesignatureReason'?: boolean;
     /**
      * 
      * @type {FieldEEzsigntemplatesignaturePositioning}
@@ -129,6 +146,13 @@ export interface EzsigntemplatesignatureRequest {
     /*'eEzsigntemplatesignatureType': FieldEEzsigntemplatesignatureType;*/
     'eEzsigntemplatesignatureType': FieldEEzsigntemplatesignatureType;
     /**
+     * 
+     * @type {FieldEEzsigntemplatesignatureConsultationtrigger}
+     * @memberof EzsigntemplatesignatureRequest
+     */
+    /*'eEzsigntemplatesignatureConsultationtrigger'?: FieldEEzsigntemplatesignatureConsultationtrigger;*/
+    'eEzsigntemplatesignatureConsultationtrigger'?: FieldEEzsigntemplatesignatureConsultationtrigger;
+    /**
      * A tooltip that will be presented to Ezsigntemplatesigner about the Ezsigntemplatesignature
      * @type {string}
      * @memberof EzsigntemplatesignatureRequest
@@ -185,6 +209,13 @@ export interface EzsigntemplatesignatureRequest {
     /*'iEzsigntemplatesignatureMaxlength'?: number;*/
     'iEzsigntemplatesignatureMaxlength'?: number;
     /**
+     * The default value for the Ezsigntemplatesignature  You can use the codes below and they will be replaced at signature time.    | Code | Description | Example | | ------------------------- | ------------ | ------------ | | {sUserFirstname} | The first name of the contact | John | | {sUserLastname} | The last name of the contact | Doe | | {sUserJobtitle} | The job title | Sales Representative | | {sCompany} | Company name | eZmax Solutions Inc. | | {sEmailAddress} | The email address | email@example.com | | {sPhoneE164} | A phone number in E.164 Format | +15149901516 | | {sPhoneE164Cell} | A phone number in E.164 Format | +15149901516 |
+     * @type {string}
+     * @memberof EzsigntemplatesignatureRequest
+     */
+    /*'sEzsigntemplatesignatureDefaultvalue'?: string;*/
+    'sEzsigntemplatesignatureDefaultvalue'?: string;
+    /**
      * A regular expression to indicate what values are acceptable for the Ezsigntemplatesignature.  This can only be set if eEzsigntemplatesignatureType is **Text** or **Textarea**
      * @type {string}
      * @memberof EzsigntemplatesignatureRequest
@@ -198,6 +229,13 @@ export interface EzsigntemplatesignatureRequest {
      */
     /*'eEzsigntemplatesignatureTextvalidation'?: EnumTextvalidation;*/
     'eEzsigntemplatesignatureTextvalidation'?: EnumTextvalidation;
+    /**
+     * Description of validation rule. Show by signatory.
+     * @type {string}
+     * @memberof EzsigntemplatesignatureRequest
+     */
+    /*'sEzsigntemplatesignatureTextvalidationcustommessage'?: string;*/
+    'sEzsigntemplatesignatureTextvalidationcustommessage'?: string;
     /**
      * 
      * @type {FieldEEzsigntemplatesignatureDependencyrequirement}
@@ -252,6 +290,8 @@ export class DataObjectEzsigntemplatesignatureRequest {
    fkiEzsigntemplatedocumentID:number = 0
    fkiEzsigntemplatesignerID:number = 0
    fkiEzsigntemplatesignerIDValidation?:number = undefined
+   bEzsigntemplatesignatureHandwritten?:boolean = undefined
+   bEzsigntemplatesignatureReason?:boolean = undefined
    eEzsigntemplatesignaturePositioning?:FieldEEzsigntemplatesignaturePositioning = undefined
    iEzsigntemplatedocumentpagePagenumber:number = 0
    iEzsigntemplatesignatureX?:number = undefined
@@ -260,6 +300,7 @@ export class DataObjectEzsigntemplatesignatureRequest {
    iEzsigntemplatesignatureHeight?:number = undefined
    iEzsigntemplatesignatureStep:number = 0
    eEzsigntemplatesignatureType:FieldEEzsigntemplatesignatureType = 'Acknowledgement'
+   eEzsigntemplatesignatureConsultationtrigger?:FieldEEzsigntemplatesignatureConsultationtrigger = undefined
    tEzsigntemplatesignatureTooltip?:string = undefined
    eEzsigntemplatesignatureTooltipposition?:FieldEEzsigntemplatesignatureTooltipposition = undefined
    eEzsigntemplatesignatureFont?:FieldEEzsigntemplatesignatureFont = undefined
@@ -268,8 +309,10 @@ export class DataObjectEzsigntemplatesignatureRequest {
    sEzsigntemplatesignatureAttachmentdescription?:string = undefined
    iEzsigntemplatesignatureValidationstep?:number = undefined
    iEzsigntemplatesignatureMaxlength?:number = undefined
+   sEzsigntemplatesignatureDefaultvalue?:string = undefined
    sEzsigntemplatesignatureRegexp?:string = undefined
    eEzsigntemplatesignatureTextvalidation?:EnumTextvalidation = undefined
+   sEzsigntemplatesignatureTextvalidationcustommessage?:string = undefined
    eEzsigntemplatesignatureDependencyrequirement?:FieldEEzsigntemplatesignatureDependencyrequirement = undefined
    sEzsigntemplatesignaturePositioningpattern?:string = undefined
    iEzsigntemplatesignaturePositioningoffsetx?:number = undefined
@@ -301,6 +344,14 @@ export class ValidationObjectEzsigntemplatesignatureRequest {
    fkiEzsigntemplatesignerIDValidation = {
       type: 'integer',
       minimum: 0,
+      required: false
+   }
+   bEzsigntemplatesignatureHandwritten = {
+      type: 'boolean',
+      required: false
+   }
+   bEzsigntemplatesignatureReason = {
+      type: 'boolean',
       required: false
    }
    eEzsigntemplatesignaturePositioning = {
@@ -340,8 +391,13 @@ export class ValidationObjectEzsigntemplatesignatureRequest {
    }
    eEzsigntemplatesignatureType = {
       type: 'enum',
-      allowableValues: ['Acknowledgement','City','Handwritten','Initials','Name','NameReason','Attachments','FieldText','FieldTextarea','Consultation'],
+      allowableValues: ['Acknowledgement','City','Handwritten','Initials','Name','NameReason','Attachments','FieldText','FieldTextarea','Consultation','Signature'],
       required: true
+   }
+   eEzsigntemplatesignatureConsultationtrigger = {
+      type: 'enum',
+      allowableValues: ['Automatic','Manual'],
+      required: false
    }
    tEzsigntemplatesignatureTooltip = {
       type: 'string',
@@ -380,14 +436,24 @@ export class ValidationObjectEzsigntemplatesignatureRequest {
       maximum: 65535,
       required: false
    }
+   sEzsigntemplatesignatureDefaultvalue = {
+      type: 'string',
+      required: false
+   }
    sEzsigntemplatesignatureRegexp = {
       type: 'string',
-      pattern: '/^\^.*\$$|^$/',
+      pattern: /^\^.*\$$|^$/,
       required: false
    }
    eEzsigntemplatesignatureTextvalidation = {
       type: 'enum',
       allowableValues: ['None','Date (YYYY-MM-DD)','Date (MM/DD/YYYY)','Date (MM/DD/YY)','Date (DD/MM/YYYY)','Date (DD/MM/YY)','Email','Letters','Numbers','Zip','Zip+4','PostalCode','Custom'],
+      required: false
+   }
+   sEzsigntemplatesignatureTextvalidationcustommessage = {
+      type: 'string',
+      minLength: 0,
+      maxLength: 50,
       required: false
    }
    eEzsigntemplatesignatureDependencyrequirement = {
@@ -397,7 +463,7 @@ export class ValidationObjectEzsigntemplatesignatureRequest {
    }
    sEzsigntemplatesignaturePositioningpattern = {
       type: 'string',
-      pattern: '/^.{0,30}$/',
+      pattern: /^.{0,30}$/,
       required: false
    }
    iEzsigntemplatesignaturePositioningoffsetx = {

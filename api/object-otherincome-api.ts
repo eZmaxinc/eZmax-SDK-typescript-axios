@@ -24,7 +24,13 @@ import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, ope
 // @ts-ignore
 import { CommonResponseError } from '../model';
 // @ts-ignore
+import { OtherincomeGetCommunicationCountV1Response } from '../model';
+// @ts-ignore
 import { OtherincomeGetCommunicationListV1Response } from '../model';
+// @ts-ignore
+import { OtherincomeGetCommunicationrecipientsV1Response } from '../model';
+// @ts-ignore
+import { OtherincomeGetCommunicationsendersV1Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -33,6 +39,64 @@ import { RequestSignature, IHeadersData } from '../api/request-signature';
  */
 export const ObjectOtherincomeApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
+        /**
+         * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiOtherincomeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        otherincomeGetCommunicationCountV1: async (pkiOtherincomeID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiOtherincomeID' is not null or undefined
+            assertParamExists('otherincomeGetCommunicationCountV1', 'pkiOtherincomeID', pkiOtherincomeID)
+            const localVarPath = `/1/object/otherincome/{pkiOtherincomeID}/getCommunicationCount`
+                .replace(`{${"pkiOtherincomeID"}}`, encodeURIComponent(String(pkiOtherincomeID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
         /**
          * 
          * @summary Retrieve Communication list
@@ -44,6 +108,122 @@ export const ObjectOtherincomeApiAxiosParamCreator = function (configuration?: C
             // verify required parameter 'pkiOtherincomeID' is not null or undefined
             assertParamExists('otherincomeGetCommunicationListV1', 'pkiOtherincomeID', pkiOtherincomeID)
             const localVarPath = `/1/object/otherincome/{pkiOtherincomeID}/getCommunicationList`
+                .replace(`{${"pkiOtherincomeID"}}`, encodeURIComponent(String(pkiOtherincomeID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Otherincome\'s Communicationrecipient
+         * @param {number} pkiOtherincomeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        otherincomeGetCommunicationrecipientsV1: async (pkiOtherincomeID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiOtherincomeID' is not null or undefined
+            assertParamExists('otherincomeGetCommunicationrecipientsV1', 'pkiOtherincomeID', pkiOtherincomeID)
+            const localVarPath = `/1/object/otherincome/{pkiOtherincomeID}/getCommunicationrecipients`
+                .replace(`{${"pkiOtherincomeID"}}`, encodeURIComponent(String(pkiOtherincomeID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Otherincome\'s Communicationsender
+         * @param {number} pkiOtherincomeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        otherincomeGetCommunicationsendersV1: async (pkiOtherincomeID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiOtherincomeID' is not null or undefined
+            assertParamExists('otherincomeGetCommunicationsendersV1', 'pkiOtherincomeID', pkiOtherincomeID)
+            const localVarPath = `/1/object/otherincome/{pkiOtherincomeID}/getCommunicationsenders`
                 .replace(`{${"pkiOtherincomeID"}}`, encodeURIComponent(String(pkiOtherincomeID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
@@ -103,6 +283,19 @@ export const ObjectOtherincomeApiFp = function(configuration?: Configuration) {
     return {
         /**
          * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiOtherincomeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async otherincomeGetCommunicationCountV1(pkiOtherincomeID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<OtherincomeGetCommunicationCountV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.otherincomeGetCommunicationCountV1(pkiOtherincomeID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectOtherincomeApi.otherincomeGetCommunicationCountV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Retrieve Communication list
          * @param {number} pkiOtherincomeID 
          * @param {*} [options] Override http request option.
@@ -112,6 +305,32 @@ export const ObjectOtherincomeApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.otherincomeGetCommunicationListV1(pkiOtherincomeID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectOtherincomeApi.otherincomeGetCommunicationListV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Otherincome\'s Communicationrecipient
+         * @param {number} pkiOtherincomeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async otherincomeGetCommunicationrecipientsV1(pkiOtherincomeID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<OtherincomeGetCommunicationrecipientsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.otherincomeGetCommunicationrecipientsV1(pkiOtherincomeID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectOtherincomeApi.otherincomeGetCommunicationrecipientsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Otherincome\'s Communicationsender
+         * @param {number} pkiOtherincomeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async otherincomeGetCommunicationsendersV1(pkiOtherincomeID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<OtherincomeGetCommunicationsendersV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.otherincomeGetCommunicationsendersV1(pkiOtherincomeID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectOtherincomeApi.otherincomeGetCommunicationsendersV1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -126,6 +345,16 @@ export const ObjectOtherincomeApiFactory = function (configuration?: Configurati
     return {
         /**
          * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiOtherincomeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        otherincomeGetCommunicationCountV1(pkiOtherincomeID: number, options?: any): AxiosPromise<OtherincomeGetCommunicationCountV1Response> {
+            return localVarFp.otherincomeGetCommunicationCountV1(pkiOtherincomeID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Retrieve Communication list
          * @param {number} pkiOtherincomeID 
          * @param {*} [options] Override http request option.
@@ -133,6 +362,26 @@ export const ObjectOtherincomeApiFactory = function (configuration?: Configurati
          */
         otherincomeGetCommunicationListV1(pkiOtherincomeID: number, options?: any): AxiosPromise<OtherincomeGetCommunicationListV1Response> {
             return localVarFp.otherincomeGetCommunicationListV1(pkiOtherincomeID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Otherincome\'s Communicationrecipient
+         * @param {number} pkiOtherincomeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        otherincomeGetCommunicationrecipientsV1(pkiOtherincomeID: number, options?: any): AxiosPromise<OtherincomeGetCommunicationrecipientsV1Response> {
+            return localVarFp.otherincomeGetCommunicationrecipientsV1(pkiOtherincomeID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Otherincome\'s Communicationsender
+         * @param {number} pkiOtherincomeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        otherincomeGetCommunicationsendersV1(pkiOtherincomeID: number, options?: any): AxiosPromise<OtherincomeGetCommunicationsendersV1Response> {
+            return localVarFp.otherincomeGetCommunicationsendersV1(pkiOtherincomeID, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -146,6 +395,18 @@ export const ObjectOtherincomeApiFactory = function (configuration?: Configurati
 export class ObjectOtherincomeApi extends BaseAPI {
     /**
      * 
+     * @summary Retrieve Communication count
+     * @param {number} pkiOtherincomeID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectOtherincomeApi
+     */
+    public otherincomeGetCommunicationCountV1(pkiOtherincomeID: number, options?: RawAxiosRequestConfig) {
+        return ObjectOtherincomeApiFp(this.configuration).otherincomeGetCommunicationCountV1(pkiOtherincomeID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
      * @summary Retrieve Communication list
      * @param {number} pkiOtherincomeID 
      * @param {*} [options] Override http request option.
@@ -154,6 +415,30 @@ export class ObjectOtherincomeApi extends BaseAPI {
      */
     public otherincomeGetCommunicationListV1(pkiOtherincomeID: number, options?: RawAxiosRequestConfig) {
         return ObjectOtherincomeApiFp(this.configuration).otherincomeGetCommunicationListV1(pkiOtherincomeID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Otherincome\'s Communicationrecipient
+     * @param {number} pkiOtherincomeID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectOtherincomeApi
+     */
+    public otherincomeGetCommunicationrecipientsV1(pkiOtherincomeID: number, options?: RawAxiosRequestConfig) {
+        return ObjectOtherincomeApiFp(this.configuration).otherincomeGetCommunicationrecipientsV1(pkiOtherincomeID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Otherincome\'s Communicationsender
+     * @param {number} pkiOtherincomeID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectOtherincomeApi
+     */
+    public otherincomeGetCommunicationsendersV1(pkiOtherincomeID: number, options?: RawAxiosRequestConfig) {
+        return ObjectOtherincomeApiFp(this.configuration).otherincomeGetCommunicationsendersV1(pkiOtherincomeID, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

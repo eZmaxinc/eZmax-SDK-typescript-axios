@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import { EnumHorizontalalignment } from './enum-horizontalalignment';
+// May contain unused imports in some cases
+// @ts-ignore
 import { EzsignelementdependencyResponseCompound } from './ezsignelementdependency-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -22,6 +25,9 @@ import { EzsignformfieldResponse } from './ezsignformfield-response';
 // May contain unused imports in some cases
 // @ts-ignore
 import { FieldEEzsignformfieldDependencyrequirement } from './field-eezsignformfield-dependencyrequirement';
+// May contain unused imports in some cases
+// @ts-ignore
+import { TextstylestaticResponseCompound } from './textstylestatic-response-compound';
 
 /**
  * @type EzsignformfieldResponseCompound
@@ -67,13 +73,13 @@ export interface EzsignformfieldResponseCompound {
      */
     iEzsignformfieldY:number 
     /**
-     * The Width of the Ezsignformfield in pixels calculated at 100 DPI  The allowed values are varying based on the eEzsignformfieldgroupType.  | eEzsignformfieldgroupType | Valid values | | ------------------------- | ------------ | | Checkbox                  | 22           | | Dropdown                  | 22-65535     | | Radio                     | 22           | | Text                      | 22-65535     | | Textarea                  | 22-65535     |
+     * The Width of the Ezsignformfield in pixels calculated at 100 DPI
      * @type {number}
      * @memberof EzsignformfieldResponseCompound
      */
     iEzsignformfieldWidth:number 
     /**
-     * The Height of the Ezsignformfield in pixels calculated at 100 DPI  The allowed values are varying based on the eEzsignformfieldgroupType.  | eEzsignformfieldgroupType | Valid values | | ------------------------- | ------------ | | Checkbox                  | 22           | | Dropdown                  | 22           | | Radio                     | 22           | | Text                      | 22           | | Textarea                  | 22-65535     | 
+     * The Height of the Ezsignformfield in pixels calculated at 100 DPI 
      * @type {number}
      * @memberof EzsignformfieldResponseCompound
      */
@@ -104,6 +110,18 @@ export interface EzsignformfieldResponseCompound {
     eEzsignformfieldDependencyrequirement?:FieldEEzsignformfieldDependencyrequirement 
     /**
      * 
+     * @type {EnumHorizontalalignment}
+     * @memberof EzsignformfieldResponseCompound
+     */
+    eEzsignformfieldHorizontalalignment?:EnumHorizontalalignment 
+    /**
+     * 
+     * @type {TextstylestaticResponseCompound}
+     * @memberof EzsignformfieldResponseCompound
+     */
+    objTextstylestatic?:TextstylestaticResponseCompound 
+    /**
+     * 
      * @type {Array<EzsignelementdependencyResponseCompound>}
      * @memberof EzsignformfieldResponseCompound
      */
@@ -116,6 +134,10 @@ export interface EzsignformfieldResponseCompound {
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectTextstylestaticResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectTextstylestaticResponseCompound } from './'
 
 /**
  * @export 
@@ -136,6 +158,8 @@ export class DataObjectEzsignformfieldResponseCompound {
     bEzsignformfieldSelected?:boolean = undefined
     sEzsignformfieldEnteredvalue?:string = undefined
     eEzsignformfieldDependencyrequirement?:FieldEEzsignformfieldDependencyrequirement = undefined
+    eEzsignformfieldHorizontalalignment?:EnumHorizontalalignment = undefined
+    objTextstylestatic?:TextstylestaticResponseCompound = undefined
     a_objEzsignelementdependency?:Array<EzsignelementdependencyResponseCompound> = undefined
 }
 
@@ -200,6 +224,12 @@ export class ValidationObjectEzsignformfieldResponseCompound {
       allowableValues: ['AllOf','AnyOf'],
       required: false
    }
+   eEzsignformfieldHorizontalalignment = {
+      type: 'enum',
+      allowableValues: ['Center','Left','Right'],
+      required: false
+   }
+   objTextstylestatic = new ValidationObjectTextstylestaticResponseCompound()
    a_objEzsignelementdependency = {
       type: 'array',
       required: false

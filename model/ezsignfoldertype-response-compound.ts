@@ -169,6 +169,12 @@ export interface EzsignfoldertypeResponseCompound {
      */
     iEzsignfoldertypeDeadlinedays:number 
     /**
+     * Whether we allow the automatic signature by an User
+     * @type {boolean}
+     * @memberof EzsignfoldertypeResponseCompound
+     */
+    bEzsignfoldertypeAutomaticsignature?:boolean 
+    /**
      * Wheter if delegation of signature is allowed to another user or not
      * @type {boolean}
      * @memberof EzsignfoldertypeResponseCompound
@@ -192,6 +198,12 @@ export interface EzsignfoldertypeResponseCompound {
      * @memberof EzsignfoldertypeResponseCompound
      */
     bEzsignfoldertypeReassignuser?:boolean 
+    /**
+     * Wheter if Reassignment of signatures of the groups to which the user belongs is authorized by a user to himself
+     * @type {boolean}
+     * @memberof EzsignfoldertypeResponseCompound
+     */
+    bEzsignfoldertypeReassigngroup?:boolean 
     /**
      * Whether we send an email to Ezsignsigner  when document is completed
      * @type {boolean}
@@ -377,10 +389,12 @@ export class DataObjectEzsignfoldertypeResponseCompound {
     eEzsignfoldertypeCompletion:FieldEEzsignfoldertypeCompletion = 'PerEzsigndocument'
     iEzsignfoldertypeDisposaldays?:number = undefined
     iEzsignfoldertypeDeadlinedays:number = 0
+    bEzsignfoldertypeAutomaticsignature?:boolean = undefined
     bEzsignfoldertypeDelegate?:boolean = undefined
     bEzsignfoldertypeDiscussion?:boolean = undefined
     bEzsignfoldertypeReassignezsignsigner?:boolean = undefined
     bEzsignfoldertypeReassignuser?:boolean = undefined
+    bEzsignfoldertypeReassigngroup?:boolean = undefined
     bEzsignfoldertypeSendsignedtoezsignsigner?:boolean = undefined
     bEzsignfoldertypeSendsignedtouser?:boolean = undefined
     bEzsignfoldertypeSendattachmentezsignsigner?:boolean = undefined
@@ -462,22 +476,22 @@ export class ValidationObjectEzsignfoldertypeResponseCompound {
    }
    sEmailAddressSigned = {
       type: 'string',
-      pattern: '/^[\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/',
+      pattern: /^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/,
       required: false
    }
    sEmailAddressSummary = {
       type: 'string',
-      pattern: '/^[\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/',
+      pattern: /^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/,
       required: false
    }
    sUsergroupNameX = {
       type: 'string',
-      pattern: '/^.{0,50}$/',
+      pattern: /^.{0,50}$/,
       required: false
    }
    sUsergroupNameXRestricted = {
       type: 'string',
-      pattern: '/^.{0,50}$/',
+      pattern: /^.{0,50}$/,
       required: false
    }
    eEzsignfoldertypePrivacylevel = {
@@ -518,6 +532,10 @@ export class ValidationObjectEzsignfoldertypeResponseCompound {
       maximum: 60,
       required: true
    }
+   bEzsignfoldertypeAutomaticsignature = {
+      type: 'boolean',
+      required: false
+   }
    bEzsignfoldertypeDelegate = {
       type: 'boolean',
       required: false
@@ -531,6 +549,10 @@ export class ValidationObjectEzsignfoldertypeResponseCompound {
       required: false
    }
    bEzsignfoldertypeReassignuser = {
+      type: 'boolean',
+      required: false
+   }
+   bEzsignfoldertypeReassigngroup = {
       type: 'boolean',
       required: false
    }

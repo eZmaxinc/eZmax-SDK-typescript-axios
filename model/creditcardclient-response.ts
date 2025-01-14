@@ -38,7 +38,7 @@ export interface CreditcardclientResponse {
     /*'fkiCreditcarddetailID': number;*/
     'fkiCreditcarddetailID': number;
     /**
-     * Whether if it\'s an relationisdefault
+     * Whether if it\'s the creditcardclient is the default one
      * @type {boolean}
      * @memberof CreditcardclientResponse
      */
@@ -52,26 +52,12 @@ export interface CreditcardclientResponse {
     /*'sCreditcardclientDescription': string;*/
     'sCreditcardclientDescription': string;
     /**
-     * Whether the creditcardclient is active or not
-     * @type {boolean}
-     * @memberof CreditcardclientResponse
-     */
-    /*'bCreditcardclientIsactive': boolean;*/
-    'bCreditcardclientIsactive': boolean;
-    /**
      * Whether if it\'s an allowedagencypayment
      * @type {boolean}
      * @memberof CreditcardclientResponse
      */
-    /*'bCreditcardclientAllowedagencypayment': boolean;*/
-    'bCreditcardclientAllowedagencypayment': boolean;
-    /**
-     * Whether if it\'s an allowedroyallepageprotection
-     * @type {boolean}
-     * @memberof CreditcardclientResponse
-     */
-    /*'bCreditcardclientAllowedroyallepageprotection': boolean;*/
-    'bCreditcardclientAllowedroyallepageprotection': boolean;
+    /*'bCreditcardclientAllowedcompanypayment': boolean;*/
+    'bCreditcardclientAllowedcompanypayment': boolean;
     /**
      * Whether if it\'s an allowedtranquillit
      * @type {boolean}
@@ -107,9 +93,7 @@ export class DataObjectCreditcardclientResponse {
    fkiCreditcarddetailID:number = 0
    bCreditcardclientrelationIsdefault:boolean = false
    sCreditcardclientDescription:string = ''
-   bCreditcardclientIsactive:boolean = false
-   bCreditcardclientAllowedagencypayment:boolean = false
-   bCreditcardclientAllowedroyallepageprotection:boolean = false
+   bCreditcardclientAllowedcompanypayment:boolean = false
    bCreditcardclientAllowedtranquillit:boolean = false
    objCreditcarddetail:CreditcarddetailResponseCompound = new DataObjectCreditcarddetailResponseCompound()
 }
@@ -138,18 +122,10 @@ export class ValidationObjectCreditcardclientResponse {
    }
    sCreditcardclientDescription = {
       type: 'string',
-      pattern: '/^.{0,50}$/',
+      pattern: /^.{0,50}$/,
       required: true
    }
-   bCreditcardclientIsactive = {
-      type: 'boolean',
-      required: true
-   }
-   bCreditcardclientAllowedagencypayment = {
-      type: 'boolean',
-      required: true
-   }
-   bCreditcardclientAllowedroyallepageprotection = {
+   bCreditcardclientAllowedcompanypayment = {
       type: 'boolean',
       required: true
    }

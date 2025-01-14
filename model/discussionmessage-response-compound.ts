@@ -152,17 +152,17 @@ export class ValidationObjectDiscussionmessageResponseCompound {
    }
    tDiscussionmessageContent = {
       type: 'string',
-      pattern: '/^.{0,65535}$/',
+      pattern: /^.{0,65535}$/,
       required: true
    }
    sDiscussionmessageCreatorname = {
       type: 'string',
-      pattern: '/^.{0,75}$/',
+      pattern: /^.{0,75}$/,
       required: true
    }
    sDiscussionmessageActionrequiredname = {
       type: 'string',
-      pattern: '/^.{0,75}$/',
+      pattern: /^.{0,75}$/,
       required: false
    }
    objAudit = new ValidationObjectCommonAudit()

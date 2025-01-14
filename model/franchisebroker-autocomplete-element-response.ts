@@ -21,7 +21,7 @@
  */
 export interface FranchisebrokerAutocompleteElementResponse {
     /**
-     * The name of the Franchisebroker in the language of the requester
+     * The name of the Franchisebroker
      * @type {string}
      * @memberof FranchisebrokerAutocompleteElementResponse
      */

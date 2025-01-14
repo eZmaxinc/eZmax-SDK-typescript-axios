@@ -104,6 +104,7 @@ export class ValidationObjectEzmaxinvoicingsummaryinternalResponse {
    objEzmaxinvoicingsummaryinternalDescription = new ValidationObjectMultilingualEzmaxinvoicingsummaryinternalDescription()
    sEzmaxinvoicingsummaryinternalDescriptionX = {
       type: 'string',
+      maxLength: 70,
       required: true
    }
    fkiEzmaxinvoicingID = {

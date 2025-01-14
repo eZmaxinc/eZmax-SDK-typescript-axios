@@ -125,6 +125,13 @@ export interface EzsigntemplateformfieldgroupResponse {
     /*'sEzsigntemplateformfieldgroupRegexp'?: string;*/
     'sEzsigntemplateformfieldgroupRegexp'?: string;
     /**
+     * Description of validation rule. Show by signatory.
+     * @type {string}
+     * @memberof EzsigntemplateformfieldgroupResponse
+     */
+    /*'sEzsigntemplateformfieldgroupTextvalidationcustommessage'?: string;*/
+    'sEzsigntemplateformfieldgroupTextvalidationcustommessage'?: string;
+    /**
      * 
      * @type {EnumTextvalidation}
      * @memberof EzsigntemplateformfieldgroupResponse
@@ -173,6 +180,7 @@ export class DataObjectEzsigntemplateformfieldgroupResponse {
    iEzsigntemplateformfieldgroupMaxlength?:number = undefined
    bEzsigntemplateformfieldgroupEncrypted?:boolean = undefined
    sEzsigntemplateformfieldgroupRegexp?:string = undefined
+   sEzsigntemplateformfieldgroupTextvalidationcustommessage?:string = undefined
    eEzsigntemplateformfieldgroupTextvalidation?:EnumTextvalidation = undefined
    tEzsigntemplateformfieldgroupTooltip?:string = undefined
    eEzsigntemplateformfieldgroupTooltipposition?:FieldEEzsigntemplateformfieldgroupTooltipposition = undefined
@@ -206,6 +214,8 @@ export class ValidationObjectEzsigntemplateformfieldgroupResponse {
    }
    sEzsigntemplateformfieldgroupLabel = {
       type: 'string',
+      minLength: 1,
+      maxLength: 50,
       required: true
    }
    iEzsigntemplateformfieldgroupStep = {
@@ -243,7 +253,13 @@ export class ValidationObjectEzsigntemplateformfieldgroupResponse {
    }
    sEzsigntemplateformfieldgroupRegexp = {
       type: 'string',
-      pattern: '/^\^.*\$$|^$/',
+      pattern: /^\^.*\$$|^$/,
+      required: false
+   }
+   sEzsigntemplateformfieldgroupTextvalidationcustommessage = {
+      type: 'string',
+      minLength: 0,
+      maxLength: 50,
       required: false
    }
    eEzsigntemplateformfieldgroupTextvalidation = {

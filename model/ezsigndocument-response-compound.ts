@@ -27,6 +27,9 @@ import { CustomEzsignfoldersignerassociationstatusResponse } from './custom-ezsi
 import { EzsigndocumentResponse } from './ezsigndocument-response';
 // May contain unused imports in some cases
 // @ts-ignore
+import { EzsigndocumentdependencyResponse } from './ezsigndocumentdependency-response';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FieldEEzsigndocumentStep } from './field-eezsigndocument-step';
 
 /**
@@ -121,6 +124,12 @@ export interface EzsigndocumentResponseCompound {
      */
     iEzsigndocumentSignaturetotal:number 
     /**
+     * The number of total Ezsignformfield that were requested in the Ezsigndocument.
+     * @type {number}
+     * @memberof EzsigndocumentResponseCompound
+     */
+    iEzsigndocumentFormfieldtotal:number 
+    /**
      * MD5 Hash of the initial PDF Document before signatures were applied to it.
      * @type {string}
      * @memberof EzsigndocumentResponseCompound
@@ -210,6 +219,12 @@ export interface EzsigndocumentResponseCompound {
      * @memberof EzsigndocumentResponseCompound
      */
     a_objEzsignfoldersignerassociationstatus:Array<CustomEzsignfoldersignerassociationstatusResponse> 
+    /**
+     * 
+     * @type {Array<EzsigndocumentdependencyResponse>}
+     * @memberof EzsigndocumentResponseCompound
+     */
+    a_objEzsigndocumentdependency?:Array<EzsigndocumentdependencyResponse> 
 }
 
 
@@ -244,6 +259,7 @@ export class DataObjectEzsigndocumentResponseCompound {
     iEzsigndocumentPagetotal:number = 0
     iEzsigndocumentSignaturesigned:number = 0
     iEzsigndocumentSignaturetotal:number = 0
+    iEzsigndocumentFormfieldtotal:number = 0
     sEzsigndocumentMD5initial?:string = undefined
     tEzsigndocumentDeclinedtosignreason?:string = undefined
     sEzsigndocumentMD5signed?:string = undefined
@@ -259,6 +275,7 @@ export class DataObjectEzsigndocumentResponseCompound {
     iEzsigndocumentStepsignaturetotal:number = 0
     iEzsigndocumentStepsignatureCurrent:number = 0
     a_objEzsignfoldersignerassociationstatus:Array<CustomEzsignfoldersignerassociationstatusResponse> = []
+    a_objEzsigndocumentdependency?:Array<EzsigndocumentdependencyResponse> = undefined
 }
 
 /**
@@ -333,6 +350,11 @@ export class ValidationObjectEzsigndocumentResponseCompound {
       minimum: 0,
       required: true
    }
+   iEzsigndocumentFormfieldtotal = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
    sEzsigndocumentMD5initial = {
       type: 'string',
       required: false
@@ -356,7 +378,7 @@ export class ValidationObjectEzsigndocumentResponseCompound {
    objAudit = new ValidationObjectCommonAudit()
    sEzsigndocumentExternalid = {
       type: 'string',
-      pattern: '/^.{0,128}$/',
+      pattern: /^.{0,128}$/,
       required: false
    }
    iEzsigndocumentEzsignsignatureattachmenttotal = {
@@ -392,6 +414,10 @@ export class ValidationObjectEzsigndocumentResponseCompound {
    a_objEzsignfoldersignerassociationstatus = {
       type: 'array',
       required: true
+   }
+   a_objEzsigndocumentdependency = {
+      type: 'array',
+      required: false
    }
 } 
 

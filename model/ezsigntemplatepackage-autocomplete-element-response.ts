@@ -93,6 +93,7 @@ export class ValidationObjectEzsigntemplatepackageAutocompleteElementResponse {
    }
    sEzsigntemplatepackageDescription = {
       type: 'string',
+      pattern: /^.{0,80}$/,
       required: true
    }
    pkiEzsigntemplatepackageID = {

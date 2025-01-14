@@ -59,12 +59,12 @@ export class DataObjectMultilingualEzsignsigningreasonDescription {
 export class ValidationObjectMultilingualEzsignsigningreasonDescription {
    sEzsignsigningreasonDescription1 = {
       type: 'string',
-      pattern: '/^.{0,50}$/',
+      pattern: /^.{0,50}$/,
       required: false
    }
    sEzsignsigningreasonDescription2 = {
       type: 'string',
-      pattern: '/^.{0,50}$/',
+      pattern: /^.{0,50}$/,
       required: false
    }
 } 

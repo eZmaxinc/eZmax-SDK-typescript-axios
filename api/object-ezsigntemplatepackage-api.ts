@@ -306,10 +306,11 @@ export const ObjectEzsigntemplatepackageApiAxiosParamCreator = function (configu
          * @param {EzsigntemplatepackageGetAutocompleteV2EFilterActiveEnum} [eFilterActive] Specify which results we want to display.
          * @param {string} [sQuery] Allow to filter the returned results
          * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {number} [fkiEzsignfoldertypeID] The fkiEzsignfoldertypeID to use with the selector Ezsigntemplatepublic
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigntemplatepackageGetAutocompleteV2: async (sSelector: EzsigntemplatepackageGetAutocompleteV2SSelectorEnum, eFilterActive?: EzsigntemplatepackageGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsigntemplatepackageGetAutocompleteV2: async (sSelector: EzsigntemplatepackageGetAutocompleteV2SSelectorEnum, eFilterActive?: EzsigntemplatepackageGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, fkiEzsignfoldertypeID?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('ezsigntemplatepackageGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/ezsigntemplatepackage/getAutocomplete/{sSelector}`
@@ -338,6 +339,10 @@ export const ObjectEzsigntemplatepackageApiAxiosParamCreator = function (configu
 
             if (sQuery !== undefined) {
                 localVarQueryParameter['sQuery'] = sQuery;
+            }
+
+            if (fkiEzsignfoldertypeID !== undefined) {
+                localVarQueryParameter['fkiEzsignfoldertypeID'] = fkiEzsignfoldertypeID;
             }
 
             if (acceptLanguage != null) {
@@ -584,11 +589,12 @@ export const ObjectEzsigntemplatepackageApiFp = function(configuration?: Configu
          * @param {EzsigntemplatepackageGetAutocompleteV2EFilterActiveEnum} [eFilterActive] Specify which results we want to display.
          * @param {string} [sQuery] Allow to filter the returned results
          * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {number} [fkiEzsignfoldertypeID] The fkiEzsignfoldertypeID to use with the selector Ezsigntemplatepublic
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsigntemplatepackageGetAutocompleteV2(sSelector: EzsigntemplatepackageGetAutocompleteV2SSelectorEnum, eFilterActive?: EzsigntemplatepackageGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigntemplatepackageGetAutocompleteV2Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigntemplatepackageGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options);
+        async ezsigntemplatepackageGetAutocompleteV2(sSelector: EzsigntemplatepackageGetAutocompleteV2SSelectorEnum, eFilterActive?: EzsigntemplatepackageGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, fkiEzsignfoldertypeID?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigntemplatepackageGetAutocompleteV2Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigntemplatepackageGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, fkiEzsignfoldertypeID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsigntemplatepackageApi.ezsigntemplatepackageGetAutocompleteV2']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -682,11 +688,12 @@ export const ObjectEzsigntemplatepackageApiFactory = function (configuration?: C
          * @param {EzsigntemplatepackageGetAutocompleteV2EFilterActiveEnum} [eFilterActive] Specify which results we want to display.
          * @param {string} [sQuery] Allow to filter the returned results
          * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {number} [fkiEzsignfoldertypeID] The fkiEzsignfoldertypeID to use with the selector Ezsigntemplatepublic
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigntemplatepackageGetAutocompleteV2(sSelector: EzsigntemplatepackageGetAutocompleteV2SSelectorEnum, eFilterActive?: EzsigntemplatepackageGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: any): AxiosPromise<EzsigntemplatepackageGetAutocompleteV2Response> {
-            return localVarFp.ezsigntemplatepackageGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(axios, basePath));
+        ezsigntemplatepackageGetAutocompleteV2(sSelector: EzsigntemplatepackageGetAutocompleteV2SSelectorEnum, eFilterActive?: EzsigntemplatepackageGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, fkiEzsignfoldertypeID?: number, options?: any): AxiosPromise<EzsigntemplatepackageGetAutocompleteV2Response> {
+            return localVarFp.ezsigntemplatepackageGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, fkiEzsignfoldertypeID, options).then((request) => request(axios, basePath));
         },
         /**
          * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsigntemplatepackageType | Company<br>Team<br>User<br>Usergroup |
@@ -779,12 +786,13 @@ export class ObjectEzsigntemplatepackageApi extends BaseAPI {
      * @param {EzsigntemplatepackageGetAutocompleteV2EFilterActiveEnum} [eFilterActive] Specify which results we want to display.
      * @param {string} [sQuery] Allow to filter the returned results
      * @param {HeaderAcceptLanguage} [acceptLanguage] 
+     * @param {number} [fkiEzsignfoldertypeID] The fkiEzsignfoldertypeID to use with the selector Ezsigntemplatepublic
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ObjectEzsigntemplatepackageApi
      */
-    public ezsigntemplatepackageGetAutocompleteV2(sSelector: EzsigntemplatepackageGetAutocompleteV2SSelectorEnum, eFilterActive?: EzsigntemplatepackageGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig) {
-        return ObjectEzsigntemplatepackageApiFp(this.configuration).ezsigntemplatepackageGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(this.axios, this.basePath));
+    public ezsigntemplatepackageGetAutocompleteV2(sSelector: EzsigntemplatepackageGetAutocompleteV2SSelectorEnum, eFilterActive?: EzsigntemplatepackageGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, fkiEzsignfoldertypeID?: number, options?: RawAxiosRequestConfig) {
+        return ObjectEzsigntemplatepackageApiFp(this.configuration).ezsigntemplatepackageGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, fkiEzsignfoldertypeID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -821,7 +829,8 @@ export class ObjectEzsigntemplatepackageApi extends BaseAPI {
  */
 export const EzsigntemplatepackageGetAutocompleteV2SSelectorEnum = {
     All: 'All',
-    AllMultipleCopiesDisabled: 'AllMultipleCopiesDisabled'
+    AllMultipleCopiesDisabled: 'AllMultipleCopiesDisabled',
+    Ezsigntemplatepublic: 'Ezsigntemplatepublic'
 } as const;
 export type EzsigntemplatepackageGetAutocompleteV2SSelectorEnum = typeof EzsigntemplatepackageGetAutocompleteV2SSelectorEnum[keyof typeof EzsigntemplatepackageGetAutocompleteV2SSelectorEnum];
 /**

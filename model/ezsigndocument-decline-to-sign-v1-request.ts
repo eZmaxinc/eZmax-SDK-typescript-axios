@@ -51,7 +51,7 @@ export class DataObjectEzsigndocumentDeclineToSignV1Request {
 export class ValidationObjectEzsigndocumentDeclineToSignV1Request {
    sReason = {
       type: 'string',
-      pattern: '/^.{0,65535}$/',
+      pattern: /^.{0,65535}$/,
       required: true
    }
 } 

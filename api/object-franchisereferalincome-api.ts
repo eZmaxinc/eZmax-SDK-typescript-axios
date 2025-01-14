@@ -22,6 +22,8 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
+import { CommonResponseErrorWrongFranchiseoffice } from '../model';
+// @ts-ignore
 import { FranchisereferalincomeCreateObjectV2Request } from '../model';
 // @ts-ignore
 import { FranchisereferalincomeCreateObjectV2Response } from '../model';

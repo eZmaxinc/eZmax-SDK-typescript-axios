@@ -93,12 +93,12 @@ export class ValidationObjectProvinceAutocompleteElementResponse {
    }
    sProvinceNameX = {
       type: 'string',
-      pattern: '/^.{0,50}$/',
+      pattern: /^.{0,50}$/,
       required: true
    }
    sProvinceShortname = {
       type: 'string',
-      pattern: '/^.{1,3}$/',
+      pattern: /^.{1,3}$/,
       required: true
    }
    bProvinceIsactive = {

@@ -16,6 +16,9 @@
 // May contain unused imports in some cases
 // @ts-ignore
 import { EzsigntemplatesignerResponse } from './ezsigntemplatesigner-response';
+// May contain unused imports in some cases
+// @ts-ignore
+import { FieldEEzsigntemplatesignerMapping } from './field-eezsigntemplatesigner-mapping';
 
 /**
  * @type EzsigntemplatesignerResponseCompound
@@ -37,12 +40,55 @@ export interface EzsigntemplatesignerResponseCompound {
      */
     fkiEzsigntemplateID:number 
     /**
+     * The unique ID of the User
+     * @type {number}
+     * @memberof EzsigntemplatesignerResponseCompound
+     */
+    fkiUserID?:number 
+    /**
+     * The unique ID of the Usergroup
+     * @type {number}
+     * @memberof EzsigntemplatesignerResponseCompound
+     */
+    fkiUsergroupID?:number 
+    /**
+     * The unique ID of the Ezdoctemplatedocument
+     * @type {number}
+     * @memberof EzsigntemplatesignerResponseCompound
+     */
+    fkiEzdoctemplatedocumentID?:number 
+    /**
+     * If this flag is true. The signatory will receive a copy of every signed Ezsigndocument even if it ain\'t required to sign the document.
+     * @type {boolean}
+     * @memberof EzsigntemplatesignerResponseCompound
+     */
+    bEzsigntemplatesignerReceivecopy?:boolean 
+    /**
+     * 
+     * @type {FieldEEzsigntemplatesignerMapping}
+     * @memberof EzsigntemplatesignerResponseCompound
+     */
+    eEzsigntemplatesignerMapping?:FieldEEzsigntemplatesignerMapping 
+    /**
      * The description of the Ezsigntemplatesigner
      * @type {string}
      * @memberof EzsigntemplatesignerResponseCompound
      */
     sEzsigntemplatesignerDescription:string 
+    /**
+     * The description of the User in the language of the requester
+     * @type {string}
+     * @memberof EzsigntemplatesignerResponseCompound
+     */
+    sUserName?:string 
+    /**
+     * The Name of the Usergroup in the language of the requester
+     * @type {string}
+     * @memberof EzsigntemplatesignerResponseCompound
+     */
+    sUsergroupNameX?:string 
 }
+
 
 
 /**
@@ -59,7 +105,14 @@ export interface EzsigntemplatesignerResponseCompound {
 export class DataObjectEzsigntemplatesignerResponseCompound {
     pkiEzsigntemplatesignerID:number = 0
     fkiEzsigntemplateID:number = 0
+    fkiUserID?:number = undefined
+    fkiUsergroupID?:number = undefined
+    fkiEzdoctemplatedocumentID?:number = undefined
+    bEzsigntemplatesignerReceivecopy?:boolean = undefined
+    eEzsigntemplatesignerMapping?:FieldEEzsigntemplatesignerMapping = undefined
     sEzsigntemplatesignerDescription:string = ''
+    sUserName?:string = undefined
+    sUsergroupNameX?:string = undefined
 }
 
 /**
@@ -78,10 +131,45 @@ export class ValidationObjectEzsigntemplatesignerResponseCompound {
       minimum: 0,
       required: true
    }
+   fkiUserID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiUsergroupID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 255,
+      required: false
+   }
+   fkiEzdoctemplatedocumentID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 65535,
+      required: false
+   }
+   bEzsigntemplatesignerReceivecopy = {
+      type: 'boolean',
+      required: false
+   }
+   eEzsigntemplatesignerMapping = {
+      type: 'enum',
+      allowableValues: ['Manual','Creator','User','Usergroup'],
+      required: false
+   }
    sEzsigntemplatesignerDescription = {
       type: 'string',
-      pattern: '/^.{1,50}$/',
+      pattern: /^.{1,50}$/,
       required: true
+   }
+   sUserName = {
+      type: 'string',
+      required: false
+   }
+   sUsergroupNameX = {
+      type: 'string',
+      pattern: /^.{0,50}$/,
+      required: false
    }
 } 
 

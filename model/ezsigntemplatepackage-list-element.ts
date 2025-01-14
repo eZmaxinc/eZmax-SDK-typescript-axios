@@ -124,6 +124,7 @@ export class ValidationObjectEzsigntemplatepackageListElement {
    }
    sEzsigntemplatepackageDescription = {
       type: 'string',
+      pattern: /^.{0,80}$/,
       required: true
    }
    bEzsigntemplatepackageNeedvalidation = {

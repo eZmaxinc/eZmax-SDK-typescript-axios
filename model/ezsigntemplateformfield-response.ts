@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import { EnumHorizontalalignment } from './enum-horizontalalignment';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FieldEEzsigntemplateformfieldDependencyrequirement } from './field-eezsigntemplateformfield-dependencyrequirement';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -22,6 +25,9 @@ import { FieldEEzsigntemplateformfieldPositioning } from './field-eezsigntemplat
 // May contain unused imports in some cases
 // @ts-ignore
 import { FieldEEzsigntemplateformfieldPositioningoccurence } from './field-eezsigntemplateformfield-positioningoccurence';
+// May contain unused imports in some cases
+// @ts-ignore
+import { TextstylestaticResponseCompound } from './textstylestatic-response-compound';
 
 /**
  * An Ezsigntemplateformfield Object
@@ -79,14 +85,14 @@ export interface EzsigntemplateformfieldResponse {
     /*'iEzsigntemplateformfieldY'?: number;*/
     'iEzsigntemplateformfieldY'?: number;
     /**
-     * The Width of the Ezsigntemplateformfield in pixels calculated at 100 DPI  The allowed values are varying based on the eEzsigntemplateformfieldgroupType.  | eEzsigntemplateformfieldgroupType | Valid values | | ------------------------- | ------------ | | Checkbox                  | 22           | | Dropdown                  | 22-65535     | | Radio                     | 22           | | Text                      | 22-65535     | | Textarea                  | 22-65535     |
+     * The Width of the Ezsigntemplateformfield in pixels calculated at 100 DPI
      * @type {number}
      * @memberof EzsigntemplateformfieldResponse
      */
     /*'iEzsigntemplateformfieldWidth': number;*/
     'iEzsigntemplateformfieldWidth': number;
     /**
-     * The Height of the Ezsigntemplateformfield in pixels calculated at 100 DPI  The allowed values are varying based on the eEzsigntemplateformfieldgroupType.  | eEzsigntemplateformfieldgroupType | Valid values | | ------------------------- | ------------ | | Checkbox                  | 22           | | Dropdown                  | 22           | | Radio                     | 22           | | Text                      | 22           | | Textarea                  | 22-65535     | 
+     * The Height of the Ezsigntemplateformfield in pixels calculated at 100 DPI 
      * @type {number}
      * @memberof EzsigntemplateformfieldResponse
      */
@@ -141,6 +147,20 @@ export interface EzsigntemplateformfieldResponse {
      */
     /*'eEzsigntemplateformfieldPositioningoccurence'?: FieldEEzsigntemplateformfieldPositioningoccurence;*/
     'eEzsigntemplateformfieldPositioningoccurence'?: FieldEEzsigntemplateformfieldPositioningoccurence;
+    /**
+     * 
+     * @type {EnumHorizontalalignment}
+     * @memberof EzsigntemplateformfieldResponse
+     */
+    /*'eEzsigntemplateformfieldHorizontalalignment'?: EnumHorizontalalignment;*/
+    'eEzsigntemplateformfieldHorizontalalignment'?: EnumHorizontalalignment;
+    /**
+     * 
+     * @type {TextstylestaticResponseCompound}
+     * @memberof EzsigntemplateformfieldResponse
+     */
+    /*'objTextstylestatic'?: TextstylestaticResponseCompound;*/
+    'objTextstylestatic'?: TextstylestaticResponseCompound;
 }
 
 
@@ -148,6 +168,10 @@ export interface EzsigntemplateformfieldResponse {
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectTextstylestaticResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectTextstylestaticResponseCompound } from './'
 
 /**
  * @export 
@@ -172,6 +196,8 @@ export class DataObjectEzsigntemplateformfieldResponse {
    iEzsigntemplateformfieldPositioningoffsetx?:number = undefined
    iEzsigntemplateformfieldPositioningoffsety?:number = undefined
    eEzsigntemplateformfieldPositioningoccurence?:FieldEEzsigntemplateformfieldPositioningoccurence = undefined
+   eEzsigntemplateformfieldHorizontalalignment?:EnumHorizontalalignment = undefined
+   objTextstylestatic?:TextstylestaticResponseCompound = undefined
 }
 
 /**
@@ -238,7 +264,7 @@ export class ValidationObjectEzsigntemplateformfieldResponse {
    }
    sEzsigntemplateformfieldPositioningpattern = {
       type: 'string',
-      pattern: '/^.{0,30}$/',
+      pattern: /^.{0,30}$/,
       required: false
    }
    iEzsigntemplateformfieldPositioningoffsetx = {
@@ -254,6 +280,12 @@ export class ValidationObjectEzsigntemplateformfieldResponse {
       allowableValues: ['All','First','Last'],
       required: false
    }
+   eEzsigntemplateformfieldHorizontalalignment = {
+      type: 'enum',
+      allowableValues: ['Center','Left','Right'],
+      required: false
+   }
+   objTextstylestatic = new ValidationObjectTextstylestaticResponseCompound()
 } 
 
 

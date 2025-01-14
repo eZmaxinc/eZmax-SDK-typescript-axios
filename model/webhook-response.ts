@@ -40,6 +40,13 @@ export interface WebhookResponse {
     /*'pkiWebhookID': number;*/
     'pkiWebhookID': number;
     /**
+     * The unique ID of the Authenticationexternal
+     * @type {number}
+     * @memberof WebhookResponse
+     */
+    /*'fkiAuthenticationexternalID'?: number;*/
+    'fkiAuthenticationexternalID'?: number;
+    /**
      * The description of the Webhook
      * @type {string}
      * @memberof WebhookResponse
@@ -131,6 +138,13 @@ export interface WebhookResponse {
     /*'bWebhookSkipsslvalidation': boolean;*/
     'bWebhookSkipsslvalidation': boolean;
     /**
+     * The description of the Authenticationexternal
+     * @type {string}
+     * @memberof WebhookResponse
+     */
+    /*'sAuthenticationexternalDescription'?: string;*/
+    'sAuthenticationexternalDescription'?: string;
+    /**
      * 
      * @type {CommonAudit}
      * @memberof WebhookResponse
@@ -157,6 +171,7 @@ import { ValidationObjectCommonAudit } from './'
  */
 export class DataObjectWebhookResponse {
    pkiWebhookID:number = 0
+   fkiAuthenticationexternalID?:number = undefined
    sWebhookDescription:string = ''
    fkiEzsignfoldertypeID?:number = undefined
    sEzsignfoldertypeNameX?:string = undefined
@@ -170,6 +185,7 @@ export class DataObjectWebhookResponse {
    bWebhookIsactive:boolean = false
    bWebhookIssigned:boolean = false
    bWebhookSkipsslvalidation:boolean = false
+   sAuthenticationexternalDescription?:string = undefined
    objAudit:CommonAudit = new DataObjectCommonAudit()
 }
 
@@ -182,6 +198,12 @@ export class ValidationObjectWebhookResponse {
    pkiWebhookID = {
       type: 'integer',
       required: true
+   }
+   fkiAuthenticationexternalID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 255,
+      required: false
    }
    sWebhookDescription = {
       type: 'string',
@@ -214,7 +236,7 @@ export class ValidationObjectWebhookResponse {
    }
    sWebhookUrl = {
       type: 'string',
-      pattern: '/^(https|http):\\/\\/[^\s\\/$.?#].[^\s]*$/',
+      pattern: /^(https|http):\/\/[^\s\/$.?#].[^\s]*$/,
       required: true
    }
    sWebhookEmailfailed = {
@@ -240,6 +262,11 @@ export class ValidationObjectWebhookResponse {
    bWebhookSkipsslvalidation = {
       type: 'boolean',
       required: true
+   }
+   sAuthenticationexternalDescription = {
+      type: 'string',
+      pattern: /^.{0,50}$/,
+      required: false
    }
    objAudit = new ValidationObjectCommonAudit()
 } 

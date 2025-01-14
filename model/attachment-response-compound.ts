@@ -765,7 +765,7 @@ export class ValidationObjectAttachmentResponseCompound {
    }
    sAttachmentName = {
       type: 'string',
-      pattern: '/^.{0,75}$/',
+      pattern: /^.{0,75}$/,
       required: true
    }
    eAttachmentPrivacy = {
@@ -797,7 +797,7 @@ export class ValidationObjectAttachmentResponseCompound {
    }
    sAttachmentMD5 = {
       type: 'string',
-      pattern: '/^.{0,32}$/',
+      pattern: /^.{0,32}$/,
       required: true
    }
    bAttachmentDeleted = {
@@ -815,7 +815,7 @@ export class ValidationObjectAttachmentResponseCompound {
    }
    tAttachmentRejectioncomment = {
       type: 'string',
-      pattern: '/^.{0,65535}$/',
+      pattern: /^.{0,65535}$/,
       required: false
    }
    fkiUserIDOwner = {

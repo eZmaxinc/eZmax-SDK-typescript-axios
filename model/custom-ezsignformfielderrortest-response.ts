@@ -59,12 +59,12 @@ export class DataObjectCustomEzsignformfielderrortestResponse {
 export class ValidationObjectCustomEzsignformfielderrortestResponse {
    sEzsignformfielderrortestName = {
       type: 'string',
-      pattern: '/^.{0,50}$/',
+      pattern: /^.{0,50}$/,
       required: true
    }
    sEzsignformfielderrortestDetail = {
       type: 'string',
-      pattern: '/^.{0,255}$/',
+      pattern: /^.{0,255}$/,
       required: true
    }
 } 

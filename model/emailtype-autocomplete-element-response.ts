@@ -72,7 +72,7 @@ export class ValidationObjectEmailtypeAutocompleteElementResponse {
    }
    sEmailtypeNameX = {
       type: 'string',
-      pattern: '/^.{0,15}$/',
+      pattern: /^.{0,15}$/,
       required: true
    }
    bEmailtypeIsactive = {

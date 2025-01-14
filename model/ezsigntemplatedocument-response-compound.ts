@@ -55,6 +55,12 @@ export interface EzsigntemplatedocumentResponseCompound {
      */
     iEzsigntemplatedocumentSignaturetotal:number 
     /**
+     * The number of total form fields in the Ezsigntemplate.
+     * @type {number}
+     * @memberof EzsigntemplatedocumentResponseCompound
+     */
+    iEzsigntemplatedocumentFormfieldtotal:number 
+    /**
      * If the Ezsigntemplatedocument contains signed signatures (From internal or external sources)
      * @type {boolean}
      * @memberof EzsigntemplatedocumentResponseCompound
@@ -80,6 +86,7 @@ export class DataObjectEzsigntemplatedocumentResponseCompound {
     sEzsigntemplatedocumentName:string = ''
     iEzsigntemplatedocumentPagetotal:number = 0
     iEzsigntemplatedocumentSignaturetotal:number = 0
+    iEzsigntemplatedocumentFormfieldtotal:number = 0
     bEzsigntemplatedocumentHassignedsignatures:boolean = false
 }
 
@@ -109,6 +116,10 @@ export class ValidationObjectEzsigntemplatedocumentResponseCompound {
       required: true
    }
    iEzsigntemplatedocumentSignaturetotal = {
+      type: 'integer',
+      required: true
+   }
+   iEzsigntemplatedocumentFormfieldtotal = {
       type: 'integer',
       required: true
    }

@@ -65,7 +65,7 @@ export class ValidationObjectDiscussionmessageRequestPatch {
    }
    tDiscussionmessageContent = {
       type: 'string',
-      pattern: '/^.{0,65535}$/',
+      pattern: /^.{0,65535}$/,
       required: false
    }
 } 

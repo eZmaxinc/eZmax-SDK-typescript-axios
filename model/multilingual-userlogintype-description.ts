@@ -59,12 +59,12 @@ export class DataObjectMultilingualUserlogintypeDescription {
 export class ValidationObjectMultilingualUserlogintypeDescription {
    sUserlogintypeDescription1 = {
       type: 'string',
-      pattern: '/^.{0,50}$/',
+      pattern: /^.{0,50}$/,
       required: false
    }
    sUserlogintypeDescription2 = {
       type: 'string',
-      pattern: '/^.{0,50}$/',
+      pattern: /^.{0,50}$/,
       required: false
    }
 } 

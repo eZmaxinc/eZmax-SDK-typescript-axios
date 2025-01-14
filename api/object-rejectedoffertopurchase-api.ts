@@ -24,7 +24,13 @@ import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, ope
 // @ts-ignore
 import { CommonResponseError } from '../model';
 // @ts-ignore
+import { RejectedoffertopurchaseGetCommunicationCountV1Response } from '../model';
+// @ts-ignore
 import { RejectedoffertopurchaseGetCommunicationListV1Response } from '../model';
+// @ts-ignore
+import { RejectedoffertopurchaseGetCommunicationrecipientsV1Response } from '../model';
+// @ts-ignore
+import { RejectedoffertopurchaseGetCommunicationsendersV1Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -33,6 +39,64 @@ import { RequestSignature, IHeadersData } from '../api/request-signature';
  */
 export const ObjectRejectedoffertopurchaseApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
+        /**
+         * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiRejectedoffertopurchaseID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        rejectedoffertopurchaseGetCommunicationCountV1: async (pkiRejectedoffertopurchaseID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiRejectedoffertopurchaseID' is not null or undefined
+            assertParamExists('rejectedoffertopurchaseGetCommunicationCountV1', 'pkiRejectedoffertopurchaseID', pkiRejectedoffertopurchaseID)
+            const localVarPath = `/1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/getCommunicationCount`
+                .replace(`{${"pkiRejectedoffertopurchaseID"}}`, encodeURIComponent(String(pkiRejectedoffertopurchaseID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
         /**
          * 
          * @summary Retrieve Communication list
@@ -44,6 +108,122 @@ export const ObjectRejectedoffertopurchaseApiAxiosParamCreator = function (confi
             // verify required parameter 'pkiRejectedoffertopurchaseID' is not null or undefined
             assertParamExists('rejectedoffertopurchaseGetCommunicationListV1', 'pkiRejectedoffertopurchaseID', pkiRejectedoffertopurchaseID)
             const localVarPath = `/1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/getCommunicationList`
+                .replace(`{${"pkiRejectedoffertopurchaseID"}}`, encodeURIComponent(String(pkiRejectedoffertopurchaseID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Rejectedoffertopurchase\'s Communicationrecipient
+         * @param {number} pkiRejectedoffertopurchaseID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        rejectedoffertopurchaseGetCommunicationrecipientsV1: async (pkiRejectedoffertopurchaseID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiRejectedoffertopurchaseID' is not null or undefined
+            assertParamExists('rejectedoffertopurchaseGetCommunicationrecipientsV1', 'pkiRejectedoffertopurchaseID', pkiRejectedoffertopurchaseID)
+            const localVarPath = `/1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/getCommunicationrecipients`
+                .replace(`{${"pkiRejectedoffertopurchaseID"}}`, encodeURIComponent(String(pkiRejectedoffertopurchaseID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Rejectedoffertopurchase\'s Communicationsender
+         * @param {number} pkiRejectedoffertopurchaseID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        rejectedoffertopurchaseGetCommunicationsendersV1: async (pkiRejectedoffertopurchaseID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiRejectedoffertopurchaseID' is not null or undefined
+            assertParamExists('rejectedoffertopurchaseGetCommunicationsendersV1', 'pkiRejectedoffertopurchaseID', pkiRejectedoffertopurchaseID)
+            const localVarPath = `/1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/getCommunicationsenders`
                 .replace(`{${"pkiRejectedoffertopurchaseID"}}`, encodeURIComponent(String(pkiRejectedoffertopurchaseID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
@@ -103,6 +283,19 @@ export const ObjectRejectedoffertopurchaseApiFp = function(configuration?: Confi
     return {
         /**
          * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiRejectedoffertopurchaseID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async rejectedoffertopurchaseGetCommunicationCountV1(pkiRejectedoffertopurchaseID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RejectedoffertopurchaseGetCommunicationCountV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.rejectedoffertopurchaseGetCommunicationCountV1(pkiRejectedoffertopurchaseID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectRejectedoffertopurchaseApi.rejectedoffertopurchaseGetCommunicationCountV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Retrieve Communication list
          * @param {number} pkiRejectedoffertopurchaseID 
          * @param {*} [options] Override http request option.
@@ -112,6 +305,32 @@ export const ObjectRejectedoffertopurchaseApiFp = function(configuration?: Confi
             const localVarAxiosArgs = await localVarAxiosParamCreator.rejectedoffertopurchaseGetCommunicationListV1(pkiRejectedoffertopurchaseID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectRejectedoffertopurchaseApi.rejectedoffertopurchaseGetCommunicationListV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Rejectedoffertopurchase\'s Communicationrecipient
+         * @param {number} pkiRejectedoffertopurchaseID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async rejectedoffertopurchaseGetCommunicationrecipientsV1(pkiRejectedoffertopurchaseID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RejectedoffertopurchaseGetCommunicationrecipientsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.rejectedoffertopurchaseGetCommunicationrecipientsV1(pkiRejectedoffertopurchaseID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectRejectedoffertopurchaseApi.rejectedoffertopurchaseGetCommunicationrecipientsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Rejectedoffertopurchase\'s Communicationsender
+         * @param {number} pkiRejectedoffertopurchaseID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async rejectedoffertopurchaseGetCommunicationsendersV1(pkiRejectedoffertopurchaseID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RejectedoffertopurchaseGetCommunicationsendersV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.rejectedoffertopurchaseGetCommunicationsendersV1(pkiRejectedoffertopurchaseID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectRejectedoffertopurchaseApi.rejectedoffertopurchaseGetCommunicationsendersV1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -126,6 +345,16 @@ export const ObjectRejectedoffertopurchaseApiFactory = function (configuration?:
     return {
         /**
          * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiRejectedoffertopurchaseID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        rejectedoffertopurchaseGetCommunicationCountV1(pkiRejectedoffertopurchaseID: number, options?: any): AxiosPromise<RejectedoffertopurchaseGetCommunicationCountV1Response> {
+            return localVarFp.rejectedoffertopurchaseGetCommunicationCountV1(pkiRejectedoffertopurchaseID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Retrieve Communication list
          * @param {number} pkiRejectedoffertopurchaseID 
          * @param {*} [options] Override http request option.
@@ -133,6 +362,26 @@ export const ObjectRejectedoffertopurchaseApiFactory = function (configuration?:
          */
         rejectedoffertopurchaseGetCommunicationListV1(pkiRejectedoffertopurchaseID: number, options?: any): AxiosPromise<RejectedoffertopurchaseGetCommunicationListV1Response> {
             return localVarFp.rejectedoffertopurchaseGetCommunicationListV1(pkiRejectedoffertopurchaseID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Rejectedoffertopurchase\'s Communicationrecipient
+         * @param {number} pkiRejectedoffertopurchaseID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        rejectedoffertopurchaseGetCommunicationrecipientsV1(pkiRejectedoffertopurchaseID: number, options?: any): AxiosPromise<RejectedoffertopurchaseGetCommunicationrecipientsV1Response> {
+            return localVarFp.rejectedoffertopurchaseGetCommunicationrecipientsV1(pkiRejectedoffertopurchaseID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Rejectedoffertopurchase\'s Communicationsender
+         * @param {number} pkiRejectedoffertopurchaseID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        rejectedoffertopurchaseGetCommunicationsendersV1(pkiRejectedoffertopurchaseID: number, options?: any): AxiosPromise<RejectedoffertopurchaseGetCommunicationsendersV1Response> {
+            return localVarFp.rejectedoffertopurchaseGetCommunicationsendersV1(pkiRejectedoffertopurchaseID, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -146,6 +395,18 @@ export const ObjectRejectedoffertopurchaseApiFactory = function (configuration?:
 export class ObjectRejectedoffertopurchaseApi extends BaseAPI {
     /**
      * 
+     * @summary Retrieve Communication count
+     * @param {number} pkiRejectedoffertopurchaseID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectRejectedoffertopurchaseApi
+     */
+    public rejectedoffertopurchaseGetCommunicationCountV1(pkiRejectedoffertopurchaseID: number, options?: RawAxiosRequestConfig) {
+        return ObjectRejectedoffertopurchaseApiFp(this.configuration).rejectedoffertopurchaseGetCommunicationCountV1(pkiRejectedoffertopurchaseID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
      * @summary Retrieve Communication list
      * @param {number} pkiRejectedoffertopurchaseID 
      * @param {*} [options] Override http request option.
@@ -154,6 +415,30 @@ export class ObjectRejectedoffertopurchaseApi extends BaseAPI {
      */
     public rejectedoffertopurchaseGetCommunicationListV1(pkiRejectedoffertopurchaseID: number, options?: RawAxiosRequestConfig) {
         return ObjectRejectedoffertopurchaseApiFp(this.configuration).rejectedoffertopurchaseGetCommunicationListV1(pkiRejectedoffertopurchaseID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Rejectedoffertopurchase\'s Communicationrecipient
+     * @param {number} pkiRejectedoffertopurchaseID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectRejectedoffertopurchaseApi
+     */
+    public rejectedoffertopurchaseGetCommunicationrecipientsV1(pkiRejectedoffertopurchaseID: number, options?: RawAxiosRequestConfig) {
+        return ObjectRejectedoffertopurchaseApiFp(this.configuration).rejectedoffertopurchaseGetCommunicationrecipientsV1(pkiRejectedoffertopurchaseID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Rejectedoffertopurchase\'s Communicationsender
+     * @param {number} pkiRejectedoffertopurchaseID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectRejectedoffertopurchaseApi
+     */
+    public rejectedoffertopurchaseGetCommunicationsendersV1(pkiRejectedoffertopurchaseID: number, options?: RawAxiosRequestConfig) {
+        return ObjectRejectedoffertopurchaseApiFp(this.configuration).rejectedoffertopurchaseGetCommunicationsendersV1(pkiRejectedoffertopurchaseID, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

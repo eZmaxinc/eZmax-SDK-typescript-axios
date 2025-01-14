@@ -145,6 +145,7 @@ export class ValidationObjectEzsigntemplateListElement {
    }
    sEzsigntemplateDescription = {
       type: 'string',
+      pattern: /^.{0,80}$/,
       required: true
    }
    iEzsigntemplatedocumentPagetotal = {
@@ -170,7 +171,7 @@ export class ValidationObjectEzsigntemplateListElement {
    }
    eEzsigntemplateType = {
       type: 'enum',
-      allowableValues: ['User','Usergroup','Company'],
+      allowableValues: ['User','Usergroup','Company','Ezsignfoldertype'],
       required: true
    }
 } 

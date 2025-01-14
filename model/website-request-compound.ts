@@ -25,6 +25,12 @@ import { WebsiteRequest } from './website-request';
 /*export type WebsiteRequestCompound = WebsiteRequest;*/
 export interface WebsiteRequestCompound {
     /**
+     * The unique ID of the Website Default
+     * @type {number}
+     * @memberof WebsiteRequestCompound
+     */
+    pkiWebsiteID?:number 
+    /**
      * The unique ID of the Websitetype.  Valid values:  |Value|Description| |-|-| |1|Website| |2|Twitter| |3|Facebook| |4|Survey|
      * @type {number}
      * @memberof WebsiteRequestCompound
@@ -51,6 +57,7 @@ export interface WebsiteRequestCompound {
  * @class DataObjectWebsiteRequestCompound
  */
 export class DataObjectWebsiteRequestCompound {
+    pkiWebsiteID?:number = undefined
     fkiWebsitetypeID:number = 0
     sWebsiteAddress:string = ''
 }
@@ -61,6 +68,12 @@ export class DataObjectWebsiteRequestCompound {
  * @class ValidationObjectWebsiteRequestCompound
  */
 export class ValidationObjectWebsiteRequestCompound {
+   pkiWebsiteID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 16777215,
+      required: false
+   }
    fkiWebsitetypeID = {
       type: 'integer',
       minimum: 0,

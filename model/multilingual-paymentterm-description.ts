@@ -59,12 +59,12 @@ export class DataObjectMultilingualPaymenttermDescription {
 export class ValidationObjectMultilingualPaymenttermDescription {
    sPaymenttermDescription1 = {
       type: 'string',
-      pattern: '/^.{1,40}$/',
+      pattern: /^.{1,40}$/,
       required: false
    }
    sPaymenttermDescription2 = {
       type: 'string',
-      pattern: '/^.{1,40}$/',
+      pattern: /^.{1,40}$/,
       required: false
    }
 } 

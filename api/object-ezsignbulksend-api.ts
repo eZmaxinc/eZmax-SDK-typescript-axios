@@ -24,9 +24,9 @@ import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, ope
 // @ts-ignore
 import { CommonResponseError } from '../model';
 // @ts-ignore
-import { EzsignbulksendCreateEzsignbulksendtransmissionV1Request } from '../model';
+import { EzsignbulksendCreateEzsignbulksendtransmissionV2Request } from '../model';
 // @ts-ignore
-import { EzsignbulksendCreateEzsignbulksendtransmissionV1Response } from '../model';
+import { EzsignbulksendCreateEzsignbulksendtransmissionV2Response } from '../model';
 // @ts-ignore
 import { EzsignbulksendCreateObjectV1Request } from '../model';
 // @ts-ignore
@@ -65,16 +65,16 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
          * 
          * @summary Create a new Ezsignbulksendtransmission in the Ezsignbulksend
          * @param {number} pkiEzsignbulksendID 
-         * @param {EzsignbulksendCreateEzsignbulksendtransmissionV1Request} ezsignbulksendCreateEzsignbulksendtransmissionV1Request 
+         * @param {EzsignbulksendCreateEzsignbulksendtransmissionV2Request} ezsignbulksendCreateEzsignbulksendtransmissionV2Request 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignbulksendCreateEzsignbulksendtransmissionV1: async (pkiEzsignbulksendID: number, ezsignbulksendCreateEzsignbulksendtransmissionV1Request: EzsignbulksendCreateEzsignbulksendtransmissionV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsignbulksendCreateEzsignbulksendtransmissionV2: async (pkiEzsignbulksendID: number, ezsignbulksendCreateEzsignbulksendtransmissionV2Request: EzsignbulksendCreateEzsignbulksendtransmissionV2Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsignbulksendID' is not null or undefined
-            assertParamExists('ezsignbulksendCreateEzsignbulksendtransmissionV1', 'pkiEzsignbulksendID', pkiEzsignbulksendID)
-            // verify required parameter 'ezsignbulksendCreateEzsignbulksendtransmissionV1Request' is not null or undefined
-            assertParamExists('ezsignbulksendCreateEzsignbulksendtransmissionV1', 'ezsignbulksendCreateEzsignbulksendtransmissionV1Request', ezsignbulksendCreateEzsignbulksendtransmissionV1Request)
-            const localVarPath = `/1/object/ezsignbulksend/{pkiEzsignbulksendID}/createEzsignbulksendtransmission`
+            assertParamExists('ezsignbulksendCreateEzsignbulksendtransmissionV2', 'pkiEzsignbulksendID', pkiEzsignbulksendID)
+            // verify required parameter 'ezsignbulksendCreateEzsignbulksendtransmissionV2Request' is not null or undefined
+            assertParamExists('ezsignbulksendCreateEzsignbulksendtransmissionV2', 'ezsignbulksendCreateEzsignbulksendtransmissionV2Request', ezsignbulksendCreateEzsignbulksendtransmissionV2Request)
+            const localVarPath = `/2/object/ezsignbulksend/{pkiEzsignbulksendID}/createEzsignbulksendtransmission`
                 .replace(`{${"pkiEzsignbulksendID"}}`, encodeURIComponent(String(pkiEzsignbulksendID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
@@ -102,7 +102,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(ezsignbulksendCreateEzsignbulksendtransmissionV1Request, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(ezsignbulksendCreateEzsignbulksendtransmissionV2Request, localVarRequestOptions, configuration)
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -763,14 +763,14 @@ export const ObjectEzsignbulksendApiFp = function(configuration?: Configuration)
          * 
          * @summary Create a new Ezsignbulksendtransmission in the Ezsignbulksend
          * @param {number} pkiEzsignbulksendID 
-         * @param {EzsignbulksendCreateEzsignbulksendtransmissionV1Request} ezsignbulksendCreateEzsignbulksendtransmissionV1Request 
+         * @param {EzsignbulksendCreateEzsignbulksendtransmissionV2Request} ezsignbulksendCreateEzsignbulksendtransmissionV2Request 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignbulksendCreateEzsignbulksendtransmissionV1(pkiEzsignbulksendID: number, ezsignbulksendCreateEzsignbulksendtransmissionV1Request: EzsignbulksendCreateEzsignbulksendtransmissionV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignbulksendCreateEzsignbulksendtransmissionV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignbulksendCreateEzsignbulksendtransmissionV1(pkiEzsignbulksendID, ezsignbulksendCreateEzsignbulksendtransmissionV1Request, options);
+        async ezsignbulksendCreateEzsignbulksendtransmissionV2(pkiEzsignbulksendID: number, ezsignbulksendCreateEzsignbulksendtransmissionV2Request: EzsignbulksendCreateEzsignbulksendtransmissionV2Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignbulksendCreateEzsignbulksendtransmissionV2Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignbulksendCreateEzsignbulksendtransmissionV2(pkiEzsignbulksendID, ezsignbulksendCreateEzsignbulksendtransmissionV2Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ObjectEzsignbulksendApi.ezsignbulksendCreateEzsignbulksendtransmissionV1']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsignbulksendApi.ezsignbulksendCreateEzsignbulksendtransmissionV2']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -924,12 +924,12 @@ export const ObjectEzsignbulksendApiFactory = function (configuration?: Configur
          * 
          * @summary Create a new Ezsignbulksendtransmission in the Ezsignbulksend
          * @param {number} pkiEzsignbulksendID 
-         * @param {EzsignbulksendCreateEzsignbulksendtransmissionV1Request} ezsignbulksendCreateEzsignbulksendtransmissionV1Request 
+         * @param {EzsignbulksendCreateEzsignbulksendtransmissionV2Request} ezsignbulksendCreateEzsignbulksendtransmissionV2Request 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignbulksendCreateEzsignbulksendtransmissionV1(pkiEzsignbulksendID: number, ezsignbulksendCreateEzsignbulksendtransmissionV1Request: EzsignbulksendCreateEzsignbulksendtransmissionV1Request, options?: any): AxiosPromise<EzsignbulksendCreateEzsignbulksendtransmissionV1Response> {
-            return localVarFp.ezsignbulksendCreateEzsignbulksendtransmissionV1(pkiEzsignbulksendID, ezsignbulksendCreateEzsignbulksendtransmissionV1Request, options).then((request) => request(axios, basePath));
+        ezsignbulksendCreateEzsignbulksendtransmissionV2(pkiEzsignbulksendID: number, ezsignbulksendCreateEzsignbulksendtransmissionV2Request: EzsignbulksendCreateEzsignbulksendtransmissionV2Request, options?: any): AxiosPromise<EzsignbulksendCreateEzsignbulksendtransmissionV2Response> {
+            return localVarFp.ezsignbulksendCreateEzsignbulksendtransmissionV2(pkiEzsignbulksendID, ezsignbulksendCreateEzsignbulksendtransmissionV2Request, options).then((request) => request(axios, basePath));
         },
         /**
          * The endpoint allows to create one or many elements at once.
@@ -1052,13 +1052,13 @@ export class ObjectEzsignbulksendApi extends BaseAPI {
      * 
      * @summary Create a new Ezsignbulksendtransmission in the Ezsignbulksend
      * @param {number} pkiEzsignbulksendID 
-     * @param {EzsignbulksendCreateEzsignbulksendtransmissionV1Request} ezsignbulksendCreateEzsignbulksendtransmissionV1Request 
+     * @param {EzsignbulksendCreateEzsignbulksendtransmissionV2Request} ezsignbulksendCreateEzsignbulksendtransmissionV2Request 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ObjectEzsignbulksendApi
      */
-    public ezsignbulksendCreateEzsignbulksendtransmissionV1(pkiEzsignbulksendID: number, ezsignbulksendCreateEzsignbulksendtransmissionV1Request: EzsignbulksendCreateEzsignbulksendtransmissionV1Request, options?: RawAxiosRequestConfig) {
-        return ObjectEzsignbulksendApiFp(this.configuration).ezsignbulksendCreateEzsignbulksendtransmissionV1(pkiEzsignbulksendID, ezsignbulksendCreateEzsignbulksendtransmissionV1Request, options).then((request) => request(this.axios, this.basePath));
+    public ezsignbulksendCreateEzsignbulksendtransmissionV2(pkiEzsignbulksendID: number, ezsignbulksendCreateEzsignbulksendtransmissionV2Request: EzsignbulksendCreateEzsignbulksendtransmissionV2Request, options?: RawAxiosRequestConfig) {
+        return ObjectEzsignbulksendApiFp(this.configuration).ezsignbulksendCreateEzsignbulksendtransmissionV2(pkiEzsignbulksendID, ezsignbulksendCreateEzsignbulksendtransmissionV2Request, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

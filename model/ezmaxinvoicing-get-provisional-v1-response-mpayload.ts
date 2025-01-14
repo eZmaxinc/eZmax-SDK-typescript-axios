@@ -273,6 +273,7 @@ export class ValidationObjectEzmaxinvoicingGetProvisionalV1ResponseMPayload {
    }
    yyyymmEzmaxinvoicing = {
       type: 'string',
+      maxLength: 7,
       required: true
    }
    iEzmaxinvoicingDays = {
@@ -287,7 +288,7 @@ export class ValidationObjectEzmaxinvoicingGetProvisionalV1ResponseMPayload {
    }
    dEzmaxinvoicingRebatepaymenttype = {
       type: 'string',
-      pattern: '/^-{0,1}[\d]{1,3}?\.[\d]{2}$/',
+      pattern: /^-{0,1}[\d]{1,3}?\.[\d]{2}$/,
       required: true
    }
    iEzmaxinvoicingContractlength = {
@@ -297,7 +298,7 @@ export class ValidationObjectEzmaxinvoicingGetProvisionalV1ResponseMPayload {
    }
    dEzmaxinvoicingRebatecontractlength = {
       type: 'string',
-      pattern: '/^-{0,1}[\d]{1,3}?\.[\d]{2}$/',
+      pattern: /^-{0,1}[\d]{1,3}?\.[\d]{2}$/,
       required: true
    }
    bEzmaxinvoicingRebateEzsignallagents = {

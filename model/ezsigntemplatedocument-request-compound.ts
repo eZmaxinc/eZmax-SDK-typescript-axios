@@ -85,7 +85,7 @@ export interface EzsigntemplatedocumentRequestCompound {
      */
     bEzsigntemplatedocumentForcerepair?:boolean 
     /**
-     * If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsigntemplateformfieldgroups and assign them to the specified **fkiEzsigntemplatesignerID**  **Discard** removes the form from the document
+     * If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsigntemplateformfieldgroups and assign them to the specified **fkiEzsigntemplatesignerID**  **Discard** removes the form from the document  **Flatten** prints the form values in the document.
      * @type {string}
      * @memberof EzsigntemplatedocumentRequestCompound
      */
@@ -120,7 +120,8 @@ export type EzsigntemplatedocumentRequestCompoundEEzsigntemplatedocumentFormatEn
 export const EzsigntemplatedocumentRequestCompoundEEzsigntemplatedocumentFormEnum = {
     Keep: 'Keep',
     Convert: 'Convert',
-    Discard: 'Discard'
+    Discard: 'Discard',
+    Flatten: 'Flatten'
 } as const;
 export type EzsigntemplatedocumentRequestCompoundEEzsigntemplatedocumentFormEnum = typeof EzsigntemplatedocumentRequestCompoundEEzsigntemplatedocumentFormEnum[keyof typeof EzsigntemplatedocumentRequestCompoundEEzsigntemplatedocumentFormEnum];
 

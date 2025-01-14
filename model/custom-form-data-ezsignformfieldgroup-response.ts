@@ -62,6 +62,8 @@ export class DataObjectCustomFormDataEzsignformfieldgroupResponse {
 export class ValidationObjectCustomFormDataEzsignformfieldgroupResponse {
    sEzsignformfieldgroupLabel = {
       type: 'string',
+      minLength: 1,
+      maxLength: 50,
       required: true
    }
    a_objEzsignformfield = {

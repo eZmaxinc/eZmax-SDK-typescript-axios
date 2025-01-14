@@ -72,7 +72,7 @@ export class DataObjectCreditcardtypeAutocompleteElementResponse {
 export class ValidationObjectCreditcardtypeAutocompleteElementResponse {
    sCreditcardtypeName = {
       type: 'string',
-      pattern: '/^.{1,30}$/',
+      pattern: /^.{1,30}$/,
       required: true
    }
    pkiCreditcardtypeID = {

@@ -40,7 +40,7 @@ export interface CreditcardclientRequestCompound {
      */
     fksCreditcardtokenID?:string 
     /**
-     * Whether if it\'s an relationisdefault
+     * Whether if it\'s the creditcardclient is the default one
      * @type {boolean}
      * @memberof CreditcardclientRequestCompound
      */
@@ -52,23 +52,17 @@ export interface CreditcardclientRequestCompound {
      */
     sCreditcardclientDescription:string 
     /**
-     * Whether the creditcardclient is active or not
-     * @type {boolean}
-     * @memberof CreditcardclientRequestCompound
-     */
-    bCreditcardclientIsactive:boolean 
-    /**
      * Whether if it\'s an allowedagencypayment
      * @type {boolean}
      * @memberof CreditcardclientRequestCompound
      */
-    bCreditcardclientAllowedagencypayment:boolean 
+    bCreditcardclientAllowedcompanypayment:boolean 
     /**
      * Whether if it\'s an allowedroyallepageprotection
      * @type {boolean}
      * @memberof CreditcardclientRequestCompound
      */
-    bCreditcardclientAllowedroyallepageprotection:boolean 
+    bCreditcardclientAllowedezsign:boolean 
     /**
      * Whether if it\'s an allowedtranquillit
      * @type {boolean}
@@ -110,9 +104,8 @@ export class DataObjectCreditcardclientRequestCompound {
     fksCreditcardtokenID?:string = undefined
     bCreditcardclientrelationIsdefault:boolean = false
     sCreditcardclientDescription:string = ''
-    bCreditcardclientIsactive:boolean = false
-    bCreditcardclientAllowedagencypayment:boolean = false
-    bCreditcardclientAllowedroyallepageprotection:boolean = false
+    bCreditcardclientAllowedcompanypayment:boolean = false
+    bCreditcardclientAllowedezsign:boolean = false
     bCreditcardclientAllowedtranquillit:boolean = false
     objCreditcarddetail:CreditcarddetailRequest = new DataObjectCreditcarddetailRequest()
     sCreditcardclientCVV:string = ''
@@ -132,7 +125,7 @@ export class ValidationObjectCreditcardclientRequestCompound {
    }
    fksCreditcardtokenID = {
       type: 'string',
-      pattern: '/^\{?[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\}?$/',
+      pattern: /^\{?[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\}?$/,
       required: false
    }
    bCreditcardclientrelationIsdefault = {
@@ -141,18 +134,14 @@ export class ValidationObjectCreditcardclientRequestCompound {
    }
    sCreditcardclientDescription = {
       type: 'string',
-      pattern: '/^.{0,50}$/',
+      pattern: /^.{0,50}$/,
       required: true
    }
-   bCreditcardclientIsactive = {
+   bCreditcardclientAllowedcompanypayment = {
       type: 'boolean',
       required: true
    }
-   bCreditcardclientAllowedagencypayment = {
-      type: 'boolean',
-      required: true
-   }
-   bCreditcardclientAllowedroyallepageprotection = {
+   bCreditcardclientAllowedezsign = {
       type: 'boolean',
       required: true
    }
@@ -163,7 +152,7 @@ export class ValidationObjectCreditcardclientRequestCompound {
    objCreditcarddetail = new ValidationObjectCreditcarddetailRequest()
    sCreditcardclientCVV = {
       type: 'string',
-      pattern: '/^[0-9]{3,4}$/',
+      pattern: /^[0-9]{3,4}$/,
       required: true
    }
 } 

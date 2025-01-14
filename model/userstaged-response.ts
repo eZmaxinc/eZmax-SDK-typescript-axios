@@ -103,22 +103,22 @@ export class ValidationObjectUserstagedResponse {
    }
    sEmailAddress = {
       type: 'string',
-      pattern: '/^[\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/',
+      pattern: /^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/,
       required: true
    }
    sUserstagedFirstname = {
       type: 'string',
-      pattern: '/^.{0,20}$/',
+      pattern: /^.{0,20}$/,
       required: true
    }
    sUserstagedLastname = {
       type: 'string',
-      pattern: '/^.{0,25}$/',
+      pattern: /^.{0,25}$/,
       required: true
    }
    sUserstagedExternalid = {
       type: 'string',
-      pattern: '/^.{1,60}$/',
+      pattern: /^.{1,60}$/,
       required: true
    }
 } 

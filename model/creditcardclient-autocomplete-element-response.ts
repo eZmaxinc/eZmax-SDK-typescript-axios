@@ -34,13 +34,6 @@ export interface CreditcardclientAutocompleteElementResponse {
      */
     /*'sCreditcardclientDescription': string;*/
     'sCreditcardclientDescription': string;
-    /**
-     * Whether the creditcardclient is active or not
-     * @type {boolean}
-     * @memberof CreditcardclientAutocompleteElementResponse
-     */
-    /*'bCreditcardclientIsactive': boolean;*/
-    'bCreditcardclientIsactive': boolean;
 }
 /**
  * @import
@@ -56,7 +49,6 @@ export interface CreditcardclientAutocompleteElementResponse {
 export class DataObjectCreditcardclientAutocompleteElementResponse {
    pkiCreditcardclientID:number = 0
    sCreditcardclientDescription:string = ''
-   bCreditcardclientIsactive:boolean = false
 }
 
 /**
@@ -73,11 +65,7 @@ export class ValidationObjectCreditcardclientAutocompleteElementResponse {
    }
    sCreditcardclientDescription = {
       type: 'string',
-      pattern: '/^.{0,50}$/',
-      required: true
-   }
-   bCreditcardclientIsactive = {
-      type: 'boolean',
+      pattern: /^.{0,50}$/,
       required: true
    }
 } 

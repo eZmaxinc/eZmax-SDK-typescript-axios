@@ -195,7 +195,7 @@ export class ValidationObjectCommunicationRequestCompound {
    objCommunicationsender = new ValidationObjectCustomCommunicationsenderRequest()
    sCommunicationSubject = {
       type: 'string',
-      pattern: '/^.{0,200}$/',
+      pattern: /^.{0,200}$/,
       required: false
    }
    tCommunicationBody = {

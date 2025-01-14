@@ -25,6 +25,12 @@ import { AddressRequest } from './address-request';
 /*export type AddressRequestCompound = AddressRequest;*/
 export interface AddressRequestCompound {
     /**
+     * The unique ID of the Address
+     * @type {number}
+     * @memberof AddressRequestCompound
+     */
+    pkiAddressID?:number 
+    /**
      * The unique ID of the Addresstype.  Valid values:  |Value|Description| |-|-| |1|Office| |2|Home| |3|Real Estate Invoice| |4|Invoicing| |5|Shipping|
      * @type {number}
      * @memberof AddressRequestCompound
@@ -47,7 +53,7 @@ export interface AddressRequestCompound {
      * @type {string}
      * @memberof AddressRequestCompound
      */
-    sAddressSuite:string 
+    sAddressSuite?:string 
     /**
      * The City name
      * @type {string}
@@ -99,10 +105,11 @@ export interface AddressRequestCompound {
  * @class DataObjectAddressRequestCompound
  */
 export class DataObjectAddressRequestCompound {
+    pkiAddressID?:number = undefined
     fkiAddresstypeID:number = 0
     sAddressCivic:string = ''
     sAddressStreet:string = ''
-    sAddressSuite:string = ''
+    sAddressSuite?:string = undefined
     sAddressCity:string = ''
     fkiProvinceID:number = 0
     fkiCountryID:number = 0
@@ -117,6 +124,11 @@ export class DataObjectAddressRequestCompound {
  * @class ValidationObjectAddressRequestCompound
  */
 export class ValidationObjectAddressRequestCompound {
+   pkiAddressID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
    fkiAddresstypeID = {
       type: 'integer',
       minimum: 0,
@@ -132,7 +144,7 @@ export class ValidationObjectAddressRequestCompound {
    }
    sAddressSuite = {
       type: 'string',
-      required: true
+      required: false
    }
    sAddressCity = {
       type: 'string',
@@ -154,12 +166,12 @@ export class ValidationObjectAddressRequestCompound {
    }
    fAddressLongitude = {
       type: 'string',
-      pattern: '/^(-?)(180(\.0{1,15})?|((1[0-7]\d)|(\d{1,2}))(\.\d{1,15})?)$/',
+      pattern: /^(-?)(180(\.0{1,15})?|((1[0-7]\d)|(\d{1,2}))(\.\d{1,15})?)$/,
       required: false
    }
    fAddressLatitude = {
       type: 'string',
-      pattern: '/^(-?)(90(\.0{1,15})?|([1-8]?\d(\.\d{1,15})?))$/',
+      pattern: /^(-?)(90(\.0{1,15})?|([1-8]?\d(\.\d{1,15})?))$/,
       required: false
    }
 } 

@@ -138,7 +138,7 @@ export class ValidationObjectActivesessionResponseCompoundUser {
    }
    sAvatarUrl = {
       type: 'string',
-      pattern: '/^(https|http):\\/\\/[^\s\\/$.?#].[^\s]*$/',
+      pattern: /^(https|http):\/\/[^\s\/$.?#].[^\s]*$/,
       required: false
    }
    sUserFirstname = {
@@ -151,7 +151,7 @@ export class ValidationObjectActivesessionResponseCompoundUser {
    }
    sEmailAddress = {
       type: 'string',
-      pattern: '/^[\w.%+\-!#$%&amp;&#39;*+\\/&#x3D;?^&#x60;{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/',
+      pattern: /^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/,
       required: false
    }
    eUserEzsignsendreminderfrequency = {

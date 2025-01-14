@@ -138,22 +138,22 @@ export class ValidationObjectEzmaxinvoicingsummaryexternaldetailResponseCompound
    }
    dEzmaxinvoicingsummaryexternaldetailCountreal = {
       type: 'string',
-      pattern: '/^-{0,1}[\d]{1,6}?\.[\d]{2}$/',
+      pattern: /^-{0,1}[\d]{1,6}?\.[\d]{2}$/,
       required: true
    }
    dEzmaxinvoicingsummaryexternaldetailSubtotal = {
       type: 'string',
-      pattern: '/^-{0,1}[\d]{1,9}?\.[\d]{2}$/',
+      pattern: /^-{0,1}[\d]{1,9}?\.[\d]{2}$/,
       required: true
    }
    dEzmaxinvoicingsummaryexternaldetailRebate = {
       type: 'string',
-      pattern: '/^-{0,1}[\d]{1,9}?\.[\d]{2}$/',
+      pattern: /^-{0,1}[\d]{1,9}?\.[\d]{2}$/,
       required: true
    }
    dEzmaxinvoicingsummaryexternaldetailTotal = {
       type: 'string',
-      pattern: '/^-{0,1}[\d]{1,9}?\.[\d]{2}$/',
+      pattern: /^-{0,1}[\d]{1,9}?\.[\d]{2}$/,
       required: true
    }
    bEzmaxinvoicingsummaryexternaldetailAdjustment = {

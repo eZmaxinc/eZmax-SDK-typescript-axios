@@ -15,7 +15,7 @@
 
 
 /**
- * The font of the signature. This can only be set if eEzsigntemplatesignatureType is **Name** or **Initials**
+ * The font of the signature. This can only be set if eEzsigntemplatesignatureType is **Name** or **Initials** **Deprecated**
  * @export
  * @enum {string}
  */

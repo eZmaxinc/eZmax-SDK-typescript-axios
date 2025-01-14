@@ -85,17 +85,17 @@ export class ValidationObjectCustomCreditcardtransactionResponse {
    }
    dCreditcardtransactionAmount = {
       type: 'string',
-      pattern: '/^-{0,1}[\d]{1,9}?\.[\d]{2}$/',
+      pattern: /^-{0,1}[\d]{1,9}?\.[\d]{2}$/,
       required: true
    }
    sCreditcardtransactionPartiallydecryptednumber = {
       type: 'string',
-      pattern: '/^([X]{4}[ ]){3}(\d){4}$/',
+      pattern: /^([X]{4}[ ]){3}(\d){4}$/,
       required: true
    }
    sCreditcardtransactionReferencenumber = {
       type: 'string',
-      pattern: '/^[\d]{18}$/',
+      pattern: /^[\d]{18}$/,
       required: true
    }
 } 

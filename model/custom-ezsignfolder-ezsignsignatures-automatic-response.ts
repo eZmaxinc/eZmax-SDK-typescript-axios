@@ -75,6 +75,7 @@ export class ValidationObjectCustomEzsignfolderEzsignsignaturesAutomaticResponse
    }
    sEzsignfolderDescription = {
       type: 'string',
+      pattern: /^.{0,75}$/,
       required: true
    }
    a_objEzsigndocument = {

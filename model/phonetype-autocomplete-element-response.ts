@@ -72,7 +72,7 @@ export class ValidationObjectPhonetypeAutocompleteElementResponse {
    }
    sPhonetypeNameX = {
       type: 'string',
-      pattern: '/^.{0,20}$/',
+      pattern: /^.{0,20}$/,
       required: true
    }
    bPhonetypeIsactive = {

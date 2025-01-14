@@ -15,7 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import { EnumHorizontalalignment } from './enum-horizontalalignment';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FieldEEzsignformfieldDependencyrequirement } from './field-eezsignformfield-dependencyrequirement';
+// May contain unused imports in some cases
+// @ts-ignore
+import { TextstylestaticRequestCompound } from './textstylestatic-request-compound';
 
 /**
  * A Ezsignformfield Object
@@ -66,14 +72,14 @@ export interface EzsignformfieldRequest {
     /*'iEzsignformfieldY': number;*/
     'iEzsignformfieldY': number;
     /**
-     * The Width of the Ezsignformfield in pixels calculated at 100 DPI  The allowed values are varying based on the eEzsignformfieldgroupType.  | eEzsignformfieldgroupType | Valid values | | ------------------------- | ------------ | | Checkbox                  | 22           | | Dropdown                  | 22-65535     | | Radio                     | 22           | | Text                      | 22-65535     | | Textarea                  | 22-65535     |
+     * The Width of the Ezsignformfield in pixels calculated at 100 DPI
      * @type {number}
      * @memberof EzsignformfieldRequest
      */
     /*'iEzsignformfieldWidth': number;*/
     'iEzsignformfieldWidth': number;
     /**
-     * The Height of the Ezsignformfield in pixels calculated at 100 DPI  The allowed values are varying based on the eEzsignformfieldgroupType.  | eEzsignformfieldgroupType | Valid values | | ------------------------- | ------------ | | Checkbox                  | 22           | | Dropdown                  | 22           | | Radio                     | 22           | | Text                      | 22           | | Textarea                  | 22-65535     | 
+     * The Height of the Ezsignformfield in pixels calculated at 100 DPI 
      * @type {number}
      * @memberof EzsignformfieldRequest
      */
@@ -107,6 +113,20 @@ export interface EzsignformfieldRequest {
      */
     /*'eEzsignformfieldDependencyrequirement'?: FieldEEzsignformfieldDependencyrequirement;*/
     'eEzsignformfieldDependencyrequirement'?: FieldEEzsignformfieldDependencyrequirement;
+    /**
+     * 
+     * @type {EnumHorizontalalignment}
+     * @memberof EzsignformfieldRequest
+     */
+    /*'eEzsignformfieldHorizontalalignment'?: EnumHorizontalalignment;*/
+    'eEzsignformfieldHorizontalalignment'?: EnumHorizontalalignment;
+    /**
+     * 
+     * @type {TextstylestaticRequestCompound}
+     * @memberof EzsignformfieldRequest
+     */
+    /*'objTextstylestatic'?: TextstylestaticRequestCompound;*/
+    'objTextstylestatic'?: TextstylestaticRequestCompound;
 }
 
 
@@ -114,6 +134,10 @@ export interface EzsignformfieldRequest {
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectTextstylestaticRequestCompound } from './'
+// @ts-ignore
+import { ValidationObjectTextstylestaticRequestCompound } from './'
 
 /**
  * @export 
@@ -134,6 +158,8 @@ export class DataObjectEzsignformfieldRequest {
    bEzsignformfieldSelected?:boolean = undefined
    sEzsignformfieldEnteredvalue?:string = undefined
    eEzsignformfieldDependencyrequirement?:FieldEEzsignformfieldDependencyrequirement = undefined
+   eEzsignformfieldHorizontalalignment?:EnumHorizontalalignment = undefined
+   objTextstylestatic?:TextstylestaticRequestCompound = undefined
 }
 
 /**
@@ -197,6 +223,12 @@ export class ValidationObjectEzsignformfieldRequest {
       allowableValues: ['AllOf','AnyOf'],
       required: false
    }
+   eEzsignformfieldHorizontalalignment = {
+      type: 'enum',
+      allowableValues: ['Center','Left','Right'],
+      required: false
+   }
+   objTextstylestatic = new ValidationObjectTextstylestaticRequestCompound()
 } 
 
 

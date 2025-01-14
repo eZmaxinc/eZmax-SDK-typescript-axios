@@ -54,6 +54,10 @@ import { EzsignfoldersignerassociationPatchObjectV1Request } from '../model';
 // @ts-ignore
 import { EzsignfoldersignerassociationPatchObjectV1Response } from '../model';
 // @ts-ignore
+import { EzsignfoldersignerassociationReassignV1Request } from '../model';
+// @ts-ignore
+import { EzsignfoldersignerassociationReassignV1Response } from '../model';
+// @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
  * ObjectEzsignfoldersignerassociationApi - axios parameter creator
@@ -62,7 +66,7 @@ import { RequestSignature, IHeadersData } from '../api/request-signature';
 export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.  There will be a list to retrieve informations after the signing happens in the embedded version. To do so, there is a list of parameter to add to your sReturnUrl.  In example: https://www.example.com/sReturl?sParameter1&sParameter2. The sParameter1 et sParameter2 will be replace when we will redirect on the url.
+         * This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.
          * @summary Creates an Url to allow embedded signing
          * @param {number} pkiEzsignfoldersignerassociationID 
          * @param {EzsignfoldersignerassociationCreateEmbeddedUrlV1Request} ezsignfoldersignerassociationCreateEmbeddedUrlV1Request 
@@ -671,6 +675,70 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * Reassign remaining unsigned signatures and forms
+         * @summary Reassign remaining unsigned signatures and forms
+         * @param {number} pkiEzsignfoldersignerassociationID 
+         * @param {EzsignfoldersignerassociationReassignV1Request} ezsignfoldersignerassociationReassignV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsignfoldersignerassociationReassignV1: async (pkiEzsignfoldersignerassociationID: number, ezsignfoldersignerassociationReassignV1Request: EzsignfoldersignerassociationReassignV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiEzsignfoldersignerassociationID' is not null or undefined
+            assertParamExists('ezsignfoldersignerassociationReassignV1', 'pkiEzsignfoldersignerassociationID', pkiEzsignfoldersignerassociationID)
+            // verify required parameter 'ezsignfoldersignerassociationReassignV1Request' is not null or undefined
+            assertParamExists('ezsignfoldersignerassociationReassignV1', 'ezsignfoldersignerassociationReassignV1Request', ezsignfoldersignerassociationReassignV1Request)
+            const localVarPath = `/1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/reassign`
+                .replace(`{${"pkiEzsignfoldersignerassociationID"}}`, encodeURIComponent(String(pkiEzsignfoldersignerassociationID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(ezsignfoldersignerassociationReassignV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -682,7 +750,7 @@ export const ObjectEzsignfoldersignerassociationApiFp = function(configuration?:
     const localVarAxiosParamCreator = ObjectEzsignfoldersignerassociationApiAxiosParamCreator(configuration)
     return {
         /**
-         * This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.  There will be a list to retrieve informations after the signing happens in the embedded version. To do so, there is a list of parameter to add to your sReturnUrl.  In example: https://www.example.com/sReturl?sParameter1&sParameter2. The sParameter1 et sParameter2 will be replace when we will redirect on the url.
+         * This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.
          * @summary Creates an Url to allow embedded signing
          * @param {number} pkiEzsignfoldersignerassociationID 
          * @param {EzsignfoldersignerassociationCreateEmbeddedUrlV1Request} ezsignfoldersignerassociationCreateEmbeddedUrlV1Request 
@@ -817,6 +885,20 @@ export const ObjectEzsignfoldersignerassociationApiFp = function(configuration?:
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignfoldersignerassociationApi.ezsignfoldersignerassociationPatchObjectV1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
+        /**
+         * Reassign remaining unsigned signatures and forms
+         * @summary Reassign remaining unsigned signatures and forms
+         * @param {number} pkiEzsignfoldersignerassociationID 
+         * @param {EzsignfoldersignerassociationReassignV1Request} ezsignfoldersignerassociationReassignV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsignfoldersignerassociationReassignV1(pkiEzsignfoldersignerassociationID: number, ezsignfoldersignerassociationReassignV1Request: EzsignfoldersignerassociationReassignV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfoldersignerassociationReassignV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfoldersignerassociationReassignV1(pkiEzsignfoldersignerassociationID, ezsignfoldersignerassociationReassignV1Request, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsignfoldersignerassociationApi.ezsignfoldersignerassociationReassignV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
     }
 };
 
@@ -828,7 +910,7 @@ export const ObjectEzsignfoldersignerassociationApiFactory = function (configura
     const localVarFp = ObjectEzsignfoldersignerassociationApiFp(configuration)
     return {
         /**
-         * This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.  There will be a list to retrieve informations after the signing happens in the embedded version. To do so, there is a list of parameter to add to your sReturnUrl.  In example: https://www.example.com/sReturl?sParameter1&sParameter2. The sParameter1 et sParameter2 will be replace when we will redirect on the url.
+         * This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.
          * @summary Creates an Url to allow embedded signing
          * @param {number} pkiEzsignfoldersignerassociationID 
          * @param {EzsignfoldersignerassociationCreateEmbeddedUrlV1Request} ezsignfoldersignerassociationCreateEmbeddedUrlV1Request 
@@ -933,6 +1015,17 @@ export const ObjectEzsignfoldersignerassociationApiFactory = function (configura
         ezsignfoldersignerassociationPatchObjectV1(pkiEzsignfoldersignerassociationID: number, ezsignfoldersignerassociationPatchObjectV1Request: EzsignfoldersignerassociationPatchObjectV1Request, options?: any): AxiosPromise<EzsignfoldersignerassociationPatchObjectV1Response> {
             return localVarFp.ezsignfoldersignerassociationPatchObjectV1(pkiEzsignfoldersignerassociationID, ezsignfoldersignerassociationPatchObjectV1Request, options).then((request) => request(axios, basePath));
         },
+        /**
+         * Reassign remaining unsigned signatures and forms
+         * @summary Reassign remaining unsigned signatures and forms
+         * @param {number} pkiEzsignfoldersignerassociationID 
+         * @param {EzsignfoldersignerassociationReassignV1Request} ezsignfoldersignerassociationReassignV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsignfoldersignerassociationReassignV1(pkiEzsignfoldersignerassociationID: number, ezsignfoldersignerassociationReassignV1Request: EzsignfoldersignerassociationReassignV1Request, options?: any): AxiosPromise<EzsignfoldersignerassociationReassignV1Response> {
+            return localVarFp.ezsignfoldersignerassociationReassignV1(pkiEzsignfoldersignerassociationID, ezsignfoldersignerassociationReassignV1Request, options).then((request) => request(axios, basePath));
+        },
     };
 };
 
@@ -944,7 +1037,7 @@ export const ObjectEzsignfoldersignerassociationApiFactory = function (configura
  */
 export class ObjectEzsignfoldersignerassociationApi extends BaseAPI {
     /**
-     * This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.  There will be a list to retrieve informations after the signing happens in the embedded version. To do so, there is a list of parameter to add to your sReturnUrl.  In example: https://www.example.com/sReturl?sParameter1&sParameter2. The sParameter1 et sParameter2 will be replace when we will redirect on the url.
+     * This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.
      * @summary Creates an Url to allow embedded signing
      * @param {number} pkiEzsignfoldersignerassociationID 
      * @param {EzsignfoldersignerassociationCreateEmbeddedUrlV1Request} ezsignfoldersignerassociationCreateEmbeddedUrlV1Request 
@@ -1067,6 +1160,19 @@ export class ObjectEzsignfoldersignerassociationApi extends BaseAPI {
      */
     public ezsignfoldersignerassociationPatchObjectV1(pkiEzsignfoldersignerassociationID: number, ezsignfoldersignerassociationPatchObjectV1Request: EzsignfoldersignerassociationPatchObjectV1Request, options?: RawAxiosRequestConfig) {
         return ObjectEzsignfoldersignerassociationApiFp(this.configuration).ezsignfoldersignerassociationPatchObjectV1(pkiEzsignfoldersignerassociationID, ezsignfoldersignerassociationPatchObjectV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Reassign remaining unsigned signatures and forms
+     * @summary Reassign remaining unsigned signatures and forms
+     * @param {number} pkiEzsignfoldersignerassociationID 
+     * @param {EzsignfoldersignerassociationReassignV1Request} ezsignfoldersignerassociationReassignV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectEzsignfoldersignerassociationApi
+     */
+    public ezsignfoldersignerassociationReassignV1(pkiEzsignfoldersignerassociationID: number, ezsignfoldersignerassociationReassignV1Request: EzsignfoldersignerassociationReassignV1Request, options?: RawAxiosRequestConfig) {
+        return ObjectEzsignfoldersignerassociationApiFp(this.configuration).ezsignfoldersignerassociationReassignV1(pkiEzsignfoldersignerassociationID, ezsignfoldersignerassociationReassignV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

@@ -34,6 +34,10 @@ import { UserCreateObjectV2Request } from '../model';
 // @ts-ignore
 import { UserCreateObjectV2Response } from '../model';
 // @ts-ignore
+import { UserEditColleaguesV2Request } from '../model';
+// @ts-ignore
+import { UserEditColleaguesV2Response } from '../model';
+// @ts-ignore
 import { UserEditObjectV1Request } from '../model';
 // @ts-ignore
 import { UserEditObjectV1Response } from '../model';
@@ -45,6 +49,8 @@ import { UserEditPermissionsV1Response } from '../model';
 import { UserGetApikeysV1Response } from '../model';
 // @ts-ignore
 import { UserGetAutocompleteV2Response } from '../model';
+// @ts-ignore
+import { UserGetColleaguesV2Response } from '../model';
 // @ts-ignore
 import { UserGetEffectivePermissionsV1Response } from '../model';
 // @ts-ignore
@@ -176,6 +182,70 @@ export const ObjectUserApiAxiosParamCreator = function (configuration?: Configur
                         authorization: configuration.apiKey as string,
                         secret: secret as string,
                         method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Using this endpoint, you can edit multiple Colleagues at the same time.
+         * @summary Edit multiple Colleagues
+         * @param {number} pkiUserID 
+         * @param {UserEditColleaguesV2Request} userEditColleaguesV2Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        userEditColleaguesV2: async (pkiUserID: number, userEditColleaguesV2Request: UserEditColleaguesV2Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiUserID' is not null or undefined
+            assertParamExists('userEditColleaguesV2', 'pkiUserID', pkiUserID)
+            // verify required parameter 'userEditColleaguesV2Request' is not null or undefined
+            assertParamExists('userEditColleaguesV2', 'userEditColleaguesV2Request', userEditColleaguesV2Request)
+            const localVarPath = `/2/object/user/{pkiUserID}/editColleagues`
+                .replace(`{${"pkiUserID"}}`, encodeURIComponent(String(pkiUserID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(userEditColleaguesV2Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'PUT' as string,
                         url: basePath + toPathString(localVarUrlObj) as string,
                         body: localVarRequestOptions.data || '' as string
                     }
@@ -421,6 +491,64 @@ export const ObjectUserApiAxiosParamCreator = function (configuration?: Configur
                     ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve an existing User\'s Colleagues
+         * @param {number} pkiUserID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        userGetColleaguesV2: async (pkiUserID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiUserID' is not null or undefined
+            assertParamExists('userGetColleaguesV2', 'pkiUserID', pkiUserID)
+            const localVarPath = `/2/object/user/{pkiUserID}/getColleagues`
+                .replace(`{${"pkiUserID"}}`, encodeURIComponent(String(pkiUserID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
 
     
@@ -980,6 +1108,20 @@ export const ObjectUserApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
+         * Using this endpoint, you can edit multiple Colleagues at the same time.
+         * @summary Edit multiple Colleagues
+         * @param {number} pkiUserID 
+         * @param {UserEditColleaguesV2Request} userEditColleaguesV2Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async userEditColleaguesV2(pkiUserID: number, userEditColleaguesV2Request: UserEditColleaguesV2Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserEditColleaguesV2Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.userEditColleaguesV2(pkiUserID, userEditColleaguesV2Request, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectUserApi.userEditColleaguesV2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * 
          * @summary Edit an existing User
          * @param {number} pkiUserID The unique ID of the User
@@ -1034,6 +1176,19 @@ export const ObjectUserApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.userGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectUserApi.userGetAutocompleteV2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve an existing User\'s Colleagues
+         * @param {number} pkiUserID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async userGetColleaguesV2(pkiUserID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserGetColleaguesV2Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.userGetColleaguesV2(pkiUserID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectUserApi.userGetColleaguesV2']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -1176,6 +1331,17 @@ export const ObjectUserApiFactory = function (configuration?: Configuration, bas
             return localVarFp.userCreateObjectV2(userCreateObjectV2Request, options).then((request) => request(axios, basePath));
         },
         /**
+         * Using this endpoint, you can edit multiple Colleagues at the same time.
+         * @summary Edit multiple Colleagues
+         * @param {number} pkiUserID 
+         * @param {UserEditColleaguesV2Request} userEditColleaguesV2Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        userEditColleaguesV2(pkiUserID: number, userEditColleaguesV2Request: UserEditColleaguesV2Request, options?: any): AxiosPromise<UserEditColleaguesV2Response> {
+            return localVarFp.userEditColleaguesV2(pkiUserID, userEditColleaguesV2Request, options).then((request) => request(axios, basePath));
+        },
+        /**
          * 
          * @summary Edit an existing User
          * @param {number} pkiUserID The unique ID of the User
@@ -1219,6 +1385,16 @@ export const ObjectUserApiFactory = function (configuration?: Configuration, bas
          */
         userGetAutocompleteV2(sSelector: UserGetAutocompleteV2SSelectorEnum, eFilterActive?: UserGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: any): AxiosPromise<UserGetAutocompleteV2Response> {
             return localVarFp.userGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve an existing User\'s Colleagues
+         * @param {number} pkiUserID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        userGetColleaguesV2(pkiUserID: number, options?: any): AxiosPromise<UserGetColleaguesV2Response> {
+            return localVarFp.userGetColleaguesV2(pkiUserID, options).then((request) => request(axios, basePath));
         },
         /**
          * Effective Permissions refers to the combination of Permissions held by a User and the Permissions associated with the Usergroups they belong to.
@@ -1340,6 +1516,19 @@ export class ObjectUserApi extends BaseAPI {
     }
 
     /**
+     * Using this endpoint, you can edit multiple Colleagues at the same time.
+     * @summary Edit multiple Colleagues
+     * @param {number} pkiUserID 
+     * @param {UserEditColleaguesV2Request} userEditColleaguesV2Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectUserApi
+     */
+    public userEditColleaguesV2(pkiUserID: number, userEditColleaguesV2Request: UserEditColleaguesV2Request, options?: RawAxiosRequestConfig) {
+        return ObjectUserApiFp(this.configuration).userEditColleaguesV2(pkiUserID, userEditColleaguesV2Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * 
      * @summary Edit an existing User
      * @param {number} pkiUserID The unique ID of the User
@@ -1390,6 +1579,18 @@ export class ObjectUserApi extends BaseAPI {
      */
     public userGetAutocompleteV2(sSelector: UserGetAutocompleteV2SSelectorEnum, eFilterActive?: UserGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig) {
         return ObjectUserApiFp(this.configuration).userGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve an existing User\'s Colleagues
+     * @param {number} pkiUserID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectUserApi
+     */
+    public userGetColleaguesV2(pkiUserID: number, options?: RawAxiosRequestConfig) {
+        return ObjectUserApiFp(this.configuration).userGetColleaguesV2(pkiUserID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1498,11 +1699,13 @@ export class ObjectUserApi extends BaseAPI {
  * @export
  */
 export const UserGetAutocompleteV2SSelectorEnum = {
+    AgentBrokerAssistant: 'AgentBrokerAssistant',
     AgentBrokerEmployeeEzsignUserNormal: 'AgentBrokerEmployeeEzsignUserNormal',
     AgentBrokerEmployeeNormalBuiltIn: 'AgentBrokerEmployeeNormalBuiltIn',
     AgentBrokerEzsignuserNormal: 'AgentBrokerEzsignuserNormal',
     ClonableUsers: 'ClonableUsers',
     EzsignuserBuiltIn: 'EzsignuserBuiltIn',
+    Ezsignuser: 'Ezsignuser',
     Normal: 'Normal',
     UsergroupDelegated: 'UsergroupDelegated'
 } as const;

@@ -67,6 +67,7 @@ export class DataObjectEzmaxinvoicingAutocompleteElementResponse {
 export class ValidationObjectEzmaxinvoicingAutocompleteElementResponse {
    yyyymmEzmaxinvoicing = {
       type: 'string',
+      maxLength: 7,
       required: true
    }
    pkiEzmaxinvoicingID = {

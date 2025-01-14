@@ -16,6 +16,9 @@
 // May contain unused imports in some cases
 // @ts-ignore
 import { EzsigntemplatesignerRequest } from './ezsigntemplatesigner-request';
+// May contain unused imports in some cases
+// @ts-ignore
+import { FieldEEzsigntemplatesignerMapping } from './field-eezsigntemplatesigner-mapping';
 
 /**
  * @type EzsigntemplatesignerRequestCompound
@@ -37,12 +40,43 @@ export interface EzsigntemplatesignerRequestCompound {
      */
     fkiEzsigntemplateID:number 
     /**
+     * The unique ID of the User
+     * @type {number}
+     * @memberof EzsigntemplatesignerRequestCompound
+     */
+    fkiUserID?:number 
+    /**
+     * The unique ID of the Usergroup
+     * @type {number}
+     * @memberof EzsigntemplatesignerRequestCompound
+     */
+    fkiUsergroupID?:number 
+    /**
+     * The unique ID of the Ezdoctemplatedocument
+     * @type {number}
+     * @memberof EzsigntemplatesignerRequestCompound
+     */
+    fkiEzdoctemplatedocumentID?:number 
+    /**
+     * If this flag is true. The signatory will receive a copy of every signed Ezsigndocument even if it ain\'t required to sign the document.
+     * @type {boolean}
+     * @memberof EzsigntemplatesignerRequestCompound
+     */
+    bEzsigntemplatesignerReceivecopy?:boolean 
+    /**
+     * 
+     * @type {FieldEEzsigntemplatesignerMapping}
+     * @memberof EzsigntemplatesignerRequestCompound
+     */
+    eEzsigntemplatesignerMapping?:FieldEEzsigntemplatesignerMapping 
+    /**
      * The description of the Ezsigntemplatesigner
      * @type {string}
      * @memberof EzsigntemplatesignerRequestCompound
      */
     sEzsigntemplatesignerDescription:string 
 }
+
 
 
 /**
@@ -59,6 +93,11 @@ export interface EzsigntemplatesignerRequestCompound {
 export class DataObjectEzsigntemplatesignerRequestCompound {
     pkiEzsigntemplatesignerID?:number = undefined
     fkiEzsigntemplateID:number = 0
+    fkiUserID?:number = undefined
+    fkiUsergroupID?:number = undefined
+    fkiEzdoctemplatedocumentID?:number = undefined
+    bEzsigntemplatesignerReceivecopy?:boolean = undefined
+    eEzsigntemplatesignerMapping?:FieldEEzsigntemplatesignerMapping = undefined
     sEzsigntemplatesignerDescription:string = ''
 }
 
@@ -78,9 +117,35 @@ export class ValidationObjectEzsigntemplatesignerRequestCompound {
       minimum: 0,
       required: true
    }
+   fkiUserID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiUsergroupID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 255,
+      required: false
+   }
+   fkiEzdoctemplatedocumentID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 65535,
+      required: false
+   }
+   bEzsigntemplatesignerReceivecopy = {
+      type: 'boolean',
+      required: false
+   }
+   eEzsigntemplatesignerMapping = {
+      type: 'enum',
+      allowableValues: ['Manual','Creator','User','Usergroup'],
+      required: false
+   }
    sEzsigntemplatesignerDescription = {
       type: 'string',
-      pattern: '/^.{1,50}$/',
+      pattern: /^.{1,50}$/,
       required: true
    }
 } 

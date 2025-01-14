@@ -31,6 +31,13 @@ export interface EzsignsignatureSignV1Request {
     /*'fkiEzsignsigningreasonID'?: number;*/
     'fkiEzsignsigningreasonID'?: number;
     /**
+     * The unique ID of the Font
+     * @type {number}
+     * @memberof EzsignsignatureSignV1Request
+     */
+    /*'fkiFontID'?: number;*/
+    'fkiFontID'?: number;
+    /**
      * The value required for the Ezsignsignature.  This can only be set if eEzsignsignatureType is **City**, **FieldText** or **FieldTextarea**
      * @type {string}
      * @memberof EzsignsignatureSignV1Request
@@ -52,7 +59,7 @@ export interface EzsignsignatureSignV1Request {
     /*'sAttachmentsRefusalReason'?: string;*/
     'sAttachmentsRefusalReason'?: string;
     /**
-     * The SVG of the handwritten signature.  This can only be set if eEzsignsignatureType is **Handwritten** and **bIsAutomatic** is false
+     * The SVG of the signature.  This can only be set if eEzsignsignatureType is **Signature**_/_**Initials** and **bIsAutomatic** is false
      * @type {string}
      * @memberof EzsignsignatureSignV1Request
      */
@@ -66,7 +73,7 @@ export interface EzsignsignatureSignV1Request {
     /*'a_objFile'?: Array<CommonFile>;*/
     'a_objFile'?: Array<CommonFile>;
     /**
-     * Indicates if the Ezsignsignature was part of an automatic process or not.  This can only be true if eEzsignsignatureType is **Acknowledgement**, **City**, **Handwritten**, **Initials**, **Name** or **Stamp**. 
+     * Indicates if the Ezsignsignature was part of an automatic process or not.  This can only be true if eEzsignsignatureType is **Acknowledgement**, **City**, **Signature**, **Initials** or **Stamp**. 
      * @type {boolean}
      * @memberof EzsignsignatureSignV1Request
      */
@@ -94,6 +101,7 @@ export type EzsignsignatureSignV1RequestEAttachmentsConfirmationDecisionEnum = t
  */
 export class DataObjectEzsignsignatureSignV1Request {
    fkiEzsignsigningreasonID?:number = undefined
+   fkiFontID?:number = undefined
    sValue?:string = undefined
    eAttachmentsConfirmationDecision?:EzsignsignatureSignV1RequestEAttachmentsConfirmationDecisionEnum = undefined
    sAttachmentsRefusalReason?:string = undefined
@@ -114,6 +122,11 @@ export class ValidationObjectEzsignsignatureSignV1Request {
       maximum: 255,
       required: false
    }
+   fkiFontID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
    sValue = {
       type: 'string',
       required: false
@@ -128,7 +141,7 @@ export class ValidationObjectEzsignsignatureSignV1Request {
    }
    sSvg = {
       type: 'string',
-      pattern: '/^.{0,65535}$/',
+      pattern: /^.{0,65535}$/,
       required: false
    }
    a_objFile = {

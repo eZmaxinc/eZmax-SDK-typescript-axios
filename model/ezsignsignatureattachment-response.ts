@@ -98,7 +98,7 @@ export class ValidationObjectEzsignsignatureattachmentResponse {
    }
    sEzsignsignatureattachmentName = {
       type: 'string',
-      pattern: '/^.{0,75}$/',
+      pattern: /^.{0,75}$/,
       required: true
    }
    sDownloadUrl = {

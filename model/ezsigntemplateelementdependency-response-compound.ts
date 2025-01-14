@@ -159,7 +159,7 @@ export class ValidationObjectEzsigntemplateelementdependencyResponseCompound {
    }
    sEzsigntemplateelementdependencyValue = {
       type: 'string',
-      pattern: '/^.{0,50}$/',
+      pattern: /^.{0,50}$/,
       required: false
    }
 } 

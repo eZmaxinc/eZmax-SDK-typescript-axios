@@ -61,6 +61,12 @@ export interface EzsigntemplateResponseCompound {
      */
     fkiLanguageID:number 
     /**
+     * The unique ID of the Ezdoctemplatedocument
+     * @type {number}
+     * @memberof EzsigntemplateResponseCompound
+     */
+    fkiEzdoctemplatedocumentID?:number 
+    /**
      * The Name of the Language in the language of the requester
      * @type {string}
      * @memberof EzsigntemplateResponseCompound
@@ -72,6 +78,18 @@ export interface EzsigntemplateResponseCompound {
      * @memberof EzsigntemplateResponseCompound
      */
     sEzsigntemplateDescription:string 
+    /**
+     * The external description of the Ezsigntemplate
+     * @type {string}
+     * @memberof EzsigntemplateResponseCompound
+     */
+    sEzsigntemplateExternaldescription?:string 
+    /**
+     * The comment of the Ezsigntemplate
+     * @type {string}
+     * @memberof EzsigntemplateResponseCompound
+     */
+    tEzsigntemplateComment?:string 
     /**
      * The filename pattern of the Ezsigntemplate
      * @type {string}
@@ -148,8 +166,11 @@ export class DataObjectEzsigntemplateResponseCompound {
     fkiEzsigntemplatedocumentID?:number = undefined
     fkiEzsignfoldertypeID?:number = undefined
     fkiLanguageID:number = 0
+    fkiEzdoctemplatedocumentID?:number = undefined
     sLanguageNameX:string = ''
     sEzsigntemplateDescription:string = ''
+    sEzsigntemplateExternaldescription?:string = undefined
+    tEzsigntemplateComment?:string = undefined
     sEzsigntemplateFilenamepattern?:string = undefined
     bEzsigntemplateAdminonly:boolean = false
     sEzsignfoldertypeNameX?:string = undefined
@@ -188,17 +209,33 @@ export class ValidationObjectEzsigntemplateResponseCompound {
       maximum: 2,
       required: true
    }
+   fkiEzdoctemplatedocumentID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 65535,
+      required: false
+   }
    sLanguageNameX = {
       type: 'string',
       required: true
    }
    sEzsigntemplateDescription = {
       type: 'string',
+      pattern: /^.{0,80}$/,
       required: true
+   }
+   sEzsigntemplateExternaldescription = {
+      type: 'string',
+      pattern: /^.{0,75}$/,
+      required: false
+   }
+   tEzsigntemplateComment = {
+      type: 'string',
+      required: false
    }
    sEzsigntemplateFilenamepattern = {
       type: 'string',
-      pattern: '/^.{1,50}$/',
+      pattern: /^.{1,50}$/,
       required: false
    }
    bEzsigntemplateAdminonly = {
@@ -216,7 +253,7 @@ export class ValidationObjectEzsigntemplateResponseCompound {
    }
    eEzsigntemplateType = {
       type: 'enum',
-      allowableValues: ['User','Usergroup','Company'],
+      allowableValues: ['User','Usergroup','Company','Ezsignfoldertype'],
       required: false
    }
    objEzsigntemplatedocument = new ValidationObjectEzsigntemplatedocumentResponse()

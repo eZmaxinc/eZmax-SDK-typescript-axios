@@ -59,12 +59,12 @@ export class DataObjectMultilingualVariableexpenseDescription {
 export class ValidationObjectMultilingualVariableexpenseDescription {
    sVariableexpenseDescription1 = {
       type: 'string',
-      pattern: '/^.{0,40}$/',
+      pattern: /^.{0,40}$/,
       required: false
    }
    sVariableexpenseDescription2 = {
       type: 'string',
-      pattern: '/^.{0,40}$/',
+      pattern: /^.{0,40}$/,
       required: false
    }
 } 

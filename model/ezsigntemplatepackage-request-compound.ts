@@ -37,6 +37,12 @@ export interface EzsigntemplatepackageRequestCompound {
      */
     fkiEzsignfoldertypeID:number 
     /**
+     * The unique ID of the Ezdoctemplatedocument
+     * @type {number}
+     * @memberof EzsigntemplatepackageRequestCompound
+     */
+    fkiEzdoctemplatedocumentID?:number 
+    /**
      * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @type {number}
      * @memberof EzsigntemplatepackageRequestCompound
@@ -77,6 +83,7 @@ export interface EzsigntemplatepackageRequestCompound {
 export class DataObjectEzsigntemplatepackageRequestCompound {
     pkiEzsigntemplatepackageID?:number = undefined
     fkiEzsignfoldertypeID:number = 0
+    fkiEzdoctemplatedocumentID?:number = undefined
     fkiLanguageID:number = 0
     sEzsigntemplatepackageDescription:string = ''
     bEzsigntemplatepackageAdminonly:boolean = false
@@ -100,6 +107,12 @@ export class ValidationObjectEzsigntemplatepackageRequestCompound {
       maximum: 65535,
       required: true
    }
+   fkiEzdoctemplatedocumentID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 65535,
+      required: false
+   }
    fkiLanguageID = {
       type: 'integer',
       minimum: 1,
@@ -108,6 +121,7 @@ export class ValidationObjectEzsigntemplatepackageRequestCompound {
    }
    sEzsigntemplatepackageDescription = {
       type: 'string',
+      pattern: /^.{0,80}$/,
       required: true
    }
    bEzsigntemplatepackageAdminonly = {

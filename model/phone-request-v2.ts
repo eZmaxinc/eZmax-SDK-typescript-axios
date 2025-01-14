@@ -89,7 +89,7 @@ export class ValidationObjectPhoneRequestV2 {
    }
    sPhoneE164 = {
       type: 'string',
-      pattern: '/^\+[1-9]\d{1,14}$/',
+      pattern: /^\+[1-9]\d{1,14}$/,
       required: false
    }
 } 

@@ -55,6 +55,13 @@ export interface CustomEzsignfoldertransmissionResponse {
     /*'iEzsignfolderSignaturetotal': number;*/
     'iEzsignfolderSignaturetotal': number;
     /**
+     * The number of total form fields that were requested in the Ezsignfolder
+     * @type {number}
+     * @memberof CustomEzsignfoldertransmissionResponse
+     */
+    /*'iEzsignfolderFormfieldtotal': number;*/
+    'iEzsignfolderFormfieldtotal': number;
+    /**
      * The number of signatures that were signed in the Ezsignfolder.
      * @type {number}
      * @memberof CustomEzsignfoldertransmissionResponse
@@ -87,6 +94,7 @@ export class DataObjectCustomEzsignfoldertransmissionResponse {
    sEzsignfolderDescription:string = ''
    eEzsignfolderStep:FieldEEzsignfolderStep = 'Unsent'
    iEzsignfolderSignaturetotal:number = 0
+   iEzsignfolderFormfieldtotal:number = 0
    iEzsignfolderSignaturesigned:number = 0
    a_objEzsignfoldertransmissionSigner:Array<CustomEzsignfoldertransmissionSignerResponse> = []
 }
@@ -104,6 +112,7 @@ export class ValidationObjectCustomEzsignfoldertransmissionResponse {
    }
    sEzsignfolderDescription = {
       type: 'string',
+      pattern: /^.{0,75}$/,
       required: true
    }
    eEzsignfolderStep = {
@@ -112,6 +121,10 @@ export class ValidationObjectCustomEzsignfoldertransmissionResponse {
       required: true
    }
    iEzsignfolderSignaturetotal = {
+      type: 'integer',
+      required: true
+   }
+   iEzsignfolderFormfieldtotal = {
       type: 'integer',
       required: true
    }

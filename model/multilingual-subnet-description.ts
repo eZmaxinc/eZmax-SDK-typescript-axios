@@ -59,12 +59,12 @@ export class DataObjectMultilingualSubnetDescription {
 export class ValidationObjectMultilingualSubnetDescription {
    sSubnetDescription1 = {
       type: 'string',
-      pattern: '/^.{0,50}$/',
+      pattern: /^.{0,50}$/,
       required: false
    }
    sSubnetDescription2 = {
       type: 'string',
-      pattern: '/^.{0,50}$/',
+      pattern: /^.{0,50}$/,
       required: false
    }
 } 

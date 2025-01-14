@@ -15,7 +15,7 @@
 
 
 /**
- * The Type of Ezsigntemplate
+ * The Type of Ezsigntemplate  **Usergroup** is now deprecated and replace with **Ezsignfoldertype**
  * @export
  * @enum {string}
  */
@@ -23,7 +23,8 @@
 export const FieldEEzsigntemplateType = {
     User: 'User',
     Usergroup: 'Usergroup',
-    Company: 'Company'
+    Company: 'Company',
+    Ezsignfoldertype: 'Ezsignfoldertype'
 } as const;
 
 export type FieldEEzsigntemplateType = typeof FieldEEzsigntemplateType[keyof typeof FieldEEzsigntemplateType];

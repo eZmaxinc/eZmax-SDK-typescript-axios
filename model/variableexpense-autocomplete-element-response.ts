@@ -67,7 +67,7 @@ export class DataObjectVariableexpenseAutocompleteElementResponse {
 export class ValidationObjectVariableexpenseAutocompleteElementResponse {
    sVariableexpenseDescriptionX = {
       type: 'string',
-      pattern: '/^.{0,40}$/',
+      pattern: /^.{0,40}$/,
       required: true
    }
    pkiVariableexpenseID = {

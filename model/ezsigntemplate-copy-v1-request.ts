@@ -25,8 +25,22 @@ export interface EzsigntemplateCopyV1Request {
      * @type {Array<number>}
      * @memberof EzsigntemplateCopyV1Request
      */
-    /*'a_fkiEzsignfoldertypeID': Array<number>;*/
-    'a_fkiEzsignfoldertypeID': Array<number>;
+    /*'a_fkiEzsignfoldertypeID'?: Array<number>;*/
+    'a_fkiEzsignfoldertypeID'?: Array<number>;
+    /**
+     * Whether we shall copy the Ezsigntemplate as a company Ezsigntemplate
+     * @type {boolean}
+     * @memberof EzsigntemplateCopyV1Request
+     */
+    /*'bCopyCompany'?: boolean;*/
+    'bCopyCompany'?: boolean;
+    /**
+     * Whether we shall copy the Ezsigntemplate as a user Ezsigntemplate
+     * @type {boolean}
+     * @memberof EzsigntemplateCopyV1Request
+     */
+    /*'bCopyUser'?: boolean;*/
+    'bCopyUser'?: boolean;
 }
 /**
  * @import
@@ -40,7 +54,9 @@ export interface EzsigntemplateCopyV1Request {
  * @class DataObjectEzsigntemplateCopyV1Request
  */
 export class DataObjectEzsigntemplateCopyV1Request {
-   a_fkiEzsignfoldertypeID:Array<number> = []
+   a_fkiEzsignfoldertypeID?:Array<number> = undefined
+   bCopyCompany?:boolean = undefined
+   bCopyUser?:boolean = undefined
 }
 
 /**
@@ -51,8 +67,16 @@ export class DataObjectEzsigntemplateCopyV1Request {
 export class ValidationObjectEzsigntemplateCopyV1Request {
    a_fkiEzsignfoldertypeID = {
       type: 'array',
-      minItems: 1,
-      required: true
+      minItems: 0,
+      required: false
+   }
+   bCopyCompany = {
+      type: 'boolean',
+      required: false
+   }
+   bCopyUser = {
+      type: 'boolean',
+      required: false
    }
 } 
 

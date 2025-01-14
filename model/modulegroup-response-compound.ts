@@ -79,7 +79,7 @@ export class ValidationObjectModulegroupResponseCompound {
    }
    sModulegroupNameX = {
       type: 'string',
-      pattern: '/^.{0,25}$/',
+      pattern: /^.{0,25}$/,
       required: true
    }
    a_objModule = {

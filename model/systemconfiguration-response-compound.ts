@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import { CustomBrandingResponse } from './custom-branding-response';
+// May contain unused imports in some cases
+// @ts-ignore
 import { FieldESystemconfigurationEzsign } from './field-esystemconfiguration-ezsign';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -51,6 +54,12 @@ export interface SystemconfigurationResponseCompound {
      * @memberof SystemconfigurationResponseCompound
      */
     fkiSystemconfigurationtypeID:number 
+    /**
+     * The unique ID of the Branding
+     * @type {number}
+     * @memberof SystemconfigurationResponseCompound
+     */
+    fkiBrandingID?:number 
     /**
      * The description of the Systemconfigurationtype in the language of the requester
      * @type {string}
@@ -101,6 +110,12 @@ export interface SystemconfigurationResponseCompound {
      */
     bSystemconfigurationEzsignpersonnal:boolean 
     /**
+     * Whether there is a creditcard merchant configured or not
+     * @type {boolean}
+     * @memberof SystemconfigurationResponseCompound
+     */
+    bSystemconfigurationHascreditcardmerchant?:boolean 
+    /**
      * Whether is Disposal processus is active or not
      * @type {boolean}
      * @memberof SystemconfigurationResponseCompound
@@ -124,6 +139,12 @@ export interface SystemconfigurationResponseCompound {
      * @memberof SystemconfigurationResponseCompound
      */
     dtSystemconfigurationReadonlyexpirationend?:string 
+    /**
+     * 
+     * @type {CustomBrandingResponse}
+     * @memberof SystemconfigurationResponseCompound
+     */
+    objBranding?:CustomBrandingResponse 
 }
 
 
@@ -132,6 +153,10 @@ export interface SystemconfigurationResponseCompound {
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectCustomBrandingResponse } from './'
+// @ts-ignore
+import { ValidationObjectCustomBrandingResponse } from './'
 
 /**
  * @export 
@@ -142,6 +167,7 @@ export interface SystemconfigurationResponseCompound {
 export class DataObjectSystemconfigurationResponseCompound {
     pkiSystemconfigurationID:number = 0
     fkiSystemconfigurationtypeID:number = 0
+    fkiBrandingID?:number = undefined
     sSystemconfigurationtypeDescriptionX:string = ''
     eSystemconfigurationNewexternaluseraction:FieldESystemconfigurationNewexternaluseraction = 'Stage'
     eSystemconfigurationLanguage1:FieldESystemconfigurationLanguage1 = 'fr_QC'
@@ -150,10 +176,12 @@ export class DataObjectSystemconfigurationResponseCompound {
     eSystemconfigurationEzsignofficeplan?:FieldESystemconfigurationEzsignofficeplan = undefined
     bSystemconfigurationEzsignpaidbyoffice?:boolean = undefined
     bSystemconfigurationEzsignpersonnal:boolean = false
+    bSystemconfigurationHascreditcardmerchant?:boolean = undefined
     bSystemconfigurationIsdisposalactive?:boolean = undefined
     bSystemconfigurationSspr:boolean = false
     dtSystemconfigurationReadonlyexpirationstart?:string = undefined
     dtSystemconfigurationReadonlyexpirationend?:string = undefined
+    objBranding?:CustomBrandingResponse = undefined
 }
 
 /**
@@ -172,6 +200,11 @@ export class ValidationObjectSystemconfigurationResponseCompound {
       type: 'integer',
       minimum: 1,
       required: true
+   }
+   fkiBrandingID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
    }
    sSystemconfigurationtypeDescriptionX = {
       type: 'string',
@@ -210,6 +243,10 @@ export class ValidationObjectSystemconfigurationResponseCompound {
       type: 'boolean',
       required: true
    }
+   bSystemconfigurationHascreditcardmerchant = {
+      type: 'boolean',
+      required: false
+   }
    bSystemconfigurationIsdisposalactive = {
       type: 'boolean',
       required: false
@@ -220,14 +257,15 @@ export class ValidationObjectSystemconfigurationResponseCompound {
    }
    dtSystemconfigurationReadonlyexpirationstart = {
       type: 'string',
-      pattern: '/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/',
+      pattern: /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/,
       required: false
    }
    dtSystemconfigurationReadonlyexpirationend = {
       type: 'string',
-      pattern: '/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/',
+      pattern: /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/,
       required: false
    }
+   objBranding = new ValidationObjectCustomBrandingResponse()
 } 
 
 

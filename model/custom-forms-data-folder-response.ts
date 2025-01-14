@@ -75,6 +75,7 @@ export class ValidationObjectCustomFormsDataFolderResponse {
    }
    sEzsignfolderDescription = {
       type: 'string',
+      pattern: /^.{0,75}$/,
       required: true
    }
    a_objFormDataDocument = {

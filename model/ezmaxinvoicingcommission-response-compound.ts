@@ -151,7 +151,7 @@ export class ValidationObjectEzmaxinvoicingcommissionResponseCompound {
    }
    dEzmaxinvoicingcommissionAmount = {
       type: 'string',
-      pattern: '/^-{0,1}[\d]{1,9}?\.[\d]{2}$/',
+      pattern: /^-{0,1}[\d]{1,9}?\.[\d]{2}$/,
       required: true
    }
    objContactName = new ValidationObjectCustomContactNameResponse()

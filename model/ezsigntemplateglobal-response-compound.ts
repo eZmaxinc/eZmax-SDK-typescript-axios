@@ -189,7 +189,7 @@ export class ValidationObjectEzsigntemplateglobalResponseCompound {
    }
    sEzsigntemplateglobalCode = {
       type: 'string',
-      pattern: '/^.{0,10}$/',
+      pattern: /^.{0,10}$/,
       required: true
    }
    sEzsigntemplateglobalDescription = {

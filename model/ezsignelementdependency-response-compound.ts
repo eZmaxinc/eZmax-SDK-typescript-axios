@@ -120,7 +120,7 @@ export class ValidationObjectEzsignelementdependencyResponseCompound {
    pkiEzsignelementdependencyID = {
       type: 'integer',
       minimum: 0,
-      maximum: 65535,
+      maximum: 16777215,
       required: true
    }
    fkiEzsignformfieldID = {
@@ -159,7 +159,7 @@ export class ValidationObjectEzsignelementdependencyResponseCompound {
    }
    sEzsignelementdependencyValue = {
       type: 'string',
-      pattern: '/^.{0,50}$/',
+      pattern: /^.{0,50}$/,
       required: false
    }
 } 

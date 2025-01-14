@@ -120,7 +120,7 @@ export class ValidationObjectPaymenttermResponseCompound {
    }
    sPaymenttermCode = {
       type: 'string',
-      pattern: '/^[A-Z0-9]{1,4}$/',
+      pattern: /^[A-Z0-9]{1,4}$/,
       required: true
    }
    ePaymenttermType = {

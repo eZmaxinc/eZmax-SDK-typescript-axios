@@ -101,7 +101,7 @@ export class ValidationObjectVariableexpenseRequest {
    }
    sVariableexpenseCode = {
       type: 'string',
-      pattern: '/^.{0,5}$/',
+      pattern: /^.{0,5}$/,
       required: true
    }
    objVariableexpenseDescription = new ValidationObjectMultilingualVariableexpenseDescription()

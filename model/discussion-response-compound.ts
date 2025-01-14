@@ -131,7 +131,7 @@ export class ValidationObjectDiscussionResponseCompound {
    }
    sDiscussionDescription = {
       type: 'string',
-      pattern: '/^.{0,75}$/',
+      pattern: /^.{0,75}$/,
       required: true
    }
    bDiscussionClosed = {

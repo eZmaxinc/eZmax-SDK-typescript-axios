@@ -74,12 +74,12 @@ export class ValidationObjectWebhookheaderRequestCompound {
    }
    sWebhookheaderName = {
       type: 'string',
-      pattern: '/^(?!(?:e|E)(?:z|Z)(?:m|M)(?:a|A)(?:x|X))(?!(?:h|H)(?:o|O)(?:s|S)(?:t|T)$|(?:u|U)(?:s|S)(?:e|E)(?:r|R)-(?:a|A)(?:g|G)(?:e|E)(?:n|N)(?:t|T)$)(?!\s)[^\s].*$/',
+      pattern: /^(?!(?:e|E)(?:z|Z)(?:m|M)(?:a|A)(?:x|X))(?!(?:h|H)(?:o|O)(?:s|S)(?:t|T)$|(?:u|U)(?:s|S)(?:e|E)(?:r|R)-(?:a|A)(?:g|G)(?:e|E)(?:n|N)(?:t|T)$)(?!\s)[^\s].*$/,
       required: true
    }
    sWebhookheaderValue = {
       type: 'string',
-      pattern: '/^.{1,255}$/',
+      pattern: /^.{1,255}$/,
       required: true
    }
 } 

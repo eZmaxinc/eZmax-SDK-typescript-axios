@@ -36,6 +36,10 @@ import { EzsignfolderCreateObjectV2Request } from '../model';
 // @ts-ignore
 import { EzsignfolderCreateObjectV2Response } from '../model';
 // @ts-ignore
+import { EzsignfolderCreateObjectV3Request } from '../model';
+// @ts-ignore
+import { EzsignfolderCreateObjectV3Response } from '../model';
+// @ts-ignore
 import { EzsignfolderDeleteObjectV1Response } from '../model';
 // @ts-ignore
 import { EzsignfolderDisposeEzsignfoldersV1Request } from '../model';
@@ -44,9 +48,9 @@ import { EzsignfolderDisposeEzsignfoldersV1Response } from '../model';
 // @ts-ignore
 import { EzsignfolderDisposeV1Response } from '../model';
 // @ts-ignore
-import { EzsignfolderEditObjectV1Request } from '../model';
+import { EzsignfolderEditObjectV3Request } from '../model';
 // @ts-ignore
-import { EzsignfolderEditObjectV1Response } from '../model';
+import { EzsignfolderEditObjectV3Response } from '../model';
 // @ts-ignore
 import { EzsignfolderEndPrematurelyV1Response } from '../model';
 // @ts-ignore
@@ -78,6 +82,8 @@ import { EzsignfolderGetObjectV1Response } from '../model';
 // @ts-ignore
 import { EzsignfolderGetObjectV2Response } from '../model';
 // @ts-ignore
+import { EzsignfolderGetObjectV3Response } from '../model';
+// @ts-ignore
 import { EzsignfolderImportEzsignfoldersignerassociationsV1Request } from '../model';
 // @ts-ignore
 import { EzsignfolderImportEzsignfoldersignerassociationsV1Response } from '../model';
@@ -89,6 +95,10 @@ import { EzsignfolderImportEzsigntemplatepackageV1Response } from '../model';
 import { EzsignfolderReorderV1Request } from '../model';
 // @ts-ignore
 import { EzsignfolderReorderV1Response } from '../model';
+// @ts-ignore
+import { EzsignfolderReorderV2Request } from '../model';
+// @ts-ignore
+import { EzsignfolderReorderV2Response } from '../model';
 // @ts-ignore
 import { EzsignfolderSendV1Request } from '../model';
 // @ts-ignore
@@ -303,6 +313,7 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
          * @summary Create a new Ezsignfolder
          * @param {EzsignfolderCreateObjectV2Request} ezsignfolderCreateObjectV2Request 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         ezsignfolderCreateObjectV2: async (ezsignfolderCreateObjectV2Request: EzsignfolderCreateObjectV2Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -336,6 +347,66 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ezsignfolderCreateObjectV2Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * The endpoint allows to create one or many elements at once.
+         * @summary Create a new Ezsignfolder
+         * @param {EzsignfolderCreateObjectV3Request} ezsignfolderCreateObjectV3Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsignfolderCreateObjectV3: async (ezsignfolderCreateObjectV3Request: EzsignfolderCreateObjectV3Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'ezsignfolderCreateObjectV3Request' is not null or undefined
+            assertParamExists('ezsignfolderCreateObjectV3', 'ezsignfolderCreateObjectV3Request', ezsignfolderCreateObjectV3Request)
+            const localVarPath = `/3/object/ezsignfolder`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(ezsignfolderCreateObjectV3Request, localVarRequestOptions, configuration)
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -544,16 +615,16 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
          * 
          * @summary Edit an existing Ezsignfolder
          * @param {number} pkiEzsignfolderID 
-         * @param {EzsignfolderEditObjectV1Request} ezsignfolderEditObjectV1Request 
+         * @param {EzsignfolderEditObjectV3Request} ezsignfolderEditObjectV3Request 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfolderEditObjectV1: async (pkiEzsignfolderID: number, ezsignfolderEditObjectV1Request: EzsignfolderEditObjectV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsignfolderEditObjectV3: async (pkiEzsignfolderID: number, ezsignfolderEditObjectV3Request: EzsignfolderEditObjectV3Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsignfolderID' is not null or undefined
-            assertParamExists('ezsignfolderEditObjectV1', 'pkiEzsignfolderID', pkiEzsignfolderID)
-            // verify required parameter 'ezsignfolderEditObjectV1Request' is not null or undefined
-            assertParamExists('ezsignfolderEditObjectV1', 'ezsignfolderEditObjectV1Request', ezsignfolderEditObjectV1Request)
-            const localVarPath = `/1/object/ezsignfolder/{pkiEzsignfolderID}`
+            assertParamExists('ezsignfolderEditObjectV3', 'pkiEzsignfolderID', pkiEzsignfolderID)
+            // verify required parameter 'ezsignfolderEditObjectV3Request' is not null or undefined
+            assertParamExists('ezsignfolderEditObjectV3', 'ezsignfolderEditObjectV3Request', ezsignfolderEditObjectV3Request)
+            const localVarPath = `/3/object/ezsignfolder/{pkiEzsignfolderID}`
                 .replace(`{${"pkiEzsignfolderID"}}`, encodeURIComponent(String(pkiEzsignfolderID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
@@ -581,7 +652,7 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(ezsignfolderEditObjectV1Request, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(ezsignfolderEditObjectV3Request, localVarRequestOptions, configuration)
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -1307,7 +1378,7 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             };
         },
         /**
-         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent<br>Sent<br>PartiallySigned<br>Expired<br>Completed<br>Archived<br>Disposed| | eEzsignfoldertypePrivacylevel | User<br>Usergroup |  Advanced filters that can be used in query parameter *sFilter*:  | Variable | |---| | fkiUserID | | sContactFirstname | | sContactLastname | | sEzsigndocumentName |
+         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent<br>Sent<br>PartiallySigned<br>Expired<br>Completed<br>Archived<br>Disposed| | eEzsignfoldertypePrivacylevel | User<br>Usergroup |  Advanced filters that can be used in query parameter *sFilter*:  | Variable | |---| | fkiUserID | | sContactFirstname | | sContactLastname | | sUserFirstname | | sUserLastname | | sEzsigndocumentName |
          * @summary Retrieve Ezsignfolder list
          * @param {EzsignfolderGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -1451,12 +1522,71 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
          * @summary Retrieve an existing Ezsignfolder
          * @param {number} pkiEzsignfolderID 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         ezsignfolderGetObjectV2: async (pkiEzsignfolderID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsignfolderID' is not null or undefined
             assertParamExists('ezsignfolderGetObjectV2', 'pkiEzsignfolderID', pkiEzsignfolderID)
             const localVarPath = `/2/object/ezsignfolder/{pkiEzsignfolderID}`
+                .replace(`{${"pkiEzsignfolderID"}}`, encodeURIComponent(String(pkiEzsignfolderID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve an existing Ezsignfolder
+         * @param {number} pkiEzsignfolderID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsignfolderGetObjectV3: async (pkiEzsignfolderID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiEzsignfolderID' is not null or undefined
+            assertParamExists('ezsignfolderGetObjectV3', 'pkiEzsignfolderID', pkiEzsignfolderID)
+            const localVarPath = `/3/object/ezsignfolder/{pkiEzsignfolderID}`
                 .replace(`{${"pkiEzsignfolderID"}}`, encodeURIComponent(String(pkiEzsignfolderID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
@@ -1638,6 +1768,7 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
          * @param {number} pkiEzsignfolderID 
          * @param {EzsignfolderReorderV1Request} ezsignfolderReorderV1Request 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         ezsignfolderReorderV1: async (pkiEzsignfolderID: number, ezsignfolderReorderV1Request: EzsignfolderReorderV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -1674,6 +1805,70 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ezsignfolderReorderV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Reorder Ezsigndocuments in the Ezsignfolder
+         * @param {number} pkiEzsignfolderID 
+         * @param {EzsignfolderReorderV2Request} ezsignfolderReorderV2Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsignfolderReorderV2: async (pkiEzsignfolderID: number, ezsignfolderReorderV2Request: EzsignfolderReorderV2Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiEzsignfolderID' is not null or undefined
+            assertParamExists('ezsignfolderReorderV2', 'pkiEzsignfolderID', pkiEzsignfolderID)
+            // verify required parameter 'ezsignfolderReorderV2Request' is not null or undefined
+            assertParamExists('ezsignfolderReorderV2', 'ezsignfolderReorderV2Request', ezsignfolderReorderV2Request)
+            const localVarPath = `/2/object/ezsignfolder/{pkiEzsignfolderID}/reorder`
+                .replace(`{${"pkiEzsignfolderID"}}`, encodeURIComponent(String(pkiEzsignfolderID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(ezsignfolderReorderV2Request, localVarRequestOptions, configuration)
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -1946,12 +2141,26 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
          * @summary Create a new Ezsignfolder
          * @param {EzsignfolderCreateObjectV2Request} ezsignfolderCreateObjectV2Request 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         async ezsignfolderCreateObjectV2(ezsignfolderCreateObjectV2Request: EzsignfolderCreateObjectV2Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderCreateObjectV2Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderCreateObjectV2(ezsignfolderCreateObjectV2Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignfolderApi.ezsignfolderCreateObjectV2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * The endpoint allows to create one or many elements at once.
+         * @summary Create a new Ezsignfolder
+         * @param {EzsignfolderCreateObjectV3Request} ezsignfolderCreateObjectV3Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsignfolderCreateObjectV3(ezsignfolderCreateObjectV3Request: EzsignfolderCreateObjectV3Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderCreateObjectV3Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderCreateObjectV3(ezsignfolderCreateObjectV3Request, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsignfolderApi.ezsignfolderCreateObjectV3']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -1998,14 +2207,14 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
          * 
          * @summary Edit an existing Ezsignfolder
          * @param {number} pkiEzsignfolderID 
-         * @param {EzsignfolderEditObjectV1Request} ezsignfolderEditObjectV1Request 
+         * @param {EzsignfolderEditObjectV3Request} ezsignfolderEditObjectV3Request 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignfolderEditObjectV1(pkiEzsignfolderID: number, ezsignfolderEditObjectV1Request: EzsignfolderEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderEditObjectV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderEditObjectV1(pkiEzsignfolderID, ezsignfolderEditObjectV1Request, options);
+        async ezsignfolderEditObjectV3(pkiEzsignfolderID: number, ezsignfolderEditObjectV3Request: EzsignfolderEditObjectV3Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderEditObjectV3Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderEditObjectV3(pkiEzsignfolderID, ezsignfolderEditObjectV3Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ObjectEzsignfolderApi.ezsignfolderEditObjectV1']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsignfolderApi.ezsignfolderEditObjectV3']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -2166,7 +2375,7 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent<br>Sent<br>PartiallySigned<br>Expired<br>Completed<br>Archived<br>Disposed| | eEzsignfoldertypePrivacylevel | User<br>Usergroup |  Advanced filters that can be used in query parameter *sFilter*:  | Variable | |---| | fkiUserID | | sContactFirstname | | sContactLastname | | sEzsigndocumentName |
+         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent<br>Sent<br>PartiallySigned<br>Expired<br>Completed<br>Archived<br>Disposed| | eEzsignfoldertypePrivacylevel | User<br>Usergroup |  Advanced filters that can be used in query parameter *sFilter*:  | Variable | |---| | fkiUserID | | sContactFirstname | | sContactLastname | | sUserFirstname | | sUserLastname | | sEzsigndocumentName |
          * @summary Retrieve Ezsignfolder list
          * @param {EzsignfolderGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -2201,12 +2410,26 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
          * @summary Retrieve an existing Ezsignfolder
          * @param {number} pkiEzsignfolderID 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         async ezsignfolderGetObjectV2(pkiEzsignfolderID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderGetObjectV2Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderGetObjectV2(pkiEzsignfolderID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignfolderApi.ezsignfolderGetObjectV2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve an existing Ezsignfolder
+         * @param {number} pkiEzsignfolderID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsignfolderGetObjectV3(pkiEzsignfolderID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderGetObjectV3Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderGetObjectV3(pkiEzsignfolderID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsignfolderApi.ezsignfolderGetObjectV3']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -2243,12 +2466,27 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
          * @param {number} pkiEzsignfolderID 
          * @param {EzsignfolderReorderV1Request} ezsignfolderReorderV1Request 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         async ezsignfolderReorderV1(pkiEzsignfolderID: number, ezsignfolderReorderV1Request: EzsignfolderReorderV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderReorderV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderReorderV1(pkiEzsignfolderID, ezsignfolderReorderV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignfolderApi.ezsignfolderReorderV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Reorder Ezsigndocuments in the Ezsignfolder
+         * @param {number} pkiEzsignfolderID 
+         * @param {EzsignfolderReorderV2Request} ezsignfolderReorderV2Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsignfolderReorderV2(pkiEzsignfolderID: number, ezsignfolderReorderV2Request: EzsignfolderReorderV2Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderReorderV2Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderReorderV2(pkiEzsignfolderID, ezsignfolderReorderV2Request, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsignfolderApi.ezsignfolderReorderV2']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -2342,10 +2580,21 @@ export const ObjectEzsignfolderApiFactory = function (configuration?: Configurat
          * @summary Create a new Ezsignfolder
          * @param {EzsignfolderCreateObjectV2Request} ezsignfolderCreateObjectV2Request 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         ezsignfolderCreateObjectV2(ezsignfolderCreateObjectV2Request: EzsignfolderCreateObjectV2Request, options?: any): AxiosPromise<EzsignfolderCreateObjectV2Response> {
             return localVarFp.ezsignfolderCreateObjectV2(ezsignfolderCreateObjectV2Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * The endpoint allows to create one or many elements at once.
+         * @summary Create a new Ezsignfolder
+         * @param {EzsignfolderCreateObjectV3Request} ezsignfolderCreateObjectV3Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsignfolderCreateObjectV3(ezsignfolderCreateObjectV3Request: EzsignfolderCreateObjectV3Request, options?: any): AxiosPromise<EzsignfolderCreateObjectV3Response> {
+            return localVarFp.ezsignfolderCreateObjectV3(ezsignfolderCreateObjectV3Request, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2382,12 +2631,12 @@ export const ObjectEzsignfolderApiFactory = function (configuration?: Configurat
          * 
          * @summary Edit an existing Ezsignfolder
          * @param {number} pkiEzsignfolderID 
-         * @param {EzsignfolderEditObjectV1Request} ezsignfolderEditObjectV1Request 
+         * @param {EzsignfolderEditObjectV3Request} ezsignfolderEditObjectV3Request 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfolderEditObjectV1(pkiEzsignfolderID: number, ezsignfolderEditObjectV1Request: EzsignfolderEditObjectV1Request, options?: any): AxiosPromise<EzsignfolderEditObjectV1Response> {
-            return localVarFp.ezsignfolderEditObjectV1(pkiEzsignfolderID, ezsignfolderEditObjectV1Request, options).then((request) => request(axios, basePath));
+        ezsignfolderEditObjectV3(pkiEzsignfolderID: number, ezsignfolderEditObjectV3Request: EzsignfolderEditObjectV3Request, options?: any): AxiosPromise<EzsignfolderEditObjectV3Response> {
+            return localVarFp.ezsignfolderEditObjectV3(pkiEzsignfolderID, ezsignfolderEditObjectV3Request, options).then((request) => request(axios, basePath));
         },
         /**
          * End prematurely all Ezsigndocument of Ezsignfolder when some signatures are still required
@@ -2511,7 +2760,7 @@ export const ObjectEzsignfolderApiFactory = function (configuration?: Configurat
             return localVarFp.ezsignfolderGetFormsDataV1(pkiEzsignfolderID, options).then((request) => request(axios, basePath));
         },
         /**
-         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent<br>Sent<br>PartiallySigned<br>Expired<br>Completed<br>Archived<br>Disposed| | eEzsignfoldertypePrivacylevel | User<br>Usergroup |  Advanced filters that can be used in query parameter *sFilter*:  | Variable | |---| | fkiUserID | | sContactFirstname | | sContactLastname | | sEzsigndocumentName |
+         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent<br>Sent<br>PartiallySigned<br>Expired<br>Completed<br>Archived<br>Disposed| | eEzsignfoldertypePrivacylevel | User<br>Usergroup |  Advanced filters that can be used in query parameter *sFilter*:  | Variable | |---| | fkiUserID | | sContactFirstname | | sContactLastname | | sUserFirstname | | sUserLastname | | sEzsigndocumentName |
          * @summary Retrieve Ezsignfolder list
          * @param {EzsignfolderGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -2540,10 +2789,21 @@ export const ObjectEzsignfolderApiFactory = function (configuration?: Configurat
          * @summary Retrieve an existing Ezsignfolder
          * @param {number} pkiEzsignfolderID 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         ezsignfolderGetObjectV2(pkiEzsignfolderID: number, options?: any): AxiosPromise<EzsignfolderGetObjectV2Response> {
             return localVarFp.ezsignfolderGetObjectV2(pkiEzsignfolderID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve an existing Ezsignfolder
+         * @param {number} pkiEzsignfolderID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsignfolderGetObjectV3(pkiEzsignfolderID: number, options?: any): AxiosPromise<EzsignfolderGetObjectV3Response> {
+            return localVarFp.ezsignfolderGetObjectV3(pkiEzsignfolderID, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2573,10 +2833,22 @@ export const ObjectEzsignfolderApiFactory = function (configuration?: Configurat
          * @param {number} pkiEzsignfolderID 
          * @param {EzsignfolderReorderV1Request} ezsignfolderReorderV1Request 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         ezsignfolderReorderV1(pkiEzsignfolderID: number, ezsignfolderReorderV1Request: EzsignfolderReorderV1Request, options?: any): AxiosPromise<EzsignfolderReorderV1Response> {
             return localVarFp.ezsignfolderReorderV1(pkiEzsignfolderID, ezsignfolderReorderV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Reorder Ezsigndocuments in the Ezsignfolder
+         * @param {number} pkiEzsignfolderID 
+         * @param {EzsignfolderReorderV2Request} ezsignfolderReorderV2Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsignfolderReorderV2(pkiEzsignfolderID: number, ezsignfolderReorderV2Request: EzsignfolderReorderV2Request, options?: any): AxiosPromise<EzsignfolderReorderV2Response> {
+            return localVarFp.ezsignfolderReorderV2(pkiEzsignfolderID, ezsignfolderReorderV2Request, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -2666,11 +2938,24 @@ export class ObjectEzsignfolderApi extends BaseAPI {
      * @summary Create a new Ezsignfolder
      * @param {EzsignfolderCreateObjectV2Request} ezsignfolderCreateObjectV2Request 
      * @param {*} [options] Override http request option.
+     * @deprecated
      * @throws {RequiredError}
      * @memberof ObjectEzsignfolderApi
      */
     public ezsignfolderCreateObjectV2(ezsignfolderCreateObjectV2Request: EzsignfolderCreateObjectV2Request, options?: RawAxiosRequestConfig) {
         return ObjectEzsignfolderApiFp(this.configuration).ezsignfolderCreateObjectV2(ezsignfolderCreateObjectV2Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * The endpoint allows to create one or many elements at once.
+     * @summary Create a new Ezsignfolder
+     * @param {EzsignfolderCreateObjectV3Request} ezsignfolderCreateObjectV3Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectEzsignfolderApi
+     */
+    public ezsignfolderCreateObjectV3(ezsignfolderCreateObjectV3Request: EzsignfolderCreateObjectV3Request, options?: RawAxiosRequestConfig) {
+        return ObjectEzsignfolderApiFp(this.configuration).ezsignfolderCreateObjectV3(ezsignfolderCreateObjectV3Request, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -2714,13 +2999,13 @@ export class ObjectEzsignfolderApi extends BaseAPI {
      * 
      * @summary Edit an existing Ezsignfolder
      * @param {number} pkiEzsignfolderID 
-     * @param {EzsignfolderEditObjectV1Request} ezsignfolderEditObjectV1Request 
+     * @param {EzsignfolderEditObjectV3Request} ezsignfolderEditObjectV3Request 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ObjectEzsignfolderApi
      */
-    public ezsignfolderEditObjectV1(pkiEzsignfolderID: number, ezsignfolderEditObjectV1Request: EzsignfolderEditObjectV1Request, options?: RawAxiosRequestConfig) {
-        return ObjectEzsignfolderApiFp(this.configuration).ezsignfolderEditObjectV1(pkiEzsignfolderID, ezsignfolderEditObjectV1Request, options).then((request) => request(this.axios, this.basePath));
+    public ezsignfolderEditObjectV3(pkiEzsignfolderID: number, ezsignfolderEditObjectV3Request: EzsignfolderEditObjectV3Request, options?: RawAxiosRequestConfig) {
+        return ObjectEzsignfolderApiFp(this.configuration).ezsignfolderEditObjectV3(pkiEzsignfolderID, ezsignfolderEditObjectV3Request, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -2869,7 +3154,7 @@ export class ObjectEzsignfolderApi extends BaseAPI {
     }
 
     /**
-     * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent<br>Sent<br>PartiallySigned<br>Expired<br>Completed<br>Archived<br>Disposed| | eEzsignfoldertypePrivacylevel | User<br>Usergroup |  Advanced filters that can be used in query parameter *sFilter*:  | Variable | |---| | fkiUserID | | sContactFirstname | | sContactLastname | | sEzsigndocumentName |
+     * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eEzsignfolderStep | Unsent<br>Sent<br>PartiallySigned<br>Expired<br>Completed<br>Archived<br>Disposed| | eEzsignfoldertypePrivacylevel | User<br>Usergroup |  Advanced filters that can be used in query parameter *sFilter*:  | Variable | |---| | fkiUserID | | sContactFirstname | | sContactLastname | | sUserFirstname | | sUserLastname | | sEzsigndocumentName |
      * @summary Retrieve Ezsignfolder list
      * @param {EzsignfolderGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
      * @param {number} [iRowMax] 
@@ -2902,11 +3187,24 @@ export class ObjectEzsignfolderApi extends BaseAPI {
      * @summary Retrieve an existing Ezsignfolder
      * @param {number} pkiEzsignfolderID 
      * @param {*} [options] Override http request option.
+     * @deprecated
      * @throws {RequiredError}
      * @memberof ObjectEzsignfolderApi
      */
     public ezsignfolderGetObjectV2(pkiEzsignfolderID: number, options?: RawAxiosRequestConfig) {
         return ObjectEzsignfolderApiFp(this.configuration).ezsignfolderGetObjectV2(pkiEzsignfolderID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve an existing Ezsignfolder
+     * @param {number} pkiEzsignfolderID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectEzsignfolderApi
+     */
+    public ezsignfolderGetObjectV3(pkiEzsignfolderID: number, options?: RawAxiosRequestConfig) {
+        return ObjectEzsignfolderApiFp(this.configuration).ezsignfolderGetObjectV3(pkiEzsignfolderID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -2941,11 +3239,25 @@ export class ObjectEzsignfolderApi extends BaseAPI {
      * @param {number} pkiEzsignfolderID 
      * @param {EzsignfolderReorderV1Request} ezsignfolderReorderV1Request 
      * @param {*} [options] Override http request option.
+     * @deprecated
      * @throws {RequiredError}
      * @memberof ObjectEzsignfolderApi
      */
     public ezsignfolderReorderV1(pkiEzsignfolderID: number, ezsignfolderReorderV1Request: EzsignfolderReorderV1Request, options?: RawAxiosRequestConfig) {
         return ObjectEzsignfolderApiFp(this.configuration).ezsignfolderReorderV1(pkiEzsignfolderID, ezsignfolderReorderV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Reorder Ezsigndocuments in the Ezsignfolder
+     * @param {number} pkiEzsignfolderID 
+     * @param {EzsignfolderReorderV2Request} ezsignfolderReorderV2Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectEzsignfolderApi
+     */
+    public ezsignfolderReorderV2(pkiEzsignfolderID: number, ezsignfolderReorderV2Request: EzsignfolderReorderV2Request, options?: RawAxiosRequestConfig) {
+        return ObjectEzsignfolderApiFp(this.configuration).ezsignfolderReorderV2(pkiEzsignfolderID, ezsignfolderReorderV2Request, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3022,6 +3334,10 @@ export const EzsignfolderGetListV1EOrderByEnum = {
     iEzsignformfieldgroupCompleted_ASC: 'iEzsignformfieldgroupCompleted_ASC',
     iEzsignformfieldgroupCompleted_DESC: 'iEzsignformfieldgroupCompleted_DESC',
     dEzsignfolderCompletedpercentage_ASC: 'dEzsignfolderCompletedpercentage_ASC',
-    dEzsignfolderCompletedpercentage_DESC: 'dEzsignfolderCompletedpercentage_DESC'
+    dEzsignfolderCompletedpercentage_DESC: 'dEzsignfolderCompletedpercentage_DESC',
+    dEzsignfolderFormcompletedpercentage_ASC: 'dEzsignfolderFormcompletedpercentage_ASC',
+    dEzsignfolderFormcompletedpercentage_DESC: 'dEzsignfolderFormcompletedpercentage_DESC',
+    dEzsignfolderSignaturecompletedpercentage_ASC: 'dEzsignfolderSignaturecompletedpercentage_ASC',
+    dEzsignfolderSignaturecompletedpercentagee_DESC: 'dEzsignfolderSignaturecompletedpercentagee_DESC'
 } as const;
 export type EzsignfolderGetListV1EOrderByEnum = typeof EzsignfolderGetListV1EOrderByEnum[keyof typeof EzsignfolderGetListV1EOrderByEnum];
