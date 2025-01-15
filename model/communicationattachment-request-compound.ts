@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommunicationattachmentRequest } from './communicationattachment-request';
+import type { CommunicationattachmentRequest } from './communicationattachment-request';
 
 /**
  * @type CommunicationattachmentRequestCompound

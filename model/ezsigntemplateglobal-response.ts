@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsigntemplateglobalModule } from './field-eezsigntemplateglobal-module';
+import type { FieldEEzsigntemplateglobalModule } from './field-eezsigntemplateglobal-module';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsigntemplateglobalSupplier } from './field-eezsigntemplateglobal-supplier';
+import type { FieldEEzsigntemplateglobalSupplier } from './field-eezsigntemplateglobal-supplier';
 
 /**
  * A Ezsigntemplateglobal Object

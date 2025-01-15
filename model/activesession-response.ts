@@ -15,25 +15,25 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEActivesessionEzsign } from './field-eactivesession-ezsign';
+import type { FieldEActivesessionEzsign } from './field-eactivesession-ezsign';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEActivesessionEzsignaccess } from './field-eactivesession-ezsignaccess';
+import type { FieldEActivesessionEzsignaccess } from './field-eactivesession-ezsignaccess';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEActivesessionEzsignprepaid } from './field-eactivesession-ezsignprepaid';
+import type { FieldEActivesessionEzsignprepaid } from './field-eactivesession-ezsignprepaid';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEActivesessionOrigin } from './field-eactivesession-origin';
+import type { FieldEActivesessionOrigin } from './field-eactivesession-origin';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEActivesessionRealestateinprogress } from './field-eactivesession-realestateinprogress';
+import type { FieldEActivesessionRealestateinprogress } from './field-eactivesession-realestateinprogress';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEActivesessionUsertype } from './field-eactivesession-usertype';
+import type { FieldEActivesessionUsertype } from './field-eactivesession-usertype';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEActivesessionWeekdaystart } from './field-eactivesession-weekdaystart';
+import type { FieldEActivesessionWeekdaystart } from './field-eactivesession-weekdaystart';
 
 /**
  * An Activesession Object

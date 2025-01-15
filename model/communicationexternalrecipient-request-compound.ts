@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommunicationexternalrecipientRequest } from './communicationexternalrecipient-request';
+import type { CommunicationexternalrecipientRequest } from './communicationexternalrecipient-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldECommunicationexternalrecipientType } from './field-ecommunicationexternalrecipient-type';
+import type { FieldECommunicationexternalrecipientType } from './field-ecommunicationexternalrecipient-type';
 
 /**
  * @type CommunicationexternalrecipientRequestCompound

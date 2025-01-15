@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { PeriodAutocompleteElementResponse } from './period-autocomplete-element-response';
+import type { PeriodAutocompleteElementResponse } from './period-autocomplete-element-response';
 
 /**
  * Payload for POST /2/object/period/getAutocomplete

@@ -15,19 +15,19 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonAudit } from './common-audit';
+import type { CommonAudit } from './common-audit';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigntemplateResponse } from './ezsigntemplate-response';
+import type { EzsigntemplateResponse } from './ezsigntemplate-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigntemplatedocumentResponse } from './ezsigntemplatedocument-response';
+import type { EzsigntemplatedocumentResponse } from './ezsigntemplatedocument-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigntemplatesignerResponseCompound } from './ezsigntemplatesigner-response-compound';
+import type { EzsigntemplatesignerResponseCompound } from './ezsigntemplatesigner-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsigntemplateType } from './field-eezsigntemplate-type';
+import type { FieldEEzsigntemplateType } from './field-eezsigntemplate-type';
 
 /**
  * @type EzsigntemplateResponseCompound

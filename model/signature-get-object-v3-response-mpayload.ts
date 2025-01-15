@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { SignatureResponseCompoundV3 } from './signature-response-compound-v3';
+import type { SignatureResponseCompoundV3 } from './signature-response-compound-v3';
 
 /**
  * Payload for GET /3/object/signature/{pkiSignatureID}

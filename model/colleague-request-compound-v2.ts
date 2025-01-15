@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ColleagueRequestV2 } from './colleague-request-v2';
+import type { ColleagueRequestV2 } from './colleague-request-v2';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEColleagueEzsign } from './field-ecolleague-ezsign';
+import type { FieldEColleagueEzsign } from './field-ecolleague-ezsign';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEColleagueRealestateinprogess } from './field-ecolleague-realestateinprogess';
+import type { FieldEColleagueRealestateinprogess } from './field-ecolleague-realestateinprogess';
 
 /**
  * @type ColleagueRequestCompoundV2

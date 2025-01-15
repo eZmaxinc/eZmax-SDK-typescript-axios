@@ -20,27 +20,25 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponse } from '../model';
 // @ts-ignore
-import { EzsignsignergroupCreateObjectV1Request } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { EzsignsignergroupCreateObjectV1Response } from '../model';
+import type { EzsignsignergroupCreateObjectV1Request } from '../model';
 // @ts-ignore
-import { EzsignsignergroupDeleteObjectV1Response } from '../model';
+import type { EzsignsignergroupCreateObjectV1Response } from '../model';
 // @ts-ignore
-import { EzsignsignergroupEditEzsignsignergroupmembershipsV1Request } from '../model';
+import type { EzsignsignergroupEditEzsignsignergroupmembershipsV1Request } from '../model';
 // @ts-ignore
-import { EzsignsignergroupEditEzsignsignergroupmembershipsV1Response } from '../model';
+import type { EzsignsignergroupEditEzsignsignergroupmembershipsV1Response } from '../model';
 // @ts-ignore
-import { EzsignsignergroupEditObjectV1Request } from '../model';
+import type { EzsignsignergroupEditObjectV1Request } from '../model';
 // @ts-ignore
-import { EzsignsignergroupEditObjectV1Response } from '../model';
+import type { EzsignsignergroupGetEzsignsignergroupmembershipsV1Response } from '../model';
 // @ts-ignore
-import { EzsignsignergroupGetEzsignsignergroupmembershipsV1Response } from '../model';
-// @ts-ignore
-import { EzsignsignergroupGetObjectV2Response } from '../model';
+import type { EzsignsignergroupGetObjectV2Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -441,7 +439,7 @@ export const ObjectEzsignsignergroupApiFp = function(configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignsignergroupDeleteObjectV1(pkiEzsignsignergroupID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignsignergroupDeleteObjectV1Response>> {
+        async ezsignsignergroupDeleteObjectV1(pkiEzsignsignergroupID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignsignergroupDeleteObjectV1(pkiEzsignsignergroupID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignsignergroupApi.ezsignsignergroupDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -469,7 +467,7 @@ export const ObjectEzsignsignergroupApiFp = function(configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignsignergroupEditObjectV1(pkiEzsignsignergroupID: number, ezsignsignergroupEditObjectV1Request: EzsignsignergroupEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignsignergroupEditObjectV1Response>> {
+        async ezsignsignergroupEditObjectV1(pkiEzsignsignergroupID: number, ezsignsignergroupEditObjectV1Request: EzsignsignergroupEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignsignergroupEditObjectV1(pkiEzsignsignergroupID, ezsignsignergroupEditObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignsignergroupApi.ezsignsignergroupEditObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -518,7 +516,7 @@ export const ObjectEzsignsignergroupApiFactory = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignsignergroupCreateObjectV1(ezsignsignergroupCreateObjectV1Request: EzsignsignergroupCreateObjectV1Request, options?: any): AxiosPromise<EzsignsignergroupCreateObjectV1Response> {
+        ezsignsignergroupCreateObjectV1(ezsignsignergroupCreateObjectV1Request: EzsignsignergroupCreateObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsignsignergroupCreateObjectV1Response> {
             return localVarFp.ezsignsignergroupCreateObjectV1(ezsignsignergroupCreateObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -528,7 +526,7 @@ export const ObjectEzsignsignergroupApiFactory = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignsignergroupDeleteObjectV1(pkiEzsignsignergroupID: number, options?: any): AxiosPromise<EzsignsignergroupDeleteObjectV1Response> {
+        ezsignsignergroupDeleteObjectV1(pkiEzsignsignergroupID: number, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.ezsignsignergroupDeleteObjectV1(pkiEzsignsignergroupID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -539,7 +537,7 @@ export const ObjectEzsignsignergroupApiFactory = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignsignergroupEditEzsignsignergroupmembershipsV1(pkiEzsignsignergroupID: number, ezsignsignergroupEditEzsignsignergroupmembershipsV1Request: EzsignsignergroupEditEzsignsignergroupmembershipsV1Request, options?: any): AxiosPromise<EzsignsignergroupEditEzsignsignergroupmembershipsV1Response> {
+        ezsignsignergroupEditEzsignsignergroupmembershipsV1(pkiEzsignsignergroupID: number, ezsignsignergroupEditEzsignsignergroupmembershipsV1Request: EzsignsignergroupEditEzsignsignergroupmembershipsV1Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsignsignergroupEditEzsignsignergroupmembershipsV1Response> {
             return localVarFp.ezsignsignergroupEditEzsignsignergroupmembershipsV1(pkiEzsignsignergroupID, ezsignsignergroupEditEzsignsignergroupmembershipsV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -550,7 +548,7 @@ export const ObjectEzsignsignergroupApiFactory = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignsignergroupEditObjectV1(pkiEzsignsignergroupID: number, ezsignsignergroupEditObjectV1Request: EzsignsignergroupEditObjectV1Request, options?: any): AxiosPromise<EzsignsignergroupEditObjectV1Response> {
+        ezsignsignergroupEditObjectV1(pkiEzsignsignergroupID: number, ezsignsignergroupEditObjectV1Request: EzsignsignergroupEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.ezsignsignergroupEditObjectV1(pkiEzsignsignergroupID, ezsignsignergroupEditObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -560,7 +558,7 @@ export const ObjectEzsignsignergroupApiFactory = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignsignergroupGetEzsignsignergroupmembershipsV1(pkiEzsignsignergroupID: number, options?: any): AxiosPromise<EzsignsignergroupGetEzsignsignergroupmembershipsV1Response> {
+        ezsignsignergroupGetEzsignsignergroupmembershipsV1(pkiEzsignsignergroupID: number, options?: RawAxiosRequestConfig): AxiosPromise<EzsignsignergroupGetEzsignsignergroupmembershipsV1Response> {
             return localVarFp.ezsignsignergroupGetEzsignsignergroupmembershipsV1(pkiEzsignsignergroupID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -570,7 +568,7 @@ export const ObjectEzsignsignergroupApiFactory = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignsignergroupGetObjectV2(pkiEzsignsignergroupID: number, options?: any): AxiosPromise<EzsignsignergroupGetObjectV2Response> {
+        ezsignsignergroupGetObjectV2(pkiEzsignsignergroupID: number, options?: RawAxiosRequestConfig): AxiosPromise<EzsignsignergroupGetObjectV2Response> {
             return localVarFp.ezsignsignergroupGetObjectV2(pkiEzsignsignergroupID, options).then((request) => request(axios, basePath));
         },
     };

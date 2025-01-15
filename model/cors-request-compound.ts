@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CorsRequest } from './cors-request';
+import type { CorsRequest } from './cors-request';
 
 /**
  * @type CorsRequestCompound

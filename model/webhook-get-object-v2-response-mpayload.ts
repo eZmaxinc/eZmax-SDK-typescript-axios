@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { WebhookResponseCompound } from './webhook-response-compound';
+import type { WebhookResponseCompound } from './webhook-response-compound';
 
 /**
  * Payload for GET /2/object/webhook/{pkiWebhookID}

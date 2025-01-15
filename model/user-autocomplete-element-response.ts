@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEUserType } from './field-euser-type';
+import type { FieldEUserType } from './field-euser-type';
 
 /**
  * A User AutocompleteElement Response

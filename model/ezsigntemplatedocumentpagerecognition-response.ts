@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsigntemplatedocumentpagerecognitionOperator } from './field-eezsigntemplatedocumentpagerecognition-operator';
+import type { FieldEEzsigntemplatedocumentpagerecognitionOperator } from './field-eezsigntemplatedocumentpagerecognition-operator';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsigntemplatedocumentpagerecognitionSection } from './field-eezsigntemplatedocumentpagerecognition-section';
+import type { FieldEEzsigntemplatedocumentpagerecognitionSection } from './field-eezsigntemplatedocumentpagerecognition-section';
 
 /**
  * A Ezsigntemplatedocumentpagerecognition Object

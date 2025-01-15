@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AttemptResponseCompound } from './attempt-response-compound';
+import type { AttemptResponse } from './attempt-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomWebhookResponse } from './custom-webhook-response';
+import type { CustomWebhookResponse } from './custom-webhook-response';
 
 /**
  * This is the base Webhook object

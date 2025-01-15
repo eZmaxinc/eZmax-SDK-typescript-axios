@@ -20,17 +20,17 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { EzsigntemplatepackagesignermembershipCreateObjectV1Request } from '../model';
+import type { EzsigntemplatepackagesignermembershipCreateObjectV1Request } from '../model';
 // @ts-ignore
-import { EzsigntemplatepackagesignermembershipCreateObjectV1Response } from '../model';
+import type { EzsigntemplatepackagesignermembershipCreateObjectV1Response } from '../model';
 // @ts-ignore
-import { EzsigntemplatepackagesignermembershipDeleteObjectV1Response } from '../model';
+import type { EzsigntemplatepackagesignermembershipDeleteObjectV1Response } from '../model';
 // @ts-ignore
-import { EzsigntemplatepackagesignermembershipGetObjectV2Response } from '../model';
+import type { EzsigntemplatepackagesignermembershipGetObjectV2Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -281,7 +281,7 @@ export const ObjectEzsigntemplatepackagesignermembershipApiFactory = function (c
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigntemplatepackagesignermembershipCreateObjectV1(ezsigntemplatepackagesignermembershipCreateObjectV1Request: EzsigntemplatepackagesignermembershipCreateObjectV1Request, options?: any): AxiosPromise<EzsigntemplatepackagesignermembershipCreateObjectV1Response> {
+        ezsigntemplatepackagesignermembershipCreateObjectV1(ezsigntemplatepackagesignermembershipCreateObjectV1Request: EzsigntemplatepackagesignermembershipCreateObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsigntemplatepackagesignermembershipCreateObjectV1Response> {
             return localVarFp.ezsigntemplatepackagesignermembershipCreateObjectV1(ezsigntemplatepackagesignermembershipCreateObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -291,7 +291,7 @@ export const ObjectEzsigntemplatepackagesignermembershipApiFactory = function (c
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigntemplatepackagesignermembershipDeleteObjectV1(pkiEzsigntemplatepackagesignermembershipID: number, options?: any): AxiosPromise<EzsigntemplatepackagesignermembershipDeleteObjectV1Response> {
+        ezsigntemplatepackagesignermembershipDeleteObjectV1(pkiEzsigntemplatepackagesignermembershipID: number, options?: RawAxiosRequestConfig): AxiosPromise<EzsigntemplatepackagesignermembershipDeleteObjectV1Response> {
             return localVarFp.ezsigntemplatepackagesignermembershipDeleteObjectV1(pkiEzsigntemplatepackagesignermembershipID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -301,7 +301,7 @@ export const ObjectEzsigntemplatepackagesignermembershipApiFactory = function (c
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigntemplatepackagesignermembershipGetObjectV2(pkiEzsigntemplatepackagesignermembershipID: number, options?: any): AxiosPromise<EzsigntemplatepackagesignermembershipGetObjectV2Response> {
+        ezsigntemplatepackagesignermembershipGetObjectV2(pkiEzsigntemplatepackagesignermembershipID: number, options?: RawAxiosRequestConfig): AxiosPromise<EzsigntemplatepackagesignermembershipGetObjectV2Response> {
             return localVarFp.ezsigntemplatepackagesignermembershipGetObjectV2(pkiEzsigntemplatepackagesignermembershipID, options).then((request) => request(axios, basePath));
         },
     };

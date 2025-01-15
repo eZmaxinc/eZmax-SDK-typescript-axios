@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomAttachmentResponse } from './custom-attachment-response';
+import type { CustomAttachmentResponse } from './custom-attachment-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEAttachmentDocumenttype } from './field-eattachment-documenttype';
+import type { FieldEAttachmentDocumenttype } from './field-eattachment-documenttype';
 
 /**
  * An Attachmentdocumenttype

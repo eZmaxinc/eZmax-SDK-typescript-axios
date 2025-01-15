@@ -20,11 +20,11 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { HeaderAcceptLanguage } from '../model';
+import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
-import { PeriodGetAutocompleteV2Response } from '../model';
+import type { PeriodGetAutocompleteV2Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -74,14 +74,13 @@ export const ObjectPeriodApiAxiosParamCreator = function (configuration?: Config
                 localVarQueryParameter['sQuery'] = sQuery;
             }
 
+
+    
             if (acceptLanguage != null) {
                 localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
                     ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
-
-
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -154,7 +153,7 @@ export const ObjectPeriodApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        periodGetAutocompleteV2(sSelector: PeriodGetAutocompleteV2SSelectorEnum, eFilterActive?: PeriodGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: any): AxiosPromise<PeriodGetAutocompleteV2Response> {
+        periodGetAutocompleteV2(sSelector: PeriodGetAutocompleteV2SSelectorEnum, eFilterActive?: PeriodGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig): AxiosPromise<PeriodGetAutocompleteV2Response> {
             return localVarFp.periodGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(axios, basePath));
         },
     };

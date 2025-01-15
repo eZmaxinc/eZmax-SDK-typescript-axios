@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonAudit } from './common-audit';
+import type { CommonAudit } from './common-audit';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomUserNameResponse } from './custom-user-name-response';
+import type { CustomUserNameResponse } from './custom-user-name-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEColleagueEzsign } from './field-ecolleague-ezsign';
+import type { FieldEColleagueEzsign } from './field-ecolleague-ezsign';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEColleagueRealestateinprogess } from './field-ecolleague-realestateinprogess';
+import type { FieldEColleagueRealestateinprogess } from './field-ecolleague-realestateinprogess';
 
 /**
  * A Colleague Object

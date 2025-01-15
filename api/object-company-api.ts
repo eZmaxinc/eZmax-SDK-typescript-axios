@@ -20,11 +20,11 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CompanyGetAutocompleteV2Response } from '../model';
+import type { CompanyGetAutocompleteV2Response } from '../model';
 // @ts-ignore
-import { HeaderAcceptLanguage } from '../model';
+import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -74,14 +74,13 @@ export const ObjectCompanyApiAxiosParamCreator = function (configuration?: Confi
                 localVarQueryParameter['sQuery'] = sQuery;
             }
 
+
+    
             if (acceptLanguage != null) {
                 localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
                     ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
-
-
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -154,7 +153,7 @@ export const ObjectCompanyApiFactory = function (configuration?: Configuration, 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        companyGetAutocompleteV2(sSelector: CompanyGetAutocompleteV2SSelectorEnum, eFilterActive?: CompanyGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: any): AxiosPromise<CompanyGetAutocompleteV2Response> {
+        companyGetAutocompleteV2(sSelector: CompanyGetAutocompleteV2SSelectorEnum, eFilterActive?: CompanyGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig): AxiosPromise<CompanyGetAutocompleteV2Response> {
             return localVarFp.companyGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(axios, basePath));
         },
     };

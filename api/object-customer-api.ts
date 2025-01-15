@@ -20,15 +20,15 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { CustomerCreateObjectV1Request } from '../model';
+import type { CustomerCreateObjectV1Request } from '../model';
 // @ts-ignore
-import { CustomerCreateObjectV1Response } from '../model';
+import type { CustomerCreateObjectV1Response } from '../model';
 // @ts-ignore
-import { CustomerGetObjectV2Response } from '../model';
+import type { CustomerGetObjectV2Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -208,7 +208,7 @@ export const ObjectCustomerApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        customerCreateObjectV1(customerCreateObjectV1Request: CustomerCreateObjectV1Request, options?: any): AxiosPromise<CustomerCreateObjectV1Response> {
+        customerCreateObjectV1(customerCreateObjectV1Request: CustomerCreateObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CustomerCreateObjectV1Response> {
             return localVarFp.customerCreateObjectV1(customerCreateObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -218,7 +218,7 @@ export const ObjectCustomerApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        customerGetObjectV2(pkiCustomerID: number, options?: any): AxiosPromise<CustomerGetObjectV2Response> {
+        customerGetObjectV2(pkiCustomerID: number, options?: RawAxiosRequestConfig): AxiosPromise<CustomerGetObjectV2Response> {
             return localVarFp.customerGetObjectV2(pkiCustomerID, options).then((request) => request(axios, basePath));
         },
     };

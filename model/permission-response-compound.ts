@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { PermissionResponse } from './permission-response';
+import type { PermissionResponse } from './permission-response';
 
 /**
  * @type PermissionResponseCompound

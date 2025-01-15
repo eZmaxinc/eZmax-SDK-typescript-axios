@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { MultilingualNotificationsubsectionName } from './multilingual-notificationsubsection-name';
+import type { MultilingualNotificationsubsectionName } from './multilingual-notificationsubsection-name';
 
 /**
  * A Notificationsubsection Object

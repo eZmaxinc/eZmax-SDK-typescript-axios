@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EnumTextvalidation } from './enum-textvalidation';
+import type { EnumTextvalidation } from './enum-textvalidation';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignformfieldgroupSignerrequirement } from './field-eezsignformfieldgroup-signerrequirement';
+import type { FieldEEzsignformfieldgroupSignerrequirement } from './field-eezsignformfieldgroup-signerrequirement';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignformfieldgroupTooltipposition } from './field-eezsignformfieldgroup-tooltipposition';
+import type { FieldEEzsignformfieldgroupTooltipposition } from './field-eezsignformfieldgroup-tooltipposition';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignformfieldgroupType } from './field-eezsignformfieldgroup-type';
+import type { FieldEEzsignformfieldgroupType } from './field-eezsignformfieldgroup-type';
 
 /**
  * An Ezsignformfieldgroup Object

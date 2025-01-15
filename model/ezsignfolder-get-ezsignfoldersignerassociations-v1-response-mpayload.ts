@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomEzsignfoldersignerassociationActionableElementResponse } from './custom-ezsignfoldersignerassociation-actionable-element-response';
+import type { CustomEzsignfoldersignerassociationActionableElementResponse } from './custom-ezsignfoldersignerassociation-actionable-element-response';
 
 /**
  * Payload for GET /1/object/ezsignfolder/{pkiEzsignfolder}/getEzsignfoldersignerassociations

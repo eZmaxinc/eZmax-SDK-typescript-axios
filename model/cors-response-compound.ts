@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CorsResponse } from './cors-response';
+import type { CorsResponse } from './cors-response';
 
 /**
  * @type CorsResponseCompound

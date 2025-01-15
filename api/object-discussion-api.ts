@@ -20,25 +20,21 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponse } from '../model';
 // @ts-ignore
-import { DiscussionCreateObjectV1Request } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { DiscussionCreateObjectV1Response } from '../model';
+import type { DiscussionCreateObjectV1Request } from '../model';
 // @ts-ignore
-import { DiscussionDeleteObjectV1Response } from '../model';
+import type { DiscussionCreateObjectV1Response } from '../model';
 // @ts-ignore
-import { DiscussionGetObjectV2Response } from '../model';
+import type { DiscussionGetObjectV2Response } from '../model';
 // @ts-ignore
-import { DiscussionPatchObjectV1Request } from '../model';
+import type { DiscussionPatchObjectV1Request } from '../model';
 // @ts-ignore
-import { DiscussionPatchObjectV1Response } from '../model';
-// @ts-ignore
-import { DiscussionUpdateDiscussionreadstatusV1Request } from '../model';
-// @ts-ignore
-import { DiscussionUpdateDiscussionreadstatusV1Response } from '../model';
+import type { DiscussionUpdateDiscussionreadstatusV1Request } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -381,7 +377,7 @@ export const ObjectDiscussionApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async discussionDeleteObjectV1(pkiDiscussionID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DiscussionDeleteObjectV1Response>> {
+        async discussionDeleteObjectV1(pkiDiscussionID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.discussionDeleteObjectV1(pkiDiscussionID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectDiscussionApi.discussionDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -408,7 +404,7 @@ export const ObjectDiscussionApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async discussionPatchObjectV1(pkiDiscussionID: number, discussionPatchObjectV1Request: DiscussionPatchObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DiscussionPatchObjectV1Response>> {
+        async discussionPatchObjectV1(pkiDiscussionID: number, discussionPatchObjectV1Request: DiscussionPatchObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.discussionPatchObjectV1(pkiDiscussionID, discussionPatchObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectDiscussionApi.discussionPatchObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -422,7 +418,7 @@ export const ObjectDiscussionApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async discussionUpdateDiscussionreadstatusV1(pkiDiscussionID: number, discussionUpdateDiscussionreadstatusV1Request: DiscussionUpdateDiscussionreadstatusV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DiscussionUpdateDiscussionreadstatusV1Response>> {
+        async discussionUpdateDiscussionreadstatusV1(pkiDiscussionID: number, discussionUpdateDiscussionreadstatusV1Request: DiscussionUpdateDiscussionreadstatusV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.discussionUpdateDiscussionreadstatusV1(pkiDiscussionID, discussionUpdateDiscussionreadstatusV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectDiscussionApi.discussionUpdateDiscussionreadstatusV1']?.[localVarOperationServerIndex]?.url;
@@ -445,7 +441,7 @@ export const ObjectDiscussionApiFactory = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        discussionCreateObjectV1(discussionCreateObjectV1Request: DiscussionCreateObjectV1Request, options?: any): AxiosPromise<DiscussionCreateObjectV1Response> {
+        discussionCreateObjectV1(discussionCreateObjectV1Request: DiscussionCreateObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<DiscussionCreateObjectV1Response> {
             return localVarFp.discussionCreateObjectV1(discussionCreateObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -455,7 +451,7 @@ export const ObjectDiscussionApiFactory = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        discussionDeleteObjectV1(pkiDiscussionID: number, options?: any): AxiosPromise<DiscussionDeleteObjectV1Response> {
+        discussionDeleteObjectV1(pkiDiscussionID: number, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.discussionDeleteObjectV1(pkiDiscussionID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -465,7 +461,7 @@ export const ObjectDiscussionApiFactory = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        discussionGetObjectV2(pkiDiscussionID: number, options?: any): AxiosPromise<DiscussionGetObjectV2Response> {
+        discussionGetObjectV2(pkiDiscussionID: number, options?: RawAxiosRequestConfig): AxiosPromise<DiscussionGetObjectV2Response> {
             return localVarFp.discussionGetObjectV2(pkiDiscussionID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -476,7 +472,7 @@ export const ObjectDiscussionApiFactory = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        discussionPatchObjectV1(pkiDiscussionID: number, discussionPatchObjectV1Request: DiscussionPatchObjectV1Request, options?: any): AxiosPromise<DiscussionPatchObjectV1Response> {
+        discussionPatchObjectV1(pkiDiscussionID: number, discussionPatchObjectV1Request: DiscussionPatchObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.discussionPatchObjectV1(pkiDiscussionID, discussionPatchObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -487,7 +483,7 @@ export const ObjectDiscussionApiFactory = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        discussionUpdateDiscussionreadstatusV1(pkiDiscussionID: number, discussionUpdateDiscussionreadstatusV1Request: DiscussionUpdateDiscussionreadstatusV1Request, options?: any): AxiosPromise<DiscussionUpdateDiscussionreadstatusV1Response> {
+        discussionUpdateDiscussionreadstatusV1(pkiDiscussionID: number, discussionUpdateDiscussionreadstatusV1Request: DiscussionUpdateDiscussionreadstatusV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.discussionUpdateDiscussionreadstatusV1(pkiDiscussionID, discussionUpdateDiscussionreadstatusV1Request, options).then((request) => request(axios, basePath));
         },
     };

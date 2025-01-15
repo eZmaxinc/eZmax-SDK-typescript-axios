@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignfolderMessageorder } from './field-eezsignfolder-messageorder';
+import type { FieldEEzsignfolderMessageorder } from './field-eezsignfolder-messageorder';
 
 /**
  * Request for POST /3/object/ezsignfolder/{pkiEzsignfolderID}/send

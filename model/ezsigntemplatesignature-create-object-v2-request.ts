@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigntemplatesignatureRequestCompoundV2 } from './ezsigntemplatesignature-request-compound-v2';
+import type { EzsigntemplatesignatureRequestCompoundV2 } from './ezsigntemplatesignature-request-compound-v2';
 
 /**
  * Request for POST /2/object/ezsigntemplatesignature

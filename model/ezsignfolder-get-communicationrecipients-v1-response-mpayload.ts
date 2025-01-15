@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomCommunicationrecipientsgroupResponse } from './custom-communicationrecipientsgroup-response';
+import type { CustomCommunicationrecipientsgroupResponse } from './custom-communicationrecipientsgroup-response';
 
 /**
  * Response for GET /1/object/ezsignfolder/{pkiEzsignfolderID}/getCommunicationrecipients

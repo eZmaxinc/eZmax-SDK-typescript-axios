@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { WebhookRequestCompound } from './webhook-request-compound';
+import type { WebhookRequestCompound } from './webhook-request-compound';
 
 /**
  * Request for POST /2/object/webhook

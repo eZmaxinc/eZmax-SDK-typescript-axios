@@ -20,17 +20,17 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { BuyercontractGetCommunicationCountV1Response } from '../model';
+import type { BuyercontractGetCommunicationCountV1Response } from '../model';
 // @ts-ignore
-import { BuyercontractGetCommunicationListV1Response } from '../model';
+import type { BuyercontractGetCommunicationListV1Response } from '../model';
 // @ts-ignore
-import { BuyercontractGetCommunicationrecipientsV1Response } from '../model';
+import type { BuyercontractGetCommunicationrecipientsV1Response } from '../model';
 // @ts-ignore
-import { BuyercontractGetCommunicationsendersV1Response } from '../model';
+import type { BuyercontractGetCommunicationsendersV1Response } from '../model';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -350,7 +350,7 @@ export const ObjectBuyercontractApiFactory = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        buyercontractGetCommunicationCountV1(pkiBuyercontractID: number, options?: any): AxiosPromise<BuyercontractGetCommunicationCountV1Response> {
+        buyercontractGetCommunicationCountV1(pkiBuyercontractID: number, options?: RawAxiosRequestConfig): AxiosPromise<BuyercontractGetCommunicationCountV1Response> {
             return localVarFp.buyercontractGetCommunicationCountV1(pkiBuyercontractID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -360,7 +360,7 @@ export const ObjectBuyercontractApiFactory = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        buyercontractGetCommunicationListV1(pkiBuyercontractID: number, options?: any): AxiosPromise<BuyercontractGetCommunicationListV1Response> {
+        buyercontractGetCommunicationListV1(pkiBuyercontractID: number, options?: RawAxiosRequestConfig): AxiosPromise<BuyercontractGetCommunicationListV1Response> {
             return localVarFp.buyercontractGetCommunicationListV1(pkiBuyercontractID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -370,7 +370,7 @@ export const ObjectBuyercontractApiFactory = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        buyercontractGetCommunicationrecipientsV1(pkiBuyercontractID: number, options?: any): AxiosPromise<BuyercontractGetCommunicationrecipientsV1Response> {
+        buyercontractGetCommunicationrecipientsV1(pkiBuyercontractID: number, options?: RawAxiosRequestConfig): AxiosPromise<BuyercontractGetCommunicationrecipientsV1Response> {
             return localVarFp.buyercontractGetCommunicationrecipientsV1(pkiBuyercontractID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -380,7 +380,7 @@ export const ObjectBuyercontractApiFactory = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        buyercontractGetCommunicationsendersV1(pkiBuyercontractID: number, options?: any): AxiosPromise<BuyercontractGetCommunicationsendersV1Response> {
+        buyercontractGetCommunicationsendersV1(pkiBuyercontractID: number, options?: RawAxiosRequestConfig): AxiosPromise<BuyercontractGetCommunicationsendersV1Response> {
             return localVarFp.buyercontractGetCommunicationsendersV1(pkiBuyercontractID, options).then((request) => request(axios, basePath));
         },
     };

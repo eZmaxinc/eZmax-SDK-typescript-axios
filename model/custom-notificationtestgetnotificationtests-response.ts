@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldENotificationpreferenceStatus } from './field-enotificationpreference-status';
+import type { FieldENotificationpreferenceStatus } from './field-enotificationpreference-status';
 // May contain unused imports in some cases
 // @ts-ignore
-import { MultilingualNotificationtestName } from './multilingual-notificationtest-name';
+import type { MultilingualNotificationtestName } from './multilingual-notificationtest-name';
 // May contain unused imports in some cases
 // @ts-ignore
-import { NotificationtestResponse } from './notificationtest-response';
+import type { NotificationtestResponse } from './notificationtest-response';
 
 /**
  * @type CustomNotificationtestgetnotificationtestsResponse

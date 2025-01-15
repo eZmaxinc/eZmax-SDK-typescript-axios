@@ -15,22 +15,22 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AttachmentResponse } from './attachment-response';
+import type { AttachmentResponse } from './attachment-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonAudit } from './common-audit';
+import type { CommonAudit } from './common-audit';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEAttachmentDocumenttype } from './field-eattachment-documenttype';
+import type { FieldEAttachmentDocumenttype } from './field-eattachment-documenttype';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEAttachmentPrivacy } from './field-eattachment-privacy';
+import type { FieldEAttachmentPrivacy } from './field-eattachment-privacy';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEAttachmentType } from './field-eattachment-type';
+import type { FieldEAttachmentType } from './field-eattachment-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEAttachmentVerified } from './field-eattachment-verified';
+import type { FieldEAttachmentVerified } from './field-eattachment-verified';
 
 /**
  * @type AttachmentResponseCompound

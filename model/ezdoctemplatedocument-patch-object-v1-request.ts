@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzdoctemplatedocumentRequestPatch } from './ezdoctemplatedocument-request-patch';
+import type { EzdoctemplatedocumentRequestPatch } from './ezdoctemplatedocument-request-patch';
 
 /**
  * Request for PATCH /1/object/ezdoctemplatedocument/{pkiEzdoctemplatedocumentID}

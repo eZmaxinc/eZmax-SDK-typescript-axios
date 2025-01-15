@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonResponse } from './common-response';
+import type { CommonResponse } from './common-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonResponseObjDebug } from './common-response-obj-debug';
+import type { CommonResponseObjDebug } from './common-response-obj-debug';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
+import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { RejectedoffertopurchaseGetCommunicationrecipientsV1ResponseMPayload } from './rejectedoffertopurchase-get-communicationrecipients-v1-response-mpayload';
+import type { RejectedoffertopurchaseGetCommunicationrecipientsV1ResponseMPayload } from './rejectedoffertopurchase-get-communicationrecipients-v1-response-mpayload';
 
 /**
  * @type RejectedoffertopurchaseGetCommunicationrecipientsV1Response

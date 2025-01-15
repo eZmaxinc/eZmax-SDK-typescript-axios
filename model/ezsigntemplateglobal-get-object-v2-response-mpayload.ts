@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigntemplateglobalResponseCompound } from './ezsigntemplateglobal-response-compound';
+import type { EzsigntemplateglobalResponseCompound } from './ezsigntemplateglobal-response-compound';
 
 /**
  * Payload for GET /2/object/ezsigntemplateglobal/{pkiEzsigntemplateglobalID}

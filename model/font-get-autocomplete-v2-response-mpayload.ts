@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FontAutocompleteElementResponse } from './font-autocomplete-element-response';
+import type { FontAutocompleteElementResponse } from './font-autocomplete-element-response';
 
 /**
  * Payload for POST /2/object/font/getAutocomplete

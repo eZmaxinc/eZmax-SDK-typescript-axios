@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ActivesessionGenerateFederationTokenV1ResponseMPayload } from './activesession-generate-federation-token-v1-response-mpayload';
+import type { ActivesessionGenerateFederationTokenV1ResponseMPayload } from './activesession-generate-federation-token-v1-response-mpayload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonResponse } from './common-response';
+import type { CommonResponse } from './common-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonResponseObjDebug } from './common-response-obj-debug';
+import type { CommonResponseObjDebug } from './common-response-obj-debug';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
+import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 
 /**
  * @type ActivesessionGenerateFederationTokenV1Response

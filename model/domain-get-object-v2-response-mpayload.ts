@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { DomainResponseCompound } from './domain-response-compound';
+import type { DomainResponseCompound } from './domain-response-compound';
 
 /**
  * Payload for GET /2/object/domain/{pkiDomainID}

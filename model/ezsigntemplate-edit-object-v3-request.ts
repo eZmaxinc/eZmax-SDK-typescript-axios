@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigntemplateRequestCompoundV3 } from './ezsigntemplate-request-compound-v3';
+import type { EzsigntemplateRequestCompoundV3 } from './ezsigntemplate-request-compound-v3';
 
 /**
  * Request for PUT /3/object/ezsigntemplate/{pkiEzsigntemplateID}

@@ -20,37 +20,35 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponse } from '../model';
 // @ts-ignore
-import { EzsignsignatureCreateObjectV1Request } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { EzsignsignatureCreateObjectV1Response } from '../model';
+import type { EzsignsignatureCreateObjectV1Request } from '../model';
 // @ts-ignore
-import { EzsignsignatureCreateObjectV2Request } from '../model';
+import type { EzsignsignatureCreateObjectV1Response } from '../model';
 // @ts-ignore
-import { EzsignsignatureCreateObjectV2Response } from '../model';
+import type { EzsignsignatureCreateObjectV2Request } from '../model';
 // @ts-ignore
-import { EzsignsignatureCreateObjectV3Request } from '../model';
+import type { EzsignsignatureCreateObjectV2Response } from '../model';
 // @ts-ignore
-import { EzsignsignatureCreateObjectV3Response } from '../model';
+import type { EzsignsignatureCreateObjectV3Request } from '../model';
 // @ts-ignore
-import { EzsignsignatureDeleteObjectV1Response } from '../model';
+import type { EzsignsignatureCreateObjectV3Response } from '../model';
 // @ts-ignore
-import { EzsignsignatureEditObjectV2Request } from '../model';
+import type { EzsignsignatureEditObjectV2Request } from '../model';
 // @ts-ignore
-import { EzsignsignatureEditObjectV2Response } from '../model';
+import type { EzsignsignatureGetEzsignsignatureattachmentV1Response } from '../model';
 // @ts-ignore
-import { EzsignsignatureGetEzsignsignatureattachmentV1Response } from '../model';
+import type { EzsignsignatureGetEzsignsignaturesAutomaticV1Response } from '../model';
 // @ts-ignore
-import { EzsignsignatureGetEzsignsignaturesAutomaticV1Response } from '../model';
+import type { EzsignsignatureGetObjectV3Response } from '../model';
 // @ts-ignore
-import { EzsignsignatureGetObjectV3Response } from '../model';
+import type { EzsignsignatureSignV1Request } from '../model';
 // @ts-ignore
-import { EzsignsignatureSignV1Request } from '../model';
-// @ts-ignore
-import { EzsignsignatureSignV1Response } from '../model';
+import type { EzsignsignatureSignV1Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -655,7 +653,7 @@ export const ObjectEzsignsignatureApiFp = function(configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignsignatureDeleteObjectV1(pkiEzsignsignatureID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignsignatureDeleteObjectV1Response>> {
+        async ezsignsignatureDeleteObjectV1(pkiEzsignsignatureID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignsignatureDeleteObjectV1(pkiEzsignsignatureID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignsignatureApi.ezsignsignatureDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -669,7 +667,7 @@ export const ObjectEzsignsignatureApiFp = function(configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignsignatureEditObjectV2(pkiEzsignsignatureID: number, ezsignsignatureEditObjectV2Request: EzsignsignatureEditObjectV2Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignsignatureEditObjectV2Response>> {
+        async ezsignsignatureEditObjectV2(pkiEzsignsignatureID: number, ezsignsignatureEditObjectV2Request: EzsignsignatureEditObjectV2Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignsignatureEditObjectV2(pkiEzsignsignatureID, ezsignsignatureEditObjectV2Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignsignatureApi.ezsignsignatureEditObjectV2']?.[localVarOperationServerIndex]?.url;
@@ -745,7 +743,7 @@ export const ObjectEzsignsignatureApiFactory = function (configuration?: Configu
          * @deprecated
          * @throws {RequiredError}
          */
-        ezsignsignatureCreateObjectV1(ezsignsignatureCreateObjectV1Request: Array<EzsignsignatureCreateObjectV1Request>, options?: any): AxiosPromise<EzsignsignatureCreateObjectV1Response> {
+        ezsignsignatureCreateObjectV1(ezsignsignatureCreateObjectV1Request: Array<EzsignsignatureCreateObjectV1Request>, options?: RawAxiosRequestConfig): AxiosPromise<EzsignsignatureCreateObjectV1Response> {
             return localVarFp.ezsignsignatureCreateObjectV1(ezsignsignatureCreateObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -756,7 +754,7 @@ export const ObjectEzsignsignatureApiFactory = function (configuration?: Configu
          * @deprecated
          * @throws {RequiredError}
          */
-        ezsignsignatureCreateObjectV2(ezsignsignatureCreateObjectV2Request: EzsignsignatureCreateObjectV2Request, options?: any): AxiosPromise<EzsignsignatureCreateObjectV2Response> {
+        ezsignsignatureCreateObjectV2(ezsignsignatureCreateObjectV2Request: EzsignsignatureCreateObjectV2Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsignsignatureCreateObjectV2Response> {
             return localVarFp.ezsignsignatureCreateObjectV2(ezsignsignatureCreateObjectV2Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -766,7 +764,7 @@ export const ObjectEzsignsignatureApiFactory = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignsignatureCreateObjectV3(ezsignsignatureCreateObjectV3Request: EzsignsignatureCreateObjectV3Request, options?: any): AxiosPromise<EzsignsignatureCreateObjectV3Response> {
+        ezsignsignatureCreateObjectV3(ezsignsignatureCreateObjectV3Request: EzsignsignatureCreateObjectV3Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsignsignatureCreateObjectV3Response> {
             return localVarFp.ezsignsignatureCreateObjectV3(ezsignsignatureCreateObjectV3Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -776,7 +774,7 @@ export const ObjectEzsignsignatureApiFactory = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignsignatureDeleteObjectV1(pkiEzsignsignatureID: number, options?: any): AxiosPromise<EzsignsignatureDeleteObjectV1Response> {
+        ezsignsignatureDeleteObjectV1(pkiEzsignsignatureID: number, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.ezsignsignatureDeleteObjectV1(pkiEzsignsignatureID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -787,7 +785,7 @@ export const ObjectEzsignsignatureApiFactory = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignsignatureEditObjectV2(pkiEzsignsignatureID: number, ezsignsignatureEditObjectV2Request: EzsignsignatureEditObjectV2Request, options?: any): AxiosPromise<EzsignsignatureEditObjectV2Response> {
+        ezsignsignatureEditObjectV2(pkiEzsignsignatureID: number, ezsignsignatureEditObjectV2Request: EzsignsignatureEditObjectV2Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.ezsignsignatureEditObjectV2(pkiEzsignsignatureID, ezsignsignatureEditObjectV2Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -797,7 +795,7 @@ export const ObjectEzsignsignatureApiFactory = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignsignatureGetEzsignsignatureattachmentV1(pkiEzsignsignatureID: number, options?: any): AxiosPromise<EzsignsignatureGetEzsignsignatureattachmentV1Response> {
+        ezsignsignatureGetEzsignsignatureattachmentV1(pkiEzsignsignatureID: number, options?: RawAxiosRequestConfig): AxiosPromise<EzsignsignatureGetEzsignsignatureattachmentV1Response> {
             return localVarFp.ezsignsignatureGetEzsignsignatureattachmentV1(pkiEzsignsignatureID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -806,7 +804,7 @@ export const ObjectEzsignsignatureApiFactory = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignsignatureGetEzsignsignaturesAutomaticV1(options?: any): AxiosPromise<EzsignsignatureGetEzsignsignaturesAutomaticV1Response> {
+        ezsignsignatureGetEzsignsignaturesAutomaticV1(options?: RawAxiosRequestConfig): AxiosPromise<EzsignsignatureGetEzsignsignaturesAutomaticV1Response> {
             return localVarFp.ezsignsignatureGetEzsignsignaturesAutomaticV1(options).then((request) => request(axios, basePath));
         },
         /**
@@ -816,7 +814,7 @@ export const ObjectEzsignsignatureApiFactory = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignsignatureGetObjectV3(pkiEzsignsignatureID: number, options?: any): AxiosPromise<EzsignsignatureGetObjectV3Response> {
+        ezsignsignatureGetObjectV3(pkiEzsignsignatureID: number, options?: RawAxiosRequestConfig): AxiosPromise<EzsignsignatureGetObjectV3Response> {
             return localVarFp.ezsignsignatureGetObjectV3(pkiEzsignsignatureID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -827,7 +825,7 @@ export const ObjectEzsignsignatureApiFactory = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignsignatureSignV1(pkiEzsignsignatureID: number, ezsignsignatureSignV1Request: EzsignsignatureSignV1Request, options?: any): AxiosPromise<EzsignsignatureSignV1Response> {
+        ezsignsignatureSignV1(pkiEzsignsignatureID: number, ezsignsignatureSignV1Request: EzsignsignatureSignV1Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsignsignatureSignV1Response> {
             return localVarFp.ezsignsignatureSignV1(pkiEzsignsignatureID, ezsignsignatureSignV1Request, options).then((request) => request(axios, basePath));
         },
     };

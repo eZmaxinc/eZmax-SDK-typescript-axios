@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzmaxproductAutocompleteElementResponse } from './ezmaxproduct-autocomplete-element-response';
+import type { EzmaxproductAutocompleteElementResponse } from './ezmaxproduct-autocomplete-element-response';
 
 /**
  * Payload for POST /2/object/ezmaxproduct/getAutocomplete

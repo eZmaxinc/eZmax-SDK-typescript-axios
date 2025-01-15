@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignfoldertypeResponseCompound } from './ezsignfoldertype-response-compound';
+import type { EzsignfoldertypeResponseCompound } from './ezsignfoldertype-response-compound';
 
 /**
  * Payload for GET /2/object/ezsignfoldertype/{pkiEzsignfoldertypeID}

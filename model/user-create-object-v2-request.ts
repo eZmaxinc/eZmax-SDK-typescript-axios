@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { UserRequestCompoundV2 } from './user-request-compound-v2';
+import type { UserRequestCompoundV2 } from './user-request-compound-v2';
 
 /**
  * Request for POST /1/object/user

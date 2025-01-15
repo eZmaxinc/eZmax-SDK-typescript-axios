@@ -20,21 +20,19 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponse } from '../model';
 // @ts-ignore
-import { EzsignannotationCreateObjectV1Request } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { EzsignannotationCreateObjectV1Response } from '../model';
+import type { EzsignannotationCreateObjectV1Request } from '../model';
 // @ts-ignore
-import { EzsignannotationDeleteObjectV1Response } from '../model';
+import type { EzsignannotationCreateObjectV1Response } from '../model';
 // @ts-ignore
-import { EzsignannotationEditObjectV1Request } from '../model';
+import type { EzsignannotationEditObjectV1Request } from '../model';
 // @ts-ignore
-import { EzsignannotationEditObjectV1Response } from '../model';
-// @ts-ignore
-import { EzsignannotationGetObjectV2Response } from '../model';
+import type { EzsignannotationGetObjectV2Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -313,7 +311,7 @@ export const ObjectEzsignannotationApiFp = function(configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignannotationDeleteObjectV1(pkiEzsignannotationID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignannotationDeleteObjectV1Response>> {
+        async ezsignannotationDeleteObjectV1(pkiEzsignannotationID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignannotationDeleteObjectV1(pkiEzsignannotationID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignannotationApi.ezsignannotationDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -327,7 +325,7 @@ export const ObjectEzsignannotationApiFp = function(configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignannotationEditObjectV1(pkiEzsignannotationID: number, ezsignannotationEditObjectV1Request: EzsignannotationEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignannotationEditObjectV1Response>> {
+        async ezsignannotationEditObjectV1(pkiEzsignannotationID: number, ezsignannotationEditObjectV1Request: EzsignannotationEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignannotationEditObjectV1(pkiEzsignannotationID, ezsignannotationEditObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignannotationApi.ezsignannotationEditObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -363,7 +361,7 @@ export const ObjectEzsignannotationApiFactory = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignannotationCreateObjectV1(ezsignannotationCreateObjectV1Request: EzsignannotationCreateObjectV1Request, options?: any): AxiosPromise<EzsignannotationCreateObjectV1Response> {
+        ezsignannotationCreateObjectV1(ezsignannotationCreateObjectV1Request: EzsignannotationCreateObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsignannotationCreateObjectV1Response> {
             return localVarFp.ezsignannotationCreateObjectV1(ezsignannotationCreateObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -373,7 +371,7 @@ export const ObjectEzsignannotationApiFactory = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignannotationDeleteObjectV1(pkiEzsignannotationID: number, options?: any): AxiosPromise<EzsignannotationDeleteObjectV1Response> {
+        ezsignannotationDeleteObjectV1(pkiEzsignannotationID: number, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.ezsignannotationDeleteObjectV1(pkiEzsignannotationID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -384,7 +382,7 @@ export const ObjectEzsignannotationApiFactory = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignannotationEditObjectV1(pkiEzsignannotationID: number, ezsignannotationEditObjectV1Request: EzsignannotationEditObjectV1Request, options?: any): AxiosPromise<EzsignannotationEditObjectV1Response> {
+        ezsignannotationEditObjectV1(pkiEzsignannotationID: number, ezsignannotationEditObjectV1Request: EzsignannotationEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.ezsignannotationEditObjectV1(pkiEzsignannotationID, ezsignannotationEditObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -394,7 +392,7 @@ export const ObjectEzsignannotationApiFactory = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignannotationGetObjectV2(pkiEzsignannotationID: number, options?: any): AxiosPromise<EzsignannotationGetObjectV2Response> {
+        ezsignannotationGetObjectV2(pkiEzsignannotationID: number, options?: RawAxiosRequestConfig): AxiosPromise<EzsignannotationGetObjectV2Response> {
             return localVarFp.ezsignannotationGetObjectV2(pkiEzsignannotationID, options).then((request) => request(axios, basePath));
         },
     };

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { PhonetypeAutocompleteElementResponse } from './phonetype-autocomplete-element-response';
+import type { PhonetypeAutocompleteElementResponse } from './phonetype-autocomplete-element-response';
 
 /**
  * Payload for POST /2/object/phonetype/getAutocomplete

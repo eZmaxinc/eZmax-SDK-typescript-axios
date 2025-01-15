@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomContactNameResponse } from './custom-contact-name-response';
+import type { CustomContactNameResponse } from './custom-contact-name-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzmaxinvoicinguserResponse } from './ezmaxinvoicinguser-response';
+import type { EzmaxinvoicinguserResponse } from './ezmaxinvoicinguser-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzmaxinvoicinguserVariationezsign } from './field-eezmaxinvoicinguser-variationezsign';
+import type { FieldEEzmaxinvoicinguserVariationezsign } from './field-eezmaxinvoicinguser-variationezsign';
 
 /**
  * @type EzmaxinvoicinguserResponseCompound

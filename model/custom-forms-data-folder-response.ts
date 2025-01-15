@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomFormDataDocumentResponse } from './custom-form-data-document-response';
+import type { CustomFormDataDocumentResponse } from './custom-form-data-document-response';
 
 /**
  * A forms Data Folder Object

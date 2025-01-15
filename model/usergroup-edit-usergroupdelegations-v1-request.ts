@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { UsergroupdelegationRequestCompound } from './usergroupdelegation-request-compound';
+import type { UsergroupdelegationRequestCompound } from './usergroupdelegation-request-compound';
 
 /**
  * Request for PUT /1/object/usergroup/{pkiUsergroupID}/editUsergroupdelegations

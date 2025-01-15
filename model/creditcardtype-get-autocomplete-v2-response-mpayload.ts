@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CreditcardtypeAutocompleteElementResponse } from './creditcardtype-autocomplete-element-response';
+import type { CreditcardtypeAutocompleteElementResponse } from './creditcardtype-autocomplete-element-response';
 
 /**
  * Payload for POST /2/object/creditcardtype/getAutocomplete

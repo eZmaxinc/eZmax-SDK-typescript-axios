@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzdoctemplatedocumentResponseCompound } from './ezdoctemplatedocument-response-compound';
+import type { EzdoctemplatedocumentResponseCompound } from './ezdoctemplatedocument-response-compound';
 
 /**
  * Payload for GET /2/object/ezdoctemplatedocument/{pkiEzdoctemplatedocumentID}

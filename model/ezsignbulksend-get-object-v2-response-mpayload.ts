@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignbulksendResponseCompound } from './ezsignbulksend-response-compound';
+import type { EzsignbulksendResponseCompound } from './ezsignbulksend-response-compound';
 
 /**
  * Payload for GET /2/object/ezsignbulksend/{pkiEzsignbulksendID}

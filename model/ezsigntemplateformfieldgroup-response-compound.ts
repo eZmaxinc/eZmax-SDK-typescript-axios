@@ -15,28 +15,28 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomDropdownElementResponseCompound } from './custom-dropdown-element-response-compound';
+import type { CustomDropdownElementResponse } from './custom-dropdown-element-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EnumTextvalidation } from './enum-textvalidation';
+import type { EnumTextvalidation } from './enum-textvalidation';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigntemplateformfieldResponseCompound } from './ezsigntemplateformfield-response-compound';
+import type { EzsigntemplateformfieldResponseCompound } from './ezsigntemplateformfield-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigntemplateformfieldgroupResponse } from './ezsigntemplateformfieldgroup-response';
+import type { EzsigntemplateformfieldgroupResponse } from './ezsigntemplateformfieldgroup-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigntemplateformfieldgroupsignerResponseCompound } from './ezsigntemplateformfieldgroupsigner-response-compound';
+import type { EzsigntemplateformfieldgroupsignerResponse } from './ezsigntemplateformfieldgroupsigner-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsigntemplateformfieldgroupSignerrequirement } from './field-eezsigntemplateformfieldgroup-signerrequirement';
+import type { FieldEEzsigntemplateformfieldgroupSignerrequirement } from './field-eezsigntemplateformfieldgroup-signerrequirement';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsigntemplateformfieldgroupTooltipposition } from './field-eezsigntemplateformfieldgroup-tooltipposition';
+import type { FieldEEzsigntemplateformfieldgroupTooltipposition } from './field-eezsigntemplateformfieldgroup-tooltipposition';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsigntemplateformfieldgroupType } from './field-eezsigntemplateformfieldgroup-type';
+import type { FieldEEzsigntemplateformfieldgroupType } from './field-eezsigntemplateformfieldgroup-type';
 
 /**
  * @type EzsigntemplateformfieldgroupResponseCompound

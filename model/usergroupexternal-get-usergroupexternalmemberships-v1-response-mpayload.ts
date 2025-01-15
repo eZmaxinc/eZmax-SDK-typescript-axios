@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { UsergroupexternalmembershipResponseCompound } from './usergroupexternalmembership-response-compound';
+import type { UsergroupexternalmembershipResponseCompound } from './usergroupexternalmembership-response-compound';
 
 /**
  * Response for GET /1/object/usergroupexternal/{pkiUsergroupexternalID}/getUsergroupexternalmemberships

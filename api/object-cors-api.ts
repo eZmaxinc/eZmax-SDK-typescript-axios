@@ -20,21 +20,19 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponse } from '../model';
 // @ts-ignore
-import { CorsCreateObjectV1Request } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { CorsCreateObjectV1Response } from '../model';
+import type { CorsCreateObjectV1Request } from '../model';
 // @ts-ignore
-import { CorsDeleteObjectV1Response } from '../model';
+import type { CorsCreateObjectV1Response } from '../model';
 // @ts-ignore
-import { CorsEditObjectV1Request } from '../model';
+import type { CorsEditObjectV1Request } from '../model';
 // @ts-ignore
-import { CorsEditObjectV1Response } from '../model';
-// @ts-ignore
-import { CorsGetObjectV2Response } from '../model';
+import type { CorsGetObjectV2Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -313,7 +311,7 @@ export const ObjectCorsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async corsDeleteObjectV1(pkiCorsID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CorsDeleteObjectV1Response>> {
+        async corsDeleteObjectV1(pkiCorsID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.corsDeleteObjectV1(pkiCorsID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectCorsApi.corsDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -327,7 +325,7 @@ export const ObjectCorsApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async corsEditObjectV1(pkiCorsID: number, corsEditObjectV1Request: CorsEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CorsEditObjectV1Response>> {
+        async corsEditObjectV1(pkiCorsID: number, corsEditObjectV1Request: CorsEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.corsEditObjectV1(pkiCorsID, corsEditObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectCorsApi.corsEditObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -363,7 +361,7 @@ export const ObjectCorsApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        corsCreateObjectV1(corsCreateObjectV1Request: CorsCreateObjectV1Request, options?: any): AxiosPromise<CorsCreateObjectV1Response> {
+        corsCreateObjectV1(corsCreateObjectV1Request: CorsCreateObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CorsCreateObjectV1Response> {
             return localVarFp.corsCreateObjectV1(corsCreateObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -373,7 +371,7 @@ export const ObjectCorsApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        corsDeleteObjectV1(pkiCorsID: number, options?: any): AxiosPromise<CorsDeleteObjectV1Response> {
+        corsDeleteObjectV1(pkiCorsID: number, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.corsDeleteObjectV1(pkiCorsID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -384,7 +382,7 @@ export const ObjectCorsApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        corsEditObjectV1(pkiCorsID: number, corsEditObjectV1Request: CorsEditObjectV1Request, options?: any): AxiosPromise<CorsEditObjectV1Response> {
+        corsEditObjectV1(pkiCorsID: number, corsEditObjectV1Request: CorsEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.corsEditObjectV1(pkiCorsID, corsEditObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -394,7 +392,7 @@ export const ObjectCorsApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        corsGetObjectV2(pkiCorsID: number, options?: any): AxiosPromise<CorsGetObjectV2Response> {
+        corsGetObjectV2(pkiCorsID: number, options?: RawAxiosRequestConfig): AxiosPromise<CorsGetObjectV2Response> {
             return localVarFp.corsGetObjectV2(pkiCorsID, options).then((request) => request(axios, basePath));
         },
     };

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonReportrow } from './common-reportrow';
+import type { CommonReportrow } from './common-reportrow';
 
 /**
  * A part in the Reportsubsection 

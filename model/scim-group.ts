@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ScimGroupMember } from './scim-group-member';
+import type { ScimGroupMember } from './scim-group-member';
 
 /**
  * 

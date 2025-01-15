@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AddressResponse } from './address-response';
+import type { AddressResponse } from './address-response';
 
 /**
  * @type AddressResponseCompound

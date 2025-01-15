@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { WebhookheaderResponse } from './webhookheader-response';
+import type { WebhookheaderResponse } from './webhookheader-response';
 
 /**
  * @type WebhookheaderResponseCompound

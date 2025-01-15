@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { MultilingualNotificationtestName } from './multilingual-notificationtest-name';
+import type { MultilingualNotificationtestName } from './multilingual-notificationtest-name';
 
 /**
  * A Notificationtest Object

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AuthenticationexternalResponseCompound } from './authenticationexternal-response-compound';
+import type { AuthenticationexternalResponseCompound } from './authenticationexternal-response-compound';
 
 /**
  * Payload for GET /2/object/authenticationexternal/{pkiAuthenticationexternalID}

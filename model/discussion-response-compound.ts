@@ -15,16 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomDiscussionconfigurationResponse } from './custom-discussionconfiguration-response';
+import type { DiscussionResponse } from './discussion-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { DiscussionResponse } from './discussion-response';
+import type { DiscussionmembershipResponseCompound } from './discussionmembership-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import { DiscussionmembershipResponseCompound } from './discussionmembership-response-compound';
-// May contain unused imports in some cases
-// @ts-ignore
-import { DiscussionmessageResponseCompound } from './discussionmessage-response-compound';
+import type { DiscussionmessageResponseCompound } from './discussionmessage-response-compound';
 
 /**
  * @type DiscussionResponseCompound
@@ -70,11 +67,11 @@ export interface DiscussionResponseCompound {
      */
     iDiscussionmessageCountunread:number 
     /**
-     * 
-     * @type {CustomDiscussionconfigurationResponse}
+     * A Custom Discussionconfiguration Object
+     * @type {object}
      * @memberof DiscussionResponseCompound
      */
-    objDiscussionconfiguration?:CustomDiscussionconfigurationResponse 
+    objDiscussionconfiguration?:object 
     /**
      * 
      * @type {Array<DiscussionmembershipResponseCompound>}
@@ -95,9 +92,9 @@ export interface DiscussionResponseCompound {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCustomDiscussionconfigurationResponse } from './'
+import { DataObjectobject } from './'
 // @ts-ignore
-import { ValidationObjectCustomDiscussionconfigurationResponse } from './'
+import { ValidationObjectobject } from './'
 
 /**
  * @export 
@@ -112,7 +109,7 @@ export class DataObjectDiscussionResponseCompound {
     dtDiscussionLastread?:string = undefined
     iDiscussionmessageCount:number = 0
     iDiscussionmessageCountunread:number = 0
-    objDiscussionconfiguration?:CustomDiscussionconfigurationResponse = undefined
+    objDiscussionconfiguration?:object = undefined
     a_objDiscussionmembership:Array<DiscussionmembershipResponseCompound> = []
     a_objDiscussionmessage:Array<DiscussionmessageResponseCompound> = []
 }
@@ -150,7 +147,7 @@ export class ValidationObjectDiscussionResponseCompound {
       type: 'integer',
       required: true
    }
-   objDiscussionconfiguration = new ValidationObjectCustomDiscussionconfigurationResponse()
+   objDiscussionconfiguration = new ValidationObjectobject()
    a_objDiscussionmembership = {
       type: 'array',
       required: true

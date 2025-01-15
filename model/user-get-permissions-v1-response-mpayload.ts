@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ModulegroupResponseCompound } from './modulegroup-response-compound';
+import type { ModulegroupResponseCompound } from './modulegroup-response-compound';
 
 /**
  * Response for GET /1/object/user/{pkiUserID}/getPermissions

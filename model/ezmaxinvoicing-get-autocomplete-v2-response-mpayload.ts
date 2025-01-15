@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzmaxinvoicingAutocompleteElementResponse } from './ezmaxinvoicing-autocomplete-element-response';
+import type { EzmaxinvoicingAutocompleteElementResponse } from './ezmaxinvoicing-autocomplete-element-response';
 
 /**
  * Payload for POST /2/object/ezmaxinvoicing/getAutocomplete

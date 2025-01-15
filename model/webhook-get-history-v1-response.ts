@@ -15,16 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonResponse } from './common-response';
+import type { CommonResponse } from './common-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonResponseObjDebug } from './common-response-obj-debug';
+import type { CommonResponseObjDebug } from './common-response-obj-debug';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
-// May contain unused imports in some cases
-// @ts-ignore
-import { WebhookGetHistoryV1ResponseMPayload } from './webhook-get-history-v1-response-mpayload';
+import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 
 /**
  * @type WebhookGetHistoryV1Response
@@ -46,11 +43,11 @@ export interface WebhookGetHistoryV1Response {
      */
     objDebug?:CommonResponseObjDebug 
     /**
-     * 
-     * @type {WebhookGetHistoryV1ResponseMPayload}
+     * Payload for GET /1/object/webhook/{pkiWebhookID}/getHistory
+     * @type {object}
      * @memberof WebhookGetHistoryV1Response
      */
-    mPayload:WebhookGetHistoryV1ResponseMPayload 
+    mPayload:object 
 }
 
 
@@ -63,13 +60,13 @@ import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { DataObjectWebhookGetHistoryV1ResponseMPayload } from './'
+import { DataObjectobject } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectWebhookGetHistoryV1ResponseMPayload } from './'
+import { ValidationObjectobject } from './'
 
 /**
  * @export 
@@ -80,7 +77,7 @@ import { ValidationObjectWebhookGetHistoryV1ResponseMPayload } from './'
 export class DataObjectWebhookGetHistoryV1Response {
     objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
-    mPayload:WebhookGetHistoryV1ResponseMPayload = new DataObjectWebhookGetHistoryV1ResponseMPayload()
+    mPayload:object = new DataObjectobject()
 }
 
 /**
@@ -91,7 +88,7 @@ export class DataObjectWebhookGetHistoryV1Response {
 export class ValidationObjectWebhookGetHistoryV1Response {
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
-   mPayload = new ValidationObjectWebhookGetHistoryV1ResponseMPayload()
+   mPayload = new ValidationObjectobject()
 } 
 
 

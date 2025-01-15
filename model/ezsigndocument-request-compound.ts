@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigndocumentRequest } from './ezsigndocument-request';
+import type { EzsigndocumentRequest } from './ezsigndocument-request';
 
 /**
  * @type EzsigndocumentRequestCompound

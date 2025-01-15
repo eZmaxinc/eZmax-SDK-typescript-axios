@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigndocumentResponseCompound } from './ezsigndocument-response-compound';
+import type { EzsigndocumentResponseCompound } from './ezsigndocument-response-compound';
 
 /**
  * Payload for POST /1/object/ezsignfolder/{pkiEzsignfolderID}/importEzsigntemplatepackage

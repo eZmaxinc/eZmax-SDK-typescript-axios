@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ContactResponse } from './contact-response';
+import type { ContactResponse } from './contact-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ContactinformationsResponseCompound } from './contactinformations-response-compound';
+import type { ContactinformationsResponseCompound } from './contactinformations-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEContactType } from './field-econtact-type';
+import type { FieldEContactType } from './field-econtact-type';
 
 /**
  * @type ContactResponseCompound

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CorsRequestCompound } from './cors-request-compound';
+import type { CorsRequestCompound } from './cors-request-compound';
 
 /**
  * Request for PUT /1/object/cors/{pkiCorsID}

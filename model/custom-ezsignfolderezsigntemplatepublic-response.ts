@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomEzsignfolderezsigntemplatepublicSignerResponse } from './custom-ezsignfolderezsigntemplatepublic-signer-response';
+import type { CustomEzsignfolderezsigntemplatepublicSignerResponse } from './custom-ezsignfolderezsigntemplatepublic-signer-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignfolderStep } from './field-eezsignfolder-step';
+import type { FieldEEzsignfolderStep } from './field-eezsignfolder-step';
 
 /**
  * An Ezsignfolder Object in the context of an Ezsigntemplatepublic

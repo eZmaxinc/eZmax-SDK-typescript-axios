@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonAudit } from './common-audit';
+import type { CommonAudit } from './common-audit';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ContactResponseCompound } from './contact-response-compound';
+import type { ContactResponseCompound } from './contact-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignuserResponse } from './ezsignuser-response';
+import type { EzsignuserResponse } from './ezsignuser-response';
 
 /**
  * @type EzsignuserResponseCompound

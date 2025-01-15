@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomFormsDataFolderResponse } from './custom-forms-data-folder-response';
+import type { CustomFormsDataFolderResponse } from './custom-forms-data-folder-response';
 
 /**
  * Payload for GET/1/object/ezsignbulksend/{pkiEzsignbulksendID}/getFormsData

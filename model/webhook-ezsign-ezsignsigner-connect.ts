@@ -15,19 +15,19 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AttemptResponseCompound } from './attempt-response-compound';
+import type { AttemptResponse } from './attempt-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonWebhook } from './common-webhook';
+import type { CommonWebhook } from './common-webhook';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomWebhookResponse } from './custom-webhook-response';
+import type { CustomWebhookResponse } from './custom-webhook-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignfolderResponse } from './ezsignfolder-response';
+import type { EzsignfolderResponse } from './ezsignfolder-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignfoldersignerassociationResponseCompound } from './ezsignfoldersignerassociation-response-compound';
+import type { EzsignfoldersignerassociationResponseCompound } from './ezsignfoldersignerassociation-response-compound';
 
 /**
  * @type WebhookEzsignEzsignsignerConnect

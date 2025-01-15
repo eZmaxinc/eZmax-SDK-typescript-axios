@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { DiscussionmessageRequest } from './discussionmessage-request';
+import type { DiscussionmessageRequest } from './discussionmessage-request';
 
 /**
  * @type DiscussionmessageRequestCompound

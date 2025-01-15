@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { BrandingRequestV2 } from './branding-request-v2';
+import type { BrandingRequestV2 } from './branding-request-v2';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEBrandingAlignlogo } from './field-ebranding-alignlogo';
+import type { FieldEBrandingAlignlogo } from './field-ebranding-alignlogo';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEBrandingLogo } from './field-ebranding-logo';
+import type { FieldEBrandingLogo } from './field-ebranding-logo';
 // May contain unused imports in some cases
 // @ts-ignore
-import { MultilingualBrandingDescription } from './multilingual-branding-description';
+import type { MultilingualBrandingDescription } from './multilingual-branding-description';
 
 /**
  * @type BrandingRequestCompoundV2

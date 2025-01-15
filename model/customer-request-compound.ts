@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomerRequest } from './customer-request';
+import type { CustomerRequest } from './customer-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldECustomerMarketingcorrespondence } from './field-ecustomer-marketingcorrespondence';
+import type { FieldECustomerMarketingcorrespondence } from './field-ecustomer-marketingcorrespondence';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldECustomerType } from './field-ecustomer-type';
+import type { FieldECustomerType } from './field-ecustomer-type';
 
 /**
  * @type CustomerRequestCompound

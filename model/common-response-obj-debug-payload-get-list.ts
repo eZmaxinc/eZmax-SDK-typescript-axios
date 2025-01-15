@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonResponseFilter } from './common-response-filter';
+import type { CommonResponseFilter } from './common-response-filter';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
+import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 
 /**
  * @type CommonResponseObjDebugPayloadGetList

@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldECreditcardtransactionAvsresult } from './field-ecreditcardtransaction-avsresult';
+import type { FieldECreditcardtransactionAvsresult } from './field-ecreditcardtransaction-avsresult';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldECreditcardtransactionCvdresult } from './field-ecreditcardtransaction-cvdresult';
+import type { FieldECreditcardtransactionCvdresult } from './field-ecreditcardtransaction-cvdresult';
 
 /**
  * A custom Creditcardtransactionresponse Object

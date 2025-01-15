@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CorsResponseCompound } from './cors-response-compound';
+import type { CorsResponseCompound } from './cors-response-compound';
 
 /**
  * Payload for GET /2/object/cors/{pkiCorsID}

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { TextstylestaticRequest } from './textstylestatic-request';
+import type { TextstylestaticRequest } from './textstylestatic-request';
 
 /**
  * @type TextstylestaticRequestCompound

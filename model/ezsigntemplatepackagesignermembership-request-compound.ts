@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigntemplatepackagesignermembershipRequest } from './ezsigntemplatepackagesignermembership-request';
+import type { EzsigntemplatepackagesignermembershipRequest } from './ezsigntemplatepackagesignermembership-request';
 
 /**
  * @type EzsigntemplatepackagesignermembershipRequestCompound

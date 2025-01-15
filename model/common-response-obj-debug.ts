@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonResponseObjSQLQuery } from './common-response-obj-sqlquery';
+import type { CommonResponseObjSQLQuery } from './common-response-obj-sqlquery';
 
 /**
  * This is a generic debug object that is returned by all API requests

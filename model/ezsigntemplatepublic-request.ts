@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsigntemplatepublicLimittype } from './field-eezsigntemplatepublic-limittype';
+import type { FieldEEzsigntemplatepublicLimittype } from './field-eezsigntemplatepublic-limittype';
 
 /**
  * A Ezsigntemplatepublic Object

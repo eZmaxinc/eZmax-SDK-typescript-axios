@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignelementdependencyResponse } from './ezsignelementdependency-response';
+import type { EzsignelementdependencyResponse } from './ezsignelementdependency-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignelementdependencyOperator } from './field-eezsignelementdependency-operator';
+import type { FieldEEzsignelementdependencyOperator } from './field-eezsignelementdependency-operator';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignelementdependencyValidation } from './field-eezsignelementdependency-validation';
+import type { FieldEEzsignelementdependencyValidation } from './field-eezsignelementdependency-validation';
 
 /**
  * @type EzsignelementdependencyResponseCompound

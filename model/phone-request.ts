@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEPhoneType } from './field-ephone-type';
+import type { FieldEPhoneType } from './field-ephone-type';
 
 /**
  * A Phone Object

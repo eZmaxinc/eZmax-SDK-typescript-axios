@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { LanguageAutocompleteElementResponse } from './language-autocomplete-element-response';
+import type { LanguageAutocompleteElementResponse } from './language-autocomplete-element-response';
 
 /**
  * Payload for POST /2/object/language/getAutocomplete

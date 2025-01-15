@@ -20,11 +20,11 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { GlobalCustomerGetEndpointV1Response } from '../model';
+import type { GlobalCustomerGetEndpointV1Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -138,7 +138,7 @@ export const GlobalCustomerApiFactory = function (configuration?: Configuration,
          * @deprecated
          * @throws {RequiredError}
          */
-        globalCustomerGetEndpointV1(pksCustomerCode: string, sInfrastructureproductCode?: GlobalCustomerGetEndpointV1SInfrastructureproductCodeEnum, options?: any): AxiosPromise<GlobalCustomerGetEndpointV1Response> {
+        globalCustomerGetEndpointV1(pksCustomerCode: string, sInfrastructureproductCode?: GlobalCustomerGetEndpointV1SInfrastructureproductCodeEnum, options?: RawAxiosRequestConfig): AxiosPromise<GlobalCustomerGetEndpointV1Response> {
             return localVarFp.globalCustomerGetEndpointV1(pksCustomerCode, sInfrastructureproductCode, options).then((request) => request(axios, basePath));
         },
     };

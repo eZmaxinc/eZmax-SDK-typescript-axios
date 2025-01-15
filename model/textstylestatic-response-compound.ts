@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { TextstylestaticResponse } from './textstylestatic-response';
+import type { TextstylestaticResponse } from './textstylestatic-response';
 
 /**
  * @type TextstylestaticResponseCompound

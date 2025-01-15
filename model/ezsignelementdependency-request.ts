@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignelementdependencyOperator } from './field-eezsignelementdependency-operator';
+import type { FieldEEzsignelementdependencyOperator } from './field-eezsignelementdependency-operator';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignelementdependencyValidation } from './field-eezsignelementdependency-validation';
+import type { FieldEEzsignelementdependencyValidation } from './field-eezsignelementdependency-validation';
 
 /**
  * An Ezsignelementdependency Object

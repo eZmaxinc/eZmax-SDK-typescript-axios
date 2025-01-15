@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ColleagueRequestCompoundV2 } from './colleague-request-compound-v2';
+import type { ColleagueRequestCompoundV2 } from './colleague-request-compound-v2';
 
 /**
  * Request for PUT /2/object/user/{pkiUserID}/editColleagues

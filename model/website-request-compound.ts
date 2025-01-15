@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { WebsiteRequest } from './website-request';
+import type { WebsiteRequest } from './website-request';
 
 /**
  * @type WebsiteRequestCompound

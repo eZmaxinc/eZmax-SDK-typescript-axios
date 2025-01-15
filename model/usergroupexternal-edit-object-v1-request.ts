@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { UsergroupexternalRequestCompound } from './usergroupexternal-request-compound';
+import type { UsergroupexternalRequestCompound } from './usergroupexternal-request-compound';
 
 /**
  * Request for PUT /1/object/usergroupexternal/{pkiUsergroupexternalID}

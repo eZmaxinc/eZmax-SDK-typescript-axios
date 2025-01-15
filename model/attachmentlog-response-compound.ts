@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AttachmentlogResponse } from './attachmentlog-response';
+import type { AttachmentlogResponse } from './attachmentlog-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEAttachmentlogType } from './field-eattachmentlog-type';
+import type { FieldEAttachmentlogType } from './field-eattachmentlog-type';
 
 /**
  * @type AttachmentlogResponseCompound

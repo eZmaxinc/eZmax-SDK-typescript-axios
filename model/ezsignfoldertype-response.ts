@@ -15,22 +15,22 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignfoldertypeCompletion } from './field-eezsignfoldertype-completion';
+import type { FieldEEzsignfoldertypeCompletion } from './field-eezsignfoldertype-completion';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignfoldertypeDisposal } from './field-eezsignfoldertype-disposal';
+import type { FieldEEzsignfoldertypeDisposal } from './field-eezsignfoldertype-disposal';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignfoldertypePrivacylevel } from './field-eezsignfoldertype-privacylevel';
+import type { FieldEEzsignfoldertypePrivacylevel } from './field-eezsignfoldertype-privacylevel';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignfoldertypeSendreminderfrequency } from './field-eezsignfoldertype-sendreminderfrequency';
+import type { FieldEEzsignfoldertypeSendreminderfrequency } from './field-eezsignfoldertype-sendreminderfrequency';
 // May contain unused imports in some cases
 // @ts-ignore
-import { MultilingualEzsignfoldertypeName } from './multilingual-ezsignfoldertype-name';
+import type { MultilingualEzsignfoldertypeName } from './multilingual-ezsignfoldertype-name';
 // May contain unused imports in some cases
 // @ts-ignore
-import { UserlogintypeResponse } from './userlogintype-response';
+import type { UserlogintypeResponse } from './userlogintype-response';
 
 /**
  * A Ezsignfoldertype Object

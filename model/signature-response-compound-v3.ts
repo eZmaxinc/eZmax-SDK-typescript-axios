@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldESignaturePreference } from './field-esignature-preference';
+import type { FieldESignaturePreference } from './field-esignature-preference';
 // May contain unused imports in some cases
 // @ts-ignore
-import { SignatureResponseV3 } from './signature-response-v3';
+import type { SignatureResponseV3 } from './signature-response-v3';
 
 /**
  * @type SignatureResponseCompoundV3

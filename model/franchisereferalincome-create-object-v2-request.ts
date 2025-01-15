@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FranchisereferalincomeRequestCompound } from './franchisereferalincome-request-compound';
+import type { FranchisereferalincomeRequestCompound } from './franchisereferalincome-request-compound';
 
 /**
  * Request for POST /2/object/franchisereferalincome

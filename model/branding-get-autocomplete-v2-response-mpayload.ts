@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { BrandingAutocompleteElementResponse } from './branding-autocomplete-element-response';
+import type { BrandingAutocompleteElementResponse } from './branding-autocomplete-element-response';
 
 /**
  * Payload for POST /2/object/branding/getAutocomplete

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldESessionhistoryEndby } from './field-esessionhistory-endby';
+import type { FieldESessionhistoryEndby } from './field-esessionhistory-endby';
 
 /**
  * A Sessionhistory List Element

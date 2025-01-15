@@ -15,13 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonResponseError } from './common-response-error';
+import type { CommonResponseError } from './common-response-error';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomEzsignformfielderrorResponse } from './custom-ezsignformfielderror-response';
-// May contain unused imports in some cases
-// @ts-ignore
-import { FieldEErrorCode } from './field-eerror-code';
+import type { FieldEErrorCode } from './field-eerror-code';
 
 /**
  * @type CommonResponseErrorEzsignformValidation

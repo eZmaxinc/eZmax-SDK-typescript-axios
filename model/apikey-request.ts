@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { MultilingualApikeyDescription } from './multilingual-apikey-description';
+import type { MultilingualApikeyDescription } from './multilingual-apikey-description';
 
 /**
  * An Apikey Object

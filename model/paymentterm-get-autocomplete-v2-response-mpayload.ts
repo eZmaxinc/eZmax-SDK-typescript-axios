@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { PaymenttermAutocompleteElementResponse } from './paymentterm-autocomplete-element-response';
+import type { PaymenttermAutocompleteElementResponse } from './paymentterm-autocomplete-element-response';
 
 /**
  * Payload for POST /2/object/paymentterm/getAutocomplete

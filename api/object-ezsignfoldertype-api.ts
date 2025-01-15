@@ -20,27 +20,27 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponse } from '../model';
 // @ts-ignore
-import { EzsignfoldertypeCreateObjectV3Request } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { EzsignfoldertypeCreateObjectV3Response } from '../model';
+import type { EzsignfoldertypeCreateObjectV3Request } from '../model';
 // @ts-ignore
-import { EzsignfoldertypeEditObjectV3Request } from '../model';
+import type { EzsignfoldertypeCreateObjectV3Response } from '../model';
 // @ts-ignore
-import { EzsignfoldertypeEditObjectV3Response } from '../model';
+import type { EzsignfoldertypeEditObjectV3Request } from '../model';
 // @ts-ignore
-import { EzsignfoldertypeGetAutocompleteV2Response } from '../model';
+import type { EzsignfoldertypeGetAutocompleteV2Response } from '../model';
 // @ts-ignore
-import { EzsignfoldertypeGetListV1Response } from '../model';
+import type { EzsignfoldertypeGetListV1Response } from '../model';
 // @ts-ignore
-import { EzsignfoldertypeGetObjectV2Response } from '../model';
+import type { EzsignfoldertypeGetObjectV2Response } from '../model';
 // @ts-ignore
-import { EzsignfoldertypeGetObjectV4Response } from '../model';
+import type { EzsignfoldertypeGetObjectV4Response } from '../model';
 // @ts-ignore
-import { HeaderAcceptLanguage } from '../model';
+import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -214,14 +214,13 @@ export const ObjectEzsignfoldertypeApiAxiosParamCreator = function (configuratio
                 localVarQueryParameter['sQuery'] = sQuery;
             }
 
+
+    
             if (acceptLanguage != null) {
                 localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
                     ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
-
-
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -295,14 +294,13 @@ export const ObjectEzsignfoldertypeApiAxiosParamCreator = function (configuratio
                 localVarQueryParameter['sFilter'] = sFilter;
             }
 
+
+    
             if (acceptLanguage != null) {
                 localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
                     ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
-
-
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -477,7 +475,7 @@ export const ObjectEzsignfoldertypeApiFp = function(configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignfoldertypeEditObjectV3(pkiEzsignfoldertypeID: number, ezsignfoldertypeEditObjectV3Request: EzsignfoldertypeEditObjectV3Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfoldertypeEditObjectV3Response>> {
+        async ezsignfoldertypeEditObjectV3(pkiEzsignfoldertypeID: number, ezsignfoldertypeEditObjectV3Request: EzsignfoldertypeEditObjectV3Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfoldertypeEditObjectV3(pkiEzsignfoldertypeID, ezsignfoldertypeEditObjectV3Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignfoldertypeApi.ezsignfoldertypeEditObjectV3']?.[localVarOperationServerIndex]?.url;
@@ -560,7 +558,7 @@ export const ObjectEzsignfoldertypeApiFactory = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfoldertypeCreateObjectV3(ezsignfoldertypeCreateObjectV3Request: EzsignfoldertypeCreateObjectV3Request, options?: any): AxiosPromise<EzsignfoldertypeCreateObjectV3Response> {
+        ezsignfoldertypeCreateObjectV3(ezsignfoldertypeCreateObjectV3Request: EzsignfoldertypeCreateObjectV3Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsignfoldertypeCreateObjectV3Response> {
             return localVarFp.ezsignfoldertypeCreateObjectV3(ezsignfoldertypeCreateObjectV3Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -571,7 +569,7 @@ export const ObjectEzsignfoldertypeApiFactory = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfoldertypeEditObjectV3(pkiEzsignfoldertypeID: number, ezsignfoldertypeEditObjectV3Request: EzsignfoldertypeEditObjectV3Request, options?: any): AxiosPromise<EzsignfoldertypeEditObjectV3Response> {
+        ezsignfoldertypeEditObjectV3(pkiEzsignfoldertypeID: number, ezsignfoldertypeEditObjectV3Request: EzsignfoldertypeEditObjectV3Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.ezsignfoldertypeEditObjectV3(pkiEzsignfoldertypeID, ezsignfoldertypeEditObjectV3Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -584,7 +582,7 @@ export const ObjectEzsignfoldertypeApiFactory = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfoldertypeGetAutocompleteV2(sSelector: EzsignfoldertypeGetAutocompleteV2SSelectorEnum, eFilterActive?: EzsignfoldertypeGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: any): AxiosPromise<EzsignfoldertypeGetAutocompleteV2Response> {
+        ezsignfoldertypeGetAutocompleteV2(sSelector: EzsignfoldertypeGetAutocompleteV2SSelectorEnum, eFilterActive?: EzsignfoldertypeGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig): AxiosPromise<EzsignfoldertypeGetAutocompleteV2Response> {
             return localVarFp.ezsignfoldertypeGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(axios, basePath));
         },
         /**
@@ -598,7 +596,7 @@ export const ObjectEzsignfoldertypeApiFactory = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfoldertypeGetListV1(eOrderBy?: EzsignfoldertypeGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: any): AxiosPromise<EzsignfoldertypeGetListV1Response> {
+        ezsignfoldertypeGetListV1(eOrderBy?: EzsignfoldertypeGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): AxiosPromise<EzsignfoldertypeGetListV1Response> {
             return localVarFp.ezsignfoldertypeGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(axios, basePath));
         },
         /**
@@ -609,7 +607,7 @@ export const ObjectEzsignfoldertypeApiFactory = function (configuration?: Config
          * @deprecated
          * @throws {RequiredError}
          */
-        ezsignfoldertypeGetObjectV2(pkiEzsignfoldertypeID: number, options?: any): AxiosPromise<EzsignfoldertypeGetObjectV2Response> {
+        ezsignfoldertypeGetObjectV2(pkiEzsignfoldertypeID: number, options?: RawAxiosRequestConfig): AxiosPromise<EzsignfoldertypeGetObjectV2Response> {
             return localVarFp.ezsignfoldertypeGetObjectV2(pkiEzsignfoldertypeID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -619,7 +617,7 @@ export const ObjectEzsignfoldertypeApiFactory = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfoldertypeGetObjectV4(pkiEzsignfoldertypeID: number, options?: any): AxiosPromise<EzsignfoldertypeGetObjectV4Response> {
+        ezsignfoldertypeGetObjectV4(pkiEzsignfoldertypeID: number, options?: RawAxiosRequestConfig): AxiosPromise<EzsignfoldertypeGetObjectV4Response> {
             return localVarFp.ezsignfoldertypeGetObjectV4(pkiEzsignfoldertypeID, options).then((request) => request(axios, basePath));
         },
     };

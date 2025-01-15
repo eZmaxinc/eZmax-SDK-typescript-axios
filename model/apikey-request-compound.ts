@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ApikeyRequest } from './apikey-request';
+import type { ApikeyRequest } from './apikey-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { MultilingualApikeyDescription } from './multilingual-apikey-description';
+import type { MultilingualApikeyDescription } from './multilingual-apikey-description';
 
 /**
  * @type ApikeyRequestCompound

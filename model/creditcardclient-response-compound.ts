@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CreditcardclientResponse } from './creditcardclient-response';
+import type { CreditcardclientResponse } from './creditcardclient-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CreditcarddetailResponseCompound } from './creditcarddetail-response-compound';
+import type { CreditcarddetailResponseCompound } from './creditcarddetail-response-compound';
 
 /**
  * @type CreditcardclientResponseCompound

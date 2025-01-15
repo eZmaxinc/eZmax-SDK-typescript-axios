@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AuthenticationexternalRequestCompound } from './authenticationexternal-request-compound';
+import type { AuthenticationexternalRequestCompound } from './authenticationexternal-request-compound';
 
 /**
  * Request for PUT /1/object/authenticationexternal/{pkiAuthenticationexternalID}

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignformfieldgroupsignerResponse } from './ezsignformfieldgroupsigner-response';
+import type { EzsignformfieldgroupsignerResponse } from './ezsignformfieldgroupsigner-response';
 
 /**
  * @type EzsignformfieldgroupsignerResponseCompound

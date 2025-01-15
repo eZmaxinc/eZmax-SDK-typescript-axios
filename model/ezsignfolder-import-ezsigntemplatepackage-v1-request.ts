@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomImportEzsigntemplatepackageRelationRequest } from './custom-import-ezsigntemplatepackage-relation-request';
+import type { CustomImportEzsigntemplatepackageRelationRequest } from './custom-import-ezsigntemplatepackage-relation-request';
 
 /**
  * Request for POST /1/object/ezsignfolder/{pkiEzsignfolderID}/importEzsigntemplatepackage

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EmailResponse } from './email-response';
+import type { EmailResponse } from './email-response';
 
 /**
  * @type EmailResponseCompound

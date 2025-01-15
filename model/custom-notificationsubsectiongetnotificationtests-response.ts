@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomNotificationtestgetnotificationtestsResponse } from './custom-notificationtestgetnotificationtests-response';
+import type { CustomNotificationtestgetnotificationtestsResponse } from './custom-notificationtestgetnotificationtests-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { MultilingualNotificationsubsectionName } from './multilingual-notificationsubsection-name';
+import type { MultilingualNotificationsubsectionName } from './multilingual-notificationsubsection-name';
 // May contain unused imports in some cases
 // @ts-ignore
-import { NotificationsubsectionResponse } from './notificationsubsection-response';
+import type { NotificationsubsectionResponse } from './notificationsubsection-response';
 
 /**
  * @type CustomNotificationsubsectiongetnotificationtestsResponse

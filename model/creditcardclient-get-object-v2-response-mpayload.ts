@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CreditcardclientResponseCompound } from './creditcardclient-response-compound';
+import type { CreditcardclientResponseCompound } from './creditcardclient-response-compound';
 
 /**
  * Payload for GET /2/object/creditcardclient/{pkiCreditcardclientID}

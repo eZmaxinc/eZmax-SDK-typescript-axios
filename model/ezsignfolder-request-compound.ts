@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignfolderRequest } from './ezsignfolder-request';
+import type { EzsignfolderRequest } from './ezsignfolder-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignfolderSendreminderfrequency } from './field-eezsignfolder-sendreminderfrequency';
+import type { FieldEEzsignfolderSendreminderfrequency } from './field-eezsignfolder-sendreminderfrequency';
 
 /**
  * @type EzsignfolderRequestCompound

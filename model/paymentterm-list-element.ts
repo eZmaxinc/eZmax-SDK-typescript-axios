@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEPaymenttermType } from './field-epaymentterm-type';
+import type { FieldEPaymenttermType } from './field-epaymentterm-type';
 
 /**
  * A Paymentterm List Element

@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ModuleResponse } from './module-response';
+import type { ModuleResponse } from './module-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ModulesectionResponseCompound } from './modulesection-response-compound';
+import type { ModulesectionResponseCompound } from './modulesection-response-compound';
 
 /**
  * @type ModuleResponseCompound

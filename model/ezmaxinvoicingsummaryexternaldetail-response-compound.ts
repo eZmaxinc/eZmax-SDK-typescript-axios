@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzmaxinvoicingsummaryexternaldetailResponse } from './ezmaxinvoicingsummaryexternaldetail-response';
+import type { EzmaxinvoicingsummaryexternaldetailResponse } from './ezmaxinvoicingsummaryexternaldetail-response';
 
 /**
  * @type EzmaxinvoicingsummaryexternaldetailResponseCompound

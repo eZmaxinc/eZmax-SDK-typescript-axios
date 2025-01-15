@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigndiscussionResponseCompound } from './ezsigndiscussion-response-compound';
+import type { EzsigndiscussionResponseCompound } from './ezsigndiscussion-response-compound';
 
 /**
  * Payload for GET /2/object/ezsigndiscussion/{pkiEzsigndiscussionID}

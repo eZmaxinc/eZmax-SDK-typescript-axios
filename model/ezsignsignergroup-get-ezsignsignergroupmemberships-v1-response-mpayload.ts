@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignsignergroupmembershipResponseCompound } from './ezsignsignergroupmembership-response-compound';
+import type { EzsignsignergroupmembershipResponseCompound } from './ezsignsignergroupmembership-response-compound';
 
 /**
  * Response for GET /1/object/ezsignsignergroup/{pkiEzsignsignergroupID}/getEzsignsignergroupmemberships

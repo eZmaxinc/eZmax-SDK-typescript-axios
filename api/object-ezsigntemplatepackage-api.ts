@@ -20,31 +20,29 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponse } from '../model';
 // @ts-ignore
-import { EzsigntemplatepackageCreateObjectV1Request } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { EzsigntemplatepackageCreateObjectV1Response } from '../model';
+import type { EzsigntemplatepackageCreateObjectV1Request } from '../model';
 // @ts-ignore
-import { EzsigntemplatepackageDeleteObjectV1Response } from '../model';
+import type { EzsigntemplatepackageCreateObjectV1Response } from '../model';
 // @ts-ignore
-import { EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Request } from '../model';
+import type { EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Request } from '../model';
 // @ts-ignore
-import { EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response } from '../model';
+import type { EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response } from '../model';
 // @ts-ignore
-import { EzsigntemplatepackageEditObjectV1Request } from '../model';
+import type { EzsigntemplatepackageEditObjectV1Request } from '../model';
 // @ts-ignore
-import { EzsigntemplatepackageEditObjectV1Response } from '../model';
+import type { EzsigntemplatepackageGetAutocompleteV2Response } from '../model';
 // @ts-ignore
-import { EzsigntemplatepackageGetAutocompleteV2Response } from '../model';
+import type { EzsigntemplatepackageGetListV1Response } from '../model';
 // @ts-ignore
-import { EzsigntemplatepackageGetListV1Response } from '../model';
+import type { EzsigntemplatepackageGetObjectV2Response } from '../model';
 // @ts-ignore
-import { EzsigntemplatepackageGetObjectV2Response } from '../model';
-// @ts-ignore
-import { HeaderAcceptLanguage } from '../model';
+import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -345,14 +343,13 @@ export const ObjectEzsigntemplatepackageApiAxiosParamCreator = function (configu
                 localVarQueryParameter['fkiEzsignfoldertypeID'] = fkiEzsignfoldertypeID;
             }
 
+
+    
             if (acceptLanguage != null) {
                 localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
                     ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
-
-
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -426,14 +423,13 @@ export const ObjectEzsigntemplatepackageApiAxiosParamCreator = function (configu
                 localVarQueryParameter['sFilter'] = sFilter;
             }
 
+
+    
             if (acceptLanguage != null) {
                 localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
                     ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
-
-
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -548,7 +544,7 @@ export const ObjectEzsigntemplatepackageApiFp = function(configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsigntemplatepackageDeleteObjectV1(pkiEzsigntemplatepackageID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigntemplatepackageDeleteObjectV1Response>> {
+        async ezsigntemplatepackageDeleteObjectV1(pkiEzsigntemplatepackageID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigntemplatepackageDeleteObjectV1(pkiEzsigntemplatepackageID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsigntemplatepackageApi.ezsigntemplatepackageDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -576,7 +572,7 @@ export const ObjectEzsigntemplatepackageApiFp = function(configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsigntemplatepackageEditObjectV1(pkiEzsigntemplatepackageID: number, ezsigntemplatepackageEditObjectV1Request: EzsigntemplatepackageEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigntemplatepackageEditObjectV1Response>> {
+        async ezsigntemplatepackageEditObjectV1(pkiEzsigntemplatepackageID: number, ezsigntemplatepackageEditObjectV1Request: EzsigntemplatepackageEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigntemplatepackageEditObjectV1(pkiEzsigntemplatepackageID, ezsigntemplatepackageEditObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsigntemplatepackageApi.ezsigntemplatepackageEditObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -646,7 +642,7 @@ export const ObjectEzsigntemplatepackageApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigntemplatepackageCreateObjectV1(ezsigntemplatepackageCreateObjectV1Request: EzsigntemplatepackageCreateObjectV1Request, options?: any): AxiosPromise<EzsigntemplatepackageCreateObjectV1Response> {
+        ezsigntemplatepackageCreateObjectV1(ezsigntemplatepackageCreateObjectV1Request: EzsigntemplatepackageCreateObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsigntemplatepackageCreateObjectV1Response> {
             return localVarFp.ezsigntemplatepackageCreateObjectV1(ezsigntemplatepackageCreateObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -656,7 +652,7 @@ export const ObjectEzsigntemplatepackageApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigntemplatepackageDeleteObjectV1(pkiEzsigntemplatepackageID: number, options?: any): AxiosPromise<EzsigntemplatepackageDeleteObjectV1Response> {
+        ezsigntemplatepackageDeleteObjectV1(pkiEzsigntemplatepackageID: number, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.ezsigntemplatepackageDeleteObjectV1(pkiEzsigntemplatepackageID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -667,7 +663,7 @@ export const ObjectEzsigntemplatepackageApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigntemplatepackageEditEzsigntemplatepackagesignersV1(pkiEzsigntemplatepackageID: number, ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request: EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Request, options?: any): AxiosPromise<EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response> {
+        ezsigntemplatepackageEditEzsigntemplatepackagesignersV1(pkiEzsigntemplatepackageID: number, ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request: EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response> {
             return localVarFp.ezsigntemplatepackageEditEzsigntemplatepackagesignersV1(pkiEzsigntemplatepackageID, ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -678,7 +674,7 @@ export const ObjectEzsigntemplatepackageApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigntemplatepackageEditObjectV1(pkiEzsigntemplatepackageID: number, ezsigntemplatepackageEditObjectV1Request: EzsigntemplatepackageEditObjectV1Request, options?: any): AxiosPromise<EzsigntemplatepackageEditObjectV1Response> {
+        ezsigntemplatepackageEditObjectV1(pkiEzsigntemplatepackageID: number, ezsigntemplatepackageEditObjectV1Request: EzsigntemplatepackageEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.ezsigntemplatepackageEditObjectV1(pkiEzsigntemplatepackageID, ezsigntemplatepackageEditObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -692,7 +688,7 @@ export const ObjectEzsigntemplatepackageApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigntemplatepackageGetAutocompleteV2(sSelector: EzsigntemplatepackageGetAutocompleteV2SSelectorEnum, eFilterActive?: EzsigntemplatepackageGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, fkiEzsignfoldertypeID?: number, options?: any): AxiosPromise<EzsigntemplatepackageGetAutocompleteV2Response> {
+        ezsigntemplatepackageGetAutocompleteV2(sSelector: EzsigntemplatepackageGetAutocompleteV2SSelectorEnum, eFilterActive?: EzsigntemplatepackageGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, fkiEzsignfoldertypeID?: number, options?: RawAxiosRequestConfig): AxiosPromise<EzsigntemplatepackageGetAutocompleteV2Response> {
             return localVarFp.ezsigntemplatepackageGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, fkiEzsignfoldertypeID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -706,7 +702,7 @@ export const ObjectEzsigntemplatepackageApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigntemplatepackageGetListV1(eOrderBy?: EzsigntemplatepackageGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: any): AxiosPromise<EzsigntemplatepackageGetListV1Response> {
+        ezsigntemplatepackageGetListV1(eOrderBy?: EzsigntemplatepackageGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): AxiosPromise<EzsigntemplatepackageGetListV1Response> {
             return localVarFp.ezsigntemplatepackageGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(axios, basePath));
         },
         /**
@@ -716,7 +712,7 @@ export const ObjectEzsigntemplatepackageApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigntemplatepackageGetObjectV2(pkiEzsigntemplatepackageID: number, options?: any): AxiosPromise<EzsigntemplatepackageGetObjectV2Response> {
+        ezsigntemplatepackageGetObjectV2(pkiEzsigntemplatepackageID: number, options?: RawAxiosRequestConfig): AxiosPromise<EzsigntemplatepackageGetObjectV2Response> {
             return localVarFp.ezsigntemplatepackageGetObjectV2(pkiEzsigntemplatepackageID, options).then((request) => request(axios, basePath));
         },
     };

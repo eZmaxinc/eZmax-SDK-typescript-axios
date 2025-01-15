@@ -20,25 +20,25 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponse } from '../model';
 // @ts-ignore
-import { EzsignsigningreasonCreateObjectV1Request } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { EzsignsigningreasonCreateObjectV1Response } from '../model';
+import type { EzsignsigningreasonCreateObjectV1Request } from '../model';
 // @ts-ignore
-import { EzsignsigningreasonEditObjectV1Request } from '../model';
+import type { EzsignsigningreasonCreateObjectV1Response } from '../model';
 // @ts-ignore
-import { EzsignsigningreasonEditObjectV1Response } from '../model';
+import type { EzsignsigningreasonEditObjectV1Request } from '../model';
 // @ts-ignore
-import { EzsignsigningreasonGetAutocompleteV2Response } from '../model';
+import type { EzsignsigningreasonGetAutocompleteV2Response } from '../model';
 // @ts-ignore
-import { EzsignsigningreasonGetListV1Response } from '../model';
+import type { EzsignsigningreasonGetListV1Response } from '../model';
 // @ts-ignore
-import { EzsignsigningreasonGetObjectV2Response } from '../model';
+import type { EzsignsigningreasonGetObjectV2Response } from '../model';
 // @ts-ignore
-import { HeaderAcceptLanguage } from '../model';
+import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -212,14 +212,13 @@ export const ObjectEzsignsigningreasonApiAxiosParamCreator = function (configura
                 localVarQueryParameter['sQuery'] = sQuery;
             }
 
+
+    
             if (acceptLanguage != null) {
                 localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
                     ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
-
-
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -293,14 +292,13 @@ export const ObjectEzsignsigningreasonApiAxiosParamCreator = function (configura
                 localVarQueryParameter['sFilter'] = sFilter;
             }
 
+
+    
             if (acceptLanguage != null) {
                 localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
                     ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
-
-
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -416,7 +414,7 @@ export const ObjectEzsignsigningreasonApiFp = function(configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignsigningreasonEditObjectV1(pkiEzsignsigningreasonID: number, ezsignsigningreasonEditObjectV1Request: EzsignsigningreasonEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignsigningreasonEditObjectV1Response>> {
+        async ezsignsigningreasonEditObjectV1(pkiEzsignsigningreasonID: number, ezsignsigningreasonEditObjectV1Request: EzsignsigningreasonEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignsigningreasonEditObjectV1(pkiEzsignsigningreasonID, ezsignsigningreasonEditObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignsigningreasonApi.ezsignsigningreasonEditObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -485,7 +483,7 @@ export const ObjectEzsignsigningreasonApiFactory = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignsigningreasonCreateObjectV1(ezsignsigningreasonCreateObjectV1Request: EzsignsigningreasonCreateObjectV1Request, options?: any): AxiosPromise<EzsignsigningreasonCreateObjectV1Response> {
+        ezsignsigningreasonCreateObjectV1(ezsignsigningreasonCreateObjectV1Request: EzsignsigningreasonCreateObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsignsigningreasonCreateObjectV1Response> {
             return localVarFp.ezsignsigningreasonCreateObjectV1(ezsignsigningreasonCreateObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -496,7 +494,7 @@ export const ObjectEzsignsigningreasonApiFactory = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignsigningreasonEditObjectV1(pkiEzsignsigningreasonID: number, ezsignsigningreasonEditObjectV1Request: EzsignsigningreasonEditObjectV1Request, options?: any): AxiosPromise<EzsignsigningreasonEditObjectV1Response> {
+        ezsignsigningreasonEditObjectV1(pkiEzsignsigningreasonID: number, ezsignsigningreasonEditObjectV1Request: EzsignsigningreasonEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.ezsignsigningreasonEditObjectV1(pkiEzsignsigningreasonID, ezsignsigningreasonEditObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -509,7 +507,7 @@ export const ObjectEzsignsigningreasonApiFactory = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignsigningreasonGetAutocompleteV2(sSelector: EzsignsigningreasonGetAutocompleteV2SSelectorEnum, eFilterActive?: EzsignsigningreasonGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: any): AxiosPromise<EzsignsigningreasonGetAutocompleteV2Response> {
+        ezsignsigningreasonGetAutocompleteV2(sSelector: EzsignsigningreasonGetAutocompleteV2SSelectorEnum, eFilterActive?: EzsignsigningreasonGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig): AxiosPromise<EzsignsigningreasonGetAutocompleteV2Response> {
             return localVarFp.ezsignsigningreasonGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(axios, basePath));
         },
         /**
@@ -523,7 +521,7 @@ export const ObjectEzsignsigningreasonApiFactory = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignsigningreasonGetListV1(eOrderBy?: EzsignsigningreasonGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: any): AxiosPromise<EzsignsigningreasonGetListV1Response> {
+        ezsignsigningreasonGetListV1(eOrderBy?: EzsignsigningreasonGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): AxiosPromise<EzsignsigningreasonGetListV1Response> {
             return localVarFp.ezsignsigningreasonGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(axios, basePath));
         },
         /**
@@ -533,7 +531,7 @@ export const ObjectEzsignsigningreasonApiFactory = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignsigningreasonGetObjectV2(pkiEzsignsigningreasonID: number, options?: any): AxiosPromise<EzsignsigningreasonGetObjectV2Response> {
+        ezsignsigningreasonGetObjectV2(pkiEzsignsigningreasonID: number, options?: RawAxiosRequestConfig): AxiosPromise<EzsignsigningreasonGetObjectV2Response> {
             return localVarFp.ezsignsigningreasonGetObjectV2(pkiEzsignsigningreasonID, options).then((request) => request(axios, basePath));
         },
     };

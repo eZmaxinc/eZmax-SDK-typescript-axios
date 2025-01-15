@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomEzsigndocumentEzsignsignaturesAutomaticResponse } from './custom-ezsigndocument-ezsignsignatures-automatic-response';
+import type { CustomEzsigndocumentEzsignsignaturesAutomaticResponse } from './custom-ezsigndocument-ezsignsignatures-automatic-response';
 
 /**
  * An Ezsignfolder Object in the context of an EzsignsignaturesAutomatic path

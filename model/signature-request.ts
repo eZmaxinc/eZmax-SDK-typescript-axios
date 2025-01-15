@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldESignaturePreference } from './field-esignature-preference';
+import type { FieldESignaturePreference } from './field-esignature-preference';
 
 /**
  * A Signature Object

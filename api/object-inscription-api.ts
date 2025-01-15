@@ -20,19 +20,19 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { InscriptionGetAttachmentsV1Response } from '../model';
+import type { InscriptionGetAttachmentsV1Response } from '../model';
 // @ts-ignore
-import { InscriptionGetCommunicationCountV1Response } from '../model';
+import type { InscriptionGetCommunicationCountV1Response } from '../model';
 // @ts-ignore
-import { InscriptionGetCommunicationListV1Response } from '../model';
+import type { InscriptionGetCommunicationListV1Response } from '../model';
 // @ts-ignore
-import { InscriptionGetCommunicationrecipientsV1Response } from '../model';
+import type { InscriptionGetCommunicationrecipientsV1Response } from '../model';
 // @ts-ignore
-import { InscriptionGetCommunicationsendersV1Response } from '../model';
+import type { InscriptionGetCommunicationsendersV1Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -423,7 +423,7 @@ export const ObjectInscriptionApiFactory = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        inscriptionGetAttachmentsV1(pkiInscriptionID: number, options?: any): AxiosPromise<InscriptionGetAttachmentsV1Response> {
+        inscriptionGetAttachmentsV1(pkiInscriptionID: number, options?: RawAxiosRequestConfig): AxiosPromise<InscriptionGetAttachmentsV1Response> {
             return localVarFp.inscriptionGetAttachmentsV1(pkiInscriptionID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -433,7 +433,7 @@ export const ObjectInscriptionApiFactory = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        inscriptionGetCommunicationCountV1(pkiInscriptionID: number, options?: any): AxiosPromise<InscriptionGetCommunicationCountV1Response> {
+        inscriptionGetCommunicationCountV1(pkiInscriptionID: number, options?: RawAxiosRequestConfig): AxiosPromise<InscriptionGetCommunicationCountV1Response> {
             return localVarFp.inscriptionGetCommunicationCountV1(pkiInscriptionID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -443,7 +443,7 @@ export const ObjectInscriptionApiFactory = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        inscriptionGetCommunicationListV1(pkiInscriptionID: number, options?: any): AxiosPromise<InscriptionGetCommunicationListV1Response> {
+        inscriptionGetCommunicationListV1(pkiInscriptionID: number, options?: RawAxiosRequestConfig): AxiosPromise<InscriptionGetCommunicationListV1Response> {
             return localVarFp.inscriptionGetCommunicationListV1(pkiInscriptionID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -453,7 +453,7 @@ export const ObjectInscriptionApiFactory = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        inscriptionGetCommunicationrecipientsV1(pkiInscriptionID: number, options?: any): AxiosPromise<InscriptionGetCommunicationrecipientsV1Response> {
+        inscriptionGetCommunicationrecipientsV1(pkiInscriptionID: number, options?: RawAxiosRequestConfig): AxiosPromise<InscriptionGetCommunicationrecipientsV1Response> {
             return localVarFp.inscriptionGetCommunicationrecipientsV1(pkiInscriptionID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -463,7 +463,7 @@ export const ObjectInscriptionApiFactory = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        inscriptionGetCommunicationsendersV1(pkiInscriptionID: number, options?: any): AxiosPromise<InscriptionGetCommunicationsendersV1Response> {
+        inscriptionGetCommunicationsendersV1(pkiInscriptionID: number, options?: RawAxiosRequestConfig): AxiosPromise<InscriptionGetCommunicationsendersV1Response> {
             return localVarFp.inscriptionGetCommunicationsendersV1(pkiInscriptionID, options).then((request) => request(axios, basePath));
         },
     };

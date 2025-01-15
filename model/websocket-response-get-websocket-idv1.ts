@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { WebsocketResponseGetWebsocketIDV1MPayload } from './websocket-response-get-websocket-idv1-mpayload';
+import type { WebsocketResponseGetWebsocketIDV1MPayload } from './websocket-response-get-websocket-idv1-mpayload';
 
 /**
  * Response for Websocket GetWebsocketID V1

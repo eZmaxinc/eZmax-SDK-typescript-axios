@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { UsergroupRequestCompound } from './usergroup-request-compound';
+import type { UsergroupRequestCompound } from './usergroup-request-compound';
 
 /**
  * Request for POST /1/object/usergroup

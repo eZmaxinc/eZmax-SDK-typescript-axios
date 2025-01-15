@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { BrandingRequestCompoundV2 } from './branding-request-compound-v2';
+import type { BrandingRequestCompoundV2 } from './branding-request-compound-v2';
 
 /**
  * Request for POST /2/object/branding

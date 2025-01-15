@@ -15,19 +15,19 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEWebhookEzsignevent } from './field-ewebhook-ezsignevent';
+import type { FieldEWebhookEzsignevent } from './field-ewebhook-ezsignevent';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEWebhookManagementevent } from './field-ewebhook-managementevent';
+import type { FieldEWebhookManagementevent } from './field-ewebhook-managementevent';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEWebhookModule } from './field-ewebhook-module';
+import type { FieldEWebhookModule } from './field-ewebhook-module';
 // May contain unused imports in some cases
 // @ts-ignore
-import { WebhookRequest } from './webhook-request';
+import type { WebhookRequest } from './webhook-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { WebhookheaderRequestCompound } from './webhookheader-request-compound';
+import type { WebhookheaderRequestCompound } from './webhookheader-request-compound';
 
 /**
  * @type WebhookRequestCompound

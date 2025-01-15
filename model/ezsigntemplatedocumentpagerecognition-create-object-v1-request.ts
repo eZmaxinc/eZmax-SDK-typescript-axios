@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigntemplatedocumentpagerecognitionRequestCompound } from './ezsigntemplatedocumentpagerecognition-request-compound';
+import type { EzsigntemplatedocumentpagerecognitionRequestCompound } from './ezsigntemplatedocumentpagerecognition-request-compound';
 
 /**
  * Request for POST /1/object/ezsigntemplatedocumentpagerecognition

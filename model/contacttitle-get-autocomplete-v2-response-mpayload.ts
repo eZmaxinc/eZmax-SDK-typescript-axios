@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ContacttitleAutocompleteElementResponse } from './contacttitle-autocomplete-element-response';
+import type { ContacttitleAutocompleteElementResponse } from './contacttitle-autocomplete-element-response';
 
 /**
  * Payload for POST /2/object/contacttitle/getAutocomplete

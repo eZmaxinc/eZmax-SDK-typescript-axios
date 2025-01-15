@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignuserResponseCompound } from './ezsignuser-response-compound';
+import type { EzsignuserResponseCompound } from './ezsignuser-response-compound';
 
 /**
  * Payload for GET /2/object/ezsignuser/{pkiEzsignuserID}

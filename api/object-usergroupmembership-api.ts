@@ -20,21 +20,19 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponse } from '../model';
 // @ts-ignore
-import { UsergroupmembershipCreateObjectV1Request } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { UsergroupmembershipCreateObjectV1Response } from '../model';
+import type { UsergroupmembershipCreateObjectV1Request } from '../model';
 // @ts-ignore
-import { UsergroupmembershipDeleteObjectV1Response } from '../model';
+import type { UsergroupmembershipCreateObjectV1Response } from '../model';
 // @ts-ignore
-import { UsergroupmembershipEditObjectV1Request } from '../model';
+import type { UsergroupmembershipEditObjectV1Request } from '../model';
 // @ts-ignore
-import { UsergroupmembershipEditObjectV1Response } from '../model';
-// @ts-ignore
-import { UsergroupmembershipGetObjectV2Response } from '../model';
+import type { UsergroupmembershipGetObjectV2Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -313,7 +311,7 @@ export const ObjectUsergroupmembershipApiFp = function(configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async usergroupmembershipDeleteObjectV1(pkiUsergroupmembershipID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupmembershipDeleteObjectV1Response>> {
+        async usergroupmembershipDeleteObjectV1(pkiUsergroupmembershipID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.usergroupmembershipDeleteObjectV1(pkiUsergroupmembershipID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectUsergroupmembershipApi.usergroupmembershipDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -327,7 +325,7 @@ export const ObjectUsergroupmembershipApiFp = function(configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async usergroupmembershipEditObjectV1(pkiUsergroupmembershipID: number, usergroupmembershipEditObjectV1Request: UsergroupmembershipEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupmembershipEditObjectV1Response>> {
+        async usergroupmembershipEditObjectV1(pkiUsergroupmembershipID: number, usergroupmembershipEditObjectV1Request: UsergroupmembershipEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.usergroupmembershipEditObjectV1(pkiUsergroupmembershipID, usergroupmembershipEditObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectUsergroupmembershipApi.usergroupmembershipEditObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -363,7 +361,7 @@ export const ObjectUsergroupmembershipApiFactory = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usergroupmembershipCreateObjectV1(usergroupmembershipCreateObjectV1Request: UsergroupmembershipCreateObjectV1Request, options?: any): AxiosPromise<UsergroupmembershipCreateObjectV1Response> {
+        usergroupmembershipCreateObjectV1(usergroupmembershipCreateObjectV1Request: UsergroupmembershipCreateObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<UsergroupmembershipCreateObjectV1Response> {
             return localVarFp.usergroupmembershipCreateObjectV1(usergroupmembershipCreateObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -373,7 +371,7 @@ export const ObjectUsergroupmembershipApiFactory = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usergroupmembershipDeleteObjectV1(pkiUsergroupmembershipID: number, options?: any): AxiosPromise<UsergroupmembershipDeleteObjectV1Response> {
+        usergroupmembershipDeleteObjectV1(pkiUsergroupmembershipID: number, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.usergroupmembershipDeleteObjectV1(pkiUsergroupmembershipID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -384,7 +382,7 @@ export const ObjectUsergroupmembershipApiFactory = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usergroupmembershipEditObjectV1(pkiUsergroupmembershipID: number, usergroupmembershipEditObjectV1Request: UsergroupmembershipEditObjectV1Request, options?: any): AxiosPromise<UsergroupmembershipEditObjectV1Response> {
+        usergroupmembershipEditObjectV1(pkiUsergroupmembershipID: number, usergroupmembershipEditObjectV1Request: UsergroupmembershipEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.usergroupmembershipEditObjectV1(pkiUsergroupmembershipID, usergroupmembershipEditObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -394,7 +392,7 @@ export const ObjectUsergroupmembershipApiFactory = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usergroupmembershipGetObjectV2(pkiUsergroupmembershipID: number, options?: any): AxiosPromise<UsergroupmembershipGetObjectV2Response> {
+        usergroupmembershipGetObjectV2(pkiUsergroupmembershipID: number, options?: RawAxiosRequestConfig): AxiosPromise<UsergroupmembershipGetObjectV2Response> {
             return localVarFp.usergroupmembershipGetObjectV2(pkiUsergroupmembershipID, options).then((request) => request(axios, basePath));
         },
     };

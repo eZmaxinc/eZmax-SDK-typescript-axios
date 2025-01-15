@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignsignergroupmembershipRequest } from './ezsignsignergroupmembership-request';
+import type { EzsignsignergroupmembershipRequest } from './ezsignsignergroupmembership-request';
 
 /**
  * @type EzsignsignergroupmembershipRequestCompound

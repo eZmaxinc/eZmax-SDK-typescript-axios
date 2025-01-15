@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { SupplyAutocompleteElementResponse } from './supply-autocomplete-element-response';
+import type { SupplyAutocompleteElementResponse } from './supply-autocomplete-element-response';
 
 /**
  * Payload for POST /2/object/supply/getAutocomplete

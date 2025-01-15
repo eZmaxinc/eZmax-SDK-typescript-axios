@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { MultilingualSupplyDescription } from './multilingual-supply-description';
+import type { MultilingualSupplyDescription } from './multilingual-supply-description';
 // May contain unused imports in some cases
 // @ts-ignore
-import { SupplyResponse } from './supply-response';
+import type { SupplyResponse } from './supply-response';
 
 /**
  * @type SupplyResponseCompound

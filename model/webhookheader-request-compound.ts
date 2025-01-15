@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { WebhookheaderRequest } from './webhookheader-request';
+import type { WebhookheaderRequest } from './webhookheader-request';
 
 /**
  * @type WebhookheaderRequestCompound

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigntemplatepublicResponseCompound } from './ezsigntemplatepublic-response-compound';
+import type { EzsigntemplatepublicResponseCompound } from './ezsigntemplatepublic-response-compound';
 
 /**
  * Payload for GET /2/object/ezsigntemplatepublic/{pkiEzsigntemplatepublicID}

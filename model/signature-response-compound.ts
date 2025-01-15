@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { SignatureResponse } from './signature-response';
+import type { SignatureResponse } from './signature-response';
 
 /**
  * @type SignatureResponseCompound

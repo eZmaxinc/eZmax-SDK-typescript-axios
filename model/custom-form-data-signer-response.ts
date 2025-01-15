@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomFormDataEzsignformfieldgroupResponse } from './custom-form-data-ezsignformfieldgroup-response';
+import type { CustomFormDataEzsignformfieldgroupResponse } from './custom-form-data-ezsignformfieldgroup-response';
 
 /**
  * A form Data Signer Object

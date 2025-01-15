@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomTimezoneWithCodeResponse } from './custom-timezone-with-code-response';
+import type { CustomTimezoneWithCodeResponse } from './custom-timezone-with-code-response';
 
 /**
  * Response for POST /1/object/ezsignsignature/{pkiEzsignsignatureID}/sign

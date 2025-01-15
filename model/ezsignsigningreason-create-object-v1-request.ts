@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignsigningreasonRequestCompound } from './ezsignsigningreason-request-compound';
+import type { EzsignsigningreasonRequestCompound } from './ezsignsigningreason-request-compound';
 
 /**
  * Request for POST /1/object/ezsignsigningreason

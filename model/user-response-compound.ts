@@ -15,28 +15,28 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonAudit } from './common-audit';
+import type { CommonAudit } from './common-audit';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EmailResponseCompound } from './email-response-compound';
+import type { EmailResponse } from './email-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEUserEzsignaccess } from './field-euser-ezsignaccess';
+import type { FieldEUserEzsignaccess } from './field-euser-ezsignaccess';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEUserLogintype } from './field-euser-logintype';
+import type { FieldEUserLogintype } from './field-euser-logintype';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEUserOrigin } from './field-euser-origin';
+import type { FieldEUserOrigin } from './field-euser-origin';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEUserType } from './field-euser-type';
+import type { FieldEUserType } from './field-euser-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PhoneResponseCompound } from './phone-response-compound';
+import type { PhoneResponseCompound } from './phone-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import { UserResponse } from './user-response';
+import type { UserResponse } from './user-response';
 
 /**
  * @type UserResponseCompound
@@ -124,11 +124,11 @@ export interface UserResponseCompound {
      */
     sLanguageNameX:string 
     /**
-     * 
-     * @type {EmailResponseCompound}
+     * An Email Object and children to create a complete structure
+     * @type {EmailResponse}
      * @memberof UserResponseCompound
      */
-    objEmail:EmailResponseCompound 
+    objEmail:EmailResponse 
     /**
      * The unique ID of the Billingentityinternal.
      * @type {number}
@@ -282,7 +282,7 @@ export interface UserResponseCompound {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectEmailResponseCompound } from './'
+import { DataObjectEmailResponse } from './'
 // @ts-ignore
 import { DataObjectPhoneResponseCompound } from './'
 // @ts-ignore
@@ -290,7 +290,7 @@ import { DataObjectPhoneResponseCompound } from './'
 // @ts-ignore
 import { DataObjectCommonAudit } from './'
 // @ts-ignore
-import { ValidationObjectEmailResponseCompound } from './'
+import { ValidationObjectEmailResponse } from './'
 // @ts-ignore
 import { ValidationObjectPhoneResponseCompound } from './'
 // @ts-ignore
@@ -318,7 +318,7 @@ export class DataObjectUserResponseCompound {
     sTimezoneName:string = ''
     fkiLanguageID:number = 0
     sLanguageNameX:string = ''
-    objEmail:EmailResponseCompound = new DataObjectEmailResponseCompound()
+    objEmail:EmailResponse = new DataObjectEmailResponse()
     fkiBillingentityinternalID:number = 0
     sBillingentityinternalDescriptionX:string = ''
     objPhoneHome?:PhoneResponseCompound = undefined
@@ -414,7 +414,7 @@ export class ValidationObjectUserResponseCompound {
       type: 'string',
       required: true
    }
-   objEmail = new ValidationObjectEmailResponseCompound()
+   objEmail = new ValidationObjectEmailResponse()
    fkiBillingentityinternalID = {
       type: 'integer',
       minimum: 0,

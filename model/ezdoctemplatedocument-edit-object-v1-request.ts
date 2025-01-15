@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzdoctemplatedocumentRequestCompound } from './ezdoctemplatedocument-request-compound';
+import type { EzdoctemplatedocumentRequestCompound } from './ezdoctemplatedocument-request-compound';
 
 /**
  * Request for PUT /1/object/ezdoctemplatedocument/{pkiEzdoctemplatedocumentID}

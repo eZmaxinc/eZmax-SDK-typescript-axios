@@ -20,11 +20,11 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { HeaderAcceptLanguage } from '../model';
+import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
-import { UserlogintypeGetAutocompleteV2Response } from '../model';
+import type { UserlogintypeGetAutocompleteV2Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -79,14 +79,13 @@ export const ObjectUserlogintypeApiAxiosParamCreator = function (configuration?:
                 localVarQueryParameter['sQuery'] = sQuery;
             }
 
+
+    
             if (acceptLanguage != null) {
                 localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
                     ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
-
-
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -161,7 +160,7 @@ export const ObjectUserlogintypeApiFactory = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userlogintypeGetAutocompleteV2(sSelector: UserlogintypeGetAutocompleteV2SSelectorEnum, fkiEzsignfoldertypeID?: number, eFilterActive?: UserlogintypeGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: any): AxiosPromise<UserlogintypeGetAutocompleteV2Response> {
+        userlogintypeGetAutocompleteV2(sSelector: UserlogintypeGetAutocompleteV2SSelectorEnum, fkiEzsignfoldertypeID?: number, eFilterActive?: UserlogintypeGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig): AxiosPromise<UserlogintypeGetAutocompleteV2Response> {
             return localVarFp.userlogintypeGetAutocompleteV2(sSelector, fkiEzsignfoldertypeID, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(axios, basePath));
         },
     };

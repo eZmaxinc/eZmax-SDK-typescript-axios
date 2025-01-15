@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { WebsocketResponseInformationV1MPayload } from './websocket-response-information-v1-mpayload';
+import type { WebsocketResponseInformationV1MPayload } from './websocket-response-information-v1-mpayload';
 
 /**
  * Response for Websocket Information V1

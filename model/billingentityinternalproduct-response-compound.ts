@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { BillingentityinternalproductResponse } from './billingentityinternalproduct-response';
+import type { BillingentityinternalproductResponse } from './billingentityinternalproduct-response';
 
 /**
  * @type BillingentityinternalproductResponseCompound

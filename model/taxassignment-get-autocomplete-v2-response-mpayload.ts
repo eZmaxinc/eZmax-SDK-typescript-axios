@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { TaxassignmentAutocompleteElementResponse } from './taxassignment-autocomplete-element-response';
+import type { TaxassignmentAutocompleteElementResponse } from './taxassignment-autocomplete-element-response';
 
 /**
  * Payload for POST /2/object/taxassignment/getAutocomplete

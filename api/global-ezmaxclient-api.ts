@@ -20,13 +20,13 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { FieldPksEzmaxclientOs } from '../model';
+import type { FieldPksEzmaxclientOs } from '../model';
 // @ts-ignore
-import { GlobalEzmaxclientVersionV1Response } from '../model';
+import type { GlobalEzmaxclientVersionV1Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -130,7 +130,7 @@ export const GlobalEzmaxclientApiFactory = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        globalEzmaxclientVersionV1(pksEzmaxclientOs: FieldPksEzmaxclientOs, options?: any): AxiosPromise<GlobalEzmaxclientVersionV1Response> {
+        globalEzmaxclientVersionV1(pksEzmaxclientOs: FieldPksEzmaxclientOs, options?: RawAxiosRequestConfig): AxiosPromise<GlobalEzmaxclientVersionV1Response> {
             return localVarFp.globalEzmaxclientVersionV1(pksEzmaxclientOs, options).then((request) => request(axios, basePath));
         },
     };

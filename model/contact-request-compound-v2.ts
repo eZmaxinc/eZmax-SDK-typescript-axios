@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ContactRequestV2 } from './contact-request-v2';
+import type { ContactRequestV2 } from './contact-request-v2';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ContactinformationsRequestCompoundV2 } from './contactinformations-request-compound-v2';
+import type { ContactinformationsRequestCompoundV2 } from './contactinformations-request-compound-v2';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEContactType } from './field-econtact-type';
+import type { FieldEContactType } from './field-econtact-type';
 
 /**
  * @type ContactRequestCompoundV2

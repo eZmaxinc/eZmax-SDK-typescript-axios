@@ -20,23 +20,21 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponse } from '../model';
 // @ts-ignore
-import { HeaderAcceptLanguage } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { UserstagedCreateUserV1Response } from '../model';
+import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
-import { UserstagedDeleteObjectV1Response } from '../model';
+import type { UserstagedCreateUserV1Response } from '../model';
 // @ts-ignore
-import { UserstagedGetListV1Response } from '../model';
+import type { UserstagedGetListV1Response } from '../model';
 // @ts-ignore
-import { UserstagedGetObjectV2Response } from '../model';
+import type { UserstagedGetObjectV2Response } from '../model';
 // @ts-ignore
-import { UserstagedMapV1Request } from '../model';
-// @ts-ignore
-import { UserstagedMapV1Response } from '../model';
+import type { UserstagedMapV1Request } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -214,14 +212,13 @@ export const ObjectUserstagedApiAxiosParamCreator = function (configuration?: Co
                 localVarQueryParameter['sFilter'] = sFilter;
             }
 
+
+    
             if (acceptLanguage != null) {
                 localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
                     ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
-
-
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -401,7 +398,7 @@ export const ObjectUserstagedApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async userstagedDeleteObjectV1(pkiUserstagedID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserstagedDeleteObjectV1Response>> {
+        async userstagedDeleteObjectV1(pkiUserstagedID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.userstagedDeleteObjectV1(pkiUserstagedID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectUserstagedApi.userstagedDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -445,7 +442,7 @@ export const ObjectUserstagedApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async userstagedMapV1(pkiUserstagedID: number, userstagedMapV1Request: UserstagedMapV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserstagedMapV1Response>> {
+        async userstagedMapV1(pkiUserstagedID: number, userstagedMapV1Request: UserstagedMapV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.userstagedMapV1(pkiUserstagedID, userstagedMapV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectUserstagedApi.userstagedMapV1']?.[localVarOperationServerIndex]?.url;
@@ -469,7 +466,7 @@ export const ObjectUserstagedApiFactory = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userstagedCreateUserV1(pkiUserstagedID: number, body: object, options?: any): AxiosPromise<UserstagedCreateUserV1Response> {
+        userstagedCreateUserV1(pkiUserstagedID: number, body: object, options?: RawAxiosRequestConfig): AxiosPromise<UserstagedCreateUserV1Response> {
             return localVarFp.userstagedCreateUserV1(pkiUserstagedID, body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -479,7 +476,7 @@ export const ObjectUserstagedApiFactory = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userstagedDeleteObjectV1(pkiUserstagedID: number, options?: any): AxiosPromise<UserstagedDeleteObjectV1Response> {
+        userstagedDeleteObjectV1(pkiUserstagedID: number, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.userstagedDeleteObjectV1(pkiUserstagedID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -493,7 +490,7 @@ export const ObjectUserstagedApiFactory = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userstagedGetListV1(eOrderBy?: UserstagedGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: any): AxiosPromise<UserstagedGetListV1Response> {
+        userstagedGetListV1(eOrderBy?: UserstagedGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): AxiosPromise<UserstagedGetListV1Response> {
             return localVarFp.userstagedGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(axios, basePath));
         },
         /**
@@ -503,7 +500,7 @@ export const ObjectUserstagedApiFactory = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userstagedGetObjectV2(pkiUserstagedID: number, options?: any): AxiosPromise<UserstagedGetObjectV2Response> {
+        userstagedGetObjectV2(pkiUserstagedID: number, options?: RawAxiosRequestConfig): AxiosPromise<UserstagedGetObjectV2Response> {
             return localVarFp.userstagedGetObjectV2(pkiUserstagedID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -514,7 +511,7 @@ export const ObjectUserstagedApiFactory = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userstagedMapV1(pkiUserstagedID: number, userstagedMapV1Request: UserstagedMapV1Request, options?: any): AxiosPromise<UserstagedMapV1Response> {
+        userstagedMapV1(pkiUserstagedID: number, userstagedMapV1Request: UserstagedMapV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.userstagedMapV1(pkiUserstagedID, userstagedMapV1Request, options).then((request) => request(axios, basePath));
         },
     };

@@ -15,22 +15,22 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonAudit } from './common-audit';
+import type { CommonAudit } from './common-audit';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ComputedEEzsigndocumentSteptype } from './computed-eezsigndocument-steptype';
+import type { ComputedEEzsigndocumentSteptype } from './computed-eezsigndocument-steptype';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomEzsignfoldersignerassociationstatusResponse } from './custom-ezsignfoldersignerassociationstatus-response';
+import type { CustomEzsignfoldersignerassociationstatusResponse } from './custom-ezsignfoldersignerassociationstatus-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigndocumentResponseCompound } from './ezsigndocument-response-compound';
+import type { EzsigndocumentResponseCompound } from './ezsigndocument-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigndocumentdependencyResponse } from './ezsigndocumentdependency-response';
+import type { EzsigndocumentdependencyResponse } from './ezsigndocumentdependency-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsigndocumentStep } from './field-eezsigndocument-step';
+import type { FieldEEzsigndocumentStep } from './field-eezsigndocument-step';
 
 /**
  * @type EzsigndocumentGetObjectV1ResponseMPayload

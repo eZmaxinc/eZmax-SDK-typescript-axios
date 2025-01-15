@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { VersionhistoryResponseCompound } from './versionhistory-response-compound';
+import type { VersionhistoryResponseCompound } from './versionhistory-response-compound';
 
 /**
  * Payload for GET /2/object/versionhistory/{pkiVersionhistoryID}

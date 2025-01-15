@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonResponse } from './common-response';
+import type { CommonResponse } from './common-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonResponseObjDebug } from './common-response-obj-debug';
+import type { CommonResponseObjDebug } from './common-response-obj-debug';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
+import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignfolderGetObjectV1ResponseMPayload } from './ezsignfolder-get-object-v1-response-mpayload';
+import type { EzsignfolderResponseCompound } from './ezsignfolder-response-compound';
 
 /**
  * @type EzsignfolderGetObjectV1Response
@@ -46,11 +46,11 @@ export interface EzsignfolderGetObjectV1Response {
      */
     objDebug?:CommonResponseObjDebug 
     /**
-     * 
-     * @type {EzsignfolderGetObjectV1ResponseMPayload}
+     * Payload for GET /1/object/ezsignfolder/{pkiEzsignfolderID}
+     * @type {EzsignfolderResponseCompound}
      * @memberof EzsignfolderGetObjectV1Response
      */
-    mPayload:EzsignfolderGetObjectV1ResponseMPayload 
+    mPayload:EzsignfolderResponseCompound 
 }
 
 
@@ -63,13 +63,13 @@ import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { DataObjectEzsignfolderGetObjectV1ResponseMPayload } from './'
+import { DataObjectEzsignfolderResponseCompound } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectEzsignfolderGetObjectV1ResponseMPayload } from './'
+import { ValidationObjectEzsignfolderResponseCompound } from './'
 
 /**
  * @export 
@@ -80,7 +80,7 @@ import { ValidationObjectEzsignfolderGetObjectV1ResponseMPayload } from './'
 export class DataObjectEzsignfolderGetObjectV1Response {
     objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
-    mPayload:EzsignfolderGetObjectV1ResponseMPayload = new DataObjectEzsignfolderGetObjectV1ResponseMPayload()
+    mPayload:EzsignfolderResponseCompound = new DataObjectEzsignfolderResponseCompound()
 }
 
 /**
@@ -91,7 +91,7 @@ export class DataObjectEzsignfolderGetObjectV1Response {
 export class ValidationObjectEzsignfolderGetObjectV1Response {
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
-   mPayload = new ValidationObjectEzsignfolderGetObjectV1ResponseMPayload()
+   mPayload = new ValidationObjectEzsignfolderResponseCompound()
 } 
 
 

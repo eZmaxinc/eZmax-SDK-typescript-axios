@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { BillingentityinternalResponseCompound } from './billingentityinternal-response-compound';
+import type { BillingentityinternalResponseCompound } from './billingentityinternal-response-compound';
 
 /**
  * Payload for GET /2/object/billingentityinternal/{pkiBillingentityinternalID}

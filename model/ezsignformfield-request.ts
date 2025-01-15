@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EnumHorizontalalignment } from './enum-horizontalalignment';
+import type { EnumHorizontalalignment } from './enum-horizontalalignment';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignformfieldDependencyrequirement } from './field-eezsignformfield-dependencyrequirement';
+import type { FieldEEzsignformfieldDependencyrequirement } from './field-eezsignformfield-dependencyrequirement';
 // May contain unused imports in some cases
 // @ts-ignore
-import { TextstylestaticRequestCompound } from './textstylestatic-request-compound';
+import type { TextstylestaticRequestCompound } from './textstylestatic-request-compound';
 
 /**
  * A Ezsignformfield Object

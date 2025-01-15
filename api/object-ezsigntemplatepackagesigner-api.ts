@@ -20,21 +20,21 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponse } from '../model';
 // @ts-ignore
-import { EzsigntemplatepackagesignerCreateObjectV1Request } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { EzsigntemplatepackagesignerCreateObjectV1Response } from '../model';
+import type { EzsigntemplatepackagesignerCreateObjectV1Request } from '../model';
 // @ts-ignore
-import { EzsigntemplatepackagesignerDeleteObjectV1Response } from '../model';
+import type { EzsigntemplatepackagesignerCreateObjectV1Response } from '../model';
 // @ts-ignore
-import { EzsigntemplatepackagesignerEditObjectV1Request } from '../model';
+import type { EzsigntemplatepackagesignerDeleteObjectV1Response } from '../model';
 // @ts-ignore
-import { EzsigntemplatepackagesignerEditObjectV1Response } from '../model';
+import type { EzsigntemplatepackagesignerEditObjectV1Request } from '../model';
 // @ts-ignore
-import { EzsigntemplatepackagesignerGetObjectV2Response } from '../model';
+import type { EzsigntemplatepackagesignerGetObjectV2Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -327,7 +327,7 @@ export const ObjectEzsigntemplatepackagesignerApiFp = function(configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsigntemplatepackagesignerEditObjectV1(pkiEzsigntemplatepackagesignerID: number, ezsigntemplatepackagesignerEditObjectV1Request: EzsigntemplatepackagesignerEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigntemplatepackagesignerEditObjectV1Response>> {
+        async ezsigntemplatepackagesignerEditObjectV1(pkiEzsigntemplatepackagesignerID: number, ezsigntemplatepackagesignerEditObjectV1Request: EzsigntemplatepackagesignerEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigntemplatepackagesignerEditObjectV1(pkiEzsigntemplatepackagesignerID, ezsigntemplatepackagesignerEditObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsigntemplatepackagesignerApi.ezsigntemplatepackagesignerEditObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -363,7 +363,7 @@ export const ObjectEzsigntemplatepackagesignerApiFactory = function (configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigntemplatepackagesignerCreateObjectV1(ezsigntemplatepackagesignerCreateObjectV1Request: EzsigntemplatepackagesignerCreateObjectV1Request, options?: any): AxiosPromise<EzsigntemplatepackagesignerCreateObjectV1Response> {
+        ezsigntemplatepackagesignerCreateObjectV1(ezsigntemplatepackagesignerCreateObjectV1Request: EzsigntemplatepackagesignerCreateObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsigntemplatepackagesignerCreateObjectV1Response> {
             return localVarFp.ezsigntemplatepackagesignerCreateObjectV1(ezsigntemplatepackagesignerCreateObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -373,7 +373,7 @@ export const ObjectEzsigntemplatepackagesignerApiFactory = function (configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigntemplatepackagesignerDeleteObjectV1(pkiEzsigntemplatepackagesignerID: number, options?: any): AxiosPromise<EzsigntemplatepackagesignerDeleteObjectV1Response> {
+        ezsigntemplatepackagesignerDeleteObjectV1(pkiEzsigntemplatepackagesignerID: number, options?: RawAxiosRequestConfig): AxiosPromise<EzsigntemplatepackagesignerDeleteObjectV1Response> {
             return localVarFp.ezsigntemplatepackagesignerDeleteObjectV1(pkiEzsigntemplatepackagesignerID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -384,7 +384,7 @@ export const ObjectEzsigntemplatepackagesignerApiFactory = function (configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigntemplatepackagesignerEditObjectV1(pkiEzsigntemplatepackagesignerID: number, ezsigntemplatepackagesignerEditObjectV1Request: EzsigntemplatepackagesignerEditObjectV1Request, options?: any): AxiosPromise<EzsigntemplatepackagesignerEditObjectV1Response> {
+        ezsigntemplatepackagesignerEditObjectV1(pkiEzsigntemplatepackagesignerID: number, ezsigntemplatepackagesignerEditObjectV1Request: EzsigntemplatepackagesignerEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.ezsigntemplatepackagesignerEditObjectV1(pkiEzsigntemplatepackagesignerID, ezsigntemplatepackagesignerEditObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -394,7 +394,7 @@ export const ObjectEzsigntemplatepackagesignerApiFactory = function (configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigntemplatepackagesignerGetObjectV2(pkiEzsigntemplatepackagesignerID: number, options?: any): AxiosPromise<EzsigntemplatepackagesignerGetObjectV2Response> {
+        ezsigntemplatepackagesignerGetObjectV2(pkiEzsigntemplatepackagesignerID: number, options?: RawAxiosRequestConfig): AxiosPromise<EzsigntemplatepackagesignerGetObjectV2Response> {
             return localVarFp.ezsigntemplatepackagesignerGetObjectV2(pkiEzsigntemplatepackagesignerID, options).then((request) => request(axios, basePath));
         },
     };

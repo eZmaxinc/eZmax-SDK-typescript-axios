@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonReport } from './common-report';
+import type { CommonReport } from './common-report';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonReportcellstyle } from './common-reportcellstyle';
+import type { CommonReportcellstyle } from './common-reportcellstyle';
 
 /**
  * A group of reports  Each Reportgroup is for a specific recipient or for a specific context.

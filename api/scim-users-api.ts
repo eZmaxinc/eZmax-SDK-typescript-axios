@@ -20,11 +20,11 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { ScimUser } from '../model';
+import type { ScimUser } from '../model';
 // @ts-ignore
-import { ScimUserList } from '../model';
+import type { ScimUserList } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -430,7 +430,7 @@ export const ScimUsersApiFactory = function (configuration?: Configuration, base
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usersCreateObjectScimV2(scimUser: ScimUser, options?: any): AxiosPromise<ScimUser> {
+        usersCreateObjectScimV2(scimUser: ScimUser, options?: RawAxiosRequestConfig): AxiosPromise<ScimUser> {
             return localVarFp.usersCreateObjectScimV2(scimUser, options).then((request) => request(axios, basePath));
         },
         /**
@@ -440,7 +440,7 @@ export const ScimUsersApiFactory = function (configuration?: Configuration, base
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usersDeleteObjectScimV2(userId: string, options?: any): AxiosPromise<void> {
+        usersDeleteObjectScimV2(userId: string, options?: RawAxiosRequestConfig): AxiosPromise<void> {
             return localVarFp.usersDeleteObjectScimV2(userId, options).then((request) => request(axios, basePath));
         },
         /**
@@ -451,7 +451,7 @@ export const ScimUsersApiFactory = function (configuration?: Configuration, base
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usersEditObjectScimV2(userId: string, scimUser: ScimUser, options?: any): AxiosPromise<ScimUser> {
+        usersEditObjectScimV2(userId: string, scimUser: ScimUser, options?: RawAxiosRequestConfig): AxiosPromise<ScimUser> {
             return localVarFp.usersEditObjectScimV2(userId, scimUser, options).then((request) => request(axios, basePath));
         },
         /**
@@ -461,7 +461,7 @@ export const ScimUsersApiFactory = function (configuration?: Configuration, base
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usersGetListScimV2(filter?: string, options?: any): AxiosPromise<ScimUserList> {
+        usersGetListScimV2(filter?: string, options?: RawAxiosRequestConfig): AxiosPromise<ScimUserList> {
             return localVarFp.usersGetListScimV2(filter, options).then((request) => request(axios, basePath));
         },
         /**
@@ -471,7 +471,7 @@ export const ScimUsersApiFactory = function (configuration?: Configuration, base
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usersGetObjectScimV2(userId: string, options?: any): AxiosPromise<ScimUser> {
+        usersGetObjectScimV2(userId: string, options?: RawAxiosRequestConfig): AxiosPromise<ScimUser> {
             return localVarFp.usersGetObjectScimV2(userId, options).then((request) => request(axios, basePath));
         },
     };

@@ -20,21 +20,21 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { ActivesessionGenerateFederationTokenV1Request } from '../model';
+import type { ActivesessionGenerateFederationTokenV1Request } from '../model';
 // @ts-ignore
-import { ActivesessionGenerateFederationTokenV1Response } from '../model';
+import type { ActivesessionGenerateFederationTokenV1Response } from '../model';
 // @ts-ignore
-import { ActivesessionGetCurrentV1Response } from '../model';
+import type { ActivesessionGetCurrentV1Response } from '../model';
 // @ts-ignore
-import { ActivesessionGetListV1Response } from '../model';
+import type { ActivesessionGetListV1Response } from '../model';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { CommonResponseRedirectSSecretquestionTextX } from '../model';
+import type { CommonResponseRedirectSSecretquestionTextX } from '../model';
 // @ts-ignore
-import { HeaderAcceptLanguage } from '../model';
+import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -204,14 +204,13 @@ export const ObjectActivesessionApiAxiosParamCreator = function (configuration?:
                 localVarQueryParameter['sFilter'] = sFilter;
             }
 
+
+    
             if (acceptLanguage != null) {
                 localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
                     ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
-
-
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -307,7 +306,7 @@ export const ObjectActivesessionApiFactory = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        activesessionGenerateFederationTokenV1(activesessionGenerateFederationTokenV1Request: ActivesessionGenerateFederationTokenV1Request, options?: any): AxiosPromise<ActivesessionGenerateFederationTokenV1Response> {
+        activesessionGenerateFederationTokenV1(activesessionGenerateFederationTokenV1Request: ActivesessionGenerateFederationTokenV1Request, options?: RawAxiosRequestConfig): AxiosPromise<ActivesessionGenerateFederationTokenV1Response> {
             return localVarFp.activesessionGenerateFederationTokenV1(activesessionGenerateFederationTokenV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -316,7 +315,7 @@ export const ObjectActivesessionApiFactory = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        activesessionGetCurrentV1(options?: any): AxiosPromise<ActivesessionGetCurrentV1Response> {
+        activesessionGetCurrentV1(options?: RawAxiosRequestConfig): AxiosPromise<ActivesessionGetCurrentV1Response> {
             return localVarFp.activesessionGetCurrentV1(options).then((request) => request(axios, basePath));
         },
         /**
@@ -330,7 +329,7 @@ export const ObjectActivesessionApiFactory = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        activesessionGetListV1(eOrderBy?: ActivesessionGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: any): AxiosPromise<ActivesessionGetListV1Response> {
+        activesessionGetListV1(eOrderBy?: ActivesessionGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): AxiosPromise<ActivesessionGetListV1Response> {
             return localVarFp.activesessionGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(axios, basePath));
         },
     };

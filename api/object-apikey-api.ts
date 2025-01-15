@@ -20,41 +20,41 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { ApikeyCreateObjectV2Request } from '../model';
+import type { ApikeyCreateObjectV2Request } from '../model';
 // @ts-ignore
-import { ApikeyCreateObjectV2Response } from '../model';
+import type { ApikeyCreateObjectV2Response } from '../model';
 // @ts-ignore
-import { ApikeyEditObjectV1Request } from '../model';
+import type { ApikeyEditObjectV1Request } from '../model';
 // @ts-ignore
-import { ApikeyEditObjectV1Response } from '../model';
+import type { ApikeyEditPermissionsV1Request } from '../model';
 // @ts-ignore
-import { ApikeyEditPermissionsV1Request } from '../model';
+import type { ApikeyEditPermissionsV1Response } from '../model';
 // @ts-ignore
-import { ApikeyEditPermissionsV1Response } from '../model';
+import type { ApikeyGenerateDelegatedCredentialsV1Request } from '../model';
 // @ts-ignore
-import { ApikeyGenerateDelegatedCredentialsV1Request } from '../model';
+import type { ApikeyGenerateDelegatedCredentialsV1Response } from '../model';
 // @ts-ignore
-import { ApikeyGenerateDelegatedCredentialsV1Response } from '../model';
+import type { ApikeyGetCorsV1Response } from '../model';
 // @ts-ignore
-import { ApikeyGetCorsV1Response } from '../model';
+import type { ApikeyGetListV1Response } from '../model';
 // @ts-ignore
-import { ApikeyGetListV1Response } from '../model';
+import type { ApikeyGetObjectV2Response } from '../model';
 // @ts-ignore
-import { ApikeyGetObjectV2Response } from '../model';
+import type { ApikeyGetPermissionsV1Response } from '../model';
 // @ts-ignore
-import { ApikeyGetPermissionsV1Response } from '../model';
+import type { ApikeyGetSubnetsV1Response } from '../model';
 // @ts-ignore
-import { ApikeyGetSubnetsV1Response } from '../model';
+import type { ApikeyRegenerateV1Request } from '../model';
 // @ts-ignore
-import { ApikeyRegenerateV1Request } from '../model';
+import type { ApikeyRegenerateV1Response } from '../model';
 // @ts-ignore
-import { ApikeyRegenerateV1Response } from '../model';
+import type { CommonResponse } from '../model';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { HeaderAcceptLanguage } from '../model';
+import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -416,14 +416,13 @@ export const ObjectApikeyApiAxiosParamCreator = function (configuration?: Config
                 localVarQueryParameter['sFilter'] = sFilter;
             }
 
+
+    
             if (acceptLanguage != null) {
                 localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
                     ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
-
-
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -719,7 +718,7 @@ export const ObjectApikeyApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async apikeyEditObjectV1(pkiApikeyID: number, apikeyEditObjectV1Request: ApikeyEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApikeyEditObjectV1Response>> {
+        async apikeyEditObjectV1(pkiApikeyID: number, apikeyEditObjectV1Request: ApikeyEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.apikeyEditObjectV1(pkiApikeyID, apikeyEditObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectApikeyApi.apikeyEditObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -852,7 +851,7 @@ export const ObjectApikeyApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apikeyCreateObjectV2(apikeyCreateObjectV2Request: ApikeyCreateObjectV2Request, options?: any): AxiosPromise<ApikeyCreateObjectV2Response> {
+        apikeyCreateObjectV2(apikeyCreateObjectV2Request: ApikeyCreateObjectV2Request, options?: RawAxiosRequestConfig): AxiosPromise<ApikeyCreateObjectV2Response> {
             return localVarFp.apikeyCreateObjectV2(apikeyCreateObjectV2Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -863,7 +862,7 @@ export const ObjectApikeyApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apikeyEditObjectV1(pkiApikeyID: number, apikeyEditObjectV1Request: ApikeyEditObjectV1Request, options?: any): AxiosPromise<ApikeyEditObjectV1Response> {
+        apikeyEditObjectV1(pkiApikeyID: number, apikeyEditObjectV1Request: ApikeyEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.apikeyEditObjectV1(pkiApikeyID, apikeyEditObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -874,7 +873,7 @@ export const ObjectApikeyApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apikeyEditPermissionsV1(pkiApikeyID: number, apikeyEditPermissionsV1Request: ApikeyEditPermissionsV1Request, options?: any): AxiosPromise<ApikeyEditPermissionsV1Response> {
+        apikeyEditPermissionsV1(pkiApikeyID: number, apikeyEditPermissionsV1Request: ApikeyEditPermissionsV1Request, options?: RawAxiosRequestConfig): AxiosPromise<ApikeyEditPermissionsV1Response> {
             return localVarFp.apikeyEditPermissionsV1(pkiApikeyID, apikeyEditPermissionsV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -884,7 +883,7 @@ export const ObjectApikeyApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apikeyGenerateDelegatedCredentialsV1(apikeyGenerateDelegatedCredentialsV1Request: ApikeyGenerateDelegatedCredentialsV1Request, options?: any): AxiosPromise<ApikeyGenerateDelegatedCredentialsV1Response> {
+        apikeyGenerateDelegatedCredentialsV1(apikeyGenerateDelegatedCredentialsV1Request: ApikeyGenerateDelegatedCredentialsV1Request, options?: RawAxiosRequestConfig): AxiosPromise<ApikeyGenerateDelegatedCredentialsV1Response> {
             return localVarFp.apikeyGenerateDelegatedCredentialsV1(apikeyGenerateDelegatedCredentialsV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -894,7 +893,7 @@ export const ObjectApikeyApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apikeyGetCorsV1(pkiApikeyID: number, options?: any): AxiosPromise<ApikeyGetCorsV1Response> {
+        apikeyGetCorsV1(pkiApikeyID: number, options?: RawAxiosRequestConfig): AxiosPromise<ApikeyGetCorsV1Response> {
             return localVarFp.apikeyGetCorsV1(pkiApikeyID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -908,7 +907,7 @@ export const ObjectApikeyApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apikeyGetListV1(eOrderBy?: ApikeyGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: any): AxiosPromise<ApikeyGetListV1Response> {
+        apikeyGetListV1(eOrderBy?: ApikeyGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): AxiosPromise<ApikeyGetListV1Response> {
             return localVarFp.apikeyGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(axios, basePath));
         },
         /**
@@ -918,7 +917,7 @@ export const ObjectApikeyApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apikeyGetObjectV2(pkiApikeyID: number, options?: any): AxiosPromise<ApikeyGetObjectV2Response> {
+        apikeyGetObjectV2(pkiApikeyID: number, options?: RawAxiosRequestConfig): AxiosPromise<ApikeyGetObjectV2Response> {
             return localVarFp.apikeyGetObjectV2(pkiApikeyID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -928,7 +927,7 @@ export const ObjectApikeyApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apikeyGetPermissionsV1(pkiApikeyID: number, options?: any): AxiosPromise<ApikeyGetPermissionsV1Response> {
+        apikeyGetPermissionsV1(pkiApikeyID: number, options?: RawAxiosRequestConfig): AxiosPromise<ApikeyGetPermissionsV1Response> {
             return localVarFp.apikeyGetPermissionsV1(pkiApikeyID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -938,7 +937,7 @@ export const ObjectApikeyApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apikeyGetSubnetsV1(pkiApikeyID: number, options?: any): AxiosPromise<ApikeyGetSubnetsV1Response> {
+        apikeyGetSubnetsV1(pkiApikeyID: number, options?: RawAxiosRequestConfig): AxiosPromise<ApikeyGetSubnetsV1Response> {
             return localVarFp.apikeyGetSubnetsV1(pkiApikeyID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -949,7 +948,7 @@ export const ObjectApikeyApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apikeyRegenerateV1(pkiApikeyID: number, apikeyRegenerateV1Request: ApikeyRegenerateV1Request, options?: any): AxiosPromise<ApikeyRegenerateV1Response> {
+        apikeyRegenerateV1(pkiApikeyID: number, apikeyRegenerateV1Request: ApikeyRegenerateV1Request, options?: RawAxiosRequestConfig): AxiosPromise<ApikeyRegenerateV1Response> {
             return localVarFp.apikeyRegenerateV1(pkiApikeyID, apikeyRegenerateV1Request, options).then((request) => request(axios, basePath));
         },
     };

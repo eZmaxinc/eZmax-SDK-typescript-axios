@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonAuditdetail } from './common-auditdetail';
+import type { CommonAuditdetail } from './common-auditdetail';
 
 /**
  * Gives informations about the user that created the object and the last user to have modified it.  If the object was never modified after creation, objAuditdetailModified won\'t be returned. 

@@ -20,11 +20,11 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { AttachmentGetAttachmentlogsV1Response } from '../model';
+import type { AttachmentGetAttachmentlogsV1Response } from '../model';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -205,7 +205,7 @@ export const ObjectAttachmentApiFactory = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        attachmentDownloadV1(pkiAttachmentID: number, options?: any): AxiosPromise<void> {
+        attachmentDownloadV1(pkiAttachmentID: number, options?: RawAxiosRequestConfig): AxiosPromise<void> {
             return localVarFp.attachmentDownloadV1(pkiAttachmentID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -215,7 +215,7 @@ export const ObjectAttachmentApiFactory = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        attachmentGetAttachmentlogsV1(pkiAttachmentID: number, options?: any): AxiosPromise<AttachmentGetAttachmentlogsV1Response> {
+        attachmentGetAttachmentlogsV1(pkiAttachmentID: number, options?: RawAxiosRequestConfig): AxiosPromise<AttachmentGetAttachmentlogsV1Response> {
             return localVarFp.attachmentGetAttachmentlogsV1(pkiAttachmentID, options).then((request) => request(axios, basePath));
         },
     };

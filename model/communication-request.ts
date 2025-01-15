@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomCommunicationsenderRequest } from './custom-communicationsender-request';
+import type { CustomCommunicationsenderRequest } from './custom-communicationsender-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldECommunicationImportance } from './field-ecommunication-importance';
+import type { FieldECommunicationImportance } from './field-ecommunication-importance';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldECommunicationType } from './field-ecommunication-type';
+import type { FieldECommunicationType } from './field-ecommunication-type';
 
 /**
  * Request for POST /1/object/communication

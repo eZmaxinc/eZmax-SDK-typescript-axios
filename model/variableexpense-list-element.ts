@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEVariableexpenseTaxable } from './field-evariableexpense-taxable';
+import type { FieldEVariableexpenseTaxable } from './field-evariableexpense-taxable';
 
 /**
  * A Variableexpense List Element

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AttachmentlogResponseCompound } from './attachmentlog-response-compound';
+import type { AttachmentlogResponseCompound } from './attachmentlog-response-compound';
 
 /**
  * Response for GET /1/object/attachment/{pkiAttachmentID}/getAttachmentlogs

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { MultilingualSubnetDescription } from './multilingual-subnet-description';
+import type { MultilingualSubnetDescription } from './multilingual-subnet-description';
 
 /**
  * A Subnet Object

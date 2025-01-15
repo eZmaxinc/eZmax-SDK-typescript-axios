@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommunicationreferenceRequest } from './communicationreference-request';
+import type { CommunicationreferenceRequest } from './communicationreference-request';
 
 /**
  * @type CommunicationreferenceRequestCompound

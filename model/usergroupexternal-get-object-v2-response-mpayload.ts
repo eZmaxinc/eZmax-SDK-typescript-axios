@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { UsergroupexternalResponseCompound } from './usergroupexternal-response-compound';
+import type { UsergroupexternalResponseCompound } from './usergroupexternal-response-compound';
 
 /**
  * Payload for GET /2/object/usergroupexternal/{pkiUsergroupexternalID}

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigntemplateformfieldgroupsignerRequest } from './ezsigntemplateformfieldgroupsigner-request';
+import type { EzsigntemplateformfieldgroupsignerRequest } from './ezsigntemplateformfieldgroupsigner-request';
 
 /**
  * @type EzsigntemplateformfieldgroupsignerRequestCompound

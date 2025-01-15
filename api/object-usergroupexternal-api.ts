@@ -20,31 +20,29 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponse } from '../model';
 // @ts-ignore
-import { HeaderAcceptLanguage } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { UsergroupexternalCreateObjectV1Request } from '../model';
+import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
-import { UsergroupexternalCreateObjectV1Response } from '../model';
+import type { UsergroupexternalCreateObjectV1Request } from '../model';
 // @ts-ignore
-import { UsergroupexternalDeleteObjectV1Response } from '../model';
+import type { UsergroupexternalCreateObjectV1Response } from '../model';
 // @ts-ignore
-import { UsergroupexternalEditObjectV1Request } from '../model';
+import type { UsergroupexternalEditObjectV1Request } from '../model';
 // @ts-ignore
-import { UsergroupexternalEditObjectV1Response } from '../model';
+import type { UsergroupexternalGetAutocompleteV2Response } from '../model';
 // @ts-ignore
-import { UsergroupexternalGetAutocompleteV2Response } from '../model';
+import type { UsergroupexternalGetListV1Response } from '../model';
 // @ts-ignore
-import { UsergroupexternalGetListV1Response } from '../model';
+import type { UsergroupexternalGetObjectV2Response } from '../model';
 // @ts-ignore
-import { UsergroupexternalGetObjectV2Response } from '../model';
+import type { UsergroupexternalGetUsergroupexternalmembershipsV1Response } from '../model';
 // @ts-ignore
-import { UsergroupexternalGetUsergroupexternalmembershipsV1Response } from '../model';
-// @ts-ignore
-import { UsergroupexternalGetUsergroupsV1Response } from '../model';
+import type { UsergroupexternalGetUsergroupsV1Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -276,14 +274,13 @@ export const ObjectUsergroupexternalApiAxiosParamCreator = function (configurati
                 localVarQueryParameter['sQuery'] = sQuery;
             }
 
+
+    
             if (acceptLanguage != null) {
                 localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
                     ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
-
-
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -357,14 +354,13 @@ export const ObjectUsergroupexternalApiAxiosParamCreator = function (configurati
                 localVarQueryParameter['sFilter'] = sFilter;
             }
 
+
+    
             if (acceptLanguage != null) {
                 localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
                     ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
-
-
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -595,7 +591,7 @@ export const ObjectUsergroupexternalApiFp = function(configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async usergroupexternalDeleteObjectV1(pkiUsergroupexternalID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupexternalDeleteObjectV1Response>> {
+        async usergroupexternalDeleteObjectV1(pkiUsergroupexternalID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.usergroupexternalDeleteObjectV1(pkiUsergroupexternalID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectUsergroupexternalApi.usergroupexternalDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -609,7 +605,7 @@ export const ObjectUsergroupexternalApiFp = function(configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async usergroupexternalEditObjectV1(pkiUsergroupexternalID: number, usergroupexternalEditObjectV1Request: UsergroupexternalEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupexternalEditObjectV1Response>> {
+        async usergroupexternalEditObjectV1(pkiUsergroupexternalID: number, usergroupexternalEditObjectV1Request: UsergroupexternalEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.usergroupexternalEditObjectV1(pkiUsergroupexternalID, usergroupexternalEditObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectUsergroupexternalApi.usergroupexternalEditObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -704,7 +700,7 @@ export const ObjectUsergroupexternalApiFactory = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usergroupexternalCreateObjectV1(usergroupexternalCreateObjectV1Request: UsergroupexternalCreateObjectV1Request, options?: any): AxiosPromise<UsergroupexternalCreateObjectV1Response> {
+        usergroupexternalCreateObjectV1(usergroupexternalCreateObjectV1Request: UsergroupexternalCreateObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<UsergroupexternalCreateObjectV1Response> {
             return localVarFp.usergroupexternalCreateObjectV1(usergroupexternalCreateObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -714,7 +710,7 @@ export const ObjectUsergroupexternalApiFactory = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usergroupexternalDeleteObjectV1(pkiUsergroupexternalID: number, options?: any): AxiosPromise<UsergroupexternalDeleteObjectV1Response> {
+        usergroupexternalDeleteObjectV1(pkiUsergroupexternalID: number, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.usergroupexternalDeleteObjectV1(pkiUsergroupexternalID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -725,7 +721,7 @@ export const ObjectUsergroupexternalApiFactory = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usergroupexternalEditObjectV1(pkiUsergroupexternalID: number, usergroupexternalEditObjectV1Request: UsergroupexternalEditObjectV1Request, options?: any): AxiosPromise<UsergroupexternalEditObjectV1Response> {
+        usergroupexternalEditObjectV1(pkiUsergroupexternalID: number, usergroupexternalEditObjectV1Request: UsergroupexternalEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.usergroupexternalEditObjectV1(pkiUsergroupexternalID, usergroupexternalEditObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -738,7 +734,7 @@ export const ObjectUsergroupexternalApiFactory = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usergroupexternalGetAutocompleteV2(sSelector: UsergroupexternalGetAutocompleteV2SSelectorEnum, eFilterActive?: UsergroupexternalGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: any): AxiosPromise<UsergroupexternalGetAutocompleteV2Response> {
+        usergroupexternalGetAutocompleteV2(sSelector: UsergroupexternalGetAutocompleteV2SSelectorEnum, eFilterActive?: UsergroupexternalGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig): AxiosPromise<UsergroupexternalGetAutocompleteV2Response> {
             return localVarFp.usergroupexternalGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(axios, basePath));
         },
         /**
@@ -752,7 +748,7 @@ export const ObjectUsergroupexternalApiFactory = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usergroupexternalGetListV1(eOrderBy?: UsergroupexternalGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: any): AxiosPromise<UsergroupexternalGetListV1Response> {
+        usergroupexternalGetListV1(eOrderBy?: UsergroupexternalGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): AxiosPromise<UsergroupexternalGetListV1Response> {
             return localVarFp.usergroupexternalGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(axios, basePath));
         },
         /**
@@ -762,7 +758,7 @@ export const ObjectUsergroupexternalApiFactory = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usergroupexternalGetObjectV2(pkiUsergroupexternalID: number, options?: any): AxiosPromise<UsergroupexternalGetObjectV2Response> {
+        usergroupexternalGetObjectV2(pkiUsergroupexternalID: number, options?: RawAxiosRequestConfig): AxiosPromise<UsergroupexternalGetObjectV2Response> {
             return localVarFp.usergroupexternalGetObjectV2(pkiUsergroupexternalID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -772,7 +768,7 @@ export const ObjectUsergroupexternalApiFactory = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usergroupexternalGetUsergroupexternalmembershipsV1(pkiUsergroupexternalID: number, options?: any): AxiosPromise<UsergroupexternalGetUsergroupexternalmembershipsV1Response> {
+        usergroupexternalGetUsergroupexternalmembershipsV1(pkiUsergroupexternalID: number, options?: RawAxiosRequestConfig): AxiosPromise<UsergroupexternalGetUsergroupexternalmembershipsV1Response> {
             return localVarFp.usergroupexternalGetUsergroupexternalmembershipsV1(pkiUsergroupexternalID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -782,7 +778,7 @@ export const ObjectUsergroupexternalApiFactory = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usergroupexternalGetUsergroupsV1(pkiUsergroupexternalID: number, options?: any): AxiosPromise<UsergroupexternalGetUsergroupsV1Response> {
+        usergroupexternalGetUsergroupsV1(pkiUsergroupexternalID: number, options?: RawAxiosRequestConfig): AxiosPromise<UsergroupexternalGetUsergroupsV1Response> {
             return localVarFp.usergroupexternalGetUsergroupsV1(pkiUsergroupexternalID, options).then((request) => request(axios, basePath));
         },
     };

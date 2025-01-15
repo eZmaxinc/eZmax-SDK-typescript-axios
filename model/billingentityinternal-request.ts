@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { MultilingualBillingentityinternalDescription } from './multilingual-billingentityinternal-description';
+import type { MultilingualBillingentityinternalDescription } from './multilingual-billingentityinternal-description';
 
 /**
  * A Billingentityinternal Object

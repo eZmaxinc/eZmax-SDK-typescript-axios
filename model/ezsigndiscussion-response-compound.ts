@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { DiscussionResponseCompound } from './discussion-response-compound';
+import type { DiscussionResponseCompound } from './discussion-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigndiscussionResponse } from './ezsigndiscussion-response';
+import type { EzsigndiscussionResponse } from './ezsigndiscussion-response';
 
 /**
  * @type EzsigndiscussionResponseCompound

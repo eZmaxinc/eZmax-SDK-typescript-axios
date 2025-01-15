@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigntemplateglobalsignerResponse } from './ezsigntemplateglobalsigner-response';
+import type { EzsigntemplateglobalsignerResponse } from './ezsigntemplateglobalsigner-response';
 
 /**
  * @type EzsigntemplateglobalsignerResponseCompound

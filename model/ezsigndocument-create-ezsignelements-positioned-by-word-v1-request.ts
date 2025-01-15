@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomEzsignformfieldgroupCreateEzsignelementsPositionedByWordRequest } from './custom-ezsignformfieldgroup-create-ezsignelements-positioned-by-word-request';
+import type { CustomEzsignformfieldgroupCreateEzsignelementsPositionedByWordRequest } from './custom-ezsignformfieldgroup-create-ezsignelements-positioned-by-word-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomEzsignsignatureCreateEzsignelementsPositionedByWordRequest } from './custom-ezsignsignature-create-ezsignelements-positioned-by-word-request';
+import type { CustomEzsignsignatureCreateEzsignelementsPositionedByWordRequest } from './custom-ezsignsignature-create-ezsignelements-positioned-by-word-request';
 
 /**
  * Request for POST /1/object/ezsigndocument/{pkiEzsigndocumentID}/createEzsignelementsPositionedByWord

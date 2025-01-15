@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigndocumentdependencyRequestCompound } from './ezsigndocumentdependency-request-compound';
+import type { EzsigndocumentdependencyRequest } from './ezsigndocumentdependency-request';
 
 /**
  * Request for POST /2/object/ezsignfolder/{pkiEzsignfolderID}/reorder

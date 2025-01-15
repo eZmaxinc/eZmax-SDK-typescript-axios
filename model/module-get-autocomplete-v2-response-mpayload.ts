@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ModuleAutocompleteElementResponse } from './module-autocomplete-element-response';
+import type { ModuleAutocompleteElementResponse } from './module-autocomplete-element-response';
 
 /**
  * Payload for POST /2/object/module/getAutocomplete

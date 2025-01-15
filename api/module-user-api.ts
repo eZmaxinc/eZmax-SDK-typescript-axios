@@ -20,11 +20,11 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { UserCreateEzsignuserV1Request } from '../model';
+import type { UserCreateEzsignuserV1Request } from '../model';
 // @ts-ignore
-import { UserCreateEzsignuserV1Response } from '../model';
+import type { UserCreateEzsignuserV1Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -133,7 +133,7 @@ export const ModuleUserApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userCreateEzsignuserV1(userCreateEzsignuserV1Request: Array<UserCreateEzsignuserV1Request>, options?: any): AxiosPromise<UserCreateEzsignuserV1Response> {
+        userCreateEzsignuserV1(userCreateEzsignuserV1Request: Array<UserCreateEzsignuserV1Request>, options?: RawAxiosRequestConfig): AxiosPromise<UserCreateEzsignuserV1Response> {
             return localVarFp.userCreateEzsignuserV1(userCreateEzsignuserV1Request, options).then((request) => request(axios, basePath));
         },
     };

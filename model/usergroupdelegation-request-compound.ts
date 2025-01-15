@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { UsergroupdelegationRequest } from './usergroupdelegation-request';
+import type { UsergroupdelegationRequest } from './usergroupdelegation-request';
 
 /**
  * @type UsergroupdelegationRequestCompound

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { SupplyRequestCompound } from './supply-request-compound';
+import type { SupplyRequestCompound } from './supply-request-compound';
 
 /**
  * Request for PUT /1/object/supply/{pkiSupplyID}

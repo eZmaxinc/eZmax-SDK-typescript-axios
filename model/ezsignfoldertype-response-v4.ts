@@ -15,37 +15,37 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonAudit } from './common-audit';
+import type { CommonAudit } from './common-audit';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignfoldertypeCompletion } from './field-eezsignfoldertype-completion';
+import type { FieldEEzsignfoldertypeCompletion } from './field-eezsignfoldertype-completion';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignfoldertypeDisposal } from './field-eezsignfoldertype-disposal';
+import type { FieldEEzsignfoldertypeDisposal } from './field-eezsignfoldertype-disposal';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignfoldertypeDocumentdependency } from './field-eezsignfoldertype-documentdependency';
+import type { FieldEEzsignfoldertypeDocumentdependency } from './field-eezsignfoldertype-documentdependency';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignfoldertypePdfanoncompliantaction } from './field-eezsignfoldertype-pdfanoncompliantaction';
+import type { FieldEEzsignfoldertypePdfanoncompliantaction } from './field-eezsignfoldertype-pdfanoncompliantaction';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignfoldertypePdfarequirement } from './field-eezsignfoldertype-pdfarequirement';
+import type { FieldEEzsignfoldertypePdfarequirement } from './field-eezsignfoldertype-pdfarequirement';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignfoldertypePrivacylevel } from './field-eezsignfoldertype-privacylevel';
+import type { FieldEEzsignfoldertypePrivacylevel } from './field-eezsignfoldertype-privacylevel';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignfoldertypeSigneraccess } from './field-eezsignfoldertype-signeraccess';
+import type { FieldEEzsignfoldertypeSigneraccess } from './field-eezsignfoldertype-signeraccess';
 // May contain unused imports in some cases
 // @ts-ignore
-import { MultilingualEzsignfoldertypeName } from './multilingual-ezsignfoldertype-name';
+import type { MultilingualEzsignfoldertypeName } from './multilingual-ezsignfoldertype-name';
 // May contain unused imports in some cases
 // @ts-ignore
-import { UsergroupResponse } from './usergroup-response';
+import type { UsergroupResponse } from './usergroup-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { UserlogintypeResponse } from './userlogintype-response';
+import type { UserlogintypeResponse } from './userlogintype-response';
 
 /**
  * A Ezsignfoldertype Object

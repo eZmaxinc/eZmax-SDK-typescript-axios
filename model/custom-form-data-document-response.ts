@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomFormDataSignerResponse } from './custom-form-data-signer-response';
+import type { CustomFormDataSignerResponse } from './custom-form-data-signer-response';
 
 /**
  * A form Data Document Object 

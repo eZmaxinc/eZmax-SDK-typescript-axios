@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { MultilingualEzmaxinvoicingsummaryinternalDescription } from './multilingual-ezmaxinvoicingsummaryinternal-description';
+import type { MultilingualEzmaxinvoicingsummaryinternalDescription } from './multilingual-ezmaxinvoicingsummaryinternal-description';
 
 /**
  * A Ezmaxinvoicingsummaryinternal Object

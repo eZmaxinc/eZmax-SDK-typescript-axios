@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignsignatureType } from './field-eezsignsignature-type';
+import type { FieldEEzsignsignatureType } from './field-eezsignsignature-type';
 
 /**
  * An Ezsignsignature Object in the context of an EzsignsignaturesAutomatic path

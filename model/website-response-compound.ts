@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { WebsiteResponse } from './website-response';
+import type { WebsiteResponse } from './website-response';
 
 /**
  * @type WebsiteResponseCompound

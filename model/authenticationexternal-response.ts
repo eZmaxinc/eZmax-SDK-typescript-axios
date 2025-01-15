@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonAudit } from './common-audit';
+import type { CommonAudit } from './common-audit';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEAuthenticationexternalType } from './field-eauthenticationexternal-type';
+import type { FieldEAuthenticationexternalType } from './field-eauthenticationexternal-type';
 
 /**
  * A Authenticationexternal Object

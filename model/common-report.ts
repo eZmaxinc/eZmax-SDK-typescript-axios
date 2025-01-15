@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonReportsection } from './common-reportsection';
+import type { CommonReportsection } from './common-reportsection';
 
 /**
  * A Report containing Reportsections 

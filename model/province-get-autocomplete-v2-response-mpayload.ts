@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ProvinceAutocompleteElementResponse } from './province-autocomplete-element-response';
+import type { ProvinceAutocompleteElementResponse } from './province-autocomplete-element-response';
 
 /**
  * Payload for POST /2/object/province/getAutocomplete

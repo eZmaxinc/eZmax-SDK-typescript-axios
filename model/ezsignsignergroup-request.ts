@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { MultilingualEzsignsignergroupDescription } from './multilingual-ezsignsignergroup-description';
+import type { MultilingualEzsignsignergroupDescription } from './multilingual-ezsignsignergroup-description';
 
 /**
  * A Ezsignsignergroup Object

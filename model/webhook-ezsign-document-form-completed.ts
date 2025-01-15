@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AttemptResponseCompound } from './attempt-response-compound';
+import type { AttemptResponse } from './attempt-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonWebhook } from './common-webhook';
+import type { CommonWebhook } from './common-webhook';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomWebhookResponse } from './custom-webhook-response';
+import type { CustomWebhookResponse } from './custom-webhook-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigndocumentResponse } from './ezsigndocument-response';
+import type { EzsigndocumentResponse } from './ezsigndocument-response';
 
 /**
  * @type WebhookEzsignDocumentFormCompleted

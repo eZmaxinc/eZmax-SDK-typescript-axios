@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { PaymenttermResponseCompound } from './paymentterm-response-compound';
+import type { PaymenttermResponseCompound } from './paymentterm-response-compound';
 
 /**
  * Payload for GET /2/object/paymentterm/{pkiPaymenttermID}

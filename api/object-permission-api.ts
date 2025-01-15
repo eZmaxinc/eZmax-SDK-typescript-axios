@@ -20,21 +20,19 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponse } from '../model';
 // @ts-ignore
-import { PermissionCreateObjectV1Request } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { PermissionCreateObjectV1Response } from '../model';
+import type { PermissionCreateObjectV1Request } from '../model';
 // @ts-ignore
-import { PermissionDeleteObjectV1Response } from '../model';
+import type { PermissionCreateObjectV1Response } from '../model';
 // @ts-ignore
-import { PermissionEditObjectV1Request } from '../model';
+import type { PermissionEditObjectV1Request } from '../model';
 // @ts-ignore
-import { PermissionEditObjectV1Response } from '../model';
-// @ts-ignore
-import { PermissionGetObjectV2Response } from '../model';
+import type { PermissionGetObjectV2Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -313,7 +311,7 @@ export const ObjectPermissionApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async permissionDeleteObjectV1(pkiPermissionID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PermissionDeleteObjectV1Response>> {
+        async permissionDeleteObjectV1(pkiPermissionID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.permissionDeleteObjectV1(pkiPermissionID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectPermissionApi.permissionDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -327,7 +325,7 @@ export const ObjectPermissionApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async permissionEditObjectV1(pkiPermissionID: number, permissionEditObjectV1Request: PermissionEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PermissionEditObjectV1Response>> {
+        async permissionEditObjectV1(pkiPermissionID: number, permissionEditObjectV1Request: PermissionEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.permissionEditObjectV1(pkiPermissionID, permissionEditObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectPermissionApi.permissionEditObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -363,7 +361,7 @@ export const ObjectPermissionApiFactory = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        permissionCreateObjectV1(permissionCreateObjectV1Request: PermissionCreateObjectV1Request, options?: any): AxiosPromise<PermissionCreateObjectV1Response> {
+        permissionCreateObjectV1(permissionCreateObjectV1Request: PermissionCreateObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<PermissionCreateObjectV1Response> {
             return localVarFp.permissionCreateObjectV1(permissionCreateObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -373,7 +371,7 @@ export const ObjectPermissionApiFactory = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        permissionDeleteObjectV1(pkiPermissionID: number, options?: any): AxiosPromise<PermissionDeleteObjectV1Response> {
+        permissionDeleteObjectV1(pkiPermissionID: number, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.permissionDeleteObjectV1(pkiPermissionID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -384,7 +382,7 @@ export const ObjectPermissionApiFactory = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        permissionEditObjectV1(pkiPermissionID: number, permissionEditObjectV1Request: PermissionEditObjectV1Request, options?: any): AxiosPromise<PermissionEditObjectV1Response> {
+        permissionEditObjectV1(pkiPermissionID: number, permissionEditObjectV1Request: PermissionEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.permissionEditObjectV1(pkiPermissionID, permissionEditObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -394,7 +392,7 @@ export const ObjectPermissionApiFactory = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        permissionGetObjectV2(pkiPermissionID: number, options?: any): AxiosPromise<PermissionGetObjectV2Response> {
+        permissionGetObjectV2(pkiPermissionID: number, options?: RawAxiosRequestConfig): AxiosPromise<PermissionGetObjectV2Response> {
             return localVarFp.permissionGetObjectV2(pkiPermissionID, options).then((request) => request(axios, basePath));
         },
     };

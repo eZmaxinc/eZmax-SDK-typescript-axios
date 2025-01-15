@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ClonehistoryListElement } from './clonehistory-list-element';
+import type { ClonehistoryListElement } from './clonehistory-list-element';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonGetListV1ResponseMPayload } from './common-get-list-v1-response-mpayload';
+import type { CommonGetListV1ResponseMPayload } from './common-get-list-v1-response-mpayload';
 
 /**
  * @type ClonehistoryGetListV1ResponseMPayload

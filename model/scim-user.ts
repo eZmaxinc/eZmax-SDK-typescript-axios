@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ScimEmail } from './scim-email';
+import type { ScimEmail } from './scim-email';
 
 /**
  * 

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignsignatureattachmentResponse } from './ezsignsignatureattachment-response';
+import type { EzsignsignatureattachmentResponse } from './ezsignsignatureattachment-response';
 
 /**
  * Response for GET /1/object/ezsignsignature/{pkiEzsignsignatureID}/getEzsignsignatureattachment

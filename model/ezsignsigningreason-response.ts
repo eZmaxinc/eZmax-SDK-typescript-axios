@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { MultilingualEzsignsigningreasonDescription } from './multilingual-ezsignsigningreason-description';
+import type { MultilingualEzsignsigningreasonDescription } from './multilingual-ezsignsigningreason-description';
 
 /**
  * A Ezsignsigningreason Object

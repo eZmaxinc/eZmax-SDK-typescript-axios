@@ -15,25 +15,25 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ScimAuthenticationScheme } from './scim-authentication-scheme';
+import type { ScimAuthenticationScheme } from './scim-authentication-scheme';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ScimServiceProviderConfigBulk } from './scim-service-provider-config-bulk';
+import type { ScimServiceProviderConfigBulk } from './scim-service-provider-config-bulk';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ScimServiceProviderConfigChangePassword } from './scim-service-provider-config-change-password';
+import type { ScimServiceProviderConfigChangePassword } from './scim-service-provider-config-change-password';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ScimServiceProviderConfigEtag } from './scim-service-provider-config-etag';
+import type { ScimServiceProviderConfigEtag } from './scim-service-provider-config-etag';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ScimServiceProviderConfigFilter } from './scim-service-provider-config-filter';
+import type { ScimServiceProviderConfigFilter } from './scim-service-provider-config-filter';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ScimServiceProviderConfigPatch } from './scim-service-provider-config-patch';
+import type { ScimServiceProviderConfigPatch } from './scim-service-provider-config-patch';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ScimServiceProviderConfigSort } from './scim-service-provider-config-sort';
+import type { ScimServiceProviderConfigSort } from './scim-service-provider-config-sort';
 
 /**
  * 

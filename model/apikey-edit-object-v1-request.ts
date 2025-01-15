@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ApikeyRequestCompound } from './apikey-request-compound';
+import type { ApikeyRequest } from './apikey-request';
 
 /**
  * Request for PUT /1/object/apikey/{pkiApikeyID}
@@ -24,21 +24,21 @@ import { ApikeyRequestCompound } from './apikey-request-compound';
  */
 export interface ApikeyEditObjectV1Request {
     /**
-     * 
-     * @type {ApikeyRequestCompound}
+     * An Apikey Object and children to create a complete structure
+     * @type {ApikeyRequest}
      * @memberof ApikeyEditObjectV1Request
      */
-    /*'objApikey': ApikeyRequestCompound;*/
-    'objApikey': ApikeyRequestCompound;
+    /*'objApikey': ApikeyRequest;*/
+    'objApikey': ApikeyRequest;
 }
 /**
  * @import
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectApikeyRequestCompound } from './'
+import { DataObjectApikeyRequest } from './'
 // @ts-ignore
-import { ValidationObjectApikeyRequestCompound } from './'
+import { ValidationObjectApikeyRequest } from './'
 
 /**
  * @export 
@@ -47,7 +47,7 @@ import { ValidationObjectApikeyRequestCompound } from './'
  * @class DataObjectApikeyEditObjectV1Request
  */
 export class DataObjectApikeyEditObjectV1Request {
-   objApikey:ApikeyRequestCompound = new DataObjectApikeyRequestCompound()
+   objApikey:ApikeyRequest = new DataObjectApikeyRequest()
 }
 
 /**
@@ -56,7 +56,7 @@ export class DataObjectApikeyEditObjectV1Request {
  * @class ValidationObjectApikeyEditObjectV1Request
  */
 export class ValidationObjectApikeyEditObjectV1Request {
-   objApikey = new ValidationObjectApikeyRequestCompound()
+   objApikey = new ValidationObjectApikeyRequest()
 } 
 
 

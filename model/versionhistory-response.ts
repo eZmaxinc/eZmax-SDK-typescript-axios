@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEVersionhistoryType } from './field-eversionhistory-type';
+import type { FieldEVersionhistoryType } from './field-eversionhistory-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEVersionhistoryUsertype } from './field-eversionhistory-usertype';
+import type { FieldEVersionhistoryUsertype } from './field-eversionhistory-usertype';
 // May contain unused imports in some cases
 // @ts-ignore
-import { MultilingualVersionhistoryDetail } from './multilingual-versionhistory-detail';
+import type { MultilingualVersionhistoryDetail } from './multilingual-versionhistory-detail';
 
 /**
  * A Versionhistory Object

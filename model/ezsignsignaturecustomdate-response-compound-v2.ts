@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignsignaturecustomdateResponseV2 } from './ezsignsignaturecustomdate-response-v2';
+import type { EzsignsignaturecustomdateResponseV2 } from './ezsignsignaturecustomdate-response-v2';
 
 /**
  * @type EzsignsignaturecustomdateResponseCompoundV2

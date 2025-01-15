@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonReportsubsectionpart } from './common-reportsubsectionpart';
+import type { CommonReportsubsectionpart } from './common-reportsubsectionpart';
 
 /**
  * A Subsection in a Reportsection. It contains 3 Reportsubsectionparts (Header, Body and Footer) 

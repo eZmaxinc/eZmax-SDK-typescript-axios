@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEErrorCode } from './field-eerror-code';
+import type { FieldEErrorCode } from './field-eerror-code';
 
 /**
  * Generic Error Message

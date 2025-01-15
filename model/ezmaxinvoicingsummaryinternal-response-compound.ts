@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzmaxinvoicingsummaryinternalResponse } from './ezmaxinvoicingsummaryinternal-response';
+import type { EzmaxinvoicingsummaryinternalResponse } from './ezmaxinvoicingsummaryinternal-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzmaxinvoicingsummaryinternaldetailResponseCompound } from './ezmaxinvoicingsummaryinternaldetail-response-compound';
+import type { EzmaxinvoicingsummaryinternaldetailResponseCompound } from './ezmaxinvoicingsummaryinternaldetail-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import { MultilingualEzmaxinvoicingsummaryinternalDescription } from './multilingual-ezmaxinvoicingsummaryinternal-description';
+import type { MultilingualEzmaxinvoicingsummaryinternalDescription } from './multilingual-ezmaxinvoicingsummaryinternal-description';
 
 /**
  * @type EzmaxinvoicingsummaryinternalResponseCompound

@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignsigningreasonRequest } from './ezsignsigningreason-request';
+import type { EzsignsigningreasonRequest } from './ezsignsigningreason-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { MultilingualEzsignsigningreasonDescription } from './multilingual-ezsignsigningreason-description';
+import type { MultilingualEzsignsigningreasonDescription } from './multilingual-ezsignsigningreason-description';
 
 /**
  * @type EzsignsigningreasonRequestCompound

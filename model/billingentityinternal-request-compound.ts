@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { BillingentityinternalRequest } from './billingentityinternal-request';
+import type { BillingentityinternalRequest } from './billingentityinternal-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { BillingentityinternalproductRequestCompound } from './billingentityinternalproduct-request-compound';
+import type { BillingentityinternalproductRequestCompound } from './billingentityinternalproduct-request-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import { MultilingualBillingentityinternalDescription } from './multilingual-billingentityinternal-description';
+import type { MultilingualBillingentityinternalDescription } from './multilingual-billingentityinternal-description';
 
 /**
  * @type BillingentityinternalRequestCompound

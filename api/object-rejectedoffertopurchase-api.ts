@@ -20,17 +20,17 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { RejectedoffertopurchaseGetCommunicationCountV1Response } from '../model';
+import type { RejectedoffertopurchaseGetCommunicationCountV1Response } from '../model';
 // @ts-ignore
-import { RejectedoffertopurchaseGetCommunicationListV1Response } from '../model';
+import type { RejectedoffertopurchaseGetCommunicationListV1Response } from '../model';
 // @ts-ignore
-import { RejectedoffertopurchaseGetCommunicationrecipientsV1Response } from '../model';
+import type { RejectedoffertopurchaseGetCommunicationrecipientsV1Response } from '../model';
 // @ts-ignore
-import { RejectedoffertopurchaseGetCommunicationsendersV1Response } from '../model';
+import type { RejectedoffertopurchaseGetCommunicationsendersV1Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -350,7 +350,7 @@ export const ObjectRejectedoffertopurchaseApiFactory = function (configuration?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        rejectedoffertopurchaseGetCommunicationCountV1(pkiRejectedoffertopurchaseID: number, options?: any): AxiosPromise<RejectedoffertopurchaseGetCommunicationCountV1Response> {
+        rejectedoffertopurchaseGetCommunicationCountV1(pkiRejectedoffertopurchaseID: number, options?: RawAxiosRequestConfig): AxiosPromise<RejectedoffertopurchaseGetCommunicationCountV1Response> {
             return localVarFp.rejectedoffertopurchaseGetCommunicationCountV1(pkiRejectedoffertopurchaseID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -360,7 +360,7 @@ export const ObjectRejectedoffertopurchaseApiFactory = function (configuration?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        rejectedoffertopurchaseGetCommunicationListV1(pkiRejectedoffertopurchaseID: number, options?: any): AxiosPromise<RejectedoffertopurchaseGetCommunicationListV1Response> {
+        rejectedoffertopurchaseGetCommunicationListV1(pkiRejectedoffertopurchaseID: number, options?: RawAxiosRequestConfig): AxiosPromise<RejectedoffertopurchaseGetCommunicationListV1Response> {
             return localVarFp.rejectedoffertopurchaseGetCommunicationListV1(pkiRejectedoffertopurchaseID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -370,7 +370,7 @@ export const ObjectRejectedoffertopurchaseApiFactory = function (configuration?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        rejectedoffertopurchaseGetCommunicationrecipientsV1(pkiRejectedoffertopurchaseID: number, options?: any): AxiosPromise<RejectedoffertopurchaseGetCommunicationrecipientsV1Response> {
+        rejectedoffertopurchaseGetCommunicationrecipientsV1(pkiRejectedoffertopurchaseID: number, options?: RawAxiosRequestConfig): AxiosPromise<RejectedoffertopurchaseGetCommunicationrecipientsV1Response> {
             return localVarFp.rejectedoffertopurchaseGetCommunicationrecipientsV1(pkiRejectedoffertopurchaseID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -380,7 +380,7 @@ export const ObjectRejectedoffertopurchaseApiFactory = function (configuration?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        rejectedoffertopurchaseGetCommunicationsendersV1(pkiRejectedoffertopurchaseID: number, options?: any): AxiosPromise<RejectedoffertopurchaseGetCommunicationsendersV1Response> {
+        rejectedoffertopurchaseGetCommunicationsendersV1(pkiRejectedoffertopurchaseID: number, options?: RawAxiosRequestConfig): AxiosPromise<RejectedoffertopurchaseGetCommunicationsendersV1Response> {
             return localVarFp.rejectedoffertopurchaseGetCommunicationsendersV1(pkiRejectedoffertopurchaseID, options).then((request) => request(axios, basePath));
         },
     };

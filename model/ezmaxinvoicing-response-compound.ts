@@ -15,40 +15,34 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonAudit } from './common-audit';
+import type { CommonAudit } from './common-audit';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomEzmaxinvoicingEzsigndocumentResponse } from './custom-ezmaxinvoicing-ezsigndocument-response';
+import type { CustomEzmaxpricingResponse } from './custom-ezmaxpricing-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomEzmaxinvoicingEzsignfolderResponse } from './custom-ezmaxinvoicing-ezsignfolder-response';
+import type { EzmaxinvoicingResponse } from './ezmaxinvoicing-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomEzmaxpricingResponse } from './custom-ezmaxpricing-response';
+import type { EzmaxinvoicingagentResponseCompound } from './ezmaxinvoicingagent-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzmaxinvoicingResponse } from './ezmaxinvoicing-response';
+import type { EzmaxinvoicingcontractResponseCompound } from './ezmaxinvoicingcontract-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzmaxinvoicingagentResponseCompound } from './ezmaxinvoicingagent-response-compound';
+import type { EzmaxinvoicingsummaryexternalResponseCompound } from './ezmaxinvoicingsummaryexternal-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzmaxinvoicingcontractResponseCompound } from './ezmaxinvoicingcontract-response-compound';
+import type { EzmaxinvoicingsummaryglobalResponseCompound } from './ezmaxinvoicingsummaryglobal-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzmaxinvoicingsummaryexternalResponseCompound } from './ezmaxinvoicingsummaryexternal-response-compound';
+import type { EzmaxinvoicingsummaryinternalResponseCompound } from './ezmaxinvoicingsummaryinternal-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzmaxinvoicingsummaryglobalResponseCompound } from './ezmaxinvoicingsummaryglobal-response-compound';
+import type { EzmaxinvoicinguserResponseCompound } from './ezmaxinvoicinguser-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzmaxinvoicingsummaryinternalResponseCompound } from './ezmaxinvoicingsummaryinternal-response-compound';
-// May contain unused imports in some cases
-// @ts-ignore
-import { EzmaxinvoicinguserResponseCompound } from './ezmaxinvoicinguser-response-compound';
-// May contain unused imports in some cases
-// @ts-ignore
-import { FieldEEzmaxinvoicingPaymenttype } from './field-eezmaxinvoicing-paymenttype';
+import type { FieldEEzmaxinvoicingPaymenttype } from './field-eezmaxinvoicing-paymenttype';
 
 /**
  * @type EzmaxinvoicingResponseCompound

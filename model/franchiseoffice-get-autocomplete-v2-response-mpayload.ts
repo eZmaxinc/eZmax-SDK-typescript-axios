@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FranchiseofficeAutocompleteElementResponse } from './franchiseoffice-autocomplete-element-response';
+import type { FranchiseofficeAutocompleteElementResponse } from './franchiseoffice-autocomplete-element-response';
 
 /**
  * Payload for POST /2/object/franchiseoffice/getAutocomplete

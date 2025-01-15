@@ -15,22 +15,19 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonAudit } from './common-audit';
+import type { CommonAudit } from './common-audit';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ComputedEEzsignfolderAccess } from './computed-eezsignfolder-access';
+import type { ComputedEEzsignfolderAccess } from './computed-eezsignfolder-access';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomEzsignfoldertypeResponse } from './custom-ezsignfoldertype-response';
+import type { FieldEEzsignfolderCompletion } from './field-eezsignfolder-completion';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignfolderCompletion } from './field-eezsignfolder-completion';
+import type { FieldEEzsignfolderDocumentdependency } from './field-eezsignfolder-documentdependency';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignfolderDocumentdependency } from './field-eezsignfolder-documentdependency';
-// May contain unused imports in some cases
-// @ts-ignore
-import { FieldEEzsignfolderStep } from './field-eezsignfolder-step';
+import type { FieldEEzsignfolderStep } from './field-eezsignfolder-step';
 
 /**
  * An Ezsignfolder Object
@@ -53,12 +50,12 @@ export interface EzsignfolderResponseV3 {
     /*'fkiEzsignfoldertypeID'?: number;*/
     'fkiEzsignfoldertypeID'?: number;
     /**
-     * 
-     * @type {CustomEzsignfoldertypeResponse}
+     * A Custom Ezsignfoldertype Object
+     * @type {object}
      * @memberof EzsignfolderResponseV3
      */
-    /*'objEzsignfoldertype'?: CustomEzsignfoldertypeResponse;*/
-    'objEzsignfoldertype'?: CustomEzsignfoldertypeResponse;
+    /*'objEzsignfoldertype'?: object;*/
+    'objEzsignfoldertype'?: object;
     /**
      * The unique ID of the Timezone
      * @type {number}
@@ -236,11 +233,11 @@ export interface EzsignfolderResponseV3 {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCustomEzsignfoldertypeResponse } from './'
+import { DataObjectobject } from './'
 // @ts-ignore
 import { DataObjectCommonAudit } from './'
 // @ts-ignore
-import { ValidationObjectCustomEzsignfoldertypeResponse } from './'
+import { ValidationObjectobject } from './'
 // @ts-ignore
 import { ValidationObjectCommonAudit } from './'
 
@@ -253,7 +250,7 @@ import { ValidationObjectCommonAudit } from './'
 export class DataObjectEzsignfolderResponseV3 {
    pkiEzsignfolderID:number = 0
    fkiEzsignfoldertypeID?:number = undefined
-   objEzsignfoldertype?:CustomEzsignfoldertypeResponse = undefined
+   objEzsignfoldertype?:object = undefined
    fkiTimezoneID?:number = undefined
    eEzsignfolderCompletion:FieldEEzsignfolderCompletion = 'PerEzsigndocument'
    eEzsignfolderDocumentdependency?:FieldEEzsignfolderDocumentdependency = undefined
@@ -297,7 +294,7 @@ export class ValidationObjectEzsignfolderResponseV3 {
       maximum: 65535,
       required: false
    }
-   objEzsignfoldertype = new ValidationObjectCustomEzsignfoldertypeResponse()
+   objEzsignfoldertype = new ValidationObjectobject()
    fkiTimezoneID = {
       type: 'integer',
       minimum: 0,

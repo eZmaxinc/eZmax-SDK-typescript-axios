@@ -15,22 +15,22 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonAudit } from './common-audit';
+import type { CommonAudit } from './common-audit';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEWebhookEzsignevent } from './field-ewebhook-ezsignevent';
+import type { FieldEWebhookEzsignevent } from './field-ewebhook-ezsignevent';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEWebhookManagementevent } from './field-ewebhook-managementevent';
+import type { FieldEWebhookManagementevent } from './field-ewebhook-managementevent';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEWebhookModule } from './field-ewebhook-module';
+import type { FieldEWebhookModule } from './field-ewebhook-module';
 // May contain unused imports in some cases
 // @ts-ignore
-import { WebhookResponse } from './webhook-response';
+import type { WebhookResponse } from './webhook-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { WebhookheaderResponseCompound } from './webhookheader-response-compound';
+import type { WebhookheaderResponseCompound } from './webhookheader-response-compound';
 
 /**
  * @type WebhookResponseCompound

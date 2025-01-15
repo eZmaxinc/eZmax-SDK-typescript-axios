@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ComputedECommunicationDirection } from './computed-ecommunication-direction';
+import type { ComputedECommunicationDirection } from './computed-ecommunication-direction';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldECommunicationImportance } from './field-ecommunication-importance';
+import type { FieldECommunicationImportance } from './field-ecommunication-importance';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldECommunicationType } from './field-ecommunication-type';
+import type { FieldECommunicationType } from './field-ecommunication-type';
 
 /**
  * A Communication List Element

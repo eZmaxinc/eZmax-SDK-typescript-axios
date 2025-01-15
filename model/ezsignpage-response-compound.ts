@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignpageResponse } from './ezsignpage-response';
+import type { EzsignpageResponse } from './ezsignpage-response';
 
 /**
  * @type EzsignpageResponseCompound

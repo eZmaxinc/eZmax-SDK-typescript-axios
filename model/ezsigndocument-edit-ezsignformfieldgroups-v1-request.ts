@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignformfieldgroupRequestCompound } from './ezsignformfieldgroup-request-compound';
+import type { EzsignformfieldgroupRequestCompound } from './ezsignformfieldgroup-request-compound';
 
 /**
  * Request for PUT /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignformfieldgroups

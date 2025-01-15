@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomCommunicationrecipientsrecipientResponse } from './custom-communicationrecipientsrecipient-response';
+import type { CustomCommunicationrecipientsrecipientResponse } from './custom-communicationrecipientsrecipient-response';
 
 /**
  * Generic CommunicationrecipientsGroup Response

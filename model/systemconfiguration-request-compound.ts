@@ -15,22 +15,22 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldESystemconfigurationEzsign } from './field-esystemconfiguration-ezsign';
+import type { FieldESystemconfigurationEzsign } from './field-esystemconfiguration-ezsign';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldESystemconfigurationEzsignofficeplan } from './field-esystemconfiguration-ezsignofficeplan';
+import type { FieldESystemconfigurationEzsignofficeplan } from './field-esystemconfiguration-ezsignofficeplan';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldESystemconfigurationLanguage1 } from './field-esystemconfiguration-language1';
+import type { FieldESystemconfigurationLanguage1 } from './field-esystemconfiguration-language1';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldESystemconfigurationLanguage2 } from './field-esystemconfiguration-language2';
+import type { FieldESystemconfigurationLanguage2 } from './field-esystemconfiguration-language2';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldESystemconfigurationNewexternaluseraction } from './field-esystemconfiguration-newexternaluseraction';
+import type { FieldESystemconfigurationNewexternaluseraction } from './field-esystemconfiguration-newexternaluseraction';
 // May contain unused imports in some cases
 // @ts-ignore
-import { SystemconfigurationRequest } from './systemconfiguration-request';
+import type { SystemconfigurationRequest } from './systemconfiguration-request';
 
 /**
  * @type SystemconfigurationRequestCompound

@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignfoldersignerassociationRequest } from './ezsignfoldersignerassociation-request';
+import type { EzsignfoldersignerassociationRequest } from './ezsignfoldersignerassociation-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignsignerRequestCompound } from './ezsignsigner-request-compound';
+import type { EzsignsignerRequestCompound } from './ezsignsigner-request-compound';
 
 /**
  * @type EzsignfoldersignerassociationRequestCompound

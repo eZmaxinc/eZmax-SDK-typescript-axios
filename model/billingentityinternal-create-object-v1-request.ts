@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { BillingentityinternalRequestCompound } from './billingentityinternal-request-compound';
+import type { BillingentityinternalRequestCompound } from './billingentityinternal-request-compound';
 
 /**
  * Request for POST /1/object/billingentityinternal

@@ -20,27 +20,25 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponse } from '../model';
 // @ts-ignore
-import { HeaderAcceptLanguage } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { SupplyCreateObjectV1Request } from '../model';
+import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
-import { SupplyCreateObjectV1Response } from '../model';
+import type { SupplyCreateObjectV1Request } from '../model';
 // @ts-ignore
-import { SupplyDeleteObjectV1Response } from '../model';
+import type { SupplyCreateObjectV1Response } from '../model';
 // @ts-ignore
-import { SupplyEditObjectV1Request } from '../model';
+import type { SupplyEditObjectV1Request } from '../model';
 // @ts-ignore
-import { SupplyEditObjectV1Response } from '../model';
+import type { SupplyGetAutocompleteV2Response } from '../model';
 // @ts-ignore
-import { SupplyGetAutocompleteV2Response } from '../model';
+import type { SupplyGetListV1Response } from '../model';
 // @ts-ignore
-import { SupplyGetListV1Response } from '../model';
-// @ts-ignore
-import { SupplyGetObjectV2Response } from '../model';
+import type { SupplyGetObjectV2Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -272,14 +270,13 @@ export const ObjectSupplyApiAxiosParamCreator = function (configuration?: Config
                 localVarQueryParameter['sQuery'] = sQuery;
             }
 
+
+    
             if (acceptLanguage != null) {
                 localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
                     ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
-
-
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -353,14 +350,13 @@ export const ObjectSupplyApiAxiosParamCreator = function (configuration?: Config
                 localVarQueryParameter['sFilter'] = sFilter;
             }
 
+
+    
             if (acceptLanguage != null) {
                 localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
                     ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
-
-
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -475,7 +471,7 @@ export const ObjectSupplyApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async supplyDeleteObjectV1(pkiSupplyID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SupplyDeleteObjectV1Response>> {
+        async supplyDeleteObjectV1(pkiSupplyID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.supplyDeleteObjectV1(pkiSupplyID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectSupplyApi.supplyDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -489,7 +485,7 @@ export const ObjectSupplyApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async supplyEditObjectV1(pkiSupplyID: number, supplyEditObjectV1Request: SupplyEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SupplyEditObjectV1Response>> {
+        async supplyEditObjectV1(pkiSupplyID: number, supplyEditObjectV1Request: SupplyEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.supplyEditObjectV1(pkiSupplyID, supplyEditObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectSupplyApi.supplyEditObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -558,7 +554,7 @@ export const ObjectSupplyApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        supplyCreateObjectV1(supplyCreateObjectV1Request: SupplyCreateObjectV1Request, options?: any): AxiosPromise<SupplyCreateObjectV1Response> {
+        supplyCreateObjectV1(supplyCreateObjectV1Request: SupplyCreateObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<SupplyCreateObjectV1Response> {
             return localVarFp.supplyCreateObjectV1(supplyCreateObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -568,7 +564,7 @@ export const ObjectSupplyApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        supplyDeleteObjectV1(pkiSupplyID: number, options?: any): AxiosPromise<SupplyDeleteObjectV1Response> {
+        supplyDeleteObjectV1(pkiSupplyID: number, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.supplyDeleteObjectV1(pkiSupplyID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -579,7 +575,7 @@ export const ObjectSupplyApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        supplyEditObjectV1(pkiSupplyID: number, supplyEditObjectV1Request: SupplyEditObjectV1Request, options?: any): AxiosPromise<SupplyEditObjectV1Response> {
+        supplyEditObjectV1(pkiSupplyID: number, supplyEditObjectV1Request: SupplyEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.supplyEditObjectV1(pkiSupplyID, supplyEditObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -592,7 +588,7 @@ export const ObjectSupplyApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        supplyGetAutocompleteV2(sSelector: SupplyGetAutocompleteV2SSelectorEnum, eFilterActive?: SupplyGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: any): AxiosPromise<SupplyGetAutocompleteV2Response> {
+        supplyGetAutocompleteV2(sSelector: SupplyGetAutocompleteV2SSelectorEnum, eFilterActive?: SupplyGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig): AxiosPromise<SupplyGetAutocompleteV2Response> {
             return localVarFp.supplyGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(axios, basePath));
         },
         /**
@@ -606,7 +602,7 @@ export const ObjectSupplyApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        supplyGetListV1(eOrderBy?: SupplyGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: any): AxiosPromise<SupplyGetListV1Response> {
+        supplyGetListV1(eOrderBy?: SupplyGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): AxiosPromise<SupplyGetListV1Response> {
             return localVarFp.supplyGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(axios, basePath));
         },
         /**
@@ -616,7 +612,7 @@ export const ObjectSupplyApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        supplyGetObjectV2(pkiSupplyID: number, options?: any): AxiosPromise<SupplyGetObjectV2Response> {
+        supplyGetObjectV2(pkiSupplyID: number, options?: RawAxiosRequestConfig): AxiosPromise<SupplyGetObjectV2Response> {
             return localVarFp.supplyGetObjectV2(pkiSupplyID, options).then((request) => request(axios, basePath));
         },
     };

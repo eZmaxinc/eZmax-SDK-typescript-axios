@@ -20,39 +20,39 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponse } from '../model';
 // @ts-ignore
-import { CommonResponseErrorTooManyRequests } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { HeaderAcceptLanguage } from '../model';
+import type { CommonResponseErrorTooManyRequests } from '../model';
 // @ts-ignore
-import { WebhookCreateObjectV2Request } from '../model';
+import type { CustomEWebhookEzsignevent } from '../model';
 // @ts-ignore
-import { WebhookCreateObjectV2Response } from '../model';
+import type { FieldEWebhookManagementevent } from '../model';
 // @ts-ignore
-import { WebhookDeleteObjectV1Response } from '../model';
+import type { FieldEWebhookModule } from '../model';
 // @ts-ignore
-import { WebhookEditObjectV1Request } from '../model';
+import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
-import { WebhookEditObjectV1Response } from '../model';
+import type { WebhookCreateObjectV2Request } from '../model';
 // @ts-ignore
-import { WebhookGetHistoryV1Response } from '../model';
+import type { WebhookCreateObjectV2Response } from '../model';
 // @ts-ignore
-import { WebhookGetListV1Response } from '../model';
+import type { WebhookEditObjectV1Request } from '../model';
 // @ts-ignore
-import { WebhookGetObjectV2Response } from '../model';
+import type { WebhookGetHistoryV1Response } from '../model';
 // @ts-ignore
-import { WebhookRegenerateApikeyV1Request } from '../model';
+import type { WebhookGetListV1Response } from '../model';
 // @ts-ignore
-import { WebhookRegenerateApikeyV1Response } from '../model';
+import type { WebhookGetObjectV2Response } from '../model';
 // @ts-ignore
-import { WebhookSendWebhookV1Request } from '../model';
+import type { WebhookRegenerateApikeyV1Request } from '../model';
 // @ts-ignore
-import { WebhookSendWebhookV1Response } from '../model';
+import type { WebhookRegenerateApikeyV1Response } from '../model';
 // @ts-ignore
-import { WebhookTestV1Response } from '../model';
+import type { WebhookSendWebhookV1Request } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -355,14 +355,13 @@ export const ObjectWebhookApiAxiosParamCreator = function (configuration?: Confi
                 localVarQueryParameter['sFilter'] = sFilter;
             }
 
+
+    
             if (acceptLanguage != null) {
                 localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
                     ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
-
-
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -665,7 +664,7 @@ export const ObjectWebhookApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async webhookDeleteObjectV1(pkiWebhookID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookDeleteObjectV1Response>> {
+        async webhookDeleteObjectV1(pkiWebhookID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.webhookDeleteObjectV1(pkiWebhookID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectWebhookApi.webhookDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -679,7 +678,7 @@ export const ObjectWebhookApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async webhookEditObjectV1(pkiWebhookID: number, webhookEditObjectV1Request: WebhookEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookEditObjectV1Response>> {
+        async webhookEditObjectV1(pkiWebhookID: number, webhookEditObjectV1Request: WebhookEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.webhookEditObjectV1(pkiWebhookID, webhookEditObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectWebhookApi.webhookEditObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -750,7 +749,7 @@ export const ObjectWebhookApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async webhookSendWebhookV1(webhookSendWebhookV1Request: WebhookSendWebhookV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookSendWebhookV1Response>> {
+        async webhookSendWebhookV1(webhookSendWebhookV1Request: WebhookSendWebhookV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.webhookSendWebhookV1(webhookSendWebhookV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectWebhookApi.webhookSendWebhookV1']?.[localVarOperationServerIndex]?.url;
@@ -764,7 +763,7 @@ export const ObjectWebhookApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async webhookTestV1(pkiWebhookID: number, body: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WebhookTestV1Response>> {
+        async webhookTestV1(pkiWebhookID: number, body: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.webhookTestV1(pkiWebhookID, body, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectWebhookApi.webhookTestV1']?.[localVarOperationServerIndex]?.url;
@@ -787,7 +786,7 @@ export const ObjectWebhookApiFactory = function (configuration?: Configuration, 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        webhookCreateObjectV2(webhookCreateObjectV2Request: WebhookCreateObjectV2Request, options?: any): AxiosPromise<WebhookCreateObjectV2Response> {
+        webhookCreateObjectV2(webhookCreateObjectV2Request: WebhookCreateObjectV2Request, options?: RawAxiosRequestConfig): AxiosPromise<WebhookCreateObjectV2Response> {
             return localVarFp.webhookCreateObjectV2(webhookCreateObjectV2Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -797,7 +796,7 @@ export const ObjectWebhookApiFactory = function (configuration?: Configuration, 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        webhookDeleteObjectV1(pkiWebhookID: number, options?: any): AxiosPromise<WebhookDeleteObjectV1Response> {
+        webhookDeleteObjectV1(pkiWebhookID: number, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.webhookDeleteObjectV1(pkiWebhookID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -808,7 +807,7 @@ export const ObjectWebhookApiFactory = function (configuration?: Configuration, 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        webhookEditObjectV1(pkiWebhookID: number, webhookEditObjectV1Request: WebhookEditObjectV1Request, options?: any): AxiosPromise<WebhookEditObjectV1Response> {
+        webhookEditObjectV1(pkiWebhookID: number, webhookEditObjectV1Request: WebhookEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.webhookEditObjectV1(pkiWebhookID, webhookEditObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -819,7 +818,7 @@ export const ObjectWebhookApiFactory = function (configuration?: Configuration, 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        webhookGetHistoryV1(pkiWebhookID: number, eWebhookHistoryinterval: WebhookGetHistoryV1EWebhookHistoryintervalEnum, options?: any): AxiosPromise<WebhookGetHistoryV1Response> {
+        webhookGetHistoryV1(pkiWebhookID: number, eWebhookHistoryinterval: WebhookGetHistoryV1EWebhookHistoryintervalEnum, options?: RawAxiosRequestConfig): AxiosPromise<WebhookGetHistoryV1Response> {
             return localVarFp.webhookGetHistoryV1(pkiWebhookID, eWebhookHistoryinterval, options).then((request) => request(axios, basePath));
         },
         /**
@@ -833,7 +832,7 @@ export const ObjectWebhookApiFactory = function (configuration?: Configuration, 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        webhookGetListV1(eOrderBy?: WebhookGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: any): AxiosPromise<WebhookGetListV1Response> {
+        webhookGetListV1(eOrderBy?: WebhookGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): AxiosPromise<WebhookGetListV1Response> {
             return localVarFp.webhookGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(axios, basePath));
         },
         /**
@@ -843,7 +842,7 @@ export const ObjectWebhookApiFactory = function (configuration?: Configuration, 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        webhookGetObjectV2(pkiWebhookID: number, options?: any): AxiosPromise<WebhookGetObjectV2Response> {
+        webhookGetObjectV2(pkiWebhookID: number, options?: RawAxiosRequestConfig): AxiosPromise<WebhookGetObjectV2Response> {
             return localVarFp.webhookGetObjectV2(pkiWebhookID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -854,7 +853,7 @@ export const ObjectWebhookApiFactory = function (configuration?: Configuration, 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        webhookRegenerateApikeyV1(pkiWebhookID: number, webhookRegenerateApikeyV1Request: WebhookRegenerateApikeyV1Request, options?: any): AxiosPromise<WebhookRegenerateApikeyV1Response> {
+        webhookRegenerateApikeyV1(pkiWebhookID: number, webhookRegenerateApikeyV1Request: WebhookRegenerateApikeyV1Request, options?: RawAxiosRequestConfig): AxiosPromise<WebhookRegenerateApikeyV1Response> {
             return localVarFp.webhookRegenerateApikeyV1(pkiWebhookID, webhookRegenerateApikeyV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -864,7 +863,7 @@ export const ObjectWebhookApiFactory = function (configuration?: Configuration, 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        webhookSendWebhookV1(webhookSendWebhookV1Request: WebhookSendWebhookV1Request, options?: any): AxiosPromise<WebhookSendWebhookV1Response> {
+        webhookSendWebhookV1(webhookSendWebhookV1Request: WebhookSendWebhookV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.webhookSendWebhookV1(webhookSendWebhookV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -875,7 +874,7 @@ export const ObjectWebhookApiFactory = function (configuration?: Configuration, 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        webhookTestV1(pkiWebhookID: number, body: object, options?: any): AxiosPromise<WebhookTestV1Response> {
+        webhookTestV1(pkiWebhookID: number, body: object, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.webhookTestV1(pkiWebhookID, body, options).then((request) => request(axios, basePath));
         },
     };

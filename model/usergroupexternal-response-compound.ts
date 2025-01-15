@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { UsergroupexternalResponse } from './usergroupexternal-response';
+import type { UsergroupexternalResponse } from './usergroupexternal-response';
 
 /**
  * @type UsergroupexternalResponseCompound

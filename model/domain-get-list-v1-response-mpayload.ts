@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonGetListV1ResponseMPayload } from './common-get-list-v1-response-mpayload';
+import type { CommonGetListV1ResponseMPayload } from './common-get-list-v1-response-mpayload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { DomainListElement } from './domain-list-element';
+import type { DomainListElement } from './domain-list-element';
 
 /**
  * @type DomainGetListV1ResponseMPayload

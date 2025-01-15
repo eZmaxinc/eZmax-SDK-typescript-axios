@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CreditcardclientRequestPatch } from './creditcardclient-request-patch';
+import type { CreditcardclientRequestPatch } from './creditcardclient-request-patch';
 
 /**
  * Request for PATCH /1/object/creditcardclient/{pkiCreditcardclientID}

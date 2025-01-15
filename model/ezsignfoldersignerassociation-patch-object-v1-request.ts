@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignfoldersignerassociationRequestPatch } from './ezsignfoldersignerassociation-request-patch';
+import type { EzsignfoldersignerassociationRequestPatch } from './ezsignfoldersignerassociation-request-patch';
 
 /**
  * Request for PATCH /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}

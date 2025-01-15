@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { PermissionRequestCompound } from './permission-request-compound';
+import type { PermissionRequest } from './permission-request';
 
 /**
  * Request for POST /1/object/permission

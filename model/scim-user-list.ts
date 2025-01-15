@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ScimUser } from './scim-user';
+import type { ScimUser } from './scim-user';
 
 /**
  * 

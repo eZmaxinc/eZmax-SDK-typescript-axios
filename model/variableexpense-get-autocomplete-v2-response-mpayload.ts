@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { VariableexpenseAutocompleteElementResponse } from './variableexpense-autocomplete-element-response';
+import type { VariableexpenseAutocompleteElementResponse } from './variableexpense-autocomplete-element-response';
 
 /**
  * Payload for POST /2/object/variableexpense/getAutocomplete

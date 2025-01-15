@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonFile } from './common-file';
+import type { CommonFile } from './common-file';
 
 /**
  * Request for POST /1/object/ezsignsignature/{pkiEzsignsignatureID}/sign

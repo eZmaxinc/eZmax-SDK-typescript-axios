@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzmaxinvoicingResponseCompound } from './ezmaxinvoicing-response-compound';
+import type { EzmaxinvoicingResponseCompound } from './ezmaxinvoicing-response-compound';
 
 /**
  * Payload for GET /2/object/ezmaxinvoicing/{pkiEzmaxinvoicingID}

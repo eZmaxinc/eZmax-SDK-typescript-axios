@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEUserEzsignaccess } from './field-euser-ezsignaccess';
+import type { FieldEUserEzsignaccess } from './field-euser-ezsignaccess';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEUserOrigin } from './field-euser-origin';
+import type { FieldEUserOrigin } from './field-euser-origin';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEUserType } from './field-euser-type';
+import type { FieldEUserType } from './field-euser-type';
 
 /**
  * A User List Element

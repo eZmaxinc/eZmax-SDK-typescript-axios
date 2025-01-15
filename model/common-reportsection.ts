@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonReportcolumn } from './common-reportcolumn';
+import type { CommonReportcolumn } from './common-reportcolumn';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonReportsubsection } from './common-reportsubsection';
+import type { CommonReportsubsection } from './common-reportsubsection';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EnumHorizontalalignment } from './enum-horizontalalignment';
+import type { EnumHorizontalalignment } from './enum-horizontalalignment';
 
 /**
  * A section in a Report. Each Reportsection shares Reportcolumns disposition with all its Reportsubsection 

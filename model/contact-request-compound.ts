@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ContactRequest } from './contact-request';
+import type { ContactRequest } from './contact-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ContactinformationsRequestCompound } from './contactinformations-request-compound';
+import type { ContactinformationsRequestCompound } from './contactinformations-request-compound';
 
 /**
  * @type ContactRequestCompound

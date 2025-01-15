@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigndocumentRequestPatch } from './ezsigndocument-request-patch';
+import type { EzsigndocumentRequestPatch } from './ezsigndocument-request-patch';
 
 /**
  * Request for PATCH /1/object/ezsigndocument/{pkiEzsigndocumentID}

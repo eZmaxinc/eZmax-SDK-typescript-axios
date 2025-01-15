@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonAudit } from './common-audit';
+import type { CommonAudit } from './common-audit';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzmaxinvoicingcontractPaymenttype } from './field-eezmaxinvoicingcontract-paymenttype';
+import type { FieldEEzmaxinvoicingcontractPaymenttype } from './field-eezmaxinvoicingcontract-paymenttype';
 
 /**
  * A Ezmaxinvoicingcontract Object

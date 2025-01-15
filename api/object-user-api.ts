@@ -20,53 +20,51 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponse } from '../model';
 // @ts-ignore
-import { HeaderAcceptLanguage } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { UserCreateObjectV1Request } from '../model';
+import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
-import { UserCreateObjectV1Response } from '../model';
+import type { UserCreateObjectV1Request } from '../model';
 // @ts-ignore
-import { UserCreateObjectV2Request } from '../model';
+import type { UserCreateObjectV1Response } from '../model';
 // @ts-ignore
-import { UserCreateObjectV2Response } from '../model';
+import type { UserCreateObjectV2Request } from '../model';
 // @ts-ignore
-import { UserEditColleaguesV2Request } from '../model';
+import type { UserCreateObjectV2Response } from '../model';
 // @ts-ignore
-import { UserEditColleaguesV2Response } from '../model';
+import type { UserEditColleaguesV2Request } from '../model';
 // @ts-ignore
-import { UserEditObjectV1Request } from '../model';
+import type { UserEditColleaguesV2Response } from '../model';
 // @ts-ignore
-import { UserEditObjectV1Response } from '../model';
+import type { UserEditObjectV1Request } from '../model';
 // @ts-ignore
-import { UserEditPermissionsV1Request } from '../model';
+import type { UserEditPermissionsV1Request } from '../model';
 // @ts-ignore
-import { UserEditPermissionsV1Response } from '../model';
+import type { UserEditPermissionsV1Response } from '../model';
 // @ts-ignore
-import { UserGetApikeysV1Response } from '../model';
+import type { UserGetApikeysV1Response } from '../model';
 // @ts-ignore
-import { UserGetAutocompleteV2Response } from '../model';
+import type { UserGetAutocompleteV2Response } from '../model';
 // @ts-ignore
-import { UserGetColleaguesV2Response } from '../model';
+import type { UserGetColleaguesV2Response } from '../model';
 // @ts-ignore
-import { UserGetEffectivePermissionsV1Response } from '../model';
+import type { UserGetEffectivePermissionsV1Response } from '../model';
 // @ts-ignore
-import { UserGetListV1Response } from '../model';
+import type { UserGetListV1Response } from '../model';
 // @ts-ignore
-import { UserGetObjectV2Response } from '../model';
+import type { UserGetObjectV2Response } from '../model';
 // @ts-ignore
-import { UserGetPermissionsV1Response } from '../model';
+import type { UserGetPermissionsV1Response } from '../model';
 // @ts-ignore
-import { UserGetSubnetsV1Response } from '../model';
+import type { UserGetSubnetsV1Response } from '../model';
 // @ts-ignore
-import { UserGetUsergroupexternalsV1Response } from '../model';
+import type { UserGetUsergroupexternalsV1Response } from '../model';
 // @ts-ignore
-import { UserGetUsergroupsV1Response } from '../model';
-// @ts-ignore
-import { UserSendPasswordResetV1Response } from '../model';
+import type { UserGetUsergroupsV1Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -486,14 +484,13 @@ export const ObjectUserApiAxiosParamCreator = function (configuration?: Configur
                 localVarQueryParameter['sQuery'] = sQuery;
             }
 
+
+    
             if (acceptLanguage != null) {
                 localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
                     ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
-
-
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -683,14 +680,13 @@ export const ObjectUserApiAxiosParamCreator = function (configuration?: Configur
                 localVarQueryParameter['sFilter'] = sFilter;
             }
 
+
+    
             if (acceptLanguage != null) {
                 localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
                     ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
-
-
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1129,7 +1125,7 @@ export const ObjectUserApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async userEditObjectV1(pkiUserID: number, userEditObjectV1Request: UserEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserEditObjectV1Response>> {
+        async userEditObjectV1(pkiUserID: number, userEditObjectV1Request: UserEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.userEditObjectV1(pkiUserID, userEditObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectUserApi.userEditObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -1294,7 +1290,7 @@ export const ObjectUserApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async userSendPasswordResetV1(pkiUserID: number, body: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserSendPasswordResetV1Response>> {
+        async userSendPasswordResetV1(pkiUserID: number, body: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.userSendPasswordResetV1(pkiUserID, body, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectUserApi.userSendPasswordResetV1']?.[localVarOperationServerIndex]?.url;
@@ -1317,7 +1313,7 @@ export const ObjectUserApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userCreateObjectV1(userCreateObjectV1Request: UserCreateObjectV1Request, options?: any): AxiosPromise<UserCreateObjectV1Response> {
+        userCreateObjectV1(userCreateObjectV1Request: UserCreateObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<UserCreateObjectV1Response> {
             return localVarFp.userCreateObjectV1(userCreateObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1327,7 +1323,7 @@ export const ObjectUserApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userCreateObjectV2(userCreateObjectV2Request: UserCreateObjectV2Request, options?: any): AxiosPromise<UserCreateObjectV2Response> {
+        userCreateObjectV2(userCreateObjectV2Request: UserCreateObjectV2Request, options?: RawAxiosRequestConfig): AxiosPromise<UserCreateObjectV2Response> {
             return localVarFp.userCreateObjectV2(userCreateObjectV2Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1338,7 +1334,7 @@ export const ObjectUserApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userEditColleaguesV2(pkiUserID: number, userEditColleaguesV2Request: UserEditColleaguesV2Request, options?: any): AxiosPromise<UserEditColleaguesV2Response> {
+        userEditColleaguesV2(pkiUserID: number, userEditColleaguesV2Request: UserEditColleaguesV2Request, options?: RawAxiosRequestConfig): AxiosPromise<UserEditColleaguesV2Response> {
             return localVarFp.userEditColleaguesV2(pkiUserID, userEditColleaguesV2Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1349,7 +1345,7 @@ export const ObjectUserApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userEditObjectV1(pkiUserID: number, userEditObjectV1Request: UserEditObjectV1Request, options?: any): AxiosPromise<UserEditObjectV1Response> {
+        userEditObjectV1(pkiUserID: number, userEditObjectV1Request: UserEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.userEditObjectV1(pkiUserID, userEditObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1360,7 +1356,7 @@ export const ObjectUserApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userEditPermissionsV1(pkiUserID: number, userEditPermissionsV1Request: UserEditPermissionsV1Request, options?: any): AxiosPromise<UserEditPermissionsV1Response> {
+        userEditPermissionsV1(pkiUserID: number, userEditPermissionsV1Request: UserEditPermissionsV1Request, options?: RawAxiosRequestConfig): AxiosPromise<UserEditPermissionsV1Response> {
             return localVarFp.userEditPermissionsV1(pkiUserID, userEditPermissionsV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1370,7 +1366,7 @@ export const ObjectUserApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userGetApikeysV1(pkiUserID: number, options?: any): AxiosPromise<UserGetApikeysV1Response> {
+        userGetApikeysV1(pkiUserID: number, options?: RawAxiosRequestConfig): AxiosPromise<UserGetApikeysV1Response> {
             return localVarFp.userGetApikeysV1(pkiUserID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1383,7 +1379,7 @@ export const ObjectUserApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userGetAutocompleteV2(sSelector: UserGetAutocompleteV2SSelectorEnum, eFilterActive?: UserGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: any): AxiosPromise<UserGetAutocompleteV2Response> {
+        userGetAutocompleteV2(sSelector: UserGetAutocompleteV2SSelectorEnum, eFilterActive?: UserGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig): AxiosPromise<UserGetAutocompleteV2Response> {
             return localVarFp.userGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1393,7 +1389,7 @@ export const ObjectUserApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userGetColleaguesV2(pkiUserID: number, options?: any): AxiosPromise<UserGetColleaguesV2Response> {
+        userGetColleaguesV2(pkiUserID: number, options?: RawAxiosRequestConfig): AxiosPromise<UserGetColleaguesV2Response> {
             return localVarFp.userGetColleaguesV2(pkiUserID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1403,7 +1399,7 @@ export const ObjectUserApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userGetEffectivePermissionsV1(pkiUserID: number, options?: any): AxiosPromise<UserGetEffectivePermissionsV1Response> {
+        userGetEffectivePermissionsV1(pkiUserID: number, options?: RawAxiosRequestConfig): AxiosPromise<UserGetEffectivePermissionsV1Response> {
             return localVarFp.userGetEffectivePermissionsV1(pkiUserID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1417,7 +1413,7 @@ export const ObjectUserApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userGetListV1(eOrderBy?: UserGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: any): AxiosPromise<UserGetListV1Response> {
+        userGetListV1(eOrderBy?: UserGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): AxiosPromise<UserGetListV1Response> {
             return localVarFp.userGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1427,7 +1423,7 @@ export const ObjectUserApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userGetObjectV2(pkiUserID: number, options?: any): AxiosPromise<UserGetObjectV2Response> {
+        userGetObjectV2(pkiUserID: number, options?: RawAxiosRequestConfig): AxiosPromise<UserGetObjectV2Response> {
             return localVarFp.userGetObjectV2(pkiUserID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1437,7 +1433,7 @@ export const ObjectUserApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userGetPermissionsV1(pkiUserID: number, options?: any): AxiosPromise<UserGetPermissionsV1Response> {
+        userGetPermissionsV1(pkiUserID: number, options?: RawAxiosRequestConfig): AxiosPromise<UserGetPermissionsV1Response> {
             return localVarFp.userGetPermissionsV1(pkiUserID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1447,7 +1443,7 @@ export const ObjectUserApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userGetSubnetsV1(pkiUserID: number, options?: any): AxiosPromise<UserGetSubnetsV1Response> {
+        userGetSubnetsV1(pkiUserID: number, options?: RawAxiosRequestConfig): AxiosPromise<UserGetSubnetsV1Response> {
             return localVarFp.userGetSubnetsV1(pkiUserID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1457,7 +1453,7 @@ export const ObjectUserApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userGetUsergroupexternalsV1(pkiUserID: number, options?: any): AxiosPromise<UserGetUsergroupexternalsV1Response> {
+        userGetUsergroupexternalsV1(pkiUserID: number, options?: RawAxiosRequestConfig): AxiosPromise<UserGetUsergroupexternalsV1Response> {
             return localVarFp.userGetUsergroupexternalsV1(pkiUserID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1467,7 +1463,7 @@ export const ObjectUserApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userGetUsergroupsV1(pkiUserID: number, options?: any): AxiosPromise<UserGetUsergroupsV1Response> {
+        userGetUsergroupsV1(pkiUserID: number, options?: RawAxiosRequestConfig): AxiosPromise<UserGetUsergroupsV1Response> {
             return localVarFp.userGetUsergroupsV1(pkiUserID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1478,7 +1474,7 @@ export const ObjectUserApiFactory = function (configuration?: Configuration, bas
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        userSendPasswordResetV1(pkiUserID: number, body: object, options?: any): AxiosPromise<UserSendPasswordResetV1Response> {
+        userSendPasswordResetV1(pkiUserID: number, body: object, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.userSendPasswordResetV1(pkiUserID, body, options).then((request) => request(axios, basePath));
         },
     };

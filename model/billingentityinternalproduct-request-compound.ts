@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { BillingentityinternalproductRequest } from './billingentityinternalproduct-request';
+import type { BillingentityinternalproductRequest } from './billingentityinternalproduct-request';
 
 /**
  * @type BillingentityinternalproductRequestCompound

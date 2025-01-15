@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignannotationResponseCompound } from './ezsignannotation-response-compound';
+import type { EzsignannotationResponseCompound } from './ezsignannotation-response-compound';
 
 /**
  * Payload for GET /2/object/ezsignannotation/{pkiEzsignannotationID}

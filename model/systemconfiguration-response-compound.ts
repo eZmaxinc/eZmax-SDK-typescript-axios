@@ -15,25 +15,22 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomBrandingResponse } from './custom-branding-response';
+import type { FieldESystemconfigurationEzsign } from './field-esystemconfiguration-ezsign';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldESystemconfigurationEzsign } from './field-esystemconfiguration-ezsign';
+import type { FieldESystemconfigurationEzsignofficeplan } from './field-esystemconfiguration-ezsignofficeplan';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldESystemconfigurationEzsignofficeplan } from './field-esystemconfiguration-ezsignofficeplan';
+import type { FieldESystemconfigurationLanguage1 } from './field-esystemconfiguration-language1';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldESystemconfigurationLanguage1 } from './field-esystemconfiguration-language1';
+import type { FieldESystemconfigurationLanguage2 } from './field-esystemconfiguration-language2';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldESystemconfigurationLanguage2 } from './field-esystemconfiguration-language2';
+import type { FieldESystemconfigurationNewexternaluseraction } from './field-esystemconfiguration-newexternaluseraction';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldESystemconfigurationNewexternaluseraction } from './field-esystemconfiguration-newexternaluseraction';
-// May contain unused imports in some cases
-// @ts-ignore
-import { SystemconfigurationResponse } from './systemconfiguration-response';
+import type { SystemconfigurationResponse } from './systemconfiguration-response';
 
 /**
  * @type SystemconfigurationResponseCompound
@@ -140,11 +137,11 @@ export interface SystemconfigurationResponseCompound {
      */
     dtSystemconfigurationReadonlyexpirationend?:string 
     /**
-     * 
-     * @type {CustomBrandingResponse}
+     * A Custom Branding Object
+     * @type {object}
      * @memberof SystemconfigurationResponseCompound
      */
-    objBranding?:CustomBrandingResponse 
+    objBranding?:object 
 }
 
 
@@ -154,9 +151,9 @@ export interface SystemconfigurationResponseCompound {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCustomBrandingResponse } from './'
+import { DataObjectobject } from './'
 // @ts-ignore
-import { ValidationObjectCustomBrandingResponse } from './'
+import { ValidationObjectobject } from './'
 
 /**
  * @export 
@@ -181,7 +178,7 @@ export class DataObjectSystemconfigurationResponseCompound {
     bSystemconfigurationSspr:boolean = false
     dtSystemconfigurationReadonlyexpirationstart?:string = undefined
     dtSystemconfigurationReadonlyexpirationend?:string = undefined
-    objBranding?:CustomBrandingResponse = undefined
+    objBranding?:object = undefined
 }
 
 /**
@@ -265,7 +262,7 @@ export class ValidationObjectSystemconfigurationResponseCompound {
       pattern: /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/,
       required: false
    }
-   objBranding = new ValidationObjectCustomBrandingResponse()
+   objBranding = new ValidationObjectobject()
 } 
 
 

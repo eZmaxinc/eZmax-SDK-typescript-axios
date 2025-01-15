@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigndocumentMatchingtemplateV3Response } from './ezsigndocument-matchingtemplate-v3-response';
+import type { EzsigndocumentMatchingtemplateV3Response } from './ezsigndocument-matchingtemplate-v3-response';
 
 /**
  * A Ezsigndocument createObject Response

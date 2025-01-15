@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonAudit } from './common-audit';
+import type { CommonAudit } from './common-audit';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomContactNameResponse } from './custom-contact-name-response';
+import type { CustomContactNameResponse } from './custom-contact-name-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { MultilingualApikeyDescription } from './multilingual-apikey-description';
+import type { MultilingualApikeyDescription } from './multilingual-apikey-description';
 
 /**
  * An Apikey Object

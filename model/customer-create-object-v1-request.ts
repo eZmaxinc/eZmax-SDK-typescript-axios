@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomerRequestCompound } from './customer-request-compound';
+import type { CustomerRequestCompound } from './customer-request-compound';
 
 /**
  * Request for POST /1/object/customer

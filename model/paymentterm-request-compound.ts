@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEPaymenttermType } from './field-epaymentterm-type';
+import type { FieldEPaymenttermType } from './field-epaymentterm-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { MultilingualPaymenttermDescription } from './multilingual-paymentterm-description';
+import type { MultilingualPaymenttermDescription } from './multilingual-paymentterm-description';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PaymenttermRequest } from './paymentterm-request';
+import type { PaymenttermRequest } from './paymentterm-request';
 
 /**
  * @type PaymenttermRequestCompound

@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AddressRequest } from './address-request';
+import type { AddressRequest } from './address-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ContactRequestCompound } from './contact-request-compound';
+import type { ContactRequestCompound } from './contact-request-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FranchisereferalincomeRequest } from './franchisereferalincome-request';
+import type { FranchisereferalincomeRequest } from './franchisereferalincome-request';
 
 /**
  * @type FranchisereferalincomeRequestCompound

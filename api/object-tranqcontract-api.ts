@@ -20,17 +20,17 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { TranqcontractGetCommunicationCountV1Response } from '../model';
+import type { TranqcontractGetCommunicationCountV1Response } from '../model';
 // @ts-ignore
-import { TranqcontractGetCommunicationListV1Response } from '../model';
+import type { TranqcontractGetCommunicationListV1Response } from '../model';
 // @ts-ignore
-import { TranqcontractGetCommunicationrecipientsV1Response } from '../model';
+import type { TranqcontractGetCommunicationrecipientsV1Response } from '../model';
 // @ts-ignore
-import { TranqcontractGetCommunicationsendersV1Response } from '../model';
+import type { TranqcontractGetCommunicationsendersV1Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -350,7 +350,7 @@ export const ObjectTranqcontractApiFactory = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        tranqcontractGetCommunicationCountV1(pkiTranqcontractID: number, options?: any): AxiosPromise<TranqcontractGetCommunicationCountV1Response> {
+        tranqcontractGetCommunicationCountV1(pkiTranqcontractID: number, options?: RawAxiosRequestConfig): AxiosPromise<TranqcontractGetCommunicationCountV1Response> {
             return localVarFp.tranqcontractGetCommunicationCountV1(pkiTranqcontractID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -360,7 +360,7 @@ export const ObjectTranqcontractApiFactory = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        tranqcontractGetCommunicationListV1(pkiTranqcontractID: number, options?: any): AxiosPromise<TranqcontractGetCommunicationListV1Response> {
+        tranqcontractGetCommunicationListV1(pkiTranqcontractID: number, options?: RawAxiosRequestConfig): AxiosPromise<TranqcontractGetCommunicationListV1Response> {
             return localVarFp.tranqcontractGetCommunicationListV1(pkiTranqcontractID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -370,7 +370,7 @@ export const ObjectTranqcontractApiFactory = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        tranqcontractGetCommunicationrecipientsV1(pkiTranqcontractID: number, options?: any): AxiosPromise<TranqcontractGetCommunicationrecipientsV1Response> {
+        tranqcontractGetCommunicationrecipientsV1(pkiTranqcontractID: number, options?: RawAxiosRequestConfig): AxiosPromise<TranqcontractGetCommunicationrecipientsV1Response> {
             return localVarFp.tranqcontractGetCommunicationrecipientsV1(pkiTranqcontractID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -380,7 +380,7 @@ export const ObjectTranqcontractApiFactory = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        tranqcontractGetCommunicationsendersV1(pkiTranqcontractID: number, options?: any): AxiosPromise<TranqcontractGetCommunicationsendersV1Response> {
+        tranqcontractGetCommunicationsendersV1(pkiTranqcontractID: number, options?: RawAxiosRequestConfig): AxiosPromise<TranqcontractGetCommunicationsendersV1Response> {
             return localVarFp.tranqcontractGetCommunicationsendersV1(pkiTranqcontractID, options).then((request) => request(axios, basePath));
         },
     };

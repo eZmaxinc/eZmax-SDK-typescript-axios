@@ -20,21 +20,19 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponse } from '../model';
 // @ts-ignore
-import { UsergroupdelegationCreateObjectV1Request } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { UsergroupdelegationCreateObjectV1Response } from '../model';
+import type { UsergroupdelegationCreateObjectV1Request } from '../model';
 // @ts-ignore
-import { UsergroupdelegationDeleteObjectV1Response } from '../model';
+import type { UsergroupdelegationCreateObjectV1Response } from '../model';
 // @ts-ignore
-import { UsergroupdelegationEditObjectV1Request } from '../model';
+import type { UsergroupdelegationEditObjectV1Request } from '../model';
 // @ts-ignore
-import { UsergroupdelegationEditObjectV1Response } from '../model';
-// @ts-ignore
-import { UsergroupdelegationGetObjectV2Response } from '../model';
+import type { UsergroupdelegationGetObjectV2Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -313,7 +311,7 @@ export const ObjectUsergroupdelegationApiFp = function(configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async usergroupdelegationDeleteObjectV1(pkiUsergroupdelegationID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupdelegationDeleteObjectV1Response>> {
+        async usergroupdelegationDeleteObjectV1(pkiUsergroupdelegationID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.usergroupdelegationDeleteObjectV1(pkiUsergroupdelegationID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectUsergroupdelegationApi.usergroupdelegationDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -327,7 +325,7 @@ export const ObjectUsergroupdelegationApiFp = function(configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async usergroupdelegationEditObjectV1(pkiUsergroupdelegationID: number, usergroupdelegationEditObjectV1Request: UsergroupdelegationEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupdelegationEditObjectV1Response>> {
+        async usergroupdelegationEditObjectV1(pkiUsergroupdelegationID: number, usergroupdelegationEditObjectV1Request: UsergroupdelegationEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.usergroupdelegationEditObjectV1(pkiUsergroupdelegationID, usergroupdelegationEditObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectUsergroupdelegationApi.usergroupdelegationEditObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -363,7 +361,7 @@ export const ObjectUsergroupdelegationApiFactory = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usergroupdelegationCreateObjectV1(usergroupdelegationCreateObjectV1Request: UsergroupdelegationCreateObjectV1Request, options?: any): AxiosPromise<UsergroupdelegationCreateObjectV1Response> {
+        usergroupdelegationCreateObjectV1(usergroupdelegationCreateObjectV1Request: UsergroupdelegationCreateObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<UsergroupdelegationCreateObjectV1Response> {
             return localVarFp.usergroupdelegationCreateObjectV1(usergroupdelegationCreateObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -373,7 +371,7 @@ export const ObjectUsergroupdelegationApiFactory = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usergroupdelegationDeleteObjectV1(pkiUsergroupdelegationID: number, options?: any): AxiosPromise<UsergroupdelegationDeleteObjectV1Response> {
+        usergroupdelegationDeleteObjectV1(pkiUsergroupdelegationID: number, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.usergroupdelegationDeleteObjectV1(pkiUsergroupdelegationID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -384,7 +382,7 @@ export const ObjectUsergroupdelegationApiFactory = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usergroupdelegationEditObjectV1(pkiUsergroupdelegationID: number, usergroupdelegationEditObjectV1Request: UsergroupdelegationEditObjectV1Request, options?: any): AxiosPromise<UsergroupdelegationEditObjectV1Response> {
+        usergroupdelegationEditObjectV1(pkiUsergroupdelegationID: number, usergroupdelegationEditObjectV1Request: UsergroupdelegationEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.usergroupdelegationEditObjectV1(pkiUsergroupdelegationID, usergroupdelegationEditObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -394,7 +392,7 @@ export const ObjectUsergroupdelegationApiFactory = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usergroupdelegationGetObjectV2(pkiUsergroupdelegationID: number, options?: any): AxiosPromise<UsergroupdelegationGetObjectV2Response> {
+        usergroupdelegationGetObjectV2(pkiUsergroupdelegationID: number, options?: RawAxiosRequestConfig): AxiosPromise<UsergroupdelegationGetObjectV2Response> {
             return localVarFp.usergroupdelegationGetObjectV2(pkiUsergroupdelegationID, options).then((request) => request(axios, basePath));
         },
     };

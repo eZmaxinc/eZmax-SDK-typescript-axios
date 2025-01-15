@@ -15,25 +15,22 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonAudit } from './common-audit';
+import type { CommonAudit } from './common-audit';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomEzsignfoldertypeResponse } from './custom-ezsignfoldertype-response';
+import type { CustomTimezoneWithCodeResponse } from './custom-timezone-with-code-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomTimezoneWithCodeResponse } from './custom-timezone-with-code-response';
+import type { EzsignfolderResponseCompound } from './ezsignfolder-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignfolderResponseCompound } from './ezsignfolder-response-compound';
+import type { FieldEEzsignfolderCompletion } from './field-eezsignfolder-completion';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignfolderCompletion } from './field-eezsignfolder-completion';
+import type { FieldEEzsignfolderSendreminderfrequency } from './field-eezsignfolder-sendreminderfrequency';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignfolderSendreminderfrequency } from './field-eezsignfolder-sendreminderfrequency';
-// May contain unused imports in some cases
-// @ts-ignore
-import { FieldEEzsignfolderStep } from './field-eezsignfolder-step';
+import type { FieldEEzsignfolderStep } from './field-eezsignfolder-step';
 
 /**
  * @type EzsignfolderGetObjectV1ResponseMPayload
@@ -55,11 +52,11 @@ export interface EzsignfolderGetObjectV1ResponseMPayload {
      */
     fkiEzsignfoldertypeID?:number 
     /**
-     * 
-     * @type {CustomEzsignfoldertypeResponse}
+     * A Custom Ezsignfoldertype Object
+     * @type {object}
      * @memberof EzsignfolderGetObjectV1ResponseMPayload
      */
-    objEzsignfoldertype?:CustomEzsignfoldertypeResponse 
+    objEzsignfoldertype?:object 
     /**
      * The unique ID of the Timezone
      * @type {number}
@@ -215,13 +212,13 @@ export interface EzsignfolderGetObjectV1ResponseMPayload {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCustomEzsignfoldertypeResponse } from './'
+import { DataObjectobject } from './'
 // @ts-ignore
 import { DataObjectCommonAudit } from './'
 // @ts-ignore
 import { DataObjectCustomTimezoneWithCodeResponse } from './'
 // @ts-ignore
-import { ValidationObjectCustomEzsignfoldertypeResponse } from './'
+import { ValidationObjectobject } from './'
 // @ts-ignore
 import { ValidationObjectCommonAudit } from './'
 // @ts-ignore
@@ -236,7 +233,7 @@ import { ValidationObjectCustomTimezoneWithCodeResponse } from './'
 export class DataObjectEzsignfolderGetObjectV1ResponseMPayload {
     pkiEzsignfolderID:number = 0
     fkiEzsignfoldertypeID?:number = undefined
-    objEzsignfoldertype?:CustomEzsignfoldertypeResponse = undefined
+    objEzsignfoldertype?:object = undefined
     fkiTimezoneID?:number = undefined
     eEzsignfolderCompletion:FieldEEzsignfolderCompletion = 'PerEzsigndocument'
     sEzsignfoldertypeNameX?:string = undefined
@@ -280,7 +277,7 @@ export class ValidationObjectEzsignfolderGetObjectV1ResponseMPayload {
       maximum: 65535,
       required: false
    }
-   objEzsignfoldertype = new ValidationObjectCustomEzsignfoldertypeResponse()
+   objEzsignfoldertype = new ValidationObjectobject()
    fkiTimezoneID = {
       type: 'integer',
       minimum: 0,

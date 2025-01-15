@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzdoctemplatedocumentAutocompleteElementResponse } from './ezdoctemplatedocument-autocomplete-element-response';
+import type { EzdoctemplatedocumentAutocompleteElementResponse } from './ezdoctemplatedocument-autocomplete-element-response';
 
 /**
  * Payload for POST /2/object/ezdoctemplatedocument/getAutocomplete

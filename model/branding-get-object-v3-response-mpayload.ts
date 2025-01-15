@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { BrandingResponseCompoundV3 } from './branding-response-compound-v3';
+import type { BrandingResponseCompoundV3 } from './branding-response-compound-v3';
 
 /**
  * Payload for GET /3/object/branding/{pkiBrandingID}

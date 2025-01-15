@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomAttachmentdocumenttypeResponse } from './custom-attachmentdocumenttype-response';
+import type { CustomAttachmentdocumenttypeResponse } from './custom-attachmentdocumenttype-response';
 
 /**
  * Response for GET /1/object/ezsigndocument/{pkiEzsigndocumentID}/getAttachments

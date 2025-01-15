@@ -20,9 +20,9 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { ScimServiceProviderConfig } from '../model';
+import type { ScimServiceProviderConfig } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -120,7 +120,7 @@ export const ScimServiceProviderConfigApiFactory = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        serviceProviderConfigGetObjectScimV2(options?: any): AxiosPromise<ScimServiceProviderConfig> {
+        serviceProviderConfigGetObjectScimV2(options?: RawAxiosRequestConfig): AxiosPromise<ScimServiceProviderConfig> {
             return localVarFp.serviceProviderConfigGetObjectScimV2(options).then((request) => request(axios, basePath));
         },
     };

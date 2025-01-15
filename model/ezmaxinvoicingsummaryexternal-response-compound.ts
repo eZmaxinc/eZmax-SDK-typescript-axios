@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzmaxinvoicingsummaryexternalResponse } from './ezmaxinvoicingsummaryexternal-response';
+import type { EzmaxinvoicingsummaryexternalResponse } from './ezmaxinvoicingsummaryexternal-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzmaxinvoicingsummaryexternaldetailResponseCompound } from './ezmaxinvoicingsummaryexternaldetail-response-compound';
+import type { EzmaxinvoicingsummaryexternaldetailResponseCompound } from './ezmaxinvoicingsummaryexternaldetail-response-compound';
 
 /**
  * @type EzmaxinvoicingsummaryexternalResponseCompound

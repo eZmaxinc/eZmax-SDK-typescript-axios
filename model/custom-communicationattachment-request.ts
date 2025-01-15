@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonFile } from './common-file';
+import type { CommonFile } from './common-file';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommunicationattachmentRequestCompound } from './communicationattachment-request-compound';
+import type { CommunicationattachmentRequestCompound } from './communicationattachment-request-compound';
 
 /**
  * A Custom Communicationattachment Object

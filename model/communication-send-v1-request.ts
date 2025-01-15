@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommunicationRequestCompound } from './communication-request-compound';
+import type { CommunicationRequestCompound } from './communication-request-compound';
 
 /**
  * Request for POST /1/object/communication

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { UsergroupmembershipResponseCompound } from './usergroupmembership-response-compound';
+import type { UsergroupmembershipResponseCompound } from './usergroupmembership-response-compound';
 
 /**
  * Payload for GET /2/object/usergroupmembership/{pkiUsergroupmembershipID}

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { DomainRequest } from './domain-request';
+import type { DomainRequest } from './domain-request';
 
 /**
  * @type DomainRequestCompound

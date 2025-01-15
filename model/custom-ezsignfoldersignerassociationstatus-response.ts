@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomEzsignsignaturestatusResponse } from './custom-ezsignsignaturestatus-response';
+import type { CustomEzsignsignaturestatusResponse } from './custom-ezsignsignaturestatus-response';
 
 /**
  * A Ezsignfoldersignerassociationstatus Object and children to create a complete structure

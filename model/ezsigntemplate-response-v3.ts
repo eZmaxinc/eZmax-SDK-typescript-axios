@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonAudit } from './common-audit';
+import type { CommonAudit } from './common-audit';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsigntemplateRecognition } from './field-eezsigntemplate-recognition';
+import type { FieldEEzsigntemplateRecognition } from './field-eezsigntemplate-recognition';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsigntemplateType } from './field-eezsigntemplate-type';
+import type { FieldEEzsigntemplateType } from './field-eezsigntemplate-type';
 
 /**
  * A Ezsigntemplate Object

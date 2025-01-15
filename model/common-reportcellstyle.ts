@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EnumFontunderline } from './enum-fontunderline';
+import type { EnumFontunderline } from './enum-fontunderline';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EnumFontweight } from './enum-fontweight';
+import type { EnumFontweight } from './enum-fontweight';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EnumHorizontalalignment } from './enum-horizontalalignment';
+import type { EnumHorizontalalignment } from './enum-horizontalalignment';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EnumVerticalalignment } from './enum-verticalalignment';
+import type { EnumVerticalalignment } from './enum-verticalalignment';
 
 /**
  * Styles applied to a Reportcell 

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignsignergroupmembershipRequestCompound } from './ezsignsignergroupmembership-request-compound';
+import type { EzsignsignergroupmembershipRequestCompound } from './ezsignsignergroupmembership-request-compound';
 
 /**
  * Request for PUT /1/object/ezsignsignergroup/{pkiEzsignsignergroupID}/editEzsignsignergroupmemberships

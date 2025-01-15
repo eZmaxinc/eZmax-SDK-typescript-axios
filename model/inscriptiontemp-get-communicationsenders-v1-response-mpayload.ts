@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomCommunicationsenderResponse } from './custom-communicationsender-response';
+import type { CustomCommunicationsenderResponse } from './custom-communicationsender-response';
 
 /**
  * Response for GET /1/object/inscriptiontemp/{pkiInscriptiontempID}/getCommunicationsenders

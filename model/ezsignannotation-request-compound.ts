@@ -15,19 +15,19 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EnumHorizontalalignment } from './enum-horizontalalignment';
+import type { EnumHorizontalalignment } from './enum-horizontalalignment';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EnumVerticalalignment } from './enum-verticalalignment';
+import type { EnumVerticalalignment } from './enum-verticalalignment';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignannotationRequest } from './ezsignannotation-request';
+import type { EzsignannotationRequest } from './ezsignannotation-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignannotationType } from './field-eezsignannotation-type';
+import type { FieldEEzsignannotationType } from './field-eezsignannotation-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { TextstylestaticRequestCompound } from './textstylestatic-request-compound';
+import type { TextstylestaticRequestCompound } from './textstylestatic-request-compound';
 
 /**
  * @type EzsignannotationRequestCompound

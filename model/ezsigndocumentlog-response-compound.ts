@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigndocumentlogResponse } from './ezsigndocumentlog-response';
+import type { EzsigndocumentlogResponse } from './ezsigndocumentlog-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsigndocumentlogType } from './field-eezsigndocumentlog-type';
+import type { FieldEEzsigndocumentlogType } from './field-eezsigndocumentlog-type';
 
 /**
  * @type EzsigndocumentlogResponseCompound

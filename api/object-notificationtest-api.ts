@@ -20,11 +20,11 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { NotificationtestGetElementsV1Response } from '../model';
+import type { NotificationtestGetElementsV1Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -131,7 +131,7 @@ export const ObjectNotificationtestApiFactory = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        notificationtestGetElementsV1(pkiNotificationtestID: number, options?: any): AxiosPromise<NotificationtestGetElementsV1Response> {
+        notificationtestGetElementsV1(pkiNotificationtestID: number, options?: RawAxiosRequestConfig): AxiosPromise<NotificationtestGetElementsV1Response> {
             return localVarFp.notificationtestGetElementsV1(pkiNotificationtestID, options).then((request) => request(axios, basePath));
         },
     };

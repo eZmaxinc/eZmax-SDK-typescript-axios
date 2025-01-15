@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigntemplatesignerRequestCompound } from './ezsigntemplatesigner-request-compound';
+import type { EzsigntemplatesignerRequestCompound } from './ezsigntemplatesigner-request-compound';
 
 /**
  * Request for POST /1/object/ezsigntemplatesigner

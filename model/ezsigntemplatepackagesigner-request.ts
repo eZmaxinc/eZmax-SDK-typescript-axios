@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsigntemplatepackagesignerMapping } from './field-eezsigntemplatepackagesigner-mapping';
+import type { FieldEEzsigntemplatepackagesignerMapping } from './field-eezsigntemplatepackagesigner-mapping';
 
 /**
  * A Ezsigntemplatepackagesigner Object

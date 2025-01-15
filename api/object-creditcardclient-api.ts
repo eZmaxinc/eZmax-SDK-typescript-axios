@@ -20,33 +20,29 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponse } from '../model';
 // @ts-ignore
-import { CommonResponseErrorCreditcardValidation } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { CreditcardclientCreateObjectV1Request } from '../model';
+import type { CommonResponseErrorCreditcardValidation } from '../model';
 // @ts-ignore
-import { CreditcardclientCreateObjectV1Response } from '../model';
+import type { CreditcardclientCreateObjectV1Request } from '../model';
 // @ts-ignore
-import { CreditcardclientDeleteObjectV1Response } from '../model';
+import type { CreditcardclientCreateObjectV1Response } from '../model';
 // @ts-ignore
-import { CreditcardclientEditObjectV1Request } from '../model';
+import type { CreditcardclientEditObjectV1Request } from '../model';
 // @ts-ignore
-import { CreditcardclientEditObjectV1Response } from '../model';
+import type { CreditcardclientGetAutocompleteV2Response } from '../model';
 // @ts-ignore
-import { CreditcardclientGetAutocompleteV2Response } from '../model';
+import type { CreditcardclientGetListV1Response } from '../model';
 // @ts-ignore
-import { CreditcardclientGetListV1Response } from '../model';
+import type { CreditcardclientGetObjectV2Response } from '../model';
 // @ts-ignore
-import { CreditcardclientGetObjectV2Response } from '../model';
+import type { CreditcardclientPatchObjectV1Request } from '../model';
 // @ts-ignore
-import { CreditcardclientPatchObjectV1Request } from '../model';
-// @ts-ignore
-import { CreditcardclientPatchObjectV1Response } from '../model';
-// @ts-ignore
-import { HeaderAcceptLanguage } from '../model';
+import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -278,14 +274,13 @@ export const ObjectCreditcardclientApiAxiosParamCreator = function (configuratio
                 localVarQueryParameter['sQuery'] = sQuery;
             }
 
+
+    
             if (acceptLanguage != null) {
                 localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
                     ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
-
-
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -359,14 +354,13 @@ export const ObjectCreditcardclientApiAxiosParamCreator = function (configuratio
                 localVarQueryParameter['sFilter'] = sFilter;
             }
 
+
+    
             if (acceptLanguage != null) {
                 localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
                     ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
-
-
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -545,7 +539,7 @@ export const ObjectCreditcardclientApiFp = function(configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async creditcardclientDeleteObjectV1(pkiCreditcardclientID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreditcardclientDeleteObjectV1Response>> {
+        async creditcardclientDeleteObjectV1(pkiCreditcardclientID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.creditcardclientDeleteObjectV1(pkiCreditcardclientID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectCreditcardclientApi.creditcardclientDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -559,7 +553,7 @@ export const ObjectCreditcardclientApiFp = function(configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async creditcardclientEditObjectV1(pkiCreditcardclientID: number, creditcardclientEditObjectV1Request: CreditcardclientEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreditcardclientEditObjectV1Response>> {
+        async creditcardclientEditObjectV1(pkiCreditcardclientID: number, creditcardclientEditObjectV1Request: CreditcardclientEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.creditcardclientEditObjectV1(pkiCreditcardclientID, creditcardclientEditObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectCreditcardclientApi.creditcardclientEditObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -619,7 +613,7 @@ export const ObjectCreditcardclientApiFp = function(configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async creditcardclientPatchObjectV1(pkiCreditcardclientID: number, creditcardclientPatchObjectV1Request: CreditcardclientPatchObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CreditcardclientPatchObjectV1Response>> {
+        async creditcardclientPatchObjectV1(pkiCreditcardclientID: number, creditcardclientPatchObjectV1Request: CreditcardclientPatchObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.creditcardclientPatchObjectV1(pkiCreditcardclientID, creditcardclientPatchObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectCreditcardclientApi.creditcardclientPatchObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -642,7 +636,7 @@ export const ObjectCreditcardclientApiFactory = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        creditcardclientCreateObjectV1(creditcardclientCreateObjectV1Request: CreditcardclientCreateObjectV1Request, options?: any): AxiosPromise<CreditcardclientCreateObjectV1Response> {
+        creditcardclientCreateObjectV1(creditcardclientCreateObjectV1Request: CreditcardclientCreateObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CreditcardclientCreateObjectV1Response> {
             return localVarFp.creditcardclientCreateObjectV1(creditcardclientCreateObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -652,7 +646,7 @@ export const ObjectCreditcardclientApiFactory = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        creditcardclientDeleteObjectV1(pkiCreditcardclientID: number, options?: any): AxiosPromise<CreditcardclientDeleteObjectV1Response> {
+        creditcardclientDeleteObjectV1(pkiCreditcardclientID: number, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.creditcardclientDeleteObjectV1(pkiCreditcardclientID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -663,7 +657,7 @@ export const ObjectCreditcardclientApiFactory = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        creditcardclientEditObjectV1(pkiCreditcardclientID: number, creditcardclientEditObjectV1Request: CreditcardclientEditObjectV1Request, options?: any): AxiosPromise<CreditcardclientEditObjectV1Response> {
+        creditcardclientEditObjectV1(pkiCreditcardclientID: number, creditcardclientEditObjectV1Request: CreditcardclientEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.creditcardclientEditObjectV1(pkiCreditcardclientID, creditcardclientEditObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -676,7 +670,7 @@ export const ObjectCreditcardclientApiFactory = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        creditcardclientGetAutocompleteV2(sSelector: CreditcardclientGetAutocompleteV2SSelectorEnum, eFilterActive?: CreditcardclientGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: any): AxiosPromise<CreditcardclientGetAutocompleteV2Response> {
+        creditcardclientGetAutocompleteV2(sSelector: CreditcardclientGetAutocompleteV2SSelectorEnum, eFilterActive?: CreditcardclientGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig): AxiosPromise<CreditcardclientGetAutocompleteV2Response> {
             return localVarFp.creditcardclientGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(axios, basePath));
         },
         /**
@@ -690,7 +684,7 @@ export const ObjectCreditcardclientApiFactory = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        creditcardclientGetListV1(eOrderBy?: CreditcardclientGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: any): AxiosPromise<CreditcardclientGetListV1Response> {
+        creditcardclientGetListV1(eOrderBy?: CreditcardclientGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): AxiosPromise<CreditcardclientGetListV1Response> {
             return localVarFp.creditcardclientGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(axios, basePath));
         },
         /**
@@ -700,7 +694,7 @@ export const ObjectCreditcardclientApiFactory = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        creditcardclientGetObjectV2(pkiCreditcardclientID: number, options?: any): AxiosPromise<CreditcardclientGetObjectV2Response> {
+        creditcardclientGetObjectV2(pkiCreditcardclientID: number, options?: RawAxiosRequestConfig): AxiosPromise<CreditcardclientGetObjectV2Response> {
             return localVarFp.creditcardclientGetObjectV2(pkiCreditcardclientID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -711,7 +705,7 @@ export const ObjectCreditcardclientApiFactory = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        creditcardclientPatchObjectV1(pkiCreditcardclientID: number, creditcardclientPatchObjectV1Request: CreditcardclientPatchObjectV1Request, options?: any): AxiosPromise<CreditcardclientPatchObjectV1Response> {
+        creditcardclientPatchObjectV1(pkiCreditcardclientID: number, creditcardclientPatchObjectV1Request: CreditcardclientPatchObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.creditcardclientPatchObjectV1(pkiCreditcardclientID, creditcardclientPatchObjectV1Request, options).then((request) => request(axios, basePath));
         },
     };

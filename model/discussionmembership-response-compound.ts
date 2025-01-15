@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { DiscussionmembershipResponse } from './discussionmembership-response';
+import type { DiscussionmembershipResponse } from './discussionmembership-response';
 
 /**
  * @type DiscussionmembershipResponseCompound

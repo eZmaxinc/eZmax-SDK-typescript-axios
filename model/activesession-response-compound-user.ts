@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEUserEzsignsendreminderfrequency } from './field-euser-ezsignsendreminderfrequency';
+import type { FieldEUserEzsignsendreminderfrequency } from './field-euser-ezsignsendreminderfrequency';
 
 /**
  * An Activesession->User Object and children to create a complete structure

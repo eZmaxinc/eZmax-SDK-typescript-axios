@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonGetListV1ResponseMPayload } from './common-get-list-v1-response-mpayload';
+import type { CommonGetListV1ResponseMPayload } from './common-get-list-v1-response-mpayload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigntemplatepublicListElement } from './ezsigntemplatepublic-list-element';
+import type { EzsigntemplatepublicListElement } from './ezsigntemplatepublic-list-element';
 
 /**
  * @type EzsigntemplatepublicGetListV1ResponseMPayload

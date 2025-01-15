@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { PhoneRequestV2 } from './phone-request-v2';
+import type { PhoneRequestV2 } from './phone-request-v2';
 
 /**
  * @type PhoneRequestCompoundV2

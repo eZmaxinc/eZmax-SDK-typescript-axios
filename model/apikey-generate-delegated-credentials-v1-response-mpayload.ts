@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomApikey } from './custom-apikey';
+import type { CustomApikey } from './custom-apikey';
 
 /**
  * Payload for POST /1/object/apikey/generateDelegatedCredentials

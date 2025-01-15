@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomEzsigndocumentRequest } from './custom-ezsigndocument-request';
+import type { CustomEzsigndocumentRequest } from './custom-ezsigndocument-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignfolderDocumentdependency } from './field-eezsignfolder-documentdependency';
+import type { FieldEEzsignfolderDocumentdependency } from './field-eezsignfolder-documentdependency';
 
 /**
  * Request for POST /2/object/ezsignfolder/{pkiEzsignfolderID}/reorder

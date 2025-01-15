@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { UserRequestCompound } from './user-request-compound';
+import type { UserRequestCompound } from './user-request-compound';
 
 /**
  * Request for PUT /1/object/user/{pkiUserID}

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignbulksendRequest } from './ezsignbulksend-request';
+import type { EzsignbulksendRequest } from './ezsignbulksend-request';
 
 /**
  * @type EzsignbulksendRequestCompound

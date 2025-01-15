@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigntemplatepublicRequest } from './ezsigntemplatepublic-request';
+import type { EzsigntemplatepublicRequest } from './ezsigntemplatepublic-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsigntemplatepublicLimittype } from './field-eezsigntemplatepublic-limittype';
+import type { FieldEEzsigntemplatepublicLimittype } from './field-eezsigntemplatepublic-limittype';
 
 /**
  * @type EzsigntemplatepublicRequestCompound

@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonResponseObjDebug } from './common-response-obj-debug';
+import type { CommonResponseObjDebug } from './common-response-obj-debug';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonResponseObjDebugPayloadGetList } from './common-response-obj-debug-payload-get-list';
+import type { CommonResponseObjDebugPayloadGetList } from './common-response-obj-debug-payload-get-list';
 
 /**
  * All API response will inherit this based Response

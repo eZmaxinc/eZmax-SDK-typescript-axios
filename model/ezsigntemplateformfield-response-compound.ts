@@ -15,25 +15,25 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EnumHorizontalalignment } from './enum-horizontalalignment';
+import type { EnumHorizontalalignment } from './enum-horizontalalignment';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigntemplateelementdependencyResponseCompound } from './ezsigntemplateelementdependency-response-compound';
+import type { EzsigntemplateelementdependencyResponse } from './ezsigntemplateelementdependency-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigntemplateformfieldResponse } from './ezsigntemplateformfield-response';
+import type { EzsigntemplateformfieldResponse } from './ezsigntemplateformfield-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsigntemplateformfieldDependencyrequirement } from './field-eezsigntemplateformfield-dependencyrequirement';
+import type { FieldEEzsigntemplateformfieldDependencyrequirement } from './field-eezsigntemplateformfield-dependencyrequirement';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsigntemplateformfieldPositioning } from './field-eezsigntemplateformfield-positioning';
+import type { FieldEEzsigntemplateformfieldPositioning } from './field-eezsigntemplateformfield-positioning';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsigntemplateformfieldPositioningoccurence } from './field-eezsigntemplateformfield-positioningoccurence';
+import type { FieldEEzsigntemplateformfieldPositioningoccurence } from './field-eezsigntemplateformfield-positioningoccurence';
 // May contain unused imports in some cases
 // @ts-ignore
-import { TextstylestaticResponseCompound } from './textstylestatic-response-compound';
+import type { TextstylestaticResponseCompound } from './textstylestatic-response-compound';
 
 /**
  * @type EzsigntemplateformfieldResponseCompound

@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzdoctemplatedocumentPrivacylevel } from './field-eezdoctemplatedocument-privacylevel';
+import type { FieldEEzdoctemplatedocumentPrivacylevel } from './field-eezdoctemplatedocument-privacylevel';
 // May contain unused imports in some cases
 // @ts-ignore
-import { MultilingualEzdoctemplatedocumentName } from './multilingual-ezdoctemplatedocument-name';
+import type { MultilingualEzdoctemplatedocumentName } from './multilingual-ezdoctemplatedocument-name';
 
 /**
  * A Ezdoctemplatedocument Object

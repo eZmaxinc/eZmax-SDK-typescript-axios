@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonAudit } from './common-audit';
+import type { CommonAudit } from './common-audit';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomEzsignfoldertransmissionResponse } from './custom-ezsignfoldertransmission-response';
+import type { CustomEzsignfoldertransmissionResponse } from './custom-ezsignfoldertransmission-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignbulksendtransmissionResponse } from './ezsignbulksendtransmission-response';
+import type { EzsignbulksendtransmissionResponse } from './ezsignbulksendtransmission-response';
 
 /**
  * @type EzsignbulksendtransmissionResponseCompound

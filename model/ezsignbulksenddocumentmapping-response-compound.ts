@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignbulksenddocumentmappingResponse } from './ezsignbulksenddocumentmapping-response';
+import type { EzsignbulksenddocumentmappingResponse } from './ezsignbulksenddocumentmapping-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigntemplateResponseCompound } from './ezsigntemplate-response-compound';
+import type { EzsigntemplateResponseCompound } from './ezsigntemplate-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigntemplatepackageResponseCompound } from './ezsigntemplatepackage-response-compound';
+import type { EzsigntemplatepackageResponseCompound } from './ezsigntemplatepackage-response-compound';
 
 /**
  * @type EzsignbulksenddocumentmappingResponseCompound

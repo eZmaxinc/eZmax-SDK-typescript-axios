@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { VariableexpenseResponseCompound } from './variableexpense-response-compound';
+import type { VariableexpenseResponseCompound } from './variableexpense-response-compound';
 
 /**
  * Payload for GET /2/object/variableexpense/{pkiVariableexpenseID}

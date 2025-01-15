@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { UsergroupexternalRequest } from './usergroupexternal-request';
+import type { UsergroupexternalRequest } from './usergroupexternal-request';
 
 /**
  * @type UsergroupexternalRequestCompound

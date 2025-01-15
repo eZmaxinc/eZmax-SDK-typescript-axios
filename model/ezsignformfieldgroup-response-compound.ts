@@ -15,28 +15,28 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomDropdownElementResponseCompound } from './custom-dropdown-element-response-compound';
+import type { CustomDropdownElementResponse } from './custom-dropdown-element-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EnumTextvalidation } from './enum-textvalidation';
+import type { EnumTextvalidation } from './enum-textvalidation';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignformfieldResponseCompound } from './ezsignformfield-response-compound';
+import type { EzsignformfieldResponseCompound } from './ezsignformfield-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignformfieldgroupResponse } from './ezsignformfieldgroup-response';
+import type { EzsignformfieldgroupResponse } from './ezsignformfieldgroup-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignformfieldgroupsignerResponseCompound } from './ezsignformfieldgroupsigner-response-compound';
+import type { EzsignformfieldgroupsignerResponse } from './ezsignformfieldgroupsigner-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignformfieldgroupSignerrequirement } from './field-eezsignformfieldgroup-signerrequirement';
+import type { FieldEEzsignformfieldgroupSignerrequirement } from './field-eezsignformfieldgroup-signerrequirement';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignformfieldgroupTooltipposition } from './field-eezsignformfieldgroup-tooltipposition';
+import type { FieldEEzsignformfieldgroupTooltipposition } from './field-eezsignformfieldgroup-tooltipposition';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignformfieldgroupType } from './field-eezsignformfieldgroup-type';
+import type { FieldEEzsignformfieldgroupType } from './field-eezsignformfieldgroup-type';
 
 /**
  * @type EzsignformfieldgroupResponseCompound

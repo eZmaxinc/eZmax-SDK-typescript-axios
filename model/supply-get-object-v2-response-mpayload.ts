@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { SupplyResponseCompound } from './supply-response-compound';
+import type { SupplyResponseCompound } from './supply-response-compound';
 
 /**
  * Payload for GET /2/object/supply/{pkiSupplyID}

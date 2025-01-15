@@ -15,28 +15,28 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommunicationRequest } from './communication-request';
+import type { CommunicationRequest } from './communication-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommunicationexternalrecipientRequestCompound } from './communicationexternalrecipient-request-compound';
+import type { CommunicationexternalrecipientRequestCompound } from './communicationexternalrecipient-request-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommunicationrecipientRequestCompound } from './communicationrecipient-request-compound';
+import type { CommunicationrecipientRequestCompound } from './communicationrecipient-request-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommunicationreferenceRequestCompound } from './communicationreference-request-compound';
+import type { CommunicationreferenceRequest } from './communicationreference-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomCommunicationattachmentRequest } from './custom-communicationattachment-request';
+import type { CustomCommunicationattachmentRequest } from './custom-communicationattachment-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomCommunicationsenderRequest } from './custom-communicationsender-request';
+import type { CustomCommunicationsenderRequest } from './custom-communicationsender-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldECommunicationImportance } from './field-ecommunication-importance';
+import type { FieldECommunicationImportance } from './field-ecommunication-importance';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldECommunicationType } from './field-ecommunication-type';
+import type { FieldECommunicationType } from './field-ecommunication-type';
 
 /**
  * @type CommunicationRequestCompound

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { VariableexpenseRequestCompound } from './variableexpense-request-compound';
+import type { VariableexpenseRequestCompound } from './variableexpense-request-compound';
 
 /**
  * Request for PUT /1/object/variableexpense/{pkiVariableexpenseID}

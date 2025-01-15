@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignsignatureRequestCompound } from './ezsignsignature-request-compound';
+import type { EzsignsignatureRequestCompound } from './ezsignsignature-request-compound';
 
 /**
  * Request for PUT /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignsignatures

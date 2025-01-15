@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { SystemconfigurationResponseCompound } from './systemconfiguration-response-compound';
+import type { SystemconfigurationResponseCompound } from './systemconfiguration-response-compound';
 
 /**
  * Payload for GET /2/object/systemconfiguration/{pkiSystemconfigurationID}

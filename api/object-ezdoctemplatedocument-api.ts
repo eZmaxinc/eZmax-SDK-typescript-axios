@@ -20,29 +20,27 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponse } from '../model';
 // @ts-ignore
-import { EzdoctemplatedocumentCreateObjectV1Request } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { EzdoctemplatedocumentCreateObjectV1Response } from '../model';
+import type { EzdoctemplatedocumentCreateObjectV1Request } from '../model';
 // @ts-ignore
-import { EzdoctemplatedocumentEditObjectV1Request } from '../model';
+import type { EzdoctemplatedocumentCreateObjectV1Response } from '../model';
 // @ts-ignore
-import { EzdoctemplatedocumentEditObjectV1Response } from '../model';
+import type { EzdoctemplatedocumentEditObjectV1Request } from '../model';
 // @ts-ignore
-import { EzdoctemplatedocumentGetAutocompleteV2Response } from '../model';
+import type { EzdoctemplatedocumentGetAutocompleteV2Response } from '../model';
 // @ts-ignore
-import { EzdoctemplatedocumentGetListV1Response } from '../model';
+import type { EzdoctemplatedocumentGetListV1Response } from '../model';
 // @ts-ignore
-import { EzdoctemplatedocumentGetObjectV2Response } from '../model';
+import type { EzdoctemplatedocumentGetObjectV2Response } from '../model';
 // @ts-ignore
-import { EzdoctemplatedocumentPatchObjectV1Request } from '../model';
+import type { EzdoctemplatedocumentPatchObjectV1Request } from '../model';
 // @ts-ignore
-import { EzdoctemplatedocumentPatchObjectV1Response } from '../model';
-// @ts-ignore
-import { HeaderAcceptLanguage } from '../model';
+import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -289,14 +287,13 @@ export const ObjectEzdoctemplatedocumentApiAxiosParamCreator = function (configu
                 localVarQueryParameter['sQuery'] = sQuery;
             }
 
+
+    
             if (acceptLanguage != null) {
                 localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
                     ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
-
-
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -370,14 +367,13 @@ export const ObjectEzdoctemplatedocumentApiAxiosParamCreator = function (configu
                 localVarQueryParameter['sFilter'] = sFilter;
             }
 
+
+    
             if (acceptLanguage != null) {
                 localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
                     ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
-
-
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -570,7 +566,7 @@ export const ObjectEzdoctemplatedocumentApiFp = function(configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezdoctemplatedocumentEditObjectV1(pkiEzdoctemplatedocumentID: number, ezdoctemplatedocumentEditObjectV1Request: EzdoctemplatedocumentEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzdoctemplatedocumentEditObjectV1Response>> {
+        async ezdoctemplatedocumentEditObjectV1(pkiEzdoctemplatedocumentID: number, ezdoctemplatedocumentEditObjectV1Request: EzdoctemplatedocumentEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezdoctemplatedocumentEditObjectV1(pkiEzdoctemplatedocumentID, ezdoctemplatedocumentEditObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzdoctemplatedocumentApi.ezdoctemplatedocumentEditObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -632,7 +628,7 @@ export const ObjectEzdoctemplatedocumentApiFp = function(configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezdoctemplatedocumentPatchObjectV1(pkiEzdoctemplatedocumentID: number, ezdoctemplatedocumentPatchObjectV1Request: EzdoctemplatedocumentPatchObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzdoctemplatedocumentPatchObjectV1Response>> {
+        async ezdoctemplatedocumentPatchObjectV1(pkiEzdoctemplatedocumentID: number, ezdoctemplatedocumentPatchObjectV1Request: EzdoctemplatedocumentPatchObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezdoctemplatedocumentPatchObjectV1(pkiEzdoctemplatedocumentID, ezdoctemplatedocumentPatchObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzdoctemplatedocumentApi.ezdoctemplatedocumentPatchObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -655,7 +651,7 @@ export const ObjectEzdoctemplatedocumentApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezdoctemplatedocumentCreateObjectV1(ezdoctemplatedocumentCreateObjectV1Request: EzdoctemplatedocumentCreateObjectV1Request, options?: any): AxiosPromise<EzdoctemplatedocumentCreateObjectV1Response> {
+        ezdoctemplatedocumentCreateObjectV1(ezdoctemplatedocumentCreateObjectV1Request: EzdoctemplatedocumentCreateObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<EzdoctemplatedocumentCreateObjectV1Response> {
             return localVarFp.ezdoctemplatedocumentCreateObjectV1(ezdoctemplatedocumentCreateObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -665,7 +661,7 @@ export const ObjectEzdoctemplatedocumentApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezdoctemplatedocumentDownloadV1(pkiEzdoctemplatedocumentID: number, options?: any): AxiosPromise<void> {
+        ezdoctemplatedocumentDownloadV1(pkiEzdoctemplatedocumentID: number, options?: RawAxiosRequestConfig): AxiosPromise<void> {
             return localVarFp.ezdoctemplatedocumentDownloadV1(pkiEzdoctemplatedocumentID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -676,7 +672,7 @@ export const ObjectEzdoctemplatedocumentApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezdoctemplatedocumentEditObjectV1(pkiEzdoctemplatedocumentID: number, ezdoctemplatedocumentEditObjectV1Request: EzdoctemplatedocumentEditObjectV1Request, options?: any): AxiosPromise<EzdoctemplatedocumentEditObjectV1Response> {
+        ezdoctemplatedocumentEditObjectV1(pkiEzdoctemplatedocumentID: number, ezdoctemplatedocumentEditObjectV1Request: EzdoctemplatedocumentEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.ezdoctemplatedocumentEditObjectV1(pkiEzdoctemplatedocumentID, ezdoctemplatedocumentEditObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -691,7 +687,7 @@ export const ObjectEzdoctemplatedocumentApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezdoctemplatedocumentGetAutocompleteV2(sSelector: EzdoctemplatedocumentGetAutocompleteV2SSelectorEnum, eType: EzdoctemplatedocumentGetAutocompleteV2ETypeEnum, fkiEzsignfoldertypeID?: string, eFilterActive?: EzdoctemplatedocumentGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: any): AxiosPromise<EzdoctemplatedocumentGetAutocompleteV2Response> {
+        ezdoctemplatedocumentGetAutocompleteV2(sSelector: EzdoctemplatedocumentGetAutocompleteV2SSelectorEnum, eType: EzdoctemplatedocumentGetAutocompleteV2ETypeEnum, fkiEzsignfoldertypeID?: string, eFilterActive?: EzdoctemplatedocumentGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig): AxiosPromise<EzdoctemplatedocumentGetAutocompleteV2Response> {
             return localVarFp.ezdoctemplatedocumentGetAutocompleteV2(sSelector, eType, fkiEzsignfoldertypeID, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(axios, basePath));
         },
         /**
@@ -705,7 +701,7 @@ export const ObjectEzdoctemplatedocumentApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezdoctemplatedocumentGetListV1(eOrderBy?: EzdoctemplatedocumentGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: any): AxiosPromise<EzdoctemplatedocumentGetListV1Response> {
+        ezdoctemplatedocumentGetListV1(eOrderBy?: EzdoctemplatedocumentGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): AxiosPromise<EzdoctemplatedocumentGetListV1Response> {
             return localVarFp.ezdoctemplatedocumentGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(axios, basePath));
         },
         /**
@@ -715,7 +711,7 @@ export const ObjectEzdoctemplatedocumentApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezdoctemplatedocumentGetObjectV2(pkiEzdoctemplatedocumentID: number, options?: any): AxiosPromise<EzdoctemplatedocumentGetObjectV2Response> {
+        ezdoctemplatedocumentGetObjectV2(pkiEzdoctemplatedocumentID: number, options?: RawAxiosRequestConfig): AxiosPromise<EzdoctemplatedocumentGetObjectV2Response> {
             return localVarFp.ezdoctemplatedocumentGetObjectV2(pkiEzdoctemplatedocumentID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -726,7 +722,7 @@ export const ObjectEzdoctemplatedocumentApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezdoctemplatedocumentPatchObjectV1(pkiEzdoctemplatedocumentID: number, ezdoctemplatedocumentPatchObjectV1Request: EzdoctemplatedocumentPatchObjectV1Request, options?: any): AxiosPromise<EzdoctemplatedocumentPatchObjectV1Response> {
+        ezdoctemplatedocumentPatchObjectV1(pkiEzdoctemplatedocumentID: number, ezdoctemplatedocumentPatchObjectV1Request: EzdoctemplatedocumentPatchObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.ezdoctemplatedocumentPatchObjectV1(pkiEzdoctemplatedocumentID, ezdoctemplatedocumentPatchObjectV1Request, options).then((request) => request(axios, basePath));
         },
     };

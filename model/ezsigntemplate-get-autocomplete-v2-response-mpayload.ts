@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigntemplateAutocompleteElementResponse } from './ezsigntemplate-autocomplete-element-response';
+import type { EzsigntemplateAutocompleteElementResponse } from './ezsigntemplate-autocomplete-element-response';
 
 /**
  * Payload for POST /2/object/ezsigntemplate/getAutocomplete

@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AuthenticationexternalRequest } from './authenticationexternal-request';
+import type { AuthenticationexternalRequest } from './authenticationexternal-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEAuthenticationexternalType } from './field-eauthenticationexternal-type';
+import type { FieldEAuthenticationexternalType } from './field-eauthenticationexternal-type';
 
 /**
  * @type AuthenticationexternalRequestCompound

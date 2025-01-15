@@ -15,28 +15,28 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomDropdownElementRequestCompound } from './custom-dropdown-element-request-compound';
+import type { CustomDropdownElementRequest } from './custom-dropdown-element-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EnumTextvalidation } from './enum-textvalidation';
+import type { EnumTextvalidation } from './enum-textvalidation';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignformfieldRequestCompound } from './ezsignformfield-request-compound';
+import type { EzsignformfieldRequestCompound } from './ezsignformfield-request-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignformfieldgroupRequest } from './ezsignformfieldgroup-request';
+import type { EzsignformfieldgroupRequest } from './ezsignformfieldgroup-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignformfieldgroupsignerRequestCompound } from './ezsignformfieldgroupsigner-request-compound';
+import type { EzsignformfieldgroupsignerRequest } from './ezsignformfieldgroupsigner-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignformfieldgroupSignerrequirement } from './field-eezsignformfieldgroup-signerrequirement';
+import type { FieldEEzsignformfieldgroupSignerrequirement } from './field-eezsignformfieldgroup-signerrequirement';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignformfieldgroupTooltipposition } from './field-eezsignformfieldgroup-tooltipposition';
+import type { FieldEEzsignformfieldgroupTooltipposition } from './field-eezsignformfieldgroup-tooltipposition';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignformfieldgroupType } from './field-eezsignformfieldgroup-type';
+import type { FieldEEzsignformfieldgroupType } from './field-eezsignformfieldgroup-type';
 
 /**
  * @type EzsignformfieldgroupRequestCompound

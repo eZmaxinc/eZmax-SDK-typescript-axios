@@ -15,19 +15,19 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigntemplateglobalResponse } from './ezsigntemplateglobal-response';
+import type { EzsigntemplateglobalResponse } from './ezsigntemplateglobal-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigntemplateglobaldocumentResponse } from './ezsigntemplateglobaldocument-response';
+import type { EzsigntemplateglobaldocumentResponse } from './ezsigntemplateglobaldocument-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigntemplateglobalsignerResponseCompound } from './ezsigntemplateglobalsigner-response-compound';
+import type { EzsigntemplateglobalsignerResponseCompound } from './ezsigntemplateglobalsigner-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsigntemplateglobalModule } from './field-eezsigntemplateglobal-module';
+import type { FieldEEzsigntemplateglobalModule } from './field-eezsigntemplateglobal-module';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsigntemplateglobalSupplier } from './field-eezsigntemplateglobal-supplier';
+import type { FieldEEzsigntemplateglobalSupplier } from './field-eezsigntemplateglobal-supplier';
 
 /**
  * @type EzsigntemplateglobalResponseCompound

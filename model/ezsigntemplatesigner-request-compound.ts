@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigntemplatesignerRequest } from './ezsigntemplatesigner-request';
+import type { EzsigntemplatesignerRequest } from './ezsigntemplatesigner-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsigntemplatesignerMapping } from './field-eezsigntemplatesigner-mapping';
+import type { FieldEEzsigntemplatesignerMapping } from './field-eezsigntemplatesigner-mapping';
 
 /**
  * @type EzsigntemplatesignerRequestCompound

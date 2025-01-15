@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonReportgroup } from './common-reportgroup';
+import type { CommonReportgroup } from './common-reportgroup';
 
 /**
  * Payload for POST /1/report/xxx/xxx and and /1/module/report/getReportFromCache

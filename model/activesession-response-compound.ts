@@ -15,43 +15,43 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ActivesessionResponse } from './activesession-response';
+import type { ActivesessionResponse } from './activesession-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ActivesessionResponseCompoundApikey } from './activesession-response-compound-apikey';
+import type { ActivesessionResponseCompoundApikey } from './activesession-response-compound-apikey';
 // May contain unused imports in some cases
 // @ts-ignore
-import { ActivesessionResponseCompoundUser } from './activesession-response-compound-user';
+import type { ActivesessionResponseCompoundUser } from './activesession-response-compound-user';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEActivesessionEzsign } from './field-eactivesession-ezsign';
+import type { FieldEActivesessionEzsign } from './field-eactivesession-ezsign';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEActivesessionEzsignaccess } from './field-eactivesession-ezsignaccess';
+import type { FieldEActivesessionEzsignaccess } from './field-eactivesession-ezsignaccess';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEActivesessionEzsignprepaid } from './field-eactivesession-ezsignprepaid';
+import type { FieldEActivesessionEzsignprepaid } from './field-eactivesession-ezsignprepaid';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEActivesessionOrigin } from './field-eactivesession-origin';
+import type { FieldEActivesessionOrigin } from './field-eactivesession-origin';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEActivesessionRealestateinprogress } from './field-eactivesession-realestateinprogress';
+import type { FieldEActivesessionRealestateinprogress } from './field-eactivesession-realestateinprogress';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEActivesessionUsertype } from './field-eactivesession-usertype';
+import type { FieldEActivesessionUsertype } from './field-eactivesession-usertype';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEActivesessionWeekdaystart } from './field-eactivesession-weekdaystart';
+import type { FieldEActivesessionWeekdaystart } from './field-eactivesession-weekdaystart';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldESystemconfigurationEzsignofficeplan } from './field-esystemconfiguration-ezsignofficeplan';
+import type { FieldESystemconfigurationEzsignofficeplan } from './field-esystemconfiguration-ezsignofficeplan';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEUserEzsignaccess } from './field-euser-ezsignaccess';
+import type { FieldEUserEzsignaccess } from './field-euser-ezsignaccess';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEUserEzsignprepaid } from './field-euser-ezsignprepaid';
+import type { FieldEUserEzsignprepaid } from './field-euser-ezsignprepaid';
 
 /**
  * @type ActivesessionResponseCompound

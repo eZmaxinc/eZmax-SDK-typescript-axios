@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CreditcarddetailResponseCompound } from './creditcarddetail-response-compound';
+import type { CreditcarddetailResponseCompound } from './creditcarddetail-response-compound';
 
 /**
  * A Creditcardclient Object

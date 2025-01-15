@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonReportcellstyle } from './common-reportcellstyle';
+import type { CommonReportcellstyle } from './common-reportcellstyle';
 
 /**
  * A column in a Reportsection 

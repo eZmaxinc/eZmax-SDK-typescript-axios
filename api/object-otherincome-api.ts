@@ -20,17 +20,17 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { OtherincomeGetCommunicationCountV1Response } from '../model';
+import type { OtherincomeGetCommunicationCountV1Response } from '../model';
 // @ts-ignore
-import { OtherincomeGetCommunicationListV1Response } from '../model';
+import type { OtherincomeGetCommunicationListV1Response } from '../model';
 // @ts-ignore
-import { OtherincomeGetCommunicationrecipientsV1Response } from '../model';
+import type { OtherincomeGetCommunicationrecipientsV1Response } from '../model';
 // @ts-ignore
-import { OtherincomeGetCommunicationsendersV1Response } from '../model';
+import type { OtherincomeGetCommunicationsendersV1Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -350,7 +350,7 @@ export const ObjectOtherincomeApiFactory = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        otherincomeGetCommunicationCountV1(pkiOtherincomeID: number, options?: any): AxiosPromise<OtherincomeGetCommunicationCountV1Response> {
+        otherincomeGetCommunicationCountV1(pkiOtherincomeID: number, options?: RawAxiosRequestConfig): AxiosPromise<OtherincomeGetCommunicationCountV1Response> {
             return localVarFp.otherincomeGetCommunicationCountV1(pkiOtherincomeID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -360,7 +360,7 @@ export const ObjectOtherincomeApiFactory = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        otherincomeGetCommunicationListV1(pkiOtherincomeID: number, options?: any): AxiosPromise<OtherincomeGetCommunicationListV1Response> {
+        otherincomeGetCommunicationListV1(pkiOtherincomeID: number, options?: RawAxiosRequestConfig): AxiosPromise<OtherincomeGetCommunicationListV1Response> {
             return localVarFp.otherincomeGetCommunicationListV1(pkiOtherincomeID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -370,7 +370,7 @@ export const ObjectOtherincomeApiFactory = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        otherincomeGetCommunicationrecipientsV1(pkiOtherincomeID: number, options?: any): AxiosPromise<OtherincomeGetCommunicationrecipientsV1Response> {
+        otherincomeGetCommunicationrecipientsV1(pkiOtherincomeID: number, options?: RawAxiosRequestConfig): AxiosPromise<OtherincomeGetCommunicationrecipientsV1Response> {
             return localVarFp.otherincomeGetCommunicationrecipientsV1(pkiOtherincomeID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -380,7 +380,7 @@ export const ObjectOtherincomeApiFactory = function (configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        otherincomeGetCommunicationsendersV1(pkiOtherincomeID: number, options?: any): AxiosPromise<OtherincomeGetCommunicationsendersV1Response> {
+        otherincomeGetCommunicationsendersV1(pkiOtherincomeID: number, options?: RawAxiosRequestConfig): AxiosPromise<OtherincomeGetCommunicationsendersV1Response> {
             return localVarFp.otherincomeGetCommunicationsendersV1(pkiOtherincomeID, options).then((request) => request(axios, basePath));
         },
     };

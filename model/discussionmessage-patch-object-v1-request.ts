@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { DiscussionmessageRequestPatch } from './discussionmessage-request-patch';
+import type { DiscussionmessageRequestPatch } from './discussionmessage-request-patch';
 
 /**
  * Request for PATCH /1/object/discussionmessage/{pkiDiscussionmessageID}

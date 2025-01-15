@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignfoldertypeRequestCompoundV3 } from './ezsignfoldertype-request-compound-v3';
+import type { EzsignfoldertypeRequestCompoundV3 } from './ezsignfoldertype-request-compound-v3';
 
 /**
  * Request for PUT /3/object/ezsignfoldertype/{pkiEzsignfoldertypeID}

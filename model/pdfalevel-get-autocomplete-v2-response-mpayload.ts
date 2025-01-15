@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { PdfalevelAutocompleteElementResponse } from './pdfalevel-autocomplete-element-response';
+import type { PdfalevelAutocompleteElementResponse } from './pdfalevel-autocomplete-element-response';
 
 /**
  * Payload for POST /2/object/pdfalevel/getAutocomplete

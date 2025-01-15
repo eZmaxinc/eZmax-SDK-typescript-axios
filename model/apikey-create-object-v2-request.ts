@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ApikeyRequestCompound } from './apikey-request-compound';
+import type { ApikeyRequest } from './apikey-request';
 
 /**
  * Request for POST /2/object/apikey

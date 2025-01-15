@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonResponse } from './common-response';
+import type { CommonResponse } from './common-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonResponseObjDebug } from './common-response-obj-debug';
+import type { CommonResponseObjDebug } from './common-response-obj-debug';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
+import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { InscriptiontempGetCommunicationrecipientsV1ResponseMPayload } from './inscriptiontemp-get-communicationrecipients-v1-response-mpayload';
+import type { InscriptiontempGetCommunicationrecipientsV1ResponseMPayload } from './inscriptiontemp-get-communicationrecipients-v1-response-mpayload';
 
 /**
  * @type InscriptiontempGetCommunicationrecipientsV1Response

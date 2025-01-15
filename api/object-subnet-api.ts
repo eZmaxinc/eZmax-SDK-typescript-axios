@@ -20,21 +20,19 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponse } from '../model';
 // @ts-ignore
-import { SubnetCreateObjectV1Request } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { SubnetCreateObjectV1Response } from '../model';
+import type { SubnetCreateObjectV1Request } from '../model';
 // @ts-ignore
-import { SubnetDeleteObjectV1Response } from '../model';
+import type { SubnetCreateObjectV1Response } from '../model';
 // @ts-ignore
-import { SubnetEditObjectV1Request } from '../model';
+import type { SubnetEditObjectV1Request } from '../model';
 // @ts-ignore
-import { SubnetEditObjectV1Response } from '../model';
-// @ts-ignore
-import { SubnetGetObjectV2Response } from '../model';
+import type { SubnetGetObjectV2Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -313,7 +311,7 @@ export const ObjectSubnetApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async subnetDeleteObjectV1(pkiSubnetID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SubnetDeleteObjectV1Response>> {
+        async subnetDeleteObjectV1(pkiSubnetID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.subnetDeleteObjectV1(pkiSubnetID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectSubnetApi.subnetDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -327,7 +325,7 @@ export const ObjectSubnetApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async subnetEditObjectV1(pkiSubnetID: number, subnetEditObjectV1Request: SubnetEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SubnetEditObjectV1Response>> {
+        async subnetEditObjectV1(pkiSubnetID: number, subnetEditObjectV1Request: SubnetEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.subnetEditObjectV1(pkiSubnetID, subnetEditObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectSubnetApi.subnetEditObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -363,7 +361,7 @@ export const ObjectSubnetApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        subnetCreateObjectV1(subnetCreateObjectV1Request: SubnetCreateObjectV1Request, options?: any): AxiosPromise<SubnetCreateObjectV1Response> {
+        subnetCreateObjectV1(subnetCreateObjectV1Request: SubnetCreateObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<SubnetCreateObjectV1Response> {
             return localVarFp.subnetCreateObjectV1(subnetCreateObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -373,7 +371,7 @@ export const ObjectSubnetApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        subnetDeleteObjectV1(pkiSubnetID: number, options?: any): AxiosPromise<SubnetDeleteObjectV1Response> {
+        subnetDeleteObjectV1(pkiSubnetID: number, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.subnetDeleteObjectV1(pkiSubnetID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -384,7 +382,7 @@ export const ObjectSubnetApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        subnetEditObjectV1(pkiSubnetID: number, subnetEditObjectV1Request: SubnetEditObjectV1Request, options?: any): AxiosPromise<SubnetEditObjectV1Response> {
+        subnetEditObjectV1(pkiSubnetID: number, subnetEditObjectV1Request: SubnetEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.subnetEditObjectV1(pkiSubnetID, subnetEditObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -394,7 +392,7 @@ export const ObjectSubnetApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        subnetGetObjectV2(pkiSubnetID: number, options?: any): AxiosPromise<SubnetGetObjectV2Response> {
+        subnetGetObjectV2(pkiSubnetID: number, options?: RawAxiosRequestConfig): AxiosPromise<SubnetGetObjectV2Response> {
             return localVarFp.subnetGetObjectV2(pkiSubnetID, options).then((request) => request(axios, basePath));
         },
     };

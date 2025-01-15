@@ -20,19 +20,19 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { InvoiceGetAttachmentsV1Response } from '../model';
+import type { InvoiceGetAttachmentsV1Response } from '../model';
 // @ts-ignore
-import { InvoiceGetCommunicationCountV1Response } from '../model';
+import type { InvoiceGetCommunicationCountV1Response } from '../model';
 // @ts-ignore
-import { InvoiceGetCommunicationListV1Response } from '../model';
+import type { InvoiceGetCommunicationListV1Response } from '../model';
 // @ts-ignore
-import { InvoiceGetCommunicationrecipientsV1Response } from '../model';
+import type { InvoiceGetCommunicationrecipientsV1Response } from '../model';
 // @ts-ignore
-import { InvoiceGetCommunicationsendersV1Response } from '../model';
+import type { InvoiceGetCommunicationsendersV1Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -423,7 +423,7 @@ export const ObjectInvoiceApiFactory = function (configuration?: Configuration, 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        invoiceGetAttachmentsV1(pkiInvoiceID: number, options?: any): AxiosPromise<InvoiceGetAttachmentsV1Response> {
+        invoiceGetAttachmentsV1(pkiInvoiceID: number, options?: RawAxiosRequestConfig): AxiosPromise<InvoiceGetAttachmentsV1Response> {
             return localVarFp.invoiceGetAttachmentsV1(pkiInvoiceID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -433,7 +433,7 @@ export const ObjectInvoiceApiFactory = function (configuration?: Configuration, 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        invoiceGetCommunicationCountV1(pkiInvoiceID: number, options?: any): AxiosPromise<InvoiceGetCommunicationCountV1Response> {
+        invoiceGetCommunicationCountV1(pkiInvoiceID: number, options?: RawAxiosRequestConfig): AxiosPromise<InvoiceGetCommunicationCountV1Response> {
             return localVarFp.invoiceGetCommunicationCountV1(pkiInvoiceID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -443,7 +443,7 @@ export const ObjectInvoiceApiFactory = function (configuration?: Configuration, 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        invoiceGetCommunicationListV1(pkiInvoiceID: number, options?: any): AxiosPromise<InvoiceGetCommunicationListV1Response> {
+        invoiceGetCommunicationListV1(pkiInvoiceID: number, options?: RawAxiosRequestConfig): AxiosPromise<InvoiceGetCommunicationListV1Response> {
             return localVarFp.invoiceGetCommunicationListV1(pkiInvoiceID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -453,7 +453,7 @@ export const ObjectInvoiceApiFactory = function (configuration?: Configuration, 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        invoiceGetCommunicationrecipientsV1(pkiInvoiceID: number, options?: any): AxiosPromise<InvoiceGetCommunicationrecipientsV1Response> {
+        invoiceGetCommunicationrecipientsV1(pkiInvoiceID: number, options?: RawAxiosRequestConfig): AxiosPromise<InvoiceGetCommunicationrecipientsV1Response> {
             return localVarFp.invoiceGetCommunicationrecipientsV1(pkiInvoiceID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -463,7 +463,7 @@ export const ObjectInvoiceApiFactory = function (configuration?: Configuration, 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        invoiceGetCommunicationsendersV1(pkiInvoiceID: number, options?: any): AxiosPromise<InvoiceGetCommunicationsendersV1Response> {
+        invoiceGetCommunicationsendersV1(pkiInvoiceID: number, options?: RawAxiosRequestConfig): AxiosPromise<InvoiceGetCommunicationsendersV1Response> {
             return localVarFp.invoiceGetCommunicationsendersV1(pkiInvoiceID, options).then((request) => request(axios, basePath));
         },
     };

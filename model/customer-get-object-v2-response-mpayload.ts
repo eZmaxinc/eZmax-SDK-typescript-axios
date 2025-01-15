@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomerResponseCompound } from './customer-response-compound';
+import type { CustomerResponseCompound } from './customer-response-compound';
 
 /**
  * Payload for GET /2/object/customer/{pkiCustomerID}

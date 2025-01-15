@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsigndocumentlogType } from './field-eezsigndocumentlog-type';
+import type { FieldEEzsigndocumentlogType } from './field-eezsigndocumentlog-type';
 
 /**
  * An Ezsigndocumentlog Object

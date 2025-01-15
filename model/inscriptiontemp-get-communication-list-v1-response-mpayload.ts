@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomCommunicationListElementResponse } from './custom-communication-list-element-response';
+import type { CustomCommunicationListElementResponse } from './custom-communication-list-element-response';
 
 /**
  * Response for GET /1/object/inscriptiontemp/{pkiInscriptiontempID}/getCommunicationList

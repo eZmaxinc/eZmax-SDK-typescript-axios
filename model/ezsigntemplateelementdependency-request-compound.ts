@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigntemplateelementdependencyRequest } from './ezsigntemplateelementdependency-request';
+import type { EzsigntemplateelementdependencyRequest } from './ezsigntemplateelementdependency-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsigntemplateelementdependencyOperator } from './field-eezsigntemplateelementdependency-operator';
+import type { FieldEEzsigntemplateelementdependencyOperator } from './field-eezsigntemplateelementdependency-operator';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsigntemplateelementdependencyValidation } from './field-eezsigntemplateelementdependency-validation';
+import type { FieldEEzsigntemplateelementdependencyValidation } from './field-eezsigntemplateelementdependency-validation';
 
 /**
  * @type EzsigntemplateelementdependencyRequestCompound

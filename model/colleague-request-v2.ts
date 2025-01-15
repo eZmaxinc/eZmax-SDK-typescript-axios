@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEColleagueEzsign } from './field-ecolleague-ezsign';
+import type { FieldEColleagueEzsign } from './field-ecolleague-ezsign';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEColleagueRealestateinprogess } from './field-ecolleague-realestateinprogess';
+import type { FieldEColleagueRealestateinprogess } from './field-ecolleague-realestateinprogess';
 
 /**
  * A Colleague Object

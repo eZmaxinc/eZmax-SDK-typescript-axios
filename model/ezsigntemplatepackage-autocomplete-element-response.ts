@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignfoldertypePrivacylevel } from './field-eezsignfoldertype-privacylevel';
+import type { FieldEEzsignfoldertypePrivacylevel } from './field-eezsignfoldertype-privacylevel';
 
 /**
  * A Ezsigntemplatepackage AutocompleteElement Response

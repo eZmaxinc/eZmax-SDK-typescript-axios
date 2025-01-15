@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AuthenticationexternalGetAutocompleteV2ResponseMPayload } from './authenticationexternal-get-autocomplete-v2-response-mpayload';
+import type { AuthenticationexternalGetAutocompleteV2ResponseMPayload } from './authenticationexternal-get-autocomplete-v2-response-mpayload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonResponse } from './common-response';
+import type { CommonResponse } from './common-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonResponseObjDebug } from './common-response-obj-debug';
+import type { CommonResponseObjDebug } from './common-response-obj-debug';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
+import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 
 /**
  * @type AuthenticationexternalGetAutocompleteV2Response

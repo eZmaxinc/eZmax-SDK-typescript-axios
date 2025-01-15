@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonAudit } from './common-audit';
+import type { CommonAudit } from './common-audit';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsigntemplatepublicLimittype } from './field-eezsigntemplatepublic-limittype';
+import type { FieldEEzsigntemplatepublicLimittype } from './field-eezsigntemplatepublic-limittype';
 
 /**
  * A Ezsigntemplatepublic Object

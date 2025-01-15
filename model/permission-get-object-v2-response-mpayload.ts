@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { PermissionResponseCompound } from './permission-response-compound';
+import type { PermissionResponse } from './permission-response';
 
 /**
  * Payload for GET /2/object/permission/{pkiPermissionID}
@@ -24,21 +24,21 @@ import { PermissionResponseCompound } from './permission-response-compound';
  */
 export interface PermissionGetObjectV2ResponseMPayload {
     /**
-     * 
-     * @type {PermissionResponseCompound}
+     * A Permission Object and children to create a complete structure
+     * @type {PermissionResponse}
      * @memberof PermissionGetObjectV2ResponseMPayload
      */
-    /*'objPermission': PermissionResponseCompound;*/
-    'objPermission': PermissionResponseCompound;
+    /*'objPermission': PermissionResponse;*/
+    'objPermission': PermissionResponse;
 }
 /**
  * @import
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectPermissionResponseCompound } from './'
+import { DataObjectPermissionResponse } from './'
 // @ts-ignore
-import { ValidationObjectPermissionResponseCompound } from './'
+import { ValidationObjectPermissionResponse } from './'
 
 /**
  * @export 
@@ -47,7 +47,7 @@ import { ValidationObjectPermissionResponseCompound } from './'
  * @class DataObjectPermissionGetObjectV2ResponseMPayload
  */
 export class DataObjectPermissionGetObjectV2ResponseMPayload {
-   objPermission:PermissionResponseCompound = new DataObjectPermissionResponseCompound()
+   objPermission:PermissionResponse = new DataObjectPermissionResponse()
 }
 
 /**
@@ -56,7 +56,7 @@ export class DataObjectPermissionGetObjectV2ResponseMPayload {
  * @class ValidationObjectPermissionGetObjectV2ResponseMPayload
  */
 export class ValidationObjectPermissionGetObjectV2ResponseMPayload {
-   objPermission = new ValidationObjectPermissionResponseCompound()
+   objPermission = new ValidationObjectPermissionResponse()
 } 
 
 

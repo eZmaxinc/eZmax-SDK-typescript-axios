@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldECreditcardtypeCodename } from './field-ecreditcardtype-codename';
+import type { FieldECreditcardtypeCodename } from './field-ecreditcardtype-codename';
 
 /**
  * Creditcardtype AutocompleteElement Response

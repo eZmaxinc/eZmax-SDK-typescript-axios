@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomDropdownElementRequest } from './custom-dropdown-element-request';
+import type { CustomDropdownElementRequest } from './custom-dropdown-element-request';
 
 /**
  * @type CustomDropdownElementRequestCompound

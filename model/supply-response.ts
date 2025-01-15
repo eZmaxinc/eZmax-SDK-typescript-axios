@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { MultilingualSupplyDescription } from './multilingual-supply-description';
+import type { MultilingualSupplyDescription } from './multilingual-supply-description';
 
 /**
  * A Supply Object

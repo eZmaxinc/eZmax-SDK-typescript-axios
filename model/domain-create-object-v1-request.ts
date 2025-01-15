@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { DomainRequestCompound } from './domain-request-compound';
+import type { DomainRequestCompound } from './domain-request-compound';
 
 /**
  * Request for POST /1/object/domain

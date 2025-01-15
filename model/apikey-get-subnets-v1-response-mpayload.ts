@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { SubnetResponseCompound } from './subnet-response-compound';
+import type { SubnetResponseCompound } from './subnet-response-compound';
 
 /**
  * Response for GET /1/object/apikey/{pkiApikeyID}/getSubnets

@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignformfieldgroupResponseCompound } from './ezsignformfieldgroup-response-compound';
+import type { EzsignformfieldgroupResponseCompound } from './ezsignformfieldgroup-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignsignatureResponseCompound } from './ezsignsignature-response-compound';
+import type { EzsignsignatureResponseCompound } from './ezsignsignature-response-compound';
 
 /**
  * Payload for GET /1/object/ezsigndocument/{pkiEzsigndocumentID}/getCompletedElements

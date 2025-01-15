@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignfolderDocumentdependency } from './field-eezsignfolder-documentdependency';
+import type { FieldEEzsignfolderDocumentdependency } from './field-eezsignfolder-documentdependency';
 
 /**
  * An Ezsignfolder Object

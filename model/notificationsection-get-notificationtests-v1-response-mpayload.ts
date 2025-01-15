@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomNotificationsubsectiongetnotificationtestsResponse } from './custom-notificationsubsectiongetnotificationtests-response';
+import type { CustomNotificationsubsectiongetnotificationtestsResponse } from './custom-notificationsubsectiongetnotificationtests-response';
 
 /**
  * Payload for GET /1/object/notificationsection/{pkiNotificationsectionID}/getNotificationtests

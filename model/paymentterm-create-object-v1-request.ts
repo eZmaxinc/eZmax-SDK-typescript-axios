@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { PaymenttermRequestCompound } from './paymentterm-request-compound';
+import type { PaymenttermRequestCompound } from './paymentterm-request-compound';
 
 /**
  * Request for POST /1/object/paymentterm

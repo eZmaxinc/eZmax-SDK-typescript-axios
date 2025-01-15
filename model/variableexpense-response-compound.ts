@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEVariableexpenseTaxable } from './field-evariableexpense-taxable';
+import type { FieldEVariableexpenseTaxable } from './field-evariableexpense-taxable';
 // May contain unused imports in some cases
 // @ts-ignore
-import { MultilingualVariableexpenseDescription } from './multilingual-variableexpense-description';
+import type { MultilingualVariableexpenseDescription } from './multilingual-variableexpense-description';
 // May contain unused imports in some cases
 // @ts-ignore
-import { VariableexpenseResponse } from './variableexpense-response';
+import type { VariableexpenseResponse } from './variableexpense-response';
 
 /**
  * @type VariableexpenseResponseCompound

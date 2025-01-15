@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigndiscussionRequestCompound } from './ezsigndiscussion-request-compound';
+import type { EzsigndiscussionRequestCompound } from './ezsigndiscussion-request-compound';
 
 /**
  * Request for POST /1/object/ezsigndiscussion

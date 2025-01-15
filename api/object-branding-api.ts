@@ -20,25 +20,25 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { BrandingCreateObjectV2Request } from '../model';
+import type { BrandingCreateObjectV2Request } from '../model';
 // @ts-ignore
-import { BrandingCreateObjectV2Response } from '../model';
+import type { BrandingCreateObjectV2Response } from '../model';
 // @ts-ignore
-import { BrandingEditObjectV2Request } from '../model';
+import type { BrandingEditObjectV2Request } from '../model';
 // @ts-ignore
-import { BrandingEditObjectV2Response } from '../model';
+import type { BrandingGetAutocompleteV2Response } from '../model';
 // @ts-ignore
-import { BrandingGetAutocompleteV2Response } from '../model';
+import type { BrandingGetListV1Response } from '../model';
 // @ts-ignore
-import { BrandingGetListV1Response } from '../model';
+import type { BrandingGetObjectV3Response } from '../model';
 // @ts-ignore
-import { BrandingGetObjectV3Response } from '../model';
+import type { CommonResponse } from '../model';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { HeaderAcceptLanguage } from '../model';
+import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -212,14 +212,13 @@ export const ObjectBrandingApiAxiosParamCreator = function (configuration?: Conf
                 localVarQueryParameter['sQuery'] = sQuery;
             }
 
+
+    
             if (acceptLanguage != null) {
                 localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
                     ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
-
-
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -293,14 +292,13 @@ export const ObjectBrandingApiAxiosParamCreator = function (configuration?: Conf
                 localVarQueryParameter['sFilter'] = sFilter;
             }
 
+
+    
             if (acceptLanguage != null) {
                 localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
                     ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
-
-
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -416,7 +414,7 @@ export const ObjectBrandingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async brandingEditObjectV2(pkiBrandingID: number, brandingEditObjectV2Request: BrandingEditObjectV2Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BrandingEditObjectV2Response>> {
+        async brandingEditObjectV2(pkiBrandingID: number, brandingEditObjectV2Request: BrandingEditObjectV2Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.brandingEditObjectV2(pkiBrandingID, brandingEditObjectV2Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectBrandingApi.brandingEditObjectV2']?.[localVarOperationServerIndex]?.url;
@@ -485,7 +483,7 @@ export const ObjectBrandingApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        brandingCreateObjectV2(brandingCreateObjectV2Request: BrandingCreateObjectV2Request, options?: any): AxiosPromise<BrandingCreateObjectV2Response> {
+        brandingCreateObjectV2(brandingCreateObjectV2Request: BrandingCreateObjectV2Request, options?: RawAxiosRequestConfig): AxiosPromise<BrandingCreateObjectV2Response> {
             return localVarFp.brandingCreateObjectV2(brandingCreateObjectV2Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -496,7 +494,7 @@ export const ObjectBrandingApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        brandingEditObjectV2(pkiBrandingID: number, brandingEditObjectV2Request: BrandingEditObjectV2Request, options?: any): AxiosPromise<BrandingEditObjectV2Response> {
+        brandingEditObjectV2(pkiBrandingID: number, brandingEditObjectV2Request: BrandingEditObjectV2Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.brandingEditObjectV2(pkiBrandingID, brandingEditObjectV2Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -509,7 +507,7 @@ export const ObjectBrandingApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        brandingGetAutocompleteV2(sSelector: BrandingGetAutocompleteV2SSelectorEnum, eFilterActive?: BrandingGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: any): AxiosPromise<BrandingGetAutocompleteV2Response> {
+        brandingGetAutocompleteV2(sSelector: BrandingGetAutocompleteV2SSelectorEnum, eFilterActive?: BrandingGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig): AxiosPromise<BrandingGetAutocompleteV2Response> {
             return localVarFp.brandingGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(axios, basePath));
         },
         /**
@@ -523,7 +521,7 @@ export const ObjectBrandingApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        brandingGetListV1(eOrderBy?: BrandingGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: any): AxiosPromise<BrandingGetListV1Response> {
+        brandingGetListV1(eOrderBy?: BrandingGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): AxiosPromise<BrandingGetListV1Response> {
             return localVarFp.brandingGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(axios, basePath));
         },
         /**
@@ -533,7 +531,7 @@ export const ObjectBrandingApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        brandingGetObjectV3(pkiBrandingID: number, options?: any): AxiosPromise<BrandingGetObjectV3Response> {
+        brandingGetObjectV3(pkiBrandingID: number, options?: RawAxiosRequestConfig): AxiosPromise<BrandingGetObjectV3Response> {
             return localVarFp.brandingGetObjectV3(pkiBrandingID, options).then((request) => request(axios, basePath));
         },
     };

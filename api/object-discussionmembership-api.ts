@@ -20,15 +20,15 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponse } from '../model';
 // @ts-ignore
-import { DiscussionmembershipCreateObjectV1Request } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { DiscussionmembershipCreateObjectV1Response } from '../model';
+import type { DiscussionmembershipCreateObjectV1Request } from '../model';
 // @ts-ignore
-import { DiscussionmembershipDeleteObjectV1Response } from '../model';
+import type { DiscussionmembershipCreateObjectV1Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -185,7 +185,7 @@ export const ObjectDiscussionmembershipApiFp = function(configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async discussionmembershipDeleteObjectV1(pkiDiscussionmembershipID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DiscussionmembershipDeleteObjectV1Response>> {
+        async discussionmembershipDeleteObjectV1(pkiDiscussionmembershipID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.discussionmembershipDeleteObjectV1(pkiDiscussionmembershipID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectDiscussionmembershipApi.discussionmembershipDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -208,7 +208,7 @@ export const ObjectDiscussionmembershipApiFactory = function (configuration?: Co
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        discussionmembershipCreateObjectV1(discussionmembershipCreateObjectV1Request: DiscussionmembershipCreateObjectV1Request, options?: any): AxiosPromise<DiscussionmembershipCreateObjectV1Response> {
+        discussionmembershipCreateObjectV1(discussionmembershipCreateObjectV1Request: DiscussionmembershipCreateObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<DiscussionmembershipCreateObjectV1Response> {
             return localVarFp.discussionmembershipCreateObjectV1(discussionmembershipCreateObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -218,7 +218,7 @@ export const ObjectDiscussionmembershipApiFactory = function (configuration?: Co
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        discussionmembershipDeleteObjectV1(pkiDiscussionmembershipID: number, options?: any): AxiosPromise<DiscussionmembershipDeleteObjectV1Response> {
+        discussionmembershipDeleteObjectV1(pkiDiscussionmembershipID: number, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.discussionmembershipDeleteObjectV1(pkiDiscussionmembershipID, options).then((request) => request(axios, basePath));
         },
     };

@@ -20,17 +20,17 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { ElectronicfundstransferGetCommunicationCountV1Response } from '../model';
+import type { ElectronicfundstransferGetCommunicationCountV1Response } from '../model';
 // @ts-ignore
-import { ElectronicfundstransferGetCommunicationListV1Response } from '../model';
+import type { ElectronicfundstransferGetCommunicationListV1Response } from '../model';
 // @ts-ignore
-import { ElectronicfundstransferGetCommunicationrecipientsV1Response } from '../model';
+import type { ElectronicfundstransferGetCommunicationrecipientsV1Response } from '../model';
 // @ts-ignore
-import { ElectronicfundstransferGetCommunicationsendersV1Response } from '../model';
+import type { ElectronicfundstransferGetCommunicationsendersV1Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -350,7 +350,7 @@ export const ObjectElectronicfundstransferApiFactory = function (configuration?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        electronicfundstransferGetCommunicationCountV1(pkiElectronicfundstransferID: number, options?: any): AxiosPromise<ElectronicfundstransferGetCommunicationCountV1Response> {
+        electronicfundstransferGetCommunicationCountV1(pkiElectronicfundstransferID: number, options?: RawAxiosRequestConfig): AxiosPromise<ElectronicfundstransferGetCommunicationCountV1Response> {
             return localVarFp.electronicfundstransferGetCommunicationCountV1(pkiElectronicfundstransferID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -360,7 +360,7 @@ export const ObjectElectronicfundstransferApiFactory = function (configuration?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        electronicfundstransferGetCommunicationListV1(pkiElectronicfundstransferID: number, options?: any): AxiosPromise<ElectronicfundstransferGetCommunicationListV1Response> {
+        electronicfundstransferGetCommunicationListV1(pkiElectronicfundstransferID: number, options?: RawAxiosRequestConfig): AxiosPromise<ElectronicfundstransferGetCommunicationListV1Response> {
             return localVarFp.electronicfundstransferGetCommunicationListV1(pkiElectronicfundstransferID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -370,7 +370,7 @@ export const ObjectElectronicfundstransferApiFactory = function (configuration?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        electronicfundstransferGetCommunicationrecipientsV1(pkiElectronicfundstransferID: number, options?: any): AxiosPromise<ElectronicfundstransferGetCommunicationrecipientsV1Response> {
+        electronicfundstransferGetCommunicationrecipientsV1(pkiElectronicfundstransferID: number, options?: RawAxiosRequestConfig): AxiosPromise<ElectronicfundstransferGetCommunicationrecipientsV1Response> {
             return localVarFp.electronicfundstransferGetCommunicationrecipientsV1(pkiElectronicfundstransferID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -380,7 +380,7 @@ export const ObjectElectronicfundstransferApiFactory = function (configuration?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        electronicfundstransferGetCommunicationsendersV1(pkiElectronicfundstransferID: number, options?: any): AxiosPromise<ElectronicfundstransferGetCommunicationsendersV1Response> {
+        electronicfundstransferGetCommunicationsendersV1(pkiElectronicfundstransferID: number, options?: RawAxiosRequestConfig): AxiosPromise<ElectronicfundstransferGetCommunicationsendersV1Response> {
             return localVarFp.electronicfundstransferGetCommunicationsendersV1(pkiElectronicfundstransferID, options).then((request) => request(axios, basePath));
         },
     };

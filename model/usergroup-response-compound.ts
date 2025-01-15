@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EmailRequest } from './email-request';
+import type { EmailRequest } from './email-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { MultilingualUsergroupName } from './multilingual-usergroup-name';
+import type { MultilingualUsergroupName } from './multilingual-usergroup-name';
 // May contain unused imports in some cases
 // @ts-ignore
-import { UsergroupResponse } from './usergroup-response';
+import type { UsergroupResponse } from './usergroup-response';
 
 /**
  * @type UsergroupResponseCompound

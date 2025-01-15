@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { MultilingualSubnetDescription } from './multilingual-subnet-description';
+import type { MultilingualSubnetDescription } from './multilingual-subnet-description';
 // May contain unused imports in some cases
 // @ts-ignore
-import { SubnetRequest } from './subnet-request';
+import type { SubnetRequest } from './subnet-request';
 
 /**
  * @type SubnetRequestCompound

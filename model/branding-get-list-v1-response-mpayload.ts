@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { BrandingListElement } from './branding-list-element';
+import type { BrandingListElement } from './branding-list-element';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonGetListV1ResponseMPayload } from './common-get-list-v1-response-mpayload';
+import type { CommonGetListV1ResponseMPayload } from './common-get-list-v1-response-mpayload';
 
 /**
  * @type BrandingGetListV1ResponseMPayload

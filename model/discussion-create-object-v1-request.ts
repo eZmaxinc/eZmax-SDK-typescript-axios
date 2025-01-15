@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { DiscussionRequestCompound } from './discussion-request-compound';
+import type { DiscussionRequestCompound } from './discussion-request-compound';
 
 /**
  * Request for POST /1/object/discussion

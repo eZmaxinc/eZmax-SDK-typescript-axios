@@ -20,13 +20,13 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { CommunicationSendV1Request } from '../model';
+import type { CommunicationSendV1Request } from '../model';
 // @ts-ignore
-import { CommunicationSendV1Response } from '../model';
+import type { CommunicationSendV1Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -206,7 +206,7 @@ export const ObjectCommunicationApiFactory = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        communicationGetCommunicationBodyV1(pkiCommunicationID: number, options?: any): AxiosPromise<void> {
+        communicationGetCommunicationBodyV1(pkiCommunicationID: number, options?: RawAxiosRequestConfig): AxiosPromise<void> {
             return localVarFp.communicationGetCommunicationBodyV1(pkiCommunicationID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -216,7 +216,7 @@ export const ObjectCommunicationApiFactory = function (configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        communicationSendV1(communicationSendV1Request: CommunicationSendV1Request, options?: any): AxiosPromise<CommunicationSendV1Response> {
+        communicationSendV1(communicationSendV1Request: CommunicationSendV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommunicationSendV1Response> {
             return localVarFp.communicationSendV1(communicationSendV1Request, options).then((request) => request(axios, basePath));
         },
     };

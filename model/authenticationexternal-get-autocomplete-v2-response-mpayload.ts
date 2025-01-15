@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AuthenticationexternalAutocompleteElementResponse } from './authenticationexternal-autocomplete-element-response';
+import type { AuthenticationexternalAutocompleteElementResponse } from './authenticationexternal-autocomplete-element-response';
 
 /**
  * Payload for POST /2/object/authenticationexternal/getAutocomplete

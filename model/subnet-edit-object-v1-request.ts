@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { SubnetRequestCompound } from './subnet-request-compound';
+import type { SubnetRequestCompound } from './subnet-request-compound';
 
 /**
  * Request for PUT /1/object/subnet/{pkiSubnetID}

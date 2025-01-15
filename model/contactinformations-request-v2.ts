@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEContactinformationsType } from './field-econtactinformations-type';
+import type { FieldEContactinformationsType } from './field-econtactinformations-type';
 
 /**
  * A Contactinformations Object

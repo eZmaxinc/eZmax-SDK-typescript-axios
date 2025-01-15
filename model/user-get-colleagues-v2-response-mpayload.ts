@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ColleagueResponseCompoundV2 } from './colleague-response-compound-v2';
+import type { ColleagueResponseCompoundV2 } from './colleague-response-compound-v2';
 
 /**
  * Response for GET /2/object/user/{pkiUserID}/getColleagues

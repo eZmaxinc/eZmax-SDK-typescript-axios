@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { SecretquestionAutocompleteElementResponse } from './secretquestion-autocomplete-element-response';
+import type { SecretquestionAutocompleteElementResponse } from './secretquestion-autocomplete-element-response';
 
 /**
  * Payload for POST /2/object/secretquestion/getAutocomplete

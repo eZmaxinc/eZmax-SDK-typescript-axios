@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzdoctemplatedocumentRequest } from './ezdoctemplatedocument-request';
+import type { EzdoctemplatedocumentRequest } from './ezdoctemplatedocument-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzdoctemplatedocumentPrivacylevel } from './field-eezdoctemplatedocument-privacylevel';
+import type { FieldEEzdoctemplatedocumentPrivacylevel } from './field-eezdoctemplatedocument-privacylevel';
 // May contain unused imports in some cases
 // @ts-ignore
-import { MultilingualEzdoctemplatedocumentName } from './multilingual-ezdoctemplatedocument-name';
+import type { MultilingualEzdoctemplatedocumentName } from './multilingual-ezdoctemplatedocument-name';
 
 /**
  * @type EzdoctemplatedocumentRequestCompound

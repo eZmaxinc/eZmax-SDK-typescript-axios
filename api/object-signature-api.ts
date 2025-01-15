@@ -20,23 +20,21 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponse } from '../model';
 // @ts-ignore
-import { SignatureCreateObjectV1Request } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { SignatureCreateObjectV1Response } from '../model';
+import type { SignatureCreateObjectV1Request } from '../model';
 // @ts-ignore
-import { SignatureDeleteObjectV1Response } from '../model';
+import type { SignatureCreateObjectV1Response } from '../model';
 // @ts-ignore
-import { SignatureEditObjectV1Request } from '../model';
+import type { SignatureEditObjectV1Request } from '../model';
 // @ts-ignore
-import { SignatureEditObjectV1Response } from '../model';
+import type { SignatureGetObjectV2Response } from '../model';
 // @ts-ignore
-import { SignatureGetObjectV2Response } from '../model';
-// @ts-ignore
-import { SignatureGetObjectV3Response } from '../model';
+import type { SignatureGetObjectV3Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -490,7 +488,7 @@ export const ObjectSignatureApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async signatureDeleteObjectV1(pkiSignatureID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SignatureDeleteObjectV1Response>> {
+        async signatureDeleteObjectV1(pkiSignatureID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.signatureDeleteObjectV1(pkiSignatureID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectSignatureApi.signatureDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -504,7 +502,7 @@ export const ObjectSignatureApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async signatureEditObjectV1(pkiSignatureID: number, signatureEditObjectV1Request: SignatureEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SignatureEditObjectV1Response>> {
+        async signatureEditObjectV1(pkiSignatureID: number, signatureEditObjectV1Request: SignatureEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.signatureEditObjectV1(pkiSignatureID, signatureEditObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectSignatureApi.signatureEditObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -580,7 +578,7 @@ export const ObjectSignatureApiFactory = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        signatureCreateObjectV1(signatureCreateObjectV1Request: SignatureCreateObjectV1Request, options?: any): AxiosPromise<SignatureCreateObjectV1Response> {
+        signatureCreateObjectV1(signatureCreateObjectV1Request: SignatureCreateObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<SignatureCreateObjectV1Response> {
             return localVarFp.signatureCreateObjectV1(signatureCreateObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -590,7 +588,7 @@ export const ObjectSignatureApiFactory = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        signatureDeleteObjectV1(pkiSignatureID: number, options?: any): AxiosPromise<SignatureDeleteObjectV1Response> {
+        signatureDeleteObjectV1(pkiSignatureID: number, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.signatureDeleteObjectV1(pkiSignatureID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -601,7 +599,7 @@ export const ObjectSignatureApiFactory = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        signatureEditObjectV1(pkiSignatureID: number, signatureEditObjectV1Request: SignatureEditObjectV1Request, options?: any): AxiosPromise<SignatureEditObjectV1Response> {
+        signatureEditObjectV1(pkiSignatureID: number, signatureEditObjectV1Request: SignatureEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.signatureEditObjectV1(pkiSignatureID, signatureEditObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -612,7 +610,7 @@ export const ObjectSignatureApiFactory = function (configuration?: Configuration
          * @deprecated
          * @throws {RequiredError}
          */
-        signatureGetObjectV2(pkiSignatureID: number, options?: any): AxiosPromise<SignatureGetObjectV2Response> {
+        signatureGetObjectV2(pkiSignatureID: number, options?: RawAxiosRequestConfig): AxiosPromise<SignatureGetObjectV2Response> {
             return localVarFp.signatureGetObjectV2(pkiSignatureID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -622,7 +620,7 @@ export const ObjectSignatureApiFactory = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        signatureGetObjectV3(pkiSignatureID: number, options?: any): AxiosPromise<SignatureGetObjectV3Response> {
+        signatureGetObjectV3(pkiSignatureID: number, options?: RawAxiosRequestConfig): AxiosPromise<SignatureGetObjectV3Response> {
             return localVarFp.signatureGetObjectV3(pkiSignatureID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -632,7 +630,7 @@ export const ObjectSignatureApiFactory = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        signatureGetSVGInitialsV1(pkiSignatureID: number, options?: any): AxiosPromise<void> {
+        signatureGetSVGInitialsV1(pkiSignatureID: number, options?: RawAxiosRequestConfig): AxiosPromise<void> {
             return localVarFp.signatureGetSVGInitialsV1(pkiSignatureID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -642,7 +640,7 @@ export const ObjectSignatureApiFactory = function (configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        signatureGetSVGSignatureV1(pkiSignatureID: number, options?: any): AxiosPromise<void> {
+        signatureGetSVGSignatureV1(pkiSignatureID: number, options?: RawAxiosRequestConfig): AxiosPromise<void> {
             return localVarFp.signatureGetSVGSignatureV1(pkiSignatureID, options).then((request) => request(axios, basePath));
         },
     };

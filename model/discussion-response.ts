@@ -13,9 +13,6 @@
  */
 
 
-// May contain unused imports in some cases
-// @ts-ignore
-import { CustomDiscussionconfigurationResponse } from './custom-discussionconfiguration-response';
 
 /**
  * A Discussion Object
@@ -66,21 +63,21 @@ export interface DiscussionResponse {
     /*'iDiscussionmessageCountunread': number;*/
     'iDiscussionmessageCountunread': number;
     /**
-     * 
-     * @type {CustomDiscussionconfigurationResponse}
+     * A Custom Discussionconfiguration Object
+     * @type {object}
      * @memberof DiscussionResponse
      */
-    /*'objDiscussionconfiguration'?: CustomDiscussionconfigurationResponse;*/
-    'objDiscussionconfiguration'?: CustomDiscussionconfigurationResponse;
+    /*'objDiscussionconfiguration'?: object;*/
+    'objDiscussionconfiguration'?: object;
 }
 /**
  * @import
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCustomDiscussionconfigurationResponse } from './'
+import { DataObjectobject } from './'
 // @ts-ignore
-import { ValidationObjectCustomDiscussionconfigurationResponse } from './'
+import { ValidationObjectobject } from './'
 
 /**
  * @export 
@@ -95,7 +92,7 @@ export class DataObjectDiscussionResponse {
    dtDiscussionLastread?:string = undefined
    iDiscussionmessageCount:number = 0
    iDiscussionmessageCountunread:number = 0
-   objDiscussionconfiguration?:CustomDiscussionconfigurationResponse = undefined
+   objDiscussionconfiguration?:object = undefined
 }
 
 /**
@@ -131,7 +128,7 @@ export class ValidationObjectDiscussionResponse {
       type: 'integer',
       required: true
    }
-   objDiscussionconfiguration = new ValidationObjectCustomDiscussionconfigurationResponse()
+   objDiscussionconfiguration = new ValidationObjectobject()
 } 
 
 

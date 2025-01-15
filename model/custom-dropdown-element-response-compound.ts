@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomDropdownElementResponse } from './custom-dropdown-element-response';
+import type { CustomDropdownElementResponse } from './custom-dropdown-element-response';
 
 /**
  * @type CustomDropdownElementResponseCompound

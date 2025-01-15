@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigndocumentCreateElementV3Response } from './ezsigndocument-create-element-v3-response';
+import type { EzsigndocumentCreateElementV3Response } from './ezsigndocument-create-element-v3-response';
 
 /**
  * Payload for POST /3/object/ezsigndocument

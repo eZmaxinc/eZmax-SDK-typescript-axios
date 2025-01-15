@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignsignatureResponseCompound } from './ezsignsignature-response-compound';
+import type { EzsignsignatureResponseCompound } from './ezsignsignature-response-compound';
 
 /**
  * Payload for GET /1/object/ezsigndocument/{pkiEzsigndocument}/getEzsignsignatures

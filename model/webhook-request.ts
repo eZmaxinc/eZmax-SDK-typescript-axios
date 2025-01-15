@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEWebhookEzsignevent } from './field-ewebhook-ezsignevent';
+import type { FieldEWebhookEzsignevent } from './field-ewebhook-ezsignevent';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEWebhookManagementevent } from './field-ewebhook-managementevent';
+import type { FieldEWebhookManagementevent } from './field-ewebhook-managementevent';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEWebhookModule } from './field-ewebhook-module';
+import type { FieldEWebhookModule } from './field-ewebhook-module';
 
 /**
  * A Webhook Object

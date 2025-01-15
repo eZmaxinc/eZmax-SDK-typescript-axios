@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { BillingentityinternalGetListV1ResponseMPayload } from './billingentityinternal-get-list-v1-response-mpayload';
+import type { BillingentityinternalGetListV1ResponseMPayload } from './billingentityinternal-get-list-v1-response-mpayload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonResponseGetList } from './common-response-get-list';
+import type { CommonResponseGetList } from './common-response-get-list';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonResponseObjDebug } from './common-response-obj-debug';
+import type { CommonResponseObjDebug } from './common-response-obj-debug';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonResponseObjDebugPayloadGetList } from './common-response-obj-debug-payload-get-list';
+import type { CommonResponseObjDebugPayloadGetList } from './common-response-obj-debug-payload-get-list';
 
 /**
  * @type BillingentityinternalGetListV1Response

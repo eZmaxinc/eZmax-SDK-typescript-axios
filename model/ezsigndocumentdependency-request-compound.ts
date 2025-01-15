@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsigndocumentdependencyRequest } from './ezsigndocumentdependency-request';
+import type { EzsigndocumentdependencyRequest } from './ezsigndocumentdependency-request';
 
 /**
  * @type EzsigndocumentdependencyRequestCompound

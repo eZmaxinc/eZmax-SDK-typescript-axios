@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CreditcarddetailResponse } from './creditcarddetail-response';
+import type { CreditcarddetailResponse } from './creditcarddetail-response';
 
 /**
  * @type CreditcarddetailResponseCompound

@@ -20,17 +20,17 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { InscriptionnotauthenticatedGetCommunicationCountV1Response } from '../model';
+import type { InscriptionnotauthenticatedGetCommunicationCountV1Response } from '../model';
 // @ts-ignore
-import { InscriptionnotauthenticatedGetCommunicationListV1Response } from '../model';
+import type { InscriptionnotauthenticatedGetCommunicationListV1Response } from '../model';
 // @ts-ignore
-import { InscriptionnotauthenticatedGetCommunicationrecipientsV1Response } from '../model';
+import type { InscriptionnotauthenticatedGetCommunicationrecipientsV1Response } from '../model';
 // @ts-ignore
-import { InscriptionnotauthenticatedGetCommunicationsendersV1Response } from '../model';
+import type { InscriptionnotauthenticatedGetCommunicationsendersV1Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -350,7 +350,7 @@ export const ObjectInscriptionnotauthenticatedApiFactory = function (configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        inscriptionnotauthenticatedGetCommunicationCountV1(pkiInscriptionnotauthenticatedID: number, options?: any): AxiosPromise<InscriptionnotauthenticatedGetCommunicationCountV1Response> {
+        inscriptionnotauthenticatedGetCommunicationCountV1(pkiInscriptionnotauthenticatedID: number, options?: RawAxiosRequestConfig): AxiosPromise<InscriptionnotauthenticatedGetCommunicationCountV1Response> {
             return localVarFp.inscriptionnotauthenticatedGetCommunicationCountV1(pkiInscriptionnotauthenticatedID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -360,7 +360,7 @@ export const ObjectInscriptionnotauthenticatedApiFactory = function (configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        inscriptionnotauthenticatedGetCommunicationListV1(pkiInscriptionnotauthenticatedID: number, options?: any): AxiosPromise<InscriptionnotauthenticatedGetCommunicationListV1Response> {
+        inscriptionnotauthenticatedGetCommunicationListV1(pkiInscriptionnotauthenticatedID: number, options?: RawAxiosRequestConfig): AxiosPromise<InscriptionnotauthenticatedGetCommunicationListV1Response> {
             return localVarFp.inscriptionnotauthenticatedGetCommunicationListV1(pkiInscriptionnotauthenticatedID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -370,7 +370,7 @@ export const ObjectInscriptionnotauthenticatedApiFactory = function (configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        inscriptionnotauthenticatedGetCommunicationrecipientsV1(pkiInscriptionnotauthenticatedID: number, options?: any): AxiosPromise<InscriptionnotauthenticatedGetCommunicationrecipientsV1Response> {
+        inscriptionnotauthenticatedGetCommunicationrecipientsV1(pkiInscriptionnotauthenticatedID: number, options?: RawAxiosRequestConfig): AxiosPromise<InscriptionnotauthenticatedGetCommunicationrecipientsV1Response> {
             return localVarFp.inscriptionnotauthenticatedGetCommunicationrecipientsV1(pkiInscriptionnotauthenticatedID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -380,7 +380,7 @@ export const ObjectInscriptionnotauthenticatedApiFactory = function (configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        inscriptionnotauthenticatedGetCommunicationsendersV1(pkiInscriptionnotauthenticatedID: number, options?: any): AxiosPromise<InscriptionnotauthenticatedGetCommunicationsendersV1Response> {
+        inscriptionnotauthenticatedGetCommunicationsendersV1(pkiInscriptionnotauthenticatedID: number, options?: RawAxiosRequestConfig): AxiosPromise<InscriptionnotauthenticatedGetCommunicationsendersV1Response> {
             return localVarFp.inscriptionnotauthenticatedGetCommunicationsendersV1(pkiInscriptionnotauthenticatedID, options).then((request) => request(axios, basePath));
         },
     };

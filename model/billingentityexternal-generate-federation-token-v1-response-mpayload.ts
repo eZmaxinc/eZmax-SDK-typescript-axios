@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomApikeyfederation } from './custom-apikeyfederation';
+import type { CustomApikeyfederation } from './custom-apikeyfederation';
 
 /**
  * Payload for POST /1/object/billingentityexternal/{pkiBillingentityexternalID}/generateFederationToken

@@ -20,21 +20,21 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponse } from '../model';
 // @ts-ignore
-import { DomainCreateObjectV1Request } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { DomainCreateObjectV1Response } from '../model';
+import type { DomainCreateObjectV1Request } from '../model';
 // @ts-ignore
-import { DomainDeleteObjectV1Response } from '../model';
+import type { DomainCreateObjectV1Response } from '../model';
 // @ts-ignore
-import { DomainGetListV1Response } from '../model';
+import type { DomainGetListV1Response } from '../model';
 // @ts-ignore
-import { DomainGetObjectV2Response } from '../model';
+import type { DomainGetObjectV2Response } from '../model';
 // @ts-ignore
-import { HeaderAcceptLanguage } from '../model';
+import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -208,14 +208,13 @@ export const ObjectDomainApiAxiosParamCreator = function (configuration?: Config
                 localVarQueryParameter['sFilter'] = sFilter;
             }
 
+
+    
             if (acceptLanguage != null) {
                 localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
                     ? acceptLanguage
                     : JSON.stringify(acceptLanguage);
             }
-
-
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -330,7 +329,7 @@ export const ObjectDomainApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async domainDeleteObjectV1(pkiDomainID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DomainDeleteObjectV1Response>> {
+        async domainDeleteObjectV1(pkiDomainID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.domainDeleteObjectV1(pkiDomainID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectDomainApi.domainDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -383,7 +382,7 @@ export const ObjectDomainApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        domainCreateObjectV1(domainCreateObjectV1Request: DomainCreateObjectV1Request, options?: any): AxiosPromise<DomainCreateObjectV1Response> {
+        domainCreateObjectV1(domainCreateObjectV1Request: DomainCreateObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<DomainCreateObjectV1Response> {
             return localVarFp.domainCreateObjectV1(domainCreateObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -393,7 +392,7 @@ export const ObjectDomainApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        domainDeleteObjectV1(pkiDomainID: number, options?: any): AxiosPromise<DomainDeleteObjectV1Response> {
+        domainDeleteObjectV1(pkiDomainID: number, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.domainDeleteObjectV1(pkiDomainID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -407,7 +406,7 @@ export const ObjectDomainApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        domainGetListV1(eOrderBy?: DomainGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: any): AxiosPromise<DomainGetListV1Response> {
+        domainGetListV1(eOrderBy?: DomainGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): AxiosPromise<DomainGetListV1Response> {
             return localVarFp.domainGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(axios, basePath));
         },
         /**
@@ -417,7 +416,7 @@ export const ObjectDomainApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        domainGetObjectV2(pkiDomainID: number, options?: any): AxiosPromise<DomainGetObjectV2Response> {
+        domainGetObjectV2(pkiDomainID: number, options?: RawAxiosRequestConfig): AxiosPromise<DomainGetObjectV2Response> {
             return localVarFp.domainGetObjectV2(pkiDomainID, options).then((request) => request(axios, basePath));
         },
     };

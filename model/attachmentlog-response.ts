@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEAttachmentlogType } from './field-eattachmentlog-type';
+import type { FieldEAttachmentlogType } from './field-eattachmentlog-type';
 
 /**
  * An Attachmentlog Object

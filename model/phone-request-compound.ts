@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEPhoneType } from './field-ephone-type';
+import type { FieldEPhoneType } from './field-ephone-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import { PhoneRequest } from './phone-request';
+import type { PhoneRequest } from './phone-request';
 
 /**
  * @type PhoneRequestCompound

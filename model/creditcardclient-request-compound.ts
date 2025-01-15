@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CreditcardclientRequest } from './creditcardclient-request';
+import type { CreditcardclientRequest } from './creditcardclient-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CreditcarddetailRequest } from './creditcarddetail-request';
+import type { CreditcarddetailRequest } from './creditcarddetail-request';
 
 /**
  * @type CreditcardclientRequestCompound

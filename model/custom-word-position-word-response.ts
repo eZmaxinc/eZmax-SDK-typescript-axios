@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomWordPositionOccurenceResponse } from './custom-word-position-occurence-response';
+import type { CustomWordPositionOccurenceResponse } from './custom-word-position-occurence-response';
 
 /**
  * A Word Position Object

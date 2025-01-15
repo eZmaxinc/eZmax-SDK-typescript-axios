@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignbulksendsignermappingRequest } from './ezsignbulksendsignermapping-request';
+import type { EzsignbulksendsignermappingRequest } from './ezsignbulksendsignermapping-request';
 
 /**
  * @type EzsignbulksendsignermappingRequestCompound

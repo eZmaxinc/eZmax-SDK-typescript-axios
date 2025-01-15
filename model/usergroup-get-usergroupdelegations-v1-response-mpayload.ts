@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { UsergroupdelegationResponseCompound } from './usergroupdelegation-response-compound';
+import type { UsergroupdelegationResponseCompound } from './usergroupdelegation-response-compound';
 
 /**
  * Response for GET /1/object/usergroup/{pkiUsergroupID}/getUsergroupdelegations

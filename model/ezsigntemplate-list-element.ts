@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsigntemplateType } from './field-eezsigntemplate-type';
+import type { FieldEEzsigntemplateType } from './field-eezsigntemplate-type';
 
 /**
  * A Ezsigntemplate List Element

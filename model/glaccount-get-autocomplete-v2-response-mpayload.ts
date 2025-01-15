@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { GlaccountAutocompleteElementResponse } from './glaccount-autocomplete-element-response';
+import type { GlaccountAutocompleteElementResponse } from './glaccount-autocomplete-element-response';
 
 /**
  * Payload for POST /2/object/glaccount/getAutocomplete

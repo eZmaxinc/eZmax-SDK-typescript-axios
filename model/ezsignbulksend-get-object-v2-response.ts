@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonResponse } from './common-response';
+import type { CommonResponse } from './common-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonResponseObjDebug } from './common-response-obj-debug';
+import type { CommonResponseObjDebug } from './common-response-obj-debug';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
+import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignbulksendGetObjectV2ResponseMPayload } from './ezsignbulksend-get-object-v2-response-mpayload';
+import type { EzsignbulksendGetObjectV2ResponseMPayload } from './ezsignbulksend-get-object-v2-response-mpayload';
 
 /**
  * @type EzsignbulksendGetObjectV2Response

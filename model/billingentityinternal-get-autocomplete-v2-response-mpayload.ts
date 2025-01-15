@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { BillingentityinternalAutocompleteElementResponse } from './billingentityinternal-autocomplete-element-response';
+import type { BillingentityinternalAutocompleteElementResponse } from './billingentityinternal-autocomplete-element-response';
 
 /**
  * Payload for POST /2/object/billingentityinternal/getAutocomplete

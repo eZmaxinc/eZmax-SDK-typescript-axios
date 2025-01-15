@@ -20,15 +20,15 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseError } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
-import { EzsignbulksendtransmissionGetEzsignsignaturesAutomaticV1Response } from '../model';
+import type { EzsignbulksendtransmissionGetEzsignsignaturesAutomaticV1Response } from '../model';
 // @ts-ignore
-import { EzsignbulksendtransmissionGetFormsDataV1Response } from '../model';
+import type { EzsignbulksendtransmissionGetFormsDataV1Response } from '../model';
 // @ts-ignore
-import { EzsignbulksendtransmissionGetObjectV2Response } from '../model';
+import type { EzsignbulksendtransmissionGetObjectV2Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -348,7 +348,7 @@ export const ObjectEzsignbulksendtransmissionApiFactory = function (configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignbulksendtransmissionGetCsvErrorsV1(pkiEzsignbulksendtransmissionID: number, options?: any): AxiosPromise<string> {
+        ezsignbulksendtransmissionGetCsvErrorsV1(pkiEzsignbulksendtransmissionID: number, options?: RawAxiosRequestConfig): AxiosPromise<string> {
             return localVarFp.ezsignbulksendtransmissionGetCsvErrorsV1(pkiEzsignbulksendtransmissionID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -358,7 +358,7 @@ export const ObjectEzsignbulksendtransmissionApiFactory = function (configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignbulksendtransmissionGetEzsignsignaturesAutomaticV1(pkiEzsignbulksendtransmissionID: number, options?: any): AxiosPromise<EzsignbulksendtransmissionGetEzsignsignaturesAutomaticV1Response> {
+        ezsignbulksendtransmissionGetEzsignsignaturesAutomaticV1(pkiEzsignbulksendtransmissionID: number, options?: RawAxiosRequestConfig): AxiosPromise<EzsignbulksendtransmissionGetEzsignsignaturesAutomaticV1Response> {
             return localVarFp.ezsignbulksendtransmissionGetEzsignsignaturesAutomaticV1(pkiEzsignbulksendtransmissionID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -368,7 +368,7 @@ export const ObjectEzsignbulksendtransmissionApiFactory = function (configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignbulksendtransmissionGetFormsDataV1(pkiEzsignbulksendtransmissionID: number, options?: any): AxiosPromise<EzsignbulksendtransmissionGetFormsDataV1Response> {
+        ezsignbulksendtransmissionGetFormsDataV1(pkiEzsignbulksendtransmissionID: number, options?: RawAxiosRequestConfig): AxiosPromise<EzsignbulksendtransmissionGetFormsDataV1Response> {
             return localVarFp.ezsignbulksendtransmissionGetFormsDataV1(pkiEzsignbulksendtransmissionID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -378,7 +378,7 @@ export const ObjectEzsignbulksendtransmissionApiFactory = function (configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignbulksendtransmissionGetObjectV2(pkiEzsignbulksendtransmissionID: number, options?: any): AxiosPromise<EzsignbulksendtransmissionGetObjectV2Response> {
+        ezsignbulksendtransmissionGetObjectV2(pkiEzsignbulksendtransmissionID: number, options?: RawAxiosRequestConfig): AxiosPromise<EzsignbulksendtransmissionGetObjectV2Response> {
             return localVarFp.ezsignbulksendtransmissionGetObjectV2(pkiEzsignbulksendtransmissionID, options).then((request) => request(axios, basePath));
         },
     };

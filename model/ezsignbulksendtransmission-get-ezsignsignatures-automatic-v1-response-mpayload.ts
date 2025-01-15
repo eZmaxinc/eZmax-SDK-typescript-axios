@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomEzsignfolderEzsignsignaturesAutomaticResponse } from './custom-ezsignfolder-ezsignsignatures-automatic-response';
+import type { CustomEzsignfolderEzsignsignaturesAutomaticResponse } from './custom-ezsignfolder-ezsignsignatures-automatic-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignsignatureType } from './field-eezsignsignature-type';
+import type { FieldEEzsignsignatureType } from './field-eezsignsignature-type';
 
 /**
  * Payload for GET /1/object/ezsignbulksendtransmission/{pkiEzsignbulksendtransmissionID}/getEzsignsignaturesAutomatic

@@ -15,16 +15,16 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignfoldersignerassociationResponseCompound } from './ezsignfoldersignerassociation-response-compound';
+import type { EzsignfoldersignerassociationResponseCompound } from './ezsignfoldersignerassociation-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignfoldersignerassociationResponseCompoundUser } from './ezsignfoldersignerassociation-response-compound-user';
+import type { EzsignfoldersignerassociationResponseCompoundUser } from './ezsignfoldersignerassociation-response-compound-user';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignsignerResponseCompound } from './ezsignsigner-response-compound';
+import type { EzsignsignerResponseCompound } from './ezsignsigner-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignsignergroupResponseCompound } from './ezsignsignergroup-response-compound';
+import type { EzsignsignergroupResponseCompound } from './ezsignsignergroup-response-compound';
 
 /**
  * @type EzsignfoldersignerassociationGetObjectV1ResponseMPayload

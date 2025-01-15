@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AuthenticationexternalListElement } from './authenticationexternal-list-element';
+import type { AuthenticationexternalListElement } from './authenticationexternal-list-element';
 // May contain unused imports in some cases
 // @ts-ignore
-import { CommonGetListV1ResponseMPayload } from './common-get-list-v1-response-mpayload';
+import type { CommonGetListV1ResponseMPayload } from './common-get-list-v1-response-mpayload';
 
 /**
  * @type AuthenticationexternalGetListV1ResponseMPayload

@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { CustomContactNameResponse } from './custom-contact-name-response';
+import type { CustomContactNameResponse } from './custom-contact-name-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzmaxinvoicingcommissionResponse } from './ezmaxinvoicingcommission-response';
+import type { EzmaxinvoicingcommissionResponse } from './ezmaxinvoicingcommission-response';
 
 /**
  * @type EzmaxinvoicingcommissionResponseCompound

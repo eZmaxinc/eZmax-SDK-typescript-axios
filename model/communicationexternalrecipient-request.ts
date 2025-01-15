@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldECommunicationexternalrecipientType } from './field-ecommunicationexternalrecipient-type';
+import type { FieldECommunicationexternalrecipientType } from './field-ecommunicationexternalrecipient-type';
 
 /**
  * A Communicationexternalrecipient Object

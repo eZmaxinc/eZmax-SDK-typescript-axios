@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { DepartmentAutocompleteElementResponse } from './department-autocomplete-element-response';
+import type { DepartmentAutocompleteElementResponse } from './department-autocomplete-element-response';
 
 /**
  * Payload for POST /2/object/department/getAutocomplete

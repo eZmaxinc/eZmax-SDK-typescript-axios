@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { UsergroupexternalAutocompleteElementResponse } from './usergroupexternal-autocomplete-element-response';
+import type { UsergroupexternalAutocompleteElementResponse } from './usergroupexternal-autocomplete-element-response';
 
 /**
  * Payload for POST /2/object/usergroupexternal/getAutocomplete

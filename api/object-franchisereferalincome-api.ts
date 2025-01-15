@@ -20,13 +20,13 @@ import globalAxios from 'axios';
 // @ts-ignore
 import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObject, setBearerAuthToObject, setOAuthToObject, setSearchParams, serializeDataIfNeeded, toPathString, createRequestFunction } from '../common';
 // @ts-ignore
-import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
+import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import { CommonResponseErrorWrongFranchiseoffice } from '../model';
+import type { CommonResponseErrorWrongFranchiseoffice } from '../model';
 // @ts-ignore
-import { FranchisereferalincomeCreateObjectV2Request } from '../model';
+import type { FranchisereferalincomeCreateObjectV2Request } from '../model';
 // @ts-ignore
-import { FranchisereferalincomeCreateObjectV2Response } from '../model';
+import type { FranchisereferalincomeCreateObjectV2Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -135,7 +135,7 @@ export const ObjectFranchisereferalincomeApiFactory = function (configuration?: 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        franchisereferalincomeCreateObjectV2(franchisereferalincomeCreateObjectV2Request: FranchisereferalincomeCreateObjectV2Request, options?: any): AxiosPromise<FranchisereferalincomeCreateObjectV2Response> {
+        franchisereferalincomeCreateObjectV2(franchisereferalincomeCreateObjectV2Request: FranchisereferalincomeCreateObjectV2Request, options?: RawAxiosRequestConfig): AxiosPromise<FranchisereferalincomeCreateObjectV2Response> {
             return localVarFp.franchisereferalincomeCreateObjectV2(franchisereferalincomeCreateObjectV2Request, options).then((request) => request(axios, basePath));
         },
     };

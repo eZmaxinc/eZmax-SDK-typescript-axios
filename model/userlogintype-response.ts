@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { MultilingualUserlogintypeDescription } from './multilingual-userlogintype-description';
+import type { MultilingualUserlogintypeDescription } from './multilingual-userlogintype-description';
 
 /**
  * An Userlogintype Object

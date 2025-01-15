@@ -15,34 +15,34 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { EnumTextvalidation } from './enum-textvalidation';
+import type { EnumTextvalidation } from './enum-textvalidation';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignelementdependencyRequestCompound } from './ezsignelementdependency-request-compound';
+import type { EzsignelementdependencyRequest } from './ezsignelementdependency-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignsignatureRequest } from './ezsignsignature-request';
+import type { EzsignsignatureRequest } from './ezsignsignature-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { EzsignsignaturecustomdateRequestCompound } from './ezsignsignaturecustomdate-request-compound';
+import type { EzsignsignaturecustomdateRequest } from './ezsignsignaturecustomdate-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignsignatureAttachmentnamesource } from './field-eezsignsignature-attachmentnamesource';
+import type { FieldEEzsignsignatureAttachmentnamesource } from './field-eezsignsignature-attachmentnamesource';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignsignatureConsultationtrigger } from './field-eezsignsignature-consultationtrigger';
+import type { FieldEEzsignsignatureConsultationtrigger } from './field-eezsignsignature-consultationtrigger';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignsignatureDependencyrequirement } from './field-eezsignsignature-dependencyrequirement';
+import type { FieldEEzsignsignatureDependencyrequirement } from './field-eezsignsignature-dependencyrequirement';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignsignatureFont } from './field-eezsignsignature-font';
+import type { FieldEEzsignsignatureFont } from './field-eezsignsignature-font';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignsignatureTooltipposition } from './field-eezsignsignature-tooltipposition';
+import type { FieldEEzsignsignatureTooltipposition } from './field-eezsignsignature-tooltipposition';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEEzsignsignatureType } from './field-eezsignsignature-type';
+import type { FieldEEzsignsignatureType } from './field-eezsignsignature-type';
 
 /**
  * @type EzsignsignatureRequestCompound

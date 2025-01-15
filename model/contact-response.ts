@@ -15,10 +15,10 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { ContactinformationsResponseCompound } from './contactinformations-response-compound';
+import type { ContactinformationsResponseCompound } from './contactinformations-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import { FieldEContactType } from './field-econtact-type';
+import type { FieldEContactType } from './field-econtact-type';
 
 /**
  * A Contact Object

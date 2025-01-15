@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import { AttemptResponse } from './attempt-response';
+import type { AttemptResponse } from './attempt-response';
 
 /**
  * @type AttemptResponseCompound
