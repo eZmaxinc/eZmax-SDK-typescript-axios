@@ -3,6 +3,8 @@ export * from './activesession-generate-federation-token-v1-response';
 export * from './activesession-generate-federation-token-v1-response-mpayload';
 export * from './activesession-get-current-v1-response';
 export * from './activesession-get-current-v1-response-mpayload';
+export * from './activesession-get-current-v2-response';
+export * from './activesession-get-current-v2-response-mpayload';
 export * from './activesession-get-list-v1-response';
 export * from './activesession-get-list-v1-response-mpayload';
 export * from './activesession-list-element';

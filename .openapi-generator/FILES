@@ -123,6 +123,8 @@ model/activesession-generate-federation-token-v1-response-mpayload.ts
 model/activesession-generate-federation-token-v1-response.ts
 model/activesession-get-current-v1-response-mpayload.ts
 model/activesession-get-current-v1-response.ts
+model/activesession-get-current-v2-response-mpayload.ts
+model/activesession-get-current-v2-response.ts
 model/activesession-get-list-v1-response-mpayload.ts
 model/activesession-get-list-v1-response.ts
 model/activesession-list-element.ts

@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import type { ActivesessionGetCurrentV2ResponseMPayload } from './activesession-get-current-v2-response-mpayload';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { CommonResponse } from './common-response';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -22,35 +25,32 @@ import type { CommonResponseObjDebug } from './common-response-obj-debug';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
-// May contain unused imports in some cases
-// @ts-ignore
-import type { WebhookGetHistoryV1ResponseMPayload } from './webhook-get-history-v1-response-mpayload';
 
 /**
- * @type WebhookGetHistoryV1Response
- * Response for GET /1/object/webhook/{pkiWebhookID}/getHistory
+ * @type ActivesessionGetCurrentV2Response
+ * Response for GET /2/object/activesession/getCurrent
  * @export
  */
-/*export type WebhookGetHistoryV1Response = CommonResponse;*/
-export interface WebhookGetHistoryV1Response {
+/*export type ActivesessionGetCurrentV2Response = CommonResponse;*/
+export interface ActivesessionGetCurrentV2Response {
     /**
      * 
      * @type {CommonResponseObjDebugPayload}
-     * @memberof WebhookGetHistoryV1Response
+     * @memberof ActivesessionGetCurrentV2Response
      */
     objDebugPayload:CommonResponseObjDebugPayload 
     /**
      * 
      * @type {CommonResponseObjDebug}
-     * @memberof WebhookGetHistoryV1Response
+     * @memberof ActivesessionGetCurrentV2Response
      */
     objDebug?:CommonResponseObjDebug 
     /**
      * 
-     * @type {WebhookGetHistoryV1ResponseMPayload}
-     * @memberof WebhookGetHistoryV1Response
+     * @type {ActivesessionGetCurrentV2ResponseMPayload}
+     * @memberof ActivesessionGetCurrentV2Response
      */
-    mPayload:WebhookGetHistoryV1ResponseMPayload 
+    mPayload:ActivesessionGetCurrentV2ResponseMPayload 
 }
 
 
@@ -63,35 +63,35 @@ import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { DataObjectWebhookGetHistoryV1ResponseMPayload } from './'
+import { DataObjectActivesessionGetCurrentV2ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectWebhookGetHistoryV1ResponseMPayload } from './'
+import { ValidationObjectActivesessionGetCurrentV2ResponseMPayload } from './'
 
 /**
  * @export 
- * A WebhookGetHistoryV1Response Data Object with automatic temporary default value
+ * A ActivesessionGetCurrentV2Response Data Object with automatic temporary default value
  * Use this object only for create an empty data object to assign a response from server
- * @class DataObjectWebhookGetHistoryV1Response
+ * @class DataObjectActivesessionGetCurrentV2Response
  */
-export class DataObjectWebhookGetHistoryV1Response {
+export class DataObjectActivesessionGetCurrentV2Response {
     objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
-    mPayload:WebhookGetHistoryV1ResponseMPayload = new DataObjectWebhookGetHistoryV1ResponseMPayload()
+    mPayload:ActivesessionGetCurrentV2ResponseMPayload = new DataObjectActivesessionGetCurrentV2ResponseMPayload()
 }
 
 /**
  * @export 
- * A WebhookGetHistoryV1Response Validation Object
- * @class ValidationObjectWebhookGetHistoryV1Response
+ * A ActivesessionGetCurrentV2Response Validation Object
+ * @class ValidationObjectActivesessionGetCurrentV2Response
  */
-export class ValidationObjectWebhookGetHistoryV1Response {
+export class ValidationObjectActivesessionGetCurrentV2Response {
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
-   mPayload = new ValidationObjectWebhookGetHistoryV1ResponseMPayload()
+   mPayload = new ValidationObjectActivesessionGetCurrentV2ResponseMPayload()
 } 
 
 
