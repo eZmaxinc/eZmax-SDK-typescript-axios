@@ -18,6 +18,9 @@
 import type { CommonAudit } from './common-audit';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { CustomEzsignfoldertypeResponse } from './custom-ezsignfoldertype-response';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { FieldEEzsignfolderCompletion } from './field-eezsignfolder-completion';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -47,12 +50,12 @@ export interface EzsignfolderResponse {
     /*'fkiEzsignfoldertypeID'?: number;*/
     'fkiEzsignfoldertypeID'?: number;
     /**
-     * A Custom Ezsignfoldertype Object
-     * @type {object}
+     * 
+     * @type {CustomEzsignfoldertypeResponse}
      * @memberof EzsignfolderResponse
      */
-    /*'objEzsignfoldertype'?: object;*/
-    'objEzsignfoldertype'?: object;
+    /*'objEzsignfoldertype'?: CustomEzsignfoldertypeResponse;*/
+    'objEzsignfoldertype'?: CustomEzsignfoldertypeResponse;
     /**
      * The unique ID of the Timezone
      * @type {number}
@@ -224,11 +227,11 @@ export interface EzsignfolderResponse {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectobject } from './'
+import { DataObjectCustomEzsignfoldertypeResponse } from './'
 // @ts-ignore
 import { DataObjectCommonAudit } from './'
 // @ts-ignore
-import { ValidationObjectobject } from './'
+import { ValidationObjectCustomEzsignfoldertypeResponse } from './'
 // @ts-ignore
 import { ValidationObjectCommonAudit } from './'
 
@@ -241,7 +244,7 @@ import { ValidationObjectCommonAudit } from './'
 export class DataObjectEzsignfolderResponse {
    pkiEzsignfolderID:number = 0
    fkiEzsignfoldertypeID?:number = undefined
-   objEzsignfoldertype?:object = undefined
+   objEzsignfoldertype?:CustomEzsignfoldertypeResponse = undefined
    fkiTimezoneID?:number = undefined
    eEzsignfolderCompletion:FieldEEzsignfolderCompletion = 'PerEzsigndocument'
    sEzsignfoldertypeNameX?:string = undefined
@@ -284,7 +287,7 @@ export class ValidationObjectEzsignfolderResponse {
       maximum: 65535,
       required: false
    }
-   objEzsignfoldertype = new ValidationObjectobject()
+   objEzsignfoldertype = new ValidationObjectCustomEzsignfoldertypeResponse()
    fkiTimezoneID = {
       type: 'integer',
       minimum: 0,

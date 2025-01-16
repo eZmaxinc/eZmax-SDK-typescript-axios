@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import type { CustomDiscussionconfigurationResponse } from './custom-discussionconfiguration-response';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { DiscussionResponse } from './discussion-response';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -67,11 +70,11 @@ export interface DiscussionResponseCompound {
      */
     iDiscussionmessageCountunread:number 
     /**
-     * A Custom Discussionconfiguration Object
-     * @type {object}
+     * 
+     * @type {CustomDiscussionconfigurationResponse}
      * @memberof DiscussionResponseCompound
      */
-    objDiscussionconfiguration?:object 
+    objDiscussionconfiguration?:CustomDiscussionconfigurationResponse 
     /**
      * 
      * @type {Array<DiscussionmembershipResponseCompound>}
@@ -92,9 +95,9 @@ export interface DiscussionResponseCompound {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectobject } from './'
+import { DataObjectCustomDiscussionconfigurationResponse } from './'
 // @ts-ignore
-import { ValidationObjectobject } from './'
+import { ValidationObjectCustomDiscussionconfigurationResponse } from './'
 
 /**
  * @export 
@@ -109,7 +112,7 @@ export class DataObjectDiscussionResponseCompound {
     dtDiscussionLastread?:string = undefined
     iDiscussionmessageCount:number = 0
     iDiscussionmessageCountunread:number = 0
-    objDiscussionconfiguration?:object = undefined
+    objDiscussionconfiguration?:CustomDiscussionconfigurationResponse = undefined
     a_objDiscussionmembership:Array<DiscussionmembershipResponseCompound> = []
     a_objDiscussionmessage:Array<DiscussionmessageResponseCompound> = []
 }
@@ -147,7 +150,7 @@ export class ValidationObjectDiscussionResponseCompound {
       type: 'integer',
       required: true
    }
-   objDiscussionconfiguration = new ValidationObjectobject()
+   objDiscussionconfiguration = new ValidationObjectCustomDiscussionconfigurationResponse()
    a_objDiscussionmembership = {
       type: 'array',
       required: true

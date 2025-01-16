@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import type { CustomBrandingResponse } from './custom-branding-response';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { FieldESystemconfigurationEzsign } from './field-esystemconfiguration-ezsign';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -149,12 +152,12 @@ export interface SystemconfigurationResponse {
     /*'dtSystemconfigurationReadonlyexpirationend'?: string;*/
     'dtSystemconfigurationReadonlyexpirationend'?: string;
     /**
-     * A Custom Branding Object
-     * @type {object}
+     * 
+     * @type {CustomBrandingResponse}
      * @memberof SystemconfigurationResponse
      */
-    /*'objBranding'?: object;*/
-    'objBranding'?: object;
+    /*'objBranding'?: CustomBrandingResponse;*/
+    'objBranding'?: CustomBrandingResponse;
 }
 
 
@@ -163,9 +166,9 @@ export interface SystemconfigurationResponse {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectobject } from './'
+import { DataObjectCustomBrandingResponse } from './'
 // @ts-ignore
-import { ValidationObjectobject } from './'
+import { ValidationObjectCustomBrandingResponse } from './'
 
 /**
  * @export 
@@ -190,7 +193,7 @@ export class DataObjectSystemconfigurationResponse {
    bSystemconfigurationSspr:boolean = false
    dtSystemconfigurationReadonlyexpirationstart?:string = undefined
    dtSystemconfigurationReadonlyexpirationend?:string = undefined
-   objBranding?:object = undefined
+   objBranding?:CustomBrandingResponse = undefined
 }
 
 /**
@@ -274,7 +277,7 @@ export class ValidationObjectSystemconfigurationResponse {
       pattern: /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/,
       required: false
    }
-   objBranding = new ValidationObjectobject()
+   objBranding = new ValidationObjectCustomBrandingResponse()
 } 
 
 

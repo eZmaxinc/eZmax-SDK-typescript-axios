@@ -21,6 +21,9 @@ import type { CommonAudit } from './common-audit';
 import type { ComputedEEzsignfolderAccess } from './computed-eezsignfolder-access';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { CustomEzsignfoldertypeResponse } from './custom-ezsignfoldertype-response';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { CustomTimezoneWithCodeResponse } from './custom-timezone-with-code-response';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -55,11 +58,11 @@ export interface EzsignfolderResponseCompoundV3 {
      */
     fkiEzsignfoldertypeID?:number 
     /**
-     * A Custom Ezsignfoldertype Object
-     * @type {object}
+     * 
+     * @type {CustomEzsignfoldertypeResponse}
      * @memberof EzsignfolderResponseCompoundV3
      */
-    objEzsignfoldertype?:object 
+    objEzsignfoldertype?:CustomEzsignfoldertypeResponse 
     /**
      * The unique ID of the Timezone
      * @type {number}
@@ -220,13 +223,13 @@ export interface EzsignfolderResponseCompoundV3 {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectobject } from './'
+import { DataObjectCustomEzsignfoldertypeResponse } from './'
 // @ts-ignore
 import { DataObjectCommonAudit } from './'
 // @ts-ignore
 import { DataObjectCustomTimezoneWithCodeResponse } from './'
 // @ts-ignore
-import { ValidationObjectobject } from './'
+import { ValidationObjectCustomEzsignfoldertypeResponse } from './'
 // @ts-ignore
 import { ValidationObjectCommonAudit } from './'
 // @ts-ignore
@@ -241,7 +244,7 @@ import { ValidationObjectCustomTimezoneWithCodeResponse } from './'
 export class DataObjectEzsignfolderResponseCompoundV3 {
     pkiEzsignfolderID:number = 0
     fkiEzsignfoldertypeID?:number = undefined
-    objEzsignfoldertype?:object = undefined
+    objEzsignfoldertype?:CustomEzsignfoldertypeResponse = undefined
     fkiTimezoneID?:number = undefined
     eEzsignfolderCompletion:FieldEEzsignfolderCompletion = 'PerEzsigndocument'
     eEzsignfolderDocumentdependency?:FieldEEzsignfolderDocumentdependency = undefined
@@ -286,7 +289,7 @@ export class ValidationObjectEzsignfolderResponseCompoundV3 {
       maximum: 65535,
       required: false
    }
-   objEzsignfoldertype = new ValidationObjectobject()
+   objEzsignfoldertype = new ValidationObjectCustomEzsignfoldertypeResponse()
    fkiTimezoneID = {
       type: 'integer',
       minimum: 0,
