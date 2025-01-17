@@ -24,8 +24,106 @@ import type { EzsigntemplatedocumentRequest } from './ezsigntemplatedocument-req
  */
 /*export type EzsigntemplatedocumentRequestCompound = EzsigntemplatedocumentRequest;*/
 export interface EzsigntemplatedocumentRequestCompound {
+    /**
+     * The unique ID of the Ezsigntemplatedocument
+     * @type {number}
+     * @memberof EzsigntemplatedocumentRequestCompound
+     */
+    pkiEzsigntemplatedocumentID?:number 
+    /**
+     * The unique ID of the Ezsigntemplate
+     * @type {number}
+     * @memberof EzsigntemplatedocumentRequestCompound
+     */
+    fkiEzsigntemplateID:number 
+    /**
+     * The unique ID of the Ezsigndocument
+     * @type {number}
+     * @memberof EzsigntemplatedocumentRequestCompound
+     */
+    fkiEzsigndocumentID?:number 
+    /**
+     * The unique ID of the Ezsigntemplatesigner
+     * @type {number}
+     * @memberof EzsigntemplatedocumentRequestCompound
+     */
+    fkiEzsigntemplatesignerID?:number 
+    /**
+     * The name of the Ezsigntemplatedocument.
+     * @type {string}
+     * @memberof EzsigntemplatedocumentRequestCompound
+     */
+    sEzsigntemplatedocumentName:string 
+    /**
+     * Indicates where to look for the document binary content.
+     * @type {string}
+     * @memberof EzsigntemplatedocumentRequestCompound
+     */
+    eEzsigntemplatedocumentSource:EzsigntemplatedocumentRequestCompoundEEzsigntemplatedocumentSourceEnum 
+    /**
+     * Indicates the format of the template.
+     * @type {string}
+     * @memberof EzsigntemplatedocumentRequestCompound
+     */
+    eEzsigntemplatedocumentFormat?:EzsigntemplatedocumentRequestCompoundEEzsigntemplatedocumentFormatEnum 
+    /**
+     * The Base64 encoded binary content of the document.  This field is Required when eEzsigntemplatedocumentSource = Base64.
+     * @type {string}
+     * @memberof EzsigntemplatedocumentRequestCompound
+     */
+    sEzsigntemplatedocumentBase64?:string 
+    /**
+     * The url where the document content resides.  This field is Required when eEzsigntemplatedocumentSource = Url.
+     * @type {string}
+     * @memberof EzsigntemplatedocumentRequestCompound
+     */
+    sEzsigntemplatedocumentUrl?:string 
+    /**
+     * Try to repair the document or flatten it if it cannot be used for electronic signature.
+     * @type {boolean}
+     * @memberof EzsigntemplatedocumentRequestCompound
+     */
+    bEzsigntemplatedocumentForcerepair?:boolean 
+    /**
+     * If the document contains an existing PDF form this property must be set.  **Keep** leaves the form as-is in the document.  **Convert** removes the form and convert all the existing fields to Ezsigntemplateformfieldgroups and assign them to the specified **fkiEzsigntemplatesignerID**  **Discard** removes the form from the document  **Flatten** prints the form values in the document.
+     * @type {string}
+     * @memberof EzsigntemplatedocumentRequestCompound
+     */
+    eEzsigntemplatedocumentForm?:EzsigntemplatedocumentRequestCompoundEEzsigntemplatedocumentFormEnum 
+    /**
+     * If the source template is password protected, the password to open/modify it.
+     * @type {string}
+     * @memberof EzsigntemplatedocumentRequestCompound
+     */
+    sEzsigntemplatedocumentPassword?:string 
 }
 
+
+export const EzsigntemplatedocumentRequestCompoundEEzsigntemplatedocumentSourceEnum = {
+    Base64: 'Base64',
+    Url: 'Url',
+    Ezsigndocument: 'Ezsigndocument'
+} as const;
+export type EzsigntemplatedocumentRequestCompoundEEzsigntemplatedocumentSourceEnum = typeof EzsigntemplatedocumentRequestCompoundEEzsigntemplatedocumentSourceEnum[keyof typeof EzsigntemplatedocumentRequestCompoundEEzsigntemplatedocumentSourceEnum];
+
+export const EzsigntemplatedocumentRequestCompoundEEzsigntemplatedocumentFormatEnum = {
+    Pdf: 'Pdf',
+    Doc: 'Doc',
+    Docx: 'Docx',
+    Xls: 'Xls',
+    Xlsx: 'Xlsx',
+    Ppt: 'Ppt',
+    Pptx: 'Pptx'
+} as const;
+export type EzsigntemplatedocumentRequestCompoundEEzsigntemplatedocumentFormatEnum = typeof EzsigntemplatedocumentRequestCompoundEEzsigntemplatedocumentFormatEnum[keyof typeof EzsigntemplatedocumentRequestCompoundEEzsigntemplatedocumentFormatEnum];
+
+export const EzsigntemplatedocumentRequestCompoundEEzsigntemplatedocumentFormEnum = {
+    Keep: 'Keep',
+    Convert: 'Convert',
+    Discard: 'Discard',
+    Flatten: 'Flatten'
+} as const;
+export type EzsigntemplatedocumentRequestCompoundEEzsigntemplatedocumentFormEnum = typeof EzsigntemplatedocumentRequestCompoundEEzsigntemplatedocumentFormEnum[keyof typeof EzsigntemplatedocumentRequestCompoundEEzsigntemplatedocumentFormEnum];
 
 
 /**
@@ -40,6 +138,18 @@ export interface EzsigntemplatedocumentRequestCompound {
  * @class DataObjectEzsigntemplatedocumentRequestCompound
  */
 export class DataObjectEzsigntemplatedocumentRequestCompound {
+    pkiEzsigntemplatedocumentID?:number = undefined
+    fkiEzsigntemplateID:number = 0
+    fkiEzsigndocumentID?:number = undefined
+    fkiEzsigntemplatesignerID?:number = undefined
+    sEzsigntemplatedocumentName:string = ''
+    eEzsigntemplatedocumentSource:EzsigntemplatedocumentRequestCompoundEEzsigntemplatedocumentSourceEnum = 'Base64'
+    eEzsigntemplatedocumentFormat?:EzsigntemplatedocumentRequestCompoundEEzsigntemplatedocumentFormatEnum = undefined
+    sEzsigntemplatedocumentBase64?:string = undefined
+    sEzsigntemplatedocumentUrl?:string = undefined
+    bEzsigntemplatedocumentForcerepair?:boolean = undefined
+    eEzsigntemplatedocumentForm?:EzsigntemplatedocumentRequestCompoundEEzsigntemplatedocumentFormEnum = undefined
+    sEzsigntemplatedocumentPassword?:string = undefined
 }
 
 /**
@@ -48,6 +158,58 @@ export class DataObjectEzsigntemplatedocumentRequestCompound {
  * @class ValidationObjectEzsigntemplatedocumentRequestCompound
  */
 export class ValidationObjectEzsigntemplatedocumentRequestCompound {
+   pkiEzsigntemplatedocumentID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzsigntemplateID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsigndocumentID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzsigntemplatesignerID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   sEzsigntemplatedocumentName = {
+      type: 'string',
+      required: true
+   }
+   eEzsigntemplatedocumentSource = {
+      type: 'string',
+      required: true
+   }
+   eEzsigntemplatedocumentFormat = {
+      type: 'string',
+      required: false
+   }
+   sEzsigntemplatedocumentBase64 = {
+      type: 'string',
+      required: false
+   }
+   sEzsigntemplatedocumentUrl = {
+      type: 'string',
+      required: false
+   }
+   bEzsigntemplatedocumentForcerepair = {
+      type: 'boolean',
+      required: false
+   }
+   eEzsigntemplatedocumentForm = {
+      type: 'string',
+      required: false
+   }
+   sEzsigntemplatedocumentPassword = {
+      type: 'string',
+      required: false
+   }
 } 
 
 

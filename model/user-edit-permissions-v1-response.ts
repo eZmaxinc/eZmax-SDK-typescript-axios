@@ -35,6 +35,18 @@ import type { UserEditPermissionsV1ResponseMPayload } from './user-edit-permissi
 export interface UserEditPermissionsV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof UserEditPermissionsV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof UserEditPermissionsV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {UserEditPermissionsV1ResponseMPayload}
      * @memberof UserEditPermissionsV1Response
      */
@@ -47,7 +59,15 @@ export interface UserEditPermissionsV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectUserEditPermissionsV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectUserEditPermissionsV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectUserEditPermissionsV1ResponseMPayload } from './'
  * @class DataObjectUserEditPermissionsV1Response
  */
 export class DataObjectUserEditPermissionsV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:UserEditPermissionsV1ResponseMPayload = new DataObjectUserEditPermissionsV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectUserEditPermissionsV1Response {
  * @class ValidationObjectUserEditPermissionsV1Response
  */
 export class ValidationObjectUserEditPermissionsV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectUserEditPermissionsV1ResponseMPayload()
 } 
 

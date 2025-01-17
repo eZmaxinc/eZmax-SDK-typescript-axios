@@ -35,6 +35,18 @@ import type { UsergroupGetUsergroupdelegationsV1ResponseMPayload } from './userg
 export interface UsergroupGetUsergroupdelegationsV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof UsergroupGetUsergroupdelegationsV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof UsergroupGetUsergroupdelegationsV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {UsergroupGetUsergroupdelegationsV1ResponseMPayload}
      * @memberof UsergroupGetUsergroupdelegationsV1Response
      */
@@ -47,7 +59,15 @@ export interface UsergroupGetUsergroupdelegationsV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectUsergroupGetUsergroupdelegationsV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectUsergroupGetUsergroupdelegationsV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectUsergroupGetUsergroupdelegationsV1ResponseMPayload } fr
  * @class DataObjectUsergroupGetUsergroupdelegationsV1Response
  */
 export class DataObjectUsergroupGetUsergroupdelegationsV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:UsergroupGetUsergroupdelegationsV1ResponseMPayload = new DataObjectUsergroupGetUsergroupdelegationsV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectUsergroupGetUsergroupdelegationsV1Response {
  * @class ValidationObjectUsergroupGetUsergroupdelegationsV1Response
  */
 export class ValidationObjectUsergroupGetUsergroupdelegationsV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectUsergroupGetUsergroupdelegationsV1ResponseMPayload()
 } 
 

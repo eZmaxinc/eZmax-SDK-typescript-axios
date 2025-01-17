@@ -18,6 +18,12 @@
 import type { CommonAudit } from './common-audit';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { CustomEzmaxinvoicingEzsigndocumentResponse } from './custom-ezmaxinvoicing-ezsigndocument-response';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { CustomEzmaxinvoicingEzsignfolderResponse } from './custom-ezmaxinvoicing-ezsignfolder-response';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { CustomEzmaxpricingResponse } from './custom-ezmaxpricing-response';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -51,6 +57,138 @@ import type { FieldEEzmaxinvoicingPaymenttype } from './field-eezmaxinvoicing-pa
  */
 /*export type EzmaxinvoicingGetProvisionalV1ResponseMPayload = EzmaxinvoicingResponseCompound;*/
 export interface EzmaxinvoicingGetProvisionalV1ResponseMPayload {
+    /**
+     * The unique ID of the Ezmaxinvoicing
+     * @type {number}
+     * @memberof EzmaxinvoicingGetProvisionalV1ResponseMPayload
+     */
+    pkiEzmaxinvoicingID?:number 
+    /**
+     * The unique ID of the Ezmaxinvoicingcontract
+     * @type {number}
+     * @memberof EzmaxinvoicingGetProvisionalV1ResponseMPayload
+     */
+    fkiEzmaxinvoicingcontractID:number 
+    /**
+     * The unique ID of the Ezmaxpricing
+     * @type {number}
+     * @memberof EzmaxinvoicingGetProvisionalV1ResponseMPayload
+     */
+    fkiEzmaxpricingID:number 
+    /**
+     * The unique ID of the Systemconfigurationtype
+     * @type {number}
+     * @memberof EzmaxinvoicingGetProvisionalV1ResponseMPayload
+     */
+    fkiSystemconfigurationtypeID:number 
+    /**
+     * The description of the Systemconfigurationtype in the language of the requester
+     * @type {string}
+     * @memberof EzmaxinvoicingGetProvisionalV1ResponseMPayload
+     */
+    sSystemconfigurationtypeDescriptionX:string 
+    /**
+     * The YYYYMM period of the Ezmaxinvoicing
+     * @type {string}
+     * @memberof EzmaxinvoicingGetProvisionalV1ResponseMPayload
+     */
+    yyyymmEzmaxinvoicing:string 
+    /**
+     * The number of days invoiced
+     * @type {number}
+     * @memberof EzmaxinvoicingGetProvisionalV1ResponseMPayload
+     */
+    iEzmaxinvoicingDays:number 
+    /**
+     * 
+     * @type {FieldEEzmaxinvoicingPaymenttype}
+     * @memberof EzmaxinvoicingGetProvisionalV1ResponseMPayload
+     */
+    eEzmaxinvoicingPaymenttype:FieldEEzmaxinvoicingPaymenttype 
+    /**
+     * The percentage of rebate depending of the payment type
+     * @type {string}
+     * @memberof EzmaxinvoicingGetProvisionalV1ResponseMPayload
+     */
+    dEzmaxinvoicingRebatepaymenttype:string 
+    /**
+     * The length of the contract in years
+     * @type {number}
+     * @memberof EzmaxinvoicingGetProvisionalV1ResponseMPayload
+     */
+    iEzmaxinvoicingContractlength:number 
+    /**
+     * The percentage of rebate depending of the contract length
+     * @type {string}
+     * @memberof EzmaxinvoicingGetProvisionalV1ResponseMPayload
+     */
+    dEzmaxinvoicingRebatecontractlength:string 
+    /**
+     * Whether the rebate for eZsign is for all agents
+     * @type {boolean}
+     * @memberof EzmaxinvoicingGetProvisionalV1ResponseMPayload
+     */
+    bEzmaxinvoicingRebateEzsignallagents:boolean 
+    /**
+     * 
+     * @type {CommonAudit}
+     * @memberof EzmaxinvoicingGetProvisionalV1ResponseMPayload
+     */
+    objAudit?:CommonAudit 
+    /**
+     * 
+     * @type {EzmaxinvoicingcontractResponseCompound}
+     * @memberof EzmaxinvoicingGetProvisionalV1ResponseMPayload
+     */
+    objEzmaxinvoicingcontract:EzmaxinvoicingcontractResponseCompound 
+    /**
+     * 
+     * @type {CustomEzmaxpricingResponse}
+     * @memberof EzmaxinvoicingGetProvisionalV1ResponseMPayload
+     */
+    objEzmaxpricing:CustomEzmaxpricingResponse 
+    /**
+     * 
+     * @type {Array<EzmaxinvoicingsummaryglobalResponseCompound>}
+     * @memberof EzmaxinvoicingGetProvisionalV1ResponseMPayload
+     */
+    a_objEzmaxinvoicingsummaryglobal:Array<EzmaxinvoicingsummaryglobalResponseCompound> 
+    /**
+     * 
+     * @type {Array<EzmaxinvoicingsummaryexternalResponseCompound>}
+     * @memberof EzmaxinvoicingGetProvisionalV1ResponseMPayload
+     */
+    a_objEzmaxinvoicingsummaryexternal:Array<EzmaxinvoicingsummaryexternalResponseCompound> 
+    /**
+     * 
+     * @type {Array<EzmaxinvoicingsummaryinternalResponseCompound>}
+     * @memberof EzmaxinvoicingGetProvisionalV1ResponseMPayload
+     */
+    a_objEzmaxinvoicingsummaryinternal:Array<EzmaxinvoicingsummaryinternalResponseCompound> 
+    /**
+     * 
+     * @type {Array<EzmaxinvoicingagentResponseCompound>}
+     * @memberof EzmaxinvoicingGetProvisionalV1ResponseMPayload
+     */
+    a_objEzmaxinvoicingagent:Array<EzmaxinvoicingagentResponseCompound> 
+    /**
+     * 
+     * @type {Array<EzmaxinvoicinguserResponseCompound>}
+     * @memberof EzmaxinvoicingGetProvisionalV1ResponseMPayload
+     */
+    a_objEzmaxinvoicinguser:Array<EzmaxinvoicinguserResponseCompound> 
+    /**
+     * 
+     * @type {Array<CustomEzmaxinvoicingEzsignfolderResponse>}
+     * @memberof EzmaxinvoicingGetProvisionalV1ResponseMPayload
+     */
+    a_objEzmaxinvoicingezsignfolder:Array<CustomEzmaxinvoicingEzsignfolderResponse> 
+    /**
+     * 
+     * @type {Array<CustomEzmaxinvoicingEzsigndocumentResponse>}
+     * @memberof EzmaxinvoicingGetProvisionalV1ResponseMPayload
+     */
+    a_objEzmaxinvoicingezsigndocument:Array<CustomEzmaxinvoicingEzsigndocumentResponse> 
 }
 
 
@@ -59,6 +197,18 @@ export interface EzmaxinvoicingGetProvisionalV1ResponseMPayload {
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectCommonAudit } from './'
+// @ts-ignore
+import { DataObjectEzmaxinvoicingcontractResponseCompound } from './'
+// @ts-ignore
+import { DataObjectCustomEzmaxpricingResponse } from './'
+// @ts-ignore
+import { ValidationObjectCommonAudit } from './'
+// @ts-ignore
+import { ValidationObjectEzmaxinvoicingcontractResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectCustomEzmaxpricingResponse } from './'
 
 /**
  * @export 
@@ -67,6 +217,28 @@ export interface EzmaxinvoicingGetProvisionalV1ResponseMPayload {
  * @class DataObjectEzmaxinvoicingGetProvisionalV1ResponseMPayload
  */
 export class DataObjectEzmaxinvoicingGetProvisionalV1ResponseMPayload {
+    pkiEzmaxinvoicingID?:number = undefined
+    fkiEzmaxinvoicingcontractID:number = 0
+    fkiEzmaxpricingID:number = 0
+    fkiSystemconfigurationtypeID:number = 0
+    sSystemconfigurationtypeDescriptionX:string = ''
+    yyyymmEzmaxinvoicing:string = ''
+    iEzmaxinvoicingDays:number = 0
+    eEzmaxinvoicingPaymenttype:FieldEEzmaxinvoicingPaymenttype = 'Cheque'
+    dEzmaxinvoicingRebatepaymenttype:string = ''
+    iEzmaxinvoicingContractlength:number = 0
+    dEzmaxinvoicingRebatecontractlength:string = ''
+    bEzmaxinvoicingRebateEzsignallagents:boolean = false
+    objAudit?:CommonAudit = undefined
+    objEzmaxinvoicingcontract:EzmaxinvoicingcontractResponseCompound = new DataObjectEzmaxinvoicingcontractResponseCompound()
+    objEzmaxpricing:CustomEzmaxpricingResponse = new DataObjectCustomEzmaxpricingResponse()
+    a_objEzmaxinvoicingsummaryglobal:Array<EzmaxinvoicingsummaryglobalResponseCompound> = []
+    a_objEzmaxinvoicingsummaryexternal:Array<EzmaxinvoicingsummaryexternalResponseCompound> = []
+    a_objEzmaxinvoicingsummaryinternal:Array<EzmaxinvoicingsummaryinternalResponseCompound> = []
+    a_objEzmaxinvoicingagent:Array<EzmaxinvoicingagentResponseCompound> = []
+    a_objEzmaxinvoicinguser:Array<EzmaxinvoicinguserResponseCompound> = []
+    a_objEzmaxinvoicingezsignfolder:Array<CustomEzmaxinvoicingEzsignfolderResponse> = []
+    a_objEzmaxinvoicingezsigndocument:Array<CustomEzmaxinvoicingEzsigndocumentResponse> = []
 }
 
 /**
@@ -75,6 +247,95 @@ export class DataObjectEzmaxinvoicingGetProvisionalV1ResponseMPayload {
  * @class ValidationObjectEzmaxinvoicingGetProvisionalV1ResponseMPayload
  */
 export class ValidationObjectEzmaxinvoicingGetProvisionalV1ResponseMPayload {
+   pkiEzmaxinvoicingID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzmaxinvoicingcontractID = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   fkiEzmaxpricingID = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   fkiSystemconfigurationtypeID = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   sSystemconfigurationtypeDescriptionX = {
+      type: 'string',
+      required: true
+   }
+   yyyymmEzmaxinvoicing = {
+      type: 'string',
+      maxLength: 7,
+      required: true
+   }
+   iEzmaxinvoicingDays = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   eEzmaxinvoicingPaymenttype = {
+      type: 'enum',
+      allowableValues: ['Cheque','CreditCard','DirectDebit'],
+      required: true
+   }
+   dEzmaxinvoicingRebatepaymenttype = {
+      type: 'string',
+      pattern: /^-{0,1}[\d]{1,3}?\.[\d]{2}$/,
+      required: true
+   }
+   iEzmaxinvoicingContractlength = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   dEzmaxinvoicingRebatecontractlength = {
+      type: 'string',
+      pattern: /^-{0,1}[\d]{1,3}?\.[\d]{2}$/,
+      required: true
+   }
+   bEzmaxinvoicingRebateEzsignallagents = {
+      type: 'boolean',
+      required: true
+   }
+   objAudit = new ValidationObjectCommonAudit()
+   objEzmaxinvoicingcontract = new ValidationObjectEzmaxinvoicingcontractResponseCompound()
+   objEzmaxpricing = new ValidationObjectCustomEzmaxpricingResponse()
+   a_objEzmaxinvoicingsummaryglobal = {
+      type: 'array',
+      required: true
+   }
+   a_objEzmaxinvoicingsummaryexternal = {
+      type: 'array',
+      required: true
+   }
+   a_objEzmaxinvoicingsummaryinternal = {
+      type: 'array',
+      required: true
+   }
+   a_objEzmaxinvoicingagent = {
+      type: 'array',
+      required: true
+   }
+   a_objEzmaxinvoicinguser = {
+      type: 'array',
+      required: true
+   }
+   a_objEzmaxinvoicingezsignfolder = {
+      type: 'array',
+      required: true
+   }
+   a_objEzmaxinvoicingezsigndocument = {
+      type: 'array',
+      required: true
+   }
 } 
 
 

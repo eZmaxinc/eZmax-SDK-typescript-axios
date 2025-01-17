@@ -35,6 +35,18 @@ import type { SignatureCreateObjectV1ResponseMPayload } from './signature-create
 export interface SignatureCreateObjectV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof SignatureCreateObjectV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof SignatureCreateObjectV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {SignatureCreateObjectV1ResponseMPayload}
      * @memberof SignatureCreateObjectV1Response
      */
@@ -47,7 +59,15 @@ export interface SignatureCreateObjectV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectSignatureCreateObjectV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectSignatureCreateObjectV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectSignatureCreateObjectV1ResponseMPayload } from './'
  * @class DataObjectSignatureCreateObjectV1Response
  */
 export class DataObjectSignatureCreateObjectV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:SignatureCreateObjectV1ResponseMPayload = new DataObjectSignatureCreateObjectV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectSignatureCreateObjectV1Response {
  * @class ValidationObjectSignatureCreateObjectV1Response
  */
 export class ValidationObjectSignatureCreateObjectV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectSignatureCreateObjectV1ResponseMPayload()
 } 
 

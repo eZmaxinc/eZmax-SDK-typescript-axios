@@ -35,6 +35,18 @@ import type { EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1ResponseM
 export interface EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1ResponseMPayload}
      * @memberof EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Response
      */
@@ -47,7 +59,15 @@ export interface EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Respon
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectEzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectEzsigntemplatedocumentEditEzsigntemplateformfieldgroups
  * @class DataObjectEzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Response
  */
 export class DataObjectEzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1ResponseMPayload = new DataObjectEzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectEzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1
  * @class ValidationObjectEzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Response
  */
 export class ValidationObjectEzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1ResponseMPayload()
 } 
 

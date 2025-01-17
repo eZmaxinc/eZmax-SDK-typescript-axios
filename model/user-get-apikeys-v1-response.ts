@@ -35,6 +35,18 @@ import type { UserGetApikeysV1ResponseMPayload } from './user-get-apikeys-v1-res
 export interface UserGetApikeysV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof UserGetApikeysV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof UserGetApikeysV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {UserGetApikeysV1ResponseMPayload}
      * @memberof UserGetApikeysV1Response
      */
@@ -47,7 +59,15 @@ export interface UserGetApikeysV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectUserGetApikeysV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectUserGetApikeysV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectUserGetApikeysV1ResponseMPayload } from './'
  * @class DataObjectUserGetApikeysV1Response
  */
 export class DataObjectUserGetApikeysV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:UserGetApikeysV1ResponseMPayload = new DataObjectUserGetApikeysV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectUserGetApikeysV1Response {
  * @class ValidationObjectUserGetApikeysV1Response
  */
 export class ValidationObjectUserGetApikeysV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectUserGetApikeysV1ResponseMPayload()
 } 
 

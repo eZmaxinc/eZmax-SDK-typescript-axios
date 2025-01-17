@@ -35,6 +35,18 @@ import type { EzsignannotationCreateObjectV1ResponseMPayload } from './ezsignann
 export interface EzsignannotationCreateObjectV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof EzsignannotationCreateObjectV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof EzsignannotationCreateObjectV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {EzsignannotationCreateObjectV1ResponseMPayload}
      * @memberof EzsignannotationCreateObjectV1Response
      */
@@ -47,7 +59,15 @@ export interface EzsignannotationCreateObjectV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectEzsignannotationCreateObjectV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsignannotationCreateObjectV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectEzsignannotationCreateObjectV1ResponseMPayload } from '
  * @class DataObjectEzsignannotationCreateObjectV1Response
  */
 export class DataObjectEzsignannotationCreateObjectV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsignannotationCreateObjectV1ResponseMPayload = new DataObjectEzsignannotationCreateObjectV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectEzsignannotationCreateObjectV1Response {
  * @class ValidationObjectEzsignannotationCreateObjectV1Response
  */
 export class ValidationObjectEzsignannotationCreateObjectV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsignannotationCreateObjectV1ResponseMPayload()
 } 
 

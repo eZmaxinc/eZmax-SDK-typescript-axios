@@ -27,6 +27,24 @@ import type { FieldEAuthenticationexternalType } from './field-eauthenticationex
  */
 /*export type AuthenticationexternalRequestCompound = AuthenticationexternalRequest;*/
 export interface AuthenticationexternalRequestCompound {
+    /**
+     * The unique ID of the Authenticationexternal
+     * @type {number}
+     * @memberof AuthenticationexternalRequestCompound
+     */
+    pkiAuthenticationexternalID?:number 
+    /**
+     * The description of the Authenticationexternal
+     * @type {string}
+     * @memberof AuthenticationexternalRequestCompound
+     */
+    sAuthenticationexternalDescription:string 
+    /**
+     * 
+     * @type {FieldEAuthenticationexternalType}
+     * @memberof AuthenticationexternalRequestCompound
+     */
+    eAuthenticationexternalType:FieldEAuthenticationexternalType 
 }
 
 
@@ -43,6 +61,9 @@ export interface AuthenticationexternalRequestCompound {
  * @class DataObjectAuthenticationexternalRequestCompound
  */
 export class DataObjectAuthenticationexternalRequestCompound {
+    pkiAuthenticationexternalID?:number = undefined
+    sAuthenticationexternalDescription:string = ''
+    eAuthenticationexternalType:FieldEAuthenticationexternalType = 'Salesforce'
 }
 
 /**
@@ -51,6 +72,22 @@ export class DataObjectAuthenticationexternalRequestCompound {
  * @class ValidationObjectAuthenticationexternalRequestCompound
  */
 export class ValidationObjectAuthenticationexternalRequestCompound {
+   pkiAuthenticationexternalID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 255,
+      required: false
+   }
+   sAuthenticationexternalDescription = {
+      type: 'string',
+      pattern: /^.{0,50}$/,
+      required: true
+   }
+   eAuthenticationexternalType = {
+      type: 'enum',
+      allowableValues: ['Salesforce','SalesforceSandbox'],
+      required: true
+   }
 } 
 
 

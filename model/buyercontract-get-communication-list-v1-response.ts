@@ -35,6 +35,18 @@ import type { CommonResponseObjDebugPayloadGetList } from './common-response-obj
 export interface BuyercontractGetCommunicationListV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayloadGetList}
+     * @memberof BuyercontractGetCommunicationListV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayloadGetList 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof BuyercontractGetCommunicationListV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {BuyercontractGetCommunicationListV1ResponseMPayload}
      * @memberof BuyercontractGetCommunicationListV1Response
      */
@@ -47,7 +59,15 @@ export interface BuyercontractGetCommunicationListV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayloadGetList } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectBuyercontractGetCommunicationListV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayloadGetList } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectBuyercontractGetCommunicationListV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectBuyercontractGetCommunicationListV1ResponseMPayload } f
  * @class DataObjectBuyercontractGetCommunicationListV1Response
  */
 export class DataObjectBuyercontractGetCommunicationListV1Response {
+    objDebugPayload:CommonResponseObjDebugPayloadGetList = new DataObjectCommonResponseObjDebugPayloadGetList()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:BuyercontractGetCommunicationListV1ResponseMPayload = new DataObjectBuyercontractGetCommunicationListV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectBuyercontractGetCommunicationListV1Response {
  * @class ValidationObjectBuyercontractGetCommunicationListV1Response
  */
 export class ValidationObjectBuyercontractGetCommunicationListV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayloadGetList()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectBuyercontractGetCommunicationListV1ResponseMPayload()
 } 
 

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PermissionRequest } from './permission-request';
+import type { PermissionRequestCompound } from './permission-request-compound';
 
 /**
  * Request for PUT /1/object/user/{pkiUserID}/editPermissions

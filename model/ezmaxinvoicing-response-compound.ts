@@ -18,6 +18,12 @@
 import type { CommonAudit } from './common-audit';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { CustomEzmaxinvoicingEzsigndocumentResponse } from './custom-ezmaxinvoicing-ezsigndocument-response';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { CustomEzmaxinvoicingEzsignfolderResponse } from './custom-ezmaxinvoicing-ezsignfolder-response';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { CustomEzmaxpricingResponse } from './custom-ezmaxpricing-response';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -51,6 +57,84 @@ import type { FieldEEzmaxinvoicingPaymenttype } from './field-eezmaxinvoicing-pa
  */
 /*export type EzmaxinvoicingResponseCompound = EzmaxinvoicingResponse;*/
 export interface EzmaxinvoicingResponseCompound {
+    /**
+     * The unique ID of the Ezmaxinvoicing
+     * @type {number}
+     * @memberof EzmaxinvoicingResponseCompound
+     */
+    pkiEzmaxinvoicingID?:number 
+    /**
+     * The unique ID of the Ezmaxinvoicingcontract
+     * @type {number}
+     * @memberof EzmaxinvoicingResponseCompound
+     */
+    fkiEzmaxinvoicingcontractID:number 
+    /**
+     * The unique ID of the Ezmaxpricing
+     * @type {number}
+     * @memberof EzmaxinvoicingResponseCompound
+     */
+    fkiEzmaxpricingID:number 
+    /**
+     * The unique ID of the Systemconfigurationtype
+     * @type {number}
+     * @memberof EzmaxinvoicingResponseCompound
+     */
+    fkiSystemconfigurationtypeID:number 
+    /**
+     * The description of the Systemconfigurationtype in the language of the requester
+     * @type {string}
+     * @memberof EzmaxinvoicingResponseCompound
+     */
+    sSystemconfigurationtypeDescriptionX:string 
+    /**
+     * The YYYYMM period of the Ezmaxinvoicing
+     * @type {string}
+     * @memberof EzmaxinvoicingResponseCompound
+     */
+    yyyymmEzmaxinvoicing:string 
+    /**
+     * The number of days invoiced
+     * @type {number}
+     * @memberof EzmaxinvoicingResponseCompound
+     */
+    iEzmaxinvoicingDays:number 
+    /**
+     * 
+     * @type {FieldEEzmaxinvoicingPaymenttype}
+     * @memberof EzmaxinvoicingResponseCompound
+     */
+    eEzmaxinvoicingPaymenttype:FieldEEzmaxinvoicingPaymenttype 
+    /**
+     * The percentage of rebate depending of the payment type
+     * @type {string}
+     * @memberof EzmaxinvoicingResponseCompound
+     */
+    dEzmaxinvoicingRebatepaymenttype:string 
+    /**
+     * The length of the contract in years
+     * @type {number}
+     * @memberof EzmaxinvoicingResponseCompound
+     */
+    iEzmaxinvoicingContractlength:number 
+    /**
+     * The percentage of rebate depending of the contract length
+     * @type {string}
+     * @memberof EzmaxinvoicingResponseCompound
+     */
+    dEzmaxinvoicingRebatecontractlength:string 
+    /**
+     * Whether the rebate for eZsign is for all agents
+     * @type {boolean}
+     * @memberof EzmaxinvoicingResponseCompound
+     */
+    bEzmaxinvoicingRebateEzsignallagents:boolean 
+    /**
+     * 
+     * @type {CommonAudit}
+     * @memberof EzmaxinvoicingResponseCompound
+     */
+    objAudit?:CommonAudit 
     /**
      * 
      * @type {EzmaxinvoicingcontractResponseCompound}
@@ -114,9 +198,13 @@ export interface EzmaxinvoicingResponseCompound {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonAudit } from './'
+// @ts-ignore
 import { DataObjectEzmaxinvoicingcontractResponseCompound } from './'
 // @ts-ignore
 import { DataObjectCustomEzmaxpricingResponse } from './'
+// @ts-ignore
+import { ValidationObjectCommonAudit } from './'
 // @ts-ignore
 import { ValidationObjectEzmaxinvoicingcontractResponseCompound } from './'
 // @ts-ignore
@@ -129,6 +217,19 @@ import { ValidationObjectCustomEzmaxpricingResponse } from './'
  * @class DataObjectEzmaxinvoicingResponseCompound
  */
 export class DataObjectEzmaxinvoicingResponseCompound {
+    pkiEzmaxinvoicingID?:number = undefined
+    fkiEzmaxinvoicingcontractID:number = 0
+    fkiEzmaxpricingID:number = 0
+    fkiSystemconfigurationtypeID:number = 0
+    sSystemconfigurationtypeDescriptionX:string = ''
+    yyyymmEzmaxinvoicing:string = ''
+    iEzmaxinvoicingDays:number = 0
+    eEzmaxinvoicingPaymenttype:FieldEEzmaxinvoicingPaymenttype = 'Cheque'
+    dEzmaxinvoicingRebatepaymenttype:string = ''
+    iEzmaxinvoicingContractlength:number = 0
+    dEzmaxinvoicingRebatecontractlength:string = ''
+    bEzmaxinvoicingRebateEzsignallagents:boolean = false
+    objAudit?:CommonAudit = undefined
     objEzmaxinvoicingcontract:EzmaxinvoicingcontractResponseCompound = new DataObjectEzmaxinvoicingcontractResponseCompound()
     objEzmaxpricing:CustomEzmaxpricingResponse = new DataObjectCustomEzmaxpricingResponse()
     a_objEzmaxinvoicingsummaryglobal:Array<EzmaxinvoicingsummaryglobalResponseCompound> = []
@@ -146,6 +247,65 @@ export class DataObjectEzmaxinvoicingResponseCompound {
  * @class ValidationObjectEzmaxinvoicingResponseCompound
  */
 export class ValidationObjectEzmaxinvoicingResponseCompound {
+   pkiEzmaxinvoicingID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzmaxinvoicingcontractID = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   fkiEzmaxpricingID = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   fkiSystemconfigurationtypeID = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   sSystemconfigurationtypeDescriptionX = {
+      type: 'string',
+      required: true
+   }
+   yyyymmEzmaxinvoicing = {
+      type: 'string',
+      maxLength: 7,
+      required: true
+   }
+   iEzmaxinvoicingDays = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   eEzmaxinvoicingPaymenttype = {
+      type: 'enum',
+      allowableValues: ['Cheque','CreditCard','DirectDebit'],
+      required: true
+   }
+   dEzmaxinvoicingRebatepaymenttype = {
+      type: 'string',
+      pattern: /^-{0,1}[\d]{1,3}?\.[\d]{2}$/,
+      required: true
+   }
+   iEzmaxinvoicingContractlength = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   dEzmaxinvoicingRebatecontractlength = {
+      type: 'string',
+      pattern: /^-{0,1}[\d]{1,3}?\.[\d]{2}$/,
+      required: true
+   }
+   bEzmaxinvoicingRebateEzsignallagents = {
+      type: 'boolean',
+      required: true
+   }
+   objAudit = new ValidationObjectCommonAudit()
    objEzmaxinvoicingcontract = new ValidationObjectEzmaxinvoicingcontractResponseCompound()
    objEzmaxpricing = new ValidationObjectCustomEzmaxpricingResponse()
    a_objEzmaxinvoicingsummaryglobal = {

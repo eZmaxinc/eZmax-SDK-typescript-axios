@@ -15,19 +15,19 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AddressRequest } from './address-request';
+import type { AddressRequestCompound } from './address-request-compound';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { ContactinformationsRequest } from './contactinformations-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EmailRequest } from './email-request';
+import type { EmailRequestCompound } from './email-request-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PhoneRequest } from './phone-request';
+import type { PhoneRequestCompound } from './phone-request-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { WebsiteRequest } from './website-request';
+import type { WebsiteRequestCompound } from './website-request-compound';
 
 /**
  * @type ContactinformationsRequestCompound
@@ -36,6 +36,30 @@ import type { WebsiteRequest } from './website-request';
  */
 /*export type ContactinformationsRequestCompound = ContactinformationsRequest;*/
 export interface ContactinformationsRequestCompound {
+    /**
+     * The index in the a_objAddress array (zero based index) representing the Address object that should become the default one.  You can leave the value to 0 if the array is empty.
+     * @type {number}
+     * @memberof ContactinformationsRequestCompound
+     */
+    iAddressDefault:number 
+    /**
+     * The index in the a_objPhone array (zero based index) representing the Phone object that should become the default one.  You can leave the value to 0 if the array is empty.
+     * @type {number}
+     * @memberof ContactinformationsRequestCompound
+     */
+    iPhoneDefault:number 
+    /**
+     * The index in the a_objEmail array (zero based index) representing the Email object that should become the default one.  You can leave the value to 0 if the array is empty.
+     * @type {number}
+     * @memberof ContactinformationsRequestCompound
+     */
+    iEmailDefault:number 
+    /**
+     * The index in the a_objWebsite array (zero based index) representing the Website object that should become the default one.  You can leave the value to 0 if the array is empty.
+     * @type {number}
+     * @memberof ContactinformationsRequestCompound
+     */
+    iWebsiteDefault:number 
     /**
      * 
      * @type {Array<AddressRequestCompound>}
@@ -75,6 +99,10 @@ export interface ContactinformationsRequestCompound {
  * @class DataObjectContactinformationsRequestCompound
  */
 export class DataObjectContactinformationsRequestCompound {
+    iAddressDefault:number = 0
+    iPhoneDefault:number = 0
+    iEmailDefault:number = 0
+    iWebsiteDefault:number = 0
     a_objAddress:Array<AddressRequestCompound> = []
     a_objPhone:Array<PhoneRequestCompound> = []
     a_objEmail:Array<EmailRequestCompound> = []
@@ -87,6 +115,22 @@ export class DataObjectContactinformationsRequestCompound {
  * @class ValidationObjectContactinformationsRequestCompound
  */
 export class ValidationObjectContactinformationsRequestCompound {
+   iAddressDefault = {
+      type: 'integer',
+      required: true
+   }
+   iPhoneDefault = {
+      type: 'integer',
+      required: true
+   }
+   iEmailDefault = {
+      type: 'integer',
+      required: true
+   }
+   iWebsiteDefault = {
+      type: 'integer',
+      required: true
+   }
    a_objAddress = {
       type: 'array',
       required: true

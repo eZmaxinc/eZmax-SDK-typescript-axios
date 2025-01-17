@@ -35,6 +35,18 @@ import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-
 export interface AuthenticationexternalGetAutocompleteV2Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof AuthenticationexternalGetAutocompleteV2Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof AuthenticationexternalGetAutocompleteV2Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {AuthenticationexternalGetAutocompleteV2ResponseMPayload}
      * @memberof AuthenticationexternalGetAutocompleteV2Response
      */
@@ -47,7 +59,15 @@ export interface AuthenticationexternalGetAutocompleteV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectAuthenticationexternalGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectAuthenticationexternalGetAutocompleteV2ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectAuthenticationexternalGetAutocompleteV2ResponseMPayload
  * @class DataObjectAuthenticationexternalGetAutocompleteV2Response
  */
 export class DataObjectAuthenticationexternalGetAutocompleteV2Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:AuthenticationexternalGetAutocompleteV2ResponseMPayload = new DataObjectAuthenticationexternalGetAutocompleteV2ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectAuthenticationexternalGetAutocompleteV2Response {
  * @class ValidationObjectAuthenticationexternalGetAutocompleteV2Response
  */
 export class ValidationObjectAuthenticationexternalGetAutocompleteV2Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectAuthenticationexternalGetAutocompleteV2ResponseMPayload()
 } 
 

@@ -30,6 +30,18 @@ import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-
  */
 /*export type WebhookDeleteObjectV1Response = CommonResponse;*/
 export interface WebhookDeleteObjectV1Response {
+    /**
+     * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof WebhookDeleteObjectV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof WebhookDeleteObjectV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
 }
 
 
@@ -37,6 +49,14 @@ export interface WebhookDeleteObjectV1Response {
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 
 /**
  * @export 
@@ -45,6 +65,8 @@ export interface WebhookDeleteObjectV1Response {
  * @class DataObjectWebhookDeleteObjectV1Response
  */
 export class DataObjectWebhookDeleteObjectV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
 }
 
 /**
@@ -53,6 +75,8 @@ export class DataObjectWebhookDeleteObjectV1Response {
  * @class ValidationObjectWebhookDeleteObjectV1Response
  */
 export class ValidationObjectWebhookDeleteObjectV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
 } 
 
 

@@ -35,6 +35,18 @@ import type { DomainGetListV1ResponseMPayload } from './domain-get-list-v1-respo
 export interface DomainGetListV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayloadGetList}
+     * @memberof DomainGetListV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayloadGetList 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof DomainGetListV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {DomainGetListV1ResponseMPayload}
      * @memberof DomainGetListV1Response
      */
@@ -47,7 +59,15 @@ export interface DomainGetListV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayloadGetList } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectDomainGetListV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayloadGetList } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectDomainGetListV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectDomainGetListV1ResponseMPayload } from './'
  * @class DataObjectDomainGetListV1Response
  */
 export class DataObjectDomainGetListV1Response {
+    objDebugPayload:CommonResponseObjDebugPayloadGetList = new DataObjectCommonResponseObjDebugPayloadGetList()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:DomainGetListV1ResponseMPayload = new DataObjectDomainGetListV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectDomainGetListV1Response {
  * @class ValidationObjectDomainGetListV1Response
  */
 export class ValidationObjectDomainGetListV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayloadGetList()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectDomainGetListV1ResponseMPayload()
 } 
 

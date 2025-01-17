@@ -30,6 +30,18 @@ import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-
  */
 /*export type UsergroupmembershipDeleteObjectV1Response = CommonResponse;*/
 export interface UsergroupmembershipDeleteObjectV1Response {
+    /**
+     * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof UsergroupmembershipDeleteObjectV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof UsergroupmembershipDeleteObjectV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
 }
 
 
@@ -37,6 +49,14 @@ export interface UsergroupmembershipDeleteObjectV1Response {
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 
 /**
  * @export 
@@ -45,6 +65,8 @@ export interface UsergroupmembershipDeleteObjectV1Response {
  * @class DataObjectUsergroupmembershipDeleteObjectV1Response
  */
 export class DataObjectUsergroupmembershipDeleteObjectV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
 }
 
 /**
@@ -53,6 +75,8 @@ export class DataObjectUsergroupmembershipDeleteObjectV1Response {
  * @class ValidationObjectUsergroupmembershipDeleteObjectV1Response
  */
 export class ValidationObjectUsergroupmembershipDeleteObjectV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
 } 
 
 

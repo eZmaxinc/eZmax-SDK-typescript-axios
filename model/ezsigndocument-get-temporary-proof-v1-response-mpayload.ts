@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EzsigndocumentlogResponse } from './ezsigndocumentlog-response';
+import type { EzsigndocumentlogResponseCompound } from './ezsigndocumentlog-response-compound';
 
 /**
  * Payload for GET /1/object/ezsigndocument/{pkiEzsigndocumentID}/getTemporaryProof

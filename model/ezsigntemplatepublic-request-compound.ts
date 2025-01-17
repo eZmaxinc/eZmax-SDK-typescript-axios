@@ -27,6 +27,66 @@ import type { FieldEEzsigntemplatepublicLimittype } from './field-eezsigntemplat
  */
 /*export type EzsigntemplatepublicRequestCompound = EzsigntemplatepublicRequest;*/
 export interface EzsigntemplatepublicRequestCompound {
+    /**
+     * The unique ID of the Ezsigntemplatepublic
+     * @type {number}
+     * @memberof EzsigntemplatepublicRequestCompound
+     */
+    pkiEzsigntemplatepublicID?:number 
+    /**
+     * The unique ID of the Ezsignfoldertype.
+     * @type {number}
+     * @memberof EzsigntemplatepublicRequestCompound
+     */
+    fkiEzsignfoldertypeID:number 
+    /**
+     * The unique ID of the Userlogintype  Valid values:  |Value|Description|Detail| |-|-|-| |1|**Email Only**|The Ezsignsigner will receive a secure link by email| |2|**Email and phone or SMS**|The Ezsignsigner will receive a secure link by email and will need to authenticate using SMS or Phone call. **Additional fee applies**| |3|**Email and secret question**|The Ezsignsigner will receive a secure link by email and will need to authenticate using a predefined question and answer| |4|**In person only**|The Ezsignsigner will only be able to sign \"In-Person\" and there won\'t be any authentication. No email will be sent for invitation to sign. Make sure you evaluate the risk of signature denial and at minimum, we recommend you use a handwritten signature type| |5|**In person with phone or SMS**|The Ezsignsigner will only be able to sign \"In-Person\" and will need to authenticate using SMS or Phone call. No email will be sent for invitation to sign. **Additional fee applies**| |6|**Embedded**|The Ezsignsigner will only be able to sign in the embedded solution. No email will be sent for invitation to sign. **Additional fee applies**|   |7|**Embedded with phone or SMS**|The Ezsignsigner will only be able to sign in the embedded solution and will need to authenticate using SMS or Phone call. No email will be sent for invitation to sign. **Additional fee applies**|   |8|**No validation**|The Ezsignsigner will not receive an email and won\'t have to validate his connection using 2 factor. **Additional fee applies**|      |9|**Sms only**|The Ezsignsigner will not receive an email but will will need to authenticate using SMS. **Additional fee applies**|     
+     * @type {number}
+     * @memberof EzsigntemplatepublicRequestCompound
+     */
+    fkiUserlogintypeID:number 
+    /**
+     * The unique ID of the Ezsigntemplate
+     * @type {number}
+     * @memberof EzsigntemplatepublicRequestCompound
+     */
+    fkiEzsigntemplateID?:number 
+    /**
+     * The unique ID of the Ezsigntemplatepackage
+     * @type {number}
+     * @memberof EzsigntemplatepublicRequestCompound
+     */
+    fkiEzsigntemplatepackageID?:number 
+    /**
+     * The description of the Ezsigntemplatepublic
+     * @type {string}
+     * @memberof EzsigntemplatepublicRequestCompound
+     */
+    sEzsigntemplatepublicDescription:string 
+    /**
+     * Whether the ezsigntemplatepublic is active or not
+     * @type {boolean}
+     * @memberof EzsigntemplatepublicRequestCompound
+     */
+    bEzsigntemplatepublicIsactive:boolean 
+    /**
+     * The note of the Ezsigntemplatepublic
+     * @type {string}
+     * @memberof EzsigntemplatepublicRequestCompound
+     */
+    tEzsigntemplatepublicNote:string 
+    /**
+     * 
+     * @type {FieldEEzsigntemplatepublicLimittype}
+     * @memberof EzsigntemplatepublicRequestCompound
+     */
+    eEzsigntemplatepublicLimittype:FieldEEzsigntemplatepublicLimittype 
+    /**
+     * The limit of the Ezsigntemplatepublic
+     * @type {number}
+     * @memberof EzsigntemplatepublicRequestCompound
+     */
+    iEzsigntemplatepublicLimit:number 
 }
 
 
@@ -43,6 +103,16 @@ export interface EzsigntemplatepublicRequestCompound {
  * @class DataObjectEzsigntemplatepublicRequestCompound
  */
 export class DataObjectEzsigntemplatepublicRequestCompound {
+    pkiEzsigntemplatepublicID?:number = undefined
+    fkiEzsignfoldertypeID:number = 0
+    fkiUserlogintypeID:number = 0
+    fkiEzsigntemplateID?:number = undefined
+    fkiEzsigntemplatepackageID?:number = undefined
+    sEzsigntemplatepublicDescription:string = ''
+    bEzsigntemplatepublicIsactive:boolean = false
+    tEzsigntemplatepublicNote:string = ''
+    eEzsigntemplatepublicLimittype:FieldEEzsigntemplatepublicLimittype = 'Hour'
+    iEzsigntemplatepublicLimit:number = 0
 }
 
 /**
@@ -51,6 +121,58 @@ export class DataObjectEzsigntemplatepublicRequestCompound {
  * @class ValidationObjectEzsigntemplatepublicRequestCompound
  */
 export class ValidationObjectEzsigntemplatepublicRequestCompound {
+   pkiEzsigntemplatepublicID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 65535,
+      required: false
+   }
+   fkiEzsignfoldertypeID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 65535,
+      required: true
+   }
+   fkiUserlogintypeID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsigntemplateID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzsigntemplatepackageID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   sEzsigntemplatepublicDescription = {
+      type: 'string',
+      pattern: /^.{0,80}$/,
+      required: true
+   }
+   bEzsigntemplatepublicIsactive = {
+      type: 'boolean',
+      required: true
+   }
+   tEzsigntemplatepublicNote = {
+      type: 'string',
+      pattern: /^.{0,65535}$/,
+      required: true
+   }
+   eEzsigntemplatepublicLimittype = {
+      type: 'enum',
+      allowableValues: ['Hour','Day','Month','Total'],
+      required: true
+   }
+   iEzsigntemplatepublicLimit = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 65535,
+      required: true
+   }
 } 
 
 

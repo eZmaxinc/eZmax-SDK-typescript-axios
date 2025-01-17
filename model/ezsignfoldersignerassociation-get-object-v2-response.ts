@@ -35,6 +35,18 @@ import type { EzsignfoldersignerassociationGetObjectV2ResponseMPayload } from '.
 export interface EzsignfoldersignerassociationGetObjectV2Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof EzsignfoldersignerassociationGetObjectV2Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof EzsignfoldersignerassociationGetObjectV2Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {EzsignfoldersignerassociationGetObjectV2ResponseMPayload}
      * @memberof EzsignfoldersignerassociationGetObjectV2Response
      */
@@ -47,7 +59,15 @@ export interface EzsignfoldersignerassociationGetObjectV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectEzsignfoldersignerassociationGetObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsignfoldersignerassociationGetObjectV2ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectEzsignfoldersignerassociationGetObjectV2ResponseMPayloa
  * @class DataObjectEzsignfoldersignerassociationGetObjectV2Response
  */
 export class DataObjectEzsignfoldersignerassociationGetObjectV2Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsignfoldersignerassociationGetObjectV2ResponseMPayload = new DataObjectEzsignfoldersignerassociationGetObjectV2ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectEzsignfoldersignerassociationGetObjectV2Response {
  * @class ValidationObjectEzsignfoldersignerassociationGetObjectV2Response
  */
 export class ValidationObjectEzsignfoldersignerassociationGetObjectV2Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsignfoldersignerassociationGetObjectV2ResponseMPayload()
 } 
 

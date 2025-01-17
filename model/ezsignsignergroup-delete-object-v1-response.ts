@@ -30,6 +30,18 @@ import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-
  */
 /*export type EzsignsignergroupDeleteObjectV1Response = CommonResponse;*/
 export interface EzsignsignergroupDeleteObjectV1Response {
+    /**
+     * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof EzsignsignergroupDeleteObjectV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof EzsignsignergroupDeleteObjectV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
 }
 
 
@@ -37,6 +49,14 @@ export interface EzsignsignergroupDeleteObjectV1Response {
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 
 /**
  * @export 
@@ -45,6 +65,8 @@ export interface EzsignsignergroupDeleteObjectV1Response {
  * @class DataObjectEzsignsignergroupDeleteObjectV1Response
  */
 export class DataObjectEzsignsignergroupDeleteObjectV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
 }
 
 /**
@@ -53,6 +75,8 @@ export class DataObjectEzsignsignergroupDeleteObjectV1Response {
  * @class ValidationObjectEzsignsignergroupDeleteObjectV1Response
  */
 export class ValidationObjectEzsignsignergroupDeleteObjectV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
 } 
 
 

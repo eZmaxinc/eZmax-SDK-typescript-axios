@@ -35,6 +35,18 @@ import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-
 export interface BrandingGetAutocompleteV2Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof BrandingGetAutocompleteV2Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof BrandingGetAutocompleteV2Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {BrandingGetAutocompleteV2ResponseMPayload}
      * @memberof BrandingGetAutocompleteV2Response
      */
@@ -47,7 +59,15 @@ export interface BrandingGetAutocompleteV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectBrandingGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectBrandingGetAutocompleteV2ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectBrandingGetAutocompleteV2ResponseMPayload } from './'
  * @class DataObjectBrandingGetAutocompleteV2Response
  */
 export class DataObjectBrandingGetAutocompleteV2Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:BrandingGetAutocompleteV2ResponseMPayload = new DataObjectBrandingGetAutocompleteV2ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectBrandingGetAutocompleteV2Response {
  * @class ValidationObjectBrandingGetAutocompleteV2Response
  */
 export class ValidationObjectBrandingGetAutocompleteV2Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectBrandingGetAutocompleteV2ResponseMPayload()
 } 
 

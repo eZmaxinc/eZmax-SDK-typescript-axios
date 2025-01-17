@@ -35,6 +35,18 @@ import type { EzsignbulksendsignermappingCreateObjectV1ResponseMPayload } from '
 export interface EzsignbulksendsignermappingCreateObjectV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof EzsignbulksendsignermappingCreateObjectV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof EzsignbulksendsignermappingCreateObjectV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {EzsignbulksendsignermappingCreateObjectV1ResponseMPayload}
      * @memberof EzsignbulksendsignermappingCreateObjectV1Response
      */
@@ -47,7 +59,15 @@ export interface EzsignbulksendsignermappingCreateObjectV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectEzsignbulksendsignermappingCreateObjectV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsignbulksendsignermappingCreateObjectV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectEzsignbulksendsignermappingCreateObjectV1ResponseMPaylo
  * @class DataObjectEzsignbulksendsignermappingCreateObjectV1Response
  */
 export class DataObjectEzsignbulksendsignermappingCreateObjectV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsignbulksendsignermappingCreateObjectV1ResponseMPayload = new DataObjectEzsignbulksendsignermappingCreateObjectV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectEzsignbulksendsignermappingCreateObjectV1Response {
  * @class ValidationObjectEzsignbulksendsignermappingCreateObjectV1Response
  */
 export class ValidationObjectEzsignbulksendsignermappingCreateObjectV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsignbulksendsignermappingCreateObjectV1ResponseMPayload()
 } 
 

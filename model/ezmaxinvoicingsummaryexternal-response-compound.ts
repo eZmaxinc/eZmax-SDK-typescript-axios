@@ -28,6 +28,36 @@ import type { EzmaxinvoicingsummaryexternaldetailResponseCompound } from './ezma
 /*export type EzmaxinvoicingsummaryexternalResponseCompound = EzmaxinvoicingsummaryexternalResponse;*/
 export interface EzmaxinvoicingsummaryexternalResponseCompound {
     /**
+     * The unique ID of the Ezmaxinvoicingsummaryexternal
+     * @type {number}
+     * @memberof EzmaxinvoicingsummaryexternalResponseCompound
+     */
+    pkiEzmaxinvoicingsummaryexternalID?:number 
+    /**
+     * The unique ID of the Ezmaxinvoicing
+     * @type {number}
+     * @memberof EzmaxinvoicingsummaryexternalResponseCompound
+     */
+    fkiEzmaxinvoicingID?:number 
+    /**
+     * The unique ID of the Billingentityexternal
+     * @type {number}
+     * @memberof EzmaxinvoicingsummaryexternalResponseCompound
+     */
+    fkiBillingentityexternalID:number 
+    /**
+     * The description of the Billingentityexternal
+     * @type {string}
+     * @memberof EzmaxinvoicingsummaryexternalResponseCompound
+     */
+    sBillingentityexternalDescription:string 
+    /**
+     * The description of the Ezmaxinvoicingsummaryexternal
+     * @type {string}
+     * @memberof EzmaxinvoicingsummaryexternalResponseCompound
+     */
+    sEzmaxinvoicingsummaryexternalDescription:string 
+    /**
      * 
      * @type {Array<EzmaxinvoicingsummaryexternaldetailResponseCompound>}
      * @memberof EzmaxinvoicingsummaryexternalResponseCompound
@@ -48,6 +78,11 @@ export interface EzmaxinvoicingsummaryexternalResponseCompound {
  * @class DataObjectEzmaxinvoicingsummaryexternalResponseCompound
  */
 export class DataObjectEzmaxinvoicingsummaryexternalResponseCompound {
+    pkiEzmaxinvoicingsummaryexternalID?:number = undefined
+    fkiEzmaxinvoicingID?:number = undefined
+    fkiBillingentityexternalID:number = 0
+    sBillingentityexternalDescription:string = ''
+    sEzmaxinvoicingsummaryexternalDescription:string = ''
     a_objEzmaxinvoicingsummaryexternaldetail:Array<EzmaxinvoicingsummaryexternaldetailResponseCompound> = []
 }
 
@@ -57,6 +92,30 @@ export class DataObjectEzmaxinvoicingsummaryexternalResponseCompound {
  * @class ValidationObjectEzmaxinvoicingsummaryexternalResponseCompound
  */
 export class ValidationObjectEzmaxinvoicingsummaryexternalResponseCompound {
+   pkiEzmaxinvoicingsummaryexternalID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzmaxinvoicingID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiBillingentityexternalID = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   sBillingentityexternalDescription = {
+      type: 'string',
+      required: true
+   }
+   sEzmaxinvoicingsummaryexternalDescription = {
+      type: 'string',
+      maxLength: 70,
+      required: true
+   }
    a_objEzmaxinvoicingsummaryexternaldetail = {
       type: 'array',
       required: true

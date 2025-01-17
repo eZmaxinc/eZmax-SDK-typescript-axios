@@ -35,6 +35,18 @@ import type { UserstagedGetListV1ResponseMPayload } from './userstaged-get-list-
 export interface UserstagedGetListV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayloadGetList}
+     * @memberof UserstagedGetListV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayloadGetList 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof UserstagedGetListV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {UserstagedGetListV1ResponseMPayload}
      * @memberof UserstagedGetListV1Response
      */
@@ -47,7 +59,15 @@ export interface UserstagedGetListV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayloadGetList } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectUserstagedGetListV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayloadGetList } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectUserstagedGetListV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectUserstagedGetListV1ResponseMPayload } from './'
  * @class DataObjectUserstagedGetListV1Response
  */
 export class DataObjectUserstagedGetListV1Response {
+    objDebugPayload:CommonResponseObjDebugPayloadGetList = new DataObjectCommonResponseObjDebugPayloadGetList()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:UserstagedGetListV1ResponseMPayload = new DataObjectUserstagedGetListV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectUserstagedGetListV1Response {
  * @class ValidationObjectUserstagedGetListV1Response
  */
 export class ValidationObjectUserstagedGetListV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayloadGetList()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectUserstagedGetListV1ResponseMPayload()
 } 
 

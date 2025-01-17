@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { CustomDropdownElementResponse } from './custom-dropdown-element-response';
+import type { CustomDropdownElementResponseCompound } from './custom-dropdown-element-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { EnumTextvalidation } from './enum-textvalidation';
@@ -27,7 +27,7 @@ import type { EzsigntemplateformfieldResponseCompound } from './ezsigntemplatefo
 import type { EzsigntemplateformfieldgroupResponse } from './ezsigntemplateformfieldgroup-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EzsigntemplateformfieldgroupsignerResponse } from './ezsigntemplateformfieldgroupsigner-response';
+import type { EzsigntemplateformfieldgroupsignerResponseCompound } from './ezsigntemplateformfieldgroupsigner-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { FieldEEzsigntemplateformfieldgroupSignerrequirement } from './field-eezsigntemplateformfieldgroup-signerrequirement';
@@ -45,6 +45,109 @@ import type { FieldEEzsigntemplateformfieldgroupType } from './field-eezsigntemp
  */
 /*export type EzsigntemplateformfieldgroupResponseCompound = EzsigntemplateformfieldgroupResponse;*/
 export interface EzsigntemplateformfieldgroupResponseCompound {
+    /**
+     * The unique ID of the Ezsigntemplateformfieldgroup
+     * @type {number}
+     * @memberof EzsigntemplateformfieldgroupResponseCompound
+     */
+    pkiEzsigntemplateformfieldgroupID:number 
+    /**
+     * The unique ID of the Ezsigntemplatedocument
+     * @type {number}
+     * @memberof EzsigntemplateformfieldgroupResponseCompound
+     */
+    fkiEzsigntemplatedocumentID:number 
+    /**
+     * 
+     * @type {FieldEEzsigntemplateformfieldgroupType}
+     * @memberof EzsigntemplateformfieldgroupResponseCompound
+     */
+    eEzsigntemplateformfieldgroupType:FieldEEzsigntemplateformfieldgroupType 
+    /**
+     * 
+     * @type {FieldEEzsigntemplateformfieldgroupSignerrequirement}
+     * @memberof EzsigntemplateformfieldgroupResponseCompound
+     * @deprecated
+     */
+    eEzsigntemplateformfieldgroupSignerrequirement?:FieldEEzsigntemplateformfieldgroupSignerrequirement 
+    /**
+     * The Label for the Ezsigntemplateformfieldgroup
+     * @type {string}
+     * @memberof EzsigntemplateformfieldgroupResponseCompound
+     */
+    sEzsigntemplateformfieldgroupLabel:string 
+    /**
+     * The step when the Ezsigntemplatesigner will be invited to fill the form fields
+     * @type {number}
+     * @memberof EzsigntemplateformfieldgroupResponseCompound
+     */
+    iEzsigntemplateformfieldgroupStep:number 
+    /**
+     * The default value for the Ezsigntemplateformfieldgroup  You can use the codes below and they will be replaced at signature time.    | Code | Description | Example | | ------------------------- | ------------ | ------------ | | {sUserFirstname} | The first name of the contact | John | | {sUserLastname} | The last name of the contact | Doe | | {sUserJobtitle} | The job title | Sales Representative | | {sEmailAddress} | The email address | email@example.com | | {sPhoneE164} | A phone number in E.164 Format | +15149901516 | | {sPhoneE164Cell} | A phone number in E.164 Format | +15149901516 |
+     * @type {string}
+     * @memberof EzsigntemplateformfieldgroupResponseCompound
+     */
+    sEzsigntemplateformfieldgroupDefaultvalue?:string 
+    /**
+     * The minimum number of Ezsigntemplateformfield that must be filled in the Ezsigntemplateformfieldgroup
+     * @type {number}
+     * @memberof EzsigntemplateformfieldgroupResponseCompound
+     */
+    iEzsigntemplateformfieldgroupFilledmin:number 
+    /**
+     * The maximum number of Ezsigntemplateformfield that must be filled in the Ezsigntemplateformfieldgroup
+     * @type {number}
+     * @memberof EzsigntemplateformfieldgroupResponseCompound
+     */
+    iEzsigntemplateformfieldgroupFilledmax:number 
+    /**
+     * Whether the Ezsigntemplateformfieldgroup is read only or not.
+     * @type {boolean}
+     * @memberof EzsigntemplateformfieldgroupResponseCompound
+     */
+    bEzsigntemplateformfieldgroupReadonly:boolean 
+    /**
+     * The maximum length for the value in the Ezsigntemplateformfieldgroup  This can only be set if eEzsigntemplateformfieldgroupType is **Text** or **Textarea**
+     * @type {number}
+     * @memberof EzsigntemplateformfieldgroupResponseCompound
+     */
+    iEzsigntemplateformfieldgroupMaxlength?:number 
+    /**
+     * Whether the Ezsigntemplateformfieldgroup is encrypted in the database or not. Encrypted values are not displayed on the Ezsigndocument. This can only be set if eEzsigntemplateformfieldgroupType is **Text** or **Textarea**
+     * @type {boolean}
+     * @memberof EzsigntemplateformfieldgroupResponseCompound
+     */
+    bEzsigntemplateformfieldgroupEncrypted?:boolean 
+    /**
+     * A regular expression to indicate what values are acceptable for the Ezsigntemplateformfieldgroup.  This can only be set if eEzsigntemplateformfieldgroupType is **Text** or **Textarea**
+     * @type {string}
+     * @memberof EzsigntemplateformfieldgroupResponseCompound
+     */
+    sEzsigntemplateformfieldgroupRegexp?:string 
+    /**
+     * Description of validation rule. Show by signatory.
+     * @type {string}
+     * @memberof EzsigntemplateformfieldgroupResponseCompound
+     */
+    sEzsigntemplateformfieldgroupTextvalidationcustommessage?:string 
+    /**
+     * 
+     * @type {EnumTextvalidation}
+     * @memberof EzsigntemplateformfieldgroupResponseCompound
+     */
+    eEzsigntemplateformfieldgroupTextvalidation?:EnumTextvalidation 
+    /**
+     * A tooltip that will be presented to Ezsigntemplatesigner about the Ezsigntemplateformfieldgroup
+     * @type {string}
+     * @memberof EzsigntemplateformfieldgroupResponseCompound
+     */
+    tEzsigntemplateformfieldgroupTooltip?:string 
+    /**
+     * 
+     * @type {FieldEEzsigntemplateformfieldgroupTooltipposition}
+     * @memberof EzsigntemplateformfieldgroupResponseCompound
+     */
+    eEzsigntemplateformfieldgroupTooltipposition?:FieldEEzsigntemplateformfieldgroupTooltipposition 
     /**
      * 
      * @type {Array<EzsigntemplateformfieldgroupsignerResponseCompound>}
@@ -79,6 +182,23 @@ export interface EzsigntemplateformfieldgroupResponseCompound {
  * @class DataObjectEzsigntemplateformfieldgroupResponseCompound
  */
 export class DataObjectEzsigntemplateformfieldgroupResponseCompound {
+    pkiEzsigntemplateformfieldgroupID:number = 0
+    fkiEzsigntemplatedocumentID:number = 0
+    eEzsigntemplateformfieldgroupType:FieldEEzsigntemplateformfieldgroupType = 'Text'
+    eEzsigntemplateformfieldgroupSignerrequirement?:FieldEEzsigntemplateformfieldgroupSignerrequirement = undefined
+    sEzsigntemplateformfieldgroupLabel:string = ''
+    iEzsigntemplateformfieldgroupStep:number = 0
+    sEzsigntemplateformfieldgroupDefaultvalue?:string = undefined
+    iEzsigntemplateformfieldgroupFilledmin:number = 0
+    iEzsigntemplateformfieldgroupFilledmax:number = 0
+    bEzsigntemplateformfieldgroupReadonly:boolean = false
+    iEzsigntemplateformfieldgroupMaxlength?:number = undefined
+    bEzsigntemplateformfieldgroupEncrypted?:boolean = undefined
+    sEzsigntemplateformfieldgroupRegexp?:string = undefined
+    sEzsigntemplateformfieldgroupTextvalidationcustommessage?:string = undefined
+    eEzsigntemplateformfieldgroupTextvalidation?:EnumTextvalidation = undefined
+    tEzsigntemplateformfieldgroupTooltip?:string = undefined
+    eEzsigntemplateformfieldgroupTooltipposition?:FieldEEzsigntemplateformfieldgroupTooltipposition = undefined
     a_objEzsigntemplateformfieldgroupsigner:Array<EzsigntemplateformfieldgroupsignerResponseCompound> = []
     a_objDropdownElement?:Array<CustomDropdownElementResponseCompound> = undefined
     a_objEzsigntemplateformfield:Array<EzsigntemplateformfieldResponseCompound> = []
@@ -90,6 +210,90 @@ export class DataObjectEzsigntemplateformfieldgroupResponseCompound {
  * @class ValidationObjectEzsigntemplateformfieldgroupResponseCompound
  */
 export class ValidationObjectEzsigntemplateformfieldgroupResponseCompound {
+   pkiEzsigntemplateformfieldgroupID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsigntemplatedocumentID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   eEzsigntemplateformfieldgroupType = {
+      type: 'enum',
+      allowableValues: ['Text','Textarea','Dropdown','Radio','Checkbox','Number','Date'],
+      required: true
+   }
+   eEzsigntemplateformfieldgroupSignerrequirement = {
+      type: 'enum',
+      allowableValues: ['All','One'],
+      required: false
+   }
+   sEzsigntemplateformfieldgroupLabel = {
+      type: 'string',
+      minLength: 1,
+      maxLength: 50,
+      required: true
+   }
+   iEzsigntemplateformfieldgroupStep = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   sEzsigntemplateformfieldgroupDefaultvalue = {
+      type: 'string',
+      required: false
+   }
+   iEzsigntemplateformfieldgroupFilledmin = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsigntemplateformfieldgroupFilledmax = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   bEzsigntemplateformfieldgroupReadonly = {
+      type: 'boolean',
+      required: true
+   }
+   iEzsigntemplateformfieldgroupMaxlength = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 65535,
+      required: false
+   }
+   bEzsigntemplateformfieldgroupEncrypted = {
+      type: 'boolean',
+      required: false
+   }
+   sEzsigntemplateformfieldgroupRegexp = {
+      type: 'string',
+      pattern: /^\^.*\$$|^$/,
+      required: false
+   }
+   sEzsigntemplateformfieldgroupTextvalidationcustommessage = {
+      type: 'string',
+      minLength: 0,
+      maxLength: 50,
+      required: false
+   }
+   eEzsigntemplateformfieldgroupTextvalidation = {
+      type: 'enum',
+      allowableValues: ['None','Date (YYYY-MM-DD)','Date (MM/DD/YYYY)','Date (MM/DD/YY)','Date (DD/MM/YYYY)','Date (DD/MM/YY)','Email','Letters','Numbers','Zip','Zip+4','PostalCode','Custom'],
+      required: false
+   }
+   tEzsigntemplateformfieldgroupTooltip = {
+      type: 'string',
+      required: false
+   }
+   eEzsigntemplateformfieldgroupTooltipposition = {
+      type: 'enum',
+      allowableValues: ['TopLeft','TopCenter','TopRight','MiddleLeft','MiddleRight','BottomLeft','BottomCenter','BottomRight'],
+      required: false
+   }
    a_objEzsigntemplateformfieldgroupsigner = {
       type: 'array',
       required: true

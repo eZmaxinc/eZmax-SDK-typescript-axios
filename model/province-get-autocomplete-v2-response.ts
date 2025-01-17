@@ -35,6 +35,18 @@ import type { ProvinceGetAutocompleteV2ResponseMPayload } from './province-get-a
 export interface ProvinceGetAutocompleteV2Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof ProvinceGetAutocompleteV2Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof ProvinceGetAutocompleteV2Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {ProvinceGetAutocompleteV2ResponseMPayload}
      * @memberof ProvinceGetAutocompleteV2Response
      */
@@ -47,7 +59,15 @@ export interface ProvinceGetAutocompleteV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectProvinceGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectProvinceGetAutocompleteV2ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectProvinceGetAutocompleteV2ResponseMPayload } from './'
  * @class DataObjectProvinceGetAutocompleteV2Response
  */
 export class DataObjectProvinceGetAutocompleteV2Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:ProvinceGetAutocompleteV2ResponseMPayload = new DataObjectProvinceGetAutocompleteV2ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectProvinceGetAutocompleteV2Response {
  * @class ValidationObjectProvinceGetAutocompleteV2Response
  */
 export class ValidationObjectProvinceGetAutocompleteV2Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectProvinceGetAutocompleteV2ResponseMPayload()
 } 
 

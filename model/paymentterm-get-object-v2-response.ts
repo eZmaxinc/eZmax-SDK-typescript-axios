@@ -35,6 +35,18 @@ import type { PaymenttermGetObjectV2ResponseMPayload } from './paymentterm-get-o
 export interface PaymenttermGetObjectV2Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof PaymenttermGetObjectV2Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof PaymenttermGetObjectV2Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {PaymenttermGetObjectV2ResponseMPayload}
      * @memberof PaymenttermGetObjectV2Response
      */
@@ -47,7 +59,15 @@ export interface PaymenttermGetObjectV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectPaymenttermGetObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectPaymenttermGetObjectV2ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectPaymenttermGetObjectV2ResponseMPayload } from './'
  * @class DataObjectPaymenttermGetObjectV2Response
  */
 export class DataObjectPaymenttermGetObjectV2Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:PaymenttermGetObjectV2ResponseMPayload = new DataObjectPaymenttermGetObjectV2ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectPaymenttermGetObjectV2Response {
  * @class ValidationObjectPaymenttermGetObjectV2Response
  */
 export class ValidationObjectPaymenttermGetObjectV2Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectPaymenttermGetObjectV2ResponseMPayload()
 } 
 

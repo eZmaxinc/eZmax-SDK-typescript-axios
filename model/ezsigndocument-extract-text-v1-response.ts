@@ -35,6 +35,18 @@ import type { EzsigndocumentExtractTextV1ResponseMPayload } from './ezsigndocume
 export interface EzsigndocumentExtractTextV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof EzsigndocumentExtractTextV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof EzsigndocumentExtractTextV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {EzsigndocumentExtractTextV1ResponseMPayload}
      * @memberof EzsigndocumentExtractTextV1Response
      */
@@ -47,7 +59,15 @@ export interface EzsigndocumentExtractTextV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectEzsigndocumentExtractTextV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsigndocumentExtractTextV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectEzsigndocumentExtractTextV1ResponseMPayload } from './'
  * @class DataObjectEzsigndocumentExtractTextV1Response
  */
 export class DataObjectEzsigndocumentExtractTextV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsigndocumentExtractTextV1ResponseMPayload = new DataObjectEzsigndocumentExtractTextV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectEzsigndocumentExtractTextV1Response {
  * @class ValidationObjectEzsigndocumentExtractTextV1Response
  */
 export class ValidationObjectEzsigndocumentExtractTextV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsigndocumentExtractTextV1ResponseMPayload()
 } 
 

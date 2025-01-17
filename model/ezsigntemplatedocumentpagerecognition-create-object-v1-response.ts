@@ -35,6 +35,18 @@ import type { EzsigntemplatedocumentpagerecognitionCreateObjectV1ResponseMPayloa
 export interface EzsigntemplatedocumentpagerecognitionCreateObjectV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof EzsigntemplatedocumentpagerecognitionCreateObjectV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof EzsigntemplatedocumentpagerecognitionCreateObjectV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {EzsigntemplatedocumentpagerecognitionCreateObjectV1ResponseMPayload}
      * @memberof EzsigntemplatedocumentpagerecognitionCreateObjectV1Response
      */
@@ -47,7 +59,15 @@ export interface EzsigntemplatedocumentpagerecognitionCreateObjectV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectEzsigntemplatedocumentpagerecognitionCreateObjectV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsigntemplatedocumentpagerecognitionCreateObjectV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectEzsigntemplatedocumentpagerecognitionCreateObjectV1Resp
  * @class DataObjectEzsigntemplatedocumentpagerecognitionCreateObjectV1Response
  */
 export class DataObjectEzsigntemplatedocumentpagerecognitionCreateObjectV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsigntemplatedocumentpagerecognitionCreateObjectV1ResponseMPayload = new DataObjectEzsigntemplatedocumentpagerecognitionCreateObjectV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectEzsigntemplatedocumentpagerecognitionCreateObjectV1Respon
  * @class ValidationObjectEzsigntemplatedocumentpagerecognitionCreateObjectV1Response
  */
 export class ValidationObjectEzsigntemplatedocumentpagerecognitionCreateObjectV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsigntemplatedocumentpagerecognitionCreateObjectV1ResponseMPayload()
 } 
 

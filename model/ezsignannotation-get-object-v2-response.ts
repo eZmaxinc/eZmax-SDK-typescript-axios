@@ -35,6 +35,18 @@ import type { EzsignannotationGetObjectV2ResponseMPayload } from './ezsignannota
 export interface EzsignannotationGetObjectV2Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof EzsignannotationGetObjectV2Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof EzsignannotationGetObjectV2Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {EzsignannotationGetObjectV2ResponseMPayload}
      * @memberof EzsignannotationGetObjectV2Response
      */
@@ -47,7 +59,15 @@ export interface EzsignannotationGetObjectV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectEzsignannotationGetObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsignannotationGetObjectV2ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectEzsignannotationGetObjectV2ResponseMPayload } from './'
  * @class DataObjectEzsignannotationGetObjectV2Response
  */
 export class DataObjectEzsignannotationGetObjectV2Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsignannotationGetObjectV2ResponseMPayload = new DataObjectEzsignannotationGetObjectV2ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectEzsignannotationGetObjectV2Response {
  * @class ValidationObjectEzsignannotationGetObjectV2Response
  */
 export class ValidationObjectEzsignannotationGetObjectV2Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsignannotationGetObjectV2ResponseMPayload()
 } 
 

@@ -35,6 +35,18 @@ import type { PaymenttermCreateObjectV1ResponseMPayload } from './paymentterm-cr
 export interface PaymenttermCreateObjectV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof PaymenttermCreateObjectV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof PaymenttermCreateObjectV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {PaymenttermCreateObjectV1ResponseMPayload}
      * @memberof PaymenttermCreateObjectV1Response
      */
@@ -47,7 +59,15 @@ export interface PaymenttermCreateObjectV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectPaymenttermCreateObjectV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectPaymenttermCreateObjectV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectPaymenttermCreateObjectV1ResponseMPayload } from './'
  * @class DataObjectPaymenttermCreateObjectV1Response
  */
 export class DataObjectPaymenttermCreateObjectV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:PaymenttermCreateObjectV1ResponseMPayload = new DataObjectPaymenttermCreateObjectV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectPaymenttermCreateObjectV1Response {
  * @class ValidationObjectPaymenttermCreateObjectV1Response
  */
 export class ValidationObjectPaymenttermCreateObjectV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectPaymenttermCreateObjectV1ResponseMPayload()
 } 
 

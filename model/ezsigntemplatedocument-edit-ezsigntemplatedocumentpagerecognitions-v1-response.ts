@@ -35,6 +35,18 @@ import type { EzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1
 export interface EzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof EzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof EzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {EzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1ResponseMPayload}
      * @memberof EzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Response
      */
@@ -47,7 +59,15 @@ export interface EzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognition
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectEzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectEzsigntemplatedocumentEditEzsigntemplatedocumentpagerec
  * @class DataObjectEzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Response
  */
 export class DataObjectEzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1ResponseMPayload = new DataObjectEzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectEzsigntemplatedocumentEditEzsigntemplatedocumentpagerecog
  * @class ValidationObjectEzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Response
  */
 export class ValidationObjectEzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1ResponseMPayload()
 } 
 

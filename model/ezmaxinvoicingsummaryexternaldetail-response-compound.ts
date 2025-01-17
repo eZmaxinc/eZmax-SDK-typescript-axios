@@ -24,6 +24,66 @@ import type { EzmaxinvoicingsummaryexternaldetailResponse } from './ezmaxinvoici
  */
 /*export type EzmaxinvoicingsummaryexternaldetailResponseCompound = EzmaxinvoicingsummaryexternaldetailResponse;*/
 export interface EzmaxinvoicingsummaryexternaldetailResponseCompound {
+    /**
+     * The unique ID of the Ezmaxinvoicingsummaryexternaldetail
+     * @type {number}
+     * @memberof EzmaxinvoicingsummaryexternaldetailResponseCompound
+     */
+    pkiEzmaxinvoicingsummaryexternaldetailID?:number 
+    /**
+     * The unique ID of the Ezmaxinvoicingsummaryexternal
+     * @type {number}
+     * @memberof EzmaxinvoicingsummaryexternaldetailResponseCompound
+     */
+    fkiEzmaxinvoicingsummaryexternalID?:number 
+    /**
+     * The unique ID of the Ezmaxproduct
+     * @type {number}
+     * @memberof EzmaxinvoicingsummaryexternaldetailResponseCompound
+     */
+    fkiEzmaxproductID:number 
+    /**
+     * The description of the Ezmaxproduct in the language of the requester
+     * @type {string}
+     * @memberof EzmaxinvoicingsummaryexternaldetailResponseCompound
+     */
+    sEzmaxproductDescriptionX:string 
+    /**
+     * The count item invoiced for the product
+     * @type {string}
+     * @memberof EzmaxinvoicingsummaryexternaldetailResponseCompound
+     */
+    dEzmaxinvoicingsummaryexternaldetailCountreal:string 
+    /**
+     * The subtotal invoiced for the product
+     * @type {string}
+     * @memberof EzmaxinvoicingsummaryexternaldetailResponseCompound
+     */
+    dEzmaxinvoicingsummaryexternaldetailSubtotal:string 
+    /**
+     * The rebate for the product
+     * @type {string}
+     * @memberof EzmaxinvoicingsummaryexternaldetailResponseCompound
+     */
+    dEzmaxinvoicingsummaryexternaldetailRebate:string 
+    /**
+     * The total invoiced for the product
+     * @type {string}
+     * @memberof EzmaxinvoicingsummaryexternaldetailResponseCompound
+     */
+    dEzmaxinvoicingsummaryexternaldetailTotal:string 
+    /**
+     * Whether it\'s an adjustment
+     * @type {boolean}
+     * @memberof EzmaxinvoicingsummaryexternaldetailResponseCompound
+     */
+    bEzmaxinvoicingsummaryexternaldetailAdjustment:boolean 
+    /**
+     * The help message of the Ezmaxproduct in the language of the requester
+     * @type {string}
+     * @memberof EzmaxinvoicingsummaryexternaldetailResponseCompound
+     */
+    tEzmaxproductHelpX:string 
 }
 
 
@@ -39,6 +99,16 @@ export interface EzmaxinvoicingsummaryexternaldetailResponseCompound {
  * @class DataObjectEzmaxinvoicingsummaryexternaldetailResponseCompound
  */
 export class DataObjectEzmaxinvoicingsummaryexternaldetailResponseCompound {
+    pkiEzmaxinvoicingsummaryexternaldetailID?:number = undefined
+    fkiEzmaxinvoicingsummaryexternalID?:number = undefined
+    fkiEzmaxproductID:number = 0
+    sEzmaxproductDescriptionX:string = ''
+    dEzmaxinvoicingsummaryexternaldetailCountreal:string = ''
+    dEzmaxinvoicingsummaryexternaldetailSubtotal:string = ''
+    dEzmaxinvoicingsummaryexternaldetailRebate:string = ''
+    dEzmaxinvoicingsummaryexternaldetailTotal:string = ''
+    bEzmaxinvoicingsummaryexternaldetailAdjustment:boolean = false
+    tEzmaxproductHelpX:string = ''
 }
 
 /**
@@ -47,6 +117,53 @@ export class DataObjectEzmaxinvoicingsummaryexternaldetailResponseCompound {
  * @class ValidationObjectEzmaxinvoicingsummaryexternaldetailResponseCompound
  */
 export class ValidationObjectEzmaxinvoicingsummaryexternaldetailResponseCompound {
+   pkiEzmaxinvoicingsummaryexternaldetailID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzmaxinvoicingsummaryexternalID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzmaxproductID = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   sEzmaxproductDescriptionX = {
+      type: 'string',
+      required: true
+   }
+   dEzmaxinvoicingsummaryexternaldetailCountreal = {
+      type: 'string',
+      pattern: /^-{0,1}[\d]{1,6}?\.[\d]{2}$/,
+      required: true
+   }
+   dEzmaxinvoicingsummaryexternaldetailSubtotal = {
+      type: 'string',
+      pattern: /^-{0,1}[\d]{1,9}?\.[\d]{2}$/,
+      required: true
+   }
+   dEzmaxinvoicingsummaryexternaldetailRebate = {
+      type: 'string',
+      pattern: /^-{0,1}[\d]{1,9}?\.[\d]{2}$/,
+      required: true
+   }
+   dEzmaxinvoicingsummaryexternaldetailTotal = {
+      type: 'string',
+      pattern: /^-{0,1}[\d]{1,9}?\.[\d]{2}$/,
+      required: true
+   }
+   bEzmaxinvoicingsummaryexternaldetailAdjustment = {
+      type: 'boolean',
+      required: true
+   }
+   tEzmaxproductHelpX = {
+      type: 'string',
+      required: true
+   }
 } 
 
 

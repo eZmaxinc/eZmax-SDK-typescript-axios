@@ -35,6 +35,18 @@ import type { TranqcontractGetCommunicationrecipientsV1ResponseMPayload } from '
 export interface TranqcontractGetCommunicationrecipientsV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof TranqcontractGetCommunicationrecipientsV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof TranqcontractGetCommunicationrecipientsV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {TranqcontractGetCommunicationrecipientsV1ResponseMPayload}
      * @memberof TranqcontractGetCommunicationrecipientsV1Response
      */
@@ -47,7 +59,15 @@ export interface TranqcontractGetCommunicationrecipientsV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectTranqcontractGetCommunicationrecipientsV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectTranqcontractGetCommunicationrecipientsV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectTranqcontractGetCommunicationrecipientsV1ResponseMPaylo
  * @class DataObjectTranqcontractGetCommunicationrecipientsV1Response
  */
 export class DataObjectTranqcontractGetCommunicationrecipientsV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:TranqcontractGetCommunicationrecipientsV1ResponseMPayload = new DataObjectTranqcontractGetCommunicationrecipientsV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectTranqcontractGetCommunicationrecipientsV1Response {
  * @class ValidationObjectTranqcontractGetCommunicationrecipientsV1Response
  */
 export class ValidationObjectTranqcontractGetCommunicationrecipientsV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectTranqcontractGetCommunicationrecipientsV1ResponseMPayload()
 } 
 

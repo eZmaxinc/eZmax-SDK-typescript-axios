@@ -24,6 +24,24 @@ import type { EzsigntemplatepackagemembershipRequest } from './ezsigntemplatepac
  */
 /*export type EzsigntemplatepackagemembershipRequestCompound = EzsigntemplatepackagemembershipRequest;*/
 export interface EzsigntemplatepackagemembershipRequestCompound {
+    /**
+     * The unique ID of the Ezsigntemplatepackagemembership
+     * @type {number}
+     * @memberof EzsigntemplatepackagemembershipRequestCompound
+     */
+    pkiEzsigntemplatepackagemembershipID?:number 
+    /**
+     * The unique ID of the Ezsigntemplatepackage
+     * @type {number}
+     * @memberof EzsigntemplatepackagemembershipRequestCompound
+     */
+    fkiEzsigntemplatepackageID:number 
+    /**
+     * The unique ID of the Ezsigntemplate
+     * @type {number}
+     * @memberof EzsigntemplatepackagemembershipRequestCompound
+     */
+    fkiEzsigntemplateID:number 
 }
 
 
@@ -39,6 +57,9 @@ export interface EzsigntemplatepackagemembershipRequestCompound {
  * @class DataObjectEzsigntemplatepackagemembershipRequestCompound
  */
 export class DataObjectEzsigntemplatepackagemembershipRequestCompound {
+    pkiEzsigntemplatepackagemembershipID?:number = undefined
+    fkiEzsigntemplatepackageID:number = 0
+    fkiEzsigntemplateID:number = 0
 }
 
 /**
@@ -47,6 +68,21 @@ export class DataObjectEzsigntemplatepackagemembershipRequestCompound {
  * @class ValidationObjectEzsigntemplatepackagemembershipRequestCompound
  */
 export class ValidationObjectEzsigntemplatepackagemembershipRequestCompound {
+   pkiEzsigntemplatepackagemembershipID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzsigntemplatepackageID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsigntemplateID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
 } 
 
 

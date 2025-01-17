@@ -35,6 +35,18 @@ import type { TaxassignmentGetAutocompleteV2ResponseMPayload } from './taxassign
 export interface TaxassignmentGetAutocompleteV2Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof TaxassignmentGetAutocompleteV2Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof TaxassignmentGetAutocompleteV2Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {TaxassignmentGetAutocompleteV2ResponseMPayload}
      * @memberof TaxassignmentGetAutocompleteV2Response
      */
@@ -47,7 +59,15 @@ export interface TaxassignmentGetAutocompleteV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectTaxassignmentGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectTaxassignmentGetAutocompleteV2ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectTaxassignmentGetAutocompleteV2ResponseMPayload } from '
  * @class DataObjectTaxassignmentGetAutocompleteV2Response
  */
 export class DataObjectTaxassignmentGetAutocompleteV2Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:TaxassignmentGetAutocompleteV2ResponseMPayload = new DataObjectTaxassignmentGetAutocompleteV2ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectTaxassignmentGetAutocompleteV2Response {
  * @class ValidationObjectTaxassignmentGetAutocompleteV2Response
  */
 export class ValidationObjectTaxassignmentGetAutocompleteV2Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectTaxassignmentGetAutocompleteV2ResponseMPayload()
 } 
 

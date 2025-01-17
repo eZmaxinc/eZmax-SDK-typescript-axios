@@ -35,6 +35,18 @@ import type { EzsignsignergroupmembershipGetObjectV2ResponseMPayload } from './e
 export interface EzsignsignergroupmembershipGetObjectV2Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof EzsignsignergroupmembershipGetObjectV2Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof EzsignsignergroupmembershipGetObjectV2Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {EzsignsignergroupmembershipGetObjectV2ResponseMPayload}
      * @memberof EzsignsignergroupmembershipGetObjectV2Response
      */
@@ -47,7 +59,15 @@ export interface EzsignsignergroupmembershipGetObjectV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectEzsignsignergroupmembershipGetObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsignsignergroupmembershipGetObjectV2ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectEzsignsignergroupmembershipGetObjectV2ResponseMPayload 
  * @class DataObjectEzsignsignergroupmembershipGetObjectV2Response
  */
 export class DataObjectEzsignsignergroupmembershipGetObjectV2Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsignsignergroupmembershipGetObjectV2ResponseMPayload = new DataObjectEzsignsignergroupmembershipGetObjectV2ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectEzsignsignergroupmembershipGetObjectV2Response {
  * @class ValidationObjectEzsignsignergroupmembershipGetObjectV2Response
  */
 export class ValidationObjectEzsignsignergroupmembershipGetObjectV2Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsignsignergroupmembershipGetObjectV2ResponseMPayload()
 } 
 

@@ -28,6 +28,37 @@ import type { PhoneResponse } from './phone-response';
 /*export type PhoneResponseCompound = PhoneResponse;*/
 export interface PhoneResponseCompound {
     /**
+     * The unique ID of the Phone.
+     * @type {number}
+     * @memberof PhoneResponseCompound
+     */
+    pkiPhoneID:number 
+    /**
+     * The unique ID of the Phonetype.  Valid values:  |Value|Description| |-|-| |1|Office| |2|Home| |3|Mobile| |4|Fax| |5|Pager| |6|Toll Free|
+     * @type {number}
+     * @memberof PhoneResponseCompound
+     */
+    fkiPhonetypeID:number 
+    /**
+     * 
+     * @type {FieldEPhoneType}
+     * @memberof PhoneResponseCompound
+     * @deprecated
+     */
+    ePhoneType?:FieldEPhoneType 
+    /**
+     * A phone number in E.164 Format
+     * @type {string}
+     * @memberof PhoneResponseCompound
+     */
+    sPhoneE164?:string 
+    /**
+     * The extension of the phone number.  The extension is the \"123\" section in this sample phone number: (514) 990-1516 x123.  It can also be used with international phone numbers
+     * @type {string}
+     * @memberof PhoneResponseCompound
+     */
+    sPhoneExtension?:string 
+    /**
      * Indicate the phone number is an international phone number.
      * @type {boolean}
      * @memberof PhoneResponseCompound
@@ -49,6 +80,11 @@ export interface PhoneResponseCompound {
  * @class DataObjectPhoneResponseCompound
  */
 export class DataObjectPhoneResponseCompound {
+    pkiPhoneID:number = 0
+    fkiPhonetypeID:number = 0
+    ePhoneType?:FieldEPhoneType = undefined
+    sPhoneE164?:string = undefined
+    sPhoneExtension?:string = undefined
     bPhoneInternational?:boolean = undefined
 }
 
@@ -58,6 +94,30 @@ export class DataObjectPhoneResponseCompound {
  * @class ValidationObjectPhoneResponseCompound
  */
 export class ValidationObjectPhoneResponseCompound {
+   pkiPhoneID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiPhonetypeID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   ePhoneType = {
+      type: 'enum',
+      allowableValues: ['Local','International'],
+      required: false
+   }
+   sPhoneE164 = {
+      type: 'string',
+      pattern: /^\+[1-9]\d{1,14}$/,
+      required: false
+   }
+   sPhoneExtension = {
+      type: 'string',
+      required: false
+   }
    bPhoneInternational = {
       type: 'boolean',
       required: false

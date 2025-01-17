@@ -24,6 +24,24 @@ import type { UsergroupexternalRequest } from './usergroupexternal-request';
  */
 /*export type UsergroupexternalRequestCompound = UsergroupexternalRequest;*/
 export interface UsergroupexternalRequestCompound {
+    /**
+     * The unique ID of the Usergroupexternal
+     * @type {number}
+     * @memberof UsergroupexternalRequestCompound
+     */
+    pkiUsergroupexternalID?:number 
+    /**
+     * The name of the Usergroupexternal
+     * @type {string}
+     * @memberof UsergroupexternalRequestCompound
+     */
+    sUsergroupexternalName:string 
+    /**
+     * The id of the Usergroupexternal
+     * @type {string}
+     * @memberof UsergroupexternalRequestCompound
+     */
+    sUsergroupexternalID:string 
 }
 
 
@@ -39,6 +57,9 @@ export interface UsergroupexternalRequestCompound {
  * @class DataObjectUsergroupexternalRequestCompound
  */
 export class DataObjectUsergroupexternalRequestCompound {
+    pkiUsergroupexternalID?:number = undefined
+    sUsergroupexternalName:string = ''
+    sUsergroupexternalID:string = ''
 }
 
 /**
@@ -47,6 +68,22 @@ export class DataObjectUsergroupexternalRequestCompound {
  * @class ValidationObjectUsergroupexternalRequestCompound
  */
 export class ValidationObjectUsergroupexternalRequestCompound {
+   pkiUsergroupexternalID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 255,
+      required: false
+   }
+   sUsergroupexternalName = {
+      type: 'string',
+      pattern: /^.{0,64}$/,
+      required: true
+   }
+   sUsergroupexternalID = {
+      type: 'string',
+      pattern: /^.{0,64}$/,
+      required: true
+   }
 } 
 
 

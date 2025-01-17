@@ -27,6 +27,42 @@ import type { SubnetResponse } from './subnet-response';
  */
 /*export type SubnetResponseCompound = SubnetResponse;*/
 export interface SubnetResponseCompound {
+    /**
+     * The unique ID of the Subnet
+     * @type {number}
+     * @memberof SubnetResponseCompound
+     */
+    pkiSubnetID:number 
+    /**
+     * The unique ID of the User
+     * @type {number}
+     * @memberof SubnetResponseCompound
+     */
+    fkiUserID?:number 
+    /**
+     * The unique ID of the Apikey
+     * @type {number}
+     * @memberof SubnetResponseCompound
+     */
+    fkiApikeyID?:number 
+    /**
+     * 
+     * @type {MultilingualSubnetDescription}
+     * @memberof SubnetResponseCompound
+     */
+    objSubnetDescription:MultilingualSubnetDescription 
+    /**
+     * The network of the Subnet in integer form. For example 8.8.8.0 would be 134744064
+     * @type {number}
+     * @memberof SubnetResponseCompound
+     */
+    iSubnetNetwork:number 
+    /**
+     * The mask of the Subnet  in integer form. For example 255.255.255.0 would be 4294967040
+     * @type {number}
+     * @memberof SubnetResponseCompound
+     */
+    iSubnetMask:number 
 }
 
 
@@ -34,6 +70,10 @@ export interface SubnetResponseCompound {
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectMultilingualSubnetDescription } from './'
+// @ts-ignore
+import { ValidationObjectMultilingualSubnetDescription } from './'
 
 /**
  * @export 
@@ -42,6 +82,12 @@ export interface SubnetResponseCompound {
  * @class DataObjectSubnetResponseCompound
  */
 export class DataObjectSubnetResponseCompound {
+    pkiSubnetID:number = 0
+    fkiUserID?:number = undefined
+    fkiApikeyID?:number = undefined
+    objSubnetDescription:MultilingualSubnetDescription = new DataObjectMultilingualSubnetDescription()
+    iSubnetNetwork:number = 0
+    iSubnetMask:number = 0
 }
 
 /**
@@ -50,6 +96,35 @@ export class DataObjectSubnetResponseCompound {
  * @class ValidationObjectSubnetResponseCompound
  */
 export class ValidationObjectSubnetResponseCompound {
+   pkiSubnetID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 65535,
+      required: true
+   }
+   fkiUserID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiApikeyID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   objSubnetDescription = new ValidationObjectMultilingualSubnetDescription()
+   iSubnetNetwork = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 4294967295,
+      required: true
+   }
+   iSubnetMask = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 4294967295,
+      required: true
+   }
 } 
 
 

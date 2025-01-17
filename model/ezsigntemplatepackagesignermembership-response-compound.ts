@@ -24,6 +24,36 @@ import type { EzsigntemplatepackagesignermembershipResponse } from './ezsigntemp
  */
 /*export type EzsigntemplatepackagesignermembershipResponseCompound = EzsigntemplatepackagesignermembershipResponse;*/
 export interface EzsigntemplatepackagesignermembershipResponseCompound {
+    /**
+     * The unique ID of the Ezsigntemplatepackagesignermembership
+     * @type {number}
+     * @memberof EzsigntemplatepackagesignermembershipResponseCompound
+     */
+    pkiEzsigntemplatepackagesignermembershipID:number 
+    /**
+     * The unique ID of the Ezsigntemplatepackagemembership
+     * @type {number}
+     * @memberof EzsigntemplatepackagesignermembershipResponseCompound
+     */
+    fkiEzsigntemplatepackagemembershipID:number 
+    /**
+     * The unique ID of the Ezsigntemplatepackagesigner
+     * @type {number}
+     * @memberof EzsigntemplatepackagesignermembershipResponseCompound
+     */
+    fkiEzsigntemplatepackagesignerID:number 
+    /**
+     * The unique ID of the Ezsigntemplatesigner
+     * @type {number}
+     * @memberof EzsigntemplatepackagesignermembershipResponseCompound
+     */
+    fkiEzsigntemplatesignerID:number 
+    /**
+     * The Copy number in case of multiple copies.
+     * @type {number}
+     * @memberof EzsigntemplatepackagesignermembershipResponseCompound
+     */
+    iEzsigntemplatepackagesignermembershipCopy?:number 
 }
 
 
@@ -39,6 +69,11 @@ export interface EzsigntemplatepackagesignermembershipResponseCompound {
  * @class DataObjectEzsigntemplatepackagesignermembershipResponseCompound
  */
 export class DataObjectEzsigntemplatepackagesignermembershipResponseCompound {
+    pkiEzsigntemplatepackagesignermembershipID:number = 0
+    fkiEzsigntemplatepackagemembershipID:number = 0
+    fkiEzsigntemplatepackagesignerID:number = 0
+    fkiEzsigntemplatesignerID:number = 0
+    iEzsigntemplatepackagesignermembershipCopy?:number = undefined
 }
 
 /**
@@ -47,6 +82,31 @@ export class DataObjectEzsigntemplatepackagesignermembershipResponseCompound {
  * @class ValidationObjectEzsigntemplatepackagesignermembershipResponseCompound
  */
 export class ValidationObjectEzsigntemplatepackagesignermembershipResponseCompound {
+   pkiEzsigntemplatepackagesignermembershipID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsigntemplatepackagemembershipID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsigntemplatepackagesignerID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsigntemplatesignerID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsigntemplatepackagesignermembershipCopy = {
+      type: 'integer',
+      minimum: 1,
+      required: false
+   }
 } 
 
 

@@ -28,6 +28,18 @@ import type { CommonGetListV1ResponseMPayload } from './common-get-list-v1-respo
 /*export type ApikeyGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;*/
 export interface ApikeyGetListV1ResponseMPayload {
     /**
+     * The number of rows returned
+     * @type {number}
+     * @memberof ApikeyGetListV1ResponseMPayload
+     */
+    iRowReturned:number 
+    /**
+     * The number of rows matching your filters (if any) or the total number of rows
+     * @type {number}
+     * @memberof ApikeyGetListV1ResponseMPayload
+     */
+    iRowFiltered:number 
+    /**
      * 
      * @type {Array<ApikeyListElement>}
      * @memberof ApikeyGetListV1ResponseMPayload
@@ -48,6 +60,8 @@ export interface ApikeyGetListV1ResponseMPayload {
  * @class DataObjectApikeyGetListV1ResponseMPayload
  */
 export class DataObjectApikeyGetListV1ResponseMPayload {
+    iRowReturned:number = 0
+    iRowFiltered:number = 0
     a_objApikey:Array<ApikeyListElement> = []
 }
 
@@ -57,6 +71,14 @@ export class DataObjectApikeyGetListV1ResponseMPayload {
  * @class ValidationObjectApikeyGetListV1ResponseMPayload
  */
 export class ValidationObjectApikeyGetListV1ResponseMPayload {
+   iRowReturned = {
+      type: 'integer',
+      required: true
+   }
+   iRowFiltered = {
+      type: 'integer',
+      required: true
+   }
    a_objApikey = {
       type: 'array',
       required: true

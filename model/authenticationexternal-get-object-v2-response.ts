@@ -35,6 +35,18 @@ import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-
 export interface AuthenticationexternalGetObjectV2Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof AuthenticationexternalGetObjectV2Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof AuthenticationexternalGetObjectV2Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {AuthenticationexternalGetObjectV2ResponseMPayload}
      * @memberof AuthenticationexternalGetObjectV2Response
      */
@@ -47,7 +59,15 @@ export interface AuthenticationexternalGetObjectV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectAuthenticationexternalGetObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectAuthenticationexternalGetObjectV2ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectAuthenticationexternalGetObjectV2ResponseMPayload } fro
  * @class DataObjectAuthenticationexternalGetObjectV2Response
  */
 export class DataObjectAuthenticationexternalGetObjectV2Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:AuthenticationexternalGetObjectV2ResponseMPayload = new DataObjectAuthenticationexternalGetObjectV2ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectAuthenticationexternalGetObjectV2Response {
  * @class ValidationObjectAuthenticationexternalGetObjectV2Response
  */
 export class ValidationObjectAuthenticationexternalGetObjectV2Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectAuthenticationexternalGetObjectV2ResponseMPayload()
 } 
 

@@ -35,6 +35,18 @@ import type { FranchisereferalincomeCreateObjectV2ResponseMPayload } from './fra
 export interface FranchisereferalincomeCreateObjectV2Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof FranchisereferalincomeCreateObjectV2Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof FranchisereferalincomeCreateObjectV2Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {FranchisereferalincomeCreateObjectV2ResponseMPayload}
      * @memberof FranchisereferalincomeCreateObjectV2Response
      */
@@ -47,7 +59,15 @@ export interface FranchisereferalincomeCreateObjectV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectFranchisereferalincomeCreateObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectFranchisereferalincomeCreateObjectV2ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectFranchisereferalincomeCreateObjectV2ResponseMPayload } 
  * @class DataObjectFranchisereferalincomeCreateObjectV2Response
  */
 export class DataObjectFranchisereferalincomeCreateObjectV2Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:FranchisereferalincomeCreateObjectV2ResponseMPayload = new DataObjectFranchisereferalincomeCreateObjectV2ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectFranchisereferalincomeCreateObjectV2Response {
  * @class ValidationObjectFranchisereferalincomeCreateObjectV2Response
  */
 export class ValidationObjectFranchisereferalincomeCreateObjectV2Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectFranchisereferalincomeCreateObjectV2ResponseMPayload()
 } 
 

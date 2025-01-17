@@ -35,6 +35,18 @@ import type { EzsigntemplatepackageEditEzsigntemplatepackagesignersV1ResponseMPa
 export interface EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {EzsigntemplatepackageEditEzsigntemplatepackagesignersV1ResponseMPayload}
      * @memberof EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response
      */
@@ -47,7 +59,15 @@ export interface EzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectEzsigntemplatepackageEditEzsigntemplatepackagesignersV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsigntemplatepackageEditEzsigntemplatepackagesignersV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectEzsigntemplatepackageEditEzsigntemplatepackagesignersV1
  * @class DataObjectEzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response
  */
 export class DataObjectEzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsigntemplatepackageEditEzsigntemplatepackagesignersV1ResponseMPayload = new DataObjectEzsigntemplatepackageEditEzsigntemplatepackagesignersV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectEzsigntemplatepackageEditEzsigntemplatepackagesignersV1Re
  * @class ValidationObjectEzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response
  */
 export class ValidationObjectEzsigntemplatepackageEditEzsigntemplatepackagesignersV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsigntemplatepackageEditEzsigntemplatepackagesignersV1ResponseMPayload()
 } 
 

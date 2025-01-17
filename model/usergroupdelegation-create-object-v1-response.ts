@@ -35,6 +35,18 @@ import type { UsergroupdelegationCreateObjectV1ResponseMPayload } from './usergr
 export interface UsergroupdelegationCreateObjectV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof UsergroupdelegationCreateObjectV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof UsergroupdelegationCreateObjectV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {UsergroupdelegationCreateObjectV1ResponseMPayload}
      * @memberof UsergroupdelegationCreateObjectV1Response
      */
@@ -47,7 +59,15 @@ export interface UsergroupdelegationCreateObjectV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectUsergroupdelegationCreateObjectV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectUsergroupdelegationCreateObjectV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectUsergroupdelegationCreateObjectV1ResponseMPayload } fro
  * @class DataObjectUsergroupdelegationCreateObjectV1Response
  */
 export class DataObjectUsergroupdelegationCreateObjectV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:UsergroupdelegationCreateObjectV1ResponseMPayload = new DataObjectUsergroupdelegationCreateObjectV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectUsergroupdelegationCreateObjectV1Response {
  * @class ValidationObjectUsergroupdelegationCreateObjectV1Response
  */
 export class ValidationObjectUsergroupdelegationCreateObjectV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectUsergroupdelegationCreateObjectV1ResponseMPayload()
 } 
 

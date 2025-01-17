@@ -35,6 +35,18 @@ import type { EzmaxinvoicingGetObjectV2ResponseMPayload } from './ezmaxinvoicing
 export interface EzmaxinvoicingGetObjectV2Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof EzmaxinvoicingGetObjectV2Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof EzmaxinvoicingGetObjectV2Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {EzmaxinvoicingGetObjectV2ResponseMPayload}
      * @memberof EzmaxinvoicingGetObjectV2Response
      */
@@ -47,7 +59,15 @@ export interface EzmaxinvoicingGetObjectV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectEzmaxinvoicingGetObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzmaxinvoicingGetObjectV2ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectEzmaxinvoicingGetObjectV2ResponseMPayload } from './'
  * @class DataObjectEzmaxinvoicingGetObjectV2Response
  */
 export class DataObjectEzmaxinvoicingGetObjectV2Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzmaxinvoicingGetObjectV2ResponseMPayload = new DataObjectEzmaxinvoicingGetObjectV2ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectEzmaxinvoicingGetObjectV2Response {
  * @class ValidationObjectEzmaxinvoicingGetObjectV2Response
  */
 export class ValidationObjectEzmaxinvoicingGetObjectV2Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzmaxinvoicingGetObjectV2ResponseMPayload()
 } 
 

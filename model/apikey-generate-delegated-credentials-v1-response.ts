@@ -35,6 +35,18 @@ import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-
 export interface ApikeyGenerateDelegatedCredentialsV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof ApikeyGenerateDelegatedCredentialsV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof ApikeyGenerateDelegatedCredentialsV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {ApikeyGenerateDelegatedCredentialsV1ResponseMPayload}
      * @memberof ApikeyGenerateDelegatedCredentialsV1Response
      */
@@ -47,7 +59,15 @@ export interface ApikeyGenerateDelegatedCredentialsV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectApikeyGenerateDelegatedCredentialsV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectApikeyGenerateDelegatedCredentialsV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectApikeyGenerateDelegatedCredentialsV1ResponseMPayload } 
  * @class DataObjectApikeyGenerateDelegatedCredentialsV1Response
  */
 export class DataObjectApikeyGenerateDelegatedCredentialsV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:ApikeyGenerateDelegatedCredentialsV1ResponseMPayload = new DataObjectApikeyGenerateDelegatedCredentialsV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectApikeyGenerateDelegatedCredentialsV1Response {
  * @class ValidationObjectApikeyGenerateDelegatedCredentialsV1Response
  */
 export class ValidationObjectApikeyGenerateDelegatedCredentialsV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectApikeyGenerateDelegatedCredentialsV1ResponseMPayload()
 } 
 

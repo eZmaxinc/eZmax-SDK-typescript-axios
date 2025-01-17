@@ -24,6 +24,24 @@ import type { UsergroupdelegationRequest } from './usergroupdelegation-request';
  */
 /*export type UsergroupdelegationRequestCompound = UsergroupdelegationRequest;*/
 export interface UsergroupdelegationRequestCompound {
+    /**
+     * The unique ID of the Usergroupdelegation
+     * @type {number}
+     * @memberof UsergroupdelegationRequestCompound
+     */
+    pkiUsergroupdelegationID?:number 
+    /**
+     * The unique ID of the Usergroup
+     * @type {number}
+     * @memberof UsergroupdelegationRequestCompound
+     */
+    fkiUsergroupID:number 
+    /**
+     * The unique ID of the User
+     * @type {number}
+     * @memberof UsergroupdelegationRequestCompound
+     */
+    fkiUserID:number 
 }
 
 
@@ -39,6 +57,9 @@ export interface UsergroupdelegationRequestCompound {
  * @class DataObjectUsergroupdelegationRequestCompound
  */
 export class DataObjectUsergroupdelegationRequestCompound {
+    pkiUsergroupdelegationID?:number = undefined
+    fkiUsergroupID:number = 0
+    fkiUserID:number = 0
 }
 
 /**
@@ -47,6 +68,23 @@ export class DataObjectUsergroupdelegationRequestCompound {
  * @class ValidationObjectUsergroupdelegationRequestCompound
  */
 export class ValidationObjectUsergroupdelegationRequestCompound {
+   pkiUsergroupdelegationID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 65535,
+      required: false
+   }
+   fkiUsergroupID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 255,
+      required: true
+   }
+   fkiUserID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
 } 
 
 

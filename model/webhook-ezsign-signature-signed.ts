@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AttemptResponse } from './attempt-response';
+import type { AttemptResponseCompound } from './attempt-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { CommonWebhook } from './common-webhook';
@@ -35,6 +35,18 @@ import type { EzsignsignatureResponse } from './ezsignsignature-response';
 export interface WebhookEzsignSignatureSigned {
     /**
      * 
+     * @type {CustomWebhookResponse}
+     * @memberof WebhookEzsignSignatureSigned
+     */
+    objWebhook:CustomWebhookResponse 
+    /**
+     * An array containing details of previous attempts that were made to deliver the message. The array is empty if it\'s the first attempt.
+     * @type {Array<AttemptResponseCompound>}
+     * @memberof WebhookEzsignSignatureSigned
+     */
+    a_objAttempt:Array<AttemptResponseCompound> 
+    /**
+     * 
      * @type {EzsignsignatureResponse}
      * @memberof WebhookEzsignSignatureSigned
      */
@@ -47,7 +59,11 @@ export interface WebhookEzsignSignatureSigned {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCustomWebhookResponse } from './'
+// @ts-ignore
 import { DataObjectEzsignsignatureResponse } from './'
+// @ts-ignore
+import { ValidationObjectCustomWebhookResponse } from './'
 // @ts-ignore
 import { ValidationObjectEzsignsignatureResponse } from './'
 
@@ -58,6 +74,8 @@ import { ValidationObjectEzsignsignatureResponse } from './'
  * @class DataObjectWebhookEzsignSignatureSigned
  */
 export class DataObjectWebhookEzsignSignatureSigned {
+    objWebhook:CustomWebhookResponse = new DataObjectCustomWebhookResponse()
+    a_objAttempt:Array<AttemptResponseCompound> = []
     objEzsignsignature:EzsignsignatureResponse = new DataObjectEzsignsignatureResponse()
 }
 
@@ -67,6 +85,11 @@ export class DataObjectWebhookEzsignSignatureSigned {
  * @class ValidationObjectWebhookEzsignSignatureSigned
  */
 export class ValidationObjectWebhookEzsignSignatureSigned {
+   objWebhook = new ValidationObjectCustomWebhookResponse()
+   a_objAttempt = {
+      type: 'array',
+      required: true
+   }
    objEzsignsignature = new ValidationObjectEzsignsignatureResponse()
 } 
 

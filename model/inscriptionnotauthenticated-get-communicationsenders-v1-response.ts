@@ -35,6 +35,18 @@ import type { InscriptionnotauthenticatedGetCommunicationsendersV1ResponseMPaylo
 export interface InscriptionnotauthenticatedGetCommunicationsendersV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof InscriptionnotauthenticatedGetCommunicationsendersV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof InscriptionnotauthenticatedGetCommunicationsendersV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {InscriptionnotauthenticatedGetCommunicationsendersV1ResponseMPayload}
      * @memberof InscriptionnotauthenticatedGetCommunicationsendersV1Response
      */
@@ -47,7 +59,15 @@ export interface InscriptionnotauthenticatedGetCommunicationsendersV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectInscriptionnotauthenticatedGetCommunicationsendersV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectInscriptionnotauthenticatedGetCommunicationsendersV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectInscriptionnotauthenticatedGetCommunicationsendersV1Res
  * @class DataObjectInscriptionnotauthenticatedGetCommunicationsendersV1Response
  */
 export class DataObjectInscriptionnotauthenticatedGetCommunicationsendersV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:InscriptionnotauthenticatedGetCommunicationsendersV1ResponseMPayload = new DataObjectInscriptionnotauthenticatedGetCommunicationsendersV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectInscriptionnotauthenticatedGetCommunicationsendersV1Respo
  * @class ValidationObjectInscriptionnotauthenticatedGetCommunicationsendersV1Response
  */
 export class ValidationObjectInscriptionnotauthenticatedGetCommunicationsendersV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectInscriptionnotauthenticatedGetCommunicationsendersV1ResponseMPayload()
 } 
 

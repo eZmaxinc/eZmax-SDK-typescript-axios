@@ -35,6 +35,18 @@ import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-
 export interface CommonGetReportV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof CommonGetReportV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof CommonGetReportV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {CommonGetReportV1ResponseMPayload}
      * @memberof CommonGetReportV1Response
      */
@@ -47,7 +59,15 @@ export interface CommonGetReportV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectCommonGetReportV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectCommonGetReportV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectCommonGetReportV1ResponseMPayload } from './'
  * @class DataObjectCommonGetReportV1Response
  */
 export class DataObjectCommonGetReportV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:CommonGetReportV1ResponseMPayload = new DataObjectCommonGetReportV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectCommonGetReportV1Response {
  * @class ValidationObjectCommonGetReportV1Response
  */
 export class ValidationObjectCommonGetReportV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectCommonGetReportV1ResponseMPayload()
 } 
 

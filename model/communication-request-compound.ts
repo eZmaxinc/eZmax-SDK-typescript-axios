@@ -24,7 +24,7 @@ import type { CommunicationexternalrecipientRequestCompound } from './communicat
 import type { CommunicationrecipientRequestCompound } from './communicationrecipient-request-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { CommunicationreferenceRequest } from './communicationreference-request';
+import type { CommunicationreferenceRequestCompound } from './communicationreference-request-compound';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { CustomCommunicationattachmentRequest } from './custom-communicationattachment-request';
@@ -45,6 +45,66 @@ import type { FieldECommunicationType } from './field-ecommunication-type';
  */
 /*export type CommunicationRequestCompound = CommunicationRequest;*/
 export interface CommunicationRequestCompound {
+    /**
+     * The unique ID of the Communication.
+     * @type {number}
+     * @memberof CommunicationRequestCompound
+     */
+    pkiCommunicationID?:number 
+    /**
+     * 
+     * @type {FieldECommunicationImportance}
+     * @memberof CommunicationRequestCompound
+     */
+    eCommunicationImportance?:FieldECommunicationImportance 
+    /**
+     * 
+     * @type {FieldECommunicationType}
+     * @memberof CommunicationRequestCompound
+     */
+    eCommunicationType:FieldECommunicationType 
+    /**
+     * 
+     * @type {CustomCommunicationsenderRequest}
+     * @memberof CommunicationRequestCompound
+     */
+    objCommunicationsender?:CustomCommunicationsenderRequest 
+    /**
+     * The subject of the Communication
+     * @type {string}
+     * @memberof CommunicationRequestCompound
+     */
+    sCommunicationSubject?:string 
+    /**
+     * The Body of the Communication
+     * @type {string}
+     * @memberof CommunicationRequestCompound
+     */
+    tCommunicationBody:string 
+    /**
+     * Whether the Communication is private or not
+     * @type {boolean}
+     * @memberof CommunicationRequestCompound
+     */
+    bCommunicationPrivate:boolean 
+    /**
+     * How the attachment should be included in the email.   Only used if eCommunicationType is **Email**
+     * @type {string}
+     * @memberof CommunicationRequestCompound
+     */
+    eCommunicationAttachmenttype?:CommunicationRequestCompoundECommunicationAttachmenttypeEnum 
+    /**
+     * The number of days before the attachment link expired.   Only used if eCommunicationType is **Email** and eCommunicationattachmentType is **Link**
+     * @type {number}
+     * @memberof CommunicationRequestCompound
+     */
+    iCommunicationAttachmentlinkexpiration?:number 
+    /**
+     * Whether we ask for a read receipt or not.
+     * @type {boolean}
+     * @memberof CommunicationRequestCompound
+     */
+    bCommunicationReadreceipt?:boolean 
     /**
      * 
      * @type {Array<CustomCommunicationattachmentRequest>}
@@ -72,11 +132,21 @@ export interface CommunicationRequestCompound {
 }
 
 
+export const CommunicationRequestCompoundECommunicationAttachmenttypeEnum = {
+    Attachment: 'Attachment',
+    Url: 'Url'
+} as const;
+export type CommunicationRequestCompoundECommunicationAttachmenttypeEnum = typeof CommunicationRequestCompoundECommunicationAttachmenttypeEnum[keyof typeof CommunicationRequestCompoundECommunicationAttachmenttypeEnum];
+
 
 /**
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectCustomCommunicationsenderRequest } from './'
+// @ts-ignore
+import { ValidationObjectCustomCommunicationsenderRequest } from './'
 
 /**
  * @export 
@@ -85,6 +155,16 @@ export interface CommunicationRequestCompound {
  * @class DataObjectCommunicationRequestCompound
  */
 export class DataObjectCommunicationRequestCompound {
+    pkiCommunicationID?:number = undefined
+    eCommunicationImportance?:FieldECommunicationImportance = undefined
+    eCommunicationType:FieldECommunicationType = 'Email'
+    objCommunicationsender?:CustomCommunicationsenderRequest = undefined
+    sCommunicationSubject?:string = undefined
+    tCommunicationBody:string = ''
+    bCommunicationPrivate:boolean = false
+    eCommunicationAttachmenttype?:CommunicationRequestCompoundECommunicationAttachmenttypeEnum = undefined
+    iCommunicationAttachmentlinkexpiration?:number = undefined
+    bCommunicationReadreceipt?:boolean = undefined
     a_objCommunicationattachment:Array<CustomCommunicationattachmentRequest> = []
     a_objCommunicationrecipient:Array<CommunicationrecipientRequestCompound> = []
     a_objCommunicationreference:Array<CommunicationreferenceRequestCompound> = []
@@ -97,6 +177,49 @@ export class DataObjectCommunicationRequestCompound {
  * @class ValidationObjectCommunicationRequestCompound
  */
 export class ValidationObjectCommunicationRequestCompound {
+   pkiCommunicationID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   eCommunicationImportance = {
+      type: 'enum',
+      allowableValues: ['High','Normal','Low'],
+      required: false
+   }
+   eCommunicationType = {
+      type: 'enum',
+      allowableValues: ['Email','Fax','Sms'],
+      required: true
+   }
+   objCommunicationsender = new ValidationObjectCustomCommunicationsenderRequest()
+   sCommunicationSubject = {
+      type: 'string',
+      pattern: /^.{0,200}$/,
+      required: false
+   }
+   tCommunicationBody = {
+      type: 'string',
+      required: true
+   }
+   bCommunicationPrivate = {
+      type: 'boolean',
+      required: true
+   }
+   eCommunicationAttachmenttype = {
+      type: 'string',
+      required: false
+   }
+   iCommunicationAttachmentlinkexpiration = {
+      type: 'integer',
+      minimum: 1,
+      maximum: 30,
+      required: false
+   }
+   bCommunicationReadreceipt = {
+      type: 'boolean',
+      required: false
+   }
    a_objCommunicationattachment = {
       type: 'array',
       minItems: 0,

@@ -28,6 +28,18 @@ import type { VariableexpenseListElement } from './variableexpense-list-element'
 /*export type VariableexpenseGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;*/
 export interface VariableexpenseGetListV1ResponseMPayload {
     /**
+     * The number of rows returned
+     * @type {number}
+     * @memberof VariableexpenseGetListV1ResponseMPayload
+     */
+    iRowReturned:number 
+    /**
+     * The number of rows matching your filters (if any) or the total number of rows
+     * @type {number}
+     * @memberof VariableexpenseGetListV1ResponseMPayload
+     */
+    iRowFiltered:number 
+    /**
      * 
      * @type {Array<VariableexpenseListElement>}
      * @memberof VariableexpenseGetListV1ResponseMPayload
@@ -48,6 +60,8 @@ export interface VariableexpenseGetListV1ResponseMPayload {
  * @class DataObjectVariableexpenseGetListV1ResponseMPayload
  */
 export class DataObjectVariableexpenseGetListV1ResponseMPayload {
+    iRowReturned:number = 0
+    iRowFiltered:number = 0
     a_objVariableexpense:Array<VariableexpenseListElement> = []
 }
 
@@ -57,6 +71,14 @@ export class DataObjectVariableexpenseGetListV1ResponseMPayload {
  * @class ValidationObjectVariableexpenseGetListV1ResponseMPayload
  */
 export class ValidationObjectVariableexpenseGetListV1ResponseMPayload {
+   iRowReturned = {
+      type: 'integer',
+      required: true
+   }
+   iRowFiltered = {
+      type: 'integer',
+      required: true
+   }
    a_objVariableexpense = {
       type: 'array',
       required: true

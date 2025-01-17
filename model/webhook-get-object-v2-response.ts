@@ -35,6 +35,18 @@ import type { WebhookGetObjectV2ResponseMPayload } from './webhook-get-object-v2
 export interface WebhookGetObjectV2Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof WebhookGetObjectV2Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof WebhookGetObjectV2Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {WebhookGetObjectV2ResponseMPayload}
      * @memberof WebhookGetObjectV2Response
      */
@@ -47,7 +59,15 @@ export interface WebhookGetObjectV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectWebhookGetObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectWebhookGetObjectV2ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectWebhookGetObjectV2ResponseMPayload } from './'
  * @class DataObjectWebhookGetObjectV2Response
  */
 export class DataObjectWebhookGetObjectV2Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:WebhookGetObjectV2ResponseMPayload = new DataObjectWebhookGetObjectV2ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectWebhookGetObjectV2Response {
  * @class ValidationObjectWebhookGetObjectV2Response
  */
 export class ValidationObjectWebhookGetObjectV2Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectWebhookGetObjectV2ResponseMPayload()
 } 
 

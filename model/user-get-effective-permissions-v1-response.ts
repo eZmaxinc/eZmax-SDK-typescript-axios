@@ -35,6 +35,18 @@ import type { UserGetEffectivePermissionsV1ResponseMPayload } from './user-get-e
 export interface UserGetEffectivePermissionsV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof UserGetEffectivePermissionsV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof UserGetEffectivePermissionsV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {UserGetEffectivePermissionsV1ResponseMPayload}
      * @memberof UserGetEffectivePermissionsV1Response
      */
@@ -47,7 +59,15 @@ export interface UserGetEffectivePermissionsV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectUserGetEffectivePermissionsV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectUserGetEffectivePermissionsV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectUserGetEffectivePermissionsV1ResponseMPayload } from '.
  * @class DataObjectUserGetEffectivePermissionsV1Response
  */
 export class DataObjectUserGetEffectivePermissionsV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:UserGetEffectivePermissionsV1ResponseMPayload = new DataObjectUserGetEffectivePermissionsV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectUserGetEffectivePermissionsV1Response {
  * @class ValidationObjectUserGetEffectivePermissionsV1Response
  */
 export class ValidationObjectUserGetEffectivePermissionsV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectUserGetEffectivePermissionsV1ResponseMPayload()
 } 
 

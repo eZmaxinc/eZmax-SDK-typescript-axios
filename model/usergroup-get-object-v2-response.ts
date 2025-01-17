@@ -35,6 +35,18 @@ import type { UsergroupGetObjectV2ResponseMPayload } from './usergroup-get-objec
 export interface UsergroupGetObjectV2Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof UsergroupGetObjectV2Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof UsergroupGetObjectV2Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {UsergroupGetObjectV2ResponseMPayload}
      * @memberof UsergroupGetObjectV2Response
      */
@@ -47,7 +59,15 @@ export interface UsergroupGetObjectV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectUsergroupGetObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectUsergroupGetObjectV2ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectUsergroupGetObjectV2ResponseMPayload } from './'
  * @class DataObjectUsergroupGetObjectV2Response
  */
 export class DataObjectUsergroupGetObjectV2Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:UsergroupGetObjectV2ResponseMPayload = new DataObjectUsergroupGetObjectV2ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectUsergroupGetObjectV2Response {
  * @class ValidationObjectUsergroupGetObjectV2Response
  */
 export class ValidationObjectUsergroupGetObjectV2Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectUsergroupGetObjectV2ResponseMPayload()
 } 
 

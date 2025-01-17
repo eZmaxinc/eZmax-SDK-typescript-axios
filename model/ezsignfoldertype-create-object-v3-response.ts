@@ -35,6 +35,18 @@ import type { EzsignfoldertypeCreateObjectV3ResponseMPayload } from './ezsignfol
 export interface EzsignfoldertypeCreateObjectV3Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof EzsignfoldertypeCreateObjectV3Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof EzsignfoldertypeCreateObjectV3Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {EzsignfoldertypeCreateObjectV3ResponseMPayload}
      * @memberof EzsignfoldertypeCreateObjectV3Response
      */
@@ -47,7 +59,15 @@ export interface EzsignfoldertypeCreateObjectV3Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectEzsignfoldertypeCreateObjectV3ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsignfoldertypeCreateObjectV3ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectEzsignfoldertypeCreateObjectV3ResponseMPayload } from '
  * @class DataObjectEzsignfoldertypeCreateObjectV3Response
  */
 export class DataObjectEzsignfoldertypeCreateObjectV3Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsignfoldertypeCreateObjectV3ResponseMPayload = new DataObjectEzsignfoldertypeCreateObjectV3ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectEzsignfoldertypeCreateObjectV3Response {
  * @class ValidationObjectEzsignfoldertypeCreateObjectV3Response
  */
 export class ValidationObjectEzsignfoldertypeCreateObjectV3Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsignfoldertypeCreateObjectV3ResponseMPayload()
 } 
 

@@ -27,6 +27,24 @@ import type { MultilingualEzsignsigningreasonDescription } from './multilingual-
  */
 /*export type EzsignsigningreasonResponseCompound = EzsignsigningreasonResponse;*/
 export interface EzsignsigningreasonResponseCompound {
+    /**
+     * The unique ID of the Ezsignsigningreason
+     * @type {number}
+     * @memberof EzsignsigningreasonResponseCompound
+     */
+    pkiEzsignsigningreasonID:number 
+    /**
+     * 
+     * @type {MultilingualEzsignsigningreasonDescription}
+     * @memberof EzsignsigningreasonResponseCompound
+     */
+    objEzsignsigningreasonDescription:MultilingualEzsignsigningreasonDescription 
+    /**
+     * Whether the ezsignsigningreason is active or not
+     * @type {boolean}
+     * @memberof EzsignsigningreasonResponseCompound
+     */
+    bEzsignsigningreasonIsactive:boolean 
 }
 
 
@@ -34,6 +52,10 @@ export interface EzsignsigningreasonResponseCompound {
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectMultilingualEzsignsigningreasonDescription } from './'
+// @ts-ignore
+import { ValidationObjectMultilingualEzsignsigningreasonDescription } from './'
 
 /**
  * @export 
@@ -42,6 +64,9 @@ export interface EzsignsigningreasonResponseCompound {
  * @class DataObjectEzsignsigningreasonResponseCompound
  */
 export class DataObjectEzsignsigningreasonResponseCompound {
+    pkiEzsignsigningreasonID:number = 0
+    objEzsignsigningreasonDescription:MultilingualEzsignsigningreasonDescription = new DataObjectMultilingualEzsignsigningreasonDescription()
+    bEzsignsigningreasonIsactive:boolean = false
 }
 
 /**
@@ -50,6 +75,17 @@ export class DataObjectEzsignsigningreasonResponseCompound {
  * @class ValidationObjectEzsignsigningreasonResponseCompound
  */
 export class ValidationObjectEzsignsigningreasonResponseCompound {
+   pkiEzsignsigningreasonID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 255,
+      required: true
+   }
+   objEzsignsigningreasonDescription = new ValidationObjectMultilingualEzsignsigningreasonDescription()
+   bEzsignsigningreasonIsactive = {
+      type: 'boolean',
+      required: true
+   }
 } 
 
 

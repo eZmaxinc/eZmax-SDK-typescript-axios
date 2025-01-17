@@ -31,6 +31,36 @@ import type { EzsignbulksendtransmissionResponse } from './ezsignbulksendtransmi
 /*export type EzsignbulksendtransmissionResponseCompound = EzsignbulksendtransmissionResponse;*/
 export interface EzsignbulksendtransmissionResponseCompound {
     /**
+     * The unique ID of the Ezsignbulksendtransmission
+     * @type {number}
+     * @memberof EzsignbulksendtransmissionResponseCompound
+     */
+    pkiEzsignbulksendtransmissionID:number 
+    /**
+     * The unique ID of the Ezsignbulksend
+     * @type {number}
+     * @memberof EzsignbulksendtransmissionResponseCompound
+     */
+    fkiEzsignbulksendID:number 
+    /**
+     * The description of the Ezsignbulksendtransmission
+     * @type {string}
+     * @memberof EzsignbulksendtransmissionResponseCompound
+     */
+    sEzsignbulksendtransmissionDescription:string 
+    /**
+     * The number of errors during the Ezsignbulksendtransmission
+     * @type {number}
+     * @memberof EzsignbulksendtransmissionResponseCompound
+     */
+    iEzsignbulksendtransmissionErrors:number 
+    /**
+     * 
+     * @type {CommonAudit}
+     * @memberof EzsignbulksendtransmissionResponseCompound
+     */
+    objAudit:CommonAudit 
+    /**
      * 
      * @type {Array<CustomEzsignfoldertransmissionResponse>}
      * @memberof EzsignbulksendtransmissionResponseCompound
@@ -43,6 +73,10 @@ export interface EzsignbulksendtransmissionResponseCompound {
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectCommonAudit } from './'
+// @ts-ignore
+import { ValidationObjectCommonAudit } from './'
 
 /**
  * @export 
@@ -51,6 +85,11 @@ export interface EzsignbulksendtransmissionResponseCompound {
  * @class DataObjectEzsignbulksendtransmissionResponseCompound
  */
 export class DataObjectEzsignbulksendtransmissionResponseCompound {
+    pkiEzsignbulksendtransmissionID:number = 0
+    fkiEzsignbulksendID:number = 0
+    sEzsignbulksendtransmissionDescription:string = ''
+    iEzsignbulksendtransmissionErrors:number = 0
+    objAudit:CommonAudit = new DataObjectCommonAudit()
     a_objEzsignfoldertransmission:Array<CustomEzsignfoldertransmissionResponse> = []
 }
 
@@ -60,6 +99,26 @@ export class DataObjectEzsignbulksendtransmissionResponseCompound {
  * @class ValidationObjectEzsignbulksendtransmissionResponseCompound
  */
 export class ValidationObjectEzsignbulksendtransmissionResponseCompound {
+   pkiEzsignbulksendtransmissionID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiEzsignbulksendID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sEzsignbulksendtransmissionDescription = {
+      type: 'string',
+      required: true
+   }
+   iEzsignbulksendtransmissionErrors = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   objAudit = new ValidationObjectCommonAudit()
    a_objEzsignfoldertransmission = {
       type: 'array',
       required: true

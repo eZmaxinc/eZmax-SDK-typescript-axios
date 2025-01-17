@@ -30,6 +30,66 @@ import type { FieldEEzsigntemplatedocumentpagerecognitionSection } from './field
  */
 /*export type EzsigntemplatedocumentpagerecognitionResponseCompound = EzsigntemplatedocumentpagerecognitionResponse;*/
 export interface EzsigntemplatedocumentpagerecognitionResponseCompound {
+    /**
+     * The unique ID of the Ezsigntemplatedocumentpagerecognition
+     * @type {number}
+     * @memberof EzsigntemplatedocumentpagerecognitionResponseCompound
+     */
+    pkiEzsigntemplatedocumentpagerecognitionID:number 
+    /**
+     * The unique ID of the Ezsigntemplatedocumentpage
+     * @type {number}
+     * @memberof EzsigntemplatedocumentpagerecognitionResponseCompound
+     */
+    fkiEzsigntemplatedocumentpageID:number 
+    /**
+     * 
+     * @type {FieldEEzsigntemplatedocumentpagerecognitionOperator}
+     * @memberof EzsigntemplatedocumentpagerecognitionResponseCompound
+     */
+    eEzsigntemplatedocumentpagerecognitionOperator:FieldEEzsigntemplatedocumentpagerecognitionOperator 
+    /**
+     * 
+     * @type {FieldEEzsigntemplatedocumentpagerecognitionSection}
+     * @memberof EzsigntemplatedocumentpagerecognitionResponseCompound
+     */
+    eEzsigntemplatedocumentpagerecognitionSection:FieldEEzsigntemplatedocumentpagerecognitionSection 
+    /**
+     * The similarpercentage of the Ezsigntemplatedocumentpagerecognition
+     * @type {number}
+     * @memberof EzsigntemplatedocumentpagerecognitionResponseCompound
+     */
+    iEzsigntemplatedocumentpagerecognitionSimilarpercentage?:number 
+    /**
+     * The x of the Ezsigntemplatedocumentpagerecognition
+     * @type {number}
+     * @memberof EzsigntemplatedocumentpagerecognitionResponseCompound
+     */
+    iEzsigntemplatedocumentpagerecognitionX?:number 
+    /**
+     * The y of the Ezsigntemplatedocumentpagerecognition
+     * @type {number}
+     * @memberof EzsigntemplatedocumentpagerecognitionResponseCompound
+     */
+    iEzsigntemplatedocumentpagerecognitionY?:number 
+    /**
+     * The width of the Ezsigntemplatedocumentpagerecognition
+     * @type {number}
+     * @memberof EzsigntemplatedocumentpagerecognitionResponseCompound
+     */
+    iEzsigntemplatedocumentpagerecognitionWidth?:number 
+    /**
+     * The height of the Ezsigntemplatedocumentpagerecognition
+     * @type {number}
+     * @memberof EzsigntemplatedocumentpagerecognitionResponseCompound
+     */
+    iEzsigntemplatedocumentpagerecognitionHeight?:number 
+    /**
+     * The text of the Ezsigntemplatedocumentpagerecognition
+     * @type {string}
+     * @memberof EzsigntemplatedocumentpagerecognitionResponseCompound
+     */
+    tEzsigntemplatedocumentpagerecognitionText:string 
 }
 
 
@@ -46,6 +106,16 @@ export interface EzsigntemplatedocumentpagerecognitionResponseCompound {
  * @class DataObjectEzsigntemplatedocumentpagerecognitionResponseCompound
  */
 export class DataObjectEzsigntemplatedocumentpagerecognitionResponseCompound {
+    pkiEzsigntemplatedocumentpagerecognitionID:number = 0
+    fkiEzsigntemplatedocumentpageID:number = 0
+    eEzsigntemplatedocumentpagerecognitionOperator:FieldEEzsigntemplatedocumentpagerecognitionOperator = 'eq'
+    eEzsigntemplatedocumentpagerecognitionSection:FieldEEzsigntemplatedocumentpagerecognitionSection = 'FirstLine'
+    iEzsigntemplatedocumentpagerecognitionSimilarpercentage?:number = undefined
+    iEzsigntemplatedocumentpagerecognitionX?:number = undefined
+    iEzsigntemplatedocumentpagerecognitionY?:number = undefined
+    iEzsigntemplatedocumentpagerecognitionWidth?:number = undefined
+    iEzsigntemplatedocumentpagerecognitionHeight?:number = undefined
+    tEzsigntemplatedocumentpagerecognitionText:string = ''
 }
 
 /**
@@ -54,6 +124,62 @@ export class DataObjectEzsigntemplatedocumentpagerecognitionResponseCompound {
  * @class ValidationObjectEzsigntemplatedocumentpagerecognitionResponseCompound
  */
 export class ValidationObjectEzsigntemplatedocumentpagerecognitionResponseCompound {
+   pkiEzsigntemplatedocumentpagerecognitionID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 65535,
+      required: true
+   }
+   fkiEzsigntemplatedocumentpageID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   eEzsigntemplatedocumentpagerecognitionOperator = {
+      type: 'enum',
+      allowableValues: ['eq','in','similar'],
+      required: true
+   }
+   eEzsigntemplatedocumentpagerecognitionSection = {
+      type: 'enum',
+      allowableValues: ['FirstLine','LastLine','Page','Region'],
+      required: true
+   }
+   iEzsigntemplatedocumentpagerecognitionSimilarpercentage = {
+      type: 'integer',
+      minimum: 60,
+      maximum: 100,
+      required: false
+   }
+   iEzsigntemplatedocumentpagerecognitionX = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 65535,
+      required: false
+   }
+   iEzsigntemplatedocumentpagerecognitionY = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 65535,
+      required: false
+   }
+   iEzsigntemplatedocumentpagerecognitionWidth = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 65535,
+      required: false
+   }
+   iEzsigntemplatedocumentpagerecognitionHeight = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 65535,
+      required: false
+   }
+   tEzsigntemplatedocumentpagerecognitionText = {
+      type: 'string',
+      pattern: /^[.\D\d]{0,65535}$/,
+      required: true
+   }
 } 
 
 

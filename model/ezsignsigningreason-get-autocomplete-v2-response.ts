@@ -35,6 +35,18 @@ import type { EzsignsigningreasonGetAutocompleteV2ResponseMPayload } from './ezs
 export interface EzsignsigningreasonGetAutocompleteV2Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof EzsignsigningreasonGetAutocompleteV2Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof EzsignsigningreasonGetAutocompleteV2Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {EzsignsigningreasonGetAutocompleteV2ResponseMPayload}
      * @memberof EzsignsigningreasonGetAutocompleteV2Response
      */
@@ -47,7 +59,15 @@ export interface EzsignsigningreasonGetAutocompleteV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectEzsignsigningreasonGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsignsigningreasonGetAutocompleteV2ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectEzsignsigningreasonGetAutocompleteV2ResponseMPayload } 
  * @class DataObjectEzsignsigningreasonGetAutocompleteV2Response
  */
 export class DataObjectEzsignsigningreasonGetAutocompleteV2Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsignsigningreasonGetAutocompleteV2ResponseMPayload = new DataObjectEzsignsigningreasonGetAutocompleteV2ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectEzsignsigningreasonGetAutocompleteV2Response {
  * @class ValidationObjectEzsignsigningreasonGetAutocompleteV2Response
  */
 export class ValidationObjectEzsignsigningreasonGetAutocompleteV2Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsignsigningreasonGetAutocompleteV2ResponseMPayload()
 } 
 

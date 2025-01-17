@@ -24,6 +24,24 @@ import type { BillingentityinternalproductRequest } from './billingentityinterna
  */
 /*export type BillingentityinternalproductRequestCompound = BillingentityinternalproductRequest;*/
 export interface BillingentityinternalproductRequestCompound {
+    /**
+     * The unique ID of the Billingentityinternalproduct
+     * @type {number}
+     * @memberof BillingentityinternalproductRequestCompound
+     */
+    pkiBillingentityinternalproductID?:number 
+    /**
+     * The unique ID of the Ezmaxproduct
+     * @type {number}
+     * @memberof BillingentityinternalproductRequestCompound
+     */
+    fkiEzmaxproductID:number 
+    /**
+     * The unique ID of the Billingentityexternal
+     * @type {number}
+     * @memberof BillingentityinternalproductRequestCompound
+     */
+    fkiBillingentityexternalID:number 
 }
 
 
@@ -39,6 +57,9 @@ export interface BillingentityinternalproductRequestCompound {
  * @class DataObjectBillingentityinternalproductRequestCompound
  */
 export class DataObjectBillingentityinternalproductRequestCompound {
+    pkiBillingentityinternalproductID?:number = undefined
+    fkiEzmaxproductID:number = 0
+    fkiBillingentityexternalID:number = 0
 }
 
 /**
@@ -47,6 +68,22 @@ export class DataObjectBillingentityinternalproductRequestCompound {
  * @class ValidationObjectBillingentityinternalproductRequestCompound
  */
 export class ValidationObjectBillingentityinternalproductRequestCompound {
+   pkiBillingentityinternalproductID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 255,
+      required: false
+   }
+   fkiEzmaxproductID = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   fkiBillingentityexternalID = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
 } 
 
 

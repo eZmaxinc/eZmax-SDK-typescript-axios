@@ -27,6 +27,36 @@ import type { SignatureResponseV3 } from './signature-response-v3';
  */
 /*export type SignatureResponseCompoundV3 = SignatureResponseV3;*/
 export interface SignatureResponseCompoundV3 {
+    /**
+     * The unique ID of the Signature
+     * @type {number}
+     * @memberof SignatureResponseCompoundV3
+     */
+    pkiSignatureID:number 
+    /**
+     * The unique ID of the Font
+     * @type {number}
+     * @memberof SignatureResponseCompoundV3
+     */
+    fkiFontID:number 
+    /**
+     * 
+     * @type {FieldESignaturePreference}
+     * @memberof SignatureResponseCompoundV3
+     */
+    eSignaturePreference:FieldESignaturePreference 
+    /**
+     * Whether the signature has a SVG or not
+     * @type {boolean}
+     * @memberof SignatureResponseCompoundV3
+     */
+    bSignatureSvg:boolean 
+    /**
+     * Whether the initials has a SVG or not
+     * @type {boolean}
+     * @memberof SignatureResponseCompoundV3
+     */
+    bSignatureSvginitials:boolean 
 }
 
 
@@ -43,6 +73,11 @@ export interface SignatureResponseCompoundV3 {
  * @class DataObjectSignatureResponseCompoundV3
  */
 export class DataObjectSignatureResponseCompoundV3 {
+    pkiSignatureID:number = 0
+    fkiFontID:number = 0
+    eSignaturePreference:FieldESignaturePreference = 'Text'
+    bSignatureSvg:boolean = false
+    bSignatureSvginitials:boolean = false
 }
 
 /**
@@ -51,6 +86,30 @@ export class DataObjectSignatureResponseCompoundV3 {
  * @class ValidationObjectSignatureResponseCompoundV3
  */
 export class ValidationObjectSignatureResponseCompoundV3 {
+   pkiSignatureID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 16777215,
+      required: true
+   }
+   fkiFontID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   eSignaturePreference = {
+      type: 'enum',
+      allowableValues: ['Text','Handwritten'],
+      required: true
+   }
+   bSignatureSvg = {
+      type: 'boolean',
+      required: true
+   }
+   bSignatureSvginitials = {
+      type: 'boolean',
+      required: true
+   }
 } 
 
 

@@ -35,6 +35,18 @@ import type { SessionhistoryGetListV1ResponseMPayload } from './sessionhistory-g
 export interface SessionhistoryGetListV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayloadGetList}
+     * @memberof SessionhistoryGetListV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayloadGetList 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof SessionhistoryGetListV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {SessionhistoryGetListV1ResponseMPayload}
      * @memberof SessionhistoryGetListV1Response
      */
@@ -47,7 +59,15 @@ export interface SessionhistoryGetListV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayloadGetList } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectSessionhistoryGetListV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayloadGetList } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectSessionhistoryGetListV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectSessionhistoryGetListV1ResponseMPayload } from './'
  * @class DataObjectSessionhistoryGetListV1Response
  */
 export class DataObjectSessionhistoryGetListV1Response {
+    objDebugPayload:CommonResponseObjDebugPayloadGetList = new DataObjectCommonResponseObjDebugPayloadGetList()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:SessionhistoryGetListV1ResponseMPayload = new DataObjectSessionhistoryGetListV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectSessionhistoryGetListV1Response {
  * @class ValidationObjectSessionhistoryGetListV1Response
  */
 export class ValidationObjectSessionhistoryGetListV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayloadGetList()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectSessionhistoryGetListV1ResponseMPayload()
 } 
 

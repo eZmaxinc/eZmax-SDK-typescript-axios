@@ -35,6 +35,18 @@ import type { NotificationsectionGetNotificationtestsV1ResponseMPayload } from '
 export interface NotificationsectionGetNotificationtestsV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof NotificationsectionGetNotificationtestsV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof NotificationsectionGetNotificationtestsV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {NotificationsectionGetNotificationtestsV1ResponseMPayload}
      * @memberof NotificationsectionGetNotificationtestsV1Response
      */
@@ -47,7 +59,15 @@ export interface NotificationsectionGetNotificationtestsV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectNotificationsectionGetNotificationtestsV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectNotificationsectionGetNotificationtestsV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectNotificationsectionGetNotificationtestsV1ResponseMPaylo
  * @class DataObjectNotificationsectionGetNotificationtestsV1Response
  */
 export class DataObjectNotificationsectionGetNotificationtestsV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:NotificationsectionGetNotificationtestsV1ResponseMPayload = new DataObjectNotificationsectionGetNotificationtestsV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectNotificationsectionGetNotificationtestsV1Response {
  * @class ValidationObjectNotificationsectionGetNotificationtestsV1Response
  */
 export class ValidationObjectNotificationsectionGetNotificationtestsV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectNotificationsectionGetNotificationtestsV1ResponseMPayload()
 } 
 

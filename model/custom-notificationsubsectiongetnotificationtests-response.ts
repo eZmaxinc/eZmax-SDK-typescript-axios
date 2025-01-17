@@ -31,6 +31,36 @@ import type { NotificationsubsectionResponse } from './notificationsubsection-re
 /*export type CustomNotificationsubsectiongetnotificationtestsResponse = NotificationsubsectionResponse;*/
 export interface CustomNotificationsubsectiongetnotificationtestsResponse {
     /**
+     * The unique ID of the Notificationsubsection
+     * @type {number}
+     * @memberof CustomNotificationsubsectiongetnotificationtestsResponse
+     */
+    pkiNotificationsubsectionID:number 
+    /**
+     * The unique ID of the Notificationsection
+     * @type {number}
+     * @memberof CustomNotificationsubsectiongetnotificationtestsResponse
+     */
+    fkiNotificationsectionID:number 
+    /**
+     * 
+     * @type {MultilingualNotificationsubsectionName}
+     * @memberof CustomNotificationsubsectiongetnotificationtestsResponse
+     */
+    objNotificationsubsectionName?:MultilingualNotificationsubsectionName 
+    /**
+     * The name of the Notificationsection in the language of the requester
+     * @type {string}
+     * @memberof CustomNotificationsubsectiongetnotificationtestsResponse
+     */
+    sNotificationsectionNameX?:string 
+    /**
+     * The name of the Notificationsubsection in the language of the requester
+     * @type {string}
+     * @memberof CustomNotificationsubsectiongetnotificationtestsResponse
+     */
+    sNotificationsubsectionNameX:string 
+    /**
      * 
      * @type {Array<CustomNotificationtestgetnotificationtestsResponse>}
      * @memberof CustomNotificationsubsectiongetnotificationtestsResponse
@@ -43,6 +73,10 @@ export interface CustomNotificationsubsectiongetnotificationtestsResponse {
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectMultilingualNotificationsubsectionName } from './'
+// @ts-ignore
+import { ValidationObjectMultilingualNotificationsubsectionName } from './'
 
 /**
  * @export 
@@ -51,6 +85,11 @@ export interface CustomNotificationsubsectiongetnotificationtestsResponse {
  * @class DataObjectCustomNotificationsubsectiongetnotificationtestsResponse
  */
 export class DataObjectCustomNotificationsubsectiongetnotificationtestsResponse {
+    pkiNotificationsubsectionID:number = 0
+    fkiNotificationsectionID:number = 0
+    objNotificationsubsectionName?:MultilingualNotificationsubsectionName = undefined
+    sNotificationsectionNameX?:string = undefined
+    sNotificationsubsectionNameX:string = ''
     a_objNotificationtest:Array<CustomNotificationtestgetnotificationtestsResponse> = []
 }
 
@@ -60,6 +99,25 @@ export class DataObjectCustomNotificationsubsectiongetnotificationtestsResponse 
  * @class ValidationObjectCustomNotificationsubsectiongetnotificationtestsResponse
  */
 export class ValidationObjectCustomNotificationsubsectiongetnotificationtestsResponse {
+   pkiNotificationsubsectionID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiNotificationsectionID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   objNotificationsubsectionName = new ValidationObjectMultilingualNotificationsubsectionName()
+   sNotificationsectionNameX = {
+      type: 'string',
+      required: false
+   }
+   sNotificationsubsectionNameX = {
+      type: 'string',
+      required: true
+   }
    a_objNotificationtest = {
       type: 'array',
       required: true

@@ -35,6 +35,18 @@ import type { EzsigntemplatepackagesignermembershipGetObjectV2ResponseMPayload }
 export interface EzsigntemplatepackagesignermembershipGetObjectV2Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof EzsigntemplatepackagesignermembershipGetObjectV2Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof EzsigntemplatepackagesignermembershipGetObjectV2Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {EzsigntemplatepackagesignermembershipGetObjectV2ResponseMPayload}
      * @memberof EzsigntemplatepackagesignermembershipGetObjectV2Response
      */
@@ -47,7 +59,15 @@ export interface EzsigntemplatepackagesignermembershipGetObjectV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectEzsigntemplatepackagesignermembershipGetObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsigntemplatepackagesignermembershipGetObjectV2ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectEzsigntemplatepackagesignermembershipGetObjectV2Respons
  * @class DataObjectEzsigntemplatepackagesignermembershipGetObjectV2Response
  */
 export class DataObjectEzsigntemplatepackagesignermembershipGetObjectV2Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsigntemplatepackagesignermembershipGetObjectV2ResponseMPayload = new DataObjectEzsigntemplatepackagesignermembershipGetObjectV2ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectEzsigntemplatepackagesignermembershipGetObjectV2Response 
  * @class ValidationObjectEzsigntemplatepackagesignermembershipGetObjectV2Response
  */
 export class ValidationObjectEzsigntemplatepackagesignermembershipGetObjectV2Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsigntemplatepackagesignermembershipGetObjectV2ResponseMPayload()
 } 
 

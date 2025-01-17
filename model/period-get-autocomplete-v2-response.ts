@@ -35,6 +35,18 @@ import type { PeriodGetAutocompleteV2ResponseMPayload } from './period-get-autoc
 export interface PeriodGetAutocompleteV2Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof PeriodGetAutocompleteV2Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof PeriodGetAutocompleteV2Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {PeriodGetAutocompleteV2ResponseMPayload}
      * @memberof PeriodGetAutocompleteV2Response
      */
@@ -47,7 +59,15 @@ export interface PeriodGetAutocompleteV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectPeriodGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectPeriodGetAutocompleteV2ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectPeriodGetAutocompleteV2ResponseMPayload } from './'
  * @class DataObjectPeriodGetAutocompleteV2Response
  */
 export class DataObjectPeriodGetAutocompleteV2Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:PeriodGetAutocompleteV2ResponseMPayload = new DataObjectPeriodGetAutocompleteV2ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectPeriodGetAutocompleteV2Response {
  * @class ValidationObjectPeriodGetAutocompleteV2Response
  */
 export class ValidationObjectPeriodGetAutocompleteV2Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectPeriodGetAutocompleteV2ResponseMPayload()
 } 
 

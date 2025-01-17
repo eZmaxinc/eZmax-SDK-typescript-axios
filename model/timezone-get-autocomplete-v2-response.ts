@@ -35,6 +35,18 @@ import type { TimezoneGetAutocompleteV2ResponseMPayload } from './timezone-get-a
 export interface TimezoneGetAutocompleteV2Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof TimezoneGetAutocompleteV2Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof TimezoneGetAutocompleteV2Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {TimezoneGetAutocompleteV2ResponseMPayload}
      * @memberof TimezoneGetAutocompleteV2Response
      */
@@ -47,7 +59,15 @@ export interface TimezoneGetAutocompleteV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectTimezoneGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectTimezoneGetAutocompleteV2ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectTimezoneGetAutocompleteV2ResponseMPayload } from './'
  * @class DataObjectTimezoneGetAutocompleteV2Response
  */
 export class DataObjectTimezoneGetAutocompleteV2Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:TimezoneGetAutocompleteV2ResponseMPayload = new DataObjectTimezoneGetAutocompleteV2ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectTimezoneGetAutocompleteV2Response {
  * @class ValidationObjectTimezoneGetAutocompleteV2Response
  */
 export class ValidationObjectTimezoneGetAutocompleteV2Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectTimezoneGetAutocompleteV2ResponseMPayload()
 } 
 

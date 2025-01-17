@@ -35,6 +35,18 @@ import type { UserlogintypeGetAutocompleteV2ResponseMPayload } from './userlogin
 export interface UserlogintypeGetAutocompleteV2Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof UserlogintypeGetAutocompleteV2Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof UserlogintypeGetAutocompleteV2Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {UserlogintypeGetAutocompleteV2ResponseMPayload}
      * @memberof UserlogintypeGetAutocompleteV2Response
      */
@@ -47,7 +59,15 @@ export interface UserlogintypeGetAutocompleteV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectUserlogintypeGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectUserlogintypeGetAutocompleteV2ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectUserlogintypeGetAutocompleteV2ResponseMPayload } from '
  * @class DataObjectUserlogintypeGetAutocompleteV2Response
  */
 export class DataObjectUserlogintypeGetAutocompleteV2Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:UserlogintypeGetAutocompleteV2ResponseMPayload = new DataObjectUserlogintypeGetAutocompleteV2ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectUserlogintypeGetAutocompleteV2Response {
  * @class ValidationObjectUserlogintypeGetAutocompleteV2Response
  */
 export class ValidationObjectUserlogintypeGetAutocompleteV2Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectUserlogintypeGetAutocompleteV2ResponseMPayload()
 } 
 

@@ -24,6 +24,48 @@ import type { EzsigntemplatepackageRequest } from './ezsigntemplatepackage-reque
  */
 /*export type EzsigntemplatepackageRequestCompound = EzsigntemplatepackageRequest;*/
 export interface EzsigntemplatepackageRequestCompound {
+    /**
+     * The unique ID of the Ezsigntemplatepackage
+     * @type {number}
+     * @memberof EzsigntemplatepackageRequestCompound
+     */
+    pkiEzsigntemplatepackageID?:number 
+    /**
+     * The unique ID of the Ezsignfoldertype.
+     * @type {number}
+     * @memberof EzsigntemplatepackageRequestCompound
+     */
+    fkiEzsignfoldertypeID:number 
+    /**
+     * The unique ID of the Ezdoctemplatedocument
+     * @type {number}
+     * @memberof EzsigntemplatepackageRequestCompound
+     */
+    fkiEzdoctemplatedocumentID?:number 
+    /**
+     * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
+     * @type {number}
+     * @memberof EzsigntemplatepackageRequestCompound
+     */
+    fkiLanguageID:number 
+    /**
+     * The description of the Ezsigntemplatepackage
+     * @type {string}
+     * @memberof EzsigntemplatepackageRequestCompound
+     */
+    sEzsigntemplatepackageDescription:string 
+    /**
+     * Whether the Ezsigntemplatepackage can be accessed by admin users only (eUserType=Normal)
+     * @type {boolean}
+     * @memberof EzsigntemplatepackageRequestCompound
+     */
+    bEzsigntemplatepackageAdminonly:boolean 
+    /**
+     * Whether the Ezsigntemplatepackage is active or not
+     * @type {boolean}
+     * @memberof EzsigntemplatepackageRequestCompound
+     */
+    bEzsigntemplatepackageIsactive:boolean 
 }
 
 
@@ -39,6 +81,13 @@ export interface EzsigntemplatepackageRequestCompound {
  * @class DataObjectEzsigntemplatepackageRequestCompound
  */
 export class DataObjectEzsigntemplatepackageRequestCompound {
+    pkiEzsigntemplatepackageID?:number = undefined
+    fkiEzsignfoldertypeID:number = 0
+    fkiEzdoctemplatedocumentID?:number = undefined
+    fkiLanguageID:number = 0
+    sEzsigntemplatepackageDescription:string = ''
+    bEzsigntemplatepackageAdminonly:boolean = false
+    bEzsigntemplatepackageIsactive:boolean = false
 }
 
 /**
@@ -47,6 +96,42 @@ export class DataObjectEzsigntemplatepackageRequestCompound {
  * @class ValidationObjectEzsigntemplatepackageRequestCompound
  */
 export class ValidationObjectEzsigntemplatepackageRequestCompound {
+   pkiEzsigntemplatepackageID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzsignfoldertypeID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 65535,
+      required: true
+   }
+   fkiEzdoctemplatedocumentID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 65535,
+      required: false
+   }
+   fkiLanguageID = {
+      type: 'integer',
+      minimum: 1,
+      maximum: 2,
+      required: true
+   }
+   sEzsigntemplatepackageDescription = {
+      type: 'string',
+      pattern: /^.{0,80}$/,
+      required: true
+   }
+   bEzsigntemplatepackageAdminonly = {
+      type: 'boolean',
+      required: true
+   }
+   bEzsigntemplatepackageIsactive = {
+      type: 'boolean',
+      required: true
+   }
 } 
 
 

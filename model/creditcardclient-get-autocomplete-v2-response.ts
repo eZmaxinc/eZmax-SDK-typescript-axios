@@ -35,6 +35,18 @@ import type { CreditcardclientGetAutocompleteV2ResponseMPayload } from './credit
 export interface CreditcardclientGetAutocompleteV2Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof CreditcardclientGetAutocompleteV2Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof CreditcardclientGetAutocompleteV2Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {CreditcardclientGetAutocompleteV2ResponseMPayload}
      * @memberof CreditcardclientGetAutocompleteV2Response
      */
@@ -47,7 +59,15 @@ export interface CreditcardclientGetAutocompleteV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectCreditcardclientGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectCreditcardclientGetAutocompleteV2ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectCreditcardclientGetAutocompleteV2ResponseMPayload } fro
  * @class DataObjectCreditcardclientGetAutocompleteV2Response
  */
 export class DataObjectCreditcardclientGetAutocompleteV2Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:CreditcardclientGetAutocompleteV2ResponseMPayload = new DataObjectCreditcardclientGetAutocompleteV2ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectCreditcardclientGetAutocompleteV2Response {
  * @class ValidationObjectCreditcardclientGetAutocompleteV2Response
  */
 export class ValidationObjectCreditcardclientGetAutocompleteV2Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectCreditcardclientGetAutocompleteV2ResponseMPayload()
 } 
 

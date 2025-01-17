@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AttemptResponse } from './attempt-response';
+import type { AttemptResponseCompound } from './attempt-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { CommonWebhook } from './common-webhook';
@@ -35,6 +35,18 @@ import type { EzsignfolderResponse } from './ezsignfolder-response';
 export interface WebhookEzsignFolderSent {
     /**
      * 
+     * @type {CustomWebhookResponse}
+     * @memberof WebhookEzsignFolderSent
+     */
+    objWebhook:CustomWebhookResponse 
+    /**
+     * An array containing details of previous attempts that were made to deliver the message. The array is empty if it\'s the first attempt.
+     * @type {Array<AttemptResponseCompound>}
+     * @memberof WebhookEzsignFolderSent
+     */
+    a_objAttempt:Array<AttemptResponseCompound> 
+    /**
+     * 
      * @type {EzsignfolderResponse}
      * @memberof WebhookEzsignFolderSent
      */
@@ -47,7 +59,11 @@ export interface WebhookEzsignFolderSent {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCustomWebhookResponse } from './'
+// @ts-ignore
 import { DataObjectEzsignfolderResponse } from './'
+// @ts-ignore
+import { ValidationObjectCustomWebhookResponse } from './'
 // @ts-ignore
 import { ValidationObjectEzsignfolderResponse } from './'
 
@@ -58,6 +74,8 @@ import { ValidationObjectEzsignfolderResponse } from './'
  * @class DataObjectWebhookEzsignFolderSent
  */
 export class DataObjectWebhookEzsignFolderSent {
+    objWebhook:CustomWebhookResponse = new DataObjectCustomWebhookResponse()
+    a_objAttempt:Array<AttemptResponseCompound> = []
     objEzsignfolder:EzsignfolderResponse = new DataObjectEzsignfolderResponse()
 }
 
@@ -67,6 +85,11 @@ export class DataObjectWebhookEzsignFolderSent {
  * @class ValidationObjectWebhookEzsignFolderSent
  */
 export class ValidationObjectWebhookEzsignFolderSent {
+   objWebhook = new ValidationObjectCustomWebhookResponse()
+   a_objAttempt = {
+      type: 'array',
+      required: true
+   }
    objEzsignfolder = new ValidationObjectEzsignfolderResponse()
 } 
 

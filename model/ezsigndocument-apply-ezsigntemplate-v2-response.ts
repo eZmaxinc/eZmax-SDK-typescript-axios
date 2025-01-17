@@ -35,6 +35,18 @@ import type { CommonResponseWarning } from './common-response-warning';
 export interface EzsigndocumentApplyEzsigntemplateV2Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof EzsigndocumentApplyEzsigntemplateV2Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof EzsigndocumentApplyEzsigntemplateV2Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {Array<CommonResponseWarning>}
      * @memberof EzsigndocumentApplyEzsigntemplateV2Response
      */
@@ -46,6 +58,14 @@ export interface EzsigndocumentApplyEzsigntemplateV2Response {
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 
 /**
  * @export 
@@ -54,6 +74,8 @@ export interface EzsigndocumentApplyEzsigntemplateV2Response {
  * @class DataObjectEzsigndocumentApplyEzsigntemplateV2Response
  */
 export class DataObjectEzsigndocumentApplyEzsigntemplateV2Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     a_objWarning?:Array<CommonResponseWarning> = undefined
 }
 
@@ -63,6 +85,8 @@ export class DataObjectEzsigndocumentApplyEzsigntemplateV2Response {
  * @class ValidationObjectEzsigndocumentApplyEzsigntemplateV2Response
  */
 export class ValidationObjectEzsigndocumentApplyEzsigntemplateV2Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    a_objWarning = {
       type: 'array',
       required: false

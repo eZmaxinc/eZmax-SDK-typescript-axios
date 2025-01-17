@@ -35,6 +35,18 @@ import type { VersionhistoryGetObjectV2ResponseMPayload } from './versionhistory
 export interface VersionhistoryGetObjectV2Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof VersionhistoryGetObjectV2Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof VersionhistoryGetObjectV2Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {VersionhistoryGetObjectV2ResponseMPayload}
      * @memberof VersionhistoryGetObjectV2Response
      */
@@ -47,7 +59,15 @@ export interface VersionhistoryGetObjectV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectVersionhistoryGetObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectVersionhistoryGetObjectV2ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectVersionhistoryGetObjectV2ResponseMPayload } from './'
  * @class DataObjectVersionhistoryGetObjectV2Response
  */
 export class DataObjectVersionhistoryGetObjectV2Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:VersionhistoryGetObjectV2ResponseMPayload = new DataObjectVersionhistoryGetObjectV2ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectVersionhistoryGetObjectV2Response {
  * @class ValidationObjectVersionhistoryGetObjectV2Response
  */
 export class ValidationObjectVersionhistoryGetObjectV2Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectVersionhistoryGetObjectV2ResponseMPayload()
 } 
 

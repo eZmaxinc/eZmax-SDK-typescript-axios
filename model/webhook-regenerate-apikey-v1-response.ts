@@ -35,6 +35,18 @@ import type { WebhookRegenerateApikeyV1ResponseMPayload } from './webhook-regene
 export interface WebhookRegenerateApikeyV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof WebhookRegenerateApikeyV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof WebhookRegenerateApikeyV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {WebhookRegenerateApikeyV1ResponseMPayload}
      * @memberof WebhookRegenerateApikeyV1Response
      */
@@ -47,7 +59,15 @@ export interface WebhookRegenerateApikeyV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectWebhookRegenerateApikeyV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectWebhookRegenerateApikeyV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectWebhookRegenerateApikeyV1ResponseMPayload } from './'
  * @class DataObjectWebhookRegenerateApikeyV1Response
  */
 export class DataObjectWebhookRegenerateApikeyV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:WebhookRegenerateApikeyV1ResponseMPayload = new DataObjectWebhookRegenerateApikeyV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectWebhookRegenerateApikeyV1Response {
  * @class ValidationObjectWebhookRegenerateApikeyV1Response
  */
 export class ValidationObjectWebhookRegenerateApikeyV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectWebhookRegenerateApikeyV1ResponseMPayload()
 } 
 

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AttemptResponse } from './attempt-response';
+import type { AttemptResponseCompound } from './attempt-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { CommonWebhook } from './common-webhook';
@@ -35,6 +35,18 @@ import type { EzsigndocumentResponse } from './ezsigndocument-response';
 export interface WebhookEzsignDocumentFormCompleted {
     /**
      * 
+     * @type {CustomWebhookResponse}
+     * @memberof WebhookEzsignDocumentFormCompleted
+     */
+    objWebhook:CustomWebhookResponse 
+    /**
+     * An array containing details of previous attempts that were made to deliver the message. The array is empty if it\'s the first attempt.
+     * @type {Array<AttemptResponseCompound>}
+     * @memberof WebhookEzsignDocumentFormCompleted
+     */
+    a_objAttempt:Array<AttemptResponseCompound> 
+    /**
+     * 
      * @type {EzsigndocumentResponse}
      * @memberof WebhookEzsignDocumentFormCompleted
      */
@@ -47,7 +59,11 @@ export interface WebhookEzsignDocumentFormCompleted {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCustomWebhookResponse } from './'
+// @ts-ignore
 import { DataObjectEzsigndocumentResponse } from './'
+// @ts-ignore
+import { ValidationObjectCustomWebhookResponse } from './'
 // @ts-ignore
 import { ValidationObjectEzsigndocumentResponse } from './'
 
@@ -58,6 +74,8 @@ import { ValidationObjectEzsigndocumentResponse } from './'
  * @class DataObjectWebhookEzsignDocumentFormCompleted
  */
 export class DataObjectWebhookEzsignDocumentFormCompleted {
+    objWebhook:CustomWebhookResponse = new DataObjectCustomWebhookResponse()
+    a_objAttempt:Array<AttemptResponseCompound> = []
     objEzsigndocument:EzsigndocumentResponse = new DataObjectEzsigndocumentResponse()
 }
 
@@ -67,6 +85,11 @@ export class DataObjectWebhookEzsignDocumentFormCompleted {
  * @class ValidationObjectWebhookEzsignDocumentFormCompleted
  */
 export class ValidationObjectWebhookEzsignDocumentFormCompleted {
+   objWebhook = new ValidationObjectCustomWebhookResponse()
+   a_objAttempt = {
+      type: 'array',
+      required: true
+   }
    objEzsigndocument = new ValidationObjectEzsigndocumentResponse()
 } 
 

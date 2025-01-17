@@ -28,6 +28,18 @@ import type { CommonGetListV1ResponseMPayload } from './common-get-list-v1-respo
 /*export type ClonehistoryGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;*/
 export interface ClonehistoryGetListV1ResponseMPayload {
     /**
+     * The number of rows returned
+     * @type {number}
+     * @memberof ClonehistoryGetListV1ResponseMPayload
+     */
+    iRowReturned:number 
+    /**
+     * The number of rows matching your filters (if any) or the total number of rows
+     * @type {number}
+     * @memberof ClonehistoryGetListV1ResponseMPayload
+     */
+    iRowFiltered:number 
+    /**
      * 
      * @type {Array<ClonehistoryListElement>}
      * @memberof ClonehistoryGetListV1ResponseMPayload
@@ -48,6 +60,8 @@ export interface ClonehistoryGetListV1ResponseMPayload {
  * @class DataObjectClonehistoryGetListV1ResponseMPayload
  */
 export class DataObjectClonehistoryGetListV1ResponseMPayload {
+    iRowReturned:number = 0
+    iRowFiltered:number = 0
     a_objClonehistory:Array<ClonehistoryListElement> = []
 }
 
@@ -57,6 +71,14 @@ export class DataObjectClonehistoryGetListV1ResponseMPayload {
  * @class ValidationObjectClonehistoryGetListV1ResponseMPayload
  */
 export class ValidationObjectClonehistoryGetListV1ResponseMPayload {
+   iRowReturned = {
+      type: 'integer',
+      required: true
+   }
+   iRowFiltered = {
+      type: 'integer',
+      required: true
+   }
    a_objClonehistory = {
       type: 'array',
       required: true

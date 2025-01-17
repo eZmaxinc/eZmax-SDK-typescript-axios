@@ -35,6 +35,18 @@ import type { EzsigntemplateformfieldgroupGetObjectV2ResponseMPayload } from './
 export interface EzsigntemplateformfieldgroupGetObjectV2Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof EzsigntemplateformfieldgroupGetObjectV2Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof EzsigntemplateformfieldgroupGetObjectV2Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {EzsigntemplateformfieldgroupGetObjectV2ResponseMPayload}
      * @memberof EzsigntemplateformfieldgroupGetObjectV2Response
      */
@@ -47,7 +59,15 @@ export interface EzsigntemplateformfieldgroupGetObjectV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectEzsigntemplateformfieldgroupGetObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsigntemplateformfieldgroupGetObjectV2ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectEzsigntemplateformfieldgroupGetObjectV2ResponseMPayload
  * @class DataObjectEzsigntemplateformfieldgroupGetObjectV2Response
  */
 export class DataObjectEzsigntemplateformfieldgroupGetObjectV2Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsigntemplateformfieldgroupGetObjectV2ResponseMPayload = new DataObjectEzsigntemplateformfieldgroupGetObjectV2ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectEzsigntemplateformfieldgroupGetObjectV2Response {
  * @class ValidationObjectEzsigntemplateformfieldgroupGetObjectV2Response
  */
 export class ValidationObjectEzsigntemplateformfieldgroupGetObjectV2Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsigntemplateformfieldgroupGetObjectV2ResponseMPayload()
 } 
 

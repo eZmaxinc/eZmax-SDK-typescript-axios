@@ -24,6 +24,30 @@ import type { WebhookheaderResponse } from './webhookheader-response';
  */
 /*export type WebhookheaderResponseCompound = WebhookheaderResponse;*/
 export interface WebhookheaderResponseCompound {
+    /**
+     * The unique ID of the Webhookheader
+     * @type {number}
+     * @memberof WebhookheaderResponseCompound
+     */
+    pkiWebhookheaderID:number 
+    /**
+     * The unique ID of the Webhook
+     * @type {number}
+     * @memberof WebhookheaderResponseCompound
+     */
+    fkiWebhookID:number 
+    /**
+     * The Name of the Webhookheader
+     * @type {string}
+     * @memberof WebhookheaderResponseCompound
+     */
+    sWebhookheaderName:string 
+    /**
+     * The Value of the Webhookheader
+     * @type {string}
+     * @memberof WebhookheaderResponseCompound
+     */
+    sWebhookheaderValue:string 
 }
 
 
@@ -39,6 +63,10 @@ export interface WebhookheaderResponseCompound {
  * @class DataObjectWebhookheaderResponseCompound
  */
 export class DataObjectWebhookheaderResponseCompound {
+    pkiWebhookheaderID:number = 0
+    fkiWebhookID:number = 0
+    sWebhookheaderName:string = ''
+    sWebhookheaderValue:string = ''
 }
 
 /**
@@ -47,6 +75,24 @@ export class DataObjectWebhookheaderResponseCompound {
  * @class ValidationObjectWebhookheaderResponseCompound
  */
 export class ValidationObjectWebhookheaderResponseCompound {
+   pkiWebhookheaderID = {
+      type: 'integer',
+      required: true
+   }
+   fkiWebhookID = {
+      type: 'integer',
+      required: true
+   }
+   sWebhookheaderName = {
+      type: 'string',
+      pattern: /^(?!(?:e|E)(?:z|Z)(?:m|M)(?:a|A)(?:x|X))(?!(?:h|H)(?:o|O)(?:s|S)(?:t|T)$|(?:u|U)(?:s|S)(?:e|E)(?:r|R)-(?:a|A)(?:g|G)(?:e|E)(?:n|N)(?:t|T)$)(?!\s)[^\s].*$/,
+      required: true
+   }
+   sWebhookheaderValue = {
+      type: 'string',
+      pattern: /^.{1,255}$/,
+      required: true
+   }
 } 
 
 

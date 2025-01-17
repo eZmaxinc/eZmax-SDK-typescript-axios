@@ -24,6 +24,30 @@ import type { EzsignbulksendsignermappingRequest } from './ezsignbulksendsignerm
  */
 /*export type EzsignbulksendsignermappingRequestCompound = EzsignbulksendsignermappingRequest;*/
 export interface EzsignbulksendsignermappingRequestCompound {
+    /**
+     * The unique ID of the Ezsignbulksendsignermapping
+     * @type {number}
+     * @memberof EzsignbulksendsignermappingRequestCompound
+     */
+    pkiEzsignbulksendsignermappingID?:number 
+    /**
+     * The unique ID of the Ezsignbulksend
+     * @type {number}
+     * @memberof EzsignbulksendsignermappingRequestCompound
+     */
+    fkiEzsignbulksendID:number 
+    /**
+     * The unique ID of the User
+     * @type {number}
+     * @memberof EzsignbulksendsignermappingRequestCompound
+     */
+    fkiUserID?:number 
+    /**
+     * The description of the Ezsignbulksendsignermapping
+     * @type {string}
+     * @memberof EzsignbulksendsignermappingRequestCompound
+     */
+    sEzsignbulksendsignermappingDescription:string 
 }
 
 
@@ -39,6 +63,10 @@ export interface EzsignbulksendsignermappingRequestCompound {
  * @class DataObjectEzsignbulksendsignermappingRequestCompound
  */
 export class DataObjectEzsignbulksendsignermappingRequestCompound {
+    pkiEzsignbulksendsignermappingID?:number = undefined
+    fkiEzsignbulksendID:number = 0
+    fkiUserID?:number = undefined
+    sEzsignbulksendsignermappingDescription:string = ''
 }
 
 /**
@@ -47,6 +75,25 @@ export class DataObjectEzsignbulksendsignermappingRequestCompound {
  * @class ValidationObjectEzsignbulksendsignermappingRequestCompound
  */
 export class ValidationObjectEzsignbulksendsignermappingRequestCompound {
+   pkiEzsignbulksendsignermappingID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEzsignbulksendID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiUserID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   sEzsignbulksendsignermappingDescription = {
+      type: 'string',
+      required: true
+   }
 } 
 
 

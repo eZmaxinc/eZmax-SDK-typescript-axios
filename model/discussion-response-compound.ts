@@ -34,6 +34,48 @@ import type { DiscussionmessageResponseCompound } from './discussionmessage-resp
 /*export type DiscussionResponseCompound = DiscussionResponse;*/
 export interface DiscussionResponseCompound {
     /**
+     * The unique ID of the Discussion
+     * @type {number}
+     * @memberof DiscussionResponseCompound
+     */
+    pkiDiscussionID:number 
+    /**
+     * The description of the Discussion
+     * @type {string}
+     * @memberof DiscussionResponseCompound
+     */
+    sDiscussionDescription:string 
+    /**
+     * Whether if it\'s an closed
+     * @type {boolean}
+     * @memberof DiscussionResponseCompound
+     */
+    bDiscussionClosed:boolean 
+    /**
+     * The date the Discussion was last read
+     * @type {string}
+     * @memberof DiscussionResponseCompound
+     */
+    dtDiscussionLastread?:string 
+    /**
+     * The count of Attachment.
+     * @type {number}
+     * @memberof DiscussionResponseCompound
+     */
+    iDiscussionmessageCount:number 
+    /**
+     * The count of Attachment.
+     * @type {number}
+     * @memberof DiscussionResponseCompound
+     */
+    iDiscussionmessageCountunread:number 
+    /**
+     * 
+     * @type {CustomDiscussionconfigurationResponse}
+     * @memberof DiscussionResponseCompound
+     */
+    objDiscussionconfiguration?:CustomDiscussionconfigurationResponse 
+    /**
      * 
      * @type {Array<DiscussionmembershipResponseCompound>}
      * @memberof DiscussionResponseCompound
@@ -52,6 +94,10 @@ export interface DiscussionResponseCompound {
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectCustomDiscussionconfigurationResponse } from './'
+// @ts-ignore
+import { ValidationObjectCustomDiscussionconfigurationResponse } from './'
 
 /**
  * @export 
@@ -60,6 +106,13 @@ export interface DiscussionResponseCompound {
  * @class DataObjectDiscussionResponseCompound
  */
 export class DataObjectDiscussionResponseCompound {
+    pkiDiscussionID:number = 0
+    sDiscussionDescription:string = ''
+    bDiscussionClosed:boolean = false
+    dtDiscussionLastread?:string = undefined
+    iDiscussionmessageCount:number = 0
+    iDiscussionmessageCountunread:number = 0
+    objDiscussionconfiguration?:CustomDiscussionconfigurationResponse = undefined
     a_objDiscussionmembership:Array<DiscussionmembershipResponseCompound> = []
     a_objDiscussionmessage:Array<DiscussionmessageResponseCompound> = []
 }
@@ -70,6 +123,34 @@ export class DataObjectDiscussionResponseCompound {
  * @class ValidationObjectDiscussionResponseCompound
  */
 export class ValidationObjectDiscussionResponseCompound {
+   pkiDiscussionID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 16777215,
+      required: true
+   }
+   sDiscussionDescription = {
+      type: 'string',
+      pattern: /^.{0,75}$/,
+      required: true
+   }
+   bDiscussionClosed = {
+      type: 'boolean',
+      required: true
+   }
+   dtDiscussionLastread = {
+      type: 'string',
+      required: false
+   }
+   iDiscussionmessageCount = {
+      type: 'integer',
+      required: true
+   }
+   iDiscussionmessageCountunread = {
+      type: 'integer',
+      required: true
+   }
+   objDiscussionconfiguration = new ValidationObjectCustomDiscussionconfigurationResponse()
    a_objDiscussionmembership = {
       type: 'array',
       required: true

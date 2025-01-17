@@ -35,6 +35,18 @@ import type { EzsigntemplatedocumentCreateObjectV1ResponseMPayload } from './ezs
 export interface EzsigntemplatedocumentCreateObjectV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof EzsigntemplatedocumentCreateObjectV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof EzsigntemplatedocumentCreateObjectV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {EzsigntemplatedocumentCreateObjectV1ResponseMPayload}
      * @memberof EzsigntemplatedocumentCreateObjectV1Response
      */
@@ -47,7 +59,15 @@ export interface EzsigntemplatedocumentCreateObjectV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectEzsigntemplatedocumentCreateObjectV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsigntemplatedocumentCreateObjectV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectEzsigntemplatedocumentCreateObjectV1ResponseMPayload } 
  * @class DataObjectEzsigntemplatedocumentCreateObjectV1Response
  */
 export class DataObjectEzsigntemplatedocumentCreateObjectV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsigntemplatedocumentCreateObjectV1ResponseMPayload = new DataObjectEzsigntemplatedocumentCreateObjectV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectEzsigntemplatedocumentCreateObjectV1Response {
  * @class ValidationObjectEzsigntemplatedocumentCreateObjectV1Response
  */
 export class ValidationObjectEzsigntemplatedocumentCreateObjectV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsigntemplatedocumentCreateObjectV1ResponseMPayload()
 } 
 

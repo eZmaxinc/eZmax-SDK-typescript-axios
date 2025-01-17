@@ -27,6 +27,36 @@ import type { FieldEAttachmentlogType } from './field-eattachmentlog-type';
  */
 /*export type AttachmentlogResponseCompound = AttachmentlogResponse;*/
 export interface AttachmentlogResponseCompound {
+    /**
+     * The unique ID of the Attachment.
+     * @type {number}
+     * @memberof AttachmentlogResponseCompound
+     */
+    fkiAttachmentID:number 
+    /**
+     * The unique ID of the User
+     * @type {number}
+     * @memberof AttachmentlogResponseCompound
+     */
+    fkiUserID:number 
+    /**
+     * The created date
+     * @type {string}
+     * @memberof AttachmentlogResponseCompound
+     */
+    dtAttachmentlogDatetime:string 
+    /**
+     * 
+     * @type {FieldEAttachmentlogType}
+     * @memberof AttachmentlogResponseCompound
+     */
+    eAttachmentlogType:FieldEAttachmentlogType 
+    /**
+     * The additionnal detail
+     * @type {string}
+     * @memberof AttachmentlogResponseCompound
+     */
+    sAttachmentlogDetail?:string 
 }
 
 
@@ -43,6 +73,11 @@ export interface AttachmentlogResponseCompound {
  * @class DataObjectAttachmentlogResponseCompound
  */
 export class DataObjectAttachmentlogResponseCompound {
+    fkiAttachmentID:number = 0
+    fkiUserID:number = 0
+    dtAttachmentlogDatetime:string = ''
+    eAttachmentlogType:FieldEAttachmentlogType = 'AutoValidation'
+    sAttachmentlogDetail?:string = undefined
 }
 
 /**
@@ -51,6 +86,31 @@ export class DataObjectAttachmentlogResponseCompound {
  * @class ValidationObjectAttachmentlogResponseCompound
  */
 export class ValidationObjectAttachmentlogResponseCompound {
+   fkiAttachmentID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiUserID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   dtAttachmentlogDatetime = {
+      type: 'string',
+      pattern: /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/,
+      required: true
+   }
+   eAttachmentlogType = {
+      type: 'enum',
+      allowableValues: ['AutoValidation','CopyFrom','CopyTo','CopyToEzsign','CreateByEzsign','Download','Deleted','Destroyed','Email','EmailCC','EmailCCI','Fax','ImportedFromExternalSystem','ImportedFromEZA','ImportedFromFaltour','ImportedFromLonewolf','ImportedFromProspects','Move','OpenFromEmail','Purged','Reject','Rename','Restore','Scanned','SendToGED','UnvalidatedBy','Upload','ValidatedBy','VetinfoUpload'],
+      required: true
+   }
+   sAttachmentlogDetail = {
+      type: 'string',
+      pattern: /^.{0,75}$/,
+      required: false
+   }
 } 
 
 

@@ -35,6 +35,18 @@ import type { EzsigntsarequirementGetAutocompleteV2ResponseMPayload } from './ez
 export interface EzsigntsarequirementGetAutocompleteV2Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof EzsigntsarequirementGetAutocompleteV2Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof EzsigntsarequirementGetAutocompleteV2Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {EzsigntsarequirementGetAutocompleteV2ResponseMPayload}
      * @memberof EzsigntsarequirementGetAutocompleteV2Response
      */
@@ -47,7 +59,15 @@ export interface EzsigntsarequirementGetAutocompleteV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectEzsigntsarequirementGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsigntsarequirementGetAutocompleteV2ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectEzsigntsarequirementGetAutocompleteV2ResponseMPayload }
  * @class DataObjectEzsigntsarequirementGetAutocompleteV2Response
  */
 export class DataObjectEzsigntsarequirementGetAutocompleteV2Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsigntsarequirementGetAutocompleteV2ResponseMPayload = new DataObjectEzsigntsarequirementGetAutocompleteV2ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectEzsigntsarequirementGetAutocompleteV2Response {
  * @class ValidationObjectEzsigntsarequirementGetAutocompleteV2Response
  */
 export class ValidationObjectEzsigntsarequirementGetAutocompleteV2Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsigntsarequirementGetAutocompleteV2ResponseMPayload()
 } 
 

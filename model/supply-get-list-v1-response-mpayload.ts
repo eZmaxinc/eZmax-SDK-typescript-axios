@@ -28,6 +28,18 @@ import type { SupplyListElement } from './supply-list-element';
 /*export type SupplyGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;*/
 export interface SupplyGetListV1ResponseMPayload {
     /**
+     * The number of rows returned
+     * @type {number}
+     * @memberof SupplyGetListV1ResponseMPayload
+     */
+    iRowReturned:number 
+    /**
+     * The number of rows matching your filters (if any) or the total number of rows
+     * @type {number}
+     * @memberof SupplyGetListV1ResponseMPayload
+     */
+    iRowFiltered:number 
+    /**
      * 
      * @type {Array<SupplyListElement>}
      * @memberof SupplyGetListV1ResponseMPayload
@@ -48,6 +60,8 @@ export interface SupplyGetListV1ResponseMPayload {
  * @class DataObjectSupplyGetListV1ResponseMPayload
  */
 export class DataObjectSupplyGetListV1ResponseMPayload {
+    iRowReturned:number = 0
+    iRowFiltered:number = 0
     a_objSupply:Array<SupplyListElement> = []
 }
 
@@ -57,6 +71,14 @@ export class DataObjectSupplyGetListV1ResponseMPayload {
  * @class ValidationObjectSupplyGetListV1ResponseMPayload
  */
 export class ValidationObjectSupplyGetListV1ResponseMPayload {
+   iRowReturned = {
+      type: 'integer',
+      required: true
+   }
+   iRowFiltered = {
+      type: 'integer',
+      required: true
+   }
    a_objSupply = {
       type: 'array',
       required: true

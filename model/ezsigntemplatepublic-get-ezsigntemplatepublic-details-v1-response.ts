@@ -35,6 +35,18 @@ import type { EzsigntemplatepublicGetEzsigntemplatepublicDetailsV1ResponseMPaylo
 export interface EzsigntemplatepublicGetEzsigntemplatepublicDetailsV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof EzsigntemplatepublicGetEzsigntemplatepublicDetailsV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof EzsigntemplatepublicGetEzsigntemplatepublicDetailsV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {EzsigntemplatepublicGetEzsigntemplatepublicDetailsV1ResponseMPayload}
      * @memberof EzsigntemplatepublicGetEzsigntemplatepublicDetailsV1Response
      */
@@ -47,7 +59,15 @@ export interface EzsigntemplatepublicGetEzsigntemplatepublicDetailsV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectEzsigntemplatepublicGetEzsigntemplatepublicDetailsV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsigntemplatepublicGetEzsigntemplatepublicDetailsV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectEzsigntemplatepublicGetEzsigntemplatepublicDetailsV1Res
  * @class DataObjectEzsigntemplatepublicGetEzsigntemplatepublicDetailsV1Response
  */
 export class DataObjectEzsigntemplatepublicGetEzsigntemplatepublicDetailsV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsigntemplatepublicGetEzsigntemplatepublicDetailsV1ResponseMPayload = new DataObjectEzsigntemplatepublicGetEzsigntemplatepublicDetailsV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectEzsigntemplatepublicGetEzsigntemplatepublicDetailsV1Respo
  * @class ValidationObjectEzsigntemplatepublicGetEzsigntemplatepublicDetailsV1Response
  */
 export class ValidationObjectEzsigntemplatepublicGetEzsigntemplatepublicDetailsV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsigntemplatepublicGetEzsigntemplatepublicDetailsV1ResponseMPayload()
 } 
 

@@ -30,6 +30,42 @@ import type { FieldEAuthenticationexternalType } from './field-eauthenticationex
  */
 /*export type AuthenticationexternalResponseCompound = AuthenticationexternalResponse;*/
 export interface AuthenticationexternalResponseCompound {
+    /**
+     * The unique ID of the Authenticationexternal
+     * @type {number}
+     * @memberof AuthenticationexternalResponseCompound
+     */
+    pkiAuthenticationexternalID:number 
+    /**
+     * The description of the Authenticationexternal
+     * @type {string}
+     * @memberof AuthenticationexternalResponseCompound
+     */
+    sAuthenticationexternalDescription:string 
+    /**
+     * 
+     * @type {FieldEAuthenticationexternalType}
+     * @memberof AuthenticationexternalResponseCompound
+     */
+    eAuthenticationexternalType:FieldEAuthenticationexternalType 
+    /**
+     * Whether the Authenticationexternal has been connected or not
+     * @type {boolean}
+     * @memberof AuthenticationexternalResponseCompound
+     */
+    bAuthenticationexternalConnected?:boolean 
+    /**
+     * The url to authorize the Authenticationexternal
+     * @type {string}
+     * @memberof AuthenticationexternalResponseCompound
+     */
+    sAuthenticationexternalAuthorizationurl?:string 
+    /**
+     * 
+     * @type {CommonAudit}
+     * @memberof AuthenticationexternalResponseCompound
+     */
+    objAudit:CommonAudit 
 }
 
 
@@ -38,6 +74,10 @@ export interface AuthenticationexternalResponseCompound {
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectCommonAudit } from './'
+// @ts-ignore
+import { ValidationObjectCommonAudit } from './'
 
 /**
  * @export 
@@ -46,6 +86,12 @@ export interface AuthenticationexternalResponseCompound {
  * @class DataObjectAuthenticationexternalResponseCompound
  */
 export class DataObjectAuthenticationexternalResponseCompound {
+    pkiAuthenticationexternalID:number = 0
+    sAuthenticationexternalDescription:string = ''
+    eAuthenticationexternalType:FieldEAuthenticationexternalType = 'Salesforce'
+    bAuthenticationexternalConnected?:boolean = undefined
+    sAuthenticationexternalAuthorizationurl?:string = undefined
+    objAudit:CommonAudit = new DataObjectCommonAudit()
 }
 
 /**
@@ -54,6 +100,32 @@ export class DataObjectAuthenticationexternalResponseCompound {
  * @class ValidationObjectAuthenticationexternalResponseCompound
  */
 export class ValidationObjectAuthenticationexternalResponseCompound {
+   pkiAuthenticationexternalID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 255,
+      required: true
+   }
+   sAuthenticationexternalDescription = {
+      type: 'string',
+      pattern: /^.{0,50}$/,
+      required: true
+   }
+   eAuthenticationexternalType = {
+      type: 'enum',
+      allowableValues: ['Salesforce','SalesforceSandbox'],
+      required: true
+   }
+   bAuthenticationexternalConnected = {
+      type: 'boolean',
+      required: false
+   }
+   sAuthenticationexternalAuthorizationurl = {
+      type: 'string',
+      pattern: /^(https|http):\/\/[^\s\/$.?#].[^\s]*$/,
+      required: false
+   }
+   objAudit = new ValidationObjectCommonAudit()
 } 
 
 

@@ -35,6 +35,18 @@ import type { EzsignfolderGetCommunicationsendersV1ResponseMPayload } from './ez
 export interface EzsignfolderGetCommunicationsendersV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof EzsignfolderGetCommunicationsendersV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof EzsignfolderGetCommunicationsendersV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {EzsignfolderGetCommunicationsendersV1ResponseMPayload}
      * @memberof EzsignfolderGetCommunicationsendersV1Response
      */
@@ -47,7 +59,15 @@ export interface EzsignfolderGetCommunicationsendersV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectEzsignfolderGetCommunicationsendersV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsignfolderGetCommunicationsendersV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectEzsignfolderGetCommunicationsendersV1ResponseMPayload }
  * @class DataObjectEzsignfolderGetCommunicationsendersV1Response
  */
 export class DataObjectEzsignfolderGetCommunicationsendersV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsignfolderGetCommunicationsendersV1ResponseMPayload = new DataObjectEzsignfolderGetCommunicationsendersV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectEzsignfolderGetCommunicationsendersV1Response {
  * @class ValidationObjectEzsignfolderGetCommunicationsendersV1Response
  */
 export class ValidationObjectEzsignfolderGetCommunicationsendersV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsignfolderGetCommunicationsendersV1ResponseMPayload()
 } 
 

@@ -28,6 +28,18 @@ import type { CreditcardclientListElement } from './creditcardclient-list-elemen
 /*export type CreditcardclientGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;*/
 export interface CreditcardclientGetListV1ResponseMPayload {
     /**
+     * The number of rows returned
+     * @type {number}
+     * @memberof CreditcardclientGetListV1ResponseMPayload
+     */
+    iRowReturned:number 
+    /**
+     * The number of rows matching your filters (if any) or the total number of rows
+     * @type {number}
+     * @memberof CreditcardclientGetListV1ResponseMPayload
+     */
+    iRowFiltered:number 
+    /**
      * 
      * @type {Array<CreditcardclientListElement>}
      * @memberof CreditcardclientGetListV1ResponseMPayload
@@ -48,6 +60,8 @@ export interface CreditcardclientGetListV1ResponseMPayload {
  * @class DataObjectCreditcardclientGetListV1ResponseMPayload
  */
 export class DataObjectCreditcardclientGetListV1ResponseMPayload {
+    iRowReturned:number = 0
+    iRowFiltered:number = 0
     a_objCreditcardclient:Array<CreditcardclientListElement> = []
 }
 
@@ -57,6 +71,14 @@ export class DataObjectCreditcardclientGetListV1ResponseMPayload {
  * @class ValidationObjectCreditcardclientGetListV1ResponseMPayload
  */
 export class ValidationObjectCreditcardclientGetListV1ResponseMPayload {
+   iRowReturned = {
+      type: 'integer',
+      required: true
+   }
+   iRowFiltered = {
+      type: 'integer',
+      required: true
+   }
    a_objCreditcardclient = {
       type: 'array',
       required: true

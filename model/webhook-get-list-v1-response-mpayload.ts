@@ -28,6 +28,18 @@ import type { WebhookListElement } from './webhook-list-element';
 /*export type WebhookGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;*/
 export interface WebhookGetListV1ResponseMPayload {
     /**
+     * The number of rows returned
+     * @type {number}
+     * @memberof WebhookGetListV1ResponseMPayload
+     */
+    iRowReturned:number 
+    /**
+     * The number of rows matching your filters (if any) or the total number of rows
+     * @type {number}
+     * @memberof WebhookGetListV1ResponseMPayload
+     */
+    iRowFiltered:number 
+    /**
      * 
      * @type {Array<WebhookListElement>}
      * @memberof WebhookGetListV1ResponseMPayload
@@ -48,6 +60,8 @@ export interface WebhookGetListV1ResponseMPayload {
  * @class DataObjectWebhookGetListV1ResponseMPayload
  */
 export class DataObjectWebhookGetListV1ResponseMPayload {
+    iRowReturned:number = 0
+    iRowFiltered:number = 0
     a_objWebhook:Array<WebhookListElement> = []
 }
 
@@ -57,6 +71,14 @@ export class DataObjectWebhookGetListV1ResponseMPayload {
  * @class ValidationObjectWebhookGetListV1ResponseMPayload
  */
 export class ValidationObjectWebhookGetListV1ResponseMPayload {
+   iRowReturned = {
+      type: 'integer',
+      required: true
+   }
+   iRowFiltered = {
+      type: 'integer',
+      required: true
+   }
    a_objWebhook = {
       type: 'array',
       required: true

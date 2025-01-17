@@ -35,6 +35,18 @@ import type { OtherincomeGetCommunicationsendersV1ResponseMPayload } from './oth
 export interface OtherincomeGetCommunicationsendersV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof OtherincomeGetCommunicationsendersV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof OtherincomeGetCommunicationsendersV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {OtherincomeGetCommunicationsendersV1ResponseMPayload}
      * @memberof OtherincomeGetCommunicationsendersV1Response
      */
@@ -47,7 +59,15 @@ export interface OtherincomeGetCommunicationsendersV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectOtherincomeGetCommunicationsendersV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectOtherincomeGetCommunicationsendersV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectOtherincomeGetCommunicationsendersV1ResponseMPayload } 
  * @class DataObjectOtherincomeGetCommunicationsendersV1Response
  */
 export class DataObjectOtherincomeGetCommunicationsendersV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:OtherincomeGetCommunicationsendersV1ResponseMPayload = new DataObjectOtherincomeGetCommunicationsendersV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectOtherincomeGetCommunicationsendersV1Response {
  * @class ValidationObjectOtherincomeGetCommunicationsendersV1Response
  */
 export class ValidationObjectOtherincomeGetCommunicationsendersV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectOtherincomeGetCommunicationsendersV1ResponseMPayload()
 } 
 

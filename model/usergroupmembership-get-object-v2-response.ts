@@ -35,6 +35,18 @@ import type { UsergroupmembershipGetObjectV2ResponseMPayload } from './usergroup
 export interface UsergroupmembershipGetObjectV2Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof UsergroupmembershipGetObjectV2Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof UsergroupmembershipGetObjectV2Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {UsergroupmembershipGetObjectV2ResponseMPayload}
      * @memberof UsergroupmembershipGetObjectV2Response
      */
@@ -47,7 +59,15 @@ export interface UsergroupmembershipGetObjectV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectUsergroupmembershipGetObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectUsergroupmembershipGetObjectV2ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectUsergroupmembershipGetObjectV2ResponseMPayload } from '
  * @class DataObjectUsergroupmembershipGetObjectV2Response
  */
 export class DataObjectUsergroupmembershipGetObjectV2Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:UsergroupmembershipGetObjectV2ResponseMPayload = new DataObjectUsergroupmembershipGetObjectV2ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectUsergroupmembershipGetObjectV2Response {
  * @class ValidationObjectUsergroupmembershipGetObjectV2Response
  */
 export class ValidationObjectUsergroupmembershipGetObjectV2Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectUsergroupmembershipGetObjectV2ResponseMPayload()
 } 
 

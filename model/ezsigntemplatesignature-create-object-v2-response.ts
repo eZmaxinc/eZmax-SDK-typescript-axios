@@ -35,6 +35,18 @@ import type { EzsigntemplatesignatureCreateObjectV2ResponseMPayload } from './ez
 export interface EzsigntemplatesignatureCreateObjectV2Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof EzsigntemplatesignatureCreateObjectV2Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof EzsigntemplatesignatureCreateObjectV2Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {EzsigntemplatesignatureCreateObjectV2ResponseMPayload}
      * @memberof EzsigntemplatesignatureCreateObjectV2Response
      */
@@ -47,7 +59,15 @@ export interface EzsigntemplatesignatureCreateObjectV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectEzsigntemplatesignatureCreateObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsigntemplatesignatureCreateObjectV2ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectEzsigntemplatesignatureCreateObjectV2ResponseMPayload }
  * @class DataObjectEzsigntemplatesignatureCreateObjectV2Response
  */
 export class DataObjectEzsigntemplatesignatureCreateObjectV2Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsigntemplatesignatureCreateObjectV2ResponseMPayload = new DataObjectEzsigntemplatesignatureCreateObjectV2ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectEzsigntemplatesignatureCreateObjectV2Response {
  * @class ValidationObjectEzsigntemplatesignatureCreateObjectV2Response
  */
 export class ValidationObjectEzsigntemplatesignatureCreateObjectV2Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsigntemplatesignatureCreateObjectV2ResponseMPayload()
 } 
 

@@ -35,6 +35,18 @@ import type { PhonetypeGetAutocompleteV2ResponseMPayload } from './phonetype-get
 export interface PhonetypeGetAutocompleteV2Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof PhonetypeGetAutocompleteV2Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof PhonetypeGetAutocompleteV2Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {PhonetypeGetAutocompleteV2ResponseMPayload}
      * @memberof PhonetypeGetAutocompleteV2Response
      */
@@ -47,7 +59,15 @@ export interface PhonetypeGetAutocompleteV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectPhonetypeGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectPhonetypeGetAutocompleteV2ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectPhonetypeGetAutocompleteV2ResponseMPayload } from './'
  * @class DataObjectPhonetypeGetAutocompleteV2Response
  */
 export class DataObjectPhonetypeGetAutocompleteV2Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:PhonetypeGetAutocompleteV2ResponseMPayload = new DataObjectPhonetypeGetAutocompleteV2ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectPhonetypeGetAutocompleteV2Response {
  * @class ValidationObjectPhonetypeGetAutocompleteV2Response
  */
 export class ValidationObjectPhonetypeGetAutocompleteV2Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectPhonetypeGetAutocompleteV2ResponseMPayload()
 } 
 

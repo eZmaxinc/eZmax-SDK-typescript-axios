@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AddressResponse } from './address-response';
+import type { AddressResponseCompound } from './address-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { ContactinformationsResponse } from './contactinformations-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EmailResponse } from './email-response';
+import type { EmailResponseCompound } from './email-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { FieldEContactinformationsType } from './field-econtactinformations-type';
@@ -30,7 +30,7 @@ import type { FieldEContactinformationsType } from './field-econtactinformations
 import type { PhoneResponseCompound } from './phone-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { WebsiteResponse } from './website-response';
+import type { WebsiteResponseCompound } from './website-response-compound';
 
 /**
  * @type ContactinformationsResponseCompound
@@ -39,6 +39,72 @@ import type { WebsiteResponse } from './website-response';
  */
 /*export type ContactinformationsResponseCompound = ContactinformationsResponse;*/
 export interface ContactinformationsResponseCompound {
+    /**
+     * The unique ID of the Contactinformations
+     * @type {number}
+     * @memberof ContactinformationsResponseCompound
+     */
+    pkiContactinformationsID:number 
+    /**
+     * The unique ID of the Address
+     * @type {number}
+     * @memberof ContactinformationsResponseCompound
+     */
+    fkiAddressIDDefault?:number 
+    /**
+     * The unique ID of the Phone.
+     * @type {number}
+     * @memberof ContactinformationsResponseCompound
+     */
+    fkiPhoneIDDefault?:number 
+    /**
+     * The unique ID of the Email
+     * @type {number}
+     * @memberof ContactinformationsResponseCompound
+     */
+    fkiEmailIDDefault?:number 
+    /**
+     * The unique ID of the Website Default
+     * @type {number}
+     * @memberof ContactinformationsResponseCompound
+     */
+    fkiWebsiteIDDefault?:number 
+    /**
+     * 
+     * @type {FieldEContactinformationsType}
+     * @memberof ContactinformationsResponseCompound
+     */
+    eContactinformationsType:FieldEContactinformationsType 
+    /**
+     * The url of the Contactinformations
+     * @type {string}
+     * @memberof ContactinformationsResponseCompound
+     */
+    sContactinformationsUrl?:string 
+    /**
+     * 
+     * @type {AddressResponseCompound}
+     * @memberof ContactinformationsResponseCompound
+     */
+    objAddressDefault?:AddressResponseCompound 
+    /**
+     * 
+     * @type {PhoneResponseCompound}
+     * @memberof ContactinformationsResponseCompound
+     */
+    objPhoneDefault?:PhoneResponseCompound 
+    /**
+     * 
+     * @type {EmailResponseCompound}
+     * @memberof ContactinformationsResponseCompound
+     */
+    objEmailDefault?:EmailResponseCompound 
+    /**
+     * 
+     * @type {WebsiteResponseCompound}
+     * @memberof ContactinformationsResponseCompound
+     */
+    objWebsiteDefault?:WebsiteResponseCompound 
     /**
      * 
      * @type {Array<AddressResponseCompound>}
@@ -71,6 +137,22 @@ export interface ContactinformationsResponseCompound {
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectAddressResponseCompound } from './'
+// @ts-ignore
+import { DataObjectPhoneResponseCompound } from './'
+// @ts-ignore
+import { DataObjectEmailResponseCompound } from './'
+// @ts-ignore
+import { DataObjectWebsiteResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectAddressResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectPhoneResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectEmailResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectWebsiteResponseCompound } from './'
 
 /**
  * @export 
@@ -79,6 +161,17 @@ export interface ContactinformationsResponseCompound {
  * @class DataObjectContactinformationsResponseCompound
  */
 export class DataObjectContactinformationsResponseCompound {
+    pkiContactinformationsID:number = 0
+    fkiAddressIDDefault?:number = undefined
+    fkiPhoneIDDefault?:number = undefined
+    fkiEmailIDDefault?:number = undefined
+    fkiWebsiteIDDefault?:number = undefined
+    eContactinformationsType:FieldEContactinformationsType = 'BankAccount'
+    sContactinformationsUrl?:string = undefined
+    objAddressDefault?:AddressResponseCompound = undefined
+    objPhoneDefault?:PhoneResponseCompound = undefined
+    objEmailDefault?:EmailResponseCompound = undefined
+    objWebsiteDefault?:WebsiteResponseCompound = undefined
     a_objAddress:Array<AddressResponseCompound> = []
     a_objPhone:Array<PhoneResponseCompound> = []
     a_objEmail:Array<EmailResponseCompound> = []
@@ -91,6 +184,48 @@ export class DataObjectContactinformationsResponseCompound {
  * @class ValidationObjectContactinformationsResponseCompound
  */
 export class ValidationObjectContactinformationsResponseCompound {
+   pkiContactinformationsID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 16777215,
+      required: true
+   }
+   fkiAddressIDDefault = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiPhoneIDDefault = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiEmailIDDefault = {
+      type: 'integer',
+      minimum: 1,
+      maximum: 16777215,
+      required: false
+   }
+   fkiWebsiteIDDefault = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 16777215,
+      required: false
+   }
+   eContactinformationsType = {
+      type: 'enum',
+      allowableValues: ['BankAccount','ContactObject','CreditCard','Customer','ExternalBroker','ExternalBrokerFirm','EzcomCompany','FinancialInstitution','FranchiseCompany','FranchiseOffice','Supplier'],
+      required: true
+   }
+   sContactinformationsUrl = {
+      type: 'string',
+      pattern: /^.{0,255}$/,
+      required: false
+   }
+   objAddressDefault = new ValidationObjectAddressResponseCompound()
+   objPhoneDefault = new ValidationObjectPhoneResponseCompound()
+   objEmailDefault = new ValidationObjectEmailResponseCompound()
+   objWebsiteDefault = new ValidationObjectWebsiteResponseCompound()
    a_objAddress = {
       type: 'array',
       required: true

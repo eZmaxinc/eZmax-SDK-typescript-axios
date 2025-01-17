@@ -35,6 +35,18 @@ import type { OtherincomeGetCommunicationCountV1ResponseMPayload } from './other
 export interface OtherincomeGetCommunicationCountV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof OtherincomeGetCommunicationCountV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof OtherincomeGetCommunicationCountV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {OtherincomeGetCommunicationCountV1ResponseMPayload}
      * @memberof OtherincomeGetCommunicationCountV1Response
      */
@@ -47,7 +59,15 @@ export interface OtherincomeGetCommunicationCountV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectOtherincomeGetCommunicationCountV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectOtherincomeGetCommunicationCountV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectOtherincomeGetCommunicationCountV1ResponseMPayload } fr
  * @class DataObjectOtherincomeGetCommunicationCountV1Response
  */
 export class DataObjectOtherincomeGetCommunicationCountV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:OtherincomeGetCommunicationCountV1ResponseMPayload = new DataObjectOtherincomeGetCommunicationCountV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectOtherincomeGetCommunicationCountV1Response {
  * @class ValidationObjectOtherincomeGetCommunicationCountV1Response
  */
 export class ValidationObjectOtherincomeGetCommunicationCountV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectOtherincomeGetCommunicationCountV1ResponseMPayload()
 } 
 

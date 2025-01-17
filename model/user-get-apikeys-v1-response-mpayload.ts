@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ApikeyResponse } from './apikey-response';
+import type { ApikeyResponseCompound } from './apikey-response-compound';
 
 /**
  * Response for GET /1/object/user/{pkiUserID}/getApikeys

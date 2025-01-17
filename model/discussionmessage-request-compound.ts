@@ -24,6 +24,30 @@ import type { DiscussionmessageRequest } from './discussionmessage-request';
  */
 /*export type DiscussionmessageRequestCompound = DiscussionmessageRequest;*/
 export interface DiscussionmessageRequestCompound {
+    /**
+     * The unique ID of the Discussionmessage
+     * @type {number}
+     * @memberof DiscussionmessageRequestCompound
+     */
+    pkiDiscussionmessageID?:number 
+    /**
+     * The unique ID of the Discussion
+     * @type {number}
+     * @memberof DiscussionmessageRequestCompound
+     */
+    fkiDiscussionID:number 
+    /**
+     * The unique ID of the Discussionmembership
+     * @type {number}
+     * @memberof DiscussionmessageRequestCompound
+     */
+    fkiDiscussionmembershipIDActionrequired?:number 
+    /**
+     * The content of the Discussionmessage
+     * @type {string}
+     * @memberof DiscussionmessageRequestCompound
+     */
+    tDiscussionmessageContent:string 
 }
 
 
@@ -39,6 +63,10 @@ export interface DiscussionmessageRequestCompound {
  * @class DataObjectDiscussionmessageRequestCompound
  */
 export class DataObjectDiscussionmessageRequestCompound {
+    pkiDiscussionmessageID?:number = undefined
+    fkiDiscussionID:number = 0
+    fkiDiscussionmembershipIDActionrequired?:number = undefined
+    tDiscussionmessageContent:string = ''
 }
 
 /**
@@ -47,6 +75,29 @@ export class DataObjectDiscussionmessageRequestCompound {
  * @class ValidationObjectDiscussionmessageRequestCompound
  */
 export class ValidationObjectDiscussionmessageRequestCompound {
+   pkiDiscussionmessageID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 16777215,
+      required: false
+   }
+   fkiDiscussionID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 16777215,
+      required: true
+   }
+   fkiDiscussionmembershipIDActionrequired = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 16777215,
+      required: false
+   }
+   tDiscussionmessageContent = {
+      type: 'string',
+      pattern: /^.{0,65535}$/,
+      required: true
+   }
 } 
 
 

@@ -35,6 +35,18 @@ import type { TranqcontractGetCommunicationCountV1ResponseMPayload } from './tra
 export interface TranqcontractGetCommunicationCountV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof TranqcontractGetCommunicationCountV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof TranqcontractGetCommunicationCountV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {TranqcontractGetCommunicationCountV1ResponseMPayload}
      * @memberof TranqcontractGetCommunicationCountV1Response
      */
@@ -47,7 +59,15 @@ export interface TranqcontractGetCommunicationCountV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectTranqcontractGetCommunicationCountV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectTranqcontractGetCommunicationCountV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectTranqcontractGetCommunicationCountV1ResponseMPayload } 
  * @class DataObjectTranqcontractGetCommunicationCountV1Response
  */
 export class DataObjectTranqcontractGetCommunicationCountV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:TranqcontractGetCommunicationCountV1ResponseMPayload = new DataObjectTranqcontractGetCommunicationCountV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectTranqcontractGetCommunicationCountV1Response {
  * @class ValidationObjectTranqcontractGetCommunicationCountV1Response
  */
 export class ValidationObjectTranqcontractGetCommunicationCountV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectTranqcontractGetCommunicationCountV1ResponseMPayload()
 } 
 

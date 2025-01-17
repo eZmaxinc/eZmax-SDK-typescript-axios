@@ -35,6 +35,18 @@ import type { VariableexpenseGetListV1ResponseMPayload } from './variableexpense
 export interface VariableexpenseGetListV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayloadGetList}
+     * @memberof VariableexpenseGetListV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayloadGetList 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof VariableexpenseGetListV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {VariableexpenseGetListV1ResponseMPayload}
      * @memberof VariableexpenseGetListV1Response
      */
@@ -47,7 +59,15 @@ export interface VariableexpenseGetListV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayloadGetList } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectVariableexpenseGetListV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayloadGetList } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectVariableexpenseGetListV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectVariableexpenseGetListV1ResponseMPayload } from './'
  * @class DataObjectVariableexpenseGetListV1Response
  */
 export class DataObjectVariableexpenseGetListV1Response {
+    objDebugPayload:CommonResponseObjDebugPayloadGetList = new DataObjectCommonResponseObjDebugPayloadGetList()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:VariableexpenseGetListV1ResponseMPayload = new DataObjectVariableexpenseGetListV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectVariableexpenseGetListV1Response {
  * @class ValidationObjectVariableexpenseGetListV1Response
  */
 export class ValidationObjectVariableexpenseGetListV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayloadGetList()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectVariableexpenseGetListV1ResponseMPayload()
 } 
 

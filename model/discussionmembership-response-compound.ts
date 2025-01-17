@@ -24,6 +24,48 @@ import type { DiscussionmembershipResponse } from './discussionmembership-respon
  */
 /*export type DiscussionmembershipResponseCompound = DiscussionmembershipResponse;*/
 export interface DiscussionmembershipResponseCompound {
+    /**
+     * The unique ID of the Discussionmembership
+     * @type {number}
+     * @memberof DiscussionmembershipResponseCompound
+     */
+    pkiDiscussionmembershipID:number 
+    /**
+     * The unique ID of the Discussion
+     * @type {number}
+     * @memberof DiscussionmembershipResponseCompound
+     */
+    fkiDiscussionID:number 
+    /**
+     * The unique ID of the User
+     * @type {number}
+     * @memberof DiscussionmembershipResponseCompound
+     */
+    fkiUserID?:number 
+    /**
+     * The unique ID of the Usergroup
+     * @type {number}
+     * @memberof DiscussionmembershipResponseCompound
+     */
+    fkiUsergroupID?:number 
+    /**
+     * The unique ID of the Modulesection
+     * @type {number}
+     * @memberof DiscussionmembershipResponseCompound
+     */
+    fkiModulesectionID?:number 
+    /**
+     * The Description containing the detail of who the Discussionmembership refers to
+     * @type {string}
+     * @memberof DiscussionmembershipResponseCompound
+     */
+    sDiscussionmembershipDescription:string 
+    /**
+     * The joined date of the Discussionmembership
+     * @type {string}
+     * @memberof DiscussionmembershipResponseCompound
+     */
+    dtDiscussionmembershipJoined:string 
 }
 
 
@@ -39,6 +81,13 @@ export interface DiscussionmembershipResponseCompound {
  * @class DataObjectDiscussionmembershipResponseCompound
  */
 export class DataObjectDiscussionmembershipResponseCompound {
+    pkiDiscussionmembershipID:number = 0
+    fkiDiscussionID:number = 0
+    fkiUserID?:number = undefined
+    fkiUsergroupID?:number = undefined
+    fkiModulesectionID?:number = undefined
+    sDiscussionmembershipDescription:string = ''
+    dtDiscussionmembershipJoined:string = ''
 }
 
 /**
@@ -47,6 +96,44 @@ export class DataObjectDiscussionmembershipResponseCompound {
  * @class ValidationObjectDiscussionmembershipResponseCompound
  */
 export class ValidationObjectDiscussionmembershipResponseCompound {
+   pkiDiscussionmembershipID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 16777215,
+      required: true
+   }
+   fkiDiscussionID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 16777215,
+      required: true
+   }
+   fkiUserID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiUsergroupID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 255,
+      required: false
+   }
+   fkiModulesectionID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   sDiscussionmembershipDescription = {
+      type: 'string',
+      pattern: /^.{0,100}$/,
+      required: true
+   }
+   dtDiscussionmembershipJoined = {
+      type: 'string',
+      pattern: /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/,
+      required: true
+   }
 } 
 
 

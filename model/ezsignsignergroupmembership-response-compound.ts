@@ -24,6 +24,36 @@ import type { EzsignsignergroupmembershipResponse } from './ezsignsignergroupmem
  */
 /*export type EzsignsignergroupmembershipResponseCompound = EzsignsignergroupmembershipResponse;*/
 export interface EzsignsignergroupmembershipResponseCompound {
+    /**
+     * The unique ID of the Ezsignsignergroupmembership
+     * @type {number}
+     * @memberof EzsignsignergroupmembershipResponseCompound
+     */
+    pkiEzsignsignergroupmembershipID:number 
+    /**
+     * The unique ID of the Ezsignsignergroup
+     * @type {number}
+     * @memberof EzsignsignergroupmembershipResponseCompound
+     */
+    fkiEzsignsignergroupID:number 
+    /**
+     * The unique ID of the Ezsignsigner
+     * @type {number}
+     * @memberof EzsignsignergroupmembershipResponseCompound
+     */
+    fkiEzsignsignerID?:number 
+    /**
+     * The unique ID of the User
+     * @type {number}
+     * @memberof EzsignsignergroupmembershipResponseCompound
+     */
+    fkiUserID?:number 
+    /**
+     * The unique ID of the Usergroup
+     * @type {number}
+     * @memberof EzsignsignergroupmembershipResponseCompound
+     */
+    fkiUsergroupID?:number 
 }
 
 
@@ -39,6 +69,11 @@ export interface EzsignsignergroupmembershipResponseCompound {
  * @class DataObjectEzsignsignergroupmembershipResponseCompound
  */
 export class DataObjectEzsignsignergroupmembershipResponseCompound {
+    pkiEzsignsignergroupmembershipID:number = 0
+    fkiEzsignsignergroupID:number = 0
+    fkiEzsignsignerID?:number = undefined
+    fkiUserID?:number = undefined
+    fkiUsergroupID?:number = undefined
 }
 
 /**
@@ -47,6 +82,34 @@ export class DataObjectEzsignsignergroupmembershipResponseCompound {
  * @class ValidationObjectEzsignsignergroupmembershipResponseCompound
  */
 export class ValidationObjectEzsignsignergroupmembershipResponseCompound {
+   pkiEzsignsignergroupmembershipID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 16777215,
+      required: true
+   }
+   fkiEzsignsignergroupID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 65535,
+      required: true
+   }
+   fkiEzsignsignerID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiUserID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiUsergroupID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 255,
+      required: false
+   }
 } 
 
 

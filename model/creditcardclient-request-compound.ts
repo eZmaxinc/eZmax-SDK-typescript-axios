@@ -27,6 +27,60 @@ import type { CreditcarddetailRequest } from './creditcarddetail-request';
  */
 /*export type CreditcardclientRequestCompound = CreditcardclientRequest;*/
 export interface CreditcardclientRequestCompound {
+    /**
+     * The unique ID of the Creditcardclient
+     * @type {number}
+     * @memberof CreditcardclientRequestCompound
+     */
+    pkiCreditcardclientID?:number 
+    /**
+     * The creditcard token identifier
+     * @type {string}
+     * @memberof CreditcardclientRequestCompound
+     */
+    fksCreditcardtokenID?:string 
+    /**
+     * Whether if it\'s the creditcardclient is the default one
+     * @type {boolean}
+     * @memberof CreditcardclientRequestCompound
+     */
+    bCreditcardclientrelationIsdefault:boolean 
+    /**
+     * The description of the Creditcardclient
+     * @type {string}
+     * @memberof CreditcardclientRequestCompound
+     */
+    sCreditcardclientDescription:string 
+    /**
+     * Whether if it\'s an allowedagencypayment
+     * @type {boolean}
+     * @memberof CreditcardclientRequestCompound
+     */
+    bCreditcardclientAllowedcompanypayment:boolean 
+    /**
+     * Whether if it\'s an allowedroyallepageprotection
+     * @type {boolean}
+     * @memberof CreditcardclientRequestCompound
+     */
+    bCreditcardclientAllowedezsign:boolean 
+    /**
+     * Whether if it\'s an allowedtranquillit
+     * @type {boolean}
+     * @memberof CreditcardclientRequestCompound
+     */
+    bCreditcardclientAllowedtranquillit:boolean 
+    /**
+     * 
+     * @type {CreditcarddetailRequest}
+     * @memberof CreditcardclientRequestCompound
+     */
+    objCreditcarddetail:CreditcarddetailRequest 
+    /**
+     * The creditcard card CVV
+     * @type {string}
+     * @memberof CreditcardclientRequestCompound
+     */
+    sCreditcardclientCVV:string 
 }
 
 
@@ -34,6 +88,10 @@ export interface CreditcardclientRequestCompound {
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectCreditcarddetailRequest } from './'
+// @ts-ignore
+import { ValidationObjectCreditcarddetailRequest } from './'
 
 /**
  * @export 
@@ -42,6 +100,15 @@ export interface CreditcardclientRequestCompound {
  * @class DataObjectCreditcardclientRequestCompound
  */
 export class DataObjectCreditcardclientRequestCompound {
+    pkiCreditcardclientID?:number = undefined
+    fksCreditcardtokenID?:string = undefined
+    bCreditcardclientrelationIsdefault:boolean = false
+    sCreditcardclientDescription:string = ''
+    bCreditcardclientAllowedcompanypayment:boolean = false
+    bCreditcardclientAllowedezsign:boolean = false
+    bCreditcardclientAllowedtranquillit:boolean = false
+    objCreditcarddetail:CreditcarddetailRequest = new DataObjectCreditcarddetailRequest()
+    sCreditcardclientCVV:string = ''
 }
 
 /**
@@ -50,6 +117,44 @@ export class DataObjectCreditcardclientRequestCompound {
  * @class ValidationObjectCreditcardclientRequestCompound
  */
 export class ValidationObjectCreditcardclientRequestCompound {
+   pkiCreditcardclientID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 65535,
+      required: false
+   }
+   fksCreditcardtokenID = {
+      type: 'string',
+      pattern: /^\{?[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\}?$/,
+      required: false
+   }
+   bCreditcardclientrelationIsdefault = {
+      type: 'boolean',
+      required: true
+   }
+   sCreditcardclientDescription = {
+      type: 'string',
+      pattern: /^.{0,50}$/,
+      required: true
+   }
+   bCreditcardclientAllowedcompanypayment = {
+      type: 'boolean',
+      required: true
+   }
+   bCreditcardclientAllowedezsign = {
+      type: 'boolean',
+      required: true
+   }
+   bCreditcardclientAllowedtranquillit = {
+      type: 'boolean',
+      required: true
+   }
+   objCreditcarddetail = new ValidationObjectCreditcarddetailRequest()
+   sCreditcardclientCVV = {
+      type: 'string',
+      pattern: /^[0-9]{3,4}$/,
+      required: true
+   }
 } 
 
 

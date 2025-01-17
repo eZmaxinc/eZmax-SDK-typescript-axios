@@ -35,6 +35,18 @@ import type { EzdoctemplatedocumentGetListV1ResponseMPayload } from './ezdoctemp
 export interface EzdoctemplatedocumentGetListV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayloadGetList}
+     * @memberof EzdoctemplatedocumentGetListV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayloadGetList 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof EzdoctemplatedocumentGetListV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {EzdoctemplatedocumentGetListV1ResponseMPayload}
      * @memberof EzdoctemplatedocumentGetListV1Response
      */
@@ -47,7 +59,15 @@ export interface EzdoctemplatedocumentGetListV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayloadGetList } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectEzdoctemplatedocumentGetListV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayloadGetList } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzdoctemplatedocumentGetListV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectEzdoctemplatedocumentGetListV1ResponseMPayload } from '
  * @class DataObjectEzdoctemplatedocumentGetListV1Response
  */
 export class DataObjectEzdoctemplatedocumentGetListV1Response {
+    objDebugPayload:CommonResponseObjDebugPayloadGetList = new DataObjectCommonResponseObjDebugPayloadGetList()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzdoctemplatedocumentGetListV1ResponseMPayload = new DataObjectEzdoctemplatedocumentGetListV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectEzdoctemplatedocumentGetListV1Response {
  * @class ValidationObjectEzdoctemplatedocumentGetListV1Response
  */
 export class ValidationObjectEzdoctemplatedocumentGetListV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayloadGetList()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzdoctemplatedocumentGetListV1ResponseMPayload()
 } 
 

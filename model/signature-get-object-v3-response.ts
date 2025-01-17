@@ -35,6 +35,18 @@ import type { SignatureGetObjectV3ResponseMPayload } from './signature-get-objec
 export interface SignatureGetObjectV3Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof SignatureGetObjectV3Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof SignatureGetObjectV3Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {SignatureGetObjectV3ResponseMPayload}
      * @memberof SignatureGetObjectV3Response
      */
@@ -47,7 +59,15 @@ export interface SignatureGetObjectV3Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectSignatureGetObjectV3ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectSignatureGetObjectV3ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectSignatureGetObjectV3ResponseMPayload } from './'
  * @class DataObjectSignatureGetObjectV3Response
  */
 export class DataObjectSignatureGetObjectV3Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:SignatureGetObjectV3ResponseMPayload = new DataObjectSignatureGetObjectV3ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectSignatureGetObjectV3Response {
  * @class ValidationObjectSignatureGetObjectV3Response
  */
 export class ValidationObjectSignatureGetObjectV3Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectSignatureGetObjectV3ResponseMPayload()
 } 
 

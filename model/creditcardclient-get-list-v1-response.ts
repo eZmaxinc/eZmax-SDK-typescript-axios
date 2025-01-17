@@ -35,6 +35,18 @@ import type { CreditcardclientGetListV1ResponseMPayload } from './creditcardclie
 export interface CreditcardclientGetListV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayloadGetList}
+     * @memberof CreditcardclientGetListV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayloadGetList 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof CreditcardclientGetListV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {CreditcardclientGetListV1ResponseMPayload}
      * @memberof CreditcardclientGetListV1Response
      */
@@ -47,7 +59,15 @@ export interface CreditcardclientGetListV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayloadGetList } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectCreditcardclientGetListV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayloadGetList } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectCreditcardclientGetListV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectCreditcardclientGetListV1ResponseMPayload } from './'
  * @class DataObjectCreditcardclientGetListV1Response
  */
 export class DataObjectCreditcardclientGetListV1Response {
+    objDebugPayload:CommonResponseObjDebugPayloadGetList = new DataObjectCommonResponseObjDebugPayloadGetList()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:CreditcardclientGetListV1ResponseMPayload = new DataObjectCreditcardclientGetListV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectCreditcardclientGetListV1Response {
  * @class ValidationObjectCreditcardclientGetListV1Response
  */
 export class ValidationObjectCreditcardclientGetListV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayloadGetList()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectCreditcardclientGetListV1ResponseMPayload()
 } 
 

@@ -24,6 +24,24 @@ import type { WebhookheaderRequest } from './webhookheader-request';
  */
 /*export type WebhookheaderRequestCompound = WebhookheaderRequest;*/
 export interface WebhookheaderRequestCompound {
+    /**
+     * The unique ID of the Webhookheader
+     * @type {number}
+     * @memberof WebhookheaderRequestCompound
+     */
+    pkiWebhookheaderID?:number 
+    /**
+     * The Name of the Webhookheader
+     * @type {string}
+     * @memberof WebhookheaderRequestCompound
+     */
+    sWebhookheaderName:string 
+    /**
+     * The Value of the Webhookheader
+     * @type {string}
+     * @memberof WebhookheaderRequestCompound
+     */
+    sWebhookheaderValue:string 
 }
 
 
@@ -39,6 +57,9 @@ export interface WebhookheaderRequestCompound {
  * @class DataObjectWebhookheaderRequestCompound
  */
 export class DataObjectWebhookheaderRequestCompound {
+    pkiWebhookheaderID?:number = undefined
+    sWebhookheaderName:string = ''
+    sWebhookheaderValue:string = ''
 }
 
 /**
@@ -47,6 +68,20 @@ export class DataObjectWebhookheaderRequestCompound {
  * @class ValidationObjectWebhookheaderRequestCompound
  */
 export class ValidationObjectWebhookheaderRequestCompound {
+   pkiWebhookheaderID = {
+      type: 'integer',
+      required: false
+   }
+   sWebhookheaderName = {
+      type: 'string',
+      pattern: /^(?!(?:e|E)(?:z|Z)(?:m|M)(?:a|A)(?:x|X))(?!(?:h|H)(?:o|O)(?:s|S)(?:t|T)$|(?:u|U)(?:s|S)(?:e|E)(?:r|R)-(?:a|A)(?:g|G)(?:e|E)(?:n|N)(?:t|T)$)(?!\s)[^\s].*$/,
+      required: true
+   }
+   sWebhookheaderValue = {
+      type: 'string',
+      pattern: /^.{1,255}$/,
+      required: true
+   }
 } 
 
 

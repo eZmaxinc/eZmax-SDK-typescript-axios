@@ -37,6 +37,78 @@ import type { WebhookheaderRequestCompound } from './webhookheader-request-compo
 /*export type WebhookRequestCompound = WebhookRequest;*/
 export interface WebhookRequestCompound {
     /**
+     * The unique ID of the Webhook
+     * @type {number}
+     * @memberof WebhookRequestCompound
+     */
+    pkiWebhookID?:number 
+    /**
+     * The unique ID of the Authenticationexternal
+     * @type {number}
+     * @memberof WebhookRequestCompound
+     */
+    fkiAuthenticationexternalID?:number 
+    /**
+     * The unique ID of the Ezsignfoldertype.
+     * @type {number}
+     * @memberof WebhookRequestCompound
+     */
+    fkiEzsignfoldertypeID?:number 
+    /**
+     * The description of the Webhook
+     * @type {string}
+     * @memberof WebhookRequestCompound
+     */
+    sWebhookDescription:string 
+    /**
+     * 
+     * @type {FieldEWebhookModule}
+     * @memberof WebhookRequestCompound
+     */
+    eWebhookModule:FieldEWebhookModule 
+    /**
+     * 
+     * @type {FieldEWebhookEzsignevent}
+     * @memberof WebhookRequestCompound
+     */
+    eWebhookEzsignevent?:FieldEWebhookEzsignevent 
+    /**
+     * 
+     * @type {FieldEWebhookManagementevent}
+     * @memberof WebhookRequestCompound
+     */
+    eWebhookManagementevent?:FieldEWebhookManagementevent 
+    /**
+     * The URL of the Webhook callback
+     * @type {string}
+     * @memberof WebhookRequestCompound
+     */
+    sWebhookUrl:string 
+    /**
+     * The email that will receive the Webhook in case all attempts fail
+     * @type {string}
+     * @memberof WebhookRequestCompound
+     */
+    sWebhookEmailfailed:string 
+    /**
+     * Whether the Webhook is active or not
+     * @type {boolean}
+     * @memberof WebhookRequestCompound
+     */
+    bWebhookIsactive:boolean 
+    /**
+     * Whether the requests will be signed or not
+     * @type {boolean}
+     * @memberof WebhookRequestCompound
+     */
+    bWebhookIssigned?:boolean 
+    /**
+     * Wheter the server\'s SSL certificate should be validated or not. Not recommended to skip for production use
+     * @type {boolean}
+     * @memberof WebhookRequestCompound
+     */
+    bWebhookSkipsslvalidation:boolean 
+    /**
      * 
      * @type {Array<WebhookheaderRequestCompound>}
      * @memberof WebhookRequestCompound
@@ -58,6 +130,18 @@ export interface WebhookRequestCompound {
  * @class DataObjectWebhookRequestCompound
  */
 export class DataObjectWebhookRequestCompound {
+    pkiWebhookID?:number = undefined
+    fkiAuthenticationexternalID?:number = undefined
+    fkiEzsignfoldertypeID?:number = undefined
+    sWebhookDescription:string = ''
+    eWebhookModule:FieldEWebhookModule = 'Ezsign'
+    eWebhookEzsignevent?:FieldEWebhookEzsignevent = undefined
+    eWebhookManagementevent?:FieldEWebhookManagementevent = undefined
+    sWebhookUrl:string = ''
+    sWebhookEmailfailed:string = ''
+    bWebhookIsactive:boolean = false
+    bWebhookIssigned?:boolean = undefined
+    bWebhookSkipsslvalidation:boolean = false
     a_objWebhookheader?:Array<WebhookheaderRequestCompound> = undefined
 }
 
@@ -67,6 +151,62 @@ export class DataObjectWebhookRequestCompound {
  * @class ValidationObjectWebhookRequestCompound
  */
 export class ValidationObjectWebhookRequestCompound {
+   pkiWebhookID = {
+      type: 'integer',
+      required: false
+   }
+   fkiAuthenticationexternalID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 255,
+      required: false
+   }
+   fkiEzsignfoldertypeID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 65535,
+      required: false
+   }
+   sWebhookDescription = {
+      type: 'string',
+      required: true
+   }
+   eWebhookModule = {
+      type: 'enum',
+      allowableValues: ['Ezsign','Management'],
+      required: true
+   }
+   eWebhookEzsignevent = {
+      type: 'enum',
+      allowableValues: ['DocumentCompleted','DocumentFormCompleted','DocumentUnsent','EzsignsignerAcceptclause','EzsignsignerConnect','FolderCompleted','FolderDisposed','FolderSent','FolderUnsent','SignatureSigned'],
+      required: false
+   }
+   eWebhookManagementevent = {
+      type: 'enum',
+      allowableValues: ['UserCreated','UserstagedCreated'],
+      required: false
+   }
+   sWebhookUrl = {
+      type: 'string',
+      pattern: /^(https|http):\/\/[^\s\/$.?#].[^\s]*$/,
+      required: true
+   }
+   sWebhookEmailfailed = {
+      type: 'string',
+      required: true
+   }
+   bWebhookIsactive = {
+      type: 'boolean',
+      required: true
+   }
+   bWebhookIssigned = {
+      type: 'boolean',
+      required: false
+   }
+   bWebhookSkipsslvalidation = {
+      type: 'boolean',
+      required: true
+   }
    a_objWebhookheader = {
       type: 'array',
       required: false

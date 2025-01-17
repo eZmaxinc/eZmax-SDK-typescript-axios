@@ -35,6 +35,18 @@ import type { EzsignfoldersignerassociationCreateEmbeddedUrlV1ResponseMPayload }
 export interface EzsignfoldersignerassociationCreateEmbeddedUrlV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof EzsignfoldersignerassociationCreateEmbeddedUrlV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof EzsignfoldersignerassociationCreateEmbeddedUrlV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {EzsignfoldersignerassociationCreateEmbeddedUrlV1ResponseMPayload}
      * @memberof EzsignfoldersignerassociationCreateEmbeddedUrlV1Response
      */
@@ -47,7 +59,15 @@ export interface EzsignfoldersignerassociationCreateEmbeddedUrlV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectEzsignfoldersignerassociationCreateEmbeddedUrlV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsignfoldersignerassociationCreateEmbeddedUrlV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectEzsignfoldersignerassociationCreateEmbeddedUrlV1Respons
  * @class DataObjectEzsignfoldersignerassociationCreateEmbeddedUrlV1Response
  */
 export class DataObjectEzsignfoldersignerassociationCreateEmbeddedUrlV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsignfoldersignerassociationCreateEmbeddedUrlV1ResponseMPayload = new DataObjectEzsignfoldersignerassociationCreateEmbeddedUrlV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectEzsignfoldersignerassociationCreateEmbeddedUrlV1Response 
  * @class ValidationObjectEzsignfoldersignerassociationCreateEmbeddedUrlV1Response
  */
 export class ValidationObjectEzsignfoldersignerassociationCreateEmbeddedUrlV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsignfoldersignerassociationCreateEmbeddedUrlV1ResponseMPayload()
 } 
 

@@ -35,6 +35,18 @@ import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-
 export interface BrandingGetObjectV3Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof BrandingGetObjectV3Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof BrandingGetObjectV3Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {BrandingGetObjectV3ResponseMPayload}
      * @memberof BrandingGetObjectV3Response
      */
@@ -47,7 +59,15 @@ export interface BrandingGetObjectV3Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectBrandingGetObjectV3ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectBrandingGetObjectV3ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectBrandingGetObjectV3ResponseMPayload } from './'
  * @class DataObjectBrandingGetObjectV3Response
  */
 export class DataObjectBrandingGetObjectV3Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:BrandingGetObjectV3ResponseMPayload = new DataObjectBrandingGetObjectV3ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectBrandingGetObjectV3Response {
  * @class ValidationObjectBrandingGetObjectV3Response
  */
 export class ValidationObjectBrandingGetObjectV3Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectBrandingGetObjectV3ResponseMPayload()
 } 
 

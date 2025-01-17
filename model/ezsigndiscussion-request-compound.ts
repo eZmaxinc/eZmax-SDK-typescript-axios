@@ -27,6 +27,42 @@ import type { EzsigndiscussionRequest } from './ezsigndiscussion-request';
  */
 /*export type EzsigndiscussionRequestCompound = EzsigndiscussionRequest;*/
 export interface EzsigndiscussionRequestCompound {
+    /**
+     * The unique ID of the Ezsigndiscussion
+     * @type {number}
+     * @memberof EzsigndiscussionRequestCompound
+     */
+    pkiEzsigndiscussionID?:number 
+    /**
+     * The unique ID of the Ezsigndocument
+     * @type {number}
+     * @memberof EzsigndiscussionRequestCompound
+     */
+    fkiEzsigndocumentID:number 
+    /**
+     * The page number in the Ezsigndocument for the Ezsigndiscussion
+     * @type {number}
+     * @memberof EzsigndiscussionRequestCompound
+     */
+    iEzsigndiscussionPagenumber:number 
+    /**
+     * The x of the Ezsigndiscussion
+     * @type {number}
+     * @memberof EzsigndiscussionRequestCompound
+     */
+    iEzsigndiscussionX:number 
+    /**
+     * The y of the Ezsigndiscussion
+     * @type {number}
+     * @memberof EzsigndiscussionRequestCompound
+     */
+    iEzsigndiscussionY:number 
+    /**
+     * 
+     * @type {DiscussionRequest}
+     * @memberof EzsigndiscussionRequestCompound
+     */
+    objDiscussion:DiscussionRequest 
 }
 
 
@@ -34,6 +70,10 @@ export interface EzsigndiscussionRequestCompound {
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectDiscussionRequest } from './'
+// @ts-ignore
+import { ValidationObjectDiscussionRequest } from './'
 
 /**
  * @export 
@@ -42,6 +82,12 @@ export interface EzsigndiscussionRequestCompound {
  * @class DataObjectEzsigndiscussionRequestCompound
  */
 export class DataObjectEzsigndiscussionRequestCompound {
+    pkiEzsigndiscussionID?:number = undefined
+    fkiEzsigndocumentID:number = 0
+    iEzsigndiscussionPagenumber:number = 0
+    iEzsigndiscussionX:number = 0
+    iEzsigndiscussionY:number = 0
+    objDiscussion:DiscussionRequest = new DataObjectDiscussionRequest()
 }
 
 /**
@@ -50,6 +96,34 @@ export class DataObjectEzsigndiscussionRequestCompound {
  * @class ValidationObjectEzsigndiscussionRequestCompound
  */
 export class ValidationObjectEzsigndiscussionRequestCompound {
+   pkiEzsigndiscussionID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 16777215,
+      required: false
+   }
+   fkiEzsigndocumentID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   iEzsigndiscussionPagenumber = {
+      type: 'integer',
+      required: true
+   }
+   iEzsigndiscussionX = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 65535,
+      required: true
+   }
+   iEzsigndiscussionY = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 65535,
+      required: true
+   }
+   objDiscussion = new ValidationObjectDiscussionRequest()
 } 
 
 

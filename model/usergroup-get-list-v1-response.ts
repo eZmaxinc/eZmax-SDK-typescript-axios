@@ -35,6 +35,18 @@ import type { UsergroupGetListV1ResponseMPayload } from './usergroup-get-list-v1
 export interface UsergroupGetListV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayloadGetList}
+     * @memberof UsergroupGetListV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayloadGetList 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof UsergroupGetListV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {UsergroupGetListV1ResponseMPayload}
      * @memberof UsergroupGetListV1Response
      */
@@ -47,7 +59,15 @@ export interface UsergroupGetListV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayloadGetList } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectUsergroupGetListV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayloadGetList } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectUsergroupGetListV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectUsergroupGetListV1ResponseMPayload } from './'
  * @class DataObjectUsergroupGetListV1Response
  */
 export class DataObjectUsergroupGetListV1Response {
+    objDebugPayload:CommonResponseObjDebugPayloadGetList = new DataObjectCommonResponseObjDebugPayloadGetList()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:UsergroupGetListV1ResponseMPayload = new DataObjectUsergroupGetListV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectUsergroupGetListV1Response {
  * @class ValidationObjectUsergroupGetListV1Response
  */
 export class ValidationObjectUsergroupGetListV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayloadGetList()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectUsergroupGetListV1ResponseMPayload()
 } 
 

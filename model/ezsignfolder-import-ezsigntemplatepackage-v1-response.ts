@@ -35,6 +35,18 @@ import type { EzsignfolderImportEzsigntemplatepackageV1ResponseMPayload } from '
 export interface EzsignfolderImportEzsigntemplatepackageV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof EzsignfolderImportEzsigntemplatepackageV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof EzsignfolderImportEzsigntemplatepackageV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {EzsignfolderImportEzsigntemplatepackageV1ResponseMPayload}
      * @memberof EzsignfolderImportEzsigntemplatepackageV1Response
      */
@@ -47,7 +59,15 @@ export interface EzsignfolderImportEzsigntemplatepackageV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectEzsignfolderImportEzsigntemplatepackageV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsignfolderImportEzsigntemplatepackageV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectEzsignfolderImportEzsigntemplatepackageV1ResponseMPaylo
  * @class DataObjectEzsignfolderImportEzsigntemplatepackageV1Response
  */
 export class DataObjectEzsignfolderImportEzsigntemplatepackageV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsignfolderImportEzsigntemplatepackageV1ResponseMPayload = new DataObjectEzsignfolderImportEzsigntemplatepackageV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectEzsignfolderImportEzsigntemplatepackageV1Response {
  * @class ValidationObjectEzsignfolderImportEzsigntemplatepackageV1Response
  */
 export class ValidationObjectEzsignfolderImportEzsigntemplatepackageV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsignfolderImportEzsigntemplatepackageV1ResponseMPayload()
 } 
 

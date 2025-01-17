@@ -27,6 +27,24 @@ import type { EzsignuserRequest } from './ezsignuser-request';
  */
 /*export type EzsignuserRequestCompound = EzsignuserRequest;*/
 export interface EzsignuserRequestCompound {
+    /**
+     * The unique ID of the Ezsignuser
+     * @type {number}
+     * @memberof EzsignuserRequestCompound
+     */
+    pkiEzsignuserID?:number 
+    /**
+     * The unique ID of the Contact
+     * @type {number}
+     * @memberof EzsignuserRequestCompound
+     */
+    fkiContactID:number 
+    /**
+     * 
+     * @type {ContactRequestCompoundV2}
+     * @memberof EzsignuserRequestCompound
+     */
+    objContact:ContactRequestCompoundV2 
 }
 
 
@@ -34,6 +52,10 @@ export interface EzsignuserRequestCompound {
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectContactRequestCompoundV2 } from './'
+// @ts-ignore
+import { ValidationObjectContactRequestCompoundV2 } from './'
 
 /**
  * @export 
@@ -42,6 +64,9 @@ export interface EzsignuserRequestCompound {
  * @class DataObjectEzsignuserRequestCompound
  */
 export class DataObjectEzsignuserRequestCompound {
+    pkiEzsignuserID?:number = undefined
+    fkiContactID:number = 0
+    objContact:ContactRequestCompoundV2 = new DataObjectContactRequestCompoundV2()
 }
 
 /**
@@ -50,6 +75,18 @@ export class DataObjectEzsignuserRequestCompound {
  * @class ValidationObjectEzsignuserRequestCompound
  */
 export class ValidationObjectEzsignuserRequestCompound {
+   pkiEzsignuserID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 65535,
+      required: false
+   }
+   fkiContactID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   objContact = new ValidationObjectContactRequestCompoundV2()
 } 
 
 

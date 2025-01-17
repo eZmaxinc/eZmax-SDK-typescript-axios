@@ -61,6 +61,120 @@ import type { FieldEUserEzsignprepaid } from './field-euser-ezsignprepaid';
 /*export type ActivesessionResponseCompound = ActivesessionResponse;*/
 export interface ActivesessionResponseCompound {
     /**
+     * 
+     * @type {FieldEActivesessionUsertype}
+     * @memberof ActivesessionResponseCompound
+     */
+    eActivesessionUsertype:FieldEActivesessionUsertype 
+    /**
+     * 
+     * @type {FieldEActivesessionOrigin}
+     * @memberof ActivesessionResponseCompound
+     */
+    eActivesessionOrigin:FieldEActivesessionOrigin 
+    /**
+     * 
+     * @type {FieldEActivesessionWeekdaystart}
+     * @memberof ActivesessionResponseCompound
+     */
+    eActivesessionWeekdaystart:FieldEActivesessionWeekdaystart 
+    /**
+     * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
+     * @type {number}
+     * @memberof ActivesessionResponseCompound
+     */
+    fkiLanguageID:number 
+    /**
+     * The Name of the Company in the language of the requester
+     * @type {string}
+     * @memberof ActivesessionResponseCompound
+     */
+    sCompanyNameX:string 
+    /**
+     * The Name of the Department in the language of the requester
+     * @type {string}
+     * @memberof ActivesessionResponseCompound
+     */
+    sDepartmentNameX:string 
+    /**
+     * Whether the active session is in debug or not
+     * @type {boolean}
+     * @memberof ActivesessionResponseCompound
+     */
+    bActivesessionDebug:boolean 
+    /**
+     * Whether the active session is superadmin or not
+     * @type {boolean}
+     * @memberof ActivesessionResponseCompound
+     */
+    bActivesessionIssuperadmin:boolean 
+    /**
+     * Can access attachment when we clone a user
+     * @type {boolean}
+     * @memberof ActivesessionResponseCompound
+     */
+    bActivesessionAttachment?:boolean 
+    /**
+     * Can access canafe when we clone a user
+     * @type {boolean}
+     * @memberof ActivesessionResponseCompound
+     */
+    bActivesessionCanafe?:boolean 
+    /**
+     * Can access financial element when we clone a user
+     * @type {boolean}
+     * @memberof ActivesessionResponseCompound
+     */
+    bActivesessionFinancial?:boolean 
+    /**
+     * Can access closed realestate folders when we clone a user
+     * @type {boolean}
+     * @memberof ActivesessionResponseCompound
+     */
+    bActivesessionRealestatecompleted?:boolean 
+    /**
+     * 
+     * @type {FieldEActivesessionEzsign}
+     * @memberof ActivesessionResponseCompound
+     */
+    eActivesessionEzsign?:FieldEActivesessionEzsign 
+    /**
+     * 
+     * @type {FieldEActivesessionEzsignaccess}
+     * @memberof ActivesessionResponseCompound
+     */
+    eActivesessionEzsignaccess:FieldEActivesessionEzsignaccess 
+    /**
+     * 
+     * @type {FieldEActivesessionEzsignprepaid}
+     * @memberof ActivesessionResponseCompound
+     */
+    eActivesessionEzsignprepaid?:FieldEActivesessionEzsignprepaid 
+    /**
+     * 
+     * @type {FieldEActivesessionRealestateinprogress}
+     * @memberof ActivesessionResponseCompound
+     */
+    eActivesessionRealestateinprogress?:FieldEActivesessionRealestateinprogress 
+    /**
+     * The customer code assigned to your account
+     * @type {string}
+     * @memberof ActivesessionResponseCompound
+     */
+    pksCustomerCode:string 
+    /**
+     * The unique ID of the Systemconfigurationtype
+     * @type {number}
+     * @memberof ActivesessionResponseCompound
+     */
+    fkiSystemconfigurationtypeID:number 
+    /**
+     * The unique ID of the Signature
+     * @type {number}
+     * @memberof ActivesessionResponseCompound
+     */
+    fkiSignatureID?:number 
+    /**
      * The unique ID of the Ezsignuser
      * @type {number}
      * @memberof ActivesessionResponseCompound
@@ -160,6 +274,25 @@ import { ValidationObjectActivesessionResponseCompoundApikey } from './'
  * @class DataObjectActivesessionResponseCompound
  */
 export class DataObjectActivesessionResponseCompound {
+    eActivesessionUsertype:FieldEActivesessionUsertype = 'AgentBroker'
+    eActivesessionOrigin:FieldEActivesessionOrigin = 'BuiltIn'
+    eActivesessionWeekdaystart:FieldEActivesessionWeekdaystart = 'Sunday'
+    fkiLanguageID:number = 0
+    sCompanyNameX:string = ''
+    sDepartmentNameX:string = ''
+    bActivesessionDebug:boolean = false
+    bActivesessionIssuperadmin:boolean = false
+    bActivesessionAttachment?:boolean = undefined
+    bActivesessionCanafe?:boolean = undefined
+    bActivesessionFinancial?:boolean = undefined
+    bActivesessionRealestatecompleted?:boolean = undefined
+    eActivesessionEzsign?:FieldEActivesessionEzsign = undefined
+    eActivesessionEzsignaccess:FieldEActivesessionEzsignaccess = 'No'
+    eActivesessionEzsignprepaid?:FieldEActivesessionEzsignprepaid = undefined
+    eActivesessionRealestateinprogress?:FieldEActivesessionRealestateinprogress = undefined
+    pksCustomerCode:string = ''
+    fkiSystemconfigurationtypeID:number = 0
+    fkiSignatureID?:number = undefined
     fkiEzsignuserID?:number = undefined
     bSystemconfigurationEzsignpaidbyoffice?:boolean = undefined
     eSystemconfigurationEzsignofficeplan?:FieldESystemconfigurationEzsignofficeplan = undefined
@@ -180,6 +313,96 @@ export class DataObjectActivesessionResponseCompound {
  * @class ValidationObjectActivesessionResponseCompound
  */
 export class ValidationObjectActivesessionResponseCompound {
+   eActivesessionUsertype = {
+      type: 'enum',
+      allowableValues: ['AgentBroker','Assistant','EzsignSigner','EzsignUser','Normal'],
+      required: true
+   }
+   eActivesessionOrigin = {
+      type: 'enum',
+      allowableValues: ['BuiltIn','External'],
+      required: true
+   }
+   eActivesessionWeekdaystart = {
+      type: 'enum',
+      allowableValues: ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
+      required: true
+   }
+   fkiLanguageID = {
+      type: 'integer',
+      minimum: 1,
+      maximum: 2,
+      required: true
+   }
+   sCompanyNameX = {
+      type: 'string',
+      required: true
+   }
+   sDepartmentNameX = {
+      type: 'string',
+      required: true
+   }
+   bActivesessionDebug = {
+      type: 'boolean',
+      required: true
+   }
+   bActivesessionIssuperadmin = {
+      type: 'boolean',
+      required: true
+   }
+   bActivesessionAttachment = {
+      type: 'boolean',
+      required: false
+   }
+   bActivesessionCanafe = {
+      type: 'boolean',
+      required: false
+   }
+   bActivesessionFinancial = {
+      type: 'boolean',
+      required: false
+   }
+   bActivesessionRealestatecompleted = {
+      type: 'boolean',
+      required: false
+   }
+   eActivesessionEzsign = {
+      type: 'enum',
+      allowableValues: ['No','Read','Modify','Full'],
+      required: false
+   }
+   eActivesessionEzsignaccess = {
+      type: 'enum',
+      allowableValues: ['No','PaidByOffice','PerDocument','Prepaid'],
+      required: true
+   }
+   eActivesessionEzsignprepaid = {
+      type: 'enum',
+      allowableValues: ['No','Basic','Standard','Pro'],
+      required: false
+   }
+   eActivesessionRealestateinprogress = {
+      type: 'enum',
+      allowableValues: ['No','Read','Modify','Create'],
+      required: false
+   }
+   pksCustomerCode = {
+      type: 'string',
+      minLength: 2,
+      maxLength: 6,
+      required: true
+   }
+   fkiSystemconfigurationtypeID = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
+   fkiSignatureID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 16777215,
+      required: false
+   }
    fkiEzsignuserID = {
       type: 'integer',
       minimum: 0,

@@ -22,8 +22,6 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import type { CommonResponse } from '../model';
-// @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
 import type { CommonResponseErrorEzsignformValidation } from '../model';
@@ -31,6 +29,8 @@ import type { CommonResponseErrorEzsignformValidation } from '../model';
 import type { CommonResponseErrorSTemporaryFileUrl } from '../model';
 // @ts-ignore
 import type { EzsigndocumentApplyEzsigntemplateV1Request } from '../model';
+// @ts-ignore
+import type { EzsigndocumentApplyEzsigntemplateV1Response } from '../model';
 // @ts-ignore
 import type { EzsigndocumentApplyEzsigntemplateV2Request } from '../model';
 // @ts-ignore
@@ -58,6 +58,10 @@ import type { EzsigndocumentCreateObjectV3Response } from '../model';
 // @ts-ignore
 import type { EzsigndocumentDeclineToSignV1Request } from '../model';
 // @ts-ignore
+import type { EzsigndocumentDeclineToSignV1Response } from '../model';
+// @ts-ignore
+import type { EzsigndocumentDeleteObjectV1Response } from '../model';
+// @ts-ignore
 import type { EzsigndocumentEditEzsignannotationsV1Request } from '../model';
 // @ts-ignore
 import type { EzsigndocumentEditEzsignannotationsV1Response } from '../model';
@@ -74,9 +78,13 @@ import type { EzsigndocumentEditObjectV1Request } from '../model';
 // @ts-ignore
 import type { EzsigndocumentEditObjectV1Response } from '../model';
 // @ts-ignore
+import type { EzsigndocumentEndPrematurelyV1Response } from '../model';
+// @ts-ignore
 import type { EzsigndocumentExtractTextV1Request } from '../model';
 // @ts-ignore
 import type { EzsigndocumentExtractTextV1Response } from '../model';
+// @ts-ignore
+import type { EzsigndocumentFlattenV1Response } from '../model';
 // @ts-ignore
 import type { EzsigndocumentGetActionableElementsV1Response } from '../model';
 // @ts-ignore
@@ -112,7 +120,13 @@ import type { EzsigndocumentGetWordsPositionsV1Response } from '../model';
 // @ts-ignore
 import type { EzsigndocumentPatchObjectV1Request } from '../model';
 // @ts-ignore
+import type { EzsigndocumentPatchObjectV1Response } from '../model';
+// @ts-ignore
 import type { EzsigndocumentSubmitEzsignformV1Request } from '../model';
+// @ts-ignore
+import type { EzsigndocumentSubmitEzsignformV1Response } from '../model';
+// @ts-ignore
+import type { EzsigndocumentUnsendV1Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -2222,7 +2236,7 @@ export const ObjectEzsigndocumentApiFp = function(configuration?: Configuration)
          * @deprecated
          * @throws {RequiredError}
          */
-        async ezsigndocumentApplyEzsigntemplateV1(pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateV1Request: EzsigndocumentApplyEzsigntemplateV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
+        async ezsigndocumentApplyEzsigntemplateV1(pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateV1Request: EzsigndocumentApplyEzsigntemplateV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentApplyEzsigntemplateV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigndocumentApplyEzsigntemplateV1(pkiEzsigndocumentID, ezsigndocumentApplyEzsigntemplateV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsigndocumentApi.ezsigndocumentApplyEzsigntemplateV1']?.[localVarOperationServerIndex]?.url;
@@ -2319,7 +2333,7 @@ export const ObjectEzsigndocumentApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsigndocumentDeclineToSignV1(pkiEzsigndocumentID: number, ezsigndocumentDeclineToSignV1Request: EzsigndocumentDeclineToSignV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
+        async ezsigndocumentDeclineToSignV1(pkiEzsigndocumentID: number, ezsigndocumentDeclineToSignV1Request: EzsigndocumentDeclineToSignV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentDeclineToSignV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigndocumentDeclineToSignV1(pkiEzsigndocumentID, ezsigndocumentDeclineToSignV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsigndocumentApi.ezsigndocumentDeclineToSignV1']?.[localVarOperationServerIndex]?.url;
@@ -2332,7 +2346,7 @@ export const ObjectEzsigndocumentApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsigndocumentDeleteObjectV1(pkiEzsigndocumentID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
+        async ezsigndocumentDeleteObjectV1(pkiEzsigndocumentID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentDeleteObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigndocumentDeleteObjectV1(pkiEzsigndocumentID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsigndocumentApi.ezsigndocumentDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -2402,7 +2416,7 @@ export const ObjectEzsigndocumentApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsigndocumentEndPrematurelyV1(pkiEzsigndocumentID: number, body: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
+        async ezsigndocumentEndPrematurelyV1(pkiEzsigndocumentID: number, body: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentEndPrematurelyV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigndocumentEndPrematurelyV1(pkiEzsigndocumentID, body, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsigndocumentApi.ezsigndocumentEndPrematurelyV1']?.[localVarOperationServerIndex]?.url;
@@ -2430,7 +2444,7 @@ export const ObjectEzsigndocumentApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsigndocumentFlattenV1(pkiEzsigndocumentID: number, body: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
+        async ezsigndocumentFlattenV1(pkiEzsigndocumentID: number, body: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentFlattenV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigndocumentFlattenV1(pkiEzsigndocumentID, body, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsigndocumentApi.ezsigndocumentFlattenV1']?.[localVarOperationServerIndex]?.url;
@@ -2642,7 +2656,7 @@ export const ObjectEzsigndocumentApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsigndocumentPatchObjectV1(pkiEzsigndocumentID: number, ezsigndocumentPatchObjectV1Request: EzsigndocumentPatchObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
+        async ezsigndocumentPatchObjectV1(pkiEzsigndocumentID: number, ezsigndocumentPatchObjectV1Request: EzsigndocumentPatchObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentPatchObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigndocumentPatchObjectV1(pkiEzsigndocumentID, ezsigndocumentPatchObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsigndocumentApi.ezsigndocumentPatchObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -2656,7 +2670,7 @@ export const ObjectEzsigndocumentApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsigndocumentSubmitEzsignformV1(pkiEzsigndocumentID: number, ezsigndocumentSubmitEzsignformV1Request: EzsigndocumentSubmitEzsignformV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
+        async ezsigndocumentSubmitEzsignformV1(pkiEzsigndocumentID: number, ezsigndocumentSubmitEzsignformV1Request: EzsigndocumentSubmitEzsignformV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentSubmitEzsignformV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigndocumentSubmitEzsignformV1(pkiEzsigndocumentID, ezsigndocumentSubmitEzsignformV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsigndocumentApi.ezsigndocumentSubmitEzsignformV1']?.[localVarOperationServerIndex]?.url;
@@ -2670,7 +2684,7 @@ export const ObjectEzsigndocumentApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsigndocumentUnsendV1(pkiEzsigndocumentID: number, body: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
+        async ezsigndocumentUnsendV1(pkiEzsigndocumentID: number, body: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentUnsendV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigndocumentUnsendV1(pkiEzsigndocumentID, body, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsigndocumentApi.ezsigndocumentUnsendV1']?.[localVarOperationServerIndex]?.url;
@@ -2695,7 +2709,7 @@ export const ObjectEzsigndocumentApiFactory = function (configuration?: Configur
          * @deprecated
          * @throws {RequiredError}
          */
-        ezsigndocumentApplyEzsigntemplateV1(pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateV1Request: EzsigndocumentApplyEzsigntemplateV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
+        ezsigndocumentApplyEzsigntemplateV1(pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateV1Request: EzsigndocumentApplyEzsigntemplateV1Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsigndocumentApplyEzsigntemplateV1Response> {
             return localVarFp.ezsigndocumentApplyEzsigntemplateV1(pkiEzsigndocumentID, ezsigndocumentApplyEzsigntemplateV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -2771,7 +2785,7 @@ export const ObjectEzsigndocumentApiFactory = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigndocumentDeclineToSignV1(pkiEzsigndocumentID: number, ezsigndocumentDeclineToSignV1Request: EzsigndocumentDeclineToSignV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
+        ezsigndocumentDeclineToSignV1(pkiEzsigndocumentID: number, ezsigndocumentDeclineToSignV1Request: EzsigndocumentDeclineToSignV1Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsigndocumentDeclineToSignV1Response> {
             return localVarFp.ezsigndocumentDeclineToSignV1(pkiEzsigndocumentID, ezsigndocumentDeclineToSignV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -2781,7 +2795,7 @@ export const ObjectEzsigndocumentApiFactory = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigndocumentDeleteObjectV1(pkiEzsigndocumentID: number, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
+        ezsigndocumentDeleteObjectV1(pkiEzsigndocumentID: number, options?: RawAxiosRequestConfig): AxiosPromise<EzsigndocumentDeleteObjectV1Response> {
             return localVarFp.ezsigndocumentDeleteObjectV1(pkiEzsigndocumentID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -2836,7 +2850,7 @@ export const ObjectEzsigndocumentApiFactory = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigndocumentEndPrematurelyV1(pkiEzsigndocumentID: number, body: object, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
+        ezsigndocumentEndPrematurelyV1(pkiEzsigndocumentID: number, body: object, options?: RawAxiosRequestConfig): AxiosPromise<EzsigndocumentEndPrematurelyV1Response> {
             return localVarFp.ezsigndocumentEndPrematurelyV1(pkiEzsigndocumentID, body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -2858,7 +2872,7 @@ export const ObjectEzsigndocumentApiFactory = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigndocumentFlattenV1(pkiEzsigndocumentID: number, body: object, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
+        ezsigndocumentFlattenV1(pkiEzsigndocumentID: number, body: object, options?: RawAxiosRequestConfig): AxiosPromise<EzsigndocumentFlattenV1Response> {
             return localVarFp.ezsigndocumentFlattenV1(pkiEzsigndocumentID, body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -3022,7 +3036,7 @@ export const ObjectEzsigndocumentApiFactory = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigndocumentPatchObjectV1(pkiEzsigndocumentID: number, ezsigndocumentPatchObjectV1Request: EzsigndocumentPatchObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
+        ezsigndocumentPatchObjectV1(pkiEzsigndocumentID: number, ezsigndocumentPatchObjectV1Request: EzsigndocumentPatchObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsigndocumentPatchObjectV1Response> {
             return localVarFp.ezsigndocumentPatchObjectV1(pkiEzsigndocumentID, ezsigndocumentPatchObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -3033,7 +3047,7 @@ export const ObjectEzsigndocumentApiFactory = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigndocumentSubmitEzsignformV1(pkiEzsigndocumentID: number, ezsigndocumentSubmitEzsignformV1Request: EzsigndocumentSubmitEzsignformV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
+        ezsigndocumentSubmitEzsignformV1(pkiEzsigndocumentID: number, ezsigndocumentSubmitEzsignformV1Request: EzsigndocumentSubmitEzsignformV1Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsigndocumentSubmitEzsignformV1Response> {
             return localVarFp.ezsigndocumentSubmitEzsignformV1(pkiEzsigndocumentID, ezsigndocumentSubmitEzsignformV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -3044,7 +3058,7 @@ export const ObjectEzsigndocumentApiFactory = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigndocumentUnsendV1(pkiEzsigndocumentID: number, body: object, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
+        ezsigndocumentUnsendV1(pkiEzsigndocumentID: number, body: object, options?: RawAxiosRequestConfig): AxiosPromise<EzsigndocumentUnsendV1Response> {
             return localVarFp.ezsigndocumentUnsendV1(pkiEzsigndocumentID, body, options).then((request) => request(axios, basePath));
         },
     };

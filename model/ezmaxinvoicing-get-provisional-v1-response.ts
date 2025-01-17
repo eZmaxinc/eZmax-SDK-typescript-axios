@@ -24,7 +24,7 @@ import type { CommonResponseObjDebug } from './common-response-obj-debug';
 import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EzmaxinvoicingResponseCompound } from './ezmaxinvoicing-response-compound';
+import type { EzmaxinvoicingGetProvisionalV1ResponseMPayload } from './ezmaxinvoicing-get-provisional-v1-response-mpayload';
 
 /**
  * @type EzmaxinvoicingGetProvisionalV1Response
@@ -34,11 +34,23 @@ import type { EzmaxinvoicingResponseCompound } from './ezmaxinvoicing-response-c
 /*export type EzmaxinvoicingGetProvisionalV1Response = CommonResponse;*/
 export interface EzmaxinvoicingGetProvisionalV1Response {
     /**
-     * Payload for GET /1/object/ezmaxinvoicing/getProvisional
-     * @type {EzmaxinvoicingResponseCompound}
+     * 
+     * @type {CommonResponseObjDebugPayload}
      * @memberof EzmaxinvoicingGetProvisionalV1Response
      */
-    mPayload:EzmaxinvoicingResponseCompound 
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof EzmaxinvoicingGetProvisionalV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
+     * @type {EzmaxinvoicingGetProvisionalV1ResponseMPayload}
+     * @memberof EzmaxinvoicingGetProvisionalV1Response
+     */
+    mPayload:EzmaxinvoicingGetProvisionalV1ResponseMPayload 
 }
 
 
@@ -47,9 +59,17 @@ export interface EzmaxinvoicingGetProvisionalV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectEzmaxinvoicingResponseCompound } from './'
+import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
-import { ValidationObjectEzmaxinvoicingResponseCompound } from './'
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { DataObjectEzmaxinvoicingGetProvisionalV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzmaxinvoicingGetProvisionalV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -58,7 +78,9 @@ import { ValidationObjectEzmaxinvoicingResponseCompound } from './'
  * @class DataObjectEzmaxinvoicingGetProvisionalV1Response
  */
 export class DataObjectEzmaxinvoicingGetProvisionalV1Response {
-    mPayload:EzmaxinvoicingResponseCompound = new DataObjectEzmaxinvoicingResponseCompound()
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
+    mPayload:EzmaxinvoicingGetProvisionalV1ResponseMPayload = new DataObjectEzmaxinvoicingGetProvisionalV1ResponseMPayload()
 }
 
 /**
@@ -67,7 +89,9 @@ export class DataObjectEzmaxinvoicingGetProvisionalV1Response {
  * @class ValidationObjectEzmaxinvoicingGetProvisionalV1Response
  */
 export class ValidationObjectEzmaxinvoicingGetProvisionalV1Response {
-   mPayload = new ValidationObjectEzmaxinvoicingResponseCompound()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectEzmaxinvoicingGetProvisionalV1ResponseMPayload()
 } 
 
 

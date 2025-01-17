@@ -27,6 +27,36 @@ import type { SignatureRequest } from './signature-request';
  */
 /*export type SignatureRequestCompound = SignatureRequest;*/
 export interface SignatureRequestCompound {
+    /**
+     * The unique ID of the Signature
+     * @type {number}
+     * @memberof SignatureRequestCompound
+     */
+    pkiSignatureID?:number 
+    /**
+     * The unique ID of the Font
+     * @type {number}
+     * @memberof SignatureRequestCompound
+     */
+    fkiFontID:number 
+    /**
+     * 
+     * @type {FieldESignaturePreference}
+     * @memberof SignatureRequestCompound
+     */
+    eSignaturePreference:FieldESignaturePreference 
+    /**
+     * The svg of the Signature
+     * @type {string}
+     * @memberof SignatureRequestCompound
+     */
+    tSignatureSvg?:string 
+    /**
+     * The svg of the Initials
+     * @type {string}
+     * @memberof SignatureRequestCompound
+     */
+    tSignatureSvginitials?:string 
 }
 
 
@@ -43,6 +73,11 @@ export interface SignatureRequestCompound {
  * @class DataObjectSignatureRequestCompound
  */
 export class DataObjectSignatureRequestCompound {
+    pkiSignatureID?:number = undefined
+    fkiFontID:number = 0
+    eSignaturePreference:FieldESignaturePreference = 'Text'
+    tSignatureSvg?:string = undefined
+    tSignatureSvginitials?:string = undefined
 }
 
 /**
@@ -51,6 +86,32 @@ export class DataObjectSignatureRequestCompound {
  * @class ValidationObjectSignatureRequestCompound
  */
 export class ValidationObjectSignatureRequestCompound {
+   pkiSignatureID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 16777215,
+      required: false
+   }
+   fkiFontID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   eSignaturePreference = {
+      type: 'enum',
+      allowableValues: ['Text','Handwritten'],
+      required: true
+   }
+   tSignatureSvg = {
+      type: 'string',
+      pattern: /^.{60,65535}$/,
+      required: false
+   }
+   tSignatureSvginitials = {
+      type: 'string',
+      pattern: /^.{60,65535}$/,
+      required: false
+   }
 } 
 
 

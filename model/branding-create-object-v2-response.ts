@@ -35,6 +35,18 @@ import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-
 export interface BrandingCreateObjectV2Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof BrandingCreateObjectV2Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof BrandingCreateObjectV2Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {BrandingCreateObjectV2ResponseMPayload}
      * @memberof BrandingCreateObjectV2Response
      */
@@ -47,7 +59,15 @@ export interface BrandingCreateObjectV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectBrandingCreateObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectBrandingCreateObjectV2ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectBrandingCreateObjectV2ResponseMPayload } from './'
  * @class DataObjectBrandingCreateObjectV2Response
  */
 export class DataObjectBrandingCreateObjectV2Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:BrandingCreateObjectV2ResponseMPayload = new DataObjectBrandingCreateObjectV2ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectBrandingCreateObjectV2Response {
  * @class ValidationObjectBrandingCreateObjectV2Response
  */
 export class ValidationObjectBrandingCreateObjectV2Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectBrandingCreateObjectV2ResponseMPayload()
 } 
 

@@ -31,6 +31,36 @@ import type { NotificationtestResponse } from './notificationtest-response';
 /*export type CustomNotificationtestgetnotificationtestsResponse = NotificationtestResponse;*/
 export interface CustomNotificationtestgetnotificationtestsResponse {
     /**
+     * The unique ID of the Notificationtest
+     * @type {number}
+     * @memberof CustomNotificationtestgetnotificationtestsResponse
+     */
+    pkiNotificationtestID:number 
+    /**
+     * 
+     * @type {MultilingualNotificationtestName}
+     * @memberof CustomNotificationtestgetnotificationtestsResponse
+     */
+    objNotificationtestName:MultilingualNotificationtestName 
+    /**
+     * The unique ID of the Notificationsubsection
+     * @type {number}
+     * @memberof CustomNotificationtestgetnotificationtestsResponse
+     */
+    fkiNotificationsubsectionID:number 
+    /**
+     * The function name of the Notificationtest
+     * @type {string}
+     * @memberof CustomNotificationtestgetnotificationtestsResponse
+     */
+    sNotificationtestFunction:string 
+    /**
+     * The name of the Notificationtest in the language of the requester
+     * @type {string}
+     * @memberof CustomNotificationtestgetnotificationtestsResponse
+     */
+    sNotificationtestNameX:string 
+    /**
      * 
      * @type {FieldENotificationpreferenceStatus}
      * @memberof CustomNotificationtestgetnotificationtestsResponse
@@ -50,6 +80,10 @@ export interface CustomNotificationtestgetnotificationtestsResponse {
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectMultilingualNotificationtestName } from './'
+// @ts-ignore
+import { ValidationObjectMultilingualNotificationtestName } from './'
 
 /**
  * @export 
@@ -58,6 +92,11 @@ export interface CustomNotificationtestgetnotificationtestsResponse {
  * @class DataObjectCustomNotificationtestgetnotificationtestsResponse
  */
 export class DataObjectCustomNotificationtestgetnotificationtestsResponse {
+    pkiNotificationtestID:number = 0
+    objNotificationtestName:MultilingualNotificationtestName = new DataObjectMultilingualNotificationtestName()
+    fkiNotificationsubsectionID:number = 0
+    sNotificationtestFunction:string = ''
+    sNotificationtestNameX:string = ''
     eNotificationpreferenceStatus:FieldENotificationpreferenceStatus = 'Show'
     iNotificationtest:number = 0
 }
@@ -68,6 +107,25 @@ export class DataObjectCustomNotificationtestgetnotificationtestsResponse {
  * @class ValidationObjectCustomNotificationtestgetnotificationtestsResponse
  */
 export class ValidationObjectCustomNotificationtestgetnotificationtestsResponse {
+   pkiNotificationtestID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   objNotificationtestName = new ValidationObjectMultilingualNotificationtestName()
+   fkiNotificationsubsectionID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sNotificationtestFunction = {
+      type: 'string',
+      required: true
+   }
+   sNotificationtestNameX = {
+      type: 'string',
+      required: true
+   }
    eNotificationpreferenceStatus = {
       type: 'enum',
       allowableValues: ['Show','Hide','Pin'],

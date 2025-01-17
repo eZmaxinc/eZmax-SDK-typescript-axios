@@ -35,6 +35,18 @@ import type { DiscussionmessageCreateObjectV1ResponseMPayload } from './discussi
 export interface DiscussionmessageCreateObjectV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof DiscussionmessageCreateObjectV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof DiscussionmessageCreateObjectV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {DiscussionmessageCreateObjectV1ResponseMPayload}
      * @memberof DiscussionmessageCreateObjectV1Response
      */
@@ -47,7 +59,15 @@ export interface DiscussionmessageCreateObjectV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectDiscussionmessageCreateObjectV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectDiscussionmessageCreateObjectV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectDiscussionmessageCreateObjectV1ResponseMPayload } from 
  * @class DataObjectDiscussionmessageCreateObjectV1Response
  */
 export class DataObjectDiscussionmessageCreateObjectV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:DiscussionmessageCreateObjectV1ResponseMPayload = new DataObjectDiscussionmessageCreateObjectV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectDiscussionmessageCreateObjectV1Response {
  * @class ValidationObjectDiscussionmessageCreateObjectV1Response
  */
 export class ValidationObjectDiscussionmessageCreateObjectV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectDiscussionmessageCreateObjectV1ResponseMPayload()
 } 
 

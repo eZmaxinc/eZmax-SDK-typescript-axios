@@ -35,6 +35,18 @@ import type { UserGetUsergroupsV1ResponseMPayload } from './user-get-usergroups-
 export interface UserGetUsergroupsV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof UserGetUsergroupsV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof UserGetUsergroupsV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {UserGetUsergroupsV1ResponseMPayload}
      * @memberof UserGetUsergroupsV1Response
      */
@@ -47,7 +59,15 @@ export interface UserGetUsergroupsV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectUserGetUsergroupsV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectUserGetUsergroupsV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectUserGetUsergroupsV1ResponseMPayload } from './'
  * @class DataObjectUserGetUsergroupsV1Response
  */
 export class DataObjectUserGetUsergroupsV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:UserGetUsergroupsV1ResponseMPayload = new DataObjectUserGetUsergroupsV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectUserGetUsergroupsV1Response {
  * @class ValidationObjectUserGetUsergroupsV1Response
  */
 export class ValidationObjectUserGetUsergroupsV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectUserGetUsergroupsV1ResponseMPayload()
 } 
 

@@ -35,6 +35,18 @@ import type { CommonResponseObjDebugPayloadGetList } from './common-response-obj
 export interface ActivesessionGetListV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayloadGetList}
+     * @memberof ActivesessionGetListV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayloadGetList 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof ActivesessionGetListV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {ActivesessionGetListV1ResponseMPayload}
      * @memberof ActivesessionGetListV1Response
      */
@@ -47,7 +59,15 @@ export interface ActivesessionGetListV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayloadGetList } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectActivesessionGetListV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayloadGetList } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectActivesessionGetListV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectActivesessionGetListV1ResponseMPayload } from './'
  * @class DataObjectActivesessionGetListV1Response
  */
 export class DataObjectActivesessionGetListV1Response {
+    objDebugPayload:CommonResponseObjDebugPayloadGetList = new DataObjectCommonResponseObjDebugPayloadGetList()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:ActivesessionGetListV1ResponseMPayload = new DataObjectActivesessionGetListV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectActivesessionGetListV1Response {
  * @class ValidationObjectActivesessionGetListV1Response
  */
 export class ValidationObjectActivesessionGetListV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayloadGetList()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectActivesessionGetListV1ResponseMPayload()
 } 
 

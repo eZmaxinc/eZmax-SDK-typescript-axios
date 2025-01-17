@@ -35,6 +35,18 @@ import type { EzsignsigningreasonGetObjectV2ResponseMPayload } from './ezsignsig
 export interface EzsignsigningreasonGetObjectV2Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof EzsignsigningreasonGetObjectV2Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof EzsignsigningreasonGetObjectV2Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {EzsignsigningreasonGetObjectV2ResponseMPayload}
      * @memberof EzsignsigningreasonGetObjectV2Response
      */
@@ -47,7 +59,15 @@ export interface EzsignsigningreasonGetObjectV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectEzsignsigningreasonGetObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsignsigningreasonGetObjectV2ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectEzsignsigningreasonGetObjectV2ResponseMPayload } from '
  * @class DataObjectEzsignsigningreasonGetObjectV2Response
  */
 export class DataObjectEzsignsigningreasonGetObjectV2Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsignsigningreasonGetObjectV2ResponseMPayload = new DataObjectEzsignsigningreasonGetObjectV2ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectEzsignsigningreasonGetObjectV2Response {
  * @class ValidationObjectEzsignsigningreasonGetObjectV2Response
  */
 export class ValidationObjectEzsignsigningreasonGetObjectV2Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsignsigningreasonGetObjectV2ResponseMPayload()
 } 
 

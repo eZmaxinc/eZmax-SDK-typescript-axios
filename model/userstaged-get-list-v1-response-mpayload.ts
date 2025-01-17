@@ -28,6 +28,18 @@ import type { UserstagedListElement } from './userstaged-list-element';
 /*export type UserstagedGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;*/
 export interface UserstagedGetListV1ResponseMPayload {
     /**
+     * The number of rows returned
+     * @type {number}
+     * @memberof UserstagedGetListV1ResponseMPayload
+     */
+    iRowReturned:number 
+    /**
+     * The number of rows matching your filters (if any) or the total number of rows
+     * @type {number}
+     * @memberof UserstagedGetListV1ResponseMPayload
+     */
+    iRowFiltered:number 
+    /**
      * 
      * @type {Array<UserstagedListElement>}
      * @memberof UserstagedGetListV1ResponseMPayload
@@ -48,6 +60,8 @@ export interface UserstagedGetListV1ResponseMPayload {
  * @class DataObjectUserstagedGetListV1ResponseMPayload
  */
 export class DataObjectUserstagedGetListV1ResponseMPayload {
+    iRowReturned:number = 0
+    iRowFiltered:number = 0
     a_objUserstaged:Array<UserstagedListElement> = []
 }
 
@@ -57,6 +71,14 @@ export class DataObjectUserstagedGetListV1ResponseMPayload {
  * @class ValidationObjectUserstagedGetListV1ResponseMPayload
  */
 export class ValidationObjectUserstagedGetListV1ResponseMPayload {
+   iRowReturned = {
+      type: 'integer',
+      required: true
+   }
+   iRowFiltered = {
+      type: 'integer',
+      required: true
+   }
    a_objUserstaged = {
       type: 'array',
       required: true

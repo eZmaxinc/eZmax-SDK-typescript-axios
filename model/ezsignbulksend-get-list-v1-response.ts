@@ -35,6 +35,18 @@ import type { EzsignbulksendGetListV1ResponseMPayload } from './ezsignbulksend-g
 export interface EzsignbulksendGetListV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayloadGetList}
+     * @memberof EzsignbulksendGetListV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayloadGetList 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof EzsignbulksendGetListV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {EzsignbulksendGetListV1ResponseMPayload}
      * @memberof EzsignbulksendGetListV1Response
      */
@@ -47,7 +59,15 @@ export interface EzsignbulksendGetListV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayloadGetList } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectEzsignbulksendGetListV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayloadGetList } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsignbulksendGetListV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectEzsignbulksendGetListV1ResponseMPayload } from './'
  * @class DataObjectEzsignbulksendGetListV1Response
  */
 export class DataObjectEzsignbulksendGetListV1Response {
+    objDebugPayload:CommonResponseObjDebugPayloadGetList = new DataObjectCommonResponseObjDebugPayloadGetList()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsignbulksendGetListV1ResponseMPayload = new DataObjectEzsignbulksendGetListV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectEzsignbulksendGetListV1Response {
  * @class ValidationObjectEzsignbulksendGetListV1Response
  */
 export class ValidationObjectEzsignbulksendGetListV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayloadGetList()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsignbulksendGetListV1ResponseMPayload()
 } 
 

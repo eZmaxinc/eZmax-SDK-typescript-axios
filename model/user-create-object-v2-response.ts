@@ -35,6 +35,18 @@ import type { UserCreateObjectV2ResponseMPayload } from './user-create-object-v2
 export interface UserCreateObjectV2Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof UserCreateObjectV2Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof UserCreateObjectV2Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {UserCreateObjectV2ResponseMPayload}
      * @memberof UserCreateObjectV2Response
      */
@@ -47,7 +59,15 @@ export interface UserCreateObjectV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectUserCreateObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectUserCreateObjectV2ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectUserCreateObjectV2ResponseMPayload } from './'
  * @class DataObjectUserCreateObjectV2Response
  */
 export class DataObjectUserCreateObjectV2Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:UserCreateObjectV2ResponseMPayload = new DataObjectUserCreateObjectV2ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectUserCreateObjectV2Response {
  * @class ValidationObjectUserCreateObjectV2Response
  */
 export class ValidationObjectUserCreateObjectV2Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectUserCreateObjectV2ResponseMPayload()
 } 
 

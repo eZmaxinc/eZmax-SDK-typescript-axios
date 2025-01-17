@@ -35,6 +35,18 @@ import type { UsergroupEditUsergroupmembershipsV1ResponseMPayload } from './user
 export interface UsergroupEditUsergroupmembershipsV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof UsergroupEditUsergroupmembershipsV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof UsergroupEditUsergroupmembershipsV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {UsergroupEditUsergroupmembershipsV1ResponseMPayload}
      * @memberof UsergroupEditUsergroupmembershipsV1Response
      */
@@ -47,7 +59,15 @@ export interface UsergroupEditUsergroupmembershipsV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectUsergroupEditUsergroupmembershipsV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectUsergroupEditUsergroupmembershipsV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectUsergroupEditUsergroupmembershipsV1ResponseMPayload } f
  * @class DataObjectUsergroupEditUsergroupmembershipsV1Response
  */
 export class DataObjectUsergroupEditUsergroupmembershipsV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:UsergroupEditUsergroupmembershipsV1ResponseMPayload = new DataObjectUsergroupEditUsergroupmembershipsV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectUsergroupEditUsergroupmembershipsV1Response {
  * @class ValidationObjectUsergroupEditUsergroupmembershipsV1Response
  */
 export class ValidationObjectUsergroupEditUsergroupmembershipsV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectUsergroupEditUsergroupmembershipsV1ResponseMPayload()
 } 
 

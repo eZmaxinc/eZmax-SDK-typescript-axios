@@ -35,6 +35,18 @@ import type { InscriptionGetAttachmentsV1ResponseMPayload } from './inscription-
 export interface InscriptionGetAttachmentsV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof InscriptionGetAttachmentsV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof InscriptionGetAttachmentsV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {InscriptionGetAttachmentsV1ResponseMPayload}
      * @memberof InscriptionGetAttachmentsV1Response
      */
@@ -47,7 +59,15 @@ export interface InscriptionGetAttachmentsV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectInscriptionGetAttachmentsV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectInscriptionGetAttachmentsV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectInscriptionGetAttachmentsV1ResponseMPayload } from './'
  * @class DataObjectInscriptionGetAttachmentsV1Response
  */
 export class DataObjectInscriptionGetAttachmentsV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:InscriptionGetAttachmentsV1ResponseMPayload = new DataObjectInscriptionGetAttachmentsV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectInscriptionGetAttachmentsV1Response {
  * @class ValidationObjectInscriptionGetAttachmentsV1Response
  */
 export class ValidationObjectInscriptionGetAttachmentsV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectInscriptionGetAttachmentsV1ResponseMPayload()
 } 
 

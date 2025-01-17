@@ -28,6 +28,18 @@ import type { EzdoctemplatedocumentListElement } from './ezdoctemplatedocument-l
 /*export type EzdoctemplatedocumentGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;*/
 export interface EzdoctemplatedocumentGetListV1ResponseMPayload {
     /**
+     * The number of rows returned
+     * @type {number}
+     * @memberof EzdoctemplatedocumentGetListV1ResponseMPayload
+     */
+    iRowReturned:number 
+    /**
+     * The number of rows matching your filters (if any) or the total number of rows
+     * @type {number}
+     * @memberof EzdoctemplatedocumentGetListV1ResponseMPayload
+     */
+    iRowFiltered:number 
+    /**
      * 
      * @type {Array<EzdoctemplatedocumentListElement>}
      * @memberof EzdoctemplatedocumentGetListV1ResponseMPayload
@@ -48,6 +60,8 @@ export interface EzdoctemplatedocumentGetListV1ResponseMPayload {
  * @class DataObjectEzdoctemplatedocumentGetListV1ResponseMPayload
  */
 export class DataObjectEzdoctemplatedocumentGetListV1ResponseMPayload {
+    iRowReturned:number = 0
+    iRowFiltered:number = 0
     a_objEzdoctemplatedocument:Array<EzdoctemplatedocumentListElement> = []
 }
 
@@ -57,6 +71,14 @@ export class DataObjectEzdoctemplatedocumentGetListV1ResponseMPayload {
  * @class ValidationObjectEzdoctemplatedocumentGetListV1ResponseMPayload
  */
 export class ValidationObjectEzdoctemplatedocumentGetListV1ResponseMPayload {
+   iRowReturned = {
+      type: 'integer',
+      required: true
+   }
+   iRowFiltered = {
+      type: 'integer',
+      required: true
+   }
    a_objEzdoctemplatedocument = {
       type: 'array',
       required: true

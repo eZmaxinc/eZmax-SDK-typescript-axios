@@ -35,6 +35,18 @@ import type { UserCreateEzsignuserV1ResponseMPayload } from './user-create-ezsig
 export interface UserCreateEzsignuserV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof UserCreateEzsignuserV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof UserCreateEzsignuserV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {UserCreateEzsignuserV1ResponseMPayload}
      * @memberof UserCreateEzsignuserV1Response
      */
@@ -47,7 +59,15 @@ export interface UserCreateEzsignuserV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectUserCreateEzsignuserV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectUserCreateEzsignuserV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectUserCreateEzsignuserV1ResponseMPayload } from './'
  * @class DataObjectUserCreateEzsignuserV1Response
  */
 export class DataObjectUserCreateEzsignuserV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:UserCreateEzsignuserV1ResponseMPayload = new DataObjectUserCreateEzsignuserV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectUserCreateEzsignuserV1Response {
  * @class ValidationObjectUserCreateEzsignuserV1Response
  */
 export class ValidationObjectUserCreateEzsignuserV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectUserCreateEzsignuserV1ResponseMPayload()
 } 
 

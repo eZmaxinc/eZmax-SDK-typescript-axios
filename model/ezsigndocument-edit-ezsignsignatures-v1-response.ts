@@ -35,6 +35,18 @@ import type { EzsigndocumentEditEzsignsignaturesV1ResponseMPayload } from './ezs
 export interface EzsigndocumentEditEzsignsignaturesV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof EzsigndocumentEditEzsignsignaturesV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof EzsigndocumentEditEzsignsignaturesV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {EzsigndocumentEditEzsignsignaturesV1ResponseMPayload}
      * @memberof EzsigndocumentEditEzsignsignaturesV1Response
      */
@@ -47,7 +59,15 @@ export interface EzsigndocumentEditEzsignsignaturesV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectEzsigndocumentEditEzsignsignaturesV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsigndocumentEditEzsignsignaturesV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectEzsigndocumentEditEzsignsignaturesV1ResponseMPayload } 
  * @class DataObjectEzsigndocumentEditEzsignsignaturesV1Response
  */
 export class DataObjectEzsigndocumentEditEzsignsignaturesV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsigndocumentEditEzsignsignaturesV1ResponseMPayload = new DataObjectEzsigndocumentEditEzsignsignaturesV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectEzsigndocumentEditEzsignsignaturesV1Response {
  * @class ValidationObjectEzsigndocumentEditEzsignsignaturesV1Response
  */
 export class ValidationObjectEzsigndocumentEditEzsignsignaturesV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsigndocumentEditEzsignsignaturesV1ResponseMPayload()
 } 
 

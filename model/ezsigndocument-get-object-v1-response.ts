@@ -24,7 +24,7 @@ import type { CommonResponseObjDebug } from './common-response-obj-debug';
 import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EzsigndocumentResponseCompound } from './ezsigndocument-response-compound';
+import type { EzsigndocumentGetObjectV1ResponseMPayload } from './ezsigndocument-get-object-v1-response-mpayload';
 
 /**
  * @type EzsigndocumentGetObjectV1Response
@@ -34,11 +34,23 @@ import type { EzsigndocumentResponseCompound } from './ezsigndocument-response-c
 /*export type EzsigndocumentGetObjectV1Response = CommonResponse;*/
 export interface EzsigndocumentGetObjectV1Response {
     /**
-     * Payload for GET /1/object/ezsigndocument/{pkiEzsigndocumentID}
-     * @type {EzsigndocumentResponseCompound}
+     * 
+     * @type {CommonResponseObjDebugPayload}
      * @memberof EzsigndocumentGetObjectV1Response
      */
-    mPayload:EzsigndocumentResponseCompound 
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof EzsigndocumentGetObjectV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
+     * @type {EzsigndocumentGetObjectV1ResponseMPayload}
+     * @memberof EzsigndocumentGetObjectV1Response
+     */
+    mPayload:EzsigndocumentGetObjectV1ResponseMPayload 
 }
 
 
@@ -47,9 +59,17 @@ export interface EzsigndocumentGetObjectV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectEzsigndocumentResponseCompound } from './'
+import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
-import { ValidationObjectEzsigndocumentResponseCompound } from './'
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { DataObjectEzsigndocumentGetObjectV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsigndocumentGetObjectV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -58,7 +78,9 @@ import { ValidationObjectEzsigndocumentResponseCompound } from './'
  * @class DataObjectEzsigndocumentGetObjectV1Response
  */
 export class DataObjectEzsigndocumentGetObjectV1Response {
-    mPayload:EzsigndocumentResponseCompound = new DataObjectEzsigndocumentResponseCompound()
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
+    mPayload:EzsigndocumentGetObjectV1ResponseMPayload = new DataObjectEzsigndocumentGetObjectV1ResponseMPayload()
 }
 
 /**
@@ -67,7 +89,9 @@ export class DataObjectEzsigndocumentGetObjectV1Response {
  * @class ValidationObjectEzsigndocumentGetObjectV1Response
  */
 export class ValidationObjectEzsigndocumentGetObjectV1Response {
-   mPayload = new ValidationObjectEzsigndocumentResponseCompound()
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectEzsigndocumentGetObjectV1ResponseMPayload()
 } 
 
 

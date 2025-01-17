@@ -33,6 +33,72 @@ import type { VersionhistoryResponse } from './versionhistory-response';
  */
 /*export type VersionhistoryResponseCompound = VersionhistoryResponse;*/
 export interface VersionhistoryResponseCompound {
+    /**
+     * The unique ID of the Versionhistory
+     * @type {number}
+     * @memberof VersionhistoryResponseCompound
+     */
+    pkiVersionhistoryID:number 
+    /**
+     * The unique ID of the Module
+     * @type {number}
+     * @memberof VersionhistoryResponseCompound
+     */
+    fkiModuleID?:number 
+    /**
+     * The unique ID of the Modulesection
+     * @type {number}
+     * @memberof VersionhistoryResponseCompound
+     */
+    fkiModulesectionID?:number 
+    /**
+     * The Name of the Module in the language of the requester
+     * @type {string}
+     * @memberof VersionhistoryResponseCompound
+     */
+    sModuleNameX?:string 
+    /**
+     * The Name of the Modulesection in the language of the requester
+     * @type {string}
+     * @memberof VersionhistoryResponseCompound
+     */
+    sModulesectionNameX?:string 
+    /**
+     * 
+     * @type {FieldEVersionhistoryUsertype}
+     * @memberof VersionhistoryResponseCompound
+     */
+    eVersionhistoryUsertype?:FieldEVersionhistoryUsertype 
+    /**
+     * 
+     * @type {MultilingualVersionhistoryDetail}
+     * @memberof VersionhistoryResponseCompound
+     */
+    objVersionhistoryDetail:MultilingualVersionhistoryDetail 
+    /**
+     * The date  at which the Versionhistory was published or should be published
+     * @type {string}
+     * @memberof VersionhistoryResponseCompound
+     */
+    dtVersionhistoryDate:string 
+    /**
+     * The date  at which the Versionhistory will no longer be visible
+     * @type {string}
+     * @memberof VersionhistoryResponseCompound
+     */
+    dtVersionhistoryDateend?:string 
+    /**
+     * 
+     * @type {FieldEVersionhistoryType}
+     * @memberof VersionhistoryResponseCompound
+     */
+    eVersionhistoryType:FieldEVersionhistoryType 
+    /**
+     * Whether the Versionhistory is published or still a draft
+     * @type {boolean}
+     * @memberof VersionhistoryResponseCompound
+     */
+    bVersionhistoryDraft:boolean 
 }
 
 
@@ -41,6 +107,10 @@ export interface VersionhistoryResponseCompound {
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectMultilingualVersionhistoryDetail } from './'
+// @ts-ignore
+import { ValidationObjectMultilingualVersionhistoryDetail } from './'
 
 /**
  * @export 
@@ -49,6 +119,17 @@ export interface VersionhistoryResponseCompound {
  * @class DataObjectVersionhistoryResponseCompound
  */
 export class DataObjectVersionhistoryResponseCompound {
+    pkiVersionhistoryID:number = 0
+    fkiModuleID?:number = undefined
+    fkiModulesectionID?:number = undefined
+    sModuleNameX?:string = undefined
+    sModulesectionNameX?:string = undefined
+    eVersionhistoryUsertype?:FieldEVersionhistoryUsertype = undefined
+    objVersionhistoryDetail:MultilingualVersionhistoryDetail = new DataObjectMultilingualVersionhistoryDetail()
+    dtVersionhistoryDate:string = ''
+    dtVersionhistoryDateend?:string = undefined
+    eVersionhistoryType:FieldEVersionhistoryType = 'AgentBroker'
+    bVersionhistoryDraft:boolean = false
 }
 
 /**
@@ -57,6 +138,52 @@ export class DataObjectVersionhistoryResponseCompound {
  * @class ValidationObjectVersionhistoryResponseCompound
  */
 export class ValidationObjectVersionhistoryResponseCompound {
+   pkiVersionhistoryID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiModuleID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiModulesectionID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   sModuleNameX = {
+      type: 'string',
+      required: false
+   }
+   sModulesectionNameX = {
+      type: 'string',
+      required: false
+   }
+   eVersionhistoryUsertype = {
+      type: 'enum',
+      allowableValues: ['','AgentBroker','EzsignUser','Normal'],
+      required: false
+   }
+   objVersionhistoryDetail = new ValidationObjectMultilingualVersionhistoryDetail()
+   dtVersionhistoryDate = {
+      type: 'string',
+      required: true
+   }
+   dtVersionhistoryDateend = {
+      type: 'string',
+      required: false
+   }
+   eVersionhistoryType = {
+      type: 'enum',
+      allowableValues: ['AgentBroker','NewFeature','Correction','Modification','ImportantMessage'],
+      required: true
+   }
+   bVersionhistoryDraft = {
+      type: 'boolean',
+      required: true
+   }
 } 
 
 

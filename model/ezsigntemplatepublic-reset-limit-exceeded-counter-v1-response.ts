@@ -35,6 +35,18 @@ import type { EzsigntemplatepublicResetLimitExceededCounterV1ResponseMPayload } 
 export interface EzsigntemplatepublicResetLimitExceededCounterV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof EzsigntemplatepublicResetLimitExceededCounterV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof EzsigntemplatepublicResetLimitExceededCounterV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {EzsigntemplatepublicResetLimitExceededCounterV1ResponseMPayload}
      * @memberof EzsigntemplatepublicResetLimitExceededCounterV1Response
      */
@@ -47,7 +59,15 @@ export interface EzsigntemplatepublicResetLimitExceededCounterV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectEzsigntemplatepublicResetLimitExceededCounterV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsigntemplatepublicResetLimitExceededCounterV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectEzsigntemplatepublicResetLimitExceededCounterV1Response
  * @class DataObjectEzsigntemplatepublicResetLimitExceededCounterV1Response
  */
 export class DataObjectEzsigntemplatepublicResetLimitExceededCounterV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsigntemplatepublicResetLimitExceededCounterV1ResponseMPayload = new DataObjectEzsigntemplatepublicResetLimitExceededCounterV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectEzsigntemplatepublicResetLimitExceededCounterV1Response {
  * @class ValidationObjectEzsigntemplatepublicResetLimitExceededCounterV1Response
  */
 export class ValidationObjectEzsigntemplatepublicResetLimitExceededCounterV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsigntemplatepublicResetLimitExceededCounterV1ResponseMPayload()
 } 
 

@@ -28,6 +28,18 @@ import type { UsergroupexternalListElement } from './usergroupexternal-list-elem
 /*export type UsergroupexternalGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;*/
 export interface UsergroupexternalGetListV1ResponseMPayload {
     /**
+     * The number of rows returned
+     * @type {number}
+     * @memberof UsergroupexternalGetListV1ResponseMPayload
+     */
+    iRowReturned:number 
+    /**
+     * The number of rows matching your filters (if any) or the total number of rows
+     * @type {number}
+     * @memberof UsergroupexternalGetListV1ResponseMPayload
+     */
+    iRowFiltered:number 
+    /**
      * 
      * @type {Array<UsergroupexternalListElement>}
      * @memberof UsergroupexternalGetListV1ResponseMPayload
@@ -48,6 +60,8 @@ export interface UsergroupexternalGetListV1ResponseMPayload {
  * @class DataObjectUsergroupexternalGetListV1ResponseMPayload
  */
 export class DataObjectUsergroupexternalGetListV1ResponseMPayload {
+    iRowReturned:number = 0
+    iRowFiltered:number = 0
     a_objUsergroupexternal:Array<UsergroupexternalListElement> = []
 }
 
@@ -57,6 +71,14 @@ export class DataObjectUsergroupexternalGetListV1ResponseMPayload {
  * @class ValidationObjectUsergroupexternalGetListV1ResponseMPayload
  */
 export class ValidationObjectUsergroupexternalGetListV1ResponseMPayload {
+   iRowReturned = {
+      type: 'integer',
+      required: true
+   }
+   iRowFiltered = {
+      type: 'integer',
+      required: true
+   }
    a_objUsergroupexternal = {
       type: 'array',
       required: true

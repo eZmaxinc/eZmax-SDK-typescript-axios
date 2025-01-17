@@ -35,6 +35,18 @@ import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-
 export interface BillingentityinternalGetAutocompleteV2Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof BillingentityinternalGetAutocompleteV2Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof BillingentityinternalGetAutocompleteV2Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {BillingentityinternalGetAutocompleteV2ResponseMPayload}
      * @memberof BillingentityinternalGetAutocompleteV2Response
      */
@@ -47,7 +59,15 @@ export interface BillingentityinternalGetAutocompleteV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectBillingentityinternalGetAutocompleteV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectBillingentityinternalGetAutocompleteV2ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectBillingentityinternalGetAutocompleteV2ResponseMPayload 
  * @class DataObjectBillingentityinternalGetAutocompleteV2Response
  */
 export class DataObjectBillingentityinternalGetAutocompleteV2Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:BillingentityinternalGetAutocompleteV2ResponseMPayload = new DataObjectBillingentityinternalGetAutocompleteV2ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectBillingentityinternalGetAutocompleteV2Response {
  * @class ValidationObjectBillingentityinternalGetAutocompleteV2Response
  */
 export class ValidationObjectBillingentityinternalGetAutocompleteV2Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectBillingentityinternalGetAutocompleteV2ResponseMPayload()
 } 
 

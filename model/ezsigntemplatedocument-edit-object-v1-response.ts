@@ -35,6 +35,18 @@ import type { CommonResponseWarning } from './common-response-warning';
 export interface EzsigntemplatedocumentEditObjectV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof EzsigntemplatedocumentEditObjectV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof EzsigntemplatedocumentEditObjectV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {Array<CommonResponseWarning>}
      * @memberof EzsigntemplatedocumentEditObjectV1Response
      */
@@ -46,6 +58,14 @@ export interface EzsigntemplatedocumentEditObjectV1Response {
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 
 /**
  * @export 
@@ -54,6 +74,8 @@ export interface EzsigntemplatedocumentEditObjectV1Response {
  * @class DataObjectEzsigntemplatedocumentEditObjectV1Response
  */
 export class DataObjectEzsigntemplatedocumentEditObjectV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     a_objWarning?:Array<CommonResponseWarning> = undefined
 }
 
@@ -63,6 +85,8 @@ export class DataObjectEzsigntemplatedocumentEditObjectV1Response {
  * @class ValidationObjectEzsigntemplatedocumentEditObjectV1Response
  */
 export class ValidationObjectEzsigntemplatedocumentEditObjectV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    a_objWarning = {
       type: 'array',
       required: false

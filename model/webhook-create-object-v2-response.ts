@@ -35,6 +35,18 @@ import type { WebhookCreateObjectV2ResponseMPayload } from './webhook-create-obj
 export interface WebhookCreateObjectV2Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof WebhookCreateObjectV2Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof WebhookCreateObjectV2Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {WebhookCreateObjectV2ResponseMPayload}
      * @memberof WebhookCreateObjectV2Response
      */
@@ -47,7 +59,15 @@ export interface WebhookCreateObjectV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectWebhookCreateObjectV2ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectWebhookCreateObjectV2ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectWebhookCreateObjectV2ResponseMPayload } from './'
  * @class DataObjectWebhookCreateObjectV2Response
  */
 export class DataObjectWebhookCreateObjectV2Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:WebhookCreateObjectV2ResponseMPayload = new DataObjectWebhookCreateObjectV2ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectWebhookCreateObjectV2Response {
  * @class ValidationObjectWebhookCreateObjectV2Response
  */
 export class ValidationObjectWebhookCreateObjectV2Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectWebhookCreateObjectV2ResponseMPayload()
 } 
 

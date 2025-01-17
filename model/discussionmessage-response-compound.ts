@@ -30,6 +30,60 @@ import type { FieldEDiscussionmessageStatus } from './field-ediscussionmessage-s
  */
 /*export type DiscussionmessageResponseCompound = DiscussionmessageResponse;*/
 export interface DiscussionmessageResponseCompound {
+    /**
+     * The unique ID of the Discussionmessage
+     * @type {number}
+     * @memberof DiscussionmessageResponseCompound
+     */
+    pkiDiscussionmessageID:number 
+    /**
+     * The unique ID of the Discussion
+     * @type {number}
+     * @memberof DiscussionmessageResponseCompound
+     */
+    fkiDiscussionID:number 
+    /**
+     * The unique ID of the Discussionmembership
+     * @type {number}
+     * @memberof DiscussionmessageResponseCompound
+     */
+    fkiDiscussionmembershipID?:number 
+    /**
+     * The unique ID of the Discussionmembership
+     * @type {number}
+     * @memberof DiscussionmessageResponseCompound
+     */
+    fkiDiscussionmembershipIDActionrequired?:number 
+    /**
+     * 
+     * @type {FieldEDiscussionmessageStatus}
+     * @memberof DiscussionmessageResponseCompound
+     */
+    eDiscussionmessageStatus:FieldEDiscussionmessageStatus 
+    /**
+     * The content of the Discussionmessage
+     * @type {string}
+     * @memberof DiscussionmessageResponseCompound
+     */
+    tDiscussionmessageContent:string 
+    /**
+     * The name the creator of the Discussionmessage.
+     * @type {string}
+     * @memberof DiscussionmessageResponseCompound
+     */
+    sDiscussionmessageCreatorname:string 
+    /**
+     * The name the Actionrequired of the Discussionmessage.
+     * @type {string}
+     * @memberof DiscussionmessageResponseCompound
+     */
+    sDiscussionmessageActionrequiredname?:string 
+    /**
+     * 
+     * @type {CommonAudit}
+     * @memberof DiscussionmessageResponseCompound
+     */
+    objAudit:CommonAudit 
 }
 
 
@@ -38,6 +92,10 @@ export interface DiscussionmessageResponseCompound {
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectCommonAudit } from './'
+// @ts-ignore
+import { ValidationObjectCommonAudit } from './'
 
 /**
  * @export 
@@ -46,6 +104,15 @@ export interface DiscussionmessageResponseCompound {
  * @class DataObjectDiscussionmessageResponseCompound
  */
 export class DataObjectDiscussionmessageResponseCompound {
+    pkiDiscussionmessageID:number = 0
+    fkiDiscussionID:number = 0
+    fkiDiscussionmembershipID?:number = undefined
+    fkiDiscussionmembershipIDActionrequired?:number = undefined
+    eDiscussionmessageStatus:FieldEDiscussionmessageStatus = 'New'
+    tDiscussionmessageContent:string = ''
+    sDiscussionmessageCreatorname:string = ''
+    sDiscussionmessageActionrequiredname?:string = undefined
+    objAudit:CommonAudit = new DataObjectCommonAudit()
 }
 
 /**
@@ -54,6 +121,51 @@ export class DataObjectDiscussionmessageResponseCompound {
  * @class ValidationObjectDiscussionmessageResponseCompound
  */
 export class ValidationObjectDiscussionmessageResponseCompound {
+   pkiDiscussionmessageID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 16777215,
+      required: true
+   }
+   fkiDiscussionID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 16777215,
+      required: true
+   }
+   fkiDiscussionmembershipID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 16777215,
+      required: false
+   }
+   fkiDiscussionmembershipIDActionrequired = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 16777215,
+      required: false
+   }
+   eDiscussionmessageStatus = {
+      type: 'enum',
+      allowableValues: ['New','Edited','Deleted'],
+      required: true
+   }
+   tDiscussionmessageContent = {
+      type: 'string',
+      pattern: /^.{0,65535}$/,
+      required: true
+   }
+   sDiscussionmessageCreatorname = {
+      type: 'string',
+      pattern: /^.{0,75}$/,
+      required: true
+   }
+   sDiscussionmessageActionrequiredname = {
+      type: 'string',
+      pattern: /^.{0,75}$/,
+      required: false
+   }
+   objAudit = new ValidationObjectCommonAudit()
 } 
 
 

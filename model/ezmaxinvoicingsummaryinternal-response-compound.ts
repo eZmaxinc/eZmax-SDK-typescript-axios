@@ -31,6 +31,42 @@ import type { MultilingualEzmaxinvoicingsummaryinternalDescription } from './mul
 /*export type EzmaxinvoicingsummaryinternalResponseCompound = EzmaxinvoicingsummaryinternalResponse;*/
 export interface EzmaxinvoicingsummaryinternalResponseCompound {
     /**
+     * The unique ID of the Ezmaxinvoicingsummaryinternal
+     * @type {number}
+     * @memberof EzmaxinvoicingsummaryinternalResponseCompound
+     */
+    pkiEzmaxinvoicingsummaryinternalID?:number 
+    /**
+     * 
+     * @type {MultilingualEzmaxinvoicingsummaryinternalDescription}
+     * @memberof EzmaxinvoicingsummaryinternalResponseCompound
+     */
+    objEzmaxinvoicingsummaryinternalDescription:MultilingualEzmaxinvoicingsummaryinternalDescription 
+    /**
+     * The Ezmaxinvoicingsummaryinternal description in the language of the requester
+     * @type {string}
+     * @memberof EzmaxinvoicingsummaryinternalResponseCompound
+     */
+    sEzmaxinvoicingsummaryinternalDescriptionX:string 
+    /**
+     * The unique ID of the Ezmaxinvoicing
+     * @type {number}
+     * @memberof EzmaxinvoicingsummaryinternalResponseCompound
+     */
+    fkiEzmaxinvoicingID?:number 
+    /**
+     * The unique ID of the Billingentityinternal.
+     * @type {number}
+     * @memberof EzmaxinvoicingsummaryinternalResponseCompound
+     */
+    fkiBillingentityinternalID:number 
+    /**
+     * The description of the Billingentityinternal in the language of the requester
+     * @type {string}
+     * @memberof EzmaxinvoicingsummaryinternalResponseCompound
+     */
+    sBillingentityinternalDescriptionX:string 
+    /**
      * 
      * @type {Array<EzmaxinvoicingsummaryinternaldetailResponseCompound>}
      * @memberof EzmaxinvoicingsummaryinternalResponseCompound
@@ -43,6 +79,10 @@ export interface EzmaxinvoicingsummaryinternalResponseCompound {
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectMultilingualEzmaxinvoicingsummaryinternalDescription } from './'
+// @ts-ignore
+import { ValidationObjectMultilingualEzmaxinvoicingsummaryinternalDescription } from './'
 
 /**
  * @export 
@@ -51,6 +91,12 @@ export interface EzmaxinvoicingsummaryinternalResponseCompound {
  * @class DataObjectEzmaxinvoicingsummaryinternalResponseCompound
  */
 export class DataObjectEzmaxinvoicingsummaryinternalResponseCompound {
+    pkiEzmaxinvoicingsummaryinternalID?:number = undefined
+    objEzmaxinvoicingsummaryinternalDescription:MultilingualEzmaxinvoicingsummaryinternalDescription = new DataObjectMultilingualEzmaxinvoicingsummaryinternalDescription()
+    sEzmaxinvoicingsummaryinternalDescriptionX:string = ''
+    fkiEzmaxinvoicingID?:number = undefined
+    fkiBillingentityinternalID:number = 0
+    sBillingentityinternalDescriptionX:string = ''
     a_objEzmaxinvoicingsummaryinternaldetail:Array<EzmaxinvoicingsummaryinternaldetailResponseCompound> = []
 }
 
@@ -60,6 +106,31 @@ export class DataObjectEzmaxinvoicingsummaryinternalResponseCompound {
  * @class ValidationObjectEzmaxinvoicingsummaryinternalResponseCompound
  */
 export class ValidationObjectEzmaxinvoicingsummaryinternalResponseCompound {
+   pkiEzmaxinvoicingsummaryinternalID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   objEzmaxinvoicingsummaryinternalDescription = new ValidationObjectMultilingualEzmaxinvoicingsummaryinternalDescription()
+   sEzmaxinvoicingsummaryinternalDescriptionX = {
+      type: 'string',
+      maxLength: 70,
+      required: true
+   }
+   fkiEzmaxinvoicingID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiBillingentityinternalID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sBillingentityinternalDescriptionX = {
+      type: 'string',
+      required: true
+   }
    a_objEzmaxinvoicingsummaryinternaldetail = {
       type: 'array',
       required: true

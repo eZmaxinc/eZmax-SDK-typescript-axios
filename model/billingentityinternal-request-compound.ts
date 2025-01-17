@@ -31,6 +31,18 @@ import type { MultilingualBillingentityinternalDescription } from './multilingua
 /*export type BillingentityinternalRequestCompound = BillingentityinternalRequest;*/
 export interface BillingentityinternalRequestCompound {
     /**
+     * The unique ID of the Billingentityinternal.
+     * @type {number}
+     * @memberof BillingentityinternalRequestCompound
+     */
+    pkiBillingentityinternalID?:number 
+    /**
+     * 
+     * @type {MultilingualBillingentityinternalDescription}
+     * @memberof BillingentityinternalRequestCompound
+     */
+    objBillingentityinternalDescription:MultilingualBillingentityinternalDescription 
+    /**
      * 
      * @type {Array<BillingentityinternalproductRequestCompound>}
      * @memberof BillingentityinternalRequestCompound
@@ -43,6 +55,10 @@ export interface BillingentityinternalRequestCompound {
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectMultilingualBillingentityinternalDescription } from './'
+// @ts-ignore
+import { ValidationObjectMultilingualBillingentityinternalDescription } from './'
 
 /**
  * @export 
@@ -51,6 +67,8 @@ export interface BillingentityinternalRequestCompound {
  * @class DataObjectBillingentityinternalRequestCompound
  */
 export class DataObjectBillingentityinternalRequestCompound {
+    pkiBillingentityinternalID?:number = undefined
+    objBillingentityinternalDescription:MultilingualBillingentityinternalDescription = new DataObjectMultilingualBillingentityinternalDescription()
     a_objBillingentityinternalproduct:Array<BillingentityinternalproductRequestCompound> = []
 }
 
@@ -60,6 +78,12 @@ export class DataObjectBillingentityinternalRequestCompound {
  * @class ValidationObjectBillingentityinternalRequestCompound
  */
 export class ValidationObjectBillingentityinternalRequestCompound {
+   pkiBillingentityinternalID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   objBillingentityinternalDescription = new ValidationObjectMultilingualBillingentityinternalDescription()
    a_objBillingentityinternalproduct = {
       type: 'array',
       required: true

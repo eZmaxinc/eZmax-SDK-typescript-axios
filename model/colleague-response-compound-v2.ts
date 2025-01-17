@@ -36,6 +36,102 @@ import type { FieldEColleagueRealestateinprogess } from './field-ecolleague-real
  */
 /*export type ColleagueResponseCompoundV2 = ColleagueResponseV2;*/
 export interface ColleagueResponseCompoundV2 {
+    /**
+     * The unique ID of the Colleague
+     * @type {number}
+     * @memberof ColleagueResponseCompoundV2
+     */
+    pkiColleagueID:number 
+    /**
+     * The unique ID of the User
+     * @type {number}
+     * @memberof ColleagueResponseCompoundV2
+     */
+    fkiUserID:number 
+    /**
+     * The unique ID of the User
+     * @type {number}
+     * @memberof ColleagueResponseCompoundV2
+     */
+    fkiUserIDColleague:number 
+    /**
+     * Whether the email can be used by the cloning user in Ezsign
+     * @type {boolean}
+     * @memberof ColleagueResponseCompoundV2
+     */
+    bColleagueEzsignemail:boolean 
+    /**
+     * Whether the cloning user has access to the financial
+     * @type {boolean}
+     * @memberof ColleagueResponseCompoundV2
+     */
+    bColleagueFinancial:boolean 
+    /**
+     * Whether the cloning user has access to the cloned user email to send communications
+     * @type {boolean}
+     * @memberof ColleagueResponseCompoundV2
+     */
+    bColleagueUsecloneemail:boolean 
+    /**
+     * Whether the cloning user has access to the attachment
+     * @type {boolean}
+     * @memberof ColleagueResponseCompoundV2
+     */
+    bColleagueAttachment:boolean 
+    /**
+     * Whether the cloning user has access to canafe
+     * @type {boolean}
+     * @memberof ColleagueResponseCompoundV2
+     */
+    bColleagueCanafe:boolean 
+    /**
+     * Whether the cloning user copies the permission of the cloned user
+     * @type {boolean}
+     * @memberof ColleagueResponseCompoundV2
+     */
+    bColleaguePermission:boolean 
+    /**
+     * Whether if the cloning user has access to the completed folders in real estate
+     * @type {boolean}
+     * @memberof ColleagueResponseCompoundV2
+     */
+    bColleagueRealestatecompleted:boolean 
+    /**
+     * The from of the Colleague
+     * @type {string}
+     * @memberof ColleagueResponseCompoundV2
+     */
+    dtColleagueFrom?:string 
+    /**
+     * The to of the Colleague
+     * @type {string}
+     * @memberof ColleagueResponseCompoundV2
+     */
+    dtColleagueTo?:string 
+    /**
+     * 
+     * @type {FieldEColleagueEzsign}
+     * @memberof ColleagueResponseCompoundV2
+     */
+    eColleagueEzsign:FieldEColleagueEzsign 
+    /**
+     * 
+     * @type {FieldEColleagueRealestateinprogess}
+     * @memberof ColleagueResponseCompoundV2
+     */
+    eColleagueRealestateinprogress:FieldEColleagueRealestateinprogess 
+    /**
+     * 
+     * @type {CustomUserNameResponse}
+     * @memberof ColleagueResponseCompoundV2
+     */
+    objUserName:CustomUserNameResponse 
+    /**
+     * 
+     * @type {CommonAudit}
+     * @memberof ColleagueResponseCompoundV2
+     */
+    objAudit:CommonAudit 
 }
 
 
@@ -44,6 +140,14 @@ export interface ColleagueResponseCompoundV2 {
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectCustomUserNameResponse } from './'
+// @ts-ignore
+import { DataObjectCommonAudit } from './'
+// @ts-ignore
+import { ValidationObjectCustomUserNameResponse } from './'
+// @ts-ignore
+import { ValidationObjectCommonAudit } from './'
 
 /**
  * @export 
@@ -52,6 +156,22 @@ export interface ColleagueResponseCompoundV2 {
  * @class DataObjectColleagueResponseCompoundV2
  */
 export class DataObjectColleagueResponseCompoundV2 {
+    pkiColleagueID:number = 0
+    fkiUserID:number = 0
+    fkiUserIDColleague:number = 0
+    bColleagueEzsignemail:boolean = false
+    bColleagueFinancial:boolean = false
+    bColleagueUsecloneemail:boolean = false
+    bColleagueAttachment:boolean = false
+    bColleagueCanafe:boolean = false
+    bColleaguePermission:boolean = false
+    bColleagueRealestatecompleted:boolean = false
+    dtColleagueFrom?:string = undefined
+    dtColleagueTo?:string = undefined
+    eColleagueEzsign:FieldEColleagueEzsign = 'No'
+    eColleagueRealestateinprogress:FieldEColleagueRealestateinprogess = 'No'
+    objUserName:CustomUserNameResponse = new DataObjectCustomUserNameResponse()
+    objAudit:CommonAudit = new DataObjectCommonAudit()
 }
 
 /**
@@ -60,6 +180,72 @@ export class DataObjectColleagueResponseCompoundV2 {
  * @class ValidationObjectColleagueResponseCompoundV2
  */
 export class ValidationObjectColleagueResponseCompoundV2 {
+   pkiColleagueID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 65535,
+      required: true
+   }
+   fkiUserID = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   fkiUserIDColleague = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   bColleagueEzsignemail = {
+      type: 'boolean',
+      required: true
+   }
+   bColleagueFinancial = {
+      type: 'boolean',
+      required: true
+   }
+   bColleagueUsecloneemail = {
+      type: 'boolean',
+      required: true
+   }
+   bColleagueAttachment = {
+      type: 'boolean',
+      required: true
+   }
+   bColleagueCanafe = {
+      type: 'boolean',
+      required: true
+   }
+   bColleaguePermission = {
+      type: 'boolean',
+      required: true
+   }
+   bColleagueRealestatecompleted = {
+      type: 'boolean',
+      required: true
+   }
+   dtColleagueFrom = {
+      type: 'string',
+      pattern: /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/,
+      required: false
+   }
+   dtColleagueTo = {
+      type: 'string',
+      pattern: /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/,
+      required: false
+   }
+   eColleagueEzsign = {
+      type: 'enum',
+      allowableValues: ['No','Read','Modify','Full'],
+      required: true
+   }
+   eColleagueRealestateinprogress = {
+      type: 'enum',
+      allowableValues: ['No','Read','Modify','Create'],
+      required: true
+   }
+   objUserName = new ValidationObjectCustomUserNameResponse()
+   objAudit = new ValidationObjectCommonAudit()
 } 
 
 

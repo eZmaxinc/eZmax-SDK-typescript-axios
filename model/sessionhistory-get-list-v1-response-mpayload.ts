@@ -28,6 +28,18 @@ import type { SessionhistoryListElement } from './sessionhistory-list-element';
 /*export type SessionhistoryGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;*/
 export interface SessionhistoryGetListV1ResponseMPayload {
     /**
+     * The number of rows returned
+     * @type {number}
+     * @memberof SessionhistoryGetListV1ResponseMPayload
+     */
+    iRowReturned:number 
+    /**
+     * The number of rows matching your filters (if any) or the total number of rows
+     * @type {number}
+     * @memberof SessionhistoryGetListV1ResponseMPayload
+     */
+    iRowFiltered:number 
+    /**
      * 
      * @type {Array<SessionhistoryListElement>}
      * @memberof SessionhistoryGetListV1ResponseMPayload
@@ -48,6 +60,8 @@ export interface SessionhistoryGetListV1ResponseMPayload {
  * @class DataObjectSessionhistoryGetListV1ResponseMPayload
  */
 export class DataObjectSessionhistoryGetListV1ResponseMPayload {
+    iRowReturned:number = 0
+    iRowFiltered:number = 0
     a_objSessionhistory:Array<SessionhistoryListElement> = []
 }
 
@@ -57,6 +71,14 @@ export class DataObjectSessionhistoryGetListV1ResponseMPayload {
  * @class ValidationObjectSessionhistoryGetListV1ResponseMPayload
  */
 export class ValidationObjectSessionhistoryGetListV1ResponseMPayload {
+   iRowReturned = {
+      type: 'integer',
+      required: true
+   }
+   iRowFiltered = {
+      type: 'integer',
+      required: true
+   }
    a_objSessionhistory = {
       type: 'array',
       required: true

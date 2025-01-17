@@ -22,11 +22,11 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import type { CommonResponse } from '../model';
-// @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
 import type { EzsignuserEditObjectV1Request } from '../model';
+// @ts-ignore
+import type { EzsignuserEditObjectV1Response } from '../model';
 // @ts-ignore
 import type { EzsignuserGetObjectV2Response } from '../model';
 // @ts-ignore
@@ -177,7 +177,7 @@ export const ObjectEzsignuserApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignuserEditObjectV1(pkiEzsignuserID: number, ezsignuserEditObjectV1Request: EzsignuserEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
+        async ezsignuserEditObjectV1(pkiEzsignuserID: number, ezsignuserEditObjectV1Request: EzsignuserEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignuserEditObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignuserEditObjectV1(pkiEzsignuserID, ezsignuserEditObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignuserApi.ezsignuserEditObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -214,7 +214,7 @@ export const ObjectEzsignuserApiFactory = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignuserEditObjectV1(pkiEzsignuserID: number, ezsignuserEditObjectV1Request: EzsignuserEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
+        ezsignuserEditObjectV1(pkiEzsignuserID: number, ezsignuserEditObjectV1Request: EzsignuserEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsignuserEditObjectV1Response> {
             return localVarFp.ezsignuserEditObjectV1(pkiEzsignuserID, ezsignuserEditObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**

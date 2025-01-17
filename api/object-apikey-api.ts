@@ -28,6 +28,8 @@ import type { ApikeyCreateObjectV2Response } from '../model';
 // @ts-ignore
 import type { ApikeyEditObjectV1Request } from '../model';
 // @ts-ignore
+import type { ApikeyEditObjectV1Response } from '../model';
+// @ts-ignore
 import type { ApikeyEditPermissionsV1Request } from '../model';
 // @ts-ignore
 import type { ApikeyEditPermissionsV1Response } from '../model';
@@ -49,8 +51,6 @@ import type { ApikeyGetSubnetsV1Response } from '../model';
 import type { ApikeyRegenerateV1Request } from '../model';
 // @ts-ignore
 import type { ApikeyRegenerateV1Response } from '../model';
-// @ts-ignore
-import type { CommonResponse } from '../model';
 // @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
@@ -718,7 +718,7 @@ export const ObjectApikeyApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async apikeyEditObjectV1(pkiApikeyID: number, apikeyEditObjectV1Request: ApikeyEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
+        async apikeyEditObjectV1(pkiApikeyID: number, apikeyEditObjectV1Request: ApikeyEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ApikeyEditObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.apikeyEditObjectV1(pkiApikeyID, apikeyEditObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectApikeyApi.apikeyEditObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -862,7 +862,7 @@ export const ObjectApikeyApiFactory = function (configuration?: Configuration, b
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apikeyEditObjectV1(pkiApikeyID: number, apikeyEditObjectV1Request: ApikeyEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
+        apikeyEditObjectV1(pkiApikeyID: number, apikeyEditObjectV1Request: ApikeyEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<ApikeyEditObjectV1Response> {
             return localVarFp.apikeyEditObjectV1(pkiApikeyID, apikeyEditObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**

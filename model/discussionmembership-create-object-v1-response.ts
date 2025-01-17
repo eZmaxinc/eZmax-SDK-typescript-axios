@@ -35,6 +35,18 @@ import type { DiscussionmembershipCreateObjectV1ResponseMPayload } from './discu
 export interface DiscussionmembershipCreateObjectV1Response {
     /**
      * 
+     * @type {CommonResponseObjDebugPayload}
+     * @memberof DiscussionmembershipCreateObjectV1Response
+     */
+    objDebugPayload:CommonResponseObjDebugPayload 
+    /**
+     * 
+     * @type {CommonResponseObjDebug}
+     * @memberof DiscussionmembershipCreateObjectV1Response
+     */
+    objDebug?:CommonResponseObjDebug 
+    /**
+     * 
      * @type {DiscussionmembershipCreateObjectV1ResponseMPayload}
      * @memberof DiscussionmembershipCreateObjectV1Response
      */
@@ -47,7 +59,15 @@ export interface DiscussionmembershipCreateObjectV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { DataObjectCommonResponseObjDebug } from './'
+// @ts-ignore
 import { DataObjectDiscussionmembershipCreateObjectV1ResponseMPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebugPayload } from './'
+// @ts-ignore
+import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectDiscussionmembershipCreateObjectV1ResponseMPayload } from './'
 
@@ -58,6 +78,8 @@ import { ValidationObjectDiscussionmembershipCreateObjectV1ResponseMPayload } fr
  * @class DataObjectDiscussionmembershipCreateObjectV1Response
  */
 export class DataObjectDiscussionmembershipCreateObjectV1Response {
+    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
+    objDebug?:CommonResponseObjDebug = undefined
     mPayload:DiscussionmembershipCreateObjectV1ResponseMPayload = new DataObjectDiscussionmembershipCreateObjectV1ResponseMPayload()
 }
 
@@ -67,6 +89,8 @@ export class DataObjectDiscussionmembershipCreateObjectV1Response {
  * @class ValidationObjectDiscussionmembershipCreateObjectV1Response
  */
 export class ValidationObjectDiscussionmembershipCreateObjectV1Response {
+   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
+   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectDiscussionmembershipCreateObjectV1ResponseMPayload()
 } 
 

@@ -27,6 +27,48 @@ import type { CreditcarddetailResponseCompound } from './creditcarddetail-respon
  */
 /*export type CreditcardclientResponseCompound = CreditcardclientResponse;*/
 export interface CreditcardclientResponseCompound {
+    /**
+     * The unique ID of the Creditcardclient
+     * @type {number}
+     * @memberof CreditcardclientResponseCompound
+     */
+    pkiCreditcardclientID:number 
+    /**
+     * The unique ID of the Creditcarddetail
+     * @type {number}
+     * @memberof CreditcardclientResponseCompound
+     */
+    fkiCreditcarddetailID:number 
+    /**
+     * Whether if it\'s the creditcardclient is the default one
+     * @type {boolean}
+     * @memberof CreditcardclientResponseCompound
+     */
+    bCreditcardclientrelationIsdefault:boolean 
+    /**
+     * The description of the Creditcardclient
+     * @type {string}
+     * @memberof CreditcardclientResponseCompound
+     */
+    sCreditcardclientDescription:string 
+    /**
+     * Whether if it\'s an allowedagencypayment
+     * @type {boolean}
+     * @memberof CreditcardclientResponseCompound
+     */
+    bCreditcardclientAllowedcompanypayment:boolean 
+    /**
+     * Whether if it\'s an allowedtranquillit
+     * @type {boolean}
+     * @memberof CreditcardclientResponseCompound
+     */
+    bCreditcardclientAllowedtranquillit:boolean 
+    /**
+     * 
+     * @type {CreditcarddetailResponseCompound}
+     * @memberof CreditcardclientResponseCompound
+     */
+    objCreditcarddetail:CreditcarddetailResponseCompound 
 }
 
 
@@ -34,6 +76,10 @@ export interface CreditcardclientResponseCompound {
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectCreditcarddetailResponseCompound } from './'
+// @ts-ignore
+import { ValidationObjectCreditcarddetailResponseCompound } from './'
 
 /**
  * @export 
@@ -42,6 +88,13 @@ export interface CreditcardclientResponseCompound {
  * @class DataObjectCreditcardclientResponseCompound
  */
 export class DataObjectCreditcardclientResponseCompound {
+    pkiCreditcardclientID:number = 0
+    fkiCreditcarddetailID:number = 0
+    bCreditcardclientrelationIsdefault:boolean = false
+    sCreditcardclientDescription:string = ''
+    bCreditcardclientAllowedcompanypayment:boolean = false
+    bCreditcardclientAllowedtranquillit:boolean = false
+    objCreditcarddetail:CreditcarddetailResponseCompound = new DataObjectCreditcarddetailResponseCompound()
 }
 
 /**
@@ -50,6 +103,36 @@ export class DataObjectCreditcardclientResponseCompound {
  * @class ValidationObjectCreditcardclientResponseCompound
  */
 export class ValidationObjectCreditcardclientResponseCompound {
+   pkiCreditcardclientID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 65535,
+      required: true
+   }
+   fkiCreditcarddetailID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 65535,
+      required: true
+   }
+   bCreditcardclientrelationIsdefault = {
+      type: 'boolean',
+      required: true
+   }
+   sCreditcardclientDescription = {
+      type: 'string',
+      pattern: /^.{0,50}$/,
+      required: true
+   }
+   bCreditcardclientAllowedcompanypayment = {
+      type: 'boolean',
+      required: true
+   }
+   bCreditcardclientAllowedtranquillit = {
+      type: 'boolean',
+      required: true
+   }
+   objCreditcarddetail = new ValidationObjectCreditcarddetailResponseCompound()
 } 
 
 
