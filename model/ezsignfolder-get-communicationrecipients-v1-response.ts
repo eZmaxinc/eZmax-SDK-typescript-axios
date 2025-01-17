@@ -35,18 +35,6 @@ import type { EzsignfolderGetCommunicationrecipientsV1ResponseMPayload } from '.
 export interface EzsignfolderGetCommunicationrecipientsV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsignfolderGetCommunicationrecipientsV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsignfolderGetCommunicationrecipientsV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {EzsignfolderGetCommunicationrecipientsV1ResponseMPayload}
      * @memberof EzsignfolderGetCommunicationrecipientsV1Response
      */
@@ -59,15 +47,7 @@ export interface EzsignfolderGetCommunicationrecipientsV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEzsignfolderGetCommunicationrecipientsV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsignfolderGetCommunicationrecipientsV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEzsignfolderGetCommunicationrecipientsV1ResponseMPayloa
  * @class DataObjectEzsignfolderGetCommunicationrecipientsV1Response
  */
 export class DataObjectEzsignfolderGetCommunicationrecipientsV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsignfolderGetCommunicationrecipientsV1ResponseMPayload = new DataObjectEzsignfolderGetCommunicationrecipientsV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEzsignfolderGetCommunicationrecipientsV1Response {
  * @class ValidationObjectEzsignfolderGetCommunicationrecipientsV1Response
  */
 export class ValidationObjectEzsignfolderGetCommunicationrecipientsV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsignfolderGetCommunicationrecipientsV1ResponseMPayload()
 } 
 

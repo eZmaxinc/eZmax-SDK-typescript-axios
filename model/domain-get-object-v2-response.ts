@@ -35,18 +35,6 @@ import type { DomainGetObjectV2ResponseMPayload } from './domain-get-object-v2-r
 export interface DomainGetObjectV2Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof DomainGetObjectV2Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof DomainGetObjectV2Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {DomainGetObjectV2ResponseMPayload}
      * @memberof DomainGetObjectV2Response
      */
@@ -59,15 +47,7 @@ export interface DomainGetObjectV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectDomainGetObjectV2ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectDomainGetObjectV2ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectDomainGetObjectV2ResponseMPayload } from './'
  * @class DataObjectDomainGetObjectV2Response
  */
 export class DataObjectDomainGetObjectV2Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:DomainGetObjectV2ResponseMPayload = new DataObjectDomainGetObjectV2ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectDomainGetObjectV2Response {
  * @class ValidationObjectDomainGetObjectV2Response
  */
 export class ValidationObjectDomainGetObjectV2Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectDomainGetObjectV2ResponseMPayload()
 } 
 

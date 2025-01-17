@@ -35,18 +35,6 @@ import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-
 export interface BillingentityinternalGetObjectV2Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof BillingentityinternalGetObjectV2Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof BillingentityinternalGetObjectV2Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {BillingentityinternalGetObjectV2ResponseMPayload}
      * @memberof BillingentityinternalGetObjectV2Response
      */
@@ -59,15 +47,7 @@ export interface BillingentityinternalGetObjectV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectBillingentityinternalGetObjectV2ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectBillingentityinternalGetObjectV2ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectBillingentityinternalGetObjectV2ResponseMPayload } from
  * @class DataObjectBillingentityinternalGetObjectV2Response
  */
 export class DataObjectBillingentityinternalGetObjectV2Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:BillingentityinternalGetObjectV2ResponseMPayload = new DataObjectBillingentityinternalGetObjectV2ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectBillingentityinternalGetObjectV2Response {
  * @class ValidationObjectBillingentityinternalGetObjectV2Response
  */
 export class ValidationObjectBillingentityinternalGetObjectV2Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectBillingentityinternalGetObjectV2ResponseMPayload()
 } 
 

@@ -35,18 +35,6 @@ import type { CommonResponseObjDebugPayloadGetList } from './common-response-obj
 export interface BillingentityinternalGetListV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayloadGetList}
-     * @memberof BillingentityinternalGetListV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayloadGetList 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof BillingentityinternalGetListV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {BillingentityinternalGetListV1ResponseMPayload}
      * @memberof BillingentityinternalGetListV1Response
      */
@@ -59,15 +47,7 @@ export interface BillingentityinternalGetListV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayloadGetList } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectBillingentityinternalGetListV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayloadGetList } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectBillingentityinternalGetListV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectBillingentityinternalGetListV1ResponseMPayload } from '
  * @class DataObjectBillingentityinternalGetListV1Response
  */
 export class DataObjectBillingentityinternalGetListV1Response {
-    objDebugPayload:CommonResponseObjDebugPayloadGetList = new DataObjectCommonResponseObjDebugPayloadGetList()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:BillingentityinternalGetListV1ResponseMPayload = new DataObjectBillingentityinternalGetListV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectBillingentityinternalGetListV1Response {
  * @class ValidationObjectBillingentityinternalGetListV1Response
  */
 export class ValidationObjectBillingentityinternalGetListV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayloadGetList()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectBillingentityinternalGetListV1ResponseMPayload()
 } 
 

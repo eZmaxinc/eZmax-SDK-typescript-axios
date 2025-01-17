@@ -28,18 +28,6 @@ import type { EzsigntemplatepublicListElement } from './ezsigntemplatepublic-lis
 /*export type EzsigntemplatepublicGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;*/
 export interface EzsigntemplatepublicGetListV1ResponseMPayload {
     /**
-     * The number of rows returned
-     * @type {number}
-     * @memberof EzsigntemplatepublicGetListV1ResponseMPayload
-     */
-    iRowReturned:number 
-    /**
-     * The number of rows matching your filters (if any) or the total number of rows
-     * @type {number}
-     * @memberof EzsigntemplatepublicGetListV1ResponseMPayload
-     */
-    iRowFiltered:number 
-    /**
      * 
      * @type {Array<EzsigntemplatepublicListElement>}
      * @memberof EzsigntemplatepublicGetListV1ResponseMPayload
@@ -60,8 +48,6 @@ export interface EzsigntemplatepublicGetListV1ResponseMPayload {
  * @class DataObjectEzsigntemplatepublicGetListV1ResponseMPayload
  */
 export class DataObjectEzsigntemplatepublicGetListV1ResponseMPayload {
-    iRowReturned:number = 0
-    iRowFiltered:number = 0
     a_objEzsigntemplatepublic:Array<EzsigntemplatepublicListElement> = []
 }
 
@@ -71,14 +57,6 @@ export class DataObjectEzsigntemplatepublicGetListV1ResponseMPayload {
  * @class ValidationObjectEzsigntemplatepublicGetListV1ResponseMPayload
  */
 export class ValidationObjectEzsigntemplatepublicGetListV1ResponseMPayload {
-   iRowReturned = {
-      type: 'integer',
-      required: true
-   }
-   iRowFiltered = {
-      type: 'integer',
-      required: true
-   }
    a_objEzsigntemplatepublic = {
       type: 'array',
       required: true

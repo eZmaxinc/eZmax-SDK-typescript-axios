@@ -35,18 +35,6 @@ import type { EzdoctemplatedocumentCreateObjectV1ResponseMPayload } from './ezdo
 export interface EzdoctemplatedocumentCreateObjectV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzdoctemplatedocumentCreateObjectV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzdoctemplatedocumentCreateObjectV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {EzdoctemplatedocumentCreateObjectV1ResponseMPayload}
      * @memberof EzdoctemplatedocumentCreateObjectV1Response
      */
@@ -59,15 +47,7 @@ export interface EzdoctemplatedocumentCreateObjectV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEzdoctemplatedocumentCreateObjectV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzdoctemplatedocumentCreateObjectV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEzdoctemplatedocumentCreateObjectV1ResponseMPayload } f
  * @class DataObjectEzdoctemplatedocumentCreateObjectV1Response
  */
 export class DataObjectEzdoctemplatedocumentCreateObjectV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzdoctemplatedocumentCreateObjectV1ResponseMPayload = new DataObjectEzdoctemplatedocumentCreateObjectV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEzdoctemplatedocumentCreateObjectV1Response {
  * @class ValidationObjectEzdoctemplatedocumentCreateObjectV1Response
  */
 export class ValidationObjectEzdoctemplatedocumentCreateObjectV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzdoctemplatedocumentCreateObjectV1ResponseMPayload()
 } 
 

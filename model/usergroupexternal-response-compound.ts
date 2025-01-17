@@ -24,24 +24,6 @@ import type { UsergroupexternalResponse } from './usergroupexternal-response';
  */
 /*export type UsergroupexternalResponseCompound = UsergroupexternalResponse;*/
 export interface UsergroupexternalResponseCompound {
-    /**
-     * The unique ID of the Usergroupexternal
-     * @type {number}
-     * @memberof UsergroupexternalResponseCompound
-     */
-    pkiUsergroupexternalID:number 
-    /**
-     * The name of the Usergroupexternal
-     * @type {string}
-     * @memberof UsergroupexternalResponseCompound
-     */
-    sUsergroupexternalName:string 
-    /**
-     * The id of the Usergroupexternal
-     * @type {string}
-     * @memberof UsergroupexternalResponseCompound
-     */
-    sUsergroupexternalID:string 
 }
 
 
@@ -57,9 +39,6 @@ export interface UsergroupexternalResponseCompound {
  * @class DataObjectUsergroupexternalResponseCompound
  */
 export class DataObjectUsergroupexternalResponseCompound {
-    pkiUsergroupexternalID:number = 0
-    sUsergroupexternalName:string = ''
-    sUsergroupexternalID:string = ''
 }
 
 /**
@@ -68,22 +47,6 @@ export class DataObjectUsergroupexternalResponseCompound {
  * @class ValidationObjectUsergroupexternalResponseCompound
  */
 export class ValidationObjectUsergroupexternalResponseCompound {
-   pkiUsergroupexternalID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 255,
-      required: true
-   }
-   sUsergroupexternalName = {
-      type: 'string',
-      pattern: /^.{0,64}$/,
-      required: true
-   }
-   sUsergroupexternalID = {
-      type: 'string',
-      pattern: /^.{0,64}$/,
-      required: true
-   }
 } 
 
 

@@ -35,18 +35,6 @@ import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-
 export interface ActivesessionGetCurrentV2Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof ActivesessionGetCurrentV2Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof ActivesessionGetCurrentV2Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {ActivesessionGetCurrentV2ResponseMPayload}
      * @memberof ActivesessionGetCurrentV2Response
      */
@@ -59,15 +47,7 @@ export interface ActivesessionGetCurrentV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectActivesessionGetCurrentV2ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectActivesessionGetCurrentV2ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectActivesessionGetCurrentV2ResponseMPayload } from './'
  * @class DataObjectActivesessionGetCurrentV2Response
  */
 export class DataObjectActivesessionGetCurrentV2Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:ActivesessionGetCurrentV2ResponseMPayload = new DataObjectActivesessionGetCurrentV2ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectActivesessionGetCurrentV2Response {
  * @class ValidationObjectActivesessionGetCurrentV2Response
  */
 export class ValidationObjectActivesessionGetCurrentV2Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectActivesessionGetCurrentV2ResponseMPayload()
 } 
 

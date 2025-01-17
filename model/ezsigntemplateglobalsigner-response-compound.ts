@@ -24,24 +24,6 @@ import type { EzsigntemplateglobalsignerResponse } from './ezsigntemplateglobals
  */
 /*export type EzsigntemplateglobalsignerResponseCompound = EzsigntemplateglobalsignerResponse;*/
 export interface EzsigntemplateglobalsignerResponseCompound {
-    /**
-     * The unique ID of the Ezsigntemplateglobalsigner
-     * @type {number}
-     * @memberof EzsigntemplateglobalsignerResponseCompound
-     */
-    pkiEzsigntemplateglobalsignerID:number 
-    /**
-     * The unique ID of the Ezsigntemplateglobal
-     * @type {number}
-     * @memberof EzsigntemplateglobalsignerResponseCompound
-     */
-    fkiEzsigntemplateglobalID:number 
-    /**
-     * The description of the Ezsigntemplateglobalsigner
-     * @type {string}
-     * @memberof EzsigntemplateglobalsignerResponseCompound
-     */
-    sEzsigntemplateglobalsignerDescription:string 
 }
 
 
@@ -57,9 +39,6 @@ export interface EzsigntemplateglobalsignerResponseCompound {
  * @class DataObjectEzsigntemplateglobalsignerResponseCompound
  */
 export class DataObjectEzsigntemplateglobalsignerResponseCompound {
-    pkiEzsigntemplateglobalsignerID:number = 0
-    fkiEzsigntemplateglobalID:number = 0
-    sEzsigntemplateglobalsignerDescription:string = ''
 }
 
 /**
@@ -68,21 +47,6 @@ export class DataObjectEzsigntemplateglobalsignerResponseCompound {
  * @class ValidationObjectEzsigntemplateglobalsignerResponseCompound
  */
 export class ValidationObjectEzsigntemplateglobalsignerResponseCompound {
-   pkiEzsigntemplateglobalsignerID = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   fkiEzsigntemplateglobalID = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   sEzsigntemplateglobalsignerDescription = {
-      type: 'string',
-      pattern: /^.{1,50}$/,
-      required: true
-   }
 } 
 
 

@@ -35,18 +35,6 @@ import type { PermissionCreateObjectV1ResponseMPayload } from './permission-crea
 export interface PermissionCreateObjectV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof PermissionCreateObjectV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof PermissionCreateObjectV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {PermissionCreateObjectV1ResponseMPayload}
      * @memberof PermissionCreateObjectV1Response
      */
@@ -59,15 +47,7 @@ export interface PermissionCreateObjectV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectPermissionCreateObjectV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectPermissionCreateObjectV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectPermissionCreateObjectV1ResponseMPayload } from './'
  * @class DataObjectPermissionCreateObjectV1Response
  */
 export class DataObjectPermissionCreateObjectV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:PermissionCreateObjectV1ResponseMPayload = new DataObjectPermissionCreateObjectV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectPermissionCreateObjectV1Response {
  * @class ValidationObjectPermissionCreateObjectV1Response
  */
 export class ValidationObjectPermissionCreateObjectV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectPermissionCreateObjectV1ResponseMPayload()
 } 
 

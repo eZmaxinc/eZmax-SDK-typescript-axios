@@ -24,24 +24,6 @@ import type { DiscussionRequest } from './discussion-request';
  */
 /*export type DiscussionRequestCompound = DiscussionRequest;*/
 export interface DiscussionRequestCompound {
-    /**
-     * The unique ID of the Discussion
-     * @type {number}
-     * @memberof DiscussionRequestCompound
-     */
-    pkiDiscussionID?:number 
-    /**
-     * The description of the Discussion
-     * @type {string}
-     * @memberof DiscussionRequestCompound
-     */
-    sDiscussionDescription:string 
-    /**
-     * Whether if it\'s an closed
-     * @type {boolean}
-     * @memberof DiscussionRequestCompound
-     */
-    bDiscussionClosed?:boolean 
 }
 
 
@@ -57,9 +39,6 @@ export interface DiscussionRequestCompound {
  * @class DataObjectDiscussionRequestCompound
  */
 export class DataObjectDiscussionRequestCompound {
-    pkiDiscussionID?:number = undefined
-    sDiscussionDescription:string = ''
-    bDiscussionClosed?:boolean = undefined
 }
 
 /**
@@ -68,21 +47,6 @@ export class DataObjectDiscussionRequestCompound {
  * @class ValidationObjectDiscussionRequestCompound
  */
 export class ValidationObjectDiscussionRequestCompound {
-   pkiDiscussionID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 16777215,
-      required: false
-   }
-   sDiscussionDescription = {
-      type: 'string',
-      pattern: /^.{0,75}$/,
-      required: true
-   }
-   bDiscussionClosed = {
-      type: 'boolean',
-      required: false
-   }
 } 
 
 

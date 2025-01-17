@@ -34,18 +34,6 @@ import type { EzmaxinvoicingResponseCompound } from './ezmaxinvoicing-response-c
 /*export type EzmaxinvoicingGetProvisionalV1Response = CommonResponse;*/
 export interface EzmaxinvoicingGetProvisionalV1Response {
     /**
-     * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzmaxinvoicingGetProvisionalV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzmaxinvoicingGetProvisionalV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
      * Payload for GET /1/object/ezmaxinvoicing/getProvisional
      * @type {EzmaxinvoicingResponseCompound}
      * @memberof EzmaxinvoicingGetProvisionalV1Response
@@ -59,15 +47,7 @@ export interface EzmaxinvoicingGetProvisionalV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEzmaxinvoicingResponseCompound } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzmaxinvoicingResponseCompound } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEzmaxinvoicingResponseCompound } from './'
  * @class DataObjectEzmaxinvoicingGetProvisionalV1Response
  */
 export class DataObjectEzmaxinvoicingGetProvisionalV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzmaxinvoicingResponseCompound = new DataObjectEzmaxinvoicingResponseCompound()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEzmaxinvoicingGetProvisionalV1Response {
  * @class ValidationObjectEzmaxinvoicingGetProvisionalV1Response
  */
 export class ValidationObjectEzmaxinvoicingGetProvisionalV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzmaxinvoicingResponseCompound()
 } 
 

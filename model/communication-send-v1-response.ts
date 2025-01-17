@@ -35,18 +35,6 @@ import type { CommunicationSendV1ResponseMPayload } from './communication-send-v
 export interface CommunicationSendV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof CommunicationSendV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof CommunicationSendV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {CommunicationSendV1ResponseMPayload}
      * @memberof CommunicationSendV1Response
      */
@@ -59,15 +47,7 @@ export interface CommunicationSendV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectCommunicationSendV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectCommunicationSendV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectCommunicationSendV1ResponseMPayload } from './'
  * @class DataObjectCommunicationSendV1Response
  */
 export class DataObjectCommunicationSendV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:CommunicationSendV1ResponseMPayload = new DataObjectCommunicationSendV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectCommunicationSendV1Response {
  * @class ValidationObjectCommunicationSendV1Response
  */
 export class ValidationObjectCommunicationSendV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectCommunicationSendV1ResponseMPayload()
 } 
 

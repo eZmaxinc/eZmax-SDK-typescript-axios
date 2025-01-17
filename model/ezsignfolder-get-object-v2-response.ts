@@ -35,18 +35,6 @@ import type { EzsignfolderGetObjectV2ResponseMPayload } from './ezsignfolder-get
 export interface EzsignfolderGetObjectV2Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsignfolderGetObjectV2Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsignfolderGetObjectV2Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {EzsignfolderGetObjectV2ResponseMPayload}
      * @memberof EzsignfolderGetObjectV2Response
      */
@@ -59,15 +47,7 @@ export interface EzsignfolderGetObjectV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEzsignfolderGetObjectV2ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsignfolderGetObjectV2ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEzsignfolderGetObjectV2ResponseMPayload } from './'
  * @class DataObjectEzsignfolderGetObjectV2Response
  */
 export class DataObjectEzsignfolderGetObjectV2Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsignfolderGetObjectV2ResponseMPayload = new DataObjectEzsignfolderGetObjectV2ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEzsignfolderGetObjectV2Response {
  * @class ValidationObjectEzsignfolderGetObjectV2Response
  */
 export class ValidationObjectEzsignfolderGetObjectV2Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsignfolderGetObjectV2ResponseMPayload()
 } 
 

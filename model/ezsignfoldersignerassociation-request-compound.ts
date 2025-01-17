@@ -28,42 +28,6 @@ import type { EzsignsignerRequestCompound } from './ezsignsigner-request-compoun
 /*export type EzsignfoldersignerassociationRequestCompound = EzsignfoldersignerassociationRequest;*/
 export interface EzsignfoldersignerassociationRequestCompound {
     /**
-     * The unique ID of the Ezsignfoldersignerassociation
-     * @type {number}
-     * @memberof EzsignfoldersignerassociationRequestCompound
-     */
-    pkiEzsignfoldersignerassociationID?:number 
-    /**
-     * The unique ID of the User
-     * @type {number}
-     * @memberof EzsignfoldersignerassociationRequestCompound
-     */
-    fkiUserID?:number 
-    /**
-     * The unique ID of the Ezsignsignergroup
-     * @type {number}
-     * @memberof EzsignfoldersignerassociationRequestCompound
-     */
-    fkiEzsignsignergroupID?:number 
-    /**
-     * The unique ID of the Ezsignfolder
-     * @type {number}
-     * @memberof EzsignfoldersignerassociationRequestCompound
-     */
-    fkiEzsignfolderID:number 
-    /**
-     * If this flag is true. The signatory will receive a copy of every signed Ezsigndocument even if it ain\'t required to sign the document.
-     * @type {boolean}
-     * @memberof EzsignfoldersignerassociationRequestCompound
-     */
-    bEzsignfoldersignerassociationReceivecopy?:boolean 
-    /**
-     * A custom text message that will be added to the email sent.
-     * @type {string}
-     * @memberof EzsignfoldersignerassociationRequestCompound
-     */
-    tEzsignfoldersignerassociationMessage?:string 
-    /**
      * 
      * @type {EzsignsignerRequestCompound}
      * @memberof EzsignfoldersignerassociationRequestCompound
@@ -88,12 +52,6 @@ import { ValidationObjectEzsignsignerRequestCompound } from './'
  * @class DataObjectEzsignfoldersignerassociationRequestCompound
  */
 export class DataObjectEzsignfoldersignerassociationRequestCompound {
-    pkiEzsignfoldersignerassociationID?:number = undefined
-    fkiUserID?:number = undefined
-    fkiEzsignsignergroupID?:number = undefined
-    fkiEzsignfolderID:number = 0
-    bEzsignfoldersignerassociationReceivecopy?:boolean = undefined
-    tEzsignfoldersignerassociationMessage?:string = undefined
     objEzsignsigner?:EzsignsignerRequestCompound = undefined
 }
 
@@ -103,35 +61,6 @@ export class DataObjectEzsignfoldersignerassociationRequestCompound {
  * @class ValidationObjectEzsignfoldersignerassociationRequestCompound
  */
 export class ValidationObjectEzsignfoldersignerassociationRequestCompound {
-   pkiEzsignfoldersignerassociationID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   fkiUserID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   fkiEzsignsignergroupID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 65535,
-      required: false
-   }
-   fkiEzsignfolderID = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   bEzsignfoldersignerassociationReceivecopy = {
-      type: 'boolean',
-      required: false
-   }
-   tEzsignfoldersignerassociationMessage = {
-      type: 'string',
-      required: false
-   }
    objEzsignsigner = new ValidationObjectEzsignsignerRequestCompound()
 } 
 

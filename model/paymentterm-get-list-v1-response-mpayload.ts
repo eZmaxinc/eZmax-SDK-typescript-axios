@@ -28,18 +28,6 @@ import type { PaymenttermListElement } from './paymentterm-list-element';
 /*export type PaymenttermGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;*/
 export interface PaymenttermGetListV1ResponseMPayload {
     /**
-     * The number of rows returned
-     * @type {number}
-     * @memberof PaymenttermGetListV1ResponseMPayload
-     */
-    iRowReturned:number 
-    /**
-     * The number of rows matching your filters (if any) or the total number of rows
-     * @type {number}
-     * @memberof PaymenttermGetListV1ResponseMPayload
-     */
-    iRowFiltered:number 
-    /**
      * 
      * @type {Array<PaymenttermListElement>}
      * @memberof PaymenttermGetListV1ResponseMPayload
@@ -60,8 +48,6 @@ export interface PaymenttermGetListV1ResponseMPayload {
  * @class DataObjectPaymenttermGetListV1ResponseMPayload
  */
 export class DataObjectPaymenttermGetListV1ResponseMPayload {
-    iRowReturned:number = 0
-    iRowFiltered:number = 0
     a_objPaymentterm:Array<PaymenttermListElement> = []
 }
 
@@ -71,14 +57,6 @@ export class DataObjectPaymenttermGetListV1ResponseMPayload {
  * @class ValidationObjectPaymenttermGetListV1ResponseMPayload
  */
 export class ValidationObjectPaymenttermGetListV1ResponseMPayload {
-   iRowReturned = {
-      type: 'integer',
-      required: true
-   }
-   iRowFiltered = {
-      type: 'integer',
-      required: true
-   }
    a_objPaymentterm = {
       type: 'array',
       required: true

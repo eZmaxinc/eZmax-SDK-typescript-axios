@@ -31,36 +31,6 @@ import type { EzsigntemplatepackageResponseCompound } from './ezsigntemplatepack
 /*export type EzsignbulksenddocumentmappingResponseCompound = EzsignbulksenddocumentmappingResponse;*/
 export interface EzsignbulksenddocumentmappingResponseCompound {
     /**
-     * The unique ID of the Ezsignbulksenddocumentmapping.
-     * @type {number}
-     * @memberof EzsignbulksenddocumentmappingResponseCompound
-     */
-    pkiEzsignbulksenddocumentmappingID:number 
-    /**
-     * The unique ID of the Ezsignbulksend
-     * @type {number}
-     * @memberof EzsignbulksenddocumentmappingResponseCompound
-     */
-    fkiEzsignbulksendID:number 
-    /**
-     * The unique ID of the Ezsigntemplatepackage
-     * @type {number}
-     * @memberof EzsignbulksenddocumentmappingResponseCompound
-     */
-    fkiEzsigntemplatepackageID?:number 
-    /**
-     * The unique ID of the Ezsigntemplate
-     * @type {number}
-     * @memberof EzsignbulksenddocumentmappingResponseCompound
-     */
-    fkiEzsigntemplateID?:number 
-    /**
-     * The order in which the Ezsigntemplate or Ezsigntemplatepackage will be presented to the signatory in the Ezsignfolder.
-     * @type {number}
-     * @memberof EzsignbulksenddocumentmappingResponseCompound
-     */
-    iEzsignbulksenddocumentmappingOrder:number 
-    /**
      * 
      * @type {EzsigntemplateResponseCompound}
      * @memberof EzsignbulksenddocumentmappingResponseCompound
@@ -95,11 +65,6 @@ import { ValidationObjectEzsigntemplatepackageResponseCompound } from './'
  * @class DataObjectEzsignbulksenddocumentmappingResponseCompound
  */
 export class DataObjectEzsignbulksenddocumentmappingResponseCompound {
-    pkiEzsignbulksenddocumentmappingID:number = 0
-    fkiEzsignbulksendID:number = 0
-    fkiEzsigntemplatepackageID?:number = undefined
-    fkiEzsigntemplateID?:number = undefined
-    iEzsignbulksenddocumentmappingOrder:number = 0
     objEzsigntemplate?:EzsigntemplateResponseCompound = undefined
     objEzsigntemplatepackage?:EzsigntemplatepackageResponseCompound = undefined
 }
@@ -110,31 +75,6 @@ export class DataObjectEzsignbulksenddocumentmappingResponseCompound {
  * @class ValidationObjectEzsignbulksenddocumentmappingResponseCompound
  */
 export class ValidationObjectEzsignbulksenddocumentmappingResponseCompound {
-   pkiEzsignbulksenddocumentmappingID = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   fkiEzsignbulksendID = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   fkiEzsigntemplatepackageID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   fkiEzsigntemplateID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   iEzsignbulksenddocumentmappingOrder = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
    objEzsigntemplate = new ValidationObjectEzsigntemplateResponseCompound()
    objEzsigntemplatepackage = new ValidationObjectEzsigntemplatepackageResponseCompound()
 } 

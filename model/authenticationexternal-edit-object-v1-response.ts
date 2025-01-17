@@ -30,18 +30,6 @@ import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-
  */
 /*export type AuthenticationexternalEditObjectV1Response = CommonResponse;*/
 export interface AuthenticationexternalEditObjectV1Response {
-    /**
-     * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof AuthenticationexternalEditObjectV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof AuthenticationexternalEditObjectV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
 }
 
 
@@ -49,14 +37,6 @@ export interface AuthenticationexternalEditObjectV1Response {
  * @import
  * Imports Child Data Object
  */
-// @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 
 /**
  * @export 
@@ -65,8 +45,6 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectAuthenticationexternalEditObjectV1Response
  */
 export class DataObjectAuthenticationexternalEditObjectV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
 }
 
 /**
@@ -75,8 +53,6 @@ export class DataObjectAuthenticationexternalEditObjectV1Response {
  * @class ValidationObjectAuthenticationexternalEditObjectV1Response
  */
 export class ValidationObjectAuthenticationexternalEditObjectV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
 } 
 
 

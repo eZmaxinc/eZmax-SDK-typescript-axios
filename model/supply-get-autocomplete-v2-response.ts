@@ -35,18 +35,6 @@ import type { SupplyGetAutocompleteV2ResponseMPayload } from './supply-get-autoc
 export interface SupplyGetAutocompleteV2Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof SupplyGetAutocompleteV2Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof SupplyGetAutocompleteV2Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {SupplyGetAutocompleteV2ResponseMPayload}
      * @memberof SupplyGetAutocompleteV2Response
      */
@@ -59,15 +47,7 @@ export interface SupplyGetAutocompleteV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectSupplyGetAutocompleteV2ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectSupplyGetAutocompleteV2ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectSupplyGetAutocompleteV2ResponseMPayload } from './'
  * @class DataObjectSupplyGetAutocompleteV2Response
  */
 export class DataObjectSupplyGetAutocompleteV2Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:SupplyGetAutocompleteV2ResponseMPayload = new DataObjectSupplyGetAutocompleteV2ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectSupplyGetAutocompleteV2Response {
  * @class ValidationObjectSupplyGetAutocompleteV2Response
  */
 export class ValidationObjectSupplyGetAutocompleteV2Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectSupplyGetAutocompleteV2ResponseMPayload()
 } 
 

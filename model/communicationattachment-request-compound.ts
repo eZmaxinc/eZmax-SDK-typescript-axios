@@ -24,30 +24,6 @@ import type { CommunicationattachmentRequest } from './communicationattachment-r
  */
 /*export type CommunicationattachmentRequestCompound = CommunicationattachmentRequest;*/
 export interface CommunicationattachmentRequestCompound {
-    /**
-     * The unique ID of the Communicationattachment
-     * @type {number}
-     * @memberof CommunicationattachmentRequestCompound
-     */
-    pkiCommunicationattachmentID?:number 
-    /**
-     * The unique ID of the Attachment.
-     * @type {number}
-     * @memberof CommunicationattachmentRequestCompound
-     */
-    fkiAttachmentID?:number 
-    /**
-     * The unique ID of the Invoice.
-     * @type {number}
-     * @memberof CommunicationattachmentRequestCompound
-     */
-    fkiInvoiceID?:number 
-    /**
-     * The unique ID of the Salarypreparation.
-     * @type {number}
-     * @memberof CommunicationattachmentRequestCompound
-     */
-    fkiSalarypreparationID?:number 
 }
 
 
@@ -63,10 +39,6 @@ export interface CommunicationattachmentRequestCompound {
  * @class DataObjectCommunicationattachmentRequestCompound
  */
 export class DataObjectCommunicationattachmentRequestCompound {
-    pkiCommunicationattachmentID?:number = undefined
-    fkiAttachmentID?:number = undefined
-    fkiInvoiceID?:number = undefined
-    fkiSalarypreparationID?:number = undefined
 }
 
 /**
@@ -75,25 +47,6 @@ export class DataObjectCommunicationattachmentRequestCompound {
  * @class ValidationObjectCommunicationattachmentRequestCompound
  */
 export class ValidationObjectCommunicationattachmentRequestCompound {
-   pkiCommunicationattachmentID = {
-      type: 'integer',
-      required: false
-   }
-   fkiAttachmentID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   fkiInvoiceID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   fkiSalarypreparationID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
 } 
 
 

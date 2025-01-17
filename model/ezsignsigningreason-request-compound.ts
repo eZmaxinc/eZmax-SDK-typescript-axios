@@ -27,24 +27,6 @@ import type { MultilingualEzsignsigningreasonDescription } from './multilingual-
  */
 /*export type EzsignsigningreasonRequestCompound = EzsignsigningreasonRequest;*/
 export interface EzsignsigningreasonRequestCompound {
-    /**
-     * The unique ID of the Ezsignsigningreason
-     * @type {number}
-     * @memberof EzsignsigningreasonRequestCompound
-     */
-    pkiEzsignsigningreasonID?:number 
-    /**
-     * 
-     * @type {MultilingualEzsignsigningreasonDescription}
-     * @memberof EzsignsigningreasonRequestCompound
-     */
-    objEzsignsigningreasonDescription:MultilingualEzsignsigningreasonDescription 
-    /**
-     * Whether the ezsignsigningreason is active or not
-     * @type {boolean}
-     * @memberof EzsignsigningreasonRequestCompound
-     */
-    bEzsignsigningreasonIsactive:boolean 
 }
 
 
@@ -52,10 +34,6 @@ export interface EzsignsigningreasonRequestCompound {
  * @import
  * Imports Child Data Object
  */
-// @ts-ignore
-import { DataObjectMultilingualEzsignsigningreasonDescription } from './'
-// @ts-ignore
-import { ValidationObjectMultilingualEzsignsigningreasonDescription } from './'
 
 /**
  * @export 
@@ -64,9 +42,6 @@ import { ValidationObjectMultilingualEzsignsigningreasonDescription } from './'
  * @class DataObjectEzsignsigningreasonRequestCompound
  */
 export class DataObjectEzsignsigningreasonRequestCompound {
-    pkiEzsignsigningreasonID?:number = undefined
-    objEzsignsigningreasonDescription:MultilingualEzsignsigningreasonDescription = new DataObjectMultilingualEzsignsigningreasonDescription()
-    bEzsignsigningreasonIsactive:boolean = false
 }
 
 /**
@@ -75,17 +50,6 @@ export class DataObjectEzsignsigningreasonRequestCompound {
  * @class ValidationObjectEzsignsigningreasonRequestCompound
  */
 export class ValidationObjectEzsignsigningreasonRequestCompound {
-   pkiEzsignsigningreasonID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 255,
-      required: false
-   }
-   objEzsignsigningreasonDescription = new ValidationObjectMultilingualEzsignsigningreasonDescription()
-   bEzsignsigningreasonIsactive = {
-      type: 'boolean',
-      required: true
-   }
 } 
 
 

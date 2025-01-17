@@ -24,18 +24,6 @@ import type { DomainRequest } from './domain-request';
  */
 /*export type DomainRequestCompound = DomainRequest;*/
 export interface DomainRequestCompound {
-    /**
-     * The unique ID of the Domain
-     * @type {number}
-     * @memberof DomainRequestCompound
-     */
-    pkiDomainID?:number 
-    /**
-     * The name of the Domain
-     * @type {string}
-     * @memberof DomainRequestCompound
-     */
-    sDomainName:string 
 }
 
 
@@ -51,8 +39,6 @@ export interface DomainRequestCompound {
  * @class DataObjectDomainRequestCompound
  */
 export class DataObjectDomainRequestCompound {
-    pkiDomainID?:number = undefined
-    sDomainName:string = ''
 }
 
 /**
@@ -61,17 +47,6 @@ export class DataObjectDomainRequestCompound {
  * @class ValidationObjectDomainRequestCompound
  */
 export class ValidationObjectDomainRequestCompound {
-   pkiDomainID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 255,
-      required: false
-   }
-   sDomainName = {
-      type: 'string',
-      pattern: /^(?=.{4,75}$)([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,63}$/,
-      required: true
-   }
 } 
 
 

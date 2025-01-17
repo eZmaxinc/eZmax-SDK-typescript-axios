@@ -34,18 +34,6 @@ import type { CustomWordPositionWordResponse } from './custom-word-position-word
 /*export type EzsigntemplatedocumentGetWordsPositionsV1Response = CommonResponse;*/
 export interface EzsigntemplatedocumentGetWordsPositionsV1Response {
     /**
-     * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsigntemplatedocumentGetWordsPositionsV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsigntemplatedocumentGetWordsPositionsV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
      * Payload for POST /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getWordsPositions
      * @type {Array<CustomWordPositionWordResponse>}
      * @memberof EzsigntemplatedocumentGetWordsPositionsV1Response
@@ -58,14 +46,6 @@ export interface EzsigntemplatedocumentGetWordsPositionsV1Response {
  * @import
  * Imports Child Data Object
  */
-// @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 
 /**
  * @export 
@@ -74,8 +54,6 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectEzsigntemplatedocumentGetWordsPositionsV1Response
  */
 export class DataObjectEzsigntemplatedocumentGetWordsPositionsV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:Array<CustomWordPositionWordResponse> = []
 }
 
@@ -85,8 +63,6 @@ export class DataObjectEzsigntemplatedocumentGetWordsPositionsV1Response {
  * @class ValidationObjectEzsigntemplatedocumentGetWordsPositionsV1Response
  */
 export class ValidationObjectEzsigntemplatedocumentGetWordsPositionsV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = {
       type: 'array',
       required: true

@@ -34,18 +34,6 @@ import type { EzsignfolderResponseCompound } from './ezsignfolder-response-compo
 /*export type EzsignfolderGetObjectV1Response = CommonResponse;*/
 export interface EzsignfolderGetObjectV1Response {
     /**
-     * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsignfolderGetObjectV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsignfolderGetObjectV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
      * Payload for GET /1/object/ezsignfolder/{pkiEzsignfolderID}
      * @type {EzsignfolderResponseCompound}
      * @memberof EzsignfolderGetObjectV1Response
@@ -59,15 +47,7 @@ export interface EzsignfolderGetObjectV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEzsignfolderResponseCompound } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsignfolderResponseCompound } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEzsignfolderResponseCompound } from './'
  * @class DataObjectEzsignfolderGetObjectV1Response
  */
 export class DataObjectEzsignfolderGetObjectV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsignfolderResponseCompound = new DataObjectEzsignfolderResponseCompound()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEzsignfolderGetObjectV1Response {
  * @class ValidationObjectEzsignfolderGetObjectV1Response
  */
 export class ValidationObjectEzsignfolderGetObjectV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsignfolderResponseCompound()
 } 
 

@@ -37,90 +37,6 @@ import type { TextstylestaticRequestCompound } from './textstylestatic-request-c
 /*export type EzsignformfieldRequestCompound = EzsignformfieldRequest;*/
 export interface EzsignformfieldRequestCompound {
     /**
-     * The unique ID of the Ezsignformfield
-     * @type {number}
-     * @memberof EzsignformfieldRequestCompound
-     */
-    pkiEzsignformfieldID?:number 
-    /**
-     * The page number in the Ezsigndocument
-     * @type {number}
-     * @memberof EzsignformfieldRequestCompound
-     */
-    iEzsignpagePagenumber:number 
-    /**
-     * The Label for the Ezsignformfield
-     * @type {string}
-     * @memberof EzsignformfieldRequestCompound
-     */
-    sEzsignformfieldLabel:string 
-    /**
-     * The value for the Ezsignformfield  This can only be set if eEzsignformfieldgroupType is Checkbox or Radio
-     * @type {string}
-     * @memberof EzsignformfieldRequestCompound
-     */
-    sEzsignformfieldValue?:string 
-    /**
-     * The X coordinate (Horizontal) where to put the Ezsignformfield on the Ezsignpage.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignformfield 2 inches from the left border of the page, you would use \"200\" for the X coordinate.
-     * @type {number}
-     * @memberof EzsignformfieldRequestCompound
-     */
-    iEzsignformfieldX:number 
-    /**
-     * The Y coordinate (Vertical) where to put the Ezsignformfield on the Ezsignpage.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignformfield 3 inches from the top border of the page, you would use \"300\" for the Y coordinate.
-     * @type {number}
-     * @memberof EzsignformfieldRequestCompound
-     */
-    iEzsignformfieldY:number 
-    /**
-     * The Width of the Ezsignformfield in pixels calculated at 100 DPI
-     * @type {number}
-     * @memberof EzsignformfieldRequestCompound
-     */
-    iEzsignformfieldWidth:number 
-    /**
-     * The Height of the Ezsignformfield in pixels calculated at 100 DPI 
-     * @type {number}
-     * @memberof EzsignformfieldRequestCompound
-     */
-    iEzsignformfieldHeight:number 
-    /**
-     * Whether the Ezsignformfield allows the use of the autocomplete of the browser.  This can only be set if eEzsignformfieldgroupType is **Text**
-     * @type {boolean}
-     * @memberof EzsignformfieldRequestCompound
-     */
-    bEzsignformfieldAutocomplete?:boolean 
-    /**
-     * Whether the Ezsignformfield is selected or not by default.  This can only be set if eEzsignformfieldgroupType is **Checkbox** or **Radio**
-     * @type {boolean}
-     * @memberof EzsignformfieldRequestCompound
-     */
-    bEzsignformfieldSelected?:boolean 
-    /**
-     * This is the value enterred for the Ezsignformfield  This can only be set if eEzsignformfieldgroupType is **Dropdown**, **Text** or **Textarea**
-     * @type {string}
-     * @memberof EzsignformfieldRequestCompound
-     */
-    sEzsignformfieldEnteredvalue?:string 
-    /**
-     * 
-     * @type {FieldEEzsignformfieldDependencyrequirement}
-     * @memberof EzsignformfieldRequestCompound
-     */
-    eEzsignformfieldDependencyrequirement?:FieldEEzsignformfieldDependencyrequirement 
-    /**
-     * 
-     * @type {EnumHorizontalalignment}
-     * @memberof EzsignformfieldRequestCompound
-     */
-    eEzsignformfieldHorizontalalignment?:EnumHorizontalalignment 
-    /**
-     * 
-     * @type {TextstylestaticRequestCompound}
-     * @memberof EzsignformfieldRequestCompound
-     */
-    objTextstylestatic?:TextstylestaticRequestCompound 
-    /**
      * 
      * @type {Array<EzsignelementdependencyRequestCompound>}
      * @memberof EzsignformfieldRequestCompound
@@ -134,10 +50,6 @@ export interface EzsignformfieldRequestCompound {
  * @import
  * Imports Child Data Object
  */
-// @ts-ignore
-import { DataObjectTextstylestaticRequestCompound } from './'
-// @ts-ignore
-import { ValidationObjectTextstylestaticRequestCompound } from './'
 
 /**
  * @export 
@@ -146,20 +58,6 @@ import { ValidationObjectTextstylestaticRequestCompound } from './'
  * @class DataObjectEzsignformfieldRequestCompound
  */
 export class DataObjectEzsignformfieldRequestCompound {
-    pkiEzsignformfieldID?:number = undefined
-    iEzsignpagePagenumber:number = 0
-    sEzsignformfieldLabel:string = ''
-    sEzsignformfieldValue?:string = undefined
-    iEzsignformfieldX:number = 0
-    iEzsignformfieldY:number = 0
-    iEzsignformfieldWidth:number = 0
-    iEzsignformfieldHeight:number = 0
-    bEzsignformfieldAutocomplete?:boolean = undefined
-    bEzsignformfieldSelected?:boolean = undefined
-    sEzsignformfieldEnteredvalue?:string = undefined
-    eEzsignformfieldDependencyrequirement?:FieldEEzsignformfieldDependencyrequirement = undefined
-    eEzsignformfieldHorizontalalignment?:EnumHorizontalalignment = undefined
-    objTextstylestatic?:TextstylestaticRequestCompound = undefined
     a_objEzsignelementdependency?:Array<EzsignelementdependencyRequestCompound> = undefined
 }
 
@@ -169,67 +67,6 @@ export class DataObjectEzsignformfieldRequestCompound {
  * @class ValidationObjectEzsignformfieldRequestCompound
  */
 export class ValidationObjectEzsignformfieldRequestCompound {
-   pkiEzsignformfieldID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   iEzsignpagePagenumber = {
-      type: 'integer',
-      minimum: 1,
-      required: true
-   }
-   sEzsignformfieldLabel = {
-      type: 'string',
-      required: true
-   }
-   sEzsignformfieldValue = {
-      type: 'string',
-      required: false
-   }
-   iEzsignformfieldX = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   iEzsignformfieldY = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   iEzsignformfieldWidth = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   iEzsignformfieldHeight = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   bEzsignformfieldAutocomplete = {
-      type: 'boolean',
-      required: false
-   }
-   bEzsignformfieldSelected = {
-      type: 'boolean',
-      required: false
-   }
-   sEzsignformfieldEnteredvalue = {
-      type: 'string',
-      required: false
-   }
-   eEzsignformfieldDependencyrequirement = {
-      type: 'enum',
-      allowableValues: ['AllOf','AnyOf'],
-      required: false
-   }
-   eEzsignformfieldHorizontalalignment = {
-      type: 'enum',
-      allowableValues: ['Center','Left','Right'],
-      required: false
-   }
-   objTextstylestatic = new ValidationObjectTextstylestaticRequestCompound()
    a_objEzsignelementdependency = {
       type: 'array',
       required: false

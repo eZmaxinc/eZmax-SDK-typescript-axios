@@ -24,48 +24,6 @@ import type { TextstylestaticRequest } from './textstylestatic-request';
  */
 /*export type TextstylestaticRequestCompound = TextstylestaticRequest;*/
 export interface TextstylestaticRequestCompound {
-    /**
-     * The unique ID of the Font
-     * @type {number}
-     * @memberof TextstylestaticRequestCompound
-     */
-    fkiFontID:number 
-    /**
-     * Whether the Textstylestatic is Bold or not
-     * @type {boolean}
-     * @memberof TextstylestaticRequestCompound
-     */
-    bTextstylestaticBold:boolean 
-    /**
-     * Whether the Textstylestatic is Underline or not
-     * @type {boolean}
-     * @memberof TextstylestaticRequestCompound
-     */
-    bTextstylestaticUnderline:boolean 
-    /**
-     * Whether the Textstylestatic is Italic or not
-     * @type {boolean}
-     * @memberof TextstylestaticRequestCompound
-     */
-    bTextstylestaticItalic:boolean 
-    /**
-     * Whether the Textstylestatic is Strikethrough or not
-     * @type {boolean}
-     * @memberof TextstylestaticRequestCompound
-     */
-    bTextstylestaticStrikethrough:boolean 
-    /**
-     * The int32 representation of the Fontcolor. For example, RGB color #39435B would be 3752795
-     * @type {number}
-     * @memberof TextstylestaticRequestCompound
-     */
-    iTextstylestaticFontcolor:number 
-    /**
-     * The Size for the Font of the Textstylestatic
-     * @type {number}
-     * @memberof TextstylestaticRequestCompound
-     */
-    iTextstylestaticSize:number 
 }
 
 
@@ -81,13 +39,6 @@ export interface TextstylestaticRequestCompound {
  * @class DataObjectTextstylestaticRequestCompound
  */
 export class DataObjectTextstylestaticRequestCompound {
-    fkiFontID:number = 0
-    bTextstylestaticBold:boolean = false
-    bTextstylestaticUnderline:boolean = false
-    bTextstylestaticItalic:boolean = false
-    bTextstylestaticStrikethrough:boolean = false
-    iTextstylestaticFontcolor:number = 0
-    iTextstylestaticSize:number = 0
 }
 
 /**
@@ -96,39 +47,6 @@ export class DataObjectTextstylestaticRequestCompound {
  * @class ValidationObjectTextstylestaticRequestCompound
  */
 export class ValidationObjectTextstylestaticRequestCompound {
-   fkiFontID = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   bTextstylestaticBold = {
-      type: 'boolean',
-      required: true
-   }
-   bTextstylestaticUnderline = {
-      type: 'boolean',
-      required: true
-   }
-   bTextstylestaticItalic = {
-      type: 'boolean',
-      required: true
-   }
-   bTextstylestaticStrikethrough = {
-      type: 'boolean',
-      required: true
-   }
-   iTextstylestaticFontcolor = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 16777215,
-      required: true
-   }
-   iTextstylestaticSize = {
-      type: 'integer',
-      minimum: 1,
-      maximum: 255,
-      required: true
-   }
 } 
 
 

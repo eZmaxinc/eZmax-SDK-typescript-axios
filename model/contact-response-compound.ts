@@ -30,84 +30,6 @@ import type { FieldEContactType } from './field-econtact-type';
  */
 /*export type ContactResponseCompound = ContactResponse;*/
 export interface ContactResponseCompound {
-    /**
-     * The unique ID of the Contact
-     * @type {number}
-     * @memberof ContactResponseCompound
-     */
-    pkiContactID:number 
-    /**
-     * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
-     * @type {number}
-     * @memberof ContactResponseCompound
-     */
-    fkiLanguageID:number 
-    /**
-     * The unique ID of the Contacttitle.  Valid values:  |Value|Description| |-|-| |1|Ms.| |2|Mr.| |4|(Blank)| |5|Me (For Notaries)|
-     * @type {number}
-     * @memberof ContactResponseCompound
-     */
-    fkiContacttitleID:number 
-    /**
-     * The unique ID of the Contactinformations
-     * @type {number}
-     * @memberof ContactResponseCompound
-     */
-    fkiContactinformationsID:number 
-    /**
-     * The Birth Date of the contact
-     * @type {string}
-     * @memberof ContactResponseCompound
-     */
-    dtContactBirthdate?:string 
-    /**
-     * 
-     * @type {FieldEContactType}
-     * @memberof ContactResponseCompound
-     */
-    eContactType:FieldEContactType 
-    /**
-     * The First name of the contact
-     * @type {string}
-     * @memberof ContactResponseCompound
-     */
-    sContactFirstname:string 
-    /**
-     * The Last name of the contact
-     * @type {string}
-     * @memberof ContactResponseCompound
-     */
-    sContactLastname:string 
-    /**
-     * The Company name of the contact
-     * @type {string}
-     * @memberof ContactResponseCompound
-     */
-    sContactCompany?:string 
-    /**
-     * The occupation of the Contact
-     * @type {string}
-     * @memberof ContactResponseCompound
-     */
-    sContactOccupation?:string 
-    /**
-     * The note of the Contact
-     * @type {string}
-     * @memberof ContactResponseCompound
-     */
-    tContactNote?:string 
-    /**
-     * Whether the contact is active or not
-     * @type {boolean}
-     * @memberof ContactResponseCompound
-     */
-    bContactIsactive:boolean 
-    /**
-     * 
-     * @type {ContactinformationsResponseCompound}
-     * @memberof ContactResponseCompound
-     */
-    objContactinformations:ContactinformationsResponseCompound 
 }
 
 
@@ -116,10 +38,6 @@ export interface ContactResponseCompound {
  * @import
  * Imports Child Data Object
  */
-// @ts-ignore
-import { DataObjectContactinformationsResponseCompound } from './'
-// @ts-ignore
-import { ValidationObjectContactinformationsResponseCompound } from './'
 
 /**
  * @export 
@@ -128,19 +46,6 @@ import { ValidationObjectContactinformationsResponseCompound } from './'
  * @class DataObjectContactResponseCompound
  */
 export class DataObjectContactResponseCompound {
-    pkiContactID:number = 0
-    fkiLanguageID:number = 0
-    fkiContacttitleID:number = 0
-    fkiContactinformationsID:number = 0
-    dtContactBirthdate?:string = undefined
-    eContactType:FieldEContactType = 'Agent'
-    sContactFirstname:string = ''
-    sContactLastname:string = ''
-    sContactCompany?:string = undefined
-    sContactOccupation?:string = undefined
-    tContactNote?:string = undefined
-    bContactIsactive:boolean = false
-    objContactinformations:ContactinformationsResponseCompound = new DataObjectContactinformationsResponseCompound()
 }
 
 /**
@@ -149,64 +54,6 @@ export class DataObjectContactResponseCompound {
  * @class ValidationObjectContactResponseCompound
  */
 export class ValidationObjectContactResponseCompound {
-   pkiContactID = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   fkiLanguageID = {
-      type: 'integer',
-      minimum: 1,
-      maximum: 2,
-      required: true
-   }
-   fkiContacttitleID = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   fkiContactinformationsID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 16777215,
-      required: true
-   }
-   dtContactBirthdate = {
-      type: 'string',
-      required: false
-   }
-   eContactType = {
-      type: 'enum',
-      allowableValues: ['Agent','Assistant','BankAccount','Borrower','Buyer','Company','ContractCreator','Creditcardmerchant','Customer','Depositreceipt','Employee','ExternalBroker','EzsignSigner','EzsignUser','EzcomAgent','EzcomApprover','FinancialInstitution','FranchiseBroker','Franchisefranchisecontact','Franchisefranchisesignatory','FranchiseOfficeBroker','FranchiseCompany','FranchiseOwner','Lead','MarketingCampaignSample','Notary','Payer','Petowner','PrivateTo','RewardMember','RewardRepresentative','Seller','Shared','Supplier','Survey','Inspector'],
-      required: true
-   }
-   sContactFirstname = {
-      type: 'string',
-      required: true
-   }
-   sContactLastname = {
-      type: 'string',
-      required: true
-   }
-   sContactCompany = {
-      type: 'string',
-      required: false
-   }
-   sContactOccupation = {
-      type: 'string',
-      pattern: /^.{0,50}$/,
-      required: false
-   }
-   tContactNote = {
-      type: 'string',
-      pattern: /^.{0,32000}$/,
-      required: false
-   }
-   bContactIsactive = {
-      type: 'boolean',
-      required: true
-   }
-   objContactinformations = new ValidationObjectContactinformationsResponseCompound()
 } 
 
 

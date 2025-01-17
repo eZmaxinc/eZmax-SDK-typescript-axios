@@ -34,18 +34,6 @@ import type { UserResponse } from './user-response';
 /*export type WebhookUserUserCreated = CommonWebhook;*/
 export interface WebhookUserUserCreated {
     /**
-     * 
-     * @type {CustomWebhookResponse}
-     * @memberof WebhookUserUserCreated
-     */
-    objWebhook:CustomWebhookResponse 
-    /**
-     * An array containing details of previous attempts that were made to deliver the message. The array is empty if it\'s the first attempt.
-     * @type {Array<AttemptResponseCompound>}
-     * @memberof WebhookUserUserCreated
-     */
-    a_objAttempt:Array<AttemptResponseCompound> 
-    /**
      * A User Object and children to create a complete structure
      * @type {UserResponse}
      * @memberof WebhookUserUserCreated
@@ -59,11 +47,7 @@ export interface WebhookUserUserCreated {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCustomWebhookResponse } from './'
-// @ts-ignore
 import { DataObjectUserResponse } from './'
-// @ts-ignore
-import { ValidationObjectCustomWebhookResponse } from './'
 // @ts-ignore
 import { ValidationObjectUserResponse } from './'
 
@@ -74,8 +58,6 @@ import { ValidationObjectUserResponse } from './'
  * @class DataObjectWebhookUserUserCreated
  */
 export class DataObjectWebhookUserUserCreated {
-    objWebhook:CustomWebhookResponse = new DataObjectCustomWebhookResponse()
-    a_objAttempt:Array<AttemptResponseCompound> = []
     objUser:UserResponse = new DataObjectUserResponse()
 }
 
@@ -85,11 +67,6 @@ export class DataObjectWebhookUserUserCreated {
  * @class ValidationObjectWebhookUserUserCreated
  */
 export class ValidationObjectWebhookUserUserCreated {
-   objWebhook = new ValidationObjectCustomWebhookResponse()
-   a_objAttempt = {
-      type: 'array',
-      required: true
-   }
    objUser = new ValidationObjectUserResponse()
 } 
 

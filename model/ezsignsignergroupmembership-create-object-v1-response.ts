@@ -35,18 +35,6 @@ import type { EzsignsignergroupmembershipCreateObjectV1ResponseMPayload } from '
 export interface EzsignsignergroupmembershipCreateObjectV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsignsignergroupmembershipCreateObjectV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsignsignergroupmembershipCreateObjectV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {EzsignsignergroupmembershipCreateObjectV1ResponseMPayload}
      * @memberof EzsignsignergroupmembershipCreateObjectV1Response
      */
@@ -59,15 +47,7 @@ export interface EzsignsignergroupmembershipCreateObjectV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEzsignsignergroupmembershipCreateObjectV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsignsignergroupmembershipCreateObjectV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEzsignsignergroupmembershipCreateObjectV1ResponseMPaylo
  * @class DataObjectEzsignsignergroupmembershipCreateObjectV1Response
  */
 export class DataObjectEzsignsignergroupmembershipCreateObjectV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsignsignergroupmembershipCreateObjectV1ResponseMPayload = new DataObjectEzsignsignergroupmembershipCreateObjectV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEzsignsignergroupmembershipCreateObjectV1Response {
  * @class ValidationObjectEzsignsignergroupmembershipCreateObjectV1Response
  */
 export class ValidationObjectEzsignsignergroupmembershipCreateObjectV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsignsignergroupmembershipCreateObjectV1ResponseMPayload()
 } 
 

@@ -35,18 +35,6 @@ import type { PaymenttermGetAutocompleteV2ResponseMPayload } from './paymentterm
 export interface PaymenttermGetAutocompleteV2Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof PaymenttermGetAutocompleteV2Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof PaymenttermGetAutocompleteV2Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {PaymenttermGetAutocompleteV2ResponseMPayload}
      * @memberof PaymenttermGetAutocompleteV2Response
      */
@@ -59,15 +47,7 @@ export interface PaymenttermGetAutocompleteV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectPaymenttermGetAutocompleteV2ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectPaymenttermGetAutocompleteV2ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectPaymenttermGetAutocompleteV2ResponseMPayload } from './
  * @class DataObjectPaymenttermGetAutocompleteV2Response
  */
 export class DataObjectPaymenttermGetAutocompleteV2Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:PaymenttermGetAutocompleteV2ResponseMPayload = new DataObjectPaymenttermGetAutocompleteV2ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectPaymenttermGetAutocompleteV2Response {
  * @class ValidationObjectPaymenttermGetAutocompleteV2Response
  */
 export class ValidationObjectPaymenttermGetAutocompleteV2Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectPaymenttermGetAutocompleteV2ResponseMPayload()
 } 
 

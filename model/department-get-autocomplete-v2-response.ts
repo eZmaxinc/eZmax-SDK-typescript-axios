@@ -35,18 +35,6 @@ import type { DepartmentGetAutocompleteV2ResponseMPayload } from './department-g
 export interface DepartmentGetAutocompleteV2Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof DepartmentGetAutocompleteV2Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof DepartmentGetAutocompleteV2Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {DepartmentGetAutocompleteV2ResponseMPayload}
      * @memberof DepartmentGetAutocompleteV2Response
      */
@@ -59,15 +47,7 @@ export interface DepartmentGetAutocompleteV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectDepartmentGetAutocompleteV2ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectDepartmentGetAutocompleteV2ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectDepartmentGetAutocompleteV2ResponseMPayload } from './'
  * @class DataObjectDepartmentGetAutocompleteV2Response
  */
 export class DataObjectDepartmentGetAutocompleteV2Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:DepartmentGetAutocompleteV2ResponseMPayload = new DataObjectDepartmentGetAutocompleteV2ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectDepartmentGetAutocompleteV2Response {
  * @class ValidationObjectDepartmentGetAutocompleteV2Response
  */
 export class ValidationObjectDepartmentGetAutocompleteV2Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectDepartmentGetAutocompleteV2ResponseMPayload()
 } 
 

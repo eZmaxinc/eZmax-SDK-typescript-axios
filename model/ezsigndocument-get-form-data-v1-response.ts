@@ -35,18 +35,6 @@ import type { EzsigndocumentGetFormDataV1ResponseMPayload } from './ezsigndocume
 export interface EzsigndocumentGetFormDataV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsigndocumentGetFormDataV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsigndocumentGetFormDataV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {EzsigndocumentGetFormDataV1ResponseMPayload}
      * @memberof EzsigndocumentGetFormDataV1Response
      */
@@ -59,15 +47,7 @@ export interface EzsigndocumentGetFormDataV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEzsigndocumentGetFormDataV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsigndocumentGetFormDataV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEzsigndocumentGetFormDataV1ResponseMPayload } from './'
  * @class DataObjectEzsigndocumentGetFormDataV1Response
  */
 export class DataObjectEzsigndocumentGetFormDataV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsigndocumentGetFormDataV1ResponseMPayload = new DataObjectEzsigndocumentGetFormDataV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEzsigndocumentGetFormDataV1Response {
  * @class ValidationObjectEzsigndocumentGetFormDataV1Response
  */
 export class ValidationObjectEzsigndocumentGetFormDataV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsigndocumentGetFormDataV1ResponseMPayload()
 } 
 

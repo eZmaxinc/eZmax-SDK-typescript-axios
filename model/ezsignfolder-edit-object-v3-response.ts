@@ -30,18 +30,6 @@ import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-
  */
 /*export type EzsignfolderEditObjectV3Response = CommonResponse;*/
 export interface EzsignfolderEditObjectV3Response {
-    /**
-     * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsignfolderEditObjectV3Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsignfolderEditObjectV3Response
-     */
-    objDebug?:CommonResponseObjDebug 
 }
 
 
@@ -49,14 +37,6 @@ export interface EzsignfolderEditObjectV3Response {
  * @import
  * Imports Child Data Object
  */
-// @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 
 /**
  * @export 
@@ -65,8 +45,6 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectEzsignfolderEditObjectV3Response
  */
 export class DataObjectEzsignfolderEditObjectV3Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
 }
 
 /**
@@ -75,8 +53,6 @@ export class DataObjectEzsignfolderEditObjectV3Response {
  * @class ValidationObjectEzsignfolderEditObjectV3Response
  */
 export class ValidationObjectEzsignfolderEditObjectV3Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
 } 
 
 

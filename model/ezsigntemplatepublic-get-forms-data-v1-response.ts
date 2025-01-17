@@ -35,18 +35,6 @@ import type { EzsigntemplatepublicGetFormsDataV1ResponseMPayload } from './ezsig
 export interface EzsigntemplatepublicGetFormsDataV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsigntemplatepublicGetFormsDataV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsigntemplatepublicGetFormsDataV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {EzsigntemplatepublicGetFormsDataV1ResponseMPayload}
      * @memberof EzsigntemplatepublicGetFormsDataV1Response
      */
@@ -59,15 +47,7 @@ export interface EzsigntemplatepublicGetFormsDataV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEzsigntemplatepublicGetFormsDataV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsigntemplatepublicGetFormsDataV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEzsigntemplatepublicGetFormsDataV1ResponseMPayload } fr
  * @class DataObjectEzsigntemplatepublicGetFormsDataV1Response
  */
 export class DataObjectEzsigntemplatepublicGetFormsDataV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsigntemplatepublicGetFormsDataV1ResponseMPayload = new DataObjectEzsigntemplatepublicGetFormsDataV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEzsigntemplatepublicGetFormsDataV1Response {
  * @class ValidationObjectEzsigntemplatepublicGetFormsDataV1Response
  */
 export class ValidationObjectEzsigntemplatepublicGetFormsDataV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsigntemplatepublicGetFormsDataV1ResponseMPayload()
 } 
 

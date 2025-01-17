@@ -30,18 +30,6 @@ import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-
  */
 /*export type DiscussionmessagePatchObjectV1Response = CommonResponse;*/
 export interface DiscussionmessagePatchObjectV1Response {
-    /**
-     * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof DiscussionmessagePatchObjectV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof DiscussionmessagePatchObjectV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
 }
 
 
@@ -49,14 +37,6 @@ export interface DiscussionmessagePatchObjectV1Response {
  * @import
  * Imports Child Data Object
  */
-// @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 
 /**
  * @export 
@@ -65,8 +45,6 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectDiscussionmessagePatchObjectV1Response
  */
 export class DataObjectDiscussionmessagePatchObjectV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
 }
 
 /**
@@ -75,8 +53,6 @@ export class DataObjectDiscussionmessagePatchObjectV1Response {
  * @class ValidationObjectDiscussionmessagePatchObjectV1Response
  */
 export class ValidationObjectDiscussionmessagePatchObjectV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
 } 
 
 

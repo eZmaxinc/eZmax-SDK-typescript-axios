@@ -30,36 +30,6 @@ import type { VariableexpenseRequest } from './variableexpense-request';
  */
 /*export type VariableexpenseRequestCompound = VariableexpenseRequest;*/
 export interface VariableexpenseRequestCompound {
-    /**
-     * The unique ID of the Variableexpense
-     * @type {number}
-     * @memberof VariableexpenseRequestCompound
-     */
-    pkiVariableexpenseID?:number 
-    /**
-     * The code of the Variableexpense
-     * @type {string}
-     * @memberof VariableexpenseRequestCompound
-     */
-    sVariableexpenseCode:string 
-    /**
-     * 
-     * @type {MultilingualVariableexpenseDescription}
-     * @memberof VariableexpenseRequestCompound
-     */
-    objVariableexpenseDescription:MultilingualVariableexpenseDescription 
-    /**
-     * 
-     * @type {FieldEVariableexpenseTaxable}
-     * @memberof VariableexpenseRequestCompound
-     */
-    eVariableexpenseTaxable:FieldEVariableexpenseTaxable 
-    /**
-     * Whether the variableexpense is active or not
-     * @type {boolean}
-     * @memberof VariableexpenseRequestCompound
-     */
-    bVariableexpenseIsactive:boolean 
 }
 
 
@@ -68,10 +38,6 @@ export interface VariableexpenseRequestCompound {
  * @import
  * Imports Child Data Object
  */
-// @ts-ignore
-import { DataObjectMultilingualVariableexpenseDescription } from './'
-// @ts-ignore
-import { ValidationObjectMultilingualVariableexpenseDescription } from './'
 
 /**
  * @export 
@@ -80,11 +46,6 @@ import { ValidationObjectMultilingualVariableexpenseDescription } from './'
  * @class DataObjectVariableexpenseRequestCompound
  */
 export class DataObjectVariableexpenseRequestCompound {
-    pkiVariableexpenseID?:number = undefined
-    sVariableexpenseCode:string = ''
-    objVariableexpenseDescription:MultilingualVariableexpenseDescription = new DataObjectMultilingualVariableexpenseDescription()
-    eVariableexpenseTaxable:FieldEVariableexpenseTaxable = 'Yes'
-    bVariableexpenseIsactive:boolean = false
 }
 
 /**
@@ -93,27 +54,6 @@ export class DataObjectVariableexpenseRequestCompound {
  * @class ValidationObjectVariableexpenseRequestCompound
  */
 export class ValidationObjectVariableexpenseRequestCompound {
-   pkiVariableexpenseID = {
-      type: 'integer',
-      minimum: 1,
-      maximum: 255,
-      required: false
-   }
-   sVariableexpenseCode = {
-      type: 'string',
-      pattern: /^.{0,5}$/,
-      required: true
-   }
-   objVariableexpenseDescription = new ValidationObjectMultilingualVariableexpenseDescription()
-   eVariableexpenseTaxable = {
-      type: 'enum',
-      allowableValues: ['Yes','No','Included'],
-      required: true
-   }
-   bVariableexpenseIsactive = {
-      type: 'boolean',
-      required: true
-   }
 } 
 
 

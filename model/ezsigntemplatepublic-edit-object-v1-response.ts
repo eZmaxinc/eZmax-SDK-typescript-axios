@@ -30,18 +30,6 @@ import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-
  */
 /*export type EzsigntemplatepublicEditObjectV1Response = CommonResponse;*/
 export interface EzsigntemplatepublicEditObjectV1Response {
-    /**
-     * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsigntemplatepublicEditObjectV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsigntemplatepublicEditObjectV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
 }
 
 
@@ -49,14 +37,6 @@ export interface EzsigntemplatepublicEditObjectV1Response {
  * @import
  * Imports Child Data Object
  */
-// @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 
 /**
  * @export 
@@ -65,8 +45,6 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectEzsigntemplatepublicEditObjectV1Response
  */
 export class DataObjectEzsigntemplatepublicEditObjectV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
 }
 
 /**
@@ -75,8 +53,6 @@ export class DataObjectEzsigntemplatepublicEditObjectV1Response {
  * @class ValidationObjectEzsigntemplatepublicEditObjectV1Response
  */
 export class ValidationObjectEzsigntemplatepublicEditObjectV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
 } 
 
 

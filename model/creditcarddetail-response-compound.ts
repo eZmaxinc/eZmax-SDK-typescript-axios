@@ -24,54 +24,6 @@ import type { CreditcarddetailResponse } from './creditcarddetail-response';
  */
 /*export type CreditcarddetailResponseCompound = CreditcarddetailResponse;*/
 export interface CreditcarddetailResponseCompound {
-    /**
-     * The unique ID of the Creditcarddetail
-     * @type {number}
-     * @memberof CreditcarddetailResponseCompound
-     */
-    pkiCreditcarddetailID:number 
-    /**
-     * The unique ID of the Creditcardtype
-     * @type {number}
-     * @memberof CreditcarddetailResponseCompound
-     */
-    fkiCreditcardtypeID:number 
-    /**
-     * The last digits of the Creditcarddetail
-     * @type {number}
-     * @memberof CreditcarddetailResponseCompound
-     */
-    iCreditcarddetailLastdigits:number 
-    /**
-     * The expirationmonth of the Creditcarddetail
-     * @type {number}
-     * @memberof CreditcarddetailResponseCompound
-     */
-    iCreditcarddetailExpirationmonth:number 
-    /**
-     * The expirationyear of the Creditcarddetail
-     * @type {number}
-     * @memberof CreditcarddetailResponseCompound
-     */
-    iCreditcarddetailExpirationyear:number 
-    /**
-     * The civic of the Creditcarddetail
-     * @type {string}
-     * @memberof CreditcarddetailResponseCompound
-     */
-    sCreditcarddetailCivic:string 
-    /**
-     * The street of the Creditcarddetail
-     * @type {string}
-     * @memberof CreditcarddetailResponseCompound
-     */
-    sCreditcarddetailStreet:string 
-    /**
-     * The zip of the Creditcarddetail
-     * @type {string}
-     * @memberof CreditcarddetailResponseCompound
-     */
-    sCreditcarddetailZip:string 
 }
 
 
@@ -87,14 +39,6 @@ export interface CreditcarddetailResponseCompound {
  * @class DataObjectCreditcarddetailResponseCompound
  */
 export class DataObjectCreditcarddetailResponseCompound {
-    pkiCreditcarddetailID:number = 0
-    fkiCreditcardtypeID:number = 0
-    iCreditcarddetailLastdigits:number = 0
-    iCreditcarddetailExpirationmonth:number = 0
-    iCreditcarddetailExpirationyear:number = 0
-    sCreditcarddetailCivic:string = ''
-    sCreditcarddetailStreet:string = ''
-    sCreditcarddetailZip:string = ''
 }
 
 /**
@@ -103,51 +47,6 @@ export class DataObjectCreditcarddetailResponseCompound {
  * @class ValidationObjectCreditcarddetailResponseCompound
  */
 export class ValidationObjectCreditcarddetailResponseCompound {
-   pkiCreditcarddetailID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 65535,
-      required: true
-   }
-   fkiCreditcardtypeID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 255,
-      required: true
-   }
-   iCreditcarddetailLastdigits = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 9999,
-      required: true
-   }
-   iCreditcarddetailExpirationmonth = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 12,
-      required: true
-   }
-   iCreditcarddetailExpirationyear = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 2200,
-      required: true
-   }
-   sCreditcarddetailCivic = {
-      type: 'string',
-      pattern: /^[\d]{1,8}$/,
-      required: true
-   }
-   sCreditcarddetailStreet = {
-      type: 'string',
-      pattern: /^.{1,19}$/,
-      required: true
-   }
-   sCreditcarddetailZip = {
-      type: 'string',
-      pattern: /^.{0,9}$/,
-      required: true
-   }
 } 
 
 

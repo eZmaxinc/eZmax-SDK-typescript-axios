@@ -31,30 +31,6 @@ import type { EzsigntemplatepackagesignermembershipResponseCompound } from './ez
 /*export type EzsigntemplatepackagemembershipResponseCompound = EzsigntemplatepackagemembershipResponse;*/
 export interface EzsigntemplatepackagemembershipResponseCompound {
     /**
-     * The unique ID of the Ezsigntemplatepackagemembership
-     * @type {number}
-     * @memberof EzsigntemplatepackagemembershipResponseCompound
-     */
-    pkiEzsigntemplatepackagemembershipID:number 
-    /**
-     * The unique ID of the Ezsigntemplatepackage
-     * @type {number}
-     * @memberof EzsigntemplatepackagemembershipResponseCompound
-     */
-    fkiEzsigntemplatepackageID:number 
-    /**
-     * The unique ID of the Ezsigntemplate
-     * @type {number}
-     * @memberof EzsigntemplatepackagemembershipResponseCompound
-     */
-    fkiEzsigntemplateID:number 
-    /**
-     * The order in which the Ezsigntemplate will be imported when using an Ezsigntemplatepackage.
-     * @type {number}
-     * @memberof EzsigntemplatepackagemembershipResponseCompound
-     */
-    iEzsigntemplatepackagemembershipOrder:number 
-    /**
      * 
      * @type {EzsigntemplateResponseCompound}
      * @memberof EzsigntemplatepackagemembershipResponseCompound
@@ -85,10 +61,6 @@ import { ValidationObjectEzsigntemplateResponseCompound } from './'
  * @class DataObjectEzsigntemplatepackagemembershipResponseCompound
  */
 export class DataObjectEzsigntemplatepackagemembershipResponseCompound {
-    pkiEzsigntemplatepackagemembershipID:number = 0
-    fkiEzsigntemplatepackageID:number = 0
-    fkiEzsigntemplateID:number = 0
-    iEzsigntemplatepackagemembershipOrder:number = 0
     objEzsigntemplate:EzsigntemplateResponseCompound = new DataObjectEzsigntemplateResponseCompound()
     a_objEzsigntemplatepackagesignermembership:Array<EzsigntemplatepackagesignermembershipResponseCompound> = []
 }
@@ -99,26 +71,6 @@ export class DataObjectEzsigntemplatepackagemembershipResponseCompound {
  * @class ValidationObjectEzsigntemplatepackagemembershipResponseCompound
  */
 export class ValidationObjectEzsigntemplatepackagemembershipResponseCompound {
-   pkiEzsigntemplatepackagemembershipID = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   fkiEzsigntemplatepackageID = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   fkiEzsigntemplateID = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   iEzsigntemplatepackagemembershipOrder = {
-      type: 'integer',
-      minimum: 1,
-      required: true
-   }
    objEzsigntemplate = new ValidationObjectEzsigntemplateResponseCompound()
    a_objEzsigntemplatepackagesignermembership = {
       type: 'array',

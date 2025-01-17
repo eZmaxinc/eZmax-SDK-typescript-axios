@@ -30,60 +30,6 @@ import type { FieldEEzmaxinvoicingcontractPaymenttype } from './field-eezmaxinvo
  */
 /*export type EzmaxinvoicingcontractResponseCompound = EzmaxinvoicingcontractResponse;*/
 export interface EzmaxinvoicingcontractResponseCompound {
-    /**
-     * The unique ID of the Ezmaxinvoicingcontract
-     * @type {number}
-     * @memberof EzmaxinvoicingcontractResponseCompound
-     */
-    pkiEzmaxinvoicingcontractID:number 
-    /**
-     * 
-     * @type {FieldEEzmaxinvoicingcontractPaymenttype}
-     * @memberof EzmaxinvoicingcontractResponseCompound
-     */
-    eEzmaxinvoicingcontractPaymenttype:FieldEEzmaxinvoicingcontractPaymenttype 
-    /**
-     * The length in years of the Ezmaxinvoicingcontract
-     * @type {number}
-     * @memberof EzmaxinvoicingcontractResponseCompound
-     */
-    iEzmaxinvoicingcontractLength:number 
-    /**
-     * The start date of the Ezmaxinvoicingcontract
-     * @type {string}
-     * @memberof EzmaxinvoicingcontractResponseCompound
-     */
-    dtEzmaxinvoicingcontractStart:string 
-    /**
-     * The end date of the Ezmaxinvoicingcontract
-     * @type {string}
-     * @memberof EzmaxinvoicingcontractResponseCompound
-     */
-    dtEzmaxinvoicingcontractEnd:string 
-    /**
-     * The price of the license
-     * @type {string}
-     * @memberof EzmaxinvoicingcontractResponseCompound
-     */
-    dEzmaxinvoicingcontractLicense:string 
-    /**
-     * The price for 121QA
-     * @type {string}
-     * @memberof EzmaxinvoicingcontractResponseCompound
-     */
-    dEzmaxinvoicingcontract121qa:string 
-    /**
-     * Whether eZsign is for all agents
-     * @type {boolean}
-     * @memberof EzmaxinvoicingcontractResponseCompound
-     */
-    bEzmaxinvoicingcontractEzsignallagents:boolean 
-    /**
-     * 
-     * @type {CommonAudit}
-     * @memberof EzmaxinvoicingcontractResponseCompound
-     */
-    objAudit:CommonAudit 
 }
 
 
@@ -92,10 +38,6 @@ export interface EzmaxinvoicingcontractResponseCompound {
  * @import
  * Imports Child Data Object
  */
-// @ts-ignore
-import { DataObjectCommonAudit } from './'
-// @ts-ignore
-import { ValidationObjectCommonAudit } from './'
 
 /**
  * @export 
@@ -104,15 +46,6 @@ import { ValidationObjectCommonAudit } from './'
  * @class DataObjectEzmaxinvoicingcontractResponseCompound
  */
 export class DataObjectEzmaxinvoicingcontractResponseCompound {
-    pkiEzmaxinvoicingcontractID:number = 0
-    eEzmaxinvoicingcontractPaymenttype:FieldEEzmaxinvoicingcontractPaymenttype = 'Cheque'
-    iEzmaxinvoicingcontractLength:number = 0
-    dtEzmaxinvoicingcontractStart:string = ''
-    dtEzmaxinvoicingcontractEnd:string = ''
-    dEzmaxinvoicingcontractLicense:string = ''
-    dEzmaxinvoicingcontract121qa:string = ''
-    bEzmaxinvoicingcontractEzsignallagents:boolean = false
-    objAudit:CommonAudit = new DataObjectCommonAudit()
 }
 
 /**
@@ -121,44 +54,6 @@ export class DataObjectEzmaxinvoicingcontractResponseCompound {
  * @class ValidationObjectEzmaxinvoicingcontractResponseCompound
  */
 export class ValidationObjectEzmaxinvoicingcontractResponseCompound {
-   pkiEzmaxinvoicingcontractID = {
-      type: 'integer',
-      minimum: 1,
-      required: true
-   }
-   eEzmaxinvoicingcontractPaymenttype = {
-      type: 'enum',
-      allowableValues: ['Cheque','CreditCard','DirectDebit'],
-      required: true
-   }
-   iEzmaxinvoicingcontractLength = {
-      type: 'integer',
-      minimum: 1,
-      required: true
-   }
-   dtEzmaxinvoicingcontractStart = {
-      type: 'string',
-      required: true
-   }
-   dtEzmaxinvoicingcontractEnd = {
-      type: 'string',
-      required: true
-   }
-   dEzmaxinvoicingcontractLicense = {
-      type: 'string',
-      pattern: /^-{0,1}[\d]{1,9}?\.[\d]{2}$/,
-      required: true
-   }
-   dEzmaxinvoicingcontract121qa = {
-      type: 'string',
-      pattern: /^-{0,1}[\d]{1,9}?\.[\d]{2}$/,
-      required: true
-   }
-   bEzmaxinvoicingcontractEzsignallagents = {
-      type: 'boolean',
-      required: true
-   }
-   objAudit = new ValidationObjectCommonAudit()
 } 
 
 

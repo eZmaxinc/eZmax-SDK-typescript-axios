@@ -35,18 +35,6 @@ import type { SubnetCreateObjectV1ResponseMPayload } from './subnet-create-objec
 export interface SubnetCreateObjectV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof SubnetCreateObjectV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof SubnetCreateObjectV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {SubnetCreateObjectV1ResponseMPayload}
      * @memberof SubnetCreateObjectV1Response
      */
@@ -59,15 +47,7 @@ export interface SubnetCreateObjectV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectSubnetCreateObjectV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectSubnetCreateObjectV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectSubnetCreateObjectV1ResponseMPayload } from './'
  * @class DataObjectSubnetCreateObjectV1Response
  */
 export class DataObjectSubnetCreateObjectV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:SubnetCreateObjectV1ResponseMPayload = new DataObjectSubnetCreateObjectV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectSubnetCreateObjectV1Response {
  * @class ValidationObjectSubnetCreateObjectV1Response
  */
 export class ValidationObjectSubnetCreateObjectV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectSubnetCreateObjectV1ResponseMPayload()
 } 
 

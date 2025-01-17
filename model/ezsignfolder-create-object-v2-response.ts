@@ -35,18 +35,6 @@ import type { EzsignfolderCreateObjectV2ResponseMPayload } from './ezsignfolder-
 export interface EzsignfolderCreateObjectV2Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsignfolderCreateObjectV2Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsignfolderCreateObjectV2Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {EzsignfolderCreateObjectV2ResponseMPayload}
      * @memberof EzsignfolderCreateObjectV2Response
      */
@@ -59,15 +47,7 @@ export interface EzsignfolderCreateObjectV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEzsignfolderCreateObjectV2ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsignfolderCreateObjectV2ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEzsignfolderCreateObjectV2ResponseMPayload } from './'
  * @class DataObjectEzsignfolderCreateObjectV2Response
  */
 export class DataObjectEzsignfolderCreateObjectV2Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsignfolderCreateObjectV2ResponseMPayload = new DataObjectEzsignfolderCreateObjectV2ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEzsignfolderCreateObjectV2Response {
  * @class ValidationObjectEzsignfolderCreateObjectV2Response
  */
 export class ValidationObjectEzsignfolderCreateObjectV2Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsignfolderCreateObjectV2ResponseMPayload()
 } 
 

@@ -35,18 +35,6 @@ import type { CommonResponseObjDebugPayloadGetList } from './common-response-obj
 export interface BrandingGetListV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayloadGetList}
-     * @memberof BrandingGetListV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayloadGetList 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof BrandingGetListV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {BrandingGetListV1ResponseMPayload}
      * @memberof BrandingGetListV1Response
      */
@@ -59,15 +47,7 @@ export interface BrandingGetListV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayloadGetList } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectBrandingGetListV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayloadGetList } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectBrandingGetListV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectBrandingGetListV1ResponseMPayload } from './'
  * @class DataObjectBrandingGetListV1Response
  */
 export class DataObjectBrandingGetListV1Response {
-    objDebugPayload:CommonResponseObjDebugPayloadGetList = new DataObjectCommonResponseObjDebugPayloadGetList()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:BrandingGetListV1ResponseMPayload = new DataObjectBrandingGetListV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectBrandingGetListV1Response {
  * @class ValidationObjectBrandingGetListV1Response
  */
 export class ValidationObjectBrandingGetListV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayloadGetList()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectBrandingGetListV1ResponseMPayload()
 } 
 

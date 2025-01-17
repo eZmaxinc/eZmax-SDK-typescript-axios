@@ -35,18 +35,6 @@ import type { WebhookGetHistoryV1ResponseMPayload } from './webhook-get-history-
 export interface WebhookGetHistoryV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof WebhookGetHistoryV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof WebhookGetHistoryV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {WebhookGetHistoryV1ResponseMPayload}
      * @memberof WebhookGetHistoryV1Response
      */
@@ -59,15 +47,7 @@ export interface WebhookGetHistoryV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectWebhookGetHistoryV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectWebhookGetHistoryV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectWebhookGetHistoryV1ResponseMPayload } from './'
  * @class DataObjectWebhookGetHistoryV1Response
  */
 export class DataObjectWebhookGetHistoryV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:WebhookGetHistoryV1ResponseMPayload = new DataObjectWebhookGetHistoryV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectWebhookGetHistoryV1Response {
  * @class ValidationObjectWebhookGetHistoryV1Response
  */
 export class ValidationObjectWebhookGetHistoryV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectWebhookGetHistoryV1ResponseMPayload()
 } 
 

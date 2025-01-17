@@ -35,18 +35,6 @@ import type { InvoiceGetAttachmentsV1ResponseMPayload } from './invoice-get-atta
 export interface InvoiceGetAttachmentsV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof InvoiceGetAttachmentsV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof InvoiceGetAttachmentsV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {InvoiceGetAttachmentsV1ResponseMPayload}
      * @memberof InvoiceGetAttachmentsV1Response
      */
@@ -59,15 +47,7 @@ export interface InvoiceGetAttachmentsV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectInvoiceGetAttachmentsV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectInvoiceGetAttachmentsV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectInvoiceGetAttachmentsV1ResponseMPayload } from './'
  * @class DataObjectInvoiceGetAttachmentsV1Response
  */
 export class DataObjectInvoiceGetAttachmentsV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:InvoiceGetAttachmentsV1ResponseMPayload = new DataObjectInvoiceGetAttachmentsV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectInvoiceGetAttachmentsV1Response {
  * @class ValidationObjectInvoiceGetAttachmentsV1Response
  */
 export class ValidationObjectInvoiceGetAttachmentsV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectInvoiceGetAttachmentsV1ResponseMPayload()
 } 
 

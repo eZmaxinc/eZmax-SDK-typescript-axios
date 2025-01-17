@@ -35,18 +35,6 @@ import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-
 export interface AuthenticationexternalCreateObjectV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof AuthenticationexternalCreateObjectV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof AuthenticationexternalCreateObjectV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {AuthenticationexternalCreateObjectV1ResponseMPayload}
      * @memberof AuthenticationexternalCreateObjectV1Response
      */
@@ -59,15 +47,7 @@ export interface AuthenticationexternalCreateObjectV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectAuthenticationexternalCreateObjectV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectAuthenticationexternalCreateObjectV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectAuthenticationexternalCreateObjectV1ResponseMPayload } 
  * @class DataObjectAuthenticationexternalCreateObjectV1Response
  */
 export class DataObjectAuthenticationexternalCreateObjectV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:AuthenticationexternalCreateObjectV1ResponseMPayload = new DataObjectAuthenticationexternalCreateObjectV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectAuthenticationexternalCreateObjectV1Response {
  * @class ValidationObjectAuthenticationexternalCreateObjectV1Response
  */
 export class ValidationObjectAuthenticationexternalCreateObjectV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectAuthenticationexternalCreateObjectV1ResponseMPayload()
 } 
 

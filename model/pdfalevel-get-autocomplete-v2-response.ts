@@ -35,18 +35,6 @@ import type { PdfalevelGetAutocompleteV2ResponseMPayload } from './pdfalevel-get
 export interface PdfalevelGetAutocompleteV2Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof PdfalevelGetAutocompleteV2Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof PdfalevelGetAutocompleteV2Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {PdfalevelGetAutocompleteV2ResponseMPayload}
      * @memberof PdfalevelGetAutocompleteV2Response
      */
@@ -59,15 +47,7 @@ export interface PdfalevelGetAutocompleteV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectPdfalevelGetAutocompleteV2ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectPdfalevelGetAutocompleteV2ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectPdfalevelGetAutocompleteV2ResponseMPayload } from './'
  * @class DataObjectPdfalevelGetAutocompleteV2Response
  */
 export class DataObjectPdfalevelGetAutocompleteV2Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:PdfalevelGetAutocompleteV2ResponseMPayload = new DataObjectPdfalevelGetAutocompleteV2ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectPdfalevelGetAutocompleteV2Response {
  * @class ValidationObjectPdfalevelGetAutocompleteV2Response
  */
 export class ValidationObjectPdfalevelGetAutocompleteV2Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectPdfalevelGetAutocompleteV2ResponseMPayload()
 } 
 

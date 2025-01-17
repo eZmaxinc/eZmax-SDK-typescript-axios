@@ -35,18 +35,6 @@ import type { EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload } from '.
 export interface EzsigndocumentGetEzsignformfieldgroupsV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsigndocumentGetEzsignformfieldgroupsV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsigndocumentGetEzsignformfieldgroupsV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload}
      * @memberof EzsigndocumentGetEzsignformfieldgroupsV1Response
      */
@@ -59,15 +47,7 @@ export interface EzsigndocumentGetEzsignformfieldgroupsV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayloa
  * @class DataObjectEzsigndocumentGetEzsignformfieldgroupsV1Response
  */
 export class DataObjectEzsigndocumentGetEzsignformfieldgroupsV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload = new DataObjectEzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEzsigndocumentGetEzsignformfieldgroupsV1Response {
  * @class ValidationObjectEzsigndocumentGetEzsignformfieldgroupsV1Response
  */
 export class ValidationObjectEzsigndocumentGetEzsignformfieldgroupsV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsigndocumentGetEzsignformfieldgroupsV1ResponseMPayload()
 } 
 

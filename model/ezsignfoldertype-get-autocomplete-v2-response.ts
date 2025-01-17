@@ -35,18 +35,6 @@ import type { EzsignfoldertypeGetAutocompleteV2ResponseMPayload } from './ezsign
 export interface EzsignfoldertypeGetAutocompleteV2Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsignfoldertypeGetAutocompleteV2Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsignfoldertypeGetAutocompleteV2Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {EzsignfoldertypeGetAutocompleteV2ResponseMPayload}
      * @memberof EzsignfoldertypeGetAutocompleteV2Response
      */
@@ -59,15 +47,7 @@ export interface EzsignfoldertypeGetAutocompleteV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEzsignfoldertypeGetAutocompleteV2ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsignfoldertypeGetAutocompleteV2ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEzsignfoldertypeGetAutocompleteV2ResponseMPayload } fro
  * @class DataObjectEzsignfoldertypeGetAutocompleteV2Response
  */
 export class DataObjectEzsignfoldertypeGetAutocompleteV2Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsignfoldertypeGetAutocompleteV2ResponseMPayload = new DataObjectEzsignfoldertypeGetAutocompleteV2ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEzsignfoldertypeGetAutocompleteV2Response {
  * @class ValidationObjectEzsignfoldertypeGetAutocompleteV2Response
  */
 export class ValidationObjectEzsignfoldertypeGetAutocompleteV2Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsignfoldertypeGetAutocompleteV2ResponseMPayload()
 } 
 

@@ -24,30 +24,6 @@ import type { EzsignbulksenddocumentmappingRequest } from './ezsignbulksenddocum
  */
 /*export type EzsignbulksenddocumentmappingRequestCompound = EzsignbulksenddocumentmappingRequest;*/
 export interface EzsignbulksenddocumentmappingRequestCompound {
-    /**
-     * The unique ID of the Ezsignbulksenddocumentmapping.
-     * @type {number}
-     * @memberof EzsignbulksenddocumentmappingRequestCompound
-     */
-    pkiEzsignbulksenddocumentmappingID?:number 
-    /**
-     * The unique ID of the Ezsignbulksend
-     * @type {number}
-     * @memberof EzsignbulksenddocumentmappingRequestCompound
-     */
-    fkiEzsignbulksendID:number 
-    /**
-     * The unique ID of the Ezsigntemplatepackage
-     * @type {number}
-     * @memberof EzsignbulksenddocumentmappingRequestCompound
-     */
-    fkiEzsigntemplatepackageID?:number 
-    /**
-     * The unique ID of the Ezsigntemplate
-     * @type {number}
-     * @memberof EzsignbulksenddocumentmappingRequestCompound
-     */
-    fkiEzsigntemplateID?:number 
 }
 
 
@@ -63,10 +39,6 @@ export interface EzsignbulksenddocumentmappingRequestCompound {
  * @class DataObjectEzsignbulksenddocumentmappingRequestCompound
  */
 export class DataObjectEzsignbulksenddocumentmappingRequestCompound {
-    pkiEzsignbulksenddocumentmappingID?:number = undefined
-    fkiEzsignbulksendID:number = 0
-    fkiEzsigntemplatepackageID?:number = undefined
-    fkiEzsigntemplateID?:number = undefined
 }
 
 /**
@@ -75,26 +47,6 @@ export class DataObjectEzsignbulksenddocumentmappingRequestCompound {
  * @class ValidationObjectEzsignbulksenddocumentmappingRequestCompound
  */
 export class ValidationObjectEzsignbulksenddocumentmappingRequestCompound {
-   pkiEzsignbulksenddocumentmappingID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   fkiEzsignbulksendID = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   fkiEzsigntemplatepackageID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   fkiEzsigntemplateID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
 } 
 
 

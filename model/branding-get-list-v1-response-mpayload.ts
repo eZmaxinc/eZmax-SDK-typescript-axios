@@ -28,18 +28,6 @@ import type { CommonGetListV1ResponseMPayload } from './common-get-list-v1-respo
 /*export type BrandingGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;*/
 export interface BrandingGetListV1ResponseMPayload {
     /**
-     * The number of rows returned
-     * @type {number}
-     * @memberof BrandingGetListV1ResponseMPayload
-     */
-    iRowReturned:number 
-    /**
-     * The number of rows matching your filters (if any) or the total number of rows
-     * @type {number}
-     * @memberof BrandingGetListV1ResponseMPayload
-     */
-    iRowFiltered:number 
-    /**
      * 
      * @type {Array<BrandingListElement>}
      * @memberof BrandingGetListV1ResponseMPayload
@@ -60,8 +48,6 @@ export interface BrandingGetListV1ResponseMPayload {
  * @class DataObjectBrandingGetListV1ResponseMPayload
  */
 export class DataObjectBrandingGetListV1ResponseMPayload {
-    iRowReturned:number = 0
-    iRowFiltered:number = 0
     a_objBranding:Array<BrandingListElement> = []
 }
 
@@ -71,14 +57,6 @@ export class DataObjectBrandingGetListV1ResponseMPayload {
  * @class ValidationObjectBrandingGetListV1ResponseMPayload
  */
 export class ValidationObjectBrandingGetListV1ResponseMPayload {
-   iRowReturned = {
-      type: 'integer',
-      required: true
-   }
-   iRowFiltered = {
-      type: 'integer',
-      required: true
-   }
    a_objBranding = {
       type: 'array',
       required: true

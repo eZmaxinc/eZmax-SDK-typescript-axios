@@ -24,78 +24,6 @@ import type { EzmaxinvoicingsummaryinternaldetailResponse } from './ezmaxinvoici
  */
 /*export type EzmaxinvoicingsummaryinternaldetailResponseCompound = EzmaxinvoicingsummaryinternaldetailResponse;*/
 export interface EzmaxinvoicingsummaryinternaldetailResponseCompound {
-    /**
-     * The unique ID of the Ezmaxinvoicingsummaryinternaldetail
-     * @type {number}
-     * @memberof EzmaxinvoicingsummaryinternaldetailResponseCompound
-     */
-    pkiEzmaxinvoicingsummaryinternaldetailID?:number 
-    /**
-     * The unique ID of the Ezmaxinvoicingsummaryinternal
-     * @type {number}
-     * @memberof EzmaxinvoicingsummaryinternaldetailResponseCompound
-     */
-    fkiEzmaxinvoicingsummaryinternalID?:number 
-    /**
-     * The unique ID of the Ezmaxproduct
-     * @type {number}
-     * @memberof EzmaxinvoicingsummaryinternaldetailResponseCompound
-     */
-    fkiEzmaxproductID:number 
-    /**
-     * The description of the Ezmaxproduct in the language of the requester
-     * @type {string}
-     * @memberof EzmaxinvoicingsummaryinternaldetailResponseCompound
-     */
-    sEzmaxproductDescriptionX:string 
-    /**
-     * The unique ID of the Billingentityexternal
-     * @type {number}
-     * @memberof EzmaxinvoicingsummaryinternaldetailResponseCompound
-     */
-    fkiBillingentityexternalID:number 
-    /**
-     * The description of the Billingentityexternal
-     * @type {string}
-     * @memberof EzmaxinvoicingsummaryinternaldetailResponseCompound
-     */
-    sBillingentityexternalDescription:string 
-    /**
-     * The count item invoiced for the product
-     * @type {string}
-     * @memberof EzmaxinvoicingsummaryinternaldetailResponseCompound
-     */
-    dEzmaxinvoicingsummaryinternaldetailCountreal:string 
-    /**
-     * The subtotal invoiced for the product
-     * @type {string}
-     * @memberof EzmaxinvoicingsummaryinternaldetailResponseCompound
-     */
-    dEzmaxinvoicingsummaryinternaldetailSubtotal:string 
-    /**
-     * The rebate for the product
-     * @type {string}
-     * @memberof EzmaxinvoicingsummaryinternaldetailResponseCompound
-     */
-    dEzmaxinvoicingsummaryinternaldetailRebate:string 
-    /**
-     * The total invoiced for the product
-     * @type {string}
-     * @memberof EzmaxinvoicingsummaryinternaldetailResponseCompound
-     */
-    dEzmaxinvoicingsummaryinternaldetailTotal:string 
-    /**
-     * Whether if it\'s an adjustment
-     * @type {boolean}
-     * @memberof EzmaxinvoicingsummaryinternaldetailResponseCompound
-     */
-    bEzmaxinvoicingsummaryinternaldetailAdjustment:boolean 
-    /**
-     * The help message of the Ezmaxproduct in the language of the requester
-     * @type {string}
-     * @memberof EzmaxinvoicingsummaryinternaldetailResponseCompound
-     */
-    tEzmaxproductHelpX:string 
 }
 
 
@@ -111,18 +39,6 @@ export interface EzmaxinvoicingsummaryinternaldetailResponseCompound {
  * @class DataObjectEzmaxinvoicingsummaryinternaldetailResponseCompound
  */
 export class DataObjectEzmaxinvoicingsummaryinternaldetailResponseCompound {
-    pkiEzmaxinvoicingsummaryinternaldetailID?:number = undefined
-    fkiEzmaxinvoicingsummaryinternalID?:number = undefined
-    fkiEzmaxproductID:number = 0
-    sEzmaxproductDescriptionX:string = ''
-    fkiBillingentityexternalID:number = 0
-    sBillingentityexternalDescription:string = ''
-    dEzmaxinvoicingsummaryinternaldetailCountreal:string = ''
-    dEzmaxinvoicingsummaryinternaldetailSubtotal:string = ''
-    dEzmaxinvoicingsummaryinternaldetailRebate:string = ''
-    dEzmaxinvoicingsummaryinternaldetailTotal:string = ''
-    bEzmaxinvoicingsummaryinternaldetailAdjustment:boolean = false
-    tEzmaxproductHelpX:string = ''
 }
 
 /**
@@ -131,62 +47,6 @@ export class DataObjectEzmaxinvoicingsummaryinternaldetailResponseCompound {
  * @class ValidationObjectEzmaxinvoicingsummaryinternaldetailResponseCompound
  */
 export class ValidationObjectEzmaxinvoicingsummaryinternaldetailResponseCompound {
-   pkiEzmaxinvoicingsummaryinternaldetailID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   fkiEzmaxinvoicingsummaryinternalID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   fkiEzmaxproductID = {
-      type: 'integer',
-      minimum: 1,
-      required: true
-   }
-   sEzmaxproductDescriptionX = {
-      type: 'string',
-      required: true
-   }
-   fkiBillingentityexternalID = {
-      type: 'integer',
-      minimum: 1,
-      required: true
-   }
-   sBillingentityexternalDescription = {
-      type: 'string',
-      required: true
-   }
-   dEzmaxinvoicingsummaryinternaldetailCountreal = {
-      type: 'string',
-      pattern: /^-{0,1}[\d]{1,6}?\.[\d]{2}$/,
-      required: true
-   }
-   dEzmaxinvoicingsummaryinternaldetailSubtotal = {
-      type: 'string',
-      pattern: /^-{0,1}[\d]{1,9}?\.[\d]{2}$/,
-      required: true
-   }
-   dEzmaxinvoicingsummaryinternaldetailRebate = {
-      type: 'string',
-      pattern: /^-{0,1}[\d]{1,9}?\.[\d]{2}$/,
-      required: true
-   }
-   dEzmaxinvoicingsummaryinternaldetailTotal = {
-      type: 'string',
-      pattern: /^-{0,1}[\d]{1,9}?\.[\d]{2}$/,
-      required: true
-   }
-   bEzmaxinvoicingsummaryinternaldetailAdjustment = {
-      type: 'boolean',
-      required: true
-   }
-   tEzmaxproductHelpX = {
-      type: 'string',
-      required: true
-   }
 } 
 
 

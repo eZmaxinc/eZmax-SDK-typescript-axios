@@ -35,18 +35,6 @@ import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-
 export interface AttachmentGetAttachmentlogsV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof AttachmentGetAttachmentlogsV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof AttachmentGetAttachmentlogsV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {AttachmentGetAttachmentlogsV1ResponseMPayload}
      * @memberof AttachmentGetAttachmentlogsV1Response
      */
@@ -59,15 +47,7 @@ export interface AttachmentGetAttachmentlogsV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectAttachmentGetAttachmentlogsV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectAttachmentGetAttachmentlogsV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectAttachmentGetAttachmentlogsV1ResponseMPayload } from '.
  * @class DataObjectAttachmentGetAttachmentlogsV1Response
  */
 export class DataObjectAttachmentGetAttachmentlogsV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:AttachmentGetAttachmentlogsV1ResponseMPayload = new DataObjectAttachmentGetAttachmentlogsV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectAttachmentGetAttachmentlogsV1Response {
  * @class ValidationObjectAttachmentGetAttachmentlogsV1Response
  */
 export class ValidationObjectAttachmentGetAttachmentlogsV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectAttachmentGetAttachmentlogsV1ResponseMPayload()
 } 
 

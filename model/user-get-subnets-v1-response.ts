@@ -35,18 +35,6 @@ import type { UserGetSubnetsV1ResponseMPayload } from './user-get-subnets-v1-res
 export interface UserGetSubnetsV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof UserGetSubnetsV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof UserGetSubnetsV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {UserGetSubnetsV1ResponseMPayload}
      * @memberof UserGetSubnetsV1Response
      */
@@ -59,15 +47,7 @@ export interface UserGetSubnetsV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectUserGetSubnetsV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectUserGetSubnetsV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectUserGetSubnetsV1ResponseMPayload } from './'
  * @class DataObjectUserGetSubnetsV1Response
  */
 export class DataObjectUserGetSubnetsV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:UserGetSubnetsV1ResponseMPayload = new DataObjectUserGetSubnetsV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectUserGetSubnetsV1Response {
  * @class ValidationObjectUserGetSubnetsV1Response
  */
 export class ValidationObjectUserGetSubnetsV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectUserGetSubnetsV1ResponseMPayload()
 } 
 

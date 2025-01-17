@@ -35,18 +35,6 @@ import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-
 export interface BuyercontractGetCommunicationCountV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof BuyercontractGetCommunicationCountV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof BuyercontractGetCommunicationCountV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {BuyercontractGetCommunicationCountV1ResponseMPayload}
      * @memberof BuyercontractGetCommunicationCountV1Response
      */
@@ -59,15 +47,7 @@ export interface BuyercontractGetCommunicationCountV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectBuyercontractGetCommunicationCountV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectBuyercontractGetCommunicationCountV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectBuyercontractGetCommunicationCountV1ResponseMPayload } 
  * @class DataObjectBuyercontractGetCommunicationCountV1Response
  */
 export class DataObjectBuyercontractGetCommunicationCountV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:BuyercontractGetCommunicationCountV1ResponseMPayload = new DataObjectBuyercontractGetCommunicationCountV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectBuyercontractGetCommunicationCountV1Response {
  * @class ValidationObjectBuyercontractGetCommunicationCountV1Response
  */
 export class ValidationObjectBuyercontractGetCommunicationCountV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectBuyercontractGetCommunicationCountV1ResponseMPayload()
 } 
 

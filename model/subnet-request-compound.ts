@@ -27,42 +27,6 @@ import type { SubnetRequest } from './subnet-request';
  */
 /*export type SubnetRequestCompound = SubnetRequest;*/
 export interface SubnetRequestCompound {
-    /**
-     * The unique ID of the Subnet
-     * @type {number}
-     * @memberof SubnetRequestCompound
-     */
-    pkiSubnetID?:number 
-    /**
-     * The unique ID of the User
-     * @type {number}
-     * @memberof SubnetRequestCompound
-     */
-    fkiUserID?:number 
-    /**
-     * The unique ID of the Apikey
-     * @type {number}
-     * @memberof SubnetRequestCompound
-     */
-    fkiApikeyID?:number 
-    /**
-     * 
-     * @type {MultilingualSubnetDescription}
-     * @memberof SubnetRequestCompound
-     */
-    objSubnetDescription:MultilingualSubnetDescription 
-    /**
-     * The network of the Subnet in integer form. For example 8.8.8.0 would be 134744064
-     * @type {number}
-     * @memberof SubnetRequestCompound
-     */
-    iSubnetNetwork:number 
-    /**
-     * The mask of the Subnet  in integer form. For example 255.255.255.0 would be 4294967040
-     * @type {number}
-     * @memberof SubnetRequestCompound
-     */
-    iSubnetMask:number 
 }
 
 
@@ -70,10 +34,6 @@ export interface SubnetRequestCompound {
  * @import
  * Imports Child Data Object
  */
-// @ts-ignore
-import { DataObjectMultilingualSubnetDescription } from './'
-// @ts-ignore
-import { ValidationObjectMultilingualSubnetDescription } from './'
 
 /**
  * @export 
@@ -82,12 +42,6 @@ import { ValidationObjectMultilingualSubnetDescription } from './'
  * @class DataObjectSubnetRequestCompound
  */
 export class DataObjectSubnetRequestCompound {
-    pkiSubnetID?:number = undefined
-    fkiUserID?:number = undefined
-    fkiApikeyID?:number = undefined
-    objSubnetDescription:MultilingualSubnetDescription = new DataObjectMultilingualSubnetDescription()
-    iSubnetNetwork:number = 0
-    iSubnetMask:number = 0
 }
 
 /**
@@ -96,35 +50,6 @@ export class DataObjectSubnetRequestCompound {
  * @class ValidationObjectSubnetRequestCompound
  */
 export class ValidationObjectSubnetRequestCompound {
-   pkiSubnetID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 65535,
-      required: false
-   }
-   fkiUserID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   fkiApikeyID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   objSubnetDescription = new ValidationObjectMultilingualSubnetDescription()
-   iSubnetNetwork = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 4294967295,
-      required: true
-   }
-   iSubnetMask = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 4294967295,
-      required: true
-   }
 } 
 
 

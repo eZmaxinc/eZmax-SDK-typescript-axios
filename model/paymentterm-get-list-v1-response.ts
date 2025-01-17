@@ -35,18 +35,6 @@ import type { PaymenttermGetListV1ResponseMPayload } from './paymentterm-get-lis
 export interface PaymenttermGetListV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayloadGetList}
-     * @memberof PaymenttermGetListV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayloadGetList 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof PaymenttermGetListV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {PaymenttermGetListV1ResponseMPayload}
      * @memberof PaymenttermGetListV1Response
      */
@@ -59,15 +47,7 @@ export interface PaymenttermGetListV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayloadGetList } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectPaymenttermGetListV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayloadGetList } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectPaymenttermGetListV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectPaymenttermGetListV1ResponseMPayload } from './'
  * @class DataObjectPaymenttermGetListV1Response
  */
 export class DataObjectPaymenttermGetListV1Response {
-    objDebugPayload:CommonResponseObjDebugPayloadGetList = new DataObjectCommonResponseObjDebugPayloadGetList()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:PaymenttermGetListV1ResponseMPayload = new DataObjectPaymenttermGetListV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectPaymenttermGetListV1Response {
  * @class ValidationObjectPaymenttermGetListV1Response
  */
 export class ValidationObjectPaymenttermGetListV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayloadGetList()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectPaymenttermGetListV1ResponseMPayload()
 } 
 

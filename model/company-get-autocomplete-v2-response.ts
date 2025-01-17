@@ -35,18 +35,6 @@ import type { CompanyGetAutocompleteV2ResponseMPayload } from './company-get-aut
 export interface CompanyGetAutocompleteV2Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof CompanyGetAutocompleteV2Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof CompanyGetAutocompleteV2Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {CompanyGetAutocompleteV2ResponseMPayload}
      * @memberof CompanyGetAutocompleteV2Response
      */
@@ -59,15 +47,7 @@ export interface CompanyGetAutocompleteV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectCompanyGetAutocompleteV2ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectCompanyGetAutocompleteV2ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectCompanyGetAutocompleteV2ResponseMPayload } from './'
  * @class DataObjectCompanyGetAutocompleteV2Response
  */
 export class DataObjectCompanyGetAutocompleteV2Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:CompanyGetAutocompleteV2ResponseMPayload = new DataObjectCompanyGetAutocompleteV2ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectCompanyGetAutocompleteV2Response {
  * @class ValidationObjectCompanyGetAutocompleteV2Response
  */
 export class ValidationObjectCompanyGetAutocompleteV2Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectCompanyGetAutocompleteV2ResponseMPayload()
 } 
 

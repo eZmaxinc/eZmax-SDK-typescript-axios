@@ -35,18 +35,6 @@ import type { InscriptionGetCommunicationListV1ResponseMPayload } from './inscri
 export interface InscriptionGetCommunicationListV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayloadGetList}
-     * @memberof InscriptionGetCommunicationListV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayloadGetList 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof InscriptionGetCommunicationListV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {InscriptionGetCommunicationListV1ResponseMPayload}
      * @memberof InscriptionGetCommunicationListV1Response
      */
@@ -59,15 +47,7 @@ export interface InscriptionGetCommunicationListV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayloadGetList } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectInscriptionGetCommunicationListV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayloadGetList } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectInscriptionGetCommunicationListV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectInscriptionGetCommunicationListV1ResponseMPayload } fro
  * @class DataObjectInscriptionGetCommunicationListV1Response
  */
 export class DataObjectInscriptionGetCommunicationListV1Response {
-    objDebugPayload:CommonResponseObjDebugPayloadGetList = new DataObjectCommonResponseObjDebugPayloadGetList()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:InscriptionGetCommunicationListV1ResponseMPayload = new DataObjectInscriptionGetCommunicationListV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectInscriptionGetCommunicationListV1Response {
  * @class ValidationObjectInscriptionGetCommunicationListV1Response
  */
 export class ValidationObjectInscriptionGetCommunicationListV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayloadGetList()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectInscriptionGetCommunicationListV1ResponseMPayload()
 } 
 

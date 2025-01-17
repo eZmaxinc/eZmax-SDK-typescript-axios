@@ -28,18 +28,6 @@ import type { UsergroupListElement } from './usergroup-list-element';
 /*export type UsergroupGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;*/
 export interface UsergroupGetListV1ResponseMPayload {
     /**
-     * The number of rows returned
-     * @type {number}
-     * @memberof UsergroupGetListV1ResponseMPayload
-     */
-    iRowReturned:number 
-    /**
-     * The number of rows matching your filters (if any) or the total number of rows
-     * @type {number}
-     * @memberof UsergroupGetListV1ResponseMPayload
-     */
-    iRowFiltered:number 
-    /**
      * 
      * @type {Array<UsergroupListElement>}
      * @memberof UsergroupGetListV1ResponseMPayload
@@ -60,8 +48,6 @@ export interface UsergroupGetListV1ResponseMPayload {
  * @class DataObjectUsergroupGetListV1ResponseMPayload
  */
 export class DataObjectUsergroupGetListV1ResponseMPayload {
-    iRowReturned:number = 0
-    iRowFiltered:number = 0
     a_objUsergroup:Array<UsergroupListElement> = []
 }
 
@@ -71,14 +57,6 @@ export class DataObjectUsergroupGetListV1ResponseMPayload {
  * @class ValidationObjectUsergroupGetListV1ResponseMPayload
  */
 export class ValidationObjectUsergroupGetListV1ResponseMPayload {
-   iRowReturned = {
-      type: 'integer',
-      required: true
-   }
-   iRowFiltered = {
-      type: 'integer',
-      required: true
-   }
    a_objUsergroup = {
       type: 'array',
       required: true

@@ -41,36 +41,6 @@ import type { WebsiteRequest } from './website-request';
 export interface ContactinformationsRequestCompoundV2 {
     /**
      * 
-     * @type {FieldEContactinformationsType}
-     * @memberof ContactinformationsRequestCompoundV2
-     */
-    eContactinformationsType:FieldEContactinformationsType 
-    /**
-     * The index in the a_objAddress array (zero based index) representing the Address object that should become the default one.  You can leave the value to 0 if the array is empty.
-     * @type {number}
-     * @memberof ContactinformationsRequestCompoundV2
-     */
-    iAddressDefault:number 
-    /**
-     * The index in the a_objPhone array (zero based index) representing the Phone object that should become the default one.  You can leave the value to 0 if the array is empty.
-     * @type {number}
-     * @memberof ContactinformationsRequestCompoundV2
-     */
-    iPhoneDefault:number 
-    /**
-     * The index in the a_objEmail array (zero based index) representing the Email object that should become the default one.  You can leave the value to 0 if the array is empty.
-     * @type {number}
-     * @memberof ContactinformationsRequestCompoundV2
-     */
-    iEmailDefault:number 
-    /**
-     * The index in the a_objWebsite array (zero based index) representing the Website object that should become the default one.  You can leave the value to 0 if the array is empty.
-     * @type {number}
-     * @memberof ContactinformationsRequestCompoundV2
-     */
-    iWebsiteDefault:number 
-    /**
-     * 
      * @type {Array<AddressRequestCompound>}
      * @memberof ContactinformationsRequestCompoundV2
      */
@@ -109,11 +79,6 @@ export interface ContactinformationsRequestCompoundV2 {
  * @class DataObjectContactinformationsRequestCompoundV2
  */
 export class DataObjectContactinformationsRequestCompoundV2 {
-    eContactinformationsType:FieldEContactinformationsType = 'BankAccount'
-    iAddressDefault:number = 0
-    iPhoneDefault:number = 0
-    iEmailDefault:number = 0
-    iWebsiteDefault:number = 0
     a_objAddress:Array<AddressRequestCompound> = []
     a_objPhone:Array<PhoneRequestCompound> = []
     a_objEmail:Array<EmailRequestCompound> = []
@@ -126,27 +91,6 @@ export class DataObjectContactinformationsRequestCompoundV2 {
  * @class ValidationObjectContactinformationsRequestCompoundV2
  */
 export class ValidationObjectContactinformationsRequestCompoundV2 {
-   eContactinformationsType = {
-      type: 'enum',
-      allowableValues: ['BankAccount','ContactObject','CreditCard','Customer','ExternalBroker','ExternalBrokerFirm','EzcomCompany','FinancialInstitution','FranchiseCompany','FranchiseOffice','Supplier'],
-      required: true
-   }
-   iAddressDefault = {
-      type: 'integer',
-      required: true
-   }
-   iPhoneDefault = {
-      type: 'integer',
-      required: true
-   }
-   iEmailDefault = {
-      type: 'integer',
-      required: true
-   }
-   iWebsiteDefault = {
-      type: 'integer',
-      required: true
-   }
    a_objAddress = {
       type: 'array',
       required: true

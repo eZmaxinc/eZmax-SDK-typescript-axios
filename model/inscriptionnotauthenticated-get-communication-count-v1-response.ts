@@ -35,18 +35,6 @@ import type { InscriptionnotauthenticatedGetCommunicationCountV1ResponseMPayload
 export interface InscriptionnotauthenticatedGetCommunicationCountV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof InscriptionnotauthenticatedGetCommunicationCountV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof InscriptionnotauthenticatedGetCommunicationCountV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {InscriptionnotauthenticatedGetCommunicationCountV1ResponseMPayload}
      * @memberof InscriptionnotauthenticatedGetCommunicationCountV1Response
      */
@@ -59,15 +47,7 @@ export interface InscriptionnotauthenticatedGetCommunicationCountV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectInscriptionnotauthenticatedGetCommunicationCountV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectInscriptionnotauthenticatedGetCommunicationCountV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectInscriptionnotauthenticatedGetCommunicationCountV1Respo
  * @class DataObjectInscriptionnotauthenticatedGetCommunicationCountV1Response
  */
 export class DataObjectInscriptionnotauthenticatedGetCommunicationCountV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:InscriptionnotauthenticatedGetCommunicationCountV1ResponseMPayload = new DataObjectInscriptionnotauthenticatedGetCommunicationCountV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectInscriptionnotauthenticatedGetCommunicationCountV1Respons
  * @class ValidationObjectInscriptionnotauthenticatedGetCommunicationCountV1Response
  */
 export class ValidationObjectInscriptionnotauthenticatedGetCommunicationCountV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectInscriptionnotauthenticatedGetCommunicationCountV1ResponseMPayload()
 } 
 

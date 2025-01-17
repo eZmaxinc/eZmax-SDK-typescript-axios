@@ -35,18 +35,6 @@ import type { InscriptionGetCommunicationsendersV1ResponseMPayload } from './ins
 export interface InscriptionGetCommunicationsendersV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof InscriptionGetCommunicationsendersV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof InscriptionGetCommunicationsendersV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {InscriptionGetCommunicationsendersV1ResponseMPayload}
      * @memberof InscriptionGetCommunicationsendersV1Response
      */
@@ -59,15 +47,7 @@ export interface InscriptionGetCommunicationsendersV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectInscriptionGetCommunicationsendersV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectInscriptionGetCommunicationsendersV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectInscriptionGetCommunicationsendersV1ResponseMPayload } 
  * @class DataObjectInscriptionGetCommunicationsendersV1Response
  */
 export class DataObjectInscriptionGetCommunicationsendersV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:InscriptionGetCommunicationsendersV1ResponseMPayload = new DataObjectInscriptionGetCommunicationsendersV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectInscriptionGetCommunicationsendersV1Response {
  * @class ValidationObjectInscriptionGetCommunicationsendersV1Response
  */
 export class ValidationObjectInscriptionGetCommunicationsendersV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectInscriptionGetCommunicationsendersV1ResponseMPayload()
 } 
 

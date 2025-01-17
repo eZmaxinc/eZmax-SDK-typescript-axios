@@ -27,96 +27,6 @@ import type { FieldECommunicationrecipientType } from './field-ecommunicationrec
  */
 /*export type CommunicationrecipientRequestCompound = CommunicationrecipientRequest;*/
 export interface CommunicationrecipientRequestCompound {
-    /**
-     * The unique ID of the Communicationrecipient.
-     * @type {number}
-     * @memberof CommunicationrecipientRequestCompound
-     */
-    pkiCommunicationrecipientID?:number 
-    /**
-     * The unique ID of the Agent.
-     * @type {number}
-     * @memberof CommunicationrecipientRequestCompound
-     */
-    fkiAgentID?:number 
-    /**
-     * The unique ID of the Broker.
-     * @type {number}
-     * @memberof CommunicationrecipientRequestCompound
-     */
-    fkiBrokerID?:number 
-    /**
-     * The unique ID of the Contact
-     * @type {number}
-     * @memberof CommunicationrecipientRequestCompound
-     */
-    fkiContactID?:number 
-    /**
-     * The unique ID of the Customer.
-     * @type {number}
-     * @memberof CommunicationrecipientRequestCompound
-     */
-    fkiCustomerID?:number 
-    /**
-     * The unique ID of the Employee.
-     * @type {number}
-     * @memberof CommunicationrecipientRequestCompound
-     */
-    fkiEmployeeID?:number 
-    /**
-     * The unique ID of the Assistant.
-     * @type {number}
-     * @memberof CommunicationrecipientRequestCompound
-     */
-    fkiAssistantID?:number 
-    /**
-     * The unique ID of the Externalbroker.
-     * @type {number}
-     * @memberof CommunicationrecipientRequestCompound
-     */
-    fkiExternalbrokerID?:number 
-    /**
-     * The unique ID of the Ezsignsigner
-     * @type {number}
-     * @memberof CommunicationrecipientRequestCompound
-     */
-    fkiEzsignsignerID?:number 
-    /**
-     * The unique ID of the Notary.
-     * @type {number}
-     * @memberof CommunicationrecipientRequestCompound
-     */
-    fkiNotaryID?:number 
-    /**
-     * The unique ID of the Supplier.
-     * @type {number}
-     * @memberof CommunicationrecipientRequestCompound
-     */
-    fkiSupplierID?:number 
-    /**
-     * The unique ID of the User
-     * @type {number}
-     * @memberof CommunicationrecipientRequestCompound
-     */
-    fkiUserID?:number 
-    /**
-     * The unique ID of the Mailboxshared
-     * @type {number}
-     * @memberof CommunicationrecipientRequestCompound
-     */
-    fkiMailboxsharedID?:number 
-    /**
-     * The unique ID of the Phonelineshared
-     * @type {number}
-     * @memberof CommunicationrecipientRequestCompound
-     */
-    fkiPhonelinesharedID?:number 
-    /**
-     * 
-     * @type {FieldECommunicationrecipientType}
-     * @memberof CommunicationrecipientRequestCompound
-     */
-    eCommunicationrecipientType?:FieldECommunicationrecipientType 
 }
 
 
@@ -133,21 +43,6 @@ export interface CommunicationrecipientRequestCompound {
  * @class DataObjectCommunicationrecipientRequestCompound
  */
 export class DataObjectCommunicationrecipientRequestCompound {
-    pkiCommunicationrecipientID?:number = undefined
-    fkiAgentID?:number = undefined
-    fkiBrokerID?:number = undefined
-    fkiContactID?:number = undefined
-    fkiCustomerID?:number = undefined
-    fkiEmployeeID?:number = undefined
-    fkiAssistantID?:number = undefined
-    fkiExternalbrokerID?:number = undefined
-    fkiEzsignsignerID?:number = undefined
-    fkiNotaryID?:number = undefined
-    fkiSupplierID?:number = undefined
-    fkiUserID?:number = undefined
-    fkiMailboxsharedID?:number = undefined
-    fkiPhonelinesharedID?:number = undefined
-    eCommunicationrecipientType?:FieldECommunicationrecipientType = undefined
 }
 
 /**
@@ -156,83 +51,6 @@ export class DataObjectCommunicationrecipientRequestCompound {
  * @class ValidationObjectCommunicationrecipientRequestCompound
  */
 export class ValidationObjectCommunicationrecipientRequestCompound {
-   pkiCommunicationrecipientID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   fkiAgentID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   fkiBrokerID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   fkiContactID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   fkiCustomerID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   fkiEmployeeID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   fkiAssistantID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   fkiExternalbrokerID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   fkiEzsignsignerID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   fkiNotaryID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   fkiSupplierID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   fkiUserID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   fkiMailboxsharedID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 255,
-      required: false
-   }
-   fkiPhonelinesharedID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 255,
-      required: false
-   }
-   eCommunicationrecipientType = {
-      type: 'enum',
-      allowableValues: ['To','Cc','Bcc'],
-      required: false
-   }
 } 
 
 

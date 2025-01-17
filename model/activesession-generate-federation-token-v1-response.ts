@@ -35,18 +35,6 @@ import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-
 export interface ActivesessionGenerateFederationTokenV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof ActivesessionGenerateFederationTokenV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof ActivesessionGenerateFederationTokenV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {ActivesessionGenerateFederationTokenV1ResponseMPayload}
      * @memberof ActivesessionGenerateFederationTokenV1Response
      */
@@ -59,15 +47,7 @@ export interface ActivesessionGenerateFederationTokenV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectActivesessionGenerateFederationTokenV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectActivesessionGenerateFederationTokenV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectActivesessionGenerateFederationTokenV1ResponseMPayload 
  * @class DataObjectActivesessionGenerateFederationTokenV1Response
  */
 export class DataObjectActivesessionGenerateFederationTokenV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:ActivesessionGenerateFederationTokenV1ResponseMPayload = new DataObjectActivesessionGenerateFederationTokenV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectActivesessionGenerateFederationTokenV1Response {
  * @class ValidationObjectActivesessionGenerateFederationTokenV1Response
  */
 export class ValidationObjectActivesessionGenerateFederationTokenV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectActivesessionGenerateFederationTokenV1ResponseMPayload()
 } 
 

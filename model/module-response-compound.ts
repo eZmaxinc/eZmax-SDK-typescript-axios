@@ -28,42 +28,6 @@ import type { ModulesectionResponseCompound } from './modulesection-response-com
 /*export type ModuleResponseCompound = ModuleResponse;*/
 export interface ModuleResponseCompound {
     /**
-     * The unique ID of the Module
-     * @type {number}
-     * @memberof ModuleResponseCompound
-     */
-    pkiModuleID:number 
-    /**
-     * The unique ID of the Modulegroup
-     * @type {number}
-     * @memberof ModuleResponseCompound
-     */
-    fkiModulegroupID:number 
-    /**
-     * The Internal name of the Module.  This is theoretically an enum field but there are so many possibles values we decided not to list them all.
-     * @type {string}
-     * @memberof ModuleResponseCompound
-     */
-    eModuleInternalname:string 
-    /**
-     * The Name of the Module in the language of the requester
-     * @type {string}
-     * @memberof ModuleResponseCompound
-     */
-    sModuleNameX:string 
-    /**
-     * Whether the Module is registered or not
-     * @type {boolean}
-     * @memberof ModuleResponseCompound
-     */
-    bModuleRegistered:boolean 
-    /**
-     * Whether the Module is registered or not for api use
-     * @type {boolean}
-     * @memberof ModuleResponseCompound
-     */
-    bModuleRegisteredapi:boolean 
-    /**
      * 
      * @type {Array<ModulesectionResponseCompound>}
      * @memberof ModuleResponseCompound
@@ -84,12 +48,6 @@ export interface ModuleResponseCompound {
  * @class DataObjectModuleResponseCompound
  */
 export class DataObjectModuleResponseCompound {
-    pkiModuleID:number = 0
-    fkiModulegroupID:number = 0
-    eModuleInternalname:string = ''
-    sModuleNameX:string = ''
-    bModuleRegistered:boolean = false
-    bModuleRegisteredapi:boolean = false
     a_objModulesection?:Array<ModulesectionResponseCompound> = undefined
 }
 
@@ -99,33 +57,6 @@ export class DataObjectModuleResponseCompound {
  * @class ValidationObjectModuleResponseCompound
  */
 export class ValidationObjectModuleResponseCompound {
-   pkiModuleID = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   fkiModulegroupID = {
-      type: 'integer',
-      minimum: 1,
-      maximum: 255,
-      required: true
-   }
-   eModuleInternalname = {
-      type: 'string',
-      required: true
-   }
-   sModuleNameX = {
-      type: 'string',
-      required: true
-   }
-   bModuleRegistered = {
-      type: 'boolean',
-      required: true
-   }
-   bModuleRegisteredapi = {
-      type: 'boolean',
-      required: true
-   }
    a_objModulesection = {
       type: 'array',
       required: false

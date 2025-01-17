@@ -35,18 +35,6 @@ import type { EzdoctemplatedocumentGetAutocompleteV2ResponseMPayload } from './e
 export interface EzdoctemplatedocumentGetAutocompleteV2Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzdoctemplatedocumentGetAutocompleteV2Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzdoctemplatedocumentGetAutocompleteV2Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {EzdoctemplatedocumentGetAutocompleteV2ResponseMPayload}
      * @memberof EzdoctemplatedocumentGetAutocompleteV2Response
      */
@@ -59,15 +47,7 @@ export interface EzdoctemplatedocumentGetAutocompleteV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEzdoctemplatedocumentGetAutocompleteV2ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzdoctemplatedocumentGetAutocompleteV2ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEzdoctemplatedocumentGetAutocompleteV2ResponseMPayload 
  * @class DataObjectEzdoctemplatedocumentGetAutocompleteV2Response
  */
 export class DataObjectEzdoctemplatedocumentGetAutocompleteV2Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzdoctemplatedocumentGetAutocompleteV2ResponseMPayload = new DataObjectEzdoctemplatedocumentGetAutocompleteV2ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEzdoctemplatedocumentGetAutocompleteV2Response {
  * @class ValidationObjectEzdoctemplatedocumentGetAutocompleteV2Response
  */
 export class ValidationObjectEzdoctemplatedocumentGetAutocompleteV2Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzdoctemplatedocumentGetAutocompleteV2ResponseMPayload()
 } 
 

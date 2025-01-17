@@ -28,18 +28,6 @@ import type { EzsignfoldertypeListElement } from './ezsignfoldertype-list-elemen
 /*export type EzsignfoldertypeGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;*/
 export interface EzsignfoldertypeGetListV1ResponseMPayload {
     /**
-     * The number of rows returned
-     * @type {number}
-     * @memberof EzsignfoldertypeGetListV1ResponseMPayload
-     */
-    iRowReturned:number 
-    /**
-     * The number of rows matching your filters (if any) or the total number of rows
-     * @type {number}
-     * @memberof EzsignfoldertypeGetListV1ResponseMPayload
-     */
-    iRowFiltered:number 
-    /**
      * 
      * @type {Array<EzsignfoldertypeListElement>}
      * @memberof EzsignfoldertypeGetListV1ResponseMPayload
@@ -60,8 +48,6 @@ export interface EzsignfoldertypeGetListV1ResponseMPayload {
  * @class DataObjectEzsignfoldertypeGetListV1ResponseMPayload
  */
 export class DataObjectEzsignfoldertypeGetListV1ResponseMPayload {
-    iRowReturned:number = 0
-    iRowFiltered:number = 0
     a_objEzsignfoldertype:Array<EzsignfoldertypeListElement> = []
 }
 
@@ -71,14 +57,6 @@ export class DataObjectEzsignfoldertypeGetListV1ResponseMPayload {
  * @class ValidationObjectEzsignfoldertypeGetListV1ResponseMPayload
  */
 export class ValidationObjectEzsignfoldertypeGetListV1ResponseMPayload {
-   iRowReturned = {
-      type: 'integer',
-      required: true
-   }
-   iRowFiltered = {
-      type: 'integer',
-      required: true
-   }
    a_objEzsignfoldertype = {
       type: 'array',
       required: true

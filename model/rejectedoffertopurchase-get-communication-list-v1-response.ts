@@ -35,18 +35,6 @@ import type { RejectedoffertopurchaseGetCommunicationListV1ResponseMPayload } fr
 export interface RejectedoffertopurchaseGetCommunicationListV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayloadGetList}
-     * @memberof RejectedoffertopurchaseGetCommunicationListV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayloadGetList 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof RejectedoffertopurchaseGetCommunicationListV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {RejectedoffertopurchaseGetCommunicationListV1ResponseMPayload}
      * @memberof RejectedoffertopurchaseGetCommunicationListV1Response
      */
@@ -59,15 +47,7 @@ export interface RejectedoffertopurchaseGetCommunicationListV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayloadGetList } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectRejectedoffertopurchaseGetCommunicationListV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayloadGetList } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectRejectedoffertopurchaseGetCommunicationListV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectRejectedoffertopurchaseGetCommunicationListV1ResponseMP
  * @class DataObjectRejectedoffertopurchaseGetCommunicationListV1Response
  */
 export class DataObjectRejectedoffertopurchaseGetCommunicationListV1Response {
-    objDebugPayload:CommonResponseObjDebugPayloadGetList = new DataObjectCommonResponseObjDebugPayloadGetList()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:RejectedoffertopurchaseGetCommunicationListV1ResponseMPayload = new DataObjectRejectedoffertopurchaseGetCommunicationListV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectRejectedoffertopurchaseGetCommunicationListV1Response {
  * @class ValidationObjectRejectedoffertopurchaseGetCommunicationListV1Response
  */
 export class ValidationObjectRejectedoffertopurchaseGetCommunicationListV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayloadGetList()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectRejectedoffertopurchaseGetCommunicationListV1ResponseMPayload()
 } 
 

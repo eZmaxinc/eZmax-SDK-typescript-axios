@@ -35,18 +35,6 @@ import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-
 export interface BuyercontractGetCommunicationrecipientsV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof BuyercontractGetCommunicationrecipientsV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof BuyercontractGetCommunicationrecipientsV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {BuyercontractGetCommunicationrecipientsV1ResponseMPayload}
      * @memberof BuyercontractGetCommunicationrecipientsV1Response
      */
@@ -59,15 +47,7 @@ export interface BuyercontractGetCommunicationrecipientsV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectBuyercontractGetCommunicationrecipientsV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectBuyercontractGetCommunicationrecipientsV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectBuyercontractGetCommunicationrecipientsV1ResponseMPaylo
  * @class DataObjectBuyercontractGetCommunicationrecipientsV1Response
  */
 export class DataObjectBuyercontractGetCommunicationrecipientsV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:BuyercontractGetCommunicationrecipientsV1ResponseMPayload = new DataObjectBuyercontractGetCommunicationrecipientsV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectBuyercontractGetCommunicationrecipientsV1Response {
  * @class ValidationObjectBuyercontractGetCommunicationrecipientsV1Response
  */
 export class ValidationObjectBuyercontractGetCommunicationrecipientsV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectBuyercontractGetCommunicationrecipientsV1ResponseMPayload()
 } 
 

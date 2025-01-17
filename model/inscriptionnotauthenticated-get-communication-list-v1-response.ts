@@ -35,18 +35,6 @@ import type { InscriptionnotauthenticatedGetCommunicationListV1ResponseMPayload 
 export interface InscriptionnotauthenticatedGetCommunicationListV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayloadGetList}
-     * @memberof InscriptionnotauthenticatedGetCommunicationListV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayloadGetList 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof InscriptionnotauthenticatedGetCommunicationListV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {InscriptionnotauthenticatedGetCommunicationListV1ResponseMPayload}
      * @memberof InscriptionnotauthenticatedGetCommunicationListV1Response
      */
@@ -59,15 +47,7 @@ export interface InscriptionnotauthenticatedGetCommunicationListV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayloadGetList } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectInscriptionnotauthenticatedGetCommunicationListV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayloadGetList } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectInscriptionnotauthenticatedGetCommunicationListV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectInscriptionnotauthenticatedGetCommunicationListV1Respon
  * @class DataObjectInscriptionnotauthenticatedGetCommunicationListV1Response
  */
 export class DataObjectInscriptionnotauthenticatedGetCommunicationListV1Response {
-    objDebugPayload:CommonResponseObjDebugPayloadGetList = new DataObjectCommonResponseObjDebugPayloadGetList()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:InscriptionnotauthenticatedGetCommunicationListV1ResponseMPayload = new DataObjectInscriptionnotauthenticatedGetCommunicationListV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectInscriptionnotauthenticatedGetCommunicationListV1Response
  * @class ValidationObjectInscriptionnotauthenticatedGetCommunicationListV1Response
  */
 export class ValidationObjectInscriptionnotauthenticatedGetCommunicationListV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayloadGetList()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectInscriptionnotauthenticatedGetCommunicationListV1ResponseMPayload()
 } 
 

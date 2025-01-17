@@ -35,18 +35,6 @@ import type { EzsignfolderGetActionableElementsV1ResponseMPayload } from './ezsi
 export interface EzsignfolderGetActionableElementsV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsignfolderGetActionableElementsV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsignfolderGetActionableElementsV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {EzsignfolderGetActionableElementsV1ResponseMPayload}
      * @memberof EzsignfolderGetActionableElementsV1Response
      */
@@ -59,15 +47,7 @@ export interface EzsignfolderGetActionableElementsV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEzsignfolderGetActionableElementsV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsignfolderGetActionableElementsV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEzsignfolderGetActionableElementsV1ResponseMPayload } f
  * @class DataObjectEzsignfolderGetActionableElementsV1Response
  */
 export class DataObjectEzsignfolderGetActionableElementsV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsignfolderGetActionableElementsV1ResponseMPayload = new DataObjectEzsignfolderGetActionableElementsV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEzsignfolderGetActionableElementsV1Response {
  * @class ValidationObjectEzsignfolderGetActionableElementsV1Response
  */
 export class ValidationObjectEzsignfolderGetActionableElementsV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsignfolderGetActionableElementsV1ResponseMPayload()
 } 
 

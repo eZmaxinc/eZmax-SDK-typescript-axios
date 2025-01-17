@@ -33,60 +33,6 @@ import type { EzsignsignergroupResponseCompound } from './ezsignsignergroup-resp
  */
 /*export type EzsignfoldersignerassociationGetObjectV1ResponseMPayload = EzsignfoldersignerassociationResponseCompound;*/
 export interface EzsignfoldersignerassociationGetObjectV1ResponseMPayload {
-    /**
-     * The unique ID of the Ezsignfoldersignerassociation
-     * @type {number}
-     * @memberof EzsignfoldersignerassociationGetObjectV1ResponseMPayload
-     */
-    pkiEzsignfoldersignerassociationID:number 
-    /**
-     * The unique ID of the Ezsignfolder
-     * @type {number}
-     * @memberof EzsignfoldersignerassociationGetObjectV1ResponseMPayload
-     */
-    fkiEzsignfolderID:number 
-    /**
-     * If this flag is true the signatory is part of a delayed send.
-     * @type {boolean}
-     * @memberof EzsignfoldersignerassociationGetObjectV1ResponseMPayload
-     */
-    bEzsignfoldersignerassociationDelayedsend:boolean 
-    /**
-     * If this flag is true. The signatory will receive a copy of every signed Ezsigndocument even if it ain\'t required to sign the document.
-     * @type {boolean}
-     * @memberof EzsignfoldersignerassociationGetObjectV1ResponseMPayload
-     */
-    bEzsignfoldersignerassociationReceivecopy:boolean 
-    /**
-     * A custom text message that will be added to the email sent.
-     * @type {string}
-     * @memberof EzsignfoldersignerassociationGetObjectV1ResponseMPayload
-     */
-    tEzsignfoldersignerassociationMessage:string 
-    /**
-     * If the Ezsignfoldersignerassociation is allowed to sign in person or not
-     * @type {boolean}
-     * @memberof EzsignfoldersignerassociationGetObjectV1ResponseMPayload
-     */
-    bEzsignfoldersignerassociationAllowsigninginperson:boolean 
-    /**
-     * 
-     * @type {EzsignsignergroupResponseCompound}
-     * @memberof EzsignfoldersignerassociationGetObjectV1ResponseMPayload
-     */
-    objEzsignsignergroup?:EzsignsignergroupResponseCompound 
-    /**
-     * 
-     * @type {EzsignfoldersignerassociationResponseCompoundUser}
-     * @memberof EzsignfoldersignerassociationGetObjectV1ResponseMPayload
-     */
-    objUser?:EzsignfoldersignerassociationResponseCompoundUser 
-    /**
-     * 
-     * @type {EzsignsignerResponseCompound}
-     * @memberof EzsignfoldersignerassociationGetObjectV1ResponseMPayload
-     */
-    objEzsignsigner?:EzsignsignerResponseCompound 
 }
 
 
@@ -94,18 +40,6 @@ export interface EzsignfoldersignerassociationGetObjectV1ResponseMPayload {
  * @import
  * Imports Child Data Object
  */
-// @ts-ignore
-import { DataObjectEzsignsignergroupResponseCompound } from './'
-// @ts-ignore
-import { DataObjectEzsignfoldersignerassociationResponseCompoundUser } from './'
-// @ts-ignore
-import { DataObjectEzsignsignerResponseCompound } from './'
-// @ts-ignore
-import { ValidationObjectEzsignsignergroupResponseCompound } from './'
-// @ts-ignore
-import { ValidationObjectEzsignfoldersignerassociationResponseCompoundUser } from './'
-// @ts-ignore
-import { ValidationObjectEzsignsignerResponseCompound } from './'
 
 /**
  * @export 
@@ -114,15 +48,6 @@ import { ValidationObjectEzsignsignerResponseCompound } from './'
  * @class DataObjectEzsignfoldersignerassociationGetObjectV1ResponseMPayload
  */
 export class DataObjectEzsignfoldersignerassociationGetObjectV1ResponseMPayload {
-    pkiEzsignfoldersignerassociationID:number = 0
-    fkiEzsignfolderID:number = 0
-    bEzsignfoldersignerassociationDelayedsend:boolean = false
-    bEzsignfoldersignerassociationReceivecopy:boolean = false
-    tEzsignfoldersignerassociationMessage:string = ''
-    bEzsignfoldersignerassociationAllowsigninginperson:boolean = false
-    objEzsignsignergroup?:EzsignsignergroupResponseCompound = undefined
-    objUser?:EzsignfoldersignerassociationResponseCompoundUser = undefined
-    objEzsignsigner?:EzsignsignerResponseCompound = undefined
 }
 
 /**
@@ -131,35 +56,6 @@ export class DataObjectEzsignfoldersignerassociationGetObjectV1ResponseMPayload 
  * @class ValidationObjectEzsignfoldersignerassociationGetObjectV1ResponseMPayload
  */
 export class ValidationObjectEzsignfoldersignerassociationGetObjectV1ResponseMPayload {
-   pkiEzsignfoldersignerassociationID = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   fkiEzsignfolderID = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   bEzsignfoldersignerassociationDelayedsend = {
-      type: 'boolean',
-      required: true
-   }
-   bEzsignfoldersignerassociationReceivecopy = {
-      type: 'boolean',
-      required: true
-   }
-   tEzsignfoldersignerassociationMessage = {
-      type: 'string',
-      required: true
-   }
-   bEzsignfoldersignerassociationAllowsigninginperson = {
-      type: 'boolean',
-      required: true
-   }
-   objEzsignsignergroup = new ValidationObjectEzsignsignergroupResponseCompound()
-   objUser = new ValidationObjectEzsignfoldersignerassociationResponseCompoundUser()
-   objEzsignsigner = new ValidationObjectEzsignsignerResponseCompound()
 } 
 
 

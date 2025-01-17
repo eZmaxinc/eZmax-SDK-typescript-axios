@@ -35,18 +35,6 @@ import type { LanguageGetAutocompleteV2ResponseMPayload } from './language-get-a
 export interface LanguageGetAutocompleteV2Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof LanguageGetAutocompleteV2Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof LanguageGetAutocompleteV2Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {LanguageGetAutocompleteV2ResponseMPayload}
      * @memberof LanguageGetAutocompleteV2Response
      */
@@ -59,15 +47,7 @@ export interface LanguageGetAutocompleteV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectLanguageGetAutocompleteV2ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectLanguageGetAutocompleteV2ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectLanguageGetAutocompleteV2ResponseMPayload } from './'
  * @class DataObjectLanguageGetAutocompleteV2Response
  */
 export class DataObjectLanguageGetAutocompleteV2Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:LanguageGetAutocompleteV2ResponseMPayload = new DataObjectLanguageGetAutocompleteV2ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectLanguageGetAutocompleteV2Response {
  * @class ValidationObjectLanguageGetAutocompleteV2Response
  */
 export class ValidationObjectLanguageGetAutocompleteV2Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectLanguageGetAutocompleteV2ResponseMPayload()
 } 
 

@@ -35,18 +35,6 @@ import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-
 export interface ApikeyEditPermissionsV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof ApikeyEditPermissionsV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof ApikeyEditPermissionsV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {ApikeyEditPermissionsV1ResponseMPayload}
      * @memberof ApikeyEditPermissionsV1Response
      */
@@ -59,15 +47,7 @@ export interface ApikeyEditPermissionsV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectApikeyEditPermissionsV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectApikeyEditPermissionsV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectApikeyEditPermissionsV1ResponseMPayload } from './'
  * @class DataObjectApikeyEditPermissionsV1Response
  */
 export class DataObjectApikeyEditPermissionsV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:ApikeyEditPermissionsV1ResponseMPayload = new DataObjectApikeyEditPermissionsV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectApikeyEditPermissionsV1Response {
  * @class ValidationObjectApikeyEditPermissionsV1Response
  */
 export class ValidationObjectApikeyEditPermissionsV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectApikeyEditPermissionsV1ResponseMPayload()
 } 
 

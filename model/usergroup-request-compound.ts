@@ -30,24 +30,6 @@ import type { UsergroupRequest } from './usergroup-request';
  */
 /*export type UsergroupRequestCompound = UsergroupRequest;*/
 export interface UsergroupRequestCompound {
-    /**
-     * The unique ID of the Usergroup
-     * @type {number}
-     * @memberof UsergroupRequestCompound
-     */
-    pkiUsergroupID?:number 
-    /**
-     * 
-     * @type {EmailRequest}
-     * @memberof UsergroupRequestCompound
-     */
-    objEmail?:EmailRequest 
-    /**
-     * 
-     * @type {MultilingualUsergroupName}
-     * @memberof UsergroupRequestCompound
-     */
-    objUsergroupName:MultilingualUsergroupName 
 }
 
 
@@ -55,14 +37,6 @@ export interface UsergroupRequestCompound {
  * @import
  * Imports Child Data Object
  */
-// @ts-ignore
-import { DataObjectEmailRequest } from './'
-// @ts-ignore
-import { DataObjectMultilingualUsergroupName } from './'
-// @ts-ignore
-import { ValidationObjectEmailRequest } from './'
-// @ts-ignore
-import { ValidationObjectMultilingualUsergroupName } from './'
 
 /**
  * @export 
@@ -71,9 +45,6 @@ import { ValidationObjectMultilingualUsergroupName } from './'
  * @class DataObjectUsergroupRequestCompound
  */
 export class DataObjectUsergroupRequestCompound {
-    pkiUsergroupID?:number = undefined
-    objEmail?:EmailRequest = undefined
-    objUsergroupName:MultilingualUsergroupName = new DataObjectMultilingualUsergroupName()
 }
 
 /**
@@ -82,14 +53,6 @@ export class DataObjectUsergroupRequestCompound {
  * @class ValidationObjectUsergroupRequestCompound
  */
 export class ValidationObjectUsergroupRequestCompound {
-   pkiUsergroupID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 255,
-      required: false
-   }
-   objEmail = new ValidationObjectEmailRequest()
-   objUsergroupName = new ValidationObjectMultilingualUsergroupName()
 } 
 
 

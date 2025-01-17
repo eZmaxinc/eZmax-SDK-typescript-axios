@@ -35,18 +35,6 @@ import type { EzsignsignatureGetEzsignsignatureattachmentV1ResponseMPayload } fr
 export interface EzsignsignatureGetEzsignsignatureattachmentV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsignsignatureGetEzsignsignatureattachmentV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsignsignatureGetEzsignsignatureattachmentV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {EzsignsignatureGetEzsignsignatureattachmentV1ResponseMPayload}
      * @memberof EzsignsignatureGetEzsignsignatureattachmentV1Response
      */
@@ -59,15 +47,7 @@ export interface EzsignsignatureGetEzsignsignatureattachmentV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEzsignsignatureGetEzsignsignatureattachmentV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsignsignatureGetEzsignsignatureattachmentV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEzsignsignatureGetEzsignsignatureattachmentV1ResponseMP
  * @class DataObjectEzsignsignatureGetEzsignsignatureattachmentV1Response
  */
 export class DataObjectEzsignsignatureGetEzsignsignatureattachmentV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsignsignatureGetEzsignsignatureattachmentV1ResponseMPayload = new DataObjectEzsignsignatureGetEzsignsignatureattachmentV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEzsignsignatureGetEzsignsignatureattachmentV1Response {
  * @class ValidationObjectEzsignsignatureGetEzsignsignatureattachmentV1Response
  */
 export class ValidationObjectEzsignsignatureGetEzsignsignatureattachmentV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsignsignatureGetEzsignsignatureattachmentV1ResponseMPayload()
 } 
 

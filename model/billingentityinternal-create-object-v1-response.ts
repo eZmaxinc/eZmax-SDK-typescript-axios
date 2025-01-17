@@ -35,18 +35,6 @@ import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-
 export interface BillingentityinternalCreateObjectV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof BillingentityinternalCreateObjectV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof BillingentityinternalCreateObjectV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {BillingentityinternalCreateObjectV1ResponseMPayload}
      * @memberof BillingentityinternalCreateObjectV1Response
      */
@@ -59,15 +47,7 @@ export interface BillingentityinternalCreateObjectV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectBillingentityinternalCreateObjectV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectBillingentityinternalCreateObjectV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectBillingentityinternalCreateObjectV1ResponseMPayload } f
  * @class DataObjectBillingentityinternalCreateObjectV1Response
  */
 export class DataObjectBillingentityinternalCreateObjectV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:BillingentityinternalCreateObjectV1ResponseMPayload = new DataObjectBillingentityinternalCreateObjectV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectBillingentityinternalCreateObjectV1Response {
  * @class ValidationObjectBillingentityinternalCreateObjectV1Response
  */
 export class ValidationObjectBillingentityinternalCreateObjectV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectBillingentityinternalCreateObjectV1ResponseMPayload()
 } 
 

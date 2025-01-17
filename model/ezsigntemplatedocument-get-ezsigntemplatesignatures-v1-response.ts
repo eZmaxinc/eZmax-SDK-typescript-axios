@@ -35,18 +35,6 @@ import type { EzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseMPayloa
 export interface EzsigntemplatedocumentGetEzsigntemplatesignaturesV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsigntemplatedocumentGetEzsigntemplatesignaturesV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsigntemplatedocumentGetEzsigntemplatesignaturesV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {EzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseMPayload}
      * @memberof EzsigntemplatedocumentGetEzsigntemplatesignaturesV1Response
      */
@@ -59,15 +47,7 @@ export interface EzsigntemplatedocumentGetEzsigntemplatesignaturesV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEzsigntemplatedocumentGetEzsigntemplatesignaturesV1Resp
  * @class DataObjectEzsigntemplatedocumentGetEzsigntemplatesignaturesV1Response
  */
 export class DataObjectEzsigntemplatedocumentGetEzsigntemplatesignaturesV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseMPayload = new DataObjectEzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEzsigntemplatedocumentGetEzsigntemplatesignaturesV1Respon
  * @class ValidationObjectEzsigntemplatedocumentGetEzsigntemplatesignaturesV1Response
  */
 export class ValidationObjectEzsigntemplatedocumentGetEzsigntemplatesignaturesV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsigntemplatedocumentGetEzsigntemplatesignaturesV1ResponseMPayload()
 } 
 

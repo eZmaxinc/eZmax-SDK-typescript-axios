@@ -35,18 +35,6 @@ import type { EzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseMPaylo
 export interface EzsigntemplatedocumentEditEzsigntemplatesignaturesV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsigntemplatedocumentEditEzsigntemplatesignaturesV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsigntemplatedocumentEditEzsigntemplatesignaturesV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {EzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseMPayload}
      * @memberof EzsigntemplatedocumentEditEzsigntemplatesignaturesV1Response
      */
@@ -59,15 +47,7 @@ export interface EzsigntemplatedocumentEditEzsigntemplatesignaturesV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEzsigntemplatedocumentEditEzsigntemplatesignaturesV1Res
  * @class DataObjectEzsigntemplatedocumentEditEzsigntemplatesignaturesV1Response
  */
 export class DataObjectEzsigntemplatedocumentEditEzsigntemplatesignaturesV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseMPayload = new DataObjectEzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEzsigntemplatedocumentEditEzsigntemplatesignaturesV1Respo
  * @class ValidationObjectEzsigntemplatedocumentEditEzsigntemplatesignaturesV1Response
  */
 export class ValidationObjectEzsigntemplatedocumentEditEzsigntemplatesignaturesV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsigntemplatedocumentEditEzsigntemplatesignaturesV1ResponseMPayload()
 } 
 

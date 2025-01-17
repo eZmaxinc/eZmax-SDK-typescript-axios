@@ -35,18 +35,6 @@ import type { EzsigndocumentGetAttachmentsV1ResponseMPayload } from './ezsigndoc
 export interface EzsigndocumentGetAttachmentsV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsigndocumentGetAttachmentsV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsigndocumentGetAttachmentsV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {EzsigndocumentGetAttachmentsV1ResponseMPayload}
      * @memberof EzsigndocumentGetAttachmentsV1Response
      */
@@ -59,15 +47,7 @@ export interface EzsigndocumentGetAttachmentsV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEzsigndocumentGetAttachmentsV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsigndocumentGetAttachmentsV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEzsigndocumentGetAttachmentsV1ResponseMPayload } from '
  * @class DataObjectEzsigndocumentGetAttachmentsV1Response
  */
 export class DataObjectEzsigndocumentGetAttachmentsV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsigndocumentGetAttachmentsV1ResponseMPayload = new DataObjectEzsigndocumentGetAttachmentsV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEzsigndocumentGetAttachmentsV1Response {
  * @class ValidationObjectEzsigndocumentGetAttachmentsV1Response
  */
 export class ValidationObjectEzsigndocumentGetAttachmentsV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsigndocumentGetAttachmentsV1ResponseMPayload()
 } 
 

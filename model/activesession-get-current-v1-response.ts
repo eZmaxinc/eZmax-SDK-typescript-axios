@@ -34,18 +34,6 @@ import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-
 /*export type ActivesessionGetCurrentV1Response = CommonResponse;*/
 export interface ActivesessionGetCurrentV1Response {
     /**
-     * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof ActivesessionGetCurrentV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof ActivesessionGetCurrentV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
      * Payload for GET /1/object/activesession/getCurrent
      * @type {ActivesessionResponseCompound}
      * @memberof ActivesessionGetCurrentV1Response
@@ -59,15 +47,7 @@ export interface ActivesessionGetCurrentV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectActivesessionResponseCompound } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectActivesessionResponseCompound } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectActivesessionResponseCompound } from './'
  * @class DataObjectActivesessionGetCurrentV1Response
  */
 export class DataObjectActivesessionGetCurrentV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:ActivesessionResponseCompound = new DataObjectActivesessionResponseCompound()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectActivesessionGetCurrentV1Response {
  * @class ValidationObjectActivesessionGetCurrentV1Response
  */
 export class ValidationObjectActivesessionGetCurrentV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectActivesessionResponseCompound()
 } 
 

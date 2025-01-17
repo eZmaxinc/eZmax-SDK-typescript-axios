@@ -35,18 +35,6 @@ import type { EzsigndocumentCreateEzsignelementsPositionedByWordV1ResponseMPaylo
 export interface EzsigndocumentCreateEzsignelementsPositionedByWordV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsigndocumentCreateEzsignelementsPositionedByWordV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsigndocumentCreateEzsignelementsPositionedByWordV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {EzsigndocumentCreateEzsignelementsPositionedByWordV1ResponseMPayload}
      * @memberof EzsigndocumentCreateEzsignelementsPositionedByWordV1Response
      */
@@ -59,15 +47,7 @@ export interface EzsigndocumentCreateEzsignelementsPositionedByWordV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEzsigndocumentCreateEzsignelementsPositionedByWordV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsigndocumentCreateEzsignelementsPositionedByWordV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEzsigndocumentCreateEzsignelementsPositionedByWordV1Res
  * @class DataObjectEzsigndocumentCreateEzsignelementsPositionedByWordV1Response
  */
 export class DataObjectEzsigndocumentCreateEzsignelementsPositionedByWordV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsigndocumentCreateEzsignelementsPositionedByWordV1ResponseMPayload = new DataObjectEzsigndocumentCreateEzsignelementsPositionedByWordV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEzsigndocumentCreateEzsignelementsPositionedByWordV1Respo
  * @class ValidationObjectEzsigndocumentCreateEzsignelementsPositionedByWordV1Response
  */
 export class ValidationObjectEzsigndocumentCreateEzsignelementsPositionedByWordV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsigndocumentCreateEzsignelementsPositionedByWordV1ResponseMPayload()
 } 
 

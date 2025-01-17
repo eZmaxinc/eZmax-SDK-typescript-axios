@@ -35,18 +35,6 @@ import type { EzmaxinvoicingGetAutocompleteV2ResponseMPayload } from './ezmaxinv
 export interface EzmaxinvoicingGetAutocompleteV2Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzmaxinvoicingGetAutocompleteV2Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzmaxinvoicingGetAutocompleteV2Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {EzmaxinvoicingGetAutocompleteV2ResponseMPayload}
      * @memberof EzmaxinvoicingGetAutocompleteV2Response
      */
@@ -59,15 +47,7 @@ export interface EzmaxinvoicingGetAutocompleteV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEzmaxinvoicingGetAutocompleteV2ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzmaxinvoicingGetAutocompleteV2ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEzmaxinvoicingGetAutocompleteV2ResponseMPayload } from 
  * @class DataObjectEzmaxinvoicingGetAutocompleteV2Response
  */
 export class DataObjectEzmaxinvoicingGetAutocompleteV2Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzmaxinvoicingGetAutocompleteV2ResponseMPayload = new DataObjectEzmaxinvoicingGetAutocompleteV2ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEzmaxinvoicingGetAutocompleteV2Response {
  * @class ValidationObjectEzmaxinvoicingGetAutocompleteV2Response
  */
 export class ValidationObjectEzmaxinvoicingGetAutocompleteV2Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzmaxinvoicingGetAutocompleteV2ResponseMPayload()
 } 
 

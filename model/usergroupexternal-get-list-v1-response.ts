@@ -35,18 +35,6 @@ import type { UsergroupexternalGetListV1ResponseMPayload } from './usergroupexte
 export interface UsergroupexternalGetListV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayloadGetList}
-     * @memberof UsergroupexternalGetListV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayloadGetList 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof UsergroupexternalGetListV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {UsergroupexternalGetListV1ResponseMPayload}
      * @memberof UsergroupexternalGetListV1Response
      */
@@ -59,15 +47,7 @@ export interface UsergroupexternalGetListV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayloadGetList } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectUsergroupexternalGetListV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayloadGetList } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectUsergroupexternalGetListV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectUsergroupexternalGetListV1ResponseMPayload } from './'
  * @class DataObjectUsergroupexternalGetListV1Response
  */
 export class DataObjectUsergroupexternalGetListV1Response {
-    objDebugPayload:CommonResponseObjDebugPayloadGetList = new DataObjectCommonResponseObjDebugPayloadGetList()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:UsergroupexternalGetListV1ResponseMPayload = new DataObjectUsergroupexternalGetListV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectUsergroupexternalGetListV1Response {
  * @class ValidationObjectUsergroupexternalGetListV1Response
  */
 export class ValidationObjectUsergroupexternalGetListV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayloadGetList()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectUsergroupexternalGetListV1ResponseMPayload()
 } 
 

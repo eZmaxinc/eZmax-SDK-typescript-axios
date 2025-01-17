@@ -35,18 +35,6 @@ import type { ElectronicfundstransferGetCommunicationsendersV1ResponseMPayload }
 export interface ElectronicfundstransferGetCommunicationsendersV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof ElectronicfundstransferGetCommunicationsendersV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof ElectronicfundstransferGetCommunicationsendersV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {ElectronicfundstransferGetCommunicationsendersV1ResponseMPayload}
      * @memberof ElectronicfundstransferGetCommunicationsendersV1Response
      */
@@ -59,15 +47,7 @@ export interface ElectronicfundstransferGetCommunicationsendersV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectElectronicfundstransferGetCommunicationsendersV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectElectronicfundstransferGetCommunicationsendersV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectElectronicfundstransferGetCommunicationsendersV1Respons
  * @class DataObjectElectronicfundstransferGetCommunicationsendersV1Response
  */
 export class DataObjectElectronicfundstransferGetCommunicationsendersV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:ElectronicfundstransferGetCommunicationsendersV1ResponseMPayload = new DataObjectElectronicfundstransferGetCommunicationsendersV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectElectronicfundstransferGetCommunicationsendersV1Response 
  * @class ValidationObjectElectronicfundstransferGetCommunicationsendersV1Response
  */
 export class ValidationObjectElectronicfundstransferGetCommunicationsendersV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectElectronicfundstransferGetCommunicationsendersV1ResponseMPayload()
 } 
 

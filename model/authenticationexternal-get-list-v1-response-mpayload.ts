@@ -28,18 +28,6 @@ import type { CommonGetListV1ResponseMPayload } from './common-get-list-v1-respo
 /*export type AuthenticationexternalGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;*/
 export interface AuthenticationexternalGetListV1ResponseMPayload {
     /**
-     * The number of rows returned
-     * @type {number}
-     * @memberof AuthenticationexternalGetListV1ResponseMPayload
-     */
-    iRowReturned:number 
-    /**
-     * The number of rows matching your filters (if any) or the total number of rows
-     * @type {number}
-     * @memberof AuthenticationexternalGetListV1ResponseMPayload
-     */
-    iRowFiltered:number 
-    /**
      * 
      * @type {Array<AuthenticationexternalListElement>}
      * @memberof AuthenticationexternalGetListV1ResponseMPayload
@@ -60,8 +48,6 @@ export interface AuthenticationexternalGetListV1ResponseMPayload {
  * @class DataObjectAuthenticationexternalGetListV1ResponseMPayload
  */
 export class DataObjectAuthenticationexternalGetListV1ResponseMPayload {
-    iRowReturned:number = 0
-    iRowFiltered:number = 0
     a_objAuthenticationexternal:Array<AuthenticationexternalListElement> = []
 }
 
@@ -71,14 +57,6 @@ export class DataObjectAuthenticationexternalGetListV1ResponseMPayload {
  * @class ValidationObjectAuthenticationexternalGetListV1ResponseMPayload
  */
 export class ValidationObjectAuthenticationexternalGetListV1ResponseMPayload {
-   iRowReturned = {
-      type: 'integer',
-      required: true
-   }
-   iRowFiltered = {
-      type: 'integer',
-      required: true
-   }
    a_objAuthenticationexternal = {
       type: 'array',
       required: true

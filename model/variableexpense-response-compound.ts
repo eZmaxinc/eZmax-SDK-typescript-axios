@@ -30,36 +30,6 @@ import type { VariableexpenseResponse } from './variableexpense-response';
  */
 /*export type VariableexpenseResponseCompound = VariableexpenseResponse;*/
 export interface VariableexpenseResponseCompound {
-    /**
-     * The unique ID of the Variableexpense
-     * @type {number}
-     * @memberof VariableexpenseResponseCompound
-     */
-    pkiVariableexpenseID:number 
-    /**
-     * The code of the Variableexpense
-     * @type {string}
-     * @memberof VariableexpenseResponseCompound
-     */
-    sVariableexpenseCode?:string 
-    /**
-     * 
-     * @type {MultilingualVariableexpenseDescription}
-     * @memberof VariableexpenseResponseCompound
-     */
-    objVariableexpenseDescription:MultilingualVariableexpenseDescription 
-    /**
-     * 
-     * @type {FieldEVariableexpenseTaxable}
-     * @memberof VariableexpenseResponseCompound
-     */
-    eVariableexpenseTaxable?:FieldEVariableexpenseTaxable 
-    /**
-     * Whether the variableexpense is active or not
-     * @type {boolean}
-     * @memberof VariableexpenseResponseCompound
-     */
-    bVariableexpenseIsactive?:boolean 
 }
 
 
@@ -68,10 +38,6 @@ export interface VariableexpenseResponseCompound {
  * @import
  * Imports Child Data Object
  */
-// @ts-ignore
-import { DataObjectMultilingualVariableexpenseDescription } from './'
-// @ts-ignore
-import { ValidationObjectMultilingualVariableexpenseDescription } from './'
 
 /**
  * @export 
@@ -80,11 +46,6 @@ import { ValidationObjectMultilingualVariableexpenseDescription } from './'
  * @class DataObjectVariableexpenseResponseCompound
  */
 export class DataObjectVariableexpenseResponseCompound {
-    pkiVariableexpenseID:number = 0
-    sVariableexpenseCode?:string = undefined
-    objVariableexpenseDescription:MultilingualVariableexpenseDescription = new DataObjectMultilingualVariableexpenseDescription()
-    eVariableexpenseTaxable?:FieldEVariableexpenseTaxable = undefined
-    bVariableexpenseIsactive?:boolean = undefined
 }
 
 /**
@@ -93,27 +54,6 @@ export class DataObjectVariableexpenseResponseCompound {
  * @class ValidationObjectVariableexpenseResponseCompound
  */
 export class ValidationObjectVariableexpenseResponseCompound {
-   pkiVariableexpenseID = {
-      type: 'integer',
-      minimum: 1,
-      maximum: 255,
-      required: true
-   }
-   sVariableexpenseCode = {
-      type: 'string',
-      pattern: /^.{0,5}$/,
-      required: false
-   }
-   objVariableexpenseDescription = new ValidationObjectMultilingualVariableexpenseDescription()
-   eVariableexpenseTaxable = {
-      type: 'enum',
-      allowableValues: ['Yes','No','Included'],
-      required: false
-   }
-   bVariableexpenseIsactive = {
-      type: 'boolean',
-      required: false
-   }
 } 
 
 

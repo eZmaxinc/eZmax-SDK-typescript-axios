@@ -35,18 +35,6 @@ import type { SystemconfigurationGetObjectV2ResponseMPayload } from './systemcon
 export interface SystemconfigurationGetObjectV2Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof SystemconfigurationGetObjectV2Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof SystemconfigurationGetObjectV2Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {SystemconfigurationGetObjectV2ResponseMPayload}
      * @memberof SystemconfigurationGetObjectV2Response
      */
@@ -59,15 +47,7 @@ export interface SystemconfigurationGetObjectV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectSystemconfigurationGetObjectV2ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectSystemconfigurationGetObjectV2ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectSystemconfigurationGetObjectV2ResponseMPayload } from '
  * @class DataObjectSystemconfigurationGetObjectV2Response
  */
 export class DataObjectSystemconfigurationGetObjectV2Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:SystemconfigurationGetObjectV2ResponseMPayload = new DataObjectSystemconfigurationGetObjectV2ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectSystemconfigurationGetObjectV2Response {
  * @class ValidationObjectSystemconfigurationGetObjectV2Response
  */
 export class ValidationObjectSystemconfigurationGetObjectV2Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectSystemconfigurationGetObjectV2ResponseMPayload()
 } 
 

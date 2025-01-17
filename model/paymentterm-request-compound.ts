@@ -30,42 +30,6 @@ import type { PaymenttermRequest } from './paymentterm-request';
  */
 /*export type PaymenttermRequestCompound = PaymenttermRequest;*/
 export interface PaymenttermRequestCompound {
-    /**
-     * The unique ID of the Paymentterm
-     * @type {number}
-     * @memberof PaymenttermRequestCompound
-     */
-    pkiPaymenttermID?:number 
-    /**
-     * The code of the Paymentterm
-     * @type {string}
-     * @memberof PaymenttermRequestCompound
-     */
-    sPaymenttermCode:string 
-    /**
-     * 
-     * @type {FieldEPaymenttermType}
-     * @memberof PaymenttermRequestCompound
-     */
-    ePaymenttermType:FieldEPaymenttermType 
-    /**
-     * The day of the Paymentterm
-     * @type {number}
-     * @memberof PaymenttermRequestCompound
-     */
-    iPaymenttermDay:number 
-    /**
-     * 
-     * @type {MultilingualPaymenttermDescription}
-     * @memberof PaymenttermRequestCompound
-     */
-    objPaymenttermDescription:MultilingualPaymenttermDescription 
-    /**
-     * Whether the Paymentterm is active or not
-     * @type {boolean}
-     * @memberof PaymenttermRequestCompound
-     */
-    bPaymenttermIsactive:boolean 
 }
 
 
@@ -74,10 +38,6 @@ export interface PaymenttermRequestCompound {
  * @import
  * Imports Child Data Object
  */
-// @ts-ignore
-import { DataObjectMultilingualPaymenttermDescription } from './'
-// @ts-ignore
-import { ValidationObjectMultilingualPaymenttermDescription } from './'
 
 /**
  * @export 
@@ -86,12 +46,6 @@ import { ValidationObjectMultilingualPaymenttermDescription } from './'
  * @class DataObjectPaymenttermRequestCompound
  */
 export class DataObjectPaymenttermRequestCompound {
-    pkiPaymenttermID?:number = undefined
-    sPaymenttermCode:string = ''
-    ePaymenttermType:FieldEPaymenttermType = 'Days'
-    iPaymenttermDay:number = 0
-    objPaymenttermDescription:MultilingualPaymenttermDescription = new DataObjectMultilingualPaymenttermDescription()
-    bPaymenttermIsactive:boolean = false
 }
 
 /**
@@ -100,31 +54,6 @@ export class DataObjectPaymenttermRequestCompound {
  * @class ValidationObjectPaymenttermRequestCompound
  */
 export class ValidationObjectPaymenttermRequestCompound {
-   pkiPaymenttermID = {
-      type: 'integer',
-      required: false
-   }
-   sPaymenttermCode = {
-      type: 'string',
-      pattern: /^[A-Z0-9]{1,4}$/,
-      required: true
-   }
-   ePaymenttermType = {
-      type: 'enum',
-      allowableValues: ['Days','Dayofthemonth'],
-      required: true
-   }
-   iPaymenttermDay = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 255,
-      required: true
-   }
-   objPaymenttermDescription = new ValidationObjectMultilingualPaymenttermDescription()
-   bPaymenttermIsactive = {
-      type: 'boolean',
-      required: true
-   }
 } 
 
 

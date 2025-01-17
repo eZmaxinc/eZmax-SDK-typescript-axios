@@ -35,18 +35,6 @@ import type { InvoiceGetCommunicationListV1ResponseMPayload } from './invoice-ge
 export interface InvoiceGetCommunicationListV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayloadGetList}
-     * @memberof InvoiceGetCommunicationListV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayloadGetList 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof InvoiceGetCommunicationListV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {InvoiceGetCommunicationListV1ResponseMPayload}
      * @memberof InvoiceGetCommunicationListV1Response
      */
@@ -59,15 +47,7 @@ export interface InvoiceGetCommunicationListV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayloadGetList } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectInvoiceGetCommunicationListV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayloadGetList } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectInvoiceGetCommunicationListV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectInvoiceGetCommunicationListV1ResponseMPayload } from '.
  * @class DataObjectInvoiceGetCommunicationListV1Response
  */
 export class DataObjectInvoiceGetCommunicationListV1Response {
-    objDebugPayload:CommonResponseObjDebugPayloadGetList = new DataObjectCommonResponseObjDebugPayloadGetList()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:InvoiceGetCommunicationListV1ResponseMPayload = new DataObjectInvoiceGetCommunicationListV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectInvoiceGetCommunicationListV1Response {
  * @class ValidationObjectInvoiceGetCommunicationListV1Response
  */
 export class ValidationObjectInvoiceGetCommunicationListV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayloadGetList()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectInvoiceGetCommunicationListV1ResponseMPayload()
 } 
 

@@ -35,18 +35,6 @@ import type { EzsigntemplateformfieldgroupCreateObjectV1ResponseMPayload } from 
 export interface EzsigntemplateformfieldgroupCreateObjectV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsigntemplateformfieldgroupCreateObjectV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsigntemplateformfieldgroupCreateObjectV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {EzsigntemplateformfieldgroupCreateObjectV1ResponseMPayload}
      * @memberof EzsigntemplateformfieldgroupCreateObjectV1Response
      */
@@ -59,15 +47,7 @@ export interface EzsigntemplateformfieldgroupCreateObjectV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEzsigntemplateformfieldgroupCreateObjectV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsigntemplateformfieldgroupCreateObjectV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEzsigntemplateformfieldgroupCreateObjectV1ResponseMPayl
  * @class DataObjectEzsigntemplateformfieldgroupCreateObjectV1Response
  */
 export class DataObjectEzsigntemplateformfieldgroupCreateObjectV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsigntemplateformfieldgroupCreateObjectV1ResponseMPayload = new DataObjectEzsigntemplateformfieldgroupCreateObjectV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEzsigntemplateformfieldgroupCreateObjectV1Response {
  * @class ValidationObjectEzsigntemplateformfieldgroupCreateObjectV1Response
  */
 export class ValidationObjectEzsigntemplateformfieldgroupCreateObjectV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsigntemplateformfieldgroupCreateObjectV1ResponseMPayload()
 } 
 

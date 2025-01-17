@@ -35,18 +35,6 @@ import type { EzsignsigningreasonCreateObjectV1ResponseMPayload } from './ezsign
 export interface EzsignsigningreasonCreateObjectV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsignsigningreasonCreateObjectV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsignsigningreasonCreateObjectV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {EzsignsigningreasonCreateObjectV1ResponseMPayload}
      * @memberof EzsignsigningreasonCreateObjectV1Response
      */
@@ -59,15 +47,7 @@ export interface EzsignsigningreasonCreateObjectV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEzsignsigningreasonCreateObjectV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsignsigningreasonCreateObjectV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEzsignsigningreasonCreateObjectV1ResponseMPayload } fro
  * @class DataObjectEzsignsigningreasonCreateObjectV1Response
  */
 export class DataObjectEzsignsigningreasonCreateObjectV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsignsigningreasonCreateObjectV1ResponseMPayload = new DataObjectEzsignsigningreasonCreateObjectV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEzsignsigningreasonCreateObjectV1Response {
  * @class ValidationObjectEzsignsigningreasonCreateObjectV1Response
  */
 export class ValidationObjectEzsignsigningreasonCreateObjectV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsignsigningreasonCreateObjectV1ResponseMPayload()
 } 
 

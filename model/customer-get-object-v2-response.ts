@@ -35,18 +35,6 @@ import type { CustomerGetObjectV2ResponseMPayload } from './customer-get-object-
 export interface CustomerGetObjectV2Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof CustomerGetObjectV2Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof CustomerGetObjectV2Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {CustomerGetObjectV2ResponseMPayload}
      * @memberof CustomerGetObjectV2Response
      */
@@ -59,15 +47,7 @@ export interface CustomerGetObjectV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectCustomerGetObjectV2ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectCustomerGetObjectV2ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectCustomerGetObjectV2ResponseMPayload } from './'
  * @class DataObjectCustomerGetObjectV2Response
  */
 export class DataObjectCustomerGetObjectV2Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:CustomerGetObjectV2ResponseMPayload = new DataObjectCustomerGetObjectV2ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectCustomerGetObjectV2Response {
  * @class ValidationObjectCustomerGetObjectV2Response
  */
 export class ValidationObjectCustomerGetObjectV2Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectCustomerGetObjectV2ResponseMPayload()
 } 
 

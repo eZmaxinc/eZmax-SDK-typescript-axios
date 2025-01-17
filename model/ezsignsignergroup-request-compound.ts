@@ -27,24 +27,6 @@ import type { MultilingualEzsignsignergroupDescription } from './multilingual-ez
  */
 /*export type EzsignsignergroupRequestCompound = EzsignsignergroupRequest;*/
 export interface EzsignsignergroupRequestCompound {
-    /**
-     * The unique ID of the Ezsignsignergroup
-     * @type {number}
-     * @memberof EzsignsignergroupRequestCompound
-     */
-    pkiEzsignsignergroupID?:number 
-    /**
-     * The unique ID of the Ezsignfolder
-     * @type {number}
-     * @memberof EzsignsignergroupRequestCompound
-     */
-    fkiEzsignfolderID:number 
-    /**
-     * 
-     * @type {MultilingualEzsignsignergroupDescription}
-     * @memberof EzsignsignergroupRequestCompound
-     */
-    objEzsignsignergroupDescription:MultilingualEzsignsignergroupDescription 
 }
 
 
@@ -52,10 +34,6 @@ export interface EzsignsignergroupRequestCompound {
  * @import
  * Imports Child Data Object
  */
-// @ts-ignore
-import { DataObjectMultilingualEzsignsignergroupDescription } from './'
-// @ts-ignore
-import { ValidationObjectMultilingualEzsignsignergroupDescription } from './'
 
 /**
  * @export 
@@ -64,9 +42,6 @@ import { ValidationObjectMultilingualEzsignsignergroupDescription } from './'
  * @class DataObjectEzsignsignergroupRequestCompound
  */
 export class DataObjectEzsignsignergroupRequestCompound {
-    pkiEzsignsignergroupID?:number = undefined
-    fkiEzsignfolderID:number = 0
-    objEzsignsignergroupDescription:MultilingualEzsignsignergroupDescription = new DataObjectMultilingualEzsignsignergroupDescription()
 }
 
 /**
@@ -75,18 +50,6 @@ export class DataObjectEzsignsignergroupRequestCompound {
  * @class ValidationObjectEzsignsignergroupRequestCompound
  */
 export class ValidationObjectEzsignsignergroupRequestCompound {
-   pkiEzsignsignergroupID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 65535,
-      required: false
-   }
-   fkiEzsignfolderID = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   objEzsignsignergroupDescription = new ValidationObjectMultilingualEzsignsignergroupDescription()
 } 
 
 

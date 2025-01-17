@@ -28,18 +28,6 @@ import type { EzsignsigningreasonListElement } from './ezsignsigningreason-list-
 /*export type EzsignsigningreasonGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;*/
 export interface EzsignsigningreasonGetListV1ResponseMPayload {
     /**
-     * The number of rows returned
-     * @type {number}
-     * @memberof EzsignsigningreasonGetListV1ResponseMPayload
-     */
-    iRowReturned:number 
-    /**
-     * The number of rows matching your filters (if any) or the total number of rows
-     * @type {number}
-     * @memberof EzsignsigningreasonGetListV1ResponseMPayload
-     */
-    iRowFiltered:number 
-    /**
      * 
      * @type {Array<EzsignsigningreasonListElement>}
      * @memberof EzsignsigningreasonGetListV1ResponseMPayload
@@ -60,8 +48,6 @@ export interface EzsignsigningreasonGetListV1ResponseMPayload {
  * @class DataObjectEzsignsigningreasonGetListV1ResponseMPayload
  */
 export class DataObjectEzsignsigningreasonGetListV1ResponseMPayload {
-    iRowReturned:number = 0
-    iRowFiltered:number = 0
     a_objEzsignsigningreason:Array<EzsignsigningreasonListElement> = []
 }
 
@@ -71,14 +57,6 @@ export class DataObjectEzsignsigningreasonGetListV1ResponseMPayload {
  * @class ValidationObjectEzsignsigningreasonGetListV1ResponseMPayload
  */
 export class ValidationObjectEzsignsigningreasonGetListV1ResponseMPayload {
-   iRowReturned = {
-      type: 'integer',
-      required: true
-   }
-   iRowFiltered = {
-      type: 'integer',
-      required: true
-   }
    a_objEzsignsigningreason = {
       type: 'array',
       required: true

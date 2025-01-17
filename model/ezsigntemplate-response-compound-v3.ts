@@ -40,108 +40,6 @@ import type { FieldEEzsigntemplateType } from './field-eezsigntemplate-type';
 /*export type EzsigntemplateResponseCompoundV3 = EzsigntemplateResponseV3;*/
 export interface EzsigntemplateResponseCompoundV3 {
     /**
-     * The unique ID of the Ezsigntemplate
-     * @type {number}
-     * @memberof EzsigntemplateResponseCompoundV3
-     */
-    pkiEzsigntemplateID:number 
-    /**
-     * The unique ID of the Ezsigntemplatedocument
-     * @type {number}
-     * @memberof EzsigntemplateResponseCompoundV3
-     */
-    fkiEzsigntemplatedocumentID?:number 
-    /**
-     * The unique ID of the Ezsignfoldertype.
-     * @type {number}
-     * @memberof EzsigntemplateResponseCompoundV3
-     */
-    fkiEzsignfoldertypeID?:number 
-    /**
-     * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
-     * @type {number}
-     * @memberof EzsigntemplateResponseCompoundV3
-     */
-    fkiLanguageID:number 
-    /**
-     * The unique ID of the Ezdoctemplatedocument
-     * @type {number}
-     * @memberof EzsigntemplateResponseCompoundV3
-     */
-    fkiEzdoctemplatedocumentID?:number 
-    /**
-     * The name of the Ezdoctemplatedocument in the language of the requester
-     * @type {string}
-     * @memberof EzsigntemplateResponseCompoundV3
-     */
-    sEzdoctemplatedocumentNameX?:string 
-    /**
-     * The Name of the Language in the language of the requester
-     * @type {string}
-     * @memberof EzsigntemplateResponseCompoundV3
-     */
-    sLanguageNameX:string 
-    /**
-     * The description of the Ezsigntemplate
-     * @type {string}
-     * @memberof EzsigntemplateResponseCompoundV3
-     */
-    sEzsigntemplateDescription:string 
-    /**
-     * The external description of the Ezsigntemplate
-     * @type {string}
-     * @memberof EzsigntemplateResponseCompoundV3
-     */
-    sEzsigntemplateExternaldescription?:string 
-    /**
-     * The comment of the Ezsigntemplate
-     * @type {string}
-     * @memberof EzsigntemplateResponseCompoundV3
-     */
-    tEzsigntemplateComment?:string 
-    /**
-     * 
-     * @type {FieldEEzsigntemplateRecognition}
-     * @memberof EzsigntemplateResponseCompoundV3
-     */
-    eEzsigntemplateRecognition?:FieldEEzsigntemplateRecognition 
-    /**
-     * The filename regexp of the Ezsigntemplate.
-     * @type {string}
-     * @memberof EzsigntemplateResponseCompoundV3
-     */
-    sEzsigntemplateFilenameregexp?:string 
-    /**
-     * Whether the Ezsigntemplate can be accessed by admin users only (eUserType=Normal)
-     * @type {boolean}
-     * @memberof EzsigntemplateResponseCompoundV3
-     */
-    bEzsigntemplateAdminonly:boolean 
-    /**
-     * The name of the Ezsignfoldertype in the language of the requester
-     * @type {string}
-     * @memberof EzsigntemplateResponseCompoundV3
-     */
-    sEzsignfoldertypeNameX?:string 
-    /**
-     * 
-     * @type {CommonAudit}
-     * @memberof EzsigntemplateResponseCompoundV3
-     */
-    objAudit:CommonAudit 
-    /**
-     * Whether the Ezsigntemplate if allowed to edit or not
-     * @type {boolean}
-     * @memberof EzsigntemplateResponseCompoundV3
-     */
-    bEzsigntemplateEditallowed:boolean 
-    /**
-     * 
-     * @type {FieldEEzsigntemplateType}
-     * @memberof EzsigntemplateResponseCompoundV3
-     */
-    eEzsigntemplateType?:FieldEEzsigntemplateType 
-    /**
      * 
      * @type {EzsigntemplatedocumentResponse}
      * @memberof EzsigntemplateResponseCompoundV3
@@ -162,11 +60,7 @@ export interface EzsigntemplateResponseCompoundV3 {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonAudit } from './'
-// @ts-ignore
 import { DataObjectEzsigntemplatedocumentResponse } from './'
-// @ts-ignore
-import { ValidationObjectCommonAudit } from './'
 // @ts-ignore
 import { ValidationObjectEzsigntemplatedocumentResponse } from './'
 
@@ -177,23 +71,6 @@ import { ValidationObjectEzsigntemplatedocumentResponse } from './'
  * @class DataObjectEzsigntemplateResponseCompoundV3
  */
 export class DataObjectEzsigntemplateResponseCompoundV3 {
-    pkiEzsigntemplateID:number = 0
-    fkiEzsigntemplatedocumentID?:number = undefined
-    fkiEzsignfoldertypeID?:number = undefined
-    fkiLanguageID:number = 0
-    fkiEzdoctemplatedocumentID?:number = undefined
-    sEzdoctemplatedocumentNameX?:string = undefined
-    sLanguageNameX:string = ''
-    sEzsigntemplateDescription:string = ''
-    sEzsigntemplateExternaldescription?:string = undefined
-    tEzsigntemplateComment?:string = undefined
-    eEzsigntemplateRecognition?:FieldEEzsigntemplateRecognition = undefined
-    sEzsigntemplateFilenameregexp?:string = undefined
-    bEzsigntemplateAdminonly:boolean = false
-    sEzsignfoldertypeNameX?:string = undefined
-    objAudit:CommonAudit = new DataObjectCommonAudit()
-    bEzsigntemplateEditallowed:boolean = false
-    eEzsigntemplateType?:FieldEEzsigntemplateType = undefined
     objEzsigntemplatedocument?:EzsigntemplatedocumentResponse = undefined
     a_objEzsigntemplatesigner:Array<EzsigntemplatesignerResponseCompound> = []
 }
@@ -204,85 +81,6 @@ export class DataObjectEzsigntemplateResponseCompoundV3 {
  * @class ValidationObjectEzsigntemplateResponseCompoundV3
  */
 export class ValidationObjectEzsigntemplateResponseCompoundV3 {
-   pkiEzsigntemplateID = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   fkiEzsigntemplatedocumentID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   fkiEzsignfoldertypeID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 65535,
-      required: false
-   }
-   fkiLanguageID = {
-      type: 'integer',
-      minimum: 1,
-      maximum: 2,
-      required: true
-   }
-   fkiEzdoctemplatedocumentID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 65535,
-      required: false
-   }
-   sEzdoctemplatedocumentNameX = {
-      type: 'string',
-      pattern: /^.{0,50}$/,
-      required: false
-   }
-   sLanguageNameX = {
-      type: 'string',
-      required: true
-   }
-   sEzsigntemplateDescription = {
-      type: 'string',
-      pattern: /^.{0,80}$/,
-      required: true
-   }
-   sEzsigntemplateExternaldescription = {
-      type: 'string',
-      pattern: /^.{0,75}$/,
-      required: false
-   }
-   tEzsigntemplateComment = {
-      type: 'string',
-      required: false
-   }
-   eEzsigntemplateRecognition = {
-      type: 'enum',
-      allowableValues: ['No','Filename','Content'],
-      required: false
-   }
-   sEzsigntemplateFilenameregexp = {
-      type: 'string',
-      pattern: /^.{1,50}$/,
-      required: false
-   }
-   bEzsigntemplateAdminonly = {
-      type: 'boolean',
-      required: true
-   }
-   sEzsignfoldertypeNameX = {
-      type: 'string',
-      required: false
-   }
-   objAudit = new ValidationObjectCommonAudit()
-   bEzsigntemplateEditallowed = {
-      type: 'boolean',
-      required: true
-   }
-   eEzsigntemplateType = {
-      type: 'enum',
-      allowableValues: ['User','Usergroup','Company','Ezsignfoldertype'],
-      required: false
-   }
    objEzsigntemplatedocument = new ValidationObjectEzsigntemplatedocumentResponse()
    a_objEzsigntemplatesigner = {
       type: 'array',

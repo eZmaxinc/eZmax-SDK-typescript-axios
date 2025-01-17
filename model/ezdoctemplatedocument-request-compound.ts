@@ -30,54 +30,6 @@ import type { MultilingualEzdoctemplatedocumentName } from './multilingual-ezdoc
  */
 /*export type EzdoctemplatedocumentRequestCompound = EzdoctemplatedocumentRequest;*/
 export interface EzdoctemplatedocumentRequestCompound {
-    /**
-     * The unique ID of the Ezdoctemplatedocument
-     * @type {number}
-     * @memberof EzdoctemplatedocumentRequestCompound
-     */
-    pkiEzdoctemplatedocumentID?:number 
-    /**
-     * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
-     * @type {number}
-     * @memberof EzdoctemplatedocumentRequestCompound
-     */
-    fkiLanguageID:number 
-    /**
-     * The unique ID of the Ezsignfoldertype.
-     * @type {number}
-     * @memberof EzdoctemplatedocumentRequestCompound
-     */
-    fkiEzsignfoldertypeID?:number 
-    /**
-     * The unique ID of the Ezdoctemplatetype
-     * @type {number}
-     * @memberof EzdoctemplatedocumentRequestCompound
-     */
-    fkiEzdoctemplatetypeID:number 
-    /**
-     * The unique ID of the Ezdoctemplatefieldtypecategory
-     * @type {number}
-     * @memberof EzdoctemplatedocumentRequestCompound
-     */
-    fkiEzdoctemplatefieldtypecategoryID:number 
-    /**
-     * 
-     * @type {FieldEEzdoctemplatedocumentPrivacylevel}
-     * @memberof EzdoctemplatedocumentRequestCompound
-     */
-    eEzdoctemplatedocumentPrivacylevel?:FieldEEzdoctemplatedocumentPrivacylevel 
-    /**
-     * Whether the ezdoctemplatedocument is active or not
-     * @type {boolean}
-     * @memberof EzdoctemplatedocumentRequestCompound
-     */
-    bEzdoctemplatedocumentIsactive:boolean 
-    /**
-     * 
-     * @type {MultilingualEzdoctemplatedocumentName}
-     * @memberof EzdoctemplatedocumentRequestCompound
-     */
-    objEzdoctemplatedocumentName:MultilingualEzdoctemplatedocumentName 
 }
 
 
@@ -86,10 +38,6 @@ export interface EzdoctemplatedocumentRequestCompound {
  * @import
  * Imports Child Data Object
  */
-// @ts-ignore
-import { DataObjectMultilingualEzdoctemplatedocumentName } from './'
-// @ts-ignore
-import { ValidationObjectMultilingualEzdoctemplatedocumentName } from './'
 
 /**
  * @export 
@@ -98,14 +46,6 @@ import { ValidationObjectMultilingualEzdoctemplatedocumentName } from './'
  * @class DataObjectEzdoctemplatedocumentRequestCompound
  */
 export class DataObjectEzdoctemplatedocumentRequestCompound {
-    pkiEzdoctemplatedocumentID?:number = undefined
-    fkiLanguageID:number = 0
-    fkiEzsignfoldertypeID?:number = undefined
-    fkiEzdoctemplatetypeID:number = 0
-    fkiEzdoctemplatefieldtypecategoryID:number = 0
-    eEzdoctemplatedocumentPrivacylevel?:FieldEEzdoctemplatedocumentPrivacylevel = undefined
-    bEzdoctemplatedocumentIsactive:boolean = false
-    objEzdoctemplatedocumentName:MultilingualEzdoctemplatedocumentName = new DataObjectMultilingualEzdoctemplatedocumentName()
 }
 
 /**
@@ -114,46 +54,6 @@ export class DataObjectEzdoctemplatedocumentRequestCompound {
  * @class ValidationObjectEzdoctemplatedocumentRequestCompound
  */
 export class ValidationObjectEzdoctemplatedocumentRequestCompound {
-   pkiEzdoctemplatedocumentID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 65535,
-      required: false
-   }
-   fkiLanguageID = {
-      type: 'integer',
-      minimum: 1,
-      maximum: 2,
-      required: true
-   }
-   fkiEzsignfoldertypeID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 65535,
-      required: false
-   }
-   fkiEzdoctemplatetypeID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 255,
-      required: true
-   }
-   fkiEzdoctemplatefieldtypecategoryID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 255,
-      required: true
-   }
-   eEzdoctemplatedocumentPrivacylevel = {
-      type: 'enum',
-      allowableValues: ['Company','Ezsignfoldertype','User'],
-      required: false
-   }
-   bEzdoctemplatedocumentIsactive = {
-      type: 'boolean',
-      required: true
-   }
-   objEzdoctemplatedocumentName = new ValidationObjectMultilingualEzdoctemplatedocumentName()
 } 
 
 

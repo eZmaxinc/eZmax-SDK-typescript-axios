@@ -35,18 +35,6 @@ import type { EzsigndocumentGetTemporaryProofV1ResponseMPayload } from './ezsign
 export interface EzsigndocumentGetTemporaryProofV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsigndocumentGetTemporaryProofV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsigndocumentGetTemporaryProofV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {EzsigndocumentGetTemporaryProofV1ResponseMPayload}
      * @memberof EzsigndocumentGetTemporaryProofV1Response
      */
@@ -59,15 +47,7 @@ export interface EzsigndocumentGetTemporaryProofV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEzsigndocumentGetTemporaryProofV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsigndocumentGetTemporaryProofV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEzsigndocumentGetTemporaryProofV1ResponseMPayload } fro
  * @class DataObjectEzsigndocumentGetTemporaryProofV1Response
  */
 export class DataObjectEzsigndocumentGetTemporaryProofV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsigndocumentGetTemporaryProofV1ResponseMPayload = new DataObjectEzsigndocumentGetTemporaryProofV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEzsigndocumentGetTemporaryProofV1Response {
  * @class ValidationObjectEzsigndocumentGetTemporaryProofV1Response
  */
 export class ValidationObjectEzsigndocumentGetTemporaryProofV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsigndocumentGetTemporaryProofV1ResponseMPayload()
 } 
 

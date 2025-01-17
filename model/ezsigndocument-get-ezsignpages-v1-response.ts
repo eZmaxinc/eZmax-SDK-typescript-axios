@@ -35,18 +35,6 @@ import type { EzsigndocumentGetEzsignpagesV1ResponseMPayload } from './ezsigndoc
 export interface EzsigndocumentGetEzsignpagesV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsigndocumentGetEzsignpagesV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsigndocumentGetEzsignpagesV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {EzsigndocumentGetEzsignpagesV1ResponseMPayload}
      * @memberof EzsigndocumentGetEzsignpagesV1Response
      */
@@ -59,15 +47,7 @@ export interface EzsigndocumentGetEzsignpagesV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEzsigndocumentGetEzsignpagesV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsigndocumentGetEzsignpagesV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEzsigndocumentGetEzsignpagesV1ResponseMPayload } from '
  * @class DataObjectEzsigndocumentGetEzsignpagesV1Response
  */
 export class DataObjectEzsigndocumentGetEzsignpagesV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsigndocumentGetEzsignpagesV1ResponseMPayload = new DataObjectEzsigndocumentGetEzsignpagesV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEzsigndocumentGetEzsignpagesV1Response {
  * @class ValidationObjectEzsigndocumentGetEzsignpagesV1Response
  */
 export class ValidationObjectEzsigndocumentGetEzsignpagesV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsigndocumentGetEzsignpagesV1ResponseMPayload()
 } 
 

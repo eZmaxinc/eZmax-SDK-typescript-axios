@@ -35,18 +35,6 @@ import type { EzsigntemplatepackageGetListV1ResponseMPayload } from './ezsigntem
 export interface EzsigntemplatepackageGetListV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayloadGetList}
-     * @memberof EzsigntemplatepackageGetListV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayloadGetList 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsigntemplatepackageGetListV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {EzsigntemplatepackageGetListV1ResponseMPayload}
      * @memberof EzsigntemplatepackageGetListV1Response
      */
@@ -59,15 +47,7 @@ export interface EzsigntemplatepackageGetListV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayloadGetList } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEzsigntemplatepackageGetListV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayloadGetList } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsigntemplatepackageGetListV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEzsigntemplatepackageGetListV1ResponseMPayload } from '
  * @class DataObjectEzsigntemplatepackageGetListV1Response
  */
 export class DataObjectEzsigntemplatepackageGetListV1Response {
-    objDebugPayload:CommonResponseObjDebugPayloadGetList = new DataObjectCommonResponseObjDebugPayloadGetList()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsigntemplatepackageGetListV1ResponseMPayload = new DataObjectEzsigntemplatepackageGetListV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEzsigntemplatepackageGetListV1Response {
  * @class ValidationObjectEzsigntemplatepackageGetListV1Response
  */
 export class ValidationObjectEzsigntemplatepackageGetListV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayloadGetList()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsigntemplatepackageGetListV1ResponseMPayload()
 } 
 

@@ -27,60 +27,6 @@ import type { SupplyRequest } from './supply-request';
  */
 /*export type SupplyRequestCompound = SupplyRequest;*/
 export interface SupplyRequestCompound {
-    /**
-     * The unique ID of the Supply
-     * @type {number}
-     * @memberof SupplyRequestCompound
-     */
-    pkiSupplyID?:number 
-    /**
-     * The unique ID of the Glaccount
-     * @type {number}
-     * @memberof SupplyRequestCompound
-     */
-    fkiGlaccountID?:number 
-    /**
-     * The unique ID of the Glaccountcontainer
-     * @type {number}
-     * @memberof SupplyRequestCompound
-     */
-    fkiGlaccountcontainerID?:number 
-    /**
-     * The unique ID of the Variableexpense
-     * @type {number}
-     * @memberof SupplyRequestCompound
-     */
-    fkiVariableexpenseID:number 
-    /**
-     * The code of the Supply
-     * @type {string}
-     * @memberof SupplyRequestCompound
-     */
-    sSupplyCode:string 
-    /**
-     * 
-     * @type {MultilingualSupplyDescription}
-     * @memberof SupplyRequestCompound
-     */
-    objSupplyDescription:MultilingualSupplyDescription 
-    /**
-     * The unit price of the Supply
-     * @type {string}
-     * @memberof SupplyRequestCompound
-     */
-    dSupplyUnitprice:string 
-    /**
-     * Whether the supply is active or not
-     * @type {boolean}
-     * @memberof SupplyRequestCompound
-     */
-    bSupplyIsactive:boolean 
-    /**
-     * Whether if the price is variable
-     * @type {boolean}
-     * @memberof SupplyRequestCompound
-     */
-    bSupplyVariableprice:boolean 
 }
 
 
@@ -88,10 +34,6 @@ export interface SupplyRequestCompound {
  * @import
  * Imports Child Data Object
  */
-// @ts-ignore
-import { DataObjectMultilingualSupplyDescription } from './'
-// @ts-ignore
-import { ValidationObjectMultilingualSupplyDescription } from './'
 
 /**
  * @export 
@@ -100,15 +42,6 @@ import { ValidationObjectMultilingualSupplyDescription } from './'
  * @class DataObjectSupplyRequestCompound
  */
 export class DataObjectSupplyRequestCompound {
-    pkiSupplyID?:number = undefined
-    fkiGlaccountID?:number = undefined
-    fkiGlaccountcontainerID?:number = undefined
-    fkiVariableexpenseID:number = 0
-    sSupplyCode:string = ''
-    objSupplyDescription:MultilingualSupplyDescription = new DataObjectMultilingualSupplyDescription()
-    dSupplyUnitprice:string = ''
-    bSupplyIsactive:boolean = false
-    bSupplyVariableprice:boolean = false
 }
 
 /**
@@ -117,49 +50,6 @@ export class DataObjectSupplyRequestCompound {
  * @class ValidationObjectSupplyRequestCompound
  */
 export class ValidationObjectSupplyRequestCompound {
-   pkiSupplyID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 65535,
-      required: false
-   }
-   fkiGlaccountID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   fkiGlaccountcontainerID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   fkiVariableexpenseID = {
-      type: 'integer',
-      minimum: 1,
-      maximum: 255,
-      required: true
-   }
-   sSupplyCode = {
-      type: 'string',
-      pattern: /^.{0,5}$/,
-      required: true
-   }
-   objSupplyDescription = new ValidationObjectMultilingualSupplyDescription()
-   dSupplyUnitprice = {
-      type: 'string',
-      pattern: /^-{0,1}[\d]{1,9}?\.[\d]{2}$/,
-      minLength: 4,
-      maxLength: 13,
-      required: true
-   }
-   bSupplyIsactive = {
-      type: 'boolean',
-      required: true
-   }
-   bSupplyVariableprice = {
-      type: 'boolean',
-      required: true
-   }
 } 
 
 

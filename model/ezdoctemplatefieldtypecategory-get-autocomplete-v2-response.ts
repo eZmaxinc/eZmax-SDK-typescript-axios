@@ -35,18 +35,6 @@ import type { EzdoctemplatefieldtypecategoryGetAutocompleteV2ResponseMPayload } 
 export interface EzdoctemplatefieldtypecategoryGetAutocompleteV2Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzdoctemplatefieldtypecategoryGetAutocompleteV2Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzdoctemplatefieldtypecategoryGetAutocompleteV2Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {EzdoctemplatefieldtypecategoryGetAutocompleteV2ResponseMPayload}
      * @memberof EzdoctemplatefieldtypecategoryGetAutocompleteV2Response
      */
@@ -59,15 +47,7 @@ export interface EzdoctemplatefieldtypecategoryGetAutocompleteV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEzdoctemplatefieldtypecategoryGetAutocompleteV2ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzdoctemplatefieldtypecategoryGetAutocompleteV2ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEzdoctemplatefieldtypecategoryGetAutocompleteV2Response
  * @class DataObjectEzdoctemplatefieldtypecategoryGetAutocompleteV2Response
  */
 export class DataObjectEzdoctemplatefieldtypecategoryGetAutocompleteV2Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzdoctemplatefieldtypecategoryGetAutocompleteV2ResponseMPayload = new DataObjectEzdoctemplatefieldtypecategoryGetAutocompleteV2ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEzdoctemplatefieldtypecategoryGetAutocompleteV2Response {
  * @class ValidationObjectEzdoctemplatefieldtypecategoryGetAutocompleteV2Response
  */
 export class ValidationObjectEzdoctemplatefieldtypecategoryGetAutocompleteV2Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzdoctemplatefieldtypecategoryGetAutocompleteV2ResponseMPayload()
 } 
 

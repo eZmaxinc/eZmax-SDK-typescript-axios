@@ -35,18 +35,6 @@ import type { UserstagedCreateUserV1ResponseMPayload } from './userstaged-create
 export interface UserstagedCreateUserV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof UserstagedCreateUserV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof UserstagedCreateUserV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {UserstagedCreateUserV1ResponseMPayload}
      * @memberof UserstagedCreateUserV1Response
      */
@@ -59,15 +47,7 @@ export interface UserstagedCreateUserV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectUserstagedCreateUserV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectUserstagedCreateUserV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectUserstagedCreateUserV1ResponseMPayload } from './'
  * @class DataObjectUserstagedCreateUserV1Response
  */
 export class DataObjectUserstagedCreateUserV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:UserstagedCreateUserV1ResponseMPayload = new DataObjectUserstagedCreateUserV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectUserstagedCreateUserV1Response {
  * @class ValidationObjectUserstagedCreateUserV1Response
  */
 export class ValidationObjectUserstagedCreateUserV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectUserstagedCreateUserV1ResponseMPayload()
 } 
 

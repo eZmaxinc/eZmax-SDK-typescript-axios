@@ -24,42 +24,6 @@ import type { DiscussionmembershipRequest } from './discussionmembership-request
  */
 /*export type DiscussionmembershipRequestCompound = DiscussionmembershipRequest;*/
 export interface DiscussionmembershipRequestCompound {
-    /**
-     * The unique ID of the Discussionmembership
-     * @type {number}
-     * @memberof DiscussionmembershipRequestCompound
-     */
-    pkiDiscussionmembershipID?:number 
-    /**
-     * The unique ID of the Discussion
-     * @type {number}
-     * @memberof DiscussionmembershipRequestCompound
-     */
-    fkiDiscussionID:number 
-    /**
-     * The unique ID of the User
-     * @type {number}
-     * @memberof DiscussionmembershipRequestCompound
-     */
-    fkiUserID?:number 
-    /**
-     * The unique ID of the Usergroup
-     * @type {number}
-     * @memberof DiscussionmembershipRequestCompound
-     */
-    fkiUsergroupID?:number 
-    /**
-     * The unique ID of the Modulesection
-     * @type {number}
-     * @memberof DiscussionmembershipRequestCompound
-     */
-    fkiModulesectionID?:number 
-    /**
-     * The joined date of the Discussionmembership
-     * @type {string}
-     * @memberof DiscussionmembershipRequestCompound
-     */
-    dtDiscussionmembershipJoined:string 
 }
 
 
@@ -75,12 +39,6 @@ export interface DiscussionmembershipRequestCompound {
  * @class DataObjectDiscussionmembershipRequestCompound
  */
 export class DataObjectDiscussionmembershipRequestCompound {
-    pkiDiscussionmembershipID?:number = undefined
-    fkiDiscussionID:number = 0
-    fkiUserID?:number = undefined
-    fkiUsergroupID?:number = undefined
-    fkiModulesectionID?:number = undefined
-    dtDiscussionmembershipJoined:string = ''
 }
 
 /**
@@ -89,39 +47,6 @@ export class DataObjectDiscussionmembershipRequestCompound {
  * @class ValidationObjectDiscussionmembershipRequestCompound
  */
 export class ValidationObjectDiscussionmembershipRequestCompound {
-   pkiDiscussionmembershipID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 16777215,
-      required: false
-   }
-   fkiDiscussionID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 16777215,
-      required: true
-   }
-   fkiUserID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   fkiUsergroupID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 255,
-      required: false
-   }
-   fkiModulesectionID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   dtDiscussionmembershipJoined = {
-      type: 'string',
-      pattern: /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/,
-      required: true
-   }
 } 
 
 

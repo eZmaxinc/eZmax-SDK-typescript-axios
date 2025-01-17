@@ -35,18 +35,6 @@ import type { CreditcardclientCreateObjectV1ResponseMPayload } from './creditcar
 export interface CreditcardclientCreateObjectV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof CreditcardclientCreateObjectV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof CreditcardclientCreateObjectV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {CreditcardclientCreateObjectV1ResponseMPayload}
      * @memberof CreditcardclientCreateObjectV1Response
      */
@@ -59,15 +47,7 @@ export interface CreditcardclientCreateObjectV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectCreditcardclientCreateObjectV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectCreditcardclientCreateObjectV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectCreditcardclientCreateObjectV1ResponseMPayload } from '
  * @class DataObjectCreditcardclientCreateObjectV1Response
  */
 export class DataObjectCreditcardclientCreateObjectV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:CreditcardclientCreateObjectV1ResponseMPayload = new DataObjectCreditcardclientCreateObjectV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectCreditcardclientCreateObjectV1Response {
  * @class ValidationObjectCreditcardclientCreateObjectV1Response
  */
 export class ValidationObjectCreditcardclientCreateObjectV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectCreditcardclientCreateObjectV1ResponseMPayload()
 } 
 

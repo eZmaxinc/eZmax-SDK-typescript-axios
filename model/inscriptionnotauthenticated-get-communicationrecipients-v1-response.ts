@@ -35,18 +35,6 @@ import type { InscriptionnotauthenticatedGetCommunicationrecipientsV1ResponseMPa
 export interface InscriptionnotauthenticatedGetCommunicationrecipientsV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof InscriptionnotauthenticatedGetCommunicationrecipientsV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof InscriptionnotauthenticatedGetCommunicationrecipientsV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {InscriptionnotauthenticatedGetCommunicationrecipientsV1ResponseMPayload}
      * @memberof InscriptionnotauthenticatedGetCommunicationrecipientsV1Response
      */
@@ -59,15 +47,7 @@ export interface InscriptionnotauthenticatedGetCommunicationrecipientsV1Response
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectInscriptionnotauthenticatedGetCommunicationrecipientsV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectInscriptionnotauthenticatedGetCommunicationrecipientsV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectInscriptionnotauthenticatedGetCommunicationrecipientsV1
  * @class DataObjectInscriptionnotauthenticatedGetCommunicationrecipientsV1Response
  */
 export class DataObjectInscriptionnotauthenticatedGetCommunicationrecipientsV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:InscriptionnotauthenticatedGetCommunicationrecipientsV1ResponseMPayload = new DataObjectInscriptionnotauthenticatedGetCommunicationrecipientsV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectInscriptionnotauthenticatedGetCommunicationrecipientsV1Re
  * @class ValidationObjectInscriptionnotauthenticatedGetCommunicationrecipientsV1Response
  */
 export class ValidationObjectInscriptionnotauthenticatedGetCommunicationrecipientsV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectInscriptionnotauthenticatedGetCommunicationrecipientsV1ResponseMPayload()
 } 
 

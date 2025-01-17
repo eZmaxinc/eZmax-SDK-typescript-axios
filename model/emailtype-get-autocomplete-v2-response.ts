@@ -35,18 +35,6 @@ import type { EmailtypeGetAutocompleteV2ResponseMPayload } from './emailtype-get
 export interface EmailtypeGetAutocompleteV2Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EmailtypeGetAutocompleteV2Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EmailtypeGetAutocompleteV2Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {EmailtypeGetAutocompleteV2ResponseMPayload}
      * @memberof EmailtypeGetAutocompleteV2Response
      */
@@ -59,15 +47,7 @@ export interface EmailtypeGetAutocompleteV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEmailtypeGetAutocompleteV2ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEmailtypeGetAutocompleteV2ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEmailtypeGetAutocompleteV2ResponseMPayload } from './'
  * @class DataObjectEmailtypeGetAutocompleteV2Response
  */
 export class DataObjectEmailtypeGetAutocompleteV2Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EmailtypeGetAutocompleteV2ResponseMPayload = new DataObjectEmailtypeGetAutocompleteV2ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEmailtypeGetAutocompleteV2Response {
  * @class ValidationObjectEmailtypeGetAutocompleteV2Response
  */
 export class ValidationObjectEmailtypeGetAutocompleteV2Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEmailtypeGetAutocompleteV2ResponseMPayload()
 } 
 

@@ -24,30 +24,6 @@ import type { UsergroupmembershipRequest } from './usergroupmembership-request';
  */
 /*export type UsergroupmembershipRequestCompound = UsergroupmembershipRequest;*/
 export interface UsergroupmembershipRequestCompound {
-    /**
-     * The unique ID of the Usergroupmembership
-     * @type {number}
-     * @memberof UsergroupmembershipRequestCompound
-     */
-    pkiUsergroupmembershipID?:number 
-    /**
-     * The unique ID of the Usergroup
-     * @type {number}
-     * @memberof UsergroupmembershipRequestCompound
-     */
-    fkiUsergroupID:number 
-    /**
-     * The unique ID of the User
-     * @type {number}
-     * @memberof UsergroupmembershipRequestCompound
-     */
-    fkiUserID?:number 
-    /**
-     * The unique ID of the Usergroupexternal
-     * @type {number}
-     * @memberof UsergroupmembershipRequestCompound
-     */
-    fkiUsergroupexternalID?:number 
 }
 
 
@@ -63,10 +39,6 @@ export interface UsergroupmembershipRequestCompound {
  * @class DataObjectUsergroupmembershipRequestCompound
  */
 export class DataObjectUsergroupmembershipRequestCompound {
-    pkiUsergroupmembershipID?:number = undefined
-    fkiUsergroupID:number = 0
-    fkiUserID?:number = undefined
-    fkiUsergroupexternalID?:number = undefined
 }
 
 /**
@@ -75,29 +47,6 @@ export class DataObjectUsergroupmembershipRequestCompound {
  * @class ValidationObjectUsergroupmembershipRequestCompound
  */
 export class ValidationObjectUsergroupmembershipRequestCompound {
-   pkiUsergroupmembershipID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 65535,
-      required: false
-   }
-   fkiUsergroupID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 255,
-      required: true
-   }
-   fkiUserID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   fkiUsergroupexternalID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 255,
-      required: false
-   }
 } 
 
 

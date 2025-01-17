@@ -35,18 +35,6 @@ import type { InvoiceGetCommunicationsendersV1ResponseMPayload } from './invoice
 export interface InvoiceGetCommunicationsendersV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof InvoiceGetCommunicationsendersV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof InvoiceGetCommunicationsendersV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {InvoiceGetCommunicationsendersV1ResponseMPayload}
      * @memberof InvoiceGetCommunicationsendersV1Response
      */
@@ -59,15 +47,7 @@ export interface InvoiceGetCommunicationsendersV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectInvoiceGetCommunicationsendersV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectInvoiceGetCommunicationsendersV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectInvoiceGetCommunicationsendersV1ResponseMPayload } from
  * @class DataObjectInvoiceGetCommunicationsendersV1Response
  */
 export class DataObjectInvoiceGetCommunicationsendersV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:InvoiceGetCommunicationsendersV1ResponseMPayload = new DataObjectInvoiceGetCommunicationsendersV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectInvoiceGetCommunicationsendersV1Response {
  * @class ValidationObjectInvoiceGetCommunicationsendersV1Response
  */
 export class ValidationObjectInvoiceGetCommunicationsendersV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectInvoiceGetCommunicationsendersV1ResponseMPayload()
 } 
 

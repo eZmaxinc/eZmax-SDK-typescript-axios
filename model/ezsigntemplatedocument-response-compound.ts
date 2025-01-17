@@ -24,48 +24,6 @@ import type { EzsigntemplatedocumentResponse } from './ezsigntemplatedocument-re
  */
 /*export type EzsigntemplatedocumentResponseCompound = EzsigntemplatedocumentResponse;*/
 export interface EzsigntemplatedocumentResponseCompound {
-    /**
-     * The unique ID of the Ezsigntemplatedocument
-     * @type {number}
-     * @memberof EzsigntemplatedocumentResponseCompound
-     */
-    pkiEzsigntemplatedocumentID:number 
-    /**
-     * The unique ID of the Ezsigntemplate
-     * @type {number}
-     * @memberof EzsigntemplatedocumentResponseCompound
-     */
-    fkiEzsigntemplateID:number 
-    /**
-     * The name of the Ezsigntemplatedocument.
-     * @type {string}
-     * @memberof EzsigntemplatedocumentResponseCompound
-     */
-    sEzsigntemplatedocumentName:string 
-    /**
-     * The number of pages in the Ezsigntemplatedocument.
-     * @type {number}
-     * @memberof EzsigntemplatedocumentResponseCompound
-     */
-    iEzsigntemplatedocumentPagetotal:number 
-    /**
-     * The number of total signatures in the Ezsigntemplate.
-     * @type {number}
-     * @memberof EzsigntemplatedocumentResponseCompound
-     */
-    iEzsigntemplatedocumentSignaturetotal:number 
-    /**
-     * The number of total form fields in the Ezsigntemplate.
-     * @type {number}
-     * @memberof EzsigntemplatedocumentResponseCompound
-     */
-    iEzsigntemplatedocumentFormfieldtotal:number 
-    /**
-     * If the Ezsigntemplatedocument contains signed signatures (From internal or external sources)
-     * @type {boolean}
-     * @memberof EzsigntemplatedocumentResponseCompound
-     */
-    bEzsigntemplatedocumentHassignedsignatures:boolean 
 }
 
 
@@ -81,13 +39,6 @@ export interface EzsigntemplatedocumentResponseCompound {
  * @class DataObjectEzsigntemplatedocumentResponseCompound
  */
 export class DataObjectEzsigntemplatedocumentResponseCompound {
-    pkiEzsigntemplatedocumentID:number = 0
-    fkiEzsigntemplateID:number = 0
-    sEzsigntemplatedocumentName:string = ''
-    iEzsigntemplatedocumentPagetotal:number = 0
-    iEzsigntemplatedocumentSignaturetotal:number = 0
-    iEzsigntemplatedocumentFormfieldtotal:number = 0
-    bEzsigntemplatedocumentHassignedsignatures:boolean = false
 }
 
 /**
@@ -96,37 +47,6 @@ export class DataObjectEzsigntemplatedocumentResponseCompound {
  * @class ValidationObjectEzsigntemplatedocumentResponseCompound
  */
 export class ValidationObjectEzsigntemplatedocumentResponseCompound {
-   pkiEzsigntemplatedocumentID = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   fkiEzsigntemplateID = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   sEzsigntemplatedocumentName = {
-      type: 'string',
-      required: true
-   }
-   iEzsigntemplatedocumentPagetotal = {
-      type: 'integer',
-      minimum: 1,
-      required: true
-   }
-   iEzsigntemplatedocumentSignaturetotal = {
-      type: 'integer',
-      required: true
-   }
-   iEzsigntemplatedocumentFormfieldtotal = {
-      type: 'integer',
-      required: true
-   }
-   bEzsigntemplatedocumentHassignedsignatures = {
-      type: 'boolean',
-      required: true
-   }
 } 
 
 

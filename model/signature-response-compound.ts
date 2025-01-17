@@ -24,30 +24,6 @@ import type { SignatureResponse } from './signature-response';
  */
 /*export type SignatureResponseCompound = SignatureResponse;*/
 export interface SignatureResponseCompound {
-    /**
-     * The unique ID of the Signature
-     * @type {number}
-     * @memberof SignatureResponseCompound
-     */
-    pkiSignatureID:number 
-    /**
-     * The unique ID of the Font
-     * @type {number}
-     * @memberof SignatureResponseCompound
-     */
-    fkiFontID?:number 
-    /**
-     * The URL of the SVG file for the Signature
-     * @type {string}
-     * @memberof SignatureResponseCompound
-     */
-    sSignatureUrl?:string 
-    /**
-     * The URL of the SVG file for the Initials
-     * @type {string}
-     * @memberof SignatureResponseCompound
-     */
-    sSignatureUrlinitials?:string 
 }
 
 
@@ -63,10 +39,6 @@ export interface SignatureResponseCompound {
  * @class DataObjectSignatureResponseCompound
  */
 export class DataObjectSignatureResponseCompound {
-    pkiSignatureID:number = 0
-    fkiFontID?:number = undefined
-    sSignatureUrl?:string = undefined
-    sSignatureUrlinitials?:string = undefined
 }
 
 /**
@@ -75,27 +47,6 @@ export class DataObjectSignatureResponseCompound {
  * @class ValidationObjectSignatureResponseCompound
  */
 export class ValidationObjectSignatureResponseCompound {
-   pkiSignatureID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 16777215,
-      required: true
-   }
-   fkiFontID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   sSignatureUrl = {
-      type: 'string',
-      pattern: /^(https|http):\/\/[^\s\/$.?#].[^\s]*$/,
-      required: false
-   }
-   sSignatureUrlinitials = {
-      type: 'string',
-      pattern: /^(https|http):\/\/[^\s\/$.?#].[^\s]*$/,
-      required: false
-   }
 } 
 
 

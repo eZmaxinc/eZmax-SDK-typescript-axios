@@ -35,18 +35,6 @@ import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-
 export interface ApikeyRegenerateV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof ApikeyRegenerateV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof ApikeyRegenerateV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {ApikeyRegenerateV1ResponseMPayload}
      * @memberof ApikeyRegenerateV1Response
      */
@@ -59,15 +47,7 @@ export interface ApikeyRegenerateV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectApikeyRegenerateV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectApikeyRegenerateV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectApikeyRegenerateV1ResponseMPayload } from './'
  * @class DataObjectApikeyRegenerateV1Response
  */
 export class DataObjectApikeyRegenerateV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:ApikeyRegenerateV1ResponseMPayload = new DataObjectApikeyRegenerateV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectApikeyRegenerateV1Response {
  * @class ValidationObjectApikeyRegenerateV1Response
  */
 export class ValidationObjectApikeyRegenerateV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectApikeyRegenerateV1ResponseMPayload()
 } 
 

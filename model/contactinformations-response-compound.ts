@@ -40,72 +40,6 @@ import type { WebsiteResponse } from './website-response';
 /*export type ContactinformationsResponseCompound = ContactinformationsResponse;*/
 export interface ContactinformationsResponseCompound {
     /**
-     * The unique ID of the Contactinformations
-     * @type {number}
-     * @memberof ContactinformationsResponseCompound
-     */
-    pkiContactinformationsID:number 
-    /**
-     * The unique ID of the Address
-     * @type {number}
-     * @memberof ContactinformationsResponseCompound
-     */
-    fkiAddressIDDefault?:number 
-    /**
-     * The unique ID of the Phone.
-     * @type {number}
-     * @memberof ContactinformationsResponseCompound
-     */
-    fkiPhoneIDDefault?:number 
-    /**
-     * The unique ID of the Email
-     * @type {number}
-     * @memberof ContactinformationsResponseCompound
-     */
-    fkiEmailIDDefault?:number 
-    /**
-     * The unique ID of the Website Default
-     * @type {number}
-     * @memberof ContactinformationsResponseCompound
-     */
-    fkiWebsiteIDDefault?:number 
-    /**
-     * 
-     * @type {FieldEContactinformationsType}
-     * @memberof ContactinformationsResponseCompound
-     */
-    eContactinformationsType:FieldEContactinformationsType 
-    /**
-     * The url of the Contactinformations
-     * @type {string}
-     * @memberof ContactinformationsResponseCompound
-     */
-    sContactinformationsUrl?:string 
-    /**
-     * An Address Object and children to create a complete structure
-     * @type {AddressResponse}
-     * @memberof ContactinformationsResponseCompound
-     */
-    objAddressDefault?:AddressResponse 
-    /**
-     * 
-     * @type {PhoneResponseCompound}
-     * @memberof ContactinformationsResponseCompound
-     */
-    objPhoneDefault?:PhoneResponseCompound 
-    /**
-     * An Email Object and children to create a complete structure
-     * @type {EmailResponse}
-     * @memberof ContactinformationsResponseCompound
-     */
-    objEmailDefault?:EmailResponse 
-    /**
-     * A Website Object and children to create a complete structure
-     * @type {WebsiteResponse}
-     * @memberof ContactinformationsResponseCompound
-     */
-    objWebsiteDefault?:WebsiteResponse 
-    /**
      * 
      * @type {Array<AddressResponseCompound>}
      * @memberof ContactinformationsResponseCompound
@@ -137,22 +71,6 @@ export interface ContactinformationsResponseCompound {
  * @import
  * Imports Child Data Object
  */
-// @ts-ignore
-import { DataObjectAddressResponse } from './'
-// @ts-ignore
-import { DataObjectPhoneResponseCompound } from './'
-// @ts-ignore
-import { DataObjectEmailResponse } from './'
-// @ts-ignore
-import { DataObjectWebsiteResponse } from './'
-// @ts-ignore
-import { ValidationObjectAddressResponse } from './'
-// @ts-ignore
-import { ValidationObjectPhoneResponseCompound } from './'
-// @ts-ignore
-import { ValidationObjectEmailResponse } from './'
-// @ts-ignore
-import { ValidationObjectWebsiteResponse } from './'
 
 /**
  * @export 
@@ -161,17 +79,6 @@ import { ValidationObjectWebsiteResponse } from './'
  * @class DataObjectContactinformationsResponseCompound
  */
 export class DataObjectContactinformationsResponseCompound {
-    pkiContactinformationsID:number = 0
-    fkiAddressIDDefault?:number = undefined
-    fkiPhoneIDDefault?:number = undefined
-    fkiEmailIDDefault?:number = undefined
-    fkiWebsiteIDDefault?:number = undefined
-    eContactinformationsType:FieldEContactinformationsType = 'BankAccount'
-    sContactinformationsUrl?:string = undefined
-    objAddressDefault?:AddressResponse = undefined
-    objPhoneDefault?:PhoneResponseCompound = undefined
-    objEmailDefault?:EmailResponse = undefined
-    objWebsiteDefault?:WebsiteResponse = undefined
     a_objAddress:Array<AddressResponseCompound> = []
     a_objPhone:Array<PhoneResponseCompound> = []
     a_objEmail:Array<EmailResponseCompound> = []
@@ -184,48 +91,6 @@ export class DataObjectContactinformationsResponseCompound {
  * @class ValidationObjectContactinformationsResponseCompound
  */
 export class ValidationObjectContactinformationsResponseCompound {
-   pkiContactinformationsID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 16777215,
-      required: true
-   }
-   fkiAddressIDDefault = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   fkiPhoneIDDefault = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   fkiEmailIDDefault = {
-      type: 'integer',
-      minimum: 1,
-      maximum: 16777215,
-      required: false
-   }
-   fkiWebsiteIDDefault = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 16777215,
-      required: false
-   }
-   eContactinformationsType = {
-      type: 'enum',
-      allowableValues: ['BankAccount','ContactObject','CreditCard','Customer','ExternalBroker','ExternalBrokerFirm','EzcomCompany','FinancialInstitution','FranchiseCompany','FranchiseOffice','Supplier'],
-      required: true
-   }
-   sContactinformationsUrl = {
-      type: 'string',
-      pattern: /^.{0,255}$/,
-      required: false
-   }
-   objAddressDefault = new ValidationObjectAddressResponse()
-   objPhoneDefault = new ValidationObjectPhoneResponseCompound()
-   objEmailDefault = new ValidationObjectEmailResponse()
-   objWebsiteDefault = new ValidationObjectWebsiteResponse()
    a_objAddress = {
       type: 'array',
       required: true

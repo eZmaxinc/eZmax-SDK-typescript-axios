@@ -35,18 +35,6 @@ import type { EzsignsignatureSignV1ResponseMPayload } from './ezsignsignature-si
 export interface EzsignsignatureSignV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsignsignatureSignV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsignsignatureSignV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {EzsignsignatureSignV1ResponseMPayload}
      * @memberof EzsignsignatureSignV1Response
      */
@@ -59,15 +47,7 @@ export interface EzsignsignatureSignV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEzsignsignatureSignV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsignsignatureSignV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEzsignsignatureSignV1ResponseMPayload } from './'
  * @class DataObjectEzsignsignatureSignV1Response
  */
 export class DataObjectEzsignsignatureSignV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsignsignatureSignV1ResponseMPayload = new DataObjectEzsignsignatureSignV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEzsignsignatureSignV1Response {
  * @class ValidationObjectEzsignsignatureSignV1Response
  */
 export class ValidationObjectEzsignsignatureSignV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsignsignatureSignV1ResponseMPayload()
 } 
 

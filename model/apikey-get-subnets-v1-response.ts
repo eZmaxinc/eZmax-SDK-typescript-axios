@@ -35,18 +35,6 @@ import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-
 export interface ApikeyGetSubnetsV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof ApikeyGetSubnetsV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof ApikeyGetSubnetsV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {ApikeyGetSubnetsV1ResponseMPayload}
      * @memberof ApikeyGetSubnetsV1Response
      */
@@ -59,15 +47,7 @@ export interface ApikeyGetSubnetsV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectApikeyGetSubnetsV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectApikeyGetSubnetsV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectApikeyGetSubnetsV1ResponseMPayload } from './'
  * @class DataObjectApikeyGetSubnetsV1Response
  */
 export class DataObjectApikeyGetSubnetsV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:ApikeyGetSubnetsV1ResponseMPayload = new DataObjectApikeyGetSubnetsV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectApikeyGetSubnetsV1Response {
  * @class ValidationObjectApikeyGetSubnetsV1Response
  */
 export class ValidationObjectApikeyGetSubnetsV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectApikeyGetSubnetsV1ResponseMPayload()
 } 
 

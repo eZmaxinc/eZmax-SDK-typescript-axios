@@ -35,18 +35,6 @@ import type { EzsignsignatureGetObjectV3ResponseMPayload } from './ezsignsignatu
 export interface EzsignsignatureGetObjectV3Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsignsignatureGetObjectV3Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsignsignatureGetObjectV3Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {EzsignsignatureGetObjectV3ResponseMPayload}
      * @memberof EzsignsignatureGetObjectV3Response
      */
@@ -59,15 +47,7 @@ export interface EzsignsignatureGetObjectV3Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEzsignsignatureGetObjectV3ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsignsignatureGetObjectV3ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEzsignsignatureGetObjectV3ResponseMPayload } from './'
  * @class DataObjectEzsignsignatureGetObjectV3Response
  */
 export class DataObjectEzsignsignatureGetObjectV3Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsignsignatureGetObjectV3ResponseMPayload = new DataObjectEzsignsignatureGetObjectV3ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEzsignsignatureGetObjectV3Response {
  * @class ValidationObjectEzsignsignatureGetObjectV3Response
  */
 export class ValidationObjectEzsignsignatureGetObjectV3Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsignsignatureGetObjectV3ResponseMPayload()
 } 
 

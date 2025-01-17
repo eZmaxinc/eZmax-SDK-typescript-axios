@@ -35,18 +35,6 @@ import type { UsergroupEditPermissionsV1ResponseMPayload } from './usergroup-edi
 export interface UsergroupEditPermissionsV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof UsergroupEditPermissionsV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof UsergroupEditPermissionsV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {UsergroupEditPermissionsV1ResponseMPayload}
      * @memberof UsergroupEditPermissionsV1Response
      */
@@ -59,15 +47,7 @@ export interface UsergroupEditPermissionsV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectUsergroupEditPermissionsV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectUsergroupEditPermissionsV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectUsergroupEditPermissionsV1ResponseMPayload } from './'
  * @class DataObjectUsergroupEditPermissionsV1Response
  */
 export class DataObjectUsergroupEditPermissionsV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:UsergroupEditPermissionsV1ResponseMPayload = new DataObjectUsergroupEditPermissionsV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectUsergroupEditPermissionsV1Response {
  * @class ValidationObjectUsergroupEditPermissionsV1Response
  */
 export class ValidationObjectUsergroupEditPermissionsV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectUsergroupEditPermissionsV1ResponseMPayload()
 } 
 

@@ -35,18 +35,6 @@ import type { OtherincomeGetCommunicationrecipientsV1ResponseMPayload } from './
 export interface OtherincomeGetCommunicationrecipientsV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof OtherincomeGetCommunicationrecipientsV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof OtherincomeGetCommunicationrecipientsV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {OtherincomeGetCommunicationrecipientsV1ResponseMPayload}
      * @memberof OtherincomeGetCommunicationrecipientsV1Response
      */
@@ -59,15 +47,7 @@ export interface OtherincomeGetCommunicationrecipientsV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectOtherincomeGetCommunicationrecipientsV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectOtherincomeGetCommunicationrecipientsV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectOtherincomeGetCommunicationrecipientsV1ResponseMPayload
  * @class DataObjectOtherincomeGetCommunicationrecipientsV1Response
  */
 export class DataObjectOtherincomeGetCommunicationrecipientsV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:OtherincomeGetCommunicationrecipientsV1ResponseMPayload = new DataObjectOtherincomeGetCommunicationrecipientsV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectOtherincomeGetCommunicationrecipientsV1Response {
  * @class ValidationObjectOtherincomeGetCommunicationrecipientsV1Response
  */
 export class ValidationObjectOtherincomeGetCommunicationrecipientsV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectOtherincomeGetCommunicationrecipientsV1ResponseMPayload()
 } 
 

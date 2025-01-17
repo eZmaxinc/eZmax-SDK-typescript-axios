@@ -34,18 +34,6 @@ import type { UserstagedResponse } from './userstaged-response';
 /*export type WebhookUserstagedUserstagedCreated = CommonWebhook;*/
 export interface WebhookUserstagedUserstagedCreated {
     /**
-     * 
-     * @type {CustomWebhookResponse}
-     * @memberof WebhookUserstagedUserstagedCreated
-     */
-    objWebhook:CustomWebhookResponse 
-    /**
-     * An array containing details of previous attempts that were made to deliver the message. The array is empty if it\'s the first attempt.
-     * @type {Array<AttemptResponseCompound>}
-     * @memberof WebhookUserstagedUserstagedCreated
-     */
-    a_objAttempt:Array<AttemptResponseCompound> 
-    /**
      * A Userstaged Object
      * @type {UserstagedResponse}
      * @memberof WebhookUserstagedUserstagedCreated
@@ -59,11 +47,7 @@ export interface WebhookUserstagedUserstagedCreated {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCustomWebhookResponse } from './'
-// @ts-ignore
 import { DataObjectUserstagedResponse } from './'
-// @ts-ignore
-import { ValidationObjectCustomWebhookResponse } from './'
 // @ts-ignore
 import { ValidationObjectUserstagedResponse } from './'
 
@@ -74,8 +58,6 @@ import { ValidationObjectUserstagedResponse } from './'
  * @class DataObjectWebhookUserstagedUserstagedCreated
  */
 export class DataObjectWebhookUserstagedUserstagedCreated {
-    objWebhook:CustomWebhookResponse = new DataObjectCustomWebhookResponse()
-    a_objAttempt:Array<AttemptResponseCompound> = []
     objUserstaged:UserstagedResponse = new DataObjectUserstagedResponse()
 }
 
@@ -85,11 +67,6 @@ export class DataObjectWebhookUserstagedUserstagedCreated {
  * @class ValidationObjectWebhookUserstagedUserstagedCreated
  */
 export class ValidationObjectWebhookUserstagedUserstagedCreated {
-   objWebhook = new ValidationObjectCustomWebhookResponse()
-   a_objAttempt = {
-      type: 'array',
-      required: true
-   }
    objUserstaged = new ValidationObjectUserstagedResponse()
 } 
 

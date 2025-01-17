@@ -35,18 +35,6 @@ import type { InscriptiontempGetCommunicationCountV1ResponseMPayload } from './i
 export interface InscriptiontempGetCommunicationCountV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof InscriptiontempGetCommunicationCountV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof InscriptiontempGetCommunicationCountV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {InscriptiontempGetCommunicationCountV1ResponseMPayload}
      * @memberof InscriptiontempGetCommunicationCountV1Response
      */
@@ -59,15 +47,7 @@ export interface InscriptiontempGetCommunicationCountV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectInscriptiontempGetCommunicationCountV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectInscriptiontempGetCommunicationCountV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectInscriptiontempGetCommunicationCountV1ResponseMPayload 
  * @class DataObjectInscriptiontempGetCommunicationCountV1Response
  */
 export class DataObjectInscriptiontempGetCommunicationCountV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:InscriptiontempGetCommunicationCountV1ResponseMPayload = new DataObjectInscriptiontempGetCommunicationCountV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectInscriptiontempGetCommunicationCountV1Response {
  * @class ValidationObjectInscriptiontempGetCommunicationCountV1Response
  */
 export class ValidationObjectInscriptiontempGetCommunicationCountV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectInscriptiontempGetCommunicationCountV1ResponseMPayload()
 } 
 

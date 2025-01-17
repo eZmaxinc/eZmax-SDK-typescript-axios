@@ -35,18 +35,6 @@ import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-
 export interface ApikeyGetPermissionsV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof ApikeyGetPermissionsV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof ApikeyGetPermissionsV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {ApikeyGetPermissionsV1ResponseMPayload}
      * @memberof ApikeyGetPermissionsV1Response
      */
@@ -59,15 +47,7 @@ export interface ApikeyGetPermissionsV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectApikeyGetPermissionsV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectApikeyGetPermissionsV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectApikeyGetPermissionsV1ResponseMPayload } from './'
  * @class DataObjectApikeyGetPermissionsV1Response
  */
 export class DataObjectApikeyGetPermissionsV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:ApikeyGetPermissionsV1ResponseMPayload = new DataObjectApikeyGetPermissionsV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectApikeyGetPermissionsV1Response {
  * @class ValidationObjectApikeyGetPermissionsV1Response
  */
 export class ValidationObjectApikeyGetPermissionsV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectApikeyGetPermissionsV1ResponseMPayload()
 } 
 

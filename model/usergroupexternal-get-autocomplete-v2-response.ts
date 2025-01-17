@@ -35,18 +35,6 @@ import type { UsergroupexternalGetAutocompleteV2ResponseMPayload } from './userg
 export interface UsergroupexternalGetAutocompleteV2Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof UsergroupexternalGetAutocompleteV2Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof UsergroupexternalGetAutocompleteV2Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {UsergroupexternalGetAutocompleteV2ResponseMPayload}
      * @memberof UsergroupexternalGetAutocompleteV2Response
      */
@@ -59,15 +47,7 @@ export interface UsergroupexternalGetAutocompleteV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectUsergroupexternalGetAutocompleteV2ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectUsergroupexternalGetAutocompleteV2ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectUsergroupexternalGetAutocompleteV2ResponseMPayload } fr
  * @class DataObjectUsergroupexternalGetAutocompleteV2Response
  */
 export class DataObjectUsergroupexternalGetAutocompleteV2Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:UsergroupexternalGetAutocompleteV2ResponseMPayload = new DataObjectUsergroupexternalGetAutocompleteV2ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectUsergroupexternalGetAutocompleteV2Response {
  * @class ValidationObjectUsergroupexternalGetAutocompleteV2Response
  */
 export class ValidationObjectUsergroupexternalGetAutocompleteV2Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectUsergroupexternalGetAutocompleteV2ResponseMPayload()
 } 
 

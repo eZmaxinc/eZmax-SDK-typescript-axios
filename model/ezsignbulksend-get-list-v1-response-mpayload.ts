@@ -28,18 +28,6 @@ import type { EzsignbulksendListElement } from './ezsignbulksend-list-element';
 /*export type EzsignbulksendGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;*/
 export interface EzsignbulksendGetListV1ResponseMPayload {
     /**
-     * The number of rows returned
-     * @type {number}
-     * @memberof EzsignbulksendGetListV1ResponseMPayload
-     */
-    iRowReturned:number 
-    /**
-     * The number of rows matching your filters (if any) or the total number of rows
-     * @type {number}
-     * @memberof EzsignbulksendGetListV1ResponseMPayload
-     */
-    iRowFiltered:number 
-    /**
      * 
      * @type {Array<EzsignbulksendListElement>}
      * @memberof EzsignbulksendGetListV1ResponseMPayload
@@ -60,8 +48,6 @@ export interface EzsignbulksendGetListV1ResponseMPayload {
  * @class DataObjectEzsignbulksendGetListV1ResponseMPayload
  */
 export class DataObjectEzsignbulksendGetListV1ResponseMPayload {
-    iRowReturned:number = 0
-    iRowFiltered:number = 0
     a_objEzsignbulksend:Array<EzsignbulksendListElement> = []
 }
 
@@ -71,14 +57,6 @@ export class DataObjectEzsignbulksendGetListV1ResponseMPayload {
  * @class ValidationObjectEzsignbulksendGetListV1ResponseMPayload
  */
 export class ValidationObjectEzsignbulksendGetListV1ResponseMPayload {
-   iRowReturned = {
-      type: 'integer',
-      required: true
-   }
-   iRowFiltered = {
-      type: 'integer',
-      required: true
-   }
    a_objEzsignbulksend = {
       type: 'array',
       required: true

@@ -35,18 +35,6 @@ import type { EzsignbulksenddocumentmappingGetObjectV2ResponseMPayload } from '.
 export interface EzsignbulksenddocumentmappingGetObjectV2Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsignbulksenddocumentmappingGetObjectV2Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsignbulksenddocumentmappingGetObjectV2Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {EzsignbulksenddocumentmappingGetObjectV2ResponseMPayload}
      * @memberof EzsignbulksenddocumentmappingGetObjectV2Response
      */
@@ -59,15 +47,7 @@ export interface EzsignbulksenddocumentmappingGetObjectV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEzsignbulksenddocumentmappingGetObjectV2ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsignbulksenddocumentmappingGetObjectV2ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEzsignbulksenddocumentmappingGetObjectV2ResponseMPayloa
  * @class DataObjectEzsignbulksenddocumentmappingGetObjectV2Response
  */
 export class DataObjectEzsignbulksenddocumentmappingGetObjectV2Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsignbulksenddocumentmappingGetObjectV2ResponseMPayload = new DataObjectEzsignbulksenddocumentmappingGetObjectV2ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEzsignbulksenddocumentmappingGetObjectV2Response {
  * @class ValidationObjectEzsignbulksenddocumentmappingGetObjectV2Response
  */
 export class ValidationObjectEzsignbulksenddocumentmappingGetObjectV2Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsignbulksenddocumentmappingGetObjectV2ResponseMPayload()
 } 
 

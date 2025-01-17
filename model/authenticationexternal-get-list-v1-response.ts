@@ -35,18 +35,6 @@ import type { CommonResponseObjDebugPayloadGetList } from './common-response-obj
 export interface AuthenticationexternalGetListV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayloadGetList}
-     * @memberof AuthenticationexternalGetListV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayloadGetList 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof AuthenticationexternalGetListV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {AuthenticationexternalGetListV1ResponseMPayload}
      * @memberof AuthenticationexternalGetListV1Response
      */
@@ -59,15 +47,7 @@ export interface AuthenticationexternalGetListV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayloadGetList } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectAuthenticationexternalGetListV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayloadGetList } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectAuthenticationexternalGetListV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectAuthenticationexternalGetListV1ResponseMPayload } from 
  * @class DataObjectAuthenticationexternalGetListV1Response
  */
 export class DataObjectAuthenticationexternalGetListV1Response {
-    objDebugPayload:CommonResponseObjDebugPayloadGetList = new DataObjectCommonResponseObjDebugPayloadGetList()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:AuthenticationexternalGetListV1ResponseMPayload = new DataObjectAuthenticationexternalGetListV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectAuthenticationexternalGetListV1Response {
  * @class ValidationObjectAuthenticationexternalGetListV1Response
  */
 export class ValidationObjectAuthenticationexternalGetListV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayloadGetList()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectAuthenticationexternalGetListV1ResponseMPayload()
 } 
 

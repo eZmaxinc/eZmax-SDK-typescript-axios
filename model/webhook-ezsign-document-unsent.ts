@@ -35,18 +35,6 @@ import type { EzsigndocumentResponse } from './ezsigndocument-response';
 export interface WebhookEzsignDocumentUnsent {
     /**
      * 
-     * @type {CustomWebhookResponse}
-     * @memberof WebhookEzsignDocumentUnsent
-     */
-    objWebhook:CustomWebhookResponse 
-    /**
-     * An array containing details of previous attempts that were made to deliver the message. The array is empty if it\'s the first attempt.
-     * @type {Array<AttemptResponseCompound>}
-     * @memberof WebhookEzsignDocumentUnsent
-     */
-    a_objAttempt:Array<AttemptResponseCompound> 
-    /**
-     * 
      * @type {EzsigndocumentResponse}
      * @memberof WebhookEzsignDocumentUnsent
      */
@@ -59,11 +47,7 @@ export interface WebhookEzsignDocumentUnsent {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCustomWebhookResponse } from './'
-// @ts-ignore
 import { DataObjectEzsigndocumentResponse } from './'
-// @ts-ignore
-import { ValidationObjectCustomWebhookResponse } from './'
 // @ts-ignore
 import { ValidationObjectEzsigndocumentResponse } from './'
 
@@ -74,8 +58,6 @@ import { ValidationObjectEzsigndocumentResponse } from './'
  * @class DataObjectWebhookEzsignDocumentUnsent
  */
 export class DataObjectWebhookEzsignDocumentUnsent {
-    objWebhook:CustomWebhookResponse = new DataObjectCustomWebhookResponse()
-    a_objAttempt:Array<AttemptResponseCompound> = []
     objEzsigndocument:EzsigndocumentResponse = new DataObjectEzsigndocumentResponse()
 }
 
@@ -85,11 +67,6 @@ export class DataObjectWebhookEzsignDocumentUnsent {
  * @class ValidationObjectWebhookEzsignDocumentUnsent
  */
 export class ValidationObjectWebhookEzsignDocumentUnsent {
-   objWebhook = new ValidationObjectCustomWebhookResponse()
-   a_objAttempt = {
-      type: 'array',
-      required: true
-   }
    objEzsigndocument = new ValidationObjectEzsigndocumentResponse()
 } 
 

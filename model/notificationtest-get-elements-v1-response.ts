@@ -35,18 +35,6 @@ import type { NotificationtestGetElementsV1ResponseMPayload } from './notificati
 export interface NotificationtestGetElementsV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof NotificationtestGetElementsV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof NotificationtestGetElementsV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {NotificationtestGetElementsV1ResponseMPayload}
      * @memberof NotificationtestGetElementsV1Response
      */
@@ -59,15 +47,7 @@ export interface NotificationtestGetElementsV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectNotificationtestGetElementsV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectNotificationtestGetElementsV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectNotificationtestGetElementsV1ResponseMPayload } from '.
  * @class DataObjectNotificationtestGetElementsV1Response
  */
 export class DataObjectNotificationtestGetElementsV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:NotificationtestGetElementsV1ResponseMPayload = new DataObjectNotificationtestGetElementsV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectNotificationtestGetElementsV1Response {
  * @class ValidationObjectNotificationtestGetElementsV1Response
  */
 export class ValidationObjectNotificationtestGetElementsV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectNotificationtestGetElementsV1ResponseMPayload()
 } 
 

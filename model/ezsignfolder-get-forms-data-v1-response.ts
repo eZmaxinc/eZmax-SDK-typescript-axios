@@ -35,18 +35,6 @@ import type { EzsignfolderGetFormsDataV1ResponseMPayload } from './ezsignfolder-
 export interface EzsignfolderGetFormsDataV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsignfolderGetFormsDataV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsignfolderGetFormsDataV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {EzsignfolderGetFormsDataV1ResponseMPayload}
      * @memberof EzsignfolderGetFormsDataV1Response
      */
@@ -59,15 +47,7 @@ export interface EzsignfolderGetFormsDataV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEzsignfolderGetFormsDataV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsignfolderGetFormsDataV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEzsignfolderGetFormsDataV1ResponseMPayload } from './'
  * @class DataObjectEzsignfolderGetFormsDataV1Response
  */
 export class DataObjectEzsignfolderGetFormsDataV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsignfolderGetFormsDataV1ResponseMPayload = new DataObjectEzsignfolderGetFormsDataV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEzsignfolderGetFormsDataV1Response {
  * @class ValidationObjectEzsignfolderGetFormsDataV1Response
  */
 export class ValidationObjectEzsignfolderGetFormsDataV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsignfolderGetFormsDataV1ResponseMPayload()
 } 
 

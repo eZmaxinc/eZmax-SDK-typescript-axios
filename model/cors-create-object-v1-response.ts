@@ -35,18 +35,6 @@ import type { CorsCreateObjectV1ResponseMPayload } from './cors-create-object-v1
 export interface CorsCreateObjectV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof CorsCreateObjectV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof CorsCreateObjectV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {CorsCreateObjectV1ResponseMPayload}
      * @memberof CorsCreateObjectV1Response
      */
@@ -59,15 +47,7 @@ export interface CorsCreateObjectV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectCorsCreateObjectV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectCorsCreateObjectV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectCorsCreateObjectV1ResponseMPayload } from './'
  * @class DataObjectCorsCreateObjectV1Response
  */
 export class DataObjectCorsCreateObjectV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:CorsCreateObjectV1ResponseMPayload = new DataObjectCorsCreateObjectV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectCorsCreateObjectV1Response {
  * @class ValidationObjectCorsCreateObjectV1Response
  */
 export class ValidationObjectCorsCreateObjectV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectCorsCreateObjectV1ResponseMPayload()
 } 
 

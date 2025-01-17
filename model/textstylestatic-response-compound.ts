@@ -24,60 +24,6 @@ import type { TextstylestaticResponse } from './textstylestatic-response';
  */
 /*export type TextstylestaticResponseCompound = TextstylestaticResponse;*/
 export interface TextstylestaticResponseCompound {
-    /**
-     * The unique ID of the Textstylestatic
-     * @type {number}
-     * @memberof TextstylestaticResponseCompound
-     */
-    pkiTextstylestaticID?:number 
-    /**
-     * The unique ID of the Font
-     * @type {number}
-     * @memberof TextstylestaticResponseCompound
-     */
-    fkiFontID:number 
-    /**
-     * The name of the Font
-     * @type {string}
-     * @memberof TextstylestaticResponseCompound
-     */
-    sFontName:string 
-    /**
-     * Whether the Textstylestatic is Bold or not
-     * @type {boolean}
-     * @memberof TextstylestaticResponseCompound
-     */
-    bTextstylestaticBold:boolean 
-    /**
-     * Whether the Textstylestatic is Underline or not
-     * @type {boolean}
-     * @memberof TextstylestaticResponseCompound
-     */
-    bTextstylestaticUnderline:boolean 
-    /**
-     * Whether the Textstylestatic is Italic or not
-     * @type {boolean}
-     * @memberof TextstylestaticResponseCompound
-     */
-    bTextstylestaticItalic:boolean 
-    /**
-     * Whether the Textstylestatic is Strikethrough or not
-     * @type {boolean}
-     * @memberof TextstylestaticResponseCompound
-     */
-    bTextstylestaticStrikethrough:boolean 
-    /**
-     * The int32 representation of the Fontcolor. For example, RGB color #39435B would be 3752795
-     * @type {number}
-     * @memberof TextstylestaticResponseCompound
-     */
-    iTextstylestaticFontcolor:number 
-    /**
-     * The Size for the Font of the Textstylestatic
-     * @type {number}
-     * @memberof TextstylestaticResponseCompound
-     */
-    iTextstylestaticSize:number 
 }
 
 
@@ -93,15 +39,6 @@ export interface TextstylestaticResponseCompound {
  * @class DataObjectTextstylestaticResponseCompound
  */
 export class DataObjectTextstylestaticResponseCompound {
-    pkiTextstylestaticID?:number = undefined
-    fkiFontID:number = 0
-    sFontName:string = ''
-    bTextstylestaticBold:boolean = false
-    bTextstylestaticUnderline:boolean = false
-    bTextstylestaticItalic:boolean = false
-    bTextstylestaticStrikethrough:boolean = false
-    iTextstylestaticFontcolor:number = 0
-    iTextstylestaticSize:number = 0
 }
 
 /**
@@ -110,49 +47,6 @@ export class DataObjectTextstylestaticResponseCompound {
  * @class ValidationObjectTextstylestaticResponseCompound
  */
 export class ValidationObjectTextstylestaticResponseCompound {
-   pkiTextstylestaticID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   fkiFontID = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   sFontName = {
-      type: 'string',
-      pattern: /^.{0,50}$/,
-      required: true
-   }
-   bTextstylestaticBold = {
-      type: 'boolean',
-      required: true
-   }
-   bTextstylestaticUnderline = {
-      type: 'boolean',
-      required: true
-   }
-   bTextstylestaticItalic = {
-      type: 'boolean',
-      required: true
-   }
-   bTextstylestaticStrikethrough = {
-      type: 'boolean',
-      required: true
-   }
-   iTextstylestaticFontcolor = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 16777215,
-      required: true
-   }
-   iTextstylestaticSize = {
-      type: 'integer',
-      minimum: 1,
-      maximum: 255,
-      required: true
-   }
 } 
 
 

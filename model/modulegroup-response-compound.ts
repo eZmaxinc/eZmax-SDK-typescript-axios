@@ -28,18 +28,6 @@ import type { ModulegroupResponse } from './modulegroup-response';
 /*export type ModulegroupResponseCompound = ModulegroupResponse;*/
 export interface ModulegroupResponseCompound {
     /**
-     * The unique ID of the Modulegroup
-     * @type {number}
-     * @memberof ModulegroupResponseCompound
-     */
-    pkiModulegroupID:number 
-    /**
-     * The name of the Modulegroup in the language of the requester
-     * @type {string}
-     * @memberof ModulegroupResponseCompound
-     */
-    sModulegroupNameX:string 
-    /**
      * 
      * @type {Array<ModuleResponseCompound>}
      * @memberof ModulegroupResponseCompound
@@ -60,8 +48,6 @@ export interface ModulegroupResponseCompound {
  * @class DataObjectModulegroupResponseCompound
  */
 export class DataObjectModulegroupResponseCompound {
-    pkiModulegroupID:number = 0
-    sModulegroupNameX:string = ''
     a_objModule?:Array<ModuleResponseCompound> = undefined
 }
 
@@ -71,17 +57,6 @@ export class DataObjectModulegroupResponseCompound {
  * @class ValidationObjectModulegroupResponseCompound
  */
 export class ValidationObjectModulegroupResponseCompound {
-   pkiModulegroupID = {
-      type: 'integer',
-      minimum: 1,
-      maximum: 255,
-      required: true
-   }
-   sModulegroupNameX = {
-      type: 'string',
-      pattern: /^.{0,25}$/,
-      required: true
-   }
    a_objModule = {
       type: 'array',
       required: false

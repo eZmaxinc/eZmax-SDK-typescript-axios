@@ -35,18 +35,6 @@ import type { EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload
 export interface EzsignfoldersignerassociationGetInPersonLoginUrlV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsignfoldersignerassociationGetInPersonLoginUrlV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsignfoldersignerassociationGetInPersonLoginUrlV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload}
      * @memberof EzsignfoldersignerassociationGetInPersonLoginUrlV1Response
      */
@@ -59,15 +47,7 @@ export interface EzsignfoldersignerassociationGetInPersonLoginUrlV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEzsignfoldersignerassociationGetInPersonLoginUrlV1Respo
  * @class DataObjectEzsignfoldersignerassociationGetInPersonLoginUrlV1Response
  */
 export class DataObjectEzsignfoldersignerassociationGetInPersonLoginUrlV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload = new DataObjectEzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEzsignfoldersignerassociationGetInPersonLoginUrlV1Respons
  * @class ValidationObjectEzsignfoldersignerassociationGetInPersonLoginUrlV1Response
  */
 export class ValidationObjectEzsignfoldersignerassociationGetInPersonLoginUrlV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsignfoldersignerassociationGetInPersonLoginUrlV1ResponseMPayload()
 } 
 

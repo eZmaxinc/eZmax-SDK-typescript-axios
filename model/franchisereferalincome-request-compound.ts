@@ -31,78 +31,6 @@ import type { FranchisereferalincomeRequest } from './franchisereferalincome-req
 /*export type FranchisereferalincomeRequestCompound = FranchisereferalincomeRequest;*/
 export interface FranchisereferalincomeRequestCompound {
     /**
-     * The unique ID of the Franchisereferalincome
-     * @type {number}
-     * @memberof FranchisereferalincomeRequestCompound
-     */
-    pkiFranchisereferalincomeID?:number 
-    /**
-     * The unique ID of the Franchisebroker
-     * @type {number}
-     * @memberof FranchisereferalincomeRequestCompound
-     */
-    fkiFranchisebrokerID:number 
-    /**
-     * The unique ID of the Franchisereferalincomeprogram
-     * @type {number}
-     * @memberof FranchisereferalincomeRequestCompound
-     */
-    fkiFranchisereferalincomeprogramID:number 
-    /**
-     * The unique ID of the Period
-     * @type {number}
-     * @memberof FranchisereferalincomeRequestCompound
-     */
-    fkiPeriodID:number 
-    /**
-     * The loan amount
-     * @type {string}
-     * @memberof FranchisereferalincomeRequestCompound
-     */
-    dFranchisereferalincomeLoan:string 
-    /**
-     * The amount that will be given to the franchise
-     * @type {string}
-     * @memberof FranchisereferalincomeRequestCompound
-     */
-    dFranchisereferalincomeFranchiseamount:string 
-    /**
-     * The amount that will be kept by the franchisor
-     * @type {string}
-     * @memberof FranchisereferalincomeRequestCompound
-     */
-    dFranchisereferalincomeFranchisoramount:string 
-    /**
-     * The amount that will be given to the agent
-     * @type {string}
-     * @memberof FranchisereferalincomeRequestCompound
-     */
-    dFranchisereferalincomeAgentamount:string 
-    /**
-     * The date the amounts were disbursed
-     * @type {string}
-     * @memberof FranchisereferalincomeRequestCompound
-     */
-    dtFranchisereferalincomeDisbursed:string 
-    /**
-     * Comment about the transaction
-     * @type {string}
-     * @memberof FranchisereferalincomeRequestCompound
-     */
-    tFranchisereferalincomeComment:string 
-    /**
-     * The unique ID of the Franchisereoffice
-     * @type {number}
-     * @memberof FranchisereferalincomeRequestCompound
-     */
-    fkiFranchiseofficeID:number 
-    /**
-     * 
-     * @type {string}
-     * @memberof FranchisereferalincomeRequestCompound
-     */
-    sFranchisereferalincomeRemoteid:string 
-    /**
      * 
      * @type {AddressRequest}
      * @memberof FranchisereferalincomeRequestCompound
@@ -133,18 +61,6 @@ import { ValidationObjectAddressRequest } from './'
  * @class DataObjectFranchisereferalincomeRequestCompound
  */
 export class DataObjectFranchisereferalincomeRequestCompound {
-    pkiFranchisereferalincomeID?:number = undefined
-    fkiFranchisebrokerID:number = 0
-    fkiFranchisereferalincomeprogramID:number = 0
-    fkiPeriodID:number = 0
-    dFranchisereferalincomeLoan:string = ''
-    dFranchisereferalincomeFranchiseamount:string = ''
-    dFranchisereferalincomeFranchisoramount:string = ''
-    dFranchisereferalincomeAgentamount:string = ''
-    dtFranchisereferalincomeDisbursed:string = ''
-    tFranchisereferalincomeComment:string = ''
-    fkiFranchiseofficeID:number = 0
-    sFranchisereferalincomeRemoteid:string = ''
     objAddress?:AddressRequest = undefined
     a_objContact:Array<ContactRequestCompound> = []
 }
@@ -155,59 +71,6 @@ export class DataObjectFranchisereferalincomeRequestCompound {
  * @class ValidationObjectFranchisereferalincomeRequestCompound
  */
 export class ValidationObjectFranchisereferalincomeRequestCompound {
-   pkiFranchisereferalincomeID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   fkiFranchisebrokerID = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   fkiFranchisereferalincomeprogramID = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   fkiPeriodID = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   dFranchisereferalincomeLoan = {
-      type: 'string',
-      required: true
-   }
-   dFranchisereferalincomeFranchiseamount = {
-      type: 'string',
-      required: true
-   }
-   dFranchisereferalincomeFranchisoramount = {
-      type: 'string',
-      required: true
-   }
-   dFranchisereferalincomeAgentamount = {
-      type: 'string',
-      required: true
-   }
-   dtFranchisereferalincomeDisbursed = {
-      type: 'string',
-      required: true
-   }
-   tFranchisereferalincomeComment = {
-      type: 'string',
-      required: true
-   }
-   fkiFranchiseofficeID = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   sFranchisereferalincomeRemoteid = {
-      type: 'string',
-      required: true
-   }
    objAddress = new ValidationObjectAddressRequest()
    a_objContact = {
       type: 'array',

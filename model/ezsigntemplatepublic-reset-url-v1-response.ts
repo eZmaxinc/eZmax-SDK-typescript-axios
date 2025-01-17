@@ -35,18 +35,6 @@ import type { EzsigntemplatepublicResetUrlV1ResponseMPayload } from './ezsigntem
 export interface EzsigntemplatepublicResetUrlV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsigntemplatepublicResetUrlV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsigntemplatepublicResetUrlV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {EzsigntemplatepublicResetUrlV1ResponseMPayload}
      * @memberof EzsigntemplatepublicResetUrlV1Response
      */
@@ -59,15 +47,7 @@ export interface EzsigntemplatepublicResetUrlV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEzsigntemplatepublicResetUrlV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsigntemplatepublicResetUrlV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEzsigntemplatepublicResetUrlV1ResponseMPayload } from '
  * @class DataObjectEzsigntemplatepublicResetUrlV1Response
  */
 export class DataObjectEzsigntemplatepublicResetUrlV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsigntemplatepublicResetUrlV1ResponseMPayload = new DataObjectEzsigntemplatepublicResetUrlV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEzsigntemplatepublicResetUrlV1Response {
  * @class ValidationObjectEzsigntemplatepublicResetUrlV1Response
  */
 export class ValidationObjectEzsigntemplatepublicResetUrlV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsigntemplatepublicResetUrlV1ResponseMPayload()
 } 
 

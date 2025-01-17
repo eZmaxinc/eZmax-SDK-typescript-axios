@@ -35,18 +35,6 @@ import type { UsergroupexternalGetObjectV2ResponseMPayload } from './usergroupex
 export interface UsergroupexternalGetObjectV2Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof UsergroupexternalGetObjectV2Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof UsergroupexternalGetObjectV2Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {UsergroupexternalGetObjectV2ResponseMPayload}
      * @memberof UsergroupexternalGetObjectV2Response
      */
@@ -59,15 +47,7 @@ export interface UsergroupexternalGetObjectV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectUsergroupexternalGetObjectV2ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectUsergroupexternalGetObjectV2ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectUsergroupexternalGetObjectV2ResponseMPayload } from './
  * @class DataObjectUsergroupexternalGetObjectV2Response
  */
 export class DataObjectUsergroupexternalGetObjectV2Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:UsergroupexternalGetObjectV2ResponseMPayload = new DataObjectUsergroupexternalGetObjectV2ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectUsergroupexternalGetObjectV2Response {
  * @class ValidationObjectUsergroupexternalGetObjectV2Response
  */
 export class ValidationObjectUsergroupexternalGetObjectV2Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectUsergroupexternalGetObjectV2ResponseMPayload()
 } 
 

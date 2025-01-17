@@ -35,18 +35,6 @@ import type { EzsigndiscussionCreateObjectV1ResponseMPayload } from './ezsigndis
 export interface EzsigndiscussionCreateObjectV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsigndiscussionCreateObjectV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsigndiscussionCreateObjectV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {EzsigndiscussionCreateObjectV1ResponseMPayload}
      * @memberof EzsigndiscussionCreateObjectV1Response
      */
@@ -59,15 +47,7 @@ export interface EzsigndiscussionCreateObjectV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEzsigndiscussionCreateObjectV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsigndiscussionCreateObjectV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEzsigndiscussionCreateObjectV1ResponseMPayload } from '
  * @class DataObjectEzsigndiscussionCreateObjectV1Response
  */
 export class DataObjectEzsigndiscussionCreateObjectV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsigndiscussionCreateObjectV1ResponseMPayload = new DataObjectEzsigndiscussionCreateObjectV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEzsigndiscussionCreateObjectV1Response {
  * @class ValidationObjectEzsigndiscussionCreateObjectV1Response
  */
 export class ValidationObjectEzsigndiscussionCreateObjectV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsigndiscussionCreateObjectV1ResponseMPayload()
 } 
 

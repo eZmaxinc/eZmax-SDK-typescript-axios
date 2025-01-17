@@ -34,66 +34,6 @@ import type { MultilingualBrandingDescription } from './multilingual-branding-de
 /*export type BrandingResponseCompoundV3 = BrandingResponseV3;*/
 export interface BrandingResponseCompoundV3 {
     /**
-     * The unique ID of the Branding
-     * @type {number}
-     * @memberof BrandingResponseCompoundV3
-     */
-    pkiBrandingID:number 
-    /**
-     * The unique ID of the Email
-     * @type {number}
-     * @memberof BrandingResponseCompoundV3
-     */
-    fkiEmailID?:number 
-    /**
-     * 
-     * @type {MultilingualBrandingDescription}
-     * @memberof BrandingResponseCompoundV3
-     */
-    objBrandingDescription:MultilingualBrandingDescription 
-    /**
-     * The Description of the Branding in the language of the requester
-     * @type {string}
-     * @memberof BrandingResponseCompoundV3
-     */
-    sBrandingDescriptionX:string 
-    /**
-     * The name of the Branding  This value will only be set if you wish to overwrite the default name. If you want to keep the default name, leave this property empty
-     * @type {string}
-     * @memberof BrandingResponseCompoundV3
-     */
-    sBrandingName?:string 
-    /**
-     * The email address.
-     * @type {string}
-     * @memberof BrandingResponseCompoundV3
-     */
-    sEmailAddress?:string 
-    /**
-     * 
-     * @type {FieldEBrandingLogo}
-     * @memberof BrandingResponseCompoundV3
-     */
-    eBrandingLogo:FieldEBrandingLogo 
-    /**
-     * 
-     * @type {FieldEBrandingAlignlogo}
-     * @memberof BrandingResponseCompoundV3
-     */
-    eBrandingAlignlogo:FieldEBrandingAlignlogo 
-    /**
-     * The primary color. This is a RGB color converted into integer
-     * @type {number}
-     * @memberof BrandingResponseCompoundV3
-     */
-    iBrandingColor:number 
-    /**
-     * Whether the Branding is active or not
-     * @type {boolean}
-     * @memberof BrandingResponseCompoundV3
-     */
-    bBrandingIsactive:boolean 
-    /**
      * The url of the picture used as logo in the Branding
      * @type {string}
      * @memberof BrandingResponseCompoundV3
@@ -119,10 +59,6 @@ export interface BrandingResponseCompoundV3 {
  * @import
  * Imports Child Data Object
  */
-// @ts-ignore
-import { DataObjectMultilingualBrandingDescription } from './'
-// @ts-ignore
-import { ValidationObjectMultilingualBrandingDescription } from './'
 
 /**
  * @export 
@@ -131,16 +67,6 @@ import { ValidationObjectMultilingualBrandingDescription } from './'
  * @class DataObjectBrandingResponseCompoundV3
  */
 export class DataObjectBrandingResponseCompoundV3 {
-    pkiBrandingID:number = 0
-    fkiEmailID?:number = undefined
-    objBrandingDescription:MultilingualBrandingDescription = new DataObjectMultilingualBrandingDescription()
-    sBrandingDescriptionX:string = ''
-    sBrandingName?:string = undefined
-    sEmailAddress?:string = undefined
-    eBrandingLogo:FieldEBrandingLogo = 'Default'
-    eBrandingAlignlogo:FieldEBrandingAlignlogo = 'Center'
-    iBrandingColor:number = 0
-    bBrandingIsactive:boolean = false
     sBrandingLogourl?:string = undefined
     sBrandingLogoemailurl?:string = undefined
     sBrandingLogointerfaceurl?:string = undefined
@@ -152,52 +78,6 @@ export class DataObjectBrandingResponseCompoundV3 {
  * @class ValidationObjectBrandingResponseCompoundV3
  */
 export class ValidationObjectBrandingResponseCompoundV3 {
-   pkiBrandingID = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   fkiEmailID = {
-      type: 'integer',
-      minimum: 1,
-      maximum: 16777215,
-      required: false
-   }
-   objBrandingDescription = new ValidationObjectMultilingualBrandingDescription()
-   sBrandingDescriptionX = {
-      type: 'string',
-      required: true
-   }
-   sBrandingName = {
-      type: 'string',
-      pattern: /^.{0,55}$/,
-      required: false
-   }
-   sEmailAddress = {
-      type: 'string',
-      pattern: /^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/,
-      required: false
-   }
-   eBrandingLogo = {
-      type: 'enum',
-      allowableValues: ['Default','JPEG','PNG'],
-      required: true
-   }
-   eBrandingAlignlogo = {
-      type: 'enum',
-      allowableValues: ['Center','Left','Right'],
-      required: true
-   }
-   iBrandingColor = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 16777215,
-      required: true
-   }
-   bBrandingIsactive = {
-      type: 'boolean',
-      required: true
-   }
    sBrandingLogourl = {
       type: 'string',
       pattern: /^(https|http):\/\/[^\s\/$.?#].[^\s]*$/,

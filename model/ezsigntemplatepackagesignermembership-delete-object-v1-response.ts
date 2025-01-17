@@ -35,18 +35,6 @@ import type { EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayloa
 export interface EzsigntemplatepackagesignermembershipDeleteObjectV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsigntemplatepackagesignermembershipDeleteObjectV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsigntemplatepackagesignermembershipDeleteObjectV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload}
      * @memberof EzsigntemplatepackagesignermembershipDeleteObjectV1Response
      */
@@ -59,15 +47,7 @@ export interface EzsigntemplatepackagesignermembershipDeleteObjectV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEzsigntemplatepackagesignermembershipDeleteObjectV1Resp
  * @class DataObjectEzsigntemplatepackagesignermembershipDeleteObjectV1Response
  */
 export class DataObjectEzsigntemplatepackagesignermembershipDeleteObjectV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload = new DataObjectEzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEzsigntemplatepackagesignermembershipDeleteObjectV1Respon
  * @class ValidationObjectEzsigntemplatepackagesignermembershipDeleteObjectV1Response
  */
 export class ValidationObjectEzsigntemplatepackagesignermembershipDeleteObjectV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsigntemplatepackagesignermembershipDeleteObjectV1ResponseMPayload()
 } 
 

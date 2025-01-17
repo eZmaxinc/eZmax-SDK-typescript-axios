@@ -35,18 +35,6 @@ import type { FranchiseofficeGetAutocompleteV2ResponseMPayload } from './franchi
 export interface FranchiseofficeGetAutocompleteV2Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof FranchiseofficeGetAutocompleteV2Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof FranchiseofficeGetAutocompleteV2Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {FranchiseofficeGetAutocompleteV2ResponseMPayload}
      * @memberof FranchiseofficeGetAutocompleteV2Response
      */
@@ -59,15 +47,7 @@ export interface FranchiseofficeGetAutocompleteV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectFranchiseofficeGetAutocompleteV2ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectFranchiseofficeGetAutocompleteV2ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectFranchiseofficeGetAutocompleteV2ResponseMPayload } from
  * @class DataObjectFranchiseofficeGetAutocompleteV2Response
  */
 export class DataObjectFranchiseofficeGetAutocompleteV2Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:FranchiseofficeGetAutocompleteV2ResponseMPayload = new DataObjectFranchiseofficeGetAutocompleteV2ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectFranchiseofficeGetAutocompleteV2Response {
  * @class ValidationObjectFranchiseofficeGetAutocompleteV2Response
  */
 export class ValidationObjectFranchiseofficeGetAutocompleteV2Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectFranchiseofficeGetAutocompleteV2ResponseMPayload()
 } 
 

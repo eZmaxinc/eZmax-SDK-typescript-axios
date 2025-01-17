@@ -35,18 +35,6 @@ import type { CustomerCreateObjectV1ResponseMPayload } from './customer-create-o
 export interface CustomerCreateObjectV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof CustomerCreateObjectV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof CustomerCreateObjectV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {CustomerCreateObjectV1ResponseMPayload}
      * @memberof CustomerCreateObjectV1Response
      */
@@ -59,15 +47,7 @@ export interface CustomerCreateObjectV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectCustomerCreateObjectV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectCustomerCreateObjectV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectCustomerCreateObjectV1ResponseMPayload } from './'
  * @class DataObjectCustomerCreateObjectV1Response
  */
 export class DataObjectCustomerCreateObjectV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:CustomerCreateObjectV1ResponseMPayload = new DataObjectCustomerCreateObjectV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectCustomerCreateObjectV1Response {
  * @class ValidationObjectCustomerCreateObjectV1Response
  */
 export class ValidationObjectCustomerCreateObjectV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectCustomerCreateObjectV1ResponseMPayload()
 } 
 

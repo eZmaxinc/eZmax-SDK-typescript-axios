@@ -24,66 +24,6 @@ import type { UsergroupmembershipResponse } from './usergroupmembership-response
  */
 /*export type UsergroupmembershipResponseCompound = UsergroupmembershipResponse;*/
 export interface UsergroupmembershipResponseCompound {
-    /**
-     * The unique ID of the Usergroupmembership
-     * @type {number}
-     * @memberof UsergroupmembershipResponseCompound
-     */
-    pkiUsergroupmembershipID:number 
-    /**
-     * The unique ID of the Usergroup
-     * @type {number}
-     * @memberof UsergroupmembershipResponseCompound
-     */
-    fkiUsergroupID:number 
-    /**
-     * The unique ID of the User
-     * @type {number}
-     * @memberof UsergroupmembershipResponseCompound
-     */
-    fkiUserID?:number 
-    /**
-     * The unique ID of the Usergroupexternal
-     * @type {number}
-     * @memberof UsergroupmembershipResponseCompound
-     */
-    fkiUsergroupexternalID?:number 
-    /**
-     * The first name of the user
-     * @type {string}
-     * @memberof UsergroupmembershipResponseCompound
-     */
-    sUserFirstname?:string 
-    /**
-     * The last name of the user
-     * @type {string}
-     * @memberof UsergroupmembershipResponseCompound
-     */
-    sUserLastname?:string 
-    /**
-     * The login name of the User.
-     * @type {string}
-     * @memberof UsergroupmembershipResponseCompound
-     */
-    sUserLoginname?:string 
-    /**
-     * The email address.
-     * @type {string}
-     * @memberof UsergroupmembershipResponseCompound
-     */
-    sEmailAddress?:string 
-    /**
-     * The Name of the Usergroup in the language of the requester
-     * @type {string}
-     * @memberof UsergroupmembershipResponseCompound
-     */
-    sUsergroupNameX:string 
-    /**
-     * The name of the Usergroupexternal
-     * @type {string}
-     * @memberof UsergroupmembershipResponseCompound
-     */
-    sUsergroupexternalName?:string 
 }
 
 
@@ -99,16 +39,6 @@ export interface UsergroupmembershipResponseCompound {
  * @class DataObjectUsergroupmembershipResponseCompound
  */
 export class DataObjectUsergroupmembershipResponseCompound {
-    pkiUsergroupmembershipID:number = 0
-    fkiUsergroupID:number = 0
-    fkiUserID?:number = undefined
-    fkiUsergroupexternalID?:number = undefined
-    sUserFirstname?:string = undefined
-    sUserLastname?:string = undefined
-    sUserLoginname?:string = undefined
-    sEmailAddress?:string = undefined
-    sUsergroupNameX:string = ''
-    sUsergroupexternalName?:string = undefined
 }
 
 /**
@@ -117,57 +47,6 @@ export class DataObjectUsergroupmembershipResponseCompound {
  * @class ValidationObjectUsergroupmembershipResponseCompound
  */
 export class ValidationObjectUsergroupmembershipResponseCompound {
-   pkiUsergroupmembershipID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 65535,
-      required: true
-   }
-   fkiUsergroupID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 255,
-      required: true
-   }
-   fkiUserID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   fkiUsergroupexternalID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 255,
-      required: false
-   }
-   sUserFirstname = {
-      type: 'string',
-      required: false
-   }
-   sUserLastname = {
-      type: 'string',
-      required: false
-   }
-   sUserLoginname = {
-      type: 'string',
-      pattern: /^(?:([\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/,
-      required: false
-   }
-   sEmailAddress = {
-      type: 'string',
-      pattern: /^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/,
-      required: false
-   }
-   sUsergroupNameX = {
-      type: 'string',
-      pattern: /^.{0,50}$/,
-      required: true
-   }
-   sUsergroupexternalName = {
-      type: 'string',
-      pattern: /^.{0,64}$/,
-      required: false
-   }
 } 
 
 

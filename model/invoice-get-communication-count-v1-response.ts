@@ -35,18 +35,6 @@ import type { InvoiceGetCommunicationCountV1ResponseMPayload } from './invoice-g
 export interface InvoiceGetCommunicationCountV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof InvoiceGetCommunicationCountV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof InvoiceGetCommunicationCountV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {InvoiceGetCommunicationCountV1ResponseMPayload}
      * @memberof InvoiceGetCommunicationCountV1Response
      */
@@ -59,15 +47,7 @@ export interface InvoiceGetCommunicationCountV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectInvoiceGetCommunicationCountV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectInvoiceGetCommunicationCountV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectInvoiceGetCommunicationCountV1ResponseMPayload } from '
  * @class DataObjectInvoiceGetCommunicationCountV1Response
  */
 export class DataObjectInvoiceGetCommunicationCountV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:InvoiceGetCommunicationCountV1ResponseMPayload = new DataObjectInvoiceGetCommunicationCountV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectInvoiceGetCommunicationCountV1Response {
  * @class ValidationObjectInvoiceGetCommunicationCountV1Response
  */
 export class ValidationObjectInvoiceGetCommunicationCountV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectInvoiceGetCommunicationCountV1ResponseMPayload()
 } 
 

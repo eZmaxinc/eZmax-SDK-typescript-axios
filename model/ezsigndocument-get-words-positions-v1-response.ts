@@ -34,18 +34,6 @@ import type { CustomWordPositionWordResponse } from './custom-word-position-word
 /*export type EzsigndocumentGetWordsPositionsV1Response = CommonResponse;*/
 export interface EzsigndocumentGetWordsPositionsV1Response {
     /**
-     * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsigndocumentGetWordsPositionsV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsigndocumentGetWordsPositionsV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
      * Payload for POST /1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions
      * @type {Array<CustomWordPositionWordResponse>}
      * @memberof EzsigndocumentGetWordsPositionsV1Response
@@ -58,14 +46,6 @@ export interface EzsigndocumentGetWordsPositionsV1Response {
  * @import
  * Imports Child Data Object
  */
-// @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 
 /**
  * @export 
@@ -74,8 +54,6 @@ import { ValidationObjectCommonResponseObjDebug } from './'
  * @class DataObjectEzsigndocumentGetWordsPositionsV1Response
  */
 export class DataObjectEzsigndocumentGetWordsPositionsV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:Array<CustomWordPositionWordResponse> = []
 }
 
@@ -85,8 +63,6 @@ export class DataObjectEzsigndocumentGetWordsPositionsV1Response {
  * @class ValidationObjectEzsigndocumentGetWordsPositionsV1Response
  */
 export class ValidationObjectEzsigndocumentGetWordsPositionsV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = {
       type: 'array',
       required: true

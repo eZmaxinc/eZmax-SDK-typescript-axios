@@ -35,18 +35,6 @@ import type { UsergroupGetAutocompleteV2ResponseMPayload } from './usergroup-get
 export interface UsergroupGetAutocompleteV2Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof UsergroupGetAutocompleteV2Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof UsergroupGetAutocompleteV2Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {UsergroupGetAutocompleteV2ResponseMPayload}
      * @memberof UsergroupGetAutocompleteV2Response
      */
@@ -59,15 +47,7 @@ export interface UsergroupGetAutocompleteV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectUsergroupGetAutocompleteV2ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectUsergroupGetAutocompleteV2ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectUsergroupGetAutocompleteV2ResponseMPayload } from './'
  * @class DataObjectUsergroupGetAutocompleteV2Response
  */
 export class DataObjectUsergroupGetAutocompleteV2Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:UsergroupGetAutocompleteV2ResponseMPayload = new DataObjectUsergroupGetAutocompleteV2ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectUsergroupGetAutocompleteV2Response {
  * @class ValidationObjectUsergroupGetAutocompleteV2Response
  */
 export class ValidationObjectUsergroupGetAutocompleteV2Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectUsergroupGetAutocompleteV2ResponseMPayload()
 } 
 

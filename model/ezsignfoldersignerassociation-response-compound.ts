@@ -34,42 +34,6 @@ import type { EzsignsignergroupResponseCompound } from './ezsignsignergroup-resp
 /*export type EzsignfoldersignerassociationResponseCompound = EzsignfoldersignerassociationResponse;*/
 export interface EzsignfoldersignerassociationResponseCompound {
     /**
-     * The unique ID of the Ezsignfoldersignerassociation
-     * @type {number}
-     * @memberof EzsignfoldersignerassociationResponseCompound
-     */
-    pkiEzsignfoldersignerassociationID:number 
-    /**
-     * The unique ID of the Ezsignfolder
-     * @type {number}
-     * @memberof EzsignfoldersignerassociationResponseCompound
-     */
-    fkiEzsignfolderID:number 
-    /**
-     * If this flag is true the signatory is part of a delayed send.
-     * @type {boolean}
-     * @memberof EzsignfoldersignerassociationResponseCompound
-     */
-    bEzsignfoldersignerassociationDelayedsend:boolean 
-    /**
-     * If this flag is true. The signatory will receive a copy of every signed Ezsigndocument even if it ain\'t required to sign the document.
-     * @type {boolean}
-     * @memberof EzsignfoldersignerassociationResponseCompound
-     */
-    bEzsignfoldersignerassociationReceivecopy:boolean 
-    /**
-     * A custom text message that will be added to the email sent.
-     * @type {string}
-     * @memberof EzsignfoldersignerassociationResponseCompound
-     */
-    tEzsignfoldersignerassociationMessage:string 
-    /**
-     * If the Ezsignfoldersignerassociation is allowed to sign in person or not
-     * @type {boolean}
-     * @memberof EzsignfoldersignerassociationResponseCompound
-     */
-    bEzsignfoldersignerassociationAllowsigninginperson:boolean 
-    /**
      * 
      * @type {EzsignsignergroupResponseCompound}
      * @memberof EzsignfoldersignerassociationResponseCompound
@@ -114,12 +78,6 @@ import { ValidationObjectEzsignsignerResponseCompound } from './'
  * @class DataObjectEzsignfoldersignerassociationResponseCompound
  */
 export class DataObjectEzsignfoldersignerassociationResponseCompound {
-    pkiEzsignfoldersignerassociationID:number = 0
-    fkiEzsignfolderID:number = 0
-    bEzsignfoldersignerassociationDelayedsend:boolean = false
-    bEzsignfoldersignerassociationReceivecopy:boolean = false
-    tEzsignfoldersignerassociationMessage:string = ''
-    bEzsignfoldersignerassociationAllowsigninginperson:boolean = false
     objEzsignsignergroup?:EzsignsignergroupResponseCompound = undefined
     objUser?:EzsignfoldersignerassociationResponseCompoundUser = undefined
     objEzsignsigner?:EzsignsignerResponseCompound = undefined
@@ -131,32 +89,6 @@ export class DataObjectEzsignfoldersignerassociationResponseCompound {
  * @class ValidationObjectEzsignfoldersignerassociationResponseCompound
  */
 export class ValidationObjectEzsignfoldersignerassociationResponseCompound {
-   pkiEzsignfoldersignerassociationID = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   fkiEzsignfolderID = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   bEzsignfoldersignerassociationDelayedsend = {
-      type: 'boolean',
-      required: true
-   }
-   bEzsignfoldersignerassociationReceivecopy = {
-      type: 'boolean',
-      required: true
-   }
-   tEzsignfoldersignerassociationMessage = {
-      type: 'string',
-      required: true
-   }
-   bEzsignfoldersignerassociationAllowsigninginperson = {
-      type: 'boolean',
-      required: true
-   }
    objEzsignsignergroup = new ValidationObjectEzsignsignergroupResponseCompound()
    objUser = new ValidationObjectEzsignfoldersignerassociationResponseCompoundUser()
    objEzsignsigner = new ValidationObjectEzsignsignerResponseCompound()

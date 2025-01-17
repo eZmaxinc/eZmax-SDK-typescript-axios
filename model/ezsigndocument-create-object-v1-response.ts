@@ -35,18 +35,6 @@ import type { EzsigndocumentCreateObjectV1ResponseMPayload } from './ezsigndocum
 export interface EzsigndocumentCreateObjectV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsigndocumentCreateObjectV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsigndocumentCreateObjectV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {EzsigndocumentCreateObjectV1ResponseMPayload}
      * @memberof EzsigndocumentCreateObjectV1Response
      */
@@ -59,15 +47,7 @@ export interface EzsigndocumentCreateObjectV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEzsigndocumentCreateObjectV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsigndocumentCreateObjectV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEzsigndocumentCreateObjectV1ResponseMPayload } from './
  * @class DataObjectEzsigndocumentCreateObjectV1Response
  */
 export class DataObjectEzsigndocumentCreateObjectV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsigndocumentCreateObjectV1ResponseMPayload = new DataObjectEzsigndocumentCreateObjectV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEzsigndocumentCreateObjectV1Response {
  * @class ValidationObjectEzsigndocumentCreateObjectV1Response
  */
 export class ValidationObjectEzsigndocumentCreateObjectV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsigndocumentCreateObjectV1ResponseMPayload()
 } 
 

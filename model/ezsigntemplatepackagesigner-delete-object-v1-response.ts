@@ -35,18 +35,6 @@ import type { EzsigntemplatepackagesignerDeleteObjectV1ResponseMPayload } from '
 export interface EzsigntemplatepackagesignerDeleteObjectV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsigntemplatepackagesignerDeleteObjectV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsigntemplatepackagesignerDeleteObjectV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {EzsigntemplatepackagesignerDeleteObjectV1ResponseMPayload}
      * @memberof EzsigntemplatepackagesignerDeleteObjectV1Response
      */
@@ -59,15 +47,7 @@ export interface EzsigntemplatepackagesignerDeleteObjectV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEzsigntemplatepackagesignerDeleteObjectV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsigntemplatepackagesignerDeleteObjectV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEzsigntemplatepackagesignerDeleteObjectV1ResponseMPaylo
  * @class DataObjectEzsigntemplatepackagesignerDeleteObjectV1Response
  */
 export class DataObjectEzsigntemplatepackagesignerDeleteObjectV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsigntemplatepackagesignerDeleteObjectV1ResponseMPayload = new DataObjectEzsigntemplatepackagesignerDeleteObjectV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEzsigntemplatepackagesignerDeleteObjectV1Response {
  * @class ValidationObjectEzsigntemplatepackagesignerDeleteObjectV1Response
  */
 export class ValidationObjectEzsigntemplatepackagesignerDeleteObjectV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsigntemplatepackagesignerDeleteObjectV1ResponseMPayload()
 } 
 

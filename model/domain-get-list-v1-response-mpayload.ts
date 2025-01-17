@@ -28,18 +28,6 @@ import type { DomainListElement } from './domain-list-element';
 /*export type DomainGetListV1ResponseMPayload = CommonGetListV1ResponseMPayload;*/
 export interface DomainGetListV1ResponseMPayload {
     /**
-     * The number of rows returned
-     * @type {number}
-     * @memberof DomainGetListV1ResponseMPayload
-     */
-    iRowReturned:number 
-    /**
-     * The number of rows matching your filters (if any) or the total number of rows
-     * @type {number}
-     * @memberof DomainGetListV1ResponseMPayload
-     */
-    iRowFiltered:number 
-    /**
      * 
      * @type {Array<DomainListElement>}
      * @memberof DomainGetListV1ResponseMPayload
@@ -60,8 +48,6 @@ export interface DomainGetListV1ResponseMPayload {
  * @class DataObjectDomainGetListV1ResponseMPayload
  */
 export class DataObjectDomainGetListV1ResponseMPayload {
-    iRowReturned:number = 0
-    iRowFiltered:number = 0
     a_objDomain:Array<DomainListElement> = []
 }
 
@@ -71,14 +57,6 @@ export class DataObjectDomainGetListV1ResponseMPayload {
  * @class ValidationObjectDomainGetListV1ResponseMPayload
  */
 export class ValidationObjectDomainGetListV1ResponseMPayload {
-   iRowReturned = {
-      type: 'integer',
-      required: true
-   }
-   iRowFiltered = {
-      type: 'integer',
-      required: true
-   }
    a_objDomain = {
       type: 'array',
       required: true

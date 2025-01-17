@@ -40,108 +40,6 @@ import type { WebhookheaderResponseCompound } from './webhookheader-response-com
 /*export type WebhookResponseCompound = WebhookResponse;*/
 export interface WebhookResponseCompound {
     /**
-     * The unique ID of the Webhook
-     * @type {number}
-     * @memberof WebhookResponseCompound
-     */
-    pkiWebhookID:number 
-    /**
-     * The unique ID of the Authenticationexternal
-     * @type {number}
-     * @memberof WebhookResponseCompound
-     */
-    fkiAuthenticationexternalID?:number 
-    /**
-     * The description of the Webhook
-     * @type {string}
-     * @memberof WebhookResponseCompound
-     */
-    sWebhookDescription:string 
-    /**
-     * The unique ID of the Ezsignfoldertype.
-     * @type {number}
-     * @memberof WebhookResponseCompound
-     */
-    fkiEzsignfoldertypeID?:number 
-    /**
-     * The name of the Ezsignfoldertype in the language of the requester
-     * @type {string}
-     * @memberof WebhookResponseCompound
-     */
-    sEzsignfoldertypeNameX?:string 
-    /**
-     * 
-     * @type {FieldEWebhookModule}
-     * @memberof WebhookResponseCompound
-     */
-    eWebhookModule:FieldEWebhookModule 
-    /**
-     * 
-     * @type {FieldEWebhookEzsignevent}
-     * @memberof WebhookResponseCompound
-     */
-    eWebhookEzsignevent?:FieldEWebhookEzsignevent 
-    /**
-     * 
-     * @type {FieldEWebhookManagementevent}
-     * @memberof WebhookResponseCompound
-     */
-    eWebhookManagementevent?:FieldEWebhookManagementevent 
-    /**
-     * The URL of the Webhook callback
-     * @type {string}
-     * @memberof WebhookResponseCompound
-     */
-    sWebhookUrl:string 
-    /**
-     * The email that will receive the Webhook in case all attempts fail
-     * @type {string}
-     * @memberof WebhookResponseCompound
-     */
-    sWebhookEmailfailed:string 
-    /**
-     * The Apikey for the Webhook.  This will be hidden if we are not creating or regenerating the Apikey.
-     * @type {string}
-     * @memberof WebhookResponseCompound
-     */
-    sWebhookApikey?:string 
-    /**
-     * The Secret for the Webhook.  This will be hidden if we are not creating or regenerating the Apikey.
-     * @type {string}
-     * @memberof WebhookResponseCompound
-     */
-    sWebhookSecret?:string 
-    /**
-     * Whether the Webhook is active or not
-     * @type {boolean}
-     * @memberof WebhookResponseCompound
-     */
-    bWebhookIsactive:boolean 
-    /**
-     * Whether the requests will be signed or not
-     * @type {boolean}
-     * @memberof WebhookResponseCompound
-     */
-    bWebhookIssigned:boolean 
-    /**
-     * Wheter the server\'s SSL certificate should be validated or not. Not recommended to skip for production use
-     * @type {boolean}
-     * @memberof WebhookResponseCompound
-     */
-    bWebhookSkipsslvalidation:boolean 
-    /**
-     * The description of the Authenticationexternal
-     * @type {string}
-     * @memberof WebhookResponseCompound
-     */
-    sAuthenticationexternalDescription?:string 
-    /**
-     * 
-     * @type {CommonAudit}
-     * @memberof WebhookResponseCompound
-     */
-    objAudit:CommonAudit 
-    /**
      * The concatenated string to describe the Webhook event
      * @type {string}
      * @memberof WebhookResponseCompound
@@ -161,10 +59,6 @@ export interface WebhookResponseCompound {
  * @import
  * Imports Child Data Object
  */
-// @ts-ignore
-import { DataObjectCommonAudit } from './'
-// @ts-ignore
-import { ValidationObjectCommonAudit } from './'
 
 /**
  * @export 
@@ -173,23 +67,6 @@ import { ValidationObjectCommonAudit } from './'
  * @class DataObjectWebhookResponseCompound
  */
 export class DataObjectWebhookResponseCompound {
-    pkiWebhookID:number = 0
-    fkiAuthenticationexternalID?:number = undefined
-    sWebhookDescription:string = ''
-    fkiEzsignfoldertypeID?:number = undefined
-    sEzsignfoldertypeNameX?:string = undefined
-    eWebhookModule:FieldEWebhookModule = 'Ezsign'
-    eWebhookEzsignevent?:FieldEWebhookEzsignevent = undefined
-    eWebhookManagementevent?:FieldEWebhookManagementevent = undefined
-    sWebhookUrl:string = ''
-    sWebhookEmailfailed:string = ''
-    sWebhookApikey?:string = undefined
-    sWebhookSecret?:string = undefined
-    bWebhookIsactive:boolean = false
-    bWebhookIssigned:boolean = false
-    bWebhookSkipsslvalidation:boolean = false
-    sAuthenticationexternalDescription?:string = undefined
-    objAudit:CommonAudit = new DataObjectCommonAudit()
     sWebhookEvent?:string = undefined
     a_objWebhookheader?:Array<WebhookheaderResponseCompound> = undefined
 }
@@ -200,80 +77,6 @@ export class DataObjectWebhookResponseCompound {
  * @class ValidationObjectWebhookResponseCompound
  */
 export class ValidationObjectWebhookResponseCompound {
-   pkiWebhookID = {
-      type: 'integer',
-      required: true
-   }
-   fkiAuthenticationexternalID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 255,
-      required: false
-   }
-   sWebhookDescription = {
-      type: 'string',
-      required: true
-   }
-   fkiEzsignfoldertypeID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 65535,
-      required: false
-   }
-   sEzsignfoldertypeNameX = {
-      type: 'string',
-      required: false
-   }
-   eWebhookModule = {
-      type: 'enum',
-      allowableValues: ['Ezsign','Management'],
-      required: true
-   }
-   eWebhookEzsignevent = {
-      type: 'enum',
-      allowableValues: ['DocumentCompleted','DocumentFormCompleted','DocumentUnsent','EzsignsignerAcceptclause','EzsignsignerConnect','FolderCompleted','FolderDisposed','FolderSent','FolderUnsent','SignatureSigned'],
-      required: false
-   }
-   eWebhookManagementevent = {
-      type: 'enum',
-      allowableValues: ['UserCreated','UserstagedCreated'],
-      required: false
-   }
-   sWebhookUrl = {
-      type: 'string',
-      pattern: /^(https|http):\/\/[^\s\/$.?#].[^\s]*$/,
-      required: true
-   }
-   sWebhookEmailfailed = {
-      type: 'string',
-      required: true
-   }
-   sWebhookApikey = {
-      type: 'string',
-      required: false
-   }
-   sWebhookSecret = {
-      type: 'string',
-      required: false
-   }
-   bWebhookIsactive = {
-      type: 'boolean',
-      required: true
-   }
-   bWebhookIssigned = {
-      type: 'boolean',
-      required: true
-   }
-   bWebhookSkipsslvalidation = {
-      type: 'boolean',
-      required: true
-   }
-   sAuthenticationexternalDescription = {
-      type: 'string',
-      pattern: /^.{0,50}$/,
-      required: false
-   }
-   objAudit = new ValidationObjectCommonAudit()
    sWebhookEvent = {
       type: 'string',
       required: false

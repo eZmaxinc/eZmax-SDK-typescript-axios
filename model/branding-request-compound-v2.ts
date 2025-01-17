@@ -33,60 +33,6 @@ import type { MultilingualBrandingDescription } from './multilingual-branding-de
  */
 /*export type BrandingRequestCompoundV2 = BrandingRequestV2;*/
 export interface BrandingRequestCompoundV2 {
-    /**
-     * The unique ID of the Branding
-     * @type {number}
-     * @memberof BrandingRequestCompoundV2
-     */
-    pkiBrandingID?:number 
-    /**
-     * 
-     * @type {MultilingualBrandingDescription}
-     * @memberof BrandingRequestCompoundV2
-     */
-    objBrandingDescription:MultilingualBrandingDescription 
-    /**
-     * 
-     * @type {FieldEBrandingLogo}
-     * @memberof BrandingRequestCompoundV2
-     */
-    eBrandingLogo:FieldEBrandingLogo 
-    /**
-     * 
-     * @type {FieldEBrandingAlignlogo}
-     * @memberof BrandingRequestCompoundV2
-     */
-    eBrandingAlignlogo?:FieldEBrandingAlignlogo 
-    /**
-     * The Base64 encoded binary content of the branding logo. This need to match image type selected in eBrandingLogo if you supply an image. If you select \'Default\', the logo will be deleted and the default one will be used.
-     * @type {string}
-     * @memberof BrandingRequestCompoundV2
-     */
-    sBrandingBase64?:string 
-    /**
-     * The primary color. This is a RGB color converted into integer
-     * @type {number}
-     * @memberof BrandingRequestCompoundV2
-     */
-    iBrandingColor:number 
-    /**
-     * The name of the Branding  This value will only be set if you wish to overwrite the default name. If you want to keep the default name, leave this property empty
-     * @type {string}
-     * @memberof BrandingRequestCompoundV2
-     */
-    sBrandingName?:string 
-    /**
-     * The email address.
-     * @type {string}
-     * @memberof BrandingRequestCompoundV2
-     */
-    sEmailAddress?:string 
-    /**
-     * Whether the Branding is active or not
-     * @type {boolean}
-     * @memberof BrandingRequestCompoundV2
-     */
-    bBrandingIsactive:boolean 
 }
 
 
@@ -95,10 +41,6 @@ export interface BrandingRequestCompoundV2 {
  * @import
  * Imports Child Data Object
  */
-// @ts-ignore
-import { DataObjectMultilingualBrandingDescription } from './'
-// @ts-ignore
-import { ValidationObjectMultilingualBrandingDescription } from './'
 
 /**
  * @export 
@@ -107,15 +49,6 @@ import { ValidationObjectMultilingualBrandingDescription } from './'
  * @class DataObjectBrandingRequestCompoundV2
  */
 export class DataObjectBrandingRequestCompoundV2 {
-    pkiBrandingID?:number = undefined
-    objBrandingDescription:MultilingualBrandingDescription = new DataObjectMultilingualBrandingDescription()
-    eBrandingLogo:FieldEBrandingLogo = 'Default'
-    eBrandingAlignlogo?:FieldEBrandingAlignlogo = undefined
-    sBrandingBase64?:string = undefined
-    iBrandingColor:number = 0
-    sBrandingName?:string = undefined
-    sEmailAddress?:string = undefined
-    bBrandingIsactive:boolean = false
 }
 
 /**
@@ -124,46 +57,6 @@ export class DataObjectBrandingRequestCompoundV2 {
  * @class ValidationObjectBrandingRequestCompoundV2
  */
 export class ValidationObjectBrandingRequestCompoundV2 {
-   pkiBrandingID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   objBrandingDescription = new ValidationObjectMultilingualBrandingDescription()
-   eBrandingLogo = {
-      type: 'enum',
-      allowableValues: ['Default','JPEG','PNG'],
-      required: true
-   }
-   eBrandingAlignlogo = {
-      type: 'enum',
-      allowableValues: ['Center','Left','Right'],
-      required: false
-   }
-   sBrandingBase64 = {
-      type: 'string',
-      required: false
-   }
-   iBrandingColor = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 16777215,
-      required: true
-   }
-   sBrandingName = {
-      type: 'string',
-      pattern: /^.{0,55}$/,
-      required: false
-   }
-   sEmailAddress = {
-      type: 'string',
-      pattern: /^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/,
-      required: false
-   }
-   bBrandingIsactive = {
-      type: 'boolean',
-      required: true
-   }
 } 
 
 

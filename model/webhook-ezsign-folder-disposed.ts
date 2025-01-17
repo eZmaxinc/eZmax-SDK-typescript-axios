@@ -35,18 +35,6 @@ import type { EzsignfolderResponse } from './ezsignfolder-response';
 export interface WebhookEzsignFolderDisposed {
     /**
      * 
-     * @type {CustomWebhookResponse}
-     * @memberof WebhookEzsignFolderDisposed
-     */
-    objWebhook:CustomWebhookResponse 
-    /**
-     * An array containing details of previous attempts that were made to deliver the message. The array is empty if it\'s the first attempt.
-     * @type {Array<AttemptResponseCompound>}
-     * @memberof WebhookEzsignFolderDisposed
-     */
-    a_objAttempt:Array<AttemptResponseCompound> 
-    /**
-     * 
      * @type {EzsignfolderResponse}
      * @memberof WebhookEzsignFolderDisposed
      */
@@ -59,11 +47,7 @@ export interface WebhookEzsignFolderDisposed {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCustomWebhookResponse } from './'
-// @ts-ignore
 import { DataObjectEzsignfolderResponse } from './'
-// @ts-ignore
-import { ValidationObjectCustomWebhookResponse } from './'
 // @ts-ignore
 import { ValidationObjectEzsignfolderResponse } from './'
 
@@ -74,8 +58,6 @@ import { ValidationObjectEzsignfolderResponse } from './'
  * @class DataObjectWebhookEzsignFolderDisposed
  */
 export class DataObjectWebhookEzsignFolderDisposed {
-    objWebhook:CustomWebhookResponse = new DataObjectCustomWebhookResponse()
-    a_objAttempt:Array<AttemptResponseCompound> = []
     objEzsignfolder:EzsignfolderResponse = new DataObjectEzsignfolderResponse()
 }
 
@@ -85,11 +67,6 @@ export class DataObjectWebhookEzsignFolderDisposed {
  * @class ValidationObjectWebhookEzsignFolderDisposed
  */
 export class ValidationObjectWebhookEzsignFolderDisposed {
-   objWebhook = new ValidationObjectCustomWebhookResponse()
-   a_objAttempt = {
-      type: 'array',
-      required: true
-   }
    objEzsignfolder = new ValidationObjectEzsignfolderResponse()
 } 
 

@@ -35,18 +35,6 @@ import type { DiscussionCreateObjectV1ResponseMPayload } from './discussion-crea
 export interface DiscussionCreateObjectV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof DiscussionCreateObjectV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof DiscussionCreateObjectV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {DiscussionCreateObjectV1ResponseMPayload}
      * @memberof DiscussionCreateObjectV1Response
      */
@@ -59,15 +47,7 @@ export interface DiscussionCreateObjectV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectDiscussionCreateObjectV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectDiscussionCreateObjectV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectDiscussionCreateObjectV1ResponseMPayload } from './'
  * @class DataObjectDiscussionCreateObjectV1Response
  */
 export class DataObjectDiscussionCreateObjectV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:DiscussionCreateObjectV1ResponseMPayload = new DataObjectDiscussionCreateObjectV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectDiscussionCreateObjectV1Response {
  * @class ValidationObjectDiscussionCreateObjectV1Response
  */
 export class ValidationObjectDiscussionCreateObjectV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectDiscussionCreateObjectV1ResponseMPayload()
 } 
 

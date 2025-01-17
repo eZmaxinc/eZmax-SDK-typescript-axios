@@ -30,30 +30,6 @@ import type { UsergroupResponse } from './usergroup-response';
  */
 /*export type UsergroupResponseCompound = UsergroupResponse;*/
 export interface UsergroupResponseCompound {
-    /**
-     * The unique ID of the Usergroup
-     * @type {number}
-     * @memberof UsergroupResponseCompound
-     */
-    pkiUsergroupID:number 
-    /**
-     * 
-     * @type {MultilingualUsergroupName}
-     * @memberof UsergroupResponseCompound
-     */
-    objUsergroupName:MultilingualUsergroupName 
-    /**
-     * The Name of the Usergroup in the language of the requester
-     * @type {string}
-     * @memberof UsergroupResponseCompound
-     */
-    sUsergroupNameX?:string 
-    /**
-     * 
-     * @type {EmailRequest}
-     * @memberof UsergroupResponseCompound
-     */
-    objEmail?:EmailRequest 
 }
 
 
@@ -61,14 +37,6 @@ export interface UsergroupResponseCompound {
  * @import
  * Imports Child Data Object
  */
-// @ts-ignore
-import { DataObjectMultilingualUsergroupName } from './'
-// @ts-ignore
-import { DataObjectEmailRequest } from './'
-// @ts-ignore
-import { ValidationObjectMultilingualUsergroupName } from './'
-// @ts-ignore
-import { ValidationObjectEmailRequest } from './'
 
 /**
  * @export 
@@ -77,10 +45,6 @@ import { ValidationObjectEmailRequest } from './'
  * @class DataObjectUsergroupResponseCompound
  */
 export class DataObjectUsergroupResponseCompound {
-    pkiUsergroupID:number = 0
-    objUsergroupName:MultilingualUsergroupName = new DataObjectMultilingualUsergroupName()
-    sUsergroupNameX?:string = undefined
-    objEmail?:EmailRequest = undefined
 }
 
 /**
@@ -89,19 +53,6 @@ export class DataObjectUsergroupResponseCompound {
  * @class ValidationObjectUsergroupResponseCompound
  */
 export class ValidationObjectUsergroupResponseCompound {
-   pkiUsergroupID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 255,
-      required: true
-   }
-   objUsergroupName = new ValidationObjectMultilingualUsergroupName()
-   sUsergroupNameX = {
-      type: 'string',
-      pattern: /^.{0,50}$/,
-      required: false
-   }
-   objEmail = new ValidationObjectEmailRequest()
 } 
 
 

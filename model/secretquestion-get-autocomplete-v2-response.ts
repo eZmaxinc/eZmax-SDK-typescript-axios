@@ -35,18 +35,6 @@ import type { SecretquestionGetAutocompleteV2ResponseMPayload } from './secretqu
 export interface SecretquestionGetAutocompleteV2Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof SecretquestionGetAutocompleteV2Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof SecretquestionGetAutocompleteV2Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {SecretquestionGetAutocompleteV2ResponseMPayload}
      * @memberof SecretquestionGetAutocompleteV2Response
      */
@@ -59,15 +47,7 @@ export interface SecretquestionGetAutocompleteV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectSecretquestionGetAutocompleteV2ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectSecretquestionGetAutocompleteV2ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectSecretquestionGetAutocompleteV2ResponseMPayload } from 
  * @class DataObjectSecretquestionGetAutocompleteV2Response
  */
 export class DataObjectSecretquestionGetAutocompleteV2Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:SecretquestionGetAutocompleteV2ResponseMPayload = new DataObjectSecretquestionGetAutocompleteV2ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectSecretquestionGetAutocompleteV2Response {
  * @class ValidationObjectSecretquestionGetAutocompleteV2Response
  */
 export class ValidationObjectSecretquestionGetAutocompleteV2Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectSecretquestionGetAutocompleteV2ResponseMPayload()
 } 
 

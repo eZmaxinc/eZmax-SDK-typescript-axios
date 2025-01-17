@@ -27,72 +27,6 @@ import type { FieldEEzsigntemplatepackagesignerMapping } from './field-eezsignte
  */
 /*export type EzsigntemplatepackagesignerResponseCompound = EzsigntemplatepackagesignerResponse;*/
 export interface EzsigntemplatepackagesignerResponseCompound {
-    /**
-     * The unique ID of the Ezsigntemplatepackagesigner
-     * @type {number}
-     * @memberof EzsigntemplatepackagesignerResponseCompound
-     */
-    pkiEzsigntemplatepackagesignerID:number 
-    /**
-     * The unique ID of the Ezsigntemplatepackage
-     * @type {number}
-     * @memberof EzsigntemplatepackagesignerResponseCompound
-     */
-    fkiEzsigntemplatepackageID:number 
-    /**
-     * The unique ID of the Ezdoctemplatedocument
-     * @type {number}
-     * @memberof EzsigntemplatepackagesignerResponseCompound
-     */
-    fkiEzdoctemplatedocumentID?:number 
-    /**
-     * The unique ID of the User
-     * @type {number}
-     * @memberof EzsigntemplatepackagesignerResponseCompound
-     */
-    fkiUserID?:number 
-    /**
-     * The unique ID of the Usergroup
-     * @type {number}
-     * @memberof EzsigntemplatepackagesignerResponseCompound
-     */
-    fkiUsergroupID?:number 
-    /**
-     * The name of the Ezdoctemplatedocument in the language of the requester
-     * @type {string}
-     * @memberof EzsigntemplatepackagesignerResponseCompound
-     */
-    sEzdoctemplatedocumentNameX?:string 
-    /**
-     * If this flag is true. The signatory will receive a copy of every signed Ezsigndocument even if it ain\'t required to sign the document.
-     * @type {boolean}
-     * @memberof EzsigntemplatepackagesignerResponseCompound
-     */
-    bEzsigntemplatepackagesignerReceivecopy?:boolean 
-    /**
-     * 
-     * @type {FieldEEzsigntemplatepackagesignerMapping}
-     * @memberof EzsigntemplatepackagesignerResponseCompound
-     */
-    eEzsigntemplatepackagesignerMapping?:FieldEEzsigntemplatepackagesignerMapping 
-    /**
-     * The description of the Ezsigntemplatepackagesigner
-     * @type {string}
-     * @memberof EzsigntemplatepackagesignerResponseCompound
-     */
-    sEzsigntemplatepackagesignerDescription:string 
-    /**
-     * The description of the User in the language of the requester
-     * @type {string}
-     * @memberof EzsigntemplatepackagesignerResponseCompound
-     */
-    sUserName?:string 
-    /**
-     * The Name of the Usergroup in the language of the requester
-     * @type {string}
-     * @memberof EzsigntemplatepackagesignerResponseCompound
-     */
-    sUsergroupNameX?:string 
 }
 
 
@@ -109,17 +43,6 @@ export interface EzsigntemplatepackagesignerResponseCompound {
  * @class DataObjectEzsigntemplatepackagesignerResponseCompound
  */
 export class DataObjectEzsigntemplatepackagesignerResponseCompound {
-    pkiEzsigntemplatepackagesignerID:number = 0
-    fkiEzsigntemplatepackageID:number = 0
-    fkiEzdoctemplatedocumentID?:number = undefined
-    fkiUserID?:number = undefined
-    fkiUsergroupID?:number = undefined
-    sEzdoctemplatedocumentNameX?:string = undefined
-    bEzsigntemplatepackagesignerReceivecopy?:boolean = undefined
-    eEzsigntemplatepackagesignerMapping?:FieldEEzsigntemplatepackagesignerMapping = undefined
-    sEzsigntemplatepackagesignerDescription:string = ''
-    sUserName?:string = undefined
-    sUsergroupNameX?:string = undefined
 }
 
 /**
@@ -128,60 +51,6 @@ export class DataObjectEzsigntemplatepackagesignerResponseCompound {
  * @class ValidationObjectEzsigntemplatepackagesignerResponseCompound
  */
 export class ValidationObjectEzsigntemplatepackagesignerResponseCompound {
-   pkiEzsigntemplatepackagesignerID = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   fkiEzsigntemplatepackageID = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   fkiEzdoctemplatedocumentID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 65535,
-      required: false
-   }
-   fkiUserID = {
-      type: 'integer',
-      minimum: 0,
-      required: false
-   }
-   fkiUsergroupID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 255,
-      required: false
-   }
-   sEzdoctemplatedocumentNameX = {
-      type: 'string',
-      pattern: /^.{0,50}$/,
-      required: false
-   }
-   bEzsigntemplatepackagesignerReceivecopy = {
-      type: 'boolean',
-      required: false
-   }
-   eEzsigntemplatepackagesignerMapping = {
-      type: 'enum',
-      allowableValues: ['Manual','Creator','User','Usergroup'],
-      required: false
-   }
-   sEzsigntemplatepackagesignerDescription = {
-      type: 'string',
-      required: true
-   }
-   sUserName = {
-      type: 'string',
-      required: false
-   }
-   sUsergroupNameX = {
-      type: 'string',
-      pattern: /^.{0,50}$/,
-      required: false
-   }
 } 
 
 

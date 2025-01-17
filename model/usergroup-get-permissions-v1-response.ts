@@ -35,18 +35,6 @@ import type { UsergroupGetPermissionsV1ResponseMPayload } from './usergroup-get-
 export interface UsergroupGetPermissionsV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof UsergroupGetPermissionsV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof UsergroupGetPermissionsV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {UsergroupGetPermissionsV1ResponseMPayload}
      * @memberof UsergroupGetPermissionsV1Response
      */
@@ -59,15 +47,7 @@ export interface UsergroupGetPermissionsV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectUsergroupGetPermissionsV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectUsergroupGetPermissionsV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectUsergroupGetPermissionsV1ResponseMPayload } from './'
  * @class DataObjectUsergroupGetPermissionsV1Response
  */
 export class DataObjectUsergroupGetPermissionsV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:UsergroupGetPermissionsV1ResponseMPayload = new DataObjectUsergroupGetPermissionsV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectUsergroupGetPermissionsV1Response {
  * @class ValidationObjectUsergroupGetPermissionsV1Response
  */
 export class ValidationObjectUsergroupGetPermissionsV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectUsergroupGetPermissionsV1ResponseMPayload()
 } 
 

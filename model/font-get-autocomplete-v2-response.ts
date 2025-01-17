@@ -35,18 +35,6 @@ import type { FontGetAutocompleteV2ResponseMPayload } from './font-get-autocompl
 export interface FontGetAutocompleteV2Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof FontGetAutocompleteV2Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof FontGetAutocompleteV2Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {FontGetAutocompleteV2ResponseMPayload}
      * @memberof FontGetAutocompleteV2Response
      */
@@ -59,15 +47,7 @@ export interface FontGetAutocompleteV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectFontGetAutocompleteV2ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectFontGetAutocompleteV2ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectFontGetAutocompleteV2ResponseMPayload } from './'
  * @class DataObjectFontGetAutocompleteV2Response
  */
 export class DataObjectFontGetAutocompleteV2Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:FontGetAutocompleteV2ResponseMPayload = new DataObjectFontGetAutocompleteV2ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectFontGetAutocompleteV2Response {
  * @class ValidationObjectFontGetAutocompleteV2Response
  */
 export class ValidationObjectFontGetAutocompleteV2Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectFontGetAutocompleteV2ResponseMPayload()
 } 
 

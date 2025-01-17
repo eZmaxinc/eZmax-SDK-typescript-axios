@@ -35,18 +35,6 @@ import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-
 export interface BillingentityexternalGenerateFederationTokenV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof BillingentityexternalGenerateFederationTokenV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof BillingentityexternalGenerateFederationTokenV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {BillingentityexternalGenerateFederationTokenV1ResponseMPayload}
      * @memberof BillingentityexternalGenerateFederationTokenV1Response
      */
@@ -59,15 +47,7 @@ export interface BillingentityexternalGenerateFederationTokenV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectBillingentityexternalGenerateFederationTokenV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectBillingentityexternalGenerateFederationTokenV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectBillingentityexternalGenerateFederationTokenV1ResponseM
  * @class DataObjectBillingentityexternalGenerateFederationTokenV1Response
  */
 export class DataObjectBillingentityexternalGenerateFederationTokenV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:BillingentityexternalGenerateFederationTokenV1ResponseMPayload = new DataObjectBillingentityexternalGenerateFederationTokenV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectBillingentityexternalGenerateFederationTokenV1Response {
  * @class ValidationObjectBillingentityexternalGenerateFederationTokenV1Response
  */
 export class ValidationObjectBillingentityexternalGenerateFederationTokenV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectBillingentityexternalGenerateFederationTokenV1ResponseMPayload()
 } 
 

@@ -35,18 +35,6 @@ import type { GlaccountcontainerGetAutocompleteV2ResponseMPayload } from './glac
 export interface GlaccountcontainerGetAutocompleteV2Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof GlaccountcontainerGetAutocompleteV2Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof GlaccountcontainerGetAutocompleteV2Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {GlaccountcontainerGetAutocompleteV2ResponseMPayload}
      * @memberof GlaccountcontainerGetAutocompleteV2Response
      */
@@ -59,15 +47,7 @@ export interface GlaccountcontainerGetAutocompleteV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectGlaccountcontainerGetAutocompleteV2ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectGlaccountcontainerGetAutocompleteV2ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectGlaccountcontainerGetAutocompleteV2ResponseMPayload } f
  * @class DataObjectGlaccountcontainerGetAutocompleteV2Response
  */
 export class DataObjectGlaccountcontainerGetAutocompleteV2Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:GlaccountcontainerGetAutocompleteV2ResponseMPayload = new DataObjectGlaccountcontainerGetAutocompleteV2ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectGlaccountcontainerGetAutocompleteV2Response {
  * @class ValidationObjectGlaccountcontainerGetAutocompleteV2Response
  */
 export class ValidationObjectGlaccountcontainerGetAutocompleteV2Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectGlaccountcontainerGetAutocompleteV2ResponseMPayload()
 } 
 

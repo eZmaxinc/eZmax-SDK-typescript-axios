@@ -24,48 +24,6 @@ import type { BillingentityinternalproductResponse } from './billingentityintern
  */
 /*export type BillingentityinternalproductResponseCompound = BillingentityinternalproductResponse;*/
 export interface BillingentityinternalproductResponseCompound {
-    /**
-     * The unique ID of the Billingentityinternalproduct
-     * @type {number}
-     * @memberof BillingentityinternalproductResponseCompound
-     */
-    pkiBillingentityinternalproductID:number 
-    /**
-     * The unique ID of the Billingentityinternal.
-     * @type {number}
-     * @memberof BillingentityinternalproductResponseCompound
-     */
-    fkiBillingentityinternalID:number 
-    /**
-     * The description of the Billingentityinternal in the language of the requester
-     * @type {string}
-     * @memberof BillingentityinternalproductResponseCompound
-     */
-    sBillingentityinternalDescriptionX:string 
-    /**
-     * The unique ID of the Ezmaxproduct
-     * @type {number}
-     * @memberof BillingentityinternalproductResponseCompound
-     */
-    fkiEzmaxproductID:number 
-    /**
-     * The description of the Ezmaxproduct in the language of the requester
-     * @type {string}
-     * @memberof BillingentityinternalproductResponseCompound
-     */
-    sEzmaxproductDescriptionX:string 
-    /**
-     * The unique ID of the Billingentityexternal
-     * @type {number}
-     * @memberof BillingentityinternalproductResponseCompound
-     */
-    fkiBillingentityexternalID:number 
-    /**
-     * The description of the Billingentityexternal
-     * @type {string}
-     * @memberof BillingentityinternalproductResponseCompound
-     */
-    sBillingentityexternalDescription:string 
 }
 
 
@@ -81,13 +39,6 @@ export interface BillingentityinternalproductResponseCompound {
  * @class DataObjectBillingentityinternalproductResponseCompound
  */
 export class DataObjectBillingentityinternalproductResponseCompound {
-    pkiBillingentityinternalproductID:number = 0
-    fkiBillingentityinternalID:number = 0
-    sBillingentityinternalDescriptionX:string = ''
-    fkiEzmaxproductID:number = 0
-    sEzmaxproductDescriptionX:string = ''
-    fkiBillingentityexternalID:number = 0
-    sBillingentityexternalDescription:string = ''
 }
 
 /**
@@ -96,39 +47,6 @@ export class DataObjectBillingentityinternalproductResponseCompound {
  * @class ValidationObjectBillingentityinternalproductResponseCompound
  */
 export class ValidationObjectBillingentityinternalproductResponseCompound {
-   pkiBillingentityinternalproductID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 255,
-      required: true
-   }
-   fkiBillingentityinternalID = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   sBillingentityinternalDescriptionX = {
-      type: 'string',
-      required: true
-   }
-   fkiEzmaxproductID = {
-      type: 'integer',
-      minimum: 1,
-      required: true
-   }
-   sEzmaxproductDescriptionX = {
-      type: 'string',
-      required: true
-   }
-   fkiBillingentityexternalID = {
-      type: 'integer',
-      minimum: 1,
-      required: true
-   }
-   sBillingentityexternalDescription = {
-      type: 'string',
-      required: true
-   }
 } 
 
 

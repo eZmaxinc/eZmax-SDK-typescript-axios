@@ -37,72 +37,6 @@ import type { FieldEEzsignfoldertypePrivacylevel } from './field-eezsignfolderty
 /*export type EzsignbulksendResponseCompound = EzsignbulksendResponse;*/
 export interface EzsignbulksendResponseCompound {
     /**
-     * The unique ID of the Ezsignbulksend
-     * @type {number}
-     * @memberof EzsignbulksendResponseCompound
-     */
-    pkiEzsignbulksendID:number 
-    /**
-     * The unique ID of the Ezsignfoldertype.
-     * @type {number}
-     * @memberof EzsignbulksendResponseCompound
-     */
-    fkiEzsignfoldertypeID:number 
-    /**
-     * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
-     * @type {number}
-     * @memberof EzsignbulksendResponseCompound
-     */
-    fkiLanguageID:number 
-    /**
-     * The Name of the Language in the language of the requester
-     * @type {string}
-     * @memberof EzsignbulksendResponseCompound
-     */
-    sLanguageNameX:string 
-    /**
-     * 
-     * @type {FieldEEzsignfoldertypePrivacylevel}
-     * @memberof EzsignbulksendResponseCompound
-     */
-    eEzsignfoldertypePrivacylevel:FieldEEzsignfoldertypePrivacylevel 
-    /**
-     * The name of the Ezsignfoldertype in the language of the requester
-     * @type {string}
-     * @memberof EzsignbulksendResponseCompound
-     */
-    sEzsignfoldertypeNameX:string 
-    /**
-     * The description of the Ezsignbulksend
-     * @type {string}
-     * @memberof EzsignbulksendResponseCompound
-     */
-    sEzsignbulksendDescription:string 
-    /**
-     * Note about the Ezsignbulksend
-     * @type {string}
-     * @memberof EzsignbulksendResponseCompound
-     */
-    tEzsignbulksendNote:string 
-    /**
-     * Whether the Ezsigntemplatepackage was automatically modified and needs a manual validation
-     * @type {boolean}
-     * @memberof EzsignbulksendResponseCompound
-     */
-    bEzsignbulksendNeedvalidation:boolean 
-    /**
-     * Whether the Ezsignbulksend is active or not
-     * @type {boolean}
-     * @memberof EzsignbulksendResponseCompound
-     */
-    bEzsignbulksendIsactive:boolean 
-    /**
-     * 
-     * @type {CommonAudit}
-     * @memberof EzsignbulksendResponseCompound
-     */
-    objAudit:CommonAudit 
-    /**
      * 
      * @type {Array<EzsignbulksenddocumentmappingResponseCompound>}
      * @memberof EzsignbulksendResponseCompound
@@ -122,10 +56,6 @@ export interface EzsignbulksendResponseCompound {
  * @import
  * Imports Child Data Object
  */
-// @ts-ignore
-import { DataObjectCommonAudit } from './'
-// @ts-ignore
-import { ValidationObjectCommonAudit } from './'
 
 /**
  * @export 
@@ -134,17 +64,6 @@ import { ValidationObjectCommonAudit } from './'
  * @class DataObjectEzsignbulksendResponseCompound
  */
 export class DataObjectEzsignbulksendResponseCompound {
-    pkiEzsignbulksendID:number = 0
-    fkiEzsignfoldertypeID:number = 0
-    fkiLanguageID:number = 0
-    sLanguageNameX:string = ''
-    eEzsignfoldertypePrivacylevel:FieldEEzsignfoldertypePrivacylevel = 'User'
-    sEzsignfoldertypeNameX:string = ''
-    sEzsignbulksendDescription:string = ''
-    tEzsignbulksendNote:string = ''
-    bEzsignbulksendNeedvalidation:boolean = false
-    bEzsignbulksendIsactive:boolean = false
-    objAudit:CommonAudit = new DataObjectCommonAudit()
     a_objEzsignbulksenddocumentmapping:Array<EzsignbulksenddocumentmappingResponseCompound> = []
     a_objEzsignbulksendsignermapping:Array<EzsignbulksendsignermappingResponse> = []
 }
@@ -155,53 +74,6 @@ export class DataObjectEzsignbulksendResponseCompound {
  * @class ValidationObjectEzsignbulksendResponseCompound
  */
 export class ValidationObjectEzsignbulksendResponseCompound {
-   pkiEzsignbulksendID = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   fkiEzsignfoldertypeID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 65535,
-      required: true
-   }
-   fkiLanguageID = {
-      type: 'integer',
-      minimum: 1,
-      maximum: 2,
-      required: true
-   }
-   sLanguageNameX = {
-      type: 'string',
-      required: true
-   }
-   eEzsignfoldertypePrivacylevel = {
-      type: 'enum',
-      allowableValues: ['User','Usergroup'],
-      required: true
-   }
-   sEzsignfoldertypeNameX = {
-      type: 'string',
-      required: true
-   }
-   sEzsignbulksendDescription = {
-      type: 'string',
-      required: true
-   }
-   tEzsignbulksendNote = {
-      type: 'string',
-      required: true
-   }
-   bEzsignbulksendNeedvalidation = {
-      type: 'boolean',
-      required: true
-   }
-   bEzsignbulksendIsactive = {
-      type: 'boolean',
-      required: true
-   }
-   objAudit = new ValidationObjectCommonAudit()
    a_objEzsignbulksenddocumentmapping = {
       type: 'array',
       required: true

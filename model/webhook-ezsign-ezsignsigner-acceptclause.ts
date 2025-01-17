@@ -38,18 +38,6 @@ import type { EzsignfoldersignerassociationResponseCompound } from './ezsignfold
 export interface WebhookEzsignEzsignsignerAcceptclause {
     /**
      * 
-     * @type {CustomWebhookResponse}
-     * @memberof WebhookEzsignEzsignsignerAcceptclause
-     */
-    objWebhook:CustomWebhookResponse 
-    /**
-     * An array containing details of previous attempts that were made to deliver the message. The array is empty if it\'s the first attempt.
-     * @type {Array<AttemptResponseCompound>}
-     * @memberof WebhookEzsignEzsignsignerAcceptclause
-     */
-    a_objAttempt:Array<AttemptResponseCompound> 
-    /**
-     * 
      * @type {EzsignfolderResponse}
      * @memberof WebhookEzsignEzsignsignerAcceptclause
      */
@@ -68,13 +56,9 @@ export interface WebhookEzsignEzsignsignerAcceptclause {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCustomWebhookResponse } from './'
-// @ts-ignore
 import { DataObjectEzsignfolderResponse } from './'
 // @ts-ignore
 import { DataObjectEzsignfoldersignerassociationResponseCompound } from './'
-// @ts-ignore
-import { ValidationObjectCustomWebhookResponse } from './'
 // @ts-ignore
 import { ValidationObjectEzsignfolderResponse } from './'
 // @ts-ignore
@@ -87,8 +71,6 @@ import { ValidationObjectEzsignfoldersignerassociationResponseCompound } from '.
  * @class DataObjectWebhookEzsignEzsignsignerAcceptclause
  */
 export class DataObjectWebhookEzsignEzsignsignerAcceptclause {
-    objWebhook:CustomWebhookResponse = new DataObjectCustomWebhookResponse()
-    a_objAttempt:Array<AttemptResponseCompound> = []
     objEzsignfolder?:EzsignfolderResponse = undefined
     objEzsignfoldersignerassociation:EzsignfoldersignerassociationResponseCompound = new DataObjectEzsignfoldersignerassociationResponseCompound()
 }
@@ -99,11 +81,6 @@ export class DataObjectWebhookEzsignEzsignsignerAcceptclause {
  * @class ValidationObjectWebhookEzsignEzsignsignerAcceptclause
  */
 export class ValidationObjectWebhookEzsignEzsignsignerAcceptclause {
-   objWebhook = new ValidationObjectCustomWebhookResponse()
-   a_objAttempt = {
-      type: 'array',
-      required: true
-   }
    objEzsignfolder = new ValidationObjectEzsignfolderResponse()
    objEzsignfoldersignerassociation = new ValidationObjectEzsignfoldersignerassociationResponseCompound()
 } 

@@ -35,18 +35,6 @@ import type { EzsignbulksendCreateEzsignbulksendtransmissionV2ResponseMPayload }
 export interface EzsignbulksendCreateEzsignbulksendtransmissionV2Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsignbulksendCreateEzsignbulksendtransmissionV2Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsignbulksendCreateEzsignbulksendtransmissionV2Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {EzsignbulksendCreateEzsignbulksendtransmissionV2ResponseMPayload}
      * @memberof EzsignbulksendCreateEzsignbulksendtransmissionV2Response
      */
@@ -59,15 +47,7 @@ export interface EzsignbulksendCreateEzsignbulksendtransmissionV2Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEzsignbulksendCreateEzsignbulksendtransmissionV2ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsignbulksendCreateEzsignbulksendtransmissionV2ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEzsignbulksendCreateEzsignbulksendtransmissionV2Respons
  * @class DataObjectEzsignbulksendCreateEzsignbulksendtransmissionV2Response
  */
 export class DataObjectEzsignbulksendCreateEzsignbulksendtransmissionV2Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsignbulksendCreateEzsignbulksendtransmissionV2ResponseMPayload = new DataObjectEzsignbulksendCreateEzsignbulksendtransmissionV2ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEzsignbulksendCreateEzsignbulksendtransmissionV2Response 
  * @class ValidationObjectEzsignbulksendCreateEzsignbulksendtransmissionV2Response
  */
 export class ValidationObjectEzsignbulksendCreateEzsignbulksendtransmissionV2Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsignbulksendCreateEzsignbulksendtransmissionV2ResponseMPayload()
 } 
 

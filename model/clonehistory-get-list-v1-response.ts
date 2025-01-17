@@ -35,18 +35,6 @@ import type { CommonResponseObjDebugPayloadGetList } from './common-response-obj
 export interface ClonehistoryGetListV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayloadGetList}
-     * @memberof ClonehistoryGetListV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayloadGetList 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof ClonehistoryGetListV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {ClonehistoryGetListV1ResponseMPayload}
      * @memberof ClonehistoryGetListV1Response
      */
@@ -59,15 +47,7 @@ export interface ClonehistoryGetListV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayloadGetList } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectClonehistoryGetListV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayloadGetList } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectClonehistoryGetListV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectClonehistoryGetListV1ResponseMPayload } from './'
  * @class DataObjectClonehistoryGetListV1Response
  */
 export class DataObjectClonehistoryGetListV1Response {
-    objDebugPayload:CommonResponseObjDebugPayloadGetList = new DataObjectCommonResponseObjDebugPayloadGetList()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:ClonehistoryGetListV1ResponseMPayload = new DataObjectClonehistoryGetListV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectClonehistoryGetListV1Response {
  * @class ValidationObjectClonehistoryGetListV1Response
  */
 export class ValidationObjectClonehistoryGetListV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayloadGetList()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectClonehistoryGetListV1ResponseMPayload()
 } 
 

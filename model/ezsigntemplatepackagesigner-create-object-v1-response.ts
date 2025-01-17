@@ -35,18 +35,6 @@ import type { EzsigntemplatepackagesignerCreateObjectV1ResponseMPayload } from '
 export interface EzsigntemplatepackagesignerCreateObjectV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayload}
-     * @memberof EzsigntemplatepackagesignerCreateObjectV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayload 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof EzsigntemplatepackagesignerCreateObjectV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {EzsigntemplatepackagesignerCreateObjectV1ResponseMPayload}
      * @memberof EzsigntemplatepackagesignerCreateObjectV1Response
      */
@@ -59,15 +47,7 @@ export interface EzsigntemplatepackagesignerCreateObjectV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectEzsigntemplatepackagesignerCreateObjectV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectEzsigntemplatepackagesignerCreateObjectV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectEzsigntemplatepackagesignerCreateObjectV1ResponseMPaylo
  * @class DataObjectEzsigntemplatepackagesignerCreateObjectV1Response
  */
 export class DataObjectEzsigntemplatepackagesignerCreateObjectV1Response {
-    objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:EzsigntemplatepackagesignerCreateObjectV1ResponseMPayload = new DataObjectEzsigntemplatepackagesignerCreateObjectV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectEzsigntemplatepackagesignerCreateObjectV1Response {
  * @class ValidationObjectEzsigntemplatepackagesignerCreateObjectV1Response
  */
 export class ValidationObjectEzsigntemplatepackagesignerCreateObjectV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectEzsigntemplatepackagesignerCreateObjectV1ResponseMPayload()
 } 
 

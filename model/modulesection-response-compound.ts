@@ -28,30 +28,6 @@ import type { PermissionResponse } from './permission-response';
 /*export type ModulesectionResponseCompound = ModulesectionResponse;*/
 export interface ModulesectionResponseCompound {
     /**
-     * The unique ID of the Modulesection
-     * @type {number}
-     * @memberof ModulesectionResponseCompound
-     */
-    pkiModulesectionID:number 
-    /**
-     * The unique ID of the Module
-     * @type {number}
-     * @memberof ModulesectionResponseCompound
-     */
-    fkiModuleID:number 
-    /**
-     * The Internal name of the Module section.
-     * @type {string}
-     * @memberof ModulesectionResponseCompound
-     */
-    sModulesectionInternalname:string 
-    /**
-     * The Name of the Modulesection in the language of the requester
-     * @type {string}
-     * @memberof ModulesectionResponseCompound
-     */
-    sModulesectionNameX:string 
-    /**
      * 
      * @type {Array<PermissionResponseCompound>}
      * @memberof ModulesectionResponseCompound
@@ -72,10 +48,6 @@ export interface ModulesectionResponseCompound {
  * @class DataObjectModulesectionResponseCompound
  */
 export class DataObjectModulesectionResponseCompound {
-    pkiModulesectionID:number = 0
-    fkiModuleID:number = 0
-    sModulesectionInternalname:string = ''
-    sModulesectionNameX:string = ''
     a_objPermission?:Array<PermissionResponseCompound> = undefined
 }
 
@@ -85,24 +57,6 @@ export class DataObjectModulesectionResponseCompound {
  * @class ValidationObjectModulesectionResponseCompound
  */
 export class ValidationObjectModulesectionResponseCompound {
-   pkiModulesectionID = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   fkiModuleID = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   sModulesectionInternalname = {
-      type: 'string',
-      required: true
-   }
-   sModulesectionNameX = {
-      type: 'string',
-      required: true
-   }
    a_objPermission = {
       type: 'array',
       required: false

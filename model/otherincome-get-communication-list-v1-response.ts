@@ -35,18 +35,6 @@ import type { OtherincomeGetCommunicationListV1ResponseMPayload } from './otheri
 export interface OtherincomeGetCommunicationListV1Response {
     /**
      * 
-     * @type {CommonResponseObjDebugPayloadGetList}
-     * @memberof OtherincomeGetCommunicationListV1Response
-     */
-    objDebugPayload:CommonResponseObjDebugPayloadGetList 
-    /**
-     * 
-     * @type {CommonResponseObjDebug}
-     * @memberof OtherincomeGetCommunicationListV1Response
-     */
-    objDebug?:CommonResponseObjDebug 
-    /**
-     * 
      * @type {OtherincomeGetCommunicationListV1ResponseMPayload}
      * @memberof OtherincomeGetCommunicationListV1Response
      */
@@ -59,15 +47,7 @@ export interface OtherincomeGetCommunicationListV1Response {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectCommonResponseObjDebugPayloadGetList } from './'
-// @ts-ignore
-import { DataObjectCommonResponseObjDebug } from './'
-// @ts-ignore
 import { DataObjectOtherincomeGetCommunicationListV1ResponseMPayload } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebugPayloadGetList } from './'
-// @ts-ignore
-import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
 import { ValidationObjectOtherincomeGetCommunicationListV1ResponseMPayload } from './'
 
@@ -78,8 +58,6 @@ import { ValidationObjectOtherincomeGetCommunicationListV1ResponseMPayload } fro
  * @class DataObjectOtherincomeGetCommunicationListV1Response
  */
 export class DataObjectOtherincomeGetCommunicationListV1Response {
-    objDebugPayload:CommonResponseObjDebugPayloadGetList = new DataObjectCommonResponseObjDebugPayloadGetList()
-    objDebug?:CommonResponseObjDebug = undefined
     mPayload:OtherincomeGetCommunicationListV1ResponseMPayload = new DataObjectOtherincomeGetCommunicationListV1ResponseMPayload()
 }
 
@@ -89,8 +67,6 @@ export class DataObjectOtherincomeGetCommunicationListV1Response {
  * @class ValidationObjectOtherincomeGetCommunicationListV1Response
  */
 export class ValidationObjectOtherincomeGetCommunicationListV1Response {
-   objDebugPayload = new ValidationObjectCommonResponseObjDebugPayloadGetList()
-   objDebug = new ValidationObjectCommonResponseObjDebug()
    mPayload = new ValidationObjectOtherincomeGetCommunicationListV1ResponseMPayload()
 } 
 

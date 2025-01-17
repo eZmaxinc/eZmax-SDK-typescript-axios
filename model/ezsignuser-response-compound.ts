@@ -30,30 +30,6 @@ import type { EzsignuserResponse } from './ezsignuser-response';
  */
 /*export type EzsignuserResponseCompound = EzsignuserResponse;*/
 export interface EzsignuserResponseCompound {
-    /**
-     * The unique ID of the Ezsignuser
-     * @type {number}
-     * @memberof EzsignuserResponseCompound
-     */
-    pkiEzsignuserID:number 
-    /**
-     * The unique ID of the Contact
-     * @type {number}
-     * @memberof EzsignuserResponseCompound
-     */
-    fkiContactID:number 
-    /**
-     * 
-     * @type {ContactResponseCompound}
-     * @memberof EzsignuserResponseCompound
-     */
-    objContact:ContactResponseCompound 
-    /**
-     * 
-     * @type {CommonAudit}
-     * @memberof EzsignuserResponseCompound
-     */
-    objAudit:CommonAudit 
 }
 
 
@@ -61,14 +37,6 @@ export interface EzsignuserResponseCompound {
  * @import
  * Imports Child Data Object
  */
-// @ts-ignore
-import { DataObjectContactResponseCompound } from './'
-// @ts-ignore
-import { DataObjectCommonAudit } from './'
-// @ts-ignore
-import { ValidationObjectContactResponseCompound } from './'
-// @ts-ignore
-import { ValidationObjectCommonAudit } from './'
 
 /**
  * @export 
@@ -77,10 +45,6 @@ import { ValidationObjectCommonAudit } from './'
  * @class DataObjectEzsignuserResponseCompound
  */
 export class DataObjectEzsignuserResponseCompound {
-    pkiEzsignuserID:number = 0
-    fkiContactID:number = 0
-    objContact:ContactResponseCompound = new DataObjectContactResponseCompound()
-    objAudit:CommonAudit = new DataObjectCommonAudit()
 }
 
 /**
@@ -89,19 +53,6 @@ export class DataObjectEzsignuserResponseCompound {
  * @class ValidationObjectEzsignuserResponseCompound
  */
 export class ValidationObjectEzsignuserResponseCompound {
-   pkiEzsignuserID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 65535,
-      required: true
-   }
-   fkiContactID = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   objContact = new ValidationObjectContactResponseCompound()
-   objAudit = new ValidationObjectCommonAudit()
 } 
 
 

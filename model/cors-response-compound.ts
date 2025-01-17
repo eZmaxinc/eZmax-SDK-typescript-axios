@@ -24,24 +24,6 @@ import type { CorsResponse } from './cors-response';
  */
 /*export type CorsResponseCompound = CorsResponse;*/
 export interface CorsResponseCompound {
-    /**
-     * The unique ID of the Cors
-     * @type {number}
-     * @memberof CorsResponseCompound
-     */
-    pkiCorsID:number 
-    /**
-     * The unique ID of the Apikey
-     * @type {number}
-     * @memberof CorsResponseCompound
-     */
-    fkiApikeyID:number 
-    /**
-     * The entryurl of the Cors
-     * @type {string}
-     * @memberof CorsResponseCompound
-     */
-    sCorsEntryurl:string 
 }
 
 
@@ -57,9 +39,6 @@ export interface CorsResponseCompound {
  * @class DataObjectCorsResponseCompound
  */
 export class DataObjectCorsResponseCompound {
-    pkiCorsID:number = 0
-    fkiApikeyID:number = 0
-    sCorsEntryurl:string = ''
 }
 
 /**
@@ -68,22 +47,6 @@ export class DataObjectCorsResponseCompound {
  * @class ValidationObjectCorsResponseCompound
  */
 export class ValidationObjectCorsResponseCompound {
-   pkiCorsID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 65535,
-      required: true
-   }
-   fkiApikeyID = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
-   sCorsEntryurl = {
-      type: 'string',
-      pattern: /^(https|http):\/\/[^\s\/$.?#].[^\s]*$/,
-      required: true
-   }
 } 
 
 
