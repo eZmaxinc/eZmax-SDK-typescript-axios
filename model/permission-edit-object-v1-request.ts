@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PermissionRequest } from './permission-request';
+import type { PermissionRequestCompound } from './permission-request-compound';
 
 /**
  * Request for PUT /1/object/permission/{pkiPermissionID}
@@ -24,21 +24,21 @@ import type { PermissionRequest } from './permission-request';
  */
 export interface PermissionEditObjectV1Request {
     /**
-     * A Permission Object and children to create a complete structure
-     * @type {PermissionRequest}
+     * 
+     * @type {PermissionRequestCompound}
      * @memberof PermissionEditObjectV1Request
      */
-    /*'objPermission': PermissionRequest;*/
-    'objPermission': PermissionRequest;
+    /*'objPermission': PermissionRequestCompound;*/
+    'objPermission': PermissionRequestCompound;
 }
 /**
  * @import
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectPermissionRequest } from './'
+import { DataObjectPermissionRequestCompound } from './'
 // @ts-ignore
-import { ValidationObjectPermissionRequest } from './'
+import { ValidationObjectPermissionRequestCompound } from './'
 
 /**
  * @export 
@@ -47,7 +47,7 @@ import { ValidationObjectPermissionRequest } from './'
  * @class DataObjectPermissionEditObjectV1Request
  */
 export class DataObjectPermissionEditObjectV1Request {
-   objPermission:PermissionRequest = new DataObjectPermissionRequest()
+   objPermission:PermissionRequestCompound = new DataObjectPermissionRequestCompound()
 }
 
 /**
@@ -56,7 +56,7 @@ export class DataObjectPermissionEditObjectV1Request {
  * @class ValidationObjectPermissionEditObjectV1Request
  */
 export class ValidationObjectPermissionEditObjectV1Request {
-   objPermission = new ValidationObjectPermissionRequest()
+   objPermission = new ValidationObjectPermissionRequestCompound()
 } 
 
 

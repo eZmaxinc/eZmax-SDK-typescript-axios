@@ -18,7 +18,7 @@
 import type { EnumHorizontalalignment } from './enum-horizontalalignment';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EzsignelementdependencyResponse } from './ezsignelementdependency-response';
+import type { EzsignelementdependencyResponseCompound } from './ezsignelementdependency-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { EzsignformfieldResponse } from './ezsignformfield-response';

@@ -22,9 +22,9 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import type { CommonResponse } from '../model';
-// @ts-ignore
 import type { CommonResponseError } from '../model';
+// @ts-ignore
+import type { EzsignpageConsultV1Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -115,7 +115,7 @@ export const ObjectEzsignpageApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignpageConsultV1(pkiEzsignpageID: number, body: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
+        async ezsignpageConsultV1(pkiEzsignpageID: number, body: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignpageConsultV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignpageConsultV1(pkiEzsignpageID, body, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignpageApi.ezsignpageConsultV1']?.[localVarOperationServerIndex]?.url;
@@ -139,7 +139,7 @@ export const ObjectEzsignpageApiFactory = function (configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignpageConsultV1(pkiEzsignpageID: number, body: object, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
+        ezsignpageConsultV1(pkiEzsignpageID: number, body: object, options?: RawAxiosRequestConfig): AxiosPromise<EzsignpageConsultV1Response> {
             return localVarFp.ezsignpageConsultV1(pkiEzsignpageID, body, options).then((request) => request(axios, basePath));
         },
     };

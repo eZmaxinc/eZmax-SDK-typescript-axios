@@ -18,6 +18,12 @@
 import type { CommonAudit } from './common-audit';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { CustomEzmaxinvoicingEzsigndocumentResponse } from './custom-ezmaxinvoicing-ezsigndocument-response';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { CustomEzmaxinvoicingEzsignfolderResponse } from './custom-ezmaxinvoicing-ezsignfolder-response';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { CustomEzmaxpricingResponse } from './custom-ezmaxpricing-response';
 // May contain unused imports in some cases
 // @ts-ignore

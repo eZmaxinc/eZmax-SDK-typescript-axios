@@ -24,7 +24,7 @@ import type { CommonResponseObjDebug } from './common-response-obj-debug';
 import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EzsignfoldersignerassociationResponseCompound } from './ezsignfoldersignerassociation-response-compound';
+import type { EzsignfoldersignerassociationGetObjectV1ResponseMPayload } from './ezsignfoldersignerassociation-get-object-v1-response-mpayload';
 
 /**
  * @type EzsignfoldersignerassociationGetObjectV1Response
@@ -46,11 +46,11 @@ export interface EzsignfoldersignerassociationGetObjectV1Response {
      */
     objDebug?:CommonResponseObjDebug 
     /**
-     * Payload for GET /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}
-     * @type {EzsignfoldersignerassociationResponseCompound}
+     * 
+     * @type {EzsignfoldersignerassociationGetObjectV1ResponseMPayload}
      * @memberof EzsignfoldersignerassociationGetObjectV1Response
      */
-    mPayload:EzsignfoldersignerassociationResponseCompound 
+    mPayload:EzsignfoldersignerassociationGetObjectV1ResponseMPayload 
 }
 
 
@@ -63,13 +63,13 @@ import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { DataObjectEzsignfoldersignerassociationResponseCompound } from './'
+import { DataObjectEzsignfoldersignerassociationGetObjectV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectEzsignfoldersignerassociationResponseCompound } from './'
+import { ValidationObjectEzsignfoldersignerassociationGetObjectV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -80,7 +80,7 @@ import { ValidationObjectEzsignfoldersignerassociationResponseCompound } from '.
 export class DataObjectEzsignfoldersignerassociationGetObjectV1Response {
     objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
-    mPayload:EzsignfoldersignerassociationResponseCompound = new DataObjectEzsignfoldersignerassociationResponseCompound()
+    mPayload:EzsignfoldersignerassociationGetObjectV1ResponseMPayload = new DataObjectEzsignfoldersignerassociationGetObjectV1ResponseMPayload()
 }
 
 /**
@@ -91,7 +91,7 @@ export class DataObjectEzsignfoldersignerassociationGetObjectV1Response {
 export class ValidationObjectEzsignfoldersignerassociationGetObjectV1Response {
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
-   mPayload = new ValidationObjectEzsignfoldersignerassociationResponseCompound()
+   mPayload = new ValidationObjectEzsignfoldersignerassociationGetObjectV1ResponseMPayload()
 } 
 
 

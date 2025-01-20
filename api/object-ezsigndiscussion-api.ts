@@ -22,13 +22,13 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import type { CommonResponse } from '../model';
-// @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
 import type { EzsigndiscussionCreateObjectV1Request } from '../model';
 // @ts-ignore
 import type { EzsigndiscussionCreateObjectV1Response } from '../model';
+// @ts-ignore
+import type { EzsigndiscussionDeleteObjectV1Response } from '../model';
 // @ts-ignore
 import type { EzsigndiscussionGetObjectV2Response } from '../model';
 // @ts-ignore
@@ -245,7 +245,7 @@ export const ObjectEzsigndiscussionApiFp = function(configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsigndiscussionDeleteObjectV1(pkiEzsigndiscussionID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
+        async ezsigndiscussionDeleteObjectV1(pkiEzsigndiscussionID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndiscussionDeleteObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigndiscussionDeleteObjectV1(pkiEzsigndiscussionID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsigndiscussionApi.ezsigndiscussionDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -291,7 +291,7 @@ export const ObjectEzsigndiscussionApiFactory = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigndiscussionDeleteObjectV1(pkiEzsigndiscussionID: number, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
+        ezsigndiscussionDeleteObjectV1(pkiEzsigndiscussionID: number, options?: RawAxiosRequestConfig): AxiosPromise<EzsigndiscussionDeleteObjectV1Response> {
             return localVarFp.ezsigndiscussionDeleteObjectV1(pkiEzsigndiscussionID, options).then((request) => request(axios, basePath));
         },
         /**

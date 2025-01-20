@@ -13,6 +13,9 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import type { CustomWebhooklogResponse } from './custom-webhooklog-response';
 
 /**
  * Payload for GET /1/object/webhook/{pkiWebhookID}/getHistory

@@ -22,8 +22,6 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import type { CommonResponse } from '../model';
-// @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
 import type { HeaderAcceptLanguage } from '../model';
@@ -32,7 +30,11 @@ import type { UsergroupexternalCreateObjectV1Request } from '../model';
 // @ts-ignore
 import type { UsergroupexternalCreateObjectV1Response } from '../model';
 // @ts-ignore
+import type { UsergroupexternalDeleteObjectV1Response } from '../model';
+// @ts-ignore
 import type { UsergroupexternalEditObjectV1Request } from '../model';
+// @ts-ignore
+import type { UsergroupexternalEditObjectV1Response } from '../model';
 // @ts-ignore
 import type { UsergroupexternalGetAutocompleteV2Response } from '../model';
 // @ts-ignore
@@ -591,7 +593,7 @@ export const ObjectUsergroupexternalApiFp = function(configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async usergroupexternalDeleteObjectV1(pkiUsergroupexternalID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
+        async usergroupexternalDeleteObjectV1(pkiUsergroupexternalID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupexternalDeleteObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.usergroupexternalDeleteObjectV1(pkiUsergroupexternalID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectUsergroupexternalApi.usergroupexternalDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -605,7 +607,7 @@ export const ObjectUsergroupexternalApiFp = function(configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async usergroupexternalEditObjectV1(pkiUsergroupexternalID: number, usergroupexternalEditObjectV1Request: UsergroupexternalEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
+        async usergroupexternalEditObjectV1(pkiUsergroupexternalID: number, usergroupexternalEditObjectV1Request: UsergroupexternalEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UsergroupexternalEditObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.usergroupexternalEditObjectV1(pkiUsergroupexternalID, usergroupexternalEditObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectUsergroupexternalApi.usergroupexternalEditObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -710,7 +712,7 @@ export const ObjectUsergroupexternalApiFactory = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usergroupexternalDeleteObjectV1(pkiUsergroupexternalID: number, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
+        usergroupexternalDeleteObjectV1(pkiUsergroupexternalID: number, options?: RawAxiosRequestConfig): AxiosPromise<UsergroupexternalDeleteObjectV1Response> {
             return localVarFp.usergroupexternalDeleteObjectV1(pkiUsergroupexternalID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -721,7 +723,7 @@ export const ObjectUsergroupexternalApiFactory = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        usergroupexternalEditObjectV1(pkiUsergroupexternalID: number, usergroupexternalEditObjectV1Request: UsergroupexternalEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
+        usergroupexternalEditObjectV1(pkiUsergroupexternalID: number, usergroupexternalEditObjectV1Request: UsergroupexternalEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<UsergroupexternalEditObjectV1Response> {
             return localVarFp.usergroupexternalEditObjectV1(pkiUsergroupexternalID, usergroupexternalEditObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**

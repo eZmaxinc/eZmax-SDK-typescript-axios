@@ -18,7 +18,7 @@
 import type { CommonAudit } from './common-audit';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EmailResponse } from './email-response';
+import type { EmailResponseCompound } from './email-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { FieldEUserEzsignaccess } from './field-euser-ezsignaccess';
@@ -133,12 +133,12 @@ export interface UserResponse {
     /*'sLanguageNameX': string;*/
     'sLanguageNameX': string;
     /**
-     * An Email Object and children to create a complete structure
-     * @type {EmailResponse}
+     * 
+     * @type {EmailResponseCompound}
      * @memberof UserResponse
      */
-    /*'objEmail': EmailResponse;*/
-    'objEmail': EmailResponse;
+    /*'objEmail': EmailResponseCompound;*/
+    'objEmail': EmailResponseCompound;
     /**
      * The unique ID of the Billingentityinternal.
      * @type {number}
@@ -315,7 +315,7 @@ export interface UserResponse {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectEmailResponse } from './'
+import { DataObjectEmailResponseCompound } from './'
 // @ts-ignore
 import { DataObjectPhoneResponseCompound } from './'
 // @ts-ignore
@@ -323,7 +323,7 @@ import { DataObjectPhoneResponseCompound } from './'
 // @ts-ignore
 import { DataObjectCommonAudit } from './'
 // @ts-ignore
-import { ValidationObjectEmailResponse } from './'
+import { ValidationObjectEmailResponseCompound } from './'
 // @ts-ignore
 import { ValidationObjectPhoneResponseCompound } from './'
 // @ts-ignore
@@ -351,7 +351,7 @@ export class DataObjectUserResponse {
    sTimezoneName:string = ''
    fkiLanguageID:number = 0
    sLanguageNameX:string = ''
-   objEmail:EmailResponse = new DataObjectEmailResponse()
+   objEmail:EmailResponseCompound = new DataObjectEmailResponseCompound()
    fkiBillingentityinternalID:number = 0
    sBillingentityinternalDescriptionX:string = ''
    objPhoneHome?:PhoneResponseCompound = undefined
@@ -447,7 +447,7 @@ export class ValidationObjectUserResponse {
       type: 'string',
       required: true
    }
-   objEmail = new ValidationObjectEmailResponse()
+   objEmail = new ValidationObjectEmailResponseCompound()
    fkiBillingentityinternalID = {
       type: 'integer',
       minimum: 0,

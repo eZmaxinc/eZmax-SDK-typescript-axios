@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ActivesessionResponseCompound } from './activesession-response-compound';
+import type { ActivesessionGetCurrentV1ResponseMPayload } from './activesession-get-current-v1-response-mpayload';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { CommonResponse } from './common-response';
@@ -46,11 +46,11 @@ export interface ActivesessionGetCurrentV1Response {
      */
     objDebug?:CommonResponseObjDebug 
     /**
-     * Payload for GET /1/object/activesession/getCurrent
-     * @type {ActivesessionResponseCompound}
+     * 
+     * @type {ActivesessionGetCurrentV1ResponseMPayload}
      * @memberof ActivesessionGetCurrentV1Response
      */
-    mPayload:ActivesessionResponseCompound 
+    mPayload:ActivesessionGetCurrentV1ResponseMPayload 
 }
 
 
@@ -63,13 +63,13 @@ import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { DataObjectActivesessionResponseCompound } from './'
+import { DataObjectActivesessionGetCurrentV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectActivesessionResponseCompound } from './'
+import { ValidationObjectActivesessionGetCurrentV1ResponseMPayload } from './'
 
 /**
  * @export 
@@ -80,7 +80,7 @@ import { ValidationObjectActivesessionResponseCompound } from './'
 export class DataObjectActivesessionGetCurrentV1Response {
     objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
-    mPayload:ActivesessionResponseCompound = new DataObjectActivesessionResponseCompound()
+    mPayload:ActivesessionGetCurrentV1ResponseMPayload = new DataObjectActivesessionGetCurrentV1ResponseMPayload()
 }
 
 /**
@@ -91,7 +91,7 @@ export class DataObjectActivesessionGetCurrentV1Response {
 export class ValidationObjectActivesessionGetCurrentV1Response {
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
-   mPayload = new ValidationObjectActivesessionResponseCompound()
+   mPayload = new ValidationObjectActivesessionGetCurrentV1ResponseMPayload()
 } 
 
 

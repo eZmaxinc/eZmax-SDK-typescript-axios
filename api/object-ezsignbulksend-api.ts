@@ -22,8 +22,6 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import type { CommonResponse } from '../model';
-// @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
 import type { EzsignbulksendCreateEzsignbulksendtransmissionV2Request } from '../model';
@@ -34,7 +32,11 @@ import type { EzsignbulksendCreateObjectV1Request } from '../model';
 // @ts-ignore
 import type { EzsignbulksendCreateObjectV1Response } from '../model';
 // @ts-ignore
+import type { EzsignbulksendDeleteObjectV1Response } from '../model';
+// @ts-ignore
 import type { EzsignbulksendEditObjectV1Request } from '../model';
+// @ts-ignore
+import type { EzsignbulksendEditObjectV1Response } from '../model';
 // @ts-ignore
 import type { EzsignbulksendGetEzsignbulksendtransmissionsV1Response } from '../model';
 // @ts-ignore
@@ -47,6 +49,8 @@ import type { EzsignbulksendGetListV1Response } from '../model';
 import type { EzsignbulksendGetObjectV2Response } from '../model';
 // @ts-ignore
 import type { EzsignbulksendReorderV1Request } from '../model';
+// @ts-ignore
+import type { EzsignbulksendReorderV1Response } from '../model';
 // @ts-ignore
 import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
@@ -788,7 +792,7 @@ export const ObjectEzsignbulksendApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignbulksendDeleteObjectV1(pkiEzsignbulksendID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
+        async ezsignbulksendDeleteObjectV1(pkiEzsignbulksendID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignbulksendDeleteObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignbulksendDeleteObjectV1(pkiEzsignbulksendID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignbulksendApi.ezsignbulksendDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -802,7 +806,7 @@ export const ObjectEzsignbulksendApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignbulksendEditObjectV1(pkiEzsignbulksendID: number, ezsignbulksendEditObjectV1Request: EzsignbulksendEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
+        async ezsignbulksendEditObjectV1(pkiEzsignbulksendID: number, ezsignbulksendEditObjectV1Request: EzsignbulksendEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignbulksendEditObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignbulksendEditObjectV1(pkiEzsignbulksendID, ezsignbulksendEditObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignbulksendApi.ezsignbulksendEditObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -899,7 +903,7 @@ export const ObjectEzsignbulksendApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignbulksendReorderV1(pkiEzsignbulksendID: number, ezsignbulksendReorderV1Request: EzsignbulksendReorderV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
+        async ezsignbulksendReorderV1(pkiEzsignbulksendID: number, ezsignbulksendReorderV1Request: EzsignbulksendReorderV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignbulksendReorderV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignbulksendReorderV1(pkiEzsignbulksendID, ezsignbulksendReorderV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignbulksendApi.ezsignbulksendReorderV1']?.[localVarOperationServerIndex]?.url;
@@ -943,7 +947,7 @@ export const ObjectEzsignbulksendApiFactory = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignbulksendDeleteObjectV1(pkiEzsignbulksendID: number, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
+        ezsignbulksendDeleteObjectV1(pkiEzsignbulksendID: number, options?: RawAxiosRequestConfig): AxiosPromise<EzsignbulksendDeleteObjectV1Response> {
             return localVarFp.ezsignbulksendDeleteObjectV1(pkiEzsignbulksendID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -954,7 +958,7 @@ export const ObjectEzsignbulksendApiFactory = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignbulksendEditObjectV1(pkiEzsignbulksendID: number, ezsignbulksendEditObjectV1Request: EzsignbulksendEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
+        ezsignbulksendEditObjectV1(pkiEzsignbulksendID: number, ezsignbulksendEditObjectV1Request: EzsignbulksendEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsignbulksendEditObjectV1Response> {
             return localVarFp.ezsignbulksendEditObjectV1(pkiEzsignbulksendID, ezsignbulksendEditObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -1030,7 +1034,7 @@ export const ObjectEzsignbulksendApiFactory = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignbulksendReorderV1(pkiEzsignbulksendID: number, ezsignbulksendReorderV1Request: EzsignbulksendReorderV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
+        ezsignbulksendReorderV1(pkiEzsignbulksendID: number, ezsignbulksendReorderV1Request: EzsignbulksendReorderV1Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsignbulksendReorderV1Response> {
             return localVarFp.ezsignbulksendReorderV1(pkiEzsignbulksendID, ezsignbulksendReorderV1Request, options).then((request) => request(axios, basePath));
         },
     };

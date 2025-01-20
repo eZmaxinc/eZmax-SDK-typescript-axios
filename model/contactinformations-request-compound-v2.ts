@@ -15,22 +15,22 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AddressRequest } from './address-request';
+import type { AddressRequestCompound } from './address-request-compound';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { ContactinformationsRequestV2 } from './contactinformations-request-v2';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EmailRequest } from './email-request';
+import type { EmailRequestCompound } from './email-request-compound';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { FieldEContactinformationsType } from './field-econtactinformations-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PhoneRequest } from './phone-request';
+import type { PhoneRequestCompound } from './phone-request-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { WebsiteRequest } from './website-request';
+import type { WebsiteRequestCompound } from './website-request-compound';
 
 /**
  * @type ContactinformationsRequestCompoundV2

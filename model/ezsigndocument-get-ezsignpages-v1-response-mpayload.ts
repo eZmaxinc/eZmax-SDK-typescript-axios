@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EzsignpageResponse } from './ezsignpage-response';
+import type { EzsignpageResponseCompound } from './ezsignpage-response-compound';
 
 /**
  * Payload for GET /1/object/ezsigndocument/{pkiEzsigndocument}/getEzsignpages

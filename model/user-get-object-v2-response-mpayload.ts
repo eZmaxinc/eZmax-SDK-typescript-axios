@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { UserResponse } from './user-response';
+import type { UserResponseCompound } from './user-response-compound';
 
 /**
  * Payload for GET /2/object/user/{pkiUserID}
@@ -24,21 +24,21 @@ import type { UserResponse } from './user-response';
  */
 export interface UserGetObjectV2ResponseMPayload {
     /**
-     * A User Object and children to create a complete structure
-     * @type {UserResponse}
+     * 
+     * @type {UserResponseCompound}
      * @memberof UserGetObjectV2ResponseMPayload
      */
-    /*'objUser': UserResponse;*/
-    'objUser': UserResponse;
+    /*'objUser': UserResponseCompound;*/
+    'objUser': UserResponseCompound;
 }
 /**
  * @import
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectUserResponse } from './'
+import { DataObjectUserResponseCompound } from './'
 // @ts-ignore
-import { ValidationObjectUserResponse } from './'
+import { ValidationObjectUserResponseCompound } from './'
 
 /**
  * @export 
@@ -47,7 +47,7 @@ import { ValidationObjectUserResponse } from './'
  * @class DataObjectUserGetObjectV2ResponseMPayload
  */
 export class DataObjectUserGetObjectV2ResponseMPayload {
-   objUser:UserResponse = new DataObjectUserResponse()
+   objUser:UserResponseCompound = new DataObjectUserResponseCompound()
 }
 
 /**
@@ -56,7 +56,7 @@ export class DataObjectUserGetObjectV2ResponseMPayload {
  * @class ValidationObjectUserGetObjectV2ResponseMPayload
  */
 export class ValidationObjectUserGetObjectV2ResponseMPayload {
-   objUser = new ValidationObjectUserResponse()
+   objUser = new ValidationObjectUserResponseCompound()
 } 
 
 

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { CustomDropdownElementRequest } from './custom-dropdown-element-request';
+import type { CustomDropdownElementRequestCompound } from './custom-dropdown-element-request-compound';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { EnumTextvalidation } from './enum-textvalidation';
@@ -27,7 +27,7 @@ import type { EzsignformfieldRequestCompound } from './ezsignformfield-request-c
 import type { EzsignformfieldgroupRequest } from './ezsignformfieldgroup-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EzsignformfieldgroupsignerRequest } from './ezsignformfieldgroupsigner-request';
+import type { EzsignformfieldgroupsignerRequestCompound } from './ezsignformfieldgroupsigner-request-compound';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { FieldEEzsignformfieldgroupSignerrequirement } from './field-eezsignformfieldgroup-signerrequirement';
