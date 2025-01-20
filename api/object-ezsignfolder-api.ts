@@ -22,9 +22,9 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import type { CommonResponseError } from '../model';
+import type { CommonResponse } from '../model';
 // @ts-ignore
-import type { EzsignfolderArchiveV1Response } from '../model';
+import type { CommonResponseError } from '../model';
 // @ts-ignore
 import type { EzsignfolderBatchDownloadV1Request } from '../model';
 // @ts-ignore
@@ -40,19 +40,9 @@ import type { EzsignfolderCreateObjectV3Request } from '../model';
 // @ts-ignore
 import type { EzsignfolderCreateObjectV3Response } from '../model';
 // @ts-ignore
-import type { EzsignfolderDeleteObjectV1Response } from '../model';
-// @ts-ignore
 import type { EzsignfolderDisposeEzsignfoldersV1Request } from '../model';
 // @ts-ignore
-import type { EzsignfolderDisposeEzsignfoldersV1Response } from '../model';
-// @ts-ignore
-import type { EzsignfolderDisposeV1Response } from '../model';
-// @ts-ignore
 import type { EzsignfolderEditObjectV3Request } from '../model';
-// @ts-ignore
-import type { EzsignfolderEditObjectV3Response } from '../model';
-// @ts-ignore
-import type { EzsignfolderEndPrematurelyV1Response } from '../model';
 // @ts-ignore
 import type { EzsignfolderGetActionableElementsV1Response } from '../model';
 // @ts-ignore
@@ -94,21 +84,11 @@ import type { EzsignfolderImportEzsigntemplatepackageV1Response } from '../model
 // @ts-ignore
 import type { EzsignfolderReorderV1Request } from '../model';
 // @ts-ignore
-import type { EzsignfolderReorderV1Response } from '../model';
-// @ts-ignore
 import type { EzsignfolderReorderV2Request } from '../model';
-// @ts-ignore
-import type { EzsignfolderReorderV2Response } from '../model';
 // @ts-ignore
 import type { EzsignfolderSendV1Request } from '../model';
 // @ts-ignore
-import type { EzsignfolderSendV1Response } from '../model';
-// @ts-ignore
 import type { EzsignfolderSendV3Request } from '../model';
-// @ts-ignore
-import type { EzsignfolderSendV3Response } from '../model';
-// @ts-ignore
-import type { EzsignfolderUnsendV1Response } from '../model';
 // @ts-ignore
 import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
@@ -2101,7 +2081,7 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignfolderArchiveV1(pkiEzsignfolderID: number, body: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderArchiveV1Response>> {
+        async ezsignfolderArchiveV1(pkiEzsignfolderID: number, body: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderArchiveV1(pkiEzsignfolderID, body, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignfolderApi.ezsignfolderArchiveV1']?.[localVarOperationServerIndex]?.url;
@@ -2169,7 +2149,7 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignfolderDeleteObjectV1(pkiEzsignfolderID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderDeleteObjectV1Response>> {
+        async ezsignfolderDeleteObjectV1(pkiEzsignfolderID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderDeleteObjectV1(pkiEzsignfolderID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignfolderApi.ezsignfolderDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -2182,7 +2162,7 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignfolderDisposeEzsignfoldersV1(ezsignfolderDisposeEzsignfoldersV1Request: EzsignfolderDisposeEzsignfoldersV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderDisposeEzsignfoldersV1Response>> {
+        async ezsignfolderDisposeEzsignfoldersV1(ezsignfolderDisposeEzsignfoldersV1Request: EzsignfolderDisposeEzsignfoldersV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderDisposeEzsignfoldersV1(ezsignfolderDisposeEzsignfoldersV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignfolderApi.ezsignfolderDisposeEzsignfoldersV1']?.[localVarOperationServerIndex]?.url;
@@ -2196,7 +2176,7 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignfolderDisposeV1(pkiEzsignfolderID: number, body: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderDisposeV1Response>> {
+        async ezsignfolderDisposeV1(pkiEzsignfolderID: number, body: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderDisposeV1(pkiEzsignfolderID, body, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignfolderApi.ezsignfolderDisposeV1']?.[localVarOperationServerIndex]?.url;
@@ -2210,7 +2190,7 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignfolderEditObjectV3(pkiEzsignfolderID: number, ezsignfolderEditObjectV3Request: EzsignfolderEditObjectV3Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderEditObjectV3Response>> {
+        async ezsignfolderEditObjectV3(pkiEzsignfolderID: number, ezsignfolderEditObjectV3Request: EzsignfolderEditObjectV3Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderEditObjectV3(pkiEzsignfolderID, ezsignfolderEditObjectV3Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignfolderApi.ezsignfolderEditObjectV3']?.[localVarOperationServerIndex]?.url;
@@ -2224,7 +2204,7 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignfolderEndPrematurelyV1(pkiEzsignfolderID: number, body: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderEndPrematurelyV1Response>> {
+        async ezsignfolderEndPrematurelyV1(pkiEzsignfolderID: number, body: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderEndPrematurelyV1(pkiEzsignfolderID, body, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignfolderApi.ezsignfolderEndPrematurelyV1']?.[localVarOperationServerIndex]?.url;
@@ -2468,7 +2448,7 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
          * @deprecated
          * @throws {RequiredError}
          */
-        async ezsignfolderReorderV1(pkiEzsignfolderID: number, ezsignfolderReorderV1Request: EzsignfolderReorderV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderReorderV1Response>> {
+        async ezsignfolderReorderV1(pkiEzsignfolderID: number, ezsignfolderReorderV1Request: EzsignfolderReorderV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderReorderV1(pkiEzsignfolderID, ezsignfolderReorderV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignfolderApi.ezsignfolderReorderV1']?.[localVarOperationServerIndex]?.url;
@@ -2482,7 +2462,7 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignfolderReorderV2(pkiEzsignfolderID: number, ezsignfolderReorderV2Request: EzsignfolderReorderV2Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderReorderV2Response>> {
+        async ezsignfolderReorderV2(pkiEzsignfolderID: number, ezsignfolderReorderV2Request: EzsignfolderReorderV2Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderReorderV2(pkiEzsignfolderID, ezsignfolderReorderV2Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignfolderApi.ezsignfolderReorderV2']?.[localVarOperationServerIndex]?.url;
@@ -2497,7 +2477,7 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
          * @deprecated
          * @throws {RequiredError}
          */
-        async ezsignfolderSendV1(pkiEzsignfolderID: number, ezsignfolderSendV1Request: EzsignfolderSendV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderSendV1Response>> {
+        async ezsignfolderSendV1(pkiEzsignfolderID: number, ezsignfolderSendV1Request: EzsignfolderSendV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderSendV1(pkiEzsignfolderID, ezsignfolderSendV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignfolderApi.ezsignfolderSendV1']?.[localVarOperationServerIndex]?.url;
@@ -2511,7 +2491,7 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignfolderSendV3(pkiEzsignfolderID: number, ezsignfolderSendV3Request: EzsignfolderSendV3Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderSendV3Response>> {
+        async ezsignfolderSendV3(pkiEzsignfolderID: number, ezsignfolderSendV3Request: EzsignfolderSendV3Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderSendV3(pkiEzsignfolderID, ezsignfolderSendV3Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignfolderApi.ezsignfolderSendV3']?.[localVarOperationServerIndex]?.url;
@@ -2525,7 +2505,7 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignfolderUnsendV1(pkiEzsignfolderID: number, body: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderUnsendV1Response>> {
+        async ezsignfolderUnsendV1(pkiEzsignfolderID: number, body: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderUnsendV1(pkiEzsignfolderID, body, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignfolderApi.ezsignfolderUnsendV1']?.[localVarOperationServerIndex]?.url;
@@ -2549,7 +2529,7 @@ export const ObjectEzsignfolderApiFactory = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfolderArchiveV1(pkiEzsignfolderID: number, body: object, options?: RawAxiosRequestConfig): AxiosPromise<EzsignfolderArchiveV1Response> {
+        ezsignfolderArchiveV1(pkiEzsignfolderID: number, body: object, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.ezsignfolderArchiveV1(pkiEzsignfolderID, body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -2602,7 +2582,7 @@ export const ObjectEzsignfolderApiFactory = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfolderDeleteObjectV1(pkiEzsignfolderID: number, options?: RawAxiosRequestConfig): AxiosPromise<EzsignfolderDeleteObjectV1Response> {
+        ezsignfolderDeleteObjectV1(pkiEzsignfolderID: number, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.ezsignfolderDeleteObjectV1(pkiEzsignfolderID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -2612,7 +2592,7 @@ export const ObjectEzsignfolderApiFactory = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfolderDisposeEzsignfoldersV1(ezsignfolderDisposeEzsignfoldersV1Request: EzsignfolderDisposeEzsignfoldersV1Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsignfolderDisposeEzsignfoldersV1Response> {
+        ezsignfolderDisposeEzsignfoldersV1(ezsignfolderDisposeEzsignfoldersV1Request: EzsignfolderDisposeEzsignfoldersV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.ezsignfolderDisposeEzsignfoldersV1(ezsignfolderDisposeEzsignfoldersV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -2623,7 +2603,7 @@ export const ObjectEzsignfolderApiFactory = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfolderDisposeV1(pkiEzsignfolderID: number, body: object, options?: RawAxiosRequestConfig): AxiosPromise<EzsignfolderDisposeV1Response> {
+        ezsignfolderDisposeV1(pkiEzsignfolderID: number, body: object, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.ezsignfolderDisposeV1(pkiEzsignfolderID, body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -2634,7 +2614,7 @@ export const ObjectEzsignfolderApiFactory = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfolderEditObjectV3(pkiEzsignfolderID: number, ezsignfolderEditObjectV3Request: EzsignfolderEditObjectV3Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsignfolderEditObjectV3Response> {
+        ezsignfolderEditObjectV3(pkiEzsignfolderID: number, ezsignfolderEditObjectV3Request: EzsignfolderEditObjectV3Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.ezsignfolderEditObjectV3(pkiEzsignfolderID, ezsignfolderEditObjectV3Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -2645,7 +2625,7 @@ export const ObjectEzsignfolderApiFactory = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfolderEndPrematurelyV1(pkiEzsignfolderID: number, body: object, options?: RawAxiosRequestConfig): AxiosPromise<EzsignfolderEndPrematurelyV1Response> {
+        ezsignfolderEndPrematurelyV1(pkiEzsignfolderID: number, body: object, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.ezsignfolderEndPrematurelyV1(pkiEzsignfolderID, body, options).then((request) => request(axios, basePath));
         },
         /**
@@ -2835,7 +2815,7 @@ export const ObjectEzsignfolderApiFactory = function (configuration?: Configurat
          * @deprecated
          * @throws {RequiredError}
          */
-        ezsignfolderReorderV1(pkiEzsignfolderID: number, ezsignfolderReorderV1Request: EzsignfolderReorderV1Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsignfolderReorderV1Response> {
+        ezsignfolderReorderV1(pkiEzsignfolderID: number, ezsignfolderReorderV1Request: EzsignfolderReorderV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.ezsignfolderReorderV1(pkiEzsignfolderID, ezsignfolderReorderV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -2846,7 +2826,7 @@ export const ObjectEzsignfolderApiFactory = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfolderReorderV2(pkiEzsignfolderID: number, ezsignfolderReorderV2Request: EzsignfolderReorderV2Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsignfolderReorderV2Response> {
+        ezsignfolderReorderV2(pkiEzsignfolderID: number, ezsignfolderReorderV2Request: EzsignfolderReorderV2Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.ezsignfolderReorderV2(pkiEzsignfolderID, ezsignfolderReorderV2Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -2858,7 +2838,7 @@ export const ObjectEzsignfolderApiFactory = function (configuration?: Configurat
          * @deprecated
          * @throws {RequiredError}
          */
-        ezsignfolderSendV1(pkiEzsignfolderID: number, ezsignfolderSendV1Request: EzsignfolderSendV1Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsignfolderSendV1Response> {
+        ezsignfolderSendV1(pkiEzsignfolderID: number, ezsignfolderSendV1Request: EzsignfolderSendV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.ezsignfolderSendV1(pkiEzsignfolderID, ezsignfolderSendV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -2869,7 +2849,7 @@ export const ObjectEzsignfolderApiFactory = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfolderSendV3(pkiEzsignfolderID: number, ezsignfolderSendV3Request: EzsignfolderSendV3Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsignfolderSendV3Response> {
+        ezsignfolderSendV3(pkiEzsignfolderID: number, ezsignfolderSendV3Request: EzsignfolderSendV3Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.ezsignfolderSendV3(pkiEzsignfolderID, ezsignfolderSendV3Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -2880,7 +2860,7 @@ export const ObjectEzsignfolderApiFactory = function (configuration?: Configurat
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfolderUnsendV1(pkiEzsignfolderID: number, body: object, options?: RawAxiosRequestConfig): AxiosPromise<EzsignfolderUnsendV1Response> {
+        ezsignfolderUnsendV1(pkiEzsignfolderID: number, body: object, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.ezsignfolderUnsendV1(pkiEzsignfolderID, body, options).then((request) => request(axios, basePath));
         },
     };

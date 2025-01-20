@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EzsignfolderRequestCompoundV3 } from './ezsignfolder-request-compound-v3';
+import type { EzsignfolderRequestV3 } from './ezsignfolder-request-v3';
 
 /**
  * Request for PUT /3/object/ezsignfolder/{pkiEzsignfolderID}
@@ -24,21 +24,21 @@ import type { EzsignfolderRequestCompoundV3 } from './ezsignfolder-request-compo
  */
 export interface EzsignfolderEditObjectV3Request {
     /**
-     * 
-     * @type {EzsignfolderRequestCompoundV3}
+     * An Ezsignfolder Object and children to create a complete structure
+     * @type {EzsignfolderRequestV3}
      * @memberof EzsignfolderEditObjectV3Request
      */
-    /*'objEzsignfolder': EzsignfolderRequestCompoundV3;*/
-    'objEzsignfolder': EzsignfolderRequestCompoundV3;
+    /*'objEzsignfolder': EzsignfolderRequestV3;*/
+    'objEzsignfolder': EzsignfolderRequestV3;
 }
 /**
  * @import
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectEzsignfolderRequestCompoundV3 } from './'
+import { DataObjectEzsignfolderRequestV3 } from './'
 // @ts-ignore
-import { ValidationObjectEzsignfolderRequestCompoundV3 } from './'
+import { ValidationObjectEzsignfolderRequestV3 } from './'
 
 /**
  * @export 
@@ -47,7 +47,7 @@ import { ValidationObjectEzsignfolderRequestCompoundV3 } from './'
  * @class DataObjectEzsignfolderEditObjectV3Request
  */
 export class DataObjectEzsignfolderEditObjectV3Request {
-   objEzsignfolder:EzsignfolderRequestCompoundV3 = new DataObjectEzsignfolderRequestCompoundV3()
+   objEzsignfolder:EzsignfolderRequestV3 = new DataObjectEzsignfolderRequestV3()
 }
 
 /**
@@ -56,7 +56,7 @@ export class DataObjectEzsignfolderEditObjectV3Request {
  * @class ValidationObjectEzsignfolderEditObjectV3Request
  */
 export class ValidationObjectEzsignfolderEditObjectV3Request {
-   objEzsignfolder = new ValidationObjectEzsignfolderRequestCompoundV3()
+   objEzsignfolder = new ValidationObjectEzsignfolderRequestV3()
 } 
 
 

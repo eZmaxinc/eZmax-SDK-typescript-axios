@@ -22,6 +22,8 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
+import type { CommonResponse } from '../model';
+// @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
 import type { EzsignsigningreasonCreateObjectV1Request } from '../model';
@@ -29,8 +31,6 @@ import type { EzsignsigningreasonCreateObjectV1Request } from '../model';
 import type { EzsignsigningreasonCreateObjectV1Response } from '../model';
 // @ts-ignore
 import type { EzsignsigningreasonEditObjectV1Request } from '../model';
-// @ts-ignore
-import type { EzsignsigningreasonEditObjectV1Response } from '../model';
 // @ts-ignore
 import type { EzsignsigningreasonGetAutocompleteV2Response } from '../model';
 // @ts-ignore
@@ -414,7 +414,7 @@ export const ObjectEzsignsigningreasonApiFp = function(configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignsigningreasonEditObjectV1(pkiEzsignsigningreasonID: number, ezsignsigningreasonEditObjectV1Request: EzsignsigningreasonEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignsigningreasonEditObjectV1Response>> {
+        async ezsignsigningreasonEditObjectV1(pkiEzsignsigningreasonID: number, ezsignsigningreasonEditObjectV1Request: EzsignsigningreasonEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignsigningreasonEditObjectV1(pkiEzsignsigningreasonID, ezsignsigningreasonEditObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignsigningreasonApi.ezsignsigningreasonEditObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -494,7 +494,7 @@ export const ObjectEzsignsigningreasonApiFactory = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignsigningreasonEditObjectV1(pkiEzsignsigningreasonID: number, ezsignsigningreasonEditObjectV1Request: EzsignsigningreasonEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsignsigningreasonEditObjectV1Response> {
+        ezsignsigningreasonEditObjectV1(pkiEzsignsigningreasonID: number, ezsignsigningreasonEditObjectV1Request: EzsignsigningreasonEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.ezsignsigningreasonEditObjectV1(pkiEzsignsigningreasonID, ezsignsigningreasonEditObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**

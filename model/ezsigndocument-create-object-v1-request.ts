@@ -16,9 +16,6 @@
 // May contain unused imports in some cases
 // @ts-ignore
 import type { EzsigndocumentRequest } from './ezsigndocument-request';
-// May contain unused imports in some cases
-// @ts-ignore
-import type { EzsigndocumentRequestCompound } from './ezsigndocument-request-compound';
 
 /**
  * Request for POST /1/object/ezsigndocument
@@ -34,12 +31,12 @@ export interface EzsigndocumentCreateObjectV1Request {
     /*'objEzsigndocument'?: EzsigndocumentRequest;*/
     'objEzsigndocument'?: EzsigndocumentRequest;
     /**
-     * 
-     * @type {EzsigndocumentRequestCompound}
+     * An Ezsigndocument Object and children to create a complete structure
+     * @type {EzsigndocumentRequest}
      * @memberof EzsigndocumentCreateObjectV1Request
      */
-    /*'objEzsigndocumentCompound'?: EzsigndocumentRequestCompound;*/
-    'objEzsigndocumentCompound'?: EzsigndocumentRequestCompound;
+    /*'objEzsigndocumentCompound'?: EzsigndocumentRequest;*/
+    'objEzsigndocumentCompound'?: EzsigndocumentRequest;
 }
 /**
  * @import
@@ -48,11 +45,11 @@ export interface EzsigndocumentCreateObjectV1Request {
 // @ts-ignore
 import { DataObjectEzsigndocumentRequest } from './'
 // @ts-ignore
-import { DataObjectEzsigndocumentRequestCompound } from './'
+import { DataObjectEzsigndocumentRequest } from './'
 // @ts-ignore
 import { ValidationObjectEzsigndocumentRequest } from './'
 // @ts-ignore
-import { ValidationObjectEzsigndocumentRequestCompound } from './'
+import { ValidationObjectEzsigndocumentRequest } from './'
 
 /**
  * @export 
@@ -62,7 +59,7 @@ import { ValidationObjectEzsigndocumentRequestCompound } from './'
  */
 export class DataObjectEzsigndocumentCreateObjectV1Request {
    objEzsigndocument?:EzsigndocumentRequest = undefined
-   objEzsigndocumentCompound?:EzsigndocumentRequestCompound = undefined
+   objEzsigndocumentCompound?:EzsigndocumentRequest = undefined
 }
 
 /**
@@ -72,7 +69,7 @@ export class DataObjectEzsigndocumentCreateObjectV1Request {
  */
 export class ValidationObjectEzsigndocumentCreateObjectV1Request {
    objEzsigndocument = new ValidationObjectEzsigndocumentRequest()
-   objEzsigndocumentCompound = new ValidationObjectEzsigndocumentRequestCompound()
+   objEzsigndocumentCompound = new ValidationObjectEzsigndocumentRequest()
 } 
 
 

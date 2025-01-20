@@ -22,13 +22,13 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
+import type { CommonResponse } from '../model';
+// @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
 import type { EzsigntemplatepackagemembershipCreateObjectV1Request } from '../model';
 // @ts-ignore
 import type { EzsigntemplatepackagemembershipCreateObjectV1Response } from '../model';
-// @ts-ignore
-import type { EzsigntemplatepackagemembershipDeleteObjectV1Response } from '../model';
 // @ts-ignore
 import type { EzsigntemplatepackagemembershipGetObjectV2Response } from '../model';
 // @ts-ignore
@@ -245,7 +245,7 @@ export const ObjectEzsigntemplatepackagemembershipApiFp = function(configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsigntemplatepackagemembershipDeleteObjectV1(pkiEzsigntemplatepackagemembershipID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigntemplatepackagemembershipDeleteObjectV1Response>> {
+        async ezsigntemplatepackagemembershipDeleteObjectV1(pkiEzsigntemplatepackagemembershipID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigntemplatepackagemembershipDeleteObjectV1(pkiEzsigntemplatepackagemembershipID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsigntemplatepackagemembershipApi.ezsigntemplatepackagemembershipDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -291,7 +291,7 @@ export const ObjectEzsigntemplatepackagemembershipApiFactory = function (configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigntemplatepackagemembershipDeleteObjectV1(pkiEzsigntemplatepackagemembershipID: number, options?: RawAxiosRequestConfig): AxiosPromise<EzsigntemplatepackagemembershipDeleteObjectV1Response> {
+        ezsigntemplatepackagemembershipDeleteObjectV1(pkiEzsigntemplatepackagemembershipID: number, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.ezsigntemplatepackagemembershipDeleteObjectV1(pkiEzsigntemplatepackagemembershipID, options).then((request) => request(axios, basePath));
         },
         /**

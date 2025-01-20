@@ -18,7 +18,7 @@
 import type { ModulesectionResponse } from './modulesection-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PermissionResponseCompound } from './permission-response-compound';
+import type { PermissionResponse } from './permission-response';
 
 /**
  * @type ModulesectionResponseCompound

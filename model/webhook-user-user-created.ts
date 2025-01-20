@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AttemptResponseCompound } from './attempt-response-compound';
+import type { AttemptResponse } from './attempt-response';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { CommonWebhook } from './common-webhook';
@@ -24,7 +24,7 @@ import type { CommonWebhook } from './common-webhook';
 import type { CustomWebhookResponse } from './custom-webhook-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { UserResponseCompound } from './user-response-compound';
+import type { UserResponse } from './user-response';
 
 /**
  * @type WebhookUserUserCreated
@@ -46,11 +46,11 @@ export interface WebhookUserUserCreated {
      */
     a_objAttempt:Array<AttemptResponseCompound> 
     /**
-     * 
-     * @type {UserResponseCompound}
+     * A User Object and children to create a complete structure
+     * @type {UserResponse}
      * @memberof WebhookUserUserCreated
      */
-    objUser:UserResponseCompound 
+    objUser:UserResponse 
 }
 
 
@@ -61,11 +61,11 @@ export interface WebhookUserUserCreated {
 // @ts-ignore
 import { DataObjectCustomWebhookResponse } from './'
 // @ts-ignore
-import { DataObjectUserResponseCompound } from './'
+import { DataObjectUserResponse } from './'
 // @ts-ignore
 import { ValidationObjectCustomWebhookResponse } from './'
 // @ts-ignore
-import { ValidationObjectUserResponseCompound } from './'
+import { ValidationObjectUserResponse } from './'
 
 /**
  * @export 
@@ -76,7 +76,7 @@ import { ValidationObjectUserResponseCompound } from './'
 export class DataObjectWebhookUserUserCreated {
     objWebhook:CustomWebhookResponse = new DataObjectCustomWebhookResponse()
     a_objAttempt:Array<AttemptResponseCompound> = []
-    objUser:UserResponseCompound = new DataObjectUserResponseCompound()
+    objUser:UserResponse = new DataObjectUserResponse()
 }
 
 /**
@@ -90,7 +90,7 @@ export class ValidationObjectWebhookUserUserCreated {
       type: 'array',
       required: true
    }
-   objUser = new ValidationObjectUserResponseCompound()
+   objUser = new ValidationObjectUserResponse()
 } 
 
 

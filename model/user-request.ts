@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EmailRequestCompound } from './email-request-compound';
+import type { EmailRequest } from './email-request';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { FieldEUserEzsignaccess } from './field-euser-ezsignaccess';
@@ -27,7 +27,7 @@ import type { FieldEUserLogintype } from './field-euser-logintype';
 import type { FieldEUserType } from './field-euser-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PhoneRequestCompound } from './phone-request-compound';
+import type { PhoneRequest } from './phone-request';
 
 /**
  * A User Object
@@ -99,12 +99,12 @@ export interface UserRequest {
     /*'fkiLanguageID': number;*/
     'fkiLanguageID': number;
     /**
-     * 
-     * @type {EmailRequestCompound}
+     * An Email Object and children to create a complete structure
+     * @type {EmailRequest}
      * @memberof UserRequest
      */
-    /*'objEmail': EmailRequestCompound;*/
-    'objEmail': EmailRequestCompound;
+    /*'objEmail': EmailRequest;*/
+    'objEmail': EmailRequest;
     /**
      * The unique ID of the Billingentityinternal.
      * @type {number}
@@ -113,19 +113,19 @@ export interface UserRequest {
     /*'fkiBillingentityinternalID': number;*/
     'fkiBillingentityinternalID': number;
     /**
-     * 
-     * @type {PhoneRequestCompound}
+     * A Phone Object and children to create a complete structure
+     * @type {PhoneRequest}
      * @memberof UserRequest
      */
-    /*'objPhoneHome'?: PhoneRequestCompound;*/
-    'objPhoneHome'?: PhoneRequestCompound;
+    /*'objPhoneHome'?: PhoneRequest;*/
+    'objPhoneHome'?: PhoneRequest;
     /**
-     * 
-     * @type {PhoneRequestCompound}
+     * A Phone Object and children to create a complete structure
+     * @type {PhoneRequest}
      * @memberof UserRequest
      */
-    /*'objPhoneSMS'?: PhoneRequestCompound;*/
-    'objPhoneSMS'?: PhoneRequestCompound;
+    /*'objPhoneSMS'?: PhoneRequest;*/
+    'objPhoneSMS'?: PhoneRequest;
     /**
      * The unique ID of the Secretquestion.  Valid values:  |Value|Description| |-|-| |1|The name of the hospital in which you were born| |2|The name of your grade school| |3|The last name of your favorite teacher| |4|Your favorite sports team| |5|Your favorite TV show| |6|Your favorite movie| |7|The name of the street on which you grew up| |8|The name of your first employer| |9|Your first car| |10|Your favorite food| |11|The name of your first pet| |12|Favorite musician/band| |13|What instrument you play| |14|Your father\'s middle name| |15|Your mother\'s maiden name| |16|Name of your eldest child| |17|Your spouse\'s middle name| |18|Favorite restaurant| |19|Childhood nickname| |20|Favorite vacation destination| |21|Your boat\'s name| |22|Date of Birth (YYYY-MM-DD)| |22|Secret Code| |22|Your reference code|
      * @type {number}
@@ -239,17 +239,17 @@ export interface UserRequest {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectEmailRequestCompound } from './'
+import { DataObjectEmailRequest } from './'
 // @ts-ignore
-import { DataObjectPhoneRequestCompound } from './'
+import { DataObjectPhoneRequest } from './'
 // @ts-ignore
-import { DataObjectPhoneRequestCompound } from './'
+import { DataObjectPhoneRequest } from './'
 // @ts-ignore
-import { ValidationObjectEmailRequestCompound } from './'
+import { ValidationObjectEmailRequest } from './'
 // @ts-ignore
-import { ValidationObjectPhoneRequestCompound } from './'
+import { ValidationObjectPhoneRequest } from './'
 // @ts-ignore
-import { ValidationObjectPhoneRequestCompound } from './'
+import { ValidationObjectPhoneRequest } from './'
 
 /**
  * @export 
@@ -267,10 +267,10 @@ export class DataObjectUserRequest {
    fkiDepartmentIDDefault:number = 0
    fkiTimezoneID:number = 0
    fkiLanguageID:number = 0
-   objEmail:EmailRequestCompound = new DataObjectEmailRequestCompound()
+   objEmail:EmailRequest = new DataObjectEmailRequest()
    fkiBillingentityinternalID:number = 0
-   objPhoneHome?:PhoneRequestCompound = undefined
-   objPhoneSMS?:PhoneRequestCompound = undefined
+   objPhoneHome?:PhoneRequest = undefined
+   objPhoneSMS?:PhoneRequest = undefined
    fkiSecretquestionID?:number = undefined
    sUserSecretresponse?:string = undefined
    fkiModuleIDForm?:number = undefined
@@ -341,14 +341,14 @@ export class ValidationObjectUserRequest {
       maximum: 2,
       required: true
    }
-   objEmail = new ValidationObjectEmailRequestCompound()
+   objEmail = new ValidationObjectEmailRequest()
    fkiBillingentityinternalID = {
       type: 'integer',
       minimum: 0,
       required: true
    }
-   objPhoneHome = new ValidationObjectPhoneRequestCompound()
-   objPhoneSMS = new ValidationObjectPhoneRequestCompound()
+   objPhoneHome = new ValidationObjectPhoneRequest()
+   objPhoneSMS = new ValidationObjectPhoneRequest()
    fkiSecretquestionID = {
       type: 'integer',
       minimum: 0,

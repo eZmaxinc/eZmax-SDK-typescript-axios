@@ -22,6 +22,8 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
+import type { CommonResponse } from '../model';
+// @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
 import type { EzsignfoldertypeCreateObjectV3Request } from '../model';
@@ -29,8 +31,6 @@ import type { EzsignfoldertypeCreateObjectV3Request } from '../model';
 import type { EzsignfoldertypeCreateObjectV3Response } from '../model';
 // @ts-ignore
 import type { EzsignfoldertypeEditObjectV3Request } from '../model';
-// @ts-ignore
-import type { EzsignfoldertypeEditObjectV3Response } from '../model';
 // @ts-ignore
 import type { EzsignfoldertypeGetAutocompleteV2Response } from '../model';
 // @ts-ignore
@@ -475,7 +475,7 @@ export const ObjectEzsignfoldertypeApiFp = function(configuration?: Configuratio
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignfoldertypeEditObjectV3(pkiEzsignfoldertypeID: number, ezsignfoldertypeEditObjectV3Request: EzsignfoldertypeEditObjectV3Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfoldertypeEditObjectV3Response>> {
+        async ezsignfoldertypeEditObjectV3(pkiEzsignfoldertypeID: number, ezsignfoldertypeEditObjectV3Request: EzsignfoldertypeEditObjectV3Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfoldertypeEditObjectV3(pkiEzsignfoldertypeID, ezsignfoldertypeEditObjectV3Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignfoldertypeApi.ezsignfoldertypeEditObjectV3']?.[localVarOperationServerIndex]?.url;
@@ -569,7 +569,7 @@ export const ObjectEzsignfoldertypeApiFactory = function (configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfoldertypeEditObjectV3(pkiEzsignfoldertypeID: number, ezsignfoldertypeEditObjectV3Request: EzsignfoldertypeEditObjectV3Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsignfoldertypeEditObjectV3Response> {
+        ezsignfoldertypeEditObjectV3(pkiEzsignfoldertypeID: number, ezsignfoldertypeEditObjectV3Request: EzsignfoldertypeEditObjectV3Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.ezsignfoldertypeEditObjectV3(pkiEzsignfoldertypeID, ezsignfoldertypeEditObjectV3Request, options).then((request) => request(axios, basePath));
         },
         /**

@@ -22,21 +22,19 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
+import type { CommonResponse } from '../model';
+// @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
 import type { EzsignsignergroupCreateObjectV1Request } from '../model';
 // @ts-ignore
 import type { EzsignsignergroupCreateObjectV1Response } from '../model';
 // @ts-ignore
-import type { EzsignsignergroupDeleteObjectV1Response } from '../model';
-// @ts-ignore
 import type { EzsignsignergroupEditEzsignsignergroupmembershipsV1Request } from '../model';
 // @ts-ignore
 import type { EzsignsignergroupEditEzsignsignergroupmembershipsV1Response } from '../model';
 // @ts-ignore
 import type { EzsignsignergroupEditObjectV1Request } from '../model';
-// @ts-ignore
-import type { EzsignsignergroupEditObjectV1Response } from '../model';
 // @ts-ignore
 import type { EzsignsignergroupGetEzsignsignergroupmembershipsV1Response } from '../model';
 // @ts-ignore
@@ -441,7 +439,7 @@ export const ObjectEzsignsignergroupApiFp = function(configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignsignergroupDeleteObjectV1(pkiEzsignsignergroupID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignsignergroupDeleteObjectV1Response>> {
+        async ezsignsignergroupDeleteObjectV1(pkiEzsignsignergroupID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignsignergroupDeleteObjectV1(pkiEzsignsignergroupID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignsignergroupApi.ezsignsignergroupDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -469,7 +467,7 @@ export const ObjectEzsignsignergroupApiFp = function(configuration?: Configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignsignergroupEditObjectV1(pkiEzsignsignergroupID: number, ezsignsignergroupEditObjectV1Request: EzsignsignergroupEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignsignergroupEditObjectV1Response>> {
+        async ezsignsignergroupEditObjectV1(pkiEzsignsignergroupID: number, ezsignsignergroupEditObjectV1Request: EzsignsignergroupEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignsignergroupEditObjectV1(pkiEzsignsignergroupID, ezsignsignergroupEditObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignsignergroupApi.ezsignsignergroupEditObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -528,7 +526,7 @@ export const ObjectEzsignsignergroupApiFactory = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignsignergroupDeleteObjectV1(pkiEzsignsignergroupID: number, options?: RawAxiosRequestConfig): AxiosPromise<EzsignsignergroupDeleteObjectV1Response> {
+        ezsignsignergroupDeleteObjectV1(pkiEzsignsignergroupID: number, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.ezsignsignergroupDeleteObjectV1(pkiEzsignsignergroupID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -550,7 +548,7 @@ export const ObjectEzsignsignergroupApiFactory = function (configuration?: Confi
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignsignergroupEditObjectV1(pkiEzsignsignergroupID: number, ezsignsignergroupEditObjectV1Request: EzsignsignergroupEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsignsignergroupEditObjectV1Response> {
+        ezsignsignergroupEditObjectV1(pkiEzsignsignergroupID: number, ezsignsignergroupEditObjectV1Request: EzsignsignergroupEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.ezsignsignergroupEditObjectV1(pkiEzsignsignergroupID, ezsignsignergroupEditObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
