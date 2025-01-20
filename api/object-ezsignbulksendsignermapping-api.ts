@@ -22,13 +22,13 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
+import type { CommonResponse } from '../model';
+// @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
 import type { EzsignbulksendsignermappingCreateObjectV1Request } from '../model';
 // @ts-ignore
 import type { EzsignbulksendsignermappingCreateObjectV1Response } from '../model';
-// @ts-ignore
-import type { EzsignbulksendsignermappingDeleteObjectV1Response } from '../model';
 // @ts-ignore
 import type { EzsignbulksendsignermappingGetObjectV2Response } from '../model';
 // @ts-ignore
@@ -245,7 +245,7 @@ export const ObjectEzsignbulksendsignermappingApiFp = function(configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignbulksendsignermappingDeleteObjectV1(pkiEzsignbulksendsignermappingID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignbulksendsignermappingDeleteObjectV1Response>> {
+        async ezsignbulksendsignermappingDeleteObjectV1(pkiEzsignbulksendsignermappingID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignbulksendsignermappingDeleteObjectV1(pkiEzsignbulksendsignermappingID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignbulksendsignermappingApi.ezsignbulksendsignermappingDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -291,7 +291,7 @@ export const ObjectEzsignbulksendsignermappingApiFactory = function (configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignbulksendsignermappingDeleteObjectV1(pkiEzsignbulksendsignermappingID: number, options?: RawAxiosRequestConfig): AxiosPromise<EzsignbulksendsignermappingDeleteObjectV1Response> {
+        ezsignbulksendsignermappingDeleteObjectV1(pkiEzsignbulksendsignermappingID: number, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.ezsignbulksendsignermappingDeleteObjectV1(pkiEzsignbulksendsignermappingID, options).then((request) => request(axios, basePath));
         },
         /**

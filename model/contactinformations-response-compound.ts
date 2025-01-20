@@ -15,13 +15,13 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AddressResponseCompound } from './address-response-compound';
+import type { AddressResponse } from './address-response';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { ContactinformationsResponse } from './contactinformations-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EmailResponseCompound } from './email-response-compound';
+import type { EmailResponse } from './email-response';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { FieldEContactinformationsType } from './field-econtactinformations-type';
@@ -30,7 +30,7 @@ import type { FieldEContactinformationsType } from './field-econtactinformations
 import type { PhoneResponseCompound } from './phone-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { WebsiteResponseCompound } from './website-response-compound';
+import type { WebsiteResponse } from './website-response';
 
 /**
  * @type ContactinformationsResponseCompound
@@ -82,11 +82,11 @@ export interface ContactinformationsResponseCompound {
      */
     sContactinformationsUrl?:string 
     /**
-     * 
-     * @type {AddressResponseCompound}
+     * An Address Object and children to create a complete structure
+     * @type {AddressResponse}
      * @memberof ContactinformationsResponseCompound
      */
-    objAddressDefault?:AddressResponseCompound 
+    objAddressDefault?:AddressResponse 
     /**
      * 
      * @type {PhoneResponseCompound}
@@ -94,17 +94,17 @@ export interface ContactinformationsResponseCompound {
      */
     objPhoneDefault?:PhoneResponseCompound 
     /**
-     * 
-     * @type {EmailResponseCompound}
+     * An Email Object and children to create a complete structure
+     * @type {EmailResponse}
      * @memberof ContactinformationsResponseCompound
      */
-    objEmailDefault?:EmailResponseCompound 
+    objEmailDefault?:EmailResponse 
     /**
-     * 
-     * @type {WebsiteResponseCompound}
+     * A Website Object and children to create a complete structure
+     * @type {WebsiteResponse}
      * @memberof ContactinformationsResponseCompound
      */
-    objWebsiteDefault?:WebsiteResponseCompound 
+    objWebsiteDefault?:WebsiteResponse 
     /**
      * 
      * @type {Array<AddressResponseCompound>}
@@ -138,21 +138,21 @@ export interface ContactinformationsResponseCompound {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectAddressResponseCompound } from './'
+import { DataObjectAddressResponse } from './'
 // @ts-ignore
 import { DataObjectPhoneResponseCompound } from './'
 // @ts-ignore
-import { DataObjectEmailResponseCompound } from './'
+import { DataObjectEmailResponse } from './'
 // @ts-ignore
-import { DataObjectWebsiteResponseCompound } from './'
+import { DataObjectWebsiteResponse } from './'
 // @ts-ignore
-import { ValidationObjectAddressResponseCompound } from './'
+import { ValidationObjectAddressResponse } from './'
 // @ts-ignore
 import { ValidationObjectPhoneResponseCompound } from './'
 // @ts-ignore
-import { ValidationObjectEmailResponseCompound } from './'
+import { ValidationObjectEmailResponse } from './'
 // @ts-ignore
-import { ValidationObjectWebsiteResponseCompound } from './'
+import { ValidationObjectWebsiteResponse } from './'
 
 /**
  * @export 
@@ -168,10 +168,10 @@ export class DataObjectContactinformationsResponseCompound {
     fkiWebsiteIDDefault?:number = undefined
     eContactinformationsType:FieldEContactinformationsType = 'BankAccount'
     sContactinformationsUrl?:string = undefined
-    objAddressDefault?:AddressResponseCompound = undefined
+    objAddressDefault?:AddressResponse = undefined
     objPhoneDefault?:PhoneResponseCompound = undefined
-    objEmailDefault?:EmailResponseCompound = undefined
-    objWebsiteDefault?:WebsiteResponseCompound = undefined
+    objEmailDefault?:EmailResponse = undefined
+    objWebsiteDefault?:WebsiteResponse = undefined
     a_objAddress:Array<AddressResponseCompound> = []
     a_objPhone:Array<PhoneResponseCompound> = []
     a_objEmail:Array<EmailResponseCompound> = []
@@ -222,10 +222,10 @@ export class ValidationObjectContactinformationsResponseCompound {
       pattern: /^.{0,255}$/,
       required: false
    }
-   objAddressDefault = new ValidationObjectAddressResponseCompound()
+   objAddressDefault = new ValidationObjectAddressResponse()
    objPhoneDefault = new ValidationObjectPhoneResponseCompound()
-   objEmailDefault = new ValidationObjectEmailResponseCompound()
-   objWebsiteDefault = new ValidationObjectWebsiteResponseCompound()
+   objEmailDefault = new ValidationObjectEmailResponse()
+   objWebsiteDefault = new ValidationObjectWebsiteResponse()
    a_objAddress = {
       type: 'array',
       required: true

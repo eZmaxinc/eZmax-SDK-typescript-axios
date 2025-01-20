@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { UserstagedResponseCompound } from './userstaged-response-compound';
+import type { UserstagedResponse } from './userstaged-response';
 
 /**
  * Payload for GET /2/object/userstaged/{pkiUserstagedID}
@@ -24,21 +24,21 @@ import type { UserstagedResponseCompound } from './userstaged-response-compound'
  */
 export interface UserstagedGetObjectV2ResponseMPayload {
     /**
-     * 
-     * @type {UserstagedResponseCompound}
+     * A Userstaged Object
+     * @type {UserstagedResponse}
      * @memberof UserstagedGetObjectV2ResponseMPayload
      */
-    /*'objUserstaged': UserstagedResponseCompound;*/
-    'objUserstaged': UserstagedResponseCompound;
+    /*'objUserstaged': UserstagedResponse;*/
+    'objUserstaged': UserstagedResponse;
 }
 /**
  * @import
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectUserstagedResponseCompound } from './'
+import { DataObjectUserstagedResponse } from './'
 // @ts-ignore
-import { ValidationObjectUserstagedResponseCompound } from './'
+import { ValidationObjectUserstagedResponse } from './'
 
 /**
  * @export 
@@ -47,7 +47,7 @@ import { ValidationObjectUserstagedResponseCompound } from './'
  * @class DataObjectUserstagedGetObjectV2ResponseMPayload
  */
 export class DataObjectUserstagedGetObjectV2ResponseMPayload {
-   objUserstaged:UserstagedResponseCompound = new DataObjectUserstagedResponseCompound()
+   objUserstaged:UserstagedResponse = new DataObjectUserstagedResponse()
 }
 
 /**
@@ -56,7 +56,7 @@ export class DataObjectUserstagedGetObjectV2ResponseMPayload {
  * @class ValidationObjectUserstagedGetObjectV2ResponseMPayload
  */
 export class ValidationObjectUserstagedGetObjectV2ResponseMPayload {
-   objUserstaged = new ValidationObjectUserstagedResponseCompound()
+   objUserstaged = new ValidationObjectUserstagedResponse()
 } 
 
 

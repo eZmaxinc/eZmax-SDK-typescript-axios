@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AttemptResponseCompound } from './attempt-response-compound';
+import type { AttemptResponse } from './attempt-response';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { CustomWebhookResponse } from './custom-webhook-response';

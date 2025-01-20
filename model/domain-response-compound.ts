@@ -18,9 +18,6 @@
 import type { CommonAudit } from './common-audit';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { CustomDnsrecordResponse } from './custom-dnsrecord-response';
-// May contain unused imports in some cases
-// @ts-ignore
 import type { DomainResponse } from './domain-response';
 
 /**

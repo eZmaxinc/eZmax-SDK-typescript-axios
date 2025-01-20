@@ -27,13 +27,13 @@ import type { CustomTimezoneWithCodeResponse } from './custom-timezone-with-code
 import type { EnumTextvalidation } from './enum-textvalidation';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EzsignelementdependencyResponseCompound } from './ezsignelementdependency-response-compound';
+import type { EzsignelementdependencyResponse } from './ezsignelementdependency-response';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { EzsignsignatureResponse } from './ezsignsignature-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EzsignsignaturecustomdateResponseCompound } from './ezsignsignaturecustomdate-response-compound';
+import type { EzsignsignaturecustomdateResponse } from './ezsignsignaturecustomdate-response';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { FieldEEzsignsignatureAttachmentnamesource } from './field-eezsignsignature-attachmentnamesource';

@@ -21,13 +21,13 @@ import type { CustomCreateEzsignelementsPositionedByWordRequest } from './custom
 import type { EnumTextvalidation } from './enum-textvalidation';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EzsignelementdependencyRequestCompound } from './ezsignelementdependency-request-compound';
+import type { EzsignelementdependencyRequest } from './ezsignelementdependency-request';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { EzsignsignatureRequestCompound } from './ezsignsignature-request-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EzsignsignaturecustomdateRequestCompound } from './ezsignsignaturecustomdate-request-compound';
+import type { EzsignsignaturecustomdateRequest } from './ezsignsignaturecustomdate-request';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { FieldEEzsignsignatureAttachmentnamesource } from './field-eezsignsignature-attachmentnamesource';

@@ -22,6 +22,8 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
+import type { CommonResponse } from '../model';
+// @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
 import type { HeaderAcceptLanguage } from '../model';
@@ -31,8 +33,6 @@ import type { VariableexpenseCreateObjectV1Request } from '../model';
 import type { VariableexpenseCreateObjectV1Response } from '../model';
 // @ts-ignore
 import type { VariableexpenseEditObjectV1Request } from '../model';
-// @ts-ignore
-import type { VariableexpenseEditObjectV1Response } from '../model';
 // @ts-ignore
 import type { VariableexpenseGetAutocompleteV2Response } from '../model';
 // @ts-ignore
@@ -414,7 +414,7 @@ export const ObjectVariableexpenseApiFp = function(configuration?: Configuration
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async variableexpenseEditObjectV1(pkiVariableexpenseID: number, variableexpenseEditObjectV1Request: VariableexpenseEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<VariableexpenseEditObjectV1Response>> {
+        async variableexpenseEditObjectV1(pkiVariableexpenseID: number, variableexpenseEditObjectV1Request: VariableexpenseEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.variableexpenseEditObjectV1(pkiVariableexpenseID, variableexpenseEditObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectVariableexpenseApi.variableexpenseEditObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -494,7 +494,7 @@ export const ObjectVariableexpenseApiFactory = function (configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        variableexpenseEditObjectV1(pkiVariableexpenseID: number, variableexpenseEditObjectV1Request: VariableexpenseEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<VariableexpenseEditObjectV1Response> {
+        variableexpenseEditObjectV1(pkiVariableexpenseID: number, variableexpenseEditObjectV1Request: VariableexpenseEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.variableexpenseEditObjectV1(pkiVariableexpenseID, variableexpenseEditObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**

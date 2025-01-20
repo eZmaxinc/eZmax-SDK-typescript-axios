@@ -22,17 +22,15 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
+import type { CommonResponse } from '../model';
+// @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
 import type { EzsigntemplatedocumentpagerecognitionCreateObjectV1Request } from '../model';
 // @ts-ignore
 import type { EzsigntemplatedocumentpagerecognitionCreateObjectV1Response } from '../model';
 // @ts-ignore
-import type { EzsigntemplatedocumentpagerecognitionDeleteObjectV1Response } from '../model';
-// @ts-ignore
 import type { EzsigntemplatedocumentpagerecognitionEditObjectV1Request } from '../model';
-// @ts-ignore
-import type { EzsigntemplatedocumentpagerecognitionEditObjectV1Response } from '../model';
 // @ts-ignore
 import type { EzsigntemplatedocumentpagerecognitionGetObjectV2Response } from '../model';
 // @ts-ignore
@@ -313,7 +311,7 @@ export const ObjectEzsigntemplatedocumentpagerecognitionApiFp = function(configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsigntemplatedocumentpagerecognitionDeleteObjectV1(pkiEzsigntemplatedocumentpagerecognitionID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigntemplatedocumentpagerecognitionDeleteObjectV1Response>> {
+        async ezsigntemplatedocumentpagerecognitionDeleteObjectV1(pkiEzsigntemplatedocumentpagerecognitionID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigntemplatedocumentpagerecognitionDeleteObjectV1(pkiEzsigntemplatedocumentpagerecognitionID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsigntemplatedocumentpagerecognitionApi.ezsigntemplatedocumentpagerecognitionDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -327,7 +325,7 @@ export const ObjectEzsigntemplatedocumentpagerecognitionApiFp = function(configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsigntemplatedocumentpagerecognitionEditObjectV1(pkiEzsigntemplatedocumentpagerecognitionID: number, ezsigntemplatedocumentpagerecognitionEditObjectV1Request: EzsigntemplatedocumentpagerecognitionEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigntemplatedocumentpagerecognitionEditObjectV1Response>> {
+        async ezsigntemplatedocumentpagerecognitionEditObjectV1(pkiEzsigntemplatedocumentpagerecognitionID: number, ezsigntemplatedocumentpagerecognitionEditObjectV1Request: EzsigntemplatedocumentpagerecognitionEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigntemplatedocumentpagerecognitionEditObjectV1(pkiEzsigntemplatedocumentpagerecognitionID, ezsigntemplatedocumentpagerecognitionEditObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsigntemplatedocumentpagerecognitionApi.ezsigntemplatedocumentpagerecognitionEditObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -373,7 +371,7 @@ export const ObjectEzsigntemplatedocumentpagerecognitionApiFactory = function (c
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigntemplatedocumentpagerecognitionDeleteObjectV1(pkiEzsigntemplatedocumentpagerecognitionID: number, options?: RawAxiosRequestConfig): AxiosPromise<EzsigntemplatedocumentpagerecognitionDeleteObjectV1Response> {
+        ezsigntemplatedocumentpagerecognitionDeleteObjectV1(pkiEzsigntemplatedocumentpagerecognitionID: number, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.ezsigntemplatedocumentpagerecognitionDeleteObjectV1(pkiEzsigntemplatedocumentpagerecognitionID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -384,7 +382,7 @@ export const ObjectEzsigntemplatedocumentpagerecognitionApiFactory = function (c
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigntemplatedocumentpagerecognitionEditObjectV1(pkiEzsigntemplatedocumentpagerecognitionID: number, ezsigntemplatedocumentpagerecognitionEditObjectV1Request: EzsigntemplatedocumentpagerecognitionEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsigntemplatedocumentpagerecognitionEditObjectV1Response> {
+        ezsigntemplatedocumentpagerecognitionEditObjectV1(pkiEzsigntemplatedocumentpagerecognitionID: number, ezsigntemplatedocumentpagerecognitionEditObjectV1Request: EzsigntemplatedocumentpagerecognitionEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
             return localVarFp.ezsigntemplatedocumentpagerecognitionEditObjectV1(pkiEzsigntemplatedocumentpagerecognitionID, ezsigntemplatedocumentpagerecognitionEditObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**

@@ -13,9 +13,6 @@
  */
 
 
-// May contain unused imports in some cases
-// @ts-ignore
-import type { CustomEzsignformfieldRequest } from './custom-ezsignformfield-request';
 
 /**
  * A Custom Ezsignformfieldgroup Object to fill an Ezsignform using submitForm

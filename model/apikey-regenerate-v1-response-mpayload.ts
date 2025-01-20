@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { ApikeyResponseCompound } from './apikey-response-compound';
+import type { ApikeyResponse } from './apikey-response';
 
 /**
  * Response for GET /1/object/apikey/{pkiApikeyID}/regenerate
@@ -24,21 +24,21 @@ import type { ApikeyResponseCompound } from './apikey-response-compound';
  */
 export interface ApikeyRegenerateV1ResponseMPayload {
     /**
-     * 
-     * @type {ApikeyResponseCompound}
+     * An Apikey Object and children to create a complete structure
+     * @type {ApikeyResponse}
      * @memberof ApikeyRegenerateV1ResponseMPayload
      */
-    /*'objApikey': ApikeyResponseCompound;*/
-    'objApikey': ApikeyResponseCompound;
+    /*'objApikey': ApikeyResponse;*/
+    'objApikey': ApikeyResponse;
 }
 /**
  * @import
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectApikeyResponseCompound } from './'
+import { DataObjectApikeyResponse } from './'
 // @ts-ignore
-import { ValidationObjectApikeyResponseCompound } from './'
+import { ValidationObjectApikeyResponse } from './'
 
 /**
  * @export 
@@ -47,7 +47,7 @@ import { ValidationObjectApikeyResponseCompound } from './'
  * @class DataObjectApikeyRegenerateV1ResponseMPayload
  */
 export class DataObjectApikeyRegenerateV1ResponseMPayload {
-   objApikey:ApikeyResponseCompound = new DataObjectApikeyResponseCompound()
+   objApikey:ApikeyResponse = new DataObjectApikeyResponse()
 }
 
 /**
@@ -56,7 +56,7 @@ export class DataObjectApikeyRegenerateV1ResponseMPayload {
  * @class ValidationObjectApikeyRegenerateV1ResponseMPayload
  */
 export class ValidationObjectApikeyRegenerateV1ResponseMPayload {
-   objApikey = new ValidationObjectApikeyResponseCompound()
+   objApikey = new ValidationObjectApikeyResponse()
 } 
 
 

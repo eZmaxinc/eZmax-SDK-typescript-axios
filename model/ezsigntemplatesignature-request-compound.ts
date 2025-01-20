@@ -18,13 +18,13 @@
 import type { EnumTextvalidation } from './enum-textvalidation';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EzsigntemplateelementdependencyRequestCompound } from './ezsigntemplateelementdependency-request-compound';
+import type { EzsigntemplateelementdependencyRequest } from './ezsigntemplateelementdependency-request';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { EzsigntemplatesignatureRequest } from './ezsigntemplatesignature-request';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EzsigntemplatesignaturecustomdateRequestCompound } from './ezsigntemplatesignaturecustomdate-request-compound';
+import type { EzsigntemplatesignaturecustomdateRequest } from './ezsigntemplatesignaturecustomdate-request';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { FieldEEzsigntemplatesignatureAttachmentnamesource } from './field-eezsigntemplatesignature-attachmentnamesource';
