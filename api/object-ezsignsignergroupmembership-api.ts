@@ -22,13 +22,13 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import type { CommonResponse } from '../model';
-// @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
 import type { EzsignsignergroupmembershipCreateObjectV1Request } from '../model';
 // @ts-ignore
 import type { EzsignsignergroupmembershipCreateObjectV1Response } from '../model';
+// @ts-ignore
+import type { EzsignsignergroupmembershipDeleteObjectV1Response } from '../model';
 // @ts-ignore
 import type { EzsignsignergroupmembershipGetObjectV2Response } from '../model';
 // @ts-ignore
@@ -245,7 +245,7 @@ export const ObjectEzsignsignergroupmembershipApiFp = function(configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignsignergroupmembershipDeleteObjectV1(pkiEzsignsignergroupmembershipID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
+        async ezsignsignergroupmembershipDeleteObjectV1(pkiEzsignsignergroupmembershipID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignsignergroupmembershipDeleteObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignsignergroupmembershipDeleteObjectV1(pkiEzsignsignergroupmembershipID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignsignergroupmembershipApi.ezsignsignergroupmembershipDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -291,7 +291,7 @@ export const ObjectEzsignsignergroupmembershipApiFactory = function (configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignsignergroupmembershipDeleteObjectV1(pkiEzsignsignergroupmembershipID: number, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
+        ezsignsignergroupmembershipDeleteObjectV1(pkiEzsignsignergroupmembershipID: number, options?: RawAxiosRequestConfig): AxiosPromise<EzsignsignergroupmembershipDeleteObjectV1Response> {
             return localVarFp.ezsignsignergroupmembershipDeleteObjectV1(pkiEzsignsignergroupmembershipID, options).then((request) => request(axios, basePath));
         },
         /**

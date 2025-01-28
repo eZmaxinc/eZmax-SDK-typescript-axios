@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EzsigndocumentRequest } from './ezsigndocument-request';
+import type { EzsigndocumentRequestCompound } from './ezsigndocument-request-compound';
 
 /**
  * Request for PUT /1/object/ezsigndocument/{pkiEzsigndocumentID}
@@ -24,21 +24,21 @@ import type { EzsigndocumentRequest } from './ezsigndocument-request';
  */
 export interface EzsigndocumentEditObjectV1Request {
     /**
-     * An Ezsigndocument Object and children to create a complete structure
-     * @type {EzsigndocumentRequest}
+     * 
+     * @type {EzsigndocumentRequestCompound}
      * @memberof EzsigndocumentEditObjectV1Request
      */
-    /*'objEzsigndocument': EzsigndocumentRequest;*/
-    'objEzsigndocument': EzsigndocumentRequest;
+    /*'objEzsigndocument': EzsigndocumentRequestCompound;*/
+    'objEzsigndocument': EzsigndocumentRequestCompound;
 }
 /**
  * @import
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectEzsigndocumentRequest } from './'
+import { DataObjectEzsigndocumentRequestCompound } from './'
 // @ts-ignore
-import { ValidationObjectEzsigndocumentRequest } from './'
+import { ValidationObjectEzsigndocumentRequestCompound } from './'
 
 /**
  * @export 
@@ -47,7 +47,7 @@ import { ValidationObjectEzsigndocumentRequest } from './'
  * @class DataObjectEzsigndocumentEditObjectV1Request
  */
 export class DataObjectEzsigndocumentEditObjectV1Request {
-   objEzsigndocument:EzsigndocumentRequest = new DataObjectEzsigndocumentRequest()
+   objEzsigndocument:EzsigndocumentRequestCompound = new DataObjectEzsigndocumentRequestCompound()
 }
 
 /**
@@ -56,7 +56,7 @@ export class DataObjectEzsigndocumentEditObjectV1Request {
  * @class ValidationObjectEzsigndocumentEditObjectV1Request
  */
 export class ValidationObjectEzsigndocumentEditObjectV1Request {
-   objEzsigndocument = new ValidationObjectEzsigndocumentRequest()
+   objEzsigndocument = new ValidationObjectEzsigndocumentRequestCompound()
 } 
 
 

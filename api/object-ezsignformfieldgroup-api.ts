@@ -22,15 +22,17 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import type { CommonResponse } from '../model';
-// @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
 import type { EzsignformfieldgroupCreateObjectV1Request } from '../model';
 // @ts-ignore
 import type { EzsignformfieldgroupCreateObjectV1Response } from '../model';
 // @ts-ignore
+import type { EzsignformfieldgroupDeleteObjectV1Response } from '../model';
+// @ts-ignore
 import type { EzsignformfieldgroupEditObjectV1Request } from '../model';
+// @ts-ignore
+import type { EzsignformfieldgroupEditObjectV1Response } from '../model';
 // @ts-ignore
 import type { EzsignformfieldgroupGetObjectV2Response } from '../model';
 // @ts-ignore
@@ -311,7 +313,7 @@ export const ObjectEzsignformfieldgroupApiFp = function(configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignformfieldgroupDeleteObjectV1(pkiEzsignformfieldgroupID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
+        async ezsignformfieldgroupDeleteObjectV1(pkiEzsignformfieldgroupID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignformfieldgroupDeleteObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignformfieldgroupDeleteObjectV1(pkiEzsignformfieldgroupID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignformfieldgroupApi.ezsignformfieldgroupDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -325,7 +327,7 @@ export const ObjectEzsignformfieldgroupApiFp = function(configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignformfieldgroupEditObjectV1(pkiEzsignformfieldgroupID: number, ezsignformfieldgroupEditObjectV1Request: EzsignformfieldgroupEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
+        async ezsignformfieldgroupEditObjectV1(pkiEzsignformfieldgroupID: number, ezsignformfieldgroupEditObjectV1Request: EzsignformfieldgroupEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignformfieldgroupEditObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignformfieldgroupEditObjectV1(pkiEzsignformfieldgroupID, ezsignformfieldgroupEditObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignformfieldgroupApi.ezsignformfieldgroupEditObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -371,7 +373,7 @@ export const ObjectEzsignformfieldgroupApiFactory = function (configuration?: Co
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignformfieldgroupDeleteObjectV1(pkiEzsignformfieldgroupID: number, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
+        ezsignformfieldgroupDeleteObjectV1(pkiEzsignformfieldgroupID: number, options?: RawAxiosRequestConfig): AxiosPromise<EzsignformfieldgroupDeleteObjectV1Response> {
             return localVarFp.ezsignformfieldgroupDeleteObjectV1(pkiEzsignformfieldgroupID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -382,7 +384,7 @@ export const ObjectEzsignformfieldgroupApiFactory = function (configuration?: Co
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignformfieldgroupEditObjectV1(pkiEzsignformfieldgroupID: number, ezsignformfieldgroupEditObjectV1Request: EzsignformfieldgroupEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
+        ezsignformfieldgroupEditObjectV1(pkiEzsignformfieldgroupID: number, ezsignformfieldgroupEditObjectV1Request: EzsignformfieldgroupEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsignformfieldgroupEditObjectV1Response> {
             return localVarFp.ezsignformfieldgroupEditObjectV1(pkiEzsignformfieldgroupID, ezsignformfieldgroupEditObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**

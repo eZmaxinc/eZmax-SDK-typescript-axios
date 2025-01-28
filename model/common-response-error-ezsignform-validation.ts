@@ -18,6 +18,9 @@
 import type { CommonResponseError } from './common-response-error';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { CustomEzsignformfielderrorResponse } from './custom-ezsignformfielderror-response';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { FieldEErrorCode } from './field-eerror-code';
 
 /**

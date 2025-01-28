@@ -13,6 +13,9 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import type { CustomEzsignformfielderrortestResponse } from './custom-ezsignformfielderrortest-response';
 
 /**
  * A Custom Ezsignformfield Object to contain an error list

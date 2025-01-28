@@ -101,7 +101,8 @@ export class Configuration {
             ...{
                 headers: {
                    'Accept': 'application/json',
-                   'Accept-Language': '*'
+                   'Accept-Language': '*',
+                   'User-Agent': "OpenAPI-Generator/1.2.1/typescript-axios"
                 }
             },
             ...param.baseOptions

@@ -28,13 +28,13 @@ import type { BillingentityinternalCreateObjectV1Response } from '../model';
 // @ts-ignore
 import type { BillingentityinternalEditObjectV1Request } from '../model';
 // @ts-ignore
+import type { BillingentityinternalEditObjectV1Response } from '../model';
+// @ts-ignore
 import type { BillingentityinternalGetAutocompleteV2Response } from '../model';
 // @ts-ignore
 import type { BillingentityinternalGetListV1Response } from '../model';
 // @ts-ignore
 import type { BillingentityinternalGetObjectV2Response } from '../model';
-// @ts-ignore
-import type { CommonResponse } from '../model';
 // @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
@@ -414,7 +414,7 @@ export const ObjectBillingentityinternalApiFp = function(configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async billingentityinternalEditObjectV1(pkiBillingentityinternalID: number, billingentityinternalEditObjectV1Request: BillingentityinternalEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
+        async billingentityinternalEditObjectV1(pkiBillingentityinternalID: number, billingentityinternalEditObjectV1Request: BillingentityinternalEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BillingentityinternalEditObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.billingentityinternalEditObjectV1(pkiBillingentityinternalID, billingentityinternalEditObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectBillingentityinternalApi.billingentityinternalEditObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -494,7 +494,7 @@ export const ObjectBillingentityinternalApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        billingentityinternalEditObjectV1(pkiBillingentityinternalID: number, billingentityinternalEditObjectV1Request: BillingentityinternalEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
+        billingentityinternalEditObjectV1(pkiBillingentityinternalID: number, billingentityinternalEditObjectV1Request: BillingentityinternalEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<BillingentityinternalEditObjectV1Response> {
             return localVarFp.billingentityinternalEditObjectV1(pkiBillingentityinternalID, billingentityinternalEditObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**

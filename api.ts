@@ -23,6 +23,7 @@ export enum EApiOperation {
     'object-apikey-api',
     'object-attachment-api',
     'object-authenticationexternal-api',
+    'object-bankaccount-api',
     'object-billingentityexternal-api',
     'object-billingentityinternal-api',
     'object-branding-api',
@@ -34,6 +35,7 @@ export enum EApiOperation {
     'object-cors-api',
     'object-country-api',
     'object-creditcardclient-api',
+    'object-creditcardmerchant-api',
     'object-creditcardtype-api',
     'object-customer-api',
     'object-department-api',
@@ -136,6 +138,7 @@ export * from './api/object-activesession-api';
 export * from './api/object-apikey-api';
 export * from './api/object-attachment-api';
 export * from './api/object-authenticationexternal-api';
+export * from './api/object-bankaccount-api';
 export * from './api/object-billingentityexternal-api';
 export * from './api/object-billingentityinternal-api';
 export * from './api/object-branding-api';
@@ -147,6 +150,7 @@ export * from './api/object-contacttitle-api';
 export * from './api/object-cors-api';
 export * from './api/object-country-api';
 export * from './api/object-creditcardclient-api';
+export * from './api/object-creditcardmerchant-api';
 export * from './api/object-creditcardtype-api';
 export * from './api/object-customer-api';
 export * from './api/object-department-api';

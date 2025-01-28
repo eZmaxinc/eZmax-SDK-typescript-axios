@@ -24,13 +24,13 @@ import type { CustomCreditcardtransactionResponse } from './custom-creditcardtra
 import type { EnumTextvalidation } from './enum-textvalidation';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EzsignelementdependencyResponse } from './ezsignelementdependency-response';
+import type { EzsignelementdependencyResponseCompound } from './ezsignelementdependency-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { EzsignsignatureResponse } from './ezsignsignature-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EzsignsignaturecustomdateResponseV2 } from './ezsignsignaturecustomdate-response-v2';
+import type { EzsignsignaturecustomdateResponseCompoundV2 } from './ezsignsignaturecustomdate-response-compound-v2';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { FieldEEzsignsignatureAttachmentnamesource } from './field-eezsignsignature-attachmentnamesource';

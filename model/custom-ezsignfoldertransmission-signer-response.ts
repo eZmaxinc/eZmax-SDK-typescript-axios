@@ -72,10 +72,12 @@ export class ValidationObjectCustomEzsignfoldertransmissionSignerResponse {
    }
    sContactFirstname = {
       type: 'string',
+      pattern: /^.{1,20}$/,
       required: true
    }
    sContactLastname = {
       type: 'string',
+      pattern: /^.{1,25}$/,
       required: true
    }
 } 

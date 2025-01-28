@@ -28,13 +28,13 @@ import type { BrandingCreateObjectV2Response } from '../model';
 // @ts-ignore
 import type { BrandingEditObjectV2Request } from '../model';
 // @ts-ignore
+import type { BrandingEditObjectV2Response } from '../model';
+// @ts-ignore
 import type { BrandingGetAutocompleteV2Response } from '../model';
 // @ts-ignore
 import type { BrandingGetListV1Response } from '../model';
 // @ts-ignore
 import type { BrandingGetObjectV3Response } from '../model';
-// @ts-ignore
-import type { CommonResponse } from '../model';
 // @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
@@ -414,7 +414,7 @@ export const ObjectBrandingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async brandingEditObjectV2(pkiBrandingID: number, brandingEditObjectV2Request: BrandingEditObjectV2Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
+        async brandingEditObjectV2(pkiBrandingID: number, brandingEditObjectV2Request: BrandingEditObjectV2Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BrandingEditObjectV2Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.brandingEditObjectV2(pkiBrandingID, brandingEditObjectV2Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectBrandingApi.brandingEditObjectV2']?.[localVarOperationServerIndex]?.url;
@@ -494,7 +494,7 @@ export const ObjectBrandingApiFactory = function (configuration?: Configuration,
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        brandingEditObjectV2(pkiBrandingID: number, brandingEditObjectV2Request: BrandingEditObjectV2Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
+        brandingEditObjectV2(pkiBrandingID: number, brandingEditObjectV2Request: BrandingEditObjectV2Request, options?: RawAxiosRequestConfig): AxiosPromise<BrandingEditObjectV2Response> {
             return localVarFp.brandingEditObjectV2(pkiBrandingID, brandingEditObjectV2Request, options).then((request) => request(axios, basePath));
         },
         /**

@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { AttemptResponse } from './attempt-response';
+import type { AttemptResponseCompound } from './attempt-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { CommonWebhook } from './common-webhook';
@@ -24,7 +24,7 @@ import type { CommonWebhook } from './common-webhook';
 import type { CustomWebhookResponse } from './custom-webhook-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { UserstagedResponse } from './userstaged-response';
+import type { UserstagedResponseCompound } from './userstaged-response-compound';
 
 /**
  * @type WebhookUserstagedUserstagedCreated
@@ -46,11 +46,11 @@ export interface WebhookUserstagedUserstagedCreated {
      */
     a_objAttempt:Array<AttemptResponseCompound> 
     /**
-     * A Userstaged Object
-     * @type {UserstagedResponse}
+     * 
+     * @type {UserstagedResponseCompound}
      * @memberof WebhookUserstagedUserstagedCreated
      */
-    objUserstaged:UserstagedResponse 
+    objUserstaged:UserstagedResponseCompound 
 }
 
 
@@ -61,11 +61,11 @@ export interface WebhookUserstagedUserstagedCreated {
 // @ts-ignore
 import { DataObjectCustomWebhookResponse } from './'
 // @ts-ignore
-import { DataObjectUserstagedResponse } from './'
+import { DataObjectUserstagedResponseCompound } from './'
 // @ts-ignore
 import { ValidationObjectCustomWebhookResponse } from './'
 // @ts-ignore
-import { ValidationObjectUserstagedResponse } from './'
+import { ValidationObjectUserstagedResponseCompound } from './'
 
 /**
  * @export 
@@ -76,7 +76,7 @@ import { ValidationObjectUserstagedResponse } from './'
 export class DataObjectWebhookUserstagedUserstagedCreated {
     objWebhook:CustomWebhookResponse = new DataObjectCustomWebhookResponse()
     a_objAttempt:Array<AttemptResponseCompound> = []
-    objUserstaged:UserstagedResponse = new DataObjectUserstagedResponse()
+    objUserstaged:UserstagedResponseCompound = new DataObjectUserstagedResponseCompound()
 }
 
 /**
@@ -90,7 +90,7 @@ export class ValidationObjectWebhookUserstagedUserstagedCreated {
       type: 'array',
       required: true
    }
-   objUserstaged = new ValidationObjectUserstagedResponse()
+   objUserstaged = new ValidationObjectUserstagedResponseCompound()
 } 
 
 

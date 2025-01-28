@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EmailRequest } from './email-request';
+import type { EmailRequestCompound } from './email-request-compound';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { FieldEUserEzsignaccess } from './field-euser-ezsignaccess';
@@ -27,7 +27,7 @@ import type { FieldEUserLogintype } from './field-euser-logintype';
 import type { FieldEUserType } from './field-euser-type';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { PhoneRequestV2 } from './phone-request-v2';
+import type { PhoneRequestCompoundV2 } from './phone-request-compound-v2';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { UserRequestV2 } from './user-request-v2';
@@ -94,11 +94,11 @@ export interface UserRequestCompoundV2 {
      */
     fkiLanguageID:number 
     /**
-     * An Email Object and children to create a complete structure
-     * @type {EmailRequest}
+     * 
+     * @type {EmailRequestCompound}
      * @memberof UserRequestCompoundV2
      */
-    objEmail:EmailRequest 
+    objEmail:EmailRequestCompound 
     /**
      * The unique ID of the Billingentityinternal.
      * @type {number}
@@ -106,17 +106,17 @@ export interface UserRequestCompoundV2 {
      */
     fkiBillingentityinternalID:number 
     /**
-     * A Phone Object and children to create a complete structure
-     * @type {PhoneRequestV2}
+     * 
+     * @type {PhoneRequestCompoundV2}
      * @memberof UserRequestCompoundV2
      */
-    objPhoneHome?:PhoneRequestV2 
+    objPhoneHome?:PhoneRequestCompoundV2 
     /**
-     * A Phone Object and children to create a complete structure
-     * @type {PhoneRequestV2}
+     * 
+     * @type {PhoneRequestCompoundV2}
      * @memberof UserRequestCompoundV2
      */
-    objPhoneSMS?:PhoneRequestV2 
+    objPhoneSMS?:PhoneRequestCompoundV2 
     /**
      * The unique ID of the Secretquestion.  Valid values:  |Value|Description| |-|-| |1|The name of the hospital in which you were born| |2|The name of your grade school| |3|The last name of your favorite teacher| |4|Your favorite sports team| |5|Your favorite TV show| |6|Your favorite movie| |7|The name of the street on which you grew up| |8|The name of your first employer| |9|Your first car| |10|Your favorite food| |11|The name of your first pet| |12|Favorite musician/band| |13|What instrument you play| |14|Your father\'s middle name| |15|Your mother\'s maiden name| |16|Name of your eldest child| |17|Your spouse\'s middle name| |18|Favorite restaurant| |19|Childhood nickname| |20|Favorite vacation destination| |21|Your boat\'s name| |22|Date of Birth (YYYY-MM-DD)| |22|Secret Code| |22|Your reference code|
      * @type {number}
@@ -216,17 +216,17 @@ export interface UserRequestCompoundV2 {
  * Imports Child Data Object
  */
 // @ts-ignore
-import { DataObjectEmailRequest } from './'
+import { DataObjectEmailRequestCompound } from './'
 // @ts-ignore
-import { DataObjectPhoneRequestV2 } from './'
+import { DataObjectPhoneRequestCompoundV2 } from './'
 // @ts-ignore
-import { DataObjectPhoneRequestV2 } from './'
+import { DataObjectPhoneRequestCompoundV2 } from './'
 // @ts-ignore
-import { ValidationObjectEmailRequest } from './'
+import { ValidationObjectEmailRequestCompound } from './'
 // @ts-ignore
-import { ValidationObjectPhoneRequestV2 } from './'
+import { ValidationObjectPhoneRequestCompoundV2 } from './'
 // @ts-ignore
-import { ValidationObjectPhoneRequestV2 } from './'
+import { ValidationObjectPhoneRequestCompoundV2 } from './'
 
 /**
  * @export 
@@ -244,10 +244,10 @@ export class DataObjectUserRequestCompoundV2 {
     fkiDepartmentIDDefault:number = 0
     fkiTimezoneID:number = 0
     fkiLanguageID:number = 0
-    objEmail:EmailRequest = new DataObjectEmailRequest()
+    objEmail:EmailRequestCompound = new DataObjectEmailRequestCompound()
     fkiBillingentityinternalID:number = 0
-    objPhoneHome?:PhoneRequestV2 = undefined
-    objPhoneSMS?:PhoneRequestV2 = undefined
+    objPhoneHome?:PhoneRequestCompoundV2 = undefined
+    objPhoneSMS?:PhoneRequestCompoundV2 = undefined
     fkiSecretquestionID?:number = undefined
     sUserSecretresponse?:string = undefined
     fkiModuleIDForm?:number = undefined
@@ -318,14 +318,14 @@ export class ValidationObjectUserRequestCompoundV2 {
       maximum: 2,
       required: true
    }
-   objEmail = new ValidationObjectEmailRequest()
+   objEmail = new ValidationObjectEmailRequestCompound()
    fkiBillingentityinternalID = {
       type: 'integer',
       minimum: 0,
       required: true
    }
-   objPhoneHome = new ValidationObjectPhoneRequestV2()
-   objPhoneSMS = new ValidationObjectPhoneRequestV2()
+   objPhoneHome = new ValidationObjectPhoneRequestCompoundV2()
+   objPhoneSMS = new ValidationObjectPhoneRequestCompoundV2()
    fkiSecretquestionID = {
       type: 'integer',
       minimum: 0,

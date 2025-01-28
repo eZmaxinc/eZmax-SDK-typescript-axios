@@ -16,6 +16,9 @@
 // May contain unused imports in some cases
 // @ts-ignore
 import type { EzsignfolderRequest } from './ezsignfolder-request';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { EzsignfolderRequestCompound } from './ezsignfolder-request-compound';
 
 /**
  * Request for POST /1/object/ezsignfolder
@@ -31,12 +34,12 @@ export interface EzsignfolderCreateObjectV1Request {
     /*'objEzsignfolder'?: EzsignfolderRequest;*/
     'objEzsignfolder'?: EzsignfolderRequest;
     /**
-     * An Ezsignfolder Object and children to create a complete structure
-     * @type {EzsignfolderRequest}
+     * 
+     * @type {EzsignfolderRequestCompound}
      * @memberof EzsignfolderCreateObjectV1Request
      */
-    /*'objEzsignfolderCompound'?: EzsignfolderRequest;*/
-    'objEzsignfolderCompound'?: EzsignfolderRequest;
+    /*'objEzsignfolderCompound'?: EzsignfolderRequestCompound;*/
+    'objEzsignfolderCompound'?: EzsignfolderRequestCompound;
 }
 /**
  * @import
@@ -45,11 +48,11 @@ export interface EzsignfolderCreateObjectV1Request {
 // @ts-ignore
 import { DataObjectEzsignfolderRequest } from './'
 // @ts-ignore
-import { DataObjectEzsignfolderRequest } from './'
+import { DataObjectEzsignfolderRequestCompound } from './'
 // @ts-ignore
 import { ValidationObjectEzsignfolderRequest } from './'
 // @ts-ignore
-import { ValidationObjectEzsignfolderRequest } from './'
+import { ValidationObjectEzsignfolderRequestCompound } from './'
 
 /**
  * @export 
@@ -59,7 +62,7 @@ import { ValidationObjectEzsignfolderRequest } from './'
  */
 export class DataObjectEzsignfolderCreateObjectV1Request {
    objEzsignfolder?:EzsignfolderRequest = undefined
-   objEzsignfolderCompound?:EzsignfolderRequest = undefined
+   objEzsignfolderCompound?:EzsignfolderRequestCompound = undefined
 }
 
 /**
@@ -69,7 +72,7 @@ export class DataObjectEzsignfolderCreateObjectV1Request {
  */
 export class ValidationObjectEzsignfolderCreateObjectV1Request {
    objEzsignfolder = new ValidationObjectEzsignfolderRequest()
-   objEzsignfolderCompound = new ValidationObjectEzsignfolderRequest()
+   objEzsignfolderCompound = new ValidationObjectEzsignfolderRequestCompound()
 } 
 
 

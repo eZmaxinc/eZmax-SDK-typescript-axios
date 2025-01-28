@@ -24,7 +24,7 @@ import type { CommunicationexternalrecipientRequestCompound } from './communicat
 import type { CommunicationrecipientRequestCompound } from './communicationrecipient-request-compound';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { CommunicationreferenceRequest } from './communicationreference-request';
+import type { CommunicationreferenceRequestCompound } from './communicationreference-request-compound';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { CustomCommunicationattachmentRequest } from './custom-communicationattachment-request';

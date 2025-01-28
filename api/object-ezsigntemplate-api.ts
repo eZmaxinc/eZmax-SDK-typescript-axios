@@ -22,8 +22,6 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import type { CommonResponse } from '../model';
-// @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
 import type { EzsigntemplateCopyV1Request } from '../model';
@@ -34,7 +32,11 @@ import type { EzsigntemplateCreateObjectV3Request } from '../model';
 // @ts-ignore
 import type { EzsigntemplateCreateObjectV3Response } from '../model';
 // @ts-ignore
+import type { EzsigntemplateDeleteObjectV1Response } from '../model';
+// @ts-ignore
 import type { EzsigntemplateEditObjectV3Request } from '../model';
+// @ts-ignore
+import type { EzsigntemplateEditObjectV3Response } from '../model';
 // @ts-ignore
 import type { EzsigntemplateGetAutocompleteV2Response } from '../model';
 // @ts-ignore
@@ -558,7 +560,7 @@ export const ObjectEzsigntemplateApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsigntemplateDeleteObjectV1(pkiEzsigntemplateID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
+        async ezsigntemplateDeleteObjectV1(pkiEzsigntemplateID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigntemplateDeleteObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigntemplateDeleteObjectV1(pkiEzsigntemplateID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsigntemplateApi.ezsigntemplateDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -572,7 +574,7 @@ export const ObjectEzsigntemplateApiFp = function(configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsigntemplateEditObjectV3(pkiEzsigntemplateID: number, ezsigntemplateEditObjectV3Request: EzsigntemplateEditObjectV3Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
+        async ezsigntemplateEditObjectV3(pkiEzsigntemplateID: number, ezsigntemplateEditObjectV3Request: EzsigntemplateEditObjectV3Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigntemplateEditObjectV3Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigntemplateEditObjectV3(pkiEzsigntemplateID, ezsigntemplateEditObjectV3Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsigntemplateApi.ezsigntemplateEditObjectV3']?.[localVarOperationServerIndex]?.url;
@@ -663,7 +665,7 @@ export const ObjectEzsigntemplateApiFactory = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigntemplateDeleteObjectV1(pkiEzsigntemplateID: number, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
+        ezsigntemplateDeleteObjectV1(pkiEzsigntemplateID: number, options?: RawAxiosRequestConfig): AxiosPromise<EzsigntemplateDeleteObjectV1Response> {
             return localVarFp.ezsigntemplateDeleteObjectV1(pkiEzsigntemplateID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -674,7 +676,7 @@ export const ObjectEzsigntemplateApiFactory = function (configuration?: Configur
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigntemplateEditObjectV3(pkiEzsigntemplateID: number, ezsigntemplateEditObjectV3Request: EzsigntemplateEditObjectV3Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
+        ezsigntemplateEditObjectV3(pkiEzsigntemplateID: number, ezsigntemplateEditObjectV3Request: EzsigntemplateEditObjectV3Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsigntemplateEditObjectV3Response> {
             return localVarFp.ezsigntemplateEditObjectV3(pkiEzsigntemplateID, ezsigntemplateEditObjectV3Request, options).then((request) => request(axios, basePath));
         },
         /**

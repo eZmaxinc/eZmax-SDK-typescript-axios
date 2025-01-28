@@ -22,8 +22,6 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import type { CommonResponse } from '../model';
-// @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
 import type { EzdoctemplatedocumentCreateObjectV1Request } from '../model';
@@ -32,6 +30,8 @@ import type { EzdoctemplatedocumentCreateObjectV1Response } from '../model';
 // @ts-ignore
 import type { EzdoctemplatedocumentEditObjectV1Request } from '../model';
 // @ts-ignore
+import type { EzdoctemplatedocumentEditObjectV1Response } from '../model';
+// @ts-ignore
 import type { EzdoctemplatedocumentGetAutocompleteV2Response } from '../model';
 // @ts-ignore
 import type { EzdoctemplatedocumentGetListV1Response } from '../model';
@@ -39,6 +39,8 @@ import type { EzdoctemplatedocumentGetListV1Response } from '../model';
 import type { EzdoctemplatedocumentGetObjectV2Response } from '../model';
 // @ts-ignore
 import type { EzdoctemplatedocumentPatchObjectV1Request } from '../model';
+// @ts-ignore
+import type { EzdoctemplatedocumentPatchObjectV1Response } from '../model';
 // @ts-ignore
 import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
@@ -566,7 +568,7 @@ export const ObjectEzdoctemplatedocumentApiFp = function(configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezdoctemplatedocumentEditObjectV1(pkiEzdoctemplatedocumentID: number, ezdoctemplatedocumentEditObjectV1Request: EzdoctemplatedocumentEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
+        async ezdoctemplatedocumentEditObjectV1(pkiEzdoctemplatedocumentID: number, ezdoctemplatedocumentEditObjectV1Request: EzdoctemplatedocumentEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzdoctemplatedocumentEditObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezdoctemplatedocumentEditObjectV1(pkiEzdoctemplatedocumentID, ezdoctemplatedocumentEditObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzdoctemplatedocumentApi.ezdoctemplatedocumentEditObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -628,7 +630,7 @@ export const ObjectEzdoctemplatedocumentApiFp = function(configuration?: Configu
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezdoctemplatedocumentPatchObjectV1(pkiEzdoctemplatedocumentID: number, ezdoctemplatedocumentPatchObjectV1Request: EzdoctemplatedocumentPatchObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
+        async ezdoctemplatedocumentPatchObjectV1(pkiEzdoctemplatedocumentID: number, ezdoctemplatedocumentPatchObjectV1Request: EzdoctemplatedocumentPatchObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzdoctemplatedocumentPatchObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezdoctemplatedocumentPatchObjectV1(pkiEzdoctemplatedocumentID, ezdoctemplatedocumentPatchObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzdoctemplatedocumentApi.ezdoctemplatedocumentPatchObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -672,7 +674,7 @@ export const ObjectEzdoctemplatedocumentApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezdoctemplatedocumentEditObjectV1(pkiEzdoctemplatedocumentID: number, ezdoctemplatedocumentEditObjectV1Request: EzdoctemplatedocumentEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
+        ezdoctemplatedocumentEditObjectV1(pkiEzdoctemplatedocumentID: number, ezdoctemplatedocumentEditObjectV1Request: EzdoctemplatedocumentEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<EzdoctemplatedocumentEditObjectV1Response> {
             return localVarFp.ezdoctemplatedocumentEditObjectV1(pkiEzdoctemplatedocumentID, ezdoctemplatedocumentEditObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -722,7 +724,7 @@ export const ObjectEzdoctemplatedocumentApiFactory = function (configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezdoctemplatedocumentPatchObjectV1(pkiEzdoctemplatedocumentID: number, ezdoctemplatedocumentPatchObjectV1Request: EzdoctemplatedocumentPatchObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
+        ezdoctemplatedocumentPatchObjectV1(pkiEzdoctemplatedocumentID: number, ezdoctemplatedocumentPatchObjectV1Request: EzdoctemplatedocumentPatchObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<EzdoctemplatedocumentPatchObjectV1Response> {
             return localVarFp.ezdoctemplatedocumentPatchObjectV1(pkiEzdoctemplatedocumentID, ezdoctemplatedocumentPatchObjectV1Request, options).then((request) => request(axios, basePath));
         },
     };

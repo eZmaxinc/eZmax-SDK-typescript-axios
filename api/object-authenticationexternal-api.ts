@@ -26,7 +26,11 @@ import type { AuthenticationexternalCreateObjectV1Request } from '../model';
 // @ts-ignore
 import type { AuthenticationexternalCreateObjectV1Response } from '../model';
 // @ts-ignore
+import type { AuthenticationexternalDeleteObjectV1Response } from '../model';
+// @ts-ignore
 import type { AuthenticationexternalEditObjectV1Request } from '../model';
+// @ts-ignore
+import type { AuthenticationexternalEditObjectV1Response } from '../model';
 // @ts-ignore
 import type { AuthenticationexternalGetAutocompleteV2Response } from '../model';
 // @ts-ignore
@@ -34,7 +38,7 @@ import type { AuthenticationexternalGetListV1Response } from '../model';
 // @ts-ignore
 import type { AuthenticationexternalGetObjectV2Response } from '../model';
 // @ts-ignore
-import type { CommonResponse } from '../model';
+import type { AuthenticationexternalResetAuthorizationV1Response } from '../model';
 // @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
@@ -535,7 +539,7 @@ export const ObjectAuthenticationexternalApiFp = function(configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async authenticationexternalDeleteObjectV1(pkiAuthenticationexternalID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
+        async authenticationexternalDeleteObjectV1(pkiAuthenticationexternalID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AuthenticationexternalDeleteObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.authenticationexternalDeleteObjectV1(pkiAuthenticationexternalID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectAuthenticationexternalApi.authenticationexternalDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -549,7 +553,7 @@ export const ObjectAuthenticationexternalApiFp = function(configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async authenticationexternalEditObjectV1(pkiAuthenticationexternalID: number, authenticationexternalEditObjectV1Request: AuthenticationexternalEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
+        async authenticationexternalEditObjectV1(pkiAuthenticationexternalID: number, authenticationexternalEditObjectV1Request: AuthenticationexternalEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AuthenticationexternalEditObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.authenticationexternalEditObjectV1(pkiAuthenticationexternalID, authenticationexternalEditObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectAuthenticationexternalApi.authenticationexternalEditObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -609,7 +613,7 @@ export const ObjectAuthenticationexternalApiFp = function(configuration?: Config
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async authenticationexternalResetAuthorizationV1(pkiAuthenticationexternalID: number, body: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
+        async authenticationexternalResetAuthorizationV1(pkiAuthenticationexternalID: number, body: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AuthenticationexternalResetAuthorizationV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.authenticationexternalResetAuthorizationV1(pkiAuthenticationexternalID, body, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectAuthenticationexternalApi.authenticationexternalResetAuthorizationV1']?.[localVarOperationServerIndex]?.url;
@@ -642,7 +646,7 @@ export const ObjectAuthenticationexternalApiFactory = function (configuration?: 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        authenticationexternalDeleteObjectV1(pkiAuthenticationexternalID: number, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
+        authenticationexternalDeleteObjectV1(pkiAuthenticationexternalID: number, options?: RawAxiosRequestConfig): AxiosPromise<AuthenticationexternalDeleteObjectV1Response> {
             return localVarFp.authenticationexternalDeleteObjectV1(pkiAuthenticationexternalID, options).then((request) => request(axios, basePath));
         },
         /**
@@ -653,7 +657,7 @@ export const ObjectAuthenticationexternalApiFactory = function (configuration?: 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        authenticationexternalEditObjectV1(pkiAuthenticationexternalID: number, authenticationexternalEditObjectV1Request: AuthenticationexternalEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
+        authenticationexternalEditObjectV1(pkiAuthenticationexternalID: number, authenticationexternalEditObjectV1Request: AuthenticationexternalEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<AuthenticationexternalEditObjectV1Response> {
             return localVarFp.authenticationexternalEditObjectV1(pkiAuthenticationexternalID, authenticationexternalEditObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**
@@ -701,7 +705,7 @@ export const ObjectAuthenticationexternalApiFactory = function (configuration?: 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        authenticationexternalResetAuthorizationV1(pkiAuthenticationexternalID: number, body: object, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
+        authenticationexternalResetAuthorizationV1(pkiAuthenticationexternalID: number, body: object, options?: RawAxiosRequestConfig): AxiosPromise<AuthenticationexternalResetAuthorizationV1Response> {
             return localVarFp.authenticationexternalResetAuthorizationV1(pkiAuthenticationexternalID, body, options).then((request) => request(axios, basePath));
         },
     };

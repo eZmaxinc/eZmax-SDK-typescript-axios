@@ -21,9 +21,9 @@
  */
 
 export const FieldESystemconfigurationLanguage2 = {
-    CA: 'en_CA',
-    QC: 'en_QC',
-    US: 'en_US'
+    en_CA: 'en_CA',
+    en_QC: 'en_QC',
+    en_US: 'en_US'
 } as const;
 
 export type FieldESystemconfigurationLanguage2 = typeof FieldESystemconfigurationLanguage2[keyof typeof FieldESystemconfigurationLanguage2];

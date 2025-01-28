@@ -18,7 +18,7 @@
 import type { CustomContactNameResponse } from './custom-contact-name-response';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EmailResponse } from './email-response';
+import type { EmailResponseCompound } from './email-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { PhoneResponseCompound } from './phone-response-compound';
@@ -79,12 +79,12 @@ export interface CustomCommunicationsenderResponse {
     /*'objContactName': CustomContactNameResponse;*/
     'objContactName': CustomContactNameResponse;
     /**
-     * An Email Object and children to create a complete structure
-     * @type {EmailResponse}
+     * 
+     * @type {EmailResponseCompound}
      * @memberof CustomCommunicationsenderResponse
      */
-    /*'objEmail'?: EmailResponse;*/
-    'objEmail'?: EmailResponse;
+    /*'objEmail'?: EmailResponseCompound;*/
+    'objEmail'?: EmailResponseCompound;
     /**
      * 
      * @type {PhoneResponseCompound}
@@ -118,7 +118,7 @@ export type CustomCommunicationsenderResponseECommunicationsenderObjecttypeEnum 
 // @ts-ignore
 import { DataObjectCustomContactNameResponse } from './'
 // @ts-ignore
-import { DataObjectEmailResponse } from './'
+import { DataObjectEmailResponseCompound } from './'
 // @ts-ignore
 import { DataObjectPhoneResponseCompound } from './'
 // @ts-ignore
@@ -126,7 +126,7 @@ import { DataObjectPhoneResponseCompound } from './'
 // @ts-ignore
 import { ValidationObjectCustomContactNameResponse } from './'
 // @ts-ignore
-import { ValidationObjectEmailResponse } from './'
+import { ValidationObjectEmailResponseCompound } from './'
 // @ts-ignore
 import { ValidationObjectPhoneResponseCompound } from './'
 // @ts-ignore
@@ -146,7 +146,7 @@ export class DataObjectCustomCommunicationsenderResponse {
    fkiPhonelinesharedID?:number = undefined
    eCommunicationsenderObjecttype:CustomCommunicationsenderResponseECommunicationsenderObjecttypeEnum = 'Agent'
    objContactName:CustomContactNameResponse = new DataObjectCustomContactNameResponse()
-   objEmail?:EmailResponse = undefined
+   objEmail?:EmailResponseCompound = undefined
    objPhoneFax?:PhoneResponseCompound = undefined
    objPhoneSMS?:PhoneResponseCompound = undefined
 }
@@ -189,7 +189,7 @@ export class ValidationObjectCustomCommunicationsenderResponse {
       required: true
    }
    objContactName = new ValidationObjectCustomContactNameResponse()
-   objEmail = new ValidationObjectEmailResponse()
+   objEmail = new ValidationObjectEmailResponseCompound()
    objPhoneFax = new ValidationObjectPhoneResponseCompound()
    objPhoneSMS = new ValidationObjectPhoneResponseCompound()
 } 

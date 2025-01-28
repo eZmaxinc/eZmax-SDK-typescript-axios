@@ -67,10 +67,12 @@ export class DataObjectCustomContactNameResponse {
 export class ValidationObjectCustomContactNameResponse {
    sContactFirstname = {
       type: 'string',
+      pattern: /^.{1,20}$/,
       required: false
    }
    sContactLastname = {
       type: 'string',
+      pattern: /^.{1,25}$/,
       required: false
    }
    sContactCompany = {

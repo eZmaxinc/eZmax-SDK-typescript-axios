@@ -94,10 +94,12 @@ export class ValidationObjectCustomEzsignfolderezsigntemplatepublicSignerRespons
    }
    sContactFirstname = {
       type: 'string',
+      pattern: /^.{1,20}$/,
       required: false
    }
    sContactLastname = {
       type: 'string',
+      pattern: /^.{1,25}$/,
       required: false
    }
    sEzsignsignergroupDescriptionX = {

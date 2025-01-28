@@ -22,8 +22,6 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
-import type { CommonResponse } from '../model';
-// @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
 import type { EzsigntemplatepackagesignerCreateObjectV1Request } from '../model';
@@ -33,6 +31,8 @@ import type { EzsigntemplatepackagesignerCreateObjectV1Response } from '../model
 import type { EzsigntemplatepackagesignerDeleteObjectV1Response } from '../model';
 // @ts-ignore
 import type { EzsigntemplatepackagesignerEditObjectV1Request } from '../model';
+// @ts-ignore
+import type { EzsigntemplatepackagesignerEditObjectV1Response } from '../model';
 // @ts-ignore
 import type { EzsigntemplatepackagesignerGetObjectV2Response } from '../model';
 // @ts-ignore
@@ -327,7 +327,7 @@ export const ObjectEzsigntemplatepackagesignerApiFp = function(configuration?: C
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsigntemplatepackagesignerEditObjectV1(pkiEzsigntemplatepackagesignerID: number, ezsigntemplatepackagesignerEditObjectV1Request: EzsigntemplatepackagesignerEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommonResponse>> {
+        async ezsigntemplatepackagesignerEditObjectV1(pkiEzsigntemplatepackagesignerID: number, ezsigntemplatepackagesignerEditObjectV1Request: EzsigntemplatepackagesignerEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigntemplatepackagesignerEditObjectV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigntemplatepackagesignerEditObjectV1(pkiEzsigntemplatepackagesignerID, ezsigntemplatepackagesignerEditObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsigntemplatepackagesignerApi.ezsigntemplatepackagesignerEditObjectV1']?.[localVarOperationServerIndex]?.url;
@@ -384,7 +384,7 @@ export const ObjectEzsigntemplatepackagesignerApiFactory = function (configurati
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsigntemplatepackagesignerEditObjectV1(pkiEzsigntemplatepackagesignerID: number, ezsigntemplatepackagesignerEditObjectV1Request: EzsigntemplatepackagesignerEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CommonResponse> {
+        ezsigntemplatepackagesignerEditObjectV1(pkiEzsigntemplatepackagesignerID: number, ezsigntemplatepackagesignerEditObjectV1Request: EzsigntemplatepackagesignerEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsigntemplatepackagesignerEditObjectV1Response> {
             return localVarFp.ezsigntemplatepackagesignerEditObjectV1(pkiEzsigntemplatepackagesignerID, ezsigntemplatepackagesignerEditObjectV1Request, options).then((request) => request(axios, basePath));
         },
         /**

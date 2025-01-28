@@ -15,7 +15,7 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
-import type { EzsignfolderRequest } from './ezsignfolder-request';
+import type { EzsignfolderRequestCompound } from './ezsignfolder-request-compound';
 
 /**
  * Request for POST /2/object/ezsignfolder
