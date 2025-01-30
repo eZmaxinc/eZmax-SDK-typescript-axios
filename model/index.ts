@@ -1015,6 +1015,7 @@ export * from './ezsigntemplatepublic-create-ezsignfolder-v1-response-mpayload';
 export * from './ezsigntemplatepublic-create-object-v1-request';
 export * from './ezsigntemplatepublic-create-object-v1-response';
 export * from './ezsigntemplatepublic-create-object-v1-response-mpayload';
+export * from './ezsigntemplatepublic-delete-object-v1-response';
 export * from './ezsigntemplatepublic-edit-object-v1-request';
 export * from './ezsigntemplatepublic-edit-object-v1-response';
 export * from './ezsigntemplatepublic-get-ezsigntemplatepublic-details-v1-request';

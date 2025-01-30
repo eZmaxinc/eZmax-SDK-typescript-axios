@@ -1137,6 +1137,7 @@ model/ezsigntemplatepublic-create-ezsignfolder-v1-response.ts
 model/ezsigntemplatepublic-create-object-v1-request.ts
 model/ezsigntemplatepublic-create-object-v1-response-mpayload.ts
 model/ezsigntemplatepublic-create-object-v1-response.ts
+model/ezsigntemplatepublic-delete-object-v1-response.ts
 model/ezsigntemplatepublic-edit-object-v1-request.ts
 model/ezsigntemplatepublic-edit-object-v1-response.ts
 model/ezsigntemplatepublic-get-ezsigntemplatepublic-details-v1-request.ts
