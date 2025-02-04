@@ -301,6 +301,12 @@ export interface EzsignfoldertypeRequestCompoundV3 {
      */
     bEzsignfoldertypeSendproofezsignsigner?:boolean 
     /**
+     * Whether we send the Ezsigndocument in the email to Ezsignsigner or User when bEzsignfoldersignerassociationReceivecopy = 1
+     * @type {boolean}
+     * @memberof EzsignfoldertypeRequestCompoundV3
+     */
+    bEzsignfoldertypeSendattachmentreceivecopy?:boolean 
+    /**
      * Whether we send the Ezsigndocument in the email to User
      * @type {boolean}
      * @memberof EzsignfoldertypeRequestCompoundV3
@@ -482,6 +488,7 @@ export class DataObjectEzsignfoldertypeRequestCompoundV3 {
     bEzsignfoldertypeSendsignedtouser?:boolean = undefined
     bEzsignfoldertypeSendattachmentezsignsigner?:boolean = undefined
     bEzsignfoldertypeSendproofezsignsigner?:boolean = undefined
+    bEzsignfoldertypeSendattachmentreceivecopy?:boolean = undefined
     bEzsignfoldertypeSendattachmentuser?:boolean = undefined
     bEzsignfoldertypeSendproofuser?:boolean = undefined
     bEzsignfoldertypeSendproofemail?:boolean = undefined
@@ -707,6 +714,10 @@ export class ValidationObjectEzsignfoldertypeRequestCompoundV3 {
       required: false
    }
    bEzsignfoldertypeSendproofezsignsigner = {
+      type: 'boolean',
+      required: false
+   }
+   bEzsignfoldertypeSendattachmentreceivecopy = {
       type: 'boolean',
       required: false
    }
