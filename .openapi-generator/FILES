@@ -26,6 +26,7 @@ api/object-country-api.ts
 api/object-creditcardclient-api.ts
 api/object-creditcardmerchant-api.ts
 api/object-creditcardtype-api.ts
+api/object-currency-api.ts
 api/object-customer-api.ts
 api/object-department-api.ts
 api/object-discussion-api.ts
@@ -381,6 +382,9 @@ model/creditcardmerchant-response.ts
 model/creditcardtype-autocomplete-element-response.ts
 model/creditcardtype-get-autocomplete-v2-response-mpayload.ts
 model/creditcardtype-get-autocomplete-v2-response.ts
+model/currency-autocomplete-element-response.ts
+model/currency-get-autocomplete-v2-response-mpayload.ts
+model/currency-get-autocomplete-v2-response.ts
 model/custom-apikey.ts
 model/custom-apikeyfederation.ts
 model/custom-attachment-response.ts

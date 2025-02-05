@@ -37,6 +37,7 @@ export enum EApiOperation {
     'object-creditcardclient-api',
     'object-creditcardmerchant-api',
     'object-creditcardtype-api',
+    'object-currency-api',
     'object-customer-api',
     'object-department-api',
     'object-discussion-api',
@@ -152,6 +153,7 @@ export * from './api/object-country-api';
 export * from './api/object-creditcardclient-api';
 export * from './api/object-creditcardmerchant-api';
 export * from './api/object-creditcardtype-api';
+export * from './api/object-currency-api';
 export * from './api/object-customer-api';
 export * from './api/object-department-api';
 export * from './api/object-discussion-api';
