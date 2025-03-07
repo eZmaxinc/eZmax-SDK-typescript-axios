@@ -18,6 +18,9 @@
 import type { CommonAudit } from './common-audit';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { CustomEzsignfoldertypeTemplateResponse } from './custom-ezsignfoldertype-template-response';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { FieldEEzsigntemplateRecognition } from './field-eezsigntemplate-recognition';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -50,6 +53,13 @@ export interface EzsigntemplateResponseV3 {
      */
     /*'fkiEzsignfoldertypeID'?: number;*/
     'fkiEzsignfoldertypeID'?: number;
+    /**
+     * 
+     * @type {CustomEzsignfoldertypeTemplateResponse}
+     * @memberof EzsigntemplateResponseV3
+     */
+    /*'objEzsignfoldertype'?: CustomEzsignfoldertypeTemplateResponse;*/
+    'objEzsignfoldertype'?: CustomEzsignfoldertypeTemplateResponse;
     /**
      * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @type {number}
@@ -156,7 +166,11 @@ export interface EzsigntemplateResponseV3 {
  * Imports Child Data Object
  */
 // @ts-ignore
+import { DataObjectCustomEzsignfoldertypeTemplateResponse } from './'
+// @ts-ignore
 import { DataObjectCommonAudit } from './'
+// @ts-ignore
+import { ValidationObjectCustomEzsignfoldertypeTemplateResponse } from './'
 // @ts-ignore
 import { ValidationObjectCommonAudit } from './'
 
@@ -170,6 +184,7 @@ export class DataObjectEzsigntemplateResponseV3 {
    pkiEzsigntemplateID:number = 0
    fkiEzsigntemplatedocumentID?:number = undefined
    fkiEzsignfoldertypeID?:number = undefined
+   objEzsignfoldertype?:CustomEzsignfoldertypeTemplateResponse = undefined
    fkiLanguageID:number = 0
    fkiEzdoctemplatedocumentID?:number = undefined
    sEzdoctemplatedocumentNameX?:string = undefined
@@ -208,6 +223,7 @@ export class ValidationObjectEzsigntemplateResponseV3 {
       maximum: 65535,
       required: false
    }
+   objEzsignfoldertype = new ValidationObjectCustomEzsignfoldertypeTemplateResponse()
    fkiLanguageID = {
       type: 'integer',
       minimum: 1,

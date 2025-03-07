@@ -37,6 +37,13 @@ export interface CommonReportsubsectionpart {
      */
     /*'a_objReportrow': Array<CommonReportrow>;*/
     'a_objReportrow': Array<CommonReportrow>;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof CommonReportsubsectionpart
+     */
+    /*'a_sVariableobjectProperty': Array<string>;*/
+    'a_sVariableobjectProperty': Array<string>;
 }
 
 export const CommonReportsubsectionpartEReportsubsectionpartTypeEnum = {
@@ -61,6 +68,7 @@ export type CommonReportsubsectionpartEReportsubsectionpartTypeEnum = typeof Com
 export class DataObjectCommonReportsubsectionpart {
    eReportsubsectionpartType:CommonReportsubsectionpartEReportsubsectionpartTypeEnum = 'Header'
    a_objReportrow:Array<CommonReportrow> = []
+   a_sVariableobjectProperty:Array<string> = []
 }
 
 /**
@@ -74,6 +82,10 @@ export class ValidationObjectCommonReportsubsectionpart {
       required: true
    }
    a_objReportrow = {
+      type: 'array',
+      required: true
+   }
+   a_sVariableobjectProperty = {
       type: 'array',
       required: true
    }

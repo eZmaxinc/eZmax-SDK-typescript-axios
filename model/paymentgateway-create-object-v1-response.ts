@@ -24,33 +24,33 @@ import type { CommonResponseObjDebug } from './common-response-obj-debug';
 import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
 // May contain unused imports in some cases
 // @ts-ignore
-import type { CreditcardmerchantCreateObjectV1ResponseMPayload } from './creditcardmerchant-create-object-v1-response-mpayload';
+import type { PaymentgatewayCreateObjectV1ResponseMPayload } from './paymentgateway-create-object-v1-response-mpayload';
 
 /**
- * @type CreditcardmerchantCreateObjectV1Response
- * Response for POST /1/object/creditcardmerchant
+ * @type PaymentgatewayCreateObjectV1Response
+ * Response for POST /1/object/paymentgateway
  * @export
  */
-/*export type CreditcardmerchantCreateObjectV1Response = CommonResponse;*/
-export interface CreditcardmerchantCreateObjectV1Response {
+/*export type PaymentgatewayCreateObjectV1Response = CommonResponse;*/
+export interface PaymentgatewayCreateObjectV1Response {
     /**
      * 
      * @type {CommonResponseObjDebugPayload}
-     * @memberof CreditcardmerchantCreateObjectV1Response
+     * @memberof PaymentgatewayCreateObjectV1Response
      */
     objDebugPayload:CommonResponseObjDebugPayload 
     /**
      * 
      * @type {CommonResponseObjDebug}
-     * @memberof CreditcardmerchantCreateObjectV1Response
+     * @memberof PaymentgatewayCreateObjectV1Response
      */
     objDebug?:CommonResponseObjDebug 
     /**
      * 
-     * @type {CreditcardmerchantCreateObjectV1ResponseMPayload}
-     * @memberof CreditcardmerchantCreateObjectV1Response
+     * @type {PaymentgatewayCreateObjectV1ResponseMPayload}
+     * @memberof PaymentgatewayCreateObjectV1Response
      */
-    mPayload:CreditcardmerchantCreateObjectV1ResponseMPayload 
+    mPayload:PaymentgatewayCreateObjectV1ResponseMPayload 
 }
 
 
@@ -63,35 +63,35 @@ import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { DataObjectCreditcardmerchantCreateObjectV1ResponseMPayload } from './'
+import { DataObjectPaymentgatewayCreateObjectV1ResponseMPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
 // @ts-ignore
-import { ValidationObjectCreditcardmerchantCreateObjectV1ResponseMPayload } from './'
+import { ValidationObjectPaymentgatewayCreateObjectV1ResponseMPayload } from './'
 
 /**
  * @export 
- * A CreditcardmerchantCreateObjectV1Response Data Object with automatic temporary default value
+ * A PaymentgatewayCreateObjectV1Response Data Object with automatic temporary default value
  * Use this object only for create an empty data object to assign a response from server
- * @class DataObjectCreditcardmerchantCreateObjectV1Response
+ * @class DataObjectPaymentgatewayCreateObjectV1Response
  */
-export class DataObjectCreditcardmerchantCreateObjectV1Response {
+export class DataObjectPaymentgatewayCreateObjectV1Response {
     objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
-    mPayload:CreditcardmerchantCreateObjectV1ResponseMPayload = new DataObjectCreditcardmerchantCreateObjectV1ResponseMPayload()
+    mPayload:PaymentgatewayCreateObjectV1ResponseMPayload = new DataObjectPaymentgatewayCreateObjectV1ResponseMPayload()
 }
 
 /**
  * @export 
- * A CreditcardmerchantCreateObjectV1Response Validation Object
- * @class ValidationObjectCreditcardmerchantCreateObjectV1Response
+ * A PaymentgatewayCreateObjectV1Response Validation Object
+ * @class ValidationObjectPaymentgatewayCreateObjectV1Response
  */
-export class ValidationObjectCreditcardmerchantCreateObjectV1Response {
+export class ValidationObjectPaymentgatewayCreateObjectV1Response {
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
-   mPayload = new ValidationObjectCreditcardmerchantCreateObjectV1ResponseMPayload()
+   mPayload = new ValidationObjectPaymentgatewayCreateObjectV1ResponseMPayload()
 } 
 
 

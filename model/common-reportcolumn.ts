@@ -16,6 +16,9 @@
 // May contain unused imports in some cases
 // @ts-ignore
 import type { CommonReportcellstyle } from './common-reportcellstyle';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { EnumReportdataType } from './enum-reportdata-type';
 
 /**
  * A column in a Reportsection 
@@ -37,7 +40,16 @@ export interface CommonReportcolumn {
      */
     /*'iReportcolumnWidth': number;*/
     'iReportcolumnWidth': number;
+    /**
+     * 
+     * @type {EnumReportdataType}
+     * @memberof CommonReportcolumn
+     */
+    /*'eReportcolumnType': EnumReportdataType;*/
+    'eReportcolumnType': EnumReportdataType;
 }
+
+
 /**
  * @import
  * Imports Child Data Object
@@ -56,6 +68,7 @@ import { ValidationObjectCommonReportcellstyle } from './'
 export class DataObjectCommonReportcolumn {
    objReportcellstyleDefault:CommonReportcellstyle = new DataObjectCommonReportcellstyle()
    iReportcolumnWidth:number = 0
+   eReportcolumnType:EnumReportdataType = 'Date'
 }
 
 /**
@@ -67,6 +80,11 @@ export class ValidationObjectCommonReportcolumn {
    objReportcellstyleDefault = new ValidationObjectCommonReportcellstyle()
    iReportcolumnWidth = {
       type: 'integer',
+      required: true
+   }
+   eReportcolumnType = {
+      type: 'enum',
+      allowableValues: ['Date','Money','Number','Percentage','Period','String'],
       required: true
    }
 } 

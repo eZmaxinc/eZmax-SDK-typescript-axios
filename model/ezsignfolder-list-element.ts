@@ -167,6 +167,27 @@ export interface EzsignfolderListElement {
     /*'dEzsignfolderSignaturecompletedpercentage': string;*/
     'dEzsignfolderSignaturecompletedpercentage': string;
     /**
+     * The date and time at which the Ezsignfolder was closed. Either by applying the last signature or by completing it prematurely.
+     * @type {string}
+     * @memberof EzsignfolderListElement
+     */
+    /*'dtEzsignfolderClose'?: string;*/
+    'dtEzsignfolderClose'?: string;
+    /**
+     * The date and time at which the Ezsignfolder was archived.
+     * @type {string}
+     * @memberof EzsignfolderListElement
+     */
+    /*'dtEzsignfolderArchive'?: string;*/
+    'dtEzsignfolderArchive'?: string;
+    /**
+     * The date and time at which the Ezsignfolder was disposed.
+     * @type {string}
+     * @memberof EzsignfolderListElement
+     */
+    /*'dtEzsignfolderDispose'?: string;*/
+    'dtEzsignfolderDispose'?: string;
+    /**
      * Whether the Ezsignfolder has an Ezsignsignatures that need to be signed or an Ezsignformfieldgroups that need to be filled by the current user
      * @type {boolean}
      * @memberof EzsignfolderListElement
@@ -208,6 +229,9 @@ export class DataObjectEzsignfolderListElement {
    dEzsignfolderCompletedpercentage:string = ''
    dEzsignfolderFormcompletedpercentage:string = ''
    dEzsignfolderSignaturecompletedpercentage:string = ''
+   dtEzsignfolderClose?:string = undefined
+   dtEzsignfolderArchive?:string = undefined
+   dtEzsignfolderDispose?:string = undefined
    bEzsignfolderSigner?:boolean = undefined
 }
 
@@ -305,6 +329,18 @@ export class ValidationObjectEzsignfolderListElement {
       type: 'string',
       pattern: /^-{0,1}[\d]{1,3}?\.[\d]{2}$/,
       required: true
+   }
+   dtEzsignfolderClose = {
+      type: 'string',
+      required: false
+   }
+   dtEzsignfolderArchive = {
+      type: 'string',
+      required: false
+   }
+   dtEzsignfolderDispose = {
+      type: 'string',
+      required: false
    }
    bEzsignfolderSigner = {
       type: 'boolean',

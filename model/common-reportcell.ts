@@ -34,6 +34,20 @@ export interface CommonReportcell {
      */
     /*'iReportcellRowspan': number;*/
     'iReportcellRowspan': number;
+    /**
+     * The content of this Reportcell
+     * @type {string}
+     * @memberof CommonReportcell
+     */
+    /*'sReportcellContent': string;*/
+    'sReportcellContent': string;
+    /**
+     * Position of the column where it is placed
+     * @type {number}
+     * @memberof CommonReportcell
+     */
+    /*'iReportcellColumn': number;*/
+    'iReportcellColumn': number;
 }
 /**
  * @import
@@ -49,6 +63,8 @@ export interface CommonReportcell {
 export class DataObjectCommonReportcell {
    iReportcellColumnspan:number = 0
    iReportcellRowspan:number = 0
+   sReportcellContent:string = ''
+   iReportcellColumn:number = 0
 }
 
 /**
@@ -62,6 +78,14 @@ export class ValidationObjectCommonReportcell {
       required: true
    }
    iReportcellRowspan = {
+      type: 'integer',
+      required: true
+   }
+   sReportcellContent = {
+      type: 'string',
+      required: true
+   }
+   iReportcellColumn = {
       type: 'integer',
       required: true
    }

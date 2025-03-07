@@ -22,26 +22,35 @@ import type { CommonResponseObjDebug } from './common-response-obj-debug';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { CommonResponseObjDebugPayload } from './common-response-obj-debug-payload';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { EzsignimportfolderGetObjectV2ResponseMPayload } from './ezsignimportfolder-get-object-v2-response-mpayload';
 
 /**
- * @type CreditcardmerchantEditObjectV1Response
- * Response for PUT /1/object/creditcardmerchant/{pkiCreditcardmerchantID}
+ * @type EzsignimportfolderGetObjectV2Response
+ * Response for GET /2/object/ezsignimportfolder/{pkiEzsignimportfolderID}
  * @export
  */
-/*export type CreditcardmerchantEditObjectV1Response = CommonResponse;*/
-export interface CreditcardmerchantEditObjectV1Response {
+/*export type EzsignimportfolderGetObjectV2Response = CommonResponse;*/
+export interface EzsignimportfolderGetObjectV2Response {
     /**
      * 
      * @type {CommonResponseObjDebugPayload}
-     * @memberof CreditcardmerchantEditObjectV1Response
+     * @memberof EzsignimportfolderGetObjectV2Response
      */
     objDebugPayload:CommonResponseObjDebugPayload 
     /**
      * 
      * @type {CommonResponseObjDebug}
-     * @memberof CreditcardmerchantEditObjectV1Response
+     * @memberof EzsignimportfolderGetObjectV2Response
      */
     objDebug?:CommonResponseObjDebug 
+    /**
+     * 
+     * @type {EzsignimportfolderGetObjectV2ResponseMPayload}
+     * @memberof EzsignimportfolderGetObjectV2Response
+     */
+    mPayload:EzsignimportfolderGetObjectV2ResponseMPayload 
 }
 
 
@@ -54,29 +63,35 @@ import { DataObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { DataObjectCommonResponseObjDebug } from './'
 // @ts-ignore
+import { DataObjectEzsignimportfolderGetObjectV2ResponseMPayload } from './'
+// @ts-ignore
 import { ValidationObjectCommonResponseObjDebugPayload } from './'
 // @ts-ignore
 import { ValidationObjectCommonResponseObjDebug } from './'
+// @ts-ignore
+import { ValidationObjectEzsignimportfolderGetObjectV2ResponseMPayload } from './'
 
 /**
  * @export 
- * A CreditcardmerchantEditObjectV1Response Data Object with automatic temporary default value
+ * A EzsignimportfolderGetObjectV2Response Data Object with automatic temporary default value
  * Use this object only for create an empty data object to assign a response from server
- * @class DataObjectCreditcardmerchantEditObjectV1Response
+ * @class DataObjectEzsignimportfolderGetObjectV2Response
  */
-export class DataObjectCreditcardmerchantEditObjectV1Response {
+export class DataObjectEzsignimportfolderGetObjectV2Response {
     objDebugPayload:CommonResponseObjDebugPayload = new DataObjectCommonResponseObjDebugPayload()
     objDebug?:CommonResponseObjDebug = undefined
+    mPayload:EzsignimportfolderGetObjectV2ResponseMPayload = new DataObjectEzsignimportfolderGetObjectV2ResponseMPayload()
 }
 
 /**
  * @export 
- * A CreditcardmerchantEditObjectV1Response Validation Object
- * @class ValidationObjectCreditcardmerchantEditObjectV1Response
+ * A EzsignimportfolderGetObjectV2Response Validation Object
+ * @class ValidationObjectEzsignimportfolderGetObjectV2Response
  */
-export class ValidationObjectCreditcardmerchantEditObjectV1Response {
+export class ValidationObjectEzsignimportfolderGetObjectV2Response {
    objDebugPayload = new ValidationObjectCommonResponseObjDebugPayload()
    objDebug = new ValidationObjectCommonResponseObjDebug()
+   mPayload = new ValidationObjectEzsignimportfolderGetObjectV2ResponseMPayload()
 } 
 
 

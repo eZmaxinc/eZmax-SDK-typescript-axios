@@ -49,6 +49,7 @@ export enum EApiOperation {
     'object-ezdoctemplatedocument-api',
     'object-ezdoctemplatefieldtypecategory-api',
     'object-ezdoctemplatetype-api',
+    'object-ezmaxcase-api',
     'object-ezmaxinvoicing-api',
     'object-ezmaxproduct-api',
     'object-ezsignannotation-api',
@@ -62,6 +63,8 @@ export enum EApiOperation {
     'object-ezsignfoldersignerassociation-api',
     'object-ezsignfoldertype-api',
     'object-ezsignformfieldgroup-api',
+    'object-ezsignimportdocument-api',
+    'object-ezsignimportfolder-api',
     'object-ezsignpage-api',
     'object-ezsignsignature-api',
     'object-ezsignsignergroup-api',
@@ -97,6 +100,7 @@ export enum EApiOperation {
     'object-notificationsection-api',
     'object-notificationtest-api',
     'object-otherincome-api',
+    'object-paymentgateway-api',
     'object-paymentterm-api',
     'object-pdfalevel-api',
     'object-period-api',
@@ -165,6 +169,7 @@ export * from './api/object-emailtype-api';
 export * from './api/object-ezdoctemplatedocument-api';
 export * from './api/object-ezdoctemplatefieldtypecategory-api';
 export * from './api/object-ezdoctemplatetype-api';
+export * from './api/object-ezmaxcase-api';
 export * from './api/object-ezmaxinvoicing-api';
 export * from './api/object-ezmaxproduct-api';
 export * from './api/object-ezsignannotation-api';
@@ -178,6 +183,8 @@ export * from './api/object-ezsignfolder-api';
 export * from './api/object-ezsignfoldersignerassociation-api';
 export * from './api/object-ezsignfoldertype-api';
 export * from './api/object-ezsignformfieldgroup-api';
+export * from './api/object-ezsignimportdocument-api';
+export * from './api/object-ezsignimportfolder-api';
 export * from './api/object-ezsignpage-api';
 export * from './api/object-ezsignsignature-api';
 export * from './api/object-ezsignsignergroup-api';
@@ -213,6 +220,7 @@ export * from './api/object-modulegroup-api';
 export * from './api/object-notificationsection-api';
 export * from './api/object-notificationtest-api';
 export * from './api/object-otherincome-api';
+export * from './api/object-paymentgateway-api';
 export * from './api/object-paymentterm-api';
 export * from './api/object-pdfalevel-api';
 export * from './api/object-period-api';

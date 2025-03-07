@@ -83,6 +83,13 @@ export interface EzsignsignatureResponse {
     /*'fkiFontID'?: number;*/
     'fkiFontID'?: number;
     /**
+     * The description of the Currency in the language of the requester
+     * @type {string}
+     * @memberof EzsignsignatureResponse
+     */
+    /*'sCurrencyDescriptionX'?: string;*/
+    'sCurrencyDescriptionX'?: string;
+    /**
      * The description of the Ezsignsigningreason in the language of the requester
      * @type {string}
      * @memberof EzsignsignatureResponse
@@ -338,6 +345,7 @@ export class DataObjectEzsignsignatureResponse {
    fkiEzsignfoldersignerassociationID:number = 0
    fkiEzsignsigningreasonID?:number = undefined
    fkiFontID?:number = undefined
+   sCurrencyDescriptionX?:string = undefined
    sEzsignsigningreasonDescriptionX?:string = undefined
    iEzsignpagePagenumber:number = 0
    iEzsignsignatureX:number = 0
@@ -404,6 +412,11 @@ export class ValidationObjectEzsignsignatureResponse {
       minimum: 0,
       required: false
    }
+   sCurrencyDescriptionX = {
+      type: 'string',
+      pattern: /^.{1,20}$/,
+      required: false
+   }
    sEzsignsigningreasonDescriptionX = {
       type: 'string',
       pattern: /^.{0,50}$/,
@@ -444,7 +457,7 @@ export class ValidationObjectEzsignsignatureResponse {
    }
    eEzsignsignatureType = {
       type: 'enum',
-      allowableValues: ['Acknowledgement','City','Handwritten','Initials','Name','NameReason','Attachments','AttachmentsConfirmation','FieldText','FieldTextarea','Consultation','Signature'],
+      allowableValues: ['Acknowledgement','Attachments','AttachmentsConfirmation','City','Consultation','Creditcard','FieldText','FieldTextarea','Handwritten','Initials','Name','NameReason','Signature'],
       required: true
    }
    tEzsignsignatureTooltip = {

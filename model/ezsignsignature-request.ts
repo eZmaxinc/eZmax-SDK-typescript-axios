@@ -56,6 +56,13 @@ export interface EzsignsignatureRequest {
     /*'fkiEzsignfoldersignerassociationID': number;*/
     'fkiEzsignfoldersignerassociationID': number;
     /**
+     * The unique ID of the Paymentgateway
+     * @type {number}
+     * @memberof EzsignsignatureRequest
+     */
+    /*'fkiPaymentgatewayID'?: number;*/
+    'fkiPaymentgatewayID'?: number;
+    /**
      * The page number in the Ezsigndocument
      * @type {number}
      * @memberof EzsignsignatureRequest
@@ -247,6 +254,7 @@ export interface EzsignsignatureRequest {
 export class DataObjectEzsignsignatureRequest {
    pkiEzsignsignatureID?:number = undefined
    fkiEzsignfoldersignerassociationID:number = 0
+   fkiPaymentgatewayID?:number = undefined
    iEzsignpagePagenumber:number = 0
    iEzsignsignatureX:number = 0
    iEzsignsignatureY:number = 0
@@ -290,6 +298,12 @@ export class ValidationObjectEzsignsignatureRequest {
       minimum: 0,
       required: true
    }
+   fkiPaymentgatewayID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 255,
+      required: false
+   }
    iEzsignpagePagenumber = {
       type: 'integer',
       minimum: 1,
@@ -321,7 +335,7 @@ export class ValidationObjectEzsignsignatureRequest {
    }
    eEzsignsignatureType = {
       type: 'enum',
-      allowableValues: ['Acknowledgement','City','Handwritten','Initials','Name','NameReason','Attachments','AttachmentsConfirmation','FieldText','FieldTextarea','Consultation','Signature'],
+      allowableValues: ['Acknowledgement','Attachments','AttachmentsConfirmation','City','Consultation','Creditcard','FieldText','FieldTextarea','Handwritten','Initials','Name','NameReason','Signature'],
       required: true
    }
    fkiEzsigndocumentID = {

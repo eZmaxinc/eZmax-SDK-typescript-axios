@@ -44,6 +44,13 @@ export interface CommonReportsubsection {
      */
     /*'objReportsubsectionpartFooter': CommonReportsubsectionpart;*/
     'objReportsubsectionpartFooter': CommonReportsubsectionpart;
+    /**
+     * The title of this Reportsubsection
+     * @type {string}
+     * @memberof CommonReportsubsection
+     */
+    /*'sReportsubsectionTitle'?: string;*/
+    'sReportsubsectionTitle'?: string;
 }
 /**
  * @import
@@ -72,6 +79,7 @@ export class DataObjectCommonReportsubsection {
    objReportsubsectionpartHeader:CommonReportsubsectionpart = new DataObjectCommonReportsubsectionpart()
    objReportsubsectionpartBody:CommonReportsubsectionpart = new DataObjectCommonReportsubsectionpart()
    objReportsubsectionpartFooter:CommonReportsubsectionpart = new DataObjectCommonReportsubsectionpart()
+   sReportsubsectionTitle?:string = undefined
 }
 
 /**
@@ -83,6 +91,10 @@ export class ValidationObjectCommonReportsubsection {
    objReportsubsectionpartHeader = new ValidationObjectCommonReportsubsectionpart()
    objReportsubsectionpartBody = new ValidationObjectCommonReportsubsectionpart()
    objReportsubsectionpartFooter = new ValidationObjectCommonReportsubsectionpart()
+   sReportsubsectionTitle = {
+      type: 'string',
+      required: false
+   }
 } 
 
 

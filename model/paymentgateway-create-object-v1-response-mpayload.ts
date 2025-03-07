@@ -15,18 +15,18 @@
 
 
 /**
- * Payload for POST /1/object/creditcardmerchant
+ * Payload for POST /1/object/paymentgateway
  * @export
- * @interface CreditcardmerchantCreateObjectV1ResponseMPayload
+ * @interface PaymentgatewayCreateObjectV1ResponseMPayload
  */
-export interface CreditcardmerchantCreateObjectV1ResponseMPayload {
+export interface PaymentgatewayCreateObjectV1ResponseMPayload {
     /**
      * An array of unique IDs representing the object that were requested to be created.  They are returned in the same order as the array containing the objects to be created that was sent in the request.
      * @type {Array<number>}
-     * @memberof CreditcardmerchantCreateObjectV1ResponseMPayload
+     * @memberof PaymentgatewayCreateObjectV1ResponseMPayload
      */
-    /*'a_pkiCreditcardmerchantID': Array<number>;*/
-    'a_pkiCreditcardmerchantID': Array<number>;
+    /*'a_pkiPaymentgatewayID': Array<number>;*/
+    'a_pkiPaymentgatewayID': Array<number>;
 }
 /**
  * @import
@@ -35,21 +35,21 @@ export interface CreditcardmerchantCreateObjectV1ResponseMPayload {
 
 /**
  * @export 
- * A CreditcardmerchantCreateObjectV1ResponseMPayload Data Object with automatic temporary default value
+ * A PaymentgatewayCreateObjectV1ResponseMPayload Data Object with automatic temporary default value
  * Use this object only for create an empty data object to assign a response from server
- * @class DataObjectCreditcardmerchantCreateObjectV1ResponseMPayload
+ * @class DataObjectPaymentgatewayCreateObjectV1ResponseMPayload
  */
-export class DataObjectCreditcardmerchantCreateObjectV1ResponseMPayload {
-   a_pkiCreditcardmerchantID:Array<number> = []
+export class DataObjectPaymentgatewayCreateObjectV1ResponseMPayload {
+   a_pkiPaymentgatewayID:Array<number> = []
 }
 
 /**
  * @export 
- * A CreditcardmerchantCreateObjectV1ResponseMPayload Validation Object
- * @class ValidationObjectCreditcardmerchantCreateObjectV1ResponseMPayload
+ * A PaymentgatewayCreateObjectV1ResponseMPayload Validation Object
+ * @class ValidationObjectPaymentgatewayCreateObjectV1ResponseMPayload
  */
-export class ValidationObjectCreditcardmerchantCreateObjectV1ResponseMPayload {
-   a_pkiCreditcardmerchantID = {
+export class ValidationObjectPaymentgatewayCreateObjectV1ResponseMPayload {
+   a_pkiPaymentgatewayID = {
       type: 'array',
       required: true
    }

@@ -97,12 +97,19 @@ export class Configuration {
         this.accessToken = param.accessToken;
         this.basePath = param.basePath;
         this.serverIndex = param.serverIndex;
+	/*
+	this.baseOptions = {
+            ...param.baseOptions,
+            headers: {
+                ...param.baseOptions?.headers,
+            },
+        };*/
+
         this.baseOptions = { 
             ...{
                 headers: {
                    'Accept': 'application/json',
-                   'Accept-Language': '*',
-                   'User-Agent': "OpenAPI-Generator/1.2.2/typescript-axios"
+                   'Accept-Language': '*'
                 }
             },
             ...param.baseOptions

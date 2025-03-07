@@ -185,6 +185,18 @@ export interface EzsignfolderResponseCompoundV3 {
      */
     dtEzsignfolderClose?:string 
     /**
+     * The date and time at which the Ezsignfolder was archived.
+     * @type {string}
+     * @memberof EzsignfolderResponseCompoundV3
+     */
+    dtEzsignfolderArchive?:string 
+    /**
+     * The date and time at which the Ezsignfolder was disposed.
+     * @type {string}
+     * @memberof EzsignfolderResponseCompoundV3
+     */
+    dtEzsignfolderDispose?:string 
+    /**
      * A custom text message that will be added to the email sent.
      * @type {string}
      * @memberof EzsignfolderResponseCompoundV3
@@ -265,6 +277,8 @@ export class DataObjectEzsignfolderResponseCompoundV3 {
     dtEzsignfolderScheduleddispose?:string = undefined
     eEzsignfolderStep?:FieldEEzsignfolderStep = undefined
     dtEzsignfolderClose?:string = undefined
+    dtEzsignfolderArchive?:string = undefined
+    dtEzsignfolderDispose?:string = undefined
     tEzsignfolderMessage?:string = undefined
     objAudit?:CommonAudit = undefined
     sEzsignfolderExternalid?:string = undefined
@@ -379,6 +393,14 @@ export class ValidationObjectEzsignfolderResponseCompoundV3 {
       required: false
    }
    dtEzsignfolderClose = {
+      type: 'string',
+      required: false
+   }
+   dtEzsignfolderArchive = {
+      type: 'string',
+      required: false
+   }
+   dtEzsignfolderDispose = {
       type: 'string',
       required: false
    }

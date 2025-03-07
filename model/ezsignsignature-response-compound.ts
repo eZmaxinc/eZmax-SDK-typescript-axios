@@ -36,6 +36,9 @@ import type { EzsignsignatureResponse } from './ezsignsignature-response';
 import type { EzsignsignaturecustomdateResponseCompound } from './ezsignsignaturecustomdate-response-compound';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { EzsignsignaturepaymentdetailRequestCompound } from './ezsignsignaturepaymentdetail-request-compound';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { FieldEEzsignsignatureAttachmentnamesource } from './field-eezsignsignature-attachmentnamesource';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -93,6 +96,12 @@ export interface EzsignsignatureResponseCompound {
      * @memberof EzsignsignatureResponseCompound
      */
     fkiFontID?:number 
+    /**
+     * The description of the Currency in the language of the requester
+     * @type {string}
+     * @memberof EzsignsignatureResponseCompound
+     */
+    sCurrencyDescriptionX?:string 
     /**
      * The description of the Ezsignsigningreason in the language of the requester
      * @type {string}
@@ -327,6 +336,12 @@ export interface EzsignsignatureResponseCompound {
      * @memberof EzsignsignatureResponseCompound
      */
     objTimezone?:CustomTimezoneWithCodeResponse 
+    /**
+     * 
+     * @type {Array<EzsignsignaturepaymentdetailRequestCompound>}
+     * @memberof EzsignsignatureResponseCompound
+     */
+    a_objEzsignsignaturepaymentdetail?:Array<EzsignsignaturepaymentdetailRequestCompound> 
 }
 
 
@@ -368,6 +383,7 @@ export class DataObjectEzsignsignatureResponseCompound {
     fkiEzsignfoldersignerassociationID:number = 0
     fkiEzsignsigningreasonID?:number = undefined
     fkiFontID?:number = undefined
+    sCurrencyDescriptionX?:string = undefined
     sEzsignsigningreasonDescriptionX?:string = undefined
     iEzsignpagePagenumber:number = 0
     iEzsignsignatureX:number = 0
@@ -407,6 +423,7 @@ export class DataObjectEzsignsignatureResponseCompound {
     objCreditcardtransaction?:CustomCreditcardtransactionResponse = undefined
     a_objEzsignelementdependency?:Array<EzsignelementdependencyResponseCompound> = undefined
     objTimezone?:CustomTimezoneWithCodeResponse = undefined
+    a_objEzsignsignaturepaymentdetail?:Array<EzsignsignaturepaymentdetailRequestCompound> = undefined
 }
 
 /**
@@ -439,6 +456,11 @@ export class ValidationObjectEzsignsignatureResponseCompound {
    fkiFontID = {
       type: 'integer',
       minimum: 0,
+      required: false
+   }
+   sCurrencyDescriptionX = {
+      type: 'string',
+      pattern: /^.{1,20}$/,
       required: false
    }
    sEzsignsigningreasonDescriptionX = {
@@ -481,7 +503,7 @@ export class ValidationObjectEzsignsignatureResponseCompound {
    }
    eEzsignsignatureType = {
       type: 'enum',
-      allowableValues: ['Acknowledgement','City','Handwritten','Initials','Name','NameReason','Attachments','AttachmentsConfirmation','FieldText','FieldTextarea','Consultation','Signature'],
+      allowableValues: ['Acknowledgement','Attachments','AttachmentsConfirmation','City','Consultation','Creditcard','FieldText','FieldTextarea','Handwritten','Initials','Name','NameReason','Signature'],
       required: true
    }
    tEzsignsignatureTooltip = {
@@ -603,6 +625,10 @@ export class ValidationObjectEzsignsignatureResponseCompound {
       required: false
    }
    objTimezone = new ValidationObjectCustomTimezoneWithCodeResponse()
+   a_objEzsignsignaturepaymentdetail = {
+      type: 'array',
+      required: false
+   }
 } 
 
 

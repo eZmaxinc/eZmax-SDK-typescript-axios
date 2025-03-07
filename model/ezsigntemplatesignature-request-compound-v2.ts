@@ -391,7 +391,7 @@ export class ValidationObjectEzsigntemplatesignatureRequestCompoundV2 {
    }
    eEzsigntemplatesignatureType = {
       type: 'enum',
-      allowableValues: ['Acknowledgement','City','Handwritten','Initials','Name','NameReason','Attachments','FieldText','FieldTextarea','Consultation','Signature'],
+      allowableValues: ['Acknowledgement','Attachments','City','Consultation','Creditcard','FieldText','FieldTextarea','Handwritten','Initials','Name','NameReason','Signature'],
       required: true
    }
    eEzsigntemplatesignatureConsultationtrigger = {

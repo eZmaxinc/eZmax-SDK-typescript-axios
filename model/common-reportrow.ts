@@ -31,6 +31,13 @@ export interface CommonReportrow {
     /*'a_objReportcell': Array<CommonReportcell>;*/
     'a_objReportcell': Array<CommonReportcell>;
     /**
+     * A Variable object without predefined property names
+     * @type {{ [key: string]: any; }}
+     * @memberof CommonReportrow
+     */
+    /*'objVariableobject': { [key: string]: any; };*/
+    'objVariableobject': { [key: string]: any; };
+    /**
      * The reportrow height in pixels
      * @type {number}
      * @memberof CommonReportrow
@@ -51,6 +58,7 @@ export interface CommonReportrow {
  */
 export class DataObjectCommonReportrow {
    a_objReportcell:Array<CommonReportcell> = []
+   objVariableobject:{ [key: string]: any; } = {}
    iReportrowHeight:number = 0
 }
 
@@ -62,6 +70,10 @@ export class DataObjectCommonReportrow {
 export class ValidationObjectCommonReportrow {
    a_objReportcell = {
       type: 'array',
+      required: true
+   }
+   objVariableobject = {
+      type: 'object',
       required: true
    }
    iReportrowHeight = {

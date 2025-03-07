@@ -19,6 +19,9 @@ import type { CommonReport } from './common-report';
 // May contain unused imports in some cases
 // @ts-ignore
 import type { CommonReportcellstyle } from './common-reportcellstyle';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { CommonReportgroupParameter } from './common-reportgroup-parameter';
 
 /**
  * A group of reports  Each Reportgroup is for a specific recipient or for a specific context.
@@ -40,6 +43,20 @@ export interface CommonReportgroup {
      */
     /*'a_objReportcellstyleCustom': Array<CommonReportcellstyle>;*/
     'a_objReportcellstyleCustom': Array<CommonReportcellstyle>;
+    /**
+     * 
+     * @type {Array<CommonReportgroupParameter>}
+     * @memberof CommonReportgroup
+     */
+    /*'a_objReportgroupParameter': Array<CommonReportgroupParameter>;*/
+    'a_objReportgroupParameter': Array<CommonReportgroupParameter>;
+    /**
+     * The name of the file
+     * @type {string}
+     * @memberof CommonReportgroup
+     */
+    /*'sReportgroupFilename': string;*/
+    'sReportgroupFilename': string;
 }
 /**
  * @import
@@ -55,6 +72,8 @@ export interface CommonReportgroup {
 export class DataObjectCommonReportgroup {
    a_objReport:Array<CommonReport> = []
    a_objReportcellstyleCustom:Array<CommonReportcellstyle> = []
+   a_objReportgroupParameter:Array<CommonReportgroupParameter> = []
+   sReportgroupFilename:string = ''
 }
 
 /**
@@ -69,6 +88,14 @@ export class ValidationObjectCommonReportgroup {
    }
    a_objReportcellstyleCustom = {
       type: 'array',
+      required: true
+   }
+   a_objReportgroupParameter = {
+      type: 'array',
+      required: true
+   }
+   sReportgroupFilename = {
+      type: 'string',
       required: true
    }
 } 

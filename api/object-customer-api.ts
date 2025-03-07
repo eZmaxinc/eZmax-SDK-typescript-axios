@@ -28,7 +28,11 @@ import type { CustomerCreateObjectV1Request } from '../model';
 // @ts-ignore
 import type { CustomerCreateObjectV1Response } from '../model';
 // @ts-ignore
+import type { CustomerGetAutocompleteV2Response } from '../model';
+// @ts-ignore
 import type { CustomerGetObjectV2Response } from '../model';
+// @ts-ignore
+import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -84,6 +88,80 @@ export const ObjectCustomerApiAxiosParamCreator = function (configuration?: Conf
                         authorization: configuration.apiKey as string,
                         secret: secret as string,
                         method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Get the list of Customer to be used in a dropdown or autocomplete control.
+         * @summary Retrieve Customers and IDs
+         * @param {CustomerGetAutocompleteV2SSelectorEnum} sSelector The type of Customers to return
+         * @param {CustomerGetAutocompleteV2EFilterActiveEnum} [eFilterActive] Specify which results we want to display.
+         * @param {string} [sQuery] Allow to filter the returned results
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        customerGetAutocompleteV2: async (sSelector: CustomerGetAutocompleteV2SSelectorEnum, eFilterActive?: CustomerGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'sSelector' is not null or undefined
+            assertParamExists('customerGetAutocompleteV2', 'sSelector', sSelector)
+            const localVarPath = `/2/object/customer/getAutocomplete/{sSelector}`
+                .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            if (eFilterActive !== undefined) {
+                localVarQueryParameter['eFilterActive'] = eFilterActive;
+            }
+
+            if (sQuery !== undefined) {
+                localVarQueryParameter['sQuery'] = sQuery;
+            }
+
+
+    
+            if (acceptLanguage != null) {
+                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
+                    ? acceptLanguage
+                    : JSON.stringify(acceptLanguage);
+            }
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
                         url: basePath + toPathString(localVarUrlObj) as string,
                         body: localVarRequestOptions.data || '' as string
                     }
@@ -179,6 +257,22 @@ export const ObjectCustomerApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
+         * Get the list of Customer to be used in a dropdown or autocomplete control.
+         * @summary Retrieve Customers and IDs
+         * @param {CustomerGetAutocompleteV2SSelectorEnum} sSelector The type of Customers to return
+         * @param {CustomerGetAutocompleteV2EFilterActiveEnum} [eFilterActive] Specify which results we want to display.
+         * @param {string} [sQuery] Allow to filter the returned results
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async customerGetAutocompleteV2(sSelector: CustomerGetAutocompleteV2SSelectorEnum, eFilterActive?: CustomerGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CustomerGetAutocompleteV2Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.customerGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectCustomerApi.customerGetAutocompleteV2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * 
          * @summary Retrieve an existing Customer
          * @param {number} pkiCustomerID The unique ID of the Customer
@@ -210,6 +304,19 @@ export const ObjectCustomerApiFactory = function (configuration?: Configuration,
          */
         customerCreateObjectV1(customerCreateObjectV1Request: CustomerCreateObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CustomerCreateObjectV1Response> {
             return localVarFp.customerCreateObjectV1(customerCreateObjectV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Get the list of Customer to be used in a dropdown or autocomplete control.
+         * @summary Retrieve Customers and IDs
+         * @param {CustomerGetAutocompleteV2SSelectorEnum} sSelector The type of Customers to return
+         * @param {CustomerGetAutocompleteV2EFilterActiveEnum} [eFilterActive] Specify which results we want to display.
+         * @param {string} [sQuery] Allow to filter the returned results
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        customerGetAutocompleteV2(sSelector: CustomerGetAutocompleteV2SSelectorEnum, eFilterActive?: CustomerGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig): AxiosPromise<CustomerGetAutocompleteV2Response> {
+            return localVarFp.customerGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -244,6 +351,21 @@ export class ObjectCustomerApi extends BaseAPI {
     }
 
     /**
+     * Get the list of Customer to be used in a dropdown or autocomplete control.
+     * @summary Retrieve Customers and IDs
+     * @param {CustomerGetAutocompleteV2SSelectorEnum} sSelector The type of Customers to return
+     * @param {CustomerGetAutocompleteV2EFilterActiveEnum} [eFilterActive] Specify which results we want to display.
+     * @param {string} [sQuery] Allow to filter the returned results
+     * @param {HeaderAcceptLanguage} [acceptLanguage] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ObjectCustomerApi
+     */
+    public customerGetAutocompleteV2(sSelector: CustomerGetAutocompleteV2SSelectorEnum, eFilterActive?: CustomerGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig) {
+        return ObjectCustomerApiFp(this.configuration).customerGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * 
      * @summary Retrieve an existing Customer
      * @param {number} pkiCustomerID The unique ID of the Customer
@@ -256,3 +378,19 @@ export class ObjectCustomerApi extends BaseAPI {
     }
 }
 
+/**
+ * @export
+ */
+export const CustomerGetAutocompleteV2SSelectorEnum = {
+    All: 'All'
+} as const;
+export type CustomerGetAutocompleteV2SSelectorEnum = typeof CustomerGetAutocompleteV2SSelectorEnum[keyof typeof CustomerGetAutocompleteV2SSelectorEnum];
+/**
+ * @export
+ */
+export const CustomerGetAutocompleteV2EFilterActiveEnum = {
+    All: 'All',
+    Active: 'Active',
+    Inactive: 'Inactive'
+} as const;
+export type CustomerGetAutocompleteV2EFilterActiveEnum = typeof CustomerGetAutocompleteV2EFilterActiveEnum[keyof typeof CustomerGetAutocompleteV2EFilterActiveEnum];

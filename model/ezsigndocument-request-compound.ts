@@ -49,6 +49,12 @@ export interface EzsigndocumentRequestCompound {
      */
     fkiEzsignfoldersignerassociationID?:number 
     /**
+     * The unique ID of the Ezsignimportdocument
+     * @type {number}
+     * @memberof EzsigndocumentRequestCompound
+     */
+    fkiEzsignimportdocumentID?:number 
+    /**
      * The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English|
      * @type {number}
      * @memberof EzsigndocumentRequestCompound
@@ -119,6 +125,7 @@ export interface EzsigndocumentRequestCompound {
 
 export const EzsigndocumentRequestCompoundEEzsigndocumentSourceEnum = {
     Base64: 'Base64',
+    Ezsignimportdocument: 'Ezsignimportdocument',
     Ezsigntemplate: 'Ezsigntemplate',
     Url: 'Url'
 } as const;
@@ -160,6 +167,7 @@ export class DataObjectEzsigndocumentRequestCompound {
     fkiEzsignfolderID:number = 0
     fkiEzsigntemplateID?:number = undefined
     fkiEzsignfoldersignerassociationID?:number = undefined
+    fkiEzsignimportdocumentID?:number = undefined
     fkiLanguageID:number = 0
     eEzsigndocumentSource:EzsigndocumentRequestCompoundEEzsigndocumentSourceEnum = 'Base64'
     eEzsigndocumentFormat?:EzsigndocumentRequestCompoundEEzsigndocumentFormatEnum = undefined
@@ -197,6 +205,12 @@ export class ValidationObjectEzsigndocumentRequestCompound {
    fkiEzsignfoldersignerassociationID = {
       type: 'integer',
       minimum: 0,
+      required: false
+   }
+   fkiEzsignimportdocumentID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 16777215,
       required: false
    }
    fkiLanguageID = {

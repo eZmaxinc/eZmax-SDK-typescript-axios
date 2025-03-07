@@ -64,6 +64,13 @@ export interface CommonReportsection {
      */
     /*'iReportsectionWidth': number;*/
     'iReportsectionWidth': number;
+    /**
+     * The title of this Reportsection
+     * @type {string}
+     * @memberof CommonReportsection
+     */
+    /*'sReportsectionTitle'?: string;*/
+    'sReportsectionTitle'?: string;
 }
 
 
@@ -84,6 +91,7 @@ export class DataObjectCommonReportsection {
    eReportsectionHorizontalalignment:EnumHorizontalalignment = 'Center'
    iReportsectionColumncount:number = 0
    iReportsectionWidth:number = 0
+   sReportsectionTitle?:string = undefined
 }
 
 /**
@@ -112,6 +120,10 @@ export class ValidationObjectCommonReportsection {
    iReportsectionWidth = {
       type: 'integer',
       required: true
+   }
+   sReportsectionTitle = {
+      type: 'string',
+      required: false
    }
 } 
 
