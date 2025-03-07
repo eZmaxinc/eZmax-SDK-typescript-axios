@@ -428,9 +428,6 @@ export * from './ezdoctemplatefieldtypecategory-get-autocomplete-v2-response-mpa
 export * from './ezdoctemplatetype-autocomplete-element-response';
 export * from './ezdoctemplatetype-get-autocomplete-v2-response';
 export * from './ezdoctemplatetype-get-autocomplete-v2-response-mpayload';
-export * from './ezmaxcase-patch-object-v1-request';
-export * from './ezmaxcase-patch-object-v1-response';
-export * from './ezmaxcase-request-patch';
 export * from './ezmaxinvoicing-autocomplete-element-response';
 export * from './ezmaxinvoicing-get-autocomplete-v2-response';
 export * from './ezmaxinvoicing-get-autocomplete-v2-response-mpayload';

@@ -49,7 +49,6 @@ export enum EApiOperation {
     'object-ezdoctemplatedocument-api',
     'object-ezdoctemplatefieldtypecategory-api',
     'object-ezdoctemplatetype-api',
-    'object-ezmaxcase-api',
     'object-ezmaxinvoicing-api',
     'object-ezmaxproduct-api',
     'object-ezsignannotation-api',
@@ -169,7 +168,6 @@ export * from './api/object-emailtype-api';
 export * from './api/object-ezdoctemplatedocument-api';
 export * from './api/object-ezdoctemplatefieldtypecategory-api';
 export * from './api/object-ezdoctemplatetype-api';
-export * from './api/object-ezmaxcase-api';
 export * from './api/object-ezmaxinvoicing-api';
 export * from './api/object-ezmaxproduct-api';
 export * from './api/object-ezsignannotation-api';

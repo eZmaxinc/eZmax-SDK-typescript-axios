@@ -38,7 +38,6 @@ api/object-emailtype-api.ts
 api/object-ezdoctemplatedocument-api.ts
 api/object-ezdoctemplatefieldtypecategory-api.ts
 api/object-ezdoctemplatetype-api.ts
-api/object-ezmaxcase-api.ts
 api/object-ezmaxinvoicing-api.ts
 api/object-ezmaxproduct-api.ts
 api/object-ezsignannotation-api.ts
@@ -555,9 +554,6 @@ model/ezdoctemplatefieldtypecategory-get-autocomplete-v2-response.ts
 model/ezdoctemplatetype-autocomplete-element-response.ts
 model/ezdoctemplatetype-get-autocomplete-v2-response-mpayload.ts
 model/ezdoctemplatetype-get-autocomplete-v2-response.ts
-model/ezmaxcase-patch-object-v1-request.ts
-model/ezmaxcase-patch-object-v1-response.ts
-model/ezmaxcase-request-patch.ts
 model/ezmaxinvoicing-autocomplete-element-response.ts
 model/ezmaxinvoicing-get-autocomplete-v2-response-mpayload.ts
 model/ezmaxinvoicing-get-autocomplete-v2-response.ts
