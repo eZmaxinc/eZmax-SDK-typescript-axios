@@ -1,0 +1,89 @@
+# EzsigntemplatesignatureRequest
+
+A Ezsigntemplatesignature Object
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**pkiEzsigntemplatesignatureID** | **number** | The unique ID of the Ezsigntemplatesignature | [optional] [default to undefined]
+**fkiEzsigntemplatedocumentID** | **number** | The unique ID of the Ezsigntemplatedocument | [default to undefined]
+**fkiEzsigntemplatesignerID** | **number** | The unique ID of the Ezsigntemplatesigner | [default to undefined]
+**fkiEzsigntemplatesignerIDValidation** | **number** | The unique ID of the Ezsigntemplatesigner | [optional] [default to undefined]
+**fkiPaymentgatewayID** | **number** | The unique ID of the Paymentgateway | [optional] [default to undefined]
+**bEzsigntemplatesignatureHandwritten** | **boolean** | Whether the Ezsigntemplatesignature must be handwritten or not when eEzsigntemplatesignatureType &#x3D; Signature. | [optional] [default to undefined]
+**bEzsigntemplatesignatureReason** | **boolean** | Whether the Ezsigntemplatesignature must include a reason or not when eEzsigntemplatesignatureType &#x3D; Signature. | [optional] [default to undefined]
+**eEzsigntemplatesignaturePositioning** | [**FieldEEzsigntemplatesignaturePositioning**](FieldEEzsigntemplatesignaturePositioning.md) |  | [optional] [default to undefined]
+**iEzsigntemplatedocumentpagePagenumber** | **number** | The page number in the Ezsigntemplatedocument | [default to undefined]
+**iEzsigntemplatesignatureX** | **number** | The X coordinate (Horizontal) where to put the Ezsigntemplatesignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplatesignature 2 inches from the left border of the page, you would use \&quot;200\&quot; for the X coordinate. | [optional] [default to undefined]
+**iEzsigntemplatesignatureY** | **number** | The Y coordinate (Vertical) where to put the Ezsigntemplatesignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsigntemplatesignature 3 inches from the top border of the page, you would use \&quot;300\&quot; for the Y coordinate. | [optional] [default to undefined]
+**iEzsigntemplatesignatureWidth** | **number** | The width of the Ezsigntemplatesignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsigntemplatesignature to have a width of 2 inches, you would use \&quot;200\&quot; for the iEzsigntemplatesignatureWidth. | [optional] [default to undefined]
+**iEzsigntemplatesignatureHeight** | **number** | The height of the Ezsigntemplatesignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsigntemplatesignature to have an height of 2 inches, you would use \&quot;200\&quot; for the iEzsigntemplatesignatureHeight. | [optional] [default to undefined]
+**iEzsigntemplatesignatureStep** | **number** | The step when the Ezsigntemplatesigner will be invited to sign | [default to undefined]
+**eEzsigntemplatesignatureType** | [**FieldEEzsigntemplatesignatureType**](FieldEEzsigntemplatesignatureType.md) |  | [default to undefined]
+**eEzsigntemplatesignatureConsultationtrigger** | [**FieldEEzsigntemplatesignatureConsultationtrigger**](FieldEEzsigntemplatesignatureConsultationtrigger.md) |  | [optional] [default to undefined]
+**tEzsigntemplatesignatureTooltip** | **string** | A tooltip that will be presented to Ezsigntemplatesigner about the Ezsigntemplatesignature | [optional] [default to undefined]
+**eEzsigntemplatesignatureTooltipposition** | [**FieldEEzsigntemplatesignatureTooltipposition**](FieldEEzsigntemplatesignatureTooltipposition.md) |  | [optional] [default to undefined]
+**eEzsigntemplatesignatureFont** | [**FieldEEzsigntemplatesignatureFont**](FieldEEzsigntemplatesignatureFont.md) |  | [optional] [default to undefined]
+**bEzsigntemplatesignatureRequired** | **boolean** | Whether the Ezsigntemplatesignature is required or not. This field is relevant only with Ezsigntemplatesignature with eEzsigntemplatesignatureType &#x3D; Attachments. | [optional] [default to undefined]
+**eEzsigntemplatesignatureAttachmentnamesource** | [**FieldEEzsigntemplatesignatureAttachmentnamesource**](FieldEEzsigntemplatesignatureAttachmentnamesource.md) |  | [optional] [default to undefined]
+**sEzsigntemplatesignatureAttachmentdescription** | **string** | The description attached to the attachment name added in Ezsigntemplatesignature of eEzsigntemplatesignatureType Attachments | [optional] [default to undefined]
+**iEzsigntemplatesignatureValidationstep** | **number** | The step when the Ezsigntemplatesigner will be invited to validate the Ezsigntemplatesignature of eEzsigntemplatesignatureType Attachments | [optional] [default to undefined]
+**iEzsigntemplatesignatureMaxlength** | **number** | The maximum length for the value in the Ezsigntemplatesignature  This can only be set if eEzsigntemplatesignatureType is **FieldText** or **FieldTextarea** | [optional] [default to undefined]
+**sEzsigntemplatesignatureDefaultvalue** | **string** | The default value for the Ezsigntemplatesignature  You can use the codes below and they will be replaced at signature time.    | Code | Description | Example | | ------------------------- | ------------ | ------------ | | {sUserFirstname} | The first name of the contact | John | | {sUserLastname} | The last name of the contact | Doe | | {sUserJobtitle} | The job title | Sales Representative | | {sCompany} | Company name | eZmax Solutions Inc. | | {sEmailAddress} | The email address | email@example.com | | {sPhoneE164} | A phone number in E.164 Format | +15149901516 | | {sPhoneE164Cell} | A phone number in E.164 Format | +15149901516 | | [optional] [default to undefined]
+**sEzsigntemplatesignatureRegexp** | **string** | A regular expression to indicate what values are acceptable for the Ezsigntemplatesignature.  This can only be set if eEzsigntemplatesignatureType is **Text** or **Textarea** | [optional] [default to undefined]
+**eEzsigntemplatesignatureTextvalidation** | [**EnumTextvalidation**](EnumTextvalidation.md) |  | [optional] [default to undefined]
+**sEzsigntemplatesignatureTextvalidationcustommessage** | **string** | Description of validation rule. Show by signatory. | [optional] [default to undefined]
+**eEzsigntemplatesignatureDependencyrequirement** | [**FieldEEzsigntemplatesignatureDependencyrequirement**](FieldEEzsigntemplatesignatureDependencyrequirement.md) |  | [optional] [default to undefined]
+**sEzsigntemplatesignaturePositioningpattern** | **string** | The string pattern to search for the positioning. **This is not a regexp**  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates** | [optional] [default to undefined]
+**iEzsigntemplatesignaturePositioningoffsetx** | **number** | The offset X  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates** | [optional] [default to undefined]
+**iEzsigntemplatesignaturePositioningoffsety** | **number** | The offset Y  This will be required if **eEzsigntemplatesignaturePositioning** is set to **PerCoordinates** | [optional] [default to undefined]
+**eEzsigntemplatesignaturePositioningoccurence** | [**FieldEEzsigntemplatesignaturePositioningoccurence**](FieldEEzsigntemplatesignaturePositioningoccurence.md) |  | [optional] [default to undefined]
+**sEzsigntemplatesignatureCreditcardamountdescription** | **string** | The description of the Creditcard signature | [optional] [default to undefined]
+**dEzsigntemplatesignatureCreditcardamount** | **string** | The amount of the Creditcard signature | [optional] [default to undefined]
+
+## Example
+
+```typescript
+import { EzsigntemplatesignatureRequest } from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const instance: EzsigntemplatesignatureRequest = {
+    pkiEzsigntemplatesignatureID,
+    fkiEzsigntemplatedocumentID,
+    fkiEzsigntemplatesignerID,
+    fkiEzsigntemplatesignerIDValidation,
+    fkiPaymentgatewayID,
+    bEzsigntemplatesignatureHandwritten,
+    bEzsigntemplatesignatureReason,
+    eEzsigntemplatesignaturePositioning,
+    iEzsigntemplatedocumentpagePagenumber,
+    iEzsigntemplatesignatureX,
+    iEzsigntemplatesignatureY,
+    iEzsigntemplatesignatureWidth,
+    iEzsigntemplatesignatureHeight,
+    iEzsigntemplatesignatureStep,
+    eEzsigntemplatesignatureType,
+    eEzsigntemplatesignatureConsultationtrigger,
+    tEzsigntemplatesignatureTooltip,
+    eEzsigntemplatesignatureTooltipposition,
+    eEzsigntemplatesignatureFont,
+    bEzsigntemplatesignatureRequired,
+    eEzsigntemplatesignatureAttachmentnamesource,
+    sEzsigntemplatesignatureAttachmentdescription,
+    iEzsigntemplatesignatureValidationstep,
+    iEzsigntemplatesignatureMaxlength,
+    sEzsigntemplatesignatureDefaultvalue,
+    sEzsigntemplatesignatureRegexp,
+    eEzsigntemplatesignatureTextvalidation,
+    sEzsigntemplatesignatureTextvalidationcustommessage,
+    eEzsigntemplatesignatureDependencyrequirement,
+    sEzsigntemplatesignaturePositioningpattern,
+    iEzsigntemplatesignaturePositioningoffsetx,
+    iEzsigntemplatesignaturePositioningoffsety,
+    eEzsigntemplatesignaturePositioningoccurence,
+    sEzsigntemplatesignatureCreditcardamountdescription,
+    dEzsigntemplatesignatureCreditcardamount,
+};
+```
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
