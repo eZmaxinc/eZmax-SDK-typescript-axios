@@ -157,7 +157,7 @@ export class DataObjectActivesessionResponse {
 export class ValidationObjectActivesessionResponse {
    eActivesessionUsertype = {
       type: 'enum',
-      allowableValues: ['AgentBroker','Assistant','EzsignSigner','EzsignUser','Normal'],
+      allowableValues: ['AgentBroker','Assistant','Employee','EzsignSigner','EzsignUser','Normal'],
       required: true
    }
    eActivesessionOrigin = {

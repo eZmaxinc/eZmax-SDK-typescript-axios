@@ -36,6 +36,12 @@ import type { FieldEEzsigntemplatesignaturePositioning } from './field-eezsignte
 import type { FieldEEzsigntemplatesignaturePositioningoccurence } from './field-eezsigntemplatesignature-positioningoccurence';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { FieldEEzsigntemplatesignatureSignaturepad } from './field-eezsigntemplatesignature-signaturepad';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { FieldEEzsigntemplatesignatureSignaturepadrequired } from './field-eezsigntemplatesignature-signaturepadrequired';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { FieldEEzsigntemplatesignatureTooltipposition } from './field-eezsigntemplatesignature-tooltipposition';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -114,6 +120,10 @@ export interface EzsigntemplatesignatureRequest {
     'iEzsigntemplatesignatureStep': number;
     /*'eEzsigntemplatesignatureType': FieldEEzsigntemplatesignatureType;*/
     'eEzsigntemplatesignatureType': FieldEEzsigntemplatesignatureType;
+    /*'eEzsigntemplatesignatureSignaturepad'?: FieldEEzsigntemplatesignatureSignaturepad;*/
+    'eEzsigntemplatesignatureSignaturepad'?: FieldEEzsigntemplatesignatureSignaturepad;
+    /*'eEzsigntemplatesignatureSignaturepadrequired'?: FieldEEzsigntemplatesignatureSignaturepadrequired;*/
+    'eEzsigntemplatesignatureSignaturepadrequired'?: FieldEEzsigntemplatesignatureSignaturepadrequired;
     /*'eEzsigntemplatesignatureConsultationtrigger'?: FieldEEzsigntemplatesignatureConsultationtrigger;*/
     'eEzsigntemplatesignatureConsultationtrigger'?: FieldEEzsigntemplatesignatureConsultationtrigger;
     /**
@@ -223,6 +233,8 @@ export class DataObjectEzsigntemplatesignatureRequest {
    iEzsigntemplatesignatureHeight?:number = undefined
    iEzsigntemplatesignatureStep:number = 0
    eEzsigntemplatesignatureType:FieldEEzsigntemplatesignatureType = 'Acknowledgement'
+   eEzsigntemplatesignatureSignaturepad?:FieldEEzsigntemplatesignatureSignaturepad = undefined
+   eEzsigntemplatesignatureSignaturepadrequired?:FieldEEzsigntemplatesignatureSignaturepadrequired = undefined
    eEzsigntemplatesignatureConsultationtrigger?:FieldEEzsigntemplatesignatureConsultationtrigger = undefined
    tEzsigntemplatesignatureTooltip?:string = undefined
    eEzsigntemplatesignatureTooltipposition?:FieldEEzsigntemplatesignatureTooltipposition = undefined
@@ -324,6 +336,16 @@ export class ValidationObjectEzsigntemplatesignatureRequest {
       type: 'enum',
       allowableValues: ['Acknowledgement','Attachments','City','Consultation','Creditcard','FieldText','FieldTextarea','Handwritten','Initials','Name','NameReason','Signature'],
       required: true
+   }
+   eEzsigntemplatesignatureSignaturepad = {
+      type: 'enum',
+      allowableValues: ['Topaz'],
+      required: false
+   }
+   eEzsigntemplatesignatureSignaturepadrequired = {
+      type: 'enum',
+      allowableValues: ['No','BestEffort','Mandatory'],
+      required: false
    }
    eEzsigntemplatesignatureConsultationtrigger = {
       type: 'enum',

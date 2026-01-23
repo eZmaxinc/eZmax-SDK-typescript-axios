@@ -8,7 +8,6 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**ezsignbulksendCreateObjectV1**](#ezsignbulksendcreateobjectv1) | **POST** /1/object/ezsignbulksend | Create a new Ezsignbulksend|
 |[**ezsignbulksendCreateObjectV2**](#ezsignbulksendcreateobjectv2) | **POST** /2/object/ezsignbulksend | Create a new Ezsignbulksend|
 |[**ezsignbulksendDeleteObjectV1**](#ezsignbulksenddeleteobjectv1) | **DELETE** /1/object/ezsignbulksend/{pkiEzsignbulksendID} | Delete an existing Ezsignbulksend|
-|[**ezsignbulksendEditObjectV1**](#ezsignbulksendeditobjectv1) | **PUT** /1/object/ezsignbulksend/{pkiEzsignbulksendID} | Edit an existing Ezsignbulksend|
 |[**ezsignbulksendEditObjectV2**](#ezsignbulksendeditobjectv2) | **PUT** /2/object/ezsignbulksend/{pkiEzsignbulksendID} | Edit an existing Ezsignbulksend|
 |[**ezsignbulksendGetBatchFileV1**](#ezsignbulksendgetbatchfilev1) | **GET** /1/object/ezsignbulksend/{pkiEzsignbulksendID}/getBatchFile | Retrieve file to download documents in batch|
 |[**ezsignbulksendGetCsvTemplateV1**](#ezsignbulksendgetcsvtemplatev1) | **GET** /1/object/ezsignbulksend/{pkiEzsignbulksendID}/getCsvTemplate | Retrieve an existing Ezsignbulksend\&#39;s empty Csv template|
@@ -221,63 +220,6 @@ const { status, data } = await apiInstance.ezsignbulksendDeleteObjectV1(
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-|**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
-|**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **ezsignbulksendEditObjectV1**
-> EzsignbulksendEditObjectV1Response ezsignbulksendEditObjectV1(ezsignbulksendEditObjectV1Request)
-
-
-
-### Example
-
-```typescript
-import {
-    ObjectEzsignbulksendApi,
-    Configuration,
-    EzsignbulksendEditObjectV1Request
-} from '@ezmaxinc/ezmax-sdk-typescript-axios';
-
-const configuration = new Configuration();
-const apiInstance = new ObjectEzsignbulksendApi(configuration);
-
-let pkiEzsignbulksendID: number; // (default to undefined)
-let ezsignbulksendEditObjectV1Request: EzsignbulksendEditObjectV1Request; //
-
-const { status, data } = await apiInstance.ezsignbulksendEditObjectV1(
-    pkiEzsignbulksendID,
-    ezsignbulksendEditObjectV1Request
-);
-```
-
-### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **ezsignbulksendEditObjectV1Request** | **EzsignbulksendEditObjectV1Request**|  | |
-| **pkiEzsignbulksendID** | [**number**] |  | defaults to undefined|
-
-
-### Return type
-
-**EzsignbulksendEditObjectV1Response**
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
  - **Accept**: application/json
 
 

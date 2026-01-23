@@ -58,7 +58,7 @@ export class ValidationObjectEzsignfoldersignerassociationCreateEmbeddedUrlV2Req
    }
    sIframeOrigin = {
       type: 'string',
-      pattern: /^https:\/\/[a-z0-9.-]+(:\d{1,5})?$/,
+      pattern: /^(https|http):\/\/[a-z0-9.-]+(:\d{1,5})?$/,
       required: false
    }
 } 

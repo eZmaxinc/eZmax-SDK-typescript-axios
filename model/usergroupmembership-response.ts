@@ -64,6 +64,11 @@ export interface UsergroupmembershipResponse {
     /*'sUsergroupNameX': string;*/
     'sUsergroupNameX': string;
     /**
+     * Whether the User is active or not
+     */
+    /*'bUserIsactive'?: boolean;*/
+    'bUserIsactive'?: boolean;
+    /**
      * The name of the Usergroupexternal
      */
     /*'sUsergroupexternalName'?: string;*/
@@ -90,6 +95,7 @@ export class DataObjectUsergroupmembershipResponse {
    sUserLoginname?:string = undefined
    sEmailAddress?:string = undefined
    sUsergroupNameX:string = ''
+   bUserIsactive?:boolean = undefined
    sUsergroupexternalName?:string = undefined
 }
 
@@ -144,6 +150,10 @@ export class ValidationObjectUsergroupmembershipResponse {
       type: 'string',
       pattern: /^.{0,50}$/,
       required: true
+   }
+   bUserIsactive = {
+      type: 'boolean',
+      required: false
    }
    sUsergroupexternalName = {
       type: 'string',

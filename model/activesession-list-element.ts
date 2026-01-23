@@ -31,8 +31,8 @@ export interface ActivesessionListElement {
     /**
      * The unique ID of the Computer
      */
-    /*'fkiComputerID': number;*/
-    'fkiComputerID': number;
+    /*'fkiComputerID'?: number;*/
+    'fkiComputerID'?: number;
     /**
      * The unique ID of the Company
      */
@@ -61,8 +61,8 @@ export interface ActivesessionListElement {
     /**
      * The description of the Computer
      */
-    /*'sComputerDescription': string;*/
-    'sComputerDescription': string;
+    /*'sComputerDescription'?: string;*/
+    'sComputerDescription'?: string;
     /**
      * The first hit of the Activesession
      */
@@ -93,13 +93,13 @@ export interface ActivesessionListElement {
 export class DataObjectActivesessionListElement {
    pkiActivesessionID:number = 0
    fkiUserID:number = 0
-   fkiComputerID:number = 0
+   fkiComputerID?:number = undefined
    fkiCompanyID:number = 0
    fkiDepartmentID:number = 0
    sCompanyNameX:string = ''
    sDepartmentNameX:string = ''
    sActivesessionLoginname:string = ''
-   sComputerDescription:string = ''
+   sComputerDescription?:string = undefined
    dtActivesessionFirsthit:string = ''
    dtActivesessionLasthit:string = ''
    sActivesessionIP:string = ''
@@ -124,7 +124,7 @@ export class ValidationObjectActivesessionListElement {
       type: 'integer',
       minimum: 1,
       maximum: 65535,
-      required: true
+      required: false
    }
    fkiCompanyID = {
       type: 'integer',
@@ -153,7 +153,7 @@ export class ValidationObjectActivesessionListElement {
    sComputerDescription = {
       type: 'string',
       pattern: /^.{0,50}$/,
-      required: true
+      required: false
    }
    dtActivesessionFirsthit = {
       type: 'string',

@@ -5,6 +5,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
 |[**ezsigntemplatedocumentCreateObjectV1**](#ezsigntemplatedocumentcreateobjectv1) | **POST** /1/object/ezsigntemplatedocument | Create a new Ezsigntemplatedocument|
+|[**ezsigntemplatedocumentDownloadV1**](#ezsigntemplatedocumentdownloadv1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/download | Retrieve an existing Ezsigntemplatedocument\&#39;s original file|
 |[**ezsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1**](#ezsigntemplatedocumenteditezsigntemplatedocumentpagerecognitionsv1) | **PUT** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/editEzsigntemplatedocumentpagerecognitions | Edit multiple Ezsigntemplatedocumentpagerecognitions|
 |[**ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1**](#ezsigntemplatedocumenteditezsigntemplateformfieldgroupsv1) | **PUT** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/editEzsigntemplateformfieldgroups | Edit multiple Ezsigntemplateformfieldgroups|
 |[**ezsigntemplatedocumentEditEzsigntemplatesignaturesV1**](#ezsigntemplatedocumenteditezsigntemplatesignaturesv1) | **PUT** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/editEzsigntemplatesignatures | Edit multiple Ezsigntemplatesignatures|
@@ -15,7 +16,6 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**ezsigntemplatedocumentGetEzsigntemplatedocumentpagerecognitionsV1**](#ezsigntemplatedocumentgetezsigntemplatedocumentpagerecognitionsv1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplatedocumentpagerecognitions | Retrieve an existing Ezsigntemplatedocument\&#39;s Ezsigntemplatedocumentpagerecognitions|
 |[**ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1**](#ezsigntemplatedocumentgetezsigntemplatedocumentpagesv1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplatedocumentpages | Retrieve an existing Ezsigntemplatedocument\&#39;s Ezsigntemplatedocumentpages|
 |[**ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1**](#ezsigntemplatedocumentgetezsigntemplateformfieldgroupsv1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplateformfieldgroups | Retrieve an existing Ezsigntemplatedocument\&#39;s Ezsigntemplateformfieldgroups|
-|[**ezsigntemplatedocumentGetEzsigntemplatesignaturesV1**](#ezsigntemplatedocumentgetezsigntemplatesignaturesv1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplatesignatures | Retrieve an existing Ezsigntemplatedocument\&#39;s Ezsigntemplatesignatures|
 |[**ezsigntemplatedocumentGetEzsigntemplatesignaturesV2**](#ezsigntemplatedocumentgetezsigntemplatesignaturesv2) | **GET** /2/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplatesignatures | Retrieve an existing Ezsigntemplatedocument\&#39;s Ezsigntemplatesignatures|
 |[**ezsigntemplatedocumentGetObjectV2**](#ezsigntemplatedocumentgetobjectv2) | **GET** /2/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID} | Retrieve an existing Ezsigntemplatedocument|
 |[**ezsigntemplatedocumentGetWordsPositionsV1**](#ezsigntemplatedocumentgetwordspositionsv1) | **POST** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getWordsPositions | Retrieve positions X,Y of given words from a Ezsigntemplatedocument|
@@ -72,6 +72,58 @@ const { status, data } = await apiInstance.ezsigntemplatedocumentCreateObjectV1(
 |**201** | Successful response |  -  |
 |**413** | The request was large. Look for detail about the error in the body |  -  |
 |**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body. If the error is recoverable sTemporaryFileUrl will be set and you can use this url to try a new request without sending the file over again |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ezsigntemplatedocumentDownloadV1**
+> ezsigntemplatedocumentDownloadV1()
+
+
+
+### Example
+
+```typescript
+import {
+    ObjectEzsigntemplatedocumentApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectEzsigntemplatedocumentApi(configuration);
+
+let pkiEzsigntemplatedocumentID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.ezsigntemplatedocumentDownloadV1(
+    pkiEzsigntemplatedocumentID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiEzsigntemplatedocumentID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**302** | The user has been redirected |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -611,59 +663,6 @@ const { status, data } = await apiInstance.ezsigntemplatedocumentGetEzsigntempla
 ### Return type
 
 **EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1Response**
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-|**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
-|**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **ezsigntemplatedocumentGetEzsigntemplatesignaturesV1**
-> EzsigntemplatedocumentGetEzsigntemplatesignaturesV1Response ezsigntemplatedocumentGetEzsigntemplatesignaturesV1()
-
-Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
-
-### Example
-
-```typescript
-import {
-    ObjectEzsigntemplatedocumentApi,
-    Configuration
-} from '@ezmaxinc/ezmax-sdk-typescript-axios';
-
-const configuration = new Configuration();
-const apiInstance = new ObjectEzsigntemplatedocumentApi(configuration);
-
-let pkiEzsigntemplatedocumentID: number; // (default to undefined)
-
-const { status, data } = await apiInstance.ezsigntemplatedocumentGetEzsigntemplatesignaturesV1(
-    pkiEzsigntemplatedocumentID
-);
-```
-
-### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **pkiEzsigntemplatedocumentID** | [**number**] |  | defaults to undefined|
-
-
-### Return type
-
-**EzsigntemplatedocumentGetEzsigntemplatesignaturesV1Response**
 
 ### Authorization
 

@@ -33,6 +33,12 @@ import type { FieldEEzsignsignatureDependencyrequirement } from './field-eezsign
 import type { FieldEEzsignsignatureFont } from './field-eezsignsignature-font';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { FieldEEzsignsignatureSignaturepad } from './field-eezsignsignature-signaturepad';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { FieldEEzsignsignatureSignaturepadrequired } from './field-eezsignsignature-signaturepadrequired';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { FieldEEzsignsignatureTooltipposition } from './field-eezsignsignature-tooltipposition';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -91,6 +97,11 @@ export interface EzsignsignatureResponse {
     /*'sEzsignsignatureCreditcardamountdescription'?: string;*/
     'sEzsignsignatureCreditcardamountdescription'?: string;
     /**
+     * Whether we can enter a custom amount while signing an Ezsignsignature \'Creditcard\' or not
+     */
+    /*'bEzsignsignatureCreditcardcustomamount'?: boolean;*/
+    'bEzsignsignatureCreditcardcustomamount'?: boolean;
+    /**
      * The description of the Ezsignsigningreason in the language of the requester
      */
     /*'sEzsignsigningreasonDescriptionX'?: string;*/
@@ -132,6 +143,10 @@ export interface EzsignsignatureResponse {
     'iEzsignsignatureStepadjusted'?: number;
     /*'eEzsignsignatureType': FieldEEzsignsignatureType;*/
     'eEzsignsignatureType': FieldEEzsignsignatureType;
+    /*'eEzsignsignatureSignaturepad'?: FieldEEzsignsignatureSignaturepad;*/
+    'eEzsignsignatureSignaturepad'?: FieldEEzsignsignatureSignaturepad;
+    /*'eEzsignsignatureSignaturepadrequired'?: FieldEEzsignsignatureSignaturepadrequired;*/
+    'eEzsignsignatureSignaturepadrequired'?: FieldEEzsignsignatureSignaturepadrequired;
     /**
      * A tooltip that will be presented to Ezsignsigner about the Ezsignsignature
      */
@@ -256,6 +271,7 @@ export class DataObjectEzsignsignatureResponse {
    sCurrencyDescriptionX?:string = undefined
    dEzsignsignatureCreditcardamount?:string = undefined
    sEzsignsignatureCreditcardamountdescription?:string = undefined
+   bEzsignsignatureCreditcardcustomamount?:boolean = undefined
    sEzsignsigningreasonDescriptionX?:string = undefined
    iEzsignpagePagenumber:number = 0
    iEzsignsignatureX:number = 0
@@ -265,6 +281,8 @@ export class DataObjectEzsignsignatureResponse {
    iEzsignsignatureStep:number = 0
    iEzsignsignatureStepadjusted?:number = undefined
    eEzsignsignatureType:FieldEEzsignsignatureType = 'Acknowledgement'
+   eEzsignsignatureSignaturepad?:FieldEEzsignsignatureSignaturepad = undefined
+   eEzsignsignatureSignaturepadrequired?:FieldEEzsignsignatureSignaturepadrequired = undefined
    tEzsignsignatureTooltip?:string = undefined
    eEzsignsignatureTooltipposition?:FieldEEzsignsignatureTooltipposition = undefined
    eEzsignsignatureFont?:FieldEEzsignsignatureFont = undefined
@@ -335,12 +353,16 @@ export class ValidationObjectEzsignsignatureResponse {
    }
    dEzsignsignatureCreditcardamount = {
       type: 'string',
-      pattern: /^-{0,1}[\d]{1,9}?\.[\d]{2}$/,
+      pattern: /^[\d]{1,9}?\.[\d]{2}$/,
       required: false
    }
    sEzsignsignatureCreditcardamountdescription = {
       type: 'string',
       pattern: /^.{1,50}$/,
+      required: false
+   }
+   bEzsignsignatureCreditcardcustomamount = {
+      type: 'boolean',
       required: false
    }
    sEzsignsigningreasonDescriptionX = {
@@ -385,6 +407,16 @@ export class ValidationObjectEzsignsignatureResponse {
       type: 'enum',
       allowableValues: ['Acknowledgement','Attachments','AttachmentsConfirmation','City','Consultation','Creditcard','FieldText','FieldTextarea','Handwritten','Initials','Name','NameReason','Signature'],
       required: true
+   }
+   eEzsignsignatureSignaturepad = {
+      type: 'enum',
+      allowableValues: ['Topaz'],
+      required: false
+   }
+   eEzsignsignatureSignaturepadrequired = {
+      type: 'enum',
+      allowableValues: ['No','BestEffort','Mandatory'],
+      required: false
    }
    tEzsignsignatureTooltip = {
       type: 'string',

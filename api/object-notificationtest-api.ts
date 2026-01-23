@@ -24,8 +24,6 @@ import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError
 // @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
-import type { NotificationtestGetElementsV1Response } from '../model';
-// @ts-ignore
 import type { NotificationtestGetElementsV2Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
@@ -34,65 +32,6 @@ import { RequestSignature, IHeadersData } from '../api/request-signature';
  */
 export const ObjectNotificationtestApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
-        /**
-         * 
-         * @summary Retrieve an existing Notificationtest\'s Elements
-         * @param {number} pkiNotificationtestID 
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        notificationtestGetElementsV1: async (pkiNotificationtestID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiNotificationtestID' is not null or undefined
-            assertParamExists('notificationtestGetElementsV1', 'pkiNotificationtestID', pkiNotificationtestID)
-            const localVarPath = `/1/object/notificationtest/{pkiNotificationtestID}/getElements`
-                .replace(`{${"pkiNotificationtestID"}}`, encodeURIComponent(String(pkiNotificationtestID)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'GET' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
         /**
          * 
          * @summary Retrieve an existing Notificationtest\'s Elements
@@ -123,8 +62,8 @@ export const ObjectNotificationtestApiAxiosParamCreator = function (configuratio
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -165,20 +104,6 @@ export const ObjectNotificationtestApiFp = function(configuration?: Configuratio
          * @summary Retrieve an existing Notificationtest\'s Elements
          * @param {number} pkiNotificationtestID 
          * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        async notificationtestGetElementsV1(pkiNotificationtestID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<NotificationtestGetElementsV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.notificationtestGetElementsV1(pkiNotificationtestID, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ObjectNotificationtestApi.notificationtestGetElementsV1']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * 
-         * @summary Retrieve an existing Notificationtest\'s Elements
-         * @param {number} pkiNotificationtestID 
-         * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         async notificationtestGetElementsV2(pkiNotificationtestID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<NotificationtestGetElementsV2Response>> {
@@ -201,17 +126,6 @@ export const ObjectNotificationtestApiFactory = function (configuration?: Config
          * @summary Retrieve an existing Notificationtest\'s Elements
          * @param {number} pkiNotificationtestID 
          * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        notificationtestGetElementsV1(pkiNotificationtestID: number, options?: RawAxiosRequestConfig): AxiosPromise<NotificationtestGetElementsV1Response> {
-            return localVarFp.notificationtestGetElementsV1(pkiNotificationtestID, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary Retrieve an existing Notificationtest\'s Elements
-         * @param {number} pkiNotificationtestID 
-         * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         notificationtestGetElementsV2(pkiNotificationtestID: number, options?: RawAxiosRequestConfig): AxiosPromise<NotificationtestGetElementsV2Response> {
@@ -224,18 +138,6 @@ export const ObjectNotificationtestApiFactory = function (configuration?: Config
  * ObjectNotificationtestApi - object-oriented interface
  */
 export class ObjectNotificationtestApi extends BaseAPI {
-    /**
-     * 
-     * @summary Retrieve an existing Notificationtest\'s Elements
-     * @param {number} pkiNotificationtestID 
-     * @param {*} [options] Override http request option.
-     * @deprecated
-     * @throws {RequiredError}
-     */
-    public notificationtestGetElementsV1(pkiNotificationtestID: number, options?: RawAxiosRequestConfig) {
-        return ObjectNotificationtestApiFp(this.configuration).notificationtestGetElementsV1(pkiNotificationtestID, options).then((request) => request(this.axios, this.basePath));
-    }
-
     /**
      * 
      * @summary Retrieve an existing Notificationtest\'s Elements

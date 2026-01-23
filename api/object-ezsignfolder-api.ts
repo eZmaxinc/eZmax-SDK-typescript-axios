@@ -58,6 +58,8 @@ import type { EzsignfolderGetActionableElementsV1Response } from '../model';
 // @ts-ignore
 import type { EzsignfolderGetActionableElementsV2Response } from '../model';
 // @ts-ignore
+import type { EzsignfolderGetActionableElementsV3Response } from '../model';
+// @ts-ignore
 import type { EzsignfolderGetAttachmentCountV1Response } from '../model';
 // @ts-ignore
 import type { EzsignfolderGetAttachmentsV1Response } from '../model';
@@ -99,10 +101,6 @@ import type { EzsignfolderImportEzsigntemplatepackageV1Response } from '../model
 import type { EzsignfolderImportEzsigntemplatepackageV2Request } from '../model';
 // @ts-ignore
 import type { EzsignfolderImportEzsigntemplatepackageV2Response } from '../model';
-// @ts-ignore
-import type { EzsignfolderReorderV1Request } from '../model';
-// @ts-ignore
-import type { EzsignfolderReorderV1Response } from '../model';
 // @ts-ignore
 import type { EzsignfolderReorderV2Request } from '../model';
 // @ts-ignore
@@ -159,9 +157,8 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -223,9 +220,8 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/zip,application/pdf,application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -284,9 +280,8 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -345,9 +340,8 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -405,9 +399,8 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -466,8 +459,8 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -523,9 +516,8 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -587,9 +579,8 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -651,9 +642,8 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -715,9 +705,8 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -777,8 +766,67 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Return the Ezsignsignatures that can be signed and Ezsignformfieldgroups that can be filled by the current user at the current step in the process
+         * @summary Retrieve actionable elements for the Ezsignfolder
+         * @param {number} pkiEzsignfolderID 
+         * @param {*} [options] Override http request option.
+         * @deprecated
+         * @throws {RequiredError}
+         */
+        ezsignfolderGetActionableElementsV2: async (pkiEzsignfolderID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiEzsignfolderID' is not null or undefined
+            assertParamExists('ezsignfolderGetActionableElementsV2', 'pkiEzsignfolderID', pkiEzsignfolderID)
+            const localVarPath = `/2/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements`
+                .replace(`{${"pkiEzsignfolderID"}}`, encodeURIComponent(String(pkiEzsignfolderID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -812,10 +860,10 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfolderGetActionableElementsV2: async (pkiEzsignfolderID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsignfolderGetActionableElementsV3: async (pkiEzsignfolderID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsignfolderID' is not null or undefined
-            assertParamExists('ezsignfolderGetActionableElementsV2', 'pkiEzsignfolderID', pkiEzsignfolderID)
-            const localVarPath = `/2/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements`
+            assertParamExists('ezsignfolderGetActionableElementsV3', 'pkiEzsignfolderID', pkiEzsignfolderID)
+            const localVarPath = `/3/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements`
                 .replace(`{${"pkiEzsignfolderID"}}`, encodeURIComponent(String(pkiEzsignfolderID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
@@ -835,8 +883,8 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -893,8 +941,8 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -951,8 +999,8 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1009,8 +1057,8 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1067,8 +1115,8 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1125,8 +1173,8 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1183,8 +1231,8 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1242,8 +1290,8 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1300,8 +1348,8 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1358,8 +1406,8 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1416,8 +1464,8 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1474,8 +1522,8 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json,application/zip';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1549,8 +1597,8 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
                 localVarQueryParameter['sFilter'] = sFilter;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
 
-    
             if (acceptLanguage != null) {
                 localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
                     ? acceptLanguage
@@ -1613,8 +1661,8 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1672,8 +1720,8 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1730,8 +1778,8 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -1791,9 +1839,8 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -1856,9 +1903,8 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -1920,80 +1966,14 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ezsignfolderImportEzsigntemplatepackageV2Request, localVarRequestOptions, configuration)
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'POST' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary Reorder Ezsigndocuments in the Ezsignfolder
-         * @param {number} pkiEzsignfolderID 
-         * @param {EzsignfolderReorderV1Request} ezsignfolderReorderV1Request 
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        ezsignfolderReorderV1: async (pkiEzsignfolderID: number, ezsignfolderReorderV1Request: EzsignfolderReorderV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiEzsignfolderID' is not null or undefined
-            assertParamExists('ezsignfolderReorderV1', 'pkiEzsignfolderID', pkiEzsignfolderID)
-            // verify required parameter 'ezsignfolderReorderV1Request' is not null or undefined
-            assertParamExists('ezsignfolderReorderV1', 'ezsignfolderReorderV1Request', ezsignfolderReorderV1Request)
-            const localVarPath = `/1/object/ezsignfolder/{pkiEzsignfolderID}/reorder`
-                .replace(`{${"pkiEzsignfolderID"}}`, encodeURIComponent(String(pkiEzsignfolderID)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(ezsignfolderReorderV1Request, localVarRequestOptions, configuration)
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -2049,9 +2029,8 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -2114,9 +2093,8 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -2178,9 +2156,8 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -2242,9 +2219,8 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -2438,12 +2414,26 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
          * @summary Retrieve actionable elements for the Ezsignfolder
          * @param {number} pkiEzsignfolderID 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         async ezsignfolderGetActionableElementsV2(pkiEzsignfolderID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderGetActionableElementsV2Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderGetActionableElementsV2(pkiEzsignfolderID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignfolderApi.ezsignfolderGetActionableElementsV2']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Return the Ezsignsignatures that can be signed and Ezsignformfieldgroups that can be filled by the current user at the current step in the process
+         * @summary Retrieve actionable elements for the Ezsignfolder
+         * @param {number} pkiEzsignfolderID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsignfolderGetActionableElementsV3(pkiEzsignfolderID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderGetActionableElementsV3Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderGetActionableElementsV3(pkiEzsignfolderID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsignfolderApi.ezsignfolderGetActionableElementsV3']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -2695,21 +2685,6 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
          * 
          * @summary Reorder Ezsigndocuments in the Ezsignfolder
          * @param {number} pkiEzsignfolderID 
-         * @param {EzsignfolderReorderV1Request} ezsignfolderReorderV1Request 
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        async ezsignfolderReorderV1(pkiEzsignfolderID: number, ezsignfolderReorderV1Request: EzsignfolderReorderV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderReorderV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderReorderV1(pkiEzsignfolderID, ezsignfolderReorderV1Request, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ObjectEzsignfolderApi.ezsignfolderReorderV1']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * 
-         * @summary Reorder Ezsigndocuments in the Ezsignfolder
-         * @param {number} pkiEzsignfolderID 
          * @param {EzsignfolderReorderV2Request} ezsignfolderReorderV2Request 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -2895,10 +2870,21 @@ export const ObjectEzsignfolderApiFactory = function (configuration?: Configurat
          * @summary Retrieve actionable elements for the Ezsignfolder
          * @param {number} pkiEzsignfolderID 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         ezsignfolderGetActionableElementsV2(pkiEzsignfolderID: number, options?: RawAxiosRequestConfig): AxiosPromise<EzsignfolderGetActionableElementsV2Response> {
             return localVarFp.ezsignfolderGetActionableElementsV2(pkiEzsignfolderID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Return the Ezsignsignatures that can be signed and Ezsignformfieldgroups that can be filled by the current user at the current step in the process
+         * @summary Retrieve actionable elements for the Ezsignfolder
+         * @param {number} pkiEzsignfolderID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsignfolderGetActionableElementsV3(pkiEzsignfolderID: number, options?: RawAxiosRequestConfig): AxiosPromise<EzsignfolderGetActionableElementsV3Response> {
+            return localVarFp.ezsignfolderGetActionableElementsV3(pkiEzsignfolderID, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -3095,18 +3081,6 @@ export const ObjectEzsignfolderApiFactory = function (configuration?: Configurat
          * 
          * @summary Reorder Ezsigndocuments in the Ezsignfolder
          * @param {number} pkiEzsignfolderID 
-         * @param {EzsignfolderReorderV1Request} ezsignfolderReorderV1Request 
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        ezsignfolderReorderV1(pkiEzsignfolderID: number, ezsignfolderReorderV1Request: EzsignfolderReorderV1Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsignfolderReorderV1Response> {
-            return localVarFp.ezsignfolderReorderV1(pkiEzsignfolderID, ezsignfolderReorderV1Request, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary Reorder Ezsigndocuments in the Ezsignfolder
-         * @param {number} pkiEzsignfolderID 
          * @param {EzsignfolderReorderV2Request} ezsignfolderReorderV2Request 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -3289,10 +3263,22 @@ export class ObjectEzsignfolderApi extends BaseAPI {
      * @summary Retrieve actionable elements for the Ezsignfolder
      * @param {number} pkiEzsignfolderID 
      * @param {*} [options] Override http request option.
+     * @deprecated
      * @throws {RequiredError}
      */
     public ezsignfolderGetActionableElementsV2(pkiEzsignfolderID: number, options?: RawAxiosRequestConfig) {
         return ObjectEzsignfolderApiFp(this.configuration).ezsignfolderGetActionableElementsV2(pkiEzsignfolderID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * Return the Ezsignsignatures that can be signed and Ezsignformfieldgroups that can be filled by the current user at the current step in the process
+     * @summary Retrieve actionable elements for the Ezsignfolder
+     * @param {number} pkiEzsignfolderID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public ezsignfolderGetActionableElementsV3(pkiEzsignfolderID: number, options?: RawAxiosRequestConfig) {
+        return ObjectEzsignfolderApiFp(this.configuration).ezsignfolderGetActionableElementsV3(pkiEzsignfolderID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3502,19 +3488,6 @@ export class ObjectEzsignfolderApi extends BaseAPI {
      */
     public ezsignfolderImportEzsigntemplatepackageV2(pkiEzsignfolderID: number, ezsignfolderImportEzsigntemplatepackageV2Request: EzsignfolderImportEzsigntemplatepackageV2Request, options?: RawAxiosRequestConfig) {
         return ObjectEzsignfolderApiFp(this.configuration).ezsignfolderImportEzsigntemplatepackageV2(pkiEzsignfolderID, ezsignfolderImportEzsigntemplatepackageV2Request, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Reorder Ezsigndocuments in the Ezsignfolder
-     * @param {number} pkiEzsignfolderID 
-     * @param {EzsignfolderReorderV1Request} ezsignfolderReorderV1Request 
-     * @param {*} [options] Override http request option.
-     * @deprecated
-     * @throws {RequiredError}
-     */
-    public ezsignfolderReorderV1(pkiEzsignfolderID: number, ezsignfolderReorderV1Request: EzsignfolderReorderV1Request, options?: RawAxiosRequestConfig) {
-        return ObjectEzsignfolderApiFp(this.configuration).ezsignfolderReorderV1(pkiEzsignfolderID, ezsignfolderReorderV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

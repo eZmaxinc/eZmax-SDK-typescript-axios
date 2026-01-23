@@ -35,6 +35,11 @@ export interface EzsignsignatureSignV1Request {
     /*'fkiFontID'?: number;*/
     'fkiFontID'?: number;
     /**
+     * The amount of the Creditcard signature
+     */
+    /*'dEzsignsignatureCreditcardamount'?: string;*/
+    'dEzsignsignatureCreditcardamount'?: string;
+    /**
      * The value required for the Ezsignsignature.  This can only be set if eEzsignsignatureType is **City**, **FieldText** or **FieldTextarea**
      */
     /*'sValue'?: string;*/
@@ -90,6 +95,7 @@ import { ValidationObjectCustomCreditcardRequest } from './'
 export class DataObjectEzsignsignatureSignV1Request {
    fkiEzsignsigningreasonID?:number = undefined
    fkiFontID?:number = undefined
+   dEzsignsignatureCreditcardamount?:string = undefined
    sValue?:string = undefined
    eAttachmentsConfirmationDecision?:EzsignsignatureSignV1RequestEAttachmentsConfirmationDecisionEnum = undefined
    sAttachmentsRefusalReason?:string = undefined
@@ -114,6 +120,11 @@ export class ValidationObjectEzsignsignatureSignV1Request {
    fkiFontID = {
       type: 'integer',
       minimum: 0,
+      required: false
+   }
+   dEzsignsignatureCreditcardamount = {
+      type: 'string',
+      pattern: /^[\d]{1,9}?\.[\d]{2}$/,
       required: false
    }
    sValue = {

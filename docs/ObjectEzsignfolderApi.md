@@ -16,6 +16,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**ezsignfolderEndPrematurelyV1**](#ezsignfolderendprematurelyv1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/endPrematurely | End prematurely|
 |[**ezsignfolderGetActionableElementsV1**](#ezsignfoldergetactionableelementsv1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements | Retrieve actionable elements for the Ezsignfolder|
 |[**ezsignfolderGetActionableElementsV2**](#ezsignfoldergetactionableelementsv2) | **GET** /2/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements | Retrieve actionable elements for the Ezsignfolder|
+|[**ezsignfolderGetActionableElementsV3**](#ezsignfoldergetactionableelementsv3) | **GET** /3/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements | Retrieve actionable elements for the Ezsignfolder|
 |[**ezsignfolderGetAttachmentCountV1**](#ezsignfoldergetattachmentcountv1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getAttachmentCount | Retrieve Attachment count|
 |[**ezsignfolderGetAttachmentsV1**](#ezsignfoldergetattachmentsv1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getAttachments | Retrieve Ezsignfolder\&#39;s Attachments|
 |[**ezsignfolderGetCommunicationCountV1**](#ezsignfoldergetcommunicationcountv1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getCommunicationCount | Retrieve Communication count|
@@ -34,7 +35,6 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**ezsignfolderImportEzsignfoldersignerassociationsV1**](#ezsignfolderimportezsignfoldersignerassociationsv1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/importEzsignfoldersignerassociations | Import an existing Ezsignfoldersignerassociation into this Ezsignfolder|
 |[**ezsignfolderImportEzsigntemplatepackageV1**](#ezsignfolderimportezsigntemplatepackagev1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/importEzsigntemplatepackage | Import an Ezsigntemplatepackage in the Ezsignfolder|
 |[**ezsignfolderImportEzsigntemplatepackageV2**](#ezsignfolderimportezsigntemplatepackagev2) | **POST** /2/object/ezsignfolder/{pkiEzsignfolderID}/importEzsigntemplatepackage | Import an Ezsigntemplatepackage in the Ezsignfolder|
-|[**ezsignfolderReorderV1**](#ezsignfolderreorderv1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/reorder | Reorder Ezsigndocuments in the Ezsignfolder|
 |[**ezsignfolderReorderV2**](#ezsignfolderreorderv2) | **POST** /2/object/ezsignfolder/{pkiEzsignfolderID}/reorder | Reorder Ezsigndocuments in the Ezsignfolder|
 |[**ezsignfolderSendV1**](#ezsignfoldersendv1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/send | Send the Ezsignfolder to the signatories for signature|
 |[**ezsignfolderSendV3**](#ezsignfoldersendv3) | **POST** /3/object/ezsignfolder/{pkiEzsignfolderID}/send | Send the Ezsignfolder to the signatories for signature|
@@ -669,6 +669,59 @@ const { status, data } = await apiInstance.ezsignfolderGetActionableElementsV2(
 ### Return type
 
 **EzsignfolderGetActionableElementsV2Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+|**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ezsignfolderGetActionableElementsV3**
+> EzsignfolderGetActionableElementsV3Response ezsignfolderGetActionableElementsV3()
+
+Return the Ezsignsignatures that can be signed and Ezsignformfieldgroups that can be filled by the current user at the current step in the process
+
+### Example
+
+```typescript
+import {
+    ObjectEzsignfolderApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectEzsignfolderApi(configuration);
+
+let pkiEzsignfolderID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.ezsignfolderGetActionableElementsV3(
+    pkiEzsignfolderID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiEzsignfolderID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**EzsignfolderGetActionableElementsV3Response**
 
 ### Authorization
 
@@ -1634,62 +1687,6 @@ const { status, data } = await apiInstance.ezsignfolderImportEzsigntemplatepacka
 ### Return type
 
 **EzsignfolderImportEzsigntemplatepackageV2Response**
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-|**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
-|**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **ezsignfolderReorderV1**
-> EzsignfolderReorderV1Response ezsignfolderReorderV1(ezsignfolderReorderV1Request)
-
-
-### Example
-
-```typescript
-import {
-    ObjectEzsignfolderApi,
-    Configuration,
-    EzsignfolderReorderV1Request
-} from '@ezmaxinc/ezmax-sdk-typescript-axios';
-
-const configuration = new Configuration();
-const apiInstance = new ObjectEzsignfolderApi(configuration);
-
-let pkiEzsignfolderID: number; // (default to undefined)
-let ezsignfolderReorderV1Request: EzsignfolderReorderV1Request; //
-
-const { status, data } = await apiInstance.ezsignfolderReorderV1(
-    pkiEzsignfolderID,
-    ezsignfolderReorderV1Request
-);
-```
-
-### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **ezsignfolderReorderV1Request** | **EzsignfolderReorderV1Request**|  | |
-| **pkiEzsignfolderID** | [**number**] |  | defaults to undefined|
-
-
-### Return type
-
-**EzsignfolderReorderV1Response**
 
 ### Authorization
 

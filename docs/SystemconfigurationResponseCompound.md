@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **pkiSystemconfigurationID** | **number** | The unique ID of the Systemconfiguration | [default to undefined]
 **fkiSystemconfigurationtypeID** | **number** | The unique ID of the Systemconfigurationtype | [default to undefined]
 **fkiBrandingID** | **number** | The unique ID of the Branding | [optional] [default to undefined]
+**fkiTimezoneIDDefault** | **number** | The unique ID of the Timezone | [default to undefined]
+**sTimezoneNameDefault** | **string** | The description of the Timezone | [default to undefined]
 **sSystemconfigurationtypeDescriptionX** | **string** | The description of the Systemconfigurationtype in the language of the requester | [default to undefined]
 **eSystemconfigurationNewexternaluseraction** | [**FieldESystemconfigurationNewexternaluseraction**](FieldESystemconfigurationNewexternaluseraction.md) |  | [default to undefined]
 **eSystemconfigurationLanguage1** | [**FieldESystemconfigurationLanguage1**](FieldESystemconfigurationLanguage1.md) |  | [default to undefined]
@@ -23,6 +25,7 @@ Name | Type | Description | Notes
 **dtSystemconfigurationReadonlyexpirationstart** | **string** | The start date where the system will be in read only | [optional] [default to undefined]
 **dtSystemconfigurationReadonlyexpirationend** | **string** | The end date where the system will be in read only | [optional] [default to undefined]
 **objBranding** | [**CustomBrandingResponse**](CustomBrandingResponse.md) |  | [optional] [default to undefined]
+**iSystemconfigurationEzsignreminderhoursend** | **number** | The hour we will send the eZsign reminders | [optional] [default to undefined]
 
 ## Example
 
@@ -33,6 +36,8 @@ const instance: SystemconfigurationResponseCompound = {
     pkiSystemconfigurationID,
     fkiSystemconfigurationtypeID,
     fkiBrandingID,
+    fkiTimezoneIDDefault,
+    sTimezoneNameDefault,
     sSystemconfigurationtypeDescriptionX,
     eSystemconfigurationNewexternaluseraction,
     eSystemconfigurationLanguage1,
@@ -47,6 +52,7 @@ const instance: SystemconfigurationResponseCompound = {
     dtSystemconfigurationReadonlyexpirationstart,
     dtSystemconfigurationReadonlyexpirationend,
     objBranding,
+    iSystemconfigurationEzsignreminderhoursend,
 };
 ```
 

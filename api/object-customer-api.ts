@@ -24,13 +24,7 @@ import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError
 // @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
-import type { CustomerCreateObjectV1Request } from '../model';
-// @ts-ignore
-import type { CustomerCreateObjectV1Response } from '../model';
-// @ts-ignore
 import type { CustomerGetAutocompleteV2Response } from '../model';
-// @ts-ignore
-import type { CustomerGetListV1Response } from '../model';
 // @ts-ignore
 import type { CustomerGetObjectV2Response } from '../model';
 // @ts-ignore
@@ -46,66 +40,6 @@ import { RequestSignature, IHeadersData } from '../api/request-signature';
  */
 export const ObjectCustomerApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
-        /**
-         * The endpoint allows to create one or many elements at once.
-         * @summary Create a new Customer
-         * @param {CustomerCreateObjectV1Request} customerCreateObjectV1Request 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        customerCreateObjectV1: async (customerCreateObjectV1Request: CustomerCreateObjectV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'customerCreateObjectV1Request' is not null or undefined
-            assertParamExists('customerCreateObjectV1', 'customerCreateObjectV1Request', customerCreateObjectV1Request)
-            const localVarPath = `/1/object/customer`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(customerCreateObjectV1Request, localVarRequestOptions, configuration)
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'POST' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
         /**
          * Get the list of Customer to be used in a dropdown or autocomplete control.
          * @summary Retrieve Customers and IDs
@@ -147,88 +81,8 @@ export const ObjectCustomerApiAxiosParamCreator = function (configuration?: Conf
                 localVarQueryParameter['sQuery'] = sQuery;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
-            if (acceptLanguage != null) {
-                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
-                    ? acceptLanguage
-                    : JSON.stringify(acceptLanguage);
-            }
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'GET' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary Retrieve Customer list
-         * @param {CustomerGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
-         * @param {number} [iRowMax] 
-         * @param {number} [iRowOffset] 
-         * @param {HeaderAcceptLanguage} [acceptLanguage] 
-         * @param {string} [sFilter] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        customerGetListV1: async (eOrderBy?: CustomerGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/1/object/customer/getList`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-            if (eOrderBy !== undefined) {
-                localVarQueryParameter['eOrderBy'] = eOrderBy;
-            }
-
-            if (iRowMax !== undefined) {
-                localVarQueryParameter['iRowMax'] = iRowMax;
-            }
-
-            if (iRowOffset !== undefined) {
-                localVarQueryParameter['iRowOffset'] = iRowOffset;
-            }
-
-            if (sFilter !== undefined) {
-                localVarQueryParameter['sFilter'] = sFilter;
-            }
-
-
-    
             if (acceptLanguage != null) {
                 localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
                     ? acceptLanguage
@@ -290,8 +144,8 @@ export const ObjectCustomerApiAxiosParamCreator = function (configuration?: Conf
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -320,7 +174,7 @@ export const ObjectCustomerApiAxiosParamCreator = function (configuration?: Conf
         },
         /**
          * 
-         * @summary Import attachments into the Buyercontract
+         * @summary Import attachments into the Customer
          * @param {number} pkiCustomerID 
          * @param {CustomerImportIntoEDMV1Request} customerImportIntoEDMV1Request 
          * @param {*} [options] Override http request option.
@@ -351,9 +205,8 @@ export const ObjectCustomerApiAxiosParamCreator = function (configuration?: Conf
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -392,19 +245,6 @@ export const ObjectCustomerApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = ObjectCustomerApiAxiosParamCreator(configuration)
     return {
         /**
-         * The endpoint allows to create one or many elements at once.
-         * @summary Create a new Customer
-         * @param {CustomerCreateObjectV1Request} customerCreateObjectV1Request 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async customerCreateObjectV1(customerCreateObjectV1Request: CustomerCreateObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CustomerCreateObjectV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.customerCreateObjectV1(customerCreateObjectV1Request, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ObjectCustomerApi.customerCreateObjectV1']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
          * Get the list of Customer to be used in a dropdown or autocomplete control.
          * @summary Retrieve Customers and IDs
          * @param {CustomerGetAutocompleteV2SSelectorEnum} sSelector The type of Customers to return
@@ -422,23 +262,6 @@ export const ObjectCustomerApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
-         * @summary Retrieve Customer list
-         * @param {CustomerGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
-         * @param {number} [iRowMax] 
-         * @param {number} [iRowOffset] 
-         * @param {HeaderAcceptLanguage} [acceptLanguage] 
-         * @param {string} [sFilter] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async customerGetListV1(eOrderBy?: CustomerGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CustomerGetListV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.customerGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ObjectCustomerApi.customerGetListV1']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * 
          * @summary Retrieve an existing Customer
          * @param {number} pkiCustomerID The unique ID of the Customer
          * @param {*} [options] Override http request option.
@@ -452,7 +275,7 @@ export const ObjectCustomerApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
-         * @summary Import attachments into the Buyercontract
+         * @summary Import attachments into the Customer
          * @param {number} pkiCustomerID 
          * @param {CustomerImportIntoEDMV1Request} customerImportIntoEDMV1Request 
          * @param {*} [options] Override http request option.
@@ -474,16 +297,6 @@ export const ObjectCustomerApiFactory = function (configuration?: Configuration,
     const localVarFp = ObjectCustomerApiFp(configuration)
     return {
         /**
-         * The endpoint allows to create one or many elements at once.
-         * @summary Create a new Customer
-         * @param {CustomerCreateObjectV1Request} customerCreateObjectV1Request 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        customerCreateObjectV1(customerCreateObjectV1Request: CustomerCreateObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CustomerCreateObjectV1Response> {
-            return localVarFp.customerCreateObjectV1(customerCreateObjectV1Request, options).then((request) => request(axios, basePath));
-        },
-        /**
          * Get the list of Customer to be used in a dropdown or autocomplete control.
          * @summary Retrieve Customers and IDs
          * @param {CustomerGetAutocompleteV2SSelectorEnum} sSelector The type of Customers to return
@@ -498,20 +311,6 @@ export const ObjectCustomerApiFactory = function (configuration?: Configuration,
         },
         /**
          * 
-         * @summary Retrieve Customer list
-         * @param {CustomerGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
-         * @param {number} [iRowMax] 
-         * @param {number} [iRowOffset] 
-         * @param {HeaderAcceptLanguage} [acceptLanguage] 
-         * @param {string} [sFilter] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        customerGetListV1(eOrderBy?: CustomerGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): AxiosPromise<CustomerGetListV1Response> {
-            return localVarFp.customerGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
          * @summary Retrieve an existing Customer
          * @param {number} pkiCustomerID The unique ID of the Customer
          * @param {*} [options] Override http request option.
@@ -522,7 +321,7 @@ export const ObjectCustomerApiFactory = function (configuration?: Configuration,
         },
         /**
          * 
-         * @summary Import attachments into the Buyercontract
+         * @summary Import attachments into the Customer
          * @param {number} pkiCustomerID 
          * @param {CustomerImportIntoEDMV1Request} customerImportIntoEDMV1Request 
          * @param {*} [options] Override http request option.
@@ -539,17 +338,6 @@ export const ObjectCustomerApiFactory = function (configuration?: Configuration,
  */
 export class ObjectCustomerApi extends BaseAPI {
     /**
-     * The endpoint allows to create one or many elements at once.
-     * @summary Create a new Customer
-     * @param {CustomerCreateObjectV1Request} customerCreateObjectV1Request 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    public customerCreateObjectV1(customerCreateObjectV1Request: CustomerCreateObjectV1Request, options?: RawAxiosRequestConfig) {
-        return ObjectCustomerApiFp(this.configuration).customerCreateObjectV1(customerCreateObjectV1Request, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
      * Get the list of Customer to be used in a dropdown or autocomplete control.
      * @summary Retrieve Customers and IDs
      * @param {CustomerGetAutocompleteV2SSelectorEnum} sSelector The type of Customers to return
@@ -565,21 +353,6 @@ export class ObjectCustomerApi extends BaseAPI {
 
     /**
      * 
-     * @summary Retrieve Customer list
-     * @param {CustomerGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
-     * @param {number} [iRowMax] 
-     * @param {number} [iRowOffset] 
-     * @param {HeaderAcceptLanguage} [acceptLanguage] 
-     * @param {string} [sFilter] 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    public customerGetListV1(eOrderBy?: CustomerGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig) {
-        return ObjectCustomerApiFp(this.configuration).customerGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
      * @summary Retrieve an existing Customer
      * @param {number} pkiCustomerID The unique ID of the Customer
      * @param {*} [options] Override http request option.
@@ -591,7 +364,7 @@ export class ObjectCustomerApi extends BaseAPI {
 
     /**
      * 
-     * @summary Import attachments into the Buyercontract
+     * @summary Import attachments into the Customer
      * @param {number} pkiCustomerID 
      * @param {CustomerImportIntoEDMV1Request} customerImportIntoEDMV1Request 
      * @param {*} [options] Override http request option.
@@ -612,34 +385,3 @@ export const CustomerGetAutocompleteV2EFilterActiveEnum = {
     Inactive: 'Inactive'
 } as const;
 export type CustomerGetAutocompleteV2EFilterActiveEnum = typeof CustomerGetAutocompleteV2EFilterActiveEnum[keyof typeof CustomerGetAutocompleteV2EFilterActiveEnum];
-export const CustomerGetListV1EOrderByEnum = {
-    pkiCustomerID_ASC: 'pkiCustomerID_ASC',
-    pkiCustomerID_DESC: 'pkiCustomerID_DESC',
-    sCustomerName_ASC: 'sCustomerName_ASC',
-    sCustomerName_DESC: 'sCustomerName_DESC',
-    sCustomerNote_ASC: 'sCustomerNote_ASC',
-    sCustomerNote_DESC: 'sCustomerNote_DESC',
-    sCustomerCode_ASC: 'sCustomerCode_ASC',
-    sCustomerCode_DESC: 'sCustomerCode_DESC',
-    bCustomerIsactive_ASC: 'bCustomerIsactive_ASC',
-    bCustomerIsactive_DESC: 'bCustomerIsactive_DESC',
-    sPhoneE164_ASC: 'sPhoneE164_ASC',
-    sPhoneE164_DESC: 'sPhoneE164_DESC',
-    sEmailAddress_ASC: 'sEmailAddress_ASC',
-    sEmailAddress_DESC: 'sEmailAddress_DESC',
-    sAddressCivic_ASC: 'sAddressCivic_ASC',
-    sAddressCivic_DESC: 'sAddressCivic_DESC',
-    sAddressStreet_ASC: 'sAddressStreet_ASC',
-    sAddressStreet_DESC: 'sAddressStreet_DESC',
-    sAddressSuite_ASC: 'sAddressSuite_ASC',
-    sAddressSuite_DESC: 'sAddressSuite_DESC',
-    sAddressCity_ASC: 'sAddressCity_ASC',
-    sAddressCity_DESC: 'sAddressCity_DESC',
-    sAddressZip_ASC: 'sAddressZip_ASC',
-    sAddressZip_DESC: 'sAddressZip_DESC',
-    sProvinceNameX_ASC: 'sProvinceNameX_ASC',
-    sProvinceNameX_DESC: 'sProvinceNameX_DESC',
-    sCountryNameX_ASC: 'sCountryNameX_ASC',
-    sCountryNameX_DESC: 'sCountryNameX_DESC'
-} as const;
-export type CustomerGetListV1EOrderByEnum = typeof CustomerGetListV1EOrderByEnum[keyof typeof CustomerGetListV1EOrderByEnum];

@@ -33,6 +33,11 @@ export interface UsergroupListElement {
      */
     /*'iCountUser': number;*/
     'iCountUser': number;
+    /**
+     * Number of inactive users in group
+     */
+    /*'iCountInactiveuser': number;*/
+    'iCountInactiveuser': number;
 }
 /**
  * @import
@@ -49,6 +54,7 @@ export class DataObjectUsergroupListElement {
    pkiUsergroupID:number = 0
    sUsergroupNameX:string = ''
    iCountUser:number = 0
+   iCountInactiveuser:number = 0
 }
 
 /**
@@ -69,6 +75,12 @@ export class ValidationObjectUsergroupListElement {
       required: true
    }
    iCountUser = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 16777215,
+      required: true
+   }
+   iCountInactiveuser = {
       type: 'integer',
       minimum: 0,
       maximum: 16777215,

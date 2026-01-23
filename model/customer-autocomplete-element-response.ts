@@ -34,6 +34,11 @@ export interface CustomerAutocompleteElementResponse {
     /*'sCustomerName': string;*/
     'sCustomerName': string;
     /**
+     * The code of the Customer
+     */
+    /*'sCustomerCode': string;*/
+    'sCustomerCode': string;
+    /**
      * Whether the customer is active or not
      */
     /*'bCustomerIsactive': boolean;*/
@@ -54,6 +59,7 @@ export class DataObjectCustomerAutocompleteElementResponse {
    pkiCustomerID:number = 0
    fkiDepartmentID:number = 0
    sCustomerName:string = ''
+   sCustomerCode:string = ''
    bCustomerIsactive:boolean = false
 }
 
@@ -76,6 +82,11 @@ export class ValidationObjectCustomerAutocompleteElementResponse {
    sCustomerName = {
       type: 'string',
       pattern: /^.{0,50}$/,
+      required: true
+   }
+   sCustomerCode = {
+      type: 'string',
+      pattern: /^.{0,6}$/,
       required: true
    }
    bCustomerIsactive = {

@@ -39,6 +39,11 @@ export interface CreditcardclientListElement {
     /*'bCreditcardclientrelationIsdefault': boolean;*/
     'bCreditcardclientrelationIsdefault': boolean;
     /**
+     * Whether the Creditcardclient is legacy or not
+     */
+    /*'bCreditcardclientLegacy': boolean;*/
+    'bCreditcardclientLegacy': boolean;
+    /**
      * The description of the Creditcardclient
      */
     /*'sCreditcardclientDescription': string;*/
@@ -85,6 +90,7 @@ export class DataObjectCreditcardclientListElement {
    fkiCreditcarddetailID:number = 0
    fkiCreditcardtypeID:number = 0
    bCreditcardclientrelationIsdefault:boolean = false
+   bCreditcardclientLegacy:boolean = false
    sCreditcardclientDescription:string = ''
    bCreditcardclientAllowedcompanypayment:boolean = false
    bCreditcardclientAllowedtranquillit:boolean = false
@@ -118,6 +124,10 @@ export class ValidationObjectCreditcardclientListElement {
       required: true
    }
    bCreditcardclientrelationIsdefault = {
+      type: 'boolean',
+      required: true
+   }
+   bCreditcardclientLegacy = {
       type: 'boolean',
       required: true
    }

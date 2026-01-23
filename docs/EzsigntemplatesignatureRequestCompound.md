@@ -21,6 +21,8 @@ Name | Type | Description | Notes
 **iEzsigntemplatesignatureHeight** | **number** | The height of the Ezsigntemplatesignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsigntemplatesignature to have an height of 2 inches, you would use \&quot;200\&quot; for the iEzsigntemplatesignatureHeight. | [optional] [default to undefined]
 **iEzsigntemplatesignatureStep** | **number** | The step when the Ezsigntemplatesigner will be invited to sign | [default to undefined]
 **eEzsigntemplatesignatureType** | [**FieldEEzsigntemplatesignatureType**](FieldEEzsigntemplatesignatureType.md) |  | [default to undefined]
+**eEzsigntemplatesignatureSignaturepad** | [**FieldEEzsigntemplatesignatureSignaturepad**](FieldEEzsigntemplatesignatureSignaturepad.md) |  | [optional] [default to undefined]
+**eEzsigntemplatesignatureSignaturepadrequired** | [**FieldEEzsigntemplatesignatureSignaturepadrequired**](FieldEEzsigntemplatesignatureSignaturepadrequired.md) |  | [optional] [default to undefined]
 **eEzsigntemplatesignatureConsultationtrigger** | [**FieldEEzsigntemplatesignatureConsultationtrigger**](FieldEEzsigntemplatesignatureConsultationtrigger.md) |  | [optional] [default to undefined]
 **tEzsigntemplatesignatureTooltip** | **string** | A tooltip that will be presented to Ezsigntemplatesigner about the Ezsigntemplatesignature | [optional] [default to undefined]
 **eEzsigntemplatesignatureTooltipposition** | [**FieldEEzsigntemplatesignatureTooltipposition**](FieldEEzsigntemplatesignatureTooltipposition.md) |  | [optional] [default to undefined]
@@ -67,6 +69,8 @@ const instance: EzsigntemplatesignatureRequestCompound = {
     iEzsigntemplatesignatureHeight,
     iEzsigntemplatesignatureStep,
     eEzsigntemplatesignatureType,
+    eEzsigntemplatesignatureSignaturepad,
+    eEzsigntemplatesignatureSignaturepadrequired,
     eEzsigntemplatesignatureConsultationtrigger,
     tEzsigntemplatesignatureTooltip,
     eEzsigntemplatesignatureTooltipposition,

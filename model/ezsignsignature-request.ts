@@ -30,6 +30,12 @@ import type { FieldEEzsignsignatureDependencyrequirement } from './field-eezsign
 import type { FieldEEzsignsignatureFont } from './field-eezsignsignature-font';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { FieldEEzsignsignatureSignaturepad } from './field-eezsignsignature-signaturepad';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { FieldEEzsignsignatureSignaturepadrequired } from './field-eezsignsignature-signaturepadrequired';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { FieldEEzsignsignatureTooltipposition } from './field-eezsignsignature-tooltipposition';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -86,6 +92,10 @@ export interface EzsignsignatureRequest {
     'iEzsignsignatureStep': number;
     /*'eEzsignsignatureType': FieldEEzsignsignatureType;*/
     'eEzsignsignatureType': FieldEEzsignsignatureType;
+    /*'eEzsignsignatureSignaturepad'?: FieldEEzsignsignatureSignaturepad;*/
+    'eEzsignsignatureSignaturepad'?: FieldEEzsignsignatureSignaturepad;
+    /*'eEzsignsignatureSignaturepadrequired'?: FieldEEzsignsignatureSignaturepadrequired;*/
+    'eEzsignsignatureSignaturepadrequired'?: FieldEEzsignsignatureSignaturepadrequired;
     /**
      * The unique ID of the Ezsigndocument
      */
@@ -168,6 +178,11 @@ export interface EzsignsignatureRequest {
      */
     /*'dEzsignsignatureCreditcardamount'?: string;*/
     'dEzsignsignatureCreditcardamount'?: string;
+    /**
+     * Whether we can enter a custom amount while signing an Ezsignsignature \'Creditcard\' or not
+     */
+    /*'bEzsignsignatureCreditcardcustomamount'?: boolean;*/
+    'bEzsignsignatureCreditcardcustomamount'?: boolean;
 }
 
 
@@ -193,6 +208,8 @@ export class DataObjectEzsignsignatureRequest {
    iEzsignsignatureHeight?:number = undefined
    iEzsignsignatureStep:number = 0
    eEzsignsignatureType:FieldEEzsignsignatureType = 'Acknowledgement'
+   eEzsignsignatureSignaturepad?:FieldEEzsignsignatureSignaturepad = undefined
+   eEzsignsignatureSignaturepadrequired?:FieldEEzsignsignatureSignaturepadrequired = undefined
    fkiEzsigndocumentID:number = 0
    tEzsignsignatureTooltip?:string = undefined
    eEzsignsignatureTooltipposition?:FieldEEzsignsignatureTooltipposition = undefined
@@ -213,6 +230,7 @@ export class DataObjectEzsignsignatureRequest {
    eEzsignsignatureDependencyrequirement?:FieldEEzsignsignatureDependencyrequirement = undefined
    sEzsignsignatureCreditcardamountdescription?:string = undefined
    dEzsignsignatureCreditcardamount?:string = undefined
+   bEzsignsignatureCreditcardcustomamount?:boolean = undefined
 }
 
 /**
@@ -270,6 +288,16 @@ export class ValidationObjectEzsignsignatureRequest {
       type: 'enum',
       allowableValues: ['Acknowledgement','Attachments','AttachmentsConfirmation','City','Consultation','Creditcard','FieldText','FieldTextarea','Handwritten','Initials','Name','NameReason','Signature'],
       required: true
+   }
+   eEzsignsignatureSignaturepad = {
+      type: 'enum',
+      allowableValues: ['Topaz'],
+      required: false
+   }
+   eEzsignsignatureSignaturepadrequired = {
+      type: 'enum',
+      allowableValues: ['No','BestEffort','Mandatory'],
+      required: false
    }
    fkiEzsigndocumentID = {
       type: 'integer',
@@ -363,7 +391,11 @@ export class ValidationObjectEzsignsignatureRequest {
    }
    dEzsignsignatureCreditcardamount = {
       type: 'string',
-      pattern: /^-{0,1}[\d]{1,9}?\.[\d]{2}$/,
+      pattern: /^[\d]{1,9}?\.[\d]{2}$/,
+      required: false
+   }
+   bEzsignsignatureCreditcardcustomamount = {
+      type: 'boolean',
       required: false
    }
 } 

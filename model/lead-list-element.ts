@@ -53,6 +53,11 @@ export interface LeadListElement {
      */
     /*'sLeadCode': string;*/
     'sLeadCode': string;
+    /**
+     * The contacts\' name of the Lead
+     */
+    /*'sLeadContacts'?: string;*/
+    'sLeadContacts'?: string;
 }
 
 
@@ -75,6 +80,7 @@ export class DataObjectLeadListElement {
    dtLeadExpiration:string = ''
    bLeadIsactive:boolean = false
    sLeadCode:string = ''
+   sLeadContacts?:string = undefined
 }
 
 /**
@@ -116,8 +122,12 @@ export class ValidationObjectLeadListElement {
    }
    sLeadCode = {
       type: 'string',
-      pattern: /^.{0,10}$/,
+      pattern: /^.{0,25}$/,
       required: true
+   }
+   sLeadContacts = {
+      type: 'string',
+      required: false
    }
 } 
 

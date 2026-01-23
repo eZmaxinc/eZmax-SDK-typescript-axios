@@ -30,6 +30,9 @@ import type { FieldEEzsignfolderCompletion } from './field-eezsignfolder-complet
 import type { FieldEEzsignfolderDocumentdependency } from './field-eezsignfolder-documentdependency';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { FieldEEzsignfolderMessageorder } from './field-eezsignfolder-messageorder';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { FieldEEzsignfolderStep } from './field-eezsignfolder-step';
 
 /**
@@ -154,6 +157,8 @@ export interface EzsignfolderResponseV3 {
      */
     /*'tEzsignfolderMessage'?: string;*/
     'tEzsignfolderMessage'?: string;
+    /*'eEzsignfolderMessageorder'?: FieldEEzsignfolderMessageorder;*/
+    'eEzsignfolderMessageorder'?: FieldEEzsignfolderMessageorder;
     /*'objAudit'?: CommonAudit;*/
     'objAudit'?: CommonAudit;
     /**
@@ -212,6 +217,7 @@ export class DataObjectEzsignfolderResponseV3 {
    dtEzsignfolderArchive?:string = undefined
    dtEzsignfolderDispose?:string = undefined
    tEzsignfolderMessage?:string = undefined
+   eEzsignfolderMessageorder?:FieldEEzsignfolderMessageorder = undefined
    objAudit?:CommonAudit = undefined
    sEzsignfolderExternalid?:string = undefined
    eEzsignfolderAccess?:ComputedEEzsignfolderAccess = undefined
@@ -337,6 +343,11 @@ export class ValidationObjectEzsignfolderResponseV3 {
    }
    tEzsignfolderMessage = {
       type: 'string',
+      required: false
+   }
+   eEzsignfolderMessageorder = {
+      type: 'enum',
+      allowableValues: ['GlobalFirst','PrivateFirst'],
       required: false
    }
    objAudit = new ValidationObjectCommonAudit()

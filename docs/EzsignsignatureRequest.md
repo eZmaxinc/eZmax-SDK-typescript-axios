@@ -16,6 +16,8 @@ Name | Type | Description | Notes
 **iEzsignsignatureHeight** | **number** | The height of the Ezsignsignature.  Size is calculated at 100dpi (dot per inch). So for example, if you want the Ezsignsignature to have an height of 2 inches, you would use \&quot;200\&quot; for the iEzsignsignatureHeight. | [optional] [default to undefined]
 **iEzsignsignatureStep** | **number** | The step when the Ezsignsigner will be invited to sign | [default to undefined]
 **eEzsignsignatureType** | [**FieldEEzsignsignatureType**](FieldEEzsignsignatureType.md) |  | [default to undefined]
+**eEzsignsignatureSignaturepad** | [**FieldEEzsignsignatureSignaturepad**](FieldEEzsignsignatureSignaturepad.md) |  | [optional] [default to undefined]
+**eEzsignsignatureSignaturepadrequired** | [**FieldEEzsignsignatureSignaturepadrequired**](FieldEEzsignsignatureSignaturepadrequired.md) |  | [optional] [default to undefined]
 **fkiEzsigndocumentID** | **number** | The unique ID of the Ezsigndocument | [default to undefined]
 **tEzsignsignatureTooltip** | **string** | A tooltip that will be presented to Ezsignsigner about the Ezsignsignature | [optional] [default to undefined]
 **eEzsignsignatureTooltipposition** | [**FieldEEzsignsignatureTooltipposition**](FieldEEzsignsignatureTooltipposition.md) |  | [optional] [default to undefined]
@@ -36,6 +38,7 @@ Name | Type | Description | Notes
 **eEzsignsignatureDependencyrequirement** | [**FieldEEzsignsignatureDependencyrequirement**](FieldEEzsignsignatureDependencyrequirement.md) |  | [optional] [default to undefined]
 **sEzsignsignatureCreditcardamountdescription** | **string** | The description of the Creditcard signature | [optional] [default to undefined]
 **dEzsignsignatureCreditcardamount** | **string** | The amount of the Creditcard signature | [optional] [default to undefined]
+**bEzsignsignatureCreditcardcustomamount** | **boolean** | Whether we can enter a custom amount while signing an Ezsignsignature \&#39;Creditcard\&#39; or not | [optional] [default to undefined]
 
 ## Example
 
@@ -53,6 +56,8 @@ const instance: EzsignsignatureRequest = {
     iEzsignsignatureHeight,
     iEzsignsignatureStep,
     eEzsignsignatureType,
+    eEzsignsignatureSignaturepad,
+    eEzsignsignatureSignaturepadrequired,
     fkiEzsigndocumentID,
     tEzsignsignatureTooltip,
     eEzsignsignatureTooltipposition,
@@ -73,6 +78,7 @@ const instance: EzsignsignatureRequest = {
     eEzsignsignatureDependencyrequirement,
     sEzsignsignatureCreditcardamountdescription,
     dEzsignsignatureCreditcardamount,
+    bEzsignsignatureCreditcardcustomamount,
 };
 ```
 

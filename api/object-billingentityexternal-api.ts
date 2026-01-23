@@ -71,9 +71,8 @@ export const ObjectBillingentityexternalApiAxiosParamCreator = function (configu
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -143,8 +142,8 @@ export const ObjectBillingentityexternalApiAxiosParamCreator = function (configu
                 localVarQueryParameter['sQuery'] = sQuery;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             if (acceptLanguage != null) {
                 localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
                     ? acceptLanguage

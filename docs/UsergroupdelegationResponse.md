@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **sUserLastname** | **string** | The last name of the user | [default to undefined]
 **sUserLoginname** | **string** | The login name of the User. | [default to undefined]
 **sEmailAddress** | **string** | The email address. | [optional] [default to undefined]
+**bUserIsactive** | **boolean** | Whether the User is active or not | [default to undefined]
 **sUsergroupNameX** | **string** | The Name of the Usergroup in the language of the requester | [default to undefined]
 
 ## Example
@@ -28,6 +29,7 @@ const instance: UsergroupdelegationResponse = {
     sUserLastname,
     sUserLoginname,
     sEmailAddress,
+    bUserIsactive,
     sUsergroupNameX,
 };
 ```

@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **sCurrencyDescriptionX** | **string** | The description of the Currency in the language of the requester | [optional] [default to undefined]
 **dEzsignsignatureCreditcardamount** | **string** | The amount of the Creditcard signature | [optional] [default to undefined]
 **sEzsignsignatureCreditcardamountdescription** | **string** | The description of the Creditcard signature | [optional] [default to undefined]
+**bEzsignsignatureCreditcardcustomamount** | **boolean** | Whether we can enter a custom amount while signing an Ezsignsignature \&#39;Creditcard\&#39; or not | [optional] [default to undefined]
 **sEzsignsigningreasonDescriptionX** | **string** | The description of the Ezsignsigningreason in the language of the requester | [optional] [default to undefined]
 **iEzsignpagePagenumber** | **number** | The page number in the Ezsigndocument | [default to undefined]
 **iEzsignsignatureX** | **number** | The X coordinate (Horizontal) where to put the Ezsignsignature on the page.  Coordinate is calculated at 100dpi (dot per inch). So for example, if you want to put the Ezsignsignature 2 inches from the left border of the page, you would use \&quot;200\&quot; for the X coordinate. | [default to undefined]
@@ -24,6 +25,8 @@ Name | Type | Description | Notes
 **iEzsignsignatureStep** | **number** | The step when the Ezsignsigner will be invited to sign | [default to undefined]
 **iEzsignsignatureStepadjusted** | **number** | The step when the Ezsignsigner will be invited to sign | [optional] [default to undefined]
 **eEzsignsignatureType** | [**FieldEEzsignsignatureType**](FieldEEzsignsignatureType.md) |  | [default to undefined]
+**eEzsignsignatureSignaturepad** | [**FieldEEzsignsignatureSignaturepad**](FieldEEzsignsignatureSignaturepad.md) |  | [optional] [default to undefined]
+**eEzsignsignatureSignaturepadrequired** | [**FieldEEzsignsignatureSignaturepadrequired**](FieldEEzsignsignatureSignaturepadrequired.md) |  | [optional] [default to undefined]
 **tEzsignsignatureTooltip** | **string** | A tooltip that will be presented to Ezsignsigner about the Ezsignsignature | [optional] [default to undefined]
 **eEzsignsignatureTooltipposition** | [**FieldEEzsignsignatureTooltipposition**](FieldEEzsignsignatureTooltipposition.md) |  | [optional] [default to undefined]
 **eEzsignsignatureFont** | [**FieldEEzsignsignatureFont**](FieldEEzsignsignatureFont.md) |  | [optional] [default to undefined]
@@ -63,6 +66,7 @@ const instance: EzsignsignatureResponse = {
     sCurrencyDescriptionX,
     dEzsignsignatureCreditcardamount,
     sEzsignsignatureCreditcardamountdescription,
+    bEzsignsignatureCreditcardcustomamount,
     sEzsignsigningreasonDescriptionX,
     iEzsignpagePagenumber,
     iEzsignsignatureX,
@@ -72,6 +76,8 @@ const instance: EzsignsignatureResponse = {
     iEzsignsignatureStep,
     iEzsignsignatureStepadjusted,
     eEzsignsignatureType,
+    eEzsignsignatureSignaturepad,
+    eEzsignsignatureSignaturepadrequired,
     tEzsignsignatureTooltip,
     eEzsignsignatureTooltipposition,
     eEzsignsignatureFont,

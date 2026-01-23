@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **fkiCreditcarddetailID** | **number** | The unique ID of the Creditcarddetail | [default to undefined]
 **fkiCreditcardtypeID** | **number** | The unique ID of the Creditcardtype | [default to undefined]
 **bCreditcardclientrelationIsdefault** | **boolean** | Whether if it\&#39;s the creditcardclient is the default one | [default to undefined]
+**bCreditcardclientLegacy** | **boolean** | Whether the Creditcardclient is legacy or not | [default to undefined]
 **sCreditcardclientDescription** | **string** | The description of the Creditcardclient | [default to undefined]
 **bCreditcardclientAllowedcompanypayment** | **boolean** | Whether if it\&#39;s an allowedagencypayment | [default to undefined]
 **bCreditcardclientAllowedtranquillit** | **boolean** | Whether if it\&#39;s an allowedtranquillit | [default to undefined]
@@ -27,6 +28,7 @@ const instance: CreditcardclientListElement = {
     fkiCreditcarddetailID,
     fkiCreditcardtypeID,
     bCreditcardclientrelationIsdefault,
+    bCreditcardclientLegacy,
     sCreditcardclientDescription,
     bCreditcardclientAllowedcompanypayment,
     bCreditcardclientAllowedtranquillit,

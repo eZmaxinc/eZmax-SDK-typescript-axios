@@ -52,6 +52,16 @@ export interface SystemconfigurationResponse {
     /*'fkiBrandingID'?: number;*/
     'fkiBrandingID'?: number;
     /**
+     * The unique ID of the Timezone
+     */
+    /*'fkiTimezoneIDDefault': number;*/
+    'fkiTimezoneIDDefault': number;
+    /**
+     * The description of the Timezone
+     */
+    /*'sTimezoneNameDefault': string;*/
+    'sTimezoneNameDefault': string;
+    /**
      * The description of the Systemconfigurationtype in the language of the requester
      */
     /*'sSystemconfigurationtypeDescriptionX': string;*/
@@ -106,6 +116,11 @@ export interface SystemconfigurationResponse {
     'dtSystemconfigurationReadonlyexpirationend'?: string;
     /*'objBranding'?: CustomBrandingResponse;*/
     'objBranding'?: CustomBrandingResponse;
+    /**
+     * The hour we will send the eZsign reminders
+     */
+    /*'iSystemconfigurationEzsignreminderhoursend'?: number;*/
+    'iSystemconfigurationEzsignreminderhoursend'?: number;
 }
 
 
@@ -128,6 +143,8 @@ export class DataObjectSystemconfigurationResponse {
    pkiSystemconfigurationID:number = 0
    fkiSystemconfigurationtypeID:number = 0
    fkiBrandingID?:number = undefined
+   fkiTimezoneIDDefault:number = 0
+   sTimezoneNameDefault:string = ''
    sSystemconfigurationtypeDescriptionX:string = ''
    eSystemconfigurationNewexternaluseraction:FieldESystemconfigurationNewexternaluseraction = 'Stage'
    eSystemconfigurationLanguage1:FieldESystemconfigurationLanguage1 = 'fr_QC'
@@ -142,6 +159,7 @@ export class DataObjectSystemconfigurationResponse {
    dtSystemconfigurationReadonlyexpirationstart?:string = undefined
    dtSystemconfigurationReadonlyexpirationend?:string = undefined
    objBranding?:CustomBrandingResponse = undefined
+   iSystemconfigurationEzsignreminderhoursend?:number = undefined
 }
 
 /**
@@ -165,6 +183,15 @@ export class ValidationObjectSystemconfigurationResponse {
       type: 'integer',
       minimum: 0,
       required: false
+   }
+   fkiTimezoneIDDefault = {
+      type: 'integer',
+      minimum: 0,
+      required: true
+   }
+   sTimezoneNameDefault = {
+      type: 'string',
+      required: true
    }
    sSystemconfigurationtypeDescriptionX = {
       type: 'string',
@@ -226,6 +253,12 @@ export class ValidationObjectSystemconfigurationResponse {
       required: false
    }
    objBranding = new ValidationObjectCustomBrandingResponse()
+   iSystemconfigurationEzsignreminderhoursend = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 23,
+      required: false
+   }
 } 
 
 

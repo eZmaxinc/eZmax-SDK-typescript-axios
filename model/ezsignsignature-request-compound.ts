@@ -42,6 +42,12 @@ import type { FieldEEzsignsignatureDependencyrequirement } from './field-eezsign
 import type { FieldEEzsignsignatureFont } from './field-eezsignsignature-font';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { FieldEEzsignsignatureSignaturepad } from './field-eezsignsignature-signaturepad';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { FieldEEzsignsignatureSignaturepadrequired } from './field-eezsignsignature-signaturepadrequired';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { FieldEEzsignsignatureTooltipposition } from './field-eezsignsignature-tooltipposition';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -113,6 +119,18 @@ export interface EzsignsignatureRequestCompound {
      * @memberof EzsignsignatureRequestCompound
      */
     eEzsignsignatureType:FieldEEzsignsignatureType 
+    /**
+     * 
+     * @type {FieldEEzsignsignatureSignaturepad}
+     * @memberof EzsignsignatureRequestCompound
+     */
+    eEzsignsignatureSignaturepad?:FieldEEzsignsignatureSignaturepad 
+    /**
+     * 
+     * @type {FieldEEzsignsignatureSignaturepadrequired}
+     * @memberof EzsignsignatureRequestCompound
+     */
+    eEzsignsignatureSignaturepadrequired?:FieldEEzsignsignatureSignaturepadrequired 
     /**
      * The unique ID of the Ezsigndocument
      * @type {number}
@@ -234,6 +252,12 @@ export interface EzsignsignatureRequestCompound {
      */
     dEzsignsignatureCreditcardamount?:string 
     /**
+     * Whether we can enter a custom amount while signing an Ezsignsignature \'Creditcard\' or not
+     * @type {boolean}
+     * @memberof EzsignsignatureRequestCompound
+     */
+    bEzsignsignatureCreditcardcustomamount?:boolean 
+    /**
      * Whether the Ezsignsignature has a custom date format or not. (Only possible when eEzsignsignatureType is **Name** or **Handwritten**)
      * @type {boolean}
      * @memberof EzsignsignatureRequestCompound
@@ -283,6 +307,8 @@ export class DataObjectEzsignsignatureRequestCompound {
     iEzsignsignatureHeight?:number = undefined
     iEzsignsignatureStep:number = 0
     eEzsignsignatureType:FieldEEzsignsignatureType = 'Acknowledgement'
+    eEzsignsignatureSignaturepad?:FieldEEzsignsignatureSignaturepad = undefined
+    eEzsignsignatureSignaturepadrequired?:FieldEEzsignsignatureSignaturepadrequired = undefined
     fkiEzsigndocumentID:number = 0
     tEzsignsignatureTooltip?:string = undefined
     eEzsignsignatureTooltipposition?:FieldEEzsignsignatureTooltipposition = undefined
@@ -303,6 +329,7 @@ export class DataObjectEzsignsignatureRequestCompound {
     eEzsignsignatureDependencyrequirement?:FieldEEzsignsignatureDependencyrequirement = undefined
     sEzsignsignatureCreditcardamountdescription?:string = undefined
     dEzsignsignatureCreditcardamount?:string = undefined
+    bEzsignsignatureCreditcardcustomamount?:boolean = undefined
     bEzsignsignatureCustomdate?:boolean = undefined
     a_objEzsignsignaturecustomdate?:Array<EzsignsignaturecustomdateRequestCompound> = undefined
     a_objEzsignelementdependency?:Array<EzsignelementdependencyRequestCompound> = undefined
@@ -364,6 +391,16 @@ export class ValidationObjectEzsignsignatureRequestCompound {
       type: 'enum',
       allowableValues: ['Acknowledgement','Attachments','AttachmentsConfirmation','City','Consultation','Creditcard','FieldText','FieldTextarea','Handwritten','Initials','Name','NameReason','Signature'],
       required: true
+   }
+   eEzsignsignatureSignaturepad = {
+      type: 'enum',
+      allowableValues: ['Topaz'],
+      required: false
+   }
+   eEzsignsignatureSignaturepadrequired = {
+      type: 'enum',
+      allowableValues: ['No','BestEffort','Mandatory'],
+      required: false
    }
    fkiEzsigndocumentID = {
       type: 'integer',
@@ -457,7 +494,11 @@ export class ValidationObjectEzsignsignatureRequestCompound {
    }
    dEzsignsignatureCreditcardamount = {
       type: 'string',
-      pattern: /^-{0,1}[\d]{1,9}?\.[\d]{2}$/,
+      pattern: /^[\d]{1,9}?\.[\d]{2}$/,
+      required: false
+   }
+   bEzsignsignatureCreditcardcustomamount = {
+      type: 'boolean',
       required: false
    }
    bEzsignsignatureCustomdate = {

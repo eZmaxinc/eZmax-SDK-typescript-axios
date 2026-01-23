@@ -73,8 +73,8 @@ export const ObjectEzdoctemplatetypeApiAxiosParamCreator = function (configurati
                 localVarQueryParameter['sQuery'] = sQuery;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             if (acceptLanguage != null) {
                 localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
                     ? acceptLanguage

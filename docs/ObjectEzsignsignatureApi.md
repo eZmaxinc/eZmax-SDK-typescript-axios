@@ -9,11 +9,9 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**ezsignsignatureCreateObjectV3**](#ezsignsignaturecreateobjectv3) | **POST** /3/object/ezsignsignature | Create a new Ezsignsignature|
 |[**ezsignsignatureCreateObjectV4**](#ezsignsignaturecreateobjectv4) | **POST** /4/object/ezsignsignature | Create a new Ezsignsignature|
 |[**ezsignsignatureDeleteObjectV1**](#ezsignsignaturedeleteobjectv1) | **DELETE** /1/object/ezsignsignature/{pkiEzsignsignatureID} | Delete an existing Ezsignsignature|
-|[**ezsignsignatureEditObjectV2**](#ezsignsignatureeditobjectv2) | **PUT** /2/object/ezsignsignature/{pkiEzsignsignatureID} | Edit an existing Ezsignsignature|
 |[**ezsignsignatureEditObjectV3**](#ezsignsignatureeditobjectv3) | **PUT** /3/object/ezsignsignature/{pkiEzsignsignatureID} | Edit an existing Ezsignsignature|
 |[**ezsignsignatureGetEzsignsignatureattachmentV1**](#ezsignsignaturegetezsignsignatureattachmentv1) | **GET** /1/object/ezsignsignature/{pkiEzsignsignatureID}/getEzsignsignatureattachment | Retrieve an existing Ezsignsignature\&#39;s Ezsignsignatureattachments|
 |[**ezsignsignatureGetEzsignsignaturesAutomaticV1**](#ezsignsignaturegetezsignsignaturesautomaticv1) | **GET** /1/object/ezsignsignature/getEzsignsignaturesAutomatic | Retrieve all automatic Ezsignsignatures|
-|[**ezsignsignatureGetObjectV3**](#ezsignsignaturegetobjectv3) | **GET** /3/object/ezsignsignature/{pkiEzsignsignatureID} | Retrieve an existing Ezsignsignature|
 |[**ezsignsignatureGetObjectV4**](#ezsignsignaturegetobjectv4) | **GET** /4/object/ezsignsignature/{pkiEzsignsignatureID} | Retrieve an existing Ezsignsignature|
 |[**ezsignsignatureSignV1**](#ezsignsignaturesignv1) | **POST** /1/object/ezsignsignature/{pkiEzsignsignatureID}/sign | Sign the Ezsignsignature|
 
@@ -277,63 +275,6 @@ const { status, data } = await apiInstance.ezsignsignatureDeleteObjectV1(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ezsignsignatureEditObjectV2**
-> EzsignsignatureEditObjectV2Response ezsignsignatureEditObjectV2(ezsignsignatureEditObjectV2Request)
-
-Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
-
-### Example
-
-```typescript
-import {
-    ObjectEzsignsignatureApi,
-    Configuration,
-    EzsignsignatureEditObjectV2Request
-} from '@ezmaxinc/ezmax-sdk-typescript-axios';
-
-const configuration = new Configuration();
-const apiInstance = new ObjectEzsignsignatureApi(configuration);
-
-let pkiEzsignsignatureID: number; // (default to undefined)
-let ezsignsignatureEditObjectV2Request: EzsignsignatureEditObjectV2Request; //
-
-const { status, data } = await apiInstance.ezsignsignatureEditObjectV2(
-    pkiEzsignsignatureID,
-    ezsignsignatureEditObjectV2Request
-);
-```
-
-### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **ezsignsignatureEditObjectV2Request** | **EzsignsignatureEditObjectV2Request**|  | |
-| **pkiEzsignsignatureID** | [**number**] |  | defaults to undefined|
-
-
-### Return type
-
-**EzsignsignatureEditObjectV2Response**
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-|**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
-|**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **ezsignsignatureEditObjectV3**
 > EzsignsignatureEditObjectV3Response ezsignsignatureEditObjectV3(ezsignsignatureEditObjectV3Request)
 
@@ -484,58 +425,6 @@ This endpoint does not have any parameters.
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Successful response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **ezsignsignatureGetObjectV3**
-> EzsignsignatureGetObjectV3Response ezsignsignatureGetObjectV3()
-
-Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
-
-### Example
-
-```typescript
-import {
-    ObjectEzsignsignatureApi,
-    Configuration
-} from '@ezmaxinc/ezmax-sdk-typescript-axios';
-
-const configuration = new Configuration();
-const apiInstance = new ObjectEzsignsignatureApi(configuration);
-
-let pkiEzsignsignatureID: number; // (default to undefined)
-
-const { status, data } = await apiInstance.ezsignsignatureGetObjectV3(
-    pkiEzsignsignatureID
-);
-```
-
-### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **pkiEzsignsignatureID** | [**number**] |  | defaults to undefined|
-
-
-### Return type
-
-**EzsignsignatureGetObjectV3Response**
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-|**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

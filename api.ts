@@ -96,6 +96,7 @@ export enum EApiOperation {
     'object-franchisereferalincome-api',
     'object-glaccount-api',
     'object-glaccountcontainer-api',
+    'object-infrastructureregion-api',
     'object-inscription-api',
     'object-inscriptionchecklist-api',
     'object-inscriptionnotauthenticated-api',
@@ -119,6 +120,8 @@ export enum EApiOperation {
     'object-permission-api',
     'object-phonetype-api',
     'object-province-api',
+    'object-realestateassociation-api',
+    'object-realestateboard-api',
     'object-rejectedoffertopurchase-api',
     'object-secretquestion-api',
     'object-sessionhistory-api',
@@ -127,6 +130,7 @@ export enum EApiOperation {
     'object-supplier-api',
     'object-supply-api',
     'object-systemconfiguration-api',
+    'object-systemconfigurationtype-api',
     'object-taxassignment-api',
     'object-timezone-api',
     'object-tranqcontract-api',
@@ -230,6 +234,7 @@ export * from './api/object-franchiseoffice-api';
 export * from './api/object-franchisereferalincome-api';
 export * from './api/object-glaccount-api';
 export * from './api/object-glaccountcontainer-api';
+export * from './api/object-infrastructureregion-api';
 export * from './api/object-inscription-api';
 export * from './api/object-inscriptionchecklist-api';
 export * from './api/object-inscriptionnotauthenticated-api';
@@ -253,6 +258,8 @@ export * from './api/object-period-api';
 export * from './api/object-permission-api';
 export * from './api/object-phonetype-api';
 export * from './api/object-province-api';
+export * from './api/object-realestateassociation-api';
+export * from './api/object-realestateboard-api';
 export * from './api/object-rejectedoffertopurchase-api';
 export * from './api/object-secretquestion-api';
 export * from './api/object-sessionhistory-api';
@@ -261,6 +268,7 @@ export * from './api/object-subnet-api';
 export * from './api/object-supplier-api';
 export * from './api/object-supply-api';
 export * from './api/object-systemconfiguration-api';
+export * from './api/object-systemconfigurationtype-api';
 export * from './api/object-taxassignment-api';
 export * from './api/object-timezone-api';
 export * from './api/object-tranqcontract-api';

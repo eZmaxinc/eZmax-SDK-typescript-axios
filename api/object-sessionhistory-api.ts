@@ -81,8 +81,8 @@ export const ObjectSessionhistoryApiAxiosParamCreator = function (configuration?
                 localVarQueryParameter['sFilter'] = sFilter;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
 
-    
             if (acceptLanguage != null) {
                 localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
                     ? acceptLanguage

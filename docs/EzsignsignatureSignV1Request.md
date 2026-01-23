@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **fkiEzsignsigningreasonID** | **number** | The unique ID of the Ezsignsigningreason | [optional] [default to undefined]
 **fkiFontID** | **number** | The unique ID of the Font | [optional] [default to undefined]
+**dEzsignsignatureCreditcardamount** | **string** | The amount of the Creditcard signature | [optional] [default to undefined]
 **sValue** | **string** | The value required for the Ezsignsignature.  This can only be set if eEzsignsignatureType is **City**, **FieldText** or **FieldTextarea** | [optional] [default to undefined]
 **eAttachmentsConfirmationDecision** | **string** | Whether the attachment are accepted or refused.  This can only be set if eEzsignsignatureType is **AttachmentsConfirmation** | [optional] [default to undefined]
 **sAttachmentsRefusalReason** | **string** | The reason of refused.  This can only be set if eEzsignsignatureType is **AttachmentsConfirmation** | [optional] [default to undefined]
@@ -24,6 +25,7 @@ import { EzsignsignatureSignV1Request } from '@ezmaxinc/ezmax-sdk-typescript-axi
 const instance: EzsignsignatureSignV1Request = {
     fkiEzsignsigningreasonID,
     fkiFontID,
+    dEzsignsignatureCreditcardamount,
     sValue,
     eAttachmentsConfirmationDecision,
     sAttachmentsRefusalReason,

@@ -33,6 +33,11 @@ export interface CommonReportsection {
      */
     /*'sReportsectionTitle'?: string;*/
     'sReportsectionTitle'?: string;
+    /**
+     * The name of tab in excel version
+     */
+    /*'sReportsectionTabname'?: string;*/
+    'sReportsectionTabname'?: string;
 }
 
 
@@ -51,6 +56,7 @@ export class DataObjectCommonReportsection {
    a_objReportsubsection:Array<CommonReportsubsection> = []
    eReportsectionHorizontalalignment:EnumHorizontalalignment = 'Center'
    sReportsectionTitle?:string = undefined
+   sReportsectionTabname?:string = undefined
 }
 
 /**
@@ -69,6 +75,10 @@ export class ValidationObjectCommonReportsection {
       required: true
    }
    sReportsectionTitle = {
+      type: 'string',
+      required: false
+   }
+   sReportsectionTabname = {
       type: 'string',
       required: false
    }

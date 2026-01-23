@@ -62,8 +62,6 @@ import type { EzsigntemplatedocumentGetEzsigntemplatedocumentpagesV1Response } f
 // @ts-ignore
 import type { EzsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1Response } from '../model';
 // @ts-ignore
-import type { EzsigntemplatedocumentGetEzsigntemplatesignaturesV1Response } from '../model';
-// @ts-ignore
 import type { EzsigntemplatedocumentGetEzsigntemplatesignaturesV2Response } from '../model';
 // @ts-ignore
 import type { EzsigntemplatedocumentGetObjectV2Response } from '../model';
@@ -111,9 +109,8 @@ export const ObjectEzsigntemplatedocumentApiAxiosParamCreator = function (config
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -129,6 +126,64 @@ export const ObjectEzsigntemplatedocumentApiAxiosParamCreator = function (config
                         authorization: configuration.apiKey as string,
                         secret: secret as string,
                         method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve an existing Ezsigntemplatedocument\'s original file
+         * @param {number} pkiEzsigntemplatedocumentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigntemplatedocumentDownloadV1: async (pkiEzsigntemplatedocumentID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiEzsigntemplatedocumentID' is not null or undefined
+            assertParamExists('ezsigntemplatedocumentDownloadV1', 'pkiEzsigntemplatedocumentID', pkiEzsigntemplatedocumentID)
+            const localVarPath = `/1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/download`
+                .replace(`{${"pkiEzsigntemplatedocumentID"}}`, encodeURIComponent(String(pkiEzsigntemplatedocumentID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
                         url: basePath + toPathString(localVarUrlObj) as string,
                         body: localVarRequestOptions.data || '' as string
                     }
@@ -175,9 +230,8 @@ export const ObjectEzsigntemplatedocumentApiAxiosParamCreator = function (config
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -239,9 +293,8 @@ export const ObjectEzsigntemplatedocumentApiAxiosParamCreator = function (config
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -304,9 +357,8 @@ export const ObjectEzsigntemplatedocumentApiAxiosParamCreator = function (config
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -368,9 +420,8 @@ export const ObjectEzsigntemplatedocumentApiAxiosParamCreator = function (config
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -432,9 +483,8 @@ export const ObjectEzsigntemplatedocumentApiAxiosParamCreator = function (config
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -496,9 +546,8 @@ export const ObjectEzsigntemplatedocumentApiAxiosParamCreator = function (config
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -560,9 +609,8 @@ export const ObjectEzsigntemplatedocumentApiAxiosParamCreator = function (config
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -621,8 +669,8 @@ export const ObjectEzsigntemplatedocumentApiAxiosParamCreator = function (config
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -679,8 +727,8 @@ export const ObjectEzsigntemplatedocumentApiAxiosParamCreator = function (config
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -737,67 +785,8 @@ export const ObjectEzsigntemplatedocumentApiAxiosParamCreator = function (config
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'GET' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
-         * @summary Retrieve an existing Ezsigntemplatedocument\'s Ezsigntemplatesignatures
-         * @param {number} pkiEzsigntemplatedocumentID 
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        ezsigntemplatedocumentGetEzsigntemplatesignaturesV1: async (pkiEzsigntemplatedocumentID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiEzsigntemplatedocumentID' is not null or undefined
-            assertParamExists('ezsigntemplatedocumentGetEzsigntemplatesignaturesV1', 'pkiEzsigntemplatedocumentID', pkiEzsigntemplatedocumentID)
-            const localVarPath = `/1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplatesignatures`
-                .replace(`{${"pkiEzsigntemplatedocumentID"}}`, encodeURIComponent(String(pkiEzsigntemplatedocumentID)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -854,8 +843,8 @@ export const ObjectEzsigntemplatedocumentApiAxiosParamCreator = function (config
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -912,8 +901,8 @@ export const ObjectEzsigntemplatedocumentApiAxiosParamCreator = function (config
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -973,9 +962,8 @@ export const ObjectEzsigntemplatedocumentApiAxiosParamCreator = function (config
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -1037,9 +1025,8 @@ export const ObjectEzsigntemplatedocumentApiAxiosParamCreator = function (config
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -1088,6 +1075,19 @@ export const ObjectEzsigntemplatedocumentApiFp = function(configuration?: Config
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigntemplatedocumentCreateObjectV1(ezsigntemplatedocumentCreateObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsigntemplatedocumentApi.ezsigntemplatedocumentCreateObjectV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve an existing Ezsigntemplatedocument\'s original file
+         * @param {number} pkiEzsigntemplatedocumentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsigntemplatedocumentDownloadV1(pkiEzsigntemplatedocumentID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigntemplatedocumentDownloadV1(pkiEzsigntemplatedocumentID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsigntemplatedocumentApi.ezsigntemplatedocumentDownloadV1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -1229,20 +1229,6 @@ export const ObjectEzsigntemplatedocumentApiFp = function(configuration?: Config
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
-         * @summary Retrieve an existing Ezsigntemplatedocument\'s Ezsigntemplatesignatures
-         * @param {number} pkiEzsigntemplatedocumentID 
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        async ezsigntemplatedocumentGetEzsigntemplatesignaturesV1(pkiEzsigntemplatedocumentID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigntemplatedocumentGetEzsigntemplatesignaturesV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigntemplatedocumentGetEzsigntemplatesignaturesV1(pkiEzsigntemplatedocumentID, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ObjectEzsigntemplatedocumentApi.ezsigntemplatedocumentGetEzsigntemplatesignaturesV1']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
          * 
          * @summary Retrieve an existing Ezsigntemplatedocument\'s Ezsigntemplatesignatures
          * @param {number} pkiEzsigntemplatedocumentID 
@@ -1314,6 +1300,16 @@ export const ObjectEzsigntemplatedocumentApiFactory = function (configuration?: 
          */
         ezsigntemplatedocumentCreateObjectV1(ezsigntemplatedocumentCreateObjectV1Request: EzsigntemplatedocumentCreateObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsigntemplatedocumentCreateObjectV1Response> {
             return localVarFp.ezsigntemplatedocumentCreateObjectV1(ezsigntemplatedocumentCreateObjectV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve an existing Ezsigntemplatedocument\'s original file
+         * @param {number} pkiEzsigntemplatedocumentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigntemplatedocumentDownloadV1(pkiEzsigntemplatedocumentID: number, options?: RawAxiosRequestConfig): AxiosPromise<void> {
+            return localVarFp.ezsigntemplatedocumentDownloadV1(pkiEzsigntemplatedocumentID, options).then((request) => request(axios, basePath));
         },
         /**
          * Edit multiple Ezsigntemplatedocumentpagerecognitions
@@ -1424,17 +1420,6 @@ export const ObjectEzsigntemplatedocumentApiFactory = function (configuration?: 
             return localVarFp.ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1(pkiEzsigntemplatedocumentID, options).then((request) => request(axios, basePath));
         },
         /**
-         * Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
-         * @summary Retrieve an existing Ezsigntemplatedocument\'s Ezsigntemplatesignatures
-         * @param {number} pkiEzsigntemplatedocumentID 
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        ezsigntemplatedocumentGetEzsigntemplatesignaturesV1(pkiEzsigntemplatedocumentID: number, options?: RawAxiosRequestConfig): AxiosPromise<EzsigntemplatedocumentGetEzsigntemplatesignaturesV1Response> {
-            return localVarFp.ezsigntemplatedocumentGetEzsigntemplatesignaturesV1(pkiEzsigntemplatedocumentID, options).then((request) => request(axios, basePath));
-        },
-        /**
          * 
          * @summary Retrieve an existing Ezsigntemplatedocument\'s Ezsigntemplatesignatures
          * @param {number} pkiEzsigntemplatedocumentID 
@@ -1492,6 +1477,17 @@ export class ObjectEzsigntemplatedocumentApi extends BaseAPI {
      */
     public ezsigntemplatedocumentCreateObjectV1(ezsigntemplatedocumentCreateObjectV1Request: EzsigntemplatedocumentCreateObjectV1Request, options?: RawAxiosRequestConfig) {
         return ObjectEzsigntemplatedocumentApiFp(this.configuration).ezsigntemplatedocumentCreateObjectV1(ezsigntemplatedocumentCreateObjectV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve an existing Ezsigntemplatedocument\'s original file
+     * @param {number} pkiEzsigntemplatedocumentID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public ezsigntemplatedocumentDownloadV1(pkiEzsigntemplatedocumentID: number, options?: RawAxiosRequestConfig) {
+        return ObjectEzsigntemplatedocumentApiFp(this.configuration).ezsigntemplatedocumentDownloadV1(pkiEzsigntemplatedocumentID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1610,18 +1606,6 @@ export class ObjectEzsigntemplatedocumentApi extends BaseAPI {
      */
     public ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1(pkiEzsigntemplatedocumentID: number, options?: RawAxiosRequestConfig) {
         return ObjectEzsigntemplatedocumentApiFp(this.configuration).ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1(pkiEzsigntemplatedocumentID, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
-     * @summary Retrieve an existing Ezsigntemplatedocument\'s Ezsigntemplatesignatures
-     * @param {number} pkiEzsigntemplatedocumentID 
-     * @param {*} [options] Override http request option.
-     * @deprecated
-     * @throws {RequiredError}
-     */
-    public ezsigntemplatedocumentGetEzsigntemplatesignaturesV1(pkiEzsigntemplatedocumentID: number, options?: RawAxiosRequestConfig) {
-        return ObjectEzsigntemplatedocumentApiFp(this.configuration).ezsigntemplatedocumentGetEzsigntemplatesignaturesV1(pkiEzsigntemplatedocumentID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

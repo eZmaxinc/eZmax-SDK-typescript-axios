@@ -65,8 +65,8 @@ export const ModuleReportApiAxiosParamCreator = function (configuration?: Config
             // authentication Presigned required
             // await setApiKeyToObject(localVarQueryParameter, "sAuthorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json,application/pdf,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/zip,text/html';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};

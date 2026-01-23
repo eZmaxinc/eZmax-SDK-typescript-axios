@@ -34,15 +34,9 @@ import type { EzsigntemplatesignatureCreateObjectV3Response } from '../model';
 // @ts-ignore
 import type { EzsigntemplatesignatureDeleteObjectV1Response } from '../model';
 // @ts-ignore
-import type { EzsigntemplatesignatureEditObjectV2Request } from '../model';
-// @ts-ignore
-import type { EzsigntemplatesignatureEditObjectV2Response } from '../model';
-// @ts-ignore
 import type { EzsigntemplatesignatureEditObjectV3Request } from '../model';
 // @ts-ignore
 import type { EzsigntemplatesignatureEditObjectV3Response } from '../model';
-// @ts-ignore
-import type { EzsigntemplatesignatureGetObjectV3Response } from '../model';
 // @ts-ignore
 import type { EzsigntemplatesignatureGetObjectV4Response } from '../model';
 // @ts-ignore
@@ -82,9 +76,8 @@ export const ObjectEzsigntemplatesignatureApiAxiosParamCreator = function (confi
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -142,9 +135,8 @@ export const ObjectEzsigntemplatesignatureApiAxiosParamCreator = function (confi
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -203,8 +195,8 @@ export const ObjectEzsigntemplatesignatureApiAxiosParamCreator = function (confi
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -218,71 +210,6 @@ export const ObjectEzsigntemplatesignatureApiAxiosParamCreator = function (confi
                         authorization: configuration.apiKey as string,
                         secret: secret as string,
                         method: 'DELETE' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
-         * @summary Edit an existing Ezsigntemplatesignature
-         * @param {number} pkiEzsigntemplatesignatureID 
-         * @param {EzsigntemplatesignatureEditObjectV2Request} ezsigntemplatesignatureEditObjectV2Request 
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        ezsigntemplatesignatureEditObjectV2: async (pkiEzsigntemplatesignatureID: number, ezsigntemplatesignatureEditObjectV2Request: EzsigntemplatesignatureEditObjectV2Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiEzsigntemplatesignatureID' is not null or undefined
-            assertParamExists('ezsigntemplatesignatureEditObjectV2', 'pkiEzsigntemplatesignatureID', pkiEzsigntemplatesignatureID)
-            // verify required parameter 'ezsigntemplatesignatureEditObjectV2Request' is not null or undefined
-            assertParamExists('ezsigntemplatesignatureEditObjectV2', 'ezsigntemplatesignatureEditObjectV2Request', ezsigntemplatesignatureEditObjectV2Request)
-            const localVarPath = `/2/object/ezsigntemplatesignature/{pkiEzsigntemplatesignatureID}`
-                .replace(`{${"pkiEzsigntemplatesignatureID"}}`, encodeURIComponent(String(pkiEzsigntemplatesignatureID)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(ezsigntemplatesignatureEditObjectV2Request, localVarRequestOptions, configuration)
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'PUT' as string,
                         url: basePath + toPathString(localVarUrlObj) as string,
                         body: localVarRequestOptions.data || '' as string
                     }
@@ -329,9 +256,8 @@ export const ObjectEzsigntemplatesignatureApiAxiosParamCreator = function (confi
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -347,65 +273,6 @@ export const ObjectEzsigntemplatesignatureApiAxiosParamCreator = function (confi
                         authorization: configuration.apiKey as string,
                         secret: secret as string,
                         method: 'PUT' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
-         * @summary Retrieve an existing Ezsigntemplatesignature
-         * @param {number} pkiEzsigntemplatesignatureID 
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        ezsigntemplatesignatureGetObjectV3: async (pkiEzsigntemplatesignatureID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiEzsigntemplatesignatureID' is not null or undefined
-            assertParamExists('ezsigntemplatesignatureGetObjectV3', 'pkiEzsigntemplatesignatureID', pkiEzsigntemplatesignatureID)
-            const localVarPath = `/3/object/ezsigntemplatesignature/{pkiEzsigntemplatesignatureID}`
-                .replace(`{${"pkiEzsigntemplatesignatureID"}}`, encodeURIComponent(String(pkiEzsigntemplatesignatureID)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'GET' as string,
                         url: basePath + toPathString(localVarUrlObj) as string,
                         body: localVarRequestOptions.data || '' as string
                     }
@@ -449,8 +316,8 @@ export const ObjectEzsigntemplatesignatureApiAxiosParamCreator = function (confi
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -527,21 +394,6 @@ export const ObjectEzsigntemplatesignatureApiFp = function(configuration?: Confi
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
-         * @summary Edit an existing Ezsigntemplatesignature
-         * @param {number} pkiEzsigntemplatesignatureID 
-         * @param {EzsigntemplatesignatureEditObjectV2Request} ezsigntemplatesignatureEditObjectV2Request 
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        async ezsigntemplatesignatureEditObjectV2(pkiEzsigntemplatesignatureID: number, ezsigntemplatesignatureEditObjectV2Request: EzsigntemplatesignatureEditObjectV2Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigntemplatesignatureEditObjectV2Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigntemplatesignatureEditObjectV2(pkiEzsigntemplatesignatureID, ezsigntemplatesignatureEditObjectV2Request, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ObjectEzsigntemplatesignatureApi.ezsigntemplatesignatureEditObjectV2']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
          * 
          * @summary Edit an existing Ezsigntemplatesignature
          * @param {number} pkiEzsigntemplatesignatureID 
@@ -553,20 +405,6 @@ export const ObjectEzsigntemplatesignatureApiFp = function(configuration?: Confi
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigntemplatesignatureEditObjectV3(pkiEzsigntemplatesignatureID, ezsigntemplatesignatureEditObjectV3Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsigntemplatesignatureApi.ezsigntemplatesignatureEditObjectV3']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
-         * @summary Retrieve an existing Ezsigntemplatesignature
-         * @param {number} pkiEzsigntemplatesignatureID 
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        async ezsigntemplatesignatureGetObjectV3(pkiEzsigntemplatesignatureID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigntemplatesignatureGetObjectV3Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigntemplatesignatureGetObjectV3(pkiEzsigntemplatesignatureID, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ObjectEzsigntemplatesignatureApi.ezsigntemplatesignatureGetObjectV3']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -623,18 +461,6 @@ export const ObjectEzsigntemplatesignatureApiFactory = function (configuration?:
             return localVarFp.ezsigntemplatesignatureDeleteObjectV1(pkiEzsigntemplatesignatureID, options).then((request) => request(axios, basePath));
         },
         /**
-         * Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
-         * @summary Edit an existing Ezsigntemplatesignature
-         * @param {number} pkiEzsigntemplatesignatureID 
-         * @param {EzsigntemplatesignatureEditObjectV2Request} ezsigntemplatesignatureEditObjectV2Request 
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        ezsigntemplatesignatureEditObjectV2(pkiEzsigntemplatesignatureID: number, ezsigntemplatesignatureEditObjectV2Request: EzsigntemplatesignatureEditObjectV2Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsigntemplatesignatureEditObjectV2Response> {
-            return localVarFp.ezsigntemplatesignatureEditObjectV2(pkiEzsigntemplatesignatureID, ezsigntemplatesignatureEditObjectV2Request, options).then((request) => request(axios, basePath));
-        },
-        /**
          * 
          * @summary Edit an existing Ezsigntemplatesignature
          * @param {number} pkiEzsigntemplatesignatureID 
@@ -644,17 +470,6 @@ export const ObjectEzsigntemplatesignatureApiFactory = function (configuration?:
          */
         ezsigntemplatesignatureEditObjectV3(pkiEzsigntemplatesignatureID: number, ezsigntemplatesignatureEditObjectV3Request: EzsigntemplatesignatureEditObjectV3Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsigntemplatesignatureEditObjectV3Response> {
             return localVarFp.ezsigntemplatesignatureEditObjectV3(pkiEzsigntemplatesignatureID, ezsigntemplatesignatureEditObjectV3Request, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
-         * @summary Retrieve an existing Ezsigntemplatesignature
-         * @param {number} pkiEzsigntemplatesignatureID 
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        ezsigntemplatesignatureGetObjectV3(pkiEzsigntemplatesignatureID: number, options?: RawAxiosRequestConfig): AxiosPromise<EzsigntemplatesignatureGetObjectV3Response> {
-            return localVarFp.ezsigntemplatesignatureGetObjectV3(pkiEzsigntemplatesignatureID, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -708,19 +523,6 @@ export class ObjectEzsigntemplatesignatureApi extends BaseAPI {
     }
 
     /**
-     * Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
-     * @summary Edit an existing Ezsigntemplatesignature
-     * @param {number} pkiEzsigntemplatesignatureID 
-     * @param {EzsigntemplatesignatureEditObjectV2Request} ezsigntemplatesignatureEditObjectV2Request 
-     * @param {*} [options] Override http request option.
-     * @deprecated
-     * @throws {RequiredError}
-     */
-    public ezsigntemplatesignatureEditObjectV2(pkiEzsigntemplatesignatureID: number, ezsigntemplatesignatureEditObjectV2Request: EzsigntemplatesignatureEditObjectV2Request, options?: RawAxiosRequestConfig) {
-        return ObjectEzsigntemplatesignatureApiFp(this.configuration).ezsigntemplatesignatureEditObjectV2(pkiEzsigntemplatesignatureID, ezsigntemplatesignatureEditObjectV2Request, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
      * 
      * @summary Edit an existing Ezsigntemplatesignature
      * @param {number} pkiEzsigntemplatesignatureID 
@@ -730,18 +532,6 @@ export class ObjectEzsigntemplatesignatureApi extends BaseAPI {
      */
     public ezsigntemplatesignatureEditObjectV3(pkiEzsigntemplatesignatureID: number, ezsigntemplatesignatureEditObjectV3Request: EzsigntemplatesignatureEditObjectV3Request, options?: RawAxiosRequestConfig) {
         return ObjectEzsigntemplatesignatureApiFp(this.configuration).ezsigntemplatesignatureEditObjectV3(pkiEzsigntemplatesignatureID, ezsigntemplatesignatureEditObjectV3Request, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
-     * @summary Retrieve an existing Ezsigntemplatesignature
-     * @param {number} pkiEzsigntemplatesignatureID 
-     * @param {*} [options] Override http request option.
-     * @deprecated
-     * @throws {RequiredError}
-     */
-    public ezsigntemplatesignatureGetObjectV3(pkiEzsigntemplatesignatureID: number, options?: RawAxiosRequestConfig) {
-        return ObjectEzsigntemplatesignatureApiFp(this.configuration).ezsigntemplatesignatureGetObjectV3(pkiEzsigntemplatesignatureID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

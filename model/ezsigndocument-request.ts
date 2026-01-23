@@ -86,8 +86,8 @@ export interface EzsigndocumentRequest {
     /**
      * The maximum date and time at which the Ezsigndocument can be signed.
      */
-    /*'dtEzsigndocumentDuedate': string;*/
-    'dtEzsigndocumentDuedate': string;
+    /*'dtEzsigndocumentDuedate'?: string;*/
+    'dtEzsigndocumentDuedate'?: string;
     /**
      * The name of the document that will be presented to Ezsignfoldersignerassociations
      */
@@ -153,7 +153,7 @@ export class DataObjectEzsigndocumentRequest {
    bEzsigndocumentForcerepair?:boolean = undefined
    sEzsigndocumentPassword?:string = undefined
    eEzsigndocumentForm?:EzsigndocumentRequestEEzsigndocumentFormEnum = undefined
-   dtEzsigndocumentDuedate:string = ''
+   dtEzsigndocumentDuedate?:string = undefined
    sEzsigndocumentName:string = ''
    sEzsigndocumentExternalid?:string = undefined
 }
@@ -226,7 +226,7 @@ export class ValidationObjectEzsigndocumentRequest {
    }
    dtEzsigndocumentDuedate = {
       type: 'string',
-      required: true
+      required: false
    }
    sEzsigndocumentName = {
       type: 'string',

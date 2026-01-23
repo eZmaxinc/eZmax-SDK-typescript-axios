@@ -34,8 +34,6 @@ import type { SignatureEditObjectV1Request } from '../model';
 // @ts-ignore
 import type { SignatureEditObjectV1Response } from '../model';
 // @ts-ignore
-import type { SignatureGetObjectV2Response } from '../model';
-// @ts-ignore
 import type { SignatureGetObjectV3Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
@@ -73,9 +71,8 @@ export const ObjectSignatureApiAxiosParamCreator = function (configuration?: Con
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -134,8 +131,8 @@ export const ObjectSignatureApiAxiosParamCreator = function (configuration?: Con
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -195,9 +192,8 @@ export const ObjectSignatureApiAxiosParamCreator = function (configuration?: Con
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -213,65 +209,6 @@ export const ObjectSignatureApiAxiosParamCreator = function (configuration?: Con
                         authorization: configuration.apiKey as string,
                         secret: secret as string,
                         method: 'PUT' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary Retrieve an existing Signature
-         * @param {number} pkiSignatureID The unique ID of the Signature
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        signatureGetObjectV2: async (pkiSignatureID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiSignatureID' is not null or undefined
-            assertParamExists('signatureGetObjectV2', 'pkiSignatureID', pkiSignatureID)
-            const localVarPath = `/2/object/signature/{pkiSignatureID}`
-                .replace(`{${"pkiSignatureID"}}`, encodeURIComponent(String(pkiSignatureID)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-
-    
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'GET' as string,
                         url: basePath + toPathString(localVarUrlObj) as string,
                         body: localVarRequestOptions.data || '' as string
                     }
@@ -315,8 +252,8 @@ export const ObjectSignatureApiAxiosParamCreator = function (configuration?: Con
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -373,8 +310,8 @@ export const ObjectSignatureApiAxiosParamCreator = function (configuration?: Con
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -431,8 +368,8 @@ export const ObjectSignatureApiAxiosParamCreator = function (configuration?: Con
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -506,20 +443,6 @@ export const ObjectSignatureApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.signatureEditObjectV1(pkiSignatureID, signatureEditObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectSignatureApi.signatureEditObjectV1']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * 
-         * @summary Retrieve an existing Signature
-         * @param {number} pkiSignatureID The unique ID of the Signature
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        async signatureGetObjectV2(pkiSignatureID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SignatureGetObjectV2Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.signatureGetObjectV2(pkiSignatureID, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ObjectSignatureApi.signatureGetObjectV2']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -606,17 +529,6 @@ export const ObjectSignatureApiFactory = function (configuration?: Configuration
          * @summary Retrieve an existing Signature
          * @param {number} pkiSignatureID The unique ID of the Signature
          * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        signatureGetObjectV2(pkiSignatureID: number, options?: RawAxiosRequestConfig): AxiosPromise<SignatureGetObjectV2Response> {
-            return localVarFp.signatureGetObjectV2(pkiSignatureID, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary Retrieve an existing Signature
-         * @param {number} pkiSignatureID The unique ID of the Signature
-         * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         signatureGetObjectV3(pkiSignatureID: number, options?: RawAxiosRequestConfig): AxiosPromise<SignatureGetObjectV3Response> {
@@ -681,18 +593,6 @@ export class ObjectSignatureApi extends BaseAPI {
      */
     public signatureEditObjectV1(pkiSignatureID: number, signatureEditObjectV1Request: SignatureEditObjectV1Request, options?: RawAxiosRequestConfig) {
         return ObjectSignatureApiFp(this.configuration).signatureEditObjectV1(pkiSignatureID, signatureEditObjectV1Request, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Retrieve an existing Signature
-     * @param {number} pkiSignatureID The unique ID of the Signature
-     * @param {*} [options] Override http request option.
-     * @deprecated
-     * @throws {RequiredError}
-     */
-    public signatureGetObjectV2(pkiSignatureID: number, options?: RawAxiosRequestConfig) {
-        return ObjectSignatureApiFp(this.configuration).signatureGetObjectV2(pkiSignatureID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

@@ -32,6 +32,7 @@ Name | Type | Description | Notes
 **dtEzsignfolderArchive** | **string** | The date and time at which the Ezsignfolder was archived. | [optional] [default to undefined]
 **dtEzsignfolderDispose** | **string** | The date and time at which the Ezsignfolder was disposed. | [optional] [default to undefined]
 **tEzsignfolderMessage** | **string** | A custom text message that will be added to the email sent. | [optional] [default to undefined]
+**eEzsignfolderMessageorder** | [**FieldEEzsignfolderMessageorder**](FieldEEzsignfolderMessageorder.md) |  | [optional] [default to undefined]
 **objAudit** | [**CommonAudit**](CommonAudit.md) |  | [optional] [default to undefined]
 **sEzsignfolderExternalid** | **string** | This field can be used to store an External ID from the client\&#39;s system.  Anything can be stored in this field, it will never be evaluated by the eZmax system and will be returned AS-IS.  To store multiple values, consider using a JSON formatted structure, a URL encoded string, a CSV or any other custom format.  | [optional] [default to undefined]
 **eEzsignfolderAccess** | [**ComputedEEzsignfolderAccess**](ComputedEEzsignfolderAccess.md) |  | [optional] [default to undefined]
@@ -68,6 +69,7 @@ const instance: EzsignfolderResponseV3 = {
     dtEzsignfolderArchive,
     dtEzsignfolderDispose,
     tEzsignfolderMessage,
+    eEzsignfolderMessageorder,
     objAudit,
     sEzsignfolderExternalid,
     eEzsignfolderAccess,

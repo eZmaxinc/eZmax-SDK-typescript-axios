@@ -4,7 +4,6 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
-|[**ezsignfoldersignerassociationCreateEmbeddedUrlV1**](#ezsignfoldersignerassociationcreateembeddedurlv1) | **POST** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/createEmbeddedUrl | Creates an Url to allow embedded signing|
 |[**ezsignfoldersignerassociationCreateEmbeddedUrlV2**](#ezsignfoldersignerassociationcreateembeddedurlv2) | **POST** /2/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/createEmbeddedUrl | Creates an Url to allow embedded signing|
 |[**ezsignfoldersignerassociationCreateObjectV1**](#ezsignfoldersignerassociationcreateobjectv1) | **POST** /1/object/ezsignfoldersignerassociation | Create a new Ezsignfoldersignerassociation|
 |[**ezsignfoldersignerassociationCreateObjectV2**](#ezsignfoldersignerassociationcreateobjectv2) | **POST** /2/object/ezsignfoldersignerassociation | Create a new Ezsignfoldersignerassociation|
@@ -17,67 +16,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**ezsignfoldersignerassociationPatchObjectV1**](#ezsignfoldersignerassociationpatchobjectv1) | **PATCH** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Patch an existing Ezsignfoldersignerassociation|
 |[**ezsignfoldersignerassociationReassignV1**](#ezsignfoldersignerassociationreassignv1) | **POST** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/reassign | Reassign remaining unsigned signatures and forms|
 
-# **ezsignfoldersignerassociationCreateEmbeddedUrlV1**
-> EzsignfoldersignerassociationCreateEmbeddedUrlV1Response ezsignfoldersignerassociationCreateEmbeddedUrlV1(ezsignfoldersignerassociationCreateEmbeddedUrlV1Request)
-
-This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.
-
-### Example
-
-```typescript
-import {
-    ObjectEzsignfoldersignerassociationApi,
-    Configuration,
-    EzsignfoldersignerassociationCreateEmbeddedUrlV1Request
-} from '@ezmaxinc/ezmax-sdk-typescript-axios';
-
-const configuration = new Configuration();
-const apiInstance = new ObjectEzsignfoldersignerassociationApi(configuration);
-
-let pkiEzsignfoldersignerassociationID: number; // (default to undefined)
-let ezsignfoldersignerassociationCreateEmbeddedUrlV1Request: EzsignfoldersignerassociationCreateEmbeddedUrlV1Request; //
-
-const { status, data } = await apiInstance.ezsignfoldersignerassociationCreateEmbeddedUrlV1(
-    pkiEzsignfoldersignerassociationID,
-    ezsignfoldersignerassociationCreateEmbeddedUrlV1Request
-);
-```
-
-### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **ezsignfoldersignerassociationCreateEmbeddedUrlV1Request** | **EzsignfoldersignerassociationCreateEmbeddedUrlV1Request**|  | |
-| **pkiEzsignfoldersignerassociationID** | [**number**] |  | defaults to undefined|
-
-
-### Return type
-
-**EzsignfoldersignerassociationCreateEmbeddedUrlV1Response**
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-|**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
-|**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **ezsignfoldersignerassociationCreateEmbeddedUrlV2**
 > EzsignfoldersignerassociationCreateEmbeddedUrlV2Response ezsignfoldersignerassociationCreateEmbeddedUrlV2(ezsignfoldersignerassociationCreateEmbeddedUrlV2Request)
 
-This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.
+This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.  ### Iframe Communication (postMessage)  If the signing page is embedded in an `iframe`, the application sends events to the parent window via `window.postMessage`.  The message structure is defined as follows:  ```json {   \"source\": \"ezsign\",   \"type\": \"eEzsignEvent\",   \"payload\": \"CompletedEzsignfolder\" } ```  * **source**: Always `\'ezsign\'`. * **type**: Always `\'eEzsignEvent\'`. * **payload**: Corresponds to the **eEzsignEvent** values listed in the table above (e.g., `SessionTimeout`, `CompletedStep`, etc.).  #### Example listener  ```javascript window.addEventListener(\'message\', (event) => {     const { source, type, payload } = event.data;         if (source === \'ezsign\' && type === \'eEzsignEvent\') {         console.log(\'Event received:\', payload);     } }); ``` 
 
 ### Example
 

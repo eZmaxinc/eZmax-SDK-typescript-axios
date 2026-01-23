@@ -54,6 +54,11 @@ export interface UsergroupdelegationResponse {
     /*'sEmailAddress'?: string;*/
     'sEmailAddress'?: string;
     /**
+     * Whether the User is active or not
+     */
+    /*'bUserIsactive': boolean;*/
+    'bUserIsactive': boolean;
+    /**
      * The Name of the Usergroup in the language of the requester
      */
     /*'sUsergroupNameX': string;*/
@@ -78,6 +83,7 @@ export class DataObjectUsergroupdelegationResponse {
    sUserLastname:string = ''
    sUserLoginname:string = ''
    sEmailAddress?:string = undefined
+   bUserIsactive:boolean = false
    sUsergroupNameX:string = ''
 }
 
@@ -121,6 +127,10 @@ export class ValidationObjectUsergroupdelegationResponse {
       type: 'string',
       pattern: /^[\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$/,
       required: false
+   }
+   bUserIsactive = {
+      type: 'boolean',
+      required: true
    }
    sUsergroupNameX = {
       type: 'string',

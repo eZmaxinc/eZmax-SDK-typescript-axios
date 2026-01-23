@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **dtLeadExpiration** | **string** | The expiration of the Lead | [default to undefined]
 **bLeadIsactive** | **boolean** | Whether the lead is active or not | [default to undefined]
 **sLeadCode** | **string** | The code of the Lead | [default to undefined]
+**sLeadContacts** | **string** | The contacts\&#39; name of the Lead | [optional] [default to undefined]
 
 ## Example
 
@@ -27,6 +28,7 @@ const instance: LeadListElement = {
     dtLeadExpiration,
     bLeadIsactive,
     sLeadCode,
+    sLeadContacts,
 };
 ```
 

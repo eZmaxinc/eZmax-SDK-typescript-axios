@@ -24,10 +24,6 @@ import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError
 // @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
-import type { EzsignfoldersignerassociationCreateEmbeddedUrlV1Request } from '../model';
-// @ts-ignore
-import type { EzsignfoldersignerassociationCreateEmbeddedUrlV1Response } from '../model';
-// @ts-ignore
 import type { EzsignfoldersignerassociationCreateEmbeddedUrlV2Request } from '../model';
 // @ts-ignore
 import type { EzsignfoldersignerassociationCreateEmbeddedUrlV2Response } from '../model';
@@ -69,71 +65,7 @@ import { RequestSignature, IHeadersData } from '../api/request-signature';
 export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.
-         * @summary Creates an Url to allow embedded signing
-         * @param {number} pkiEzsignfoldersignerassociationID 
-         * @param {EzsignfoldersignerassociationCreateEmbeddedUrlV1Request} ezsignfoldersignerassociationCreateEmbeddedUrlV1Request 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        ezsignfoldersignerassociationCreateEmbeddedUrlV1: async (pkiEzsignfoldersignerassociationID: number, ezsignfoldersignerassociationCreateEmbeddedUrlV1Request: EzsignfoldersignerassociationCreateEmbeddedUrlV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiEzsignfoldersignerassociationID' is not null or undefined
-            assertParamExists('ezsignfoldersignerassociationCreateEmbeddedUrlV1', 'pkiEzsignfoldersignerassociationID', pkiEzsignfoldersignerassociationID)
-            // verify required parameter 'ezsignfoldersignerassociationCreateEmbeddedUrlV1Request' is not null or undefined
-            assertParamExists('ezsignfoldersignerassociationCreateEmbeddedUrlV1', 'ezsignfoldersignerassociationCreateEmbeddedUrlV1Request', ezsignfoldersignerassociationCreateEmbeddedUrlV1Request)
-            const localVarPath = `/1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/createEmbeddedUrl`
-                .replace(`{${"pkiEzsignfoldersignerassociationID"}}`, encodeURIComponent(String(pkiEzsignfoldersignerassociationID)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(ezsignfoldersignerassociationCreateEmbeddedUrlV1Request, localVarRequestOptions, configuration)
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'POST' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.
+         * This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.  ### Iframe Communication (postMessage)  If the signing page is embedded in an `iframe`, the application sends events to the parent window via `window.postMessage`.  The message structure is defined as follows:  ```json {   \"source\": \"ezsign\",   \"type\": \"eEzsignEvent\",   \"payload\": \"CompletedEzsignfolder\" } ```  * **source**: Always `\'ezsign\'`. * **type**: Always `\'eEzsignEvent\'`. * **payload**: Corresponds to the **eEzsignEvent** values listed in the table above (e.g., `SessionTimeout`, `CompletedStep`, etc.).  #### Example listener  ```javascript window.addEventListener(\'message\', (event) => {     const { source, type, payload } = event.data;         if (source === \'ezsign\' && type === \'eEzsignEvent\') {         console.log(\'Event received:\', payload);     } }); ``` 
          * @summary Creates an Url to allow embedded signing
          * @param {number} pkiEzsignfoldersignerassociationID 
          * @param {EzsignfoldersignerassociationCreateEmbeddedUrlV2Request} ezsignfoldersignerassociationCreateEmbeddedUrlV2Request 
@@ -165,9 +97,8 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -226,9 +157,8 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -286,9 +216,8 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -347,8 +276,8 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -408,9 +337,8 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -472,9 +400,8 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -533,8 +460,8 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -592,8 +519,8 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -650,8 +577,8 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -711,9 +638,8 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -775,9 +701,8 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -816,21 +741,7 @@ export const ObjectEzsignfoldersignerassociationApiFp = function(configuration?:
     const localVarAxiosParamCreator = ObjectEzsignfoldersignerassociationApiAxiosParamCreator(configuration)
     return {
         /**
-         * This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.
-         * @summary Creates an Url to allow embedded signing
-         * @param {number} pkiEzsignfoldersignerassociationID 
-         * @param {EzsignfoldersignerassociationCreateEmbeddedUrlV1Request} ezsignfoldersignerassociationCreateEmbeddedUrlV1Request 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async ezsignfoldersignerassociationCreateEmbeddedUrlV1(pkiEzsignfoldersignerassociationID: number, ezsignfoldersignerassociationCreateEmbeddedUrlV1Request: EzsignfoldersignerassociationCreateEmbeddedUrlV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfoldersignerassociationCreateEmbeddedUrlV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfoldersignerassociationCreateEmbeddedUrlV1(pkiEzsignfoldersignerassociationID, ezsignfoldersignerassociationCreateEmbeddedUrlV1Request, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ObjectEzsignfoldersignerassociationApi.ezsignfoldersignerassociationCreateEmbeddedUrlV1']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.
+         * This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.  ### Iframe Communication (postMessage)  If the signing page is embedded in an `iframe`, the application sends events to the parent window via `window.postMessage`.  The message structure is defined as follows:  ```json {   \"source\": \"ezsign\",   \"type\": \"eEzsignEvent\",   \"payload\": \"CompletedEzsignfolder\" } ```  * **source**: Always `\'ezsign\'`. * **type**: Always `\'eEzsignEvent\'`. * **payload**: Corresponds to the **eEzsignEvent** values listed in the table above (e.g., `SessionTimeout`, `CompletedStep`, etc.).  #### Example listener  ```javascript window.addEventListener(\'message\', (event) => {     const { source, type, payload } = event.data;         if (source === \'ezsign\' && type === \'eEzsignEvent\') {         console.log(\'Event received:\', payload);     } }); ``` 
          * @summary Creates an Url to allow embedded signing
          * @param {number} pkiEzsignfoldersignerassociationID 
          * @param {EzsignfoldersignerassociationCreateEmbeddedUrlV2Request} ezsignfoldersignerassociationCreateEmbeddedUrlV2Request 
@@ -989,18 +900,7 @@ export const ObjectEzsignfoldersignerassociationApiFactory = function (configura
     const localVarFp = ObjectEzsignfoldersignerassociationApiFp(configuration)
     return {
         /**
-         * This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.
-         * @summary Creates an Url to allow embedded signing
-         * @param {number} pkiEzsignfoldersignerassociationID 
-         * @param {EzsignfoldersignerassociationCreateEmbeddedUrlV1Request} ezsignfoldersignerassociationCreateEmbeddedUrlV1Request 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        ezsignfoldersignerassociationCreateEmbeddedUrlV1(pkiEzsignfoldersignerassociationID: number, ezsignfoldersignerassociationCreateEmbeddedUrlV1Request: EzsignfoldersignerassociationCreateEmbeddedUrlV1Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsignfoldersignerassociationCreateEmbeddedUrlV1Response> {
-            return localVarFp.ezsignfoldersignerassociationCreateEmbeddedUrlV1(pkiEzsignfoldersignerassociationID, ezsignfoldersignerassociationCreateEmbeddedUrlV1Request, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.
+         * This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.  ### Iframe Communication (postMessage)  If the signing page is embedded in an `iframe`, the application sends events to the parent window via `window.postMessage`.  The message structure is defined as follows:  ```json {   \"source\": \"ezsign\",   \"type\": \"eEzsignEvent\",   \"payload\": \"CompletedEzsignfolder\" } ```  * **source**: Always `\'ezsign\'`. * **type**: Always `\'eEzsignEvent\'`. * **payload**: Corresponds to the **eEzsignEvent** values listed in the table above (e.g., `SessionTimeout`, `CompletedStep`, etc.).  #### Example listener  ```javascript window.addEventListener(\'message\', (event) => {     const { source, type, payload } = event.data;         if (source === \'ezsign\' && type === \'eEzsignEvent\') {         console.log(\'Event received:\', payload);     } }); ``` 
          * @summary Creates an Url to allow embedded signing
          * @param {number} pkiEzsignfoldersignerassociationID 
          * @param {EzsignfoldersignerassociationCreateEmbeddedUrlV2Request} ezsignfoldersignerassociationCreateEmbeddedUrlV2Request 
@@ -1124,19 +1024,7 @@ export const ObjectEzsignfoldersignerassociationApiFactory = function (configura
  */
 export class ObjectEzsignfoldersignerassociationApi extends BaseAPI {
     /**
-     * This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.
-     * @summary Creates an Url to allow embedded signing
-     * @param {number} pkiEzsignfoldersignerassociationID 
-     * @param {EzsignfoldersignerassociationCreateEmbeddedUrlV1Request} ezsignfoldersignerassociationCreateEmbeddedUrlV1Request 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    public ezsignfoldersignerassociationCreateEmbeddedUrlV1(pkiEzsignfoldersignerassociationID: number, ezsignfoldersignerassociationCreateEmbeddedUrlV1Request: EzsignfoldersignerassociationCreateEmbeddedUrlV1Request, options?: RawAxiosRequestConfig) {
-        return ObjectEzsignfoldersignerassociationApiFp(this.configuration).ezsignfoldersignerassociationCreateEmbeddedUrlV1(pkiEzsignfoldersignerassociationID, ezsignfoldersignerassociationCreateEmbeddedUrlV1Request, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.
+     * This endpoint creates an Url that can be used in a browser or embedded in an I-Frame to allow signing.  The signer Login type must be configured as Embedded.  ### Iframe Communication (postMessage)  If the signing page is embedded in an `iframe`, the application sends events to the parent window via `window.postMessage`.  The message structure is defined as follows:  ```json {   \"source\": \"ezsign\",   \"type\": \"eEzsignEvent\",   \"payload\": \"CompletedEzsignfolder\" } ```  * **source**: Always `\'ezsign\'`. * **type**: Always `\'eEzsignEvent\'`. * **payload**: Corresponds to the **eEzsignEvent** values listed in the table above (e.g., `SessionTimeout`, `CompletedStep`, etc.).  #### Example listener  ```javascript window.addEventListener(\'message\', (event) => {     const { source, type, payload } = event.data;         if (source === \'ezsign\' && type === \'eEzsignEvent\') {         console.log(\'Event received:\', payload);     } }); ``` 
      * @summary Creates an Url to allow embedded signing
      * @param {number} pkiEzsignfoldersignerassociationID 
      * @param {EzsignfoldersignerassociationCreateEmbeddedUrlV2Request} ezsignfoldersignerassociationCreateEmbeddedUrlV2Request 

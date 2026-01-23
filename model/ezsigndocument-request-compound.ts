@@ -106,7 +106,7 @@ export interface EzsigndocumentRequestCompound {
      * @type {string}
      * @memberof EzsigndocumentRequestCompound
      */
-    dtEzsigndocumentDuedate:string 
+    dtEzsigndocumentDuedate?:string 
     /**
      * The name of the document that will be presented to Ezsignfoldersignerassociations
      * @type {string}
@@ -175,7 +175,7 @@ export class DataObjectEzsigndocumentRequestCompound {
     bEzsigndocumentForcerepair?:boolean = undefined
     sEzsigndocumentPassword?:string = undefined
     eEzsigndocumentForm?:EzsigndocumentRequestCompoundEEzsigndocumentFormEnum = undefined
-    dtEzsigndocumentDuedate:string = ''
+    dtEzsigndocumentDuedate?:string = undefined
     sEzsigndocumentName:string = ''
     sEzsigndocumentExternalid?:string = undefined
 }
@@ -248,7 +248,7 @@ export class ValidationObjectEzsigndocumentRequestCompound {
    }
    dtEzsigndocumentDuedate = {
       type: 'string',
-      required: true
+      required: false
    }
    sEzsigndocumentName = {
       type: 'string',

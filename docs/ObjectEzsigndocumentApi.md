@@ -16,6 +16,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**ezsigndocumentDeleteObjectV1**](#ezsigndocumentdeleteobjectv1) | **DELETE** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Delete an existing Ezsigndocument|
 |[**ezsigndocumentEditEzsignannotationsV1**](#ezsigndocumenteditezsignannotationsv1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignannotations | Edit multiple Ezsignannotations|
 |[**ezsigndocumentEditEzsignformfieldgroupsV1**](#ezsigndocumenteditezsignformfieldgroupsv1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignformfieldgroups | Edit multiple Ezsignformfieldgroups|
+|[**ezsigndocumentEditEzsignformfieldgroupsV2**](#ezsigndocumenteditezsignformfieldgroupsv2) | **PUT** /2/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignformfieldgroups | Edit multiple Ezsignformfieldgroups|
 |[**ezsigndocumentEditEzsignsignaturesV1**](#ezsigndocumenteditezsignsignaturesv1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignsignatures | Edit multiple Ezsignsignatures|
 |[**ezsigndocumentEditEzsignsignaturesV2**](#ezsigndocumenteditezsignsignaturesv2) | **PUT** /2/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignsignatures | Edit multiple Ezsignsignatures|
 |[**ezsigndocumentEditObjectV1**](#ezsigndocumenteditobjectv1) | **PUT** /1/object/ezsigndocument/{pkiEzsigndocumentID} | Edit an existing Ezsigndocument|
@@ -24,6 +25,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**ezsigndocumentFlattenV1**](#ezsigndocumentflattenv1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/flatten | Flatten|
 |[**ezsigndocumentGetActionableElementsV1**](#ezsigndocumentgetactionableelementsv1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument|
 |[**ezsigndocumentGetActionableElementsV2**](#ezsigndocumentgetactionableelementsv2) | **GET** /2/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument|
+|[**ezsigndocumentGetActionableElementsV3**](#ezsigndocumentgetactionableelementsv3) | **GET** /3/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument|
 |[**ezsigndocumentGetAttachmentsV1**](#ezsigndocumentgetattachmentsv1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getAttachments | Retrieve Ezsigndocument\&#39;s Attachments|
 |[**ezsigndocumentGetCompletedElementsV1**](#ezsigndocumentgetcompletedelementsv1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getCompletedElements | Retrieve completed elements for the Ezsigndocument|
 |[**ezsigndocumentGetCompletedElementsV2**](#ezsigndocumentgetcompletedelementsv2) | **GET** /2/object/ezsigndocument/{pkiEzsigndocumentID}/getCompletedElements | Retrieve completed elements for the Ezsigndocument|
@@ -714,6 +716,63 @@ const { status, data } = await apiInstance.ezsigndocumentEditEzsignformfieldgrou
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ezsigndocumentEditEzsignformfieldgroupsV2**
+> EzsigndocumentEditEzsignformfieldgroupsV2Response ezsigndocumentEditEzsignformfieldgroupsV2(ezsigndocumentEditEzsignformfieldgroupsV2Request)
+
+Using this endpoint, you can edit multiple Ezsignformfieldgroups at the same time.
+
+### Example
+
+```typescript
+import {
+    ObjectEzsigndocumentApi,
+    Configuration,
+    EzsigndocumentEditEzsignformfieldgroupsV2Request
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectEzsigndocumentApi(configuration);
+
+let pkiEzsigndocumentID: number; // (default to undefined)
+let ezsigndocumentEditEzsignformfieldgroupsV2Request: EzsigndocumentEditEzsignformfieldgroupsV2Request; //
+
+const { status, data } = await apiInstance.ezsigndocumentEditEzsignformfieldgroupsV2(
+    pkiEzsigndocumentID,
+    ezsigndocumentEditEzsignformfieldgroupsV2Request
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **ezsigndocumentEditEzsignformfieldgroupsV2Request** | **EzsigndocumentEditEzsignformfieldgroupsV2Request**|  | |
+| **pkiEzsigndocumentID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**EzsigndocumentEditEzsignformfieldgroupsV2Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+|**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ezsigndocumentEditEzsignsignaturesV1**
 > EzsigndocumentEditEzsignsignaturesV1Response ezsigndocumentEditEzsignsignaturesV1(ezsigndocumentEditEzsignsignaturesV1Request)
 
@@ -1140,6 +1199,59 @@ const { status, data } = await apiInstance.ezsigndocumentGetActionableElementsV2
 ### Return type
 
 **EzsigndocumentGetActionableElementsV2Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+|**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ezsigndocumentGetActionableElementsV3**
+> EzsigndocumentGetActionableElementsV3Response ezsigndocumentGetActionableElementsV3()
+
+Return the Ezsignsignatures that can be signed and Ezsignformfieldgroups that can be filled by the current user at the current step in the process
+
+### Example
+
+```typescript
+import {
+    ObjectEzsigndocumentApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectEzsigndocumentApi(configuration);
+
+let pkiEzsigndocumentID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.ezsigndocumentGetActionableElementsV3(
+    pkiEzsigndocumentID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiEzsigndocumentID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**EzsigndocumentGetActionableElementsV3Response**
 
 ### Authorization
 

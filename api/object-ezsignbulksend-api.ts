@@ -38,10 +38,6 @@ import type { EzsignbulksendCreateObjectV2Response } from '../model';
 // @ts-ignore
 import type { EzsignbulksendDeleteObjectV1Response } from '../model';
 // @ts-ignore
-import type { EzsignbulksendEditObjectV1Request } from '../model';
-// @ts-ignore
-import type { EzsignbulksendEditObjectV1Response } from '../model';
-// @ts-ignore
 import type { EzsignbulksendEditObjectV2Request } from '../model';
 // @ts-ignore
 import type { EzsignbulksendEditObjectV2Response } from '../model';
@@ -103,9 +99,8 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -164,9 +159,8 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -224,9 +218,8 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -285,8 +278,8 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -300,71 +293,6 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
                         authorization: configuration.apiKey as string,
                         secret: secret as string,
                         method: 'DELETE' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary Edit an existing Ezsignbulksend
-         * @param {number} pkiEzsignbulksendID 
-         * @param {EzsignbulksendEditObjectV1Request} ezsignbulksendEditObjectV1Request 
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        ezsignbulksendEditObjectV1: async (pkiEzsignbulksendID: number, ezsignbulksendEditObjectV1Request: EzsignbulksendEditObjectV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiEzsignbulksendID' is not null or undefined
-            assertParamExists('ezsignbulksendEditObjectV1', 'pkiEzsignbulksendID', pkiEzsignbulksendID)
-            // verify required parameter 'ezsignbulksendEditObjectV1Request' is not null or undefined
-            assertParamExists('ezsignbulksendEditObjectV1', 'ezsignbulksendEditObjectV1Request', ezsignbulksendEditObjectV1Request)
-            const localVarPath = `/1/object/ezsignbulksend/{pkiEzsignbulksendID}`
-                .replace(`{${"pkiEzsignbulksendID"}}`, encodeURIComponent(String(pkiEzsignbulksendID)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-
-    
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(ezsignbulksendEditObjectV1Request, localVarRequestOptions, configuration)
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'PUT' as string,
                         url: basePath + toPathString(localVarUrlObj) as string,
                         body: localVarRequestOptions.data || '' as string
                     }
@@ -411,9 +339,8 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -492,8 +419,8 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
                 localVarQueryParameter['bIncludeProof'] = bIncludeProof;
             }
 
+            localVarHeaderParameter['Accept'] = 'text/xml,application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -557,8 +484,8 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
                 localVarQueryParameter['eCsvSeparator'] = eCsvSeparator;
             }
 
+            localVarHeaderParameter['Accept'] = 'text/csv,application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -615,8 +542,8 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -673,8 +600,8 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -731,8 +658,8 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json,application/zip';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -806,8 +733,8 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
                 localVarQueryParameter['sFilter'] = sFilter;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
 
-    
             if (acceptLanguage != null) {
                 localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
                     ? acceptLanguage
@@ -870,8 +797,8 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -928,8 +855,8 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -989,9 +916,8 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
             // authentication Authorization required
             await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
 
-
-    
             localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
 
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
@@ -1081,21 +1007,6 @@ export const ObjectEzsignbulksendApiFp = function(configuration?: Configuration)
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignbulksendDeleteObjectV1(pkiEzsignbulksendID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignbulksendApi.ezsignbulksendDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * 
-         * @summary Edit an existing Ezsignbulksend
-         * @param {number} pkiEzsignbulksendID 
-         * @param {EzsignbulksendEditObjectV1Request} ezsignbulksendEditObjectV1Request 
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        async ezsignbulksendEditObjectV1(pkiEzsignbulksendID: number, ezsignbulksendEditObjectV1Request: EzsignbulksendEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignbulksendEditObjectV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignbulksendEditObjectV1(pkiEzsignbulksendID, ezsignbulksendEditObjectV1Request, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ObjectEzsignbulksendApi.ezsignbulksendEditObjectV1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -1295,18 +1206,6 @@ export const ObjectEzsignbulksendApiFactory = function (configuration?: Configur
          * 
          * @summary Edit an existing Ezsignbulksend
          * @param {number} pkiEzsignbulksendID 
-         * @param {EzsignbulksendEditObjectV1Request} ezsignbulksendEditObjectV1Request 
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        ezsignbulksendEditObjectV1(pkiEzsignbulksendID: number, ezsignbulksendEditObjectV1Request: EzsignbulksendEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsignbulksendEditObjectV1Response> {
-            return localVarFp.ezsignbulksendEditObjectV1(pkiEzsignbulksendID, ezsignbulksendEditObjectV1Request, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary Edit an existing Ezsignbulksend
-         * @param {number} pkiEzsignbulksendID 
          * @param {EzsignbulksendEditObjectV2Request} ezsignbulksendEditObjectV2Request 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -1466,19 +1365,6 @@ export class ObjectEzsignbulksendApi extends BaseAPI {
      */
     public ezsignbulksendDeleteObjectV1(pkiEzsignbulksendID: number, options?: RawAxiosRequestConfig) {
         return ObjectEzsignbulksendApiFp(this.configuration).ezsignbulksendDeleteObjectV1(pkiEzsignbulksendID, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Edit an existing Ezsignbulksend
-     * @param {number} pkiEzsignbulksendID 
-     * @param {EzsignbulksendEditObjectV1Request} ezsignbulksendEditObjectV1Request 
-     * @param {*} [options] Override http request option.
-     * @deprecated
-     * @throws {RequiredError}
-     */
-    public ezsignbulksendEditObjectV1(pkiEzsignbulksendID: number, ezsignbulksendEditObjectV1Request: EzsignbulksendEditObjectV1Request, options?: RawAxiosRequestConfig) {
-        return ObjectEzsignbulksendApiFp(this.configuration).ezsignbulksendEditObjectV1(pkiEzsignbulksendID, ezsignbulksendEditObjectV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

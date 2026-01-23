@@ -321,7 +321,7 @@ export class DataObjectActivesessionGetCurrentV1ResponseMPayload {
 export class ValidationObjectActivesessionGetCurrentV1ResponseMPayload {
    eActivesessionUsertype = {
       type: 'enum',
-      allowableValues: ['AgentBroker','Assistant','EzsignSigner','EzsignUser','Normal'],
+      allowableValues: ['AgentBroker','Assistant','Employee','EzsignSigner','EzsignUser','Normal'],
       required: true
    }
    eActivesessionOrigin = {

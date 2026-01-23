@@ -4,11 +4,11 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
-|[**systemconfigurationEditObjectV1**](#systemconfigurationeditobjectv1) | **PUT** /1/object/systemconfiguration/{pkiSystemconfigurationID} | Edit an existing Systemconfiguration|
+|[**systemconfigurationEditObjectV2**](#systemconfigurationeditobjectv2) | **PUT** /2/object/systemconfiguration/{pkiSystemconfigurationID} | Edit an existing Systemconfiguration|
 |[**systemconfigurationGetObjectV2**](#systemconfigurationgetobjectv2) | **GET** /2/object/systemconfiguration/{pkiSystemconfigurationID} | Retrieve an existing Systemconfiguration|
 
-# **systemconfigurationEditObjectV1**
-> SystemconfigurationEditObjectV1Response systemconfigurationEditObjectV1(systemconfigurationEditObjectV1Request)
+# **systemconfigurationEditObjectV2**
+> SystemconfigurationEditObjectV2Response systemconfigurationEditObjectV2(systemconfigurationEditObjectV2Request)
 
 
 
@@ -18,18 +18,18 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 import {
     ObjectSystemconfigurationApi,
     Configuration,
-    SystemconfigurationEditObjectV1Request
+    SystemconfigurationEditObjectV2Request
 } from '@ezmaxinc/ezmax-sdk-typescript-axios';
 
 const configuration = new Configuration();
 const apiInstance = new ObjectSystemconfigurationApi(configuration);
 
 let pkiSystemconfigurationID: number; //The unique ID of the Systemconfiguration (default to undefined)
-let systemconfigurationEditObjectV1Request: SystemconfigurationEditObjectV1Request; //
+let systemconfigurationEditObjectV2Request: SystemconfigurationEditObjectV2Request; //
 
-const { status, data } = await apiInstance.systemconfigurationEditObjectV1(
+const { status, data } = await apiInstance.systemconfigurationEditObjectV2(
     pkiSystemconfigurationID,
-    systemconfigurationEditObjectV1Request
+    systemconfigurationEditObjectV2Request
 );
 ```
 
@@ -37,13 +37,13 @@ const { status, data } = await apiInstance.systemconfigurationEditObjectV1(
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **systemconfigurationEditObjectV1Request** | **SystemconfigurationEditObjectV1Request**|  | |
+| **systemconfigurationEditObjectV2Request** | **SystemconfigurationEditObjectV2Request**|  | |
 | **pkiSystemconfigurationID** | [**number**] | The unique ID of the Systemconfiguration | defaults to undefined|
 
 
 ### Return type
 
-**SystemconfigurationEditObjectV1Response**
+**SystemconfigurationEditObjectV2Response**
 
 ### Authorization
 

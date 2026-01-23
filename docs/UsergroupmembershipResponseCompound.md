@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **sUserLoginname** | **string** | The login name of the User. | [optional] [default to undefined]
 **sEmailAddress** | **string** | The email address. | [optional] [default to undefined]
 **sUsergroupNameX** | **string** | The Name of the Usergroup in the language of the requester | [default to undefined]
+**bUserIsactive** | **boolean** | Whether the User is active or not | [optional] [default to undefined]
 **sUsergroupexternalName** | **string** | The name of the Usergroupexternal | [optional] [default to undefined]
 
 ## Example
@@ -32,6 +33,7 @@ const instance: UsergroupmembershipResponseCompound = {
     sUserLoginname,
     sEmailAddress,
     sUsergroupNameX,
+    bUserIsactive,
     sUsergroupexternalName,
 };
 ```

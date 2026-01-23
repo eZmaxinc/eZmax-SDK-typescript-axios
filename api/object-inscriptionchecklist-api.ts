@@ -24,8 +24,6 @@ import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError
 // @ts-ignore
 import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
-import type { InscriptionchecklistGetAutocompleteV2Response } from '../model';
-// @ts-ignore
 import type { InscriptionchecklistGetAutocompleteV3Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
@@ -34,91 +32,6 @@ import { RequestSignature, IHeadersData } from '../api/request-signature';
  */
 export const ObjectInscriptionchecklistApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
-        /**
-         * Get the list of Inscriptionchecklist to be used in a dropdown or autocomplete control.
-         * @summary Retrieve Inscriptionchecklists and IDs
-         * @param {InscriptionchecklistGetAutocompleteV2SSelectorEnum} sSelector The type of Inscriptionchecklist to return
-         * @param {string} [fkiID] Specify which fkiID we want to display.
-         * @param {InscriptionchecklistGetAutocompleteV2ETypeEnum} [eType] The type of Inscriptionchecklist
-         * @param {InscriptionchecklistGetAutocompleteV2EFilterActiveEnum} [eFilterActive] Specify which results we want to display.
-         * @param {string} [sQuery] Allow to filter the returned results
-         * @param {HeaderAcceptLanguage} [acceptLanguage] 
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        inscriptionchecklistGetAutocompleteV2: async (sSelector: InscriptionchecklistGetAutocompleteV2SSelectorEnum, fkiID?: string, eType?: InscriptionchecklistGetAutocompleteV2ETypeEnum, eFilterActive?: InscriptionchecklistGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'sSelector' is not null or undefined
-            assertParamExists('inscriptionchecklistGetAutocompleteV2', 'sSelector', sSelector)
-            const localVarPath = `/2/object/inscriptionchecklist/getAutocomplete/{sSelector}`
-                .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-            if (fkiID !== undefined) {
-                localVarQueryParameter['fkiID'] = fkiID;
-            }
-
-            if (eType !== undefined) {
-                localVarQueryParameter['eType'] = eType;
-            }
-
-            if (eFilterActive !== undefined) {
-                localVarQueryParameter['eFilterActive'] = eFilterActive;
-            }
-
-            if (sQuery !== undefined) {
-                localVarQueryParameter['sQuery'] = sQuery;
-            }
-
-
-    
-            if (acceptLanguage != null) {
-                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
-                    ? acceptLanguage
-                    : JSON.stringify(acceptLanguage);
-            }
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'GET' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
         /**
          * Get the list of Inscriptionchecklist to be used in a dropdown or autocomplete control.
          * @summary Retrieve Inscriptionchecklists and IDs
@@ -200,8 +113,8 @@ export const ObjectInscriptionchecklistApiAxiosParamCreator = function (configur
                 localVarQueryParameter['sQuery'] = sQuery;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             if (acceptLanguage != null) {
                 localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
                     ? acceptLanguage
@@ -245,25 +158,6 @@ export const ObjectInscriptionchecklistApiFp = function(configuration?: Configur
         /**
          * Get the list of Inscriptionchecklist to be used in a dropdown or autocomplete control.
          * @summary Retrieve Inscriptionchecklists and IDs
-         * @param {InscriptionchecklistGetAutocompleteV2SSelectorEnum} sSelector The type of Inscriptionchecklist to return
-         * @param {string} [fkiID] Specify which fkiID we want to display.
-         * @param {InscriptionchecklistGetAutocompleteV2ETypeEnum} [eType] The type of Inscriptionchecklist
-         * @param {InscriptionchecklistGetAutocompleteV2EFilterActiveEnum} [eFilterActive] Specify which results we want to display.
-         * @param {string} [sQuery] Allow to filter the returned results
-         * @param {HeaderAcceptLanguage} [acceptLanguage] 
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        async inscriptionchecklistGetAutocompleteV2(sSelector: InscriptionchecklistGetAutocompleteV2SSelectorEnum, fkiID?: string, eType?: InscriptionchecklistGetAutocompleteV2ETypeEnum, eFilterActive?: InscriptionchecklistGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InscriptionchecklistGetAutocompleteV2Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.inscriptionchecklistGetAutocompleteV2(sSelector, fkiID, eType, eFilterActive, sQuery, acceptLanguage, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ObjectInscriptionchecklistApi.inscriptionchecklistGetAutocompleteV2']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Get the list of Inscriptionchecklist to be used in a dropdown or autocomplete control.
-         * @summary Retrieve Inscriptionchecklists and IDs
          * @param {InscriptionchecklistGetAutocompleteV3SSelectorEnum} sSelector The type of Inscriptionchecklist to return
          * @param {string} [fkiBuyercontractID] Specify which Buyercontract we want to display.
          * @param {string} [fkiInscriptionID] Specify which Inscription we want to display.
@@ -297,22 +191,6 @@ export const ObjectInscriptionchecklistApiFactory = function (configuration?: Co
         /**
          * Get the list of Inscriptionchecklist to be used in a dropdown or autocomplete control.
          * @summary Retrieve Inscriptionchecklists and IDs
-         * @param {InscriptionchecklistGetAutocompleteV2SSelectorEnum} sSelector The type of Inscriptionchecklist to return
-         * @param {string} [fkiID] Specify which fkiID we want to display.
-         * @param {InscriptionchecklistGetAutocompleteV2ETypeEnum} [eType] The type of Inscriptionchecklist
-         * @param {InscriptionchecklistGetAutocompleteV2EFilterActiveEnum} [eFilterActive] Specify which results we want to display.
-         * @param {string} [sQuery] Allow to filter the returned results
-         * @param {HeaderAcceptLanguage} [acceptLanguage] 
-         * @param {*} [options] Override http request option.
-         * @deprecated
-         * @throws {RequiredError}
-         */
-        inscriptionchecklistGetAutocompleteV2(sSelector: InscriptionchecklistGetAutocompleteV2SSelectorEnum, fkiID?: string, eType?: InscriptionchecklistGetAutocompleteV2ETypeEnum, eFilterActive?: InscriptionchecklistGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig): AxiosPromise<InscriptionchecklistGetAutocompleteV2Response> {
-            return localVarFp.inscriptionchecklistGetAutocompleteV2(sSelector, fkiID, eType, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Get the list of Inscriptionchecklist to be used in a dropdown or autocomplete control.
-         * @summary Retrieve Inscriptionchecklists and IDs
          * @param {InscriptionchecklistGetAutocompleteV3SSelectorEnum} sSelector The type of Inscriptionchecklist to return
          * @param {string} [fkiBuyercontractID] Specify which Buyercontract we want to display.
          * @param {string} [fkiInscriptionID] Specify which Inscription we want to display.
@@ -341,23 +219,6 @@ export class ObjectInscriptionchecklistApi extends BaseAPI {
     /**
      * Get the list of Inscriptionchecklist to be used in a dropdown or autocomplete control.
      * @summary Retrieve Inscriptionchecklists and IDs
-     * @param {InscriptionchecklistGetAutocompleteV2SSelectorEnum} sSelector The type of Inscriptionchecklist to return
-     * @param {string} [fkiID] Specify which fkiID we want to display.
-     * @param {InscriptionchecklistGetAutocompleteV2ETypeEnum} [eType] The type of Inscriptionchecklist
-     * @param {InscriptionchecklistGetAutocompleteV2EFilterActiveEnum} [eFilterActive] Specify which results we want to display.
-     * @param {string} [sQuery] Allow to filter the returned results
-     * @param {HeaderAcceptLanguage} [acceptLanguage] 
-     * @param {*} [options] Override http request option.
-     * @deprecated
-     * @throws {RequiredError}
-     */
-    public inscriptionchecklistGetAutocompleteV2(sSelector: InscriptionchecklistGetAutocompleteV2SSelectorEnum, fkiID?: string, eType?: InscriptionchecklistGetAutocompleteV2ETypeEnum, eFilterActive?: InscriptionchecklistGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig) {
-        return ObjectInscriptionchecklistApiFp(this.configuration).inscriptionchecklistGetAutocompleteV2(sSelector, fkiID, eType, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Get the list of Inscriptionchecklist to be used in a dropdown or autocomplete control.
-     * @summary Retrieve Inscriptionchecklists and IDs
      * @param {InscriptionchecklistGetAutocompleteV3SSelectorEnum} sSelector The type of Inscriptionchecklist to return
      * @param {string} [fkiBuyercontractID] Specify which Buyercontract we want to display.
      * @param {string} [fkiInscriptionID] Specify which Inscription we want to display.
@@ -378,27 +239,6 @@ export class ObjectInscriptionchecklistApi extends BaseAPI {
     }
 }
 
-export const InscriptionchecklistGetAutocompleteV2SSelectorEnum = {
-    All: 'All'
-} as const;
-export type InscriptionchecklistGetAutocompleteV2SSelectorEnum = typeof InscriptionchecklistGetAutocompleteV2SSelectorEnum[keyof typeof InscriptionchecklistGetAutocompleteV2SSelectorEnum];
-export const InscriptionchecklistGetAutocompleteV2ETypeEnum = {
-    Buyercontract: 'Buyercontract',
-    Inscription: 'Inscription',
-    Inscriptionnotauthenticated: 'Inscriptionnotauthenticated',
-    Inscriptiontemp: 'Inscriptiontemp',
-    Agent: 'Agent',
-    Broker: 'Broker',
-    Otherincome: 'Otherincome',
-    Rejectedoffertopurchase: 'Rejectedoffertopurchase'
-} as const;
-export type InscriptionchecklistGetAutocompleteV2ETypeEnum = typeof InscriptionchecklistGetAutocompleteV2ETypeEnum[keyof typeof InscriptionchecklistGetAutocompleteV2ETypeEnum];
-export const InscriptionchecklistGetAutocompleteV2EFilterActiveEnum = {
-    All: 'All',
-    Active: 'Active',
-    Inactive: 'Inactive'
-} as const;
-export type InscriptionchecklistGetAutocompleteV2EFilterActiveEnum = typeof InscriptionchecklistGetAutocompleteV2EFilterActiveEnum[keyof typeof InscriptionchecklistGetAutocompleteV2EFilterActiveEnum];
 export const InscriptionchecklistGetAutocompleteV3SSelectorEnum = {
     All: 'All'
 } as const;

@@ -65,8 +65,8 @@ export const GlobalCustomerApiAxiosParamCreator = function (configuration?: Conf
                 localVarQueryParameter['sInfrastructureproductCode'] = sInfrastructureproductCode;
             }
 
+            localVarHeaderParameter['Accept'] = 'application/json';
 
-    
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
