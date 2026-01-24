@@ -1,0 +1,13 @@
+# FieldEVariableexpenseTaxable
+
+The taxable of the Variableexpense
+
+## Enum
+
+* `Yes` (value: `'Yes'`)
+
+* `No` (value: `'No'`)
+
+* `Included` (value: `'Included'`)
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
