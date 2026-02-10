@@ -192,11 +192,10 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
          * @summary Download multiples files from an Ezsignfolder
          * @param {number} pkiEzsignfolderID 
          * @param {EzsignfolderBatchDownloadV1Request} ezsignfolderBatchDownloadV1Request 
-         * @param {EzsignfolderBatchDownloadV1AcceptEnum} [accept] Test csharp
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfolderBatchDownloadV1: async (pkiEzsignfolderID: number, ezsignfolderBatchDownloadV1Request: EzsignfolderBatchDownloadV1Request, accept?: EzsignfolderBatchDownloadV1AcceptEnum, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        ezsignfolderBatchDownloadV1: async (pkiEzsignfolderID: number, ezsignfolderBatchDownloadV1Request: EzsignfolderBatchDownloadV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiEzsignfolderID' is not null or undefined
             assertParamExists('ezsignfolderBatchDownloadV1', 'pkiEzsignfolderID', pkiEzsignfolderID)
             // verify required parameter 'ezsignfolderBatchDownloadV1Request' is not null or undefined
@@ -224,9 +223,6 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
             localVarHeaderParameter['Content-Type'] = 'application/json';
             localVarHeaderParameter['Accept'] = 'application/zip,application/pdf,application/json';
 
-            if (accept != null) {
-                localVarHeaderParameter['Accept'] = String(accept);
-            }
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -2281,12 +2277,11 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
          * @summary Download multiples files from an Ezsignfolder
          * @param {number} pkiEzsignfolderID 
          * @param {EzsignfolderBatchDownloadV1Request} ezsignfolderBatchDownloadV1Request 
-         * @param {EzsignfolderBatchDownloadV1AcceptEnum} [accept] Test csharp
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async ezsignfolderBatchDownloadV1(pkiEzsignfolderID: number, ezsignfolderBatchDownloadV1Request: EzsignfolderBatchDownloadV1Request, accept?: EzsignfolderBatchDownloadV1AcceptEnum, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<File>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderBatchDownloadV1(pkiEzsignfolderID, ezsignfolderBatchDownloadV1Request, accept, options);
+        async ezsignfolderBatchDownloadV1(pkiEzsignfolderID: number, ezsignfolderBatchDownloadV1Request: EzsignfolderBatchDownloadV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<File>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderBatchDownloadV1(pkiEzsignfolderID, ezsignfolderBatchDownloadV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignfolderApi.ezsignfolderBatchDownloadV1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
@@ -2768,12 +2763,11 @@ export const ObjectEzsignfolderApiFactory = function (configuration?: Configurat
          * @summary Download multiples files from an Ezsignfolder
          * @param {number} pkiEzsignfolderID 
          * @param {EzsignfolderBatchDownloadV1Request} ezsignfolderBatchDownloadV1Request 
-         * @param {EzsignfolderBatchDownloadV1AcceptEnum} [accept] Test csharp
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        ezsignfolderBatchDownloadV1(pkiEzsignfolderID: number, ezsignfolderBatchDownloadV1Request: EzsignfolderBatchDownloadV1Request, accept?: EzsignfolderBatchDownloadV1AcceptEnum, options?: RawAxiosRequestConfig): AxiosPromise<File> {
-            return localVarFp.ezsignfolderBatchDownloadV1(pkiEzsignfolderID, ezsignfolderBatchDownloadV1Request, accept, options).then((request) => request(axios, basePath));
+        ezsignfolderBatchDownloadV1(pkiEzsignfolderID: number, ezsignfolderBatchDownloadV1Request: EzsignfolderBatchDownloadV1Request, options?: RawAxiosRequestConfig): AxiosPromise<File> {
+            return localVarFp.ezsignfolderBatchDownloadV1(pkiEzsignfolderID, ezsignfolderBatchDownloadV1Request, options).then((request) => request(axios, basePath));
         },
         /**
          * The endpoint allows to create one or many elements at once.  The array can contain simple (Just the object) or compound (The object and its child) objects.  Creating compound elements allows to reduce the multiple requests to create all child objects.
@@ -3152,12 +3146,11 @@ export class ObjectEzsignfolderApi extends BaseAPI {
      * @summary Download multiples files from an Ezsignfolder
      * @param {number} pkiEzsignfolderID 
      * @param {EzsignfolderBatchDownloadV1Request} ezsignfolderBatchDownloadV1Request 
-     * @param {EzsignfolderBatchDownloadV1AcceptEnum} [accept] Test csharp
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public ezsignfolderBatchDownloadV1(pkiEzsignfolderID: number, ezsignfolderBatchDownloadV1Request: EzsignfolderBatchDownloadV1Request, accept?: EzsignfolderBatchDownloadV1AcceptEnum, options?: RawAxiosRequestConfig) {
-        return ObjectEzsignfolderApiFp(this.configuration).ezsignfolderBatchDownloadV1(pkiEzsignfolderID, ezsignfolderBatchDownloadV1Request, accept, options).then((request) => request(this.axios, this.basePath));
+    public ezsignfolderBatchDownloadV1(pkiEzsignfolderID: number, ezsignfolderBatchDownloadV1Request: EzsignfolderBatchDownloadV1Request, options?: RawAxiosRequestConfig) {
+        return ObjectEzsignfolderApiFp(this.configuration).ezsignfolderBatchDownloadV1(pkiEzsignfolderID, ezsignfolderBatchDownloadV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -3547,12 +3540,6 @@ export class ObjectEzsignfolderApi extends BaseAPI {
     }
 }
 
-export const EzsignfolderBatchDownloadV1AcceptEnum = {
-    application_json: 'application/json',
-    application_zip: 'application/zip',
-    application_pdf: 'application/pdf'
-} as const;
-export type EzsignfolderBatchDownloadV1AcceptEnum = typeof EzsignfolderBatchDownloadV1AcceptEnum[keyof typeof EzsignfolderBatchDownloadV1AcceptEnum];
 export const EzsignfolderGetListV1EOrderByEnum = {
     pkiEzsignfolderID_ASC: 'pkiEzsignfolderID_ASC',
     pkiEzsignfolderID_DESC: 'pkiEzsignfolderID_DESC',
