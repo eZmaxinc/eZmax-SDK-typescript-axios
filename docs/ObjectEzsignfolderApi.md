@@ -114,10 +114,12 @@ const apiInstance = new ObjectEzsignfolderApi(configuration);
 
 let pkiEzsignfolderID: number; // (default to undefined)
 let ezsignfolderBatchDownloadV1Request: EzsignfolderBatchDownloadV1Request; //
+let accept: 'application/json' | 'application/zip' | 'application/pdf'; //Test csharp (optional) (default to undefined)
 
 const { status, data } = await apiInstance.ezsignfolderBatchDownloadV1(
     pkiEzsignfolderID,
-    ezsignfolderBatchDownloadV1Request
+    ezsignfolderBatchDownloadV1Request,
+    accept
 );
 ```
 
@@ -127,6 +129,7 @@ const { status, data } = await apiInstance.ezsignfolderBatchDownloadV1(
 |------------- | ------------- | ------------- | -------------|
 | **ezsignfolderBatchDownloadV1Request** | **EzsignfolderBatchDownloadV1Request**|  | |
 | **pkiEzsignfolderID** | [**number**] |  | defaults to undefined|
+| **accept** | [**&#39;application/json&#39; | &#39;application/zip&#39; | &#39;application/pdf&#39;**]**Array<&#39;application/json&#39; &#124; &#39;application/zip&#39; &#124; &#39;application/pdf&#39;>** | Test csharp | (optional) defaults to undefined|
 
 
 ### Return type

@@ -1,4 +1,4 @@
-## @ezmaxinc/ezmax-sdk-typescript-axios@1.3.0
+## @ezmaxinc/ezmax-sdk-typescript-axios@1.3.1
 
 This generator creates TypeScript/JavaScript client that utilizes [axios](https://github.com/axios/axios). The generated Node module can be used in the following environments:
 
@@ -36,7 +36,7 @@ navigate to the folder of your consuming project and run one of the following co
 _published:_
 
 ```
-npm install @ezmaxinc/ezmax-sdk-typescript-axios@1.3.0 --save
+npm install @ezmaxinc/ezmax-sdk-typescript-axios@1.3.1 --save
 ```
 
 _unPublished (not recommended):_
@@ -282,6 +282,7 @@ Class | Method | HTTP request | Description
 *ObjectEzsignfolderApi* | [**ezsignfolderSendV1**](docs/ObjectEzsignfolderApi.md#ezsignfoldersendv1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/send | Send the Ezsignfolder to the signatories for signature
 *ObjectEzsignfolderApi* | [**ezsignfolderSendV3**](docs/ObjectEzsignfolderApi.md#ezsignfoldersendv3) | **POST** /3/object/ezsignfolder/{pkiEzsignfolderID}/send | Send the Ezsignfolder to the signatories for signature
 *ObjectEzsignfolderApi* | [**ezsignfolderUnsendV1**](docs/ObjectEzsignfolderApi.md#ezsignfolderunsendv1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/unsend | Unsend the Ezsignfolder
+*ObjectEzsignfoldersignerassociationApi* | [**ezsignfoldersignerassociationCreateEmbeddedUrlV1**](docs/ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationcreateembeddedurlv1) | **POST** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/createEmbeddedUrl | Creates an Url to allow embedded signing
 *ObjectEzsignfoldersignerassociationApi* | [**ezsignfoldersignerassociationCreateEmbeddedUrlV2**](docs/ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationcreateembeddedurlv2) | **POST** /2/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/createEmbeddedUrl | Creates an Url to allow embedded signing
 *ObjectEzsignfoldersignerassociationApi* | [**ezsignfoldersignerassociationCreateObjectV1**](docs/ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationcreateobjectv1) | **POST** /1/object/ezsignfoldersignerassociation | Create a new Ezsignfoldersignerassociation
 *ObjectEzsignfoldersignerassociationApi* | [**ezsignfoldersignerassociationCreateObjectV2**](docs/ObjectEzsignfoldersignerassociationApi.md#ezsignfoldersignerassociationcreateobjectv2) | **POST** /2/object/ezsignfoldersignerassociation | Create a new Ezsignfoldersignerassociation
@@ -339,6 +340,10 @@ Class | Method | HTTP request | Description
 *ObjectEzsigntemplateApi* | [**ezsigntemplateGetAutocompleteV2**](docs/ObjectEzsigntemplateApi.md#ezsigntemplategetautocompletev2) | **GET** /2/object/ezsigntemplate/getAutocomplete/{sSelector} | Retrieve Ezsigntemplates and IDs
 *ObjectEzsigntemplateApi* | [**ezsigntemplateGetListV1**](docs/ObjectEzsigntemplateApi.md#ezsigntemplategetlistv1) | **GET** /1/object/ezsigntemplate/getList | Retrieve Ezsigntemplate list
 *ObjectEzsigntemplateApi* | [**ezsigntemplateGetObjectV3**](docs/ObjectEzsigntemplateApi.md#ezsigntemplategetobjectv3) | **GET** /3/object/ezsigntemplate/{pkiEzsigntemplateID} | Retrieve an existing Ezsigntemplate
+*ObjectEzsigntemplateannotationApi* | [**ezsigntemplateannotationCreateObjectV1**](docs/ObjectEzsigntemplateannotationApi.md#ezsigntemplateannotationcreateobjectv1) | **POST** /1/object/ezsigntemplateannotation | Create a new Ezsigntemplateannotation
+*ObjectEzsigntemplateannotationApi* | [**ezsigntemplateannotationDeleteObjectV1**](docs/ObjectEzsigntemplateannotationApi.md#ezsigntemplateannotationdeleteobjectv1) | **DELETE** /1/object/ezsigntemplateannotation/{pkiEzsigntemplateannotationID} | Delete an existing Ezsigntemplateannotation
+*ObjectEzsigntemplateannotationApi* | [**ezsigntemplateannotationEditObjectV1**](docs/ObjectEzsigntemplateannotationApi.md#ezsigntemplateannotationeditobjectv1) | **PUT** /1/object/ezsigntemplateannotation/{pkiEzsigntemplateannotationID} | Edit an existing Ezsigntemplateannotation
+*ObjectEzsigntemplateannotationApi* | [**ezsigntemplateannotationGetObjectV2**](docs/ObjectEzsigntemplateannotationApi.md#ezsigntemplateannotationgetobjectv2) | **GET** /2/object/ezsigntemplateannotation/{pkiEzsigntemplateannotationID} | Retrieve an existing Ezsigntemplateannotation
 *ObjectEzsigntemplatedocumentApi* | [**ezsigntemplatedocumentCreateObjectV1**](docs/ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentcreateobjectv1) | **POST** /1/object/ezsigntemplatedocument | Create a new Ezsigntemplatedocument
 *ObjectEzsigntemplatedocumentApi* | [**ezsigntemplatedocumentDownloadV1**](docs/ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumentdownloadv1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/download | Retrieve an existing Ezsigntemplatedocument\&#39;s original file
 *ObjectEzsigntemplatedocumentApi* | [**ezsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1**](docs/ObjectEzsigntemplatedocumentApi.md#ezsigntemplatedocumenteditezsigntemplatedocumentpagerecognitionsv1) | **PUT** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/editEzsigntemplatedocumentpagerecognitions | Edit multiple Ezsigntemplatedocumentpagerecognitions
@@ -365,6 +370,7 @@ Class | Method | HTTP request | Description
 *ObjectEzsigntemplateformfieldgroupApi* | [**ezsigntemplateformfieldgroupGetObjectV2**](docs/ObjectEzsigntemplateformfieldgroupApi.md#ezsigntemplateformfieldgroupgetobjectv2) | **GET** /2/object/ezsigntemplateformfieldgroup/{pkiEzsigntemplateformfieldgroupID} | Retrieve an existing Ezsigntemplateformfieldgroup
 *ObjectEzsigntemplateglobalApi* | [**ezsigntemplateglobalGetAutocompleteV2**](docs/ObjectEzsigntemplateglobalApi.md#ezsigntemplateglobalgetautocompletev2) | **GET** /2/object/ezsigntemplateglobal/getAutocomplete/{sSelector} | Retrieve Ezsigntemplateglobals and IDs
 *ObjectEzsigntemplateglobalApi* | [**ezsigntemplateglobalGetObjectV2**](docs/ObjectEzsigntemplateglobalApi.md#ezsigntemplateglobalgetobjectv2) | **GET** /2/object/ezsigntemplateglobal/{pkiEzsigntemplateglobalID} | Retrieve an existing Ezsigntemplateglobal
+*ObjectEzsigntemplateglobalannotationApi* | [**ezsigntemplateglobalannotationGetObjectV2**](docs/ObjectEzsigntemplateglobalannotationApi.md#ezsigntemplateglobalannotationgetobjectv2) | **GET** /2/object/ezsigntemplateglobalannotation/{pkiEzsigntemplateglobalannotationID} | Retrieve an existing Ezsigntemplateglobalannotation
 *ObjectEzsigntemplatepackageApi* | [**ezsigntemplatepackageCreateObjectV1**](docs/ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackagecreateobjectv1) | **POST** /1/object/ezsigntemplatepackage | Create a new Ezsigntemplatepackage
 *ObjectEzsigntemplatepackageApi* | [**ezsigntemplatepackageDeleteObjectV1**](docs/ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackagedeleteobjectv1) | **DELETE** /1/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID} | Delete an existing Ezsigntemplatepackage
 *ObjectEzsigntemplatepackageApi* | [**ezsigntemplatepackageEditEzsigntemplatepackagesignersV1**](docs/ObjectEzsigntemplatepackageApi.md#ezsigntemplatepackageeditezsigntemplatepackagesignersv1) | **PUT** /1/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID}/editEzsigntemplatepackagesigners | Edit multiple Ezsigntemplatepackagesigners
@@ -1382,6 +1388,9 @@ Class | Method | HTTP request | Description
  - [EzsignfolderSendV3Request](docs/EzsignfolderSendV3Request.md)
  - [EzsignfolderSendV3Response](docs/EzsignfolderSendV3Response.md)
  - [EzsignfolderUnsendV1Response](docs/EzsignfolderUnsendV1Response.md)
+ - [EzsignfoldersignerassociationCreateEmbeddedUrlV1Request](docs/EzsignfoldersignerassociationCreateEmbeddedUrlV1Request.md)
+ - [EzsignfoldersignerassociationCreateEmbeddedUrlV1Response](docs/EzsignfoldersignerassociationCreateEmbeddedUrlV1Response.md)
+ - [EzsignfoldersignerassociationCreateEmbeddedUrlV1ResponseMPayload](docs/EzsignfoldersignerassociationCreateEmbeddedUrlV1ResponseMPayload.md)
  - [EzsignfoldersignerassociationCreateEmbeddedUrlV2Request](docs/EzsignfoldersignerassociationCreateEmbeddedUrlV2Request.md)
  - [EzsignfoldersignerassociationCreateEmbeddedUrlV2Response](docs/EzsignfoldersignerassociationCreateEmbeddedUrlV2Response.md)
  - [EzsignfoldersignerassociationCreateEmbeddedUrlV2ResponseMPayload](docs/EzsignfoldersignerassociationCreateEmbeddedUrlV2ResponseMPayload.md)
@@ -1580,6 +1589,18 @@ Class | Method | HTTP request | Description
  - [EzsigntemplateResponseCompound](docs/EzsigntemplateResponseCompound.md)
  - [EzsigntemplateResponseCompoundV3](docs/EzsigntemplateResponseCompoundV3.md)
  - [EzsigntemplateResponseV3](docs/EzsigntemplateResponseV3.md)
+ - [EzsigntemplateannotationCreateObjectV1Request](docs/EzsigntemplateannotationCreateObjectV1Request.md)
+ - [EzsigntemplateannotationCreateObjectV1Response](docs/EzsigntemplateannotationCreateObjectV1Response.md)
+ - [EzsigntemplateannotationCreateObjectV1ResponseMPayload](docs/EzsigntemplateannotationCreateObjectV1ResponseMPayload.md)
+ - [EzsigntemplateannotationDeleteObjectV1Response](docs/EzsigntemplateannotationDeleteObjectV1Response.md)
+ - [EzsigntemplateannotationEditObjectV1Request](docs/EzsigntemplateannotationEditObjectV1Request.md)
+ - [EzsigntemplateannotationEditObjectV1Response](docs/EzsigntemplateannotationEditObjectV1Response.md)
+ - [EzsigntemplateannotationGetObjectV2Response](docs/EzsigntemplateannotationGetObjectV2Response.md)
+ - [EzsigntemplateannotationGetObjectV2ResponseMPayload](docs/EzsigntemplateannotationGetObjectV2ResponseMPayload.md)
+ - [EzsigntemplateannotationRequest](docs/EzsigntemplateannotationRequest.md)
+ - [EzsigntemplateannotationRequestCompound](docs/EzsigntemplateannotationRequestCompound.md)
+ - [EzsigntemplateannotationResponse](docs/EzsigntemplateannotationResponse.md)
+ - [EzsigntemplateannotationResponseCompound](docs/EzsigntemplateannotationResponseCompound.md)
  - [EzsigntemplatedocumentCreateObjectV1Request](docs/EzsigntemplatedocumentCreateObjectV1Request.md)
  - [EzsigntemplatedocumentCreateObjectV1Response](docs/EzsigntemplatedocumentCreateObjectV1Response.md)
  - [EzsigntemplatedocumentCreateObjectV1ResponseMPayload](docs/EzsigntemplatedocumentCreateObjectV1ResponseMPayload.md)
@@ -1665,6 +1686,10 @@ Class | Method | HTTP request | Description
  - [EzsigntemplateglobalGetObjectV2ResponseMPayload](docs/EzsigntemplateglobalGetObjectV2ResponseMPayload.md)
  - [EzsigntemplateglobalResponse](docs/EzsigntemplateglobalResponse.md)
  - [EzsigntemplateglobalResponseCompound](docs/EzsigntemplateglobalResponseCompound.md)
+ - [EzsigntemplateglobalannotationGetObjectV2Response](docs/EzsigntemplateglobalannotationGetObjectV2Response.md)
+ - [EzsigntemplateglobalannotationGetObjectV2ResponseMPayload](docs/EzsigntemplateglobalannotationGetObjectV2ResponseMPayload.md)
+ - [EzsigntemplateglobalannotationResponse](docs/EzsigntemplateglobalannotationResponse.md)
+ - [EzsigntemplateglobalannotationResponseCompound](docs/EzsigntemplateglobalannotationResponseCompound.md)
  - [EzsigntemplateglobaldocumentResponse](docs/EzsigntemplateglobaldocumentResponse.md)
  - [EzsigntemplateglobalsignerResponse](docs/EzsigntemplateglobalsignerResponse.md)
  - [EzsigntemplateglobalsignerResponseCompound](docs/EzsigntemplateglobalsignerResponseCompound.md)
@@ -1876,6 +1901,9 @@ Class | Method | HTTP request | Description
  - [FieldEEzsignsignaturepaymentdetailTaxable](docs/FieldEEzsignsignaturepaymentdetailTaxable.md)
  - [FieldEEzsigntemplateRecognition](docs/FieldEEzsigntemplateRecognition.md)
  - [FieldEEzsigntemplateType](docs/FieldEEzsigntemplateType.md)
+ - [FieldEEzsigntemplateannotationHorizontalalignment](docs/FieldEEzsigntemplateannotationHorizontalalignment.md)
+ - [FieldEEzsigntemplateannotationType](docs/FieldEEzsigntemplateannotationType.md)
+ - [FieldEEzsigntemplateannotationVerticalalignment](docs/FieldEEzsigntemplateannotationVerticalalignment.md)
  - [FieldEEzsigntemplatedocumentpagerecognitionOperator](docs/FieldEEzsigntemplatedocumentpagerecognitionOperator.md)
  - [FieldEEzsigntemplatedocumentpagerecognitionSection](docs/FieldEEzsigntemplatedocumentpagerecognitionSection.md)
  - [FieldEEzsigntemplateelementdependencyOperator](docs/FieldEEzsigntemplateelementdependencyOperator.md)
@@ -1888,6 +1916,9 @@ Class | Method | HTTP request | Description
  - [FieldEEzsigntemplateformfieldgroupType](docs/FieldEEzsigntemplateformfieldgroupType.md)
  - [FieldEEzsigntemplateglobalModule](docs/FieldEEzsigntemplateglobalModule.md)
  - [FieldEEzsigntemplateglobalSupplier](docs/FieldEEzsigntemplateglobalSupplier.md)
+ - [FieldEEzsigntemplateglobalannotationHorizontalalignment](docs/FieldEEzsigntemplateglobalannotationHorizontalalignment.md)
+ - [FieldEEzsigntemplateglobalannotationType](docs/FieldEEzsigntemplateglobalannotationType.md)
+ - [FieldEEzsigntemplateglobalannotationVerticalalignment](docs/FieldEEzsigntemplateglobalannotationVerticalalignment.md)
  - [FieldEEzsigntemplatepackagesignerMapping](docs/FieldEEzsigntemplatepackagesignerMapping.md)
  - [FieldEEzsigntemplatepublicLimittype](docs/FieldEEzsigntemplatepublicLimittype.md)
  - [FieldEEzsigntemplatesignatureAttachmentnamesource](docs/FieldEEzsigntemplatesignatureAttachmentnamesource.md)
