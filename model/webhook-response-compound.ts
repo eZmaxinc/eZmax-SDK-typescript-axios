@@ -43,7 +43,7 @@ export interface WebhookResponseCompound {
      * @type {number}
      * @memberof WebhookResponseCompound
      */
-    pkiWebhookID:number 
+    pkiWebhookID?:number 
     /**
      * The unique ID of the Authenticationexternal
      * @type {number}
@@ -139,7 +139,7 @@ export interface WebhookResponseCompound {
      * @type {CommonAudit}
      * @memberof WebhookResponseCompound
      */
-    objAudit:CommonAudit 
+    objAudit?:CommonAudit 
     /**
      * The concatenated string to describe the Webhook event
      * @type {string}
@@ -178,7 +178,7 @@ import { ValidationObjectCommonAudit } from './'
  * @class DataObjectWebhookResponseCompound
  */
 export class DataObjectWebhookResponseCompound {
-    pkiWebhookID:number = 0
+    pkiWebhookID?:number = undefined
     fkiAuthenticationexternalID?:number = undefined
     sWebhookDescription:string = ''
     fkiEzsignfoldertypeID?:number = undefined
@@ -194,7 +194,7 @@ export class DataObjectWebhookResponseCompound {
     bWebhookIssigned:boolean = false
     bWebhookSkipsslvalidation:boolean = false
     sAuthenticationexternalDescription?:string = undefined
-    objAudit:CommonAudit = new DataObjectCommonAudit()
+    objAudit?:CommonAudit = undefined
     sWebhookEvent?:string = undefined
     sWebhookAuthentificationexternalerror?:string = undefined
     a_objWebhookheader?:Array<WebhookheaderResponseCompound> = undefined
@@ -208,7 +208,7 @@ export class DataObjectWebhookResponseCompound {
 export class ValidationObjectWebhookResponseCompound {
    pkiWebhookID = {
       type: 'integer',
-      required: true
+      required: false
    }
    fkiAuthenticationexternalID = {
       type: 'integer',

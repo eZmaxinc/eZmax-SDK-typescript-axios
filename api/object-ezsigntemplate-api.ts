@@ -820,8 +820,6 @@ export type EzsigntemplateGetAutocompleteV2EFilterActiveEnum = typeof Ezsigntemp
 export const EzsigntemplateGetListV1EOrderByEnum = {
     pkiEzsigntemplateID_ASC: 'pkiEzsigntemplateID_ASC',
     pkiEzsigntemplateID_DESC: 'pkiEzsigntemplateID_DESC',
-    fkiTeamID_ASC: 'fkiTeamID_ASC',
-    fkiTeamID_DESC: 'fkiTeamID_DESC',
     fkiEzsignfoldertypeID_ASC: 'fkiEzsignfoldertypeID_ASC',
     fkiEzsignfoldertypeID_DESC: 'fkiEzsignfoldertypeID_DESC',
     fkiUserIDOwner_ASC: 'fkiUserIDOwner_ASC',
@@ -832,8 +830,6 @@ export const EzsigntemplateGetListV1EOrderByEnum = {
     eEzsigntemplateType_DESC: 'eEzsigntemplateType_DESC',
     sEzsigntemplateDescription_ASC: 'sEzsigntemplateDescription_ASC',
     sEzsigntemplateDescription_DESC: 'sEzsigntemplateDescription_DESC',
-    sEzsigntemplatedocumentDescription_ASC: 'sEzsigntemplatedocumentDescription_ASC',
-    sEzsigntemplatedocumentDescription_DESC: 'sEzsigntemplatedocumentDescription_DESC',
     iEzsigntemplatedocumentPagetotal_ASC: 'iEzsigntemplatedocumentPagetotal_ASC',
     iEzsigntemplatedocumentPagetotal_DESC: 'iEzsigntemplatedocumentPagetotal_DESC',
     iEzsigntemplateSignaturetotal_ASC: 'iEzsigntemplateSignaturetotal_ASC',

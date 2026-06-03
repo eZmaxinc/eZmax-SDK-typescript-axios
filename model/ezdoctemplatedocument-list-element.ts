@@ -44,8 +44,8 @@ export interface EzdoctemplatedocumentListElement {
     /**
      * The unique ID of the Ezdoctemplatefieldtypecategory
      */
-    /*'fkiEzdoctemplatefieldtypecategoryID': number;*/
-    'fkiEzdoctemplatefieldtypecategoryID': number;
+    /*'fkiEzdoctemplatefieldtypecategoryID'?: number;*/
+    'fkiEzdoctemplatefieldtypecategoryID'?: number;
     /**
      * The name of the Ezsignfoldertype in the language of the requester
      */
@@ -92,7 +92,7 @@ export class DataObjectEzdoctemplatedocumentListElement {
    fkiLanguageID:number = 0
    fkiEzsignfoldertypeID?:number = undefined
    fkiEzdoctemplatetypeID:number = 0
-   fkiEzdoctemplatefieldtypecategoryID:number = 0
+   fkiEzdoctemplatefieldtypecategoryID?:number = undefined
    sEzsignfoldertypeNameX?:string = undefined
    sEzdoctemplatetypeDescriptionX?:string = undefined
    sEzdoctemplatefieldtypecategoryDescriptionX?:string = undefined
@@ -135,7 +135,7 @@ export class ValidationObjectEzdoctemplatedocumentListElement {
       type: 'integer',
       minimum: 0,
       maximum: 255,
-      required: true
+      required: false
    }
    sEzsignfoldertypeNameX = {
       type: 'string',

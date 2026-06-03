@@ -210,6 +210,12 @@ export interface ActivesessionGetCurrentV1ResponseMPayload {
      */
     bUserEzsigntrial?:boolean 
     /**
+     * Whether we group or not the Ezsigntemplate roles
+     * @type {boolean}
+     * @memberof ActivesessionGetCurrentV1ResponseMPayload
+     */
+    bUserEzsigntemplaterolegrouping?:boolean 
+    /**
      * The eZsign prepaid expiration date
      * @type {string}
      * @memberof ActivesessionGetCurrentV1ResponseMPayload
@@ -251,6 +257,12 @@ export interface ActivesessionGetCurrentV1ResponseMPayload {
      * @memberof ActivesessionGetCurrentV1ResponseMPayload
      */
     a_eModuleInternalname:Array<string> 
+    /**
+     * If you need to ask which mailing lists this user wants to subscribe to
+     * @type {boolean}
+     * @memberof ActivesessionGetCurrentV1ResponseMPayload
+     */
+    bActivesessionMaillinglistrequest?:boolean 
 }
 
 
@@ -304,6 +316,7 @@ export class DataObjectActivesessionGetCurrentV1ResponseMPayload {
     eUserEzsignaccess:FieldEUserEzsignaccess = 'No'
     eUserEzsignprepaid?:FieldEUserEzsignprepaid = undefined
     bUserEzsigntrial?:boolean = undefined
+    bUserEzsigntemplaterolegrouping?:boolean = undefined
     dtUserEzsignprepaidexpiration?:string = undefined
     dtUserNpsrequest?:string = undefined
     a_pkiPermissionID:Array<number> = []
@@ -311,6 +324,7 @@ export class DataObjectActivesessionGetCurrentV1ResponseMPayload {
     objUserCloned?:ActivesessionResponseCompoundUser = undefined
     objApikey?:ActivesessionResponseCompoundApikey = undefined
     a_eModuleInternalname:Array<string> = []
+    bActivesessionMaillinglistrequest?:boolean = undefined
 }
 
 /**
@@ -438,6 +452,10 @@ export class ValidationObjectActivesessionGetCurrentV1ResponseMPayload {
       type: 'boolean',
       required: false
    }
+   bUserEzsigntemplaterolegrouping = {
+      type: 'boolean',
+      required: false
+   }
    dtUserEzsignprepaidexpiration = {
       type: 'string',
       pattern: /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/,
@@ -458,6 +476,10 @@ export class ValidationObjectActivesessionGetCurrentV1ResponseMPayload {
    a_eModuleInternalname = {
       type: 'array',
       required: true
+   }
+   bActivesessionMaillinglistrequest = {
+      type: 'boolean',
+      required: false
    }
 } 
 

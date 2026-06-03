@@ -463,7 +463,7 @@ export class ValidationObjectCustomEzsignsignatureCreateEzsignelementsPositioned
    }
    eEzsignsignatureConsultationtrigger = {
       type: 'enum',
-      allowableValues: ['Automatic','Manual'],
+      allowableValues: ['Automatic','Manual','Optional'],
       required: false
    }
    iEzsignsignatureValidationstep = {

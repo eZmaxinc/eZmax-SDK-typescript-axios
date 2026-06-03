@@ -13,12 +13,14 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**userGetAutocompleteV2**](#usergetautocompletev2) | **GET** /2/object/user/getAutocomplete/{sSelector} | Retrieve Users and IDs|
 |[**userGetColleaguesV2**](#usergetcolleaguesv2) | **GET** /2/object/user/{pkiUserID}/getColleagues | Retrieve an existing User\&#39;s Colleagues|
 |[**userGetEffectivePermissionsV1**](#usergeteffectivepermissionsv1) | **GET** /1/object/user/{pkiUserID}/getEffectivePermissions | Retrieve an existing User\&#39;s Effective Permissions|
+|[**userGetEzmaxcustomeruserV1**](#usergetezmaxcustomeruserv1) | **GET** /1/object/user/{pkiUserID}/getEzmaxcustomeruser | Returns the Ezmaxcustomeruser for the User|
 |[**userGetListV1**](#usergetlistv1) | **GET** /1/object/user/getList | Retrieve User list|
 |[**userGetObjectV2**](#usergetobjectv2) | **GET** /2/object/user/{pkiUserID} | Retrieve an existing User|
 |[**userGetPermissionsV1**](#usergetpermissionsv1) | **GET** /1/object/user/{pkiUserID}/getPermissions | Retrieve an existing User\&#39;s Permissions|
 |[**userGetSubnetsV1**](#usergetsubnetsv1) | **GET** /1/object/user/{pkiUserID}/getSubnets | Retrieve an existing User\&#39;s Subnets|
 |[**userGetUsergroupexternalsV1**](#usergetusergroupexternalsv1) | **GET** /1/object/user/{pkiUserID}/getUsergroupexternals | Get User\&#39;s Usergroupexternals|
 |[**userGetUsergroupsV1**](#usergetusergroupsv1) | **GET** /1/object/user/{pkiUserID}/getUsergroups | Get User\&#39;s Usergroups|
+|[**userImpersonateV1**](#userimpersonatev1) | **POST** /1/object/user/{pkiUserID}/impersonate | Impersonate the user|
 |[**userSendPasswordResetV1**](#usersendpasswordresetv1) | **POST** /1/object/user/{pkiUserID}/sendPasswordReset | Send password reset|
 
 # **userCreateObjectV1**
@@ -363,7 +365,7 @@ import {
 const configuration = new Configuration();
 const apiInstance = new ObjectUserApi(configuration);
 
-let sSelector: 'AgentBrokerAssistant' | 'AgentBrokerEmployeeEzsignUserNormal' | 'AgentBrokerEmployeeNormalBuiltIn' | 'AgentBrokerEzsignuserNormal' | 'ClonableUsers' | 'EzsignuserBuiltIn' | 'Ezsignuser' | 'Normal' | 'UsergroupDelegated'; //The type of Users to return (default to undefined)
+let sSelector: 'AgentBrokerAssistant' | 'AgentBrokerEmployeeEzsignUserNormalWithoutEzmaxpartner' | 'AgentBrokerEmployeeEzsignUserNormal' | 'AgentBrokerEmployeeNormalBuiltIn' | 'AgentBrokerEzsignuserNormal' | 'ClonableUsers' | 'EzsignuserBuiltIn' | 'Ezsignuser' | 'Normal' | 'UsergroupDelegated'; //The type of Users to return (default to undefined)
 let eFilterActive: 'All' | 'Active' | 'Inactive'; //Specify which results we want to display. (optional) (default to 'Active')
 let sQuery: string; //Allow to filter the returned results (optional) (default to undefined)
 let acceptLanguage: HeaderAcceptLanguage; // (optional) (default to undefined)
@@ -380,7 +382,7 @@ const { status, data } = await apiInstance.userGetAutocompleteV2(
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **sSelector** | [**&#39;AgentBrokerAssistant&#39; | &#39;AgentBrokerEmployeeEzsignUserNormal&#39; | &#39;AgentBrokerEmployeeNormalBuiltIn&#39; | &#39;AgentBrokerEzsignuserNormal&#39; | &#39;ClonableUsers&#39; | &#39;EzsignuserBuiltIn&#39; | &#39;Ezsignuser&#39; | &#39;Normal&#39; | &#39;UsergroupDelegated&#39;**]**Array<&#39;AgentBrokerAssistant&#39; &#124; &#39;AgentBrokerEmployeeEzsignUserNormal&#39; &#124; &#39;AgentBrokerEmployeeNormalBuiltIn&#39; &#124; &#39;AgentBrokerEzsignuserNormal&#39; &#124; &#39;ClonableUsers&#39; &#124; &#39;EzsignuserBuiltIn&#39; &#124; &#39;Ezsignuser&#39; &#124; &#39;Normal&#39; &#124; &#39;UsergroupDelegated&#39;>** | The type of Users to return | defaults to undefined|
+| **sSelector** | [**&#39;AgentBrokerAssistant&#39; | &#39;AgentBrokerEmployeeEzsignUserNormalWithoutEzmaxpartner&#39; | &#39;AgentBrokerEmployeeEzsignUserNormal&#39; | &#39;AgentBrokerEmployeeNormalBuiltIn&#39; | &#39;AgentBrokerEzsignuserNormal&#39; | &#39;ClonableUsers&#39; | &#39;EzsignuserBuiltIn&#39; | &#39;Ezsignuser&#39; | &#39;Normal&#39; | &#39;UsergroupDelegated&#39;**]**Array<&#39;AgentBrokerAssistant&#39; &#124; &#39;AgentBrokerEmployeeEzsignUserNormalWithoutEzmaxpartner&#39; &#124; &#39;AgentBrokerEmployeeEzsignUserNormal&#39; &#124; &#39;AgentBrokerEmployeeNormalBuiltIn&#39; &#124; &#39;AgentBrokerEzsignuserNormal&#39; &#124; &#39;ClonableUsers&#39; &#124; &#39;EzsignuserBuiltIn&#39; &#124; &#39;Ezsignuser&#39; &#124; &#39;Normal&#39; &#124; &#39;UsergroupDelegated&#39;>** | The type of Users to return | defaults to undefined|
 | **eFilterActive** | [**&#39;All&#39; | &#39;Active&#39; | &#39;Inactive&#39;**]**Array<&#39;All&#39; &#124; &#39;Active&#39; &#124; &#39;Inactive&#39;>** | Specify which results we want to display. | (optional) defaults to 'Active'|
 | **sQuery** | [**string**] | Allow to filter the returned results | (optional) defaults to undefined|
 | **acceptLanguage** | **HeaderAcceptLanguage** |  | (optional) defaults to undefined|
@@ -510,6 +512,59 @@ const { status, data } = await apiInstance.userGetEffectivePermissionsV1(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **userGetEzmaxcustomeruserV1**
+> UserGetEzmaxcustomeruserV1Response userGetEzmaxcustomeruserV1()
+
+Returns the Ezmaxcustomeruser for the User
+
+### Example
+
+```typescript
+import {
+    ObjectUserApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectUserApi(configuration);
+
+let pkiUserID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.userGetEzmaxcustomeruserV1(
+    pkiUserID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiUserID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**UserGetEzmaxcustomeruserV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+|**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **userGetListV1**
 > UserGetListV1Response userGetListV1()
 
@@ -526,7 +581,7 @@ import {
 const configuration = new Configuration();
 const apiInstance = new ObjectUserApi(configuration);
 
-let eOrderBy: 'pkiUserID_ASC' | 'pkiUserID_DESC' | 'sUserFirstname_ASC' | 'sUserFirstname_DESC' | 'sUserLastname_ASC' | 'sUserLastname_DESC' | 'sUserLoginname_ASC' | 'sUserLoginname_DESC' | 'bUserIsactive_ASC' | 'bUserIsactive_DESC' | 'eUserType_ASC' | 'eUserType_DESC' | 'eUserOrigin_ASC' | 'eUserOrigin_DESC' | 'eUserEzsignaccess_ASC' | 'eUserEzsignaccess_DESC' | 'dtUserEzsignprepaidexpiration_ASC' | 'dtUserEzsignprepaidexpiration_DESC' | 'sEmailAddress_ASC' | 'sEmailAddress_DESC'; //Specify how you want the results to be sorted (optional) (default to undefined)
+let eOrderBy: 'pkiUserID_ASC' | 'pkiUserID_DESC' | 'sUserFirstname_ASC' | 'sUserFirstname_DESC' | 'sUserLastname_ASC' | 'sUserLastname_DESC' | 'sUserLoginname_ASC' | 'sUserLoginname_DESC' | 'bUserIsactive_ASC' | 'bUserIsactive_DESC' | 'eUserType_ASC' | 'eUserType_DESC' | 'eUserOrigin_ASC' | 'eUserOrigin_DESC' | 'eUserEzsignaccess_ASC' | 'eUserEzsignaccess_DESC' | 'dtUserEzsignprepaidexpiration_ASC' | 'dtUserEzsignprepaidexpiration_DESC' | 'sEmailAddress_ASC' | 'sEmailAddress_DESC' | 'bUserSuspended_ASC' | 'bUserSuspended_DESC'; //Specify how you want the results to be sorted (optional) (default to undefined)
 let iRowMax: number; // (optional) (default to undefined)
 let iRowOffset: number; // (optional) (default to 0)
 let acceptLanguage: HeaderAcceptLanguage; // (optional) (default to undefined)
@@ -545,7 +600,7 @@ const { status, data } = await apiInstance.userGetListV1(
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **eOrderBy** | [**&#39;pkiUserID_ASC&#39; | &#39;pkiUserID_DESC&#39; | &#39;sUserFirstname_ASC&#39; | &#39;sUserFirstname_DESC&#39; | &#39;sUserLastname_ASC&#39; | &#39;sUserLastname_DESC&#39; | &#39;sUserLoginname_ASC&#39; | &#39;sUserLoginname_DESC&#39; | &#39;bUserIsactive_ASC&#39; | &#39;bUserIsactive_DESC&#39; | &#39;eUserType_ASC&#39; | &#39;eUserType_DESC&#39; | &#39;eUserOrigin_ASC&#39; | &#39;eUserOrigin_DESC&#39; | &#39;eUserEzsignaccess_ASC&#39; | &#39;eUserEzsignaccess_DESC&#39; | &#39;dtUserEzsignprepaidexpiration_ASC&#39; | &#39;dtUserEzsignprepaidexpiration_DESC&#39; | &#39;sEmailAddress_ASC&#39; | &#39;sEmailAddress_DESC&#39;**]**Array<&#39;pkiUserID_ASC&#39; &#124; &#39;pkiUserID_DESC&#39; &#124; &#39;sUserFirstname_ASC&#39; &#124; &#39;sUserFirstname_DESC&#39; &#124; &#39;sUserLastname_ASC&#39; &#124; &#39;sUserLastname_DESC&#39; &#124; &#39;sUserLoginname_ASC&#39; &#124; &#39;sUserLoginname_DESC&#39; &#124; &#39;bUserIsactive_ASC&#39; &#124; &#39;bUserIsactive_DESC&#39; &#124; &#39;eUserType_ASC&#39; &#124; &#39;eUserType_DESC&#39; &#124; &#39;eUserOrigin_ASC&#39; &#124; &#39;eUserOrigin_DESC&#39; &#124; &#39;eUserEzsignaccess_ASC&#39; &#124; &#39;eUserEzsignaccess_DESC&#39; &#124; &#39;dtUserEzsignprepaidexpiration_ASC&#39; &#124; &#39;dtUserEzsignprepaidexpiration_DESC&#39; &#124; &#39;sEmailAddress_ASC&#39; &#124; &#39;sEmailAddress_DESC&#39;>** | Specify how you want the results to be sorted | (optional) defaults to undefined|
+| **eOrderBy** | [**&#39;pkiUserID_ASC&#39; | &#39;pkiUserID_DESC&#39; | &#39;sUserFirstname_ASC&#39; | &#39;sUserFirstname_DESC&#39; | &#39;sUserLastname_ASC&#39; | &#39;sUserLastname_DESC&#39; | &#39;sUserLoginname_ASC&#39; | &#39;sUserLoginname_DESC&#39; | &#39;bUserIsactive_ASC&#39; | &#39;bUserIsactive_DESC&#39; | &#39;eUserType_ASC&#39; | &#39;eUserType_DESC&#39; | &#39;eUserOrigin_ASC&#39; | &#39;eUserOrigin_DESC&#39; | &#39;eUserEzsignaccess_ASC&#39; | &#39;eUserEzsignaccess_DESC&#39; | &#39;dtUserEzsignprepaidexpiration_ASC&#39; | &#39;dtUserEzsignprepaidexpiration_DESC&#39; | &#39;sEmailAddress_ASC&#39; | &#39;sEmailAddress_DESC&#39; | &#39;bUserSuspended_ASC&#39; | &#39;bUserSuspended_DESC&#39;**]**Array<&#39;pkiUserID_ASC&#39; &#124; &#39;pkiUserID_DESC&#39; &#124; &#39;sUserFirstname_ASC&#39; &#124; &#39;sUserFirstname_DESC&#39; &#124; &#39;sUserLastname_ASC&#39; &#124; &#39;sUserLastname_DESC&#39; &#124; &#39;sUserLoginname_ASC&#39; &#124; &#39;sUserLoginname_DESC&#39; &#124; &#39;bUserIsactive_ASC&#39; &#124; &#39;bUserIsactive_DESC&#39; &#124; &#39;eUserType_ASC&#39; &#124; &#39;eUserType_DESC&#39; &#124; &#39;eUserOrigin_ASC&#39; &#124; &#39;eUserOrigin_DESC&#39; &#124; &#39;eUserEzsignaccess_ASC&#39; &#124; &#39;eUserEzsignaccess_DESC&#39; &#124; &#39;dtUserEzsignprepaidexpiration_ASC&#39; &#124; &#39;dtUserEzsignprepaidexpiration_DESC&#39; &#124; &#39;sEmailAddress_ASC&#39; &#124; &#39;sEmailAddress_DESC&#39; &#124; &#39;bUserSuspended_ASC&#39; &#124; &#39;bUserSuspended_DESC&#39;>** | Specify how you want the results to be sorted | (optional) defaults to undefined|
 | **iRowMax** | [**number**] |  | (optional) defaults to undefined|
 | **iRowOffset** | [**number**] |  | (optional) defaults to 0|
 | **acceptLanguage** | **HeaderAcceptLanguage** |  | (optional) defaults to undefined|
@@ -827,6 +882,63 @@ const { status, data } = await apiInstance.userGetUsergroupsV1(
 |-------------|-------------|------------------|
 |**200** | Successful response |  -  |
 |**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **userImpersonateV1**
+> UserImpersonateV1Response userImpersonateV1(userImpersonateV1Request)
+
+Using this endpoint, you can impersonate the user.
+
+### Example
+
+```typescript
+import {
+    ObjectUserApi,
+    Configuration,
+    UserImpersonateV1Request
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectUserApi(configuration);
+
+let pkiUserID: number; // (default to undefined)
+let userImpersonateV1Request: UserImpersonateV1Request; //
+
+const { status, data } = await apiInstance.userImpersonateV1(
+    pkiUserID,
+    userImpersonateV1Request
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **userImpersonateV1Request** | **UserImpersonateV1Request**|  | |
+| **pkiUserID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**UserImpersonateV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+|**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

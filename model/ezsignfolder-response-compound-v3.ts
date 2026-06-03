@@ -133,7 +133,7 @@ export interface EzsignfolderResponseCompoundV3 {
      */
     bEzsignfolderIsdisposable?:boolean 
     /**
-     * The number of days before the the first reminder sending
+     * The number of days before the first reminder sending
      * @type {number}
      * @memberof EzsignfolderResponseCompoundV3
      */
@@ -180,6 +180,12 @@ export interface EzsignfolderResponseCompoundV3 {
      * @memberof EzsignfolderResponseCompoundV3
      */
     eEzsignfolderStep?:FieldEEzsignfolderStep 
+    /**
+     * The current step of the ezsignfolder when eEzsignfolderCompletion = \'PerEzsignfolderStepSync\'
+     * @type {number}
+     * @memberof EzsignfolderResponseCompoundV3
+     */
+    iEzsignfolderStepcurrent?:number 
     /**
      * The date and time at which the Ezsignfolder was closed. Either by applying the last signature or by completing it prematurely.
      * @type {string}
@@ -284,6 +290,7 @@ export class DataObjectEzsignfolderResponseCompoundV3 {
     dtEzsignfolderScheduledarchive?:string = undefined
     dtEzsignfolderScheduleddispose?:string = undefined
     eEzsignfolderStep?:FieldEEzsignfolderStep = undefined
+    iEzsignfolderStepcurrent?:number = undefined
     dtEzsignfolderClose?:string = undefined
     dtEzsignfolderArchive?:string = undefined
     dtEzsignfolderDispose?:string = undefined
@@ -399,6 +406,12 @@ export class ValidationObjectEzsignfolderResponseCompoundV3 {
    eEzsignfolderStep = {
       type: 'enum',
       allowableValues: ['Unsent','PendingSend','Sent','PartiallySigned','Expired','Completed','Archived','Disposed'],
+      required: false
+   }
+   iEzsignfolderStepcurrent = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 255,
       required: false
    }
    dtEzsignfolderClose = {

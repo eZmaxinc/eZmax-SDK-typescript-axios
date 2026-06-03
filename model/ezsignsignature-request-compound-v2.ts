@@ -449,7 +449,7 @@ export class ValidationObjectEzsignsignatureRequestCompoundV2 {
    }
    eEzsignsignatureConsultationtrigger = {
       type: 'enum',
-      allowableValues: ['Automatic','Manual'],
+      allowableValues: ['Automatic','Manual','Optional'],
       required: false
    }
    iEzsignsignatureValidationstep = {

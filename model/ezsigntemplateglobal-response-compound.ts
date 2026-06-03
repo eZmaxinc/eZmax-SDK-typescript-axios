@@ -18,6 +18,9 @@
 import type { EzsigntemplateglobalResponse } from './ezsigntemplateglobal-response';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { EzsigntemplateglobalannotationResponseCompound } from './ezsigntemplateglobalannotation-response-compound';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { EzsigntemplateglobaldocumentResponse } from './ezsigntemplateglobaldocument-response';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -107,6 +110,12 @@ export interface EzsigntemplateglobalResponseCompound {
      * @memberof EzsigntemplateglobalResponseCompound
      */
     a_objEzsigntemplateglobalsigner:Array<EzsigntemplateglobalsignerResponseCompound> 
+    /**
+     * 
+     * @type {Array<EzsigntemplateglobalannotationResponseCompound>}
+     * @memberof EzsigntemplateglobalResponseCompound
+     */
+    a_objEzsigntemplateglobalannotation?:Array<EzsigntemplateglobalannotationResponseCompound> 
 }
 
 
@@ -139,6 +148,7 @@ export class DataObjectEzsigntemplateglobalResponseCompound {
     sEzsigntemplateglobalDescription:string = ''
     objEzsigntemplateglobaldocument?:EzsigntemplateglobaldocumentResponse = undefined
     a_objEzsigntemplateglobalsigner:Array<EzsigntemplateglobalsignerResponseCompound> = []
+    a_objEzsigntemplateglobalannotation?:Array<EzsigntemplateglobalannotationResponseCompound> = undefined
 }
 
 /**
@@ -199,6 +209,10 @@ export class ValidationObjectEzsigntemplateglobalResponseCompound {
    a_objEzsigntemplateglobalsigner = {
       type: 'array',
       required: true
+   }
+   a_objEzsigntemplateglobalannotation = {
+      type: 'array',
+      required: false
    }
 } 
 

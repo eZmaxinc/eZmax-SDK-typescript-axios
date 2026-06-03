@@ -47,8 +47,8 @@ export interface EzdoctemplatedocumentResponse {
     /**
      * The unique ID of the Ezdoctemplatefieldtypecategory
      */
-    /*'fkiEzdoctemplatefieldtypecategoryID': number;*/
-    'fkiEzdoctemplatefieldtypecategoryID': number;
+    /*'fkiEzdoctemplatefieldtypecategoryID'?: number;*/
+    'fkiEzdoctemplatefieldtypecategoryID'?: number;
     /*'eEzdoctemplatedocumentPrivacylevel'?: FieldEEzdoctemplatedocumentPrivacylevel;*/
     'eEzdoctemplatedocumentPrivacylevel'?: FieldEEzdoctemplatedocumentPrivacylevel;
     /**
@@ -71,8 +71,8 @@ export interface EzdoctemplatedocumentResponse {
     /**
      * The description of the Ezdoctemplatefieldtypecategory in the language of the requester
      */
-    /*'sEzdoctemplatefieldtypecategoryDescriptionX': string;*/
-    'sEzdoctemplatefieldtypecategoryDescriptionX': string;
+    /*'sEzdoctemplatefieldtypecategoryDescriptionX'?: string;*/
+    'sEzdoctemplatefieldtypecategoryDescriptionX'?: string;
     /**
      * The description of the Ezdoctemplatetype in the language of the requester
      */
@@ -101,13 +101,13 @@ export class DataObjectEzdoctemplatedocumentResponse {
    fkiLanguageID:number = 0
    fkiEzsignfoldertypeID?:number = undefined
    fkiEzdoctemplatetypeID:number = 0
-   fkiEzdoctemplatefieldtypecategoryID:number = 0
+   fkiEzdoctemplatefieldtypecategoryID?:number = undefined
    eEzdoctemplatedocumentPrivacylevel?:FieldEEzdoctemplatedocumentPrivacylevel = undefined
    bEzdoctemplatedocumentIsactive:boolean = false
    objEzdoctemplatedocumentName:MultilingualEzdoctemplatedocumentName = new DataObjectMultilingualEzdoctemplatedocumentName()
    sEzdoctemplatedocumentNameX?:string = undefined
    sEzsignfoldertypeNameX?:string = undefined
-   sEzdoctemplatefieldtypecategoryDescriptionX:string = ''
+   sEzdoctemplatefieldtypecategoryDescriptionX?:string = undefined
    sEzdoctemplatetypeDescriptionX:string = ''
 }
 
@@ -145,7 +145,7 @@ export class ValidationObjectEzdoctemplatedocumentResponse {
       type: 'integer',
       minimum: 0,
       maximum: 255,
-      required: true
+      required: false
    }
    eEzdoctemplatedocumentPrivacylevel = {
       type: 'enum',
@@ -169,7 +169,7 @@ export class ValidationObjectEzdoctemplatedocumentResponse {
    sEzdoctemplatefieldtypecategoryDescriptionX = {
       type: 'string',
       pattern: /^.{0,55}$/,
-      required: true
+      required: false
    }
    sEzdoctemplatetypeDescriptionX = {
       type: 'string',

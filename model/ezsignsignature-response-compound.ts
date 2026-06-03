@@ -612,7 +612,7 @@ export class ValidationObjectEzsignsignatureResponseCompound {
    }
    eEzsignsignatureConsultationtrigger = {
       type: 'enum',
-      allowableValues: ['Automatic','Manual'],
+      allowableValues: ['Automatic','Manual','Optional'],
       required: false
    }
    bEzsignsignatureHandwritten = {

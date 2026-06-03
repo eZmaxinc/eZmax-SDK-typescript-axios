@@ -22,6 +22,9 @@ import type { FieldEEzsigntemplateannotationType } from './field-eezsigntemplate
 // May contain unused imports in some cases
 // @ts-ignore
 import type { FieldEEzsigntemplateannotationVerticalalignment } from './field-eezsigntemplateannotation-verticalalignment';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { TextstylestaticRequestCompound } from './textstylestatic-request-compound';
 
 /**
  * A Ezsigntemplateannotation Object
@@ -33,15 +36,12 @@ export interface EzsigntemplateannotationResponse {
     /*'pkiEzsigntemplateannotationID': number;*/
     'pkiEzsigntemplateannotationID': number;
     /**
-     * The unique ID of the Ezsigntemplatedocumentpage
-     */
-    /*'fkiEzsigntemplatedocumentpageID': number;*/
-    'fkiEzsigntemplatedocumentpageID': number;
-    /**
      * The unique ID of the Textstylestatic
      */
-    /*'fkiTextstylestaticID': number;*/
-    'fkiTextstylestaticID': number;
+    /*'fkiTextstylestaticID'?: number;*/
+    'fkiTextstylestaticID'?: number;
+    /*'objTextstylestatic'?: TextstylestaticRequestCompound;*/
+    'objTextstylestatic'?: TextstylestaticRequestCompound;
     /*'eEzsigntemplateannotationHorizontalalignment': FieldEEzsigntemplateannotationHorizontalalignment;*/
     'eEzsigntemplateannotationHorizontalalignment': FieldEEzsigntemplateannotationHorizontalalignment;
     /*'eEzsigntemplateannotationVerticalalignment': FieldEEzsigntemplateannotationVerticalalignment;*/
@@ -69,6 +69,11 @@ export interface EzsigntemplateannotationResponse {
     /*'iEzsigntemplateannotationHeight': number;*/
     'iEzsigntemplateannotationHeight': number;
     /**
+     * The page number in the Ezsigntemplatedocument
+     */
+    /*'iEzsigntemplatedocumentpagePagenumber': number;*/
+    'iEzsigntemplatedocumentpagePagenumber': number;
+    /**
      * The description of the Ezsigntemplateannotation
      */
     /*'sEzsigntemplateannotationDescription': string;*/
@@ -81,8 +86,8 @@ export interface EzsigntemplateannotationResponse {
     /**
      * The ndropdownvalues of the Ezsigntemplateannotation
      */
-    /*'sEzsigntemplateannotationnDropdownvalues': string;*/
-    'sEzsigntemplateannotationnDropdownvalues': string;
+    /*'sEzsigntemplateannotationDropdownvalues': string;*/
+    'sEzsigntemplateannotationDropdownvalues': string;
 }
 
 
@@ -90,6 +95,10 @@ export interface EzsigntemplateannotationResponse {
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectTextstylestaticRequestCompound } from './'
+// @ts-ignore
+import { ValidationObjectTextstylestaticRequestCompound } from './'
 
 /**
  * @export 
@@ -99,8 +108,8 @@ export interface EzsigntemplateannotationResponse {
  */
 export class DataObjectEzsigntemplateannotationResponse {
    pkiEzsigntemplateannotationID:number = 0
-   fkiEzsigntemplatedocumentpageID:number = 0
-   fkiTextstylestaticID:number = 0
+   fkiTextstylestaticID?:number = undefined
+   objTextstylestatic?:TextstylestaticRequestCompound = undefined
    eEzsigntemplateannotationHorizontalalignment:FieldEEzsigntemplateannotationHorizontalalignment = 'Center'
    eEzsigntemplateannotationVerticalalignment:FieldEEzsigntemplateannotationVerticalalignment = 'Bottom'
    eEzsigntemplateannotationType:FieldEEzsigntemplateannotationType = 'Dropdown'
@@ -108,9 +117,10 @@ export class DataObjectEzsigntemplateannotationResponse {
    iEzsigntemplateannotationY:number = 0
    iEzsigntemplateannotationWidth:number = 0
    iEzsigntemplateannotationHeight:number = 0
+   iEzsigntemplatedocumentpagePagenumber:number = 0
    sEzsigntemplateannotationDescription:string = ''
    sEzsigntemplateannotationDefaulttext:string = ''
-   sEzsigntemplateannotationnDropdownvalues:string = ''
+   sEzsigntemplateannotationDropdownvalues:string = ''
 }
 
 /**
@@ -125,16 +135,12 @@ export class ValidationObjectEzsigntemplateannotationResponse {
       maximum: 16777215,
       required: true
    }
-   fkiEzsigntemplatedocumentpageID = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
    fkiTextstylestaticID = {
       type: 'integer',
       minimum: 0,
-      required: true
+      required: false
    }
+   objTextstylestatic = new ValidationObjectTextstylestaticRequestCompound()
    eEzsigntemplateannotationHorizontalalignment = {
       type: 'enum',
       allowableValues: ['Center','Left','Right'],
@@ -174,6 +180,11 @@ export class ValidationObjectEzsigntemplateannotationResponse {
       maximum: 65535,
       required: true
    }
+   iEzsigntemplatedocumentpagePagenumber = {
+      type: 'integer',
+      minimum: 1,
+      required: true
+   }
    sEzsigntemplateannotationDescription = {
       type: 'string',
       pattern: /^.{0,80}$/,
@@ -184,7 +195,7 @@ export class ValidationObjectEzsigntemplateannotationResponse {
       pattern: /^.{0,65535}$/,
       required: true
    }
-   sEzsigntemplateannotationnDropdownvalues = {
+   sEzsigntemplateannotationDropdownvalues = {
       type: 'string',
       pattern: /^.{0,65535}$/,
       required: true

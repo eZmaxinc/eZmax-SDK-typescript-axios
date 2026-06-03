@@ -75,7 +75,7 @@ export interface EzsignfolderRequestCompoundV3 {
      */
     tEzsignfolderMessage?:string 
     /**
-     * The number of days before the the first reminder sending
+     * The number of days before the first reminder sending
      * @type {number}
      * @memberof EzsignfolderRequestCompoundV3
      */

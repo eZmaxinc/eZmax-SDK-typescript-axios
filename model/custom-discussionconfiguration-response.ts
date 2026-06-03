@@ -24,22 +24,22 @@ export interface CustomDiscussionconfigurationResponse {
     /*'bDiscussionconfigurationCompletehistorywhenadded': boolean;*/
     'bDiscussionconfigurationCompletehistorywhenadded': boolean;
     /**
-     * If the the creation of the Discussion is allowed or not
+     * If the creation of the Discussion is allowed or not
      */
     /*'bDiscussionconfigurationCreateallowed': boolean;*/
     'bDiscussionconfigurationCreateallowed': boolean;
     /**
-     * If the the destruction of the Discussion is allowed or not
+     * If the destruction of the Discussion is allowed or not
      */
     /*'bDiscussionconfigurationDeleteallowed': boolean;*/
     'bDiscussionconfigurationDeleteallowed': boolean;
     /**
-     * If the the destruction of the Discussionmessage is allowed or not
+     * If the destruction of the Discussionmessage is allowed or not
      */
     /*'bDiscussionconfigurationDeletediscussionmessageallowed': boolean;*/
     'bDiscussionconfigurationDeletediscussionmessageallowed': boolean;
     /**
-     * If the the creation of the Discussionmessage is allowed or not
+     * If the creation of the Discussionmessage is allowed or not
      */
     /*'bDiscussionconfigurationEditdiscussionmessageallowed': boolean;*/
     'bDiscussionconfigurationEditdiscussionmessageallowed': boolean;

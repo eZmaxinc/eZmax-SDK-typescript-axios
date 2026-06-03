@@ -6,7 +6,7 @@ A webhook object
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pkiWebhookID** | **number** | The unique ID of the Webhook | [default to undefined]
+**pkiWebhookID** | **number** | The unique ID of the Webhook | [optional] [default to undefined]
 **fkiAuthenticationexternalID** | **number** | The unique ID of the Authenticationexternal | [optional] [default to undefined]
 **sWebhookDescription** | **string** | The description of the Webhook | [default to undefined]
 **fkiEzsignfoldertypeID** | **number** | The unique ID of the Ezsignfoldertype. | [optional] [default to undefined]
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **bWebhookIssigned** | **boolean** | Whether the requests will be signed or not | [default to undefined]
 **bWebhookSkipsslvalidation** | **boolean** | Wheter the server\&#39;s SSL certificate should be validated or not. Not recommended to skip for production use | [default to undefined]
 **sAuthenticationexternalDescription** | **string** | The description of the Authenticationexternal | [optional] [default to undefined]
-**objAudit** | [**CommonAudit**](CommonAudit.md) |  | [default to undefined]
+**objAudit** | [**CommonAudit**](CommonAudit.md) |  | [optional] [default to undefined]
 
 ## Example
 

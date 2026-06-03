@@ -16,6 +16,7 @@ export enum EApiOperation {
     'global-customer-api',
     'global-ezmaxclient-api',
     'global-ezmaxcustomer-api',
+    'module-ezmaxmaillinglist-api',
     'module-report-api',
     'module-user-api',
     'object-activesession-api',
@@ -57,6 +58,8 @@ export enum EApiOperation {
     'object-ezmaxcustomer-api',
     'object-ezmaxcustomeruser-api',
     'object-ezmaxinvoicing-api',
+    'object-ezmaxmaillinglist-api',
+    'object-ezmaxpartner-api',
     'object-ezmaxproduct-api',
     'object-ezsignannotation-api',
     'object-ezsignbulksend-api',
@@ -156,6 +159,7 @@ export enum EApiOperation {
 export * from './api/global-customer-api';
 export * from './api/global-ezmaxclient-api';
 export * from './api/global-ezmaxcustomer-api';
+export * from './api/module-ezmaxmaillinglist-api';
 export * from './api/module-report-api';
 export * from './api/module-user-api';
 export * from './api/object-activesession-api';
@@ -197,6 +201,8 @@ export * from './api/object-ezdoctemplatetype-api';
 export * from './api/object-ezmaxcustomer-api';
 export * from './api/object-ezmaxcustomeruser-api';
 export * from './api/object-ezmaxinvoicing-api';
+export * from './api/object-ezmaxmaillinglist-api';
+export * from './api/object-ezmaxpartner-api';
 export * from './api/object-ezmaxproduct-api';
 export * from './api/object-ezsignannotation-api';
 export * from './api/object-ezsignbulksend-api';

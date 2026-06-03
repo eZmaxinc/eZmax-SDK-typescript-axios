@@ -24,6 +24,9 @@ import type { CustomEzsignfoldertypeTemplateResponse } from './custom-ezsignfold
 import type { EzsigntemplateResponseV3 } from './ezsigntemplate-response-v3';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { EzsigntemplateannotationResponseCompound } from './ezsigntemplateannotation-response-compound';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { EzsigntemplatedocumentResponse } from './ezsigntemplatedocument-response';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -161,6 +164,12 @@ export interface EzsigntemplateResponseCompoundV3 {
      * @memberof EzsigntemplateResponseCompoundV3
      */
     a_objEzsigntemplatesigner:Array<EzsigntemplatesignerResponseCompound> 
+    /**
+     * 
+     * @type {Array<EzsigntemplateannotationResponseCompound>}
+     * @memberof EzsigntemplateResponseCompoundV3
+     */
+    a_objEzsigntemplateannotation?:Array<EzsigntemplateannotationResponseCompound> 
 }
 
 
@@ -209,6 +218,7 @@ export class DataObjectEzsigntemplateResponseCompoundV3 {
     eEzsigntemplateType?:FieldEEzsigntemplateType = undefined
     objEzsigntemplatedocument?:EzsigntemplatedocumentResponse = undefined
     a_objEzsigntemplatesigner:Array<EzsigntemplatesignerResponseCompound> = []
+    a_objEzsigntemplateannotation?:Array<EzsigntemplateannotationResponseCompound> = undefined
 }
 
 /**
@@ -301,6 +311,10 @@ export class ValidationObjectEzsigntemplateResponseCompoundV3 {
    a_objEzsigntemplatesigner = {
       type: 'array',
       required: true
+   }
+   a_objEzsigntemplateannotation = {
+      type: 'array',
+      required: false
    }
 } 
 

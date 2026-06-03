@@ -59,7 +59,7 @@ export interface EzsignfolderRequestV3 {
     /*'tEzsignfolderMessage'?: string;*/
     'tEzsignfolderMessage'?: string;
     /**
-     * The number of days before the the first reminder sending
+     * The number of days before the first reminder sending
      */
     /*'iEzsignfolderSendreminderfirstdays': number;*/
     'iEzsignfolderSendreminderfirstdays': number;

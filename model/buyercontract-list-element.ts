@@ -54,6 +54,11 @@ export interface BuyercontractListElement {
     /*'eBuyercontractType': FieldEBuyercontractType;*/
     'eBuyercontractType': FieldEBuyercontractType;
     /**
+     * The number of the Buyercontract
+     */
+    /*'sBuyercontractContract'?: string;*/
+    'sBuyercontractContract'?: string;
+    /**
      * The date of the Buyercontract
      */
     /*'dtBuyercontractDate': string;*/
@@ -100,6 +105,7 @@ export class DataObjectBuyercontractListElement {
    dBuyercontractMinimumprice:string = ''
    dBuyercontractMaximumprice:string = ''
    eBuyercontractType:FieldEBuyercontractType = 'Rent'
+   sBuyercontractContract?:string = undefined
    dtBuyercontractDate:string = ''
    dtBuyercontractExpirationdate?:string = undefined
    bBuyercontractIsactive:boolean = false
@@ -153,6 +159,10 @@ export class ValidationObjectBuyercontractListElement {
       type: 'enum',
       allowableValues: ['Rent','Sale','RentOrSale'],
       required: true
+   }
+   sBuyercontractContract = {
+      type: 'string',
+      required: false
    }
    dtBuyercontractDate = {
       type: 'string',

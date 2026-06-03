@@ -28,9 +28,17 @@ import type { EzsignfoldertypeCreateObjectV3Request } from '../model';
 // @ts-ignore
 import type { EzsignfoldertypeCreateObjectV3Response } from '../model';
 // @ts-ignore
+import type { EzsignfoldertypeCreateObjectV4Request } from '../model';
+// @ts-ignore
+import type { EzsignfoldertypeCreateObjectV4Response } from '../model';
+// @ts-ignore
 import type { EzsignfoldertypeEditObjectV3Request } from '../model';
 // @ts-ignore
 import type { EzsignfoldertypeEditObjectV3Response } from '../model';
+// @ts-ignore
+import type { EzsignfoldertypeEditObjectV4Request } from '../model';
+// @ts-ignore
+import type { EzsignfoldertypeEditObjectV4Response } from '../model';
 // @ts-ignore
 import type { EzsignfoldertypeGetAutocompleteV2Response } from '../model';
 // @ts-ignore
@@ -53,6 +61,7 @@ export const ObjectEzsignfoldertypeApiAxiosParamCreator = function (configuratio
          * @summary Create a new Ezsignfoldertype
          * @param {EzsignfoldertypeCreateObjectV3Request} ezsignfoldertypeCreateObjectV3Request 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         ezsignfoldertypeCreateObjectV3: async (ezsignfoldertypeCreateObjectV3Request: EzsignfoldertypeCreateObjectV3Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -108,11 +117,71 @@ export const ObjectEzsignfoldertypeApiAxiosParamCreator = function (configuratio
             };
         },
         /**
+         * The endpoint allows to create one or many elements at once.
+         * @summary Create a new Ezsignfoldertype
+         * @param {EzsignfoldertypeCreateObjectV4Request} ezsignfoldertypeCreateObjectV4Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsignfoldertypeCreateObjectV4: async (ezsignfoldertypeCreateObjectV4Request: EzsignfoldertypeCreateObjectV4Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'ezsignfoldertypeCreateObjectV4Request' is not null or undefined
+            assertParamExists('ezsignfoldertypeCreateObjectV4', 'ezsignfoldertypeCreateObjectV4Request', ezsignfoldertypeCreateObjectV4Request)
+            const localVarPath = `/4/object/ezsignfoldertype`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(ezsignfoldertypeCreateObjectV4Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * 
          * @summary Edit an existing Ezsignfoldertype
          * @param {number} pkiEzsignfoldertypeID 
          * @param {EzsignfoldertypeEditObjectV3Request} ezsignfoldertypeEditObjectV3Request 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         ezsignfoldertypeEditObjectV3: async (pkiEzsignfoldertypeID: number, ezsignfoldertypeEditObjectV3Request: EzsignfoldertypeEditObjectV3Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -148,6 +217,69 @@ export const ObjectEzsignfoldertypeApiAxiosParamCreator = function (configuratio
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ezsignfoldertypeEditObjectV3Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'PUT' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Edit an existing Ezsignfoldertype
+         * @param {number} pkiEzsignfoldertypeID 
+         * @param {EzsignfoldertypeEditObjectV4Request} ezsignfoldertypeEditObjectV4Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsignfoldertypeEditObjectV4: async (pkiEzsignfoldertypeID: number, ezsignfoldertypeEditObjectV4Request: EzsignfoldertypeEditObjectV4Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiEzsignfoldertypeID' is not null or undefined
+            assertParamExists('ezsignfoldertypeEditObjectV4', 'pkiEzsignfoldertypeID', pkiEzsignfoldertypeID)
+            // verify required parameter 'ezsignfoldertypeEditObjectV4Request' is not null or undefined
+            assertParamExists('ezsignfoldertypeEditObjectV4', 'ezsignfoldertypeEditObjectV4Request', ezsignfoldertypeEditObjectV4Request)
+            const localVarPath = `/4/object/ezsignfoldertype/{pkiEzsignfoldertypeID}`
+                .replace(`{${"pkiEzsignfoldertypeID"}}`, encodeURIComponent(String(pkiEzsignfoldertypeID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(ezsignfoldertypeEditObjectV4Request, localVarRequestOptions, configuration)
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -455,6 +587,7 @@ export const ObjectEzsignfoldertypeApiFp = function(configuration?: Configuratio
          * @summary Create a new Ezsignfoldertype
          * @param {EzsignfoldertypeCreateObjectV3Request} ezsignfoldertypeCreateObjectV3Request 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         async ezsignfoldertypeCreateObjectV3(ezsignfoldertypeCreateObjectV3Request: EzsignfoldertypeCreateObjectV3Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfoldertypeCreateObjectV3Response>> {
@@ -464,17 +597,45 @@ export const ObjectEzsignfoldertypeApiFp = function(configuration?: Configuratio
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
+         * The endpoint allows to create one or many elements at once.
+         * @summary Create a new Ezsignfoldertype
+         * @param {EzsignfoldertypeCreateObjectV4Request} ezsignfoldertypeCreateObjectV4Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsignfoldertypeCreateObjectV4(ezsignfoldertypeCreateObjectV4Request: EzsignfoldertypeCreateObjectV4Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfoldertypeCreateObjectV4Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfoldertypeCreateObjectV4(ezsignfoldertypeCreateObjectV4Request, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsignfoldertypeApi.ezsignfoldertypeCreateObjectV4']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * 
          * @summary Edit an existing Ezsignfoldertype
          * @param {number} pkiEzsignfoldertypeID 
          * @param {EzsignfoldertypeEditObjectV3Request} ezsignfoldertypeEditObjectV3Request 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         async ezsignfoldertypeEditObjectV3(pkiEzsignfoldertypeID: number, ezsignfoldertypeEditObjectV3Request: EzsignfoldertypeEditObjectV3Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfoldertypeEditObjectV3Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfoldertypeEditObjectV3(pkiEzsignfoldertypeID, ezsignfoldertypeEditObjectV3Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsignfoldertypeApi.ezsignfoldertypeEditObjectV3']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Edit an existing Ezsignfoldertype
+         * @param {number} pkiEzsignfoldertypeID 
+         * @param {EzsignfoldertypeEditObjectV4Request} ezsignfoldertypeEditObjectV4Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsignfoldertypeEditObjectV4(pkiEzsignfoldertypeID: number, ezsignfoldertypeEditObjectV4Request: EzsignfoldertypeEditObjectV4Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfoldertypeEditObjectV4Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfoldertypeEditObjectV4(pkiEzsignfoldertypeID, ezsignfoldertypeEditObjectV4Request, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsignfoldertypeApi.ezsignfoldertypeEditObjectV4']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -551,10 +712,21 @@ export const ObjectEzsignfoldertypeApiFactory = function (configuration?: Config
          * @summary Create a new Ezsignfoldertype
          * @param {EzsignfoldertypeCreateObjectV3Request} ezsignfoldertypeCreateObjectV3Request 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         ezsignfoldertypeCreateObjectV3(ezsignfoldertypeCreateObjectV3Request: EzsignfoldertypeCreateObjectV3Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsignfoldertypeCreateObjectV3Response> {
             return localVarFp.ezsignfoldertypeCreateObjectV3(ezsignfoldertypeCreateObjectV3Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * The endpoint allows to create one or many elements at once.
+         * @summary Create a new Ezsignfoldertype
+         * @param {EzsignfoldertypeCreateObjectV4Request} ezsignfoldertypeCreateObjectV4Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsignfoldertypeCreateObjectV4(ezsignfoldertypeCreateObjectV4Request: EzsignfoldertypeCreateObjectV4Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsignfoldertypeCreateObjectV4Response> {
+            return localVarFp.ezsignfoldertypeCreateObjectV4(ezsignfoldertypeCreateObjectV4Request, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -562,10 +734,22 @@ export const ObjectEzsignfoldertypeApiFactory = function (configuration?: Config
          * @param {number} pkiEzsignfoldertypeID 
          * @param {EzsignfoldertypeEditObjectV3Request} ezsignfoldertypeEditObjectV3Request 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         ezsignfoldertypeEditObjectV3(pkiEzsignfoldertypeID: number, ezsignfoldertypeEditObjectV3Request: EzsignfoldertypeEditObjectV3Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsignfoldertypeEditObjectV3Response> {
             return localVarFp.ezsignfoldertypeEditObjectV3(pkiEzsignfoldertypeID, ezsignfoldertypeEditObjectV3Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Edit an existing Ezsignfoldertype
+         * @param {number} pkiEzsignfoldertypeID 
+         * @param {EzsignfoldertypeEditObjectV4Request} ezsignfoldertypeEditObjectV4Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsignfoldertypeEditObjectV4(pkiEzsignfoldertypeID: number, ezsignfoldertypeEditObjectV4Request: EzsignfoldertypeEditObjectV4Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsignfoldertypeEditObjectV4Response> {
+            return localVarFp.ezsignfoldertypeEditObjectV4(pkiEzsignfoldertypeID, ezsignfoldertypeEditObjectV4Request, options).then((request) => request(axios, basePath));
         },
         /**
          * Get the list of Ezsignfoldertype to be used in a dropdown or autocomplete control.
@@ -627,10 +811,22 @@ export class ObjectEzsignfoldertypeApi extends BaseAPI {
      * @summary Create a new Ezsignfoldertype
      * @param {EzsignfoldertypeCreateObjectV3Request} ezsignfoldertypeCreateObjectV3Request 
      * @param {*} [options] Override http request option.
+     * @deprecated
      * @throws {RequiredError}
      */
     public ezsignfoldertypeCreateObjectV3(ezsignfoldertypeCreateObjectV3Request: EzsignfoldertypeCreateObjectV3Request, options?: RawAxiosRequestConfig) {
         return ObjectEzsignfoldertypeApiFp(this.configuration).ezsignfoldertypeCreateObjectV3(ezsignfoldertypeCreateObjectV3Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * The endpoint allows to create one or many elements at once.
+     * @summary Create a new Ezsignfoldertype
+     * @param {EzsignfoldertypeCreateObjectV4Request} ezsignfoldertypeCreateObjectV4Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public ezsignfoldertypeCreateObjectV4(ezsignfoldertypeCreateObjectV4Request: EzsignfoldertypeCreateObjectV4Request, options?: RawAxiosRequestConfig) {
+        return ObjectEzsignfoldertypeApiFp(this.configuration).ezsignfoldertypeCreateObjectV4(ezsignfoldertypeCreateObjectV4Request, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -639,10 +835,23 @@ export class ObjectEzsignfoldertypeApi extends BaseAPI {
      * @param {number} pkiEzsignfoldertypeID 
      * @param {EzsignfoldertypeEditObjectV3Request} ezsignfoldertypeEditObjectV3Request 
      * @param {*} [options] Override http request option.
+     * @deprecated
      * @throws {RequiredError}
      */
     public ezsignfoldertypeEditObjectV3(pkiEzsignfoldertypeID: number, ezsignfoldertypeEditObjectV3Request: EzsignfoldertypeEditObjectV3Request, options?: RawAxiosRequestConfig) {
         return ObjectEzsignfoldertypeApiFp(this.configuration).ezsignfoldertypeEditObjectV3(pkiEzsignfoldertypeID, ezsignfoldertypeEditObjectV3Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Edit an existing Ezsignfoldertype
+     * @param {number} pkiEzsignfoldertypeID 
+     * @param {EzsignfoldertypeEditObjectV4Request} ezsignfoldertypeEditObjectV4Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public ezsignfoldertypeEditObjectV4(pkiEzsignfoldertypeID: number, ezsignfoldertypeEditObjectV4Request: EzsignfoldertypeEditObjectV4Request, options?: RawAxiosRequestConfig) {
+        return ObjectEzsignfoldertypeApiFp(this.configuration).ezsignfoldertypeEditObjectV4(pkiEzsignfoldertypeID, ezsignfoldertypeEditObjectV4Request, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

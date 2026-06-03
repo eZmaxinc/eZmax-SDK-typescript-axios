@@ -6,6 +6,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |------------- | ------------- | -------------|
 |[**ezsigntemplatedocumentCreateObjectV1**](#ezsigntemplatedocumentcreateobjectv1) | **POST** /1/object/ezsigntemplatedocument | Create a new Ezsigntemplatedocument|
 |[**ezsigntemplatedocumentDownloadV1**](#ezsigntemplatedocumentdownloadv1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/download | Retrieve an existing Ezsigntemplatedocument\&#39;s original file|
+|[**ezsigntemplatedocumentEditEzsigntemplateannotationsV1**](#ezsigntemplatedocumenteditezsigntemplateannotationsv1) | **PUT** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/editEzsigntemplateannotations | Edit multiple Ezsigntemplateannotations|
 |[**ezsigntemplatedocumentEditEzsigntemplatedocumentpagerecognitionsV1**](#ezsigntemplatedocumenteditezsigntemplatedocumentpagerecognitionsv1) | **PUT** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/editEzsigntemplatedocumentpagerecognitions | Edit multiple Ezsigntemplatedocumentpagerecognitions|
 |[**ezsigntemplatedocumentEditEzsigntemplateformfieldgroupsV1**](#ezsigntemplatedocumenteditezsigntemplateformfieldgroupsv1) | **PUT** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/editEzsigntemplateformfieldgroups | Edit multiple Ezsigntemplateformfieldgroups|
 |[**ezsigntemplatedocumentEditEzsigntemplatesignaturesV1**](#ezsigntemplatedocumenteditezsigntemplatesignaturesv1) | **PUT** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/editEzsigntemplatesignatures | Edit multiple Ezsigntemplatesignatures|
@@ -13,6 +14,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**ezsigntemplatedocumentEditObjectV1**](#ezsigntemplatedocumenteditobjectv1) | **PUT** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID} | Edit an existing Ezsigntemplatedocument|
 |[**ezsigntemplatedocumentExtractTextV1**](#ezsigntemplatedocumentextracttextv1) | **POST** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/extractText | Extract text from Ezsigntemplatedocument area|
 |[**ezsigntemplatedocumentFlattenV1**](#ezsigntemplatedocumentflattenv1) | **POST** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/flatten | Flatten|
+|[**ezsigntemplatedocumentGetEzsigntemplateannotationsV1**](#ezsigntemplatedocumentgetezsigntemplateannotationsv1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplateannotations | Retrieve an existing Ezsigntemplatedocument\&#39;s Ezsigntemplateannotations|
 |[**ezsigntemplatedocumentGetEzsigntemplatedocumentpagerecognitionsV1**](#ezsigntemplatedocumentgetezsigntemplatedocumentpagerecognitionsv1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplatedocumentpagerecognitions | Retrieve an existing Ezsigntemplatedocument\&#39;s Ezsigntemplatedocumentpagerecognitions|
 |[**ezsigntemplatedocumentGetEzsigntemplatedocumentpagesV1**](#ezsigntemplatedocumentgetezsigntemplatedocumentpagesv1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplatedocumentpages | Retrieve an existing Ezsigntemplatedocument\&#39;s Ezsigntemplatedocumentpages|
 |[**ezsigntemplatedocumentGetEzsigntemplateformfieldgroupsV1**](#ezsigntemplatedocumentgetezsigntemplateformfieldgroupsv1) | **GET** /1/object/ezsigntemplatedocument/{pkiEzsigntemplatedocumentID}/getEzsigntemplateformfieldgroups | Retrieve an existing Ezsigntemplatedocument\&#39;s Ezsigntemplateformfieldgroups|
@@ -124,6 +126,63 @@ void (empty response body)
 |-------------|-------------|------------------|
 |**302** | The user has been redirected |  -  |
 |**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ezsigntemplatedocumentEditEzsigntemplateannotationsV1**
+> EzsigntemplatedocumentEditEzsigntemplateannotationsV1Response ezsigntemplatedocumentEditEzsigntemplateannotationsV1(ezsigntemplatedocumentEditEzsigntemplateannotationsV1Request)
+
+Using this endpoint, you can edit multiple Ezsigntemplateannotations at the same time.
+
+### Example
+
+```typescript
+import {
+    ObjectEzsigntemplatedocumentApi,
+    Configuration,
+    EzsigntemplatedocumentEditEzsigntemplateannotationsV1Request
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectEzsigntemplatedocumentApi(configuration);
+
+let pkiEzsigntemplatedocumentID: number; // (default to undefined)
+let ezsigntemplatedocumentEditEzsigntemplateannotationsV1Request: EzsigntemplatedocumentEditEzsigntemplateannotationsV1Request; //
+
+const { status, data } = await apiInstance.ezsigntemplatedocumentEditEzsigntemplateannotationsV1(
+    pkiEzsigntemplatedocumentID,
+    ezsigntemplatedocumentEditEzsigntemplateannotationsV1Request
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **ezsigntemplatedocumentEditEzsigntemplateannotationsV1Request** | **EzsigntemplatedocumentEditEzsigntemplateannotationsV1Request**|  | |
+| **pkiEzsigntemplatedocumentID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**EzsigntemplatedocumentEditEzsigntemplateannotationsV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+|**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -513,6 +572,59 @@ const { status, data } = await apiInstance.ezsigntemplatedocumentFlattenV1(
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+|**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ezsigntemplatedocumentGetEzsigntemplateannotationsV1**
+> EzsigntemplatedocumentGetEzsigntemplateannotationsV1Response ezsigntemplatedocumentGetEzsigntemplateannotationsV1()
+
+
+
+### Example
+
+```typescript
+import {
+    ObjectEzsigntemplatedocumentApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectEzsigntemplatedocumentApi(configuration);
+
+let pkiEzsigntemplatedocumentID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.ezsigntemplatedocumentGetEzsigntemplateannotationsV1(
+    pkiEzsigntemplatedocumentID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiEzsigntemplatedocumentID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**EzsigntemplatedocumentGetEzsigntemplateannotationsV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 

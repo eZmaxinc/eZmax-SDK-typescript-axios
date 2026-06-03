@@ -128,7 +128,7 @@ export interface EzsignfoldertypeRequestV3 {
     /*'iEzsignfoldertypeFontsizeformfield'?: number;*/
     'iEzsignfoldertypeFontsizeformfield'?: number;
     /**
-     * The number of days before the the first reminder sending
+     * The number of days before the first reminder sending
      */
     /*'iEzsignfoldertypeSendreminderfirstdays'?: number;*/
     'iEzsignfoldertypeSendreminderfirstdays'?: number;
@@ -201,6 +201,26 @@ export interface EzsignfoldertypeRequestV3 {
      */
     /*'bEzsignfoldertypeReassigngroup'?: boolean;*/
     'bEzsignfoldertypeReassigngroup'?: boolean;
+    /**
+     * Whether we send the merged documents in the email to external recipient
+     */
+    /*'bEzsignfoldertypeSenddocumentmergetoemail'?: boolean;*/
+    'bEzsignfoldertypeSenddocumentmergetoemail'?: boolean;
+    /**
+     * Whether we send the merged documents in the email to Ezsignsigner
+     */
+    /*'bEzsignfoldertypeSenddocumentmergetoezsignsigner'?: boolean;*/
+    'bEzsignfoldertypeSenddocumentmergetoezsignsigner'?: boolean;
+    /**
+     * Whether we send the merged documents in the email to user and Ezsignsigner who receive all documents.
+     */
+    /*'bEzsignfoldertypeSenddocumentmergetoreceivealldocument'?: boolean;*/
+    'bEzsignfoldertypeSenddocumentmergetoreceivealldocument'?: boolean;
+    /**
+     * Whether we send the merged documents in the email to User
+     */
+    /*'bEzsignfoldertypeSenddocumentmergetouser'?: boolean;*/
+    'bEzsignfoldertypeSenddocumentmergetouser'?: boolean;
     /**
      * Whether we send an email to Ezsignsigner  when document is completed
      */
@@ -391,6 +411,10 @@ export class DataObjectEzsignfoldertypeRequestV3 {
    bEzsignfoldertypeReassignezsignsigner?:boolean = undefined
    bEzsignfoldertypeReassignuser?:boolean = undefined
    bEzsignfoldertypeReassigngroup?:boolean = undefined
+   bEzsignfoldertypeSenddocumentmergetoemail?:boolean = undefined
+   bEzsignfoldertypeSenddocumentmergetoezsignsigner?:boolean = undefined
+   bEzsignfoldertypeSenddocumentmergetoreceivealldocument?:boolean = undefined
+   bEzsignfoldertypeSenddocumentmergetouser?:boolean = undefined
    bEzsignfoldertypeSendsignedtoezsignsigner?:boolean = undefined
    bEzsignfoldertypeSendsignedtouser?:boolean = undefined
    bEzsignfoldertypeSendattachmentezsignsigner?:boolean = undefined
@@ -612,6 +636,22 @@ export class ValidationObjectEzsignfoldertypeRequestV3 {
       required: false
    }
    bEzsignfoldertypeReassigngroup = {
+      type: 'boolean',
+      required: false
+   }
+   bEzsignfoldertypeSenddocumentmergetoemail = {
+      type: 'boolean',
+      required: false
+   }
+   bEzsignfoldertypeSenddocumentmergetoezsignsigner = {
+      type: 'boolean',
+      required: false
+   }
+   bEzsignfoldertypeSenddocumentmergetoreceivealldocument = {
+      type: 'boolean',
+      required: false
+   }
+   bEzsignfoldertypeSenddocumentmergetouser = {
       type: 'boolean',
       required: false
    }

@@ -6,7 +6,7 @@ A custom Webhook object
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pkiWebhookID** | **number** | The unique ID of the Webhook | [default to undefined]
+**pkiWebhookID** | **number** | The unique ID of the Webhook | [optional] [default to undefined]
 **fkiAuthenticationexternalID** | **number** | The unique ID of the Authenticationexternal | [optional] [default to undefined]
 **sWebhookDescription** | **string** | The description of the Webhook | [default to undefined]
 **fkiEzsignfoldertypeID** | **number** | The unique ID of the Ezsignfoldertype. | [optional] [default to undefined]
@@ -22,13 +22,14 @@ Name | Type | Description | Notes
 **bWebhookIssigned** | **boolean** | Whether the requests will be signed or not | [default to undefined]
 **bWebhookSkipsslvalidation** | **boolean** | Wheter the server\&#39;s SSL certificate should be validated or not. Not recommended to skip for production use | [default to undefined]
 **sAuthenticationexternalDescription** | **string** | The description of the Authenticationexternal | [optional] [default to undefined]
-**objAudit** | [**CommonAudit**](CommonAudit.md) |  | [default to undefined]
+**objAudit** | [**CommonAudit**](CommonAudit.md) |  | [optional] [default to undefined]
 **sWebhookEvent** | **string** | The concatenated string to describe the Webhook event | [optional] [default to undefined]
 **sWebhookAuthentificationexternalerror** | **string** | Error message when token renewal failed or is not configured. Only if an Authenticationexternal is set. | [optional] [default to undefined]
 **a_objWebhookheader** | [**Array&lt;WebhookheaderResponseCompound&gt;**](WebhookheaderResponseCompound.md) |  | [optional] [default to undefined]
 **pksCustomerCode** | **string** | The customer code assigned to your account | [default to undefined]
 **bWebhookTest** | **boolean** | Wheter the webhook received is a manual test or a real event | [default to undefined]
 **eWebhookEmittype** | **string** | Wheter the webhook received is a manual test or a real event | [optional] [default to undefined]
+**fkiEzmaxpartnerproductstagewebhookID** | **number** | The unique ID of the Ezmaxpartnerproductstagewebhook | [optional] [default to undefined]
 
 ## Example
 
@@ -59,6 +60,7 @@ const instance: CustomWebhookResponse = {
     pksCustomerCode,
     bWebhookTest,
     eWebhookEmittype,
+    fkiEzmaxpartnerproductstagewebhookID,
 };
 ```
 

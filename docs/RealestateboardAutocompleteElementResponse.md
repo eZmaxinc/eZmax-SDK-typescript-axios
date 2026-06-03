@@ -6,7 +6,7 @@ A Realestateboard AutocompleteElement Response
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**pkiRealestateboardID** | **number** | The unique ID of the Activesession | [default to undefined]
+**pkiRealestateboardID** | **number** | The unique ID of the Realestateboard | [default to undefined]
 **sProvinceNameX** | **string** | The name of the Province in the language of the requester | [default to undefined]
 **sRealestateboardNameX** | **string** | The name of the Realestateboard | [default to undefined]
 **bRealestateboardIsactive** | **boolean** | Whether the Agenttype is active or not | [default to undefined]

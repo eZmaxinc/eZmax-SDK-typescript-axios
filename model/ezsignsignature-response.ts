@@ -447,7 +447,7 @@ export class ValidationObjectEzsignsignatureResponse {
    }
    eEzsignsignatureConsultationtrigger = {
       type: 'enum',
-      allowableValues: ['Automatic','Manual'],
+      allowableValues: ['Automatic','Manual','Optional'],
       required: false
    }
    bEzsignsignatureHandwritten = {

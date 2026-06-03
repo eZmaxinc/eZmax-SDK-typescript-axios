@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **dBuyercontractMinimumprice** | **string** | The minimumprice of the Buyercontract | [default to undefined]
 **dBuyercontractMaximumprice** | **string** | The maximumprice of the Buyercontract | [default to undefined]
 **eBuyercontractType** | [**FieldEBuyercontractType**](FieldEBuyercontractType.md) |  | [default to undefined]
+**sBuyercontractContract** | **string** | The number of the Buyercontract | [optional] [default to undefined]
 **dtBuyercontractDate** | **string** | The date of the Buyercontract | [default to undefined]
 **dtBuyercontractExpirationdate** | **string** | The expirationdate of the Buyercontract | [optional] [default to undefined]
 **bBuyercontractIsactive** | **boolean** | Whether the buyercontract is active or not | [default to undefined]
@@ -32,6 +33,7 @@ const instance: BuyercontractListElement = {
     dBuyercontractMinimumprice,
     dBuyercontractMaximumprice,
     eBuyercontractType,
+    sBuyercontractContract,
     dtBuyercontractDate,
     dtBuyercontractExpirationdate,
     bBuyercontractIsactive,

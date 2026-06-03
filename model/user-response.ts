@@ -65,6 +65,11 @@ export interface UserResponse {
     /*'fkiEmployeeID'?: number;*/
     'fkiEmployeeID'?: number;
     /**
+     * The unique ID of the Ezmaxpartner
+     */
+    /*'fkiEzmaxpartnerID'?: number;*/
+    'fkiEzmaxpartnerID'?: number;
+    /**
      * The unique ID of the Company
      */
     /*'fkiCompanyIDDefault': number;*/
@@ -121,7 +126,7 @@ export interface UserResponse {
     /*'objPhoneSMS'?: PhoneResponseCompound;*/
     'objPhoneSMS'?: PhoneResponseCompound;
     /**
-     * The unique ID of the Secretquestion.  Valid values:  |Value|Description| |-|-| |1|The name of the hospital in which you were born| |2|The name of your grade school| |3|The last name of your favorite teacher| |4|Your favorite sports team| |5|Your favorite TV show| |6|Your favorite movie| |7|The name of the street on which you grew up| |8|The name of your first employer| |9|Your first car| |10|Your favorite food| |11|The name of your first pet| |12|Favorite musician/band| |13|What instrument you play| |14|Your father\'s middle name| |15|Your mother\'s maiden name| |16|Name of your eldest child| |17|Your spouse\'s middle name| |18|Favorite restaurant| |19|Childhood nickname| |20|Favorite vacation destination| |21|Your boat\'s name| |22|Date of Birth (YYYY-MM-DD)| |22|Secret Code| |22|Your reference code|
+     * The unique ID of the Secretquestion.  Valid values:  |Value|Description| |-|-| |1|The name of the hospital in which you were born| |2|The name of your grade school| |3|The last name of your favorite teacher| |4|Your favorite sports team| |5|Your favorite TV show| |6|Your favorite movie| |7|The name of the street on which you grew up| |8|The name of your first employer| |9|Your first car| |10|Your favorite food| |11|The name of your first pet| |12|Favorite musician/band| |13|What instrument you play| |14|Your father\'s middle name| |15|Your mother\'s maiden name| |16|Name of your eldest child| |17|Your spouse\'s middle name| |18|Favorite restaurant| |19|Childhood nickname| |20|Favorite vacation destination| |21|Your boat\'s name| |22|Date of Birth (YYYY-MM-DD)| |23|Secret Code| |24|Your reference code| |25|What are the last 4 digits of your SIN| |26|What is your postal code| |27|What is your employee number| |28|What is your manager’s first name| |29|What is your file number| |30|What is your client/member number| |31|What is your license number| |32|What are the last 4 digits of your phone number| |33|What is your student number|
      */
     /*'fkiSecretquestionID'?: number;*/
     'fkiSecretquestionID'?: number;
@@ -184,6 +189,11 @@ export interface UserResponse {
     /*'bUserIsactive': boolean;*/
     'bUserIsactive': boolean;
     /**
+     * Whether the User is suspended or not
+     */
+    /*'bUserSuspended'?: boolean;*/
+    'bUserSuspended'?: boolean;
+    /**
      * Whether if the transactions in which the User is implicated must be validated by administrative personnel or not
      */
     /*'bUserValidatebyadministration'?: boolean;*/
@@ -203,6 +213,11 @@ export interface UserResponse {
      */
     /*'bUserChangepassword': boolean;*/
     'bUserChangepassword': boolean;
+    /**
+     * Whether we group or not the Ezsigntemplate roles
+     */
+    /*'bUserEzsigntemplaterolegrouping'?: boolean;*/
+    'bUserEzsigntemplaterolegrouping'?: boolean;
     /*'objAudit': CommonAudit;*/
     'objAudit': CommonAudit;
 }
@@ -241,6 +256,7 @@ export class DataObjectUserResponse {
    fkiBrokerID?:number = undefined
    fkiAssistantID?:number = undefined
    fkiEmployeeID?:number = undefined
+   fkiEzmaxpartnerID?:number = undefined
    fkiCompanyIDDefault:number = 0
    sCompanyNameX:string = ''
    fkiDepartmentIDDefault:number = 0
@@ -269,10 +285,12 @@ export class DataObjectUserResponse {
    dtUserPasswordchanged?:string = undefined
    dtUserEzsignprepaidexpiration?:string = undefined
    bUserIsactive:boolean = false
+   bUserSuspended?:boolean = undefined
    bUserValidatebyadministration?:boolean = undefined
    bUserValidatebydirector?:boolean = undefined
    bUserAttachmentautoverified?:boolean = undefined
    bUserChangepassword:boolean = false
+   bUserEzsigntemplaterolegrouping?:boolean = undefined
    objAudit:CommonAudit = new DataObjectCommonAudit()
 }
 
@@ -305,6 +323,11 @@ export class ValidationObjectUserResponse {
    fkiEmployeeID = {
       type: 'integer',
       minimum: 0,
+      required: false
+   }
+   fkiEzmaxpartnerID = {
+      type: 'integer',
+      minimum: 1,
       required: false
    }
    fkiCompanyIDDefault = {
@@ -428,6 +451,10 @@ export class ValidationObjectUserResponse {
       type: 'boolean',
       required: true
    }
+   bUserSuspended = {
+      type: 'boolean',
+      required: false
+   }
    bUserValidatebyadministration = {
       type: 'boolean',
       required: false
@@ -443,6 +470,10 @@ export class ValidationObjectUserResponse {
    bUserChangepassword = {
       type: 'boolean',
       required: true
+   }
+   bUserEzsigntemplaterolegrouping = {
+      type: 'boolean',
+      required: false
    }
    objAudit = new ValidationObjectCommonAudit()
 } 

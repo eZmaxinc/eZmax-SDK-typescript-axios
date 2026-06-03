@@ -52,6 +52,11 @@ export interface UserListElement {
      */
     /*'bUserIsactive': boolean;*/
     'bUserIsactive': boolean;
+    /**
+     * Whether the User is suspended or not
+     */
+    /*'bUserSuspended'?: boolean;*/
+    'bUserSuspended'?: boolean;
     /*'eUserType': FieldEUserType;*/
     'eUserType': FieldEUserType;
     /*'eUserOrigin': FieldEUserOrigin;*/
@@ -93,6 +98,7 @@ export class DataObjectUserListElement {
    sUserLastname:string = ''
    sUserLoginname:string = ''
    bUserIsactive:boolean = false
+   bUserSuspended?:boolean = undefined
    eUserType:FieldEUserType = 'AgentBroker'
    eUserOrigin:FieldEUserOrigin = 'BuiltIn'
    eUserEzsignaccess:FieldEUserEzsignaccess = 'No'
@@ -128,6 +134,10 @@ export class ValidationObjectUserListElement {
    bUserIsactive = {
       type: 'boolean',
       required: true
+   }
+   bUserSuspended = {
+      type: 'boolean',
+      required: false
    }
    eUserType = {
       type: 'enum',

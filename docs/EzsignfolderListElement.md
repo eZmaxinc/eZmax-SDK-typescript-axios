@@ -8,6 +8,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pkiEzsignfolderID** | **number** | The unique ID of the Ezsignfolder | [default to undefined]
 **fkiEzsignfoldertypeID** | **number** | The unique ID of the Ezsignfoldertype. | [default to undefined]
+**fkiEzsignbulksendID** | **number** | The unique ID of the Ezsignbulksend | [optional] [default to undefined]
+**sEzsignbulksendDescription** | **string** | The description of the Ezsignbulksend | [optional] [default to undefined]
+**fkiEzsignbulksendtransmissionID** | **number** | The unique ID of the Ezsignbulksendtransmission | [optional] [default to undefined]
+**sEzsignbulksendtransmissionDescription** | **string** | The description of the Ezsignbulksendtransmission | [optional] [default to undefined]
+**fkiEzsigntemplatepublicID** | **number** | The unique ID of the Ezsigntemplatepublic | [optional] [default to undefined]
+**sEzsigntemplatepublicDescription** | **string** | The description of the Ezsigntemplatepublic | [optional] [default to undefined]
+**eEzsignfolderSource** | [**FieldEEzsignfolderSource**](FieldEEzsignfolderSource.md) |  | [default to undefined]
 **eEzsignfoldertypePrivacylevel** | [**FieldEEzsignfoldertypePrivacylevel**](FieldEEzsignfoldertypePrivacylevel.md) |  | [default to undefined]
 **sEzsignfoldertypeNameX** | **string** | The name of the Ezsignfoldertype in the language of the requester | [default to undefined]
 **sEzsignfolderDescription** | **string** | The description of the Ezsignfolder | [default to undefined]
@@ -31,6 +38,7 @@ Name | Type | Description | Notes
 **dtEzsignfolderArchive** | **string** | The date and time at which the Ezsignfolder was archived. | [optional] [default to undefined]
 **dtEzsignfolderDispose** | **string** | The date and time at which the Ezsignfolder was disposed. | [optional] [default to undefined]
 **bEzsignfolderSigner** | **boolean** | Whether the Ezsignfolder has an Ezsignsignatures that need to be signed or an Ezsignformfieldgroups that need to be filled by the current user | [optional] [default to undefined]
+**bEzsignfolderIsmyown** | **boolean** | Whether the Ezsignfolder is my own or not | [optional] [default to undefined]
 
 ## Example
 
@@ -40,6 +48,13 @@ import { EzsignfolderListElement } from '@ezmaxinc/ezmax-sdk-typescript-axios';
 const instance: EzsignfolderListElement = {
     pkiEzsignfolderID,
     fkiEzsignfoldertypeID,
+    fkiEzsignbulksendID,
+    sEzsignbulksendDescription,
+    fkiEzsignbulksendtransmissionID,
+    sEzsignbulksendtransmissionDescription,
+    fkiEzsigntemplatepublicID,
+    sEzsigntemplatepublicDescription,
+    eEzsignfolderSource,
     eEzsignfoldertypePrivacylevel,
     sEzsignfoldertypeNameX,
     sEzsignfolderDescription,
@@ -63,6 +78,7 @@ const instance: EzsignfolderListElement = {
     dtEzsignfolderArchive,
     dtEzsignfolderDispose,
     bEzsignfolderSigner,
+    bEzsignfolderIsmyown,
 };
 ```
 

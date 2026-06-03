@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **eEzsigntemplateType** | [**FieldEEzsigntemplateType**](FieldEEzsigntemplateType.md) |  | [optional] [default to undefined]
 **objEzsigntemplatedocument** | [**EzsigntemplatedocumentResponse**](EzsigntemplatedocumentResponse.md) |  | [optional] [default to undefined]
 **a_objEzsigntemplatesigner** | [**Array&lt;EzsigntemplatesignerResponseCompound&gt;**](EzsigntemplatesignerResponseCompound.md) |  | [default to undefined]
+**a_objEzsigntemplateannotation** | [**Array&lt;EzsigntemplateannotationResponseCompound&gt;**](EzsigntemplateannotationResponseCompound.md) |  | [optional] [default to undefined]
 
 ## Example
 
@@ -47,6 +48,7 @@ const instance: EzsigntemplateResponseCompound = {
     eEzsigntemplateType,
     objEzsigntemplatedocument,
     a_objEzsigntemplatesigner,
+    a_objEzsigntemplateannotation,
 };
 ```
 

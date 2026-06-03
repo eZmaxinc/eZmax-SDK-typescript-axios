@@ -101,7 +101,7 @@ export interface EzsignfolderResponse {
     /*'eEzsignfolderSendreminderfrequency'?: FieldEEzsignfolderSendreminderfrequency;*/
     'eEzsignfolderSendreminderfrequency'?: FieldEEzsignfolderSendreminderfrequency;
     /**
-     * The number of days before the the first reminder sending
+     * The number of days before the first reminder sending
      */
     /*'iEzsignfolderSendreminderfirstdays'?: number;*/
     'iEzsignfolderSendreminderfirstdays'?: number;

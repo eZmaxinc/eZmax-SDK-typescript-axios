@@ -19,7 +19,7 @@
  */
 export interface RealestateboardAutocompleteElementResponse {
     /**
-     * The unique ID of the Activesession
+     * The unique ID of the Realestateboard
      */
     /*'pkiRealestateboardID': number;*/
     'pkiRealestateboardID': number;

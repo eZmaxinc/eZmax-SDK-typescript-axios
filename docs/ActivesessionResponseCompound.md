@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **eUserEzsignaccess** | [**FieldEUserEzsignaccess**](FieldEUserEzsignaccess.md) |  | [default to undefined]
 **eUserEzsignprepaid** | [**FieldEUserEzsignprepaid**](FieldEUserEzsignprepaid.md) |  | [optional] [default to undefined]
 **bUserEzsigntrial** | **boolean** | Whether the User\&#39;s eZsign subscription is a trial | [optional] [default to undefined]
+**bUserEzsigntemplaterolegrouping** | **boolean** | Whether we group or not the Ezsigntemplate roles | [optional] [default to undefined]
 **dtUserEzsignprepaidexpiration** | **string** | The eZsign prepaid expiration date | [optional] [default to undefined]
 **dtUserNpsrequest** | **string** | The date at which the NPS questionnaire will be show | [optional] [default to undefined]
 **a_pkiPermissionID** | **Array&lt;number&gt;** | An array of permissions granted to the user or api key | [default to undefined]
@@ -38,6 +39,7 @@ Name | Type | Description | Notes
 **objUserCloned** | [**ActivesessionResponseCompoundUser**](ActivesessionResponseCompoundUser.md) |  | [optional] [default to undefined]
 **objApikey** | [**ActivesessionResponseCompoundApikey**](ActivesessionResponseCompoundApikey.md) |  | [optional] [default to undefined]
 **a_eModuleInternalname** | **Array&lt;string&gt;** | An Array of Registered modules.  These are the modules that are Licensed to be used by the User or the API Key. | [default to undefined]
+**bActivesessionMaillinglistrequest** | **boolean** | If you need to ask which mailing lists this user wants to subscribe to | [optional] [default to undefined]
 
 ## Example
 
@@ -70,6 +72,7 @@ const instance: ActivesessionResponseCompound = {
     eUserEzsignaccess,
     eUserEzsignprepaid,
     bUserEzsigntrial,
+    bUserEzsigntemplaterolegrouping,
     dtUserEzsignprepaidexpiration,
     dtUserNpsrequest,
     a_pkiPermissionID,
@@ -77,6 +80,7 @@ const instance: ActivesessionResponseCompound = {
     objUserCloned,
     objApikey,
     a_eModuleInternalname,
+    bActivesessionMaillinglistrequest,
 };
 ```
 

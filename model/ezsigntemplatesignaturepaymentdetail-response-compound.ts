@@ -102,7 +102,7 @@ export class ValidationObjectEzsigntemplatesignaturepaymentdetailResponseCompoun
    }
    dEzsigntemplatesignaturepaymentdetailAmount = {
       type: 'string',
-      pattern: /^-{0,1}[\d]{1,9}?\.[\d]{2}$/,
+      pattern: /^[\d]{1,3}?\.[\d]{2}$/,
       required: true
    }
    eEzsigntemplatesignaturepaymentdetailTaxable = {

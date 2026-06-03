@@ -64,6 +64,7 @@ export class ValidationObjectEzsignfolderBatchDownloadV1Request {
    }
    a_eDocumentType = {
       type: 'array',
+      minItems: 1,
       required: true
    }
 } 

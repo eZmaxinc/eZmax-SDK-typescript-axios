@@ -21,6 +21,9 @@ import type { CommonAudit } from './common-audit';
 import type { EzsigntemplateResponse } from './ezsigntemplate-response';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { EzsigntemplateannotationResponseCompound } from './ezsigntemplateannotation-response-compound';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { EzsigntemplatedocumentResponse } from './ezsigntemplatedocument-response';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -137,6 +140,12 @@ export interface EzsigntemplateResponseCompound {
      * @memberof EzsigntemplateResponseCompound
      */
     a_objEzsigntemplatesigner:Array<EzsigntemplatesignerResponseCompound> 
+    /**
+     * 
+     * @type {Array<EzsigntemplateannotationResponseCompound>}
+     * @memberof EzsigntemplateResponseCompound
+     */
+    a_objEzsigntemplateannotation?:Array<EzsigntemplateannotationResponseCompound> 
 }
 
 
@@ -178,6 +187,7 @@ export class DataObjectEzsigntemplateResponseCompound {
     eEzsigntemplateType?:FieldEEzsigntemplateType = undefined
     objEzsigntemplatedocument?:EzsigntemplatedocumentResponse = undefined
     a_objEzsigntemplatesigner:Array<EzsigntemplatesignerResponseCompound> = []
+    a_objEzsigntemplateannotation?:Array<EzsigntemplateannotationResponseCompound> = undefined
 }
 
 /**
@@ -259,6 +269,10 @@ export class ValidationObjectEzsigntemplateResponseCompound {
    a_objEzsigntemplatesigner = {
       type: 'array',
       required: true
+   }
+   a_objEzsigntemplateannotation = {
+      type: 'array',
+      required: false
    }
 } 
 

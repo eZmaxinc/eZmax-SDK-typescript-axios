@@ -7,8 +7,8 @@ A Ezsigntemplateglobalannotation Object
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pkiEzsigntemplateglobalannotationID** | **number** | The unique ID of the Ezsigntemplateglobalannotation | [default to undefined]
-**fkiEzsigntemplateglobaldocumentpageID** | **number** | The unique ID of the Ezsigntemplateglobaldocumentpage | [default to undefined]
-**fkiTextstylestaticID** | **number** | The unique ID of the Textstylestatic | [default to undefined]
+**fkiTextstylestaticID** | **number** | The unique ID of the Textstylestatic | [optional] [default to undefined]
+**objTextstylestatic** | [**TextstylestaticRequestCompound**](TextstylestaticRequestCompound.md) |  | [optional] [default to undefined]
 **eEzsigntemplateglobalannotationHorizontalalignment** | [**FieldEEzsigntemplateglobalannotationHorizontalalignment**](FieldEEzsigntemplateglobalannotationHorizontalalignment.md) |  | [default to undefined]
 **eEzsigntemplateglobalannotationVerticalalignment** | [**FieldEEzsigntemplateglobalannotationVerticalalignment**](FieldEEzsigntemplateglobalannotationVerticalalignment.md) |  | [default to undefined]
 **eEzsigntemplateglobalannotationType** | [**FieldEEzsigntemplateglobalannotationType**](FieldEEzsigntemplateglobalannotationType.md) |  | [default to undefined]
@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **iEzsigntemplateglobalannotationY** | **number** | The y of the Ezsigntemplateglobalannotation | [default to undefined]
 **iEzsigntemplateglobalannotationWidth** | **number** | The width of the Ezsigntemplateglobalannotation | [default to undefined]
 **iEzsigntemplateglobalannotationHeight** | **number** | The height of the Ezsigntemplateglobalannotation | [default to undefined]
+**iEzsigntemplateglobaldocumentpagePagenumber** | **number** | The page number in the Ezsigntemplateglobaldocument | [default to undefined]
 **sEzsigntemplateglobalannotationDescription** | **string** | The description of the Ezsigntemplateglobalannotation | [default to undefined]
 **sEzsigntemplateglobalannotationDefaulttext** | **string** | The defaulttext of the Ezsigntemplateglobalannotation | [default to undefined]
 **sEzsigntemplateglobalannotationDropdownvalues** | **string** | The dropdownvalues of the Ezsigntemplateglobalannotation | [default to undefined]
@@ -27,8 +28,8 @@ import { EzsigntemplateglobalannotationResponse } from '@ezmaxinc/ezmax-sdk-type
 
 const instance: EzsigntemplateglobalannotationResponse = {
     pkiEzsigntemplateglobalannotationID,
-    fkiEzsigntemplateglobaldocumentpageID,
     fkiTextstylestaticID,
+    objTextstylestatic,
     eEzsigntemplateglobalannotationHorizontalalignment,
     eEzsigntemplateglobalannotationVerticalalignment,
     eEzsigntemplateglobalannotationType,
@@ -36,6 +37,7 @@ const instance: EzsigntemplateglobalannotationResponse = {
     iEzsigntemplateglobalannotationY,
     iEzsigntemplateglobalannotationWidth,
     iEzsigntemplateglobalannotationHeight,
+    iEzsigntemplateglobaldocumentpagePagenumber,
     sEzsigntemplateglobalannotationDescription,
     sEzsigntemplateglobalannotationDefaulttext,
     sEzsigntemplateglobalannotationDropdownvalues,

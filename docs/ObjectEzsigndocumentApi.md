@@ -6,7 +6,9 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |------------- | ------------- | -------------|
 |[**ezsigndocumentApplyEzsigntemplateV1**](#ezsigndocumentapplyezsigntemplatev1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/applyezsigntemplate | Apply an Ezsigntemplate to the Ezsigndocument|
 |[**ezsigndocumentApplyEzsigntemplateV2**](#ezsigndocumentapplyezsigntemplatev2) | **POST** /2/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplate | Apply an Ezsigntemplate to the Ezsigndocument|
+|[**ezsigndocumentApplyEzsigntemplateV3**](#ezsigndocumentapplyezsigntemplatev3) | **POST** /3/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplate | Apply an Ezsigntemplate to the Ezsigndocument|
 |[**ezsigndocumentApplyEzsigntemplateglobalV1**](#ezsigndocumentapplyezsigntemplateglobalv1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplateglobal | Apply an Ezsigntemplateglobal to the Ezsigndocument|
+|[**ezsigndocumentApplyEzsigntemplateglobalV2**](#ezsigndocumentapplyezsigntemplateglobalv2) | **POST** /2/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplateglobal | Apply an Ezsigntemplateglobal to the Ezsigndocument|
 |[**ezsigndocumentCreateEzsignelementsPositionedByWordV1**](#ezsigndocumentcreateezsignelementspositionedbywordv1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/createEzsignelementsPositionedByWord | Create multiple Ezsignsignatures/Ezsignformfieldgroups|
 |[**ezsigndocumentCreateEzsignelementsPositionedByWordV2**](#ezsigndocumentcreateezsignelementspositionedbywordv2) | **POST** /2/object/ezsigndocument/{pkiEzsigndocumentID}/createEzsignelementsPositionedByWord | Create multiple Ezsignsignatures/Ezsignformfieldgroups|
 |[**ezsigndocumentCreateObjectV1**](#ezsigndocumentcreateobjectv1) | **POST** /1/object/ezsigndocument | Create a new Ezsigndocument|
@@ -162,6 +164,63 @@ const { status, data } = await apiInstance.ezsigndocumentApplyEzsigntemplateV2(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ezsigndocumentApplyEzsigntemplateV3**
+> EzsigndocumentApplyEzsigntemplateV3Response ezsigndocumentApplyEzsigntemplateV3(ezsigndocumentApplyEzsigntemplateV3Request)
+
+This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
+
+### Example
+
+```typescript
+import {
+    ObjectEzsigndocumentApi,
+    Configuration,
+    EzsigndocumentApplyEzsigntemplateV3Request
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectEzsigndocumentApi(configuration);
+
+let pkiEzsigndocumentID: number; // (default to undefined)
+let ezsigndocumentApplyEzsigntemplateV3Request: EzsigndocumentApplyEzsigntemplateV3Request; //
+
+const { status, data } = await apiInstance.ezsigndocumentApplyEzsigntemplateV3(
+    pkiEzsigndocumentID,
+    ezsigndocumentApplyEzsigntemplateV3Request
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **ezsigndocumentApplyEzsigntemplateV3Request** | **EzsigndocumentApplyEzsigntemplateV3Request**|  | |
+| **pkiEzsigndocumentID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**EzsigndocumentApplyEzsigntemplateV3Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+|**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ezsigndocumentApplyEzsigntemplateglobalV1**
 > EzsigndocumentApplyEzsigntemplateglobalV1Response ezsigndocumentApplyEzsigntemplateglobalV1(ezsigndocumentApplyEzsigntemplateglobalV1Request)
 
@@ -199,6 +258,63 @@ const { status, data } = await apiInstance.ezsigndocumentApplyEzsigntemplateglob
 ### Return type
 
 **EzsigndocumentApplyEzsigntemplateglobalV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+|**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ezsigndocumentApplyEzsigntemplateglobalV2**
+> EzsigndocumentApplyEzsigntemplateglobalV2Response ezsigndocumentApplyEzsigntemplateglobalV2(ezsigndocumentApplyEzsigntemplateglobalV2Request)
+
+This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
+
+### Example
+
+```typescript
+import {
+    ObjectEzsigndocumentApi,
+    Configuration,
+    EzsigndocumentApplyEzsigntemplateglobalV2Request
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectEzsigndocumentApi(configuration);
+
+let pkiEzsigndocumentID: number; // (default to undefined)
+let ezsigndocumentApplyEzsigntemplateglobalV2Request: EzsigndocumentApplyEzsigntemplateglobalV2Request; //
+
+const { status, data } = await apiInstance.ezsigndocumentApplyEzsigntemplateglobalV2(
+    pkiEzsigndocumentID,
+    ezsigndocumentApplyEzsigntemplateglobalV2Request
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **ezsigndocumentApplyEzsigntemplateglobalV2Request** | **EzsigndocumentApplyEzsigntemplateglobalV2Request**|  | |
+| **pkiEzsigndocumentID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**EzsigndocumentApplyEzsigntemplateglobalV2Response**
 
 ### Authorization
 

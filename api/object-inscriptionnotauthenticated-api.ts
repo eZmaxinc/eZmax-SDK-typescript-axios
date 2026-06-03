@@ -26,6 +26,10 @@ import type { CommonResponseError } from '../model';
 // @ts-ignore
 import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
+import type { InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request } from '../model';
+// @ts-ignore
+import type { InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Response } from '../model';
+// @ts-ignore
 import type { InscriptionnotauthenticatedGetCommunicationCountV1Response } from '../model';
 // @ts-ignore
 import type { InscriptionnotauthenticatedGetCommunicationListV1Response } from '../model';
@@ -33,6 +37,8 @@ import type { InscriptionnotauthenticatedGetCommunicationListV1Response } from '
 import type { InscriptionnotauthenticatedGetCommunicationrecipientsV1Response } from '../model';
 // @ts-ignore
 import type { InscriptionnotauthenticatedGetCommunicationsendersV1Response } from '../model';
+// @ts-ignore
+import type { InscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1Response } from '../model';
 // @ts-ignore
 import type { InscriptionnotauthenticatedGetListV1Response } from '../model';
 // @ts-ignore
@@ -46,6 +52,69 @@ import { RequestSignature, IHeadersData } from '../api/request-signature';
  */
 export const ObjectInscriptionnotauthenticatedApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
+        /**
+         * 
+         * @summary Fills the Inscriptionnotauthenticatedcondition in the Inscriptionnotauthenticated
+         * @param {number} pkiInscriptionnotauthenticatedID 
+         * @param {InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request} inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1: async (pkiInscriptionnotauthenticatedID: number, inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request: InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiInscriptionnotauthenticatedID' is not null or undefined
+            assertParamExists('inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1', 'pkiInscriptionnotauthenticatedID', pkiInscriptionnotauthenticatedID)
+            // verify required parameter 'inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request' is not null or undefined
+            assertParamExists('inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1', 'inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request', inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request)
+            const localVarPath = `/1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/fillInscriptionnotauthenticatedcondition`
+                .replace(`{${"pkiInscriptionnotauthenticatedID"}}`, encodeURIComponent(String(pkiInscriptionnotauthenticatedID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
         /**
          * 
          * @summary Retrieve Communication count
@@ -279,6 +348,64 @@ export const ObjectInscriptionnotauthenticatedApiAxiosParamCreator = function (c
             };
         },
         /**
+         * 
+         * @summary Retrieve Inscriptionnotauthenticated conditions
+         * @param {number} pkiInscriptionnotauthenticatedID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        inscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1: async (pkiInscriptionnotauthenticatedID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiInscriptionnotauthenticatedID' is not null or undefined
+            assertParamExists('inscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1', 'pkiInscriptionnotauthenticatedID', pkiInscriptionnotauthenticatedID)
+            const localVarPath = `/1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getInscriptionnotauthenticatedconditions`
+                .replace(`{${"pkiInscriptionnotauthenticatedID"}}`, encodeURIComponent(String(pkiInscriptionnotauthenticatedID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eInscriptionStep | TemporaryNotAuthenticated<br>ImportedInscription<br>Inscription<br>ModifiedInscription<br>ContractEnded<br>ExpiredInscription<br>Out-market<br>ImportedNotauthenticated<br>NotAuthenticated<br>ModifiedNotauthenticated<br>Authenticated |
          * @summary Retrieve Inscriptionnotauthenticated list
          * @param {InscriptionnotauthenticatedGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
@@ -432,6 +559,20 @@ export const ObjectInscriptionnotauthenticatedApiFp = function(configuration?: C
     return {
         /**
          * 
+         * @summary Fills the Inscriptionnotauthenticatedcondition in the Inscriptionnotauthenticated
+         * @param {number} pkiInscriptionnotauthenticatedID 
+         * @param {InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request} inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1(pkiInscriptionnotauthenticatedID: number, inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request: InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1(pkiInscriptionnotauthenticatedID, inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectInscriptionnotauthenticatedApi.inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Retrieve Communication count
          * @param {number} pkiInscriptionnotauthenticatedID 
          * @param {*} [options] Override http request option.
@@ -483,6 +624,19 @@ export const ObjectInscriptionnotauthenticatedApiFp = function(configuration?: C
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
+         * 
+         * @summary Retrieve Inscriptionnotauthenticated conditions
+         * @param {number} pkiInscriptionnotauthenticatedID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async inscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1(pkiInscriptionnotauthenticatedID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.inscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1(pkiInscriptionnotauthenticatedID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectInscriptionnotauthenticatedApi.inscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eInscriptionStep | TemporaryNotAuthenticated<br>ImportedInscription<br>Inscription<br>ModifiedInscription<br>ContractEnded<br>ExpiredInscription<br>Out-market<br>ImportedNotauthenticated<br>NotAuthenticated<br>ModifiedNotauthenticated<br>Authenticated |
          * @summary Retrieve Inscriptionnotauthenticated list
          * @param {InscriptionnotauthenticatedGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
@@ -524,6 +678,17 @@ export const ObjectInscriptionnotauthenticatedApiFactory = function (configurati
     return {
         /**
          * 
+         * @summary Fills the Inscriptionnotauthenticatedcondition in the Inscriptionnotauthenticated
+         * @param {number} pkiInscriptionnotauthenticatedID 
+         * @param {InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request} inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1(pkiInscriptionnotauthenticatedID: number, inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request: InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request, options?: RawAxiosRequestConfig): AxiosPromise<InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Response> {
+            return localVarFp.inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1(pkiInscriptionnotauthenticatedID, inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Retrieve Communication count
          * @param {number} pkiInscriptionnotauthenticatedID 
          * @param {*} [options] Override http request option.
@@ -563,6 +728,16 @@ export const ObjectInscriptionnotauthenticatedApiFactory = function (configurati
             return localVarFp.inscriptionnotauthenticatedGetCommunicationsendersV1(pkiInscriptionnotauthenticatedID, options).then((request) => request(axios, basePath));
         },
         /**
+         * 
+         * @summary Retrieve Inscriptionnotauthenticated conditions
+         * @param {number} pkiInscriptionnotauthenticatedID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        inscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1(pkiInscriptionnotauthenticatedID: number, options?: RawAxiosRequestConfig): AxiosPromise<InscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1Response> {
+            return localVarFp.inscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1(pkiInscriptionnotauthenticatedID, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eInscriptionStep | TemporaryNotAuthenticated<br>ImportedInscription<br>Inscription<br>ModifiedInscription<br>ContractEnded<br>ExpiredInscription<br>Out-market<br>ImportedNotauthenticated<br>NotAuthenticated<br>ModifiedNotauthenticated<br>Authenticated |
          * @summary Retrieve Inscriptionnotauthenticated list
          * @param {InscriptionnotauthenticatedGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
@@ -594,6 +769,18 @@ export const ObjectInscriptionnotauthenticatedApiFactory = function (configurati
  * ObjectInscriptionnotauthenticatedApi - object-oriented interface
  */
 export class ObjectInscriptionnotauthenticatedApi extends BaseAPI {
+    /**
+     * 
+     * @summary Fills the Inscriptionnotauthenticatedcondition in the Inscriptionnotauthenticated
+     * @param {number} pkiInscriptionnotauthenticatedID 
+     * @param {InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request} inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1(pkiInscriptionnotauthenticatedID: number, inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request: InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request, options?: RawAxiosRequestConfig) {
+        return ObjectInscriptionnotauthenticatedApiFp(this.configuration).inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1(pkiInscriptionnotauthenticatedID, inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
     /**
      * 
      * @summary Retrieve Communication count
@@ -636,6 +823,17 @@ export class ObjectInscriptionnotauthenticatedApi extends BaseAPI {
      */
     public inscriptionnotauthenticatedGetCommunicationsendersV1(pkiInscriptionnotauthenticatedID: number, options?: RawAxiosRequestConfig) {
         return ObjectInscriptionnotauthenticatedApiFp(this.configuration).inscriptionnotauthenticatedGetCommunicationsendersV1(pkiInscriptionnotauthenticatedID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Inscriptionnotauthenticated conditions
+     * @param {number} pkiInscriptionnotauthenticatedID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public inscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1(pkiInscriptionnotauthenticatedID: number, options?: RawAxiosRequestConfig) {
+        return ObjectInscriptionnotauthenticatedApiFp(this.configuration).inscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1(pkiInscriptionnotauthenticatedID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

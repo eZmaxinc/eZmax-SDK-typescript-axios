@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **eEzsignfoldertypePrivacylevel** | [**FieldEEzsignfoldertypePrivacylevel**](FieldEEzsignfoldertypePrivacylevel.md) |  | [default to undefined]
 **iEzsignfoldertypeFontsizeannotation** | **number** | Font size for annotations | [optional] [default to undefined]
 **iEzsignfoldertypeFontsizeformfield** | **number** | Font size for form fields | [optional] [default to undefined]
-**iEzsignfoldertypeSendreminderfirstdays** | **number** | The number of days before the the first reminder sending | [optional] [default to undefined]
+**iEzsignfoldertypeSendreminderfirstdays** | **number** | The number of days before the first reminder sending | [optional] [default to undefined]
 **iEzsignfoldertypeSendreminderotherdays** | **number** | The number of days after the first reminder sending | [optional] [default to undefined]
 **iEzsignfoldertypeArchivaldays** | **number** | The number of days before the archival of Ezsignfolders created using this Ezsignfoldertype | [default to undefined]
 **eEzsignfoldertypeDisposal** | [**FieldEEzsignfoldertypeDisposal**](FieldEEzsignfoldertypeDisposal.md) |  | [default to undefined]
@@ -45,6 +45,10 @@ Name | Type | Description | Notes
 **bEzsignfoldertypeReassignezsignsigner** | **boolean** | Wheter if Reassignment of signature is allowed by a signatory to another signatory or not | [optional] [default to undefined]
 **bEzsignfoldertypeReassignuser** | **boolean** | Wheter if Reassignment of signature is allowed by a user to a signatory or another user or not | [optional] [default to undefined]
 **bEzsignfoldertypeReassigngroup** | **boolean** | Wheter if Reassignment of signatures of the groups to which the user belongs is authorized by a user to himself | [optional] [default to undefined]
+**bEzsignfoldertypeSenddocumentmergetoemail** | **boolean** | Whether we send the merged documents in the email to external recipient | [optional] [default to undefined]
+**bEzsignfoldertypeSenddocumentmergetoezsignsigner** | **boolean** | Whether we send the merged documents in the email to Ezsignsigner | [optional] [default to undefined]
+**bEzsignfoldertypeSenddocumentmergetoreceivealldocument** | **boolean** | Whether we send the merged documents in the email to user and Ezsignsigner who receive all documents. | [optional] [default to undefined]
+**bEzsignfoldertypeSenddocumentmergetouser** | **boolean** | Whether we send the merged documents in the email to User | [optional] [default to undefined]
 **bEzsignfoldertypeSendsignedtoezsignsigner** | **boolean** | Whether we send an email to Ezsignsigner  when document is completed | [optional] [default to undefined]
 **bEzsignfoldertypeSendsignedtouser** | **boolean** | Whether we send an email to User who signed when document is completed | [optional] [default to undefined]
 **bEzsignfoldertypeSendattachmentezsignsigner** | **boolean** | Whether we send the Ezsigndocument in the email to Ezsignsigner | [optional] [default to undefined]
@@ -118,6 +122,10 @@ const instance: EzsignfoldertypeRequestV3 = {
     bEzsignfoldertypeReassignezsignsigner,
     bEzsignfoldertypeReassignuser,
     bEzsignfoldertypeReassigngroup,
+    bEzsignfoldertypeSenddocumentmergetoemail,
+    bEzsignfoldertypeSenddocumentmergetoezsignsigner,
+    bEzsignfoldertypeSenddocumentmergetoreceivealldocument,
+    bEzsignfoldertypeSenddocumentmergetouser,
     bEzsignfoldertypeSendsignedtoezsignsigner,
     bEzsignfoldertypeSendsignedtouser,
     bEzsignfoldertypeSendattachmentezsignsigner,

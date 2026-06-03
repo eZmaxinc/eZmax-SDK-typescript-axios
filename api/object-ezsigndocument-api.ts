@@ -36,9 +36,17 @@ import type { EzsigndocumentApplyEzsigntemplateV2Request } from '../model';
 // @ts-ignore
 import type { EzsigndocumentApplyEzsigntemplateV2Response } from '../model';
 // @ts-ignore
+import type { EzsigndocumentApplyEzsigntemplateV3Request } from '../model';
+// @ts-ignore
+import type { EzsigndocumentApplyEzsigntemplateV3Response } from '../model';
+// @ts-ignore
 import type { EzsigndocumentApplyEzsigntemplateglobalV1Request } from '../model';
 // @ts-ignore
 import type { EzsigndocumentApplyEzsigntemplateglobalV1Response } from '../model';
+// @ts-ignore
+import type { EzsigndocumentApplyEzsigntemplateglobalV2Request } from '../model';
+// @ts-ignore
+import type { EzsigndocumentApplyEzsigntemplateglobalV2Response } from '../model';
 // @ts-ignore
 import type { EzsigndocumentCreateEzsignelementsPositionedByWordV1Request } from '../model';
 // @ts-ignore
@@ -230,6 +238,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
          * @param {number} pkiEzsigndocumentID 
          * @param {EzsigndocumentApplyEzsigntemplateV2Request} ezsigndocumentApplyEzsigntemplateV2Request 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         ezsigndocumentApplyEzsigntemplateV2: async (pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateV2Request: EzsigndocumentApplyEzsigntemplateV2Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -289,10 +298,74 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
         },
         /**
          * This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
+         * @summary Apply an Ezsigntemplate to the Ezsigndocument
+         * @param {number} pkiEzsigndocumentID 
+         * @param {EzsigndocumentApplyEzsigntemplateV3Request} ezsigndocumentApplyEzsigntemplateV3Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigndocumentApplyEzsigntemplateV3: async (pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateV3Request: EzsigndocumentApplyEzsigntemplateV3Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
+            assertParamExists('ezsigndocumentApplyEzsigntemplateV3', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
+            // verify required parameter 'ezsigndocumentApplyEzsigntemplateV3Request' is not null or undefined
+            assertParamExists('ezsigndocumentApplyEzsigntemplateV3', 'ezsigndocumentApplyEzsigntemplateV3Request', ezsigndocumentApplyEzsigntemplateV3Request)
+            const localVarPath = `/3/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplate`
+                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(ezsigndocumentApplyEzsigntemplateV3Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
          * @summary Apply an Ezsigntemplateglobal to the Ezsigndocument
          * @param {number} pkiEzsigndocumentID 
          * @param {EzsigndocumentApplyEzsigntemplateglobalV1Request} ezsigndocumentApplyEzsigntemplateglobalV1Request 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         ezsigndocumentApplyEzsigntemplateglobalV1: async (pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateglobalV1Request: EzsigndocumentApplyEzsigntemplateglobalV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -328,6 +401,69 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(ezsigndocumentApplyEzsigntemplateglobalV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
+         * @summary Apply an Ezsigntemplateglobal to the Ezsigndocument
+         * @param {number} pkiEzsigndocumentID 
+         * @param {EzsigndocumentApplyEzsigntemplateglobalV2Request} ezsigndocumentApplyEzsigntemplateglobalV2Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigndocumentApplyEzsigntemplateglobalV2: async (pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateglobalV2Request: EzsigndocumentApplyEzsigntemplateglobalV2Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
+            assertParamExists('ezsigndocumentApplyEzsigntemplateglobalV2', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
+            // verify required parameter 'ezsigndocumentApplyEzsigntemplateglobalV2Request' is not null or undefined
+            assertParamExists('ezsigndocumentApplyEzsigntemplateglobalV2', 'ezsigndocumentApplyEzsigntemplateglobalV2Request', ezsigndocumentApplyEzsigntemplateglobalV2Request)
+            const localVarPath = `/2/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplateglobal`
+                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(ezsigndocumentApplyEzsigntemplateglobalV2Request, localVarRequestOptions, configuration)
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -2803,6 +2939,7 @@ export const ObjectEzsigndocumentApiFp = function(configuration?: Configuration)
          * @param {number} pkiEzsigndocumentID 
          * @param {EzsigndocumentApplyEzsigntemplateV2Request} ezsigndocumentApplyEzsigntemplateV2Request 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         async ezsigndocumentApplyEzsigntemplateV2(pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateV2Request: EzsigndocumentApplyEzsigntemplateV2Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentApplyEzsigntemplateV2Response>> {
@@ -2813,16 +2950,45 @@ export const ObjectEzsigndocumentApiFp = function(configuration?: Configuration)
         },
         /**
          * This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
+         * @summary Apply an Ezsigntemplate to the Ezsigndocument
+         * @param {number} pkiEzsigndocumentID 
+         * @param {EzsigndocumentApplyEzsigntemplateV3Request} ezsigndocumentApplyEzsigntemplateV3Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsigndocumentApplyEzsigntemplateV3(pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateV3Request: EzsigndocumentApplyEzsigntemplateV3Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentApplyEzsigntemplateV3Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigndocumentApplyEzsigntemplateV3(pkiEzsigndocumentID, ezsigndocumentApplyEzsigntemplateV3Request, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsigndocumentApi.ezsigndocumentApplyEzsigntemplateV3']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
          * @summary Apply an Ezsigntemplateglobal to the Ezsigndocument
          * @param {number} pkiEzsigndocumentID 
          * @param {EzsigndocumentApplyEzsigntemplateglobalV1Request} ezsigndocumentApplyEzsigntemplateglobalV1Request 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         async ezsigndocumentApplyEzsigntemplateglobalV1(pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateglobalV1Request: EzsigndocumentApplyEzsigntemplateglobalV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentApplyEzsigntemplateglobalV1Response>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigndocumentApplyEzsigntemplateglobalV1(pkiEzsigndocumentID, ezsigndocumentApplyEzsigntemplateglobalV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEzsigndocumentApi.ezsigndocumentApplyEzsigntemplateglobalV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
+         * @summary Apply an Ezsigntemplateglobal to the Ezsigndocument
+         * @param {number} pkiEzsigndocumentID 
+         * @param {EzsigndocumentApplyEzsigntemplateglobalV2Request} ezsigndocumentApplyEzsigntemplateglobalV2Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsigndocumentApplyEzsigntemplateglobalV2(pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateglobalV2Request: EzsigndocumentApplyEzsigntemplateglobalV2Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsigndocumentApplyEzsigntemplateglobalV2Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsigndocumentApplyEzsigntemplateglobalV2(pkiEzsigndocumentID, ezsigndocumentApplyEzsigntemplateglobalV2Request, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsigndocumentApi.ezsigndocumentApplyEzsigntemplateglobalV2']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -3401,6 +3567,7 @@ export const ObjectEzsigndocumentApiFactory = function (configuration?: Configur
          * @param {number} pkiEzsigndocumentID 
          * @param {EzsigndocumentApplyEzsigntemplateV2Request} ezsigndocumentApplyEzsigntemplateV2Request 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         ezsigndocumentApplyEzsigntemplateV2(pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateV2Request: EzsigndocumentApplyEzsigntemplateV2Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsigndocumentApplyEzsigntemplateV2Response> {
@@ -3408,14 +3575,37 @@ export const ObjectEzsigndocumentApiFactory = function (configuration?: Configur
         },
         /**
          * This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
+         * @summary Apply an Ezsigntemplate to the Ezsigndocument
+         * @param {number} pkiEzsigndocumentID 
+         * @param {EzsigndocumentApplyEzsigntemplateV3Request} ezsigndocumentApplyEzsigntemplateV3Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigndocumentApplyEzsigntemplateV3(pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateV3Request: EzsigndocumentApplyEzsigntemplateV3Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsigndocumentApplyEzsigntemplateV3Response> {
+            return localVarFp.ezsigndocumentApplyEzsigntemplateV3(pkiEzsigndocumentID, ezsigndocumentApplyEzsigntemplateV3Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
          * @summary Apply an Ezsigntemplateglobal to the Ezsigndocument
          * @param {number} pkiEzsigndocumentID 
          * @param {EzsigndocumentApplyEzsigntemplateglobalV1Request} ezsigndocumentApplyEzsigntemplateglobalV1Request 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         ezsigndocumentApplyEzsigntemplateglobalV1(pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateglobalV1Request: EzsigndocumentApplyEzsigntemplateglobalV1Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsigndocumentApplyEzsigntemplateglobalV1Response> {
             return localVarFp.ezsigndocumentApplyEzsigntemplateglobalV1(pkiEzsigndocumentID, ezsigndocumentApplyEzsigntemplateglobalV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
+         * @summary Apply an Ezsigntemplateglobal to the Ezsigndocument
+         * @param {number} pkiEzsigndocumentID 
+         * @param {EzsigndocumentApplyEzsigntemplateglobalV2Request} ezsigndocumentApplyEzsigntemplateglobalV2Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsigndocumentApplyEzsigntemplateglobalV2(pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateglobalV2Request: EzsigndocumentApplyEzsigntemplateglobalV2Request, options?: RawAxiosRequestConfig): AxiosPromise<EzsigndocumentApplyEzsigntemplateglobalV2Response> {
+            return localVarFp.ezsigndocumentApplyEzsigntemplateglobalV2(pkiEzsigndocumentID, ezsigndocumentApplyEzsigntemplateglobalV2Request, options).then((request) => request(axios, basePath));
         },
         /**
          * Using this endpoint, you can create multiple Ezsignsignatures/Ezsignformfieldgroups positioned by word at the same time.  Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
@@ -3872,6 +4062,7 @@ export class ObjectEzsigndocumentApi extends BaseAPI {
      * @param {number} pkiEzsigndocumentID 
      * @param {EzsigndocumentApplyEzsigntemplateV2Request} ezsigndocumentApplyEzsigntemplateV2Request 
      * @param {*} [options] Override http request option.
+     * @deprecated
      * @throws {RequiredError}
      */
     public ezsigndocumentApplyEzsigntemplateV2(pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateV2Request: EzsigndocumentApplyEzsigntemplateV2Request, options?: RawAxiosRequestConfig) {
@@ -3880,14 +4071,39 @@ export class ObjectEzsigndocumentApi extends BaseAPI {
 
     /**
      * This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
+     * @summary Apply an Ezsigntemplate to the Ezsigndocument
+     * @param {number} pkiEzsigndocumentID 
+     * @param {EzsigndocumentApplyEzsigntemplateV3Request} ezsigndocumentApplyEzsigntemplateV3Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public ezsigndocumentApplyEzsigntemplateV3(pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateV3Request: EzsigndocumentApplyEzsigntemplateV3Request, options?: RawAxiosRequestConfig) {
+        return ObjectEzsigndocumentApiFp(this.configuration).ezsigndocumentApplyEzsigntemplateV3(pkiEzsigndocumentID, ezsigndocumentApplyEzsigntemplateV3Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
      * @summary Apply an Ezsigntemplateglobal to the Ezsigndocument
      * @param {number} pkiEzsigndocumentID 
      * @param {EzsigndocumentApplyEzsigntemplateglobalV1Request} ezsigndocumentApplyEzsigntemplateglobalV1Request 
      * @param {*} [options] Override http request option.
+     * @deprecated
      * @throws {RequiredError}
      */
     public ezsigndocumentApplyEzsigntemplateglobalV1(pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateglobalV1Request: EzsigndocumentApplyEzsigntemplateglobalV1Request, options?: RawAxiosRequestConfig) {
         return ObjectEzsigndocumentApiFp(this.configuration).ezsigndocumentApplyEzsigntemplateglobalV1(pkiEzsigndocumentID, ezsigndocumentApplyEzsigntemplateglobalV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * This endpoint applies a predefined template to the ezsign document. This allows to automatically apply all the form and signature fields on a document in a single step.  The document must not already have fields otherwise an error will be returned.
+     * @summary Apply an Ezsigntemplateglobal to the Ezsigndocument
+     * @param {number} pkiEzsigndocumentID 
+     * @param {EzsigndocumentApplyEzsigntemplateglobalV2Request} ezsigndocumentApplyEzsigntemplateglobalV2Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public ezsigndocumentApplyEzsigntemplateglobalV2(pkiEzsigndocumentID: number, ezsigndocumentApplyEzsigntemplateglobalV2Request: EzsigndocumentApplyEzsigntemplateglobalV2Request, options?: RawAxiosRequestConfig) {
+        return ObjectEzsigndocumentApiFp(this.configuration).ezsigndocumentApplyEzsigntemplateglobalV2(pkiEzsigndocumentID, ezsigndocumentApplyEzsigntemplateglobalV2Request, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

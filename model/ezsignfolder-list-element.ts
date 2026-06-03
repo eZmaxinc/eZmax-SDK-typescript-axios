@@ -18,6 +18,9 @@
 import type { FieldEEzsignfolderCompletion } from './field-eezsignfolder-completion';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { FieldEEzsignfolderSource } from './field-eezsignfolder-source';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { FieldEEzsignfolderStep } from './field-eezsignfolder-step';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -37,6 +40,38 @@ export interface EzsignfolderListElement {
      */
     /*'fkiEzsignfoldertypeID': number;*/
     'fkiEzsignfoldertypeID': number;
+    /**
+     * The unique ID of the Ezsignbulksend
+     */
+    /*'fkiEzsignbulksendID'?: number;*/
+    'fkiEzsignbulksendID'?: number;
+    /**
+     * The description of the Ezsignbulksend
+     */
+    /*'sEzsignbulksendDescription'?: string;*/
+    'sEzsignbulksendDescription'?: string;
+    /**
+     * The unique ID of the Ezsignbulksendtransmission
+     */
+    /*'fkiEzsignbulksendtransmissionID'?: number;*/
+    'fkiEzsignbulksendtransmissionID'?: number;
+    /**
+     * The description of the Ezsignbulksendtransmission
+     */
+    /*'sEzsignbulksendtransmissionDescription'?: string;*/
+    'sEzsignbulksendtransmissionDescription'?: string;
+    /**
+     * The unique ID of the Ezsigntemplatepublic
+     */
+    /*'fkiEzsigntemplatepublicID'?: number;*/
+    'fkiEzsigntemplatepublicID'?: number;
+    /**
+     * The description of the Ezsigntemplatepublic
+     */
+    /*'sEzsigntemplatepublicDescription'?: string;*/
+    'sEzsigntemplatepublicDescription'?: string;
+    /*'eEzsignfolderSource': FieldEEzsignfolderSource;*/
+    'eEzsignfolderSource': FieldEEzsignfolderSource;
     /*'eEzsignfoldertypePrivacylevel': FieldEEzsignfoldertypePrivacylevel;*/
     'eEzsignfoldertypePrivacylevel': FieldEEzsignfoldertypePrivacylevel;
     /**
@@ -143,6 +178,11 @@ export interface EzsignfolderListElement {
      */
     /*'bEzsignfolderSigner'?: boolean;*/
     'bEzsignfolderSigner'?: boolean;
+    /**
+     * Whether the Ezsignfolder is my own or not
+     */
+    /*'bEzsignfolderIsmyown'?: boolean;*/
+    'bEzsignfolderIsmyown'?: boolean;
 }
 
 
@@ -160,6 +200,13 @@ export interface EzsignfolderListElement {
 export class DataObjectEzsignfolderListElement {
    pkiEzsignfolderID:number = 0
    fkiEzsignfoldertypeID:number = 0
+   fkiEzsignbulksendID?:number = undefined
+   sEzsignbulksendDescription?:string = undefined
+   fkiEzsignbulksendtransmissionID?:number = undefined
+   sEzsignbulksendtransmissionDescription?:string = undefined
+   fkiEzsigntemplatepublicID?:number = undefined
+   sEzsigntemplatepublicDescription?:string = undefined
+   eEzsignfolderSource:FieldEEzsignfolderSource = 'Normal'
    eEzsignfoldertypePrivacylevel:FieldEEzsignfoldertypePrivacylevel = 'User'
    sEzsignfoldertypeNameX:string = ''
    sEzsignfolderDescription:string = ''
@@ -183,6 +230,7 @@ export class DataObjectEzsignfolderListElement {
    dtEzsignfolderArchive?:string = undefined
    dtEzsignfolderDispose?:string = undefined
    bEzsignfolderSigner?:boolean = undefined
+   bEzsignfolderIsmyown?:boolean = undefined
 }
 
 /**
@@ -200,6 +248,40 @@ export class ValidationObjectEzsignfolderListElement {
       type: 'integer',
       minimum: 0,
       maximum: 65535,
+      required: true
+   }
+   fkiEzsignbulksendID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   sEzsignbulksendDescription = {
+      type: 'string',
+      required: false
+   }
+   fkiEzsignbulksendtransmissionID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   sEzsignbulksendtransmissionDescription = {
+      type: 'string',
+      required: false
+   }
+   fkiEzsigntemplatepublicID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 65535,
+      required: false
+   }
+   sEzsigntemplatepublicDescription = {
+      type: 'string',
+      pattern: /^.{0,80}$/,
+      required: false
+   }
+   eEzsignfolderSource = {
+      type: 'enum',
+      allowableValues: ['Normal','Ezsignbulksend','Ezsigntemplatepublic'],
       required: true
    }
    eEzsignfoldertypePrivacylevel = {
@@ -298,6 +380,10 @@ export class ValidationObjectEzsignfolderListElement {
       required: false
    }
    bEzsignfolderSigner = {
+      type: 'boolean',
+      required: false
+   }
+   bEzsignfolderIsmyown = {
       type: 'boolean',
       required: false
    }

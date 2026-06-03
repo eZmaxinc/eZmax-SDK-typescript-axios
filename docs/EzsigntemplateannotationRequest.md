@@ -7,8 +7,7 @@ A Ezsigntemplateannotation Object
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pkiEzsigntemplateannotationID** | **number** | The unique ID of the Ezsigntemplateannotation | [optional] [default to undefined]
-**fkiEzsigntemplatedocumentpageID** | **number** | The unique ID of the Ezsigntemplatedocumentpage | [default to undefined]
-**fkiTextstylestaticID** | **number** | The unique ID of the Textstylestatic | [default to undefined]
+**fkiEzsigntemplatedocumentID** | **number** | The unique ID of the Ezsigntemplatedocument | [default to undefined]
 **eEzsigntemplateannotationHorizontalalignment** | [**FieldEEzsigntemplateannotationHorizontalalignment**](FieldEEzsigntemplateannotationHorizontalalignment.md) |  | [default to undefined]
 **eEzsigntemplateannotationVerticalalignment** | [**FieldEEzsigntemplateannotationVerticalalignment**](FieldEEzsigntemplateannotationVerticalalignment.md) |  | [default to undefined]
 **eEzsigntemplateannotationType** | [**FieldEEzsigntemplateannotationType**](FieldEEzsigntemplateannotationType.md) |  | [default to undefined]
@@ -16,9 +15,11 @@ Name | Type | Description | Notes
 **iEzsigntemplateannotationY** | **number** | The y of the Ezsigntemplateannotation | [default to undefined]
 **iEzsigntemplateannotationWidth** | **number** | The width of the Ezsigntemplateannotation | [default to undefined]
 **iEzsigntemplateannotationHeight** | **number** | The height of the Ezsigntemplateannotation | [default to undefined]
+**iEzsigntemplatedocumentpagePagenumber** | **number** | The page number in the Ezsigntemplatedocument | [default to undefined]
 **sEzsigntemplateannotationDescription** | **string** | The description of the Ezsigntemplateannotation | [default to undefined]
 **sEzsigntemplateannotationDefaulttext** | **string** | The defaulttext of the Ezsigntemplateannotation | [default to undefined]
-**sEzsigntemplateannotationnDropdownvalues** | **string** | The ndropdownvalues of the Ezsigntemplateannotation | [default to undefined]
+**sEzsigntemplateannotationDropdownvalues** | **string** | The ndropdownvalues of the Ezsigntemplateannotation | [default to undefined]
+**objTextstylestatic** | [**TextstylestaticRequestCompound**](TextstylestaticRequestCompound.md) |  | [optional] [default to undefined]
 
 ## Example
 
@@ -27,8 +28,7 @@ import { EzsigntemplateannotationRequest } from '@ezmaxinc/ezmax-sdk-typescript-
 
 const instance: EzsigntemplateannotationRequest = {
     pkiEzsigntemplateannotationID,
-    fkiEzsigntemplatedocumentpageID,
-    fkiTextstylestaticID,
+    fkiEzsigntemplatedocumentID,
     eEzsigntemplateannotationHorizontalalignment,
     eEzsigntemplateannotationVerticalalignment,
     eEzsigntemplateannotationType,
@@ -36,9 +36,11 @@ const instance: EzsigntemplateannotationRequest = {
     iEzsigntemplateannotationY,
     iEzsigntemplateannotationWidth,
     iEzsigntemplateannotationHeight,
+    iEzsigntemplatedocumentpagePagenumber,
     sEzsigntemplateannotationDescription,
     sEzsigntemplateannotationDefaulttext,
-    sEzsigntemplateannotationnDropdownvalues,
+    sEzsigntemplateannotationDropdownvalues,
+    objTextstylestatic,
 };
 ```
 

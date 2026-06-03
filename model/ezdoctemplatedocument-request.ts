@@ -47,8 +47,8 @@ export interface EzdoctemplatedocumentRequest {
     /**
      * The unique ID of the Ezdoctemplatefieldtypecategory
      */
-    /*'fkiEzdoctemplatefieldtypecategoryID': number;*/
-    'fkiEzdoctemplatefieldtypecategoryID': number;
+    /*'fkiEzdoctemplatefieldtypecategoryID'?: number;*/
+    'fkiEzdoctemplatefieldtypecategoryID'?: number;
     /*'eEzdoctemplatedocumentPrivacylevel'?: FieldEEzdoctemplatedocumentPrivacylevel;*/
     'eEzdoctemplatedocumentPrivacylevel'?: FieldEEzdoctemplatedocumentPrivacylevel;
     /**
@@ -81,7 +81,7 @@ export class DataObjectEzdoctemplatedocumentRequest {
    fkiLanguageID:number = 0
    fkiEzsignfoldertypeID?:number = undefined
    fkiEzdoctemplatetypeID:number = 0
-   fkiEzdoctemplatefieldtypecategoryID:number = 0
+   fkiEzdoctemplatefieldtypecategoryID?:number = undefined
    eEzdoctemplatedocumentPrivacylevel?:FieldEEzdoctemplatedocumentPrivacylevel = undefined
    bEzdoctemplatedocumentIsactive:boolean = false
    objEzdoctemplatedocumentName:MultilingualEzdoctemplatedocumentName = new DataObjectMultilingualEzdoctemplatedocumentName()
@@ -121,7 +121,7 @@ export class ValidationObjectEzdoctemplatedocumentRequest {
       type: 'integer',
       minimum: 0,
       maximum: 255,
-      required: true
+      required: false
    }
    eEzdoctemplatedocumentPrivacylevel = {
       type: 'enum',

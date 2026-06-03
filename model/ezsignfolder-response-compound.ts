@@ -131,7 +131,7 @@ export interface EzsignfolderResponseCompound {
      */
     eEzsignfolderSendreminderfrequency?:FieldEEzsignfolderSendreminderfrequency 
     /**
-     * The number of days before the the first reminder sending
+     * The number of days before the first reminder sending
      * @type {number}
      * @memberof EzsignfolderResponseCompound
      */

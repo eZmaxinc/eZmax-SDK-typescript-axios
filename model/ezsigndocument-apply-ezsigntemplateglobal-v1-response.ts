@@ -28,7 +28,7 @@ import type { CommonResponseWarning } from './common-response-warning';
 
 /**
  * @type EzsigndocumentApplyEzsigntemplateglobalV1Response
- * Response for POST /2/object/ezsigndocument/{pkiEzsigndocument}/applyEzsigntemplate
+ * Response for POST /1/object/ezsigndocument/{pkiEzsigndocument}/applyEzsigntemplateglobal
  */
 /*export type EzsigndocumentApplyEzsigntemplateglobalV1Response = CommonResponse;*/
 export interface EzsigndocumentApplyEzsigntemplateglobalV1Response {

@@ -54,6 +54,8 @@ import type { UserGetColleaguesV2Response } from '../model';
 // @ts-ignore
 import type { UserGetEffectivePermissionsV1Response } from '../model';
 // @ts-ignore
+import type { UserGetEzmaxcustomeruserV1Response } from '../model';
+// @ts-ignore
 import type { UserGetListV1Response } from '../model';
 // @ts-ignore
 import type { UserGetObjectV2Response } from '../model';
@@ -65,6 +67,10 @@ import type { UserGetSubnetsV1Response } from '../model';
 import type { UserGetUsergroupexternalsV1Response } from '../model';
 // @ts-ignore
 import type { UserGetUsergroupsV1Response } from '../model';
+// @ts-ignore
+import type { UserImpersonateV1Request } from '../model';
+// @ts-ignore
+import type { UserImpersonateV1Response } from '../model';
 // @ts-ignore
 import type { UserSendPasswordResetV1Response } from '../model';
 // @ts-ignore
@@ -631,6 +637,64 @@ export const ObjectUserApiAxiosParamCreator = function (configuration?: Configur
             };
         },
         /**
+         * Returns the Ezmaxcustomeruser for the User
+         * @summary Returns the Ezmaxcustomeruser for the User
+         * @param {number} pkiUserID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        userGetEzmaxcustomeruserV1: async (pkiUserID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiUserID' is not null or undefined
+            assertParamExists('userGetEzmaxcustomeruserV1', 'pkiUserID', pkiUserID)
+            const localVarPath = `/1/object/user/{pkiUserID}/getEzmaxcustomeruser`
+                .replace(`{${"pkiUserID"}}`, encodeURIComponent(String(pkiUserID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eUserType | AgentBroker<br>Assistant<br>Employee<br>EzsignUser<br>Normal | | eUserOrigin | BuiltIn<br>External | | eUserEzsignaccess | No<br>PaidByOffice<br>PerDocument<br>Prepaid |
          * @summary Retrieve User list
          * @param {UserGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
@@ -1001,6 +1065,69 @@ export const ObjectUserApiAxiosParamCreator = function (configuration?: Configur
             };
         },
         /**
+         * Using this endpoint, you can impersonate the user.
+         * @summary Impersonate the user
+         * @param {number} pkiUserID 
+         * @param {UserImpersonateV1Request} userImpersonateV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        userImpersonateV1: async (pkiUserID: number, userImpersonateV1Request: UserImpersonateV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiUserID' is not null or undefined
+            assertParamExists('userImpersonateV1', 'pkiUserID', pkiUserID)
+            // verify required parameter 'userImpersonateV1Request' is not null or undefined
+            assertParamExists('userImpersonateV1', 'userImpersonateV1Request', userImpersonateV1Request)
+            const localVarPath = `/1/object/user/{pkiUserID}/impersonate`
+                .replace(`{${"pkiUserID"}}`, encodeURIComponent(String(pkiUserID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(userImpersonateV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Send the password reset email
          * @summary Send password reset
          * @param {number} pkiUserID 
@@ -1197,6 +1324,19 @@ export const ObjectUserApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
+         * Returns the Ezmaxcustomeruser for the User
+         * @summary Returns the Ezmaxcustomeruser for the User
+         * @param {number} pkiUserID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async userGetEzmaxcustomeruserV1(pkiUserID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserGetEzmaxcustomeruserV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.userGetEzmaxcustomeruserV1(pkiUserID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectUserApi.userGetEzmaxcustomeruserV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eUserType | AgentBroker<br>Assistant<br>Employee<br>EzsignUser<br>Normal | | eUserOrigin | BuiltIn<br>External | | eUserEzsignaccess | No<br>PaidByOffice<br>PerDocument<br>Prepaid |
          * @summary Retrieve User list
          * @param {UserGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
@@ -1276,6 +1416,20 @@ export const ObjectUserApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.userGetUsergroupsV1(pkiUserID, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectUserApi.userGetUsergroupsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * Using this endpoint, you can impersonate the user.
+         * @summary Impersonate the user
+         * @param {number} pkiUserID 
+         * @param {UserImpersonateV1Request} userImpersonateV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async userImpersonateV1(pkiUserID: number, userImpersonateV1Request: UserImpersonateV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<UserImpersonateV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.userImpersonateV1(pkiUserID, userImpersonateV1Request, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectUserApi.userImpersonateV1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -1399,6 +1553,16 @@ export const ObjectUserApiFactory = function (configuration?: Configuration, bas
             return localVarFp.userGetEffectivePermissionsV1(pkiUserID, options).then((request) => request(axios, basePath));
         },
         /**
+         * Returns the Ezmaxcustomeruser for the User
+         * @summary Returns the Ezmaxcustomeruser for the User
+         * @param {number} pkiUserID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        userGetEzmaxcustomeruserV1(pkiUserID: number, options?: RawAxiosRequestConfig): AxiosPromise<UserGetEzmaxcustomeruserV1Response> {
+            return localVarFp.userGetEzmaxcustomeruserV1(pkiUserID, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eUserType | AgentBroker<br>Assistant<br>Employee<br>EzsignUser<br>Normal | | eUserOrigin | BuiltIn<br>External | | eUserEzsignaccess | No<br>PaidByOffice<br>PerDocument<br>Prepaid |
          * @summary Retrieve User list
          * @param {UserGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
@@ -1461,6 +1625,17 @@ export const ObjectUserApiFactory = function (configuration?: Configuration, bas
          */
         userGetUsergroupsV1(pkiUserID: number, options?: RawAxiosRequestConfig): AxiosPromise<UserGetUsergroupsV1Response> {
             return localVarFp.userGetUsergroupsV1(pkiUserID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Using this endpoint, you can impersonate the user.
+         * @summary Impersonate the user
+         * @param {number} pkiUserID 
+         * @param {UserImpersonateV1Request} userImpersonateV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        userImpersonateV1(pkiUserID: number, userImpersonateV1Request: UserImpersonateV1Request, options?: RawAxiosRequestConfig): AxiosPromise<UserImpersonateV1Response> {
+            return localVarFp.userImpersonateV1(pkiUserID, userImpersonateV1Request, options).then((request) => request(axios, basePath));
         },
         /**
          * Send the password reset email
@@ -1587,6 +1762,17 @@ export class ObjectUserApi extends BaseAPI {
     }
 
     /**
+     * Returns the Ezmaxcustomeruser for the User
+     * @summary Returns the Ezmaxcustomeruser for the User
+     * @param {number} pkiUserID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public userGetEzmaxcustomeruserV1(pkiUserID: number, options?: RawAxiosRequestConfig) {
+        return ObjectUserApiFp(this.configuration).userGetEzmaxcustomeruserV1(pkiUserID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eUserType | AgentBroker<br>Assistant<br>Employee<br>EzsignUser<br>Normal | | eUserOrigin | BuiltIn<br>External | | eUserEzsignaccess | No<br>PaidByOffice<br>PerDocument<br>Prepaid |
      * @summary Retrieve User list
      * @param {UserGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
@@ -1657,6 +1843,18 @@ export class ObjectUserApi extends BaseAPI {
     }
 
     /**
+     * Using this endpoint, you can impersonate the user.
+     * @summary Impersonate the user
+     * @param {number} pkiUserID 
+     * @param {UserImpersonateV1Request} userImpersonateV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public userImpersonateV1(pkiUserID: number, userImpersonateV1Request: UserImpersonateV1Request, options?: RawAxiosRequestConfig) {
+        return ObjectUserApiFp(this.configuration).userImpersonateV1(pkiUserID, userImpersonateV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * Send the password reset email
      * @summary Send password reset
      * @param {number} pkiUserID 
@@ -1671,6 +1869,7 @@ export class ObjectUserApi extends BaseAPI {
 
 export const UserGetAutocompleteV2SSelectorEnum = {
     AgentBrokerAssistant: 'AgentBrokerAssistant',
+    AgentBrokerEmployeeEzsignUserNormalWithoutEzmaxpartner: 'AgentBrokerEmployeeEzsignUserNormalWithoutEzmaxpartner',
     AgentBrokerEmployeeEzsignUserNormal: 'AgentBrokerEmployeeEzsignUserNormal',
     AgentBrokerEmployeeNormalBuiltIn: 'AgentBrokerEmployeeNormalBuiltIn',
     AgentBrokerEzsignuserNormal: 'AgentBrokerEzsignuserNormal',
@@ -1707,6 +1906,8 @@ export const UserGetListV1EOrderByEnum = {
     dtUserEzsignprepaidexpiration_ASC: 'dtUserEzsignprepaidexpiration_ASC',
     dtUserEzsignprepaidexpiration_DESC: 'dtUserEzsignprepaidexpiration_DESC',
     sEmailAddress_ASC: 'sEmailAddress_ASC',
-    sEmailAddress_DESC: 'sEmailAddress_DESC'
+    sEmailAddress_DESC: 'sEmailAddress_DESC',
+    bUserSuspended_ASC: 'bUserSuspended_ASC',
+    bUserSuspended_DESC: 'bUserSuspended_DESC'
 } as const;
 export type UserGetListV1EOrderByEnum = typeof UserGetListV1EOrderByEnum[keyof typeof UserGetListV1EOrderByEnum];
