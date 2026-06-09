@@ -25,7 +25,7 @@ export const FieldEActivesessionWeekdaystart = {
     Wednesday: 'Wednesday',
     Thursday: 'Thursday',
     Friday: 'Friday',
-    Saturday: 'Saturday'
+    Saturday: 'Saturday',
 } as const;
 
 export type FieldEActivesessionWeekdaystart = typeof FieldEActivesessionWeekdaystart[keyof typeof FieldEActivesessionWeekdaystart];

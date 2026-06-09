@@ -119,7 +119,7 @@ export const ObjectEzsignsigningreasonApiAxiosParamCreator = function (configura
             // verify required parameter 'ezsignsigningreasonEditObjectV1Request' is not null or undefined
             assertParamExists('ezsignsigningreasonEditObjectV1', 'ezsignsigningreasonEditObjectV1Request', ezsignsigningreasonEditObjectV1Request)
             const localVarPath = `/1/object/ezsignsigningreason/{pkiEzsignsigningreasonID}`
-                .replace(`{${"pkiEzsignsigningreasonID"}}`, encodeURIComponent(String(pkiEzsignsigningreasonID)));
+                .replace('{pkiEzsignsigningreasonID}', encodeURIComponent(String(pkiEzsignsigningreasonID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -182,7 +182,7 @@ export const ObjectEzsignsigningreasonApiAxiosParamCreator = function (configura
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('ezsignsigningreasonGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/ezsignsigningreason/getAutocomplete/{sSelector}`
-                .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
+                .replace('{sSelector}', encodeURIComponent(String(sSelector)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -333,7 +333,7 @@ export const ObjectEzsignsigningreasonApiAxiosParamCreator = function (configura
             // verify required parameter 'pkiEzsignsigningreasonID' is not null or undefined
             assertParamExists('ezsignsigningreasonGetObjectV2', 'pkiEzsignsigningreasonID', pkiEzsignsigningreasonID)
             const localVarPath = `/2/object/ezsignsigningreason/{pkiEzsignsigningreasonID}`
-                .replace(`{${"pkiEzsignsigningreasonID"}}`, encodeURIComponent(String(pkiEzsignsigningreasonID)));
+                .replace('{pkiEzsignsigningreasonID}', encodeURIComponent(String(pkiEzsignsigningreasonID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -602,13 +602,13 @@ export class ObjectEzsignsigningreasonApi extends BaseAPI {
 
 export const EzsignsigningreasonGetAutocompleteV2SSelectorEnum = {
     All: 'All',
-    Active: 'Active'
+    Active: 'Active',
 } as const;
 export type EzsignsigningreasonGetAutocompleteV2SSelectorEnum = typeof EzsignsigningreasonGetAutocompleteV2SSelectorEnum[keyof typeof EzsignsigningreasonGetAutocompleteV2SSelectorEnum];
 export const EzsignsigningreasonGetAutocompleteV2EFilterActiveEnum = {
     All: 'All',
     Active: 'Active',
-    Inactive: 'Inactive'
+    Inactive: 'Inactive',
 } as const;
 export type EzsignsigningreasonGetAutocompleteV2EFilterActiveEnum = typeof EzsignsigningreasonGetAutocompleteV2EFilterActiveEnum[keyof typeof EzsignsigningreasonGetAutocompleteV2EFilterActiveEnum];
 export const EzsignsigningreasonGetListV1EOrderByEnum = {
@@ -617,6 +617,6 @@ export const EzsignsigningreasonGetListV1EOrderByEnum = {
     sEzsignsigningreasonDescriptionX_ASC: 'sEzsignsigningreasonDescriptionX_ASC',
     sEzsignsigningreasonDescriptionX_DESC: 'sEzsignsigningreasonDescriptionX_DESC',
     bEzsignsigningreasonIsactive_ASC: 'bEzsignsigningreasonIsactive_ASC',
-    bEzsignsigningreasonIsactive_DESC: 'bEzsignsigningreasonIsactive_DESC'
+    bEzsignsigningreasonIsactive_DESC: 'bEzsignsigningreasonIsactive_DESC',
 } as const;
 export type EzsignsigningreasonGetListV1EOrderByEnum = typeof EzsignsigningreasonGetListV1EOrderByEnum[keyof typeof EzsignsigningreasonGetListV1EOrderByEnum];

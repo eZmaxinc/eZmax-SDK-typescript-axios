@@ -27,7 +27,7 @@ export const FieldEEzsigndocumentStep = {
     PrematurelyEnded: 'PrematurelyEnded',
     PendingCompletion: 'PendingCompletion',
     Completed: 'Completed',
-    Disposed: 'Disposed'
+    Disposed: 'Disposed',
 } as const;
 
 export type FieldEEzsigndocumentStep = typeof FieldEEzsigndocumentStep[keyof typeof FieldEEzsigndocumentStep];

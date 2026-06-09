@@ -20,7 +20,7 @@
 
 export const ComputedECommunicationDirection = {
     Outbound: 'Outbound',
-    Inbound: 'Inbound'
+    Inbound: 'Inbound',
 } as const;
 
 export type ComputedECommunicationDirection = typeof ComputedECommunicationDirection[keyof typeof ComputedECommunicationDirection];

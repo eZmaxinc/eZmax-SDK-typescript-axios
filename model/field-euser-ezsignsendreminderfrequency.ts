@@ -21,7 +21,7 @@
 export const FieldEUserEzsignsendreminderfrequency = {
     None: 'None',
     Daily: 'Daily',
-    Weekly: 'Weekly'
+    Weekly: 'Weekly',
 } as const;
 
 export type FieldEUserEzsignsendreminderfrequency = typeof FieldEUserEzsignsendreminderfrequency[keyof typeof FieldEUserEzsignsendreminderfrequency];

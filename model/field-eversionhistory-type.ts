@@ -23,7 +23,7 @@ export const FieldEVersionhistoryType = {
     NewFeature: 'NewFeature',
     Correction: 'Correction',
     Modification: 'Modification',
-    ImportantMessage: 'ImportantMessage'
+    ImportantMessage: 'ImportantMessage',
 } as const;
 
 export type FieldEVersionhistoryType = typeof FieldEVersionhistoryType[keyof typeof FieldEVersionhistoryType];

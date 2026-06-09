@@ -22,7 +22,7 @@ export const ComputedEEzsignfolderAccess = {
     Signer: 'Signer',
     Read: 'Read',
     Modify: 'Modify',
-    Full: 'Full'
+    Full: 'Full',
 } as const;
 
 export type ComputedEEzsignfolderAccess = typeof ComputedEEzsignfolderAccess[keyof typeof ComputedEEzsignfolderAccess];

@@ -46,7 +46,7 @@ export const ObjectNotificationsectionApiAxiosParamCreator = function (configura
             // verify required parameter 'bShowHidden' is not null or undefined
             assertParamExists('notificationsectionGetNotificationtestsV1', 'bShowHidden', bShowHidden)
             const localVarPath = `/1/object/notificationsection/{pkiNotificationsectionID}/getNotificationtests`
-                .replace(`{${"pkiNotificationsectionID"}}`, encodeURIComponent(String(pkiNotificationsectionID)));
+                .replace('{pkiNotificationsectionID}', encodeURIComponent(String(pkiNotificationsectionID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath

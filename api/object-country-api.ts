@@ -46,7 +46,7 @@ export const ObjectCountryApiAxiosParamCreator = function (configuration?: Confi
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('countryGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/country/getAutocomplete/{sSelector}`
-                .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
+                .replace('{sSelector}', encodeURIComponent(String(sSelector)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -176,12 +176,12 @@ export class ObjectCountryApi extends BaseAPI {
 }
 
 export const CountryGetAutocompleteV2SSelectorEnum = {
-    All: 'All'
+    All: 'All',
 } as const;
 export type CountryGetAutocompleteV2SSelectorEnum = typeof CountryGetAutocompleteV2SSelectorEnum[keyof typeof CountryGetAutocompleteV2SSelectorEnum];
 export const CountryGetAutocompleteV2EFilterActiveEnum = {
     All: 'All',
     Active: 'Active',
-    Inactive: 'Inactive'
+    Inactive: 'Inactive',
 } as const;
 export type CountryGetAutocompleteV2EFilterActiveEnum = typeof CountryGetAutocompleteV2EFilterActiveEnum[keyof typeof CountryGetAutocompleteV2EFilterActiveEnum];

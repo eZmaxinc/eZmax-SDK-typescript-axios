@@ -21,7 +21,7 @@
 export const HeaderAcceptLanguage = {
     Star: '*',
     en: 'en',
-    fr: 'fr'
+    fr: 'fr',
 } as const;
 
 export type HeaderAcceptLanguage = typeof HeaderAcceptLanguage[keyof typeof HeaderAcceptLanguage];

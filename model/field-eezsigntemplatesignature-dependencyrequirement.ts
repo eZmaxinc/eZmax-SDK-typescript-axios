@@ -20,7 +20,7 @@
 
 export const FieldEEzsigntemplatesignatureDependencyrequirement = {
     AllOf: 'AllOf',
-    AnyOf: 'AnyOf'
+    AnyOf: 'AnyOf',
 } as const;
 
 export type FieldEEzsigntemplatesignatureDependencyrequirement = typeof FieldEEzsigntemplatesignatureDependencyrequirement[keyof typeof FieldEEzsigntemplatesignatureDependencyrequirement];

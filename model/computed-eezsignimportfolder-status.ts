@@ -20,7 +20,7 @@
 
 export const ComputedEEzsignimportfolderStatus = {
     Pending: 'Pending',
-    Complete: 'Complete'
+    Complete: 'Complete',
 } as const;
 
 export type ComputedEEzsignimportfolderStatus = typeof ComputedEEzsignimportfolderStatus[keyof typeof ComputedEEzsignimportfolderStatus];

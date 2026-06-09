@@ -23,7 +23,7 @@ export const FieldECustomerType = {
     Vetrx_Server: 'Vetrx-Server',
     Reward_Administration: 'Reward-Administration',
     Reward_Representative: 'Reward-Representative',
-    Reward_Server: 'Reward-Server'
+    Reward_Server: 'Reward-Server',
 } as const;
 
 export type FieldECustomerType = typeof FieldECustomerType[keyof typeof FieldECustomerType];

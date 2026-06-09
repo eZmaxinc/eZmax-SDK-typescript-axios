@@ -53,7 +53,7 @@ export const ObjectElectronicfundstransferApiAxiosParamCreator = function (confi
             // verify required parameter 'pkiElectronicfundstransferID' is not null or undefined
             assertParamExists('electronicfundstransferGetCommunicationCountV1', 'pkiElectronicfundstransferID', pkiElectronicfundstransferID)
             const localVarPath = `/1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/getCommunicationCount`
-                .replace(`{${"pkiElectronicfundstransferID"}}`, encodeURIComponent(String(pkiElectronicfundstransferID)));
+                .replace('{pkiElectronicfundstransferID}', encodeURIComponent(String(pkiElectronicfundstransferID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -111,7 +111,7 @@ export const ObjectElectronicfundstransferApiAxiosParamCreator = function (confi
             // verify required parameter 'pkiElectronicfundstransferID' is not null or undefined
             assertParamExists('electronicfundstransferGetCommunicationListV1', 'pkiElectronicfundstransferID', pkiElectronicfundstransferID)
             const localVarPath = `/1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/getCommunicationList`
-                .replace(`{${"pkiElectronicfundstransferID"}}`, encodeURIComponent(String(pkiElectronicfundstransferID)));
+                .replace('{pkiElectronicfundstransferID}', encodeURIComponent(String(pkiElectronicfundstransferID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -169,7 +169,7 @@ export const ObjectElectronicfundstransferApiAxiosParamCreator = function (confi
             // verify required parameter 'pkiElectronicfundstransferID' is not null or undefined
             assertParamExists('electronicfundstransferGetCommunicationrecipientsV1', 'pkiElectronicfundstransferID', pkiElectronicfundstransferID)
             const localVarPath = `/1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/getCommunicationrecipients`
-                .replace(`{${"pkiElectronicfundstransferID"}}`, encodeURIComponent(String(pkiElectronicfundstransferID)));
+                .replace('{pkiElectronicfundstransferID}', encodeURIComponent(String(pkiElectronicfundstransferID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -227,7 +227,7 @@ export const ObjectElectronicfundstransferApiAxiosParamCreator = function (confi
             // verify required parameter 'pkiElectronicfundstransferID' is not null or undefined
             assertParamExists('electronicfundstransferGetCommunicationsendersV1', 'pkiElectronicfundstransferID', pkiElectronicfundstransferID)
             const localVarPath = `/1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/getCommunicationsenders`
-                .replace(`{${"pkiElectronicfundstransferID"}}`, encodeURIComponent(String(pkiElectronicfundstransferID)));
+                .replace('{pkiElectronicfundstransferID}', encodeURIComponent(String(pkiElectronicfundstransferID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -288,7 +288,7 @@ export const ObjectElectronicfundstransferApiAxiosParamCreator = function (confi
             // verify required parameter 'electronicfundstransferImportIntoEDMV1Request' is not null or undefined
             assertParamExists('electronicfundstransferImportIntoEDMV1', 'electronicfundstransferImportIntoEDMV1Request', electronicfundstransferImportIntoEDMV1Request)
             const localVarPath = `/1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/importIntoEDM`
-                .replace(`{${"pkiElectronicfundstransferID"}}`, encodeURIComponent(String(pkiElectronicfundstransferID)));
+                .replace('{pkiElectronicfundstransferID}', encodeURIComponent(String(pkiElectronicfundstransferID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath

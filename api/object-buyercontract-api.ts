@@ -57,7 +57,7 @@ export const ObjectBuyercontractApiAxiosParamCreator = function (configuration?:
             // verify required parameter 'pkiBuyercontractID' is not null or undefined
             assertParamExists('buyercontractGetCommunicationCountV1', 'pkiBuyercontractID', pkiBuyercontractID)
             const localVarPath = `/1/object/buyercontract/{pkiBuyercontractID}/getCommunicationCount`
-                .replace(`{${"pkiBuyercontractID"}}`, encodeURIComponent(String(pkiBuyercontractID)));
+                .replace('{pkiBuyercontractID}', encodeURIComponent(String(pkiBuyercontractID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -115,7 +115,7 @@ export const ObjectBuyercontractApiAxiosParamCreator = function (configuration?:
             // verify required parameter 'pkiBuyercontractID' is not null or undefined
             assertParamExists('buyercontractGetCommunicationListV1', 'pkiBuyercontractID', pkiBuyercontractID)
             const localVarPath = `/1/object/buyercontract/{pkiBuyercontractID}/getCommunicationList`
-                .replace(`{${"pkiBuyercontractID"}}`, encodeURIComponent(String(pkiBuyercontractID)));
+                .replace('{pkiBuyercontractID}', encodeURIComponent(String(pkiBuyercontractID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -173,7 +173,7 @@ export const ObjectBuyercontractApiAxiosParamCreator = function (configuration?:
             // verify required parameter 'pkiBuyercontractID' is not null or undefined
             assertParamExists('buyercontractGetCommunicationrecipientsV1', 'pkiBuyercontractID', pkiBuyercontractID)
             const localVarPath = `/1/object/buyercontract/{pkiBuyercontractID}/getCommunicationrecipients`
-                .replace(`{${"pkiBuyercontractID"}}`, encodeURIComponent(String(pkiBuyercontractID)));
+                .replace('{pkiBuyercontractID}', encodeURIComponent(String(pkiBuyercontractID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -231,7 +231,7 @@ export const ObjectBuyercontractApiAxiosParamCreator = function (configuration?:
             // verify required parameter 'pkiBuyercontractID' is not null or undefined
             assertParamExists('buyercontractGetCommunicationsendersV1', 'pkiBuyercontractID', pkiBuyercontractID)
             const localVarPath = `/1/object/buyercontract/{pkiBuyercontractID}/getCommunicationsenders`
-                .replace(`{${"pkiBuyercontractID"}}`, encodeURIComponent(String(pkiBuyercontractID)));
+                .replace('{pkiBuyercontractID}', encodeURIComponent(String(pkiBuyercontractID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -372,7 +372,7 @@ export const ObjectBuyercontractApiAxiosParamCreator = function (configuration?:
             // verify required parameter 'buyercontractImportIntoEDMV1Request' is not null or undefined
             assertParamExists('buyercontractImportIntoEDMV1', 'buyercontractImportIntoEDMV1Request', buyercontractImportIntoEDMV1Request)
             const localVarPath = `/1/object/buyercontract/{pkiBuyercontractID}/importIntoEDM`
-                .replace(`{${"pkiBuyercontractID"}}`, encodeURIComponent(String(pkiBuyercontractID)));
+                .replace('{pkiBuyercontractID}', encodeURIComponent(String(pkiBuyercontractID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -686,6 +686,6 @@ export const BuyercontractGetListV1EOrderByEnum = {
     dtBuyercontractExpirationdate_ASC: 'dtBuyercontractExpirationdate_ASC',
     dtBuyercontractExpirationdate_DESC: 'dtBuyercontractExpirationdate_DESC',
     bBuyercontractIsactive_ASC: 'bBuyercontractIsactive_ASC',
-    bBuyercontractIsactive_DESC: 'bBuyercontractIsactive_DESC'
+    bBuyercontractIsactive_DESC: 'bBuyercontractIsactive_DESC',
 } as const;
 export type BuyercontractGetListV1EOrderByEnum = typeof BuyercontractGetListV1EOrderByEnum[keyof typeof BuyercontractGetListV1EOrderByEnum];

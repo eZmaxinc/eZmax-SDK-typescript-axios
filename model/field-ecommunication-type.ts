@@ -21,7 +21,7 @@
 export const FieldECommunicationType = {
     Email: 'Email',
     Fax: 'Fax',
-    Sms: 'Sms'
+    Sms: 'Sms',
 } as const;
 
 export type FieldECommunicationType = typeof FieldECommunicationType[keyof typeof FieldECommunicationType];

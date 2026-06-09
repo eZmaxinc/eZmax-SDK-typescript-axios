@@ -40,7 +40,7 @@ export const CustomAttachmentPrepareFilesTransferResponseEAttachmentActionEnum =
     Discard: 'Discard',
     Overwrite: 'Overwrite',
     Reject: 'Reject',
-    Restore: 'Restore'
+    Restore: 'Restore',
 } as const;
 
 export type CustomAttachmentPrepareFilesTransferResponseEAttachmentActionEnum = typeof CustomAttachmentPrepareFilesTransferResponseEAttachmentActionEnum[keyof typeof CustomAttachmentPrepareFilesTransferResponseEAttachmentActionEnum];

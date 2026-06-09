@@ -132,7 +132,7 @@ export const ObjectLeadApiAxiosParamCreator = function (configuration?: Configur
             // verify required parameter 'leadImportIntoEDMV1Request' is not null or undefined
             assertParamExists('leadImportIntoEDMV1', 'leadImportIntoEDMV1Request', leadImportIntoEDMV1Request)
             const localVarPath = `/1/object/lead/{pkiLeadID}/importIntoEDM`
-                .replace(`{${"pkiLeadID"}}`, encodeURIComponent(String(pkiLeadID)));
+                .replace('{pkiLeadID}', encodeURIComponent(String(pkiLeadID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -304,6 +304,6 @@ export const LeadGetListV1EOrderByEnum = {
     bLeadIsactive_ASC: 'bLeadIsactive_ASC',
     bLeadIsactive_DESC: 'bLeadIsactive_DESC',
     sLeadCode_ASC: 'sLeadCode_ASC',
-    sLeadCode_DESC: 'sLeadCode_DESC'
+    sLeadCode_DESC: 'sLeadCode_DESC',
 } as const;
 export type LeadGetListV1EOrderByEnum = typeof LeadGetListV1EOrderByEnum[keyof typeof LeadGetListV1EOrderByEnum];

@@ -42,7 +42,7 @@ export interface CommonFile {
 
 export const CommonFileEFileSourceEnum = {
     Base64: 'Base64',
-    Url: 'Url'
+    Url: 'Url',
 } as const;
 
 export type CommonFileEFileSourceEnum = typeof CommonFileEFileSourceEnum[keyof typeof CommonFileEFileSourceEnum];

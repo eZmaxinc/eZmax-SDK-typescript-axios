@@ -21,7 +21,7 @@
 export const FieldEBuyercontractType = {
     Rent: 'Rent',
     Sale: 'Sale',
-    RentOrSale: 'RentOrSale'
+    RentOrSale: 'RentOrSale',
 } as const;
 
 export type FieldEBuyercontractType = typeof FieldEBuyercontractType[keyof typeof FieldEBuyercontractType];

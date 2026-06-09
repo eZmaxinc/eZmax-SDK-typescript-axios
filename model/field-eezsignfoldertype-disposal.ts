@@ -21,7 +21,7 @@
 export const FieldEEzsignfoldertypeDisposal = {
     No: 'No',
     Manual: 'Manual',
-    Automatic: 'Automatic'
+    Automatic: 'Automatic',
 } as const;
 
 export type FieldEEzsignfoldertypeDisposal = typeof FieldEEzsignfoldertypeDisposal[keyof typeof FieldEEzsignfoldertypeDisposal];

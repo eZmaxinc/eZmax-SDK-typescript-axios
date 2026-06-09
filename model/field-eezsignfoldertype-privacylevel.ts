@@ -20,7 +20,7 @@
 
 export const FieldEEzsignfoldertypePrivacylevel = {
     User: 'User',
-    Usergroup: 'Usergroup'
+    Usergroup: 'Usergroup',
 } as const;
 
 export type FieldEEzsignfoldertypePrivacylevel = typeof FieldEEzsignfoldertypePrivacylevel[keyof typeof FieldEEzsignfoldertypePrivacylevel];

@@ -46,7 +46,7 @@ export const ObjectModuleApiAxiosParamCreator = function (configuration?: Config
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('moduleGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/module/getAutocomplete/{sSelector}`
-                .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
+                .replace('{sSelector}', encodeURIComponent(String(sSelector)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -176,12 +176,12 @@ export class ObjectModuleApi extends BaseAPI {
 }
 
 export const ModuleGetAutocompleteV2SSelectorEnum = {
-    Forms: 'Forms'
+    Forms: 'Forms',
 } as const;
 export type ModuleGetAutocompleteV2SSelectorEnum = typeof ModuleGetAutocompleteV2SSelectorEnum[keyof typeof ModuleGetAutocompleteV2SSelectorEnum];
 export const ModuleGetAutocompleteV2EFilterActiveEnum = {
     All: 'All',
     Active: 'Active',
-    Inactive: 'Inactive'
+    Inactive: 'Inactive',
 } as const;
 export type ModuleGetAutocompleteV2EFilterActiveEnum = typeof ModuleGetAutocompleteV2EFilterActiveEnum[keyof typeof ModuleGetAutocompleteV2EFilterActiveEnum];

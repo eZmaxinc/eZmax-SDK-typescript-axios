@@ -41,7 +41,7 @@ export const CustomAttachmentImportIntoEDMResponseEAttachmentStatusEnum = {
     Accepted: 'Accepted',
     FileExists: 'FileExists',
     Forbidden: 'Forbidden',
-    Overwrite: 'Overwrite'
+    Overwrite: 'Overwrite',
 } as const;
 
 export type CustomAttachmentImportIntoEDMResponseEAttachmentStatusEnum = typeof CustomAttachmentImportIntoEDMResponseEAttachmentStatusEnum[keyof typeof CustomAttachmentImportIntoEDMResponseEAttachmentStatusEnum];

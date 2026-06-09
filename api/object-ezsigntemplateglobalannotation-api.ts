@@ -43,7 +43,7 @@ export const ObjectEzsigntemplateglobalannotationApiAxiosParamCreator = function
             // verify required parameter 'pkiEzsigntemplateglobalannotationID' is not null or undefined
             assertParamExists('ezsigntemplateglobalannotationGetObjectV2', 'pkiEzsigntemplateglobalannotationID', pkiEzsigntemplateglobalannotationID)
             const localVarPath = `/2/object/ezsigntemplateglobalannotation/{pkiEzsigntemplateglobalannotationID}`
-                .replace(`{${"pkiEzsigntemplateglobalannotationID"}}`, encodeURIComponent(String(pkiEzsigntemplateglobalannotationID)));
+                .replace('{pkiEzsigntemplateglobalannotationID}', encodeURIComponent(String(pkiEzsigntemplateglobalannotationID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath

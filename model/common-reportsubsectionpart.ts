@@ -35,7 +35,7 @@ export interface CommonReportsubsectionpart {
 export const CommonReportsubsectionpartEReportsubsectionpartTypeEnum = {
     Header: 'Header',
     Body: 'Body',
-    Footer: 'Footer'
+    Footer: 'Footer',
 } as const;
 
 export type CommonReportsubsectionpartEReportsubsectionpartTypeEnum = typeof CommonReportsubsectionpartEReportsubsectionpartTypeEnum[keyof typeof CommonReportsubsectionpartEReportsubsectionpartTypeEnum];

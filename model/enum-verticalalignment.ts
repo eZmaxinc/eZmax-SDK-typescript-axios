@@ -21,7 +21,7 @@
 export const EnumVerticalalignment = {
     Bottom: 'Bottom',
     Middle: 'Middle',
-    Top: 'Top'
+    Top: 'Top',
 } as const;
 
 export type EnumVerticalalignment = typeof EnumVerticalalignment[keyof typeof EnumVerticalalignment];

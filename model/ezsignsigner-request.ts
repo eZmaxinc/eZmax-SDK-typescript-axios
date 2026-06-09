@@ -51,7 +51,7 @@ export const EzsignsignerRequestEEzsignsignerLogintypeEnum = {
     PasswordPhone: 'PasswordPhone',
     PasswordQuestion: 'PasswordQuestion',
     InPersonPhone: 'InPersonPhone',
-    InPerson: 'InPerson'
+    InPerson: 'InPerson',
 } as const;
 
 export type EzsignsignerRequestEEzsignsignerLogintypeEnum = typeof EzsignsignerRequestEEzsignsignerLogintypeEnum[keyof typeof EzsignsignerRequestEEzsignsignerLogintypeEnum];

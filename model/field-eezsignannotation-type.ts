@@ -21,7 +21,7 @@
 export const FieldEEzsignannotationType = {
     StrikethroughBlock: 'StrikethroughBlock',
     StrikethroughLine: 'StrikethroughLine',
-    Text: 'Text'
+    Text: 'Text',
 } as const;
 
 export type FieldEEzsignannotationType = typeof FieldEEzsignannotationType[keyof typeof FieldEEzsignannotationType];

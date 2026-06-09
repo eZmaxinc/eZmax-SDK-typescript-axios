@@ -112,7 +112,7 @@ export const ObjectSubnetApiAxiosParamCreator = function (configuration?: Config
             // verify required parameter 'pkiSubnetID' is not null or undefined
             assertParamExists('subnetDeleteObjectV1', 'pkiSubnetID', pkiSubnetID)
             const localVarPath = `/1/object/subnet/{pkiSubnetID}`
-                .replace(`{${"pkiSubnetID"}}`, encodeURIComponent(String(pkiSubnetID)));
+                .replace('{pkiSubnetID}', encodeURIComponent(String(pkiSubnetID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -173,7 +173,7 @@ export const ObjectSubnetApiAxiosParamCreator = function (configuration?: Config
             // verify required parameter 'subnetEditObjectV1Request' is not null or undefined
             assertParamExists('subnetEditObjectV1', 'subnetEditObjectV1Request', subnetEditObjectV1Request)
             const localVarPath = `/1/object/subnet/{pkiSubnetID}`
-                .replace(`{${"pkiSubnetID"}}`, encodeURIComponent(String(pkiSubnetID)));
+                .replace('{pkiSubnetID}', encodeURIComponent(String(pkiSubnetID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -233,7 +233,7 @@ export const ObjectSubnetApiAxiosParamCreator = function (configuration?: Config
             // verify required parameter 'pkiSubnetID' is not null or undefined
             assertParamExists('subnetGetObjectV2', 'pkiSubnetID', pkiSubnetID)
             const localVarPath = `/2/object/subnet/{pkiSubnetID}`
-                .replace(`{${"pkiSubnetID"}}`, encodeURIComponent(String(pkiSubnetID)));
+                .replace('{pkiSubnetID}', encodeURIComponent(String(pkiSubnetID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath

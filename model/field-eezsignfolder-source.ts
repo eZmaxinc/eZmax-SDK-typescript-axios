@@ -21,7 +21,7 @@
 export const FieldEEzsignfolderSource = {
     Normal: 'Normal',
     Ezsignbulksend: 'Ezsignbulksend',
-    Ezsigntemplatepublic: 'Ezsigntemplatepublic'
+    Ezsigntemplatepublic: 'Ezsigntemplatepublic',
 } as const;
 
 export type FieldEEzsignfolderSource = typeof FieldEEzsignfolderSource[keyof typeof FieldEEzsignfolderSource];

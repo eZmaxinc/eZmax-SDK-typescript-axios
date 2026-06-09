@@ -20,7 +20,7 @@
 
 export const FieldEPaymenttermType = {
     Days: 'Days',
-    Dayofthemonth: 'Dayofthemonth'
+    Dayofthemonth: 'Dayofthemonth',
 } as const;
 
 export type FieldEPaymenttermType = typeof FieldEPaymenttermType[keyof typeof FieldEPaymenttermType];

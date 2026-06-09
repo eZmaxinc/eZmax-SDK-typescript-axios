@@ -20,7 +20,7 @@
 
 export const FieldEUserOrigin = {
     BuiltIn: 'BuiltIn',
-    External: 'External'
+    External: 'External',
 } as const;
 
 export type FieldEUserOrigin = typeof FieldEUserOrigin[keyof typeof FieldEUserOrigin];

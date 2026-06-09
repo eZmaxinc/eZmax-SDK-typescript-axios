@@ -176,7 +176,7 @@ export const ObjectEzsigntemplatesignatureApiAxiosParamCreator = function (confi
             // verify required parameter 'pkiEzsigntemplatesignatureID' is not null or undefined
             assertParamExists('ezsigntemplatesignatureDeleteObjectV1', 'pkiEzsigntemplatesignatureID', pkiEzsigntemplatesignatureID)
             const localVarPath = `/1/object/ezsigntemplatesignature/{pkiEzsigntemplatesignatureID}`
-                .replace(`{${"pkiEzsigntemplatesignatureID"}}`, encodeURIComponent(String(pkiEzsigntemplatesignatureID)));
+                .replace('{pkiEzsigntemplatesignatureID}', encodeURIComponent(String(pkiEzsigntemplatesignatureID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -237,7 +237,7 @@ export const ObjectEzsigntemplatesignatureApiAxiosParamCreator = function (confi
             // verify required parameter 'ezsigntemplatesignatureEditObjectV3Request' is not null or undefined
             assertParamExists('ezsigntemplatesignatureEditObjectV3', 'ezsigntemplatesignatureEditObjectV3Request', ezsigntemplatesignatureEditObjectV3Request)
             const localVarPath = `/3/object/ezsigntemplatesignature/{pkiEzsigntemplatesignatureID}`
-                .replace(`{${"pkiEzsigntemplatesignatureID"}}`, encodeURIComponent(String(pkiEzsigntemplatesignatureID)));
+                .replace('{pkiEzsigntemplatesignatureID}', encodeURIComponent(String(pkiEzsigntemplatesignatureID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -297,7 +297,7 @@ export const ObjectEzsigntemplatesignatureApiAxiosParamCreator = function (confi
             // verify required parameter 'pkiEzsigntemplatesignatureID' is not null or undefined
             assertParamExists('ezsigntemplatesignatureGetObjectV4', 'pkiEzsigntemplatesignatureID', pkiEzsigntemplatesignatureID)
             const localVarPath = `/4/object/ezsigntemplatesignature/{pkiEzsigntemplatesignatureID}`
-                .replace(`{${"pkiEzsigntemplatesignatureID"}}`, encodeURIComponent(String(pkiEzsigntemplatesignatureID)));
+                .replace('{pkiEzsigntemplatesignatureID}', encodeURIComponent(String(pkiEzsigntemplatesignatureID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath

@@ -21,7 +21,7 @@
 export const FieldEEzsigntemplatesignaturePositioningoccurence = {
     All: 'All',
     First: 'First',
-    Last: 'Last'
+    Last: 'Last',
 } as const;
 
 export type FieldEEzsigntemplatesignaturePositioningoccurence = typeof FieldEEzsigntemplatesignaturePositioningoccurence[keyof typeof FieldEEzsigntemplatesignaturePositioningoccurence];

@@ -63,7 +63,7 @@ export const ObjectInscriptionApiAxiosParamCreator = function (configuration?: C
             // verify required parameter 'pkiInscriptionID' is not null or undefined
             assertParamExists('inscriptionGetAttachmentsV1', 'pkiInscriptionID', pkiInscriptionID)
             const localVarPath = `/1/object/inscription/{pkiInscriptionID}/getAttachments`
-                .replace(`{${"pkiInscriptionID"}}`, encodeURIComponent(String(pkiInscriptionID)));
+                .replace('{pkiInscriptionID}', encodeURIComponent(String(pkiInscriptionID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -121,7 +121,7 @@ export const ObjectInscriptionApiAxiosParamCreator = function (configuration?: C
             // verify required parameter 'pkiInscriptionID' is not null or undefined
             assertParamExists('inscriptionGetCommunicationCountV1', 'pkiInscriptionID', pkiInscriptionID)
             const localVarPath = `/1/object/inscription/{pkiInscriptionID}/getCommunicationCount`
-                .replace(`{${"pkiInscriptionID"}}`, encodeURIComponent(String(pkiInscriptionID)));
+                .replace('{pkiInscriptionID}', encodeURIComponent(String(pkiInscriptionID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -179,7 +179,7 @@ export const ObjectInscriptionApiAxiosParamCreator = function (configuration?: C
             // verify required parameter 'pkiInscriptionID' is not null or undefined
             assertParamExists('inscriptionGetCommunicationListV1', 'pkiInscriptionID', pkiInscriptionID)
             const localVarPath = `/1/object/inscription/{pkiInscriptionID}/getCommunicationList`
-                .replace(`{${"pkiInscriptionID"}}`, encodeURIComponent(String(pkiInscriptionID)));
+                .replace('{pkiInscriptionID}', encodeURIComponent(String(pkiInscriptionID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -237,7 +237,7 @@ export const ObjectInscriptionApiAxiosParamCreator = function (configuration?: C
             // verify required parameter 'pkiInscriptionID' is not null or undefined
             assertParamExists('inscriptionGetCommunicationrecipientsV1', 'pkiInscriptionID', pkiInscriptionID)
             const localVarPath = `/1/object/inscription/{pkiInscriptionID}/getCommunicationrecipients`
-                .replace(`{${"pkiInscriptionID"}}`, encodeURIComponent(String(pkiInscriptionID)));
+                .replace('{pkiInscriptionID}', encodeURIComponent(String(pkiInscriptionID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -295,7 +295,7 @@ export const ObjectInscriptionApiAxiosParamCreator = function (configuration?: C
             // verify required parameter 'pkiInscriptionID' is not null or undefined
             assertParamExists('inscriptionGetCommunicationsendersV1', 'pkiInscriptionID', pkiInscriptionID)
             const localVarPath = `/1/object/inscription/{pkiInscriptionID}/getCommunicationsenders`
-                .replace(`{${"pkiInscriptionID"}}`, encodeURIComponent(String(pkiInscriptionID)));
+                .replace('{pkiInscriptionID}', encodeURIComponent(String(pkiInscriptionID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -436,7 +436,7 @@ export const ObjectInscriptionApiAxiosParamCreator = function (configuration?: C
             // verify required parameter 'inscriptionImportIntoEDMV1Request' is not null or undefined
             assertParamExists('inscriptionImportIntoEDMV1', 'inscriptionImportIntoEDMV1Request', inscriptionImportIntoEDMV1Request)
             const localVarPath = `/1/object/inscription/{pkiInscriptionID}/importIntoEDM`
-                .replace(`{${"pkiInscriptionID"}}`, encodeURIComponent(String(pkiInscriptionID)));
+                .replace('{pkiInscriptionID}', encodeURIComponent(String(pkiInscriptionID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -499,7 +499,7 @@ export const ObjectInscriptionApiAxiosParamCreator = function (configuration?: C
             // verify required parameter 'inscriptionPrepareFilesTransferV1Request' is not null or undefined
             assertParamExists('inscriptionPrepareFilesTransferV1', 'inscriptionPrepareFilesTransferV1Request', inscriptionPrepareFilesTransferV1Request)
             const localVarPath = `/1/object/inscription/{pkiInscriptionID}/prepareFilesTransfer`
-                .replace(`{${"pkiInscriptionID"}}`, encodeURIComponent(String(pkiInscriptionID)));
+                .replace('{pkiInscriptionID}', encodeURIComponent(String(pkiInscriptionID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -920,6 +920,6 @@ export const InscriptionGetListV1EOrderByEnum = {
     iInscriptionnotauthenticatedCanceled_ASC: 'iInscriptionnotauthenticatedCanceled_ASC',
     iInscriptionnotauthenticatedCanceled_DESC: 'iInscriptionnotauthenticatedCanceled_DESC',
     bAllowedCopyintoinscriptionedm_ASC: 'bAllowedCopyintoinscriptionedm_ASC',
-    bAllowedCopyintoinscriptionedm_DESC: 'bAllowedCopyintoinscriptionedm_DESC'
+    bAllowedCopyintoinscriptionedm_DESC: 'bAllowedCopyintoinscriptionedm_DESC',
 } as const;
 export type InscriptionGetListV1EOrderByEnum = typeof InscriptionGetListV1EOrderByEnum[keyof typeof InscriptionGetListV1EOrderByEnum];

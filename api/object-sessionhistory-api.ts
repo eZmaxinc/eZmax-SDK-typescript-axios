@@ -206,6 +206,6 @@ export const SessionhistoryGetListV1EOrderByEnum = {
     sSessionhistoryIP_ASC: 'sSessionhistoryIP_ASC',
     sSessionhistoryIP_DESC: 'sSessionhistoryIP_DESC',
     sUserLoginname_ASC: 'sUserLoginname_ASC',
-    sUserLoginname_DESC: 'sUserLoginname_DESC'
+    sUserLoginname_DESC: 'sUserLoginname_DESC',
 } as const;
 export type SessionhistoryGetListV1EOrderByEnum = typeof SessionhistoryGetListV1EOrderByEnum[keyof typeof SessionhistoryGetListV1EOrderByEnum];

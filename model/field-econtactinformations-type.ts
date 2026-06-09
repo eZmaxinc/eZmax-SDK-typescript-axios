@@ -29,7 +29,7 @@ export const FieldEContactinformationsType = {
     FinancialInstitution: 'FinancialInstitution',
     FranchiseCompany: 'FranchiseCompany',
     FranchiseOffice: 'FranchiseOffice',
-    Supplier: 'Supplier'
+    Supplier: 'Supplier',
 } as const;
 
 export type FieldEContactinformationsType = typeof FieldEContactinformationsType[keyof typeof FieldEContactinformationsType];

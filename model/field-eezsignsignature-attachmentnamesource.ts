@@ -21,7 +21,7 @@
 export const FieldEEzsignsignatureAttachmentnamesource = {
     Description: 'Description',
     Customer: 'Customer',
-    DescriptionCustomer: 'DescriptionCustomer'
+    DescriptionCustomer: 'DescriptionCustomer',
 } as const;
 
 export type FieldEEzsignsignatureAttachmentnamesource = typeof FieldEEzsignsignatureAttachmentnamesource[keyof typeof FieldEEzsignsignatureAttachmentnamesource];

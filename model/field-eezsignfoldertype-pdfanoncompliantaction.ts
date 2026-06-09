@@ -20,7 +20,7 @@
 
 export const FieldEEzsignfoldertypePdfanoncompliantaction = {
     Reject: 'Reject',
-    Convert: 'Convert'
+    Convert: 'Convert',
 } as const;
 
 export type FieldEEzsignfoldertypePdfanoncompliantaction = typeof FieldEEzsignfoldertypePdfanoncompliantaction[keyof typeof FieldEEzsignfoldertypePdfanoncompliantaction];

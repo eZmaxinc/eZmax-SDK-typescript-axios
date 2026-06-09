@@ -41,7 +41,7 @@ export const ObjectModulegroupApiAxiosParamCreator = function (configuration?: C
             // verify required parameter 'eContext' is not null or undefined
             assertParamExists('modulegroupGetAllV1', 'eContext', eContext)
             const localVarPath = `/1/object/modulegroup/getAll/{eContext}`
-                .replace(`{${"eContext"}}`, encodeURIComponent(String(eContext)));
+                .replace('{eContext}', encodeURIComponent(String(eContext)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -150,6 +150,6 @@ export class ObjectModulegroupApi extends BaseAPI {
 
 export const ModulegroupGetAllV1EContextEnum = {
     Api: 'Api',
-    User: 'User'
+    User: 'User',
 } as const;
 export type ModulegroupGetAllV1EContextEnum = typeof ModulegroupGetAllV1EContextEnum[keyof typeof ModulegroupGetAllV1EContextEnum];

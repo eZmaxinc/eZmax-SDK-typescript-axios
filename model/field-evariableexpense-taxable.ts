@@ -21,7 +21,7 @@
 export const FieldEVariableexpenseTaxable = {
     Yes: 'Yes',
     No: 'No',
-    Included: 'Included'
+    Included: 'Included',
 } as const;
 
 export type FieldEVariableexpenseTaxable = typeof FieldEVariableexpenseTaxable[keyof typeof FieldEVariableexpenseTaxable];

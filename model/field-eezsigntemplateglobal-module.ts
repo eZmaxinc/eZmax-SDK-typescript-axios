@@ -20,7 +20,7 @@
 
 export const FieldEEzsigntemplateglobalModule = {
     All: 'All',
-    Inscription: 'Inscription'
+    Inscription: 'Inscription',
 } as const;
 
 export type FieldEEzsigntemplateglobalModule = typeof FieldEEzsigntemplateglobalModule[keyof typeof FieldEEzsigntemplateglobalModule];

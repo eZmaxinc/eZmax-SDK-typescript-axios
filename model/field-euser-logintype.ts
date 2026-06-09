@@ -21,7 +21,7 @@
 export const FieldEUserLogintype = {
     Password: 'Password',
     PasswordPhone: 'PasswordPhone',
-    PasswordQuestion: 'PasswordQuestion'
+    PasswordQuestion: 'PasswordQuestion',
 } as const;
 
 export type FieldEUserLogintype = typeof FieldEUserLogintype[keyof typeof FieldEUserLogintype];

@@ -20,7 +20,7 @@
 
 export const EnumFontweight = {
     Normal: 'Normal',
-    Bold: 'Bold'
+    Bold: 'Bold',
 } as const;
 
 export type EnumFontweight = typeof EnumFontweight[keyof typeof EnumFontweight];

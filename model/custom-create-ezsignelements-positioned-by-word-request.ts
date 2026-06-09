@@ -43,7 +43,7 @@ export interface CustomCreateEzsignelementsPositionedByWordRequest {
 export const CustomCreateEzsignelementsPositionedByWordRequestECreateezsignelementspositionedbywordOccuranceEnum = {
     All: 'All',
     First: 'First',
-    Last: 'Last'
+    Last: 'Last',
 } as const;
 
 export type CustomCreateEzsignelementsPositionedByWordRequestECreateezsignelementspositionedbywordOccuranceEnum = typeof CustomCreateEzsignelementsPositionedByWordRequestECreateezsignelementspositionedbywordOccuranceEnum[keyof typeof CustomCreateEzsignelementsPositionedByWordRequestECreateezsignelementspositionedbywordOccuranceEnum];

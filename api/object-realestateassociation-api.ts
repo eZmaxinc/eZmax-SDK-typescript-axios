@@ -46,7 +46,7 @@ export const ObjectRealestateassociationApiAxiosParamCreator = function (configu
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('realestateassociationGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/realestateassociation/getAutocomplete/{sSelector}`
-                .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
+                .replace('{sSelector}', encodeURIComponent(String(sSelector)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -176,12 +176,12 @@ export class ObjectRealestateassociationApi extends BaseAPI {
 }
 
 export const RealestateassociationGetAutocompleteV2SSelectorEnum = {
-    All: 'All'
+    All: 'All',
 } as const;
 export type RealestateassociationGetAutocompleteV2SSelectorEnum = typeof RealestateassociationGetAutocompleteV2SSelectorEnum[keyof typeof RealestateassociationGetAutocompleteV2SSelectorEnum];
 export const RealestateassociationGetAutocompleteV2EFilterActiveEnum = {
     All: 'All',
     Active: 'Active',
-    Inactive: 'Inactive'
+    Inactive: 'Inactive',
 } as const;
 export type RealestateassociationGetAutocompleteV2EFilterActiveEnum = typeof RealestateassociationGetAutocompleteV2EFilterActiveEnum[keyof typeof RealestateassociationGetAutocompleteV2EFilterActiveEnum];

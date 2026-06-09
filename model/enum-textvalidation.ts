@@ -31,7 +31,7 @@ export const EnumTextvalidation = {
     Zip: 'Zip',
     Zip4: 'Zip+4',
     PostalCode: 'PostalCode',
-    Custom: 'Custom'
+    Custom: 'Custom',
 } as const;
 
 export type EnumTextvalidation = typeof EnumTextvalidation[keyof typeof EnumTextvalidation];

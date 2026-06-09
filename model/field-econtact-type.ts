@@ -54,7 +54,7 @@ export const FieldEContactType = {
     Shared: 'Shared',
     Supplier: 'Supplier',
     Survey: 'Survey',
-    Inspector: 'Inspector'
+    Inspector: 'Inspector',
 } as const;
 
 export type FieldEContactType = typeof FieldEContactType[keyof typeof FieldEContactType];

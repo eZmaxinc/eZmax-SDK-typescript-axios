@@ -190,7 +190,7 @@ export const ObjectEzsignfoldertypeApiAxiosParamCreator = function (configuratio
             // verify required parameter 'ezsignfoldertypeEditObjectV3Request' is not null or undefined
             assertParamExists('ezsignfoldertypeEditObjectV3', 'ezsignfoldertypeEditObjectV3Request', ezsignfoldertypeEditObjectV3Request)
             const localVarPath = `/3/object/ezsignfoldertype/{pkiEzsignfoldertypeID}`
-                .replace(`{${"pkiEzsignfoldertypeID"}}`, encodeURIComponent(String(pkiEzsignfoldertypeID)));
+                .replace('{pkiEzsignfoldertypeID}', encodeURIComponent(String(pkiEzsignfoldertypeID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -253,7 +253,7 @@ export const ObjectEzsignfoldertypeApiAxiosParamCreator = function (configuratio
             // verify required parameter 'ezsignfoldertypeEditObjectV4Request' is not null or undefined
             assertParamExists('ezsignfoldertypeEditObjectV4', 'ezsignfoldertypeEditObjectV4Request', ezsignfoldertypeEditObjectV4Request)
             const localVarPath = `/4/object/ezsignfoldertype/{pkiEzsignfoldertypeID}`
-                .replace(`{${"pkiEzsignfoldertypeID"}}`, encodeURIComponent(String(pkiEzsignfoldertypeID)));
+                .replace('{pkiEzsignfoldertypeID}', encodeURIComponent(String(pkiEzsignfoldertypeID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -316,7 +316,7 @@ export const ObjectEzsignfoldertypeApiAxiosParamCreator = function (configuratio
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('ezsignfoldertypeGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/ezsignfoldertype/getAutocomplete/{sSelector}`
-                .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
+                .replace('{sSelector}', encodeURIComponent(String(sSelector)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -468,7 +468,7 @@ export const ObjectEzsignfoldertypeApiAxiosParamCreator = function (configuratio
             // verify required parameter 'pkiEzsignfoldertypeID' is not null or undefined
             assertParamExists('ezsignfoldertypeGetObjectV2', 'pkiEzsignfoldertypeID', pkiEzsignfoldertypeID)
             const localVarPath = `/2/object/ezsignfoldertype/{pkiEzsignfoldertypeID}`
-                .replace(`{${"pkiEzsignfoldertypeID"}}`, encodeURIComponent(String(pkiEzsignfoldertypeID)));
+                .replace('{pkiEzsignfoldertypeID}', encodeURIComponent(String(pkiEzsignfoldertypeID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -526,7 +526,7 @@ export const ObjectEzsignfoldertypeApiAxiosParamCreator = function (configuratio
             // verify required parameter 'pkiEzsignfoldertypeID' is not null or undefined
             assertParamExists('ezsignfoldertypeGetObjectV4', 'pkiEzsignfoldertypeID', pkiEzsignfoldertypeID)
             const localVarPath = `/4/object/ezsignfoldertype/{pkiEzsignfoldertypeID}`
-                .replace(`{${"pkiEzsignfoldertypeID"}}`, encodeURIComponent(String(pkiEzsignfoldertypeID)));
+                .replace('{pkiEzsignfoldertypeID}', encodeURIComponent(String(pkiEzsignfoldertypeID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -911,13 +911,13 @@ export const EzsignfoldertypeGetAutocompleteV2SSelectorEnum = {
     Active: 'Active',
     All: 'All',
     EzsigntemplateEdit: 'EzsigntemplateEdit',
-    EzsigntemplateUsergroup: 'EzsigntemplateUsergroup'
+    EzsigntemplateUsergroup: 'EzsigntemplateUsergroup',
 } as const;
 export type EzsignfoldertypeGetAutocompleteV2SSelectorEnum = typeof EzsignfoldertypeGetAutocompleteV2SSelectorEnum[keyof typeof EzsignfoldertypeGetAutocompleteV2SSelectorEnum];
 export const EzsignfoldertypeGetAutocompleteV2EFilterActiveEnum = {
     All: 'All',
     Active: 'Active',
-    Inactive: 'Inactive'
+    Inactive: 'Inactive',
 } as const;
 export type EzsignfoldertypeGetAutocompleteV2EFilterActiveEnum = typeof EzsignfoldertypeGetAutocompleteV2EFilterActiveEnum[keyof typeof EzsignfoldertypeGetAutocompleteV2EFilterActiveEnum];
 export const EzsignfoldertypeGetListV1EOrderByEnum = {
@@ -928,6 +928,6 @@ export const EzsignfoldertypeGetListV1EOrderByEnum = {
     sEzsignfoldertypeNameX_ASC: 'sEzsignfoldertypeNameX_ASC',
     sEzsignfoldertypeNameX_DESC: 'sEzsignfoldertypeNameX_DESC',
     bEzsignfoldertypeIsactive_ASC: 'bEzsignfoldertypeIsactive_ASC',
-    bEzsignfoldertypeIsactive_DESC: 'bEzsignfoldertypeIsactive_DESC'
+    bEzsignfoldertypeIsactive_DESC: 'bEzsignfoldertypeIsactive_DESC',
 } as const;
 export type EzsignfoldertypeGetListV1EOrderByEnum = typeof EzsignfoldertypeGetListV1EOrderByEnum[keyof typeof EzsignfoldertypeGetListV1EOrderByEnum];

@@ -83,7 +83,7 @@ export interface CustomAttachmentImportIntoEDMRequest {
 export const CustomAttachmentImportIntoEDMRequestEAttachmentSourceEnum = {
     Attachment: 'Attachment',
     Base64: 'Base64',
-    Url: 'Url'
+    Url: 'Url',
 } as const;
 
 export type CustomAttachmentImportIntoEDMRequestEAttachmentSourceEnum = typeof CustomAttachmentImportIntoEDMRequestEAttachmentSourceEnum[keyof typeof CustomAttachmentImportIntoEDMRequestEAttachmentSourceEnum];

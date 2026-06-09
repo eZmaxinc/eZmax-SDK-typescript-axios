@@ -21,7 +21,7 @@
 export const FieldEEzsigntemplateglobalSupplier = {
     Centris: 'Centris',
     Webforms: 'Webforms',
-    GHACQ: 'GHACQ'
+    GHACQ: 'GHACQ',
 } as const;
 
 export type FieldEEzsigntemplateglobalSupplier = typeof FieldEEzsigntemplateglobalSupplier[keyof typeof FieldEEzsigntemplateglobalSupplier];

@@ -24,7 +24,7 @@ export const FieldEActivesessionUsertype = {
     Employee: 'Employee',
     EzsignSigner: 'EzsignSigner',
     EzsignUser: 'EzsignUser',
-    Normal: 'Normal'
+    Normal: 'Normal',
 } as const;
 
 export type FieldEActivesessionUsertype = typeof FieldEActivesessionUsertype[keyof typeof FieldEActivesessionUsertype];

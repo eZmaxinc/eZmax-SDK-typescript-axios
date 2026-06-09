@@ -24,7 +24,7 @@
   "dependencies": {
     "node-forge": "^1.2.1",
     "utf8": "^3.0.0",
-    "axios": "^1.15.2"
+    "axios": "^1.16.0"
   },
   "devDependencies": {
     "@types/node-forge": "^1.0.0",

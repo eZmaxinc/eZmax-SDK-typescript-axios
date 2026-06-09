@@ -20,7 +20,7 @@
 
 export const FieldEEzsignsignatureFont = {
     Normal: 'Normal',
-    Cursive: 'Cursive'
+    Cursive: 'Cursive',
 } as const;
 
 export type FieldEEzsignsignatureFont = typeof FieldEEzsignsignatureFont[keyof typeof FieldEEzsignsignatureFont];

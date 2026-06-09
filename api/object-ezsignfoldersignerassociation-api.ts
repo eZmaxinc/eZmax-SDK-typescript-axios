@@ -83,7 +83,7 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
             // verify required parameter 'ezsignfoldersignerassociationCreateEmbeddedUrlV1Request' is not null or undefined
             assertParamExists('ezsignfoldersignerassociationCreateEmbeddedUrlV1', 'ezsignfoldersignerassociationCreateEmbeddedUrlV1Request', ezsignfoldersignerassociationCreateEmbeddedUrlV1Request)
             const localVarPath = `/1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/createEmbeddedUrl`
-                .replace(`{${"pkiEzsignfoldersignerassociationID"}}`, encodeURIComponent(String(pkiEzsignfoldersignerassociationID)));
+                .replace('{pkiEzsignfoldersignerassociationID}', encodeURIComponent(String(pkiEzsignfoldersignerassociationID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -146,7 +146,7 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
             // verify required parameter 'ezsignfoldersignerassociationCreateEmbeddedUrlV2Request' is not null or undefined
             assertParamExists('ezsignfoldersignerassociationCreateEmbeddedUrlV2', 'ezsignfoldersignerassociationCreateEmbeddedUrlV2Request', ezsignfoldersignerassociationCreateEmbeddedUrlV2Request)
             const localVarPath = `/2/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/createEmbeddedUrl`
-                .replace(`{${"pkiEzsignfoldersignerassociationID"}}`, encodeURIComponent(String(pkiEzsignfoldersignerassociationID)));
+                .replace('{pkiEzsignfoldersignerassociationID}', encodeURIComponent(String(pkiEzsignfoldersignerassociationID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -325,7 +325,7 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
             // verify required parameter 'pkiEzsignfoldersignerassociationID' is not null or undefined
             assertParamExists('ezsignfoldersignerassociationDeleteObjectV1', 'pkiEzsignfoldersignerassociationID', pkiEzsignfoldersignerassociationID)
             const localVarPath = `/1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}`
-                .replace(`{${"pkiEzsignfoldersignerassociationID"}}`, encodeURIComponent(String(pkiEzsignfoldersignerassociationID)));
+                .replace('{pkiEzsignfoldersignerassociationID}', encodeURIComponent(String(pkiEzsignfoldersignerassociationID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -386,7 +386,7 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
             // verify required parameter 'ezsignfoldersignerassociationEditObjectV1Request' is not null or undefined
             assertParamExists('ezsignfoldersignerassociationEditObjectV1', 'ezsignfoldersignerassociationEditObjectV1Request', ezsignfoldersignerassociationEditObjectV1Request)
             const localVarPath = `/1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}`
-                .replace(`{${"pkiEzsignfoldersignerassociationID"}}`, encodeURIComponent(String(pkiEzsignfoldersignerassociationID)));
+                .replace('{pkiEzsignfoldersignerassociationID}', encodeURIComponent(String(pkiEzsignfoldersignerassociationID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -449,7 +449,7 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
             // verify required parameter 'body' is not null or undefined
             assertParamExists('ezsignfoldersignerassociationForceDisconnectV1', 'body', body)
             const localVarPath = `/1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/forceDisconnect`
-                .replace(`{${"pkiEzsignfoldersignerassociationID"}}`, encodeURIComponent(String(pkiEzsignfoldersignerassociationID)));
+                .replace('{pkiEzsignfoldersignerassociationID}', encodeURIComponent(String(pkiEzsignfoldersignerassociationID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -509,7 +509,7 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
             // verify required parameter 'pkiEzsignfoldersignerassociationID' is not null or undefined
             assertParamExists('ezsignfoldersignerassociationGetInPersonLoginUrlV1', 'pkiEzsignfoldersignerassociationID', pkiEzsignfoldersignerassociationID)
             const localVarPath = `/1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/getInPersonLoginUrl`
-                .replace(`{${"pkiEzsignfoldersignerassociationID"}}`, encodeURIComponent(String(pkiEzsignfoldersignerassociationID)));
+                .replace('{pkiEzsignfoldersignerassociationID}', encodeURIComponent(String(pkiEzsignfoldersignerassociationID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -568,7 +568,7 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
             // verify required parameter 'pkiEzsignfoldersignerassociationID' is not null or undefined
             assertParamExists('ezsignfoldersignerassociationGetObjectV1', 'pkiEzsignfoldersignerassociationID', pkiEzsignfoldersignerassociationID)
             const localVarPath = `/1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}`
-                .replace(`{${"pkiEzsignfoldersignerassociationID"}}`, encodeURIComponent(String(pkiEzsignfoldersignerassociationID)));
+                .replace('{pkiEzsignfoldersignerassociationID}', encodeURIComponent(String(pkiEzsignfoldersignerassociationID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -626,7 +626,7 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
             // verify required parameter 'pkiEzsignfoldersignerassociationID' is not null or undefined
             assertParamExists('ezsignfoldersignerassociationGetObjectV2', 'pkiEzsignfoldersignerassociationID', pkiEzsignfoldersignerassociationID)
             const localVarPath = `/2/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}`
-                .replace(`{${"pkiEzsignfoldersignerassociationID"}}`, encodeURIComponent(String(pkiEzsignfoldersignerassociationID)));
+                .replace('{pkiEzsignfoldersignerassociationID}', encodeURIComponent(String(pkiEzsignfoldersignerassociationID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -687,7 +687,7 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
             // verify required parameter 'ezsignfoldersignerassociationPatchObjectV1Request' is not null or undefined
             assertParamExists('ezsignfoldersignerassociationPatchObjectV1', 'ezsignfoldersignerassociationPatchObjectV1Request', ezsignfoldersignerassociationPatchObjectV1Request)
             const localVarPath = `/1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}`
-                .replace(`{${"pkiEzsignfoldersignerassociationID"}}`, encodeURIComponent(String(pkiEzsignfoldersignerassociationID)));
+                .replace('{pkiEzsignfoldersignerassociationID}', encodeURIComponent(String(pkiEzsignfoldersignerassociationID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -750,7 +750,7 @@ export const ObjectEzsignfoldersignerassociationApiAxiosParamCreator = function 
             // verify required parameter 'ezsignfoldersignerassociationReassignV1Request' is not null or undefined
             assertParamExists('ezsignfoldersignerassociationReassignV1', 'ezsignfoldersignerassociationReassignV1Request', ezsignfoldersignerassociationReassignV1Request)
             const localVarPath = `/1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/reassign`
-                .replace(`{${"pkiEzsignfoldersignerassociationID"}}`, encodeURIComponent(String(pkiEzsignfoldersignerassociationID)));
+                .replace('{pkiEzsignfoldersignerassociationID}', encodeURIComponent(String(pkiEzsignfoldersignerassociationID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath

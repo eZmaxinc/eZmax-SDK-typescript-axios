@@ -21,7 +21,7 @@
 export const FieldEEzsignfoldertypeSigneraccess = {
     No: 'No',
     SignerDocuments: 'SignerDocuments',
-    AllDocuments: 'AllDocuments'
+    AllDocuments: 'AllDocuments',
 } as const;
 
 export type FieldEEzsignfoldertypeSigneraccess = typeof FieldEEzsignfoldertypeSigneraccess[keyof typeof FieldEEzsignfoldertypeSigneraccess];

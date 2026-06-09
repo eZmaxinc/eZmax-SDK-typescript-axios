@@ -20,7 +20,7 @@
 
 export const FieldEEzsignfoldertypeDocumentdependency = {
     All: 'All',
-    EzsignsignerOnly: 'EzsignsignerOnly'
+    EzsignsignerOnly: 'EzsignsignerOnly',
 } as const;
 
 export type FieldEEzsignfoldertypeDocumentdependency = typeof FieldEEzsignfoldertypeDocumentdependency[keyof typeof FieldEEzsignfoldertypeDocumentdependency];

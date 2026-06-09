@@ -21,7 +21,7 @@
 export const FieldEDiscussionRobot = {
     Advanced: 'Advanced',
     Normal: 'Normal',
-    Support: 'Support'
+    Support: 'Support',
 } as const;
 
 export type FieldEDiscussionRobot = typeof FieldEDiscussionRobot[keyof typeof FieldEDiscussionRobot];

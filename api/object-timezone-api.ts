@@ -46,7 +46,7 @@ export const ObjectTimezoneApiAxiosParamCreator = function (configuration?: Conf
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('timezoneGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/timezone/getAutocomplete/{sSelector}`
-                .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
+                .replace('{sSelector}', encodeURIComponent(String(sSelector)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -177,12 +177,12 @@ export class ObjectTimezoneApi extends BaseAPI {
 
 export const TimezoneGetAutocompleteV2SSelectorEnum = {
     All: 'All',
-    Active: 'Active'
+    Active: 'Active',
 } as const;
 export type TimezoneGetAutocompleteV2SSelectorEnum = typeof TimezoneGetAutocompleteV2SSelectorEnum[keyof typeof TimezoneGetAutocompleteV2SSelectorEnum];
 export const TimezoneGetAutocompleteV2EFilterActiveEnum = {
     All: 'All',
     Active: 'Active',
-    Inactive: 'Inactive'
+    Inactive: 'Inactive',
 } as const;
 export type TimezoneGetAutocompleteV2EFilterActiveEnum = typeof TimezoneGetAutocompleteV2EFilterActiveEnum[keyof typeof TimezoneGetAutocompleteV2EFilterActiveEnum];

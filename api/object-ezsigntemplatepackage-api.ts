@@ -122,7 +122,7 @@ export const ObjectEzsigntemplatepackageApiAxiosParamCreator = function (configu
             // verify required parameter 'pkiEzsigntemplatepackageID' is not null or undefined
             assertParamExists('ezsigntemplatepackageDeleteObjectV1', 'pkiEzsigntemplatepackageID', pkiEzsigntemplatepackageID)
             const localVarPath = `/1/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID}`
-                .replace(`{${"pkiEzsigntemplatepackageID"}}`, encodeURIComponent(String(pkiEzsigntemplatepackageID)));
+                .replace('{pkiEzsigntemplatepackageID}', encodeURIComponent(String(pkiEzsigntemplatepackageID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -183,7 +183,7 @@ export const ObjectEzsigntemplatepackageApiAxiosParamCreator = function (configu
             // verify required parameter 'ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request' is not null or undefined
             assertParamExists('ezsigntemplatepackageEditEzsigntemplatepackagesignersV1', 'ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request', ezsigntemplatepackageEditEzsigntemplatepackagesignersV1Request)
             const localVarPath = `/1/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID}/editEzsigntemplatepackagesigners`
-                .replace(`{${"pkiEzsigntemplatepackageID"}}`, encodeURIComponent(String(pkiEzsigntemplatepackageID)));
+                .replace('{pkiEzsigntemplatepackageID}', encodeURIComponent(String(pkiEzsigntemplatepackageID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -246,7 +246,7 @@ export const ObjectEzsigntemplatepackageApiAxiosParamCreator = function (configu
             // verify required parameter 'ezsigntemplatepackageEditObjectV1Request' is not null or undefined
             assertParamExists('ezsigntemplatepackageEditObjectV1', 'ezsigntemplatepackageEditObjectV1Request', ezsigntemplatepackageEditObjectV1Request)
             const localVarPath = `/1/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID}`
-                .replace(`{${"pkiEzsigntemplatepackageID"}}`, encodeURIComponent(String(pkiEzsigntemplatepackageID)));
+                .replace('{pkiEzsigntemplatepackageID}', encodeURIComponent(String(pkiEzsigntemplatepackageID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -310,7 +310,7 @@ export const ObjectEzsigntemplatepackageApiAxiosParamCreator = function (configu
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('ezsigntemplatepackageGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/ezsigntemplatepackage/getAutocomplete/{sSelector}`
-                .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
+                .replace('{sSelector}', encodeURIComponent(String(sSelector)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -465,7 +465,7 @@ export const ObjectEzsigntemplatepackageApiAxiosParamCreator = function (configu
             // verify required parameter 'pkiEzsigntemplatepackageID' is not null or undefined
             assertParamExists('ezsigntemplatepackageGetObjectV2', 'pkiEzsigntemplatepackageID', pkiEzsigntemplatepackageID)
             const localVarPath = `/2/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID}`
-                .replace(`{${"pkiEzsigntemplatepackageID"}}`, encodeURIComponent(String(pkiEzsigntemplatepackageID)));
+                .replace('{pkiEzsigntemplatepackageID}', encodeURIComponent(String(pkiEzsigntemplatepackageID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -809,13 +809,13 @@ export class ObjectEzsigntemplatepackageApi extends BaseAPI {
 export const EzsigntemplatepackageGetAutocompleteV2SSelectorEnum = {
     All: 'All',
     AllMultipleCopiesDisabled: 'AllMultipleCopiesDisabled',
-    Ezsigntemplatepublic: 'Ezsigntemplatepublic'
+    Ezsigntemplatepublic: 'Ezsigntemplatepublic',
 } as const;
 export type EzsigntemplatepackageGetAutocompleteV2SSelectorEnum = typeof EzsigntemplatepackageGetAutocompleteV2SSelectorEnum[keyof typeof EzsigntemplatepackageGetAutocompleteV2SSelectorEnum];
 export const EzsigntemplatepackageGetAutocompleteV2EFilterActiveEnum = {
     All: 'All',
     Active: 'Active',
-    Inactive: 'Inactive'
+    Inactive: 'Inactive',
 } as const;
 export type EzsigntemplatepackageGetAutocompleteV2EFilterActiveEnum = typeof EzsigntemplatepackageGetAutocompleteV2EFilterActiveEnum[keyof typeof EzsigntemplatepackageGetAutocompleteV2EFilterActiveEnum];
 export const EzsigntemplatepackageGetListV1EOrderByEnum = {
@@ -838,6 +838,6 @@ export const EzsigntemplatepackageGetListV1EOrderByEnum = {
     iEzsigntemplatepackagemembership_ASC: 'iEzsigntemplatepackagemembership_ASC',
     iEzsigntemplatepackagemembership_DESC: 'iEzsigntemplatepackagemembership_DESC',
     bEzsigntemplatepackageIsactive_ASC: 'bEzsigntemplatepackageIsactive_ASC',
-    bEzsigntemplatepackageIsactive_DESC: 'bEzsigntemplatepackageIsactive_DESC'
+    bEzsigntemplatepackageIsactive_DESC: 'bEzsigntemplatepackageIsactive_DESC',
 } as const;
 export type EzsigntemplatepackageGetListV1EOrderByEnum = typeof EzsigntemplatepackageGetListV1EOrderByEnum[keyof typeof EzsigntemplatepackageGetListV1EOrderByEnum];

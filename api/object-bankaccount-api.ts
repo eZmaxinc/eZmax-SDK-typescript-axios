@@ -46,7 +46,7 @@ export const ObjectBankaccountApiAxiosParamCreator = function (configuration?: C
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('bankaccountGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/bankaccount/getAutocomplete/{sSelector}`
-                .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
+                .replace('{sSelector}', encodeURIComponent(String(sSelector)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -176,12 +176,12 @@ export class ObjectBankaccountApi extends BaseAPI {
 }
 
 export const BankaccountGetAutocompleteV2SSelectorEnum = {
-    All: 'All'
+    All: 'All',
 } as const;
 export type BankaccountGetAutocompleteV2SSelectorEnum = typeof BankaccountGetAutocompleteV2SSelectorEnum[keyof typeof BankaccountGetAutocompleteV2SSelectorEnum];
 export const BankaccountGetAutocompleteV2EFilterActiveEnum = {
     All: 'All',
     Active: 'Active',
-    Inactive: 'Inactive'
+    Inactive: 'Inactive',
 } as const;
 export type BankaccountGetAutocompleteV2EFilterActiveEnum = typeof BankaccountGetAutocompleteV2EFilterActiveEnum[keyof typeof BankaccountGetAutocompleteV2EFilterActiveEnum];

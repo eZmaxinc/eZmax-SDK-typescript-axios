@@ -21,7 +21,7 @@
 export const FieldEEzmaxinvoicinguserVariationezsign = {
     Charge: 'Charge',
     Refund: 'Refund',
-    Same: 'Same'
+    Same: 'Same',
 } as const;
 
 export type FieldEEzmaxinvoicinguserVariationezsign = typeof FieldEEzmaxinvoicinguserVariationezsign[keyof typeof FieldEEzmaxinvoicinguserVariationezsign];

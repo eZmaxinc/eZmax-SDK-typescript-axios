@@ -46,7 +46,7 @@ export const ObjectGlaccountcontainerApiAxiosParamCreator = function (configurat
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('glaccountcontainerGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/glaccountcontainer/getAutocomplete/{sSelector}`
-                .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
+                .replace('{sSelector}', encodeURIComponent(String(sSelector)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -178,12 +178,12 @@ export class ObjectGlaccountcontainerApi extends BaseAPI {
 export const GlaccountcontainerGetAutocompleteV2SSelectorEnum = {
     All: 'All',
     AllWithoutSubsidiary: 'AllWithoutSubsidiary',
-    Supply: 'Supply'
+    Supply: 'Supply',
 } as const;
 export type GlaccountcontainerGetAutocompleteV2SSelectorEnum = typeof GlaccountcontainerGetAutocompleteV2SSelectorEnum[keyof typeof GlaccountcontainerGetAutocompleteV2SSelectorEnum];
 export const GlaccountcontainerGetAutocompleteV2EFilterActiveEnum = {
     All: 'All',
     Active: 'Active',
-    Inactive: 'Inactive'
+    Inactive: 'Inactive',
 } as const;
 export type GlaccountcontainerGetAutocompleteV2EFilterActiveEnum = typeof GlaccountcontainerGetAutocompleteV2EFilterActiveEnum[keyof typeof GlaccountcontainerGetAutocompleteV2EFilterActiveEnum];

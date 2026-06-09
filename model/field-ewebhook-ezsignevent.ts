@@ -28,7 +28,7 @@ export const FieldEWebhookEzsignevent = {
     FolderDisposed: 'FolderDisposed',
     FolderSent: 'FolderSent',
     FolderUnsent: 'FolderUnsent',
-    SignatureSigned: 'SignatureSigned'
+    SignatureSigned: 'SignatureSigned',
 } as const;
 
 export type FieldEWebhookEzsignevent = typeof FieldEWebhookEzsignevent[keyof typeof FieldEWebhookEzsignevent];

@@ -119,7 +119,7 @@ export const ObjectBillingentityinternalApiAxiosParamCreator = function (configu
             // verify required parameter 'billingentityinternalEditObjectV1Request' is not null or undefined
             assertParamExists('billingentityinternalEditObjectV1', 'billingentityinternalEditObjectV1Request', billingentityinternalEditObjectV1Request)
             const localVarPath = `/1/object/billingentityinternal/{pkiBillingentityinternalID}`
-                .replace(`{${"pkiBillingentityinternalID"}}`, encodeURIComponent(String(pkiBillingentityinternalID)));
+                .replace('{pkiBillingentityinternalID}', encodeURIComponent(String(pkiBillingentityinternalID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -182,7 +182,7 @@ export const ObjectBillingentityinternalApiAxiosParamCreator = function (configu
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('billingentityinternalGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/billingentityinternal/getAutocomplete/{sSelector}`
-                .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
+                .replace('{sSelector}', encodeURIComponent(String(sSelector)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -333,7 +333,7 @@ export const ObjectBillingentityinternalApiAxiosParamCreator = function (configu
             // verify required parameter 'pkiBillingentityinternalID' is not null or undefined
             assertParamExists('billingentityinternalGetObjectV2', 'pkiBillingentityinternalID', pkiBillingentityinternalID)
             const localVarPath = `/2/object/billingentityinternal/{pkiBillingentityinternalID}`
-                .replace(`{${"pkiBillingentityinternalID"}}`, encodeURIComponent(String(pkiBillingentityinternalID)));
+                .replace('{pkiBillingentityinternalID}', encodeURIComponent(String(pkiBillingentityinternalID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -601,19 +601,19 @@ export class ObjectBillingentityinternalApi extends BaseAPI {
 }
 
 export const BillingentityinternalGetAutocompleteV2SSelectorEnum = {
-    All: 'All'
+    All: 'All',
 } as const;
 export type BillingentityinternalGetAutocompleteV2SSelectorEnum = typeof BillingentityinternalGetAutocompleteV2SSelectorEnum[keyof typeof BillingentityinternalGetAutocompleteV2SSelectorEnum];
 export const BillingentityinternalGetAutocompleteV2EFilterActiveEnum = {
     All: 'All',
     Active: 'Active',
-    Inactive: 'Inactive'
+    Inactive: 'Inactive',
 } as const;
 export type BillingentityinternalGetAutocompleteV2EFilterActiveEnum = typeof BillingentityinternalGetAutocompleteV2EFilterActiveEnum[keyof typeof BillingentityinternalGetAutocompleteV2EFilterActiveEnum];
 export const BillingentityinternalGetListV1EOrderByEnum = {
     pkiBillingentityinternalID_ASC: 'pkiBillingentityinternalID_ASC',
     pkiBillingentityinternalID_DESC: 'pkiBillingentityinternalID_DESC',
     sBillingentityinternalDescriptionX_ASC: 'sBillingentityinternalDescriptionX_ASC',
-    sBillingentityinternalDescriptionX_DESC: 'sBillingentityinternalDescriptionX_DESC'
+    sBillingentityinternalDescriptionX_DESC: 'sBillingentityinternalDescriptionX_DESC',
 } as const;
 export type BillingentityinternalGetListV1EOrderByEnum = typeof BillingentityinternalGetListV1EOrderByEnum[keyof typeof BillingentityinternalGetListV1EOrderByEnum];

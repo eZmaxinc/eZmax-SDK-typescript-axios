@@ -21,7 +21,7 @@
 export const FieldEEzsignfoldertypeDocumentmerge = {
     No: 'No',
     YesWithWatermark: 'YesWithWatermark',
-    Yes: 'Yes'
+    Yes: 'Yes',
 } as const;
 
 export type FieldEEzsignfoldertypeDocumentmerge = typeof FieldEEzsignfoldertypeDocumentmerge[keyof typeof FieldEEzsignfoldertypeDocumentmerge];

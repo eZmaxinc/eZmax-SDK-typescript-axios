@@ -20,7 +20,7 @@
 
 export const FieldEEzsignfolderMessageorder = {
     GlobalFirst: 'GlobalFirst',
-    PrivateFirst: 'PrivateFirst'
+    PrivateFirst: 'PrivateFirst',
 } as const;
 
 export type FieldEEzsignfolderMessageorder = typeof FieldEEzsignfolderMessageorder[keyof typeof FieldEEzsignfolderMessageorder];

@@ -19,7 +19,7 @@
  */
 
 export const FieldESystemconfigurationLanguage1 = {
-    fr_QC: 'fr_QC'
+    fr_QC: 'fr_QC',
 } as const;
 
 export type FieldESystemconfigurationLanguage1 = typeof FieldESystemconfigurationLanguage1[keyof typeof FieldESystemconfigurationLanguage1];

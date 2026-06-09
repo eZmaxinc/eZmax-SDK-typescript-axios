@@ -22,7 +22,7 @@ export const FieldEEzsigntemplatedocumentpagerecognitionSection = {
     FirstLine: 'FirstLine',
     LastLine: 'LastLine',
     Page: 'Page',
-    Region: 'Region'
+    Region: 'Region',
 } as const;
 
 export type FieldEEzsigntemplatedocumentpagerecognitionSection = typeof FieldEEzsigntemplatedocumentpagerecognitionSection[keyof typeof FieldEEzsigntemplatedocumentpagerecognitionSection];

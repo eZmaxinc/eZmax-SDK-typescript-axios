@@ -21,7 +21,7 @@
 export const FieldEBrandingLogo = {
     Default: 'Default',
     JPEG: 'JPEG',
-    PNG: 'PNG'
+    PNG: 'PNG',
 } as const;
 
 export type FieldEBrandingLogo = typeof FieldEBrandingLogo[keyof typeof FieldEBrandingLogo];

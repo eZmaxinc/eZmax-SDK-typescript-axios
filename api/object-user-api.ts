@@ -213,7 +213,7 @@ export const ObjectUserApiAxiosParamCreator = function (configuration?: Configur
             // verify required parameter 'userEditColleaguesV2Request' is not null or undefined
             assertParamExists('userEditColleaguesV2', 'userEditColleaguesV2Request', userEditColleaguesV2Request)
             const localVarPath = `/2/object/user/{pkiUserID}/editColleagues`
-                .replace(`{${"pkiUserID"}}`, encodeURIComponent(String(pkiUserID)));
+                .replace('{pkiUserID}', encodeURIComponent(String(pkiUserID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -276,7 +276,7 @@ export const ObjectUserApiAxiosParamCreator = function (configuration?: Configur
             // verify required parameter 'userEditObjectV1Request' is not null or undefined
             assertParamExists('userEditObjectV1', 'userEditObjectV1Request', userEditObjectV1Request)
             const localVarPath = `/1/object/user/{pkiUserID}`
-                .replace(`{${"pkiUserID"}}`, encodeURIComponent(String(pkiUserID)));
+                .replace('{pkiUserID}', encodeURIComponent(String(pkiUserID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -339,7 +339,7 @@ export const ObjectUserApiAxiosParamCreator = function (configuration?: Configur
             // verify required parameter 'userEditPermissionsV1Request' is not null or undefined
             assertParamExists('userEditPermissionsV1', 'userEditPermissionsV1Request', userEditPermissionsV1Request)
             const localVarPath = `/1/object/user/{pkiUserID}/editPermissions`
-                .replace(`{${"pkiUserID"}}`, encodeURIComponent(String(pkiUserID)));
+                .replace('{pkiUserID}', encodeURIComponent(String(pkiUserID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -399,7 +399,7 @@ export const ObjectUserApiAxiosParamCreator = function (configuration?: Configur
             // verify required parameter 'pkiUserID' is not null or undefined
             assertParamExists('userGetApikeysV1', 'pkiUserID', pkiUserID)
             const localVarPath = `/1/object/user/{pkiUserID}/getApikeys`
-                .replace(`{${"pkiUserID"}}`, encodeURIComponent(String(pkiUserID)));
+                .replace('{pkiUserID}', encodeURIComponent(String(pkiUserID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -460,7 +460,7 @@ export const ObjectUserApiAxiosParamCreator = function (configuration?: Configur
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('userGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/user/getAutocomplete/{sSelector}`
-                .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
+                .replace('{sSelector}', encodeURIComponent(String(sSelector)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -531,7 +531,7 @@ export const ObjectUserApiAxiosParamCreator = function (configuration?: Configur
             // verify required parameter 'pkiUserID' is not null or undefined
             assertParamExists('userGetColleaguesV2', 'pkiUserID', pkiUserID)
             const localVarPath = `/2/object/user/{pkiUserID}/getColleagues`
-                .replace(`{${"pkiUserID"}}`, encodeURIComponent(String(pkiUserID)));
+                .replace('{pkiUserID}', encodeURIComponent(String(pkiUserID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -589,7 +589,7 @@ export const ObjectUserApiAxiosParamCreator = function (configuration?: Configur
             // verify required parameter 'pkiUserID' is not null or undefined
             assertParamExists('userGetEffectivePermissionsV1', 'pkiUserID', pkiUserID)
             const localVarPath = `/1/object/user/{pkiUserID}/getEffectivePermissions`
-                .replace(`{${"pkiUserID"}}`, encodeURIComponent(String(pkiUserID)));
+                .replace('{pkiUserID}', encodeURIComponent(String(pkiUserID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -647,7 +647,7 @@ export const ObjectUserApiAxiosParamCreator = function (configuration?: Configur
             // verify required parameter 'pkiUserID' is not null or undefined
             assertParamExists('userGetEzmaxcustomeruserV1', 'pkiUserID', pkiUserID)
             const localVarPath = `/1/object/user/{pkiUserID}/getEzmaxcustomeruser`
-                .replace(`{${"pkiUserID"}}`, encodeURIComponent(String(pkiUserID)));
+                .replace('{pkiUserID}', encodeURIComponent(String(pkiUserID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -785,7 +785,7 @@ export const ObjectUserApiAxiosParamCreator = function (configuration?: Configur
             // verify required parameter 'pkiUserID' is not null or undefined
             assertParamExists('userGetObjectV2', 'pkiUserID', pkiUserID)
             const localVarPath = `/2/object/user/{pkiUserID}`
-                .replace(`{${"pkiUserID"}}`, encodeURIComponent(String(pkiUserID)));
+                .replace('{pkiUserID}', encodeURIComponent(String(pkiUserID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -843,7 +843,7 @@ export const ObjectUserApiAxiosParamCreator = function (configuration?: Configur
             // verify required parameter 'pkiUserID' is not null or undefined
             assertParamExists('userGetPermissionsV1', 'pkiUserID', pkiUserID)
             const localVarPath = `/1/object/user/{pkiUserID}/getPermissions`
-                .replace(`{${"pkiUserID"}}`, encodeURIComponent(String(pkiUserID)));
+                .replace('{pkiUserID}', encodeURIComponent(String(pkiUserID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -901,7 +901,7 @@ export const ObjectUserApiAxiosParamCreator = function (configuration?: Configur
             // verify required parameter 'pkiUserID' is not null or undefined
             assertParamExists('userGetSubnetsV1', 'pkiUserID', pkiUserID)
             const localVarPath = `/1/object/user/{pkiUserID}/getSubnets`
-                .replace(`{${"pkiUserID"}}`, encodeURIComponent(String(pkiUserID)));
+                .replace('{pkiUserID}', encodeURIComponent(String(pkiUserID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -959,7 +959,7 @@ export const ObjectUserApiAxiosParamCreator = function (configuration?: Configur
             // verify required parameter 'pkiUserID' is not null or undefined
             assertParamExists('userGetUsergroupexternalsV1', 'pkiUserID', pkiUserID)
             const localVarPath = `/1/object/user/{pkiUserID}/getUsergroupexternals`
-                .replace(`{${"pkiUserID"}}`, encodeURIComponent(String(pkiUserID)));
+                .replace('{pkiUserID}', encodeURIComponent(String(pkiUserID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -1017,7 +1017,7 @@ export const ObjectUserApiAxiosParamCreator = function (configuration?: Configur
             // verify required parameter 'pkiUserID' is not null or undefined
             assertParamExists('userGetUsergroupsV1', 'pkiUserID', pkiUserID)
             const localVarPath = `/1/object/user/{pkiUserID}/getUsergroups`
-                .replace(`{${"pkiUserID"}}`, encodeURIComponent(String(pkiUserID)));
+                .replace('{pkiUserID}', encodeURIComponent(String(pkiUserID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -1078,7 +1078,7 @@ export const ObjectUserApiAxiosParamCreator = function (configuration?: Configur
             // verify required parameter 'userImpersonateV1Request' is not null or undefined
             assertParamExists('userImpersonateV1', 'userImpersonateV1Request', userImpersonateV1Request)
             const localVarPath = `/1/object/user/{pkiUserID}/impersonate`
-                .replace(`{${"pkiUserID"}}`, encodeURIComponent(String(pkiUserID)));
+                .replace('{pkiUserID}', encodeURIComponent(String(pkiUserID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -1141,7 +1141,7 @@ export const ObjectUserApiAxiosParamCreator = function (configuration?: Configur
             // verify required parameter 'body' is not null or undefined
             assertParamExists('userSendPasswordResetV1', 'body', body)
             const localVarPath = `/1/object/user/{pkiUserID}/sendPasswordReset`
-                .replace(`{${"pkiUserID"}}`, encodeURIComponent(String(pkiUserID)));
+                .replace('{pkiUserID}', encodeURIComponent(String(pkiUserID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -1877,13 +1877,13 @@ export const UserGetAutocompleteV2SSelectorEnum = {
     EzsignuserBuiltIn: 'EzsignuserBuiltIn',
     Ezsignuser: 'Ezsignuser',
     Normal: 'Normal',
-    UsergroupDelegated: 'UsergroupDelegated'
+    UsergroupDelegated: 'UsergroupDelegated',
 } as const;
 export type UserGetAutocompleteV2SSelectorEnum = typeof UserGetAutocompleteV2SSelectorEnum[keyof typeof UserGetAutocompleteV2SSelectorEnum];
 export const UserGetAutocompleteV2EFilterActiveEnum = {
     All: 'All',
     Active: 'Active',
-    Inactive: 'Inactive'
+    Inactive: 'Inactive',
 } as const;
 export type UserGetAutocompleteV2EFilterActiveEnum = typeof UserGetAutocompleteV2EFilterActiveEnum[keyof typeof UserGetAutocompleteV2EFilterActiveEnum];
 export const UserGetListV1EOrderByEnum = {
@@ -1908,6 +1908,6 @@ export const UserGetListV1EOrderByEnum = {
     sEmailAddress_ASC: 'sEmailAddress_ASC',
     sEmailAddress_DESC: 'sEmailAddress_DESC',
     bUserSuspended_ASC: 'bUserSuspended_ASC',
-    bUserSuspended_DESC: 'bUserSuspended_DESC'
+    bUserSuspended_DESC: 'bUserSuspended_DESC',
 } as const;
 export type UserGetListV1EOrderByEnum = typeof UserGetListV1EOrderByEnum[keyof typeof UserGetListV1EOrderByEnum];

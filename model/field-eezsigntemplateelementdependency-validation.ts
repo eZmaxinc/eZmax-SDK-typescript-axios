@@ -21,7 +21,7 @@
 export const FieldEEzsigntemplateelementdependencyValidation = {
     Value: 'Value',
     Selected: 'Selected',
-    Filled: 'Filled'
+    Filled: 'Filled',
 } as const;
 
 export type FieldEEzsigntemplateelementdependencyValidation = typeof FieldEEzsigntemplateelementdependencyValidation[keyof typeof FieldEEzsigntemplateelementdependencyValidation];

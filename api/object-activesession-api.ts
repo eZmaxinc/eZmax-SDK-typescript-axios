@@ -487,6 +487,6 @@ export const ActivesessionGetListV1EOrderByEnum = {
     dtActivesessionLasthit_ASC: 'dtActivesessionLasthit_ASC',
     dtActivesessionLasthit_DESC: 'dtActivesessionLasthit_DESC',
     sActivesessionIP_ASC: 'sActivesessionIP_ASC',
-    sActivesessionIP_DESC: 'sActivesessionIP_DESC'
+    sActivesessionIP_DESC: 'sActivesessionIP_DESC',
 } as const;
 export type ActivesessionGetListV1EOrderByEnum = typeof ActivesessionGetListV1EOrderByEnum[keyof typeof ActivesessionGetListV1EOrderByEnum];

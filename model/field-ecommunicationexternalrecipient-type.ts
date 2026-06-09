@@ -21,7 +21,7 @@
 export const FieldECommunicationexternalrecipientType = {
     To: 'To',
     Cc: 'Cc',
-    Bcc: 'Bcc'
+    Bcc: 'Bcc',
 } as const;
 
 export type FieldECommunicationexternalrecipientType = typeof FieldECommunicationexternalrecipientType[keyof typeof FieldECommunicationexternalrecipientType];

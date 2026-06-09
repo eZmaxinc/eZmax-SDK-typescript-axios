@@ -47,7 +47,7 @@ export const ObjectEzsigntsarequirementApiAxiosParamCreator = function (configur
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('ezsigntsarequirementGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/ezsigntsarequirement/getAutocomplete/{sSelector}`
-                .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
+                .replace('{sSelector}', encodeURIComponent(String(sSelector)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -186,12 +186,12 @@ export class ObjectEzsigntsarequirementApi extends BaseAPI {
 export const EzsigntsarequirementGetAutocompleteV2SSelectorEnum = {
     All: 'All',
     User: 'User',
-    Usergroup: 'Usergroup'
+    Usergroup: 'Usergroup',
 } as const;
 export type EzsigntsarequirementGetAutocompleteV2SSelectorEnum = typeof EzsigntsarequirementGetAutocompleteV2SSelectorEnum[keyof typeof EzsigntsarequirementGetAutocompleteV2SSelectorEnum];
 export const EzsigntsarequirementGetAutocompleteV2EFilterActiveEnum = {
     All: 'All',
     Active: 'Active',
-    Inactive: 'Inactive'
+    Inactive: 'Inactive',
 } as const;
 export type EzsigntsarequirementGetAutocompleteV2EFilterActiveEnum = typeof EzsigntsarequirementGetAutocompleteV2EFilterActiveEnum[keyof typeof EzsigntsarequirementGetAutocompleteV2EFilterActiveEnum];

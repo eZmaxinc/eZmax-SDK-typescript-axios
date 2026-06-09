@@ -22,7 +22,7 @@ export const FieldEColleagueEzsign = {
     No: 'No',
     Read: 'Read',
     Modify: 'Modify',
-    Full: 'Full'
+    Full: 'Full',
 } as const;
 
 export type FieldEColleagueEzsign = typeof FieldEColleagueEzsign[keyof typeof FieldEColleagueEzsign];

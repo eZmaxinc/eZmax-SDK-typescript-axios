@@ -45,7 +45,7 @@ export const GlobalCustomerApiAxiosParamCreator = function (configuration?: Conf
             // verify required parameter 'pksCustomerCode' is not null or undefined
             assertParamExists('globalCustomerGetEndpointV1', 'pksCustomerCode', pksCustomerCode)
             const localVarPath = `/1/customer/{pksCustomerCode}/endpoint`
-                .replace(`{${"pksCustomerCode"}}`, encodeURIComponent(String(pksCustomerCode)));
+                .replace('{pksCustomerCode}', encodeURIComponent(String(pksCustomerCode)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -161,6 +161,6 @@ export class GlobalCustomerApi extends BaseAPI {
 
 export const GlobalCustomerGetEndpointV1SInfrastructureproductCodeEnum = {
     appcluster01: 'appcluster01',
-    ezsignuser: 'ezsignuser'
+    ezsignuser: 'ezsignuser',
 } as const;
 export type GlobalCustomerGetEndpointV1SInfrastructureproductCodeEnum = typeof GlobalCustomerGetEndpointV1SInfrastructureproductCodeEnum[keyof typeof GlobalCustomerGetEndpointV1SInfrastructureproductCodeEnum];

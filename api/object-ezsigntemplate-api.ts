@@ -66,7 +66,7 @@ export const ObjectEzsigntemplateApiAxiosParamCreator = function (configuration?
             // verify required parameter 'ezsigntemplateCopyV1Request' is not null or undefined
             assertParamExists('ezsigntemplateCopyV1', 'ezsigntemplateCopyV1Request', ezsigntemplateCopyV1Request)
             const localVarPath = `/1/object/ezsigntemplate/{pkiEzsigntemplateID}/copy`
-                .replace(`{${"pkiEzsigntemplateID"}}`, encodeURIComponent(String(pkiEzsigntemplateID)));
+                .replace('{pkiEzsigntemplateID}', encodeURIComponent(String(pkiEzsigntemplateID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -185,7 +185,7 @@ export const ObjectEzsigntemplateApiAxiosParamCreator = function (configuration?
             // verify required parameter 'pkiEzsigntemplateID' is not null or undefined
             assertParamExists('ezsigntemplateDeleteObjectV1', 'pkiEzsigntemplateID', pkiEzsigntemplateID)
             const localVarPath = `/1/object/ezsigntemplate/{pkiEzsigntemplateID}`
-                .replace(`{${"pkiEzsigntemplateID"}}`, encodeURIComponent(String(pkiEzsigntemplateID)));
+                .replace('{pkiEzsigntemplateID}', encodeURIComponent(String(pkiEzsigntemplateID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -246,7 +246,7 @@ export const ObjectEzsigntemplateApiAxiosParamCreator = function (configuration?
             // verify required parameter 'ezsigntemplateEditObjectV3Request' is not null or undefined
             assertParamExists('ezsigntemplateEditObjectV3', 'ezsigntemplateEditObjectV3Request', ezsigntemplateEditObjectV3Request)
             const localVarPath = `/3/object/ezsigntemplate/{pkiEzsigntemplateID}`
-                .replace(`{${"pkiEzsigntemplateID"}}`, encodeURIComponent(String(pkiEzsigntemplateID)));
+                .replace('{pkiEzsigntemplateID}', encodeURIComponent(String(pkiEzsigntemplateID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -310,7 +310,7 @@ export const ObjectEzsigntemplateApiAxiosParamCreator = function (configuration?
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('ezsigntemplateGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/ezsigntemplate/getAutocomplete/{sSelector}`
-                .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
+                .replace('{sSelector}', encodeURIComponent(String(sSelector)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -465,7 +465,7 @@ export const ObjectEzsigntemplateApiAxiosParamCreator = function (configuration?
             // verify required parameter 'pkiEzsigntemplateID' is not null or undefined
             assertParamExists('ezsigntemplateGetObjectV3', 'pkiEzsigntemplateID', pkiEzsigntemplateID)
             const localVarPath = `/3/object/ezsigntemplate/{pkiEzsigntemplateID}`
-                .replace(`{${"pkiEzsigntemplateID"}}`, encodeURIComponent(String(pkiEzsigntemplateID)));
+                .replace('{pkiEzsigntemplateID}', encodeURIComponent(String(pkiEzsigntemplateID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -808,13 +808,13 @@ export class ObjectEzsigntemplateApi extends BaseAPI {
 
 export const EzsigntemplateGetAutocompleteV2SSelectorEnum = {
     All: 'All',
-    Ezsigntemplatepublic: 'Ezsigntemplatepublic'
+    Ezsigntemplatepublic: 'Ezsigntemplatepublic',
 } as const;
 export type EzsigntemplateGetAutocompleteV2SSelectorEnum = typeof EzsigntemplateGetAutocompleteV2SSelectorEnum[keyof typeof EzsigntemplateGetAutocompleteV2SSelectorEnum];
 export const EzsigntemplateGetAutocompleteV2EFilterActiveEnum = {
     All: 'All',
     Active: 'Active',
-    Inactive: 'Inactive'
+    Inactive: 'Inactive',
 } as const;
 export type EzsigntemplateGetAutocompleteV2EFilterActiveEnum = typeof EzsigntemplateGetAutocompleteV2EFilterActiveEnum[keyof typeof EzsigntemplateGetAutocompleteV2EFilterActiveEnum];
 export const EzsigntemplateGetListV1EOrderByEnum = {
@@ -837,6 +837,6 @@ export const EzsigntemplateGetListV1EOrderByEnum = {
     sEzsignfoldertypeNameX_ASC: 'sEzsignfoldertypeNameX_ASC',
     sEzsignfoldertypeNameX_DESC: 'sEzsignfoldertypeNameX_DESC',
     eEzsigntemplateType_ASC2: 'eEzsigntemplateType_ASC',
-    eEzsigntemplateType_DESC2: 'eEzsigntemplateType_DESC'
+    eEzsigntemplateType_DESC2: 'eEzsigntemplateType_DESC',
 } as const;
 export type EzsigntemplateGetListV1EOrderByEnum = typeof EzsigntemplateGetListV1EOrderByEnum[keyof typeof EzsigntemplateGetListV1EOrderByEnum];

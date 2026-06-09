@@ -21,7 +21,7 @@
 export const FieldEEzsigntemplatedocumentpagerecognitionOperator = {
     eq: 'eq',
     in: 'in',
-    similar: 'similar'
+    similar: 'similar',
 } as const;
 
 export type FieldEEzsigntemplatedocumentpagerecognitionOperator = typeof FieldEEzsigntemplatedocumentpagerecognitionOperator[keyof typeof FieldEEzsigntemplatedocumentpagerecognitionOperator];

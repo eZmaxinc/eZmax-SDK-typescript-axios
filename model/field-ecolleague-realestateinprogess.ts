@@ -22,7 +22,7 @@ export const FieldEColleagueRealestateinprogess = {
     No: 'No',
     Read: 'Read',
     Modify: 'Modify',
-    Create: 'Create'
+    Create: 'Create',
 } as const;
 
 export type FieldEColleagueRealestateinprogess = typeof FieldEColleagueRealestateinprogess[keyof typeof FieldEColleagueRealestateinprogess];

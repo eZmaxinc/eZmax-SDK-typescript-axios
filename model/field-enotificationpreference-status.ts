@@ -21,7 +21,7 @@
 export const FieldENotificationpreferenceStatus = {
     Show: 'Show',
     Hide: 'Hide',
-    Pin: 'Pin'
+    Pin: 'Pin',
 } as const;
 
 export type FieldENotificationpreferenceStatus = typeof FieldENotificationpreferenceStatus[keyof typeof FieldENotificationpreferenceStatus];

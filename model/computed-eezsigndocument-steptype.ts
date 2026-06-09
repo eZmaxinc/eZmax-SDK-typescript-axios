@@ -21,7 +21,7 @@
 export const ComputedEEzsigndocumentSteptype = {
     Form: 'Form',
     Sign: 'Sign',
-    None: 'None'
+    None: 'None',
 } as const;
 
 export type ComputedEEzsigndocumentSteptype = typeof ComputedEEzsigndocumentSteptype[keyof typeof ComputedEEzsigndocumentSteptype];

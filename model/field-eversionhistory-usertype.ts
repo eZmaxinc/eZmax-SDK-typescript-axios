@@ -22,7 +22,7 @@ export const FieldEVersionhistoryUsertype = {
     empty: '',
     AgentBroker: 'AgentBroker',
     EzsignUser: 'EzsignUser',
-    Normal: 'Normal'
+    Normal: 'Normal',
 } as const;
 
 export type FieldEVersionhistoryUsertype = typeof FieldEVersionhistoryUsertype[keyof typeof FieldEVersionhistoryUsertype];

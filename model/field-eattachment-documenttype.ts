@@ -67,7 +67,7 @@ export const FieldEAttachmentDocumenttype = {
     Salary: 'Salary',
     Supplier: 'Supplier',
     Template: 'Template',
-    Tranqcontract: 'Tranqcontract'
+    Tranqcontract: 'Tranqcontract',
 } as const;
 
 export type FieldEAttachmentDocumenttype = typeof FieldEAttachmentDocumenttype[keyof typeof FieldEAttachmentDocumenttype];

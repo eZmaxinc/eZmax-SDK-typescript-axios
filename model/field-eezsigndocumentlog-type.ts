@@ -52,7 +52,7 @@ export const FieldEEzsigndocumentlogType = {
     RegeneratePage: 'RegeneratePage',
     RegeneratePageForm: 'RegeneratePageForm',
     Reassign: 'Reassign',
-    DocumentCompletion: 'DocumentCompletion'
+    DocumentCompletion: 'DocumentCompletion',
 } as const;
 
 export type FieldEEzsigndocumentlogType = typeof FieldEEzsigndocumentlogType[keyof typeof FieldEEzsigndocumentlogType];

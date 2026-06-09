@@ -43,7 +43,7 @@ export const ObjectAttachmentApiAxiosParamCreator = function (configuration?: Co
             // verify required parameter 'pkiAttachmentID' is not null or undefined
             assertParamExists('attachmentDownloadV1', 'pkiAttachmentID', pkiAttachmentID)
             const localVarPath = `/1/object/attachment/{pkiAttachmentID}/download`
-                .replace(`{${"pkiAttachmentID"}}`, encodeURIComponent(String(pkiAttachmentID)));
+                .replace('{pkiAttachmentID}', encodeURIComponent(String(pkiAttachmentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -104,7 +104,7 @@ export const ObjectAttachmentApiAxiosParamCreator = function (configuration?: Co
             // verify required parameter 'pkiAttachmentID' is not null or undefined
             assertParamExists('attachmentGetAttachmentlogsV1', 'pkiAttachmentID', pkiAttachmentID)
             const localVarPath = `/1/object/attachment/{pkiAttachmentID}/getAttachmentlogs`
-                .replace(`{${"pkiAttachmentID"}}`, encodeURIComponent(String(pkiAttachmentID)));
+                .replace('{pkiAttachmentID}', encodeURIComponent(String(pkiAttachmentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath

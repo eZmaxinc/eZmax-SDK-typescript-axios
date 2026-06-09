@@ -33,7 +33,7 @@ export const FieldESessionhistoryEndby = {
     BadUserType: 'BadUserType',
     BadIP: 'BadIP',
     ForcedLogoff: 'ForcedLogoff',
-    Suspended: 'Suspended'
+    Suspended: 'Suspended',
 } as const;
 
 export type FieldESessionhistoryEndby = typeof FieldESessionhistoryEndby[keyof typeof FieldESessionhistoryEndby];

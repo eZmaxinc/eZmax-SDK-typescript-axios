@@ -127,7 +127,7 @@ export const ObjectEzmaxpartnerApiAxiosParamCreator = function (configuration?: 
             // verify required parameter 'pkiEzmaxpartnerID' is not null or undefined
             assertParamExists('ezmaxpartnerGetObjectV2', 'pkiEzmaxpartnerID', pkiEzmaxpartnerID)
             const localVarPath = `/2/object/ezmaxpartner/{pkiEzmaxpartnerID}`
-                .replace(`{${"pkiEzmaxpartnerID"}}`, encodeURIComponent(String(pkiEzmaxpartnerID)));
+                .replace('{pkiEzmaxpartnerID}', encodeURIComponent(String(pkiEzmaxpartnerID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -294,6 +294,6 @@ export const EzmaxpartnerGetCustomDeveloppersV1EOrderByEnum = {
     sEzmaxpartnerPhoneE164X_ASC: 'sEzmaxpartnerPhoneE164X_ASC',
     sEzmaxpartnerPhoneE164X_DESC: 'sEzmaxpartnerPhoneE164X_DESC',
     sEzmaxpartnerUrlX_ASC: 'sEzmaxpartnerUrlX_ASC',
-    sEzmaxpartnerUrlX_DESC: 'sEzmaxpartnerUrlX_DESC'
+    sEzmaxpartnerUrlX_DESC: 'sEzmaxpartnerUrlX_DESC',
 } as const;
 export type EzmaxpartnerGetCustomDeveloppersV1EOrderByEnum = typeof EzmaxpartnerGetCustomDeveloppersV1EOrderByEnum[keyof typeof EzmaxpartnerGetCustomDeveloppersV1EOrderByEnum];

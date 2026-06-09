@@ -25,7 +25,7 @@ export const FieldEEzsigntemplateformfieldgroupType = {
     Radio: 'Radio',
     Checkbox: 'Checkbox',
     Number: 'Number',
-    Date: 'Date'
+    Date: 'Date',
 } as const;
 
 export type FieldEEzsigntemplateformfieldgroupType = typeof FieldEEzsigntemplateformfieldgroupType[keyof typeof FieldEEzsigntemplateformfieldgroupType];

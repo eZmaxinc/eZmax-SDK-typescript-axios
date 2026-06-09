@@ -48,7 +48,7 @@ export const ObjectExternalbrokerApiAxiosParamCreator = function (configuration?
             // verify required parameter 'externalbrokerImportIntoEDMV1Request' is not null or undefined
             assertParamExists('externalbrokerImportIntoEDMV1', 'externalbrokerImportIntoEDMV1Request', externalbrokerImportIntoEDMV1Request)
             const localVarPath = `/1/object/externalbroker/{pkiExternalbrokerID}/importIntoEDM`
-                .replace(`{${"pkiExternalbrokerID"}}`, encodeURIComponent(String(pkiExternalbrokerID)));
+                .replace('{pkiExternalbrokerID}', encodeURIComponent(String(pkiExternalbrokerID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath

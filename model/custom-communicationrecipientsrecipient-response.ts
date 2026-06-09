@@ -130,7 +130,7 @@ export const CustomCommunicationrecipientsrecipientResponseECommunicationrecipie
     Notary: 'Notary',
     Rewardmember: 'Rewardmember',
     Supplier: 'Supplier',
-    User: 'User'
+    User: 'User',
 } as const;
 
 export type CustomCommunicationrecipientsrecipientResponseECommunicationrecipientsrecipientObjecttypeEnum = typeof CustomCommunicationrecipientsrecipientResponseECommunicationrecipientsrecipientObjecttypeEnum[keyof typeof CustomCommunicationrecipientsrecipientResponseECommunicationrecipientsrecipientObjecttypeEnum];

@@ -21,7 +21,7 @@
 export const FieldEAttachmentVerified = {
     No: 'No',
     Yes: 'Yes',
-    Rejected: 'Rejected'
+    Rejected: 'Rejected',
 } as const;
 
 export type FieldEAttachmentVerified = typeof FieldEAttachmentVerified[keyof typeof FieldEAttachmentVerified];

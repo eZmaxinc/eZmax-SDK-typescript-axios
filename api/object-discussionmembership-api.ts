@@ -106,7 +106,7 @@ export const ObjectDiscussionmembershipApiAxiosParamCreator = function (configur
             // verify required parameter 'pkiDiscussionmembershipID' is not null or undefined
             assertParamExists('discussionmembershipDeleteObjectV1', 'pkiDiscussionmembershipID', pkiDiscussionmembershipID)
             const localVarPath = `/1/object/discussionmembership/{pkiDiscussionmembershipID}`
-                .replace(`{${"pkiDiscussionmembershipID"}}`, encodeURIComponent(String(pkiDiscussionmembershipID)));
+                .replace('{pkiDiscussionmembershipID}', encodeURIComponent(String(pkiDiscussionmembershipID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath

@@ -108,7 +108,7 @@ export const ObjectEzsignbulksenddocumentmappingApiAxiosParamCreator = function 
             // verify required parameter 'pkiEzsignbulksenddocumentmappingID' is not null or undefined
             assertParamExists('ezsignbulksenddocumentmappingDeleteObjectV1', 'pkiEzsignbulksenddocumentmappingID', pkiEzsignbulksenddocumentmappingID)
             const localVarPath = `/1/object/ezsignbulksenddocumentmapping/{pkiEzsignbulksenddocumentmappingID}`
-                .replace(`{${"pkiEzsignbulksenddocumentmappingID"}}`, encodeURIComponent(String(pkiEzsignbulksenddocumentmappingID)));
+                .replace('{pkiEzsignbulksenddocumentmappingID}', encodeURIComponent(String(pkiEzsignbulksenddocumentmappingID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -166,7 +166,7 @@ export const ObjectEzsignbulksenddocumentmappingApiAxiosParamCreator = function 
             // verify required parameter 'pkiEzsignbulksenddocumentmappingID' is not null or undefined
             assertParamExists('ezsignbulksenddocumentmappingGetObjectV2', 'pkiEzsignbulksenddocumentmappingID', pkiEzsignbulksenddocumentmappingID)
             const localVarPath = `/2/object/ezsignbulksenddocumentmapping/{pkiEzsignbulksenddocumentmappingID}`
-                .replace(`{${"pkiEzsignbulksenddocumentmappingID"}}`, encodeURIComponent(String(pkiEzsignbulksenddocumentmappingID)));
+                .replace('{pkiEzsignbulksenddocumentmappingID}', encodeURIComponent(String(pkiEzsignbulksenddocumentmappingID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath

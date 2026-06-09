@@ -23,7 +23,7 @@ export const FieldELeadStatus = {
     Dispatching: 'Dispatching',
     Assigned: 'Assigned',
     Lost: 'Lost',
-    Won: 'Won'
+    Won: 'Won',
 } as const;
 
 export type FieldELeadStatus = typeof FieldELeadStatus[keyof typeof FieldELeadStatus];

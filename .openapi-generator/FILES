@@ -1967,10 +1967,7 @@ docs/ScimServiceProviderConfig.md
 docs/ScimServiceProviderConfigApi.md
 docs/ScimServiceProviderConfigBulk.md
 docs/ScimServiceProviderConfigChangePassword.md
-docs/ScimServiceProviderConfigEtag.md
 docs/ScimServiceProviderConfigFilter.md
-docs/ScimServiceProviderConfigPatch.md
-docs/ScimServiceProviderConfigSort.md
 docs/ScimUser.md
 docs/ScimUserList.md
 docs/ScimUsersApi.md
@@ -3965,10 +3962,7 @@ model/scim-group-member.ts
 model/scim-group.ts
 model/scim-service-provider-config-bulk.ts
 model/scim-service-provider-config-change-password.ts
-model/scim-service-provider-config-etag.ts
 model/scim-service-provider-config-filter.ts
-model/scim-service-provider-config-patch.ts
-model/scim-service-provider-config-sort.ts
 model/scim-service-provider-config.ts
 model/scim-user-list.ts
 model/scim-user.ts

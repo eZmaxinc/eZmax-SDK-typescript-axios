@@ -22,7 +22,7 @@ export const FieldEUserEzsignprepaid = {
     No: 'No',
     Basic: 'Basic',
     Standard: 'Standard',
-    Pro: 'Pro'
+    Pro: 'Pro',
 } as const;
 
 export type FieldEUserEzsignprepaid = typeof FieldEUserEzsignprepaid[keyof typeof FieldEUserEzsignprepaid];

@@ -38,7 +38,7 @@ export interface EzdoctemplatedocumentRequestPatch {
 export const EzdoctemplatedocumentRequestPatchEEzdoctemplatedocumentFormatEnum = {
     Docx: 'Docx',
     Html: 'Html',
-    Tx: 'Tx'
+    Tx: 'Tx',
 } as const;
 
 export type EzdoctemplatedocumentRequestPatchEEzdoctemplatedocumentFormatEnum = typeof EzdoctemplatedocumentRequestPatchEEzdoctemplatedocumentFormatEnum[keyof typeof EzdoctemplatedocumentRequestPatchEEzdoctemplatedocumentFormatEnum];

@@ -20,7 +20,7 @@
 
 export const FieldEWebhookModule = {
     Ezsign: 'Ezsign',
-    Management: 'Management'
+    Management: 'Management',
 } as const;
 
 export type FieldEWebhookModule = typeof FieldEWebhookModule[keyof typeof FieldEWebhookModule];

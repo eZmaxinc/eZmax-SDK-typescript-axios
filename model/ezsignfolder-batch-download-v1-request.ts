@@ -30,7 +30,7 @@ export interface EzsignfolderBatchDownloadV1Request {
 export const EzsignfolderBatchDownloadV1RequestAEDocumentTypeEnum = {
     Signed: 'Signed',
     Proof: 'Proof',
-    Proofdocument: 'Proofdocument'
+    Proofdocument: 'Proofdocument',
 } as const;
 
 export type EzsignfolderBatchDownloadV1RequestAEDocumentTypeEnum = typeof EzsignfolderBatchDownloadV1RequestAEDocumentTypeEnum[keyof typeof EzsignfolderBatchDownloadV1RequestAEDocumentTypeEnum];

@@ -53,14 +53,14 @@ export interface CustomDnsrecordResponse {
 export const CustomDnsrecordResponseEDnsrecordTypeEnum = {
     CNAME: 'CNAME',
     MX: 'MX',
-    TXT: 'TXT'
+    TXT: 'TXT',
 } as const;
 
 export type CustomDnsrecordResponseEDnsrecordTypeEnum = typeof CustomDnsrecordResponseEDnsrecordTypeEnum[keyof typeof CustomDnsrecordResponseEDnsrecordTypeEnum];
 export const CustomDnsrecordResponseEDnsrecordValidationEnum = {
     Match: 'Match',
     Mismatch: 'Mismatch',
-    NotFound: 'NotFound'
+    NotFound: 'NotFound',
 } as const;
 
 export type CustomDnsrecordResponseEDnsrecordValidationEnum = typeof CustomDnsrecordResponseEDnsrecordValidationEnum[keyof typeof CustomDnsrecordResponseEDnsrecordValidationEnum];

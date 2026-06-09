@@ -80,7 +80,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
             // verify required parameter 'ezsignbulksendCreateEzsignbulksendtransmissionV2Request' is not null or undefined
             assertParamExists('ezsignbulksendCreateEzsignbulksendtransmissionV2', 'ezsignbulksendCreateEzsignbulksendtransmissionV2Request', ezsignbulksendCreateEzsignbulksendtransmissionV2Request)
             const localVarPath = `/2/object/ezsignbulksend/{pkiEzsignbulksendID}/createEzsignbulksendtransmission`
-                .replace(`{${"pkiEzsignbulksendID"}}`, encodeURIComponent(String(pkiEzsignbulksendID)));
+                .replace('{pkiEzsignbulksendID}', encodeURIComponent(String(pkiEzsignbulksendID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -259,7 +259,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
             // verify required parameter 'pkiEzsignbulksendID' is not null or undefined
             assertParamExists('ezsignbulksendDeleteObjectV1', 'pkiEzsignbulksendID', pkiEzsignbulksendID)
             const localVarPath = `/1/object/ezsignbulksend/{pkiEzsignbulksendID}`
-                .replace(`{${"pkiEzsignbulksendID"}}`, encodeURIComponent(String(pkiEzsignbulksendID)));
+                .replace('{pkiEzsignbulksendID}', encodeURIComponent(String(pkiEzsignbulksendID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -320,7 +320,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
             // verify required parameter 'ezsignbulksendEditObjectV2Request' is not null or undefined
             assertParamExists('ezsignbulksendEditObjectV2', 'ezsignbulksendEditObjectV2Request', ezsignbulksendEditObjectV2Request)
             const localVarPath = `/2/object/ezsignbulksend/{pkiEzsignbulksendID}`
-                .replace(`{${"pkiEzsignbulksendID"}}`, encodeURIComponent(String(pkiEzsignbulksendID)));
+                .replace('{pkiEzsignbulksendID}', encodeURIComponent(String(pkiEzsignbulksendID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -384,7 +384,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
             // verify required parameter 'pkiEzsignbulksendID' is not null or undefined
             assertParamExists('ezsignbulksendGetBatchFileV1', 'pkiEzsignbulksendID', pkiEzsignbulksendID)
             const localVarPath = `/1/object/ezsignbulksend/{pkiEzsignbulksendID}/getBatchFile`
-                .replace(`{${"pkiEzsignbulksendID"}}`, encodeURIComponent(String(pkiEzsignbulksendID)));
+                .replace('{pkiEzsignbulksendID}', encodeURIComponent(String(pkiEzsignbulksendID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -461,7 +461,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
             // verify required parameter 'eCsvSeparator' is not null or undefined
             assertParamExists('ezsignbulksendGetCsvTemplateV1', 'eCsvSeparator', eCsvSeparator)
             const localVarPath = `/1/object/ezsignbulksend/{pkiEzsignbulksendID}/getCsvTemplate`
-                .replace(`{${"pkiEzsignbulksendID"}}`, encodeURIComponent(String(pkiEzsignbulksendID)));
+                .replace('{pkiEzsignbulksendID}', encodeURIComponent(String(pkiEzsignbulksendID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -523,7 +523,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
             // verify required parameter 'pkiEzsignbulksendID' is not null or undefined
             assertParamExists('ezsignbulksendGetEzsignbulksendtransmissionsV1', 'pkiEzsignbulksendID', pkiEzsignbulksendID)
             const localVarPath = `/1/object/ezsignbulksend/{pkiEzsignbulksendID}/getEzsignbulksendtransmissions`
-                .replace(`{${"pkiEzsignbulksendID"}}`, encodeURIComponent(String(pkiEzsignbulksendID)));
+                .replace('{pkiEzsignbulksendID}', encodeURIComponent(String(pkiEzsignbulksendID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -581,7 +581,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
             // verify required parameter 'pkiEzsignbulksendID' is not null or undefined
             assertParamExists('ezsignbulksendGetEzsignsignaturesAutomaticV1', 'pkiEzsignbulksendID', pkiEzsignbulksendID)
             const localVarPath = `/1/object/ezsignbulksend/{pkiEzsignbulksendID}/getEzsignsignaturesAutomatic`
-                .replace(`{${"pkiEzsignbulksendID"}}`, encodeURIComponent(String(pkiEzsignbulksendID)));
+                .replace('{pkiEzsignbulksendID}', encodeURIComponent(String(pkiEzsignbulksendID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -639,7 +639,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
             // verify required parameter 'pkiEzsignbulksendID' is not null or undefined
             assertParamExists('ezsignbulksendGetFormsDataV1', 'pkiEzsignbulksendID', pkiEzsignbulksendID)
             const localVarPath = `/1/object/ezsignbulksend/{pkiEzsignbulksendID}/getFormsData`
-                .replace(`{${"pkiEzsignbulksendID"}}`, encodeURIComponent(String(pkiEzsignbulksendID)));
+                .replace('{pkiEzsignbulksendID}', encodeURIComponent(String(pkiEzsignbulksendID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -778,7 +778,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
             // verify required parameter 'pkiEzsignbulksendID' is not null or undefined
             assertParamExists('ezsignbulksendGetObjectV2', 'pkiEzsignbulksendID', pkiEzsignbulksendID)
             const localVarPath = `/2/object/ezsignbulksend/{pkiEzsignbulksendID}`
-                .replace(`{${"pkiEzsignbulksendID"}}`, encodeURIComponent(String(pkiEzsignbulksendID)));
+                .replace('{pkiEzsignbulksendID}', encodeURIComponent(String(pkiEzsignbulksendID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -836,7 +836,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
             // verify required parameter 'pkiEzsignbulksendID' is not null or undefined
             assertParamExists('ezsignbulksendGetObjectV3', 'pkiEzsignbulksendID', pkiEzsignbulksendID)
             const localVarPath = `/3/object/ezsignbulksend/{pkiEzsignbulksendID}`
-                .replace(`{${"pkiEzsignbulksendID"}}`, encodeURIComponent(String(pkiEzsignbulksendID)));
+                .replace('{pkiEzsignbulksendID}', encodeURIComponent(String(pkiEzsignbulksendID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -897,7 +897,7 @@ export const ObjectEzsignbulksendApiAxiosParamCreator = function (configuration?
             // verify required parameter 'ezsignbulksendReorderV1Request' is not null or undefined
             assertParamExists('ezsignbulksendReorderV1', 'ezsignbulksendReorderV1Request', ezsignbulksendReorderV1Request)
             const localVarPath = `/1/object/ezsignbulksend/{pkiEzsignbulksendID}/reorder`
-                .replace(`{${"pkiEzsignbulksendID"}}`, encodeURIComponent(String(pkiEzsignbulksendID)));
+                .replace('{pkiEzsignbulksendID}', encodeURIComponent(String(pkiEzsignbulksendID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -1492,7 +1492,7 @@ export class ObjectEzsignbulksendApi extends BaseAPI {
 
 export const EzsignbulksendGetCsvTemplateV1ECsvSeparatorEnum = {
     Comma: 'Comma',
-    Semicolon: 'Semicolon'
+    Semicolon: 'Semicolon',
 } as const;
 export type EzsignbulksendGetCsvTemplateV1ECsvSeparatorEnum = typeof EzsignbulksendGetCsvTemplateV1ECsvSeparatorEnum[keyof typeof EzsignbulksendGetCsvTemplateV1ECsvSeparatorEnum];
 export const EzsignbulksendGetListV1EOrderByEnum = {
@@ -1519,6 +1519,6 @@ export const EzsignbulksendGetListV1EOrderByEnum = {
     iEzsignsignatureSigned_ASC: 'iEzsignsignatureSigned_ASC',
     iEzsignsignatureSigned_DESC: 'iEzsignsignatureSigned_DESC',
     bEzsignbulksendIsactive_ASC: 'bEzsignbulksendIsactive_ASC',
-    bEzsignbulksendIsactive_DESC: 'bEzsignbulksendIsactive_DESC'
+    bEzsignbulksendIsactive_DESC: 'bEzsignbulksendIsactive_DESC',
 } as const;
 export type EzsignbulksendGetListV1EOrderByEnum = typeof EzsignbulksendGetListV1EOrderByEnum[keyof typeof EzsignbulksendGetListV1EOrderByEnum];

@@ -26,7 +26,7 @@ export interface WebsocketRequestServerGetWebsocketIDV1 {
 }
 
 export const WebsocketRequestServerGetWebsocketIDV1EWebsocketMessagetypeEnum = {
-    RequestServer_GetWebsocketID_V1: 'RequestServer-GetWebsocketID-V1'
+    RequestServer_GetWebsocketID_V1: 'RequestServer-GetWebsocketID-V1',
 } as const;
 
 export type WebsocketRequestServerGetWebsocketIDV1EWebsocketMessagetypeEnum = typeof WebsocketRequestServerGetWebsocketIDV1EWebsocketMessagetypeEnum[keyof typeof WebsocketRequestServerGetWebsocketIDV1EWebsocketMessagetypeEnum];

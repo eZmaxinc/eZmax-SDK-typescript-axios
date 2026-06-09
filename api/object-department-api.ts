@@ -46,7 +46,7 @@ export const ObjectDepartmentApiAxiosParamCreator = function (configuration?: Co
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('departmentGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/department/getAutocomplete/{sSelector}`
-                .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
+                .replace('{sSelector}', encodeURIComponent(String(sSelector)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -179,12 +179,12 @@ export const DepartmentGetAutocompleteV2SSelectorEnum = {
     All: 'All',
     AllButDepartmentZero: 'AllButDepartmentZero',
     Company: 'Company',
-    CompanyButDepartmentZero: 'CompanyButDepartmentZero'
+    CompanyButDepartmentZero: 'CompanyButDepartmentZero',
 } as const;
 export type DepartmentGetAutocompleteV2SSelectorEnum = typeof DepartmentGetAutocompleteV2SSelectorEnum[keyof typeof DepartmentGetAutocompleteV2SSelectorEnum];
 export const DepartmentGetAutocompleteV2EFilterActiveEnum = {
     All: 'All',
     Active: 'Active',
-    Inactive: 'Inactive'
+    Inactive: 'Inactive',
 } as const;
 export type DepartmentGetAutocompleteV2EFilterActiveEnum = typeof DepartmentGetAutocompleteV2EFilterActiveEnum[keyof typeof DepartmentGetAutocompleteV2EFilterActiveEnum];

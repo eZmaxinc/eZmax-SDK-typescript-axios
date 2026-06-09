@@ -108,7 +108,7 @@ export const ObjectEzsigndiscussionApiAxiosParamCreator = function (configuratio
             // verify required parameter 'pkiEzsigndiscussionID' is not null or undefined
             assertParamExists('ezsigndiscussionDeleteObjectV1', 'pkiEzsigndiscussionID', pkiEzsigndiscussionID)
             const localVarPath = `/1/object/ezsigndiscussion/{pkiEzsigndiscussionID}`
-                .replace(`{${"pkiEzsigndiscussionID"}}`, encodeURIComponent(String(pkiEzsigndiscussionID)));
+                .replace('{pkiEzsigndiscussionID}', encodeURIComponent(String(pkiEzsigndiscussionID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -166,7 +166,7 @@ export const ObjectEzsigndiscussionApiAxiosParamCreator = function (configuratio
             // verify required parameter 'pkiEzsigndiscussionID' is not null or undefined
             assertParamExists('ezsigndiscussionGetObjectV2', 'pkiEzsigndiscussionID', pkiEzsigndiscussionID)
             const localVarPath = `/2/object/ezsigndiscussion/{pkiEzsigndiscussionID}`
-                .replace(`{${"pkiEzsigndiscussionID"}}`, encodeURIComponent(String(pkiEzsigndiscussionID)));
+                .replace('{pkiEzsigndiscussionID}', encodeURIComponent(String(pkiEzsigndiscussionID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath

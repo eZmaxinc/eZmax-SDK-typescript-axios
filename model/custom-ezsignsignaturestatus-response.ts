@@ -47,7 +47,7 @@ export interface CustomEzsignsignaturestatusResponse {
 
 export const CustomEzsignsignaturestatusResponseEEzsignsignaturestatusSteptypeEnum = {
     Form: 'Form',
-    Signature: 'Signature'
+    Signature: 'Signature',
 } as const;
 
 export type CustomEzsignsignaturestatusResponseEEzsignsignaturestatusSteptypeEnum = typeof CustomEzsignsignaturestatusResponseEEzsignsignaturestatusSteptypeEnum[keyof typeof CustomEzsignsignaturestatusResponseEEzsignsignaturestatusSteptypeEnum];

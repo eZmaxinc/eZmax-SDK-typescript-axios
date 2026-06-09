@@ -19,7 +19,7 @@
  */
 
 export const FieldEPaymentgatewayProcessor = {
-    Moneris: 'Moneris'
+    Moneris: 'Moneris',
 } as const;
 
 export type FieldEPaymentgatewayProcessor = typeof FieldEPaymentgatewayProcessor[keyof typeof FieldEPaymentgatewayProcessor];

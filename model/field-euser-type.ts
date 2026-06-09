@@ -23,7 +23,7 @@ export const FieldEUserType = {
     Assistant: 'Assistant',
     Employee: 'Employee',
     EzsignUser: 'EzsignUser',
-    Normal: 'Normal'
+    Normal: 'Normal',
 } as const;
 
 export type FieldEUserType = typeof FieldEUserType[keyof typeof FieldEUserType];

@@ -46,7 +46,7 @@ export const ObjectBrokertypeApiAxiosParamCreator = function (configuration?: Co
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('brokertypeGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/brokertype/getAutocomplete/{sSelector}`
-                .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
+                .replace('{sSelector}', encodeURIComponent(String(sSelector)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -176,12 +176,12 @@ export class ObjectBrokertypeApi extends BaseAPI {
 }
 
 export const BrokertypeGetAutocompleteV2SSelectorEnum = {
-    All: 'All'
+    All: 'All',
 } as const;
 export type BrokertypeGetAutocompleteV2SSelectorEnum = typeof BrokertypeGetAutocompleteV2SSelectorEnum[keyof typeof BrokertypeGetAutocompleteV2SSelectorEnum];
 export const BrokertypeGetAutocompleteV2EFilterActiveEnum = {
     All: 'All',
     Active: 'Active',
-    Inactive: 'Inactive'
+    Inactive: 'Inactive',
 } as const;
 export type BrokertypeGetAutocompleteV2EFilterActiveEnum = typeof BrokertypeGetAutocompleteV2EFilterActiveEnum[keyof typeof BrokertypeGetAutocompleteV2EFilterActiveEnum];

@@ -20,7 +20,7 @@
 
 export const FieldEAuthenticationexternalType = {
     Salesforce: 'Salesforce',
-    SalesforceSandbox: 'SalesforceSandbox'
+    SalesforceSandbox: 'SalesforceSandbox',
 } as const;
 
 export type FieldEAuthenticationexternalType = typeof FieldEAuthenticationexternalType[keyof typeof FieldEAuthenticationexternalType];

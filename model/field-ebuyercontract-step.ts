@@ -24,7 +24,7 @@ export const FieldEBuyercontractStep = {
     Modified: 'Modified',
     ContractEnded: 'ContractEnded',
     ExpiredContract: 'ExpiredContract',
-    Bought: 'Bought'
+    Bought: 'Bought',
 } as const;
 
 export type FieldEBuyercontractStep = typeof FieldEBuyercontractStep[keyof typeof FieldEBuyercontractStep];

@@ -22,7 +22,7 @@ export const FieldECustomerMarketingcorrespondence = {
     No: 'No',
     Email: 'Email',
     Mail: 'Mail',
-    Any: 'Any'
+    Any: 'Any',
 } as const;
 
 export type FieldECustomerMarketingcorrespondence = typeof FieldECustomerMarketingcorrespondence[keyof typeof FieldECustomerMarketingcorrespondence];

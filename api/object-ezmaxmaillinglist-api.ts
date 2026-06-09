@@ -192,6 +192,6 @@ export const EzmaxmaillinglistGetListV1EOrderByEnum = {
     sEzmaxmaillinglistNameX_ASC: 'sEzmaxmaillinglistNameX_ASC',
     sEzmaxmaillinglistNameX_DESC: 'sEzmaxmaillinglistNameX_DESC',
     sEzmaxmaillinglistDescriptionX_ASC: 'sEzmaxmaillinglistDescriptionX_ASC',
-    sEzmaxmaillinglistDescriptionX_DESC: 'sEzmaxmaillinglistDescriptionX_DESC'
+    sEzmaxmaillinglistDescriptionX_DESC: 'sEzmaxmaillinglistDescriptionX_DESC',
 } as const;
 export type EzmaxmaillinglistGetListV1EOrderByEnum = typeof EzmaxmaillinglistGetListV1EOrderByEnum[keyof typeof EzmaxmaillinglistGetListV1EOrderByEnum];

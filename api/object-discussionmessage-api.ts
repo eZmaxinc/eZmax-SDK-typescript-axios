@@ -110,7 +110,7 @@ export const ObjectDiscussionmessageApiAxiosParamCreator = function (configurati
             // verify required parameter 'pkiDiscussionmessageID' is not null or undefined
             assertParamExists('discussionmessageDeleteObjectV1', 'pkiDiscussionmessageID', pkiDiscussionmessageID)
             const localVarPath = `/1/object/discussionmessage/{pkiDiscussionmessageID}`
-                .replace(`{${"pkiDiscussionmessageID"}}`, encodeURIComponent(String(pkiDiscussionmessageID)));
+                .replace('{pkiDiscussionmessageID}', encodeURIComponent(String(pkiDiscussionmessageID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -171,7 +171,7 @@ export const ObjectDiscussionmessageApiAxiosParamCreator = function (configurati
             // verify required parameter 'discussionmessagePatchObjectV1Request' is not null or undefined
             assertParamExists('discussionmessagePatchObjectV1', 'discussionmessagePatchObjectV1Request', discussionmessagePatchObjectV1Request)
             const localVarPath = `/1/object/discussionmessage/{pkiDiscussionmessageID}`
-                .replace(`{${"pkiDiscussionmessageID"}}`, encodeURIComponent(String(pkiDiscussionmessageID)));
+                .replace('{pkiDiscussionmessageID}', encodeURIComponent(String(pkiDiscussionmessageID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath

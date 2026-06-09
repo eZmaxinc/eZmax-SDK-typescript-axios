@@ -20,7 +20,7 @@
 
 export const FieldESystemconfigurationEzsign = {
     No: 'No',
-    Yes: 'Yes'
+    Yes: 'Yes',
 } as const;
 
 export type FieldESystemconfigurationEzsign = typeof FieldESystemconfigurationEzsign[keyof typeof FieldESystemconfigurationEzsign];

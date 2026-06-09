@@ -46,7 +46,7 @@ export const ObjectCurrencyApiAxiosParamCreator = function (configuration?: Conf
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('currencyGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/currency/getAutocomplete/{sSelector}`
-                .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
+                .replace('{sSelector}', encodeURIComponent(String(sSelector)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -176,12 +176,12 @@ export class ObjectCurrencyApi extends BaseAPI {
 }
 
 export const CurrencyGetAutocompleteV2SSelectorEnum = {
-    All: 'All'
+    All: 'All',
 } as const;
 export type CurrencyGetAutocompleteV2SSelectorEnum = typeof CurrencyGetAutocompleteV2SSelectorEnum[keyof typeof CurrencyGetAutocompleteV2SSelectorEnum];
 export const CurrencyGetAutocompleteV2EFilterActiveEnum = {
     All: 'All',
     Active: 'Active',
-    Inactive: 'Inactive'
+    Inactive: 'Inactive',
 } as const;
 export type CurrencyGetAutocompleteV2EFilterActiveEnum = typeof CurrencyGetAutocompleteV2EFilterActiveEnum[keyof typeof CurrencyGetAutocompleteV2EFilterActiveEnum];

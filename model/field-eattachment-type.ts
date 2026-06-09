@@ -23,7 +23,7 @@ export const FieldEAttachmentType = {
     Pdf: 'Pdf',
     PdfGenerated: 'PdfGenerated',
     PdfScanned: 'PdfScanned',
-    Ezsign: 'Ezsign'
+    Ezsign: 'Ezsign',
 } as const;
 
 export type FieldEAttachmentType = typeof FieldEAttachmentType[keyof typeof FieldEAttachmentType];

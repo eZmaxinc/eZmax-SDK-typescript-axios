@@ -46,7 +46,7 @@ export const ObjectPdfalevelApiAxiosParamCreator = function (configuration?: Con
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('pdfalevelGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/pdfalevel/getAutocomplete/{sSelector}`
-                .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
+                .replace('{sSelector}', encodeURIComponent(String(sSelector)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -176,12 +176,12 @@ export class ObjectPdfalevelApi extends BaseAPI {
 }
 
 export const PdfalevelGetAutocompleteV2SSelectorEnum = {
-    All: 'All'
+    All: 'All',
 } as const;
 export type PdfalevelGetAutocompleteV2SSelectorEnum = typeof PdfalevelGetAutocompleteV2SSelectorEnum[keyof typeof PdfalevelGetAutocompleteV2SSelectorEnum];
 export const PdfalevelGetAutocompleteV2EFilterActiveEnum = {
     All: 'All',
     Active: 'Active',
-    Inactive: 'Inactive'
+    Inactive: 'Inactive',
 } as const;
 export type PdfalevelGetAutocompleteV2EFilterActiveEnum = typeof PdfalevelGetAutocompleteV2EFilterActiveEnum[keyof typeof PdfalevelGetAutocompleteV2EFilterActiveEnum];

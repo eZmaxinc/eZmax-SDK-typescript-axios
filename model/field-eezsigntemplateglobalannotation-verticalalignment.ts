@@ -21,7 +21,7 @@
 export const FieldEEzsigntemplateglobalannotationVerticalalignment = {
     Bottom: 'Bottom',
     Middle: 'Middle',
-    Top: 'Top'
+    Top: 'Top',
 } as const;
 
 export type FieldEEzsigntemplateglobalannotationVerticalalignment = typeof FieldEEzsigntemplateglobalannotationVerticalalignment[keyof typeof FieldEEzsigntemplateglobalannotationVerticalalignment];

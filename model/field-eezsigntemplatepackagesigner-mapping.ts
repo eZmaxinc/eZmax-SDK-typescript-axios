@@ -22,7 +22,7 @@ export const FieldEEzsigntemplatepackagesignerMapping = {
     Manual: 'Manual',
     Creator: 'Creator',
     User: 'User',
-    Usergroup: 'Usergroup'
+    Usergroup: 'Usergroup',
 } as const;
 
 export type FieldEEzsigntemplatepackagesignerMapping = typeof FieldEEzsigntemplatepackagesignerMapping[keyof typeof FieldEEzsigntemplatepackagesignerMapping];

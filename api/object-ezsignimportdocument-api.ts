@@ -43,7 +43,7 @@ export const ObjectEzsignimportdocumentApiAxiosParamCreator = function (configur
             // verify required parameter 'pkiEzsignimportdocumentID' is not null or undefined
             assertParamExists('ezsignimportdocumentDownloadV1', 'pkiEzsignimportdocumentID', pkiEzsignimportdocumentID)
             const localVarPath = `/1/object/ezsignimportdocument/{pkiEzsignimportdocumentID}/download`
-                .replace(`{${"pkiEzsignimportdocumentID"}}`, encodeURIComponent(String(pkiEzsignimportdocumentID)));
+                .replace('{pkiEzsignimportdocumentID}', encodeURIComponent(String(pkiEzsignimportdocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath

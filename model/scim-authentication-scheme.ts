@@ -37,7 +37,7 @@ export const ScimAuthenticationSchemeTypeEnum = {
     oauth2: 'oauth2',
     oauthbearertoken: 'oauthbearertoken',
     httpbasic: 'httpbasic',
-    httpdigest: 'httpdigest'
+    httpdigest: 'httpdigest',
 } as const;
 
 export type ScimAuthenticationSchemeTypeEnum = typeof ScimAuthenticationSchemeTypeEnum[keyof typeof ScimAuthenticationSchemeTypeEnum];

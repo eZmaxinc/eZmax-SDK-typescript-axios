@@ -46,7 +46,7 @@ export const ObjectCompanyApiAxiosParamCreator = function (configuration?: Confi
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('companyGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/company/getAutocomplete/{sSelector}`
-                .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
+                .replace('{sSelector}', encodeURIComponent(String(sSelector)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -176,12 +176,12 @@ export class ObjectCompanyApi extends BaseAPI {
 }
 
 export const CompanyGetAutocompleteV2SSelectorEnum = {
-    All: 'All'
+    All: 'All',
 } as const;
 export type CompanyGetAutocompleteV2SSelectorEnum = typeof CompanyGetAutocompleteV2SSelectorEnum[keyof typeof CompanyGetAutocompleteV2SSelectorEnum];
 export const CompanyGetAutocompleteV2EFilterActiveEnum = {
     All: 'All',
     Active: 'Active',
-    Inactive: 'Inactive'
+    Inactive: 'Inactive',
 } as const;
 export type CompanyGetAutocompleteV2EFilterActiveEnum = typeof CompanyGetAutocompleteV2EFilterActiveEnum[keyof typeof CompanyGetAutocompleteV2EFilterActiveEnum];

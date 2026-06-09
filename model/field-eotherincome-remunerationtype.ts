@@ -20,7 +20,7 @@
 
 export const FieldEOtherincomeRemunerationtype = {
     Dollars: 'Dollars',
-    DollarsTaxesIncluded: 'DollarsTaxesIncluded'
+    DollarsTaxesIncluded: 'DollarsTaxesIncluded',
 } as const;
 
 export type FieldEOtherincomeRemunerationtype = typeof FieldEOtherincomeRemunerationtype[keyof typeof FieldEOtherincomeRemunerationtype];

@@ -26,7 +26,7 @@ export const FieldEEzsignfolderStep = {
     Expired: 'Expired',
     Completed: 'Completed',
     Archived: 'Archived',
-    Disposed: 'Disposed'
+    Disposed: 'Disposed',
 } as const;
 
 export type FieldEEzsignfolderStep = typeof FieldEEzsignfolderStep[keyof typeof FieldEEzsignfolderStep];

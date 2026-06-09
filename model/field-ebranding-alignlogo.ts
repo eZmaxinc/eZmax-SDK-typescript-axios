@@ -21,7 +21,7 @@
 export const FieldEBrandingAlignlogo = {
     Center: 'Center',
     Left: 'Left',
-    Right: 'Right'
+    Right: 'Right',
 } as const;
 
 export type FieldEBrandingAlignlogo = typeof FieldEBrandingAlignlogo[keyof typeof FieldEBrandingAlignlogo];

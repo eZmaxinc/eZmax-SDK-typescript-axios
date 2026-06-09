@@ -50,7 +50,7 @@ export const ObjectSystemconfigurationApiAxiosParamCreator = function (configura
             // verify required parameter 'systemconfigurationEditObjectV2Request' is not null or undefined
             assertParamExists('systemconfigurationEditObjectV2', 'systemconfigurationEditObjectV2Request', systemconfigurationEditObjectV2Request)
             const localVarPath = `/2/object/systemconfiguration/{pkiSystemconfigurationID}`
-                .replace(`{${"pkiSystemconfigurationID"}}`, encodeURIComponent(String(pkiSystemconfigurationID)));
+                .replace('{pkiSystemconfigurationID}', encodeURIComponent(String(pkiSystemconfigurationID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -110,7 +110,7 @@ export const ObjectSystemconfigurationApiAxiosParamCreator = function (configura
             // verify required parameter 'pkiSystemconfigurationID' is not null or undefined
             assertParamExists('systemconfigurationGetObjectV2', 'pkiSystemconfigurationID', pkiSystemconfigurationID)
             const localVarPath = `/2/object/systemconfiguration/{pkiSystemconfigurationID}`
-                .replace(`{${"pkiSystemconfigurationID"}}`, encodeURIComponent(String(pkiSystemconfigurationID)));
+                .replace('{pkiSystemconfigurationID}', encodeURIComponent(String(pkiSystemconfigurationID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath

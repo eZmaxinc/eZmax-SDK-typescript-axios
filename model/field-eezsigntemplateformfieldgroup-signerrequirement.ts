@@ -20,7 +20,7 @@
 
 export const FieldEEzsigntemplateformfieldgroupSignerrequirement = {
     All: 'All',
-    One: 'One'
+    One: 'One',
 } as const;
 
 export type FieldEEzsigntemplateformfieldgroupSignerrequirement = typeof FieldEEzsigntemplateformfieldgroupSignerrequirement[keyof typeof FieldEEzsigntemplateformfieldgroupSignerrequirement];

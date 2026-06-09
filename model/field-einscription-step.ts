@@ -29,7 +29,7 @@ export const FieldEInscriptionStep = {
     ImportedNotauthenticated: 'ImportedNotauthenticated',
     NotAuthenticated: 'NotAuthenticated',
     ModifiedNotauthenticated: 'ModifiedNotauthenticated',
-    Authenticated: 'Authenticated'
+    Authenticated: 'Authenticated',
 } as const;
 
 export type FieldEInscriptionStep = typeof FieldEInscriptionStep[keyof typeof FieldEInscriptionStep];

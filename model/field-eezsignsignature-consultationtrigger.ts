@@ -21,7 +21,7 @@
 export const FieldEEzsignsignatureConsultationtrigger = {
     Automatic: 'Automatic',
     Manual: 'Manual',
-    Optional: 'Optional'
+    Optional: 'Optional',
 } as const;
 
 export type FieldEEzsignsignatureConsultationtrigger = typeof FieldEEzsignsignatureConsultationtrigger[keyof typeof FieldEEzsignsignatureConsultationtrigger];

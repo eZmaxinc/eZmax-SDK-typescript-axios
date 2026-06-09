@@ -21,7 +21,7 @@
 export const FieldEDiscussionmessageStatus = {
     New: 'New',
     Edited: 'Edited',
-    Deleted: 'Deleted'
+    Deleted: 'Deleted',
 } as const;
 
 export type FieldEDiscussionmessageStatus = typeof FieldEDiscussionmessageStatus[keyof typeof FieldEDiscussionmessageStatus];

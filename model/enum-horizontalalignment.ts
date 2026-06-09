@@ -21,7 +21,7 @@
 export const EnumHorizontalalignment = {
     Center: 'Center',
     Left: 'Left',
-    Right: 'Right'
+    Right: 'Right',
 } as const;
 
 export type EnumHorizontalalignment = typeof EnumHorizontalalignment[keyof typeof EnumHorizontalalignment];

@@ -32,7 +32,7 @@ export interface CustomEzsigndocumentDuplicateRequest {
 
 export const CustomEzsigndocumentDuplicateRequestEEzsigndocumentVersionEnum = {
     Initial: 'Initial',
-    Signed: 'Signed'
+    Signed: 'Signed',
 } as const;
 
 export type CustomEzsigndocumentDuplicateRequestEEzsigndocumentVersionEnum = typeof CustomEzsigndocumentDuplicateRequestEEzsigndocumentVersionEnum[keyof typeof CustomEzsigndocumentDuplicateRequestEEzsigndocumentVersionEnum];

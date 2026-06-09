@@ -43,7 +43,7 @@ export const ModuleReportApiAxiosParamCreator = function (configuration?: Config
             // verify required parameter 'sReportgroupCacheID' is not null or undefined
             assertParamExists('reportGetReportFromCacheV1', 'sReportgroupCacheID', sReportgroupCacheID)
             const localVarPath = `/1/module/report/getReportFromCache/{sReportgroupCacheID}`
-                .replace(`{${"sReportgroupCacheID"}}`, encodeURIComponent(String(sReportgroupCacheID)));
+                .replace('{sReportgroupCacheID}', encodeURIComponent(String(sReportgroupCacheID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath

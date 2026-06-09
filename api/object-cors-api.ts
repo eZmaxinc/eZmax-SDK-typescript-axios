@@ -112,7 +112,7 @@ export const ObjectCorsApiAxiosParamCreator = function (configuration?: Configur
             // verify required parameter 'pkiCorsID' is not null or undefined
             assertParamExists('corsDeleteObjectV1', 'pkiCorsID', pkiCorsID)
             const localVarPath = `/1/object/cors/{pkiCorsID}`
-                .replace(`{${"pkiCorsID"}}`, encodeURIComponent(String(pkiCorsID)));
+                .replace('{pkiCorsID}', encodeURIComponent(String(pkiCorsID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -173,7 +173,7 @@ export const ObjectCorsApiAxiosParamCreator = function (configuration?: Configur
             // verify required parameter 'corsEditObjectV1Request' is not null or undefined
             assertParamExists('corsEditObjectV1', 'corsEditObjectV1Request', corsEditObjectV1Request)
             const localVarPath = `/1/object/cors/{pkiCorsID}`
-                .replace(`{${"pkiCorsID"}}`, encodeURIComponent(String(pkiCorsID)));
+                .replace('{pkiCorsID}', encodeURIComponent(String(pkiCorsID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -233,7 +233,7 @@ export const ObjectCorsApiAxiosParamCreator = function (configuration?: Configur
             // verify required parameter 'pkiCorsID' is not null or undefined
             assertParamExists('corsGetObjectV2', 'pkiCorsID', pkiCorsID)
             const localVarPath = `/2/object/cors/{pkiCorsID}`
-                .replace(`{${"pkiCorsID"}}`, encodeURIComponent(String(pkiCorsID)));
+                .replace('{pkiCorsID}', encodeURIComponent(String(pkiCorsID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath

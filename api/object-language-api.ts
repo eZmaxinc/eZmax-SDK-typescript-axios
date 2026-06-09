@@ -46,7 +46,7 @@ export const ObjectLanguageApiAxiosParamCreator = function (configuration?: Conf
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('languageGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/language/getAutocomplete/{sSelector}`
-                .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
+                .replace('{sSelector}', encodeURIComponent(String(sSelector)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -176,12 +176,12 @@ export class ObjectLanguageApi extends BaseAPI {
 }
 
 export const LanguageGetAutocompleteV2SSelectorEnum = {
-    All: 'All'
+    All: 'All',
 } as const;
 export type LanguageGetAutocompleteV2SSelectorEnum = typeof LanguageGetAutocompleteV2SSelectorEnum[keyof typeof LanguageGetAutocompleteV2SSelectorEnum];
 export const LanguageGetAutocompleteV2EFilterActiveEnum = {
     All: 'All',
     Active: 'Active',
-    Inactive: 'Inactive'
+    Inactive: 'Inactive',
 } as const;
 export type LanguageGetAutocompleteV2EFilterActiveEnum = typeof LanguageGetAutocompleteV2EFilterActiveEnum[keyof typeof LanguageGetAutocompleteV2EFilterActiveEnum];

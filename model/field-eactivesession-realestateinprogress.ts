@@ -22,7 +22,7 @@ export const FieldEActivesessionRealestateinprogress = {
     No: 'No',
     Read: 'Read',
     Modify: 'Modify',
-    Create: 'Create'
+    Create: 'Create',
 } as const;
 
 export type FieldEActivesessionRealestateinprogress = typeof FieldEActivesessionRealestateinprogress[keyof typeof FieldEActivesessionRealestateinprogress];

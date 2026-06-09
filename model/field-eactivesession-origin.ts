@@ -20,7 +20,7 @@
 
 export const FieldEActivesessionOrigin = {
     BuiltIn: 'BuiltIn',
-    External: 'External'
+    External: 'External',
 } as const;
 
 export type FieldEActivesessionOrigin = typeof FieldEActivesessionOrigin[keyof typeof FieldEActivesessionOrigin];

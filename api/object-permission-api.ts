@@ -112,7 +112,7 @@ export const ObjectPermissionApiAxiosParamCreator = function (configuration?: Co
             // verify required parameter 'pkiPermissionID' is not null or undefined
             assertParamExists('permissionDeleteObjectV1', 'pkiPermissionID', pkiPermissionID)
             const localVarPath = `/1/object/permission/{pkiPermissionID}`
-                .replace(`{${"pkiPermissionID"}}`, encodeURIComponent(String(pkiPermissionID)));
+                .replace('{pkiPermissionID}', encodeURIComponent(String(pkiPermissionID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -173,7 +173,7 @@ export const ObjectPermissionApiAxiosParamCreator = function (configuration?: Co
             // verify required parameter 'permissionEditObjectV1Request' is not null or undefined
             assertParamExists('permissionEditObjectV1', 'permissionEditObjectV1Request', permissionEditObjectV1Request)
             const localVarPath = `/1/object/permission/{pkiPermissionID}`
-                .replace(`{${"pkiPermissionID"}}`, encodeURIComponent(String(pkiPermissionID)));
+                .replace('{pkiPermissionID}', encodeURIComponent(String(pkiPermissionID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -233,7 +233,7 @@ export const ObjectPermissionApiAxiosParamCreator = function (configuration?: Co
             // verify required parameter 'pkiPermissionID' is not null or undefined
             assertParamExists('permissionGetObjectV2', 'pkiPermissionID', pkiPermissionID)
             const localVarPath = `/2/object/permission/{pkiPermissionID}`
-                .replace(`{${"pkiPermissionID"}}`, encodeURIComponent(String(pkiPermissionID)));
+                .replace('{pkiPermissionID}', encodeURIComponent(String(pkiPermissionID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath

@@ -108,7 +108,7 @@ export const ObjectEzsigntemplatepackagemembershipApiAxiosParamCreator = functio
             // verify required parameter 'pkiEzsigntemplatepackagemembershipID' is not null or undefined
             assertParamExists('ezsigntemplatepackagemembershipDeleteObjectV1', 'pkiEzsigntemplatepackagemembershipID', pkiEzsigntemplatepackagemembershipID)
             const localVarPath = `/1/object/ezsigntemplatepackagemembership/{pkiEzsigntemplatepackagemembershipID}`
-                .replace(`{${"pkiEzsigntemplatepackagemembershipID"}}`, encodeURIComponent(String(pkiEzsigntemplatepackagemembershipID)));
+                .replace('{pkiEzsigntemplatepackagemembershipID}', encodeURIComponent(String(pkiEzsigntemplatepackagemembershipID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -166,7 +166,7 @@ export const ObjectEzsigntemplatepackagemembershipApiAxiosParamCreator = functio
             // verify required parameter 'pkiEzsigntemplatepackagemembershipID' is not null or undefined
             assertParamExists('ezsigntemplatepackagemembershipGetObjectV2', 'pkiEzsigntemplatepackagemembershipID', pkiEzsigntemplatepackagemembershipID)
             const localVarPath = `/2/object/ezsigntemplatepackagemembership/{pkiEzsigntemplatepackagemembershipID}`
-                .replace(`{${"pkiEzsigntemplatepackagemembershipID"}}`, encodeURIComponent(String(pkiEzsigntemplatepackagemembershipID)));
+                .replace('{pkiEzsigntemplatepackagemembershipID}', encodeURIComponent(String(pkiEzsigntemplatepackagemembershipID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath

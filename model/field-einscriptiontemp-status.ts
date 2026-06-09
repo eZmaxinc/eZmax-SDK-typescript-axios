@@ -21,7 +21,7 @@
 export const FieldEInscriptiontempStatus = {
     Imported: 'Imported',
     Processed: 'Processed',
-    Modified: 'Modified'
+    Modified: 'Modified',
 } as const;
 
 export type FieldEInscriptiontempStatus = typeof FieldEInscriptiontempStatus[keyof typeof FieldEInscriptiontempStatus];

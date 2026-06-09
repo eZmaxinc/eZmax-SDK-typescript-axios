@@ -21,7 +21,7 @@
 export const FieldECommunicationImportance = {
     High: 'High',
     Normal: 'Normal',
-    Low: 'Low'
+    Low: 'Low',
 } as const;
 
 export type FieldECommunicationImportance = typeof FieldECommunicationImportance[keyof typeof FieldECommunicationImportance];

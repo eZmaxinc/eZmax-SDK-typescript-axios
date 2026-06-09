@@ -47,7 +47,7 @@ export const FieldEAttachmentlogType = {
     UnvalidatedBy: 'UnvalidatedBy',
     Upload: 'Upload',
     ValidatedBy: 'ValidatedBy',
-    VetinfoUpload: 'VetinfoUpload'
+    VetinfoUpload: 'VetinfoUpload',
 } as const;
 
 export type FieldEAttachmentlogType = typeof FieldEAttachmentlogType[keyof typeof FieldEAttachmentlogType];

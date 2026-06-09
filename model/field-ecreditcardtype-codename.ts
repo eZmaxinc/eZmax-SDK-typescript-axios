@@ -21,7 +21,7 @@
 export const FieldECreditcardtypeCodename = {
     Amex: 'Amex',
     Mastercard: 'Mastercard',
-    Visa: 'Visa'
+    Visa: 'Visa',
 } as const;
 
 export type FieldECreditcardtypeCodename = typeof FieldECreditcardtypeCodename[keyof typeof FieldECreditcardtypeCodename];

@@ -19,7 +19,7 @@
  */
 
 export const FieldEEzsigntemplatesignatureSignaturepad = {
-    Topaz: 'Topaz'
+    Topaz: 'Topaz',
 } as const;
 
 export type FieldEEzsigntemplatesignatureSignaturepad = typeof FieldEEzsigntemplatesignatureSignaturepad[keyof typeof FieldEEzsigntemplatesignatureSignaturepad];

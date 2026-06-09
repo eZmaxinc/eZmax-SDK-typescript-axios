@@ -21,7 +21,7 @@
 export const FieldEEzsignfoldertypePdfarequirement = {
     None: 'None',
     Declared: 'Declared',
-    Verified: 'Verified'
+    Verified: 'Verified',
 } as const;
 
 export type FieldEEzsignfoldertypePdfarequirement = typeof FieldEEzsignfoldertypePdfarequirement[keyof typeof FieldEEzsignfoldertypePdfarequirement];

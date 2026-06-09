@@ -43,7 +43,7 @@ export const GlobalEzmaxcustomerApiAxiosParamCreator = function (configuration?:
             // verify required parameter 'pksEzmaxcustomerCode' is not null or undefined
             assertParamExists('globalEzmaxcustomerGetConfigurationV1', 'pksEzmaxcustomerCode', pksEzmaxcustomerCode)
             const localVarPath = `/1/ezmaxcustomer/{pksEzmaxcustomerCode}/getConfiguration`
-                .replace(`{${"pksEzmaxcustomerCode"}}`, encodeURIComponent(String(pksEzmaxcustomerCode)));
+                .replace('{pksEzmaxcustomerCode}', encodeURIComponent(String(pksEzmaxcustomerCode)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath

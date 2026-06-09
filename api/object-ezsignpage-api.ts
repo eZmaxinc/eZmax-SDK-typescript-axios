@@ -46,7 +46,7 @@ export const ObjectEzsignpageApiAxiosParamCreator = function (configuration?: Co
             // verify required parameter 'body' is not null or undefined
             assertParamExists('ezsignpageConsultV1', 'body', body)
             const localVarPath = `/1/object/ezsignpage/{pkiEzsignpageID}/consult`
-                .replace(`{${"pkiEzsignpageID"}}`, encodeURIComponent(String(pkiEzsignpageID)));
+                .replace('{pkiEzsignpageID}', encodeURIComponent(String(pkiEzsignpageID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath

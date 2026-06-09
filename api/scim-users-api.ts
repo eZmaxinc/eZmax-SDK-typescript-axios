@@ -103,7 +103,7 @@ export const ScimUsersApiAxiosParamCreator = function (configuration?: Configura
             // verify required parameter 'userId' is not null or undefined
             assertParamExists('usersDeleteObjectScimV2', 'userId', userId)
             const localVarPath = `/2/scim/Users/{userId}`
-                .replace(`{${"userId"}}`, encodeURIComponent(String(userId)));
+                .replace('{userId}', encodeURIComponent(String(userId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -164,7 +164,7 @@ export const ScimUsersApiAxiosParamCreator = function (configuration?: Configura
             // verify required parameter 'scimUser' is not null or undefined
             assertParamExists('usersEditObjectScimV2', 'scimUser', scimUser)
             const localVarPath = `/2/scim/Users/{userId}`
-                .replace(`{${"userId"}}`, encodeURIComponent(String(userId)));
+                .replace('{userId}', encodeURIComponent(String(userId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -285,7 +285,7 @@ export const ScimUsersApiAxiosParamCreator = function (configuration?: Configura
             // verify required parameter 'userId' is not null or undefined
             assertParamExists('usersGetObjectScimV2', 'userId', userId)
             const localVarPath = `/2/scim/Users/{userId}`
-                .replace(`{${"userId"}}`, encodeURIComponent(String(userId)));
+                .replace('{userId}', encodeURIComponent(String(userId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath

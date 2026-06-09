@@ -119,7 +119,7 @@ export const ObjectVariableexpenseApiAxiosParamCreator = function (configuration
             // verify required parameter 'variableexpenseEditObjectV1Request' is not null or undefined
             assertParamExists('variableexpenseEditObjectV1', 'variableexpenseEditObjectV1Request', variableexpenseEditObjectV1Request)
             const localVarPath = `/1/object/variableexpense/{pkiVariableexpenseID}`
-                .replace(`{${"pkiVariableexpenseID"}}`, encodeURIComponent(String(pkiVariableexpenseID)));
+                .replace('{pkiVariableexpenseID}', encodeURIComponent(String(pkiVariableexpenseID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -182,7 +182,7 @@ export const ObjectVariableexpenseApiAxiosParamCreator = function (configuration
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('variableexpenseGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/variableexpense/getAutocomplete/{sSelector}`
-                .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
+                .replace('{sSelector}', encodeURIComponent(String(sSelector)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -333,7 +333,7 @@ export const ObjectVariableexpenseApiAxiosParamCreator = function (configuration
             // verify required parameter 'pkiVariableexpenseID' is not null or undefined
             assertParamExists('variableexpenseGetObjectV2', 'pkiVariableexpenseID', pkiVariableexpenseID)
             const localVarPath = `/2/object/variableexpense/{pkiVariableexpenseID}`
-                .replace(`{${"pkiVariableexpenseID"}}`, encodeURIComponent(String(pkiVariableexpenseID)));
+                .replace('{pkiVariableexpenseID}', encodeURIComponent(String(pkiVariableexpenseID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -601,13 +601,13 @@ export class ObjectVariableexpenseApi extends BaseAPI {
 }
 
 export const VariableexpenseGetAutocompleteV2SSelectorEnum = {
-    All: 'All'
+    All: 'All',
 } as const;
 export type VariableexpenseGetAutocompleteV2SSelectorEnum = typeof VariableexpenseGetAutocompleteV2SSelectorEnum[keyof typeof VariableexpenseGetAutocompleteV2SSelectorEnum];
 export const VariableexpenseGetAutocompleteV2EFilterActiveEnum = {
     All: 'All',
     Active: 'Active',
-    Inactive: 'Inactive'
+    Inactive: 'Inactive',
 } as const;
 export type VariableexpenseGetAutocompleteV2EFilterActiveEnum = typeof VariableexpenseGetAutocompleteV2EFilterActiveEnum[keyof typeof VariableexpenseGetAutocompleteV2EFilterActiveEnum];
 export const VariableexpenseGetListV1EOrderByEnum = {
@@ -620,6 +620,6 @@ export const VariableexpenseGetListV1EOrderByEnum = {
     eVariableexpenseTaxable_ASC: 'eVariableexpenseTaxable_ASC',
     eVariableexpenseTaxable_DESC: 'eVariableexpenseTaxable_DESC',
     bVariableexpenseIsactive_ASC: 'bVariableexpenseIsactive_ASC',
-    bVariableexpenseIsactive_DESC: 'bVariableexpenseIsactive_DESC'
+    bVariableexpenseIsactive_DESC: 'bVariableexpenseIsactive_DESC',
 } as const;
 export type VariableexpenseGetListV1EOrderByEnum = typeof VariableexpenseGetListV1EOrderByEnum[keyof typeof VariableexpenseGetListV1EOrderByEnum];

@@ -108,7 +108,7 @@ export const ObjectEzsigntemplatepackagesignermembershipApiAxiosParamCreator = f
             // verify required parameter 'pkiEzsigntemplatepackagesignermembershipID' is not null or undefined
             assertParamExists('ezsigntemplatepackagesignermembershipDeleteObjectV1', 'pkiEzsigntemplatepackagesignermembershipID', pkiEzsigntemplatepackagesignermembershipID)
             const localVarPath = `/1/object/ezsigntemplatepackagesignermembership/{pkiEzsigntemplatepackagesignermembershipID}`
-                .replace(`{${"pkiEzsigntemplatepackagesignermembershipID"}}`, encodeURIComponent(String(pkiEzsigntemplatepackagesignermembershipID)));
+                .replace('{pkiEzsigntemplatepackagesignermembershipID}', encodeURIComponent(String(pkiEzsigntemplatepackagesignermembershipID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -166,7 +166,7 @@ export const ObjectEzsigntemplatepackagesignermembershipApiAxiosParamCreator = f
             // verify required parameter 'pkiEzsigntemplatepackagesignermembershipID' is not null or undefined
             assertParamExists('ezsigntemplatepackagesignermembershipGetObjectV2', 'pkiEzsigntemplatepackagesignermembershipID', pkiEzsigntemplatepackagesignermembershipID)
             const localVarPath = `/2/object/ezsigntemplatepackagesignermembership/{pkiEzsigntemplatepackagesignermembershipID}`
-                .replace(`{${"pkiEzsigntemplatepackagesignermembershipID"}}`, encodeURIComponent(String(pkiEzsigntemplatepackagesignermembershipID)));
+                .replace('{pkiEzsigntemplatepackagesignermembershipID}', encodeURIComponent(String(pkiEzsigntemplatepackagesignermembershipID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath

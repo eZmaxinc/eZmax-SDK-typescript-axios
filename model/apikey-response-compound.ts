@@ -45,6 +45,12 @@ export interface ApikeyResponseCompound {
      */
     fkiUserID:number 
     /**
+     * The unique ID of the Ezmaxpartnerproductstage
+     * @type {number}
+     * @memberof ApikeyResponseCompound
+     */
+    fkiEzmaxpartnerproductstageID?:number 
+    /**
      * 
      * @type {MultilingualApikeyDescription}
      * @memberof ApikeyResponseCompound
@@ -115,6 +121,7 @@ import { ValidationObjectCommonAudit } from './'
 export class DataObjectApikeyResponseCompound {
     pkiApikeyID:number = 0
     fkiUserID:number = 0
+    fkiEzmaxpartnerproductstageID?:number = undefined
     objApikeyDescription:MultilingualApikeyDescription = new DataObjectMultilingualApikeyDescription()
     objContactName:CustomContactNameResponse = new DataObjectCustomContactNameResponse()
     sApikeyApikey?:string = undefined
@@ -139,6 +146,12 @@ export class ValidationObjectApikeyResponseCompound {
       type: 'integer',
       minimum: 0,
       required: true
+   }
+   fkiEzmaxpartnerproductstageID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 255,
+      required: false
    }
    objApikeyDescription = new ValidationObjectMultilingualApikeyDescription()
    objContactName = new ValidationObjectCustomContactNameResponse()

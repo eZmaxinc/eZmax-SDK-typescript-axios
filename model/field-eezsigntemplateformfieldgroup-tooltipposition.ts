@@ -26,7 +26,7 @@ export const FieldEEzsigntemplateformfieldgroupTooltipposition = {
     MiddleRight: 'MiddleRight',
     BottomLeft: 'BottomLeft',
     BottomCenter: 'BottomCenter',
-    BottomRight: 'BottomRight'
+    BottomRight: 'BottomRight',
 } as const;
 
 export type FieldEEzsigntemplateformfieldgroupTooltipposition = typeof FieldEEzsigntemplateformfieldgroupTooltipposition[keyof typeof FieldEEzsigntemplateformfieldgroupTooltipposition];

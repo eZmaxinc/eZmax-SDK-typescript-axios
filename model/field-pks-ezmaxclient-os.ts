@@ -23,7 +23,7 @@ export const FieldPksEzmaxclientOs = {
     iOS: 'iOS',
     iPadOS: 'iPadOS',
     macOS: 'macOS',
-    Windows: 'Windows'
+    Windows: 'Windows',
 } as const;
 
 export type FieldPksEzmaxclientOs = typeof FieldPksEzmaxclientOs[keyof typeof FieldPksEzmaxclientOs];

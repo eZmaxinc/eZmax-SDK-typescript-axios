@@ -57,7 +57,7 @@ export const ObjectRejectedoffertopurchaseApiAxiosParamCreator = function (confi
             // verify required parameter 'pkiRejectedoffertopurchaseID' is not null or undefined
             assertParamExists('rejectedoffertopurchaseGetCommunicationCountV1', 'pkiRejectedoffertopurchaseID', pkiRejectedoffertopurchaseID)
             const localVarPath = `/1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/getCommunicationCount`
-                .replace(`{${"pkiRejectedoffertopurchaseID"}}`, encodeURIComponent(String(pkiRejectedoffertopurchaseID)));
+                .replace('{pkiRejectedoffertopurchaseID}', encodeURIComponent(String(pkiRejectedoffertopurchaseID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -115,7 +115,7 @@ export const ObjectRejectedoffertopurchaseApiAxiosParamCreator = function (confi
             // verify required parameter 'pkiRejectedoffertopurchaseID' is not null or undefined
             assertParamExists('rejectedoffertopurchaseGetCommunicationListV1', 'pkiRejectedoffertopurchaseID', pkiRejectedoffertopurchaseID)
             const localVarPath = `/1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/getCommunicationList`
-                .replace(`{${"pkiRejectedoffertopurchaseID"}}`, encodeURIComponent(String(pkiRejectedoffertopurchaseID)));
+                .replace('{pkiRejectedoffertopurchaseID}', encodeURIComponent(String(pkiRejectedoffertopurchaseID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -173,7 +173,7 @@ export const ObjectRejectedoffertopurchaseApiAxiosParamCreator = function (confi
             // verify required parameter 'pkiRejectedoffertopurchaseID' is not null or undefined
             assertParamExists('rejectedoffertopurchaseGetCommunicationrecipientsV1', 'pkiRejectedoffertopurchaseID', pkiRejectedoffertopurchaseID)
             const localVarPath = `/1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/getCommunicationrecipients`
-                .replace(`{${"pkiRejectedoffertopurchaseID"}}`, encodeURIComponent(String(pkiRejectedoffertopurchaseID)));
+                .replace('{pkiRejectedoffertopurchaseID}', encodeURIComponent(String(pkiRejectedoffertopurchaseID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -231,7 +231,7 @@ export const ObjectRejectedoffertopurchaseApiAxiosParamCreator = function (confi
             // verify required parameter 'pkiRejectedoffertopurchaseID' is not null or undefined
             assertParamExists('rejectedoffertopurchaseGetCommunicationsendersV1', 'pkiRejectedoffertopurchaseID', pkiRejectedoffertopurchaseID)
             const localVarPath = `/1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/getCommunicationsenders`
-                .replace(`{${"pkiRejectedoffertopurchaseID"}}`, encodeURIComponent(String(pkiRejectedoffertopurchaseID)));
+                .replace('{pkiRejectedoffertopurchaseID}', encodeURIComponent(String(pkiRejectedoffertopurchaseID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -372,7 +372,7 @@ export const ObjectRejectedoffertopurchaseApiAxiosParamCreator = function (confi
             // verify required parameter 'rejectedoffertopurchaseImportIntoEDMV1Request' is not null or undefined
             assertParamExists('rejectedoffertopurchaseImportIntoEDMV1', 'rejectedoffertopurchaseImportIntoEDMV1Request', rejectedoffertopurchaseImportIntoEDMV1Request)
             const localVarPath = `/1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/importIntoEDM`
-                .replace(`{${"pkiRejectedoffertopurchaseID"}}`, encodeURIComponent(String(pkiRejectedoffertopurchaseID)));
+                .replace('{pkiRejectedoffertopurchaseID}', encodeURIComponent(String(pkiRejectedoffertopurchaseID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -692,6 +692,6 @@ export const RejectedoffertopurchaseGetListV1EOrderByEnum = {
     sProvinceNameX_ASC: 'sProvinceNameX_ASC',
     sProvinceNameX_DESC: 'sProvinceNameX_DESC',
     sCountryNameX_ASC: 'sCountryNameX_ASC',
-    sCountryNameX_DESC: 'sCountryNameX_DESC'
+    sCountryNameX_DESC: 'sCountryNameX_DESC',
 } as const;
 export type RejectedoffertopurchaseGetListV1EOrderByEnum = typeof RejectedoffertopurchaseGetListV1EOrderByEnum[keyof typeof RejectedoffertopurchaseGetListV1EOrderByEnum];

@@ -37,7 +37,7 @@ export interface EzsigntemplatedocumentGetWordsPositionsV1Request {
 
 export const EzsigntemplatedocumentGetWordsPositionsV1RequestEGetEnum = {
     All: 'All',
-    Words: 'Words'
+    Words: 'Words',
 } as const;
 
 export type EzsigntemplatedocumentGetWordsPositionsV1RequestEGetEnum = typeof EzsigntemplatedocumentGetWordsPositionsV1RequestEGetEnum[keyof typeof EzsigntemplatedocumentGetWordsPositionsV1RequestEGetEnum];

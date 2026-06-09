@@ -27,7 +27,7 @@ export const EnumReportdataType = {
     Percentage: 'Percentage',
     PercentageInt: 'PercentageInt',
     Period: 'Period',
-    String: 'String'
+    String: 'String',
 } as const;
 
 export type EnumReportdataType = typeof EnumReportdataType[keyof typeof EnumReportdataType];

@@ -20,7 +20,7 @@
 
 export const FieldEWebhookManagementevent = {
     UserCreated: 'UserCreated',
-    UserstagedCreated: 'UserstagedCreated'
+    UserstagedCreated: 'UserstagedCreated',
 } as const;
 
 export type FieldEWebhookManagementevent = typeof FieldEWebhookManagementevent[keyof typeof FieldEWebhookManagementevent];

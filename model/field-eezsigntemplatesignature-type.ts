@@ -30,7 +30,7 @@ export const FieldEEzsigntemplatesignatureType = {
     Initials: 'Initials',
     Name: 'Name',
     NameReason: 'NameReason',
-    Signature: 'Signature'
+    Signature: 'Signature',
 } as const;
 
 export type FieldEEzsigntemplatesignatureType = typeof FieldEEzsigntemplatesignatureType[keyof typeof FieldEEzsigntemplatesignatureType];

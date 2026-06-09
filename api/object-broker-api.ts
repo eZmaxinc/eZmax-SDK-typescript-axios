@@ -54,7 +54,7 @@ export const ObjectBrokerApiAxiosParamCreator = function (configuration?: Config
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('brokerGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/broker/getAutocomplete/{sSelector}`
-                .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
+                .replace('{sSelector}', encodeURIComponent(String(sSelector)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -208,7 +208,7 @@ export const ObjectBrokerApiAxiosParamCreator = function (configuration?: Config
             // verify required parameter 'brokerImportIntoEDMV1Request' is not null or undefined
             assertParamExists('brokerImportIntoEDMV1', 'brokerImportIntoEDMV1Request', brokerImportIntoEDMV1Request)
             const localVarPath = `/1/object/broker/{pkiBrokerID}/importIntoEDM`
-                .replace(`{${"pkiBrokerID"}}`, encodeURIComponent(String(pkiBrokerID)));
+                .replace('{pkiBrokerID}', encodeURIComponent(String(pkiBrokerID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -410,13 +410,13 @@ export class ObjectBrokerApi extends BaseAPI {
 }
 
 export const BrokerGetAutocompleteV2SSelectorEnum = {
-    All: 'All'
+    All: 'All',
 } as const;
 export type BrokerGetAutocompleteV2SSelectorEnum = typeof BrokerGetAutocompleteV2SSelectorEnum[keyof typeof BrokerGetAutocompleteV2SSelectorEnum];
 export const BrokerGetAutocompleteV2EFilterActiveEnum = {
     All: 'All',
     Active: 'Active',
-    Inactive: 'Inactive'
+    Inactive: 'Inactive',
 } as const;
 export type BrokerGetAutocompleteV2EFilterActiveEnum = typeof BrokerGetAutocompleteV2EFilterActiveEnum[keyof typeof BrokerGetAutocompleteV2EFilterActiveEnum];
 export const BrokerGetListV1EOrderByEnum = {
@@ -487,6 +487,6 @@ export const BrokerGetListV1EOrderByEnum = {
     sCountryNameX_ASC: 'sCountryNameX_ASC',
     sCountryNameX_DESC: 'sCountryNameX_DESC',
     bBrokerIsactive_ASC: 'bBrokerIsactive_ASC',
-    bBrokerIsactive_DESC: 'bBrokerIsactive_DESC'
+    bBrokerIsactive_DESC: 'bBrokerIsactive_DESC',
 } as const;
 export type BrokerGetListV1EOrderByEnum = typeof BrokerGetListV1EOrderByEnum[keyof typeof BrokerGetListV1EOrderByEnum];

@@ -20,7 +20,7 @@
 
 export const FieldEEzsigntemplateannotationType = {
     Dropdown: 'Dropdown',
-    Text: 'Text'
+    Text: 'Text',
 } as const;
 
 export type FieldEEzsigntemplateannotationType = typeof FieldEEzsigntemplateannotationType[keyof typeof FieldEEzsigntemplateannotationType];

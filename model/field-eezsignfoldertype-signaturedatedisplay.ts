@@ -21,7 +21,7 @@
 export const FieldEEzsignfoldertypeSignaturedatedisplay = {
     Default: 'Default',
     Hidden: 'Hidden',
-    Custom: 'Custom'
+    Custom: 'Custom',
 } as const;
 
 export type FieldEEzsignfoldertypeSignaturedatedisplay = typeof FieldEEzsignfoldertypeSignaturedatedisplay[keyof typeof FieldEEzsignfoldertypeSignaturedatedisplay];

@@ -20,7 +20,7 @@
 
 export const FieldESystemconfigurationNewexternaluseraction = {
     Stage: 'Stage',
-    AutoCreate: 'AutoCreate'
+    AutoCreate: 'AutoCreate',
 } as const;
 
 export type FieldESystemconfigurationNewexternaluseraction = typeof FieldESystemconfigurationNewexternaluseraction[keyof typeof FieldESystemconfigurationNewexternaluseraction];

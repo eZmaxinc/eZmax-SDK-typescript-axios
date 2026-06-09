@@ -45,7 +45,7 @@ export const GlobalEzmaxclientApiAxiosParamCreator = function (configuration?: C
             // verify required parameter 'pksEzmaxclientOs' is not null or undefined
             assertParamExists('globalEzmaxclientVersionV1', 'pksEzmaxclientOs', pksEzmaxclientOs)
             const localVarPath = `/1/ezmaxclient/{pksEzmaxclientOs}/version`
-                .replace(`{${"pksEzmaxclientOs"}}`, encodeURIComponent(String(pksEzmaxclientOs)));
+                .replace('{pksEzmaxclientOs}', encodeURIComponent(String(pksEzmaxclientOs)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath

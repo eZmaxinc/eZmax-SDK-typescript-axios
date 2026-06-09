@@ -124,7 +124,7 @@ export const ObjectCreditcardclientApiAxiosParamCreator = function (configuratio
             // verify required parameter 'pkiCreditcardclientID' is not null or undefined
             assertParamExists('creditcardclientDeleteObjectV1', 'pkiCreditcardclientID', pkiCreditcardclientID)
             const localVarPath = `/1/object/creditcardclient/{pkiCreditcardclientID}`
-                .replace(`{${"pkiCreditcardclientID"}}`, encodeURIComponent(String(pkiCreditcardclientID)));
+                .replace('{pkiCreditcardclientID}', encodeURIComponent(String(pkiCreditcardclientID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -185,7 +185,7 @@ export const ObjectCreditcardclientApiAxiosParamCreator = function (configuratio
             // verify required parameter 'creditcardclientEditObjectV1Request' is not null or undefined
             assertParamExists('creditcardclientEditObjectV1', 'creditcardclientEditObjectV1Request', creditcardclientEditObjectV1Request)
             const localVarPath = `/1/object/creditcardclient/{pkiCreditcardclientID}`
-                .replace(`{${"pkiCreditcardclientID"}}`, encodeURIComponent(String(pkiCreditcardclientID)));
+                .replace('{pkiCreditcardclientID}', encodeURIComponent(String(pkiCreditcardclientID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -248,7 +248,7 @@ export const ObjectCreditcardclientApiAxiosParamCreator = function (configuratio
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('creditcardclientGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/creditcardclient/getAutocomplete/{sSelector}`
-                .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
+                .replace('{sSelector}', encodeURIComponent(String(sSelector)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -399,7 +399,7 @@ export const ObjectCreditcardclientApiAxiosParamCreator = function (configuratio
             // verify required parameter 'pkiCreditcardclientID' is not null or undefined
             assertParamExists('creditcardclientGetObjectV2', 'pkiCreditcardclientID', pkiCreditcardclientID)
             const localVarPath = `/2/object/creditcardclient/{pkiCreditcardclientID}`
-                .replace(`{${"pkiCreditcardclientID"}}`, encodeURIComponent(String(pkiCreditcardclientID)));
+                .replace('{pkiCreditcardclientID}', encodeURIComponent(String(pkiCreditcardclientID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -460,7 +460,7 @@ export const ObjectCreditcardclientApiAxiosParamCreator = function (configuratio
             // verify required parameter 'creditcardclientPatchObjectV1Request' is not null or undefined
             assertParamExists('creditcardclientPatchObjectV1', 'creditcardclientPatchObjectV1Request', creditcardclientPatchObjectV1Request)
             const localVarPath = `/1/object/creditcardclient/{pkiCreditcardclientID}`
-                .replace(`{${"pkiCreditcardclientID"}}`, encodeURIComponent(String(pkiCreditcardclientID)));
+                .replace('{pkiCreditcardclientID}', encodeURIComponent(String(pkiCreditcardclientID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -801,13 +801,13 @@ export class ObjectCreditcardclientApi extends BaseAPI {
 }
 
 export const CreditcardclientGetAutocompleteV2SSelectorEnum = {
-    All: 'All'
+    All: 'All',
 } as const;
 export type CreditcardclientGetAutocompleteV2SSelectorEnum = typeof CreditcardclientGetAutocompleteV2SSelectorEnum[keyof typeof CreditcardclientGetAutocompleteV2SSelectorEnum];
 export const CreditcardclientGetAutocompleteV2EFilterActiveEnum = {
     All: 'All',
     Active: 'Active',
-    Inactive: 'Inactive'
+    Inactive: 'Inactive',
 } as const;
 export type CreditcardclientGetAutocompleteV2EFilterActiveEnum = typeof CreditcardclientGetAutocompleteV2EFilterActiveEnum[keyof typeof CreditcardclientGetAutocompleteV2EFilterActiveEnum];
 export const CreditcardclientGetListV1EOrderByEnum = {
@@ -832,6 +832,6 @@ export const CreditcardclientGetListV1EOrderByEnum = {
     iCreditcarddetailExpirationmonth_ASC: 'iCreditcarddetailExpirationmonth_ASC',
     iCreditcarddetailExpirationmonth_DESC: 'iCreditcarddetailExpirationmonth_DESC',
     iCreditcarddetailExpirationyear_ASC: 'iCreditcarddetailExpirationyear_ASC',
-    iCreditcarddetailExpirationyear_DESC: 'iCreditcarddetailExpirationyear_DESC'
+    iCreditcarddetailExpirationyear_DESC: 'iCreditcarddetailExpirationyear_DESC',
 } as const;
 export type CreditcardclientGetListV1EOrderByEnum = typeof CreditcardclientGetListV1EOrderByEnum[keyof typeof CreditcardclientGetListV1EOrderByEnum];

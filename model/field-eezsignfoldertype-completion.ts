@@ -21,7 +21,7 @@
 export const FieldEEzsignfoldertypeCompletion = {
     PerEzsigndocument: 'PerEzsigndocument',
     PerEzsignfolder: 'PerEzsignfolder',
-    PerEzsignfolderStepSync: 'PerEzsignfolderStepSync'
+    PerEzsignfolderStepSync: 'PerEzsignfolderStepSync',
 } as const;
 
 export type FieldEEzsignfoldertypeCompletion = typeof FieldEEzsignfoldertypeCompletion[keyof typeof FieldEEzsignfoldertypeCompletion];

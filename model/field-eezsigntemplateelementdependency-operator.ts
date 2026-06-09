@@ -29,7 +29,7 @@ export const FieldEEzsigntemplateelementdependencyOperator = {
     nin: 'nin',
     rg: 'rg',
     like: 'like',
-    between: 'between'
+    between: 'between',
 } as const;
 
 export type FieldEEzsigntemplateelementdependencyOperator = typeof FieldEEzsigntemplateelementdependencyOperator[keyof typeof FieldEEzsigntemplateelementdependencyOperator];

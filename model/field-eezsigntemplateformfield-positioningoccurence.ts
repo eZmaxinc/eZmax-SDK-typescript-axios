@@ -20,7 +20,7 @@
 
 export const FieldEEzsigntemplateformfieldPositioningoccurence = {
     First: 'First',
-    Last: 'Last'
+    Last: 'Last',
 } as const;
 
 export type FieldEEzsigntemplateformfieldPositioningoccurence = typeof FieldEEzsigntemplateformfieldPositioningoccurence[keyof typeof FieldEEzsigntemplateformfieldPositioningoccurence];

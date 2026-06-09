@@ -118,7 +118,7 @@ export const ObjectSupplyApiAxiosParamCreator = function (configuration?: Config
             // verify required parameter 'pkiSupplyID' is not null or undefined
             assertParamExists('supplyDeleteObjectV1', 'pkiSupplyID', pkiSupplyID)
             const localVarPath = `/1/object/supply/{pkiSupplyID}`
-                .replace(`{${"pkiSupplyID"}}`, encodeURIComponent(String(pkiSupplyID)));
+                .replace('{pkiSupplyID}', encodeURIComponent(String(pkiSupplyID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -179,7 +179,7 @@ export const ObjectSupplyApiAxiosParamCreator = function (configuration?: Config
             // verify required parameter 'supplyEditObjectV1Request' is not null or undefined
             assertParamExists('supplyEditObjectV1', 'supplyEditObjectV1Request', supplyEditObjectV1Request)
             const localVarPath = `/1/object/supply/{pkiSupplyID}`
-                .replace(`{${"pkiSupplyID"}}`, encodeURIComponent(String(pkiSupplyID)));
+                .replace('{pkiSupplyID}', encodeURIComponent(String(pkiSupplyID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -242,7 +242,7 @@ export const ObjectSupplyApiAxiosParamCreator = function (configuration?: Config
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('supplyGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/supply/getAutocomplete/{sSelector}`
-                .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
+                .replace('{sSelector}', encodeURIComponent(String(sSelector)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -393,7 +393,7 @@ export const ObjectSupplyApiAxiosParamCreator = function (configuration?: Config
             // verify required parameter 'pkiSupplyID' is not null or undefined
             assertParamExists('supplyGetObjectV2', 'pkiSupplyID', pkiSupplyID)
             const localVarPath = `/2/object/supply/{pkiSupplyID}`
-                .replace(`{${"pkiSupplyID"}}`, encodeURIComponent(String(pkiSupplyID)));
+                .replace('{pkiSupplyID}', encodeURIComponent(String(pkiSupplyID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -695,13 +695,13 @@ export class ObjectSupplyApi extends BaseAPI {
 }
 
 export const SupplyGetAutocompleteV2SSelectorEnum = {
-    All: 'All'
+    All: 'All',
 } as const;
 export type SupplyGetAutocompleteV2SSelectorEnum = typeof SupplyGetAutocompleteV2SSelectorEnum[keyof typeof SupplyGetAutocompleteV2SSelectorEnum];
 export const SupplyGetAutocompleteV2EFilterActiveEnum = {
     All: 'All',
     Active: 'Active',
-    Inactive: 'Inactive'
+    Inactive: 'Inactive',
 } as const;
 export type SupplyGetAutocompleteV2EFilterActiveEnum = typeof SupplyGetAutocompleteV2EFilterActiveEnum[keyof typeof SupplyGetAutocompleteV2EFilterActiveEnum];
 export const SupplyGetListV1EOrderByEnum = {
@@ -722,6 +722,6 @@ export const SupplyGetListV1EOrderByEnum = {
     bSupplyIsactive_ASC: 'bSupplyIsactive_ASC',
     bSupplyIsactive_DESC: 'bSupplyIsactive_DESC',
     bSupplyVariableprice_ASC: 'bSupplyVariableprice_ASC',
-    bSupplyVariableprice_DESC: 'bSupplyVariableprice_DESC'
+    bSupplyVariableprice_DESC: 'bSupplyVariableprice_DESC',
 } as const;
 export type SupplyGetListV1EOrderByEnum = typeof SupplyGetListV1EOrderByEnum[keyof typeof SupplyGetListV1EOrderByEnum];

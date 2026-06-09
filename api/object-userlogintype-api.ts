@@ -47,7 +47,7 @@ export const ObjectUserlogintypeApiAxiosParamCreator = function (configuration?:
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('userlogintypeGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/userlogintype/getAutocomplete/{sSelector}`
-                .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
+                .replace('{sSelector}', encodeURIComponent(String(sSelector)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -187,12 +187,12 @@ export const UserlogintypeGetAutocompleteV2SSelectorEnum = {
     All: 'All',
     Ezsignfoldertype: 'Ezsignfoldertype',
     EzsignfoldertypeReassign: 'EzsignfoldertypeReassign',
-    Ezsigntemplatepublic: 'Ezsigntemplatepublic'
+    Ezsigntemplatepublic: 'Ezsigntemplatepublic',
 } as const;
 export type UserlogintypeGetAutocompleteV2SSelectorEnum = typeof UserlogintypeGetAutocompleteV2SSelectorEnum[keyof typeof UserlogintypeGetAutocompleteV2SSelectorEnum];
 export const UserlogintypeGetAutocompleteV2EFilterActiveEnum = {
     All: 'All',
     Active: 'Active',
-    Inactive: 'Inactive'
+    Inactive: 'Inactive',
 } as const;
 export type UserlogintypeGetAutocompleteV2EFilterActiveEnum = typeof UserlogintypeGetAutocompleteV2EFilterActiveEnum[keyof typeof UserlogintypeGetAutocompleteV2EFilterActiveEnum];

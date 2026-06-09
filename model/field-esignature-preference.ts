@@ -20,7 +20,7 @@
 
 export const FieldESignaturePreference = {
     Text: 'Text',
-    Handwritten: 'Handwritten'
+    Handwritten: 'Handwritten',
 } as const;
 
 export type FieldESignaturePreference = typeof FieldESignaturePreference[keyof typeof FieldESignaturePreference];

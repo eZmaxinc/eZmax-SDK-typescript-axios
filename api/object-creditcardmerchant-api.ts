@@ -52,7 +52,7 @@ export const ObjectCreditcardmerchantApiAxiosParamCreator = function (configurat
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('creditcardmerchantGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/creditcardmerchant/getAutocomplete/{sSelector}`
-                .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
+                .replace('{sSelector}', encodeURIComponent(String(sSelector)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -203,7 +203,7 @@ export const ObjectCreditcardmerchantApiAxiosParamCreator = function (configurat
             // verify required parameter 'pkiCreditcardmerchantID' is not null or undefined
             assertParamExists('creditcardmerchantGetObjectV2', 'pkiCreditcardmerchantID', pkiCreditcardmerchantID)
             const localVarPath = `/2/object/creditcardmerchant/{pkiCreditcardmerchantID}`
-                .replace(`{${"pkiCreditcardmerchantID"}}`, encodeURIComponent(String(pkiCreditcardmerchantID)));
+                .replace('{pkiCreditcardmerchantID}', encodeURIComponent(String(pkiCreditcardmerchantID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -400,13 +400,13 @@ export class ObjectCreditcardmerchantApi extends BaseAPI {
 }
 
 export const CreditcardmerchantGetAutocompleteV2SSelectorEnum = {
-    All: 'All'
+    All: 'All',
 } as const;
 export type CreditcardmerchantGetAutocompleteV2SSelectorEnum = typeof CreditcardmerchantGetAutocompleteV2SSelectorEnum[keyof typeof CreditcardmerchantGetAutocompleteV2SSelectorEnum];
 export const CreditcardmerchantGetAutocompleteV2EFilterActiveEnum = {
     All: 'All',
     Active: 'Active',
-    Inactive: 'Inactive'
+    Inactive: 'Inactive',
 } as const;
 export type CreditcardmerchantGetAutocompleteV2EFilterActiveEnum = typeof CreditcardmerchantGetAutocompleteV2EFilterActiveEnum[keyof typeof CreditcardmerchantGetAutocompleteV2EFilterActiveEnum];
 export const CreditcardmerchantGetListV1EOrderByEnum = {
@@ -427,6 +427,6 @@ export const CreditcardmerchantGetListV1EOrderByEnum = {
     sCreditcardmerchantDescription_ASC: 'sCreditcardmerchantDescription_ASC',
     sCreditcardmerchantDescription_DESC: 'sCreditcardmerchantDescription_DESC',
     sCreditcardmerchantStoreid_ASC: 'sCreditcardmerchantStoreid_ASC',
-    sCreditcardmerchantStoreid_DESC: 'sCreditcardmerchantStoreid_DESC'
+    sCreditcardmerchantStoreid_DESC: 'sCreditcardmerchantStoreid_DESC',
 } as const;
 export type CreditcardmerchantGetListV1EOrderByEnum = typeof CreditcardmerchantGetListV1EOrderByEnum[keyof typeof CreditcardmerchantGetListV1EOrderByEnum];

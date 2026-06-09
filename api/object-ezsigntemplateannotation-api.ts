@@ -112,7 +112,7 @@ export const ObjectEzsigntemplateannotationApiAxiosParamCreator = function (conf
             // verify required parameter 'pkiEzsigntemplateannotationID' is not null or undefined
             assertParamExists('ezsigntemplateannotationDeleteObjectV1', 'pkiEzsigntemplateannotationID', pkiEzsigntemplateannotationID)
             const localVarPath = `/1/object/ezsigntemplateannotation/{pkiEzsigntemplateannotationID}`
-                .replace(`{${"pkiEzsigntemplateannotationID"}}`, encodeURIComponent(String(pkiEzsigntemplateannotationID)));
+                .replace('{pkiEzsigntemplateannotationID}', encodeURIComponent(String(pkiEzsigntemplateannotationID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -173,7 +173,7 @@ export const ObjectEzsigntemplateannotationApiAxiosParamCreator = function (conf
             // verify required parameter 'ezsigntemplateannotationEditObjectV1Request' is not null or undefined
             assertParamExists('ezsigntemplateannotationEditObjectV1', 'ezsigntemplateannotationEditObjectV1Request', ezsigntemplateannotationEditObjectV1Request)
             const localVarPath = `/1/object/ezsigntemplateannotation/{pkiEzsigntemplateannotationID}`
-                .replace(`{${"pkiEzsigntemplateannotationID"}}`, encodeURIComponent(String(pkiEzsigntemplateannotationID)));
+                .replace('{pkiEzsigntemplateannotationID}', encodeURIComponent(String(pkiEzsigntemplateannotationID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -233,7 +233,7 @@ export const ObjectEzsigntemplateannotationApiAxiosParamCreator = function (conf
             // verify required parameter 'pkiEzsigntemplateannotationID' is not null or undefined
             assertParamExists('ezsigntemplateannotationGetObjectV2', 'pkiEzsigntemplateannotationID', pkiEzsigntemplateannotationID)
             const localVarPath = `/2/object/ezsigntemplateannotation/{pkiEzsigntemplateannotationID}`
-                .replace(`{${"pkiEzsigntemplateannotationID"}}`, encodeURIComponent(String(pkiEzsigntemplateannotationID)));
+                .replace('{pkiEzsigntemplateannotationID}', encodeURIComponent(String(pkiEzsigntemplateannotationID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath

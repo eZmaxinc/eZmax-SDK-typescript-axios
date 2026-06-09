@@ -26,7 +26,7 @@ export const FieldEEzsignsignatureTooltipposition = {
     MiddleRight: 'MiddleRight',
     BottomLeft: 'BottomLeft',
     BottomCenter: 'BottomCenter',
-    BottomRight: 'BottomRight'
+    BottomRight: 'BottomRight',
 } as const;
 
 export type FieldEEzsignsignatureTooltipposition = typeof FieldEEzsignsignatureTooltipposition[keyof typeof FieldEEzsignsignatureTooltipposition];

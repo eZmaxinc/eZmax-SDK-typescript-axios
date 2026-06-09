@@ -119,7 +119,7 @@ export const ObjectPaymentgatewayApiAxiosParamCreator = function (configuration?
             // verify required parameter 'paymentgatewayEditObjectV1Request' is not null or undefined
             assertParamExists('paymentgatewayEditObjectV1', 'paymentgatewayEditObjectV1Request', paymentgatewayEditObjectV1Request)
             const localVarPath = `/1/object/paymentgateway/{pkiPaymentgatewayID}`
-                .replace(`{${"pkiPaymentgatewayID"}}`, encodeURIComponent(String(pkiPaymentgatewayID)));
+                .replace('{pkiPaymentgatewayID}', encodeURIComponent(String(pkiPaymentgatewayID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -182,7 +182,7 @@ export const ObjectPaymentgatewayApiAxiosParamCreator = function (configuration?
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('paymentgatewayGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/paymentgateway/getAutocomplete/{sSelector}`
-                .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
+                .replace('{sSelector}', encodeURIComponent(String(sSelector)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -333,7 +333,7 @@ export const ObjectPaymentgatewayApiAxiosParamCreator = function (configuration?
             // verify required parameter 'pkiPaymentgatewayID' is not null or undefined
             assertParamExists('paymentgatewayGetObjectV2', 'pkiPaymentgatewayID', pkiPaymentgatewayID)
             const localVarPath = `/2/object/paymentgateway/{pkiPaymentgatewayID}`
-                .replace(`{${"pkiPaymentgatewayID"}}`, encodeURIComponent(String(pkiPaymentgatewayID)));
+                .replace('{pkiPaymentgatewayID}', encodeURIComponent(String(pkiPaymentgatewayID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -601,13 +601,13 @@ export class ObjectPaymentgatewayApi extends BaseAPI {
 }
 
 export const PaymentgatewayGetAutocompleteV2SSelectorEnum = {
-    All: 'All'
+    All: 'All',
 } as const;
 export type PaymentgatewayGetAutocompleteV2SSelectorEnum = typeof PaymentgatewayGetAutocompleteV2SSelectorEnum[keyof typeof PaymentgatewayGetAutocompleteV2SSelectorEnum];
 export const PaymentgatewayGetAutocompleteV2EFilterActiveEnum = {
     All: 'All',
     Active: 'Active',
-    Inactive: 'Inactive'
+    Inactive: 'Inactive',
 } as const;
 export type PaymentgatewayGetAutocompleteV2EFilterActiveEnum = typeof PaymentgatewayGetAutocompleteV2EFilterActiveEnum[keyof typeof PaymentgatewayGetAutocompleteV2EFilterActiveEnum];
 export const PaymentgatewayGetListV1EOrderByEnum = {
@@ -616,6 +616,6 @@ export const PaymentgatewayGetListV1EOrderByEnum = {
     fkiCreditcardmerchantID_ASC: 'fkiCreditcardmerchantID_ASC',
     fkiCreditcardmerchantID_DESC: 'fkiCreditcardmerchantID_DESC',
     ePaymentgatewayProcessor_ASC: 'ePaymentgatewayProcessor_ASC',
-    ePaymentgatewayProcessor_DESC: 'ePaymentgatewayProcessor_DESC'
+    ePaymentgatewayProcessor_DESC: 'ePaymentgatewayProcessor_DESC',
 } as const;
 export type PaymentgatewayGetListV1EOrderByEnum = typeof PaymentgatewayGetListV1EOrderByEnum[keyof typeof PaymentgatewayGetListV1EOrderByEnum];

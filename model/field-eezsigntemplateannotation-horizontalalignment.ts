@@ -21,7 +21,7 @@
 export const FieldEEzsigntemplateannotationHorizontalalignment = {
     Center: 'Center',
     Left: 'Left',
-    Right: 'Right'
+    Right: 'Right',
 } as const;
 
 export type FieldEEzsigntemplateannotationHorizontalalignment = typeof FieldEEzsigntemplateannotationHorizontalalignment[keyof typeof FieldEEzsigntemplateannotationHorizontalalignment];

@@ -23,7 +23,7 @@ export const FieldECreditcardtransactionAvsresult = {
     NoMatch: 'NoMatch',
     PartialMatch: 'PartialMatch',
     NotImplemented: 'NotImplemented',
-    NotVerified: 'NotVerified'
+    NotVerified: 'NotVerified',
 } as const;
 
 export type FieldECreditcardtransactionAvsresult = typeof FieldECreditcardtransactionAvsresult[keyof typeof FieldECreditcardtransactionAvsresult];

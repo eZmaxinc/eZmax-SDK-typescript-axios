@@ -21,7 +21,7 @@
 export const FieldEEzsigntemplatesignatureSignaturepadrequired = {
     No: 'No',
     BestEffort: 'BestEffort',
-    Mandatory: 'Mandatory'
+    Mandatory: 'Mandatory',
 } as const;
 
 export type FieldEEzsigntemplatesignatureSignaturepadrequired = typeof FieldEEzsigntemplatesignatureSignaturepadrequired[keyof typeof FieldEEzsigntemplatesignatureSignaturepadrequired];

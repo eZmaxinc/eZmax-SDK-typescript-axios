@@ -46,7 +46,7 @@ export const ObjectFranchisebrokerApiAxiosParamCreator = function (configuration
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('franchisebrokerGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/franchisebroker/getAutocomplete/{sSelector}`
-                .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
+                .replace('{sSelector}', encodeURIComponent(String(sSelector)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -176,12 +176,12 @@ export class ObjectFranchisebrokerApi extends BaseAPI {
 }
 
 export const FranchisebrokerGetAutocompleteV2SSelectorEnum = {
-    All: 'All'
+    All: 'All',
 } as const;
 export type FranchisebrokerGetAutocompleteV2SSelectorEnum = typeof FranchisebrokerGetAutocompleteV2SSelectorEnum[keyof typeof FranchisebrokerGetAutocompleteV2SSelectorEnum];
 export const FranchisebrokerGetAutocompleteV2EFilterActiveEnum = {
     All: 'All',
     Active: 'Active',
-    Inactive: 'Inactive'
+    Inactive: 'Inactive',
 } as const;
 export type FranchisebrokerGetAutocompleteV2EFilterActiveEnum = typeof FranchisebrokerGetAutocompleteV2EFilterActiveEnum[keyof typeof FranchisebrokerGetAutocompleteV2EFilterActiveEnum];

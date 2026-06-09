@@ -27,7 +27,7 @@ export const CustomEWebhookEzsignevent = {
     FolderCompleted: 'FolderCompleted',
     FolderDisposed: 'FolderDisposed',
     FolderSent: 'FolderSent',
-    FolderUnsent: 'FolderUnsent'
+    FolderUnsent: 'FolderUnsent',
 } as const;
 
 export type CustomEWebhookEzsignevent = typeof CustomEWebhookEzsignevent[keyof typeof CustomEWebhookEzsignevent];

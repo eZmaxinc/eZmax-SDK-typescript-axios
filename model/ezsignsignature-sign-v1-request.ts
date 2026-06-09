@@ -72,7 +72,7 @@ export interface EzsignsignatureSignV1Request {
 
 export const EzsignsignatureSignV1RequestEAttachmentsConfirmationDecisionEnum = {
     Accepted: 'Accepted',
-    Refused: 'Refused'
+    Refused: 'Refused',
 } as const;
 
 export type EzsignsignatureSignV1RequestEAttachmentsConfirmationDecisionEnum = typeof EzsignsignatureSignV1RequestEAttachmentsConfirmationDecisionEnum[keyof typeof EzsignsignatureSignV1RequestEAttachmentsConfirmationDecisionEnum];

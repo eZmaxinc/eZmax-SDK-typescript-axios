@@ -112,7 +112,7 @@ export const ObjectUsergroupmembershipApiAxiosParamCreator = function (configura
             // verify required parameter 'pkiUsergroupmembershipID' is not null or undefined
             assertParamExists('usergroupmembershipDeleteObjectV1', 'pkiUsergroupmembershipID', pkiUsergroupmembershipID)
             const localVarPath = `/1/object/usergroupmembership/{pkiUsergroupmembershipID}`
-                .replace(`{${"pkiUsergroupmembershipID"}}`, encodeURIComponent(String(pkiUsergroupmembershipID)));
+                .replace('{pkiUsergroupmembershipID}', encodeURIComponent(String(pkiUsergroupmembershipID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -173,7 +173,7 @@ export const ObjectUsergroupmembershipApiAxiosParamCreator = function (configura
             // verify required parameter 'usergroupmembershipEditObjectV1Request' is not null or undefined
             assertParamExists('usergroupmembershipEditObjectV1', 'usergroupmembershipEditObjectV1Request', usergroupmembershipEditObjectV1Request)
             const localVarPath = `/1/object/usergroupmembership/{pkiUsergroupmembershipID}`
-                .replace(`{${"pkiUsergroupmembershipID"}}`, encodeURIComponent(String(pkiUsergroupmembershipID)));
+                .replace('{pkiUsergroupmembershipID}', encodeURIComponent(String(pkiUsergroupmembershipID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -233,7 +233,7 @@ export const ObjectUsergroupmembershipApiAxiosParamCreator = function (configura
             // verify required parameter 'pkiUsergroupmembershipID' is not null or undefined
             assertParamExists('usergroupmembershipGetObjectV2', 'pkiUsergroupmembershipID', pkiUsergroupmembershipID)
             const localVarPath = `/2/object/usergroupmembership/{pkiUsergroupmembershipID}`
-                .replace(`{${"pkiUsergroupmembershipID"}}`, encodeURIComponent(String(pkiUsergroupmembershipID)));
+                .replace('{pkiUsergroupmembershipID}', encodeURIComponent(String(pkiUsergroupmembershipID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath

@@ -132,7 +132,7 @@ export const ObjectEmployeeApiAxiosParamCreator = function (configuration?: Conf
             // verify required parameter 'employeeImportIntoEDMV1Request' is not null or undefined
             assertParamExists('employeeImportIntoEDMV1', 'employeeImportIntoEDMV1Request', employeeImportIntoEDMV1Request)
             const localVarPath = `/1/object/employee/{pkiEmployeeID}/importIntoEDM`
-                .replace(`{${"pkiEmployeeID"}}`, encodeURIComponent(String(pkiEmployeeID)));
+                .replace('{pkiEmployeeID}', encodeURIComponent(String(pkiEmployeeID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -328,6 +328,6 @@ export const EmployeeGetListV1EOrderByEnum = {
     sProvinceNameX_ASC: 'sProvinceNameX_ASC',
     sProvinceNameX_DESC: 'sProvinceNameX_DESC',
     sCountryNameX_ASC: 'sCountryNameX_ASC',
-    sCountryNameX_DESC: 'sCountryNameX_DESC'
+    sCountryNameX_DESC: 'sCountryNameX_DESC',
 } as const;
 export type EmployeeGetListV1EOrderByEnum = typeof EmployeeGetListV1EOrderByEnum[keyof typeof EmployeeGetListV1EOrderByEnum];

@@ -69,7 +69,7 @@ export const CustomCommunicationsenderResponseECommunicationsenderObjecttypeEnum
     Broker: 'Broker',
     User: 'User',
     Mailboxshared: 'Mailboxshared',
-    Phonelineshared: 'Phonelineshared'
+    Phonelineshared: 'Phonelineshared',
 } as const;
 
 export type CustomCommunicationsenderResponseECommunicationsenderObjecttypeEnum = typeof CustomCommunicationsenderResponseECommunicationsenderObjecttypeEnum[keyof typeof CustomCommunicationsenderResponseECommunicationsenderObjecttypeEnum];

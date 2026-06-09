@@ -43,7 +43,7 @@ export const ObjectVersionhistoryApiAxiosParamCreator = function (configuration?
             // verify required parameter 'pkiVersionhistoryID' is not null or undefined
             assertParamExists('versionhistoryGetObjectV2', 'pkiVersionhistoryID', pkiVersionhistoryID)
             const localVarPath = `/2/object/versionhistory/{pkiVersionhistoryID}`
-                .replace(`{${"pkiVersionhistoryID"}}`, encodeURIComponent(String(pkiVersionhistoryID)));
+                .replace('{pkiVersionhistoryID}', encodeURIComponent(String(pkiVersionhistoryID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath

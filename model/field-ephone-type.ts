@@ -20,7 +20,7 @@
 
 export const FieldEPhoneType = {
     Local: 'Local',
-    International: 'International'
+    International: 'International',
 } as const;
 
 export type FieldEPhoneType = typeof FieldEPhoneType[keyof typeof FieldEPhoneType];

@@ -21,7 +21,7 @@
 export const FieldEEzdoctemplatedocumentPrivacylevel = {
     Company: 'Company',
     Ezsignfoldertype: 'Ezsignfoldertype',
-    User: 'User'
+    User: 'User',
 } as const;
 
 export type FieldEEzdoctemplatedocumentPrivacylevel = typeof FieldEEzdoctemplatedocumentPrivacylevel[keyof typeof FieldEEzdoctemplatedocumentPrivacylevel];

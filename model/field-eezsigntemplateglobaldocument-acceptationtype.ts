@@ -22,7 +22,7 @@ export const FieldEEzsigntemplateglobaldocumentAcceptationtype = {
     Blank: 'Blank',
     Acception: 'Acception',
     AcceptionCPCheckbox: 'AcceptionCPCheckbox',
-    AcceptionCPCheckboxEnhancement: 'AcceptionCPCheckboxEnhancement'
+    AcceptionCPCheckboxEnhancement: 'AcceptionCPCheckboxEnhancement',
 } as const;
 
 export type FieldEEzsigntemplateglobaldocumentAcceptationtype = typeof FieldEEzsigntemplateglobaldocumentAcceptationtype[keyof typeof FieldEEzsigntemplateglobaldocumentAcceptationtype];

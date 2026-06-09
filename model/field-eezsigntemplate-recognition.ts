@@ -21,7 +21,7 @@
 export const FieldEEzsigntemplateRecognition = {
     No: 'No',
     Filename: 'Filename',
-    Content: 'Content'
+    Content: 'Content',
 } as const;
 
 export type FieldEEzsigntemplateRecognition = typeof FieldEEzsigntemplateRecognition[keyof typeof FieldEEzsigntemplateRecognition];

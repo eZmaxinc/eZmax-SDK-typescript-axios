@@ -22,7 +22,7 @@ export const FieldEActivesessionEzsign = {
     No: 'No',
     Read: 'Read',
     Modify: 'Modify',
-    Full: 'Full'
+    Full: 'Full',
 } as const;
 
 export type FieldEActivesessionEzsign = typeof FieldEActivesessionEzsign[keyof typeof FieldEActivesessionEzsign];

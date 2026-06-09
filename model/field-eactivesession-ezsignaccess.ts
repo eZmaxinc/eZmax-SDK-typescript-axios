@@ -22,7 +22,7 @@ export const FieldEActivesessionEzsignaccess = {
     No: 'No',
     PaidByOffice: 'PaidByOffice',
     PerDocument: 'PerDocument',
-    Prepaid: 'Prepaid'
+    Prepaid: 'Prepaid',
 } as const;
 
 export type FieldEActivesessionEzsignaccess = typeof FieldEActivesessionEzsignaccess[keyof typeof FieldEActivesessionEzsignaccess];

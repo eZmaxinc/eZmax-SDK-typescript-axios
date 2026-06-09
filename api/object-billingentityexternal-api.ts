@@ -52,7 +52,7 @@ export const ObjectBillingentityexternalApiAxiosParamCreator = function (configu
             // verify required parameter 'billingentityexternalGenerateFederationTokenV1Request' is not null or undefined
             assertParamExists('billingentityexternalGenerateFederationTokenV1', 'billingentityexternalGenerateFederationTokenV1Request', billingentityexternalGenerateFederationTokenV1Request)
             const localVarPath = `/1/object/billingentityexternal/{pkiBillingentityexternalID}/generateFederationToken`
-                .replace(`{${"pkiBillingentityexternalID"}}`, encodeURIComponent(String(pkiBillingentityexternalID)));
+                .replace('{pkiBillingentityexternalID}', encodeURIComponent(String(pkiBillingentityexternalID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -115,7 +115,7 @@ export const ObjectBillingentityexternalApiAxiosParamCreator = function (configu
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('billingentityexternalGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/billingentityexternal/getAutocomplete/{sSelector}`
-                .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
+                .replace('{sSelector}', encodeURIComponent(String(sSelector)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -282,12 +282,12 @@ export class ObjectBillingentityexternalApi extends BaseAPI {
 }
 
 export const BillingentityexternalGetAutocompleteV2SSelectorEnum = {
-    All: 'All'
+    All: 'All',
 } as const;
 export type BillingentityexternalGetAutocompleteV2SSelectorEnum = typeof BillingentityexternalGetAutocompleteV2SSelectorEnum[keyof typeof BillingentityexternalGetAutocompleteV2SSelectorEnum];
 export const BillingentityexternalGetAutocompleteV2EFilterActiveEnum = {
     All: 'All',
     Active: 'Active',
-    Inactive: 'Inactive'
+    Inactive: 'Inactive',
 } as const;
 export type BillingentityexternalGetAutocompleteV2EFilterActiveEnum = typeof BillingentityexternalGetAutocompleteV2EFilterActiveEnum[keyof typeof BillingentityexternalGetAutocompleteV2EFilterActiveEnum];

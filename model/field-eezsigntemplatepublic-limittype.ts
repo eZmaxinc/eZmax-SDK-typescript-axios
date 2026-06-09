@@ -22,7 +22,7 @@ export const FieldEEzsigntemplatepublicLimittype = {
     Hour: 'Hour',
     Day: 'Day',
     Month: 'Month',
-    Total: 'Total'
+    Total: 'Total',
 } as const;
 
 export type FieldEEzsigntemplatepublicLimittype = typeof FieldEEzsigntemplatepublicLimittype[keyof typeof FieldEEzsigntemplatepublicLimittype];

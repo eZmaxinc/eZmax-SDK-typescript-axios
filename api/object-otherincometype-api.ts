@@ -46,7 +46,7 @@ export const ObjectOtherincometypeApiAxiosParamCreator = function (configuration
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('otherincometypeGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/otherincometype/getAutocomplete/{sSelector}`
-                .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
+                .replace('{sSelector}', encodeURIComponent(String(sSelector)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -176,12 +176,12 @@ export class ObjectOtherincometypeApi extends BaseAPI {
 }
 
 export const OtherincometypeGetAutocompleteV2SSelectorEnum = {
-    All: 'All'
+    All: 'All',
 } as const;
 export type OtherincometypeGetAutocompleteV2SSelectorEnum = typeof OtherincometypeGetAutocompleteV2SSelectorEnum[keyof typeof OtherincometypeGetAutocompleteV2SSelectorEnum];
 export const OtherincometypeGetAutocompleteV2EFilterActiveEnum = {
     All: 'All',
     Active: 'Active',
-    Inactive: 'Inactive'
+    Inactive: 'Inactive',
 } as const;
 export type OtherincometypeGetAutocompleteV2EFilterActiveEnum = typeof OtherincometypeGetAutocompleteV2EFilterActiveEnum[keyof typeof OtherincometypeGetAutocompleteV2EFilterActiveEnum];

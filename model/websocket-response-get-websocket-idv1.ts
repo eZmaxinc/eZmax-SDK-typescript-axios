@@ -31,7 +31,7 @@ export interface WebsocketResponseGetWebsocketIDV1 {
 }
 
 export const WebsocketResponseGetWebsocketIDV1EWebsocketMessagetypeEnum = {
-    Response_GetWebsocketID_V1: 'Response-GetWebsocketID-V1'
+    Response_GetWebsocketID_V1: 'Response-GetWebsocketID-V1',
 } as const;
 
 export type WebsocketResponseGetWebsocketIDV1EWebsocketMessagetypeEnum = typeof WebsocketResponseGetWebsocketIDV1EWebsocketMessagetypeEnum[keyof typeof WebsocketResponseGetWebsocketIDV1EWebsocketMessagetypeEnum];

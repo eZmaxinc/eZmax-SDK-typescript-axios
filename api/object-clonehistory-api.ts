@@ -208,6 +208,6 @@ export const ClonehistoryGetListV1EOrderByEnum = {
     sUserFirstnameCloned_ASC: 'sUserFirstnameCloned_ASC',
     sUserFirstnameCloned_DESC: 'sUserFirstnameCloned_DESC',
     sUserLastnameCloned_ASC: 'sUserLastnameCloned_ASC',
-    sUserLastnameCloned_DESC: 'sUserLastnameCloned_DESC'
+    sUserLastnameCloned_DESC: 'sUserLastnameCloned_DESC',
 } as const;
 export type ClonehistoryGetListV1EOrderByEnum = typeof ClonehistoryGetListV1EOrderByEnum[keyof typeof ClonehistoryGetListV1EOrderByEnum];

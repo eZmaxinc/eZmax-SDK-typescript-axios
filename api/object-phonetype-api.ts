@@ -46,7 +46,7 @@ export const ObjectPhonetypeApiAxiosParamCreator = function (configuration?: Con
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('phonetypeGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/phonetype/getAutocomplete/{sSelector}`
-                .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
+                .replace('{sSelector}', encodeURIComponent(String(sSelector)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -176,12 +176,12 @@ export class ObjectPhonetypeApi extends BaseAPI {
 }
 
 export const PhonetypeGetAutocompleteV2SSelectorEnum = {
-    All: 'All'
+    All: 'All',
 } as const;
 export type PhonetypeGetAutocompleteV2SSelectorEnum = typeof PhonetypeGetAutocompleteV2SSelectorEnum[keyof typeof PhonetypeGetAutocompleteV2SSelectorEnum];
 export const PhonetypeGetAutocompleteV2EFilterActiveEnum = {
     All: 'All',
     Active: 'Active',
-    Inactive: 'Inactive'
+    Inactive: 'Inactive',
 } as const;
 export type PhonetypeGetAutocompleteV2EFilterActiveEnum = typeof PhonetypeGetAutocompleteV2EFilterActiveEnum[keyof typeof PhonetypeGetAutocompleteV2EFilterActiveEnum];

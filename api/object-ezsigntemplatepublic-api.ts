@@ -189,7 +189,7 @@ export const ObjectEzsigntemplatepublicApiAxiosParamCreator = function (configur
             // verify required parameter 'pkiEzsigntemplatepublicID' is not null or undefined
             assertParamExists('ezsigntemplatepublicDeleteObjectV1', 'pkiEzsigntemplatepublicID', pkiEzsigntemplatepublicID)
             const localVarPath = `/1/object/ezsigntemplatepublic/{pkiEzsigntemplatepublicID}`
-                .replace(`{${"pkiEzsigntemplatepublicID"}}`, encodeURIComponent(String(pkiEzsigntemplatepublicID)));
+                .replace('{pkiEzsigntemplatepublicID}', encodeURIComponent(String(pkiEzsigntemplatepublicID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -250,7 +250,7 @@ export const ObjectEzsigntemplatepublicApiAxiosParamCreator = function (configur
             // verify required parameter 'ezsigntemplatepublicEditObjectV1Request' is not null or undefined
             assertParamExists('ezsigntemplatepublicEditObjectV1', 'ezsigntemplatepublicEditObjectV1Request', ezsigntemplatepublicEditObjectV1Request)
             const localVarPath = `/1/object/ezsigntemplatepublic/{pkiEzsigntemplatepublicID}`
-                .replace(`{${"pkiEzsigntemplatepublicID"}}`, encodeURIComponent(String(pkiEzsigntemplatepublicID)));
+                .replace('{pkiEzsigntemplatepublicID}', encodeURIComponent(String(pkiEzsigntemplatepublicID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -369,7 +369,7 @@ export const ObjectEzsigntemplatepublicApiAxiosParamCreator = function (configur
             // verify required parameter 'pkiEzsigntemplatepublicID' is not null or undefined
             assertParamExists('ezsigntemplatepublicGetFormsDataV1', 'pkiEzsigntemplatepublicID', pkiEzsigntemplatepublicID)
             const localVarPath = `/1/object/ezsigntemplatepublic/{pkiEzsigntemplatepublicID}/getFormsData`
-                .replace(`{${"pkiEzsigntemplatepublicID"}}`, encodeURIComponent(String(pkiEzsigntemplatepublicID)));
+                .replace('{pkiEzsigntemplatepublicID}', encodeURIComponent(String(pkiEzsigntemplatepublicID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -507,7 +507,7 @@ export const ObjectEzsigntemplatepublicApiAxiosParamCreator = function (configur
             // verify required parameter 'pkiEzsigntemplatepublicID' is not null or undefined
             assertParamExists('ezsigntemplatepublicGetObjectV2', 'pkiEzsigntemplatepublicID', pkiEzsigntemplatepublicID)
             const localVarPath = `/2/object/ezsigntemplatepublic/{pkiEzsigntemplatepublicID}`
-                .replace(`{${"pkiEzsigntemplatepublicID"}}`, encodeURIComponent(String(pkiEzsigntemplatepublicID)));
+                .replace('{pkiEzsigntemplatepublicID}', encodeURIComponent(String(pkiEzsigntemplatepublicID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -568,7 +568,7 @@ export const ObjectEzsigntemplatepublicApiAxiosParamCreator = function (configur
             // verify required parameter 'body' is not null or undefined
             assertParamExists('ezsigntemplatepublicResetLimitExceededCounterV1', 'body', body)
             const localVarPath = `/1/object/ezsigntemplatepublic/{pkiEzsigntemplatepublicID}/resetLimitExceededCounter`
-                .replace(`{${"pkiEzsigntemplatepublicID"}}`, encodeURIComponent(String(pkiEzsigntemplatepublicID)));
+                .replace('{pkiEzsigntemplatepublicID}', encodeURIComponent(String(pkiEzsigntemplatepublicID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -631,7 +631,7 @@ export const ObjectEzsigntemplatepublicApiAxiosParamCreator = function (configur
             // verify required parameter 'body' is not null or undefined
             assertParamExists('ezsigntemplatepublicResetUrlV1', 'body', body)
             const localVarPath = `/1/object/ezsigntemplatepublic/{pkiEzsigntemplatepublicID}/resetUrl`
-                .replace(`{${"pkiEzsigntemplatepublicID"}}`, encodeURIComponent(String(pkiEzsigntemplatepublicID)));
+                .replace('{pkiEzsigntemplatepublicID}', encodeURIComponent(String(pkiEzsigntemplatepublicID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -1099,6 +1099,6 @@ export const EzsigntemplatepublicGetListV1EOrderByEnum = {
     iEzsigndocument_ASC: 'iEzsigndocument_ASC',
     iEzsigndocument_DESC: 'iEzsigndocument_DESC',
     sEzsigntemplatepublicEzsigntemplatedescription_ASC: 'sEzsigntemplatepublicEzsigntemplatedescription_ASC',
-    sEzsigntemplatepublicEzsigntemplatedescription_DESC: 'sEzsigntemplatepublicEzsigntemplatedescription_DESC'
+    sEzsigntemplatepublicEzsigntemplatedescription_DESC: 'sEzsigntemplatepublicEzsigntemplatedescription_DESC',
 } as const;
 export type EzsigntemplatepublicGetListV1EOrderByEnum = typeof EzsigntemplatepublicGetListV1EOrderByEnum[keyof typeof EzsigntemplatepublicGetListV1EOrderByEnum];

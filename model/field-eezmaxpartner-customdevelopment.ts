@@ -22,7 +22,7 @@ export const FieldEEzmaxpartnerCustomdevelopment = {
     empty: '',
     No: 'No',
     NotListed: 'NotListed',
-    Listed: 'Listed'
+    Listed: 'Listed',
 } as const;
 
 export type FieldEEzmaxpartnerCustomdevelopment = typeof FieldEEzmaxpartnerCustomdevelopment[keyof typeof FieldEEzmaxpartnerCustomdevelopment];

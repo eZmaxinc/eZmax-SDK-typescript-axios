@@ -46,7 +46,7 @@ export const ObjectPeriodApiAxiosParamCreator = function (configuration?: Config
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('periodGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/period/getAutocomplete/{sSelector}`
-                .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
+                .replace('{sSelector}', encodeURIComponent(String(sSelector)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -179,12 +179,12 @@ export const PeriodGetAutocompleteV2SSelectorEnum = {
     ActiveNormal: 'ActiveNormal',
     ActiveNormalAndEndOfYear: 'ActiveNormalAndEndOfYear',
     AllNormal: 'AllNormal',
-    AllNormalAndEndOfYear: 'AllNormalAndEndOfYear'
+    AllNormalAndEndOfYear: 'AllNormalAndEndOfYear',
 } as const;
 export type PeriodGetAutocompleteV2SSelectorEnum = typeof PeriodGetAutocompleteV2SSelectorEnum[keyof typeof PeriodGetAutocompleteV2SSelectorEnum];
 export const PeriodGetAutocompleteV2EFilterActiveEnum = {
     All: 'All',
     Active: 'Active',
-    Inactive: 'Inactive'
+    Inactive: 'Inactive',
 } as const;
 export type PeriodGetAutocompleteV2EFilterActiveEnum = typeof PeriodGetAutocompleteV2EFilterActiveEnum[keyof typeof PeriodGetAutocompleteV2EFilterActiveEnum];

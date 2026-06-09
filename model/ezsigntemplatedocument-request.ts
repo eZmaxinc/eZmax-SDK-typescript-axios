@@ -83,7 +83,7 @@ export interface EzsigntemplatedocumentRequest {
 export const EzsigntemplatedocumentRequestEEzsigntemplatedocumentSourceEnum = {
     Base64: 'Base64',
     Url: 'Url',
-    Ezsigndocument: 'Ezsigndocument'
+    Ezsigndocument: 'Ezsigndocument',
 } as const;
 
 export type EzsigntemplatedocumentRequestEEzsigntemplatedocumentSourceEnum = typeof EzsigntemplatedocumentRequestEEzsigntemplatedocumentSourceEnum[keyof typeof EzsigntemplatedocumentRequestEEzsigntemplatedocumentSourceEnum];
@@ -94,7 +94,7 @@ export const EzsigntemplatedocumentRequestEEzsigntemplatedocumentFormatEnum = {
     Xls: 'Xls',
     Xlsx: 'Xlsx',
     Ppt: 'Ppt',
-    Pptx: 'Pptx'
+    Pptx: 'Pptx',
 } as const;
 
 export type EzsigntemplatedocumentRequestEEzsigntemplatedocumentFormatEnum = typeof EzsigntemplatedocumentRequestEEzsigntemplatedocumentFormatEnum[keyof typeof EzsigntemplatedocumentRequestEEzsigntemplatedocumentFormatEnum];
@@ -102,7 +102,7 @@ export const EzsigntemplatedocumentRequestEEzsigntemplatedocumentFormEnum = {
     Keep: 'Keep',
     Convert: 'Convert',
     Discard: 'Discard',
-    Flatten: 'Flatten'
+    Flatten: 'Flatten',
 } as const;
 
 export type EzsigntemplatedocumentRequestEEzsigntemplatedocumentFormEnum = typeof EzsigntemplatedocumentRequestEEzsigntemplatedocumentFormEnum[keyof typeof EzsigntemplatedocumentRequestEEzsigntemplatedocumentFormEnum];

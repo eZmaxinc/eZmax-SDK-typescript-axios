@@ -20,7 +20,7 @@
 
 export const FieldEEzsignbulksendEzsignformfieldorder = {
     Position: 'Position',
-    Name: 'Name'
+    Name: 'Name',
 } as const;
 
 export type FieldEEzsignbulksendEzsignformfieldorder = typeof FieldEEzsignbulksendEzsignformfieldorder[keyof typeof FieldEEzsignbulksendEzsignformfieldorder];

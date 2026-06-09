@@ -22,7 +22,7 @@ export const FieldEEzsigntemplateType = {
     User: 'User',
     Usergroup: 'Usergroup',
     Company: 'Company',
-    Ezsignfoldertype: 'Ezsignfoldertype'
+    Ezsignfoldertype: 'Ezsignfoldertype',
 } as const;
 
 export type FieldEEzsigntemplateType = typeof FieldEEzsigntemplateType[keyof typeof FieldEEzsigntemplateType];

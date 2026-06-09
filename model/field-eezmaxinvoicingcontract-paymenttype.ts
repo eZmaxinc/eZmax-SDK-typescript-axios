@@ -21,7 +21,7 @@
 export const FieldEEzmaxinvoicingcontractPaymenttype = {
     Cheque: 'Cheque',
     CreditCard: 'CreditCard',
-    DirectDebit: 'DirectDebit'
+    DirectDebit: 'DirectDebit',
 } as const;
 
 export type FieldEEzmaxinvoicingcontractPaymenttype = typeof FieldEEzmaxinvoicingcontractPaymenttype[keyof typeof FieldEEzmaxinvoicingcontractPaymenttype];

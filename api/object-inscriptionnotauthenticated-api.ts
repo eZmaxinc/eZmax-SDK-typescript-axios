@@ -66,7 +66,7 @@ export const ObjectInscriptionnotauthenticatedApiAxiosParamCreator = function (c
             // verify required parameter 'inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request' is not null or undefined
             assertParamExists('inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1', 'inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request', inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request)
             const localVarPath = `/1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/fillInscriptionnotauthenticatedcondition`
-                .replace(`{${"pkiInscriptionnotauthenticatedID"}}`, encodeURIComponent(String(pkiInscriptionnotauthenticatedID)));
+                .replace('{pkiInscriptionnotauthenticatedID}', encodeURIComponent(String(pkiInscriptionnotauthenticatedID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -126,7 +126,7 @@ export const ObjectInscriptionnotauthenticatedApiAxiosParamCreator = function (c
             // verify required parameter 'pkiInscriptionnotauthenticatedID' is not null or undefined
             assertParamExists('inscriptionnotauthenticatedGetCommunicationCountV1', 'pkiInscriptionnotauthenticatedID', pkiInscriptionnotauthenticatedID)
             const localVarPath = `/1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getCommunicationCount`
-                .replace(`{${"pkiInscriptionnotauthenticatedID"}}`, encodeURIComponent(String(pkiInscriptionnotauthenticatedID)));
+                .replace('{pkiInscriptionnotauthenticatedID}', encodeURIComponent(String(pkiInscriptionnotauthenticatedID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -184,7 +184,7 @@ export const ObjectInscriptionnotauthenticatedApiAxiosParamCreator = function (c
             // verify required parameter 'pkiInscriptionnotauthenticatedID' is not null or undefined
             assertParamExists('inscriptionnotauthenticatedGetCommunicationListV1', 'pkiInscriptionnotauthenticatedID', pkiInscriptionnotauthenticatedID)
             const localVarPath = `/1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getCommunicationList`
-                .replace(`{${"pkiInscriptionnotauthenticatedID"}}`, encodeURIComponent(String(pkiInscriptionnotauthenticatedID)));
+                .replace('{pkiInscriptionnotauthenticatedID}', encodeURIComponent(String(pkiInscriptionnotauthenticatedID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -242,7 +242,7 @@ export const ObjectInscriptionnotauthenticatedApiAxiosParamCreator = function (c
             // verify required parameter 'pkiInscriptionnotauthenticatedID' is not null or undefined
             assertParamExists('inscriptionnotauthenticatedGetCommunicationrecipientsV1', 'pkiInscriptionnotauthenticatedID', pkiInscriptionnotauthenticatedID)
             const localVarPath = `/1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getCommunicationrecipients`
-                .replace(`{${"pkiInscriptionnotauthenticatedID"}}`, encodeURIComponent(String(pkiInscriptionnotauthenticatedID)));
+                .replace('{pkiInscriptionnotauthenticatedID}', encodeURIComponent(String(pkiInscriptionnotauthenticatedID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -300,7 +300,7 @@ export const ObjectInscriptionnotauthenticatedApiAxiosParamCreator = function (c
             // verify required parameter 'pkiInscriptionnotauthenticatedID' is not null or undefined
             assertParamExists('inscriptionnotauthenticatedGetCommunicationsendersV1', 'pkiInscriptionnotauthenticatedID', pkiInscriptionnotauthenticatedID)
             const localVarPath = `/1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getCommunicationsenders`
-                .replace(`{${"pkiInscriptionnotauthenticatedID"}}`, encodeURIComponent(String(pkiInscriptionnotauthenticatedID)));
+                .replace('{pkiInscriptionnotauthenticatedID}', encodeURIComponent(String(pkiInscriptionnotauthenticatedID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -358,7 +358,7 @@ export const ObjectInscriptionnotauthenticatedApiAxiosParamCreator = function (c
             // verify required parameter 'pkiInscriptionnotauthenticatedID' is not null or undefined
             assertParamExists('inscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1', 'pkiInscriptionnotauthenticatedID', pkiInscriptionnotauthenticatedID)
             const localVarPath = `/1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getInscriptionnotauthenticatedconditions`
-                .replace(`{${"pkiInscriptionnotauthenticatedID"}}`, encodeURIComponent(String(pkiInscriptionnotauthenticatedID)));
+                .replace('{pkiInscriptionnotauthenticatedID}', encodeURIComponent(String(pkiInscriptionnotauthenticatedID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -499,7 +499,7 @@ export const ObjectInscriptionnotauthenticatedApiAxiosParamCreator = function (c
             // verify required parameter 'inscriptionnotauthenticatedImportIntoEDMV1Request' is not null or undefined
             assertParamExists('inscriptionnotauthenticatedImportIntoEDMV1', 'inscriptionnotauthenticatedImportIntoEDMV1Request', inscriptionnotauthenticatedImportIntoEDMV1Request)
             const localVarPath = `/1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/importIntoEDM`
-                .replace(`{${"pkiInscriptionnotauthenticatedID"}}`, encodeURIComponent(String(pkiInscriptionnotauthenticatedID)));
+                .replace('{pkiInscriptionnotauthenticatedID}', encodeURIComponent(String(pkiInscriptionnotauthenticatedID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -920,6 +920,6 @@ export const InscriptionnotauthenticatedGetListV1EOrderByEnum = {
     iInscriptionnotauthenticatedCanceled_ASC: 'iInscriptionnotauthenticatedCanceled_ASC',
     iInscriptionnotauthenticatedCanceled_DESC: 'iInscriptionnotauthenticatedCanceled_DESC',
     sInscriptionnotauthenticatedOffertopurchasenumber_ASC: 'sInscriptionnotauthenticatedOffertopurchasenumber_ASC',
-    sInscriptionnotauthenticatedOffertopurchasenumber_DESC: 'sInscriptionnotauthenticatedOffertopurchasenumber_DESC'
+    sInscriptionnotauthenticatedOffertopurchasenumber_DESC: 'sInscriptionnotauthenticatedOffertopurchasenumber_DESC',
 } as const;
 export type InscriptionnotauthenticatedGetListV1EOrderByEnum = typeof InscriptionnotauthenticatedGetListV1EOrderByEnum[keyof typeof InscriptionnotauthenticatedGetListV1EOrderByEnum];

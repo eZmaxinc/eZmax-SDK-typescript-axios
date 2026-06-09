@@ -36,7 +36,7 @@ export interface WebsocketResponseInformationV1 {
 }
 
 export const WebsocketResponseInformationV1EWebsocketMessagetypeEnum = {
-    Response_Information_V1: 'Response-Information-V1'
+    Response_Information_V1: 'Response-Information-V1',
 } as const;
 
 export type WebsocketResponseInformationV1EWebsocketMessagetypeEnum = typeof WebsocketResponseInformationV1EWebsocketMessagetypeEnum[keyof typeof WebsocketResponseInformationV1EWebsocketMessagetypeEnum];

@@ -101,7 +101,7 @@ export const ScimGroupsApiAxiosParamCreator = function (configuration?: Configur
             // verify required parameter 'groupId' is not null or undefined
             assertParamExists('groupsDeleteObjectScimV2', 'groupId', groupId)
             const localVarPath = `/2/scim/Groups/{groupId}`
-                .replace(`{${"groupId"}}`, encodeURIComponent(String(groupId)));
+                .replace('{groupId}', encodeURIComponent(String(groupId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -162,7 +162,7 @@ export const ScimGroupsApiAxiosParamCreator = function (configuration?: Configur
             // verify required parameter 'scimGroup' is not null or undefined
             assertParamExists('groupsEditObjectScimV2', 'scimGroup', scimGroup)
             const localVarPath = `/2/scim/Groups/{groupId}`
-                .replace(`{${"groupId"}}`, encodeURIComponent(String(groupId)));
+                .replace('{groupId}', encodeURIComponent(String(groupId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -283,7 +283,7 @@ export const ScimGroupsApiAxiosParamCreator = function (configuration?: Configur
             // verify required parameter 'groupId' is not null or undefined
             assertParamExists('groupsGetObjectScimV2', 'groupId', groupId)
             const localVarPath = `/2/scim/Groups/{groupId}`
-                .replace(`{${"groupId"}}`, encodeURIComponent(String(groupId)));
+                .replace('{groupId}', encodeURIComponent(String(groupId)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath

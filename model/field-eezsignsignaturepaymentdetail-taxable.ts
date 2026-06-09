@@ -21,7 +21,7 @@
 export const FieldEEzsignsignaturepaymentdetailTaxable = {
     Yes: 'Yes',
     No: 'No',
-    Included: 'Included'
+    Included: 'Included',
 } as const;
 
 export type FieldEEzsignsignaturepaymentdetailTaxable = typeof FieldEEzsignsignaturepaymentdetailTaxable[keyof typeof FieldEEzsignsignaturepaymentdetailTaxable];

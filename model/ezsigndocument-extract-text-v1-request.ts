@@ -53,7 +53,7 @@ export interface EzsigndocumentExtractTextV1Request {
 export const EzsigndocumentExtractTextV1RequestESectionEnum = {
     FirstLine: 'FirstLine',
     LastLine: 'LastLine',
-    Region: 'Region'
+    Region: 'Region',
 } as const;
 
 export type EzsigndocumentExtractTextV1RequestESectionEnum = typeof EzsigndocumentExtractTextV1RequestESectionEnum[keyof typeof EzsigndocumentExtractTextV1RequestESectionEnum];

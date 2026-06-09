@@ -24,7 +24,7 @@ export const FieldEAttachmentPrivacy = {
     Seller: 'Seller',
     Administration: 'Administration',
     Creator: 'Creator',
-    Specificuser: 'Specificuser'
+    Specificuser: 'Specificuser',
 } as const;
 
 export type FieldEAttachmentPrivacy = typeof FieldEAttachmentPrivacy[keyof typeof FieldEAttachmentPrivacy];

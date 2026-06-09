@@ -48,7 +48,7 @@ export const ObjectEzmaxcustomerApiAxiosParamCreator = function (configuration?:
             // verify required parameter 'ezmaxcustomerPatchObjectV1Request' is not null or undefined
             assertParamExists('ezmaxcustomerPatchObjectV1', 'ezmaxcustomerPatchObjectV1Request', ezmaxcustomerPatchObjectV1Request)
             const localVarPath = `/1/object/ezmaxcustomer/{pkiEzmaxcustomerID}`
-                .replace(`{${"pkiEzmaxcustomerID"}}`, encodeURIComponent(String(pkiEzmaxcustomerID)));
+                .replace('{pkiEzmaxcustomerID}', encodeURIComponent(String(pkiEzmaxcustomerID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath

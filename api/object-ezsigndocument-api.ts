@@ -183,7 +183,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'ezsigndocumentApplyEzsigntemplateV1Request' is not null or undefined
             assertParamExists('ezsigndocumentApplyEzsigntemplateV1', 'ezsigndocumentApplyEzsigntemplateV1Request', ezsigndocumentApplyEzsigntemplateV1Request)
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/applyezsigntemplate`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -247,7 +247,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'ezsigndocumentApplyEzsigntemplateV2Request' is not null or undefined
             assertParamExists('ezsigndocumentApplyEzsigntemplateV2', 'ezsigndocumentApplyEzsigntemplateV2Request', ezsigndocumentApplyEzsigntemplateV2Request)
             const localVarPath = `/2/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplate`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -310,7 +310,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'ezsigndocumentApplyEzsigntemplateV3Request' is not null or undefined
             assertParamExists('ezsigndocumentApplyEzsigntemplateV3', 'ezsigndocumentApplyEzsigntemplateV3Request', ezsigndocumentApplyEzsigntemplateV3Request)
             const localVarPath = `/3/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplate`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -374,7 +374,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'ezsigndocumentApplyEzsigntemplateglobalV1Request' is not null or undefined
             assertParamExists('ezsigndocumentApplyEzsigntemplateglobalV1', 'ezsigndocumentApplyEzsigntemplateglobalV1Request', ezsigndocumentApplyEzsigntemplateglobalV1Request)
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplateglobal`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -437,7 +437,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'ezsigndocumentApplyEzsigntemplateglobalV2Request' is not null or undefined
             assertParamExists('ezsigndocumentApplyEzsigntemplateglobalV2', 'ezsigndocumentApplyEzsigntemplateglobalV2Request', ezsigndocumentApplyEzsigntemplateglobalV2Request)
             const localVarPath = `/2/object/ezsigndocument/{pkiEzsigndocumentID}/applyEzsigntemplateglobal`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -501,7 +501,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'ezsigndocumentCreateEzsignelementsPositionedByWordV1Request' is not null or undefined
             assertParamExists('ezsigndocumentCreateEzsignelementsPositionedByWordV1', 'ezsigndocumentCreateEzsignelementsPositionedByWordV1Request', ezsigndocumentCreateEzsignelementsPositionedByWordV1Request)
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/createEzsignelementsPositionedByWord`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -564,7 +564,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'ezsigndocumentCreateEzsignelementsPositionedByWordV2Request' is not null or undefined
             assertParamExists('ezsigndocumentCreateEzsignelementsPositionedByWordV2', 'ezsigndocumentCreateEzsignelementsPositionedByWordV2Request', ezsigndocumentCreateEzsignelementsPositionedByWordV2Request)
             const localVarPath = `/2/object/ezsigndocument/{pkiEzsigndocumentID}/createEzsignelementsPositionedByWord`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -806,7 +806,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'ezsigndocumentDeclineToSignV1Request' is not null or undefined
             assertParamExists('ezsigndocumentDeclineToSignV1', 'ezsigndocumentDeclineToSignV1Request', ezsigndocumentDeclineToSignV1Request)
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/declineToSign`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -866,7 +866,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
             assertParamExists('ezsigndocumentDeleteObjectV1', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -927,7 +927,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'ezsigndocumentEditEzsignannotationsV1Request' is not null or undefined
             assertParamExists('ezsigndocumentEditEzsignannotationsV1', 'ezsigndocumentEditEzsignannotationsV1Request', ezsigndocumentEditEzsignannotationsV1Request)
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignannotations`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -991,7 +991,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'ezsigndocumentEditEzsignformfieldgroupsV1Request' is not null or undefined
             assertParamExists('ezsigndocumentEditEzsignformfieldgroupsV1', 'ezsigndocumentEditEzsignformfieldgroupsV1Request', ezsigndocumentEditEzsignformfieldgroupsV1Request)
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignformfieldgroups`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -1054,7 +1054,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'ezsigndocumentEditEzsignformfieldgroupsV2Request' is not null or undefined
             assertParamExists('ezsigndocumentEditEzsignformfieldgroupsV2', 'ezsigndocumentEditEzsignformfieldgroupsV2Request', ezsigndocumentEditEzsignformfieldgroupsV2Request)
             const localVarPath = `/2/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignformfieldgroups`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -1118,7 +1118,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'ezsigndocumentEditEzsignsignaturesV1Request' is not null or undefined
             assertParamExists('ezsigndocumentEditEzsignsignaturesV1', 'ezsigndocumentEditEzsignsignaturesV1Request', ezsigndocumentEditEzsignsignaturesV1Request)
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignsignatures`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -1181,7 +1181,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'ezsigndocumentEditEzsignsignaturesV2Request' is not null or undefined
             assertParamExists('ezsigndocumentEditEzsignsignaturesV2', 'ezsigndocumentEditEzsignsignaturesV2Request', ezsigndocumentEditEzsignsignaturesV2Request)
             const localVarPath = `/2/object/ezsigndocument/{pkiEzsigndocumentID}/editEzsignsignatures`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -1244,7 +1244,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'ezsigndocumentEditObjectV1Request' is not null or undefined
             assertParamExists('ezsigndocumentEditObjectV1', 'ezsigndocumentEditObjectV1Request', ezsigndocumentEditObjectV1Request)
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -1307,7 +1307,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'body' is not null or undefined
             assertParamExists('ezsigndocumentEndPrematurelyV1', 'body', body)
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/endPrematurely`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -1370,7 +1370,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'ezsigndocumentExtractTextV1Request' is not null or undefined
             assertParamExists('ezsigndocumentExtractTextV1', 'ezsigndocumentExtractTextV1Request', ezsigndocumentExtractTextV1Request)
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/extractText`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -1433,7 +1433,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'body' is not null or undefined
             assertParamExists('ezsigndocumentFlattenV1', 'body', body)
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/flatten`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -1494,7 +1494,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
             assertParamExists('ezsigndocumentGetActionableElementsV1', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -1553,7 +1553,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
             assertParamExists('ezsigndocumentGetActionableElementsV2', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
             const localVarPath = `/2/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -1611,7 +1611,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
             assertParamExists('ezsigndocumentGetActionableElementsV3', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
             const localVarPath = `/3/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -1669,7 +1669,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
             assertParamExists('ezsigndocumentGetAttachmentsV1', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/getAttachments`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -1728,7 +1728,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
             assertParamExists('ezsigndocumentGetCompletedElementsV1', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/getCompletedElements`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -1786,7 +1786,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
             assertParamExists('ezsigndocumentGetCompletedElementsV2', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
             const localVarPath = `/2/object/ezsigndocument/{pkiEzsigndocumentID}/getCompletedElements`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -1847,8 +1847,8 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'eDocumentType' is not null or undefined
             assertParamExists('ezsigndocumentGetDownloadUrlV1', 'eDocumentType', eDocumentType)
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/getDownloadUrl/{eDocumentType}`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)))
-                .replace(`{${"eDocumentType"}}`, encodeURIComponent(String(eDocumentType)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)))
+                .replace('{eDocumentType}', encodeURIComponent(String(eDocumentType)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -1906,7 +1906,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
             assertParamExists('ezsigndocumentGetEzsignannotationsV1', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignannotations`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -1964,7 +1964,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
             assertParamExists('ezsigndocumentGetEzsigndiscussionsV1', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsigndiscussions`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -2022,7 +2022,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
             assertParamExists('ezsigndocumentGetEzsignformfieldgroupsV1', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignformfieldgroups`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -2080,7 +2080,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
             assertParamExists('ezsigndocumentGetEzsignpagesV1', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignpages`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -2138,7 +2138,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
             assertParamExists('ezsigndocumentGetEzsignsignaturesAutomaticV1', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignsignaturesAutomatic`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -2197,7 +2197,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
             assertParamExists('ezsigndocumentGetEzsignsignaturesV1', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignsignatures`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -2255,7 +2255,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
             assertParamExists('ezsigndocumentGetEzsignsignaturesV2', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
             const localVarPath = `/2/object/ezsigndocument/{pkiEzsigndocumentID}/getEzsignsignatures`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -2313,7 +2313,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
             assertParamExists('ezsigndocumentGetFormDataV1', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/getFormData`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -2372,7 +2372,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
             assertParamExists('ezsigndocumentGetObjectV1', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -2431,7 +2431,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
             assertParamExists('ezsigndocumentGetObjectV2', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
             const localVarPath = `/2/object/ezsigndocument/{pkiEzsigndocumentID}`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -2489,7 +2489,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
             assertParamExists('ezsigndocumentGetObjectV3', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
             const localVarPath = `/3/object/ezsigndocument/{pkiEzsigndocumentID}`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -2547,7 +2547,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'pkiEzsigndocumentID' is not null or undefined
             assertParamExists('ezsigndocumentGetTemporaryProofV1', 'pkiEzsigndocumentID', pkiEzsigndocumentID)
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/getTemporaryProof`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -2608,7 +2608,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'ezsigndocumentGetWordsPositionsV1Request' is not null or undefined
             assertParamExists('ezsigndocumentGetWordsPositionsV1', 'ezsigndocumentGetWordsPositionsV1Request', ezsigndocumentGetWordsPositionsV1Request)
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/getWordsPositions`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -2671,7 +2671,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'ezsigndocumentPatchObjectV1Request' is not null or undefined
             assertParamExists('ezsigndocumentPatchObjectV1', 'ezsigndocumentPatchObjectV1Request', ezsigndocumentPatchObjectV1Request)
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -2734,7 +2734,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'ezsigndocumentPrefillEzsignformV1Request' is not null or undefined
             assertParamExists('ezsigndocumentPrefillEzsignformV1', 'ezsigndocumentPrefillEzsignformV1Request', ezsigndocumentPrefillEzsignformV1Request)
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/prefillEzsignform`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -2797,7 +2797,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'ezsigndocumentSubmitEzsignformV1Request' is not null or undefined
             assertParamExists('ezsigndocumentSubmitEzsignformV1', 'ezsigndocumentSubmitEzsignformV1Request', ezsigndocumentSubmitEzsignformV1Request)
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/submitEzsignform`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -2860,7 +2860,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             // verify required parameter 'body' is not null or undefined
             assertParamExists('ezsigndocumentUnsendV1', 'body', body)
             const localVarPath = `/1/object/ezsigndocument/{pkiEzsigndocumentID}/unsend`
-                .replace(`{${"pkiEzsigndocumentID"}}`, encodeURIComponent(String(pkiEzsigndocumentID)));
+                .replace('{pkiEzsigndocumentID}', encodeURIComponent(String(pkiEzsigndocumentID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -4582,6 +4582,6 @@ export const EzsigndocumentGetDownloadUrlV1EDocumentTypeEnum = {
     SignatureReady: 'SignatureReady',
     Signed: 'Signed',
     Proof: 'Proof',
-    Proofdocument: 'Proofdocument'
+    Proofdocument: 'Proofdocument',
 } as const;
 export type EzsigndocumentGetDownloadUrlV1EDocumentTypeEnum = typeof EzsigndocumentGetDownloadUrlV1EDocumentTypeEnum[keyof typeof EzsigndocumentGetDownloadUrlV1EDocumentTypeEnum];

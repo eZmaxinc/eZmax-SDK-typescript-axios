@@ -20,7 +20,7 @@
 
 export const FieldESystemconfigurationEzsignofficeplan = {
     Standard: 'Standard',
-    Pro: 'Pro'
+    Pro: 'Pro',
 } as const;
 
 export type FieldESystemconfigurationEzsignofficeplan = typeof FieldESystemconfigurationEzsignofficeplan[keyof typeof FieldESystemconfigurationEzsignofficeplan];

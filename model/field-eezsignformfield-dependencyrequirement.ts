@@ -20,7 +20,7 @@
 
 export const FieldEEzsignformfieldDependencyrequirement = {
     AllOf: 'AllOf',
-    AnyOf: 'AnyOf'
+    AnyOf: 'AnyOf',
 } as const;
 
 export type FieldEEzsignformfieldDependencyrequirement = typeof FieldEEzsignformfieldDependencyrequirement[keyof typeof FieldEEzsignformfieldDependencyrequirement];

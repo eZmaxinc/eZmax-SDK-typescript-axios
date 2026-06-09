@@ -132,7 +132,7 @@ export const ObjectSupplierApiAxiosParamCreator = function (configuration?: Conf
             // verify required parameter 'supplierImportIntoEDMV1Request' is not null or undefined
             assertParamExists('supplierImportIntoEDMV1', 'supplierImportIntoEDMV1Request', supplierImportIntoEDMV1Request)
             const localVarPath = `/1/object/supplier/{pkiSupplierID}/importIntoEDM`
-                .replace(`{${"pkiSupplierID"}}`, encodeURIComponent(String(pkiSupplierID)));
+                .replace('{pkiSupplierID}', encodeURIComponent(String(pkiSupplierID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -326,6 +326,6 @@ export const SupplierGetListV1EOrderByEnum = {
     sElectronicfundstransferbankaccountInstitution_ASC: 'sElectronicfundstransferbankaccountInstitution_ASC',
     sElectronicfundstransferbankaccountInstitution_DESC: 'sElectronicfundstransferbankaccountInstitution_DESC',
     sElectronicfundstransferbankaccountAccount_ASC: 'sElectronicfundstransferbankaccountAccount_ASC',
-    sElectronicfundstransferbankaccountAccount_DESC: 'sElectronicfundstransferbankaccountAccount_DESC'
+    sElectronicfundstransferbankaccountAccount_DESC: 'sElectronicfundstransferbankaccountAccount_DESC',
 } as const;
 export type SupplierGetListV1EOrderByEnum = typeof SupplierGetListV1EOrderByEnum[keyof typeof SupplierGetListV1EOrderByEnum];

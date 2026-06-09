@@ -21,7 +21,7 @@
 export const EnumFontunderline = {
     None: 'None',
     Single: 'Single',
-    Double: 'Double'
+    Double: 'Double',
 } as const;
 
 export type EnumFontunderline = typeof EnumFontunderline[keyof typeof EnumFontunderline];

@@ -20,7 +20,7 @@
 
 export const FieldEEzsigntemplatesignaturePositioning = {
     PerCoordinates: 'PerCoordinates',
-    PerPositioningPattern: 'PerPositioningPattern'
+    PerPositioningPattern: 'PerPositioningPattern',
 } as const;
 
 export type FieldEEzsigntemplatesignaturePositioning = typeof FieldEEzsigntemplatesignaturePositioning[keyof typeof FieldEEzsigntemplatesignaturePositioning];

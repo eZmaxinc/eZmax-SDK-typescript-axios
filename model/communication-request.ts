@@ -72,7 +72,7 @@ export interface CommunicationRequest {
 
 export const CommunicationRequestECommunicationAttachmenttypeEnum = {
     Attachment: 'Attachment',
-    Url: 'Url'
+    Url: 'Url',
 } as const;
 
 export type CommunicationRequestECommunicationAttachmenttypeEnum = typeof CommunicationRequestECommunicationAttachmenttypeEnum[keyof typeof CommunicationRequestECommunicationAttachmenttypeEnum];

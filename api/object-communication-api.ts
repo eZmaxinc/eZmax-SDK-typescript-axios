@@ -45,7 +45,7 @@ export const ObjectCommunicationApiAxiosParamCreator = function (configuration?:
             // verify required parameter 'pkiCommunicationID' is not null or undefined
             assertParamExists('communicationGetCommunicationBodyV1', 'pkiCommunicationID', pkiCommunicationID)
             const localVarPath = `/1/object/communication/{pkiCommunicationID}/getCommunicationBody`
-                .replace(`{${"pkiCommunicationID"}}`, encodeURIComponent(String(pkiCommunicationID)));
+                .replace('{pkiCommunicationID}', encodeURIComponent(String(pkiCommunicationID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath

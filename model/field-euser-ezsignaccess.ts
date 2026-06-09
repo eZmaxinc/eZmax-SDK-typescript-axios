@@ -22,7 +22,7 @@ export const FieldEUserEzsignaccess = {
     No: 'No',
     PaidByOffice: 'PaidByOffice',
     PerDocument: 'PerDocument',
-    Prepaid: 'Prepaid'
+    Prepaid: 'Prepaid',
 } as const;
 
 export type FieldEUserEzsignaccess = typeof FieldEUserEzsignaccess[keyof typeof FieldEUserEzsignaccess];

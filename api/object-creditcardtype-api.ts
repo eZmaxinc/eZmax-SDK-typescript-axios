@@ -46,7 +46,7 @@ export const ObjectCreditcardtypeApiAxiosParamCreator = function (configuration?
             // verify required parameter 'sSelector' is not null or undefined
             assertParamExists('creditcardtypeGetAutocompleteV2', 'sSelector', sSelector)
             const localVarPath = `/2/object/creditcardtype/getAutocomplete/{sSelector}`
-                .replace(`{${"sSelector"}}`, encodeURIComponent(String(sSelector)));
+                .replace('{sSelector}', encodeURIComponent(String(sSelector)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -176,12 +176,12 @@ export class ObjectCreditcardtypeApi extends BaseAPI {
 }
 
 export const CreditcardtypeGetAutocompleteV2SSelectorEnum = {
-    All: 'All'
+    All: 'All',
 } as const;
 export type CreditcardtypeGetAutocompleteV2SSelectorEnum = typeof CreditcardtypeGetAutocompleteV2SSelectorEnum[keyof typeof CreditcardtypeGetAutocompleteV2SSelectorEnum];
 export const CreditcardtypeGetAutocompleteV2EFilterActiveEnum = {
     All: 'All',
     Active: 'Active',
-    Inactive: 'Inactive'
+    Inactive: 'Inactive',
 } as const;
 export type CreditcardtypeGetAutocompleteV2EFilterActiveEnum = typeof CreditcardtypeGetAutocompleteV2EFilterActiveEnum[keyof typeof CreditcardtypeGetAutocompleteV2EFilterActiveEnum];

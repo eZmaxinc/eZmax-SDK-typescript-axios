@@ -20,7 +20,7 @@
 
 export const FieldEEzsigntemplatesignatureConsultationtrigger = {
     Automatic: 'Automatic',
-    Manual: 'Manual'
+    Manual: 'Manual',
 } as const;
 
 export type FieldEEzsigntemplatesignatureConsultationtrigger = typeof FieldEEzsigntemplatesignatureConsultationtrigger[keyof typeof FieldEEzsigntemplatesignatureConsultationtrigger];

@@ -112,7 +112,7 @@ export const ObjectEzsigntemplatesignerApiAxiosParamCreator = function (configur
             // verify required parameter 'pkiEzsigntemplatesignerID' is not null or undefined
             assertParamExists('ezsigntemplatesignerDeleteObjectV1', 'pkiEzsigntemplatesignerID', pkiEzsigntemplatesignerID)
             const localVarPath = `/1/object/ezsigntemplatesigner/{pkiEzsigntemplatesignerID}`
-                .replace(`{${"pkiEzsigntemplatesignerID"}}`, encodeURIComponent(String(pkiEzsigntemplatesignerID)));
+                .replace('{pkiEzsigntemplatesignerID}', encodeURIComponent(String(pkiEzsigntemplatesignerID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -173,7 +173,7 @@ export const ObjectEzsigntemplatesignerApiAxiosParamCreator = function (configur
             // verify required parameter 'ezsigntemplatesignerEditObjectV1Request' is not null or undefined
             assertParamExists('ezsigntemplatesignerEditObjectV1', 'ezsigntemplatesignerEditObjectV1Request', ezsigntemplatesignerEditObjectV1Request)
             const localVarPath = `/1/object/ezsigntemplatesigner/{pkiEzsigntemplatesignerID}`
-                .replace(`{${"pkiEzsigntemplatesignerID"}}`, encodeURIComponent(String(pkiEzsigntemplatesignerID)));
+                .replace('{pkiEzsigntemplatesignerID}', encodeURIComponent(String(pkiEzsigntemplatesignerID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -233,7 +233,7 @@ export const ObjectEzsigntemplatesignerApiAxiosParamCreator = function (configur
             // verify required parameter 'pkiEzsigntemplatesignerID' is not null or undefined
             assertParamExists('ezsigntemplatesignerGetObjectV2', 'pkiEzsigntemplatesignerID', pkiEzsigntemplatesignerID)
             const localVarPath = `/2/object/ezsigntemplatesigner/{pkiEzsigntemplatesignerID}`
-                .replace(`{${"pkiEzsigntemplatesignerID"}}`, encodeURIComponent(String(pkiEzsigntemplatesignerID)));
+                .replace('{pkiEzsigntemplatesignerID}', encodeURIComponent(String(pkiEzsigntemplatesignerID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
