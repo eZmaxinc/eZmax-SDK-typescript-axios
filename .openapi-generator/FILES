@@ -3,6 +3,7 @@
 .openapi-generator-ignore
 README.md
 api.ts
+api/documentation-ezmaxpartner-api.ts
 api/global-customer-api.ts
 api/global-ezmaxclient-api.ts
 api/global-ezmaxcustomer-api.ts
@@ -469,6 +470,7 @@ docs/CustomEzmaxcustomeruserResponse.md
 docs/CustomEzmaxinvoicingEzsigndocumentResponse.md
 docs/CustomEzmaxinvoicingEzsignfolderResponse.md
 docs/CustomEzmaxpartnerListElement.md
+docs/CustomEzmaxpartnerproductSubscribe.md
 docs/CustomEzmaxpricingResponse.md
 docs/CustomEzsigndocumentDuplicateRequest.md
 docs/CustomEzsigndocumentEzsignsignaturesAutomaticResponse.md
@@ -561,6 +563,9 @@ docs/DiscussionmessageRequestCompound.md
 docs/DiscussionmessageRequestPatch.md
 docs/DiscussionmessageResponse.md
 docs/DiscussionmessageResponseCompound.md
+docs/DocumentationEzmaxpartnerApi.md
+docs/DocumentationSubscribeV1Request.md
+docs/DocumentationSubscribeV1Response.md
 docs/DomainAutocompleteElementResponse.md
 docs/DomainCreateObjectV1Request.md
 docs/DomainCreateObjectV1Response.md
@@ -819,6 +824,8 @@ docs/EzsigndocumentExtractTextV1Request.md
 docs/EzsigndocumentExtractTextV1Response.md
 docs/EzsigndocumentExtractTextV1ResponseMPayload.md
 docs/EzsigndocumentFlattenV1Response.md
+docs/EzsigndocumentGetActionableElementsForSignerV1Response.md
+docs/EzsigndocumentGetActionableElementsForSignerV1ResponseMPayload.md
 docs/EzsigndocumentGetActionableElementsV1Response.md
 docs/EzsigndocumentGetActionableElementsV1ResponseMPayload.md
 docs/EzsigndocumentGetActionableElementsV2Response.md
@@ -903,6 +910,8 @@ docs/EzsignfolderDuplicateV1ResponseMPayload.md
 docs/EzsignfolderEditObjectV3Request.md
 docs/EzsignfolderEditObjectV3Response.md
 docs/EzsignfolderEndPrematurelyV1Response.md
+docs/EzsignfolderGetActionableElementsForSignerV1Response.md
+docs/EzsignfolderGetActionableElementsForSignerV1ResponseMPayload.md
 docs/EzsignfolderGetActionableElementsV1Response.md
 docs/EzsignfolderGetActionableElementsV1ResponseMPayload.md
 docs/EzsignfolderGetActionableElementsV2Response.md
@@ -2233,6 +2242,8 @@ docs/WebhookCreateObjectV2ResponseMPayload.md
 docs/WebhookDeleteObjectV1Response.md
 docs/WebhookEditObjectV1Request.md
 docs/WebhookEditObjectV1Response.md
+docs/WebhookEzmaxpartnerproductSubscribe.md
+docs/WebhookEzmaxpartnerproductUnsubscribe.md
 docs/WebhookEzsignDocumentCompleted.md
 docs/WebhookEzsignDocumentFormCompleted.md
 docs/WebhookEzsignDocumentUnsent.md
@@ -2602,6 +2613,7 @@ model/custom-ezmaxcustomeruser-response.ts
 model/custom-ezmaxinvoicing-ezsigndocument-response.ts
 model/custom-ezmaxinvoicing-ezsignfolder-response.ts
 model/custom-ezmaxpartner-list-element.ts
+model/custom-ezmaxpartnerproduct-subscribe.ts
 model/custom-ezmaxpricing-response.ts
 model/custom-ezsigndocument-duplicate-request.ts
 model/custom-ezsigndocument-ezsignsignatures-automatic-response.ts
@@ -2694,6 +2706,8 @@ model/discussionmessage-request-patch.ts
 model/discussionmessage-request.ts
 model/discussionmessage-response-compound.ts
 model/discussionmessage-response.ts
+model/documentation-subscribe-v1-request.ts
+model/documentation-subscribe-v1-response.ts
 model/domain-autocomplete-element-response.ts
 model/domain-create-object-v1-request.ts
 model/domain-create-object-v1-response-mpayload.ts
@@ -2952,6 +2966,8 @@ model/ezsigndocument-extract-text-v1-request.ts
 model/ezsigndocument-extract-text-v1-response-mpayload.ts
 model/ezsigndocument-extract-text-v1-response.ts
 model/ezsigndocument-flatten-v1-response.ts
+model/ezsigndocument-get-actionable-elements-for-signer-v1-response-mpayload.ts
+model/ezsigndocument-get-actionable-elements-for-signer-v1-response.ts
 model/ezsigndocument-get-actionable-elements-v1-response-mpayload.ts
 model/ezsigndocument-get-actionable-elements-v1-response.ts
 model/ezsigndocument-get-actionable-elements-v2-response-mpayload.ts
@@ -3036,6 +3052,8 @@ model/ezsignfolder-duplicate-v1-response.ts
 model/ezsignfolder-edit-object-v3-request.ts
 model/ezsignfolder-edit-object-v3-response.ts
 model/ezsignfolder-end-prematurely-v1-response.ts
+model/ezsignfolder-get-actionable-elements-for-signer-v1-response-mpayload.ts
+model/ezsignfolder-get-actionable-elements-for-signer-v1-response.ts
 model/ezsignfolder-get-actionable-elements-v1-response-mpayload.ts
 model/ezsignfolder-get-actionable-elements-v1-response.ts
 model/ezsignfolder-get-actionable-elements-v2-response-mpayload.ts
@@ -4228,6 +4246,8 @@ model/webhook-create-object-v2-response.ts
 model/webhook-delete-object-v1-response.ts
 model/webhook-edit-object-v1-request.ts
 model/webhook-edit-object-v1-response.ts
+model/webhook-ezmaxpartnerproduct-subscribe.ts
+model/webhook-ezmaxpartnerproduct-unsubscribe.ts
 model/webhook-ezsign-document-completed.ts
 model/webhook-ezsign-document-form-completed.ts
 model/webhook-ezsign-document-unsent.ts

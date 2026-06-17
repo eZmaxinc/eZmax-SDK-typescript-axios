@@ -37,6 +37,16 @@ export interface InscriptionListElement {
     /*'fkiInscriptiontypeID': number;*/
     'fkiInscriptiontypeID': number;
     /**
+     * The unique ID of the Buyercontract
+     */
+    /*'fkiBuyercontractID'?: number;*/
+    'fkiBuyercontractID'?: number;
+    /**
+     * The number of the Buyercontract
+     */
+    /*'sBuyercontractContract'?: string;*/
+    'sBuyercontractContract'?: string;
+    /**
      * The name of the Inscriptiontype in the language of the requester
      */
     /*'sInscriptiontypeNameX': string;*/
@@ -53,6 +63,11 @@ export interface InscriptionListElement {
      */
     /*'sInscriptionMLS'?: string;*/
     'sInscriptionMLS'?: string;
+    /**
+     * The sale contract number
+     */
+    /*'sInscriptionContract'?: string;*/
+    'sInscriptionContract'?: string;
     /**
      * The saleprice of the Inscription
      */
@@ -191,10 +206,13 @@ export class DataObjectInscriptionListElement {
    pkiInscriptionID:number = 0
    pkiInscriptionnotauthenticatedID?:number = undefined
    fkiInscriptiontypeID:number = 0
+   fkiBuyercontractID?:number = undefined
+   sBuyercontractContract?:string = undefined
    sInscriptiontypeNameX:string = ''
    eInscriptionStep:FieldEInscriptionStep = 'TemporaryNotAuthenticated'
    sInscriptionCivicend:string = ''
    sInscriptionMLS?:string = undefined
+   sInscriptionContract?:string = undefined
    dInscriptionSaleprice:string = ''
    dInscriptionRentprice:string = ''
    dtInscriptionDate?:string = undefined
@@ -243,6 +261,16 @@ export class ValidationObjectInscriptionListElement {
       maximum: 255,
       required: true
    }
+   fkiBuyercontractID = {
+      type: 'integer',
+      minimum: 1,
+      maximum: 65535,
+      required: false
+   }
+   sBuyercontractContract = {
+      type: 'string',
+      required: false
+   }
    sInscriptiontypeNameX = {
       type: 'string',
       pattern: /^.{0,30}$/,
@@ -259,6 +287,11 @@ export class ValidationObjectInscriptionListElement {
       required: true
    }
    sInscriptionMLS = {
+      type: 'string',
+      pattern: /^.{0,20}$/,
+      required: false
+   }
+   sInscriptionContract = {
       type: 'string',
       pattern: /^.{0,20}$/,
       required: false

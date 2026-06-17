@@ -13,6 +13,7 @@
  */
 
 export enum EApiOperation {
+    'documentation-ezmaxpartner-api',
     'global-customer-api',
     'global-ezmaxclient-api',
     'global-ezmaxcustomer-api',
@@ -156,6 +157,7 @@ export enum EApiOperation {
 }
 
 
+export * from './api/documentation-ezmaxpartner-api';
 export * from './api/global-customer-api';
 export * from './api/global-ezmaxclient-api';
 export * from './api/global-ezmaxcustomer-api';

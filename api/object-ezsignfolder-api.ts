@@ -58,6 +58,8 @@ import type { EzsignfolderEditObjectV3Response } from '../model';
 // @ts-ignore
 import type { EzsignfolderEndPrematurelyV1Response } from '../model';
 // @ts-ignore
+import type { EzsignfolderGetActionableElementsForSignerV1Response } from '../model';
+// @ts-ignore
 import type { EzsignfolderGetActionableElementsV1Response } from '../model';
 // @ts-ignore
 import type { EzsignfolderGetActionableElementsV2Response } from '../model';
@@ -799,6 +801,81 @@ export const ObjectEzsignfolderApiAxiosParamCreator = function (configuration?: 
                         authorization: configuration.apiKey as string,
                         secret: secret as string,
                         method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * Return the Ezsignsignatures that can be signed and Ezsignformfieldgroups that can be filled by an user at the current step in the process
+         * @summary Retrieve actionable elements of a user for the Ezsignfolder
+         * @param {number} pkiEzsignfolderID 
+         * @param {EzsignfolderGetActionableElementsForSignerV1ESignerTypeEnum} eSignerType 
+         * @param {number} [fkiEzsignsignerID] 
+         * @param {number} [fkiUserID] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsignfolderGetActionableElementsForSignerV1: async (pkiEzsignfolderID: number, eSignerType: EzsignfolderGetActionableElementsForSignerV1ESignerTypeEnum, fkiEzsignsignerID?: number, fkiUserID?: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiEzsignfolderID' is not null or undefined
+            assertParamExists('ezsignfolderGetActionableElementsForSignerV1', 'pkiEzsignfolderID', pkiEzsignfolderID)
+            // verify required parameter 'eSignerType' is not null or undefined
+            assertParamExists('ezsignfolderGetActionableElementsForSignerV1', 'eSignerType', eSignerType)
+            const localVarPath = `/1/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElementsForSigner`
+                .replace('{pkiEzsignfolderID}', encodeURIComponent(String(pkiEzsignfolderID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            if (eSignerType !== undefined) {
+                localVarQueryParameter['eSignerType'] = eSignerType;
+            }
+
+            if (fkiEzsignsignerID !== undefined) {
+                localVarQueryParameter['fkiEzsignsignerID'] = fkiEzsignsignerID;
+            }
+
+            if (fkiUserID !== undefined) {
+                localVarQueryParameter['fkiUserID'] = fkiUserID;
+            }
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
                         url: basePath + toPathString(localVarUrlObj) as string,
                         body: localVarRequestOptions.data || '' as string
                     }
@@ -2725,6 +2802,22 @@ export const ObjectEzsignfolderApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
+         * Return the Ezsignsignatures that can be signed and Ezsignformfieldgroups that can be filled by an user at the current step in the process
+         * @summary Retrieve actionable elements of a user for the Ezsignfolder
+         * @param {number} pkiEzsignfolderID 
+         * @param {EzsignfolderGetActionableElementsForSignerV1ESignerTypeEnum} eSignerType 
+         * @param {number} [fkiEzsignsignerID] 
+         * @param {number} [fkiUserID] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async ezsignfolderGetActionableElementsForSignerV1(pkiEzsignfolderID: number, eSignerType: EzsignfolderGetActionableElementsForSignerV1ESignerTypeEnum, fkiEzsignsignerID?: number, fkiUserID?: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EzsignfolderGetActionableElementsForSignerV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.ezsignfolderGetActionableElementsForSignerV1(pkiEzsignfolderID, eSignerType, fkiEzsignsignerID, fkiUserID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEzsignfolderApi.ezsignfolderGetActionableElementsForSignerV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * Return the Ezsignsignatures that can be signed and Ezsignformfieldgroups that can be filled by the current user at the current step in the process.    Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
          * @summary Retrieve actionable elements for the Ezsignfolder
          * @param {number} pkiEzsignfolderID 
@@ -3249,6 +3342,19 @@ export const ObjectEzsignfolderApiFactory = function (configuration?: Configurat
             return localVarFp.ezsignfolderEndPrematurelyV1(pkiEzsignfolderID, body, options).then((request) => request(axios, basePath));
         },
         /**
+         * Return the Ezsignsignatures that can be signed and Ezsignformfieldgroups that can be filled by an user at the current step in the process
+         * @summary Retrieve actionable elements of a user for the Ezsignfolder
+         * @param {number} pkiEzsignfolderID 
+         * @param {EzsignfolderGetActionableElementsForSignerV1ESignerTypeEnum} eSignerType 
+         * @param {number} [fkiEzsignsignerID] 
+         * @param {number} [fkiUserID] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        ezsignfolderGetActionableElementsForSignerV1(pkiEzsignfolderID: number, eSignerType: EzsignfolderGetActionableElementsForSignerV1ESignerTypeEnum, fkiEzsignsignerID?: number, fkiUserID?: number, options?: RawAxiosRequestConfig): AxiosPromise<EzsignfolderGetActionableElementsForSignerV1Response> {
+            return localVarFp.ezsignfolderGetActionableElementsForSignerV1(pkiEzsignfolderID, eSignerType, fkiEzsignsignerID, fkiUserID, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Return the Ezsignsignatures that can be signed and Ezsignformfieldgroups that can be filled by the current user at the current step in the process.    Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
          * @summary Retrieve actionable elements for the Ezsignfolder
          * @param {number} pkiEzsignfolderID 
@@ -3695,6 +3801,20 @@ export class ObjectEzsignfolderApi extends BaseAPI {
     }
 
     /**
+     * Return the Ezsignsignatures that can be signed and Ezsignformfieldgroups that can be filled by an user at the current step in the process
+     * @summary Retrieve actionable elements of a user for the Ezsignfolder
+     * @param {number} pkiEzsignfolderID 
+     * @param {EzsignfolderGetActionableElementsForSignerV1ESignerTypeEnum} eSignerType 
+     * @param {number} [fkiEzsignsignerID] 
+     * @param {number} [fkiUserID] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public ezsignfolderGetActionableElementsForSignerV1(pkiEzsignfolderID: number, eSignerType: EzsignfolderGetActionableElementsForSignerV1ESignerTypeEnum, fkiEzsignsignerID?: number, fkiUserID?: number, options?: RawAxiosRequestConfig) {
+        return ObjectEzsignfolderApiFp(this.configuration).ezsignfolderGetActionableElementsForSignerV1(pkiEzsignfolderID, eSignerType, fkiEzsignsignerID, fkiUserID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * Return the Ezsignsignatures that can be signed and Ezsignformfieldgroups that can be filled by the current user at the current step in the process.    Major step overhaul.  Endpoints that existed before version 1.3 do not allow you to combine forms and signatures in the same step. The step numbers are different from those indicated by endpoints added since version 1.3. This endpoint is compatible with endpoints that existed before 1.3 but are not compatible with those added since 1.3.
      * @summary Retrieve actionable elements for the Ezsignfolder
      * @param {number} pkiEzsignfolderID 
@@ -4034,6 +4154,11 @@ export class ObjectEzsignfolderApi extends BaseAPI {
     }
 }
 
+export const EzsignfolderGetActionableElementsForSignerV1ESignerTypeEnum = {
+    Ezsignsigner: 'Ezsignsigner',
+    User: 'User',
+} as const;
+export type EzsignfolderGetActionableElementsForSignerV1ESignerTypeEnum = typeof EzsignfolderGetActionableElementsForSignerV1ESignerTypeEnum[keyof typeof EzsignfolderGetActionableElementsForSignerV1ESignerTypeEnum];
 export const EzsignfolderGetListV1EOrderByEnum = {
     pkiEzsignfolderID_ASC: 'pkiEzsignfolderID_ASC',
     pkiEzsignfolderID_DESC: 'pkiEzsignfolderID_DESC',

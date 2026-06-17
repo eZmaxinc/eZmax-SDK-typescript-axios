@@ -9,10 +9,13 @@ Name | Type | Description | Notes
 **pkiInscriptionID** | **number** | The unique ID of the Inscription. | [default to undefined]
 **pkiInscriptionnotauthenticatedID** | **number** | The unique ID of the Inscriptionnotauthenticated. | [optional] [default to undefined]
 **fkiInscriptiontypeID** | **number** | The unique ID of the Inscriptiontype | [default to undefined]
+**fkiBuyercontractID** | **number** | The unique ID of the Buyercontract | [optional] [default to undefined]
+**sBuyercontractContract** | **string** | The number of the Buyercontract | [optional] [default to undefined]
 **sInscriptiontypeNameX** | **string** | The name of the Inscriptiontype in the language of the requester | [default to undefined]
 **eInscriptionStep** | [**FieldEInscriptionStep**](FieldEInscriptionStep.md) |  | [default to undefined]
 **sInscriptionCivicend** | **string** | The civicend of the Inscription | [default to undefined]
 **sInscriptionMLS** | **string** | The mls of the Inscription | [optional] [default to undefined]
+**sInscriptionContract** | **string** | The sale contract number | [optional] [default to undefined]
 **dInscriptionSaleprice** | **string** | The saleprice of the Inscription | [default to undefined]
 **dInscriptionRentprice** | **string** | The rentprice of the Inscription | [default to undefined]
 **dtInscriptionDate** | **string** | The date of the Inscription | [optional] [default to undefined]
@@ -46,10 +49,13 @@ const instance: InscriptionnotauthenticatedListElement = {
     pkiInscriptionID,
     pkiInscriptionnotauthenticatedID,
     fkiInscriptiontypeID,
+    fkiBuyercontractID,
+    sBuyercontractContract,
     sInscriptiontypeNameX,
     eInscriptionStep,
     sInscriptionCivicend,
     sInscriptionMLS,
+    sInscriptionContract,
     dInscriptionSaleprice,
     dInscriptionRentprice,
     dtInscriptionDate,

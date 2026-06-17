@@ -19,11 +19,6 @@
  */
 export interface UserImpersonateV1Request {
     /**
-     * The unique ID of the User
-     */
-    /*'fkiUserID': number;*/
-    'fkiUserID': number;
-    /**
      * The number of minute before key is no longer active
      */
     /*'iExpirationMinutes': number;*/
@@ -41,7 +36,6 @@ export interface UserImpersonateV1Request {
  * @class DataObjectUserImpersonateV1Request
  */
 export class DataObjectUserImpersonateV1Request {
-   fkiUserID:number = 0
    iExpirationMinutes:number = 0
 }
 
@@ -51,11 +45,6 @@ export class DataObjectUserImpersonateV1Request {
  * @class ValidationObjectUserImpersonateV1Request
  */
 export class ValidationObjectUserImpersonateV1Request {
-   fkiUserID = {
-      type: 'integer',
-      minimum: 0,
-      required: true
-   }
    iExpirationMinutes = {
       type: 'integer',
       minimum: 1,

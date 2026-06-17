@@ -15,6 +15,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**ezsignfolderDuplicateV1**](#ezsignfolderduplicatev1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/duplicate | Duplicate the Ezsignfolder|
 |[**ezsignfolderEditObjectV3**](#ezsignfoldereditobjectv3) | **PUT** /3/object/ezsignfolder/{pkiEzsignfolderID} | Edit an existing Ezsignfolder|
 |[**ezsignfolderEndPrematurelyV1**](#ezsignfolderendprematurelyv1) | **POST** /1/object/ezsignfolder/{pkiEzsignfolderID}/endPrematurely | End prematurely|
+|[**ezsignfolderGetActionableElementsForSignerV1**](#ezsignfoldergetactionableelementsforsignerv1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElementsForSigner | Retrieve actionable elements of a user for the Ezsignfolder|
 |[**ezsignfolderGetActionableElementsV1**](#ezsignfoldergetactionableelementsv1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements | Retrieve actionable elements for the Ezsignfolder|
 |[**ezsignfolderGetActionableElementsV2**](#ezsignfoldergetactionableelementsv2) | **GET** /2/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements | Retrieve actionable elements for the Ezsignfolder|
 |[**ezsignfolderGetActionableElementsV3**](#ezsignfoldergetactionableelementsv3) | **GET** /3/object/ezsignfolder/{pkiEzsignfolderID}/getActionableElements | Retrieve actionable elements for the Ezsignfolder|
@@ -633,6 +634,68 @@ const { status, data } = await apiInstance.ezsignfolderEndPrematurelyV1(
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+|**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ezsignfolderGetActionableElementsForSignerV1**
+> EzsignfolderGetActionableElementsForSignerV1Response ezsignfolderGetActionableElementsForSignerV1()
+
+Return the Ezsignsignatures that can be signed and Ezsignformfieldgroups that can be filled by an user at the current step in the process
+
+### Example
+
+```typescript
+import {
+    ObjectEzsignfolderApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectEzsignfolderApi(configuration);
+
+let pkiEzsignfolderID: number; // (default to undefined)
+let eSignerType: 'Ezsignsigner' | 'User'; // (default to undefined)
+let fkiEzsignsignerID: number; // (optional) (default to undefined)
+let fkiUserID: number; // (optional) (default to undefined)
+
+const { status, data } = await apiInstance.ezsignfolderGetActionableElementsForSignerV1(
+    pkiEzsignfolderID,
+    eSignerType,
+    fkiEzsignsignerID,
+    fkiUserID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiEzsignfolderID** | [**number**] |  | defaults to undefined|
+| **eSignerType** | [**&#39;Ezsignsigner&#39; | &#39;User&#39;**]**Array<&#39;Ezsignsigner&#39; &#124; &#39;User&#39;>** |  | defaults to undefined|
+| **fkiEzsignsignerID** | [**number**] |  | (optional) defaults to undefined|
+| **fkiUserID** | [**number**] |  | (optional) defaults to undefined|
+
+
+### Return type
+
+**EzsignfolderGetActionableElementsForSignerV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 

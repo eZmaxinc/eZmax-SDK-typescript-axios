@@ -25,6 +25,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**ezsigndocumentEndPrematurelyV1**](#ezsigndocumentendprematurelyv1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/endPrematurely | End prematurely|
 |[**ezsigndocumentExtractTextV1**](#ezsigndocumentextracttextv1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/extractText | Extract text from Ezsigndocument area|
 |[**ezsigndocumentFlattenV1**](#ezsigndocumentflattenv1) | **POST** /1/object/ezsigndocument/{pkiEzsigndocumentID}/flatten | Flatten|
+|[**ezsigndocumentGetActionableElementsForSignerV1**](#ezsigndocumentgetactionableelementsforsignerv1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElementsForSigner | Retrieve actionable elements of a user for the Ezsigndocument|
 |[**ezsigndocumentGetActionableElementsV1**](#ezsigndocumentgetactionableelementsv1) | **GET** /1/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument|
 |[**ezsigndocumentGetActionableElementsV2**](#ezsigndocumentgetactionableelementsv2) | **GET** /2/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument|
 |[**ezsigndocumentGetActionableElementsV3**](#ezsigndocumentgetactionableelementsv3) | **GET** /3/object/ezsigndocument/{pkiEzsigndocumentID}/getActionableElements | Retrieve actionable elements for the Ezsigndocument|
@@ -1217,6 +1218,68 @@ const { status, data } = await apiInstance.ezsigndocumentFlattenV1(
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+|**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ezsigndocumentGetActionableElementsForSignerV1**
+> EzsigndocumentGetActionableElementsForSignerV1Response ezsigndocumentGetActionableElementsForSignerV1()
+
+Return the Ezsignsignatures that can be signed and Ezsignformfieldgroups that can be filled by a user at the current step in the process
+
+### Example
+
+```typescript
+import {
+    ObjectEzsigndocumentApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectEzsigndocumentApi(configuration);
+
+let pkiEzsigndocumentID: number; // (default to undefined)
+let eSignerType: 'Ezsignsigner' | 'User'; // (default to undefined)
+let fkiEzsignsignerID: number; // (optional) (default to undefined)
+let fkiUserID: number; // (optional) (default to undefined)
+
+const { status, data } = await apiInstance.ezsigndocumentGetActionableElementsForSignerV1(
+    pkiEzsigndocumentID,
+    eSignerType,
+    fkiEzsignsignerID,
+    fkiUserID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiEzsigndocumentID** | [**number**] |  | defaults to undefined|
+| **eSignerType** | [**&#39;Ezsignsigner&#39; | &#39;User&#39;**]**Array<&#39;Ezsignsigner&#39; &#124; &#39;User&#39;>** |  | defaults to undefined|
+| **fkiEzsignsignerID** | [**number**] |  | (optional) defaults to undefined|
+| **fkiUserID** | [**number**] |  | (optional) defaults to undefined|
+
+
+### Return type
+
+**EzsigndocumentGetActionableElementsForSignerV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 
