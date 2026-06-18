@@ -4,12 +4,70 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
+|[**inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1**](#inscriptionnotauthenticatedfillinscriptionnotauthenticatedconditionv1) | **POST** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/fillInscriptionnotauthenticatedcondition | Fills the Inscriptionnotauthenticatedcondition in the Inscriptionnotauthenticated|
 |[**inscriptionnotauthenticatedGetCommunicationCountV1**](#inscriptionnotauthenticatedgetcommunicationcountv1) | **GET** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getCommunicationCount | Retrieve Communication count|
 |[**inscriptionnotauthenticatedGetCommunicationListV1**](#inscriptionnotauthenticatedgetcommunicationlistv1) | **GET** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getCommunicationList | Retrieve Communication list|
 |[**inscriptionnotauthenticatedGetCommunicationrecipientsV1**](#inscriptionnotauthenticatedgetcommunicationrecipientsv1) | **GET** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getCommunicationrecipients | Retrieve Inscriptionnotauthenticated\&#39;s Communicationrecipient|
 |[**inscriptionnotauthenticatedGetCommunicationsendersV1**](#inscriptionnotauthenticatedgetcommunicationsendersv1) | **GET** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getCommunicationsenders | Retrieve Inscriptionnotauthenticated\&#39;s Communicationsender|
+|[**inscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1**](#inscriptionnotauthenticatedgetinscriptionnotauthenticatedconditionsv1) | **GET** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getInscriptionnotauthenticatedconditions | Retrieve Inscriptionnotauthenticated conditions|
 |[**inscriptionnotauthenticatedGetListV1**](#inscriptionnotauthenticatedgetlistv1) | **GET** /1/object/inscriptionnotauthenticated/getList | Retrieve Inscriptionnotauthenticated list|
 |[**inscriptionnotauthenticatedImportIntoEDMV1**](#inscriptionnotauthenticatedimportintoedmv1) | **POST** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/importIntoEDM | Import attachments into the Inscriptionnotauthenticated|
+
+# **inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1**
+> InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Response inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1(inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request)
+
+
+
+### Example
+
+```typescript
+import {
+    ObjectInscriptionnotauthenticatedApi,
+    Configuration,
+    InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectInscriptionnotauthenticatedApi(configuration);
+
+let pkiInscriptionnotauthenticatedID: number; // (default to undefined)
+let inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request: InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request; //
+
+const { status, data } = await apiInstance.inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1(
+    pkiInscriptionnotauthenticatedID,
+    inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request** | **InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request**|  | |
+| **pkiInscriptionnotauthenticatedID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **inscriptionnotauthenticatedGetCommunicationCountV1**
 > InscriptionnotauthenticatedGetCommunicationCountV1Response inscriptionnotauthenticatedGetCommunicationCountV1()
@@ -200,6 +258,58 @@ const { status, data } = await apiInstance.inscriptionnotauthenticatedGetCommuni
 ### Return type
 
 **InscriptionnotauthenticatedGetCommunicationsendersV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **inscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1**
+> InscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1Response inscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1()
+
+
+
+### Example
+
+```typescript
+import {
+    ObjectInscriptionnotauthenticatedApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectInscriptionnotauthenticatedApi(configuration);
+
+let pkiInscriptionnotauthenticatedID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.inscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1(
+    pkiInscriptionnotauthenticatedID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiInscriptionnotauthenticatedID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**InscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1Response**
 
 ### Authorization
 

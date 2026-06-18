@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **sUserLastname** | **string** | The last name of the user | [default to undefined]
 **sUserLoginname** | **string** | The login name of the User. | [default to undefined]
 **bUserIsactive** | **boolean** | Whether the User is active or not | [default to undefined]
+**bUserSuspended** | **boolean** | Whether the User is suspended or not | [optional] [default to undefined]
 **eUserType** | [**FieldEUserType**](FieldEUserType.md) |  | [default to undefined]
 **eUserOrigin** | [**FieldEUserOrigin**](FieldEUserOrigin.md) |  | [default to undefined]
 **eUserEzsignaccess** | [**FieldEUserEzsignaccess**](FieldEUserEzsignaccess.md) |  | [default to undefined]
@@ -29,6 +30,7 @@ const instance: UserListElement = {
     sUserLastname,
     sUserLoginname,
     bUserIsactive,
+    bUserSuspended,
     eUserType,
     eUserOrigin,
     eUserEzsignaccess,

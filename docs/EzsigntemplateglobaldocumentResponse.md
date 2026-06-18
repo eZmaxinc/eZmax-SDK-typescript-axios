@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pkiEzsigntemplateglobaldocumentID** | **number** | The unique ID of the Ezsigntemplateglobaldocument | [default to undefined]
 **sEzsigntemplateglobaldocumentName** | **string** | The name of the Ezsigntemplateglobaldocument. | [default to undefined]
+**eEzsigntemplateglobaldocumentAcceptationtype** | [**FieldEEzsigntemplateglobaldocumentAcceptationtype**](FieldEEzsigntemplateglobaldocumentAcceptationtype.md) |  | [default to undefined]
 **iEzsigntemplateglobaldocumentPagetotal** | **number** | The number of pages in the Ezsigntemplateglobaldocument. | [default to undefined]
 **iEzsigntemplateglobaldocumentSignaturetotal** | **number** | The number of total signatures in the Ezsigntemplateglobal. | [default to undefined]
 
@@ -19,6 +20,7 @@ import { EzsigntemplateglobaldocumentResponse } from '@ezmaxinc/ezmax-sdk-typesc
 const instance: EzsigntemplateglobaldocumentResponse = {
     pkiEzsigntemplateglobaldocumentID,
     sEzsigntemplateglobaldocumentName,
+    eEzsigntemplateglobaldocumentAcceptationtype,
     iEzsigntemplateglobaldocumentPagetotal,
     iEzsigntemplateglobaldocumentSignaturetotal,
 };

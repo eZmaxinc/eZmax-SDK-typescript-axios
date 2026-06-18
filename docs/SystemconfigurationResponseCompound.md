@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **bSystemconfigurationEzsignpersonnal** | **boolean** | Whether if we allow the creation of personal files in eZsign | [default to undefined]
 **bSystemconfigurationHascreditcardmerchant** | **boolean** | Whether there is a creditcard merchant configured or not | [optional] [default to undefined]
 **bSystemconfigurationIsdisposalactive** | **boolean** | Whether is Disposal processus is active or not | [optional] [default to undefined]
+**bSystemconfigurationAllowcomplexcreditcardsignature** | **boolean** | Whether is the system allows to have a complex creditcard signature | [optional] [default to undefined]
 **bSystemconfigurationSspr** | **boolean** | Whether if we allow SSPR | [default to undefined]
 **dtSystemconfigurationReadonlyexpirationstart** | **string** | The start date where the system will be in read only | [optional] [default to undefined]
 **dtSystemconfigurationReadonlyexpirationend** | **string** | The end date where the system will be in read only | [optional] [default to undefined]
@@ -48,6 +49,7 @@ const instance: SystemconfigurationResponseCompound = {
     bSystemconfigurationEzsignpersonnal,
     bSystemconfigurationHascreditcardmerchant,
     bSystemconfigurationIsdisposalactive,
+    bSystemconfigurationAllowcomplexcreditcardsignature,
     bSystemconfigurationSspr,
     dtSystemconfigurationReadonlyexpirationstart,
     dtSystemconfigurationReadonlyexpirationend,

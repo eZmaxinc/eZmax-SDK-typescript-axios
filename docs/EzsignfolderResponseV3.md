@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **sEzsignfolderDescription** | **string** | The description of the Ezsignfolder | [default to undefined]
 **tEzsignfolderNote** | **string** | Note about the Ezsignfolder | [optional] [default to undefined]
 **bEzsignfolderIsdisposable** | **boolean** | If the Ezsigndocument can be disposed | [optional] [default to undefined]
-**iEzsignfolderSendreminderfirstdays** | **number** | The number of days before the the first reminder sending | [optional] [default to undefined]
+**iEzsignfolderSendreminderfirstdays** | **number** | The number of days before the first reminder sending | [optional] [default to undefined]
 **iEzsignfolderSendreminderotherdays** | **number** | The number of days after the first reminder sending | [optional] [default to undefined]
 **dtEzsignfolderDelayedsenddate** | **string** | The date and time at which the Ezsignfolder will be sent in the future. | [optional] [default to undefined]
 **dtEzsignfolderDuedate** | **string** | The maximum date and time at which the Ezsignfolder can be signed. | [optional] [default to undefined]
@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **dtEzsignfolderScheduledarchive** | **string** | The scheduled date and time at which the Ezsignfolder should be archived. | [optional] [default to undefined]
 **dtEzsignfolderScheduleddispose** | **string** | The scheduled date at which the Ezsignfolder should be Disposed. | [optional] [default to undefined]
 **eEzsignfolderStep** | [**FieldEEzsignfolderStep**](FieldEEzsignfolderStep.md) |  | [optional] [default to undefined]
+**iEzsignfolderStepcurrent** | **number** | The current step of the ezsignfolder when eEzsignfolderCompletion &#x3D; \&#39;PerEzsignfolderStepSync\&#39; | [optional] [default to undefined]
 **dtEzsignfolderClose** | **string** | The date and time at which the Ezsignfolder was closed. Either by applying the last signature or by completing it prematurely. | [optional] [default to undefined]
 **dtEzsignfolderArchive** | **string** | The date and time at which the Ezsignfolder was archived. | [optional] [default to undefined]
 **dtEzsignfolderDispose** | **string** | The date and time at which the Ezsignfolder was disposed. | [optional] [default to undefined]
@@ -65,6 +66,7 @@ const instance: EzsignfolderResponseV3 = {
     dtEzsignfolderScheduledarchive,
     dtEzsignfolderScheduleddispose,
     eEzsignfolderStep,
+    iEzsignfolderStepcurrent,
     dtEzsignfolderClose,
     dtEzsignfolderArchive,
     dtEzsignfolderDispose,

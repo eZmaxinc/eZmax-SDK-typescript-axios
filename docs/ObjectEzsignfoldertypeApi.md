@@ -5,7 +5,9 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
 |[**ezsignfoldertypeCreateObjectV3**](#ezsignfoldertypecreateobjectv3) | **POST** /3/object/ezsignfoldertype | Create a new Ezsignfoldertype|
+|[**ezsignfoldertypeCreateObjectV4**](#ezsignfoldertypecreateobjectv4) | **POST** /4/object/ezsignfoldertype | Create a new Ezsignfoldertype|
 |[**ezsignfoldertypeEditObjectV3**](#ezsignfoldertypeeditobjectv3) | **PUT** /3/object/ezsignfoldertype/{pkiEzsignfoldertypeID} | Edit an existing Ezsignfoldertype|
+|[**ezsignfoldertypeEditObjectV4**](#ezsignfoldertypeeditobjectv4) | **PUT** /4/object/ezsignfoldertype/{pkiEzsignfoldertypeID} | Edit an existing Ezsignfoldertype|
 |[**ezsignfoldertypeGetAutocompleteV2**](#ezsignfoldertypegetautocompletev2) | **GET** /2/object/ezsignfoldertype/getAutocomplete/{sSelector} | Retrieve Ezsignfoldertypes and IDs|
 |[**ezsignfoldertypeGetListV1**](#ezsignfoldertypegetlistv1) | **GET** /1/object/ezsignfoldertype/getList | Retrieve Ezsignfoldertype list|
 |[**ezsignfoldertypeGetObjectV2**](#ezsignfoldertypegetobjectv2) | **GET** /2/object/ezsignfoldertype/{pkiEzsignfoldertypeID} | Retrieve an existing Ezsignfoldertype|
@@ -63,6 +65,58 @@ const { status, data } = await apiInstance.ezsignfoldertypeCreateObjectV3(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ezsignfoldertypeCreateObjectV4**
+> EzsignfoldertypeCreateObjectV4Response ezsignfoldertypeCreateObjectV4(ezsignfoldertypeCreateObjectV4Request)
+
+The endpoint allows to create one or many elements at once.
+
+### Example
+
+```typescript
+import {
+    ObjectEzsignfoldertypeApi,
+    Configuration,
+    EzsignfoldertypeCreateObjectV4Request
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectEzsignfoldertypeApi(configuration);
+
+let ezsignfoldertypeCreateObjectV4Request: EzsignfoldertypeCreateObjectV4Request; //
+
+const { status, data } = await apiInstance.ezsignfoldertypeCreateObjectV4(
+    ezsignfoldertypeCreateObjectV4Request
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **ezsignfoldertypeCreateObjectV4Request** | **EzsignfoldertypeCreateObjectV4Request**|  | |
+
+
+### Return type
+
+**EzsignfoldertypeCreateObjectV4Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**201** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ezsignfoldertypeEditObjectV3**
 > EzsignfoldertypeEditObjectV3Response ezsignfoldertypeEditObjectV3(ezsignfoldertypeEditObjectV3Request)
 
@@ -100,6 +154,63 @@ const { status, data } = await apiInstance.ezsignfoldertypeEditObjectV3(
 ### Return type
 
 **EzsignfoldertypeEditObjectV3Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+|**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ezsignfoldertypeEditObjectV4**
+> EzsignfoldertypeEditObjectV4Response ezsignfoldertypeEditObjectV4(ezsignfoldertypeEditObjectV4Request)
+
+
+
+### Example
+
+```typescript
+import {
+    ObjectEzsignfoldertypeApi,
+    Configuration,
+    EzsignfoldertypeEditObjectV4Request
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectEzsignfoldertypeApi(configuration);
+
+let pkiEzsignfoldertypeID: number; // (default to undefined)
+let ezsignfoldertypeEditObjectV4Request: EzsignfoldertypeEditObjectV4Request; //
+
+const { status, data } = await apiInstance.ezsignfoldertypeEditObjectV4(
+    pkiEzsignfoldertypeID,
+    ezsignfoldertypeEditObjectV4Request
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **ezsignfoldertypeEditObjectV4Request** | **EzsignfoldertypeEditObjectV4Request**|  | |
+| **pkiEzsignfoldertypeID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**EzsignfoldertypeEditObjectV4Response**
 
 ### Authorization
 

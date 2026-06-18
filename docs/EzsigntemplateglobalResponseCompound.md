@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **sEzsigntemplateglobalDescription** | **string** | The description of the Ezsigntemplate | [default to undefined]
 **objEzsigntemplateglobaldocument** | [**EzsigntemplateglobaldocumentResponse**](EzsigntemplateglobaldocumentResponse.md) |  | [optional] [default to undefined]
 **a_objEzsigntemplateglobalsigner** | [**Array&lt;EzsigntemplateglobalsignerResponseCompound&gt;**](EzsigntemplateglobalsignerResponseCompound.md) |  | [default to undefined]
+**a_objEzsigntemplateglobalannotation** | [**Array&lt;EzsigntemplateglobalannotationResponseCompound&gt;**](EzsigntemplateglobalannotationResponseCompound.md) |  | [optional] [default to undefined]
 
 ## Example
 
@@ -37,6 +38,7 @@ const instance: EzsigntemplateglobalResponseCompound = {
     sEzsigntemplateglobalDescription,
     objEzsigntemplateglobaldocument,
     a_objEzsigntemplateglobalsigner,
+    a_objEzsigntemplateglobalannotation,
 };
 ```
 

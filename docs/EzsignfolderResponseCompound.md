@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **tEzsignfolderNote** | **string** | Note about the Ezsignfolder | [optional] [default to undefined]
 **bEzsignfolderIsdisposable** | **boolean** | If the Ezsigndocument can be disposed | [optional] [default to undefined]
 **eEzsignfolderSendreminderfrequency** | [**FieldEEzsignfolderSendreminderfrequency**](FieldEEzsignfolderSendreminderfrequency.md) |  | [optional] [default to undefined]
-**iEzsignfolderSendreminderfirstdays** | **number** | The number of days before the the first reminder sending | [optional] [default to undefined]
+**iEzsignfolderSendreminderfirstdays** | **number** | The number of days before the first reminder sending | [optional] [default to undefined]
 **iEzsignfolderSendreminderotherdays** | **number** | The number of days after the first reminder sending | [optional] [default to undefined]
 **dtEzsignfolderDelayedsenddate** | **string** | The date and time at which the Ezsignfolder will be sent in the future. | [optional] [default to undefined]
 **dtEzsignfolderDuedate** | **string** | The maximum date and time at which the Ezsignfolder can be signed. | [optional] [default to undefined]
