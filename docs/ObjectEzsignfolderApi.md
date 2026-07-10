@@ -29,6 +29,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**ezsignfolderGetEzsigndocumentsV1**](#ezsignfoldergetezsigndocumentsv1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsigndocuments | Retrieve an existing Ezsignfolder\&#39;s Ezsigndocuments|
 |[**ezsignfolderGetEzsigndocumentsV2**](#ezsignfoldergetezsigndocumentsv2) | **GET** /2/object/ezsignfolder/{pkiEzsignfolderID}/getEzsigndocuments | Retrieve an existing Ezsignfolder\&#39;s Ezsigndocuments|
 |[**ezsignfolderGetEzsignfoldersignerassociationsV1**](#ezsignfoldergetezsignfoldersignerassociationsv1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsignfoldersignerassociations | Retrieve an existing Ezsignfolder\&#39;s Ezsignfoldersignerassociations|
+|[**ezsignfolderGetEzsignfoldersignerassociationsV2**](#ezsignfoldergetezsignfoldersignerassociationsv2) | **GET** /2/object/ezsignfolder/{pkiEzsignfolderID}/getEzsignfoldersignerassociations | Retrieve an existing Ezsignfolder\&#39;s Ezsignfoldersignerassociations|
 |[**ezsignfolderGetEzsignformfieldgroupsV1**](#ezsignfoldergetezsignformfieldgroupsv1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsignformfieldgroups | Retrieve an existing Ezsignfolder\&#39;s Ezsignformfieldgroups|
 |[**ezsignfolderGetEzsignsignaturesAutomaticV1**](#ezsignfoldergetezsignsignaturesautomaticv1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsignsignaturesAutomatic | Retrieve an existing Ezsignfolder\&#39;s automatic Ezsignsignatures|
 |[**ezsignfolderGetEzsignsignaturesV1**](#ezsignfoldergetezsignsignaturesv1) | **GET** /1/object/ezsignfolder/{pkiEzsignfolderID}/getEzsignsignatures | Retrieve an existing Ezsignfolder\&#39;s Ezsignsignatures|
@@ -1369,6 +1370,58 @@ const { status, data } = await apiInstance.ezsignfolderGetEzsignfoldersignerasso
 ### Return type
 
 **EzsignfolderGetEzsignfoldersignerassociationsV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ezsignfolderGetEzsignfoldersignerassociationsV2**
+> EzsignfolderGetEzsignfoldersignerassociationsV2Response ezsignfolderGetEzsignfoldersignerassociationsV2()
+
+
+
+### Example
+
+```typescript
+import {
+    ObjectEzsignfolderApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectEzsignfolderApi(configuration);
+
+let pkiEzsignfolderID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.ezsignfolderGetEzsignfoldersignerassociationsV2(
+    pkiEzsignfolderID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiEzsignfolderID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**EzsignfolderGetEzsignfoldersignerassociationsV2Response**
 
 ### Authorization
 

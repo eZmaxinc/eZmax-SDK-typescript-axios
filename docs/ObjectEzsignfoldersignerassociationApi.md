@@ -8,12 +8,15 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**ezsignfoldersignerassociationCreateEmbeddedUrlV2**](#ezsignfoldersignerassociationcreateembeddedurlv2) | **POST** /2/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/createEmbeddedUrl | Creates an Url to allow embedded signing|
 |[**ezsignfoldersignerassociationCreateObjectV1**](#ezsignfoldersignerassociationcreateobjectv1) | **POST** /1/object/ezsignfoldersignerassociation | Create a new Ezsignfoldersignerassociation|
 |[**ezsignfoldersignerassociationCreateObjectV2**](#ezsignfoldersignerassociationcreateobjectv2) | **POST** /2/object/ezsignfoldersignerassociation | Create a new Ezsignfoldersignerassociation|
+|[**ezsignfoldersignerassociationCreateObjectV3**](#ezsignfoldersignerassociationcreateobjectv3) | **POST** /3/object/ezsignfoldersignerassociation | Create a new Ezsignfoldersignerassociation|
 |[**ezsignfoldersignerassociationDeleteObjectV1**](#ezsignfoldersignerassociationdeleteobjectv1) | **DELETE** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Delete an existing Ezsignfoldersignerassociation|
 |[**ezsignfoldersignerassociationEditObjectV1**](#ezsignfoldersignerassociationeditobjectv1) | **PUT** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Edit an existing Ezsignfoldersignerassociation|
+|[**ezsignfoldersignerassociationEditObjectV2**](#ezsignfoldersignerassociationeditobjectv2) | **PUT** /2/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Edit an existing Ezsignfoldersignerassociation|
 |[**ezsignfoldersignerassociationForceDisconnectV1**](#ezsignfoldersignerassociationforcedisconnectv1) | **POST** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/forceDisconnect | Disconnects the Ezsignfoldersignerassociation|
 |[**ezsignfoldersignerassociationGetInPersonLoginUrlV1**](#ezsignfoldersignerassociationgetinpersonloginurlv1) | **GET** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/getInPersonLoginUrl | Retrieve a Login Url to allow In-Person signing|
 |[**ezsignfoldersignerassociationGetObjectV1**](#ezsignfoldersignerassociationgetobjectv1) | **GET** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Retrieve an existing Ezsignfoldersignerassociation|
 |[**ezsignfoldersignerassociationGetObjectV2**](#ezsignfoldersignerassociationgetobjectv2) | **GET** /2/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Retrieve an existing Ezsignfoldersignerassociation|
+|[**ezsignfoldersignerassociationGetObjectV3**](#ezsignfoldersignerassociationgetobjectv3) | **GET** /3/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Retrieve an existing Ezsignfoldersignerassociation|
 |[**ezsignfoldersignerassociationPatchObjectV1**](#ezsignfoldersignerassociationpatchobjectv1) | **PATCH** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID} | Patch an existing Ezsignfoldersignerassociation|
 |[**ezsignfoldersignerassociationReassignV1**](#ezsignfoldersignerassociationreassignv1) | **POST** /1/object/ezsignfoldersignerassociation/{pkiEzsignfoldersignerassociationID}/reassign | Reassign remaining unsigned signatures and forms|
 
@@ -234,6 +237,58 @@ const { status, data } = await apiInstance.ezsignfoldersignerassociationCreateOb
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ezsignfoldersignerassociationCreateObjectV3**
+> EzsignfoldersignerassociationCreateObjectV3Response ezsignfoldersignerassociationCreateObjectV3(ezsignfoldersignerassociationCreateObjectV3Request)
+
+The endpoint allows to create one or many elements at once.
+
+### Example
+
+```typescript
+import {
+    ObjectEzsignfoldersignerassociationApi,
+    Configuration,
+    EzsignfoldersignerassociationCreateObjectV3Request
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectEzsignfoldersignerassociationApi(configuration);
+
+let ezsignfoldersignerassociationCreateObjectV3Request: EzsignfoldersignerassociationCreateObjectV3Request; //
+
+const { status, data } = await apiInstance.ezsignfoldersignerassociationCreateObjectV3(
+    ezsignfoldersignerassociationCreateObjectV3Request
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **ezsignfoldersignerassociationCreateObjectV3Request** | **EzsignfoldersignerassociationCreateObjectV3Request**|  | |
+
+
+### Return type
+
+**EzsignfoldersignerassociationCreateObjectV3Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**201** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ezsignfoldersignerassociationDeleteObjectV1**
 > EzsignfoldersignerassociationDeleteObjectV1Response ezsignfoldersignerassociationDeleteObjectV1()
 
@@ -324,6 +379,63 @@ const { status, data } = await apiInstance.ezsignfoldersignerassociationEditObje
 ### Return type
 
 **EzsignfoldersignerassociationEditObjectV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+|**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ezsignfoldersignerassociationEditObjectV2**
+> EzsignfoldersignerassociationEditObjectV2Response ezsignfoldersignerassociationEditObjectV2(ezsignfoldersignerassociationEditObjectV2Request)
+
+
+
+### Example
+
+```typescript
+import {
+    ObjectEzsignfoldersignerassociationApi,
+    Configuration,
+    EzsignfoldersignerassociationEditObjectV2Request
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectEzsignfoldersignerassociationApi(configuration);
+
+let pkiEzsignfoldersignerassociationID: number; // (default to undefined)
+let ezsignfoldersignerassociationEditObjectV2Request: EzsignfoldersignerassociationEditObjectV2Request; //
+
+const { status, data } = await apiInstance.ezsignfoldersignerassociationEditObjectV2(
+    pkiEzsignfoldersignerassociationID,
+    ezsignfoldersignerassociationEditObjectV2Request
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **ezsignfoldersignerassociationEditObjectV2Request** | **EzsignfoldersignerassociationEditObjectV2Request**|  | |
+| **pkiEzsignfoldersignerassociationID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**EzsignfoldersignerassociationEditObjectV2Response**
 
 ### Authorization
 
@@ -538,6 +650,58 @@ const { status, data } = await apiInstance.ezsignfoldersignerassociationGetObjec
 ### Return type
 
 **EzsignfoldersignerassociationGetObjectV2Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ezsignfoldersignerassociationGetObjectV3**
+> EzsignfoldersignerassociationGetObjectV3Response ezsignfoldersignerassociationGetObjectV3()
+
+
+
+### Example
+
+```typescript
+import {
+    ObjectEzsignfoldersignerassociationApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectEzsignfoldersignerassociationApi(configuration);
+
+let pkiEzsignfoldersignerassociationID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.ezsignfoldersignerassociationGetObjectV3(
+    pkiEzsignfoldersignerassociationID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiEzsignfoldersignerassociationID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**EzsignfoldersignerassociationGetObjectV3Response**
 
 ### Authorization
 

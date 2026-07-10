@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **fkiEzsignfoldertypeID** | **number** | The unique ID of the Ezsignfoldertype. | [optional] [default to undefined]
 **sEzsignfoldertypeNameX** | **string** | The name of the Ezsignfoldertype in the language of the requester | [optional] [default to undefined]
 **eWebhookModule** | [**FieldEWebhookModule**](FieldEWebhookModule.md) |  | [default to undefined]
+**eWebhookEzmaxpartnerevent** | [**FieldEWebhookEzmaxpartnerevent**](FieldEWebhookEzmaxpartnerevent.md) |  | [optional] [default to undefined]
 **eWebhookEzsignevent** | [**FieldEWebhookEzsignevent**](FieldEWebhookEzsignevent.md) |  | [optional] [default to undefined]
 **eWebhookManagementevent** | [**FieldEWebhookManagementevent**](FieldEWebhookManagementevent.md) |  | [optional] [default to undefined]
 **sWebhookUrl** | **string** | The URL of the Webhook callback | [default to undefined]
@@ -39,6 +40,7 @@ const instance: WebhookResponseCompound = {
     fkiEzsignfoldertypeID,
     sEzsignfoldertypeNameX,
     eWebhookModule,
+    eWebhookEzmaxpartnerevent,
     eWebhookEzsignevent,
     eWebhookManagementevent,
     sWebhookUrl,

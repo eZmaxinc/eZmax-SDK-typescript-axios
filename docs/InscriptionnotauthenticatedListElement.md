@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **dtInscriptionnotauthenticatedTransactiondateReal** | **string** | The transactiondatereal of the Inscriptionnotauthenticated | [optional] [default to undefined]
 **bInscriptionnotauthenticatedConditional** | **boolean** | Whether the inscriptionnotauthenticated is conditional | [optional] [default to undefined]
 **bInscriptionnotauthenticatedIsactive** | **boolean** | Whether the inscriptionnotauthenticated is active or not | [optional] [default to undefined]
+**bInscriptionnotauthenticatedDraft** | **boolean** | Whether the inscriptionnotauthenticated is a draft or not | [optional] [default to undefined]
 **sAddressCivic** | **string** | The Civic number. | [optional] [default to undefined]
 **sAddressStreet** | **string** | The Street Name | [optional] [default to undefined]
 **sAddressSuite** | **string** | The Suite or appartment number | [optional] [default to undefined]
@@ -69,6 +70,7 @@ const instance: InscriptionnotauthenticatedListElement = {
     dtInscriptionnotauthenticatedTransactiondateReal,
     bInscriptionnotauthenticatedConditional,
     bInscriptionnotauthenticatedIsactive,
+    bInscriptionnotauthenticatedDraft,
     sAddressCivic,
     sAddressStreet,
     sAddressSuite,

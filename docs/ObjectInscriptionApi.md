@@ -9,7 +9,9 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**inscriptionGetCommunicationListV1**](#inscriptiongetcommunicationlistv1) | **GET** /1/object/inscription/{pkiInscriptionID}/getCommunicationList | Retrieve Communication list|
 |[**inscriptionGetCommunicationrecipientsV1**](#inscriptiongetcommunicationrecipientsv1) | **GET** /1/object/inscription/{pkiInscriptionID}/getCommunicationrecipients | Retrieve Inscription\&#39;s Communicationrecipient|
 |[**inscriptionGetCommunicationsendersV1**](#inscriptiongetcommunicationsendersv1) | **GET** /1/object/inscription/{pkiInscriptionID}/getCommunicationsenders | Retrieve Inscription\&#39;s Communicationsender|
+|[**inscriptionGetInscriptionnotauthenticatedsV1**](#inscriptiongetinscriptionnotauthenticatedsv1) | **GET** /1/object/inscription/{pkiInscriptionID}/getInscriptionnotauthenticateds | Retrieve Inscriptionnotauthenticated list|
 |[**inscriptionGetListV1**](#inscriptiongetlistv1) | **GET** /1/object/inscription/getList | Retrieve Inscription list|
+|[**inscriptionGetObjectV2**](#inscriptiongetobjectv2) | **GET** /2/object/inscription/{pkiInscriptionID} | Retrieve an existing Inscription|
 |[**inscriptionImportIntoEDMV1**](#inscriptionimportintoedmv1) | **POST** /1/object/inscription/{pkiInscriptionID}/importIntoEDM | Import attachments into the Inscription|
 |[**inscriptionPrepareFilesTransferV1**](#inscriptionpreparefilestransferv1) | **POST** /1/object/inscription/{pkiInscriptionID}/prepareFilesTransfer | Prepares file transfer into EDM|
 
@@ -273,6 +275,57 @@ const { status, data } = await apiInstance.inscriptionGetCommunicationsendersV1(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **inscriptionGetInscriptionnotauthenticatedsV1**
+> InscriptionGetInscriptionnotauthenticatedsV1Response inscriptionGetInscriptionnotauthenticatedsV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectInscriptionApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectInscriptionApi(configuration);
+
+let pkiInscriptionID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.inscriptionGetInscriptionnotauthenticatedsV1(
+    pkiInscriptionID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiInscriptionID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**InscriptionGetInscriptionnotauthenticatedsV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **inscriptionGetListV1**
 > InscriptionGetListV1Response inscriptionGetListV1()
 
@@ -334,6 +387,58 @@ const { status, data } = await apiInstance.inscriptionGetListV1(
 |-------------|-------------|------------------|
 |**200** | Successful response |  -  |
 |**406** | The URL is valid, but one of the Accept header is not defined or invalid. For example, you set the header \&quot;Accept: application/json\&quot; but the function can only return \&quot;Content-type: image/png\&quot; |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **inscriptionGetObjectV2**
+> InscriptionGetObjectV2Response inscriptionGetObjectV2()
+
+
+
+### Example
+
+```typescript
+import {
+    ObjectInscriptionApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectInscriptionApi(configuration);
+
+let pkiInscriptionID: number; //The unique ID of the Inscription (default to undefined)
+
+const { status, data } = await apiInstance.inscriptionGetObjectV2(
+    pkiInscriptionID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiInscriptionID** | [**number**] | The unique ID of the Inscription | defaults to undefined|
+
+
+### Return type
+
+**InscriptionGetObjectV2Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
