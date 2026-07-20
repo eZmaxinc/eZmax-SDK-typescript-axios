@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **eWebhookEzmaxpartnerevent** | [**FieldEWebhookEzmaxpartnerevent**](FieldEWebhookEzmaxpartnerevent.md) |  | [optional] [default to undefined]
 **eWebhookEzsignevent** | [**FieldEWebhookEzsignevent**](FieldEWebhookEzsignevent.md) |  | [optional] [default to undefined]
 **eWebhookManagementevent** | [**FieldEWebhookManagementevent**](FieldEWebhookManagementevent.md) |  | [optional] [default to undefined]
+**eWebhookRealestateevent** | [**FieldEWebhookRealestateevent**](FieldEWebhookRealestateevent.md) |  | [optional] [default to undefined]
 **sWebhookUrl** | **string** | The URL of the Webhook callback | [default to undefined]
 **sWebhookEmailfailed** | **string** | The email that will receive the Webhook in case all attempts fail | [default to undefined]
 **sWebhookApikey** | **string** | The Apikey for the Webhook.  This will be hidden if we are not creating or regenerating the Apikey. | [optional] [default to undefined]
@@ -47,6 +48,7 @@ const instance: CustomWebhookResponse = {
     eWebhookEzmaxpartnerevent,
     eWebhookEzsignevent,
     eWebhookManagementevent,
+    eWebhookRealestateevent,
     sWebhookUrl,
     sWebhookEmailfailed,
     sWebhookApikey,

@@ -521,7 +521,7 @@ export class ValidationObjectInscriptionnotauthenticatedResponseCompound {
    }
    tInscriptionnotauthenticatedConditions = {
       type: 'string',
-      pattern: /^.{0,16777215}$/,
+      pattern: /^.{0,65535}$/,
       required: true
    }
    dtInscriptionnotauthenticatedConditiondeadlinedate = {
@@ -546,7 +546,7 @@ export class ValidationObjectInscriptionnotauthenticatedResponseCompound {
    }
    tInscriptionnotauthenticatedChecklistnote = {
       type: 'string',
-      pattern: /^.{0,16777215}$/,
+      pattern: /^.{0,65535}$/,
       required: true
    }
    dInscriptionnotauthenticatedSelleronlyretribution = {

@@ -15,17 +15,15 @@
 
 
 /**
- * The module for the Webhook
+ * Agent schedule type.
  */
 
-export const FieldEWebhookModule = {
-    Ezmaxpartner: 'Ezmaxpartner',
-    Ezsign: 'Ezsign',
-    Management: 'Management',
-    Realestate: 'Realestate',
+export const FieldEAgentSchedule = {
+    Full_time: 'Full-time',
+    Part_time: 'Part-time',
 } as const;
 
-export type FieldEWebhookModule = typeof FieldEWebhookModule[keyof typeof FieldEWebhookModule];
+export type FieldEAgentSchedule = typeof FieldEAgentSchedule[keyof typeof FieldEAgentSchedule];
 
 
 

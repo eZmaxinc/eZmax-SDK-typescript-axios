@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **eWebhookModule** | [**FieldEWebhookModule**](FieldEWebhookModule.md) |  | [default to undefined]
 **eWebhookEzsignevent** | [**FieldEWebhookEzsignevent**](FieldEWebhookEzsignevent.md) |  | [optional] [default to undefined]
 **eWebhookManagementevent** | [**FieldEWebhookManagementevent**](FieldEWebhookManagementevent.md) |  | [optional] [default to undefined]
+**eWebhookRealestateevent** | [**FieldEWebhookRealestateevent**](FieldEWebhookRealestateevent.md) |  | [optional] [default to undefined]
 **bWebhookIsactive** | **boolean** | Whether the Webhook is active or not | [default to undefined]
 **bWebhookIssigned** | **boolean** | Whether the requests will be signed or not | [default to undefined]
 
@@ -31,6 +32,7 @@ const instance: WebhookListElement = {
     eWebhookModule,
     eWebhookEzsignevent,
     eWebhookManagementevent,
+    eWebhookRealestateevent,
     bWebhookIsactive,
     bWebhookIssigned,
 };

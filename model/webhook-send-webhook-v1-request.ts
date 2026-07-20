@@ -22,6 +22,9 @@ import type { FieldEWebhookManagementevent } from './field-ewebhook-managementev
 // May contain unused imports in some cases
 // @ts-ignore
 import type { FieldEWebhookModule } from './field-ewebhook-module';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { FieldEWebhookRealestateevent } from './field-ewebhook-realestateevent';
 
 /**
  * Request for POST /1/object/webhook/sendWebhook
@@ -33,6 +36,8 @@ export interface WebhookSendWebhookV1Request {
     'eWebhookEzsignevent'?: CustomEWebhookEzsignevent;
     /*'eWebhookManagementevent'?: FieldEWebhookManagementevent;*/
     'eWebhookManagementevent'?: FieldEWebhookManagementevent;
+    /*'eWebhookRealestateevent'?: FieldEWebhookRealestateevent;*/
+    'eWebhookRealestateevent'?: FieldEWebhookRealestateevent;
     /**
      * The unique ID of the Ezsignfolder
      */
@@ -76,6 +81,7 @@ export class DataObjectWebhookSendWebhookV1Request {
    eWebhookModule:FieldEWebhookModule = 'Ezmaxpartner'
    eWebhookEzsignevent?:CustomEWebhookEzsignevent = undefined
    eWebhookManagementevent?:FieldEWebhookManagementevent = undefined
+   eWebhookRealestateevent?:FieldEWebhookRealestateevent = undefined
    fkiEzsignfolderID?:number = undefined
    fkiEzsigndocumentID?:number = undefined
    fkiEzsignsignerID?:number = undefined
@@ -91,7 +97,7 @@ export class DataObjectWebhookSendWebhookV1Request {
 export class ValidationObjectWebhookSendWebhookV1Request {
    eWebhookModule = {
       type: 'enum',
-      allowableValues: ['Ezmaxpartner','Ezsign','Management'],
+      allowableValues: ['Ezmaxpartner','Ezsign','Management','Realestate'],
       required: true
    }
    eWebhookEzsignevent = {
@@ -102,6 +108,11 @@ export class ValidationObjectWebhookSendWebhookV1Request {
    eWebhookManagementevent = {
       type: 'enum',
       allowableValues: ['UserCreated','UserstagedCreated'],
+      required: false
+   }
+   eWebhookRealestateevent = {
+      type: 'enum',
+      allowableValues: ['InscriptionCreated','InscriptionModified','InscriptionnotauthenticatedCreated','InscriptionnotauthenticatedModified'],
       required: false
    }
    fkiEzsignfolderID = {

@@ -16,6 +16,9 @@
 // May contain unused imports in some cases
 // @ts-ignore
 import type { FieldEInscriptionStep } from './field-einscription-step';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { FieldEInscriptionType } from './field-einscription-type';
 
 /**
  * A Inscription List Element
@@ -37,6 +40,31 @@ export interface InscriptionListElement {
     /*'fkiInscriptiontypeID': number;*/
     'fkiInscriptiontypeID': number;
     /**
+     * The name of the Inscriptiontype in the language of the requester
+     */
+    /*'sInscriptiontypeNameX': string;*/
+    'sInscriptiontypeNameX': string;
+    /**
+     * The unique ID of the Inscriptionbuildingtype
+     */
+    /*'fkiInscriptionbuildingtypeID': number;*/
+    'fkiInscriptionbuildingtypeID': number;
+    /**
+     * The name of the Inscriptionbuildingtype in the language of the requester
+     */
+    /*'sInscriptionbuildingtypeNameX': string;*/
+    'sInscriptionbuildingtypeNameX': string;
+    /**
+     * The unique ID of the Inscriptioncategory
+     */
+    /*'fkiInscriptioncategoryID': number;*/
+    'fkiInscriptioncategoryID': number;
+    /**
+     * The name of the Inscriptioncategory in the language of the requester
+     */
+    /*'sInscriptioncategoryNameX': string;*/
+    'sInscriptioncategoryNameX': string;
+    /**
      * The unique ID of the Buyercontract
      */
     /*'fkiBuyercontractID'?: number;*/
@@ -46,13 +74,10 @@ export interface InscriptionListElement {
      */
     /*'sBuyercontractContract'?: string;*/
     'sBuyercontractContract'?: string;
-    /**
-     * The name of the Inscriptiontype in the language of the requester
-     */
-    /*'sInscriptiontypeNameX': string;*/
-    'sInscriptiontypeNameX': string;
     /*'eInscriptionStep': FieldEInscriptionStep;*/
     'eInscriptionStep': FieldEInscriptionStep;
+    /*'eInscriptionType': FieldEInscriptionType;*/
+    'eInscriptionType': FieldEInscriptionType;
     /**
      * The civicend of the Inscription
      */
@@ -184,6 +209,11 @@ export interface InscriptionListElement {
     /*'iInscriptionnotauthenticatedCanceled': number;*/
     'iInscriptionnotauthenticatedCanceled': number;
     /**
+     * The unit of the Inscription
+     */
+    /*'iInscriptionUnit': number;*/
+    'iInscriptionUnit': number;
+    /**
      * Whether we are allowed to copy into the Inscription EDM
      */
     /*'bAllowedCopyintoinscriptionedm': boolean;*/
@@ -206,10 +236,15 @@ export class DataObjectInscriptionListElement {
    pkiInscriptionID:number = 0
    pkiInscriptionnotauthenticatedID?:number = undefined
    fkiInscriptiontypeID:number = 0
+   sInscriptiontypeNameX:string = ''
+   fkiInscriptionbuildingtypeID:number = 0
+   sInscriptionbuildingtypeNameX:string = ''
+   fkiInscriptioncategoryID:number = 0
+   sInscriptioncategoryNameX:string = ''
    fkiBuyercontractID?:number = undefined
    sBuyercontractContract?:string = undefined
-   sInscriptiontypeNameX:string = ''
    eInscriptionStep:FieldEInscriptionStep = 'TemporaryNotAuthenticated'
+   eInscriptionType:FieldEInscriptionType = 'Rent'
    sInscriptionCivicend:string = ''
    sInscriptionMLS?:string = undefined
    sInscriptionContract?:string = undefined
@@ -236,6 +271,7 @@ export class DataObjectInscriptionListElement {
    fkiCountryID?:number = undefined
    sCountryNameX?:string = undefined
    iInscriptionnotauthenticatedCanceled:number = 0
+   iInscriptionUnit:number = 0
    bAllowedCopyintoinscriptionedm:boolean = false
 }
 
@@ -261,6 +297,33 @@ export class ValidationObjectInscriptionListElement {
       maximum: 255,
       required: true
    }
+   sInscriptiontypeNameX = {
+      type: 'string',
+      pattern: /^.{0,30}$/,
+      required: true
+   }
+   fkiInscriptionbuildingtypeID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 255,
+      required: true
+   }
+   sInscriptionbuildingtypeNameX = {
+      type: 'string',
+      pattern: /^.{0,20}$/,
+      required: true
+   }
+   fkiInscriptioncategoryID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 255,
+      required: true
+   }
+   sInscriptioncategoryNameX = {
+      type: 'string',
+      pattern: /^.{0,30}$/,
+      required: true
+   }
    fkiBuyercontractID = {
       type: 'integer',
       minimum: 1,
@@ -271,14 +334,14 @@ export class ValidationObjectInscriptionListElement {
       type: 'string',
       required: false
    }
-   sInscriptiontypeNameX = {
-      type: 'string',
-      pattern: /^.{0,30}$/,
-      required: true
-   }
    eInscriptionStep = {
       type: 'enum',
       allowableValues: ['TemporaryNotAuthenticated','ImportedInscription','Inscription','ModifiedInscription','ContractEnded','ExpiredInscription','Out-market','ImportedNotauthenticated','NotAuthenticated','ModifiedNotauthenticated','Authenticated'],
+      required: true
+   }
+   eInscriptionType = {
+      type: 'enum',
+      allowableValues: ['Rent','Sale','RentOrSale'],
       required: true
    }
    sInscriptionCivicend = {
@@ -402,6 +465,12 @@ export class ValidationObjectInscriptionListElement {
    }
    iInscriptionnotauthenticatedCanceled = {
       type: 'integer',
+      required: true
+   }
+   iInscriptionUnit = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 255,
       required: true
    }
    bAllowedCopyintoinscriptionedm = {

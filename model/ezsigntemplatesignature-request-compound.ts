@@ -108,6 +108,12 @@ export interface EzsigntemplatesignatureRequestCompound {
      */
     bEzsigntemplatesignatureReason?:boolean 
     /**
+     * Whether we can enter a custom amount while signing an Ezsigntemplatesignature \'Creditcard\' or not
+     * @type {boolean}
+     * @memberof EzsigntemplatesignatureRequestCompound
+     */
+    bEzsigntemplatesignatureCreditcardcustomamount?:boolean 
+    /**
      * 
      * @type {FieldEEzsigntemplatesignaturePositioning}
      * @memberof EzsigntemplatesignatureRequestCompound
@@ -334,6 +340,7 @@ export class DataObjectEzsigntemplatesignatureRequestCompound {
     fkiPaymentgatewayID?:number = undefined
     bEzsigntemplatesignatureHandwritten?:boolean = undefined
     bEzsigntemplatesignatureReason?:boolean = undefined
+    bEzsigntemplatesignatureCreditcardcustomamount?:boolean = undefined
     eEzsigntemplatesignaturePositioning?:FieldEEzsigntemplatesignaturePositioning = undefined
     iEzsigntemplatedocumentpagePagenumber:number = 0
     iEzsigntemplatesignatureX?:number = undefined
@@ -407,6 +414,10 @@ export class ValidationObjectEzsigntemplatesignatureRequestCompound {
       required: false
    }
    bEzsigntemplatesignatureReason = {
+      type: 'boolean',
+      required: false
+   }
+   bEzsigntemplatesignatureCreditcardcustomamount = {
       type: 'boolean',
       required: false
    }

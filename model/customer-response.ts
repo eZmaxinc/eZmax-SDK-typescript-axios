@@ -610,7 +610,7 @@ export class ValidationObjectCustomerResponse {
    }
    tCustomerComment = {
       type: 'string',
-      pattern: /^.{0,16777215}$/,
+      pattern: /^.{0,65535}$/,
       required: true
    }
    IMPORTID = {

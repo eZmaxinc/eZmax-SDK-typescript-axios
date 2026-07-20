@@ -9,10 +9,10 @@ Name | Type | Description | Notes
 **bulk** | [**ScimServiceProviderConfigBulk**](ScimServiceProviderConfigBulk.md) |  | [default to undefined]
 **changePassword** | [**ScimServiceProviderConfigChangePassword**](ScimServiceProviderConfigChangePassword.md) |  | [default to undefined]
 **documentationUri** | **string** | An HTTP-addressable URL pointing to the service provider\&#39;s human-consumable help documentation | [default to undefined]
-**etag** | [**ScimServiceProviderConfigChangePassword**](ScimServiceProviderConfigChangePassword.md) |  | [default to undefined]
+**etag** | [**ScimServiceProviderConfigEtag**](ScimServiceProviderConfigEtag.md) |  | [default to undefined]
 **filter** | [**ScimServiceProviderConfigFilter**](ScimServiceProviderConfigFilter.md) |  | [default to undefined]
-**patch** | [**ScimServiceProviderConfigChangePassword**](ScimServiceProviderConfigChangePassword.md) |  | [default to undefined]
-**sort** | [**ScimServiceProviderConfigChangePassword**](ScimServiceProviderConfigChangePassword.md) |  | [default to undefined]
+**patch** | [**ScimServiceProviderConfigPatch**](ScimServiceProviderConfigPatch.md) |  | [default to undefined]
+**sort** | [**ScimServiceProviderConfigSort**](ScimServiceProviderConfigSort.md) |  | [default to undefined]
 
 ## Example
 

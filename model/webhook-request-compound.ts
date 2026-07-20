@@ -24,6 +24,9 @@ import type { FieldEWebhookManagementevent } from './field-ewebhook-managementev
 import type { FieldEWebhookModule } from './field-ewebhook-module';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { FieldEWebhookRealestateevent } from './field-ewebhook-realestateevent';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { WebhookRequest } from './webhook-request';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -77,6 +80,12 @@ export interface WebhookRequestCompound {
      * @memberof WebhookRequestCompound
      */
     eWebhookManagementevent?:FieldEWebhookManagementevent 
+    /**
+     * 
+     * @type {FieldEWebhookRealestateevent}
+     * @memberof WebhookRequestCompound
+     */
+    eWebhookRealestateevent?:FieldEWebhookRealestateevent 
     /**
      * The URL of the Webhook callback
      * @type {string}
@@ -136,6 +145,7 @@ export class DataObjectWebhookRequestCompound {
     eWebhookModule:FieldEWebhookModule = 'Ezmaxpartner'
     eWebhookEzsignevent?:FieldEWebhookEzsignevent = undefined
     eWebhookManagementevent?:FieldEWebhookManagementevent = undefined
+    eWebhookRealestateevent?:FieldEWebhookRealestateevent = undefined
     sWebhookUrl:string = ''
     sWebhookEmailfailed:string = ''
     bWebhookIsactive:boolean = false
@@ -172,7 +182,7 @@ export class ValidationObjectWebhookRequestCompound {
    }
    eWebhookModule = {
       type: 'enum',
-      allowableValues: ['Ezmaxpartner','Ezsign','Management'],
+      allowableValues: ['Ezmaxpartner','Ezsign','Management','Realestate'],
       required: true
    }
    eWebhookEzsignevent = {
@@ -183,6 +193,11 @@ export class ValidationObjectWebhookRequestCompound {
    eWebhookManagementevent = {
       type: 'enum',
       allowableValues: ['UserCreated','UserstagedCreated'],
+      required: false
+   }
+   eWebhookRealestateevent = {
+      type: 'enum',
+      allowableValues: ['InscriptionCreated','InscriptionModified','InscriptionnotauthenticatedCreated','InscriptionnotauthenticatedModified'],
       required: false
    }
    sWebhookUrl = {

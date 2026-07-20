@@ -13,6 +13,9 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import type { MultilingualEzmaxpartnerLogourl } from './multilingual-ezmaxpartner-logourl';
 
 /**
  * A custom Ezmaxpartner List Element
@@ -53,11 +56,17 @@ export interface CustomEzmaxpartnerListElement {
      */
     /*'sEzmaxpartnerUrlX': string;*/
     'sEzmaxpartnerUrlX': string;
+    /*'objEzmaxpartnerLogourl': MultilingualEzmaxpartnerLogourl;*/
+    'objEzmaxpartnerLogourl': MultilingualEzmaxpartnerLogourl;
 }
 /**
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectMultilingualEzmaxpartnerLogourl } from './'
+// @ts-ignore
+import { ValidationObjectMultilingualEzmaxpartnerLogourl } from './'
 
 /**
  * @export 
@@ -73,6 +82,7 @@ export class DataObjectCustomEzmaxpartnerListElement {
    sEzmaxpartnerNameX:string = ''
    sEzmaxpartnerPhoneE164X:string = ''
    sEzmaxpartnerUrlX:string = ''
+   objEzmaxpartnerLogourl:MultilingualEzmaxpartnerLogourl = new DataObjectMultilingualEzmaxpartnerLogourl()
 }
 
 /**
@@ -116,6 +126,7 @@ export class ValidationObjectCustomEzmaxpartnerListElement {
       pattern: /^(https|http):\/\/[^\s\/$.?#].[^\s]*$/,
       required: true
    }
+   objEzmaxpartnerLogourl = new ValidationObjectMultilingualEzmaxpartnerLogourl()
 } 
 
 

@@ -998,6 +998,8 @@ export const WebhookGetListV1EOrderByEnum = {
     eWebhookEzsignevent_DESC: 'eWebhookEzsignevent_DESC',
     eWebhookManagementevent_ASC: 'eWebhookManagementevent_ASC',
     eWebhookManagementevent_DESC: 'eWebhookManagementevent_DESC',
+    eWebhookRealestateevent_ASC: 'eWebhookRealestateevent_ASC',
+    eWebhookRealestateevent_DESC: 'eWebhookRealestateevent_DESC',
     eWebhookModule_ASC: 'eWebhookModule_ASC',
     eWebhookModule_DESC: 'eWebhookModule_DESC',
     sWebhookEmailfailed_ASC: 'sWebhookEmailfailed_ASC',

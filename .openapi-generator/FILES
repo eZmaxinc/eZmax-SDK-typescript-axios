@@ -3,7 +3,7 @@
 .openapi-generator-ignore
 README.md
 api.ts
-api/documentation-ezmaxpartner-api.ts
+api/external-ezmaxpartner-api.ts
 api/global-customer-api.ts
 api/global-ezmaxclient-api.ts
 api/global-ezmaxcustomer-api.ts
@@ -564,7 +564,6 @@ docs/DiscussionmessageRequestCompound.md
 docs/DiscussionmessageRequestPatch.md
 docs/DiscussionmessageResponse.md
 docs/DiscussionmessageResponseCompound.md
-docs/DocumentationEzmaxpartnerApi.md
 docs/DocumentationSubscribeV1Request.md
 docs/DocumentationSubscribeV1Response.md
 docs/DomainAutocompleteElementResponse.md
@@ -613,6 +612,7 @@ docs/EnumHorizontalalignment.md
 docs/EnumReportdataType.md
 docs/EnumTextvalidation.md
 docs/EnumVerticalalignment.md
+docs/ExternalEzmaxpartnerApi.md
 docs/ExternalbrokerImportIntoEDMV1Request.md
 docs/ExternalbrokerImportIntoEDMV1Response.md
 docs/ExternalbrokerImportIntoEDMV1ResponseMPayload.md
@@ -1454,6 +1454,7 @@ docs/FieldEActivesessionOrigin.md
 docs/FieldEActivesessionRealestateinprogress.md
 docs/FieldEActivesessionUsertype.md
 docs/FieldEActivesessionWeekdaystart.md
+docs/FieldEAgentSchedule.md
 docs/FieldEAttachmentDocumenttype.md
 docs/FieldEAttachmentPrivacy.md
 docs/FieldEAttachmentType.md
@@ -1595,6 +1596,7 @@ docs/FieldEWebhookEzmaxpartnerevent.md
 docs/FieldEWebhookEzsignevent.md
 docs/FieldEWebhookManagementevent.md
 docs/FieldEWebhookModule.md
+docs/FieldEWebhookRealestateevent.md
 docs/FieldEtInscriptionnotauthenticatedMortgagetype.md
 docs/FieldPksEzmaxclientOs.md
 docs/FontAutocompleteElementResponse.md
@@ -2012,7 +2014,10 @@ docs/ScimServiceProviderConfig.md
 docs/ScimServiceProviderConfigApi.md
 docs/ScimServiceProviderConfigBulk.md
 docs/ScimServiceProviderConfigChangePassword.md
+docs/ScimServiceProviderConfigEtag.md
 docs/ScimServiceProviderConfigFilter.md
+docs/ScimServiceProviderConfigPatch.md
+docs/ScimServiceProviderConfigSort.md
 docs/ScimUser.md
 docs/ScimUserList.md
 docs/ScimUsersApi.md
@@ -2297,6 +2302,10 @@ docs/WebhookGetListV1ResponseMPayload.md
 docs/WebhookGetObjectV2Response.md
 docs/WebhookGetObjectV2ResponseMPayload.md
 docs/WebhookListElement.md
+docs/WebhookRealestateInscriptionCreated.md
+docs/WebhookRealestateInscriptionModified.md
+docs/WebhookRealestateInscriptionnotauthenticatedCreated.md
+docs/WebhookRealestateInscriptionnotauthenticatedModified.md
 docs/WebhookRegenerateApikeyV1Request.md
 docs/WebhookRegenerateApikeyV1Response.md
 docs/WebhookRegenerateApikeyV1ResponseMPayload.md
@@ -3632,6 +3641,7 @@ model/field-eactivesession-origin.ts
 model/field-eactivesession-realestateinprogress.ts
 model/field-eactivesession-usertype.ts
 model/field-eactivesession-weekdaystart.ts
+model/field-eagent-schedule.ts
 model/field-eattachment-documenttype.ts
 model/field-eattachment-privacy.ts
 model/field-eattachment-type.ts
@@ -3774,6 +3784,7 @@ model/field-ewebhook-ezmaxpartnerevent.ts
 model/field-ewebhook-ezsignevent.ts
 model/field-ewebhook-managementevent.ts
 model/field-ewebhook-module.ts
+model/field-ewebhook-realestateevent.ts
 model/field-pks-ezmaxclient-os.ts
 model/font-autocomplete-element-response.ts
 model/font-get-autocomplete-v2-response-mpayload.ts
@@ -4052,7 +4063,10 @@ model/scim-group-member.ts
 model/scim-group.ts
 model/scim-service-provider-config-bulk.ts
 model/scim-service-provider-config-change-password.ts
+model/scim-service-provider-config-etag.ts
 model/scim-service-provider-config-filter.ts
+model/scim-service-provider-config-patch.ts
+model/scim-service-provider-config-sort.ts
 model/scim-service-provider-config.ts
 model/scim-user-list.ts
 model/scim-user.ts
@@ -4337,6 +4351,10 @@ model/webhook-get-list-v1-response.ts
 model/webhook-get-object-v2-response-mpayload.ts
 model/webhook-get-object-v2-response.ts
 model/webhook-list-element.ts
+model/webhook-realestate-inscription-created.ts
+model/webhook-realestate-inscription-modified.ts
+model/webhook-realestate-inscriptionnotauthenticated-created.ts
+model/webhook-realestate-inscriptionnotauthenticated-modified.ts
 model/webhook-regenerate-apikey-v1-request.ts
 model/webhook-regenerate-apikey-v1-response-mpayload.ts
 model/webhook-regenerate-apikey-v1-response.ts

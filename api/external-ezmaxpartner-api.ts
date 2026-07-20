@@ -28,9 +28,9 @@ import type { DocumentationSubscribeV1Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
- * DocumentationEzmaxpartnerApi - axios parameter creator
+ * ExternalEzmaxpartnerApi - axios parameter creator
  */
-export const DocumentationEzmaxpartnerApiAxiosParamCreator = function (configuration?: Configuration) {
+export const ExternalEzmaxpartnerApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
          * Subscribe to an Ezmaxparnerproductstage
@@ -39,10 +39,10 @@ export const DocumentationEzmaxpartnerApiAxiosParamCreator = function (configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        documentationSubscribeV1: async (documentationSubscribeV1Request: DocumentationSubscribeV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        externalpartnerSubscribeV1: async (documentationSubscribeV1Request: DocumentationSubscribeV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'documentationSubscribeV1Request' is not null or undefined
-            assertParamExists('documentationSubscribeV1', 'documentationSubscribeV1Request', documentationSubscribeV1Request)
-            const localVarPath = `/1/documentation/subscribe`;
+            assertParamExists('externalpartnerSubscribeV1', 'documentationSubscribeV1Request', documentationSubscribeV1Request)
+            const localVarPath = `/1/external/ezmaxpartner/subscribe`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
             if (configuration && configuration.basePath) basePath = configuration.basePath
@@ -95,10 +95,10 @@ export const DocumentationEzmaxpartnerApiAxiosParamCreator = function (configura
 };
 
 /**
- * DocumentationEzmaxpartnerApi - functional programming interface
+ * ExternalEzmaxpartnerApi - functional programming interface
  */
-export const DocumentationEzmaxpartnerApiFp = function(configuration?: Configuration) {
-    const localVarAxiosParamCreator = DocumentationEzmaxpartnerApiAxiosParamCreator(configuration)
+export const ExternalEzmaxpartnerApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = ExternalEzmaxpartnerApiAxiosParamCreator(configuration)
     return {
         /**
          * Subscribe to an Ezmaxparnerproductstage
@@ -107,20 +107,20 @@ export const DocumentationEzmaxpartnerApiFp = function(configuration?: Configura
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async documentationSubscribeV1(documentationSubscribeV1Request: DocumentationSubscribeV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DocumentationSubscribeV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.documentationSubscribeV1(documentationSubscribeV1Request, options);
+        async externalpartnerSubscribeV1(documentationSubscribeV1Request: DocumentationSubscribeV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DocumentationSubscribeV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.externalpartnerSubscribeV1(documentationSubscribeV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['DocumentationEzmaxpartnerApi.documentationSubscribeV1']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['ExternalEzmaxpartnerApi.externalpartnerSubscribeV1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
 };
 
 /**
- * DocumentationEzmaxpartnerApi - factory interface
+ * ExternalEzmaxpartnerApi - factory interface
  */
-export const DocumentationEzmaxpartnerApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
-    const localVarFp = DocumentationEzmaxpartnerApiFp(configuration)
+export const ExternalEzmaxpartnerApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = ExternalEzmaxpartnerApiFp(configuration)
     return {
         /**
          * Subscribe to an Ezmaxparnerproductstage
@@ -129,16 +129,16 @@ export const DocumentationEzmaxpartnerApiFactory = function (configuration?: Con
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        documentationSubscribeV1(documentationSubscribeV1Request: DocumentationSubscribeV1Request, options?: RawAxiosRequestConfig): AxiosPromise<DocumentationSubscribeV1Response> {
-            return localVarFp.documentationSubscribeV1(documentationSubscribeV1Request, options).then((request) => request(axios, basePath));
+        externalpartnerSubscribeV1(documentationSubscribeV1Request: DocumentationSubscribeV1Request, options?: RawAxiosRequestConfig): AxiosPromise<DocumentationSubscribeV1Response> {
+            return localVarFp.externalpartnerSubscribeV1(documentationSubscribeV1Request, options).then((request) => request(axios, basePath));
         },
     };
 };
 
 /**
- * DocumentationEzmaxpartnerApi - object-oriented interface
+ * ExternalEzmaxpartnerApi - object-oriented interface
  */
-export class DocumentationEzmaxpartnerApi extends BaseAPI {
+export class ExternalEzmaxpartnerApi extends BaseAPI {
     /**
      * Subscribe to an Ezmaxparnerproductstage
      * @summary Subscribe to an Ezmaxparnerproductstage
@@ -146,8 +146,8 @@ export class DocumentationEzmaxpartnerApi extends BaseAPI {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public documentationSubscribeV1(documentationSubscribeV1Request: DocumentationSubscribeV1Request, options?: RawAxiosRequestConfig) {
-        return DocumentationEzmaxpartnerApiFp(this.configuration).documentationSubscribeV1(documentationSubscribeV1Request, options).then((request) => request(this.axios, this.basePath));
+    public externalpartnerSubscribeV1(documentationSubscribeV1Request: DocumentationSubscribeV1Request, options?: RawAxiosRequestConfig) {
+        return ExternalEzmaxpartnerApiFp(this.configuration).externalpartnerSubscribeV1(documentationSubscribeV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

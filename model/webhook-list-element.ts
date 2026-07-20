@@ -22,6 +22,9 @@ import type { FieldEWebhookManagementevent } from './field-ewebhook-managementev
 // May contain unused imports in some cases
 // @ts-ignore
 import type { FieldEWebhookModule } from './field-ewebhook-module';
+// May contain unused imports in some cases
+// @ts-ignore
+import type { FieldEWebhookRealestateevent } from './field-ewebhook-realestateevent';
 
 /**
  * A Webhook List Element
@@ -58,6 +61,8 @@ export interface WebhookListElement {
     'eWebhookEzsignevent'?: FieldEWebhookEzsignevent;
     /*'eWebhookManagementevent'?: FieldEWebhookManagementevent;*/
     'eWebhookManagementevent'?: FieldEWebhookManagementevent;
+    /*'eWebhookRealestateevent'?: FieldEWebhookRealestateevent;*/
+    'eWebhookRealestateevent'?: FieldEWebhookRealestateevent;
     /**
      * Whether the Webhook is active or not
      */
@@ -91,6 +96,7 @@ export class DataObjectWebhookListElement {
    eWebhookModule:FieldEWebhookModule = 'Ezmaxpartner'
    eWebhookEzsignevent?:FieldEWebhookEzsignevent = undefined
    eWebhookManagementevent?:FieldEWebhookManagementevent = undefined
+   eWebhookRealestateevent?:FieldEWebhookRealestateevent = undefined
    bWebhookIsactive:boolean = false
    bWebhookIssigned:boolean = false
 }
@@ -124,7 +130,7 @@ export class ValidationObjectWebhookListElement {
    }
    eWebhookModule = {
       type: 'enum',
-      allowableValues: ['Ezmaxpartner','Ezsign','Management'],
+      allowableValues: ['Ezmaxpartner','Ezsign','Management','Realestate'],
       required: true
    }
    eWebhookEzsignevent = {
@@ -135,6 +141,11 @@ export class ValidationObjectWebhookListElement {
    eWebhookManagementevent = {
       type: 'enum',
       allowableValues: ['UserCreated','UserstagedCreated'],
+      required: false
+   }
+   eWebhookRealestateevent = {
+      type: 'enum',
+      allowableValues: ['InscriptionCreated','InscriptionModified','InscriptionnotauthenticatedCreated','InscriptionnotauthenticatedModified'],
       required: false
    }
    bWebhookIsactive = {
