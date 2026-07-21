@@ -9,10 +9,15 @@ Name | Type | Description | Notes
 **pkiInscriptionID** | **number** | The unique ID of the Inscription. | [default to undefined]
 **pkiInscriptionnotauthenticatedID** | **number** | The unique ID of the Inscriptionnotauthenticated. | [optional] [default to undefined]
 **fkiInscriptiontypeID** | **number** | The unique ID of the Inscriptiontype | [default to undefined]
+**sInscriptiontypeNameX** | **string** | The name of the Inscriptiontype in the language of the requester | [default to undefined]
+**fkiInscriptionbuildingtypeID** | **number** | The unique ID of the Inscriptionbuildingtype | [default to undefined]
+**sInscriptionbuildingtypeNameX** | **string** | The name of the Inscriptionbuildingtype in the language of the requester | [default to undefined]
+**fkiInscriptioncategoryID** | **number** | The unique ID of the Inscriptioncategory | [default to undefined]
+**sInscriptioncategoryNameX** | **string** | The name of the Inscriptioncategory in the language of the requester | [default to undefined]
 **fkiBuyercontractID** | **number** | The unique ID of the Buyercontract | [optional] [default to undefined]
 **sBuyercontractContract** | **string** | The number of the Buyercontract | [optional] [default to undefined]
-**sInscriptiontypeNameX** | **string** | The name of the Inscriptiontype in the language of the requester | [default to undefined]
 **eInscriptionStep** | [**FieldEInscriptionStep**](FieldEInscriptionStep.md) |  | [default to undefined]
+**eInscriptionType** | [**FieldEInscriptionType**](FieldEInscriptionType.md) |  | [default to undefined]
 **sInscriptionCivicend** | **string** | The civicend of the Inscription | [default to undefined]
 **sInscriptionMLS** | **string** | The mls of the Inscription | [optional] [default to undefined]
 **sInscriptionContract** | **string** | The sale contract number | [optional] [default to undefined]
@@ -29,6 +34,7 @@ Name | Type | Description | Notes
 **dtInscriptionnotauthenticatedTransactiondateReal** | **string** | The transactiondatereal of the Inscriptionnotauthenticated | [optional] [default to undefined]
 **bInscriptionnotauthenticatedConditional** | **boolean** | Whether the inscriptionnotauthenticated is conditional | [optional] [default to undefined]
 **bInscriptionnotauthenticatedIsactive** | **boolean** | Whether the inscriptionnotauthenticated is active or not | [optional] [default to undefined]
+**bInscriptionnotauthenticatedDraft** | **boolean** | Whether the inscriptionnotauthenticated is a draft or not | [optional] [default to undefined]
 **sAddressCivic** | **string** | The Civic number. | [optional] [default to undefined]
 **sAddressStreet** | **string** | The Street Name | [optional] [default to undefined]
 **sAddressSuite** | **string** | The Suite or appartment number | [optional] [default to undefined]
@@ -39,6 +45,7 @@ Name | Type | Description | Notes
 **fkiCountryID** | **number** | The unique ID of the Country.  Here are some common values (Complete list must be retrieved from API):  |Value|Description| |-|-| |1|Canada| |2|United-States| | [optional] [default to undefined]
 **sCountryNameX** | **string** | The name of the Country in the language of the requester | [optional] [default to undefined]
 **sInscriptionnotauthenticatedOffertopurchasenumber** | **string** | The Offer to purchase number | [default to undefined]
+**iInscriptionUnit** | **number** | The unit of the Inscription | [default to undefined]
 
 ## Example
 
@@ -49,10 +56,15 @@ const instance: InscriptionnotauthenticatedListElement = {
     pkiInscriptionID,
     pkiInscriptionnotauthenticatedID,
     fkiInscriptiontypeID,
+    sInscriptiontypeNameX,
+    fkiInscriptionbuildingtypeID,
+    sInscriptionbuildingtypeNameX,
+    fkiInscriptioncategoryID,
+    sInscriptioncategoryNameX,
     fkiBuyercontractID,
     sBuyercontractContract,
-    sInscriptiontypeNameX,
     eInscriptionStep,
+    eInscriptionType,
     sInscriptionCivicend,
     sInscriptionMLS,
     sInscriptionContract,
@@ -69,6 +81,7 @@ const instance: InscriptionnotauthenticatedListElement = {
     dtInscriptionnotauthenticatedTransactiondateReal,
     bInscriptionnotauthenticatedConditional,
     bInscriptionnotauthenticatedIsactive,
+    bInscriptionnotauthenticatedDraft,
     sAddressCivic,
     sAddressStreet,
     sAddressSuite,
@@ -79,6 +92,7 @@ const instance: InscriptionnotauthenticatedListElement = {
     fkiCountryID,
     sCountryNameX,
     sInscriptionnotauthenticatedOffertopurchasenumber,
+    iInscriptionUnit,
 };
 ```
 

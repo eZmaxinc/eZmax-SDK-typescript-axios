@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **eWebhookModule** | [**FieldEWebhookModule**](FieldEWebhookModule.md) |  | [default to undefined]
 **eWebhookEzsignevent** | [**CustomEWebhookEzsignevent**](CustomEWebhookEzsignevent.md) |  | [optional] [default to undefined]
 **eWebhookManagementevent** | [**FieldEWebhookManagementevent**](FieldEWebhookManagementevent.md) |  | [optional] [default to undefined]
+**eWebhookRealestateevent** | [**FieldEWebhookRealestateevent**](FieldEWebhookRealestateevent.md) |  | [optional] [default to undefined]
 **fkiEzsignfolderID** | **number** | The unique ID of the Ezsignfolder | [optional] [default to undefined]
 **fkiEzsigndocumentID** | **number** | The unique ID of the Ezsigndocument | [optional] [default to undefined]
 **fkiEzsignsignerID** | **number** | The unique ID of the Ezsignsigner | [optional] [default to undefined]
@@ -24,6 +25,7 @@ const instance: WebhookSendWebhookV1Request = {
     eWebhookModule,
     eWebhookEzsignevent,
     eWebhookManagementevent,
+    eWebhookRealestateevent,
     fkiEzsignfolderID,
     fkiEzsigndocumentID,
     fkiEzsignsignerID,

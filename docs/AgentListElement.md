@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **dtAgentSenioritydate** | **string** | The seniority date of the Agent | [optional] [default to undefined]
 **dtAgentSickleavestart** | **string** | The sick leave start date of the Agent | [optional] [default to undefined]
 **dtAgentSickleaveend** | **string** | The sick leave end date of the Agent | [optional] [default to undefined]
+**eAgentSchedule** | [**FieldEAgentSchedule**](FieldEAgentSchedule.md) |  | [default to undefined]
 **bAgentTranquillit** | **boolean** | Whether if it\&#39;s an tranquillit | [default to undefined]
 **bAgentResidentiallicense** | **boolean** | Whether if it\&#39;s an residentiallicense | [default to undefined]
 **bAgentCommerciallicense** | **boolean** | Whether if it\&#39;s an commerciallicense | [default to undefined]
@@ -78,6 +79,7 @@ const instance: AgentListElement = {
     dtAgentSenioritydate,
     dtAgentSickleavestart,
     dtAgentSickleaveend,
+    eAgentSchedule,
     bAgentTranquillit,
     bAgentResidentiallicense,
     bAgentCommerciallicense,

@@ -1,13 +1,13 @@
-# DocumentationEzmaxpartnerApi
+# ExternalEzmaxpartnerApi
 
 All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/rest*
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
-|[**documentationSubscribeV1**](#documentationsubscribev1) | **POST** /1/documentation/subscribe | Subscribe to an Ezmaxparnerproductstage|
+|[**ezmaxpartnerSubscribeV1**](#ezmaxpartnersubscribev1) | **POST** /1/external/ezmaxpartner/subscribe | Subscribe to an Ezmaxparnerproductstage|
 
-# **documentationSubscribeV1**
-> DocumentationSubscribeV1Response documentationSubscribeV1(documentationSubscribeV1Request)
+# **ezmaxpartnerSubscribeV1**
+> EzmaxpartnerSubscribeV1Response ezmaxpartnerSubscribeV1(ezmaxpartnerSubscribeV1Request)
 
 Subscribe to an Ezmaxparnerproductstage
 
@@ -15,18 +15,18 @@ Subscribe to an Ezmaxparnerproductstage
 
 ```typescript
 import {
-    DocumentationEzmaxpartnerApi,
+    ExternalEzmaxpartnerApi,
     Configuration,
-    DocumentationSubscribeV1Request
+    EzmaxpartnerSubscribeV1Request
 } from '@ezmaxinc/ezmax-sdk-typescript-axios';
 
 const configuration = new Configuration();
-const apiInstance = new DocumentationEzmaxpartnerApi(configuration);
+const apiInstance = new ExternalEzmaxpartnerApi(configuration);
 
-let documentationSubscribeV1Request: DocumentationSubscribeV1Request; //
+let ezmaxpartnerSubscribeV1Request: EzmaxpartnerSubscribeV1Request; //
 
-const { status, data } = await apiInstance.documentationSubscribeV1(
-    documentationSubscribeV1Request
+const { status, data } = await apiInstance.ezmaxpartnerSubscribeV1(
+    ezmaxpartnerSubscribeV1Request
 );
 ```
 
@@ -34,12 +34,12 @@ const { status, data } = await apiInstance.documentationSubscribeV1(
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **documentationSubscribeV1Request** | **DocumentationSubscribeV1Request**|  | |
+| **ezmaxpartnerSubscribeV1Request** | **EzmaxpartnerSubscribeV1Request**|  | |
 
 
 ### Return type
 
-**DocumentationSubscribeV1Response**
+**EzmaxpartnerSubscribeV1Response**
 
 ### Authorization
 

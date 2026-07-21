@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **objEzmaxpartnerShortdescription** | [**MultilingualEzmaxpartnerShortdescription**](MultilingualEzmaxpartnerShortdescription.md) |  | [default to undefined]
 **objEzmaxpartnerUrl** | [**MultilingualEzmaxpartnerUrl**](MultilingualEzmaxpartnerUrl.md) |  | [default to undefined]
 **bEzmaxpartnerIsactive** | **boolean** | Whether the Ezmaxpartner is active or not | [optional] [default to undefined]
+**objEzmaxpartnerLogourl** | [**MultilingualEzmaxpartnerLogourl**](MultilingualEzmaxpartnerLogourl.md) |  | [default to undefined]
 
 ## Example
 
@@ -31,6 +32,7 @@ const instance: EzmaxpartnerResponse = {
     objEzmaxpartnerShortdescription,
     objEzmaxpartnerUrl,
     bEzmaxpartnerIsactive,
+    objEzmaxpartnerLogourl,
 };
 ```
 

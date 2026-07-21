@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **sEzmaxpartnerNameX** | **string** | The name of the Ezmaxpartner in the language of the requester | [default to undefined]
 **sEzmaxpartnerPhoneE164X** | **string** | A phone number in E.164 Format | [default to undefined]
 **sEzmaxpartnerUrlX** | **string** | The url of the Ezmaxpartner website in the language of the requester | [default to undefined]
+**objEzmaxpartnerLogourl** | [**MultilingualEzmaxpartnerLogourl**](MultilingualEzmaxpartnerLogourl.md) |  | [default to undefined]
 
 ## Example
 
@@ -27,6 +28,7 @@ const instance: CustomEzmaxpartnerListElement = {
     sEzmaxpartnerNameX,
     sEzmaxpartnerPhoneE164X,
     sEzmaxpartnerUrlX,
+    objEzmaxpartnerLogourl,
 };
 ```
 

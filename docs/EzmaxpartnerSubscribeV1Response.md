@@ -1,4 +1,4 @@
-# DocumentationSubscribeV1Response
+# EzmaxpartnerSubscribeV1Response
 
 Request for POST /1/module/ezmaxmaillinglist/subscribe
 
@@ -11,9 +11,9 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { DocumentationSubscribeV1Response } from '@ezmaxinc/ezmax-sdk-typescript-axios';
+import { EzmaxpartnerSubscribeV1Response } from '@ezmaxinc/ezmax-sdk-typescript-axios';
 
-const instance: DocumentationSubscribeV1Response = {
+const instance: EzmaxpartnerSubscribeV1Response = {
     sExternalID,
 };
 ```

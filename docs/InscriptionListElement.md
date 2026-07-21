@@ -9,10 +9,15 @@ Name | Type | Description | Notes
 **pkiInscriptionID** | **number** | The unique ID of the Inscription. | [default to undefined]
 **pkiInscriptionnotauthenticatedID** | **number** | The unique ID of the Inscriptionnotauthenticated. | [optional] [default to undefined]
 **fkiInscriptiontypeID** | **number** | The unique ID of the Inscriptiontype | [default to undefined]
+**sInscriptiontypeNameX** | **string** | The name of the Inscriptiontype in the language of the requester | [default to undefined]
+**fkiInscriptionbuildingtypeID** | **number** | The unique ID of the Inscriptionbuildingtype | [default to undefined]
+**sInscriptionbuildingtypeNameX** | **string** | The name of the Inscriptionbuildingtype in the language of the requester | [default to undefined]
+**fkiInscriptioncategoryID** | **number** | The unique ID of the Inscriptioncategory | [default to undefined]
+**sInscriptioncategoryNameX** | **string** | The name of the Inscriptioncategory in the language of the requester | [default to undefined]
 **fkiBuyercontractID** | **number** | The unique ID of the Buyercontract | [optional] [default to undefined]
 **sBuyercontractContract** | **string** | The number of the Buyercontract | [optional] [default to undefined]
-**sInscriptiontypeNameX** | **string** | The name of the Inscriptiontype in the language of the requester | [default to undefined]
 **eInscriptionStep** | [**FieldEInscriptionStep**](FieldEInscriptionStep.md) |  | [default to undefined]
+**eInscriptionType** | [**FieldEInscriptionType**](FieldEInscriptionType.md) |  | [default to undefined]
 **sInscriptionCivicend** | **string** | The civicend of the Inscription | [default to undefined]
 **sInscriptionMLS** | **string** | The mls of the Inscription | [optional] [default to undefined]
 **sInscriptionContract** | **string** | The sale contract number | [optional] [default to undefined]
@@ -39,6 +44,7 @@ Name | Type | Description | Notes
 **fkiCountryID** | **number** | The unique ID of the Country.  Here are some common values (Complete list must be retrieved from API):  |Value|Description| |-|-| |1|Canada| |2|United-States| | [optional] [default to undefined]
 **sCountryNameX** | **string** | The name of the Country in the language of the requester | [optional] [default to undefined]
 **iInscriptionnotauthenticatedCanceled** | **number** | The numbre of inscriptionnotauthenticated was canceled in this Inscription | [default to undefined]
+**iInscriptionUnit** | **number** | The unit of the Inscription | [default to undefined]
 **bAllowedCopyintoinscriptionedm** | **boolean** | Whether we are allowed to copy into the Inscription EDM | [default to undefined]
 
 ## Example
@@ -50,10 +56,15 @@ const instance: InscriptionListElement = {
     pkiInscriptionID,
     pkiInscriptionnotauthenticatedID,
     fkiInscriptiontypeID,
+    sInscriptiontypeNameX,
+    fkiInscriptionbuildingtypeID,
+    sInscriptionbuildingtypeNameX,
+    fkiInscriptioncategoryID,
+    sInscriptioncategoryNameX,
     fkiBuyercontractID,
     sBuyercontractContract,
-    sInscriptiontypeNameX,
     eInscriptionStep,
+    eInscriptionType,
     sInscriptionCivicend,
     sInscriptionMLS,
     sInscriptionContract,
@@ -80,6 +91,7 @@ const instance: InscriptionListElement = {
     fkiCountryID,
     sCountryNameX,
     iInscriptionnotauthenticatedCanceled,
+    iInscriptionUnit,
     bAllowedCopyintoinscriptionedm,
 };
 ```

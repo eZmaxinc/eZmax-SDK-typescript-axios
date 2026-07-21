@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **eWebhookModule** | [**FieldEWebhookModule**](FieldEWebhookModule.md) |  | [default to undefined]
 **eWebhookEzsignevent** | [**FieldEWebhookEzsignevent**](FieldEWebhookEzsignevent.md) |  | [optional] [default to undefined]
 **eWebhookManagementevent** | [**FieldEWebhookManagementevent**](FieldEWebhookManagementevent.md) |  | [optional] [default to undefined]
+**eWebhookRealestateevent** | [**FieldEWebhookRealestateevent**](FieldEWebhookRealestateevent.md) |  | [optional] [default to undefined]
 **sWebhookUrl** | **string** | The URL of the Webhook callback | [default to undefined]
 **sWebhookEmailfailed** | **string** | The email that will receive the Webhook in case all attempts fail | [default to undefined]
 **bWebhookIsactive** | **boolean** | Whether the Webhook is active or not | [default to undefined]
@@ -33,6 +34,7 @@ const instance: WebhookRequestCompound = {
     eWebhookModule,
     eWebhookEzsignevent,
     eWebhookManagementevent,
+    eWebhookRealestateevent,
     sWebhookUrl,
     sWebhookEmailfailed,
     bWebhookIsactive,
