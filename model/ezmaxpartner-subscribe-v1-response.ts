@@ -17,7 +17,7 @@
 /**
  * Request for POST /1/module/ezmaxmaillinglist/subscribe
  */
-export interface DocumentationSubscribeV1Response {
+export interface EzmaxpartnerSubscribeV1Response {
     /**
      * 
      */
@@ -31,20 +31,20 @@ export interface DocumentationSubscribeV1Response {
 
 /**
  * @export 
- * A DocumentationSubscribeV1Response Data Object with automatic temporary default value
+ * A EzmaxpartnerSubscribeV1Response Data Object with automatic temporary default value
  * Use this object only for create an empty data object to assign a response from server
- * @class DataObjectDocumentationSubscribeV1Response
+ * @class DataObjectEzmaxpartnerSubscribeV1Response
  */
-export class DataObjectDocumentationSubscribeV1Response {
+export class DataObjectEzmaxpartnerSubscribeV1Response {
    sExternalID:string = ''
 }
 
 /**
  * @export 
- * A DocumentationSubscribeV1Response Validation Object
- * @class ValidationObjectDocumentationSubscribeV1Response
+ * A EzmaxpartnerSubscribeV1Response Validation Object
+ * @class ValidationObjectEzmaxpartnerSubscribeV1Response
  */
-export class ValidationObjectDocumentationSubscribeV1Response {
+export class ValidationObjectEzmaxpartnerSubscribeV1Response {
    sExternalID = {
       type: 'string',
       required: true

@@ -4,10 +4,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
-|[**externalpartnerSubscribeV1**](#externalpartnersubscribev1) | **POST** /1/external/ezmaxpartner/subscribe | Subscribe to an Ezmaxparnerproductstage|
+|[**ezmaxpartnerSubscribeV1**](#ezmaxpartnersubscribev1) | **POST** /1/external/ezmaxpartner/subscribe | Subscribe to an Ezmaxparnerproductstage|
 
-# **externalpartnerSubscribeV1**
-> DocumentationSubscribeV1Response externalpartnerSubscribeV1(documentationSubscribeV1Request)
+# **ezmaxpartnerSubscribeV1**
+> EzmaxpartnerSubscribeV1Response ezmaxpartnerSubscribeV1(ezmaxpartnerSubscribeV1Request)
 
 Subscribe to an Ezmaxparnerproductstage
 
@@ -17,16 +17,16 @@ Subscribe to an Ezmaxparnerproductstage
 import {
     ExternalEzmaxpartnerApi,
     Configuration,
-    DocumentationSubscribeV1Request
+    EzmaxpartnerSubscribeV1Request
 } from '@ezmaxinc/ezmax-sdk-typescript-axios';
 
 const configuration = new Configuration();
 const apiInstance = new ExternalEzmaxpartnerApi(configuration);
 
-let documentationSubscribeV1Request: DocumentationSubscribeV1Request; //
+let ezmaxpartnerSubscribeV1Request: EzmaxpartnerSubscribeV1Request; //
 
-const { status, data } = await apiInstance.externalpartnerSubscribeV1(
-    documentationSubscribeV1Request
+const { status, data } = await apiInstance.ezmaxpartnerSubscribeV1(
+    ezmaxpartnerSubscribeV1Request
 );
 ```
 
@@ -34,12 +34,12 @@ const { status, data } = await apiInstance.externalpartnerSubscribeV1(
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **documentationSubscribeV1Request** | **DocumentationSubscribeV1Request**|  | |
+| **ezmaxpartnerSubscribeV1Request** | **EzmaxpartnerSubscribeV1Request**|  | |
 
 
 ### Return type
 
-**DocumentationSubscribeV1Response**
+**EzmaxpartnerSubscribeV1Response**
 
 ### Authorization
 

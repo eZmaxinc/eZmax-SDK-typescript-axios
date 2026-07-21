@@ -1,4 +1,4 @@
-# DocumentationSubscribeV1Request
+# EzmaxpartnerSubscribeV1Request
 
 Request for POST /1/webhookdocumentation/subscribe
 
@@ -33,9 +33,9 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { DocumentationSubscribeV1Request } from '@ezmaxinc/ezmax-sdk-typescript-axios';
+import { EzmaxpartnerSubscribeV1Request } from '@ezmaxinc/ezmax-sdk-typescript-axios';
 
-const instance: DocumentationSubscribeV1Request = {
+const instance: EzmaxpartnerSubscribeV1Request = {
     pksEzmaxcustomerCode,
     sInfrastructureenvironmenttypeDescription,
     sCompanyName1,

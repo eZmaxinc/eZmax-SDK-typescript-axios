@@ -564,8 +564,6 @@ docs/DiscussionmessageRequestCompound.md
 docs/DiscussionmessageRequestPatch.md
 docs/DiscussionmessageResponse.md
 docs/DiscussionmessageResponseCompound.md
-docs/DocumentationSubscribeV1Request.md
-docs/DocumentationSubscribeV1Response.md
 docs/DomainAutocompleteElementResponse.md
 docs/DomainCreateObjectV1Request.md
 docs/DomainCreateObjectV1Response.md
@@ -686,6 +684,8 @@ docs/EzmaxpartnerGetObjectV2Response.md
 docs/EzmaxpartnerGetObjectV2ResponseMPayload.md
 docs/EzmaxpartnerResponse.md
 docs/EzmaxpartnerResponseCompound.md
+docs/EzmaxpartnerSubscribeV1Request.md
+docs/EzmaxpartnerSubscribeV1Response.md
 docs/EzmaxproductAutocompleteElementResponse.md
 docs/EzmaxproductGetAutocompleteV2Response.md
 docs/EzmaxproductGetAutocompleteV2ResponseMPayload.md
@@ -2752,8 +2752,6 @@ model/discussionmessage-request-patch.ts
 model/discussionmessage-request.ts
 model/discussionmessage-response-compound.ts
 model/discussionmessage-response.ts
-model/documentation-subscribe-v1-request.ts
-model/documentation-subscribe-v1-response.ts
 model/domain-autocomplete-element-response.ts
 model/domain-create-object-v1-request.ts
 model/domain-create-object-v1-response-mpayload.ts
@@ -2873,6 +2871,8 @@ model/ezmaxpartner-get-object-v2-response-mpayload.ts
 model/ezmaxpartner-get-object-v2-response.ts
 model/ezmaxpartner-response-compound.ts
 model/ezmaxpartner-response.ts
+model/ezmaxpartner-subscribe-v1-request.ts
+model/ezmaxpartner-subscribe-v1-response.ts
 model/ezmaxproduct-autocomplete-element-response.ts
 model/ezmaxproduct-get-autocomplete-v2-response-mpayload.ts
 model/ezmaxproduct-get-autocomplete-v2-response.ts

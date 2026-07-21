@@ -26,7 +26,7 @@ import type { PhoneRequestCompoundV2 } from './phone-request-compound-v2';
 /**
  * Request for POST /1/webhookdocumentation/subscribe
  */
-export interface DocumentationSubscribeV1Request {
+export interface EzmaxpartnerSubscribeV1Request {
     /**
      * The Ezmaxcustomer code
      */
@@ -153,11 +153,11 @@ import { ValidationObjectEmailRequestCompound } from './'
 
 /**
  * @export 
- * A DocumentationSubscribeV1Request Data Object with automatic temporary default value
+ * A EzmaxpartnerSubscribeV1Request Data Object with automatic temporary default value
  * Use this object only for create an empty data object to assign a response from server
- * @class DataObjectDocumentationSubscribeV1Request
+ * @class DataObjectEzmaxpartnerSubscribeV1Request
  */
-export class DataObjectDocumentationSubscribeV1Request {
+export class DataObjectEzmaxpartnerSubscribeV1Request {
    pksEzmaxcustomerCode?:string = undefined
    sInfrastructureenvironmenttypeDescription?:string = undefined
    sCompanyName1?:string = undefined
@@ -185,10 +185,10 @@ export class DataObjectDocumentationSubscribeV1Request {
 
 /**
  * @export 
- * A DocumentationSubscribeV1Request Validation Object
- * @class ValidationObjectDocumentationSubscribeV1Request
+ * A EzmaxpartnerSubscribeV1Request Validation Object
+ * @class ValidationObjectEzmaxpartnerSubscribeV1Request
  */
-export class ValidationObjectDocumentationSubscribeV1Request {
+export class ValidationObjectEzmaxpartnerSubscribeV1Request {
    pksEzmaxcustomerCode = {
       type: 'string',
       pattern: /^[a-z\d]{2,6}$/,

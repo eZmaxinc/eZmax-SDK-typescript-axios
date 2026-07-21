@@ -50,6 +50,12 @@ export interface WebhookEzmaxpartnerproductUnsubscribe {
      * @memberof WebhookEzmaxpartnerproductUnsubscribe
      */
     objEzmaxpartnerproduct:CustomEzmaxpartnerproductSubscribe 
+    /**
+     * 
+     * @type {string}
+     * @memberof WebhookEzmaxpartnerproductUnsubscribe
+     */
+    sExternalID?:string 
 }
 
 
@@ -76,6 +82,7 @@ export class DataObjectWebhookEzmaxpartnerproductUnsubscribe {
     objWebhook:CustomWebhookResponse = new DataObjectCustomWebhookResponse()
     a_objAttempt:Array<AttemptResponseCompound> = []
     objEzmaxpartnerproduct:CustomEzmaxpartnerproductSubscribe = new DataObjectCustomEzmaxpartnerproductSubscribe()
+    sExternalID?:string = undefined
 }
 
 /**
@@ -90,6 +97,10 @@ export class ValidationObjectWebhookEzmaxpartnerproductUnsubscribe {
       required: true
    }
    objEzmaxpartnerproduct = new ValidationObjectCustomEzmaxpartnerproductSubscribe()
+   sExternalID = {
+      type: 'string',
+      required: false
+   }
 } 
 
 
