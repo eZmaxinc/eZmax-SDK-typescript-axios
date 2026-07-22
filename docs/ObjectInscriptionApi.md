@@ -9,7 +9,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**inscriptionGetCommunicationListV1**](#inscriptiongetcommunicationlistv1) | **GET** /1/object/inscription/{pkiInscriptionID}/getCommunicationList | Retrieve Communication list|
 |[**inscriptionGetCommunicationrecipientsV1**](#inscriptiongetcommunicationrecipientsv1) | **GET** /1/object/inscription/{pkiInscriptionID}/getCommunicationrecipients | Retrieve Inscription\&#39;s Communicationrecipient|
 |[**inscriptionGetCommunicationsendersV1**](#inscriptiongetcommunicationsendersv1) | **GET** /1/object/inscription/{pkiInscriptionID}/getCommunicationsenders | Retrieve Inscription\&#39;s Communicationsender|
-|[**inscriptionGetInscriptionnotauthenticatedsV1**](#inscriptiongetinscriptionnotauthenticatedsv1) | **GET** /1/object/inscription/{pkiInscriptionID}/getInscriptionnotauthenticateds | Retrieve Inscriptionnotauthenticated list|
+|[**inscriptionGetInscriptionnotauthenticatedsV1**](#inscriptiongetinscriptionnotauthenticatedsv1) | **GET** /1/object/inscription/{pkiInscriptionID}/getInscriptionnotauthenticateds | Retrieve Inscription\&#39;s Inscriptionnotauthenticated|
 |[**inscriptionGetListV1**](#inscriptiongetlistv1) | **GET** /1/object/inscription/getList | Retrieve Inscription list|
 |[**inscriptionGetObjectV2**](#inscriptiongetobjectv2) | **GET** /2/object/inscription/{pkiInscriptionID} | Retrieve an existing Inscription|
 |[**inscriptionImportIntoEDMV1**](#inscriptionimportintoedmv1) | **POST** /1/object/inscription/{pkiInscriptionID}/importIntoEDM | Import attachments into the Inscription|

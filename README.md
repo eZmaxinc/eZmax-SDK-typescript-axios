@@ -1,4 +1,4 @@
-## @ezmaxinc/ezmax-sdk-typescript-axios@1.3.2
+## @ezmaxinc/ezmax-sdk-typescript-axios@1.3.3
 
 This generator creates TypeScript/JavaScript client that utilizes [axios](https://github.com/axios/axios). The generated Node module can be used in the following environments:
 
@@ -36,7 +36,7 @@ navigate to the folder of your consuming project and run one of the following co
 _published:_
 
 ```
-npm install @ezmaxinc/ezmax-sdk-typescript-axios@1.3.2 --save
+npm install @ezmaxinc/ezmax-sdk-typescript-axios@1.3.3 --save
 ```
 
 _unPublished (not recommended):_
@@ -444,7 +444,7 @@ Class | Method | HTTP request | Description
 *ObjectInscriptionApi* | [**inscriptionGetCommunicationListV1**](docs/ObjectInscriptionApi.md#inscriptiongetcommunicationlistv1) | **GET** /1/object/inscription/{pkiInscriptionID}/getCommunicationList | Retrieve Communication list
 *ObjectInscriptionApi* | [**inscriptionGetCommunicationrecipientsV1**](docs/ObjectInscriptionApi.md#inscriptiongetcommunicationrecipientsv1) | **GET** /1/object/inscription/{pkiInscriptionID}/getCommunicationrecipients | Retrieve Inscription\&#39;s Communicationrecipient
 *ObjectInscriptionApi* | [**inscriptionGetCommunicationsendersV1**](docs/ObjectInscriptionApi.md#inscriptiongetcommunicationsendersv1) | **GET** /1/object/inscription/{pkiInscriptionID}/getCommunicationsenders | Retrieve Inscription\&#39;s Communicationsender
-*ObjectInscriptionApi* | [**inscriptionGetInscriptionnotauthenticatedsV1**](docs/ObjectInscriptionApi.md#inscriptiongetinscriptionnotauthenticatedsv1) | **GET** /1/object/inscription/{pkiInscriptionID}/getInscriptionnotauthenticateds | Retrieve Inscriptionnotauthenticated list
+*ObjectInscriptionApi* | [**inscriptionGetInscriptionnotauthenticatedsV1**](docs/ObjectInscriptionApi.md#inscriptiongetinscriptionnotauthenticatedsv1) | **GET** /1/object/inscription/{pkiInscriptionID}/getInscriptionnotauthenticateds | Retrieve Inscription\&#39;s Inscriptionnotauthenticated
 *ObjectInscriptionApi* | [**inscriptionGetListV1**](docs/ObjectInscriptionApi.md#inscriptiongetlistv1) | **GET** /1/object/inscription/getList | Retrieve Inscription list
 *ObjectInscriptionApi* | [**inscriptionGetObjectV2**](docs/ObjectInscriptionApi.md#inscriptiongetobjectv2) | **GET** /2/object/inscription/{pkiInscriptionID} | Retrieve an existing Inscription
 *ObjectInscriptionApi* | [**inscriptionImportIntoEDMV1**](docs/ObjectInscriptionApi.md#inscriptionimportintoedmv1) | **POST** /1/object/inscription/{pkiInscriptionID}/importIntoEDM | Import attachments into the Inscription
@@ -2114,6 +2114,7 @@ Class | Method | HTTP request | Description
  - [InscriptionGetCommunicationsendersV1Response](docs/InscriptionGetCommunicationsendersV1Response.md)
  - [InscriptionGetCommunicationsendersV1ResponseMPayload](docs/InscriptionGetCommunicationsendersV1ResponseMPayload.md)
  - [InscriptionGetInscriptionnotauthenticatedsV1Response](docs/InscriptionGetInscriptionnotauthenticatedsV1Response.md)
+ - [InscriptionGetInscriptionnotauthenticatedsV1ResponseMPayload](docs/InscriptionGetInscriptionnotauthenticatedsV1ResponseMPayload.md)
  - [InscriptionGetListV1Response](docs/InscriptionGetListV1Response.md)
  - [InscriptionGetListV1ResponseMPayload](docs/InscriptionGetListV1ResponseMPayload.md)
  - [InscriptionGetObjectV2Response](docs/InscriptionGetObjectV2Response.md)

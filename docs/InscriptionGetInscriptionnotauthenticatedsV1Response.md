@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **objDebugPayload** | [**CommonResponseObjDebugPayload**](CommonResponseObjDebugPayload.md) |  | [default to undefined]
 **objDebug** | [**CommonResponseObjDebug**](CommonResponseObjDebug.md) |  | [optional] [default to undefined]
-**mPayload** | **object** | Response for GET /1/object/inscription/{pkiInscriptionID}/getInscriptionnotauthenticateds | [default to undefined]
+**mPayload** | [**InscriptionGetInscriptionnotauthenticatedsV1ResponseMPayload**](InscriptionGetInscriptionnotauthenticatedsV1ResponseMPayload.md) |  | [default to undefined]
 
 ## Example
 

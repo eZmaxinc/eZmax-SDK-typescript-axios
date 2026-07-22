@@ -7,7 +7,7 @@ Request for POST /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthent
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **a_objInscriptionnotauthenticatedcondition** | [**Array&lt;CustomInscriptionnotauthenticatedconditionRequest&gt;**](CustomInscriptionnotauthenticatedconditionRequest.md) |  | [default to undefined]
-**dtInscriptionnotauthenticatedTransactiondateReal** | **string** | The transactiondatereal of the Inscriptionnotauthenticated | [optional] [default to undefined]
+**dtInscriptionnotauthenticatedTransactiondateReal** | **string** | The real transactiondate of the Inscriptionnotauthenticated | [optional] [default to undefined]
 
 ## Example
 

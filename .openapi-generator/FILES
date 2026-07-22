@@ -1640,6 +1640,7 @@ docs/InscriptionGetCommunicationrecipientsV1ResponseMPayload.md
 docs/InscriptionGetCommunicationsendersV1Response.md
 docs/InscriptionGetCommunicationsendersV1ResponseMPayload.md
 docs/InscriptionGetInscriptionnotauthenticatedsV1Response.md
+docs/InscriptionGetInscriptionnotauthenticatedsV1ResponseMPayload.md
 docs/InscriptionGetListV1Response.md
 docs/InscriptionGetListV1ResponseMPayload.md
 docs/InscriptionGetObjectV2Response.md
@@ -3824,6 +3825,7 @@ model/inscription-get-communicationrecipients-v1-response-mpayload.ts
 model/inscription-get-communicationrecipients-v1-response.ts
 model/inscription-get-communicationsenders-v1-response-mpayload.ts
 model/inscription-get-communicationsenders-v1-response.ts
+model/inscription-get-inscriptionnotauthenticateds-v1-response-mpayload.ts
 model/inscription-get-inscriptionnotauthenticateds-v1-response.ts
 model/inscription-get-list-v1-response-mpayload.ts
 model/inscription-get-list-v1-response.ts

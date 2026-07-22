@@ -1487,6 +1487,7 @@ export * from './inscription-get-communicationrecipients-v1-response-mpayload';
 export * from './inscription-get-communicationsenders-v1-response';
 export * from './inscription-get-communicationsenders-v1-response-mpayload';
 export * from './inscription-get-inscriptionnotauthenticateds-v1-response';
+export * from './inscription-get-inscriptionnotauthenticateds-v1-response-mpayload';
 export * from './inscription-get-list-v1-response';
 export * from './inscription-get-list-v1-response-mpayload';
 export * from './inscription-get-object-v2-response';
