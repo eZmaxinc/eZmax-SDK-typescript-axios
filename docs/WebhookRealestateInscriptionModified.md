@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **objWebhook** | [**CustomWebhookResponse**](CustomWebhookResponse.md) |  | [default to undefined]
 **a_objAttempt** | [**Array&lt;AttemptResponseCompound&gt;**](AttemptResponseCompound.md) | An array containing details of previous attempts that were made to deliver the message. The array is empty if it\&#39;s the first attempt. | [default to undefined]
-**objEzmaxpartnerproduct** | [**InscriptionResponse**](InscriptionResponse.md) |  | [default to undefined]
+**objInscription** | [**InscriptionResponse**](InscriptionResponse.md) |  | [default to undefined]
 
 ## Example
 
@@ -18,7 +18,7 @@ import { WebhookRealestateInscriptionModified } from '@ezmaxinc/ezmax-sdk-typesc
 const instance: WebhookRealestateInscriptionModified = {
     objWebhook,
     a_objAttempt,
-    objEzmaxpartnerproduct,
+    objInscription,
 };
 ```
 
