@@ -7,6 +7,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**ezsigntemplatepackagemembershipCreateObjectV1**](#ezsigntemplatepackagemembershipcreateobjectv1) | **POST** /1/object/ezsigntemplatepackagemembership | Create a new Ezsigntemplatepackagemembership|
 |[**ezsigntemplatepackagemembershipDeleteObjectV1**](#ezsigntemplatepackagemembershipdeleteobjectv1) | **DELETE** /1/object/ezsigntemplatepackagemembership/{pkiEzsigntemplatepackagemembershipID} | Delete an existing Ezsigntemplatepackagemembership|
 |[**ezsigntemplatepackagemembershipGetObjectV2**](#ezsigntemplatepackagemembershipgetobjectv2) | **GET** /2/object/ezsigntemplatepackagemembership/{pkiEzsigntemplatepackagemembershipID} | Retrieve an existing Ezsigntemplatepackagemembership|
+|[**ezsigntemplatepackagemembershipGetObjectV3**](#ezsigntemplatepackagemembershipgetobjectv3) | **GET** /3/object/ezsigntemplatepackagemembership/{pkiEzsigntemplatepackagemembershipID} | Retrieve an existing Ezsigntemplatepackagemembership|
 
 # **ezsigntemplatepackagemembershipCreateObjectV1**
 > EzsigntemplatepackagemembershipCreateObjectV1Response ezsigntemplatepackagemembershipCreateObjectV1(ezsigntemplatepackagemembershipCreateObjectV1Request)
@@ -146,6 +147,58 @@ const { status, data } = await apiInstance.ezsigntemplatepackagemembershipGetObj
 ### Return type
 
 **EzsigntemplatepackagemembershipGetObjectV2Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ezsigntemplatepackagemembershipGetObjectV3**
+> EzsigntemplatepackagemembershipGetObjectV3Response ezsigntemplatepackagemembershipGetObjectV3()
+
+
+
+### Example
+
+```typescript
+import {
+    ObjectEzsigntemplatepackagemembershipApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectEzsigntemplatepackagemembershipApi(configuration);
+
+let pkiEzsigntemplatepackagemembershipID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.ezsigntemplatepackagemembershipGetObjectV3(
+    pkiEzsigntemplatepackagemembershipID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiEzsigntemplatepackagemembershipID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**EzsigntemplatepackagemembershipGetObjectV3Response**
 
 ### Authorization
 

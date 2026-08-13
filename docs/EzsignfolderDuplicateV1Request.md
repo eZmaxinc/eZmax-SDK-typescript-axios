@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **a_fkiEzsignfoldersignerassociationID** | **Array&lt;number&gt;** |  | [default to undefined]
 **a_objEzsigndocument** | [**Array&lt;CustomEzsigndocumentDuplicateRequest&gt;**](CustomEzsigndocumentDuplicateRequest.md) |  | [default to undefined]
 **tEzsignfolderNote** | **string** | Note about the Ezsignfolder | [optional] [default to undefined]
+**bKeepenteredvalues** | **boolean** | Whether we keep the entered values or not in the Ezsignform | [optional] [default to true]
 
 ## Example
 
@@ -21,6 +22,7 @@ const instance: EzsignfolderDuplicateV1Request = {
     a_fkiEzsignfoldersignerassociationID,
     a_objEzsigndocument,
     tEzsignfolderNote,
+    bKeepenteredvalues,
 };
 ```
 

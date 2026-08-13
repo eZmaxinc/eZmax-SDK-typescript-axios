@@ -11,6 +11,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**ezsigntemplateGetAutocompleteV2**](#ezsigntemplategetautocompletev2) | **GET** /2/object/ezsigntemplate/getAutocomplete/{sSelector} | Retrieve Ezsigntemplates and IDs|
 |[**ezsigntemplateGetListV1**](#ezsigntemplategetlistv1) | **GET** /1/object/ezsigntemplate/getList | Retrieve Ezsigntemplate list|
 |[**ezsigntemplateGetObjectV3**](#ezsigntemplategetobjectv3) | **GET** /3/object/ezsigntemplate/{pkiEzsigntemplateID} | Retrieve an existing Ezsigntemplate|
+|[**ezsigntemplateGetObjectV4**](#ezsigntemplategetobjectv4) | **GET** /4/object/ezsigntemplate/{pkiEzsigntemplateID} | Retrieve an existing Ezsigntemplate|
 
 # **ezsigntemplateCopyV1**
 > EzsigntemplateCopyV1Response ezsigntemplateCopyV1(ezsigntemplateCopyV1Request)
@@ -389,6 +390,58 @@ const { status, data } = await apiInstance.ezsigntemplateGetObjectV3(
 ### Return type
 
 **EzsigntemplateGetObjectV3Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ezsigntemplateGetObjectV4**
+> EzsigntemplateGetObjectV4Response ezsigntemplateGetObjectV4()
+
+
+
+### Example
+
+```typescript
+import {
+    ObjectEzsigntemplateApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectEzsigntemplateApi(configuration);
+
+let pkiEzsigntemplateID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.ezsigntemplateGetObjectV4(
+    pkiEzsigntemplateID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiEzsigntemplateID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**EzsigntemplateGetObjectV4Response**
 
 ### Authorization
 

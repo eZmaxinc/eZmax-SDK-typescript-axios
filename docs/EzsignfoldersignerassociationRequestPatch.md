@@ -6,6 +6,7 @@ An Ezsignfoldersignerassociation Object
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**eEzsignfoldersignerassociationRole** | [**FieldEEzsignfoldersignerassociationRole**](FieldEEzsignfoldersignerassociationRole.md) |  | [optional] [default to undefined]
 **tEzsignfoldersignerassociationMessage** | **string** | A custom text message that will be added to the email sent. | [optional] [default to undefined]
 
 ## Example
@@ -14,6 +15,7 @@ Name | Type | Description | Notes
 import { EzsignfoldersignerassociationRequestPatch } from '@ezmaxinc/ezmax-sdk-typescript-axios';
 
 const instance: EzsignfoldersignerassociationRequestPatch = {
+    eEzsignfoldersignerassociationRole,
     tEzsignfoldersignerassociationMessage,
 };
 ```

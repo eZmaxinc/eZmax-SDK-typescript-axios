@@ -7,10 +7,12 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**ezsigntemplatepackageCreateObjectV1**](#ezsigntemplatepackagecreateobjectv1) | **POST** /1/object/ezsigntemplatepackage | Create a new Ezsigntemplatepackage|
 |[**ezsigntemplatepackageDeleteObjectV1**](#ezsigntemplatepackagedeleteobjectv1) | **DELETE** /1/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID} | Delete an existing Ezsigntemplatepackage|
 |[**ezsigntemplatepackageEditEzsigntemplatepackagesignersV1**](#ezsigntemplatepackageeditezsigntemplatepackagesignersv1) | **PUT** /1/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID}/editEzsigntemplatepackagesigners | Edit multiple Ezsigntemplatepackagesigners|
+|[**ezsigntemplatepackageEditEzsigntemplatepackagesignersV2**](#ezsigntemplatepackageeditezsigntemplatepackagesignersv2) | **PUT** /2/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID}/editEzsigntemplatepackagesigners | Edit multiple Ezsigntemplatepackagesigners|
 |[**ezsigntemplatepackageEditObjectV1**](#ezsigntemplatepackageeditobjectv1) | **PUT** /1/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID} | Edit an existing Ezsigntemplatepackage|
 |[**ezsigntemplatepackageGetAutocompleteV2**](#ezsigntemplatepackagegetautocompletev2) | **GET** /2/object/ezsigntemplatepackage/getAutocomplete/{sSelector} | Retrieve Ezsigntemplatepackages and IDs|
 |[**ezsigntemplatepackageGetListV1**](#ezsigntemplatepackagegetlistv1) | **GET** /1/object/ezsigntemplatepackage/getList | Retrieve Ezsigntemplatepackage list|
 |[**ezsigntemplatepackageGetObjectV2**](#ezsigntemplatepackagegetobjectv2) | **GET** /2/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID} | Retrieve an existing Ezsigntemplatepackage|
+|[**ezsigntemplatepackageGetObjectV3**](#ezsigntemplatepackagegetobjectv3) | **GET** /3/object/ezsigntemplatepackage/{pkiEzsigntemplatepackageID} | Retrieve an existing Ezsigntemplatepackage|
 
 # **ezsigntemplatepackageCreateObjectV1**
 > EzsigntemplatepackageCreateObjectV1Response ezsigntemplatepackageCreateObjectV1(ezsigntemplatepackageCreateObjectV1Request)
@@ -173,6 +175,63 @@ const { status, data } = await apiInstance.ezsigntemplatepackageEditEzsigntempla
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **ezsigntemplatepackageEditEzsigntemplatepackagesignersV2**
+> EzsigntemplatepackageEditEzsigntemplatepackagesignersV2Response ezsigntemplatepackageEditEzsigntemplatepackagesignersV2(ezsigntemplatepackageEditEzsigntemplatepackagesignersV2Request)
+
+Using this endpoint, you can edit multiple Ezsigntemplatepackagesigners at the same time.
+
+### Example
+
+```typescript
+import {
+    ObjectEzsigntemplatepackageApi,
+    Configuration,
+    EzsigntemplatepackageEditEzsigntemplatepackagesignersV2Request
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectEzsigntemplatepackageApi(configuration);
+
+let pkiEzsigntemplatepackageID: number; // (default to undefined)
+let ezsigntemplatepackageEditEzsigntemplatepackagesignersV2Request: EzsigntemplatepackageEditEzsigntemplatepackagesignersV2Request; //
+
+const { status, data } = await apiInstance.ezsigntemplatepackageEditEzsigntemplatepackagesignersV2(
+    pkiEzsigntemplatepackageID,
+    ezsigntemplatepackageEditEzsigntemplatepackagesignersV2Request
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **ezsigntemplatepackageEditEzsigntemplatepackagesignersV2Request** | **EzsigntemplatepackageEditEzsigntemplatepackagesignersV2Request**|  | |
+| **pkiEzsigntemplatepackageID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**EzsigntemplatepackageEditEzsigntemplatepackagesignersV2Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+|**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **ezsigntemplatepackageEditObjectV1**
 > EzsigntemplatepackageEditObjectV1Response ezsigntemplatepackageEditObjectV1(ezsigntemplatepackageEditObjectV1Request)
 
@@ -309,7 +368,7 @@ import {
 const configuration = new Configuration();
 const apiInstance = new ObjectEzsigntemplatepackageApi(configuration);
 
-let eOrderBy: 'pkiEzsigntemplatepackageID_ASC' | 'pkiEzsigntemplatepackageID_DESC' | 'fkiTeamID_ASC' | 'fkiTeamID_DESC' | 'fkiEzsignfoldertypeID_ASC' | 'fkiEzsignfoldertypeID_DESC' | 'fkiLanguageID_ASC' | 'fkiLanguageID_DESC' | 'eEzsigntemplatepackageType_ASC' | 'eEzsigntemplatepackageType_DESC' | 'sEzsigntemplatepackageTypedescriptionX_ASC' | 'sEzsigntemplatepackageTypedescriptionX_DESC' | 'sEzsigntemplatepackageDescription_ASC' | 'sEzsigntemplatepackageDescription_DESC' | 'bEzsigntemplatepackageNeedvalidation_ASC' | 'bEzsigntemplatepackageNeedvalidation_DESC' | 'iEzsigntemplatepackagemembership_ASC' | 'iEzsigntemplatepackagemembership_DESC' | 'bEzsigntemplatepackageIsactive_ASC' | 'bEzsigntemplatepackageIsactive_DESC'; //Specify how you want the results to be sorted (optional) (default to undefined)
+let eOrderBy: 'pkiEzsigntemplatepackageID_ASC' | 'pkiEzsigntemplatepackageID_DESC' | 'fkiTeamID_ASC' | 'fkiTeamID_DESC' | 'fkiEzsignfoldertypeID_ASC' | 'fkiEzsignfoldertypeID_DESC' | 'fkiLanguageID_ASC' | 'fkiLanguageID_DESC' | 'eEzsigntemplatepackageType_ASC' | 'eEzsigntemplatepackageType_DESC' | 'sEzsigntemplatepackageDescription_ASC' | 'sEzsigntemplatepackageDescription_DESC' | 'bEzsigntemplatepackageNeedvalidation_ASC' | 'bEzsigntemplatepackageNeedvalidation_DESC' | 'iEzsigntemplatepackagemembership_ASC' | 'iEzsigntemplatepackagemembership_DESC' | 'bEzsigntemplatepackageIsactive_ASC' | 'bEzsigntemplatepackageIsactive_DESC'; //Specify how you want the results to be sorted (optional) (default to undefined)
 let iRowMax: number; // (optional) (default to undefined)
 let iRowOffset: number; // (optional) (default to 0)
 let acceptLanguage: HeaderAcceptLanguage; // (optional) (default to undefined)
@@ -328,7 +387,7 @@ const { status, data } = await apiInstance.ezsigntemplatepackageGetListV1(
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **eOrderBy** | [**&#39;pkiEzsigntemplatepackageID_ASC&#39; | &#39;pkiEzsigntemplatepackageID_DESC&#39; | &#39;fkiTeamID_ASC&#39; | &#39;fkiTeamID_DESC&#39; | &#39;fkiEzsignfoldertypeID_ASC&#39; | &#39;fkiEzsignfoldertypeID_DESC&#39; | &#39;fkiLanguageID_ASC&#39; | &#39;fkiLanguageID_DESC&#39; | &#39;eEzsigntemplatepackageType_ASC&#39; | &#39;eEzsigntemplatepackageType_DESC&#39; | &#39;sEzsigntemplatepackageTypedescriptionX_ASC&#39; | &#39;sEzsigntemplatepackageTypedescriptionX_DESC&#39; | &#39;sEzsigntemplatepackageDescription_ASC&#39; | &#39;sEzsigntemplatepackageDescription_DESC&#39; | &#39;bEzsigntemplatepackageNeedvalidation_ASC&#39; | &#39;bEzsigntemplatepackageNeedvalidation_DESC&#39; | &#39;iEzsigntemplatepackagemembership_ASC&#39; | &#39;iEzsigntemplatepackagemembership_DESC&#39; | &#39;bEzsigntemplatepackageIsactive_ASC&#39; | &#39;bEzsigntemplatepackageIsactive_DESC&#39;**]**Array<&#39;pkiEzsigntemplatepackageID_ASC&#39; &#124; &#39;pkiEzsigntemplatepackageID_DESC&#39; &#124; &#39;fkiTeamID_ASC&#39; &#124; &#39;fkiTeamID_DESC&#39; &#124; &#39;fkiEzsignfoldertypeID_ASC&#39; &#124; &#39;fkiEzsignfoldertypeID_DESC&#39; &#124; &#39;fkiLanguageID_ASC&#39; &#124; &#39;fkiLanguageID_DESC&#39; &#124; &#39;eEzsigntemplatepackageType_ASC&#39; &#124; &#39;eEzsigntemplatepackageType_DESC&#39; &#124; &#39;sEzsigntemplatepackageTypedescriptionX_ASC&#39; &#124; &#39;sEzsigntemplatepackageTypedescriptionX_DESC&#39; &#124; &#39;sEzsigntemplatepackageDescription_ASC&#39; &#124; &#39;sEzsigntemplatepackageDescription_DESC&#39; &#124; &#39;bEzsigntemplatepackageNeedvalidation_ASC&#39; &#124; &#39;bEzsigntemplatepackageNeedvalidation_DESC&#39; &#124; &#39;iEzsigntemplatepackagemembership_ASC&#39; &#124; &#39;iEzsigntemplatepackagemembership_DESC&#39; &#124; &#39;bEzsigntemplatepackageIsactive_ASC&#39; &#124; &#39;bEzsigntemplatepackageIsactive_DESC&#39;>** | Specify how you want the results to be sorted | (optional) defaults to undefined|
+| **eOrderBy** | [**&#39;pkiEzsigntemplatepackageID_ASC&#39; | &#39;pkiEzsigntemplatepackageID_DESC&#39; | &#39;fkiTeamID_ASC&#39; | &#39;fkiTeamID_DESC&#39; | &#39;fkiEzsignfoldertypeID_ASC&#39; | &#39;fkiEzsignfoldertypeID_DESC&#39; | &#39;fkiLanguageID_ASC&#39; | &#39;fkiLanguageID_DESC&#39; | &#39;eEzsigntemplatepackageType_ASC&#39; | &#39;eEzsigntemplatepackageType_DESC&#39; | &#39;sEzsigntemplatepackageDescription_ASC&#39; | &#39;sEzsigntemplatepackageDescription_DESC&#39; | &#39;bEzsigntemplatepackageNeedvalidation_ASC&#39; | &#39;bEzsigntemplatepackageNeedvalidation_DESC&#39; | &#39;iEzsigntemplatepackagemembership_ASC&#39; | &#39;iEzsigntemplatepackagemembership_DESC&#39; | &#39;bEzsigntemplatepackageIsactive_ASC&#39; | &#39;bEzsigntemplatepackageIsactive_DESC&#39;**]**Array<&#39;pkiEzsigntemplatepackageID_ASC&#39; &#124; &#39;pkiEzsigntemplatepackageID_DESC&#39; &#124; &#39;fkiTeamID_ASC&#39; &#124; &#39;fkiTeamID_DESC&#39; &#124; &#39;fkiEzsignfoldertypeID_ASC&#39; &#124; &#39;fkiEzsignfoldertypeID_DESC&#39; &#124; &#39;fkiLanguageID_ASC&#39; &#124; &#39;fkiLanguageID_DESC&#39; &#124; &#39;eEzsigntemplatepackageType_ASC&#39; &#124; &#39;eEzsigntemplatepackageType_DESC&#39; &#124; &#39;sEzsigntemplatepackageDescription_ASC&#39; &#124; &#39;sEzsigntemplatepackageDescription_DESC&#39; &#124; &#39;bEzsigntemplatepackageNeedvalidation_ASC&#39; &#124; &#39;bEzsigntemplatepackageNeedvalidation_DESC&#39; &#124; &#39;iEzsigntemplatepackagemembership_ASC&#39; &#124; &#39;iEzsigntemplatepackagemembership_DESC&#39; &#124; &#39;bEzsigntemplatepackageIsactive_ASC&#39; &#124; &#39;bEzsigntemplatepackageIsactive_DESC&#39;>** | Specify how you want the results to be sorted | (optional) defaults to undefined|
 | **iRowMax** | [**number**] |  | (optional) defaults to undefined|
 | **iRowOffset** | [**number**] |  | (optional) defaults to 0|
 | **acceptLanguage** | **HeaderAcceptLanguage** |  | (optional) defaults to undefined|
@@ -390,6 +449,58 @@ const { status, data } = await apiInstance.ezsigntemplatepackageGetObjectV2(
 ### Return type
 
 **EzsigntemplatepackageGetObjectV2Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ezsigntemplatepackageGetObjectV3**
+> EzsigntemplatepackageGetObjectV3Response ezsigntemplatepackageGetObjectV3()
+
+
+
+### Example
+
+```typescript
+import {
+    ObjectEzsigntemplatepackageApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectEzsigntemplatepackageApi(configuration);
+
+let pkiEzsigntemplatepackageID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.ezsigntemplatepackageGetObjectV3(
+    pkiEzsigntemplatepackageID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiEzsigntemplatepackageID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**EzsigntemplatepackageGetObjectV3Response**
 
 ### Authorization
 

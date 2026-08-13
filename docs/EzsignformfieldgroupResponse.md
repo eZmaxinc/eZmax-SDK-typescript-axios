@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **sEzsignformfieldgroupTextvalidationcustommessage** | **string** | Description of validation rule. Show by signatory. | [optional] [default to undefined]
 **tEzsignformfieldgroupTooltip** | **string** | A tooltip that will be presented to Ezsignsigner about the Ezsignformfieldgroup | [optional] [default to undefined]
 **eEzsignformfieldgroupTooltipposition** | [**FieldEEzsignformfieldgroupTooltipposition**](FieldEEzsignformfieldgroupTooltipposition.md) |  | [optional] [default to undefined]
+**dtEzsignformfieldgroupCompleted** | **string** | The date the Ezsignformfieldgroup was completed. | [optional] [default to undefined]
 
 ## Example
 
@@ -47,6 +48,7 @@ const instance: EzsignformfieldgroupResponse = {
     sEzsignformfieldgroupTextvalidationcustommessage,
     tEzsignformfieldgroupTooltip,
     eEzsignformfieldgroupTooltipposition,
+    dtEzsignformfieldgroupCompleted,
 };
 ```
 
