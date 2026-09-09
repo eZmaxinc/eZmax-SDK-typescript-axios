@@ -33,6 +33,16 @@ export interface UserListElement {
     /*'pkiUserID': number;*/
     'pkiUserID': number;
     /**
+     * The unique ID of the Agent.
+     */
+    /*'fkiAgentID'?: number;*/
+    'fkiAgentID'?: number;
+    /**
+     * The unique ID of the Broker.
+     */
+    /*'fkiBrokerID'?: number;*/
+    'fkiBrokerID'?: number;
+    /**
      * The first name of the user
      */
     /*'sUserFirstname': string;*/
@@ -94,6 +104,8 @@ export interface UserListElement {
  */
 export class DataObjectUserListElement {
    pkiUserID:number = 0
+   fkiAgentID?:number = undefined
+   fkiBrokerID?:number = undefined
    sUserFirstname:string = ''
    sUserLastname:string = ''
    sUserLoginname:string = ''
@@ -117,6 +129,16 @@ export class ValidationObjectUserListElement {
       type: 'integer',
       minimum: 0,
       required: true
+   }
+   fkiAgentID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiBrokerID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
    }
    sUserFirstname = {
       type: 'string',

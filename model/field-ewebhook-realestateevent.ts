@@ -19,6 +19,8 @@
  */
 
 export const FieldEWebhookRealestateevent = {
+    BuyercontractCreated: 'BuyercontractCreated',
+    BuyercontractModified: 'BuyercontractModified',
     InscriptionCreated: 'InscriptionCreated',
     InscriptionModified: 'InscriptionModified',
     InscriptionnotauthenticatedCreated: 'InscriptionnotauthenticatedCreated',

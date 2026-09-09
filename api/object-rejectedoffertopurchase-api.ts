@@ -26,6 +26,10 @@ import type { CommonResponseError } from '../model';
 // @ts-ignore
 import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
+import type { RejectedoffertopurchaseBatchDownloadV1Request } from '../model';
+// @ts-ignore
+import type { RejectedoffertopurchaseGetAttachmentsV1Response } from '../model';
+// @ts-ignore
 import type { RejectedoffertopurchaseGetCommunicationCountV1Response } from '../model';
 // @ts-ignore
 import type { RejectedoffertopurchaseGetCommunicationListV1Response } from '../model';
@@ -46,6 +50,127 @@ import { RequestSignature, IHeadersData } from '../api/request-signature';
  */
 export const ObjectRejectedoffertopurchaseApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
+        /**
+         * 
+         * @summary Download multiples attachments from a Rejectedoffertopurchase
+         * @param {number} pkiRejectedoffertopurchaseID 
+         * @param {RejectedoffertopurchaseBatchDownloadV1Request} rejectedoffertopurchaseBatchDownloadV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        rejectedoffertopurchaseBatchDownloadV1: async (pkiRejectedoffertopurchaseID: number, rejectedoffertopurchaseBatchDownloadV1Request: RejectedoffertopurchaseBatchDownloadV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiRejectedoffertopurchaseID' is not null or undefined
+            assertParamExists('rejectedoffertopurchaseBatchDownloadV1', 'pkiRejectedoffertopurchaseID', pkiRejectedoffertopurchaseID)
+            // verify required parameter 'rejectedoffertopurchaseBatchDownloadV1Request' is not null or undefined
+            assertParamExists('rejectedoffertopurchaseBatchDownloadV1', 'rejectedoffertopurchaseBatchDownloadV1Request', rejectedoffertopurchaseBatchDownloadV1Request)
+            const localVarPath = `/1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/batchDownload`
+                .replace('{pkiRejectedoffertopurchaseID}', encodeURIComponent(String(pkiRejectedoffertopurchaseID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/zip,text/xml,application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(rejectedoffertopurchaseBatchDownloadV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Rejectedoffertopurchase\'s attachments
+         * @param {number} pkiRejectedoffertopurchaseID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        rejectedoffertopurchaseGetAttachmentsV1: async (pkiRejectedoffertopurchaseID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiRejectedoffertopurchaseID' is not null or undefined
+            assertParamExists('rejectedoffertopurchaseGetAttachmentsV1', 'pkiRejectedoffertopurchaseID', pkiRejectedoffertopurchaseID)
+            const localVarPath = `/1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/getAttachments`
+                .replace('{pkiRejectedoffertopurchaseID}', encodeURIComponent(String(pkiRejectedoffertopurchaseID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
         /**
          * 
          * @summary Retrieve Communication count
@@ -432,6 +557,33 @@ export const ObjectRejectedoffertopurchaseApiFp = function(configuration?: Confi
     return {
         /**
          * 
+         * @summary Download multiples attachments from a Rejectedoffertopurchase
+         * @param {number} pkiRejectedoffertopurchaseID 
+         * @param {RejectedoffertopurchaseBatchDownloadV1Request} rejectedoffertopurchaseBatchDownloadV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async rejectedoffertopurchaseBatchDownloadV1(pkiRejectedoffertopurchaseID: number, rejectedoffertopurchaseBatchDownloadV1Request: RejectedoffertopurchaseBatchDownloadV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<File>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.rejectedoffertopurchaseBatchDownloadV1(pkiRejectedoffertopurchaseID, rejectedoffertopurchaseBatchDownloadV1Request, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectRejectedoffertopurchaseApi.rejectedoffertopurchaseBatchDownloadV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Rejectedoffertopurchase\'s attachments
+         * @param {number} pkiRejectedoffertopurchaseID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async rejectedoffertopurchaseGetAttachmentsV1(pkiRejectedoffertopurchaseID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<RejectedoffertopurchaseGetAttachmentsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.rejectedoffertopurchaseGetAttachmentsV1(pkiRejectedoffertopurchaseID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectRejectedoffertopurchaseApi.rejectedoffertopurchaseGetAttachmentsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Retrieve Communication count
          * @param {number} pkiRejectedoffertopurchaseID 
          * @param {*} [options] Override http request option.
@@ -524,6 +676,27 @@ export const ObjectRejectedoffertopurchaseApiFactory = function (configuration?:
     return {
         /**
          * 
+         * @summary Download multiples attachments from a Rejectedoffertopurchase
+         * @param {number} pkiRejectedoffertopurchaseID 
+         * @param {RejectedoffertopurchaseBatchDownloadV1Request} rejectedoffertopurchaseBatchDownloadV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        rejectedoffertopurchaseBatchDownloadV1(pkiRejectedoffertopurchaseID: number, rejectedoffertopurchaseBatchDownloadV1Request: RejectedoffertopurchaseBatchDownloadV1Request, options?: RawAxiosRequestConfig): AxiosPromise<File> {
+            return localVarFp.rejectedoffertopurchaseBatchDownloadV1(pkiRejectedoffertopurchaseID, rejectedoffertopurchaseBatchDownloadV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Rejectedoffertopurchase\'s attachments
+         * @param {number} pkiRejectedoffertopurchaseID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        rejectedoffertopurchaseGetAttachmentsV1(pkiRejectedoffertopurchaseID: number, options?: RawAxiosRequestConfig): AxiosPromise<RejectedoffertopurchaseGetAttachmentsV1Response> {
+            return localVarFp.rejectedoffertopurchaseGetAttachmentsV1(pkiRejectedoffertopurchaseID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Retrieve Communication count
          * @param {number} pkiRejectedoffertopurchaseID 
          * @param {*} [options] Override http request option.
@@ -594,6 +767,29 @@ export const ObjectRejectedoffertopurchaseApiFactory = function (configuration?:
  * ObjectRejectedoffertopurchaseApi - object-oriented interface
  */
 export class ObjectRejectedoffertopurchaseApi extends BaseAPI {
+    /**
+     * 
+     * @summary Download multiples attachments from a Rejectedoffertopurchase
+     * @param {number} pkiRejectedoffertopurchaseID 
+     * @param {RejectedoffertopurchaseBatchDownloadV1Request} rejectedoffertopurchaseBatchDownloadV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public rejectedoffertopurchaseBatchDownloadV1(pkiRejectedoffertopurchaseID: number, rejectedoffertopurchaseBatchDownloadV1Request: RejectedoffertopurchaseBatchDownloadV1Request, options?: RawAxiosRequestConfig) {
+        return ObjectRejectedoffertopurchaseApiFp(this.configuration).rejectedoffertopurchaseBatchDownloadV1(pkiRejectedoffertopurchaseID, rejectedoffertopurchaseBatchDownloadV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Rejectedoffertopurchase\'s attachments
+     * @param {number} pkiRejectedoffertopurchaseID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public rejectedoffertopurchaseGetAttachmentsV1(pkiRejectedoffertopurchaseID: number, options?: RawAxiosRequestConfig) {
+        return ObjectRejectedoffertopurchaseApiFp(this.configuration).rejectedoffertopurchaseGetAttachmentsV1(pkiRejectedoffertopurchaseID, options).then((request) => request(this.axios, this.basePath));
+    }
+
     /**
      * 
      * @summary Retrieve Communication count

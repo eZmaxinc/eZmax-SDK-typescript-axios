@@ -666,7 +666,7 @@ export class ValidationObjectInscriptionResponseCompound {
    }
    tInscriptionCadastre = {
       type: 'string',
-      pattern: /^(\n|.){0,65535}$/,
+      pattern: /^[\s\S]{0,65535}$/,
       required: true
    }
    bInscriptionReference = {

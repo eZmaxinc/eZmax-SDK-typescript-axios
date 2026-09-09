@@ -4,12 +4,120 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
+|[**inscriptiontempBatchDownloadV1**](#inscriptiontempbatchdownloadv1) | **POST** /1/object/inscriptiontemp/{pkiInscriptiontempID}/batchDownload | Download multiples attachments from a Inscriptiontemp|
+|[**inscriptiontempGetAttachmentsV1**](#inscriptiontempgetattachmentsv1) | **GET** /1/object/inscriptiontemp/{pkiInscriptiontempID}/getAttachments | Retrieve Inscriptiontemp\&#39;s attachments|
 |[**inscriptiontempGetCommunicationCountV1**](#inscriptiontempgetcommunicationcountv1) | **GET** /1/object/inscriptiontemp/{pkiInscriptiontempID}/getCommunicationCount | Retrieve Communication count|
 |[**inscriptiontempGetCommunicationListV1**](#inscriptiontempgetcommunicationlistv1) | **GET** /1/object/inscriptiontemp/{pkiInscriptiontempID}/getCommunicationList | Retrieve Communication list|
 |[**inscriptiontempGetCommunicationrecipientsV1**](#inscriptiontempgetcommunicationrecipientsv1) | **GET** /1/object/inscriptiontemp/{pkiInscriptiontempID}/getCommunicationrecipients | Retrieve Inscriptiontemp\&#39;s Communicationrecipient|
 |[**inscriptiontempGetCommunicationsendersV1**](#inscriptiontempgetcommunicationsendersv1) | **GET** /1/object/inscriptiontemp/{pkiInscriptiontempID}/getCommunicationsenders | Retrieve Inscriptiontemp\&#39;s Communicationsender|
 |[**inscriptiontempGetListV1**](#inscriptiontempgetlistv1) | **GET** /1/object/inscriptiontemp/getList | Retrieve Inscriptiontemp list|
 |[**inscriptiontempImportIntoEDMV1**](#inscriptiontempimportintoedmv1) | **POST** /1/object/inscriptiontemp/{pkiInscriptiontempID}/importIntoEDM | Import attachments into the Inscriptiontemp|
+
+# **inscriptiontempBatchDownloadV1**
+> File inscriptiontempBatchDownloadV1(inscriptiontempBatchDownloadV1Request)
+
+
+### Example
+
+```typescript
+import {
+    ObjectInscriptiontempApi,
+    Configuration,
+    InscriptiontempBatchDownloadV1Request
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectInscriptiontempApi(configuration);
+
+let pkiInscriptiontempID: number; // (default to undefined)
+let inscriptiontempBatchDownloadV1Request: InscriptiontempBatchDownloadV1Request; //
+
+const { status, data } = await apiInstance.inscriptiontempBatchDownloadV1(
+    pkiInscriptiontempID,
+    inscriptiontempBatchDownloadV1Request
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **inscriptiontempBatchDownloadV1Request** | **InscriptiontempBatchDownloadV1Request**|  | |
+| **pkiInscriptiontempID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**File**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/zip, text/xml, application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **inscriptiontempGetAttachmentsV1**
+> InscriptiontempGetAttachmentsV1Response inscriptiontempGetAttachmentsV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectInscriptiontempApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectInscriptiontempApi(configuration);
+
+let pkiInscriptiontempID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.inscriptiontempGetAttachmentsV1(
+    pkiInscriptiontempID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiInscriptiontempID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**InscriptiontempGetAttachmentsV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **inscriptiontempGetCommunicationCountV1**
 > InscriptiontempGetCommunicationCountV1Response inscriptiontempGetCommunicationCountV1()
@@ -59,7 +167,7 @@ const { status, data } = await apiInstance.inscriptiontempGetCommunicationCountV
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -111,7 +219,7 @@ const { status, data } = await apiInstance.inscriptiontempGetCommunicationListV1
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -163,7 +271,7 @@ const { status, data } = await apiInstance.inscriptiontempGetCommunicationrecipi
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -215,7 +323,7 @@ const { status, data } = await apiInstance.inscriptiontempGetCommunicationsender
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -335,7 +443,7 @@ const { status, data } = await apiInstance.inscriptiontempImportIntoEDMV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

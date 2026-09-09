@@ -119,7 +119,7 @@ export class ValidationObjectEzsigntemplateelementdependencyRequestCompound {
    pkiEzsigntemplateelementdependencyID = {
       type: 'integer',
       minimum: 0,
-      maximum: 65535,
+      maximum: 16777215,
       required: false
    }
    fkiEzsigntemplateformfieldIDValidation = {

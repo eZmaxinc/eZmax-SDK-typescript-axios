@@ -4,6 +4,10 @@ The Realestateevent of the Webhook
 
 ## Enum
 
+* `BuyercontractCreated` (value: `'BuyercontractCreated'`)
+
+* `BuyercontractModified` (value: `'BuyercontractModified'`)
+
 * `InscriptionCreated` (value: `'InscriptionCreated'`)
 
 * `InscriptionModified` (value: `'InscriptionModified'`)

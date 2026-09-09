@@ -20,6 +20,7 @@
 
 export const FieldEEzsignfoldersignerassociationRole = {
     CC: 'CC',
+    CCDeleted: 'CCDeleted',
     Signer: 'Signer',
     SignerAndCC: 'SignerAndCC',
 } as const;

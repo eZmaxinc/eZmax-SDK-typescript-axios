@@ -26,6 +26,8 @@ import type { CommonResponseError } from '../model';
 // @ts-ignore
 import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
+import type { InscriptionBatchDownloadV1Request } from '../model';
+// @ts-ignore
 import type { InscriptionGetAttachmentsV1Response } from '../model';
 // @ts-ignore
 import type { InscriptionGetCommunicationCountV1Response } from '../model';
@@ -56,6 +58,69 @@ import { RequestSignature, IHeadersData } from '../api/request-signature';
  */
 export const ObjectInscriptionApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
+        /**
+         * 
+         * @summary Download multiples attachments from an Inscription
+         * @param {number} pkiInscriptionID 
+         * @param {InscriptionBatchDownloadV1Request} inscriptionBatchDownloadV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        inscriptionBatchDownloadV1: async (pkiInscriptionID: number, inscriptionBatchDownloadV1Request: InscriptionBatchDownloadV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiInscriptionID' is not null or undefined
+            assertParamExists('inscriptionBatchDownloadV1', 'pkiInscriptionID', pkiInscriptionID)
+            // verify required parameter 'inscriptionBatchDownloadV1Request' is not null or undefined
+            assertParamExists('inscriptionBatchDownloadV1', 'inscriptionBatchDownloadV1Request', inscriptionBatchDownloadV1Request)
+            const localVarPath = `/1/object/inscription/{pkiInscriptionID}/batchDownload`
+                .replace('{pkiInscriptionID}', encodeURIComponent(String(pkiInscriptionID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/zip,text/xml,application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(inscriptionBatchDownloadV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
         /**
          * 
          * @summary Retrieve Inscription\'s Attachments
@@ -679,6 +744,20 @@ export const ObjectInscriptionApiFp = function(configuration?: Configuration) {
     return {
         /**
          * 
+         * @summary Download multiples attachments from an Inscription
+         * @param {number} pkiInscriptionID 
+         * @param {InscriptionBatchDownloadV1Request} inscriptionBatchDownloadV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async inscriptionBatchDownloadV1(pkiInscriptionID: number, inscriptionBatchDownloadV1Request: InscriptionBatchDownloadV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<File>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.inscriptionBatchDownloadV1(pkiInscriptionID, inscriptionBatchDownloadV1Request, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectInscriptionApi.inscriptionBatchDownloadV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Retrieve Inscription\'s Attachments
          * @param {number} pkiInscriptionID 
          * @param {*} [options] Override http request option.
@@ -824,6 +903,17 @@ export const ObjectInscriptionApiFactory = function (configuration?: Configurati
     return {
         /**
          * 
+         * @summary Download multiples attachments from an Inscription
+         * @param {number} pkiInscriptionID 
+         * @param {InscriptionBatchDownloadV1Request} inscriptionBatchDownloadV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        inscriptionBatchDownloadV1(pkiInscriptionID: number, inscriptionBatchDownloadV1Request: InscriptionBatchDownloadV1Request, options?: RawAxiosRequestConfig): AxiosPromise<File> {
+            return localVarFp.inscriptionBatchDownloadV1(pkiInscriptionID, inscriptionBatchDownloadV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Retrieve Inscription\'s Attachments
          * @param {number} pkiInscriptionID 
          * @param {*} [options] Override http request option.
@@ -935,6 +1025,18 @@ export const ObjectInscriptionApiFactory = function (configuration?: Configurati
  * ObjectInscriptionApi - object-oriented interface
  */
 export class ObjectInscriptionApi extends BaseAPI {
+    /**
+     * 
+     * @summary Download multiples attachments from an Inscription
+     * @param {number} pkiInscriptionID 
+     * @param {InscriptionBatchDownloadV1Request} inscriptionBatchDownloadV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public inscriptionBatchDownloadV1(pkiInscriptionID: number, inscriptionBatchDownloadV1Request: InscriptionBatchDownloadV1Request, options?: RawAxiosRequestConfig) {
+        return ObjectInscriptionApiFp(this.configuration).inscriptionBatchDownloadV1(pkiInscriptionID, inscriptionBatchDownloadV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
     /**
      * 
      * @summary Retrieve Inscription\'s Attachments

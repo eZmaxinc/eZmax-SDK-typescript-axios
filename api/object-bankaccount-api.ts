@@ -22,7 +22,17 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
+import type { BankaccountBatchDownloadV1Request } from '../model';
+// @ts-ignore
+import type { BankaccountGetAttachmentsV1Response } from '../model';
+// @ts-ignore
 import type { BankaccountGetAutocompleteV2Response } from '../model';
+// @ts-ignore
+import type { BankaccountImportIntoEDMV1Request } from '../model';
+// @ts-ignore
+import type { BankaccountImportIntoEDMV1Response } from '../model';
+// @ts-ignore
+import type { CommonResponseError } from '../model';
 // @ts-ignore
 import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
@@ -32,6 +42,127 @@ import { RequestSignature, IHeadersData } from '../api/request-signature';
  */
 export const ObjectBankaccountApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
+        /**
+         * 
+         * @summary Download multiples attachments from a Bankaccount
+         * @param {number} pkiBankaccountID 
+         * @param {BankaccountBatchDownloadV1Request} bankaccountBatchDownloadV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        bankaccountBatchDownloadV1: async (pkiBankaccountID: number, bankaccountBatchDownloadV1Request: BankaccountBatchDownloadV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiBankaccountID' is not null or undefined
+            assertParamExists('bankaccountBatchDownloadV1', 'pkiBankaccountID', pkiBankaccountID)
+            // verify required parameter 'bankaccountBatchDownloadV1Request' is not null or undefined
+            assertParamExists('bankaccountBatchDownloadV1', 'bankaccountBatchDownloadV1Request', bankaccountBatchDownloadV1Request)
+            const localVarPath = `/1/object/bankaccount/{pkiBankaccountID}/batchDownload`
+                .replace('{pkiBankaccountID}', encodeURIComponent(String(pkiBankaccountID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/zip,text/xml,application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(bankaccountBatchDownloadV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Bankaccount\'s attachments
+         * @param {number} pkiBankaccountID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        bankaccountGetAttachmentsV1: async (pkiBankaccountID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiBankaccountID' is not null or undefined
+            assertParamExists('bankaccountGetAttachmentsV1', 'pkiBankaccountID', pkiBankaccountID)
+            const localVarPath = `/1/object/bankaccount/{pkiBankaccountID}/getAttachments`
+                .replace('{pkiBankaccountID}', encodeURIComponent(String(pkiBankaccountID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
         /**
          * Get the list of Bankaccount to be used in a dropdown or autocomplete control.
          * @summary Retrieve Bankaccounts and IDs
@@ -106,6 +237,69 @@ export const ObjectBankaccountApiAxiosParamCreator = function (configuration?: C
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * 
+         * @summary Import attachments into the Bankaccount
+         * @param {number} pkiBankaccountID 
+         * @param {BankaccountImportIntoEDMV1Request} bankaccountImportIntoEDMV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        bankaccountImportIntoEDMV1: async (pkiBankaccountID: number, bankaccountImportIntoEDMV1Request: BankaccountImportIntoEDMV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiBankaccountID' is not null or undefined
+            assertParamExists('bankaccountImportIntoEDMV1', 'pkiBankaccountID', pkiBankaccountID)
+            // verify required parameter 'bankaccountImportIntoEDMV1Request' is not null or undefined
+            assertParamExists('bankaccountImportIntoEDMV1', 'bankaccountImportIntoEDMV1Request', bankaccountImportIntoEDMV1Request)
+            const localVarPath = `/1/object/bankaccount/{pkiBankaccountID}/importIntoEDM`
+                .replace('{pkiBankaccountID}', encodeURIComponent(String(pkiBankaccountID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(bankaccountImportIntoEDMV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -115,6 +309,33 @@ export const ObjectBankaccountApiAxiosParamCreator = function (configuration?: C
 export const ObjectBankaccountApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = ObjectBankaccountApiAxiosParamCreator(configuration)
     return {
+        /**
+         * 
+         * @summary Download multiples attachments from a Bankaccount
+         * @param {number} pkiBankaccountID 
+         * @param {BankaccountBatchDownloadV1Request} bankaccountBatchDownloadV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async bankaccountBatchDownloadV1(pkiBankaccountID: number, bankaccountBatchDownloadV1Request: BankaccountBatchDownloadV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<File>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.bankaccountBatchDownloadV1(pkiBankaccountID, bankaccountBatchDownloadV1Request, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectBankaccountApi.bankaccountBatchDownloadV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Bankaccount\'s attachments
+         * @param {number} pkiBankaccountID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async bankaccountGetAttachmentsV1(pkiBankaccountID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BankaccountGetAttachmentsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.bankaccountGetAttachmentsV1(pkiBankaccountID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectBankaccountApi.bankaccountGetAttachmentsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
         /**
          * Get the list of Bankaccount to be used in a dropdown or autocomplete control.
          * @summary Retrieve Bankaccounts and IDs
@@ -131,6 +352,20 @@ export const ObjectBankaccountApiFp = function(configuration?: Configuration) {
             const localVarOperationServerBasePath = operationServerMap['ObjectBankaccountApi.bankaccountGetAutocompleteV2']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
+        /**
+         * 
+         * @summary Import attachments into the Bankaccount
+         * @param {number} pkiBankaccountID 
+         * @param {BankaccountImportIntoEDMV1Request} bankaccountImportIntoEDMV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async bankaccountImportIntoEDMV1(pkiBankaccountID: number, bankaccountImportIntoEDMV1Request: BankaccountImportIntoEDMV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BankaccountImportIntoEDMV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.bankaccountImportIntoEDMV1(pkiBankaccountID, bankaccountImportIntoEDMV1Request, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectBankaccountApi.bankaccountImportIntoEDMV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
     }
 };
 
@@ -140,6 +375,27 @@ export const ObjectBankaccountApiFp = function(configuration?: Configuration) {
 export const ObjectBankaccountApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = ObjectBankaccountApiFp(configuration)
     return {
+        /**
+         * 
+         * @summary Download multiples attachments from a Bankaccount
+         * @param {number} pkiBankaccountID 
+         * @param {BankaccountBatchDownloadV1Request} bankaccountBatchDownloadV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        bankaccountBatchDownloadV1(pkiBankaccountID: number, bankaccountBatchDownloadV1Request: BankaccountBatchDownloadV1Request, options?: RawAxiosRequestConfig): AxiosPromise<File> {
+            return localVarFp.bankaccountBatchDownloadV1(pkiBankaccountID, bankaccountBatchDownloadV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Bankaccount\'s attachments
+         * @param {number} pkiBankaccountID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        bankaccountGetAttachmentsV1(pkiBankaccountID: number, options?: RawAxiosRequestConfig): AxiosPromise<BankaccountGetAttachmentsV1Response> {
+            return localVarFp.bankaccountGetAttachmentsV1(pkiBankaccountID, options).then((request) => request(axios, basePath));
+        },
         /**
          * Get the list of Bankaccount to be used in a dropdown or autocomplete control.
          * @summary Retrieve Bankaccounts and IDs
@@ -153,6 +409,17 @@ export const ObjectBankaccountApiFactory = function (configuration?: Configurati
         bankaccountGetAutocompleteV2(sSelector: BankaccountGetAutocompleteV2SSelectorEnum, eFilterActive?: BankaccountGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig): AxiosPromise<BankaccountGetAutocompleteV2Response> {
             return localVarFp.bankaccountGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(axios, basePath));
         },
+        /**
+         * 
+         * @summary Import attachments into the Bankaccount
+         * @param {number} pkiBankaccountID 
+         * @param {BankaccountImportIntoEDMV1Request} bankaccountImportIntoEDMV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        bankaccountImportIntoEDMV1(pkiBankaccountID: number, bankaccountImportIntoEDMV1Request: BankaccountImportIntoEDMV1Request, options?: RawAxiosRequestConfig): AxiosPromise<BankaccountImportIntoEDMV1Response> {
+            return localVarFp.bankaccountImportIntoEDMV1(pkiBankaccountID, bankaccountImportIntoEDMV1Request, options).then((request) => request(axios, basePath));
+        },
     };
 };
 
@@ -160,6 +427,29 @@ export const ObjectBankaccountApiFactory = function (configuration?: Configurati
  * ObjectBankaccountApi - object-oriented interface
  */
 export class ObjectBankaccountApi extends BaseAPI {
+    /**
+     * 
+     * @summary Download multiples attachments from a Bankaccount
+     * @param {number} pkiBankaccountID 
+     * @param {BankaccountBatchDownloadV1Request} bankaccountBatchDownloadV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public bankaccountBatchDownloadV1(pkiBankaccountID: number, bankaccountBatchDownloadV1Request: BankaccountBatchDownloadV1Request, options?: RawAxiosRequestConfig) {
+        return ObjectBankaccountApiFp(this.configuration).bankaccountBatchDownloadV1(pkiBankaccountID, bankaccountBatchDownloadV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Bankaccount\'s attachments
+     * @param {number} pkiBankaccountID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public bankaccountGetAttachmentsV1(pkiBankaccountID: number, options?: RawAxiosRequestConfig) {
+        return ObjectBankaccountApiFp(this.configuration).bankaccountGetAttachmentsV1(pkiBankaccountID, options).then((request) => request(this.axios, this.basePath));
+    }
+
     /**
      * Get the list of Bankaccount to be used in a dropdown or autocomplete control.
      * @summary Retrieve Bankaccounts and IDs
@@ -172,6 +462,18 @@ export class ObjectBankaccountApi extends BaseAPI {
      */
     public bankaccountGetAutocompleteV2(sSelector: BankaccountGetAutocompleteV2SSelectorEnum, eFilterActive?: BankaccountGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig) {
         return ObjectBankaccountApiFp(this.configuration).bankaccountGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Import attachments into the Bankaccount
+     * @param {number} pkiBankaccountID 
+     * @param {BankaccountImportIntoEDMV1Request} bankaccountImportIntoEDMV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public bankaccountImportIntoEDMV1(pkiBankaccountID: number, bankaccountImportIntoEDMV1Request: BankaccountImportIntoEDMV1Request, options?: RawAxiosRequestConfig) {
+        return ObjectBankaccountApiFp(this.configuration).bankaccountImportIntoEDMV1(pkiBankaccountID, bankaccountImportIntoEDMV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

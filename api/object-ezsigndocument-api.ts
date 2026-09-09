@@ -2924,7 +2924,7 @@ export const ObjectEzsigndocumentApiAxiosParamCreator = function (configuration?
             };
         },
         /**
-         * Once an Ezsigndocument has been sent to signatories, it cannot be modified.  Using this endpoint, you can unsend the Ezsigndocument and make it modifiable again.  Signatories will receive an email informing them the signature process was aborted and they might receive a new invitation to sign.  ⚠️ Warning: Any signature previously made by signatories on this Ezsigndocumentswill be lost.
+         * Once an Ezsigndocument has been sent to signatories, it cannot be modified.  Using this endpoint, you can unsend the Ezsigndocument and make it modifiable again.  Signatories will receive an email informing them the signature process was aborted and they might receive a new invitation to sign.  âš ï¸ Warning: Any signature previously made by signatories on this Ezsigndocumentswill be lost.
          * @summary Unsend the Ezsigndocument
          * @param {number} pkiEzsigndocumentID 
          * @param {object} body 
@@ -3620,7 +3620,7 @@ export const ObjectEzsigndocumentApiFp = function(configuration?: Configuration)
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Once an Ezsigndocument has been sent to signatories, it cannot be modified.  Using this endpoint, you can unsend the Ezsigndocument and make it modifiable again.  Signatories will receive an email informing them the signature process was aborted and they might receive a new invitation to sign.  ⚠️ Warning: Any signature previously made by signatories on this Ezsigndocumentswill be lost.
+         * Once an Ezsigndocument has been sent to signatories, it cannot be modified.  Using this endpoint, you can unsend the Ezsigndocument and make it modifiable again.  Signatories will receive an email informing them the signature process was aborted and they might receive a new invitation to sign.  âš ï¸ Warning: Any signature previously made by signatories on this Ezsigndocumentswill be lost.
          * @summary Unsend the Ezsigndocument
          * @param {number} pkiEzsigndocumentID 
          * @param {object} body 
@@ -4132,7 +4132,7 @@ export const ObjectEzsigndocumentApiFactory = function (configuration?: Configur
             return localVarFp.ezsigndocumentSubmitEzsignformV1(pkiEzsigndocumentID, ezsigndocumentSubmitEzsignformV1Request, options).then((request) => request(axios, basePath));
         },
         /**
-         * Once an Ezsigndocument has been sent to signatories, it cannot be modified.  Using this endpoint, you can unsend the Ezsigndocument and make it modifiable again.  Signatories will receive an email informing them the signature process was aborted and they might receive a new invitation to sign.  ⚠️ Warning: Any signature previously made by signatories on this Ezsigndocumentswill be lost.
+         * Once an Ezsigndocument has been sent to signatories, it cannot be modified.  Using this endpoint, you can unsend the Ezsigndocument and make it modifiable again.  Signatories will receive an email informing them the signature process was aborted and they might receive a new invitation to sign.  âš ï¸ Warning: Any signature previously made by signatories on this Ezsigndocumentswill be lost.
          * @summary Unsend the Ezsigndocument
          * @param {number} pkiEzsigndocumentID 
          * @param {object} body 
@@ -4684,7 +4684,7 @@ export class ObjectEzsigndocumentApi extends BaseAPI {
     }
 
     /**
-     * Once an Ezsigndocument has been sent to signatories, it cannot be modified.  Using this endpoint, you can unsend the Ezsigndocument and make it modifiable again.  Signatories will receive an email informing them the signature process was aborted and they might receive a new invitation to sign.  ⚠️ Warning: Any signature previously made by signatories on this Ezsigndocumentswill be lost.
+     * Once an Ezsigndocument has been sent to signatories, it cannot be modified.  Using this endpoint, you can unsend the Ezsigndocument and make it modifiable again.  Signatories will receive an email informing them the signature process was aborted and they might receive a new invitation to sign.  âš ï¸ Warning: Any signature previously made by signatories on this Ezsigndocumentswill be lost.
      * @summary Unsend the Ezsigndocument
      * @param {number} pkiEzsigndocumentID 
      * @param {object} body 

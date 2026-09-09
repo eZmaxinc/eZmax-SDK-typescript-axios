@@ -97,12 +97,17 @@ export interface AgentListElement {
     /*'sAgentRealestateassociationlicense': string;*/
     'sAgentRealestateassociationlicense': string;
     /**
-     * The hiredate of the Agent
+     * The expiration date of permit of the Agent
+     */
+    /*'dtAgentPermitexpiration'?: string;*/
+    'dtAgentPermitexpiration'?: string;
+    /**
+     * The hire date of the Agent
      */
     /*'dtAgentHiredate'?: string;*/
     'dtAgentHiredate'?: string;
     /**
-     * The leavedate of the Agent
+     * The leave date of the Agent
      */
     /*'dtAgentLeavedate'?: string;*/
     'dtAgentLeavedate'?: string;
@@ -268,6 +273,7 @@ export class DataObjectAgentListElement {
    iAgentLongdistancecode:number = 0
    iAgentBannernumber:number = 0
    sAgentRealestateassociationlicense:string = ''
+   dtAgentPermitexpiration?:string = undefined
    dtAgentHiredate?:string = undefined
    dtAgentLeavedate?:string = undefined
    dtAgentContractdate?:string = undefined
@@ -382,6 +388,11 @@ export class ValidationObjectAgentListElement {
       type: 'string',
       pattern: /^.{0,15}$/,
       required: true
+   }
+   dtAgentPermitexpiration = {
+      type: 'string',
+      pattern: /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/,
+      required: false
    }
    dtAgentHiredate = {
       type: 'string',

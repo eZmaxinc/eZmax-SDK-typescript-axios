@@ -4,8 +4,116 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
+|[**supplierBatchDownloadV1**](#supplierbatchdownloadv1) | **POST** /1/object/supplier/{pkiSupplierID}/batchDownload | Download multiples attachments from a Supplier|
+|[**supplierGetAttachmentsV1**](#suppliergetattachmentsv1) | **GET** /1/object/supplier/{pkiSupplierID}/getAttachments | Retrieve Supplier\&#39;s attachments|
 |[**supplierGetListV1**](#suppliergetlistv1) | **GET** /1/object/supplier/getList | Retrieve Supplier list|
 |[**supplierImportIntoEDMV1**](#supplierimportintoedmv1) | **POST** /1/object/supplier/{pkiSupplierID}/importIntoEDM | Import attachments into the Supplier|
+
+# **supplierBatchDownloadV1**
+> File supplierBatchDownloadV1(supplierBatchDownloadV1Request)
+
+
+### Example
+
+```typescript
+import {
+    ObjectSupplierApi,
+    Configuration,
+    SupplierBatchDownloadV1Request
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectSupplierApi(configuration);
+
+let pkiSupplierID: number; // (default to undefined)
+let supplierBatchDownloadV1Request: SupplierBatchDownloadV1Request; //
+
+const { status, data } = await apiInstance.supplierBatchDownloadV1(
+    pkiSupplierID,
+    supplierBatchDownloadV1Request
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **supplierBatchDownloadV1Request** | **SupplierBatchDownloadV1Request**|  | |
+| **pkiSupplierID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**File**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/zip, text/xml, application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **supplierGetAttachmentsV1**
+> SupplierGetAttachmentsV1Response supplierGetAttachmentsV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectSupplierApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectSupplierApi(configuration);
+
+let pkiSupplierID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.supplierGetAttachmentsV1(
+    pkiSupplierID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiSupplierID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**SupplierGetAttachmentsV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **supplierGetListV1**
 > SupplierGetListV1Response supplierGetListV1()
@@ -123,7 +231,7 @@ const { status, data } = await apiInstance.supplierImportIntoEDMV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

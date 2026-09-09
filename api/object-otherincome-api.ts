@@ -26,6 +26,10 @@ import type { CommonResponseError } from '../model';
 // @ts-ignore
 import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
+import type { OtherincomeBatchDownloadV1Request } from '../model';
+// @ts-ignore
+import type { OtherincomeGetAttachmentsV1Response } from '../model';
+// @ts-ignore
 import type { OtherincomeGetCommunicationCountV1Response } from '../model';
 // @ts-ignore
 import type { OtherincomeGetCommunicationListV1Response } from '../model';
@@ -46,6 +50,127 @@ import { RequestSignature, IHeadersData } from '../api/request-signature';
  */
 export const ObjectOtherincomeApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
+        /**
+         * 
+         * @summary Download multiples attachments from a Otherincome
+         * @param {number} pkiOtherincomeID 
+         * @param {OtherincomeBatchDownloadV1Request} otherincomeBatchDownloadV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        otherincomeBatchDownloadV1: async (pkiOtherincomeID: number, otherincomeBatchDownloadV1Request: OtherincomeBatchDownloadV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiOtherincomeID' is not null or undefined
+            assertParamExists('otherincomeBatchDownloadV1', 'pkiOtherincomeID', pkiOtherincomeID)
+            // verify required parameter 'otherincomeBatchDownloadV1Request' is not null or undefined
+            assertParamExists('otherincomeBatchDownloadV1', 'otherincomeBatchDownloadV1Request', otherincomeBatchDownloadV1Request)
+            const localVarPath = `/1/object/otherincome/{pkiOtherincomeID}/batchDownload`
+                .replace('{pkiOtherincomeID}', encodeURIComponent(String(pkiOtherincomeID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/zip,text/xml,application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(otherincomeBatchDownloadV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Otherincome\'s attachments
+         * @param {number} pkiOtherincomeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        otherincomeGetAttachmentsV1: async (pkiOtherincomeID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiOtherincomeID' is not null or undefined
+            assertParamExists('otherincomeGetAttachmentsV1', 'pkiOtherincomeID', pkiOtherincomeID)
+            const localVarPath = `/1/object/otherincome/{pkiOtherincomeID}/getAttachments`
+                .replace('{pkiOtherincomeID}', encodeURIComponent(String(pkiOtherincomeID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
         /**
          * 
          * @summary Retrieve Communication count
@@ -432,6 +557,33 @@ export const ObjectOtherincomeApiFp = function(configuration?: Configuration) {
     return {
         /**
          * 
+         * @summary Download multiples attachments from a Otherincome
+         * @param {number} pkiOtherincomeID 
+         * @param {OtherincomeBatchDownloadV1Request} otherincomeBatchDownloadV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async otherincomeBatchDownloadV1(pkiOtherincomeID: number, otherincomeBatchDownloadV1Request: OtherincomeBatchDownloadV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<File>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.otherincomeBatchDownloadV1(pkiOtherincomeID, otherincomeBatchDownloadV1Request, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectOtherincomeApi.otherincomeBatchDownloadV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Otherincome\'s attachments
+         * @param {number} pkiOtherincomeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async otherincomeGetAttachmentsV1(pkiOtherincomeID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<OtherincomeGetAttachmentsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.otherincomeGetAttachmentsV1(pkiOtherincomeID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectOtherincomeApi.otherincomeGetAttachmentsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Retrieve Communication count
          * @param {number} pkiOtherincomeID 
          * @param {*} [options] Override http request option.
@@ -524,6 +676,27 @@ export const ObjectOtherincomeApiFactory = function (configuration?: Configurati
     return {
         /**
          * 
+         * @summary Download multiples attachments from a Otherincome
+         * @param {number} pkiOtherincomeID 
+         * @param {OtherincomeBatchDownloadV1Request} otherincomeBatchDownloadV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        otherincomeBatchDownloadV1(pkiOtherincomeID: number, otherincomeBatchDownloadV1Request: OtherincomeBatchDownloadV1Request, options?: RawAxiosRequestConfig): AxiosPromise<File> {
+            return localVarFp.otherincomeBatchDownloadV1(pkiOtherincomeID, otherincomeBatchDownloadV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Otherincome\'s attachments
+         * @param {number} pkiOtherincomeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        otherincomeGetAttachmentsV1(pkiOtherincomeID: number, options?: RawAxiosRequestConfig): AxiosPromise<OtherincomeGetAttachmentsV1Response> {
+            return localVarFp.otherincomeGetAttachmentsV1(pkiOtherincomeID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Retrieve Communication count
          * @param {number} pkiOtherincomeID 
          * @param {*} [options] Override http request option.
@@ -594,6 +767,29 @@ export const ObjectOtherincomeApiFactory = function (configuration?: Configurati
  * ObjectOtherincomeApi - object-oriented interface
  */
 export class ObjectOtherincomeApi extends BaseAPI {
+    /**
+     * 
+     * @summary Download multiples attachments from a Otherincome
+     * @param {number} pkiOtherincomeID 
+     * @param {OtherincomeBatchDownloadV1Request} otherincomeBatchDownloadV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public otherincomeBatchDownloadV1(pkiOtherincomeID: number, otherincomeBatchDownloadV1Request: OtherincomeBatchDownloadV1Request, options?: RawAxiosRequestConfig) {
+        return ObjectOtherincomeApiFp(this.configuration).otherincomeBatchDownloadV1(pkiOtherincomeID, otherincomeBatchDownloadV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Otherincome\'s attachments
+     * @param {number} pkiOtherincomeID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public otherincomeGetAttachmentsV1(pkiOtherincomeID: number, options?: RawAxiosRequestConfig) {
+        return ObjectOtherincomeApiFp(this.configuration).otherincomeGetAttachmentsV1(pkiOtherincomeID, options).then((request) => request(this.axios, this.basePath));
+    }
+
     /**
      * 
      * @summary Retrieve Communication count

@@ -24,6 +24,10 @@ import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError
 // @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
+import type { EmployeeBatchDownloadV1Request } from '../model';
+// @ts-ignore
+import type { EmployeeGetAttachmentsV1Response } from '../model';
+// @ts-ignore
 import type { EmployeeGetListV1Response } from '../model';
 // @ts-ignore
 import type { EmployeeImportIntoEDMV1Request } from '../model';
@@ -38,6 +42,127 @@ import { RequestSignature, IHeadersData } from '../api/request-signature';
  */
 export const ObjectEmployeeApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
+        /**
+         * 
+         * @summary Download multiples attachments from a Employee
+         * @param {number} pkiEmployeeID 
+         * @param {EmployeeBatchDownloadV1Request} employeeBatchDownloadV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        employeeBatchDownloadV1: async (pkiEmployeeID: number, employeeBatchDownloadV1Request: EmployeeBatchDownloadV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiEmployeeID' is not null or undefined
+            assertParamExists('employeeBatchDownloadV1', 'pkiEmployeeID', pkiEmployeeID)
+            // verify required parameter 'employeeBatchDownloadV1Request' is not null or undefined
+            assertParamExists('employeeBatchDownloadV1', 'employeeBatchDownloadV1Request', employeeBatchDownloadV1Request)
+            const localVarPath = `/1/object/employee/{pkiEmployeeID}/batchDownload`
+                .replace('{pkiEmployeeID}', encodeURIComponent(String(pkiEmployeeID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/zip,text/xml,application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(employeeBatchDownloadV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Employee\'s attachments
+         * @param {number} pkiEmployeeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        employeeGetAttachmentsV1: async (pkiEmployeeID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiEmployeeID' is not null or undefined
+            assertParamExists('employeeGetAttachmentsV1', 'pkiEmployeeID', pkiEmployeeID)
+            const localVarPath = `/1/object/employee/{pkiEmployeeID}/getAttachments`
+                .replace('{pkiEmployeeID}', encodeURIComponent(String(pkiEmployeeID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
         /**
          * 
          * @summary Retrieve Employee list
@@ -192,6 +317,33 @@ export const ObjectEmployeeApiFp = function(configuration?: Configuration) {
     return {
         /**
          * 
+         * @summary Download multiples attachments from a Employee
+         * @param {number} pkiEmployeeID 
+         * @param {EmployeeBatchDownloadV1Request} employeeBatchDownloadV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async employeeBatchDownloadV1(pkiEmployeeID: number, employeeBatchDownloadV1Request: EmployeeBatchDownloadV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<File>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.employeeBatchDownloadV1(pkiEmployeeID, employeeBatchDownloadV1Request, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEmployeeApi.employeeBatchDownloadV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Employee\'s attachments
+         * @param {number} pkiEmployeeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async employeeGetAttachmentsV1(pkiEmployeeID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EmployeeGetAttachmentsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.employeeGetAttachmentsV1(pkiEmployeeID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEmployeeApi.employeeGetAttachmentsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Retrieve Employee list
          * @param {EmployeeGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -232,6 +384,27 @@ export const ObjectEmployeeApiFactory = function (configuration?: Configuration,
     return {
         /**
          * 
+         * @summary Download multiples attachments from a Employee
+         * @param {number} pkiEmployeeID 
+         * @param {EmployeeBatchDownloadV1Request} employeeBatchDownloadV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        employeeBatchDownloadV1(pkiEmployeeID: number, employeeBatchDownloadV1Request: EmployeeBatchDownloadV1Request, options?: RawAxiosRequestConfig): AxiosPromise<File> {
+            return localVarFp.employeeBatchDownloadV1(pkiEmployeeID, employeeBatchDownloadV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Employee\'s attachments
+         * @param {number} pkiEmployeeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        employeeGetAttachmentsV1(pkiEmployeeID: number, options?: RawAxiosRequestConfig): AxiosPromise<EmployeeGetAttachmentsV1Response> {
+            return localVarFp.employeeGetAttachmentsV1(pkiEmployeeID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Retrieve Employee list
          * @param {EmployeeGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -262,6 +435,29 @@ export const ObjectEmployeeApiFactory = function (configuration?: Configuration,
  * ObjectEmployeeApi - object-oriented interface
  */
 export class ObjectEmployeeApi extends BaseAPI {
+    /**
+     * 
+     * @summary Download multiples attachments from a Employee
+     * @param {number} pkiEmployeeID 
+     * @param {EmployeeBatchDownloadV1Request} employeeBatchDownloadV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public employeeBatchDownloadV1(pkiEmployeeID: number, employeeBatchDownloadV1Request: EmployeeBatchDownloadV1Request, options?: RawAxiosRequestConfig) {
+        return ObjectEmployeeApiFp(this.configuration).employeeBatchDownloadV1(pkiEmployeeID, employeeBatchDownloadV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Employee\'s attachments
+     * @param {number} pkiEmployeeID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public employeeGetAttachmentsV1(pkiEmployeeID: number, options?: RawAxiosRequestConfig) {
+        return ObjectEmployeeApiFp(this.configuration).employeeGetAttachmentsV1(pkiEmployeeID, options).then((request) => request(this.axios, this.basePath));
+    }
+
     /**
      * 
      * @summary Retrieve Employee list

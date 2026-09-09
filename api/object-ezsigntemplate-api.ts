@@ -934,7 +934,5 @@ export const EzsigntemplateGetListV1EOrderByEnum = {
     iEzsigntemplateSignaturetotal_DESC: 'iEzsigntemplateSignaturetotal_DESC',
     sEzsignfoldertypeNameX_ASC: 'sEzsignfoldertypeNameX_ASC',
     sEzsignfoldertypeNameX_DESC: 'sEzsignfoldertypeNameX_DESC',
-    eEzsigntemplateType_ASC2: 'eEzsigntemplateType_ASC',
-    eEzsigntemplateType_DESC2: 'eEzsigntemplateType_DESC',
 } as const;
 export type EzsigntemplateGetListV1EOrderByEnum = typeof EzsigntemplateGetListV1EOrderByEnum[keyof typeof EzsigntemplateGetListV1EOrderByEnum];

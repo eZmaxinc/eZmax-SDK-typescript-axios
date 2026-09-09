@@ -26,6 +26,10 @@ import type { CommonResponseError } from '../model';
 // @ts-ignore
 import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
+import type { SupplierBatchDownloadV1Request } from '../model';
+// @ts-ignore
+import type { SupplierGetAttachmentsV1Response } from '../model';
+// @ts-ignore
 import type { SupplierGetListV1Response } from '../model';
 // @ts-ignore
 import type { SupplierImportIntoEDMV1Request } from '../model';
@@ -38,6 +42,127 @@ import { RequestSignature, IHeadersData } from '../api/request-signature';
  */
 export const ObjectSupplierApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
+        /**
+         * 
+         * @summary Download multiples attachments from a Supplier
+         * @param {number} pkiSupplierID 
+         * @param {SupplierBatchDownloadV1Request} supplierBatchDownloadV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        supplierBatchDownloadV1: async (pkiSupplierID: number, supplierBatchDownloadV1Request: SupplierBatchDownloadV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiSupplierID' is not null or undefined
+            assertParamExists('supplierBatchDownloadV1', 'pkiSupplierID', pkiSupplierID)
+            // verify required parameter 'supplierBatchDownloadV1Request' is not null or undefined
+            assertParamExists('supplierBatchDownloadV1', 'supplierBatchDownloadV1Request', supplierBatchDownloadV1Request)
+            const localVarPath = `/1/object/supplier/{pkiSupplierID}/batchDownload`
+                .replace('{pkiSupplierID}', encodeURIComponent(String(pkiSupplierID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/zip,text/xml,application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(supplierBatchDownloadV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Supplier\'s attachments
+         * @param {number} pkiSupplierID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        supplierGetAttachmentsV1: async (pkiSupplierID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiSupplierID' is not null or undefined
+            assertParamExists('supplierGetAttachmentsV1', 'pkiSupplierID', pkiSupplierID)
+            const localVarPath = `/1/object/supplier/{pkiSupplierID}/getAttachments`
+                .replace('{pkiSupplierID}', encodeURIComponent(String(pkiSupplierID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
         /**
          * 
          * @summary Retrieve Supplier list
@@ -192,6 +317,33 @@ export const ObjectSupplierApiFp = function(configuration?: Configuration) {
     return {
         /**
          * 
+         * @summary Download multiples attachments from a Supplier
+         * @param {number} pkiSupplierID 
+         * @param {SupplierBatchDownloadV1Request} supplierBatchDownloadV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async supplierBatchDownloadV1(pkiSupplierID: number, supplierBatchDownloadV1Request: SupplierBatchDownloadV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<File>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.supplierBatchDownloadV1(pkiSupplierID, supplierBatchDownloadV1Request, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectSupplierApi.supplierBatchDownloadV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Supplier\'s attachments
+         * @param {number} pkiSupplierID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async supplierGetAttachmentsV1(pkiSupplierID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SupplierGetAttachmentsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.supplierGetAttachmentsV1(pkiSupplierID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectSupplierApi.supplierGetAttachmentsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Retrieve Supplier list
          * @param {SupplierGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -232,6 +384,27 @@ export const ObjectSupplierApiFactory = function (configuration?: Configuration,
     return {
         /**
          * 
+         * @summary Download multiples attachments from a Supplier
+         * @param {number} pkiSupplierID 
+         * @param {SupplierBatchDownloadV1Request} supplierBatchDownloadV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        supplierBatchDownloadV1(pkiSupplierID: number, supplierBatchDownloadV1Request: SupplierBatchDownloadV1Request, options?: RawAxiosRequestConfig): AxiosPromise<File> {
+            return localVarFp.supplierBatchDownloadV1(pkiSupplierID, supplierBatchDownloadV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Supplier\'s attachments
+         * @param {number} pkiSupplierID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        supplierGetAttachmentsV1(pkiSupplierID: number, options?: RawAxiosRequestConfig): AxiosPromise<SupplierGetAttachmentsV1Response> {
+            return localVarFp.supplierGetAttachmentsV1(pkiSupplierID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Retrieve Supplier list
          * @param {SupplierGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -262,6 +435,29 @@ export const ObjectSupplierApiFactory = function (configuration?: Configuration,
  * ObjectSupplierApi - object-oriented interface
  */
 export class ObjectSupplierApi extends BaseAPI {
+    /**
+     * 
+     * @summary Download multiples attachments from a Supplier
+     * @param {number} pkiSupplierID 
+     * @param {SupplierBatchDownloadV1Request} supplierBatchDownloadV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public supplierBatchDownloadV1(pkiSupplierID: number, supplierBatchDownloadV1Request: SupplierBatchDownloadV1Request, options?: RawAxiosRequestConfig) {
+        return ObjectSupplierApiFp(this.configuration).supplierBatchDownloadV1(pkiSupplierID, supplierBatchDownloadV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Supplier\'s attachments
+     * @param {number} pkiSupplierID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public supplierGetAttachmentsV1(pkiSupplierID: number, options?: RawAxiosRequestConfig) {
+        return ObjectSupplierApiFp(this.configuration).supplierGetAttachmentsV1(pkiSupplierID, options).then((request) => request(this.axios, this.basePath));
+    }
+
     /**
      * 
      * @summary Retrieve Supplier list

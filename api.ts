@@ -21,6 +21,7 @@ export enum EApiOperation {
     'module-report-api',
     'module-user-api',
     'object-activesession-api',
+    'object-adjustment-api',
     'object-agent-api',
     'object-agenttype-api',
     'object-apikey-api',
@@ -34,6 +35,7 @@ export enum EApiOperation {
     'object-brokertype-api',
     'object-buyercontract-api',
     'object-clonehistory-api',
+    'object-commissionadvance-api',
     'object-communication-api',
     'object-company-api',
     'object-contacttitle-api',
@@ -45,6 +47,9 @@ export enum EApiOperation {
     'object-currency-api',
     'object-customer-api',
     'object-department-api',
+    'object-deposit-api',
+    'object-deposittransitcheque-api',
+    'object-disclosure-api',
     'object-discussion-api',
     'object-discussionmembership-api',
     'object-discussionmessage-api',
@@ -96,6 +101,7 @@ export enum EApiOperation {
     'object-ezsigntemplatesigner-api',
     'object-ezsigntsarequirement-api',
     'object-ezsignuser-api',
+    'object-folder-api',
     'object-font-api',
     'object-franchisebroker-api',
     'object-franchiseoffice-api',
@@ -114,21 +120,27 @@ export enum EApiOperation {
     'object-leadsource-api',
     'object-module-api',
     'object-modulegroup-api',
+    'object-notary-api',
     'object-notificationsection-api',
     'object-notificationtest-api',
+    'object-officetaxreport-api',
     'object-otherincome-api',
     'object-otherincometype-api',
     'object-paymentgateway-api',
     'object-paymentmethod-api',
+    'object-paymentpreparation-api',
     'object-paymentterm-api',
     'object-pdfalevel-api',
     'object-period-api',
     'object-permission-api',
     'object-phonetype-api',
     'object-province-api',
+    'object-purchase-api',
     'object-realestateassociation-api',
     'object-realestateboard-api',
+    'object-reconciliation-api',
     'object-rejectedoffertopurchase-api',
+    'object-salary-api',
     'object-secretquestion-api',
     'object-sessionhistory-api',
     'object-signature-api',
@@ -165,6 +177,7 @@ export * from './api/module-ezmaxmaillinglist-api';
 export * from './api/module-report-api';
 export * from './api/module-user-api';
 export * from './api/object-activesession-api';
+export * from './api/object-adjustment-api';
 export * from './api/object-agent-api';
 export * from './api/object-agenttype-api';
 export * from './api/object-apikey-api';
@@ -178,6 +191,7 @@ export * from './api/object-broker-api';
 export * from './api/object-brokertype-api';
 export * from './api/object-buyercontract-api';
 export * from './api/object-clonehistory-api';
+export * from './api/object-commissionadvance-api';
 export * from './api/object-communication-api';
 export * from './api/object-company-api';
 export * from './api/object-contacttitle-api';
@@ -189,6 +203,9 @@ export * from './api/object-creditcardtype-api';
 export * from './api/object-currency-api';
 export * from './api/object-customer-api';
 export * from './api/object-department-api';
+export * from './api/object-deposit-api';
+export * from './api/object-deposittransitcheque-api';
+export * from './api/object-disclosure-api';
 export * from './api/object-discussion-api';
 export * from './api/object-discussionmembership-api';
 export * from './api/object-discussionmessage-api';
@@ -240,6 +257,7 @@ export * from './api/object-ezsigntemplatesignature-api';
 export * from './api/object-ezsigntemplatesigner-api';
 export * from './api/object-ezsigntsarequirement-api';
 export * from './api/object-ezsignuser-api';
+export * from './api/object-folder-api';
 export * from './api/object-font-api';
 export * from './api/object-franchisebroker-api';
 export * from './api/object-franchiseoffice-api';
@@ -258,21 +276,27 @@ export * from './api/object-lead-api';
 export * from './api/object-leadsource-api';
 export * from './api/object-module-api';
 export * from './api/object-modulegroup-api';
+export * from './api/object-notary-api';
 export * from './api/object-notificationsection-api';
 export * from './api/object-notificationtest-api';
+export * from './api/object-officetaxreport-api';
 export * from './api/object-otherincome-api';
 export * from './api/object-otherincometype-api';
 export * from './api/object-paymentgateway-api';
 export * from './api/object-paymentmethod-api';
+export * from './api/object-paymentpreparation-api';
 export * from './api/object-paymentterm-api';
 export * from './api/object-pdfalevel-api';
 export * from './api/object-period-api';
 export * from './api/object-permission-api';
 export * from './api/object-phonetype-api';
 export * from './api/object-province-api';
+export * from './api/object-purchase-api';
 export * from './api/object-realestateassociation-api';
 export * from './api/object-realestateboard-api';
+export * from './api/object-reconciliation-api';
 export * from './api/object-rejectedoffertopurchase-api';
+export * from './api/object-salary-api';
 export * from './api/object-secretquestion-api';
 export * from './api/object-sessionhistory-api';
 export * from './api/object-signature-api';

@@ -4,12 +4,70 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
+|[**invoiceBatchDownloadV1**](#invoicebatchdownloadv1) | **POST** /1/object/invoice/{pkiInvoiceID}/batchDownload | Download multiples attachments from an Invoice|
 |[**invoiceGetAttachmentsV1**](#invoicegetattachmentsv1) | **GET** /1/object/invoice/{pkiInvoiceID}/getAttachments | Retrieve Invoice\&#39;s Attachments|
 |[**invoiceGetCommunicationCountV1**](#invoicegetcommunicationcountv1) | **GET** /1/object/invoice/{pkiInvoiceID}/getCommunicationCount | Retrieve Communication count|
 |[**invoiceGetCommunicationListV1**](#invoicegetcommunicationlistv1) | **GET** /1/object/invoice/{pkiInvoiceID}/getCommunicationList | Retrieve Communication list|
 |[**invoiceGetCommunicationrecipientsV1**](#invoicegetcommunicationrecipientsv1) | **GET** /1/object/invoice/{pkiInvoiceID}/getCommunicationrecipients | Retrieve Invoice\&#39;s Communicationrecipient|
 |[**invoiceGetCommunicationsendersV1**](#invoicegetcommunicationsendersv1) | **GET** /1/object/invoice/{pkiInvoiceID}/getCommunicationsenders | Retrieve Invoice\&#39;s Communicationsender|
 |[**invoiceImportIntoEDMV1**](#invoiceimportintoedmv1) | **POST** /1/object/invoice/{pkiInvoiceID}/importIntoEDM | Import attachments into the Invoice|
+
+# **invoiceBatchDownloadV1**
+> File invoiceBatchDownloadV1(invoiceBatchDownloadV1Request)
+
+
+### Example
+
+```typescript
+import {
+    ObjectInvoiceApi,
+    Configuration,
+    InvoiceBatchDownloadV1Request
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectInvoiceApi(configuration);
+
+let pkiInvoiceID: number; // (default to undefined)
+let invoiceBatchDownloadV1Request: InvoiceBatchDownloadV1Request; //
+
+const { status, data } = await apiInstance.invoiceBatchDownloadV1(
+    pkiInvoiceID,
+    invoiceBatchDownloadV1Request
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **invoiceBatchDownloadV1Request** | **InvoiceBatchDownloadV1Request**|  | |
+| **pkiInvoiceID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**File**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/zip, text/xml, application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+|**406** | The URL is valid, but one of the Accept header is not defined or invalid. For example, you set the header \&quot;Accept: application/json\&quot; but the function can only return \&quot;Content-type: image/png\&quot; |  -  |
+|**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **invoiceGetAttachmentsV1**
 > InvoiceGetAttachmentsV1Response invoiceGetAttachmentsV1()
@@ -59,7 +117,7 @@ const { status, data } = await apiInstance.invoiceGetAttachmentsV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -111,7 +169,7 @@ const { status, data } = await apiInstance.invoiceGetCommunicationCountV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -163,7 +221,7 @@ const { status, data } = await apiInstance.invoiceGetCommunicationListV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -215,7 +273,7 @@ const { status, data } = await apiInstance.invoiceGetCommunicationrecipientsV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -267,7 +325,7 @@ const { status, data } = await apiInstance.invoiceGetCommunicationsendersV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -323,7 +381,7 @@ const { status, data } = await apiInstance.invoiceImportIntoEDMV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -24,6 +24,10 @@ import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError
 // @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
+import type { ElectronicfundstransferBatchDownloadV1Request } from '../model';
+// @ts-ignore
+import type { ElectronicfundstransferGetAttachmentsV1Response } from '../model';
+// @ts-ignore
 import type { ElectronicfundstransferGetCommunicationCountV1Response } from '../model';
 // @ts-ignore
 import type { ElectronicfundstransferGetCommunicationListV1Response } from '../model';
@@ -42,6 +46,127 @@ import { RequestSignature, IHeadersData } from '../api/request-signature';
  */
 export const ObjectElectronicfundstransferApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
+        /**
+         * 
+         * @summary Download multiples attachments from an Electronicfundstransfer
+         * @param {number} pkiElectronicfundstransferID 
+         * @param {ElectronicfundstransferBatchDownloadV1Request} electronicfundstransferBatchDownloadV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        electronicfundstransferBatchDownloadV1: async (pkiElectronicfundstransferID: number, electronicfundstransferBatchDownloadV1Request: ElectronicfundstransferBatchDownloadV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiElectronicfundstransferID' is not null or undefined
+            assertParamExists('electronicfundstransferBatchDownloadV1', 'pkiElectronicfundstransferID', pkiElectronicfundstransferID)
+            // verify required parameter 'electronicfundstransferBatchDownloadV1Request' is not null or undefined
+            assertParamExists('electronicfundstransferBatchDownloadV1', 'electronicfundstransferBatchDownloadV1Request', electronicfundstransferBatchDownloadV1Request)
+            const localVarPath = `/1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/batchDownload`
+                .replace('{pkiElectronicfundstransferID}', encodeURIComponent(String(pkiElectronicfundstransferID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/zip,text/xml,application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(electronicfundstransferBatchDownloadV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Electronicfundstransfer\'s attachments
+         * @param {number} pkiElectronicfundstransferID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        electronicfundstransferGetAttachmentsV1: async (pkiElectronicfundstransferID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiElectronicfundstransferID' is not null or undefined
+            assertParamExists('electronicfundstransferGetAttachmentsV1', 'pkiElectronicfundstransferID', pkiElectronicfundstransferID)
+            const localVarPath = `/1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/getAttachments`
+                .replace('{pkiElectronicfundstransferID}', encodeURIComponent(String(pkiElectronicfundstransferID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
         /**
          * 
          * @summary Retrieve Communication count
@@ -348,6 +473,33 @@ export const ObjectElectronicfundstransferApiFp = function(configuration?: Confi
     return {
         /**
          * 
+         * @summary Download multiples attachments from an Electronicfundstransfer
+         * @param {number} pkiElectronicfundstransferID 
+         * @param {ElectronicfundstransferBatchDownloadV1Request} electronicfundstransferBatchDownloadV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async electronicfundstransferBatchDownloadV1(pkiElectronicfundstransferID: number, electronicfundstransferBatchDownloadV1Request: ElectronicfundstransferBatchDownloadV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<File>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.electronicfundstransferBatchDownloadV1(pkiElectronicfundstransferID, electronicfundstransferBatchDownloadV1Request, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectElectronicfundstransferApi.electronicfundstransferBatchDownloadV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Electronicfundstransfer\'s attachments
+         * @param {number} pkiElectronicfundstransferID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async electronicfundstransferGetAttachmentsV1(pkiElectronicfundstransferID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ElectronicfundstransferGetAttachmentsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.electronicfundstransferGetAttachmentsV1(pkiElectronicfundstransferID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectElectronicfundstransferApi.electronicfundstransferGetAttachmentsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Retrieve Communication count
          * @param {number} pkiElectronicfundstransferID 
          * @param {*} [options] Override http request option.
@@ -423,6 +575,27 @@ export const ObjectElectronicfundstransferApiFactory = function (configuration?:
     return {
         /**
          * 
+         * @summary Download multiples attachments from an Electronicfundstransfer
+         * @param {number} pkiElectronicfundstransferID 
+         * @param {ElectronicfundstransferBatchDownloadV1Request} electronicfundstransferBatchDownloadV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        electronicfundstransferBatchDownloadV1(pkiElectronicfundstransferID: number, electronicfundstransferBatchDownloadV1Request: ElectronicfundstransferBatchDownloadV1Request, options?: RawAxiosRequestConfig): AxiosPromise<File> {
+            return localVarFp.electronicfundstransferBatchDownloadV1(pkiElectronicfundstransferID, electronicfundstransferBatchDownloadV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Electronicfundstransfer\'s attachments
+         * @param {number} pkiElectronicfundstransferID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        electronicfundstransferGetAttachmentsV1(pkiElectronicfundstransferID: number, options?: RawAxiosRequestConfig): AxiosPromise<ElectronicfundstransferGetAttachmentsV1Response> {
+            return localVarFp.electronicfundstransferGetAttachmentsV1(pkiElectronicfundstransferID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Retrieve Communication count
          * @param {number} pkiElectronicfundstransferID 
          * @param {*} [options] Override http request option.
@@ -479,6 +652,29 @@ export const ObjectElectronicfundstransferApiFactory = function (configuration?:
  * ObjectElectronicfundstransferApi - object-oriented interface
  */
 export class ObjectElectronicfundstransferApi extends BaseAPI {
+    /**
+     * 
+     * @summary Download multiples attachments from an Electronicfundstransfer
+     * @param {number} pkiElectronicfundstransferID 
+     * @param {ElectronicfundstransferBatchDownloadV1Request} electronicfundstransferBatchDownloadV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public electronicfundstransferBatchDownloadV1(pkiElectronicfundstransferID: number, electronicfundstransferBatchDownloadV1Request: ElectronicfundstransferBatchDownloadV1Request, options?: RawAxiosRequestConfig) {
+        return ObjectElectronicfundstransferApiFp(this.configuration).electronicfundstransferBatchDownloadV1(pkiElectronicfundstransferID, electronicfundstransferBatchDownloadV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Electronicfundstransfer\'s attachments
+     * @param {number} pkiElectronicfundstransferID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public electronicfundstransferGetAttachmentsV1(pkiElectronicfundstransferID: number, options?: RawAxiosRequestConfig) {
+        return ObjectElectronicfundstransferApiFp(this.configuration).electronicfundstransferGetAttachmentsV1(pkiElectronicfundstransferID, options).then((request) => request(this.axios, this.basePath));
+    }
+
     /**
      * 
      * @summary Retrieve Communication count

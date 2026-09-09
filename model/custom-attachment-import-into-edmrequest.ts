@@ -146,12 +146,12 @@ export class ValidationObjectCustomAttachmentImportIntoEDMRequest {
    }
    sAttachmentName = {
       type: 'string',
-      pattern: /^.{0,75}$/,
+      pattern: /^(?!\.{1,2}$)(?!.*[ .]$)(?!(?:CON|PRN|AUX|NUL|COM(?:[1-9]|[¹²³])|LPT(?:[1-9]|[¹²³]))(?:\.|$))[^\x00-\x1F<>:"\/\\\\|?*]{1,75}$/,
       required: true
    }
    sAttachmentCategory = {
       type: 'string',
-      pattern: /^.{0,75}$/,
+      pattern: /^(?!\.{1,2}$)(?!.*[ .]$)(?!(?:CON|PRN|AUX|NUL|COM(?:[1-9]|[¹²³])|LPT(?:[1-9]|[¹²³]))(?:\.|$))[^\x00-\x1F<>:"\/\\\\|?*]{0,75}$/,
       required: true
    }
    eAttachmentPrivacy = {
@@ -166,7 +166,7 @@ export class ValidationObjectCustomAttachmentImportIntoEDMRequest {
    }
    sAttachmentMD5 = {
       type: 'string',
-      pattern: /^.{32}$/,
+      pattern: /^[a-f0-9]{32}$/,
       required: false
    }
    bAttachmentForceoverwrite = {

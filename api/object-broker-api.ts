@@ -22,6 +22,10 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
+import type { BrokerBatchDownloadV1Request } from '../model';
+// @ts-ignore
+import type { BrokerGetAttachmentsV1Response } from '../model';
+// @ts-ignore
 import type { BrokerGetAutocompleteV2Response } from '../model';
 // @ts-ignore
 import type { BrokerGetListV1Response } from '../model';
@@ -40,6 +44,127 @@ import { RequestSignature, IHeadersData } from '../api/request-signature';
  */
 export const ObjectBrokerApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
+        /**
+         * 
+         * @summary Download multiples attachments from a Broker
+         * @param {number} pkiBrokerID 
+         * @param {BrokerBatchDownloadV1Request} brokerBatchDownloadV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        brokerBatchDownloadV1: async (pkiBrokerID: number, brokerBatchDownloadV1Request: BrokerBatchDownloadV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiBrokerID' is not null or undefined
+            assertParamExists('brokerBatchDownloadV1', 'pkiBrokerID', pkiBrokerID)
+            // verify required parameter 'brokerBatchDownloadV1Request' is not null or undefined
+            assertParamExists('brokerBatchDownloadV1', 'brokerBatchDownloadV1Request', brokerBatchDownloadV1Request)
+            const localVarPath = `/1/object/broker/{pkiBrokerID}/batchDownload`
+                .replace('{pkiBrokerID}', encodeURIComponent(String(pkiBrokerID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/zip,text/xml,application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(brokerBatchDownloadV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Broker\'s attachments
+         * @param {number} pkiBrokerID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        brokerGetAttachmentsV1: async (pkiBrokerID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiBrokerID' is not null or undefined
+            assertParamExists('brokerGetAttachmentsV1', 'pkiBrokerID', pkiBrokerID)
+            const localVarPath = `/1/object/broker/{pkiBrokerID}/getAttachments`
+                .replace('{pkiBrokerID}', encodeURIComponent(String(pkiBrokerID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
         /**
          * Get the list of Broker to be used in a dropdown or autocomplete control.
          * @summary Retrieve Brokers and IDs
@@ -267,6 +392,33 @@ export const ObjectBrokerApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = ObjectBrokerApiAxiosParamCreator(configuration)
     return {
         /**
+         * 
+         * @summary Download multiples attachments from a Broker
+         * @param {number} pkiBrokerID 
+         * @param {BrokerBatchDownloadV1Request} brokerBatchDownloadV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async brokerBatchDownloadV1(pkiBrokerID: number, brokerBatchDownloadV1Request: BrokerBatchDownloadV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<File>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.brokerBatchDownloadV1(pkiBrokerID, brokerBatchDownloadV1Request, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectBrokerApi.brokerBatchDownloadV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Broker\'s attachments
+         * @param {number} pkiBrokerID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async brokerGetAttachmentsV1(pkiBrokerID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BrokerGetAttachmentsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.brokerGetAttachmentsV1(pkiBrokerID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectBrokerApi.brokerGetAttachmentsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * Get the list of Broker to be used in a dropdown or autocomplete control.
          * @summary Retrieve Brokers and IDs
          * @param {BrokerGetAutocompleteV2SSelectorEnum} sSelector The type of Brokers to return
@@ -323,6 +475,27 @@ export const ObjectBrokerApiFactory = function (configuration?: Configuration, b
     const localVarFp = ObjectBrokerApiFp(configuration)
     return {
         /**
+         * 
+         * @summary Download multiples attachments from a Broker
+         * @param {number} pkiBrokerID 
+         * @param {BrokerBatchDownloadV1Request} brokerBatchDownloadV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        brokerBatchDownloadV1(pkiBrokerID: number, brokerBatchDownloadV1Request: BrokerBatchDownloadV1Request, options?: RawAxiosRequestConfig): AxiosPromise<File> {
+            return localVarFp.brokerBatchDownloadV1(pkiBrokerID, brokerBatchDownloadV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Broker\'s attachments
+         * @param {number} pkiBrokerID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        brokerGetAttachmentsV1(pkiBrokerID: number, options?: RawAxiosRequestConfig): AxiosPromise<BrokerGetAttachmentsV1Response> {
+            return localVarFp.brokerGetAttachmentsV1(pkiBrokerID, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Get the list of Broker to be used in a dropdown or autocomplete control.
          * @summary Retrieve Brokers and IDs
          * @param {BrokerGetAutocompleteV2SSelectorEnum} sSelector The type of Brokers to return
@@ -367,6 +540,29 @@ export const ObjectBrokerApiFactory = function (configuration?: Configuration, b
  * ObjectBrokerApi - object-oriented interface
  */
 export class ObjectBrokerApi extends BaseAPI {
+    /**
+     * 
+     * @summary Download multiples attachments from a Broker
+     * @param {number} pkiBrokerID 
+     * @param {BrokerBatchDownloadV1Request} brokerBatchDownloadV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public brokerBatchDownloadV1(pkiBrokerID: number, brokerBatchDownloadV1Request: BrokerBatchDownloadV1Request, options?: RawAxiosRequestConfig) {
+        return ObjectBrokerApiFp(this.configuration).brokerBatchDownloadV1(pkiBrokerID, brokerBatchDownloadV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Broker\'s attachments
+     * @param {number} pkiBrokerID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public brokerGetAttachmentsV1(pkiBrokerID: number, options?: RawAxiosRequestConfig) {
+        return ObjectBrokerApiFp(this.configuration).brokerGetAttachmentsV1(pkiBrokerID, options).then((request) => request(this.axios, this.basePath));
+    }
+
     /**
      * Get the list of Broker to be used in a dropdown or autocomplete control.
      * @summary Retrieve Brokers and IDs

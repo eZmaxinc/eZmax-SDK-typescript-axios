@@ -24,6 +24,10 @@ import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError
 // @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
+import type { CustomerBatchDownloadV1Request } from '../model';
+// @ts-ignore
+import type { CustomerGetAttachmentsV1Response } from '../model';
+// @ts-ignore
 import type { CustomerGetAutocompleteV2Response } from '../model';
 // @ts-ignore
 import type { CustomerGetObjectV2Response } from '../model';
@@ -40,6 +44,127 @@ import { RequestSignature, IHeadersData } from '../api/request-signature';
  */
 export const ObjectCustomerApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
+        /**
+         * 
+         * @summary Download multiples attachments from a Customer
+         * @param {number} pkiCustomerID 
+         * @param {CustomerBatchDownloadV1Request} customerBatchDownloadV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        customerBatchDownloadV1: async (pkiCustomerID: number, customerBatchDownloadV1Request: CustomerBatchDownloadV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiCustomerID' is not null or undefined
+            assertParamExists('customerBatchDownloadV1', 'pkiCustomerID', pkiCustomerID)
+            // verify required parameter 'customerBatchDownloadV1Request' is not null or undefined
+            assertParamExists('customerBatchDownloadV1', 'customerBatchDownloadV1Request', customerBatchDownloadV1Request)
+            const localVarPath = `/1/object/customer/{pkiCustomerID}/batchDownload`
+                .replace('{pkiCustomerID}', encodeURIComponent(String(pkiCustomerID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/zip,text/xml,application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(customerBatchDownloadV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Customer\'s attachments
+         * @param {number} pkiCustomerID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        customerGetAttachmentsV1: async (pkiCustomerID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiCustomerID' is not null or undefined
+            assertParamExists('customerGetAttachmentsV1', 'pkiCustomerID', pkiCustomerID)
+            const localVarPath = `/1/object/customer/{pkiCustomerID}/getAttachments`
+                .replace('{pkiCustomerID}', encodeURIComponent(String(pkiCustomerID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
         /**
          * Get the list of Customer to be used in a dropdown or autocomplete control.
          * @summary Retrieve Customers and IDs
@@ -245,6 +370,33 @@ export const ObjectCustomerApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = ObjectCustomerApiAxiosParamCreator(configuration)
     return {
         /**
+         * 
+         * @summary Download multiples attachments from a Customer
+         * @param {number} pkiCustomerID 
+         * @param {CustomerBatchDownloadV1Request} customerBatchDownloadV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async customerBatchDownloadV1(pkiCustomerID: number, customerBatchDownloadV1Request: CustomerBatchDownloadV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<File>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.customerBatchDownloadV1(pkiCustomerID, customerBatchDownloadV1Request, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectCustomerApi.customerBatchDownloadV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Customer\'s attachments
+         * @param {number} pkiCustomerID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async customerGetAttachmentsV1(pkiCustomerID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CustomerGetAttachmentsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.customerGetAttachmentsV1(pkiCustomerID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectCustomerApi.customerGetAttachmentsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * Get the list of Customer to be used in a dropdown or autocomplete control.
          * @summary Retrieve Customers and IDs
          * @param {CustomerGetAutocompleteV2SSelectorEnum} sSelector The type of Customers to return
@@ -297,6 +449,27 @@ export const ObjectCustomerApiFactory = function (configuration?: Configuration,
     const localVarFp = ObjectCustomerApiFp(configuration)
     return {
         /**
+         * 
+         * @summary Download multiples attachments from a Customer
+         * @param {number} pkiCustomerID 
+         * @param {CustomerBatchDownloadV1Request} customerBatchDownloadV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        customerBatchDownloadV1(pkiCustomerID: number, customerBatchDownloadV1Request: CustomerBatchDownloadV1Request, options?: RawAxiosRequestConfig): AxiosPromise<File> {
+            return localVarFp.customerBatchDownloadV1(pkiCustomerID, customerBatchDownloadV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Customer\'s attachments
+         * @param {number} pkiCustomerID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        customerGetAttachmentsV1(pkiCustomerID: number, options?: RawAxiosRequestConfig): AxiosPromise<CustomerGetAttachmentsV1Response> {
+            return localVarFp.customerGetAttachmentsV1(pkiCustomerID, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Get the list of Customer to be used in a dropdown or autocomplete control.
          * @summary Retrieve Customers and IDs
          * @param {CustomerGetAutocompleteV2SSelectorEnum} sSelector The type of Customers to return
@@ -337,6 +510,29 @@ export const ObjectCustomerApiFactory = function (configuration?: Configuration,
  * ObjectCustomerApi - object-oriented interface
  */
 export class ObjectCustomerApi extends BaseAPI {
+    /**
+     * 
+     * @summary Download multiples attachments from a Customer
+     * @param {number} pkiCustomerID 
+     * @param {CustomerBatchDownloadV1Request} customerBatchDownloadV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public customerBatchDownloadV1(pkiCustomerID: number, customerBatchDownloadV1Request: CustomerBatchDownloadV1Request, options?: RawAxiosRequestConfig) {
+        return ObjectCustomerApiFp(this.configuration).customerBatchDownloadV1(pkiCustomerID, customerBatchDownloadV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Customer\'s attachments
+     * @param {number} pkiCustomerID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public customerGetAttachmentsV1(pkiCustomerID: number, options?: RawAxiosRequestConfig) {
+        return ObjectCustomerApiFp(this.configuration).customerGetAttachmentsV1(pkiCustomerID, options).then((request) => request(this.axios, this.basePath));
+    }
+
     /**
      * Get the list of Customer to be used in a dropdown or autocomplete control.
      * @summary Retrieve Customers and IDs

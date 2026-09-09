@@ -42,12 +42,12 @@ export interface BuyercontractListElement {
     /*'eBuyercontractStep': FieldEBuyercontractStep;*/
     'eBuyercontractStep': FieldEBuyercontractStep;
     /**
-     * The minimumprice of the Buyercontract
+     * The minimum price of the Buyercontract
      */
     /*'dBuyercontractMinimumprice': string;*/
     'dBuyercontractMinimumprice': string;
     /**
-     * The maximumprice of the Buyercontract
+     * The maximum price of the Buyercontract
      */
     /*'dBuyercontractMaximumprice': string;*/
     'dBuyercontractMaximumprice': string;
@@ -64,7 +64,7 @@ export interface BuyercontractListElement {
     /*'dtBuyercontractDate': string;*/
     'dtBuyercontractDate': string;
     /**
-     * The expirationdate of the Buyercontract
+     * The expiration date of the Buyercontract
      */
     /*'dtBuyercontractExpirationdate'?: string;*/
     'dtBuyercontractExpirationdate'?: string;

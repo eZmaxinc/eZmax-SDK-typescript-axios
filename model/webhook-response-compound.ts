@@ -272,7 +272,7 @@ export class ValidationObjectWebhookResponseCompound {
    }
    eWebhookRealestateevent = {
       type: 'enum',
-      allowableValues: ['InscriptionCreated','InscriptionModified','InscriptionnotauthenticatedCreated','InscriptionnotauthenticatedModified'],
+      allowableValues: ['BuyercontractCreated','BuyercontractModified','InscriptionCreated','InscriptionModified','InscriptionnotauthenticatedCreated','InscriptionnotauthenticatedModified'],
       required: false
    }
    sWebhookUrl = {

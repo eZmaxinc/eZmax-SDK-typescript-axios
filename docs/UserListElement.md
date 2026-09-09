@@ -7,6 +7,8 @@ A User List Element
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pkiUserID** | **number** | The unique ID of the User | [default to undefined]
+**fkiAgentID** | **number** | The unique ID of the Agent. | [optional] [default to undefined]
+**fkiBrokerID** | **number** | The unique ID of the Broker. | [optional] [default to undefined]
 **sUserFirstname** | **string** | The first name of the user | [default to undefined]
 **sUserLastname** | **string** | The last name of the user | [default to undefined]
 **sUserLoginname** | **string** | The login name of the User. | [default to undefined]
@@ -26,6 +28,8 @@ import { UserListElement } from '@ezmaxinc/ezmax-sdk-typescript-axios';
 
 const instance: UserListElement = {
     pkiUserID,
+    fkiAgentID,
+    fkiBrokerID,
     sUserFirstname,
     sUserLastname,
     sUserLoginname,

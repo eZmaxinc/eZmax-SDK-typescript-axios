@@ -55,7 +55,7 @@ export class DataObjectEzsignfoldersignerassociationRequestPatch {
 export class ValidationObjectEzsignfoldersignerassociationRequestPatch {
    eEzsignfoldersignerassociationRole = {
       type: 'enum',
-      allowableValues: ['CC','Signer','SignerAndCC'],
+      allowableValues: ['CC','CCDeleted','Signer','SignerAndCC'],
       required: false
    }
    tEzsignfoldersignerassociationMessage = {

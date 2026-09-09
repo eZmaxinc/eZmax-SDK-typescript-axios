@@ -24,6 +24,10 @@ import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError
 // @ts-ignore
 import type { AttachmentGetAttachmentlogsV1Response } from '../model';
 // @ts-ignore
+import type { AttachmentRenameV1Request } from '../model';
+// @ts-ignore
+import type { AttachmentRenameV1Response } from '../model';
+// @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
@@ -151,6 +155,69 @@ export const ObjectAttachmentApiAxiosParamCreator = function (configuration?: Co
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * The endpoint allows to change the attachment\'s file name and category.
+         * @summary Rename an Attachment
+         * @param {number} pkiAttachmentID 
+         * @param {AttachmentRenameV1Request} attachmentRenameV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        attachmentRenameV1: async (pkiAttachmentID: number, attachmentRenameV1Request: AttachmentRenameV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiAttachmentID' is not null or undefined
+            assertParamExists('attachmentRenameV1', 'pkiAttachmentID', pkiAttachmentID)
+            // verify required parameter 'attachmentRenameV1Request' is not null or undefined
+            assertParamExists('attachmentRenameV1', 'attachmentRenameV1Request', attachmentRenameV1Request)
+            const localVarPath = `/1/object/attachment/{pkiAttachmentID}/rename`
+                .replace('{pkiAttachmentID}', encodeURIComponent(String(pkiAttachmentID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(attachmentRenameV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -186,6 +253,20 @@ export const ObjectAttachmentApiFp = function(configuration?: Configuration) {
             const localVarOperationServerBasePath = operationServerMap['ObjectAttachmentApi.attachmentGetAttachmentlogsV1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
+        /**
+         * The endpoint allows to change the attachment\'s file name and category.
+         * @summary Rename an Attachment
+         * @param {number} pkiAttachmentID 
+         * @param {AttachmentRenameV1Request} attachmentRenameV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async attachmentRenameV1(pkiAttachmentID: number, attachmentRenameV1Request: AttachmentRenameV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AttachmentRenameV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.attachmentRenameV1(pkiAttachmentID, attachmentRenameV1Request, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectAttachmentApi.attachmentRenameV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
     }
 };
 
@@ -215,6 +296,17 @@ export const ObjectAttachmentApiFactory = function (configuration?: Configuratio
         attachmentGetAttachmentlogsV1(pkiAttachmentID: number, options?: RawAxiosRequestConfig): AxiosPromise<AttachmentGetAttachmentlogsV1Response> {
             return localVarFp.attachmentGetAttachmentlogsV1(pkiAttachmentID, options).then((request) => request(axios, basePath));
         },
+        /**
+         * The endpoint allows to change the attachment\'s file name and category.
+         * @summary Rename an Attachment
+         * @param {number} pkiAttachmentID 
+         * @param {AttachmentRenameV1Request} attachmentRenameV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        attachmentRenameV1(pkiAttachmentID: number, attachmentRenameV1Request: AttachmentRenameV1Request, options?: RawAxiosRequestConfig): AxiosPromise<AttachmentRenameV1Response> {
+            return localVarFp.attachmentRenameV1(pkiAttachmentID, attachmentRenameV1Request, options).then((request) => request(axios, basePath));
+        },
     };
 };
 
@@ -242,6 +334,18 @@ export class ObjectAttachmentApi extends BaseAPI {
      */
     public attachmentGetAttachmentlogsV1(pkiAttachmentID: number, options?: RawAxiosRequestConfig) {
         return ObjectAttachmentApiFp(this.configuration).attachmentGetAttachmentlogsV1(pkiAttachmentID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * The endpoint allows to change the attachment\'s file name and category.
+     * @summary Rename an Attachment
+     * @param {number} pkiAttachmentID 
+     * @param {AttachmentRenameV1Request} attachmentRenameV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public attachmentRenameV1(pkiAttachmentID: number, attachmentRenameV1Request: AttachmentRenameV1Request, options?: RawAxiosRequestConfig) {
+        return ObjectAttachmentApiFp(this.configuration).attachmentRenameV1(pkiAttachmentID, attachmentRenameV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

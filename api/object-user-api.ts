@@ -1889,6 +1889,10 @@ export type UserGetAutocompleteV2EFilterActiveEnum = typeof UserGetAutocompleteV
 export const UserGetListV1EOrderByEnum = {
     pkiUserID_ASC: 'pkiUserID_ASC',
     pkiUserID_DESC: 'pkiUserID_DESC',
+    fkiAgentID_ASC: 'fkiAgentID_ASC',
+    fkiAgentID_DESC: 'fkiAgentID_DESC',
+    fkiBrokerID_ASC: 'fkiBrokerID_ASC',
+    fkiBrokerID_DESC: 'fkiBrokerID_DESC',
     sUserFirstname_ASC: 'sUserFirstname_ASC',
     sUserFirstname_DESC: 'sUserFirstname_DESC',
     sUserLastname_ASC: 'sUserLastname_ASC',

@@ -26,9 +26,13 @@ import type { CommonResponseError } from '../model';
 // @ts-ignore
 import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
+import type { InscriptionnotauthenticatedBatchDownloadV1Request } from '../model';
+// @ts-ignore
 import type { InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request } from '../model';
 // @ts-ignore
 import type { InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Response } from '../model';
+// @ts-ignore
+import type { InscriptionnotauthenticatedGetAttachmentsV1Response } from '../model';
 // @ts-ignore
 import type { InscriptionnotauthenticatedGetCommunicationCountV1Response } from '../model';
 // @ts-ignore
@@ -54,6 +58,69 @@ import { RequestSignature, IHeadersData } from '../api/request-signature';
  */
 export const ObjectInscriptionnotauthenticatedApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
+        /**
+         * 
+         * @summary Download multiples attachments from a Inscriptionnotauthenticated
+         * @param {number} pkiInscriptionnotauthenticatedID 
+         * @param {InscriptionnotauthenticatedBatchDownloadV1Request} inscriptionnotauthenticatedBatchDownloadV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        inscriptionnotauthenticatedBatchDownloadV1: async (pkiInscriptionnotauthenticatedID: number, inscriptionnotauthenticatedBatchDownloadV1Request: InscriptionnotauthenticatedBatchDownloadV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiInscriptionnotauthenticatedID' is not null or undefined
+            assertParamExists('inscriptionnotauthenticatedBatchDownloadV1', 'pkiInscriptionnotauthenticatedID', pkiInscriptionnotauthenticatedID)
+            // verify required parameter 'inscriptionnotauthenticatedBatchDownloadV1Request' is not null or undefined
+            assertParamExists('inscriptionnotauthenticatedBatchDownloadV1', 'inscriptionnotauthenticatedBatchDownloadV1Request', inscriptionnotauthenticatedBatchDownloadV1Request)
+            const localVarPath = `/1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/batchDownload`
+                .replace('{pkiInscriptionnotauthenticatedID}', encodeURIComponent(String(pkiInscriptionnotauthenticatedID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/zip,text/xml,application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(inscriptionnotauthenticatedBatchDownloadV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
         /**
          * 
          * @summary Fills the Inscriptionnotauthenticatedcondition in the Inscriptionnotauthenticated
@@ -104,6 +171,64 @@ export const ObjectInscriptionnotauthenticatedApiAxiosParamCreator = function (c
                         authorization: configuration.apiKey as string,
                         secret: secret as string,
                         method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Inscriptionnotauthenticated\'s attachments
+         * @param {number} pkiInscriptionnotauthenticatedID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        inscriptionnotauthenticatedGetAttachmentsV1: async (pkiInscriptionnotauthenticatedID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiInscriptionnotauthenticatedID' is not null or undefined
+            assertParamExists('inscriptionnotauthenticatedGetAttachmentsV1', 'pkiInscriptionnotauthenticatedID', pkiInscriptionnotauthenticatedID)
+            const localVarPath = `/1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getAttachments`
+                .replace('{pkiInscriptionnotauthenticatedID}', encodeURIComponent(String(pkiInscriptionnotauthenticatedID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
                         url: basePath + toPathString(localVarUrlObj) as string,
                         body: localVarRequestOptions.data || '' as string
                     }
@@ -619,6 +744,20 @@ export const ObjectInscriptionnotauthenticatedApiFp = function(configuration?: C
     return {
         /**
          * 
+         * @summary Download multiples attachments from a Inscriptionnotauthenticated
+         * @param {number} pkiInscriptionnotauthenticatedID 
+         * @param {InscriptionnotauthenticatedBatchDownloadV1Request} inscriptionnotauthenticatedBatchDownloadV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async inscriptionnotauthenticatedBatchDownloadV1(pkiInscriptionnotauthenticatedID: number, inscriptionnotauthenticatedBatchDownloadV1Request: InscriptionnotauthenticatedBatchDownloadV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<File>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.inscriptionnotauthenticatedBatchDownloadV1(pkiInscriptionnotauthenticatedID, inscriptionnotauthenticatedBatchDownloadV1Request, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectInscriptionnotauthenticatedApi.inscriptionnotauthenticatedBatchDownloadV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Fills the Inscriptionnotauthenticatedcondition in the Inscriptionnotauthenticated
          * @param {number} pkiInscriptionnotauthenticatedID 
          * @param {InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request} inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request 
@@ -629,6 +768,19 @@ export const ObjectInscriptionnotauthenticatedApiFp = function(configuration?: C
             const localVarAxiosArgs = await localVarAxiosParamCreator.inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1(pkiInscriptionnotauthenticatedID, inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectInscriptionnotauthenticatedApi.inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Inscriptionnotauthenticated\'s attachments
+         * @param {number} pkiInscriptionnotauthenticatedID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async inscriptionnotauthenticatedGetAttachmentsV1(pkiInscriptionnotauthenticatedID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InscriptionnotauthenticatedGetAttachmentsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.inscriptionnotauthenticatedGetAttachmentsV1(pkiInscriptionnotauthenticatedID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectInscriptionnotauthenticatedApi.inscriptionnotauthenticatedGetAttachmentsV1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
@@ -751,6 +903,17 @@ export const ObjectInscriptionnotauthenticatedApiFactory = function (configurati
     return {
         /**
          * 
+         * @summary Download multiples attachments from a Inscriptionnotauthenticated
+         * @param {number} pkiInscriptionnotauthenticatedID 
+         * @param {InscriptionnotauthenticatedBatchDownloadV1Request} inscriptionnotauthenticatedBatchDownloadV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        inscriptionnotauthenticatedBatchDownloadV1(pkiInscriptionnotauthenticatedID: number, inscriptionnotauthenticatedBatchDownloadV1Request: InscriptionnotauthenticatedBatchDownloadV1Request, options?: RawAxiosRequestConfig): AxiosPromise<File> {
+            return localVarFp.inscriptionnotauthenticatedBatchDownloadV1(pkiInscriptionnotauthenticatedID, inscriptionnotauthenticatedBatchDownloadV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Fills the Inscriptionnotauthenticatedcondition in the Inscriptionnotauthenticated
          * @param {number} pkiInscriptionnotauthenticatedID 
          * @param {InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request} inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request 
@@ -759,6 +922,16 @@ export const ObjectInscriptionnotauthenticatedApiFactory = function (configurati
          */
         inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1(pkiInscriptionnotauthenticatedID: number, inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request: InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request, options?: RawAxiosRequestConfig): AxiosPromise<InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Response> {
             return localVarFp.inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1(pkiInscriptionnotauthenticatedID, inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Inscriptionnotauthenticated\'s attachments
+         * @param {number} pkiInscriptionnotauthenticatedID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        inscriptionnotauthenticatedGetAttachmentsV1(pkiInscriptionnotauthenticatedID: number, options?: RawAxiosRequestConfig): AxiosPromise<InscriptionnotauthenticatedGetAttachmentsV1Response> {
+            return localVarFp.inscriptionnotauthenticatedGetAttachmentsV1(pkiInscriptionnotauthenticatedID, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -854,6 +1027,18 @@ export const ObjectInscriptionnotauthenticatedApiFactory = function (configurati
 export class ObjectInscriptionnotauthenticatedApi extends BaseAPI {
     /**
      * 
+     * @summary Download multiples attachments from a Inscriptionnotauthenticated
+     * @param {number} pkiInscriptionnotauthenticatedID 
+     * @param {InscriptionnotauthenticatedBatchDownloadV1Request} inscriptionnotauthenticatedBatchDownloadV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public inscriptionnotauthenticatedBatchDownloadV1(pkiInscriptionnotauthenticatedID: number, inscriptionnotauthenticatedBatchDownloadV1Request: InscriptionnotauthenticatedBatchDownloadV1Request, options?: RawAxiosRequestConfig) {
+        return ObjectInscriptionnotauthenticatedApiFp(this.configuration).inscriptionnotauthenticatedBatchDownloadV1(pkiInscriptionnotauthenticatedID, inscriptionnotauthenticatedBatchDownloadV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
      * @summary Fills the Inscriptionnotauthenticatedcondition in the Inscriptionnotauthenticated
      * @param {number} pkiInscriptionnotauthenticatedID 
      * @param {InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request} inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request 
@@ -862,6 +1047,17 @@ export class ObjectInscriptionnotauthenticatedApi extends BaseAPI {
      */
     public inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1(pkiInscriptionnotauthenticatedID: number, inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request: InscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request, options?: RawAxiosRequestConfig) {
         return ObjectInscriptionnotauthenticatedApiFp(this.configuration).inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1(pkiInscriptionnotauthenticatedID, inscriptionnotauthenticatedFillInscriptionnotauthenticatedconditionV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Inscriptionnotauthenticated\'s attachments
+     * @param {number} pkiInscriptionnotauthenticatedID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public inscriptionnotauthenticatedGetAttachmentsV1(pkiInscriptionnotauthenticatedID: number, options?: RawAxiosRequestConfig) {
+        return ObjectInscriptionnotauthenticatedApiFp(this.configuration).inscriptionnotauthenticatedGetAttachmentsV1(pkiInscriptionnotauthenticatedID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

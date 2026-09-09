@@ -4,9 +4,117 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
+|[**brokerBatchDownloadV1**](#brokerbatchdownloadv1) | **POST** /1/object/broker/{pkiBrokerID}/batchDownload | Download multiples attachments from a Broker|
+|[**brokerGetAttachmentsV1**](#brokergetattachmentsv1) | **GET** /1/object/broker/{pkiBrokerID}/getAttachments | Retrieve Broker\&#39;s attachments|
 |[**brokerGetAutocompleteV2**](#brokergetautocompletev2) | **GET** /2/object/broker/getAutocomplete/{sSelector} | Retrieve Brokers and IDs|
 |[**brokerGetListV1**](#brokergetlistv1) | **GET** /1/object/broker/getList | Retrieve Broker list|
 |[**brokerImportIntoEDMV1**](#brokerimportintoedmv1) | **POST** /1/object/broker/{pkiBrokerID}/importIntoEDM | Import attachments into the Broker|
+
+# **brokerBatchDownloadV1**
+> File brokerBatchDownloadV1(brokerBatchDownloadV1Request)
+
+
+### Example
+
+```typescript
+import {
+    ObjectBrokerApi,
+    Configuration,
+    BrokerBatchDownloadV1Request
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectBrokerApi(configuration);
+
+let pkiBrokerID: number; // (default to undefined)
+let brokerBatchDownloadV1Request: BrokerBatchDownloadV1Request; //
+
+const { status, data } = await apiInstance.brokerBatchDownloadV1(
+    pkiBrokerID,
+    brokerBatchDownloadV1Request
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **brokerBatchDownloadV1Request** | **BrokerBatchDownloadV1Request**|  | |
+| **pkiBrokerID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**File**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/zip, text/xml, application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **brokerGetAttachmentsV1**
+> BrokerGetAttachmentsV1Response brokerGetAttachmentsV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectBrokerApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectBrokerApi(configuration);
+
+let pkiBrokerID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.brokerGetAttachmentsV1(
+    pkiBrokerID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiBrokerID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**BrokerGetAttachmentsV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **brokerGetAutocompleteV2**
 > BrokerGetAutocompleteV2Response brokerGetAutocompleteV2()
@@ -184,7 +292,7 @@ const { status, data } = await apiInstance.brokerImportIntoEDMV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

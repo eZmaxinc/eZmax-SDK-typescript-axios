@@ -28,7 +28,7 @@ import type { ElectronicfundstransferGetCommunicationsendersV1ResponseMPayload }
 
 /**
  * @type ElectronicfundstransferGetCommunicationsendersV1Response
- * Response for GET /1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/getCommunicationrecipients
+ * Response for GET /1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/getCommunicationsenders
  */
 /*export type ElectronicfundstransferGetCommunicationsendersV1Response = CommonResponse;*/
 export interface ElectronicfundstransferGetCommunicationsendersV1Response {

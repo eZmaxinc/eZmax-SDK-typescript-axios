@@ -24,6 +24,10 @@ import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError
 // @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
+import type { ExternalbrokerBatchDownloadV1Request } from '../model';
+// @ts-ignore
+import type { ExternalbrokerGetAttachmentsV1Response } from '../model';
+// @ts-ignore
 import type { ExternalbrokerImportIntoEDMV1Request } from '../model';
 // @ts-ignore
 import type { ExternalbrokerImportIntoEDMV1Response } from '../model';
@@ -34,6 +38,127 @@ import { RequestSignature, IHeadersData } from '../api/request-signature';
  */
 export const ObjectExternalbrokerApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
+        /**
+         * 
+         * @summary Download multiples attachments from an Externalbroker
+         * @param {number} pkiExternalbrokerID 
+         * @param {ExternalbrokerBatchDownloadV1Request} externalbrokerBatchDownloadV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        externalbrokerBatchDownloadV1: async (pkiExternalbrokerID: number, externalbrokerBatchDownloadV1Request: ExternalbrokerBatchDownloadV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiExternalbrokerID' is not null or undefined
+            assertParamExists('externalbrokerBatchDownloadV1', 'pkiExternalbrokerID', pkiExternalbrokerID)
+            // verify required parameter 'externalbrokerBatchDownloadV1Request' is not null or undefined
+            assertParamExists('externalbrokerBatchDownloadV1', 'externalbrokerBatchDownloadV1Request', externalbrokerBatchDownloadV1Request)
+            const localVarPath = `/1/object/externalbroker/{pkiExternalbrokerID}/batchDownload`
+                .replace('{pkiExternalbrokerID}', encodeURIComponent(String(pkiExternalbrokerID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/zip,text/xml,application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(externalbrokerBatchDownloadV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Externalbroker\'s attachments
+         * @param {number} pkiExternalbrokerID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        externalbrokerGetAttachmentsV1: async (pkiExternalbrokerID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiExternalbrokerID' is not null or undefined
+            assertParamExists('externalbrokerGetAttachmentsV1', 'pkiExternalbrokerID', pkiExternalbrokerID)
+            const localVarPath = `/1/object/externalbroker/{pkiExternalbrokerID}/getAttachments`
+                .replace('{pkiExternalbrokerID}', encodeURIComponent(String(pkiExternalbrokerID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
         /**
          * 
          * @summary Import attachments into the Externalbroker
@@ -108,6 +233,33 @@ export const ObjectExternalbrokerApiFp = function(configuration?: Configuration)
     return {
         /**
          * 
+         * @summary Download multiples attachments from an Externalbroker
+         * @param {number} pkiExternalbrokerID 
+         * @param {ExternalbrokerBatchDownloadV1Request} externalbrokerBatchDownloadV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async externalbrokerBatchDownloadV1(pkiExternalbrokerID: number, externalbrokerBatchDownloadV1Request: ExternalbrokerBatchDownloadV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<File>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.externalbrokerBatchDownloadV1(pkiExternalbrokerID, externalbrokerBatchDownloadV1Request, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectExternalbrokerApi.externalbrokerBatchDownloadV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Externalbroker\'s attachments
+         * @param {number} pkiExternalbrokerID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async externalbrokerGetAttachmentsV1(pkiExternalbrokerID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ExternalbrokerGetAttachmentsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.externalbrokerGetAttachmentsV1(pkiExternalbrokerID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectExternalbrokerApi.externalbrokerGetAttachmentsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Import attachments into the Externalbroker
          * @param {number} pkiExternalbrokerID 
          * @param {ExternalbrokerImportIntoEDMV1Request} externalbrokerImportIntoEDMV1Request 
@@ -131,6 +283,27 @@ export const ObjectExternalbrokerApiFactory = function (configuration?: Configur
     return {
         /**
          * 
+         * @summary Download multiples attachments from an Externalbroker
+         * @param {number} pkiExternalbrokerID 
+         * @param {ExternalbrokerBatchDownloadV1Request} externalbrokerBatchDownloadV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        externalbrokerBatchDownloadV1(pkiExternalbrokerID: number, externalbrokerBatchDownloadV1Request: ExternalbrokerBatchDownloadV1Request, options?: RawAxiosRequestConfig): AxiosPromise<File> {
+            return localVarFp.externalbrokerBatchDownloadV1(pkiExternalbrokerID, externalbrokerBatchDownloadV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Externalbroker\'s attachments
+         * @param {number} pkiExternalbrokerID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        externalbrokerGetAttachmentsV1(pkiExternalbrokerID: number, options?: RawAxiosRequestConfig): AxiosPromise<ExternalbrokerGetAttachmentsV1Response> {
+            return localVarFp.externalbrokerGetAttachmentsV1(pkiExternalbrokerID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Import attachments into the Externalbroker
          * @param {number} pkiExternalbrokerID 
          * @param {ExternalbrokerImportIntoEDMV1Request} externalbrokerImportIntoEDMV1Request 
@@ -147,6 +320,29 @@ export const ObjectExternalbrokerApiFactory = function (configuration?: Configur
  * ObjectExternalbrokerApi - object-oriented interface
  */
 export class ObjectExternalbrokerApi extends BaseAPI {
+    /**
+     * 
+     * @summary Download multiples attachments from an Externalbroker
+     * @param {number} pkiExternalbrokerID 
+     * @param {ExternalbrokerBatchDownloadV1Request} externalbrokerBatchDownloadV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public externalbrokerBatchDownloadV1(pkiExternalbrokerID: number, externalbrokerBatchDownloadV1Request: ExternalbrokerBatchDownloadV1Request, options?: RawAxiosRequestConfig) {
+        return ObjectExternalbrokerApiFp(this.configuration).externalbrokerBatchDownloadV1(pkiExternalbrokerID, externalbrokerBatchDownloadV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Externalbroker\'s attachments
+     * @param {number} pkiExternalbrokerID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public externalbrokerGetAttachmentsV1(pkiExternalbrokerID: number, options?: RawAxiosRequestConfig) {
+        return ObjectExternalbrokerApiFp(this.configuration).externalbrokerGetAttachmentsV1(pkiExternalbrokerID, options).then((request) => request(this.axios, this.basePath));
+    }
+
     /**
      * 
      * @summary Import attachments into the Externalbroker

@@ -164,7 +164,7 @@ export class ValidationObjectCustomEzsignfoldersignerassociationActionableElemen
    }
    eEzsignfoldersignerassociationRole = {
       type: 'enum',
-      allowableValues: ['CC','Signer','SignerAndCC'],
+      allowableValues: ['CC','CCDeleted','Signer','SignerAndCC'],
       required: true
    }
    tEzsignfoldersignerassociationMessage = {

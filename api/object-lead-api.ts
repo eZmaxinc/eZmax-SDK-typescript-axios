@@ -26,6 +26,10 @@ import type { CommonResponseError } from '../model';
 // @ts-ignore
 import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
+import type { LeadBatchDownloadV1Request } from '../model';
+// @ts-ignore
+import type { LeadGetAttachmentsV1Response } from '../model';
+// @ts-ignore
 import type { LeadGetListV1Response } from '../model';
 // @ts-ignore
 import type { LeadImportIntoEDMV1Request } from '../model';
@@ -38,6 +42,127 @@ import { RequestSignature, IHeadersData } from '../api/request-signature';
  */
 export const ObjectLeadApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
+        /**
+         * 
+         * @summary Download multiples attachments from a Lead
+         * @param {number} pkiLeadID 
+         * @param {LeadBatchDownloadV1Request} leadBatchDownloadV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        leadBatchDownloadV1: async (pkiLeadID: number, leadBatchDownloadV1Request: LeadBatchDownloadV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiLeadID' is not null or undefined
+            assertParamExists('leadBatchDownloadV1', 'pkiLeadID', pkiLeadID)
+            // verify required parameter 'leadBatchDownloadV1Request' is not null or undefined
+            assertParamExists('leadBatchDownloadV1', 'leadBatchDownloadV1Request', leadBatchDownloadV1Request)
+            const localVarPath = `/1/object/lead/{pkiLeadID}/batchDownload`
+                .replace('{pkiLeadID}', encodeURIComponent(String(pkiLeadID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/zip,text/xml,application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(leadBatchDownloadV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Lead\'s attachments
+         * @param {number} pkiLeadID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        leadGetAttachmentsV1: async (pkiLeadID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiLeadID' is not null or undefined
+            assertParamExists('leadGetAttachmentsV1', 'pkiLeadID', pkiLeadID)
+            const localVarPath = `/1/object/lead/{pkiLeadID}/getAttachments`
+                .replace('{pkiLeadID}', encodeURIComponent(String(pkiLeadID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
         /**
          * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eLeadStatus | New<br>Dispatching<br>Assigned<br>Lost<br>Won |
          * @summary Retrieve Lead list
@@ -191,6 +316,33 @@ export const ObjectLeadApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = ObjectLeadApiAxiosParamCreator(configuration)
     return {
         /**
+         * 
+         * @summary Download multiples attachments from a Lead
+         * @param {number} pkiLeadID 
+         * @param {LeadBatchDownloadV1Request} leadBatchDownloadV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async leadBatchDownloadV1(pkiLeadID: number, leadBatchDownloadV1Request: LeadBatchDownloadV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<File>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.leadBatchDownloadV1(pkiLeadID, leadBatchDownloadV1Request, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectLeadApi.leadBatchDownloadV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Lead\'s attachments
+         * @param {number} pkiLeadID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async leadGetAttachmentsV1(pkiLeadID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<LeadGetAttachmentsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.leadGetAttachmentsV1(pkiLeadID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectLeadApi.leadGetAttachmentsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eLeadStatus | New<br>Dispatching<br>Assigned<br>Lost<br>Won |
          * @summary Retrieve Lead list
          * @param {LeadGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
@@ -231,6 +383,27 @@ export const ObjectLeadApiFactory = function (configuration?: Configuration, bas
     const localVarFp = ObjectLeadApiFp(configuration)
     return {
         /**
+         * 
+         * @summary Download multiples attachments from a Lead
+         * @param {number} pkiLeadID 
+         * @param {LeadBatchDownloadV1Request} leadBatchDownloadV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        leadBatchDownloadV1(pkiLeadID: number, leadBatchDownloadV1Request: LeadBatchDownloadV1Request, options?: RawAxiosRequestConfig): AxiosPromise<File> {
+            return localVarFp.leadBatchDownloadV1(pkiLeadID, leadBatchDownloadV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Lead\'s attachments
+         * @param {number} pkiLeadID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        leadGetAttachmentsV1(pkiLeadID: number, options?: RawAxiosRequestConfig): AxiosPromise<LeadGetAttachmentsV1Response> {
+            return localVarFp.leadGetAttachmentsV1(pkiLeadID, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eLeadStatus | New<br>Dispatching<br>Assigned<br>Lost<br>Won |
          * @summary Retrieve Lead list
          * @param {LeadGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
@@ -262,6 +435,29 @@ export const ObjectLeadApiFactory = function (configuration?: Configuration, bas
  * ObjectLeadApi - object-oriented interface
  */
 export class ObjectLeadApi extends BaseAPI {
+    /**
+     * 
+     * @summary Download multiples attachments from a Lead
+     * @param {number} pkiLeadID 
+     * @param {LeadBatchDownloadV1Request} leadBatchDownloadV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public leadBatchDownloadV1(pkiLeadID: number, leadBatchDownloadV1Request: LeadBatchDownloadV1Request, options?: RawAxiosRequestConfig) {
+        return ObjectLeadApiFp(this.configuration).leadBatchDownloadV1(pkiLeadID, leadBatchDownloadV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Lead\'s attachments
+     * @param {number} pkiLeadID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public leadGetAttachmentsV1(pkiLeadID: number, options?: RawAxiosRequestConfig) {
+        return ObjectLeadApiFp(this.configuration).leadGetAttachmentsV1(pkiLeadID, options).then((request) => request(this.axios, this.basePath));
+    }
+
     /**
      * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eLeadStatus | New<br>Dispatching<br>Assigned<br>Lost<br>Won |
      * @summary Retrieve Lead list

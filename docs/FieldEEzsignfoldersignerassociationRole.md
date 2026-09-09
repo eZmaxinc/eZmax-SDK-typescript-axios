@@ -6,6 +6,8 @@ The role of the Ezsignfoldersignerassociation.  1. **CC** receive a copy of all 
 
 * `CC` (value: `'CC'`)
 
+* `CCDeleted` (value: `'CCDeleted'`)
+
 * `Signer` (value: `'Signer'`)
 
 * `SignerAndCC` (value: `'SignerAndCC'`)
