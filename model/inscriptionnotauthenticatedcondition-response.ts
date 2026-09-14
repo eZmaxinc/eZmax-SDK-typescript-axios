@@ -121,7 +121,7 @@ export class ValidationObjectInscriptionnotauthenticatedconditionResponse {
    }
    tInscriptionnotauthenticatedconditionComment = {
       type: 'string',
-      pattern: /^.{0,65535}$/,
+      pattern: /^[\s\S]{0,65535}$/,
       required: true
    }
 } 

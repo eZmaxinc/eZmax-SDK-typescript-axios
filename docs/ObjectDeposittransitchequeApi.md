@@ -6,6 +6,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |------------- | ------------- | -------------|
 |[**deposittransitchequeBatchDownloadV1**](#deposittransitchequebatchdownloadv1) | **POST** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/batchDownload | Download multiples attachments from a Deposittransitcheque|
 |[**deposittransitchequeGetAttachmentsV1**](#deposittransitchequegetattachmentsv1) | **GET** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getAttachments | Retrieve Deposittransitcheque\&#39;s attachments|
+|[**deposittransitchequeGetCommunicationCountV1**](#deposittransitchequegetcommunicationcountv1) | **GET** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getCommunicationCount | Retrieve Communication count|
+|[**deposittransitchequeGetCommunicationListV1**](#deposittransitchequegetcommunicationlistv1) | **GET** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getCommunicationList | Retrieve Communication list|
+|[**deposittransitchequeGetCommunicationrecipientsV1**](#deposittransitchequegetcommunicationrecipientsv1) | **GET** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getCommunicationrecipients | Retrieve Communication recipients|
+|[**deposittransitchequeGetCommunicationsendersV1**](#deposittransitchequegetcommunicationsendersv1) | **GET** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getCommunicationsenders | Retrieve Communication senders|
 |[**deposittransitchequeImportIntoEDMV1**](#deposittransitchequeimportintoedmv1) | **POST** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/importIntoEDM | Import attachments into the Deposittransitcheque|
 
 # **deposittransitchequeBatchDownloadV1**
@@ -97,6 +101,210 @@ const { status, data } = await apiInstance.deposittransitchequeGetAttachmentsV1(
 ### Return type
 
 **DeposittransitchequeGetAttachmentsV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deposittransitchequeGetCommunicationCountV1**
+> DeposittransitchequeGetCommunicationCountV1Response deposittransitchequeGetCommunicationCountV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectDeposittransitchequeApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectDeposittransitchequeApi(configuration);
+
+let pkiDeposittransitchequeID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.deposittransitchequeGetCommunicationCountV1(
+    pkiDeposittransitchequeID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiDeposittransitchequeID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**DeposittransitchequeGetCommunicationCountV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deposittransitchequeGetCommunicationListV1**
+> DeposittransitchequeGetCommunicationListV1Response deposittransitchequeGetCommunicationListV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectDeposittransitchequeApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectDeposittransitchequeApi(configuration);
+
+let pkiDeposittransitchequeID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.deposittransitchequeGetCommunicationListV1(
+    pkiDeposittransitchequeID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiDeposittransitchequeID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**DeposittransitchequeGetCommunicationListV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deposittransitchequeGetCommunicationrecipientsV1**
+> DeposittransitchequeGetCommunicationrecipientsV1Response deposittransitchequeGetCommunicationrecipientsV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectDeposittransitchequeApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectDeposittransitchequeApi(configuration);
+
+let pkiDeposittransitchequeID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.deposittransitchequeGetCommunicationrecipientsV1(
+    pkiDeposittransitchequeID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiDeposittransitchequeID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**DeposittransitchequeGetCommunicationrecipientsV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deposittransitchequeGetCommunicationsendersV1**
+> DeposittransitchequeGetCommunicationsendersV1Response deposittransitchequeGetCommunicationsendersV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectDeposittransitchequeApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectDeposittransitchequeApi(configuration);
+
+let pkiDeposittransitchequeID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.deposittransitchequeGetCommunicationsendersV1(
+    pkiDeposittransitchequeID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiDeposittransitchequeID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**DeposittransitchequeGetCommunicationsendersV1Response**
 
 ### Authorization
 

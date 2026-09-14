@@ -28,6 +28,14 @@ import type { DisclosureBatchDownloadV1Request } from '../model';
 // @ts-ignore
 import type { DisclosureGetAttachmentsV1Response } from '../model';
 // @ts-ignore
+import type { DisclosureGetCommunicationCountV1Response } from '../model';
+// @ts-ignore
+import type { DisclosureGetCommunicationListV1Response } from '../model';
+// @ts-ignore
+import type { DisclosureGetCommunicationrecipientsV1Response } from '../model';
+// @ts-ignore
+import type { DisclosureGetCommunicationsendersV1Response } from '../model';
+// @ts-ignore
 import type { DisclosureImportIntoEDMV1Request } from '../model';
 // @ts-ignore
 import type { DisclosureImportIntoEDMV1Response } from '../model';
@@ -112,6 +120,238 @@ export const ObjectDisclosureApiAxiosParamCreator = function (configuration?: Co
             // verify required parameter 'pkiDisclosureID' is not null or undefined
             assertParamExists('disclosureGetAttachmentsV1', 'pkiDisclosureID', pkiDisclosureID)
             const localVarPath = `/1/object/disclosure/{pkiDisclosureID}/getAttachments`
+                .replace('{pkiDisclosureID}', encodeURIComponent(String(pkiDisclosureID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiDisclosureID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        disclosureGetCommunicationCountV1: async (pkiDisclosureID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiDisclosureID' is not null or undefined
+            assertParamExists('disclosureGetCommunicationCountV1', 'pkiDisclosureID', pkiDisclosureID)
+            const localVarPath = `/1/object/disclosure/{pkiDisclosureID}/getCommunicationCount`
+                .replace('{pkiDisclosureID}', encodeURIComponent(String(pkiDisclosureID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiDisclosureID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        disclosureGetCommunicationListV1: async (pkiDisclosureID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiDisclosureID' is not null or undefined
+            assertParamExists('disclosureGetCommunicationListV1', 'pkiDisclosureID', pkiDisclosureID)
+            const localVarPath = `/1/object/disclosure/{pkiDisclosureID}/getCommunicationList`
+                .replace('{pkiDisclosureID}', encodeURIComponent(String(pkiDisclosureID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiDisclosureID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        disclosureGetCommunicationrecipientsV1: async (pkiDisclosureID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiDisclosureID' is not null or undefined
+            assertParamExists('disclosureGetCommunicationrecipientsV1', 'pkiDisclosureID', pkiDisclosureID)
+            const localVarPath = `/1/object/disclosure/{pkiDisclosureID}/getCommunicationrecipients`
+                .replace('{pkiDisclosureID}', encodeURIComponent(String(pkiDisclosureID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiDisclosureID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        disclosureGetCommunicationsendersV1: async (pkiDisclosureID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiDisclosureID' is not null or undefined
+            assertParamExists('disclosureGetCommunicationsendersV1', 'pkiDisclosureID', pkiDisclosureID)
+            const localVarPath = `/1/object/disclosure/{pkiDisclosureID}/getCommunicationsenders`
                 .replace('{pkiDisclosureID}', encodeURIComponent(String(pkiDisclosureID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
@@ -260,6 +500,58 @@ export const ObjectDisclosureApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiDisclosureID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async disclosureGetCommunicationCountV1(pkiDisclosureID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DisclosureGetCommunicationCountV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.disclosureGetCommunicationCountV1(pkiDisclosureID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectDisclosureApi.disclosureGetCommunicationCountV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiDisclosureID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async disclosureGetCommunicationListV1(pkiDisclosureID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DisclosureGetCommunicationListV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.disclosureGetCommunicationListV1(pkiDisclosureID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectDisclosureApi.disclosureGetCommunicationListV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiDisclosureID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async disclosureGetCommunicationrecipientsV1(pkiDisclosureID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DisclosureGetCommunicationrecipientsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.disclosureGetCommunicationrecipientsV1(pkiDisclosureID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectDisclosureApi.disclosureGetCommunicationrecipientsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiDisclosureID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async disclosureGetCommunicationsendersV1(pkiDisclosureID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DisclosureGetCommunicationsendersV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.disclosureGetCommunicationsendersV1(pkiDisclosureID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectDisclosureApi.disclosureGetCommunicationsendersV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Import attachments into the Disclosure
          * @param {number} pkiDisclosureID 
          * @param {DisclosureImportIntoEDMV1Request} disclosureImportIntoEDMV1Request 
@@ -304,6 +596,46 @@ export const ObjectDisclosureApiFactory = function (configuration?: Configuratio
         },
         /**
          * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiDisclosureID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        disclosureGetCommunicationCountV1(pkiDisclosureID: number, options?: RawAxiosRequestConfig): AxiosPromise<DisclosureGetCommunicationCountV1Response> {
+            return localVarFp.disclosureGetCommunicationCountV1(pkiDisclosureID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiDisclosureID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        disclosureGetCommunicationListV1(pkiDisclosureID: number, options?: RawAxiosRequestConfig): AxiosPromise<DisclosureGetCommunicationListV1Response> {
+            return localVarFp.disclosureGetCommunicationListV1(pkiDisclosureID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiDisclosureID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        disclosureGetCommunicationrecipientsV1(pkiDisclosureID: number, options?: RawAxiosRequestConfig): AxiosPromise<DisclosureGetCommunicationrecipientsV1Response> {
+            return localVarFp.disclosureGetCommunicationrecipientsV1(pkiDisclosureID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiDisclosureID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        disclosureGetCommunicationsendersV1(pkiDisclosureID: number, options?: RawAxiosRequestConfig): AxiosPromise<DisclosureGetCommunicationsendersV1Response> {
+            return localVarFp.disclosureGetCommunicationsendersV1(pkiDisclosureID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Import attachments into the Disclosure
          * @param {number} pkiDisclosureID 
          * @param {DisclosureImportIntoEDMV1Request} disclosureImportIntoEDMV1Request 
@@ -341,6 +673,50 @@ export class ObjectDisclosureApi extends BaseAPI {
      */
     public disclosureGetAttachmentsV1(pkiDisclosureID: number, options?: RawAxiosRequestConfig) {
         return ObjectDisclosureApiFp(this.configuration).disclosureGetAttachmentsV1(pkiDisclosureID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication count
+     * @param {number} pkiDisclosureID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public disclosureGetCommunicationCountV1(pkiDisclosureID: number, options?: RawAxiosRequestConfig) {
+        return ObjectDisclosureApiFp(this.configuration).disclosureGetCommunicationCountV1(pkiDisclosureID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication list
+     * @param {number} pkiDisclosureID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public disclosureGetCommunicationListV1(pkiDisclosureID: number, options?: RawAxiosRequestConfig) {
+        return ObjectDisclosureApiFp(this.configuration).disclosureGetCommunicationListV1(pkiDisclosureID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication recipients
+     * @param {number} pkiDisclosureID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public disclosureGetCommunicationrecipientsV1(pkiDisclosureID: number, options?: RawAxiosRequestConfig) {
+        return ObjectDisclosureApiFp(this.configuration).disclosureGetCommunicationrecipientsV1(pkiDisclosureID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication senders
+     * @param {number} pkiDisclosureID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public disclosureGetCommunicationsendersV1(pkiDisclosureID: number, options?: RawAxiosRequestConfig) {
+        return ObjectDisclosureApiFp(this.configuration).disclosureGetCommunicationsendersV1(pkiDisclosureID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

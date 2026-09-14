@@ -7,6 +7,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**bankaccountBatchDownloadV1**](#bankaccountbatchdownloadv1) | **POST** /1/object/bankaccount/{pkiBankaccountID}/batchDownload | Download multiples attachments from a Bankaccount|
 |[**bankaccountGetAttachmentsV1**](#bankaccountgetattachmentsv1) | **GET** /1/object/bankaccount/{pkiBankaccountID}/getAttachments | Retrieve Bankaccount\&#39;s attachments|
 |[**bankaccountGetAutocompleteV2**](#bankaccountgetautocompletev2) | **GET** /2/object/bankaccount/getAutocomplete/{sSelector} | Retrieve Bankaccounts and IDs|
+|[**bankaccountGetCommunicationCountV1**](#bankaccountgetcommunicationcountv1) | **GET** /1/object/bankaccount/{pkiBankaccountID}/getCommunicationCount | Retrieve Communication count|
+|[**bankaccountGetCommunicationListV1**](#bankaccountgetcommunicationlistv1) | **GET** /1/object/bankaccount/{pkiBankaccountID}/getCommunicationList | Retrieve Communication list|
+|[**bankaccountGetCommunicationrecipientsV1**](#bankaccountgetcommunicationrecipientsv1) | **GET** /1/object/bankaccount/{pkiBankaccountID}/getCommunicationrecipients | Retrieve Communication recipients|
+|[**bankaccountGetCommunicationsendersV1**](#bankaccountgetcommunicationsendersv1) | **GET** /1/object/bankaccount/{pkiBankaccountID}/getCommunicationsenders | Retrieve Communication senders|
 |[**bankaccountImportIntoEDMV1**](#bankaccountimportintoedmv1) | **POST** /1/object/bankaccount/{pkiBankaccountID}/importIntoEDM | Import attachments into the Bankaccount|
 
 # **bankaccountBatchDownloadV1**
@@ -174,6 +178,210 @@ const { status, data } = await apiInstance.bankaccountGetAutocompleteV2(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **bankaccountGetCommunicationCountV1**
+> BankaccountGetCommunicationCountV1Response bankaccountGetCommunicationCountV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectBankaccountApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectBankaccountApi(configuration);
+
+let pkiBankaccountID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.bankaccountGetCommunicationCountV1(
+    pkiBankaccountID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiBankaccountID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**BankaccountGetCommunicationCountV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **bankaccountGetCommunicationListV1**
+> BankaccountGetCommunicationListV1Response bankaccountGetCommunicationListV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectBankaccountApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectBankaccountApi(configuration);
+
+let pkiBankaccountID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.bankaccountGetCommunicationListV1(
+    pkiBankaccountID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiBankaccountID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**BankaccountGetCommunicationListV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **bankaccountGetCommunicationrecipientsV1**
+> BankaccountGetCommunicationrecipientsV1Response bankaccountGetCommunicationrecipientsV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectBankaccountApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectBankaccountApi(configuration);
+
+let pkiBankaccountID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.bankaccountGetCommunicationrecipientsV1(
+    pkiBankaccountID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiBankaccountID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**BankaccountGetCommunicationrecipientsV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **bankaccountGetCommunicationsendersV1**
+> BankaccountGetCommunicationsendersV1Response bankaccountGetCommunicationsendersV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectBankaccountApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectBankaccountApi(configuration);
+
+let pkiBankaccountID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.bankaccountGetCommunicationsendersV1(
+    pkiBankaccountID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiBankaccountID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**BankaccountGetCommunicationsendersV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

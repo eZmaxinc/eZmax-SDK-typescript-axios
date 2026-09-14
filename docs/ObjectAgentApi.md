@@ -7,6 +7,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**agentBatchDownloadV1**](#agentbatchdownloadv1) | **POST** /1/object/agent/{pkiAgentID}/batchDownload | Download multiples attachments from a Agent|
 |[**agentGetAttachmentsV1**](#agentgetattachmentsv1) | **GET** /1/object/agent/{pkiAgentID}/getAttachments | Retrieve Agent\&#39;s attachments|
 |[**agentGetAutocompleteV2**](#agentgetautocompletev2) | **GET** /2/object/agent/getAutocomplete/{sSelector} | Retrieve Agents and IDs|
+|[**agentGetCommunicationCountV1**](#agentgetcommunicationcountv1) | **GET** /1/object/agent/{pkiAgentID}/getCommunicationCount | Retrieve Communication count|
+|[**agentGetCommunicationListV1**](#agentgetcommunicationlistv1) | **GET** /1/object/agent/{pkiAgentID}/getCommunicationList | Retrieve Communication list|
+|[**agentGetCommunicationrecipientsV1**](#agentgetcommunicationrecipientsv1) | **GET** /1/object/agent/{pkiAgentID}/getCommunicationrecipients | Retrieve Communication recipients|
+|[**agentGetCommunicationsendersV1**](#agentgetcommunicationsendersv1) | **GET** /1/object/agent/{pkiAgentID}/getCommunicationsenders | Retrieve Communication senders|
 |[**agentGetListV1**](#agentgetlistv1) | **GET** /1/object/agent/getList | Retrieve Agent list|
 |[**agentImportIntoEDMV1**](#agentimportintoedmv1) | **POST** /1/object/agent/{pkiAgentID}/importIntoEDM | Import attachments into the Agent|
 
@@ -173,6 +177,210 @@ const { status, data } = await apiInstance.agentGetAutocompleteV2(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Successful response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **agentGetCommunicationCountV1**
+> AgentGetCommunicationCountV1Response agentGetCommunicationCountV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectAgentApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectAgentApi(configuration);
+
+let pkiAgentID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.agentGetCommunicationCountV1(
+    pkiAgentID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiAgentID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**AgentGetCommunicationCountV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **agentGetCommunicationListV1**
+> AgentGetCommunicationListV1Response agentGetCommunicationListV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectAgentApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectAgentApi(configuration);
+
+let pkiAgentID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.agentGetCommunicationListV1(
+    pkiAgentID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiAgentID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**AgentGetCommunicationListV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **agentGetCommunicationrecipientsV1**
+> AgentGetCommunicationrecipientsV1Response agentGetCommunicationrecipientsV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectAgentApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectAgentApi(configuration);
+
+let pkiAgentID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.agentGetCommunicationrecipientsV1(
+    pkiAgentID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiAgentID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**AgentGetCommunicationrecipientsV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **agentGetCommunicationsendersV1**
+> AgentGetCommunicationsendersV1Response agentGetCommunicationsendersV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectAgentApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectAgentApi(configuration);
+
+let pkiAgentID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.agentGetCommunicationsendersV1(
+    pkiAgentID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiAgentID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**AgentGetCommunicationsendersV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

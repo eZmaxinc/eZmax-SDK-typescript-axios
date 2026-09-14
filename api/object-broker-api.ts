@@ -28,6 +28,14 @@ import type { BrokerGetAttachmentsV1Response } from '../model';
 // @ts-ignore
 import type { BrokerGetAutocompleteV2Response } from '../model';
 // @ts-ignore
+import type { BrokerGetCommunicationCountV1Response } from '../model';
+// @ts-ignore
+import type { BrokerGetCommunicationListV1Response } from '../model';
+// @ts-ignore
+import type { BrokerGetCommunicationrecipientsV1Response } from '../model';
+// @ts-ignore
+import type { BrokerGetCommunicationsendersV1Response } from '../model';
+// @ts-ignore
 import type { BrokerGetListV1Response } from '../model';
 // @ts-ignore
 import type { BrokerImportIntoEDMV1Request } from '../model';
@@ -213,6 +221,238 @@ export const ObjectBrokerApiAxiosParamCreator = function (configuration?: Config
                     ? acceptLanguage
                     : JSON.stringify(acceptLanguage, replaceWithSerializableTypeIfNeeded);
             }
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiBrokerID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        brokerGetCommunicationCountV1: async (pkiBrokerID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiBrokerID' is not null or undefined
+            assertParamExists('brokerGetCommunicationCountV1', 'pkiBrokerID', pkiBrokerID)
+            const localVarPath = `/1/object/broker/{pkiBrokerID}/getCommunicationCount`
+                .replace('{pkiBrokerID}', encodeURIComponent(String(pkiBrokerID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiBrokerID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        brokerGetCommunicationListV1: async (pkiBrokerID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiBrokerID' is not null or undefined
+            assertParamExists('brokerGetCommunicationListV1', 'pkiBrokerID', pkiBrokerID)
+            const localVarPath = `/1/object/broker/{pkiBrokerID}/getCommunicationList`
+                .replace('{pkiBrokerID}', encodeURIComponent(String(pkiBrokerID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiBrokerID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        brokerGetCommunicationrecipientsV1: async (pkiBrokerID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiBrokerID' is not null or undefined
+            assertParamExists('brokerGetCommunicationrecipientsV1', 'pkiBrokerID', pkiBrokerID)
+            const localVarPath = `/1/object/broker/{pkiBrokerID}/getCommunicationrecipients`
+                .replace('{pkiBrokerID}', encodeURIComponent(String(pkiBrokerID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiBrokerID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        brokerGetCommunicationsendersV1: async (pkiBrokerID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiBrokerID' is not null or undefined
+            assertParamExists('brokerGetCommunicationsendersV1', 'pkiBrokerID', pkiBrokerID)
+            const localVarPath = `/1/object/broker/{pkiBrokerID}/getCommunicationsenders`
+                .replace('{pkiBrokerID}', encodeURIComponent(String(pkiBrokerID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -436,6 +676,58 @@ export const ObjectBrokerApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiBrokerID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async brokerGetCommunicationCountV1(pkiBrokerID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BrokerGetCommunicationCountV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.brokerGetCommunicationCountV1(pkiBrokerID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectBrokerApi.brokerGetCommunicationCountV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiBrokerID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async brokerGetCommunicationListV1(pkiBrokerID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BrokerGetCommunicationListV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.brokerGetCommunicationListV1(pkiBrokerID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectBrokerApi.brokerGetCommunicationListV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiBrokerID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async brokerGetCommunicationrecipientsV1(pkiBrokerID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BrokerGetCommunicationrecipientsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.brokerGetCommunicationrecipientsV1(pkiBrokerID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectBrokerApi.brokerGetCommunicationrecipientsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiBrokerID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async brokerGetCommunicationsendersV1(pkiBrokerID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BrokerGetCommunicationsendersV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.brokerGetCommunicationsendersV1(pkiBrokerID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectBrokerApi.brokerGetCommunicationsendersV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Retrieve Broker list
          * @param {BrokerGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -510,6 +802,46 @@ export const ObjectBrokerApiFactory = function (configuration?: Configuration, b
         },
         /**
          * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiBrokerID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        brokerGetCommunicationCountV1(pkiBrokerID: number, options?: RawAxiosRequestConfig): AxiosPromise<BrokerGetCommunicationCountV1Response> {
+            return localVarFp.brokerGetCommunicationCountV1(pkiBrokerID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiBrokerID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        brokerGetCommunicationListV1(pkiBrokerID: number, options?: RawAxiosRequestConfig): AxiosPromise<BrokerGetCommunicationListV1Response> {
+            return localVarFp.brokerGetCommunicationListV1(pkiBrokerID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiBrokerID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        brokerGetCommunicationrecipientsV1(pkiBrokerID: number, options?: RawAxiosRequestConfig): AxiosPromise<BrokerGetCommunicationrecipientsV1Response> {
+            return localVarFp.brokerGetCommunicationrecipientsV1(pkiBrokerID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiBrokerID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        brokerGetCommunicationsendersV1(pkiBrokerID: number, options?: RawAxiosRequestConfig): AxiosPromise<BrokerGetCommunicationsendersV1Response> {
+            return localVarFp.brokerGetCommunicationsendersV1(pkiBrokerID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Retrieve Broker list
          * @param {BrokerGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -575,6 +907,50 @@ export class ObjectBrokerApi extends BaseAPI {
      */
     public brokerGetAutocompleteV2(sSelector: BrokerGetAutocompleteV2SSelectorEnum, eFilterActive?: BrokerGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig) {
         return ObjectBrokerApiFp(this.configuration).brokerGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication count
+     * @param {number} pkiBrokerID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public brokerGetCommunicationCountV1(pkiBrokerID: number, options?: RawAxiosRequestConfig) {
+        return ObjectBrokerApiFp(this.configuration).brokerGetCommunicationCountV1(pkiBrokerID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication list
+     * @param {number} pkiBrokerID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public brokerGetCommunicationListV1(pkiBrokerID: number, options?: RawAxiosRequestConfig) {
+        return ObjectBrokerApiFp(this.configuration).brokerGetCommunicationListV1(pkiBrokerID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication recipients
+     * @param {number} pkiBrokerID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public brokerGetCommunicationrecipientsV1(pkiBrokerID: number, options?: RawAxiosRequestConfig) {
+        return ObjectBrokerApiFp(this.configuration).brokerGetCommunicationrecipientsV1(pkiBrokerID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication senders
+     * @param {number} pkiBrokerID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public brokerGetCommunicationsendersV1(pkiBrokerID: number, options?: RawAxiosRequestConfig) {
+        return ObjectBrokerApiFp(this.configuration).brokerGetCommunicationsendersV1(pkiBrokerID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

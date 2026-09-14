@@ -28,6 +28,14 @@ import type { EmployeeBatchDownloadV1Request } from '../model';
 // @ts-ignore
 import type { EmployeeGetAttachmentsV1Response } from '../model';
 // @ts-ignore
+import type { EmployeeGetCommunicationCountV1Response } from '../model';
+// @ts-ignore
+import type { EmployeeGetCommunicationListV1Response } from '../model';
+// @ts-ignore
+import type { EmployeeGetCommunicationrecipientsV1Response } from '../model';
+// @ts-ignore
+import type { EmployeeGetCommunicationsendersV1Response } from '../model';
+// @ts-ignore
 import type { EmployeeGetListV1Response } from '../model';
 // @ts-ignore
 import type { EmployeeImportIntoEDMV1Request } from '../model';
@@ -116,6 +124,238 @@ export const ObjectEmployeeApiAxiosParamCreator = function (configuration?: Conf
             // verify required parameter 'pkiEmployeeID' is not null or undefined
             assertParamExists('employeeGetAttachmentsV1', 'pkiEmployeeID', pkiEmployeeID)
             const localVarPath = `/1/object/employee/{pkiEmployeeID}/getAttachments`
+                .replace('{pkiEmployeeID}', encodeURIComponent(String(pkiEmployeeID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiEmployeeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        employeeGetCommunicationCountV1: async (pkiEmployeeID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiEmployeeID' is not null or undefined
+            assertParamExists('employeeGetCommunicationCountV1', 'pkiEmployeeID', pkiEmployeeID)
+            const localVarPath = `/1/object/employee/{pkiEmployeeID}/getCommunicationCount`
+                .replace('{pkiEmployeeID}', encodeURIComponent(String(pkiEmployeeID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiEmployeeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        employeeGetCommunicationListV1: async (pkiEmployeeID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiEmployeeID' is not null or undefined
+            assertParamExists('employeeGetCommunicationListV1', 'pkiEmployeeID', pkiEmployeeID)
+            const localVarPath = `/1/object/employee/{pkiEmployeeID}/getCommunicationList`
+                .replace('{pkiEmployeeID}', encodeURIComponent(String(pkiEmployeeID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiEmployeeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        employeeGetCommunicationrecipientsV1: async (pkiEmployeeID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiEmployeeID' is not null or undefined
+            assertParamExists('employeeGetCommunicationrecipientsV1', 'pkiEmployeeID', pkiEmployeeID)
+            const localVarPath = `/1/object/employee/{pkiEmployeeID}/getCommunicationrecipients`
+                .replace('{pkiEmployeeID}', encodeURIComponent(String(pkiEmployeeID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiEmployeeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        employeeGetCommunicationsendersV1: async (pkiEmployeeID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiEmployeeID' is not null or undefined
+            assertParamExists('employeeGetCommunicationsendersV1', 'pkiEmployeeID', pkiEmployeeID)
+            const localVarPath = `/1/object/employee/{pkiEmployeeID}/getCommunicationsenders`
                 .replace('{pkiEmployeeID}', encodeURIComponent(String(pkiEmployeeID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
@@ -344,6 +584,58 @@ export const ObjectEmployeeApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiEmployeeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async employeeGetCommunicationCountV1(pkiEmployeeID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EmployeeGetCommunicationCountV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.employeeGetCommunicationCountV1(pkiEmployeeID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEmployeeApi.employeeGetCommunicationCountV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiEmployeeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async employeeGetCommunicationListV1(pkiEmployeeID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EmployeeGetCommunicationListV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.employeeGetCommunicationListV1(pkiEmployeeID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEmployeeApi.employeeGetCommunicationListV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiEmployeeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async employeeGetCommunicationrecipientsV1(pkiEmployeeID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EmployeeGetCommunicationrecipientsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.employeeGetCommunicationrecipientsV1(pkiEmployeeID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEmployeeApi.employeeGetCommunicationrecipientsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiEmployeeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async employeeGetCommunicationsendersV1(pkiEmployeeID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EmployeeGetCommunicationsendersV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.employeeGetCommunicationsendersV1(pkiEmployeeID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectEmployeeApi.employeeGetCommunicationsendersV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Retrieve Employee list
          * @param {EmployeeGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -405,6 +697,46 @@ export const ObjectEmployeeApiFactory = function (configuration?: Configuration,
         },
         /**
          * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiEmployeeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        employeeGetCommunicationCountV1(pkiEmployeeID: number, options?: RawAxiosRequestConfig): AxiosPromise<EmployeeGetCommunicationCountV1Response> {
+            return localVarFp.employeeGetCommunicationCountV1(pkiEmployeeID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiEmployeeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        employeeGetCommunicationListV1(pkiEmployeeID: number, options?: RawAxiosRequestConfig): AxiosPromise<EmployeeGetCommunicationListV1Response> {
+            return localVarFp.employeeGetCommunicationListV1(pkiEmployeeID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiEmployeeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        employeeGetCommunicationrecipientsV1(pkiEmployeeID: number, options?: RawAxiosRequestConfig): AxiosPromise<EmployeeGetCommunicationrecipientsV1Response> {
+            return localVarFp.employeeGetCommunicationrecipientsV1(pkiEmployeeID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiEmployeeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        employeeGetCommunicationsendersV1(pkiEmployeeID: number, options?: RawAxiosRequestConfig): AxiosPromise<EmployeeGetCommunicationsendersV1Response> {
+            return localVarFp.employeeGetCommunicationsendersV1(pkiEmployeeID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Retrieve Employee list
          * @param {EmployeeGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -456,6 +788,50 @@ export class ObjectEmployeeApi extends BaseAPI {
      */
     public employeeGetAttachmentsV1(pkiEmployeeID: number, options?: RawAxiosRequestConfig) {
         return ObjectEmployeeApiFp(this.configuration).employeeGetAttachmentsV1(pkiEmployeeID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication count
+     * @param {number} pkiEmployeeID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public employeeGetCommunicationCountV1(pkiEmployeeID: number, options?: RawAxiosRequestConfig) {
+        return ObjectEmployeeApiFp(this.configuration).employeeGetCommunicationCountV1(pkiEmployeeID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication list
+     * @param {number} pkiEmployeeID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public employeeGetCommunicationListV1(pkiEmployeeID: number, options?: RawAxiosRequestConfig) {
+        return ObjectEmployeeApiFp(this.configuration).employeeGetCommunicationListV1(pkiEmployeeID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication recipients
+     * @param {number} pkiEmployeeID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public employeeGetCommunicationrecipientsV1(pkiEmployeeID: number, options?: RawAxiosRequestConfig) {
+        return ObjectEmployeeApiFp(this.configuration).employeeGetCommunicationrecipientsV1(pkiEmployeeID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication senders
+     * @param {number} pkiEmployeeID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public employeeGetCommunicationsendersV1(pkiEmployeeID: number, options?: RawAxiosRequestConfig) {
+        return ObjectEmployeeApiFp(this.configuration).employeeGetCommunicationsendersV1(pkiEmployeeID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

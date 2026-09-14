@@ -28,6 +28,14 @@ import type { BankaccountGetAttachmentsV1Response } from '../model';
 // @ts-ignore
 import type { BankaccountGetAutocompleteV2Response } from '../model';
 // @ts-ignore
+import type { BankaccountGetCommunicationCountV1Response } from '../model';
+// @ts-ignore
+import type { BankaccountGetCommunicationListV1Response } from '../model';
+// @ts-ignore
+import type { BankaccountGetCommunicationrecipientsV1Response } from '../model';
+// @ts-ignore
+import type { BankaccountGetCommunicationsendersV1Response } from '../model';
+// @ts-ignore
 import type { BankaccountImportIntoEDMV1Request } from '../model';
 // @ts-ignore
 import type { BankaccountImportIntoEDMV1Response } from '../model';
@@ -239,6 +247,238 @@ export const ObjectBankaccountApiAxiosParamCreator = function (configuration?: C
         },
         /**
          * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiBankaccountID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        bankaccountGetCommunicationCountV1: async (pkiBankaccountID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiBankaccountID' is not null or undefined
+            assertParamExists('bankaccountGetCommunicationCountV1', 'pkiBankaccountID', pkiBankaccountID)
+            const localVarPath = `/1/object/bankaccount/{pkiBankaccountID}/getCommunicationCount`
+                .replace('{pkiBankaccountID}', encodeURIComponent(String(pkiBankaccountID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiBankaccountID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        bankaccountGetCommunicationListV1: async (pkiBankaccountID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiBankaccountID' is not null or undefined
+            assertParamExists('bankaccountGetCommunicationListV1', 'pkiBankaccountID', pkiBankaccountID)
+            const localVarPath = `/1/object/bankaccount/{pkiBankaccountID}/getCommunicationList`
+                .replace('{pkiBankaccountID}', encodeURIComponent(String(pkiBankaccountID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiBankaccountID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        bankaccountGetCommunicationrecipientsV1: async (pkiBankaccountID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiBankaccountID' is not null or undefined
+            assertParamExists('bankaccountGetCommunicationrecipientsV1', 'pkiBankaccountID', pkiBankaccountID)
+            const localVarPath = `/1/object/bankaccount/{pkiBankaccountID}/getCommunicationrecipients`
+                .replace('{pkiBankaccountID}', encodeURIComponent(String(pkiBankaccountID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiBankaccountID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        bankaccountGetCommunicationsendersV1: async (pkiBankaccountID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiBankaccountID' is not null or undefined
+            assertParamExists('bankaccountGetCommunicationsendersV1', 'pkiBankaccountID', pkiBankaccountID)
+            const localVarPath = `/1/object/bankaccount/{pkiBankaccountID}/getCommunicationsenders`
+                .replace('{pkiBankaccountID}', encodeURIComponent(String(pkiBankaccountID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Import attachments into the Bankaccount
          * @param {number} pkiBankaccountID 
          * @param {BankaccountImportIntoEDMV1Request} bankaccountImportIntoEDMV1Request 
@@ -354,6 +594,58 @@ export const ObjectBankaccountApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiBankaccountID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async bankaccountGetCommunicationCountV1(pkiBankaccountID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BankaccountGetCommunicationCountV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.bankaccountGetCommunicationCountV1(pkiBankaccountID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectBankaccountApi.bankaccountGetCommunicationCountV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiBankaccountID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async bankaccountGetCommunicationListV1(pkiBankaccountID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BankaccountGetCommunicationListV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.bankaccountGetCommunicationListV1(pkiBankaccountID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectBankaccountApi.bankaccountGetCommunicationListV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiBankaccountID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async bankaccountGetCommunicationrecipientsV1(pkiBankaccountID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BankaccountGetCommunicationrecipientsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.bankaccountGetCommunicationrecipientsV1(pkiBankaccountID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectBankaccountApi.bankaccountGetCommunicationrecipientsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiBankaccountID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async bankaccountGetCommunicationsendersV1(pkiBankaccountID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BankaccountGetCommunicationsendersV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.bankaccountGetCommunicationsendersV1(pkiBankaccountID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectBankaccountApi.bankaccountGetCommunicationsendersV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Import attachments into the Bankaccount
          * @param {number} pkiBankaccountID 
          * @param {BankaccountImportIntoEDMV1Request} bankaccountImportIntoEDMV1Request 
@@ -411,6 +703,46 @@ export const ObjectBankaccountApiFactory = function (configuration?: Configurati
         },
         /**
          * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiBankaccountID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        bankaccountGetCommunicationCountV1(pkiBankaccountID: number, options?: RawAxiosRequestConfig): AxiosPromise<BankaccountGetCommunicationCountV1Response> {
+            return localVarFp.bankaccountGetCommunicationCountV1(pkiBankaccountID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiBankaccountID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        bankaccountGetCommunicationListV1(pkiBankaccountID: number, options?: RawAxiosRequestConfig): AxiosPromise<BankaccountGetCommunicationListV1Response> {
+            return localVarFp.bankaccountGetCommunicationListV1(pkiBankaccountID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiBankaccountID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        bankaccountGetCommunicationrecipientsV1(pkiBankaccountID: number, options?: RawAxiosRequestConfig): AxiosPromise<BankaccountGetCommunicationrecipientsV1Response> {
+            return localVarFp.bankaccountGetCommunicationrecipientsV1(pkiBankaccountID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiBankaccountID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        bankaccountGetCommunicationsendersV1(pkiBankaccountID: number, options?: RawAxiosRequestConfig): AxiosPromise<BankaccountGetCommunicationsendersV1Response> {
+            return localVarFp.bankaccountGetCommunicationsendersV1(pkiBankaccountID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Import attachments into the Bankaccount
          * @param {number} pkiBankaccountID 
          * @param {BankaccountImportIntoEDMV1Request} bankaccountImportIntoEDMV1Request 
@@ -462,6 +794,50 @@ export class ObjectBankaccountApi extends BaseAPI {
      */
     public bankaccountGetAutocompleteV2(sSelector: BankaccountGetAutocompleteV2SSelectorEnum, eFilterActive?: BankaccountGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig) {
         return ObjectBankaccountApiFp(this.configuration).bankaccountGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication count
+     * @param {number} pkiBankaccountID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public bankaccountGetCommunicationCountV1(pkiBankaccountID: number, options?: RawAxiosRequestConfig) {
+        return ObjectBankaccountApiFp(this.configuration).bankaccountGetCommunicationCountV1(pkiBankaccountID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication list
+     * @param {number} pkiBankaccountID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public bankaccountGetCommunicationListV1(pkiBankaccountID: number, options?: RawAxiosRequestConfig) {
+        return ObjectBankaccountApiFp(this.configuration).bankaccountGetCommunicationListV1(pkiBankaccountID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication recipients
+     * @param {number} pkiBankaccountID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public bankaccountGetCommunicationrecipientsV1(pkiBankaccountID: number, options?: RawAxiosRequestConfig) {
+        return ObjectBankaccountApiFp(this.configuration).bankaccountGetCommunicationrecipientsV1(pkiBankaccountID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication senders
+     * @param {number} pkiBankaccountID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public bankaccountGetCommunicationsendersV1(pkiBankaccountID: number, options?: RawAxiosRequestConfig) {
+        return ObjectBankaccountApiFp(this.configuration).bankaccountGetCommunicationsendersV1(pkiBankaccountID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

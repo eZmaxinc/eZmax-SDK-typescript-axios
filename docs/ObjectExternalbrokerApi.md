@@ -6,6 +6,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |------------- | ------------- | -------------|
 |[**externalbrokerBatchDownloadV1**](#externalbrokerbatchdownloadv1) | **POST** /1/object/externalbroker/{pkiExternalbrokerID}/batchDownload | Download multiples attachments from an Externalbroker|
 |[**externalbrokerGetAttachmentsV1**](#externalbrokergetattachmentsv1) | **GET** /1/object/externalbroker/{pkiExternalbrokerID}/getAttachments | Retrieve Externalbroker\&#39;s attachments|
+|[**externalbrokerGetCommunicationCountV1**](#externalbrokergetcommunicationcountv1) | **GET** /1/object/externalbroker/{pkiExternalbrokerID}/getCommunicationCount | Retrieve Communication count|
+|[**externalbrokerGetCommunicationListV1**](#externalbrokergetcommunicationlistv1) | **GET** /1/object/externalbroker/{pkiExternalbrokerID}/getCommunicationList | Retrieve Communication list|
+|[**externalbrokerGetCommunicationrecipientsV1**](#externalbrokergetcommunicationrecipientsv1) | **GET** /1/object/externalbroker/{pkiExternalbrokerID}/getCommunicationrecipients | Retrieve Communication recipients|
+|[**externalbrokerGetCommunicationsendersV1**](#externalbrokergetcommunicationsendersv1) | **GET** /1/object/externalbroker/{pkiExternalbrokerID}/getCommunicationsenders | Retrieve Communication senders|
 |[**externalbrokerImportIntoEDMV1**](#externalbrokerimportintoedmv1) | **POST** /1/object/externalbroker/{pkiExternalbrokerID}/importIntoEDM | Import attachments into the Externalbroker|
 
 # **externalbrokerBatchDownloadV1**
@@ -97,6 +101,210 @@ const { status, data } = await apiInstance.externalbrokerGetAttachmentsV1(
 ### Return type
 
 **ExternalbrokerGetAttachmentsV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **externalbrokerGetCommunicationCountV1**
+> ExternalbrokerGetCommunicationCountV1Response externalbrokerGetCommunicationCountV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectExternalbrokerApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectExternalbrokerApi(configuration);
+
+let pkiExternalbrokerID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.externalbrokerGetCommunicationCountV1(
+    pkiExternalbrokerID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiExternalbrokerID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**ExternalbrokerGetCommunicationCountV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **externalbrokerGetCommunicationListV1**
+> ExternalbrokerGetCommunicationListV1Response externalbrokerGetCommunicationListV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectExternalbrokerApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectExternalbrokerApi(configuration);
+
+let pkiExternalbrokerID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.externalbrokerGetCommunicationListV1(
+    pkiExternalbrokerID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiExternalbrokerID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**ExternalbrokerGetCommunicationListV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **externalbrokerGetCommunicationrecipientsV1**
+> ExternalbrokerGetCommunicationrecipientsV1Response externalbrokerGetCommunicationrecipientsV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectExternalbrokerApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectExternalbrokerApi(configuration);
+
+let pkiExternalbrokerID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.externalbrokerGetCommunicationrecipientsV1(
+    pkiExternalbrokerID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiExternalbrokerID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**ExternalbrokerGetCommunicationrecipientsV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **externalbrokerGetCommunicationsendersV1**
+> ExternalbrokerGetCommunicationsendersV1Response externalbrokerGetCommunicationsendersV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectExternalbrokerApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectExternalbrokerApi(configuration);
+
+let pkiExternalbrokerID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.externalbrokerGetCommunicationsendersV1(
+    pkiExternalbrokerID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiExternalbrokerID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**ExternalbrokerGetCommunicationsendersV1Response**
 
 ### Authorization
 

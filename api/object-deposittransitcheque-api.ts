@@ -28,6 +28,14 @@ import type { DeposittransitchequeBatchDownloadV1Request } from '../model';
 // @ts-ignore
 import type { DeposittransitchequeGetAttachmentsV1Response } from '../model';
 // @ts-ignore
+import type { DeposittransitchequeGetCommunicationCountV1Response } from '../model';
+// @ts-ignore
+import type { DeposittransitchequeGetCommunicationListV1Response } from '../model';
+// @ts-ignore
+import type { DeposittransitchequeGetCommunicationrecipientsV1Response } from '../model';
+// @ts-ignore
+import type { DeposittransitchequeGetCommunicationsendersV1Response } from '../model';
+// @ts-ignore
 import type { DeposittransitchequeImportIntoEDMV1Request } from '../model';
 // @ts-ignore
 import type { DeposittransitchequeImportIntoEDMV1Response } from '../model';
@@ -112,6 +120,238 @@ export const ObjectDeposittransitchequeApiAxiosParamCreator = function (configur
             // verify required parameter 'pkiDeposittransitchequeID' is not null or undefined
             assertParamExists('deposittransitchequeGetAttachmentsV1', 'pkiDeposittransitchequeID', pkiDeposittransitchequeID)
             const localVarPath = `/1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getAttachments`
+                .replace('{pkiDeposittransitchequeID}', encodeURIComponent(String(pkiDeposittransitchequeID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiDeposittransitchequeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deposittransitchequeGetCommunicationCountV1: async (pkiDeposittransitchequeID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiDeposittransitchequeID' is not null or undefined
+            assertParamExists('deposittransitchequeGetCommunicationCountV1', 'pkiDeposittransitchequeID', pkiDeposittransitchequeID)
+            const localVarPath = `/1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getCommunicationCount`
+                .replace('{pkiDeposittransitchequeID}', encodeURIComponent(String(pkiDeposittransitchequeID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiDeposittransitchequeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deposittransitchequeGetCommunicationListV1: async (pkiDeposittransitchequeID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiDeposittransitchequeID' is not null or undefined
+            assertParamExists('deposittransitchequeGetCommunicationListV1', 'pkiDeposittransitchequeID', pkiDeposittransitchequeID)
+            const localVarPath = `/1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getCommunicationList`
+                .replace('{pkiDeposittransitchequeID}', encodeURIComponent(String(pkiDeposittransitchequeID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiDeposittransitchequeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deposittransitchequeGetCommunicationrecipientsV1: async (pkiDeposittransitchequeID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiDeposittransitchequeID' is not null or undefined
+            assertParamExists('deposittransitchequeGetCommunicationrecipientsV1', 'pkiDeposittransitchequeID', pkiDeposittransitchequeID)
+            const localVarPath = `/1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getCommunicationrecipients`
+                .replace('{pkiDeposittransitchequeID}', encodeURIComponent(String(pkiDeposittransitchequeID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiDeposittransitchequeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deposittransitchequeGetCommunicationsendersV1: async (pkiDeposittransitchequeID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiDeposittransitchequeID' is not null or undefined
+            assertParamExists('deposittransitchequeGetCommunicationsendersV1', 'pkiDeposittransitchequeID', pkiDeposittransitchequeID)
+            const localVarPath = `/1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getCommunicationsenders`
                 .replace('{pkiDeposittransitchequeID}', encodeURIComponent(String(pkiDeposittransitchequeID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
@@ -260,6 +500,58 @@ export const ObjectDeposittransitchequeApiFp = function(configuration?: Configur
         },
         /**
          * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiDeposittransitchequeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deposittransitchequeGetCommunicationCountV1(pkiDeposittransitchequeID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeposittransitchequeGetCommunicationCountV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deposittransitchequeGetCommunicationCountV1(pkiDeposittransitchequeID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectDeposittransitchequeApi.deposittransitchequeGetCommunicationCountV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiDeposittransitchequeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deposittransitchequeGetCommunicationListV1(pkiDeposittransitchequeID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeposittransitchequeGetCommunicationListV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deposittransitchequeGetCommunicationListV1(pkiDeposittransitchequeID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectDeposittransitchequeApi.deposittransitchequeGetCommunicationListV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiDeposittransitchequeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deposittransitchequeGetCommunicationrecipientsV1(pkiDeposittransitchequeID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeposittransitchequeGetCommunicationrecipientsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deposittransitchequeGetCommunicationrecipientsV1(pkiDeposittransitchequeID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectDeposittransitchequeApi.deposittransitchequeGetCommunicationrecipientsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiDeposittransitchequeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deposittransitchequeGetCommunicationsendersV1(pkiDeposittransitchequeID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeposittransitchequeGetCommunicationsendersV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deposittransitchequeGetCommunicationsendersV1(pkiDeposittransitchequeID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectDeposittransitchequeApi.deposittransitchequeGetCommunicationsendersV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Import attachments into the Deposittransitcheque
          * @param {number} pkiDeposittransitchequeID 
          * @param {DeposittransitchequeImportIntoEDMV1Request} deposittransitchequeImportIntoEDMV1Request 
@@ -304,6 +596,46 @@ export const ObjectDeposittransitchequeApiFactory = function (configuration?: Co
         },
         /**
          * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiDeposittransitchequeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deposittransitchequeGetCommunicationCountV1(pkiDeposittransitchequeID: number, options?: RawAxiosRequestConfig): AxiosPromise<DeposittransitchequeGetCommunicationCountV1Response> {
+            return localVarFp.deposittransitchequeGetCommunicationCountV1(pkiDeposittransitchequeID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiDeposittransitchequeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deposittransitchequeGetCommunicationListV1(pkiDeposittransitchequeID: number, options?: RawAxiosRequestConfig): AxiosPromise<DeposittransitchequeGetCommunicationListV1Response> {
+            return localVarFp.deposittransitchequeGetCommunicationListV1(pkiDeposittransitchequeID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiDeposittransitchequeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deposittransitchequeGetCommunicationrecipientsV1(pkiDeposittransitchequeID: number, options?: RawAxiosRequestConfig): AxiosPromise<DeposittransitchequeGetCommunicationrecipientsV1Response> {
+            return localVarFp.deposittransitchequeGetCommunicationrecipientsV1(pkiDeposittransitchequeID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiDeposittransitchequeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deposittransitchequeGetCommunicationsendersV1(pkiDeposittransitchequeID: number, options?: RawAxiosRequestConfig): AxiosPromise<DeposittransitchequeGetCommunicationsendersV1Response> {
+            return localVarFp.deposittransitchequeGetCommunicationsendersV1(pkiDeposittransitchequeID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Import attachments into the Deposittransitcheque
          * @param {number} pkiDeposittransitchequeID 
          * @param {DeposittransitchequeImportIntoEDMV1Request} deposittransitchequeImportIntoEDMV1Request 
@@ -341,6 +673,50 @@ export class ObjectDeposittransitchequeApi extends BaseAPI {
      */
     public deposittransitchequeGetAttachmentsV1(pkiDeposittransitchequeID: number, options?: RawAxiosRequestConfig) {
         return ObjectDeposittransitchequeApiFp(this.configuration).deposittransitchequeGetAttachmentsV1(pkiDeposittransitchequeID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication count
+     * @param {number} pkiDeposittransitchequeID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public deposittransitchequeGetCommunicationCountV1(pkiDeposittransitchequeID: number, options?: RawAxiosRequestConfig) {
+        return ObjectDeposittransitchequeApiFp(this.configuration).deposittransitchequeGetCommunicationCountV1(pkiDeposittransitchequeID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication list
+     * @param {number} pkiDeposittransitchequeID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public deposittransitchequeGetCommunicationListV1(pkiDeposittransitchequeID: number, options?: RawAxiosRequestConfig) {
+        return ObjectDeposittransitchequeApiFp(this.configuration).deposittransitchequeGetCommunicationListV1(pkiDeposittransitchequeID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication recipients
+     * @param {number} pkiDeposittransitchequeID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public deposittransitchequeGetCommunicationrecipientsV1(pkiDeposittransitchequeID: number, options?: RawAxiosRequestConfig) {
+        return ObjectDeposittransitchequeApiFp(this.configuration).deposittransitchequeGetCommunicationrecipientsV1(pkiDeposittransitchequeID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication senders
+     * @param {number} pkiDeposittransitchequeID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public deposittransitchequeGetCommunicationsendersV1(pkiDeposittransitchequeID: number, options?: RawAxiosRequestConfig) {
+        return ObjectDeposittransitchequeApiFp(this.configuration).deposittransitchequeGetCommunicationsendersV1(pkiDeposittransitchequeID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

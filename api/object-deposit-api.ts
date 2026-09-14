@@ -28,6 +28,14 @@ import type { DepositBatchDownloadV1Request } from '../model';
 // @ts-ignore
 import type { DepositGetAttachmentsV1Response } from '../model';
 // @ts-ignore
+import type { DepositGetCommunicationCountV1Response } from '../model';
+// @ts-ignore
+import type { DepositGetCommunicationListV1Response } from '../model';
+// @ts-ignore
+import type { DepositGetCommunicationrecipientsV1Response } from '../model';
+// @ts-ignore
+import type { DepositGetCommunicationsendersV1Response } from '../model';
+// @ts-ignore
 import type { DepositImportIntoEDMV1Request } from '../model';
 // @ts-ignore
 import type { DepositImportIntoEDMV1Response } from '../model';
@@ -112,6 +120,238 @@ export const ObjectDepositApiAxiosParamCreator = function (configuration?: Confi
             // verify required parameter 'pkiDepositID' is not null or undefined
             assertParamExists('depositGetAttachmentsV1', 'pkiDepositID', pkiDepositID)
             const localVarPath = `/1/object/deposit/{pkiDepositID}/getAttachments`
+                .replace('{pkiDepositID}', encodeURIComponent(String(pkiDepositID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiDepositID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        depositGetCommunicationCountV1: async (pkiDepositID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiDepositID' is not null or undefined
+            assertParamExists('depositGetCommunicationCountV1', 'pkiDepositID', pkiDepositID)
+            const localVarPath = `/1/object/deposit/{pkiDepositID}/getCommunicationCount`
+                .replace('{pkiDepositID}', encodeURIComponent(String(pkiDepositID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiDepositID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        depositGetCommunicationListV1: async (pkiDepositID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiDepositID' is not null or undefined
+            assertParamExists('depositGetCommunicationListV1', 'pkiDepositID', pkiDepositID)
+            const localVarPath = `/1/object/deposit/{pkiDepositID}/getCommunicationList`
+                .replace('{pkiDepositID}', encodeURIComponent(String(pkiDepositID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiDepositID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        depositGetCommunicationrecipientsV1: async (pkiDepositID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiDepositID' is not null or undefined
+            assertParamExists('depositGetCommunicationrecipientsV1', 'pkiDepositID', pkiDepositID)
+            const localVarPath = `/1/object/deposit/{pkiDepositID}/getCommunicationrecipients`
+                .replace('{pkiDepositID}', encodeURIComponent(String(pkiDepositID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiDepositID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        depositGetCommunicationsendersV1: async (pkiDepositID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiDepositID' is not null or undefined
+            assertParamExists('depositGetCommunicationsendersV1', 'pkiDepositID', pkiDepositID)
+            const localVarPath = `/1/object/deposit/{pkiDepositID}/getCommunicationsenders`
                 .replace('{pkiDepositID}', encodeURIComponent(String(pkiDepositID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
@@ -260,6 +500,58 @@ export const ObjectDepositApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiDepositID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async depositGetCommunicationCountV1(pkiDepositID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DepositGetCommunicationCountV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.depositGetCommunicationCountV1(pkiDepositID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectDepositApi.depositGetCommunicationCountV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiDepositID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async depositGetCommunicationListV1(pkiDepositID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DepositGetCommunicationListV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.depositGetCommunicationListV1(pkiDepositID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectDepositApi.depositGetCommunicationListV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiDepositID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async depositGetCommunicationrecipientsV1(pkiDepositID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DepositGetCommunicationrecipientsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.depositGetCommunicationrecipientsV1(pkiDepositID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectDepositApi.depositGetCommunicationrecipientsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiDepositID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async depositGetCommunicationsendersV1(pkiDepositID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DepositGetCommunicationsendersV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.depositGetCommunicationsendersV1(pkiDepositID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectDepositApi.depositGetCommunicationsendersV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Import attachments into the Deposit
          * @param {number} pkiDepositID 
          * @param {DepositImportIntoEDMV1Request} depositImportIntoEDMV1Request 
@@ -304,6 +596,46 @@ export const ObjectDepositApiFactory = function (configuration?: Configuration, 
         },
         /**
          * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiDepositID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        depositGetCommunicationCountV1(pkiDepositID: number, options?: RawAxiosRequestConfig): AxiosPromise<DepositGetCommunicationCountV1Response> {
+            return localVarFp.depositGetCommunicationCountV1(pkiDepositID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiDepositID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        depositGetCommunicationListV1(pkiDepositID: number, options?: RawAxiosRequestConfig): AxiosPromise<DepositGetCommunicationListV1Response> {
+            return localVarFp.depositGetCommunicationListV1(pkiDepositID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiDepositID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        depositGetCommunicationrecipientsV1(pkiDepositID: number, options?: RawAxiosRequestConfig): AxiosPromise<DepositGetCommunicationrecipientsV1Response> {
+            return localVarFp.depositGetCommunicationrecipientsV1(pkiDepositID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiDepositID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        depositGetCommunicationsendersV1(pkiDepositID: number, options?: RawAxiosRequestConfig): AxiosPromise<DepositGetCommunicationsendersV1Response> {
+            return localVarFp.depositGetCommunicationsendersV1(pkiDepositID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Import attachments into the Deposit
          * @param {number} pkiDepositID 
          * @param {DepositImportIntoEDMV1Request} depositImportIntoEDMV1Request 
@@ -341,6 +673,50 @@ export class ObjectDepositApi extends BaseAPI {
      */
     public depositGetAttachmentsV1(pkiDepositID: number, options?: RawAxiosRequestConfig) {
         return ObjectDepositApiFp(this.configuration).depositGetAttachmentsV1(pkiDepositID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication count
+     * @param {number} pkiDepositID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public depositGetCommunicationCountV1(pkiDepositID: number, options?: RawAxiosRequestConfig) {
+        return ObjectDepositApiFp(this.configuration).depositGetCommunicationCountV1(pkiDepositID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication list
+     * @param {number} pkiDepositID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public depositGetCommunicationListV1(pkiDepositID: number, options?: RawAxiosRequestConfig) {
+        return ObjectDepositApiFp(this.configuration).depositGetCommunicationListV1(pkiDepositID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication recipients
+     * @param {number} pkiDepositID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public depositGetCommunicationrecipientsV1(pkiDepositID: number, options?: RawAxiosRequestConfig) {
+        return ObjectDepositApiFp(this.configuration).depositGetCommunicationrecipientsV1(pkiDepositID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication senders
+     * @param {number} pkiDepositID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public depositGetCommunicationsendersV1(pkiDepositID: number, options?: RawAxiosRequestConfig) {
+        return ObjectDepositApiFp(this.configuration).depositGetCommunicationsendersV1(pkiDepositID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

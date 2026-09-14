@@ -4,7 +4,8 @@
 * Do not edit the class manually.
 */
 
-import { UConstant } from './constant'
+const LANGUAGE_FRENCH = 1
+const LANGUAGE_ENGLISH = 2
 
 class UPermission {
     // prettier-ignore
@@ -341,7 +342,7 @@ class UPermission {
 
     public static getModuleDescriptionById(moduleId: number, languageId: number): string {
         switch (languageId) {
-            case UConstant.LANGUAGE_FRENCH:
+            case LANGUAGE_FRENCH:
                 switch (moduleId) {
                     case 120: return 'Administration: Administration: Archivage de dossiers immobiliers'
                     case 89: return 'Administration: Administration: Assistants'
@@ -660,7 +661,7 @@ class UPermission {
                     case 81: return 'Vétérinaire: Vetrx: Création/Modification'
                 }
 
-            case UConstant.LANGUAGE_ENGLISH:
+            case LANGUAGE_ENGLISH:
                 switch (moduleId) {
                     case 7: return 'Accounts Payable: Payments: Credit Cards'
                     case 8: return 'Accounts Payable: Payments: Electronics Funds Transfer'

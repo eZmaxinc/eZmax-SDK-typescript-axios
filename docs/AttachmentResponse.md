@@ -55,6 +55,7 @@ Name | Type | Description | Notes
 **fkiEzsigndocumentIDReference** | **number** | The unique ID of the Ezsigndocument | [optional] [default to undefined]
 **eAttachmentDocumenttype** | [**FieldEAttachmentDocumenttype**](FieldEAttachmentDocumenttype.md) |  | [default to undefined]
 **sAttachmentName** | **string** | The name of the Attachment | [default to undefined]
+**sAttachmentCategory** | **string** | The attachment category | [default to undefined]
 **eAttachmentPrivacy** | [**FieldEAttachmentPrivacy**](FieldEAttachmentPrivacy.md) |  | [default to undefined]
 **fkiUserIDSpecific** | **number** | The unique ID of the User | [optional] [default to undefined]
 **eAttachmentType** | [**FieldEAttachmentType**](FieldEAttachmentType.md) |  | [default to undefined]
@@ -123,6 +124,7 @@ const instance: AttachmentResponse = {
     fkiEzsigndocumentIDReference,
     eAttachmentDocumenttype,
     sAttachmentName,
+    sAttachmentCategory,
     eAttachmentPrivacy,
     fkiUserIDSpecific,
     eAttachmentType,

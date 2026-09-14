@@ -275,6 +275,11 @@ export interface AttachmentResponse {
      */
     /*'sAttachmentName': string;*/
     'sAttachmentName': string;
+    /**
+     * The attachment category
+     */
+    /*'sAttachmentCategory': string;*/
+    'sAttachmentCategory': string;
     /*'eAttachmentPrivacy': FieldEAttachmentPrivacy;*/
     'eAttachmentPrivacy': FieldEAttachmentPrivacy;
     /**
@@ -391,6 +396,7 @@ export class DataObjectAttachmentResponse {
    fkiEzsigndocumentIDReference?:number = undefined
    eAttachmentDocumenttype:FieldEAttachmentDocumenttype = 'Adjustment'
    sAttachmentName:string = ''
+   sAttachmentCategory:string = ''
    eAttachmentPrivacy:FieldEAttachmentPrivacy = 'All'
    fkiUserIDSpecific?:number = undefined
    eAttachmentType:FieldEAttachmentType = 'Other'
@@ -683,6 +689,11 @@ export class ValidationObjectAttachmentResponse {
    sAttachmentName = {
       type: 'string',
       pattern: /^(?!\.{1,2}$)(?!.*[ .]$)(?!(?:CON|PRN|AUX|NUL|COM(?:[1-9]|[¹²³])|LPT(?:[1-9]|[¹²³]))(?:\.|$))[^\x00-\x1F<>:"\/\\\\|?*]{1,75}$/,
+      required: true
+   }
+   sAttachmentCategory = {
+      type: 'string',
+      pattern: /^(?!\.{1,2}$)(?!.*[ .]$)(?!(?:CON|PRN|AUX|NUL|COM(?:[1-9]|[¹²³])|LPT(?:[1-9]|[¹²³]))(?:\.|$))[^\x00-\x1F<>:"\/\\\\|?*]{0,75}$/,
       required: true
    }
    eAttachmentPrivacy = {

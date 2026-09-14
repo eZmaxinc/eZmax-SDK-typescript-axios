@@ -28,6 +28,14 @@ import type { AgentGetAttachmentsV1Response } from '../model';
 // @ts-ignore
 import type { AgentGetAutocompleteV2Response } from '../model';
 // @ts-ignore
+import type { AgentGetCommunicationCountV1Response } from '../model';
+// @ts-ignore
+import type { AgentGetCommunicationListV1Response } from '../model';
+// @ts-ignore
+import type { AgentGetCommunicationrecipientsV1Response } from '../model';
+// @ts-ignore
+import type { AgentGetCommunicationsendersV1Response } from '../model';
+// @ts-ignore
 import type { AgentGetListV1Response } from '../model';
 // @ts-ignore
 import type { AgentImportIntoEDMV1Request } from '../model';
@@ -213,6 +221,238 @@ export const ObjectAgentApiAxiosParamCreator = function (configuration?: Configu
                     ? acceptLanguage
                     : JSON.stringify(acceptLanguage, replaceWithSerializableTypeIfNeeded);
             }
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiAgentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        agentGetCommunicationCountV1: async (pkiAgentID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiAgentID' is not null or undefined
+            assertParamExists('agentGetCommunicationCountV1', 'pkiAgentID', pkiAgentID)
+            const localVarPath = `/1/object/agent/{pkiAgentID}/getCommunicationCount`
+                .replace('{pkiAgentID}', encodeURIComponent(String(pkiAgentID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiAgentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        agentGetCommunicationListV1: async (pkiAgentID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiAgentID' is not null or undefined
+            assertParamExists('agentGetCommunicationListV1', 'pkiAgentID', pkiAgentID)
+            const localVarPath = `/1/object/agent/{pkiAgentID}/getCommunicationList`
+                .replace('{pkiAgentID}', encodeURIComponent(String(pkiAgentID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiAgentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        agentGetCommunicationrecipientsV1: async (pkiAgentID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiAgentID' is not null or undefined
+            assertParamExists('agentGetCommunicationrecipientsV1', 'pkiAgentID', pkiAgentID)
+            const localVarPath = `/1/object/agent/{pkiAgentID}/getCommunicationrecipients`
+                .replace('{pkiAgentID}', encodeURIComponent(String(pkiAgentID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiAgentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        agentGetCommunicationsendersV1: async (pkiAgentID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiAgentID' is not null or undefined
+            assertParamExists('agentGetCommunicationsendersV1', 'pkiAgentID', pkiAgentID)
+            const localVarPath = `/1/object/agent/{pkiAgentID}/getCommunicationsenders`
+                .replace('{pkiAgentID}', encodeURIComponent(String(pkiAgentID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
             setSearchParams(localVarUrlObj, localVarQueryParameter);
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
@@ -436,6 +676,58 @@ export const ObjectAgentApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiAgentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async agentGetCommunicationCountV1(pkiAgentID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AgentGetCommunicationCountV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.agentGetCommunicationCountV1(pkiAgentID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectAgentApi.agentGetCommunicationCountV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiAgentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async agentGetCommunicationListV1(pkiAgentID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AgentGetCommunicationListV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.agentGetCommunicationListV1(pkiAgentID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectAgentApi.agentGetCommunicationListV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiAgentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async agentGetCommunicationrecipientsV1(pkiAgentID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AgentGetCommunicationrecipientsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.agentGetCommunicationrecipientsV1(pkiAgentID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectAgentApi.agentGetCommunicationrecipientsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiAgentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async agentGetCommunicationsendersV1(pkiAgentID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AgentGetCommunicationsendersV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.agentGetCommunicationsendersV1(pkiAgentID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectAgentApi.agentGetCommunicationsendersV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Retrieve Agent list
          * @param {AgentGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -510,6 +802,46 @@ export const ObjectAgentApiFactory = function (configuration?: Configuration, ba
         },
         /**
          * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiAgentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        agentGetCommunicationCountV1(pkiAgentID: number, options?: RawAxiosRequestConfig): AxiosPromise<AgentGetCommunicationCountV1Response> {
+            return localVarFp.agentGetCommunicationCountV1(pkiAgentID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiAgentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        agentGetCommunicationListV1(pkiAgentID: number, options?: RawAxiosRequestConfig): AxiosPromise<AgentGetCommunicationListV1Response> {
+            return localVarFp.agentGetCommunicationListV1(pkiAgentID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiAgentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        agentGetCommunicationrecipientsV1(pkiAgentID: number, options?: RawAxiosRequestConfig): AxiosPromise<AgentGetCommunicationrecipientsV1Response> {
+            return localVarFp.agentGetCommunicationrecipientsV1(pkiAgentID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiAgentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        agentGetCommunicationsendersV1(pkiAgentID: number, options?: RawAxiosRequestConfig): AxiosPromise<AgentGetCommunicationsendersV1Response> {
+            return localVarFp.agentGetCommunicationsendersV1(pkiAgentID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Retrieve Agent list
          * @param {AgentGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -575,6 +907,50 @@ export class ObjectAgentApi extends BaseAPI {
      */
     public agentGetAutocompleteV2(sSelector: AgentGetAutocompleteV2SSelectorEnum, eFilterActive?: AgentGetAutocompleteV2EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig) {
         return ObjectAgentApiFp(this.configuration).agentGetAutocompleteV2(sSelector, eFilterActive, sQuery, acceptLanguage, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication count
+     * @param {number} pkiAgentID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public agentGetCommunicationCountV1(pkiAgentID: number, options?: RawAxiosRequestConfig) {
+        return ObjectAgentApiFp(this.configuration).agentGetCommunicationCountV1(pkiAgentID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication list
+     * @param {number} pkiAgentID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public agentGetCommunicationListV1(pkiAgentID: number, options?: RawAxiosRequestConfig) {
+        return ObjectAgentApiFp(this.configuration).agentGetCommunicationListV1(pkiAgentID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication recipients
+     * @param {number} pkiAgentID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public agentGetCommunicationrecipientsV1(pkiAgentID: number, options?: RawAxiosRequestConfig) {
+        return ObjectAgentApiFp(this.configuration).agentGetCommunicationrecipientsV1(pkiAgentID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication senders
+     * @param {number} pkiAgentID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public agentGetCommunicationsendersV1(pkiAgentID: number, options?: RawAxiosRequestConfig) {
+        return ObjectAgentApiFp(this.configuration).agentGetCommunicationsendersV1(pkiAgentID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

@@ -22,11 +22,21 @@ import { DUMMY_BASE_URL, assertParamExists, setApiKeyToObject, setBasicAuthToObj
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError, operationServerMap } from '../base';
 // @ts-ignore
+import type { AttachmentDeleteV1Response } from '../model';
+// @ts-ignore
 import type { AttachmentGetAttachmentlogsV1Response } from '../model';
 // @ts-ignore
 import type { AttachmentRenameV1Request } from '../model';
 // @ts-ignore
 import type { AttachmentRenameV1Response } from '../model';
+// @ts-ignore
+import type { AttachmentRestoreV1Request } from '../model';
+// @ts-ignore
+import type { AttachmentRestoreV1Response } from '../model';
+// @ts-ignore
+import type { AttachmentValidateV1Request } from '../model';
+// @ts-ignore
+import type { AttachmentValidateV1Response } from '../model';
 // @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
@@ -36,6 +46,69 @@ import { RequestSignature, IHeadersData } from '../api/request-signature';
  */
 export const ObjectAttachmentApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
+        /**
+         * Te endpoint allows to delete an attachment.
+         * @summary Delete an existing attachment
+         * @param {number} pkiAttachmentID 
+         * @param {object} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        attachmentDeleteV1: async (pkiAttachmentID: number, body: object, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiAttachmentID' is not null or undefined
+            assertParamExists('attachmentDeleteV1', 'pkiAttachmentID', pkiAttachmentID)
+            // verify required parameter 'body' is not null or undefined
+            assertParamExists('attachmentDeleteV1', 'body', body)
+            const localVarPath = `/1/object/attachment/{pkiAttachmentID}/delete`
+                .replace('{pkiAttachmentID}', encodeURIComponent(String(pkiAttachmentID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
         /**
          * Using this endpoint, you can retrieve the content of an attachment.
          * @summary Retrieve the content
@@ -157,7 +230,7 @@ export const ObjectAttachmentApiAxiosParamCreator = function (configuration?: Co
         },
         /**
          * The endpoint allows to change the attachment\'s file name and category.
-         * @summary Rename an Attachment
+         * @summary Rename an attachment
          * @param {number} pkiAttachmentID 
          * @param {AttachmentRenameV1Request} attachmentRenameV1Request 
          * @param {*} [options] Override http request option.
@@ -218,6 +291,132 @@ export const ObjectAttachmentApiAxiosParamCreator = function (configuration?: Co
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * The endpoints allows to restore a previously deleted attachment.
+         * @summary Restore a deleted attachment
+         * @param {number} pkiAttachmentID 
+         * @param {AttachmentRestoreV1Request} attachmentRestoreV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        attachmentRestoreV1: async (pkiAttachmentID: number, attachmentRestoreV1Request: AttachmentRestoreV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiAttachmentID' is not null or undefined
+            assertParamExists('attachmentRestoreV1', 'pkiAttachmentID', pkiAttachmentID)
+            // verify required parameter 'attachmentRestoreV1Request' is not null or undefined
+            assertParamExists('attachmentRestoreV1', 'attachmentRestoreV1Request', attachmentRestoreV1Request)
+            const localVarPath = `/1/object/attachment/{pkiAttachmentID}/restore`
+                .replace('{pkiAttachmentID}', encodeURIComponent(String(pkiAttachmentID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(attachmentRestoreV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * This endpoint allows to validate or reject an attachment.
+         * @summary Validate an existing attachment
+         * @param {number} pkiAttachmentID 
+         * @param {AttachmentValidateV1Request} attachmentValidateV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        attachmentValidateV1: async (pkiAttachmentID: number, attachmentValidateV1Request: AttachmentValidateV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiAttachmentID' is not null or undefined
+            assertParamExists('attachmentValidateV1', 'pkiAttachmentID', pkiAttachmentID)
+            // verify required parameter 'attachmentValidateV1Request' is not null or undefined
+            assertParamExists('attachmentValidateV1', 'attachmentValidateV1Request', attachmentValidateV1Request)
+            const localVarPath = `/1/object/attachment/{pkiAttachmentID}/validate`
+                .replace('{pkiAttachmentID}', encodeURIComponent(String(pkiAttachmentID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(attachmentValidateV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'PATCH' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -227,6 +426,20 @@ export const ObjectAttachmentApiAxiosParamCreator = function (configuration?: Co
 export const ObjectAttachmentApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = ObjectAttachmentApiAxiosParamCreator(configuration)
     return {
+        /**
+         * Te endpoint allows to delete an attachment.
+         * @summary Delete an existing attachment
+         * @param {number} pkiAttachmentID 
+         * @param {object} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async attachmentDeleteV1(pkiAttachmentID: number, body: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AttachmentDeleteV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.attachmentDeleteV1(pkiAttachmentID, body, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectAttachmentApi.attachmentDeleteV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
         /**
          * Using this endpoint, you can retrieve the content of an attachment.
          * @summary Retrieve the content
@@ -255,7 +468,7 @@ export const ObjectAttachmentApiFp = function(configuration?: Configuration) {
         },
         /**
          * The endpoint allows to change the attachment\'s file name and category.
-         * @summary Rename an Attachment
+         * @summary Rename an attachment
          * @param {number} pkiAttachmentID 
          * @param {AttachmentRenameV1Request} attachmentRenameV1Request 
          * @param {*} [options] Override http request option.
@@ -267,6 +480,34 @@ export const ObjectAttachmentApiFp = function(configuration?: Configuration) {
             const localVarOperationServerBasePath = operationServerMap['ObjectAttachmentApi.attachmentRenameV1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
+        /**
+         * The endpoints allows to restore a previously deleted attachment.
+         * @summary Restore a deleted attachment
+         * @param {number} pkiAttachmentID 
+         * @param {AttachmentRestoreV1Request} attachmentRestoreV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async attachmentRestoreV1(pkiAttachmentID: number, attachmentRestoreV1Request: AttachmentRestoreV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AttachmentRestoreV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.attachmentRestoreV1(pkiAttachmentID, attachmentRestoreV1Request, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectAttachmentApi.attachmentRestoreV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * This endpoint allows to validate or reject an attachment.
+         * @summary Validate an existing attachment
+         * @param {number} pkiAttachmentID 
+         * @param {AttachmentValidateV1Request} attachmentValidateV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async attachmentValidateV1(pkiAttachmentID: number, attachmentValidateV1Request: AttachmentValidateV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AttachmentValidateV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.attachmentValidateV1(pkiAttachmentID, attachmentValidateV1Request, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectAttachmentApi.attachmentValidateV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
     }
 };
 
@@ -276,6 +517,17 @@ export const ObjectAttachmentApiFp = function(configuration?: Configuration) {
 export const ObjectAttachmentApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
     const localVarFp = ObjectAttachmentApiFp(configuration)
     return {
+        /**
+         * Te endpoint allows to delete an attachment.
+         * @summary Delete an existing attachment
+         * @param {number} pkiAttachmentID 
+         * @param {object} body 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        attachmentDeleteV1(pkiAttachmentID: number, body: object, options?: RawAxiosRequestConfig): AxiosPromise<AttachmentDeleteV1Response> {
+            return localVarFp.attachmentDeleteV1(pkiAttachmentID, body, options).then((request) => request(axios, basePath));
+        },
         /**
          * Using this endpoint, you can retrieve the content of an attachment.
          * @summary Retrieve the content
@@ -298,7 +550,7 @@ export const ObjectAttachmentApiFactory = function (configuration?: Configuratio
         },
         /**
          * The endpoint allows to change the attachment\'s file name and category.
-         * @summary Rename an Attachment
+         * @summary Rename an attachment
          * @param {number} pkiAttachmentID 
          * @param {AttachmentRenameV1Request} attachmentRenameV1Request 
          * @param {*} [options] Override http request option.
@@ -307,6 +559,28 @@ export const ObjectAttachmentApiFactory = function (configuration?: Configuratio
         attachmentRenameV1(pkiAttachmentID: number, attachmentRenameV1Request: AttachmentRenameV1Request, options?: RawAxiosRequestConfig): AxiosPromise<AttachmentRenameV1Response> {
             return localVarFp.attachmentRenameV1(pkiAttachmentID, attachmentRenameV1Request, options).then((request) => request(axios, basePath));
         },
+        /**
+         * The endpoints allows to restore a previously deleted attachment.
+         * @summary Restore a deleted attachment
+         * @param {number} pkiAttachmentID 
+         * @param {AttachmentRestoreV1Request} attachmentRestoreV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        attachmentRestoreV1(pkiAttachmentID: number, attachmentRestoreV1Request: AttachmentRestoreV1Request, options?: RawAxiosRequestConfig): AxiosPromise<AttachmentRestoreV1Response> {
+            return localVarFp.attachmentRestoreV1(pkiAttachmentID, attachmentRestoreV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * This endpoint allows to validate or reject an attachment.
+         * @summary Validate an existing attachment
+         * @param {number} pkiAttachmentID 
+         * @param {AttachmentValidateV1Request} attachmentValidateV1Request 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        attachmentValidateV1(pkiAttachmentID: number, attachmentValidateV1Request: AttachmentValidateV1Request, options?: RawAxiosRequestConfig): AxiosPromise<AttachmentValidateV1Response> {
+            return localVarFp.attachmentValidateV1(pkiAttachmentID, attachmentValidateV1Request, options).then((request) => request(axios, basePath));
+        },
     };
 };
 
@@ -314,6 +588,18 @@ export const ObjectAttachmentApiFactory = function (configuration?: Configuratio
  * ObjectAttachmentApi - object-oriented interface
  */
 export class ObjectAttachmentApi extends BaseAPI {
+    /**
+     * Te endpoint allows to delete an attachment.
+     * @summary Delete an existing attachment
+     * @param {number} pkiAttachmentID 
+     * @param {object} body 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public attachmentDeleteV1(pkiAttachmentID: number, body: object, options?: RawAxiosRequestConfig) {
+        return ObjectAttachmentApiFp(this.configuration).attachmentDeleteV1(pkiAttachmentID, body, options).then((request) => request(this.axios, this.basePath));
+    }
+
     /**
      * Using this endpoint, you can retrieve the content of an attachment.
      * @summary Retrieve the content
@@ -338,7 +624,7 @@ export class ObjectAttachmentApi extends BaseAPI {
 
     /**
      * The endpoint allows to change the attachment\'s file name and category.
-     * @summary Rename an Attachment
+     * @summary Rename an attachment
      * @param {number} pkiAttachmentID 
      * @param {AttachmentRenameV1Request} attachmentRenameV1Request 
      * @param {*} [options] Override http request option.
@@ -346,6 +632,30 @@ export class ObjectAttachmentApi extends BaseAPI {
      */
     public attachmentRenameV1(pkiAttachmentID: number, attachmentRenameV1Request: AttachmentRenameV1Request, options?: RawAxiosRequestConfig) {
         return ObjectAttachmentApiFp(this.configuration).attachmentRenameV1(pkiAttachmentID, attachmentRenameV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * The endpoints allows to restore a previously deleted attachment.
+     * @summary Restore a deleted attachment
+     * @param {number} pkiAttachmentID 
+     * @param {AttachmentRestoreV1Request} attachmentRestoreV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public attachmentRestoreV1(pkiAttachmentID: number, attachmentRestoreV1Request: AttachmentRestoreV1Request, options?: RawAxiosRequestConfig) {
+        return ObjectAttachmentApiFp(this.configuration).attachmentRestoreV1(pkiAttachmentID, attachmentRestoreV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * This endpoint allows to validate or reject an attachment.
+     * @summary Validate an existing attachment
+     * @param {number} pkiAttachmentID 
+     * @param {AttachmentValidateV1Request} attachmentValidateV1Request 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public attachmentValidateV1(pkiAttachmentID: number, attachmentValidateV1Request: AttachmentValidateV1Request, options?: RawAxiosRequestConfig) {
+        return ObjectAttachmentApiFp(this.configuration).attachmentValidateV1(pkiAttachmentID, attachmentValidateV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

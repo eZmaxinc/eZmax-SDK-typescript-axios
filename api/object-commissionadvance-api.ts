@@ -26,6 +26,14 @@ import type { CommissionadvanceBatchDownloadV1Request } from '../model';
 // @ts-ignore
 import type { CommissionadvanceGetAttachmentsV1Response } from '../model';
 // @ts-ignore
+import type { CommissionadvanceGetCommunicationCountV1Response } from '../model';
+// @ts-ignore
+import type { CommissionadvanceGetCommunicationListV1Response } from '../model';
+// @ts-ignore
+import type { CommissionadvanceGetCommunicationrecipientsV1Response } from '../model';
+// @ts-ignore
+import type { CommissionadvanceGetCommunicationsendersV1Response } from '../model';
+// @ts-ignore
 import type { CommissionadvanceImportIntoEDMV1Request } from '../model';
 // @ts-ignore
 import type { CommissionadvanceImportIntoEDMV1Response } from '../model';
@@ -112,6 +120,238 @@ export const ObjectCommissionadvanceApiAxiosParamCreator = function (configurati
             // verify required parameter 'pkiCommissionadvanceID' is not null or undefined
             assertParamExists('commissionadvanceGetAttachmentsV1', 'pkiCommissionadvanceID', pkiCommissionadvanceID)
             const localVarPath = `/1/object/commissionadvance/{pkiCommissionadvanceID}/getAttachments`
+                .replace('{pkiCommissionadvanceID}', encodeURIComponent(String(pkiCommissionadvanceID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiCommissionadvanceID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        commissionadvanceGetCommunicationCountV1: async (pkiCommissionadvanceID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiCommissionadvanceID' is not null or undefined
+            assertParamExists('commissionadvanceGetCommunicationCountV1', 'pkiCommissionadvanceID', pkiCommissionadvanceID)
+            const localVarPath = `/1/object/commissionadvance/{pkiCommissionadvanceID}/getCommunicationCount`
+                .replace('{pkiCommissionadvanceID}', encodeURIComponent(String(pkiCommissionadvanceID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiCommissionadvanceID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        commissionadvanceGetCommunicationListV1: async (pkiCommissionadvanceID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiCommissionadvanceID' is not null or undefined
+            assertParamExists('commissionadvanceGetCommunicationListV1', 'pkiCommissionadvanceID', pkiCommissionadvanceID)
+            const localVarPath = `/1/object/commissionadvance/{pkiCommissionadvanceID}/getCommunicationList`
+                .replace('{pkiCommissionadvanceID}', encodeURIComponent(String(pkiCommissionadvanceID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiCommissionadvanceID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        commissionadvanceGetCommunicationrecipientsV1: async (pkiCommissionadvanceID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiCommissionadvanceID' is not null or undefined
+            assertParamExists('commissionadvanceGetCommunicationrecipientsV1', 'pkiCommissionadvanceID', pkiCommissionadvanceID)
+            const localVarPath = `/1/object/commissionadvance/{pkiCommissionadvanceID}/getCommunicationrecipients`
+                .replace('{pkiCommissionadvanceID}', encodeURIComponent(String(pkiCommissionadvanceID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiCommissionadvanceID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        commissionadvanceGetCommunicationsendersV1: async (pkiCommissionadvanceID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiCommissionadvanceID' is not null or undefined
+            assertParamExists('commissionadvanceGetCommunicationsendersV1', 'pkiCommissionadvanceID', pkiCommissionadvanceID)
+            const localVarPath = `/1/object/commissionadvance/{pkiCommissionadvanceID}/getCommunicationsenders`
                 .replace('{pkiCommissionadvanceID}', encodeURIComponent(String(pkiCommissionadvanceID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
@@ -260,6 +500,58 @@ export const ObjectCommissionadvanceApiFp = function(configuration?: Configurati
         },
         /**
          * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiCommissionadvanceID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async commissionadvanceGetCommunicationCountV1(pkiCommissionadvanceID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommissionadvanceGetCommunicationCountV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.commissionadvanceGetCommunicationCountV1(pkiCommissionadvanceID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectCommissionadvanceApi.commissionadvanceGetCommunicationCountV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiCommissionadvanceID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async commissionadvanceGetCommunicationListV1(pkiCommissionadvanceID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommissionadvanceGetCommunicationListV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.commissionadvanceGetCommunicationListV1(pkiCommissionadvanceID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectCommissionadvanceApi.commissionadvanceGetCommunicationListV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiCommissionadvanceID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async commissionadvanceGetCommunicationrecipientsV1(pkiCommissionadvanceID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommissionadvanceGetCommunicationrecipientsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.commissionadvanceGetCommunicationrecipientsV1(pkiCommissionadvanceID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectCommissionadvanceApi.commissionadvanceGetCommunicationrecipientsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiCommissionadvanceID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async commissionadvanceGetCommunicationsendersV1(pkiCommissionadvanceID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CommissionadvanceGetCommunicationsendersV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.commissionadvanceGetCommunicationsendersV1(pkiCommissionadvanceID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectCommissionadvanceApi.commissionadvanceGetCommunicationsendersV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Import attachments into the Commissionadvance
          * @param {number} pkiCommissionadvanceID 
          * @param {CommissionadvanceImportIntoEDMV1Request} commissionadvanceImportIntoEDMV1Request 
@@ -304,6 +596,46 @@ export const ObjectCommissionadvanceApiFactory = function (configuration?: Confi
         },
         /**
          * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiCommissionadvanceID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        commissionadvanceGetCommunicationCountV1(pkiCommissionadvanceID: number, options?: RawAxiosRequestConfig): AxiosPromise<CommissionadvanceGetCommunicationCountV1Response> {
+            return localVarFp.commissionadvanceGetCommunicationCountV1(pkiCommissionadvanceID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiCommissionadvanceID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        commissionadvanceGetCommunicationListV1(pkiCommissionadvanceID: number, options?: RawAxiosRequestConfig): AxiosPromise<CommissionadvanceGetCommunicationListV1Response> {
+            return localVarFp.commissionadvanceGetCommunicationListV1(pkiCommissionadvanceID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiCommissionadvanceID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        commissionadvanceGetCommunicationrecipientsV1(pkiCommissionadvanceID: number, options?: RawAxiosRequestConfig): AxiosPromise<CommissionadvanceGetCommunicationrecipientsV1Response> {
+            return localVarFp.commissionadvanceGetCommunicationrecipientsV1(pkiCommissionadvanceID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiCommissionadvanceID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        commissionadvanceGetCommunicationsendersV1(pkiCommissionadvanceID: number, options?: RawAxiosRequestConfig): AxiosPromise<CommissionadvanceGetCommunicationsendersV1Response> {
+            return localVarFp.commissionadvanceGetCommunicationsendersV1(pkiCommissionadvanceID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Import attachments into the Commissionadvance
          * @param {number} pkiCommissionadvanceID 
          * @param {CommissionadvanceImportIntoEDMV1Request} commissionadvanceImportIntoEDMV1Request 
@@ -341,6 +673,50 @@ export class ObjectCommissionadvanceApi extends BaseAPI {
      */
     public commissionadvanceGetAttachmentsV1(pkiCommissionadvanceID: number, options?: RawAxiosRequestConfig) {
         return ObjectCommissionadvanceApiFp(this.configuration).commissionadvanceGetAttachmentsV1(pkiCommissionadvanceID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication count
+     * @param {number} pkiCommissionadvanceID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public commissionadvanceGetCommunicationCountV1(pkiCommissionadvanceID: number, options?: RawAxiosRequestConfig) {
+        return ObjectCommissionadvanceApiFp(this.configuration).commissionadvanceGetCommunicationCountV1(pkiCommissionadvanceID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication list
+     * @param {number} pkiCommissionadvanceID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public commissionadvanceGetCommunicationListV1(pkiCommissionadvanceID: number, options?: RawAxiosRequestConfig) {
+        return ObjectCommissionadvanceApiFp(this.configuration).commissionadvanceGetCommunicationListV1(pkiCommissionadvanceID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication recipients
+     * @param {number} pkiCommissionadvanceID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public commissionadvanceGetCommunicationrecipientsV1(pkiCommissionadvanceID: number, options?: RawAxiosRequestConfig) {
+        return ObjectCommissionadvanceApiFp(this.configuration).commissionadvanceGetCommunicationrecipientsV1(pkiCommissionadvanceID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication senders
+     * @param {number} pkiCommissionadvanceID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public commissionadvanceGetCommunicationsendersV1(pkiCommissionadvanceID: number, options?: RawAxiosRequestConfig) {
+        return ObjectCommissionadvanceApiFp(this.configuration).commissionadvanceGetCommunicationsendersV1(pkiCommissionadvanceID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

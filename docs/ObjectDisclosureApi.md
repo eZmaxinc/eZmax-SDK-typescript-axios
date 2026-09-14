@@ -6,6 +6,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |------------- | ------------- | -------------|
 |[**disclosureBatchDownloadV1**](#disclosurebatchdownloadv1) | **POST** /1/object/disclosure/{pkiDisclosureID}/batchDownload | Download multiples attachments from a Disclosure|
 |[**disclosureGetAttachmentsV1**](#disclosuregetattachmentsv1) | **GET** /1/object/disclosure/{pkiDisclosureID}/getAttachments | Retrieve Disclosure\&#39;s attachments|
+|[**disclosureGetCommunicationCountV1**](#disclosuregetcommunicationcountv1) | **GET** /1/object/disclosure/{pkiDisclosureID}/getCommunicationCount | Retrieve Communication count|
+|[**disclosureGetCommunicationListV1**](#disclosuregetcommunicationlistv1) | **GET** /1/object/disclosure/{pkiDisclosureID}/getCommunicationList | Retrieve Communication list|
+|[**disclosureGetCommunicationrecipientsV1**](#disclosuregetcommunicationrecipientsv1) | **GET** /1/object/disclosure/{pkiDisclosureID}/getCommunicationrecipients | Retrieve Communication recipients|
+|[**disclosureGetCommunicationsendersV1**](#disclosuregetcommunicationsendersv1) | **GET** /1/object/disclosure/{pkiDisclosureID}/getCommunicationsenders | Retrieve Communication senders|
 |[**disclosureImportIntoEDMV1**](#disclosureimportintoedmv1) | **POST** /1/object/disclosure/{pkiDisclosureID}/importIntoEDM | Import attachments into the Disclosure|
 
 # **disclosureBatchDownloadV1**
@@ -97,6 +101,210 @@ const { status, data } = await apiInstance.disclosureGetAttachmentsV1(
 ### Return type
 
 **DisclosureGetAttachmentsV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **disclosureGetCommunicationCountV1**
+> DisclosureGetCommunicationCountV1Response disclosureGetCommunicationCountV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectDisclosureApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectDisclosureApi(configuration);
+
+let pkiDisclosureID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.disclosureGetCommunicationCountV1(
+    pkiDisclosureID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiDisclosureID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**DisclosureGetCommunicationCountV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **disclosureGetCommunicationListV1**
+> DisclosureGetCommunicationListV1Response disclosureGetCommunicationListV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectDisclosureApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectDisclosureApi(configuration);
+
+let pkiDisclosureID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.disclosureGetCommunicationListV1(
+    pkiDisclosureID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiDisclosureID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**DisclosureGetCommunicationListV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **disclosureGetCommunicationrecipientsV1**
+> DisclosureGetCommunicationrecipientsV1Response disclosureGetCommunicationrecipientsV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectDisclosureApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectDisclosureApi(configuration);
+
+let pkiDisclosureID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.disclosureGetCommunicationrecipientsV1(
+    pkiDisclosureID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiDisclosureID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**DisclosureGetCommunicationrecipientsV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **disclosureGetCommunicationsendersV1**
+> DisclosureGetCommunicationsendersV1Response disclosureGetCommunicationsendersV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectDisclosureApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectDisclosureApi(configuration);
+
+let pkiDisclosureID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.disclosureGetCommunicationsendersV1(
+    pkiDisclosureID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiDisclosureID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**DisclosureGetCommunicationsendersV1Response**
 
 ### Authorization
 
