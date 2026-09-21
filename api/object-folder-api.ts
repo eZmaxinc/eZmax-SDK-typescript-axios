@@ -28,6 +28,14 @@ import type { FolderBatchDownloadV1Request } from '../model';
 // @ts-ignore
 import type { FolderGetAttachmentsV1Response } from '../model';
 // @ts-ignore
+import type { FolderGetCommunicationCountV1Response } from '../model';
+// @ts-ignore
+import type { FolderGetCommunicationListV1Response } from '../model';
+// @ts-ignore
+import type { FolderGetCommunicationrecipientsV1Response } from '../model';
+// @ts-ignore
+import type { FolderGetCommunicationsendersV1Response } from '../model';
+// @ts-ignore
 import type { FolderImportIntoEDMV1Request } from '../model';
 // @ts-ignore
 import type { FolderImportIntoEDMV1Response } from '../model';
@@ -112,6 +120,238 @@ export const ObjectFolderApiAxiosParamCreator = function (configuration?: Config
             // verify required parameter 'pkiFolderID' is not null or undefined
             assertParamExists('folderGetAttachmentsV1', 'pkiFolderID', pkiFolderID)
             const localVarPath = `/1/object/folder/{pkiFolderID}/getAttachments`
+                .replace('{pkiFolderID}', encodeURIComponent(String(pkiFolderID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiFolderID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        folderGetCommunicationCountV1: async (pkiFolderID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiFolderID' is not null or undefined
+            assertParamExists('folderGetCommunicationCountV1', 'pkiFolderID', pkiFolderID)
+            const localVarPath = `/1/object/folder/{pkiFolderID}/getCommunicationCount`
+                .replace('{pkiFolderID}', encodeURIComponent(String(pkiFolderID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiFolderID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        folderGetCommunicationListV1: async (pkiFolderID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiFolderID' is not null or undefined
+            assertParamExists('folderGetCommunicationListV1', 'pkiFolderID', pkiFolderID)
+            const localVarPath = `/1/object/folder/{pkiFolderID}/getCommunicationList`
+                .replace('{pkiFolderID}', encodeURIComponent(String(pkiFolderID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiFolderID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        folderGetCommunicationrecipientsV1: async (pkiFolderID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiFolderID' is not null or undefined
+            assertParamExists('folderGetCommunicationrecipientsV1', 'pkiFolderID', pkiFolderID)
+            const localVarPath = `/1/object/folder/{pkiFolderID}/getCommunicationrecipients`
+                .replace('{pkiFolderID}', encodeURIComponent(String(pkiFolderID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiFolderID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        folderGetCommunicationsendersV1: async (pkiFolderID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiFolderID' is not null or undefined
+            assertParamExists('folderGetCommunicationsendersV1', 'pkiFolderID', pkiFolderID)
+            const localVarPath = `/1/object/folder/{pkiFolderID}/getCommunicationsenders`
                 .replace('{pkiFolderID}', encodeURIComponent(String(pkiFolderID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
@@ -260,6 +500,58 @@ export const ObjectFolderApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiFolderID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async folderGetCommunicationCountV1(pkiFolderID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<FolderGetCommunicationCountV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.folderGetCommunicationCountV1(pkiFolderID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectFolderApi.folderGetCommunicationCountV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiFolderID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async folderGetCommunicationListV1(pkiFolderID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<FolderGetCommunicationListV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.folderGetCommunicationListV1(pkiFolderID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectFolderApi.folderGetCommunicationListV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiFolderID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async folderGetCommunicationrecipientsV1(pkiFolderID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<FolderGetCommunicationrecipientsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.folderGetCommunicationrecipientsV1(pkiFolderID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectFolderApi.folderGetCommunicationrecipientsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiFolderID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async folderGetCommunicationsendersV1(pkiFolderID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<FolderGetCommunicationsendersV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.folderGetCommunicationsendersV1(pkiFolderID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectFolderApi.folderGetCommunicationsendersV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Import attachments into the Folder
          * @param {number} pkiFolderID 
          * @param {FolderImportIntoEDMV1Request} folderImportIntoEDMV1Request 
@@ -304,6 +596,46 @@ export const ObjectFolderApiFactory = function (configuration?: Configuration, b
         },
         /**
          * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiFolderID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        folderGetCommunicationCountV1(pkiFolderID: number, options?: RawAxiosRequestConfig): AxiosPromise<FolderGetCommunicationCountV1Response> {
+            return localVarFp.folderGetCommunicationCountV1(pkiFolderID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiFolderID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        folderGetCommunicationListV1(pkiFolderID: number, options?: RawAxiosRequestConfig): AxiosPromise<FolderGetCommunicationListV1Response> {
+            return localVarFp.folderGetCommunicationListV1(pkiFolderID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiFolderID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        folderGetCommunicationrecipientsV1(pkiFolderID: number, options?: RawAxiosRequestConfig): AxiosPromise<FolderGetCommunicationrecipientsV1Response> {
+            return localVarFp.folderGetCommunicationrecipientsV1(pkiFolderID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiFolderID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        folderGetCommunicationsendersV1(pkiFolderID: number, options?: RawAxiosRequestConfig): AxiosPromise<FolderGetCommunicationsendersV1Response> {
+            return localVarFp.folderGetCommunicationsendersV1(pkiFolderID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Import attachments into the Folder
          * @param {number} pkiFolderID 
          * @param {FolderImportIntoEDMV1Request} folderImportIntoEDMV1Request 
@@ -341,6 +673,50 @@ export class ObjectFolderApi extends BaseAPI {
      */
     public folderGetAttachmentsV1(pkiFolderID: number, options?: RawAxiosRequestConfig) {
         return ObjectFolderApiFp(this.configuration).folderGetAttachmentsV1(pkiFolderID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication count
+     * @param {number} pkiFolderID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public folderGetCommunicationCountV1(pkiFolderID: number, options?: RawAxiosRequestConfig) {
+        return ObjectFolderApiFp(this.configuration).folderGetCommunicationCountV1(pkiFolderID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication list
+     * @param {number} pkiFolderID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public folderGetCommunicationListV1(pkiFolderID: number, options?: RawAxiosRequestConfig) {
+        return ObjectFolderApiFp(this.configuration).folderGetCommunicationListV1(pkiFolderID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication recipients
+     * @param {number} pkiFolderID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public folderGetCommunicationrecipientsV1(pkiFolderID: number, options?: RawAxiosRequestConfig) {
+        return ObjectFolderApiFp(this.configuration).folderGetCommunicationrecipientsV1(pkiFolderID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication senders
+     * @param {number} pkiFolderID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public folderGetCommunicationsendersV1(pkiFolderID: number, options?: RawAxiosRequestConfig) {
+        return ObjectFolderApiFp(this.configuration).folderGetCommunicationsendersV1(pkiFolderID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

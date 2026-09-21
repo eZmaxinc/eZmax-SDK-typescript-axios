@@ -24,9 +24,21 @@ import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError
 // @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
+import type { HeaderAcceptLanguage } from '../model';
+// @ts-ignore
 import type { NotaryBatchDownloadV1Request } from '../model';
 // @ts-ignore
 import type { NotaryGetAttachmentsV1Response } from '../model';
+// @ts-ignore
+import type { NotaryGetCommunicationCountV1Response } from '../model';
+// @ts-ignore
+import type { NotaryGetCommunicationListV1Response } from '../model';
+// @ts-ignore
+import type { NotaryGetCommunicationrecipientsV1Response } from '../model';
+// @ts-ignore
+import type { NotaryGetCommunicationsendersV1Response } from '../model';
+// @ts-ignore
+import type { NotaryGetListV1Response } from '../model';
 // @ts-ignore
 import type { NotaryImportIntoEDMV1Request } from '../model';
 // @ts-ignore
@@ -161,6 +173,318 @@ export const ObjectNotaryApiAxiosParamCreator = function (configuration?: Config
         },
         /**
          * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiNotaryID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        notaryGetCommunicationCountV1: async (pkiNotaryID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiNotaryID' is not null or undefined
+            assertParamExists('notaryGetCommunicationCountV1', 'pkiNotaryID', pkiNotaryID)
+            const localVarPath = `/1/object/notary/{pkiNotaryID}/getCommunicationCount`
+                .replace('{pkiNotaryID}', encodeURIComponent(String(pkiNotaryID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiNotaryID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        notaryGetCommunicationListV1: async (pkiNotaryID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiNotaryID' is not null or undefined
+            assertParamExists('notaryGetCommunicationListV1', 'pkiNotaryID', pkiNotaryID)
+            const localVarPath = `/1/object/notary/{pkiNotaryID}/getCommunicationList`
+                .replace('{pkiNotaryID}', encodeURIComponent(String(pkiNotaryID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiNotaryID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        notaryGetCommunicationrecipientsV1: async (pkiNotaryID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiNotaryID' is not null or undefined
+            assertParamExists('notaryGetCommunicationrecipientsV1', 'pkiNotaryID', pkiNotaryID)
+            const localVarPath = `/1/object/notary/{pkiNotaryID}/getCommunicationrecipients`
+                .replace('{pkiNotaryID}', encodeURIComponent(String(pkiNotaryID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiNotaryID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        notaryGetCommunicationsendersV1: async (pkiNotaryID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiNotaryID' is not null or undefined
+            assertParamExists('notaryGetCommunicationsendersV1', 'pkiNotaryID', pkiNotaryID)
+            const localVarPath = `/1/object/notary/{pkiNotaryID}/getCommunicationsenders`
+                .replace('{pkiNotaryID}', encodeURIComponent(String(pkiNotaryID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Notary list
+         * @param {NotaryGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        notaryGetListV1: async (eOrderBy?: NotaryGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/1/object/notary/getList`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            if (eOrderBy !== undefined) {
+                localVarQueryParameter['eOrderBy'] = eOrderBy;
+            }
+
+            if (iRowMax !== undefined) {
+                localVarQueryParameter['iRowMax'] = iRowMax;
+            }
+
+            if (iRowOffset !== undefined) {
+                localVarQueryParameter['iRowOffset'] = iRowOffset;
+            }
+
+            if (sFilter !== undefined) {
+                localVarQueryParameter['sFilter'] = sFilter;
+            }
+
+            localVarHeaderParameter['Accept'] = 'application/json,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
+
+            if (acceptLanguage != null) {
+                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
+                    ? acceptLanguage
+                    : JSON.stringify(acceptLanguage, replaceWithSerializableTypeIfNeeded);
+            }
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Import attachments into the Notary
          * @param {number} pkiNotaryID 
          * @param {NotaryImportIntoEDMV1Request} notaryImportIntoEDMV1Request 
@@ -260,6 +584,75 @@ export const ObjectNotaryApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiNotaryID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async notaryGetCommunicationCountV1(pkiNotaryID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<NotaryGetCommunicationCountV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.notaryGetCommunicationCountV1(pkiNotaryID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectNotaryApi.notaryGetCommunicationCountV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiNotaryID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async notaryGetCommunicationListV1(pkiNotaryID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<NotaryGetCommunicationListV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.notaryGetCommunicationListV1(pkiNotaryID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectNotaryApi.notaryGetCommunicationListV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiNotaryID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async notaryGetCommunicationrecipientsV1(pkiNotaryID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<NotaryGetCommunicationrecipientsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.notaryGetCommunicationrecipientsV1(pkiNotaryID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectNotaryApi.notaryGetCommunicationrecipientsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiNotaryID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async notaryGetCommunicationsendersV1(pkiNotaryID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<NotaryGetCommunicationsendersV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.notaryGetCommunicationsendersV1(pkiNotaryID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectNotaryApi.notaryGetCommunicationsendersV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Notary list
+         * @param {NotaryGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async notaryGetListV1(eOrderBy?: NotaryGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<NotaryGetListV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.notaryGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectNotaryApi.notaryGetListV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Import attachments into the Notary
          * @param {number} pkiNotaryID 
          * @param {NotaryImportIntoEDMV1Request} notaryImportIntoEDMV1Request 
@@ -304,6 +697,60 @@ export const ObjectNotaryApiFactory = function (configuration?: Configuration, b
         },
         /**
          * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiNotaryID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        notaryGetCommunicationCountV1(pkiNotaryID: number, options?: RawAxiosRequestConfig): AxiosPromise<NotaryGetCommunicationCountV1Response> {
+            return localVarFp.notaryGetCommunicationCountV1(pkiNotaryID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiNotaryID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        notaryGetCommunicationListV1(pkiNotaryID: number, options?: RawAxiosRequestConfig): AxiosPromise<NotaryGetCommunicationListV1Response> {
+            return localVarFp.notaryGetCommunicationListV1(pkiNotaryID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiNotaryID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        notaryGetCommunicationrecipientsV1(pkiNotaryID: number, options?: RawAxiosRequestConfig): AxiosPromise<NotaryGetCommunicationrecipientsV1Response> {
+            return localVarFp.notaryGetCommunicationrecipientsV1(pkiNotaryID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiNotaryID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        notaryGetCommunicationsendersV1(pkiNotaryID: number, options?: RawAxiosRequestConfig): AxiosPromise<NotaryGetCommunicationsendersV1Response> {
+            return localVarFp.notaryGetCommunicationsendersV1(pkiNotaryID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Notary list
+         * @param {NotaryGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        notaryGetListV1(eOrderBy?: NotaryGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): AxiosPromise<NotaryGetListV1Response> {
+            return localVarFp.notaryGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Import attachments into the Notary
          * @param {number} pkiNotaryID 
          * @param {NotaryImportIntoEDMV1Request} notaryImportIntoEDMV1Request 
@@ -345,6 +792,65 @@ export class ObjectNotaryApi extends BaseAPI {
 
     /**
      * 
+     * @summary Retrieve Communication count
+     * @param {number} pkiNotaryID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public notaryGetCommunicationCountV1(pkiNotaryID: number, options?: RawAxiosRequestConfig) {
+        return ObjectNotaryApiFp(this.configuration).notaryGetCommunicationCountV1(pkiNotaryID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication list
+     * @param {number} pkiNotaryID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public notaryGetCommunicationListV1(pkiNotaryID: number, options?: RawAxiosRequestConfig) {
+        return ObjectNotaryApiFp(this.configuration).notaryGetCommunicationListV1(pkiNotaryID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication recipients
+     * @param {number} pkiNotaryID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public notaryGetCommunicationrecipientsV1(pkiNotaryID: number, options?: RawAxiosRequestConfig) {
+        return ObjectNotaryApiFp(this.configuration).notaryGetCommunicationrecipientsV1(pkiNotaryID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication senders
+     * @param {number} pkiNotaryID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public notaryGetCommunicationsendersV1(pkiNotaryID: number, options?: RawAxiosRequestConfig) {
+        return ObjectNotaryApiFp(this.configuration).notaryGetCommunicationsendersV1(pkiNotaryID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Notary list
+     * @param {NotaryGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+     * @param {number} [iRowMax] 
+     * @param {number} [iRowOffset] 
+     * @param {HeaderAcceptLanguage} [acceptLanguage] 
+     * @param {string} [sFilter] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public notaryGetListV1(eOrderBy?: NotaryGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig) {
+        return ObjectNotaryApiFp(this.configuration).notaryGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
      * @summary Import attachments into the Notary
      * @param {number} pkiNotaryID 
      * @param {NotaryImportIntoEDMV1Request} notaryImportIntoEDMV1Request 
@@ -356,3 +862,36 @@ export class ObjectNotaryApi extends BaseAPI {
     }
 }
 
+export const NotaryGetListV1EOrderByEnum = {
+    pkiNotaryID_ASC: 'pkiNotaryID_ASC',
+    pkiNotaryID_DESC: 'pkiNotaryID_DESC',
+    fkiPaymentmethodID_ASC: 'fkiPaymentmethodID_ASC',
+    fkiPaymentmethodID_DESC: 'fkiPaymentmethodID_DESC',
+    fkiProvinceID_ASC: 'fkiProvinceID_ASC',
+    fkiProvinceID_DESC: 'fkiProvinceID_DESC',
+    fkiCountryID_ASC: 'fkiCountryID_ASC',
+    fkiCountryID_DESC: 'fkiCountryID_DESC',
+    sContactLastname_ASC: 'sContactLastname_ASC',
+    sContactLastname_DESC: 'sContactLastname_DESC',
+    sContactFirstname_ASC: 'sContactFirstname_ASC',
+    sContactFirstname_DESC: 'sContactFirstname_DESC',
+    sContactCompany_ASC: 'sContactCompany_ASC',
+    sContactCompany_DESC: 'sContactCompany_DESC',
+    sAddressCivic_ASC: 'sAddressCivic_ASC',
+    sAddressCivic_DESC: 'sAddressCivic_DESC',
+    sAddressStreet_ASC: 'sAddressStreet_ASC',
+    sAddressStreet_DESC: 'sAddressStreet_DESC',
+    sAddressSuite_ASC: 'sAddressSuite_ASC',
+    sAddressSuite_DESC: 'sAddressSuite_DESC',
+    sAddressCity_ASC: 'sAddressCity_ASC',
+    sAddressCity_DESC: 'sAddressCity_DESC',
+    sPhoneE164_ASC: 'sPhoneE164_ASC',
+    sPhoneE164_DESC: 'sPhoneE164_DESC',
+    sPaymentmethodDescriptionX_ASC: 'sPaymentmethodDescriptionX_ASC',
+    sPaymentmethodDescriptionX_DESC: 'sPaymentmethodDescriptionX_DESC',
+    sProvinceNameX_ASC: 'sProvinceNameX_ASC',
+    sProvinceNameX_DESC: 'sProvinceNameX_DESC',
+    sCountryNameX_ASC: 'sCountryNameX_ASC',
+    sCountryNameX_DESC: 'sCountryNameX_DESC',
+} as const;
+export type NotaryGetListV1EOrderByEnum = typeof NotaryGetListV1EOrderByEnum[keyof typeof NotaryGetListV1EOrderByEnum];

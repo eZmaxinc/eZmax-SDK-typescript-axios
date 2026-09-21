@@ -36,9 +36,13 @@ import type { DepositGetCommunicationrecipientsV1Response } from '../model';
 // @ts-ignore
 import type { DepositGetCommunicationsendersV1Response } from '../model';
 // @ts-ignore
+import type { DepositGetListV1Response } from '../model';
+// @ts-ignore
 import type { DepositImportIntoEDMV1Request } from '../model';
 // @ts-ignore
 import type { DepositImportIntoEDMV1Response } from '../model';
+// @ts-ignore
+import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -401,6 +405,86 @@ export const ObjectDepositApiAxiosParamCreator = function (configuration?: Confi
         },
         /**
          * 
+         * @summary Retrieve Deposit list
+         * @param {DepositGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        depositGetListV1: async (eOrderBy?: DepositGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/1/object/deposit/getList`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            if (eOrderBy !== undefined) {
+                localVarQueryParameter['eOrderBy'] = eOrderBy;
+            }
+
+            if (iRowMax !== undefined) {
+                localVarQueryParameter['iRowMax'] = iRowMax;
+            }
+
+            if (iRowOffset !== undefined) {
+                localVarQueryParameter['iRowOffset'] = iRowOffset;
+            }
+
+            if (sFilter !== undefined) {
+                localVarQueryParameter['sFilter'] = sFilter;
+            }
+
+            localVarHeaderParameter['Accept'] = 'application/json,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
+
+            if (acceptLanguage != null) {
+                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
+                    ? acceptLanguage
+                    : JSON.stringify(acceptLanguage, replaceWithSerializableTypeIfNeeded);
+            }
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Import attachments into the Deposit
          * @param {number} pkiDepositID 
          * @param {DepositImportIntoEDMV1Request} depositImportIntoEDMV1Request 
@@ -552,6 +636,23 @@ export const ObjectDepositApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Retrieve Deposit list
+         * @param {DepositGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async depositGetListV1(eOrderBy?: DepositGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DepositGetListV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.depositGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectDepositApi.depositGetListV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Import attachments into the Deposit
          * @param {number} pkiDepositID 
          * @param {DepositImportIntoEDMV1Request} depositImportIntoEDMV1Request 
@@ -633,6 +734,20 @@ export const ObjectDepositApiFactory = function (configuration?: Configuration, 
          */
         depositGetCommunicationsendersV1(pkiDepositID: number, options?: RawAxiosRequestConfig): AxiosPromise<DepositGetCommunicationsendersV1Response> {
             return localVarFp.depositGetCommunicationsendersV1(pkiDepositID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Deposit list
+         * @param {DepositGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        depositGetListV1(eOrderBy?: DepositGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): AxiosPromise<DepositGetListV1Response> {
+            return localVarFp.depositGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -721,6 +836,21 @@ export class ObjectDepositApi extends BaseAPI {
 
     /**
      * 
+     * @summary Retrieve Deposit list
+     * @param {DepositGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+     * @param {number} [iRowMax] 
+     * @param {number} [iRowOffset] 
+     * @param {HeaderAcceptLanguage} [acceptLanguage] 
+     * @param {string} [sFilter] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public depositGetListV1(eOrderBy?: DepositGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig) {
+        return ObjectDepositApiFp(this.configuration).depositGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
      * @summary Import attachments into the Deposit
      * @param {number} pkiDepositID 
      * @param {DepositImportIntoEDMV1Request} depositImportIntoEDMV1Request 
@@ -732,3 +862,34 @@ export class ObjectDepositApi extends BaseAPI {
     }
 }
 
+export const DepositGetListV1EOrderByEnum = {
+    pkiDepositID_ASC: 'pkiDepositID_ASC',
+    pkiDepositID_DESC: 'pkiDepositID_DESC',
+    fkiPeriodID_ASC: 'fkiPeriodID_ASC',
+    fkiPeriodID_DESC: 'fkiPeriodID_DESC',
+    fkiBankaccountID_ASC: 'fkiBankaccountID_ASC',
+    fkiBankaccountID_DESC: 'fkiBankaccountID_DESC',
+    fkiUserIDCreated_ASC: 'fkiUserIDCreated_ASC',
+    fkiUserIDCreated_DESC: 'fkiUserIDCreated_DESC',
+    sDepositNumber_ASC: 'sDepositNumber_ASC',
+    sDepositNumber_DESC: 'sDepositNumber_DESC',
+    dtDepositDate_ASC: 'dtDepositDate_ASC',
+    dtDepositDate_DESC: 'dtDepositDate_DESC',
+    dDepositTotal_ASC: 'dDepositTotal_ASC',
+    dDepositTotal_DESC: 'dDepositTotal_DESC',
+    dtCreatedDate_ASC: 'dtCreatedDate_ASC',
+    dtCreatedDate_DESC: 'dtCreatedDate_DESC',
+    bDepositDraft_ASC: 'bDepositDraft_ASC',
+    bDepositDraft_DESC: 'bDepositDraft_DESC',
+    bDepositReconciled_ASC: 'bDepositReconciled_ASC',
+    bDepositReconciled_DESC: 'bDepositReconciled_DESC',
+    fkiReconciliationID_ASC: 'fkiReconciliationID_ASC',
+    fkiReconciliationID_DESC: 'fkiReconciliationID_DESC',
+    sBankaccountBankname_ASC: 'sBankaccountBankname_ASC',
+    sBankaccountBankname_DESC: 'sBankaccountBankname_DESC',
+    sPeriodYYYYMM_ASC: 'sPeriodYYYYMM_ASC',
+    sPeriodYYYYMM_DESC: 'sPeriodYYYYMM_DESC',
+    sUserLoginname_ASC: 'sUserLoginname_ASC',
+    sUserLoginname_DESC: 'sUserLoginname_DESC',
+} as const;
+export type DepositGetListV1EOrderByEnum = typeof DepositGetListV1EOrderByEnum[keyof typeof DepositGetListV1EOrderByEnum];

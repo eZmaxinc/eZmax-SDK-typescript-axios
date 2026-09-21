@@ -47,7 +47,8 @@ Name | Type | Description | Notes
 **fkiSupplierID** | **number** | The unique ID of the Supplier. | [optional] [default to undefined]
 **fkiTranqcontractID** | **number** | The unique ID of the Tranqcontract | [optional] [default to undefined]
 **fkiTemplateID** | **number** | The unique ID of the Template | [optional] [default to undefined]
-**fkiInscriptionchecklistID** | **number** | The unique ID of the Inscriptionchecklist | [optional] [default to undefined]
+**fkiDocumenttypechecklistID** | **number** | The unique ID of the Documenttypechecklist | [optional] [default to undefined]
+**sDocumenttypeNameX** | **string** | The name of the Documenttype in the language of the requester | [optional] [default to undefined]
 **fkiFolderID** | **number** | The unique ID of the Folder | [optional] [default to undefined]
 **fkiRejectedoffertopurchaseID** | **number** | The unique ID of the Rejectedoffertopurchase | [optional] [default to undefined]
 **fkiDisclosureID** | **number** | The unique ID of the Disclosure | [optional] [default to undefined]
@@ -116,7 +117,8 @@ const instance: AttachmentResponseCompound = {
     fkiSupplierID,
     fkiTranqcontractID,
     fkiTemplateID,
-    fkiInscriptionchecklistID,
+    fkiDocumenttypechecklistID,
+    sDocumenttypeNameX,
     fkiFolderID,
     fkiRejectedoffertopurchaseID,
     fkiDisclosureID,

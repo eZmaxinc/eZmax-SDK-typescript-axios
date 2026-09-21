@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **fkiAttachmentID** | **number** | The unique ID of the Attachment. | [default to undefined]
 **fkiUserID** | **number** | The unique ID of the User | [default to undefined]
+**objUser** | [**CustomUserNameResponse**](CustomUserNameResponse.md) |  | [default to undefined]
 **dtAttachmentlogDatetime** | **string** | The created date | [default to undefined]
 **eAttachmentlogType** | [**FieldEAttachmentlogType**](FieldEAttachmentlogType.md) |  | [default to undefined]
 **sAttachmentlogDetail** | **string** | The additionnal detail | [optional] [default to undefined]
@@ -20,6 +21,7 @@ import { AttachmentlogResponseCompound } from '@ezmaxinc/ezmax-sdk-typescript-ax
 const instance: AttachmentlogResponseCompound = {
     fkiAttachmentID,
     fkiUserID,
+    objUser,
     dtAttachmentlogDatetime,
     eAttachmentlogType,
     sAttachmentlogDetail,

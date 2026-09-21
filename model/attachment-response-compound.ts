@@ -285,11 +285,17 @@ export interface AttachmentResponseCompound {
      */
     fkiTemplateID?:number 
     /**
-     * The unique ID of the Inscriptionchecklist
+     * The unique ID of the Documenttypechecklist
      * @type {number}
      * @memberof AttachmentResponseCompound
      */
-    fkiInscriptionchecklistID?:number 
+    fkiDocumenttypechecklistID?:number 
+    /**
+     * The name of the Documenttype in the language of the requester
+     * @type {string}
+     * @memberof AttachmentResponseCompound
+     */
+    sDocumenttypeNameX?:string 
     /**
      * The unique ID of the Folder
      * @type {number}
@@ -471,7 +477,8 @@ export class DataObjectAttachmentResponseCompound {
     fkiSupplierID?:number = undefined
     fkiTranqcontractID?:number = undefined
     fkiTemplateID?:number = undefined
-    fkiInscriptionchecklistID?:number = undefined
+    fkiDocumenttypechecklistID?:number = undefined
+    sDocumenttypeNameX?:string = undefined
     fkiFolderID?:number = undefined
     fkiRejectedoffertopurchaseID?:number = undefined
     fkiDisclosureID?:number = undefined
@@ -729,10 +736,15 @@ export class ValidationObjectAttachmentResponseCompound {
       maximum: 65535,
       required: false
    }
-   fkiInscriptionchecklistID = {
+   fkiDocumenttypechecklistID = {
       type: 'integer',
       minimum: 0,
       maximum: 16777215,
+      required: false
+   }
+   sDocumenttypeNameX = {
+      type: 'string',
+      pattern: /^.{0,55}$/,
       required: false
    }
    fkiFolderID = {
@@ -821,7 +833,7 @@ export class ValidationObjectAttachmentResponseCompound {
    }
    eAttachmentVerified = {
       type: 'enum',
-      allowableValues: ['No','Yes','Rejected'],
+      allowableValues: ['No','Yes','Rejected','Pending'],
       required: true
    }
    tAttachmentRejectioncomment = {

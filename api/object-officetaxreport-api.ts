@@ -24,9 +24,21 @@ import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError
 // @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
+import type { HeaderAcceptLanguage } from '../model';
+// @ts-ignore
 import type { OfficetaxreportBatchDownloadV1Request } from '../model';
 // @ts-ignore
 import type { OfficetaxreportGetAttachmentsV1Response } from '../model';
+// @ts-ignore
+import type { OfficetaxreportGetCommunicationCountV1Response } from '../model';
+// @ts-ignore
+import type { OfficetaxreportGetCommunicationListV1Response } from '../model';
+// @ts-ignore
+import type { OfficetaxreportGetCommunicationrecipientsV1Response } from '../model';
+// @ts-ignore
+import type { OfficetaxreportGetCommunicationsendersV1Response } from '../model';
+// @ts-ignore
+import type { OfficetaxreportGetListV1Response } from '../model';
 // @ts-ignore
 import type { OfficetaxreportImportIntoEDMV1Request } from '../model';
 // @ts-ignore
@@ -161,6 +173,318 @@ export const ObjectOfficetaxreportApiAxiosParamCreator = function (configuration
         },
         /**
          * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiOfficetaxreportID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        officetaxreportGetCommunicationCountV1: async (pkiOfficetaxreportID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiOfficetaxreportID' is not null or undefined
+            assertParamExists('officetaxreportGetCommunicationCountV1', 'pkiOfficetaxreportID', pkiOfficetaxreportID)
+            const localVarPath = `/1/object/officetaxreport/{pkiOfficetaxreportID}/getCommunicationCount`
+                .replace('{pkiOfficetaxreportID}', encodeURIComponent(String(pkiOfficetaxreportID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiOfficetaxreportID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        officetaxreportGetCommunicationListV1: async (pkiOfficetaxreportID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiOfficetaxreportID' is not null or undefined
+            assertParamExists('officetaxreportGetCommunicationListV1', 'pkiOfficetaxreportID', pkiOfficetaxreportID)
+            const localVarPath = `/1/object/officetaxreport/{pkiOfficetaxreportID}/getCommunicationList`
+                .replace('{pkiOfficetaxreportID}', encodeURIComponent(String(pkiOfficetaxreportID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiOfficetaxreportID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        officetaxreportGetCommunicationrecipientsV1: async (pkiOfficetaxreportID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiOfficetaxreportID' is not null or undefined
+            assertParamExists('officetaxreportGetCommunicationrecipientsV1', 'pkiOfficetaxreportID', pkiOfficetaxreportID)
+            const localVarPath = `/1/object/officetaxreport/{pkiOfficetaxreportID}/getCommunicationrecipients`
+                .replace('{pkiOfficetaxreportID}', encodeURIComponent(String(pkiOfficetaxreportID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiOfficetaxreportID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        officetaxreportGetCommunicationsendersV1: async (pkiOfficetaxreportID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiOfficetaxreportID' is not null or undefined
+            assertParamExists('officetaxreportGetCommunicationsendersV1', 'pkiOfficetaxreportID', pkiOfficetaxreportID)
+            const localVarPath = `/1/object/officetaxreport/{pkiOfficetaxreportID}/getCommunicationsenders`
+                .replace('{pkiOfficetaxreportID}', encodeURIComponent(String(pkiOfficetaxreportID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Officetaxreport list
+         * @param {OfficetaxreportGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        officetaxreportGetListV1: async (eOrderBy?: OfficetaxreportGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/1/object/officetaxreport/getList`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            if (eOrderBy !== undefined) {
+                localVarQueryParameter['eOrderBy'] = eOrderBy;
+            }
+
+            if (iRowMax !== undefined) {
+                localVarQueryParameter['iRowMax'] = iRowMax;
+            }
+
+            if (iRowOffset !== undefined) {
+                localVarQueryParameter['iRowOffset'] = iRowOffset;
+            }
+
+            if (sFilter !== undefined) {
+                localVarQueryParameter['sFilter'] = sFilter;
+            }
+
+            localVarHeaderParameter['Accept'] = 'application/json,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
+
+            if (acceptLanguage != null) {
+                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
+                    ? acceptLanguage
+                    : JSON.stringify(acceptLanguage, replaceWithSerializableTypeIfNeeded);
+            }
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Import attachments into the Officetaxreport
          * @param {number} pkiOfficetaxreportID 
          * @param {OfficetaxreportImportIntoEDMV1Request} officetaxreportImportIntoEDMV1Request 
@@ -260,6 +584,75 @@ export const ObjectOfficetaxreportApiFp = function(configuration?: Configuration
         },
         /**
          * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiOfficetaxreportID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async officetaxreportGetCommunicationCountV1(pkiOfficetaxreportID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<OfficetaxreportGetCommunicationCountV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.officetaxreportGetCommunicationCountV1(pkiOfficetaxreportID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectOfficetaxreportApi.officetaxreportGetCommunicationCountV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiOfficetaxreportID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async officetaxreportGetCommunicationListV1(pkiOfficetaxreportID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<OfficetaxreportGetCommunicationListV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.officetaxreportGetCommunicationListV1(pkiOfficetaxreportID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectOfficetaxreportApi.officetaxreportGetCommunicationListV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiOfficetaxreportID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async officetaxreportGetCommunicationrecipientsV1(pkiOfficetaxreportID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<OfficetaxreportGetCommunicationrecipientsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.officetaxreportGetCommunicationrecipientsV1(pkiOfficetaxreportID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectOfficetaxreportApi.officetaxreportGetCommunicationrecipientsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiOfficetaxreportID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async officetaxreportGetCommunicationsendersV1(pkiOfficetaxreportID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<OfficetaxreportGetCommunicationsendersV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.officetaxreportGetCommunicationsendersV1(pkiOfficetaxreportID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectOfficetaxreportApi.officetaxreportGetCommunicationsendersV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Officetaxreport list
+         * @param {OfficetaxreportGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async officetaxreportGetListV1(eOrderBy?: OfficetaxreportGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<OfficetaxreportGetListV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.officetaxreportGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectOfficetaxreportApi.officetaxreportGetListV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Import attachments into the Officetaxreport
          * @param {number} pkiOfficetaxreportID 
          * @param {OfficetaxreportImportIntoEDMV1Request} officetaxreportImportIntoEDMV1Request 
@@ -304,6 +697,60 @@ export const ObjectOfficetaxreportApiFactory = function (configuration?: Configu
         },
         /**
          * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiOfficetaxreportID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        officetaxreportGetCommunicationCountV1(pkiOfficetaxreportID: number, options?: RawAxiosRequestConfig): AxiosPromise<OfficetaxreportGetCommunicationCountV1Response> {
+            return localVarFp.officetaxreportGetCommunicationCountV1(pkiOfficetaxreportID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiOfficetaxreportID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        officetaxreportGetCommunicationListV1(pkiOfficetaxreportID: number, options?: RawAxiosRequestConfig): AxiosPromise<OfficetaxreportGetCommunicationListV1Response> {
+            return localVarFp.officetaxreportGetCommunicationListV1(pkiOfficetaxreportID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiOfficetaxreportID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        officetaxreportGetCommunicationrecipientsV1(pkiOfficetaxreportID: number, options?: RawAxiosRequestConfig): AxiosPromise<OfficetaxreportGetCommunicationrecipientsV1Response> {
+            return localVarFp.officetaxreportGetCommunicationrecipientsV1(pkiOfficetaxreportID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiOfficetaxreportID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        officetaxreportGetCommunicationsendersV1(pkiOfficetaxreportID: number, options?: RawAxiosRequestConfig): AxiosPromise<OfficetaxreportGetCommunicationsendersV1Response> {
+            return localVarFp.officetaxreportGetCommunicationsendersV1(pkiOfficetaxreportID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Officetaxreport list
+         * @param {OfficetaxreportGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        officetaxreportGetListV1(eOrderBy?: OfficetaxreportGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): AxiosPromise<OfficetaxreportGetListV1Response> {
+            return localVarFp.officetaxreportGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Import attachments into the Officetaxreport
          * @param {number} pkiOfficetaxreportID 
          * @param {OfficetaxreportImportIntoEDMV1Request} officetaxreportImportIntoEDMV1Request 
@@ -345,6 +792,65 @@ export class ObjectOfficetaxreportApi extends BaseAPI {
 
     /**
      * 
+     * @summary Retrieve Communication count
+     * @param {number} pkiOfficetaxreportID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public officetaxreportGetCommunicationCountV1(pkiOfficetaxreportID: number, options?: RawAxiosRequestConfig) {
+        return ObjectOfficetaxreportApiFp(this.configuration).officetaxreportGetCommunicationCountV1(pkiOfficetaxreportID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication list
+     * @param {number} pkiOfficetaxreportID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public officetaxreportGetCommunicationListV1(pkiOfficetaxreportID: number, options?: RawAxiosRequestConfig) {
+        return ObjectOfficetaxreportApiFp(this.configuration).officetaxreportGetCommunicationListV1(pkiOfficetaxreportID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication recipients
+     * @param {number} pkiOfficetaxreportID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public officetaxreportGetCommunicationrecipientsV1(pkiOfficetaxreportID: number, options?: RawAxiosRequestConfig) {
+        return ObjectOfficetaxreportApiFp(this.configuration).officetaxreportGetCommunicationrecipientsV1(pkiOfficetaxreportID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication senders
+     * @param {number} pkiOfficetaxreportID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public officetaxreportGetCommunicationsendersV1(pkiOfficetaxreportID: number, options?: RawAxiosRequestConfig) {
+        return ObjectOfficetaxreportApiFp(this.configuration).officetaxreportGetCommunicationsendersV1(pkiOfficetaxreportID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Officetaxreport list
+     * @param {OfficetaxreportGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+     * @param {number} [iRowMax] 
+     * @param {number} [iRowOffset] 
+     * @param {HeaderAcceptLanguage} [acceptLanguage] 
+     * @param {string} [sFilter] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public officetaxreportGetListV1(eOrderBy?: OfficetaxreportGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig) {
+        return ObjectOfficetaxreportApiFp(this.configuration).officetaxreportGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
      * @summary Import attachments into the Officetaxreport
      * @param {number} pkiOfficetaxreportID 
      * @param {OfficetaxreportImportIntoEDMV1Request} officetaxreportImportIntoEDMV1Request 
@@ -356,3 +862,16 @@ export class ObjectOfficetaxreportApi extends BaseAPI {
     }
 }
 
+export const OfficetaxreportGetListV1EOrderByEnum = {
+    pkiOfficetaxreportID_ASC: 'pkiOfficetaxreportID_ASC',
+    pkiOfficetaxreportID_DESC: 'pkiOfficetaxreportID_DESC',
+    fkiPeriodID_ASC: 'fkiPeriodID_ASC',
+    fkiPeriodID_DESC: 'fkiPeriodID_DESC',
+    sPeriodYYYYMM_ASC: 'sPeriodYYYYMM_ASC',
+    sPeriodYYYYMM_DESC: 'sPeriodYYYYMM_DESC',
+    sUserLoginname_ASC: 'sUserLoginname_ASC',
+    sUserLoginname_DESC: 'sUserLoginname_DESC',
+    dtCreatedDate_ASC: 'dtCreatedDate_ASC',
+    dtCreatedDate_DESC: 'dtCreatedDate_DESC',
+} as const;
+export type OfficetaxreportGetListV1EOrderByEnum = typeof OfficetaxreportGetListV1EOrderByEnum[keyof typeof OfficetaxreportGetListV1EOrderByEnum];

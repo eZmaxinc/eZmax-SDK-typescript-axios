@@ -34,6 +34,11 @@ export interface CustomUserNameResponse {
     /*'sUserFirstname': string;*/
     'sUserFirstname': string;
     /**
+     * The login name of the User.
+     */
+    /*'sUserLoginname'?: string;*/
+    'sUserLoginname'?: string;
+    /**
      * The job title of the user
      */
     /*'sUserJobtitle'?: string;*/
@@ -54,6 +59,7 @@ export class DataObjectCustomUserNameResponse {
    sContacttitleNameX?:string = undefined
    sUserLastname:string = ''
    sUserFirstname:string = ''
+   sUserLoginname?:string = undefined
    sUserJobtitle?:string = undefined
 }
 
@@ -75,6 +81,11 @@ export class ValidationObjectCustomUserNameResponse {
    sUserFirstname = {
       type: 'string',
       required: true
+   }
+   sUserLoginname = {
+      type: 'string',
+      pattern: /^(?:([\w.%+\-!#$%&'*+\/=?^`{|}~]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20})|([a-zA-Z0-9]){1,32})$/,
+      required: false
    }
    sUserJobtitle = {
       type: 'string',

@@ -24,6 +24,8 @@ import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError
 // @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
+import type { HeaderAcceptLanguage } from '../model';
+// @ts-ignore
 import type { InvoiceBatchDownloadV1Request } from '../model';
 // @ts-ignore
 import type { InvoiceGetAttachmentsV1Response } from '../model';
@@ -35,6 +37,8 @@ import type { InvoiceGetCommunicationListV1Response } from '../model';
 import type { InvoiceGetCommunicationrecipientsV1Response } from '../model';
 // @ts-ignore
 import type { InvoiceGetCommunicationsendersV1Response } from '../model';
+// @ts-ignore
+import type { InvoiceGetListV1Response } from '../model';
 // @ts-ignore
 import type { InvoiceImportIntoEDMV1Request } from '../model';
 // @ts-ignore
@@ -400,6 +404,86 @@ export const ObjectInvoiceApiAxiosParamCreator = function (configuration?: Confi
             };
         },
         /**
+         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eInvoiceType | Commission<br>CommissionAdvance<br>Financed<br>Manual<br>Monthly |
+         * @summary Retrieve Invoice list
+         * @param {InvoiceGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        invoiceGetListV1: async (eOrderBy?: InvoiceGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/1/object/invoice/getList`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            if (eOrderBy !== undefined) {
+                localVarQueryParameter['eOrderBy'] = eOrderBy;
+            }
+
+            if (iRowMax !== undefined) {
+                localVarQueryParameter['iRowMax'] = iRowMax;
+            }
+
+            if (iRowOffset !== undefined) {
+                localVarQueryParameter['iRowOffset'] = iRowOffset;
+            }
+
+            if (sFilter !== undefined) {
+                localVarQueryParameter['sFilter'] = sFilter;
+            }
+
+            localVarHeaderParameter['Accept'] = 'application/json,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
+
+            if (acceptLanguage != null) {
+                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
+                    ? acceptLanguage
+                    : JSON.stringify(acceptLanguage, replaceWithSerializableTypeIfNeeded);
+            }
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * 
          * @summary Import attachments into the Invoice
          * @param {number} pkiInvoiceID 
@@ -551,6 +635,23 @@ export const ObjectInvoiceApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
+         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eInvoiceType | Commission<br>CommissionAdvance<br>Financed<br>Manual<br>Monthly |
+         * @summary Retrieve Invoice list
+         * @param {InvoiceGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async invoiceGetListV1(eOrderBy?: InvoiceGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InvoiceGetListV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.invoiceGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectInvoiceApi.invoiceGetListV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * 
          * @summary Import attachments into the Invoice
          * @param {number} pkiInvoiceID 
@@ -633,6 +734,20 @@ export const ObjectInvoiceApiFactory = function (configuration?: Configuration, 
          */
         invoiceGetCommunicationsendersV1(pkiInvoiceID: number, options?: RawAxiosRequestConfig): AxiosPromise<InvoiceGetCommunicationsendersV1Response> {
             return localVarFp.invoiceGetCommunicationsendersV1(pkiInvoiceID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eInvoiceType | Commission<br>CommissionAdvance<br>Financed<br>Manual<br>Monthly |
+         * @summary Retrieve Invoice list
+         * @param {InvoiceGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        invoiceGetListV1(eOrderBy?: InvoiceGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): AxiosPromise<InvoiceGetListV1Response> {
+            return localVarFp.invoiceGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -720,6 +835,21 @@ export class ObjectInvoiceApi extends BaseAPI {
     }
 
     /**
+     * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eInvoiceType | Commission<br>CommissionAdvance<br>Financed<br>Manual<br>Monthly |
+     * @summary Retrieve Invoice list
+     * @param {InvoiceGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+     * @param {number} [iRowMax] 
+     * @param {number} [iRowOffset] 
+     * @param {HeaderAcceptLanguage} [acceptLanguage] 
+     * @param {string} [sFilter] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public invoiceGetListV1(eOrderBy?: InvoiceGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig) {
+        return ObjectInvoiceApiFp(this.configuration).invoiceGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * 
      * @summary Import attachments into the Invoice
      * @param {number} pkiInvoiceID 
@@ -732,3 +862,34 @@ export class ObjectInvoiceApi extends BaseAPI {
     }
 }
 
+export const InvoiceGetListV1EOrderByEnum = {
+    pkiInvoiceID_ASC: 'pkiInvoiceID_ASC',
+    pkiInvoiceID_DESC: 'pkiInvoiceID_DESC',
+    fkiAgentID_ASC: 'fkiAgentID_ASC',
+    fkiAgentID_DESC: 'fkiAgentID_DESC',
+    fkiBrokerID_ASC: 'fkiBrokerID_ASC',
+    fkiBrokerID_DESC: 'fkiBrokerID_DESC',
+    fkiCustomerID_ASC: 'fkiCustomerID_ASC',
+    fkiCustomerID_DESC: 'fkiCustomerID_DESC',
+    fkiPeriodID_ASC: 'fkiPeriodID_ASC',
+    fkiPeriodID_DESC: 'fkiPeriodID_DESC',
+    sPeriodYYYYMM_ASC: 'sPeriodYYYYMM_ASC',
+    sPeriodYYYYMM_DESC: 'sPeriodYYYYMM_DESC',
+    bInvoiceIspaid_ASC: 'bInvoiceIspaid_ASC',
+    bInvoiceIspaid_DESC: 'bInvoiceIspaid_DESC',
+    dInvoiceTotal_ASC: 'dInvoiceTotal_ASC',
+    dInvoiceTotal_DESC: 'dInvoiceTotal_DESC',
+    dInvoicePaid_ASC: 'dInvoicePaid_ASC',
+    dInvoicePaid_DESC: 'dInvoicePaid_DESC',
+    dInvoiceBalance_ASC: 'dInvoiceBalance_ASC',
+    dInvoiceBalance_DESC: 'dInvoiceBalance_DESC',
+    dtInvoiceDate_ASC: 'dtInvoiceDate_ASC',
+    dtInvoiceDate_DESC: 'dtInvoiceDate_DESC',
+    eInvoiceType_ASC: 'eInvoiceType_ASC',
+    eInvoiceType_DESC: 'eInvoiceType_DESC',
+    sInvoiceNumber_ASC: 'sInvoiceNumber_ASC',
+    sInvoiceNumber_DESC: 'sInvoiceNumber_DESC',
+    sInvoiceRecipient_ASC: 'sInvoiceRecipient_ASC',
+    sInvoiceRecipient_DESC: 'sInvoiceRecipient_DESC',
+} as const;
+export type InvoiceGetListV1EOrderByEnum = typeof InvoiceGetListV1EOrderByEnum[keyof typeof InvoiceGetListV1EOrderByEnum];

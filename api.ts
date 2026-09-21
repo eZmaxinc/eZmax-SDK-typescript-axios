@@ -26,6 +26,7 @@ export enum EApiOperation {
     'object-agenttype-api',
     'object-apikey-api',
     'object-attachment-api',
+    'object-attachmentrejectreason-api',
     'object-authenticationexternal-api',
     'object-bankaccount-api',
     'object-billingentityexternal-api',
@@ -182,6 +183,7 @@ export * from './api/object-agent-api';
 export * from './api/object-agenttype-api';
 export * from './api/object-apikey-api';
 export * from './api/object-attachment-api';
+export * from './api/object-attachmentrejectreason-api';
 export * from './api/object-authenticationexternal-api';
 export * from './api/object-bankaccount-api';
 export * from './api/object-billingentityexternal-api';

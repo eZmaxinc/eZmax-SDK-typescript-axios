@@ -24,9 +24,13 @@ import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError
 // @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
+import type { HeaderAcceptLanguage } from '../model';
+// @ts-ignore
 import type { PurchaseBatchDownloadV1Request } from '../model';
 // @ts-ignore
 import type { PurchaseGetAttachmentsV1Response } from '../model';
+// @ts-ignore
+import type { PurchaseGetListV1Response } from '../model';
 // @ts-ignore
 import type { PurchaseImportIntoEDMV1Request } from '../model';
 // @ts-ignore
@@ -161,6 +165,86 @@ export const ObjectPurchaseApiAxiosParamCreator = function (configuration?: Conf
         },
         /**
          * 
+         * @summary Retrieve Purchase list
+         * @param {PurchaseGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        purchaseGetListV1: async (eOrderBy?: PurchaseGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/1/object/purchase/getList`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            if (eOrderBy !== undefined) {
+                localVarQueryParameter['eOrderBy'] = eOrderBy;
+            }
+
+            if (iRowMax !== undefined) {
+                localVarQueryParameter['iRowMax'] = iRowMax;
+            }
+
+            if (iRowOffset !== undefined) {
+                localVarQueryParameter['iRowOffset'] = iRowOffset;
+            }
+
+            if (sFilter !== undefined) {
+                localVarQueryParameter['sFilter'] = sFilter;
+            }
+
+            localVarHeaderParameter['Accept'] = 'application/json,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
+
+            if (acceptLanguage != null) {
+                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
+                    ? acceptLanguage
+                    : JSON.stringify(acceptLanguage, replaceWithSerializableTypeIfNeeded);
+            }
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Import attachments into the Purchase
          * @param {number} pkiPurchaseID 
          * @param {PurchaseImportIntoEDMV1Request} purchaseImportIntoEDMV1Request 
@@ -260,6 +344,23 @@ export const ObjectPurchaseApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Retrieve Purchase list
+         * @param {PurchaseGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async purchaseGetListV1(eOrderBy?: PurchaseGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PurchaseGetListV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.purchaseGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectPurchaseApi.purchaseGetListV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Import attachments into the Purchase
          * @param {number} pkiPurchaseID 
          * @param {PurchaseImportIntoEDMV1Request} purchaseImportIntoEDMV1Request 
@@ -304,6 +405,20 @@ export const ObjectPurchaseApiFactory = function (configuration?: Configuration,
         },
         /**
          * 
+         * @summary Retrieve Purchase list
+         * @param {PurchaseGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        purchaseGetListV1(eOrderBy?: PurchaseGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): AxiosPromise<PurchaseGetListV1Response> {
+            return localVarFp.purchaseGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Import attachments into the Purchase
          * @param {number} pkiPurchaseID 
          * @param {PurchaseImportIntoEDMV1Request} purchaseImportIntoEDMV1Request 
@@ -345,6 +460,21 @@ export class ObjectPurchaseApi extends BaseAPI {
 
     /**
      * 
+     * @summary Retrieve Purchase list
+     * @param {PurchaseGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+     * @param {number} [iRowMax] 
+     * @param {number} [iRowOffset] 
+     * @param {HeaderAcceptLanguage} [acceptLanguage] 
+     * @param {string} [sFilter] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public purchaseGetListV1(eOrderBy?: PurchaseGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig) {
+        return ObjectPurchaseApiFp(this.configuration).purchaseGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
      * @summary Import attachments into the Purchase
      * @param {number} pkiPurchaseID 
      * @param {PurchaseImportIntoEDMV1Request} purchaseImportIntoEDMV1Request 
@@ -356,3 +486,32 @@ export class ObjectPurchaseApi extends BaseAPI {
     }
 }
 
+export const PurchaseGetListV1EOrderByEnum = {
+    pkiPurchaseID_ASC: 'pkiPurchaseID_ASC',
+    pkiPurchaseID_DESC: 'pkiPurchaseID_DESC',
+    fkiFranchiseofficeID_ASC: 'fkiFranchiseofficeID_ASC',
+    fkiFranchiseofficeID_DESC: 'fkiFranchiseofficeID_DESC',
+    fkiSupplierID_ASC: 'fkiSupplierID_ASC',
+    fkiSupplierID_DESC: 'fkiSupplierID_DESC',
+    fkiPeriodID_ASC: 'fkiPeriodID_ASC',
+    fkiPeriodID_DESC: 'fkiPeriodID_DESC',
+    sPurchaseBillnumber_ASC: 'sPurchaseBillnumber_ASC',
+    sPurchaseBillnumber_DESC: 'sPurchaseBillnumber_DESC',
+    dtPurchaseDate_ASC: 'dtPurchaseDate_ASC',
+    dtPurchaseDate_DESC: 'dtPurchaseDate_DESC',
+    dtPurchasePaydate_ASC: 'dtPurchasePaydate_ASC',
+    dtPurchasePaydate_DESC: 'dtPurchasePaydate_DESC',
+    dPurchaseTotal_ASC: 'dPurchaseTotal_ASC',
+    dPurchaseTotal_DESC: 'dPurchaseTotal_DESC',
+    bPurchaseIsfinanced_ASC: 'bPurchaseIsfinanced_ASC',
+    bPurchaseIsfinanced_DESC: 'bPurchaseIsfinanced_DESC',
+    bPurchaseIspaid_ASC: 'bPurchaseIspaid_ASC',
+    bPurchaseIspaid_DESC: 'bPurchaseIspaid_DESC',
+    sFranchiseagenceName_ASC: 'sFranchiseagenceName_ASC',
+    sFranchiseagenceName_DESC: 'sFranchiseagenceName_DESC',
+    iFranchiseofficeCode_ASC: 'iFranchiseofficeCode_ASC',
+    iFranchiseofficeCode_DESC: 'iFranchiseofficeCode_DESC',
+    sSupplierName_ASC: 'sSupplierName_ASC',
+    sSupplierName_DESC: 'sSupplierName_DESC',
+} as const;
+export type PurchaseGetListV1EOrderByEnum = typeof PurchaseGetListV1EOrderByEnum[keyof typeof PurchaseGetListV1EOrderByEnum];

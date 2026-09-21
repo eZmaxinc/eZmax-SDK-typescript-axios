@@ -57,6 +57,7 @@ export enum EResourceIdentifier {
     Supplier = 'Supplier',
     Template = 'Template',
     Tranqcontract = 'Tranqcontract',
+    Ezsignfolder = 'Ezsignfolder',
 }
 
 export enum EResourceattachmentprivacyPermission {
@@ -64,7 +65,7 @@ export enum EResourceattachmentprivacyPermission {
     Administration = 'Administration',
     Inscriptor = 'Inscriptor',
     Seller = 'Seller',
-    SpecificUser = 'SpecificUser',
+    Specificuser = 'Specificuser',
 }
 
 export enum EResourceAttachmentbilling {
@@ -105,6 +106,7 @@ export interface IResource {
     eResourceAttachmentbilling: EResourceAttachmentbilling
     bResourceAttachmentimport: boolean
     eResourceAttachmentlocation: EResourceAttachmentlocation
+    bResourceAttachmentvalidation: boolean
     bResourceDocumenttype?: boolean
     bResourceCommunication?: boolean
     a_objResourceattachmentprivacy?: IResourcePrivacy[]
@@ -123,7 +125,7 @@ interface IResourcePermission {
 
 class UResource {
 // prettier-ignore
-    public static readonly ressources: IResources = {
+    public static readonly resources: IResources = {
         Adjustment: {
             pkiResourceID: 1,
             sResourceName1: 'Ajustement',
@@ -134,9 +136,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Size,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: false,
             bResourceDocumenttype: true,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [
                 {
                     a_fkiModulesectionID: [22],
@@ -154,9 +162,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Size,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [
                 {
                     a_fkiModulesectionID: [41],
@@ -174,9 +188,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Size,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [
                 {
                     a_fkiModulesectionID: [40],
@@ -194,9 +214,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Size,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [
                 {
                     a_fkiModulesectionID: [41],
@@ -214,16 +240,17 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Folder,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: true,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
             a_objResourceattachmentprivacy: [
                 {
                     eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
-                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All, EResourceattachmentprivacyPermission.Administration, EResourceattachmentprivacyPermission.SpecificUser],
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All, EResourceattachmentprivacyPermission.Administration, EResourceattachmentprivacyPermission.Specificuser],
                 },
                 {
                     eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.AgentBrokerBuyerContract,
-                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All, EResourceattachmentprivacyPermission.SpecificUser],
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All, EResourceattachmentprivacyPermission.Specificuser],
                 },
             ],
             a_objResourcepermission: [
@@ -247,9 +274,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Size,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [
                 {
                     a_fkiModulesectionID: [41],
@@ -267,9 +300,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Free,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [],
         },
         Customer: {
@@ -282,9 +321,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Size,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [
                 {
                     a_fkiModulesectionID: [47, 81],
@@ -302,9 +347,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Size,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [
                 {
                     a_fkiModulesectionID: [81],
@@ -322,9 +373,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Size,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [
                 {
                     a_fkiModulesectionID: [16],
@@ -342,9 +399,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Size,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [
                 {
                     a_fkiModulesectionID: [103],
@@ -362,9 +425,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Folder,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [
                 {
                     a_fkiModulesectionID: [27],
@@ -382,9 +451,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Size,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [
                 {
                     a_fkiModulesectionID: [8],
@@ -402,9 +477,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Size,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [
                 {
                     a_fkiModulesectionID: [60],
@@ -422,9 +503,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Size,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [
                 {
                     a_fkiModulesectionID: [59],
@@ -442,9 +529,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Size,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [
                 {
                     a_fkiModulesectionID: [157],
@@ -462,9 +555,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Size,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [
                 {
                     a_fkiModulesectionID: [157],
@@ -482,9 +581,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Free,
             bResourceAttachmentimport: false,
             eResourceAttachmentlocation: EResourceAttachmentlocation.PerUser,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: false,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [],
         },
         EzsigndocumentProof: {
@@ -497,9 +602,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Free,
             bResourceAttachmentimport: false,
             eResourceAttachmentlocation: EResourceAttachmentlocation.PerUser,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: false,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [],
         },
         EzsigndocumentProofdocument: {
@@ -512,9 +623,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Free,
             bResourceAttachmentimport: false,
             eResourceAttachmentlocation: EResourceAttachmentlocation.PerUser,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: false,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [],
         },
         EzsigndocumentAttachment: {
@@ -527,9 +644,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Free,
             bResourceAttachmentimport: false,
             eResourceAttachmentlocation: EResourceAttachmentlocation.PerUser,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: false,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [],
         },
         Ezsigndocumentgroup: {
@@ -542,9 +665,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Free,
             bResourceAttachmentimport: false,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: false,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [],
         },
         EzsigndocumentgroupProof: {
@@ -557,9 +686,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Free,
             bResourceAttachmentimport: false,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: false,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [],
         },
         EzsigndocumentgroupProofdocument: {
@@ -572,9 +707,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Free,
             bResourceAttachmentimport: false,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: false,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [],
         },
         Folder: {
@@ -587,9 +728,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Size,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [],
         },
         Franchiseagence: {
@@ -602,9 +749,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Size,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [],
         },
         Franchisebroker: {
@@ -617,9 +770,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Size,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [],
         },
         Franchisecomplaint: {
@@ -632,9 +791,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Size,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [],
         },
         Franchisefranchise: {
@@ -647,9 +812,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Size,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [],
         },
         Franchiseoffice: {
@@ -662,9 +833,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Size,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [],
         },
         Ghacqcontract: {
@@ -677,9 +854,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Size,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [
                 {
                     a_fkiModulesectionID: [147],
@@ -697,20 +880,21 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Folder,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: true,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
             a_objResourceattachmentprivacy: [
                 {
                     eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
-                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All, EResourceattachmentprivacyPermission.Administration, EResourceattachmentprivacyPermission.SpecificUser],
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All, EResourceattachmentprivacyPermission.Administration, EResourceattachmentprivacyPermission.Specificuser],
                 },
                 {
                     eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.AgentBrokerInscriptor,
-                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All, EResourceattachmentprivacyPermission.Inscriptor, EResourceattachmentprivacyPermission.SpecificUser],
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All, EResourceattachmentprivacyPermission.Inscriptor, EResourceattachmentprivacyPermission.Specificuser],
                 },
                 {
                     eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.AgentBrokerSeller,
-                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All, EResourceattachmentprivacyPermission.Inscriptor, EResourceattachmentprivacyPermission.SpecificUser],
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All, EResourceattachmentprivacyPermission.Inscriptor, EResourceattachmentprivacyPermission.Specificuser],
                 },
             ],
             a_objResourcepermission: [
@@ -734,20 +918,21 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Folder,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: true,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
             a_objResourceattachmentprivacy: [
                 {
                     eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
-                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All, EResourceattachmentprivacyPermission.Administration, EResourceattachmentprivacyPermission.SpecificUser],
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All, EResourceattachmentprivacyPermission.Administration, EResourceattachmentprivacyPermission.Specificuser],
                 },
                 {
                     eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.AgentBrokerInscriptor,
-                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All, EResourceattachmentprivacyPermission.Inscriptor, EResourceattachmentprivacyPermission.SpecificUser],
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All, EResourceattachmentprivacyPermission.Inscriptor, EResourceattachmentprivacyPermission.Specificuser],
                 },
                 {
                     eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.AgentBrokerSeller,
-                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All, EResourceattachmentprivacyPermission.Inscriptor, EResourceattachmentprivacyPermission.SpecificUser],
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All, EResourceattachmentprivacyPermission.Inscriptor, EResourceattachmentprivacyPermission.Specificuser],
                 },
             ],
             a_objResourcepermission: [
@@ -771,6 +956,7 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Folder,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: true,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
             a_objResourceattachmentprivacy: [
@@ -780,11 +966,11 @@ class UResource {
                 },
                 {
                     eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.AgentBrokerInscriptor,
-                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All, EResourceattachmentprivacyPermission.Inscriptor, EResourceattachmentprivacyPermission.SpecificUser],
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All, EResourceattachmentprivacyPermission.Inscriptor, EResourceattachmentprivacyPermission.Specificuser],
                 },
                 {
                     eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.AgentBrokerSeller,
-                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All, EResourceattachmentprivacyPermission.Inscriptor, EResourceattachmentprivacyPermission.SpecificUser],
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All, EResourceattachmentprivacyPermission.Inscriptor, EResourceattachmentprivacyPermission.Specificuser],
                 },
             ],
             a_objResourcepermission: [
@@ -808,9 +994,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Size,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [
                 {
                     a_fkiModulesectionID: [12],
@@ -828,9 +1020,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Size,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [
                 {
                     a_fkiModulesectionID: [190],
@@ -848,9 +1046,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Size,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [
                 {
                     a_fkiModulesectionID: [80],
@@ -868,9 +1072,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Size,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [
                 {
                     a_fkiModulesectionID: [80],
@@ -888,9 +1098,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Size,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [
                 {
                     a_fkiModulesectionID: [97],
@@ -908,6 +1124,7 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Size,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
             a_objResourceattachmentprivacy: [
@@ -933,16 +1150,17 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Folder,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
             a_objResourceattachmentprivacy: [
                 {
                     eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
-                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All, EResourceattachmentprivacyPermission.Administration, EResourceattachmentprivacyPermission.SpecificUser],
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All, EResourceattachmentprivacyPermission.Administration, EResourceattachmentprivacyPermission.Specificuser],
                 },
                 {
                     eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.AgentBrokerOtherIncome,
-                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All, EResourceattachmentprivacyPermission.SpecificUser],
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All, EResourceattachmentprivacyPermission.Specificuser],
                 },
             ],
             a_objResourcepermission: [
@@ -962,6 +1180,7 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Size,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
             a_objResourceattachmentprivacy: [
@@ -987,9 +1206,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Size,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [
                 {
                     a_fkiModulesectionID: [2],
@@ -1007,9 +1232,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Size,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [
                 {
                     a_fkiModulesectionID: [20, 98, 99],
@@ -1027,9 +1258,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Folder,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [
                 {
                     a_fkiModulesectionID: [117],
@@ -1047,6 +1284,7 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Size,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
             a_objResourceattachmentprivacy: [
@@ -1072,9 +1310,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Size,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [
                 {
                     a_fkiModulesectionID: [38],
@@ -1092,9 +1336,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Size,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [
                 {
                     a_fkiModulesectionID: [58],
@@ -1112,9 +1362,15 @@ class UResource {
             eResourceAttachmentbilling: EResourceAttachmentbilling.Size,
             bResourceAttachmentimport: true,
             eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
             bResourceCommunication: true,
             bResourceDocumenttype: true,
-            a_objResourceattachmentprivacy: [],
+            a_objResourceattachmentprivacy: [
+                {
+                    eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.Administration,
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All],
+                },
+            ],
             a_objResourcepermission: [
                 {
                     a_fkiModulesectionID: [145],
@@ -1122,38 +1378,54 @@ class UResource {
                 },
             ],
         },
+        Ezsignfolder: {
+            pkiResourceID: 50,
+            sResourceName1: 'Dossier eZsign',
+            sResourceName2: 'eZsign Folder',
+            sResourceFieldName: 'fkiEzsignfolderID',
+            bResourceAttachment: true,
+            bResourceAttachmentautoinclude: false,
+            eResourceAttachmentbilling: EResourceAttachmentbilling.Free,
+            bResourceAttachmentimport: false,
+            eResourceAttachmentlocation: EResourceAttachmentlocation.Global,
+            bResourceAttachmentvalidation: false,
+            bResourceCommunication: true,
+            bResourceDocumenttype: false,
+            a_objResourceattachmentprivacy: [],
+            a_objResourcepermission: [],
+        },
     }
 
-    public static getResource = (ressourceIdentifier: EResourceIdentifier): IResource => {
-        if (!this.ressources[ressourceIdentifier]) {
-            throw new Error(`Resource ${ressourceIdentifier} not found`)
+    public static getResource = (resourceIdentifier: EResourceIdentifier): IResource => {
+        if (!this.resources[resourceIdentifier]) {
+            throw new Error(`Resource ${resourceIdentifier} not found`)
         }
-        return this.ressources[ressourceIdentifier]
+        return this.resources[resourceIdentifier]
     }
 
-    public static getResourceName = (ressourceIdentifier: EResourceIdentifier, languageId: number): string => {
-        const ressource = this.getResource(ressourceIdentifier)
+    public static getResourceName = (resourceIdentifier: EResourceIdentifier, languageId: number): string => {
+        const resource = this.getResource(resourceIdentifier)
 
         if (languageId === LANGUAGE_FRENCH) {
-            return ressource.sResourceName1
+            return resource.sResourceName1
         }
         if (languageId === LANGUAGE_ENGLISH) {
-            return ressource.sResourceName2
+            return resource.sResourceName2
         }
 
         return ''
     }
 
-    public static isAvailableToCommunication = (ressourceIdentifier: EResourceIdentifier): boolean => {
-        return !!this.getResource(ressourceIdentifier).bResourceCommunication
+    public static isAvailableToCommunication = (resourceIdentifier: EResourceIdentifier): boolean => {
+        return !!this.getResource(resourceIdentifier).bResourceCommunication
     }
 
-    public static isAvailableToCopy = (ressourceIdentifier: EResourceIdentifier): boolean => {
-        return !!this.getResource(ressourceIdentifier).bResourceAttachmentimport
+    public static isAvailableToCopy = (resourceIdentifier: EResourceIdentifier): boolean => {
+        return !!this.getResource(resourceIdentifier).bResourceAttachmentimport
     }
 
-    public static getAttachmentPrivacy = (ressourceIdentifier: EResourceIdentifier): IResourcePrivacy[] | undefined => {
-        return this.getResource(ressourceIdentifier).a_objResourceattachmentprivacy
+    public static getAttachmentPrivacy = (resourceIdentifier: EResourceIdentifier): IResourcePrivacy[] | undefined => {
+        return this.getResource(resourceIdentifier).a_objResourceattachmentprivacy
     }
 }
 

@@ -6,6 +6,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |------------- | ------------- | -------------|
 |[**folderBatchDownloadV1**](#folderbatchdownloadv1) | **POST** /1/object/folder/{pkiFolderID}/batchDownload | Download multiples attachments from an Folder|
 |[**folderGetAttachmentsV1**](#foldergetattachmentsv1) | **GET** /1/object/folder/{pkiFolderID}/getAttachments | Retrieve Folder\&#39;s attachments|
+|[**folderGetCommunicationCountV1**](#foldergetcommunicationcountv1) | **GET** /1/object/folder/{pkiFolderID}/getCommunicationCount | Retrieve Communication count|
+|[**folderGetCommunicationListV1**](#foldergetcommunicationlistv1) | **GET** /1/object/folder/{pkiFolderID}/getCommunicationList | Retrieve Communication list|
+|[**folderGetCommunicationrecipientsV1**](#foldergetcommunicationrecipientsv1) | **GET** /1/object/folder/{pkiFolderID}/getCommunicationrecipients | Retrieve Communication recipients|
+|[**folderGetCommunicationsendersV1**](#foldergetcommunicationsendersv1) | **GET** /1/object/folder/{pkiFolderID}/getCommunicationsenders | Retrieve Communication senders|
 |[**folderImportIntoEDMV1**](#folderimportintoedmv1) | **POST** /1/object/folder/{pkiFolderID}/importIntoEDM | Import attachments into the Folder|
 
 # **folderBatchDownloadV1**
@@ -97,6 +101,210 @@ const { status, data } = await apiInstance.folderGetAttachmentsV1(
 ### Return type
 
 **FolderGetAttachmentsV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **folderGetCommunicationCountV1**
+> FolderGetCommunicationCountV1Response folderGetCommunicationCountV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectFolderApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectFolderApi(configuration);
+
+let pkiFolderID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.folderGetCommunicationCountV1(
+    pkiFolderID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiFolderID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**FolderGetCommunicationCountV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **folderGetCommunicationListV1**
+> FolderGetCommunicationListV1Response folderGetCommunicationListV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectFolderApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectFolderApi(configuration);
+
+let pkiFolderID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.folderGetCommunicationListV1(
+    pkiFolderID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiFolderID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**FolderGetCommunicationListV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **folderGetCommunicationrecipientsV1**
+> FolderGetCommunicationrecipientsV1Response folderGetCommunicationrecipientsV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectFolderApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectFolderApi(configuration);
+
+let pkiFolderID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.folderGetCommunicationrecipientsV1(
+    pkiFolderID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiFolderID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**FolderGetCommunicationrecipientsV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **folderGetCommunicationsendersV1**
+> FolderGetCommunicationsendersV1Response folderGetCommunicationsendersV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectFolderApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectFolderApi(configuration);
+
+let pkiFolderID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.folderGetCommunicationsendersV1(
+    pkiFolderID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiFolderID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**FolderGetCommunicationsendersV1Response**
 
 ### Authorization
 

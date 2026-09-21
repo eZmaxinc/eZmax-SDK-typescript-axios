@@ -24,9 +24,13 @@ import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError
 // @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
+import type { HeaderAcceptLanguage } from '../model';
+// @ts-ignore
 import type { SalaryBatchDownloadV1Request } from '../model';
 // @ts-ignore
 import type { SalaryGetAttachmentsV1Response } from '../model';
+// @ts-ignore
+import type { SalaryGetListV1Response } from '../model';
 // @ts-ignore
 import type { SalaryImportIntoEDMV1Request } from '../model';
 // @ts-ignore
@@ -161,6 +165,86 @@ export const ObjectSalaryApiAxiosParamCreator = function (configuration?: Config
         },
         /**
          * 
+         * @summary Retrieve Salary list
+         * @param {SalaryGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        salaryGetListV1: async (eOrderBy?: SalaryGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/1/object/salary/getList`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            if (eOrderBy !== undefined) {
+                localVarQueryParameter['eOrderBy'] = eOrderBy;
+            }
+
+            if (iRowMax !== undefined) {
+                localVarQueryParameter['iRowMax'] = iRowMax;
+            }
+
+            if (iRowOffset !== undefined) {
+                localVarQueryParameter['iRowOffset'] = iRowOffset;
+            }
+
+            if (sFilter !== undefined) {
+                localVarQueryParameter['sFilter'] = sFilter;
+            }
+
+            localVarHeaderParameter['Accept'] = 'application/json,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
+
+            if (acceptLanguage != null) {
+                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
+                    ? acceptLanguage
+                    : JSON.stringify(acceptLanguage, replaceWithSerializableTypeIfNeeded);
+            }
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Import attachments into the Salary
          * @param {number} pkiSalaryID 
          * @param {SalaryImportIntoEDMV1Request} salaryImportIntoEDMV1Request 
@@ -260,6 +344,23 @@ export const ObjectSalaryApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Retrieve Salary list
+         * @param {SalaryGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async salaryGetListV1(eOrderBy?: SalaryGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SalaryGetListV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.salaryGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectSalaryApi.salaryGetListV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Import attachments into the Salary
          * @param {number} pkiSalaryID 
          * @param {SalaryImportIntoEDMV1Request} salaryImportIntoEDMV1Request 
@@ -304,6 +405,20 @@ export const ObjectSalaryApiFactory = function (configuration?: Configuration, b
         },
         /**
          * 
+         * @summary Retrieve Salary list
+         * @param {SalaryGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        salaryGetListV1(eOrderBy?: SalaryGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): AxiosPromise<SalaryGetListV1Response> {
+            return localVarFp.salaryGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Import attachments into the Salary
          * @param {number} pkiSalaryID 
          * @param {SalaryImportIntoEDMV1Request} salaryImportIntoEDMV1Request 
@@ -345,6 +460,21 @@ export class ObjectSalaryApi extends BaseAPI {
 
     /**
      * 
+     * @summary Retrieve Salary list
+     * @param {SalaryGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+     * @param {number} [iRowMax] 
+     * @param {number} [iRowOffset] 
+     * @param {HeaderAcceptLanguage} [acceptLanguage] 
+     * @param {string} [sFilter] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public salaryGetListV1(eOrderBy?: SalaryGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig) {
+        return ObjectSalaryApiFp(this.configuration).salaryGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
      * @summary Import attachments into the Salary
      * @param {number} pkiSalaryID 
      * @param {SalaryImportIntoEDMV1Request} salaryImportIntoEDMV1Request 
@@ -356,3 +486,36 @@ export class ObjectSalaryApi extends BaseAPI {
     }
 }
 
+export const SalaryGetListV1EOrderByEnum = {
+    pkiSalaryID_ASC: 'pkiSalaryID_ASC',
+    pkiSalaryID_DESC: 'pkiSalaryID_DESC',
+    fkiPeriodID_ASC: 'fkiPeriodID_ASC',
+    fkiPeriodID_DESC: 'fkiPeriodID_DESC',
+    fkiUSerIDCreated_ASC: 'fkiUSerIDCreated_ASC',
+    fkiUSerIDCreated_DESC: 'fkiUSerIDCreated_DESC',
+    fkiSalaryperiodID_ASC: 'fkiSalaryperiodID_ASC',
+    fkiSalaryperiodID_DESC: 'fkiSalaryperiodID_DESC',
+    dtSalaryPaymentdate_ASC: 'dtSalaryPaymentdate_ASC',
+    dtSalaryPaymentdate_DESC: 'dtSalaryPaymentdate_DESC',
+    sSalaryperiod_ASC: 'sSalaryperiod_ASC',
+    sSalaryperiod_DESC: 'sSalaryperiod_DESC',
+    sPeriodYYYYMM_ASC: 'sPeriodYYYYMM_ASC',
+    sPeriodYYYYMM_DESC: 'sPeriodYYYYMM_DESC',
+    iSalarypreparationCount_ASC: 'iSalarypreparationCount_ASC',
+    iSalarypreparationCount_DESC: 'iSalarypreparationCount_DESC',
+    dSalarypreparationTotal_ASC: 'dSalarypreparationTotal_ASC',
+    dSalarypreparationTotal_DESC: 'dSalarypreparationTotal_DESC',
+    dtSalaryperiodStart_ASC: 'dtSalaryperiodStart_ASC',
+    dtSalaryperiodStart_DESC: 'dtSalaryperiodStart_DESC',
+    dtSalaryperiodEnd_ASC: 'dtSalaryperiodEnd_ASC',
+    dtSalaryperiodEnd_DESC: 'dtSalaryperiodEnd_DESC',
+    sUserLoginname_ASC: 'sUserLoginname_ASC',
+    sUserLoginname_DESC: 'sUserLoginname_DESC',
+    dtCreatedDate_ASC: 'dtCreatedDate_ASC',
+    dtCreatedDate_DESC: 'dtCreatedDate_DESC',
+    bSalarypreparationIspaid_ASC: 'bSalarypreparationIspaid_ASC',
+    bSalarypreparationIspaid_DESC: 'bSalarypreparationIspaid_DESC',
+    iSalaryperiodgroupYear_ASC: 'iSalaryperiodgroupYear_ASC',
+    iSalaryperiodgroupYear_DESC: 'iSalaryperiodgroupYear_DESC',
+} as const;
+export type SalaryGetListV1EOrderByEnum = typeof SalaryGetListV1EOrderByEnum[keyof typeof SalaryGetListV1EOrderByEnum];

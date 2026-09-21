@@ -18,11 +18,36 @@
 import type { FieldEAttachmentVerified } from './field-eattachment-verified';
 
 /**
- * Request for PATCH /1/object/attachment/{pkiAttachmentID}/validate
+ * Request for POST /1/object/attachment/{pkiAttachmentID}/validate
  */
 export interface AttachmentValidateV1Request {
+    /**
+     * The unique ID of the Attachmentrejectreason
+     */
+    /*'fkiAttachmentrejectreasonID'?: number;*/
+    'fkiAttachmentrejectreasonID'?: number;
     /*'eAttachmentVerified': FieldEAttachmentVerified;*/
     'eAttachmentVerified': FieldEAttachmentVerified;
+    /**
+     * The rejectioncomment of the Attachment
+     */
+    /*'tAttachmentRejectioncomment'?: string;*/
+    'tAttachmentRejectioncomment'?: string;
+    /**
+     * A list of email addresses to send a rejection notification to.
+     */
+    /*'a_sNotificationEmailAddress'?: Set<string>;*/
+    'a_sNotificationEmailAddress'?: Array<string>;
+    /**
+     * The email body to send to the notification recipients.
+     */
+    /*'tNotificationMessage'?: string;*/
+    'tNotificationMessage'?: string;
+    /**
+     * Should a copy of the attachment be included in the email.
+     */
+    /*'bNotificationIncludeAttachment'?: boolean;*/
+    'bNotificationIncludeAttachment'?: boolean;
 }
 
 
@@ -38,7 +63,12 @@ export interface AttachmentValidateV1Request {
  * @class DataObjectAttachmentValidateV1Request
  */
 export class DataObjectAttachmentValidateV1Request {
+   fkiAttachmentrejectreasonID?:number = undefined
    eAttachmentVerified:FieldEAttachmentVerified = 'No'
+   tAttachmentRejectioncomment?:string = undefined
+   a_sNotificationEmailAddress?:Array<string> = undefined
+   tNotificationMessage?:string = undefined
+   bNotificationIncludeAttachment?:boolean = undefined
 }
 
 /**
@@ -47,10 +77,35 @@ export class DataObjectAttachmentValidateV1Request {
  * @class ValidationObjectAttachmentValidateV1Request
  */
 export class ValidationObjectAttachmentValidateV1Request {
+   fkiAttachmentrejectreasonID = {
+      type: 'integer',
+      minimum: 0,
+      maximum: 255,
+      required: false
+   }
    eAttachmentVerified = {
       type: 'enum',
-      allowableValues: ['No','Yes','Rejected'],
+      allowableValues: ['No','Yes','Rejected','Pending'],
       required: true
+   }
+   tAttachmentRejectioncomment = {
+      type: 'string',
+      pattern: /^.{0,65535}$/,
+      required: false
+   }
+   a_sNotificationEmailAddress = {
+      type: 'array',
+      unique: true,
+      required: false
+   }
+   tNotificationMessage = {
+      type: 'string',
+      pattern: /^[\s\S]{0,65535}$/,
+      required: false
+   }
+   bNotificationIncludeAttachment = {
+      type: 'boolean',
+      required: false
    }
 } 
 

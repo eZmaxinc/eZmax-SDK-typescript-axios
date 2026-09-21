@@ -18,6 +18,9 @@
 import type { AttachmentlogResponse } from './attachmentlog-response';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { CustomUserNameResponse } from './custom-user-name-response';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { FieldEAttachmentlogType } from './field-eattachmentlog-type';
 
 /**
@@ -38,6 +41,12 @@ export interface AttachmentlogResponseCompound {
      * @memberof AttachmentlogResponseCompound
      */
     fkiUserID:number 
+    /**
+     * 
+     * @type {CustomUserNameResponse}
+     * @memberof AttachmentlogResponseCompound
+     */
+    objUser:CustomUserNameResponse 
     /**
      * The created date
      * @type {string}
@@ -64,6 +73,10 @@ export interface AttachmentlogResponseCompound {
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectCustomUserNameResponse } from './'
+// @ts-ignore
+import { ValidationObjectCustomUserNameResponse } from './'
 
 /**
  * @export 
@@ -74,6 +87,7 @@ export interface AttachmentlogResponseCompound {
 export class DataObjectAttachmentlogResponseCompound {
     fkiAttachmentID:number = 0
     fkiUserID:number = 0
+    objUser:CustomUserNameResponse = new DataObjectCustomUserNameResponse()
     dtAttachmentlogDatetime:string = ''
     eAttachmentlogType:FieldEAttachmentlogType = 'AutoValidation'
     sAttachmentlogDetail?:string = undefined
@@ -95,6 +109,7 @@ export class ValidationObjectAttachmentlogResponseCompound {
       minimum: 0,
       required: true
    }
+   objUser = new ValidationObjectCustomUserNameResponse()
    dtAttachmentlogDatetime = {
       type: 'string',
       pattern: /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) ([01]?[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/,

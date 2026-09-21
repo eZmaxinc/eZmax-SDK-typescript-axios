@@ -36,9 +36,13 @@ import type { DisclosureGetCommunicationrecipientsV1Response } from '../model';
 // @ts-ignore
 import type { DisclosureGetCommunicationsendersV1Response } from '../model';
 // @ts-ignore
+import type { DisclosureGetListV1Response } from '../model';
+// @ts-ignore
 import type { DisclosureImportIntoEDMV1Request } from '../model';
 // @ts-ignore
 import type { DisclosureImportIntoEDMV1Response } from '../model';
+// @ts-ignore
+import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -400,6 +404,86 @@ export const ObjectDisclosureApiAxiosParamCreator = function (configuration?: Co
             };
         },
         /**
+         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eDisclosureInteresttype | Direct<br>Indirect |
+         * @summary Retrieve Disclosure list
+         * @param {DisclosureGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        disclosureGetListV1: async (eOrderBy?: DisclosureGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/1/object/disclosure/getList`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            if (eOrderBy !== undefined) {
+                localVarQueryParameter['eOrderBy'] = eOrderBy;
+            }
+
+            if (iRowMax !== undefined) {
+                localVarQueryParameter['iRowMax'] = iRowMax;
+            }
+
+            if (iRowOffset !== undefined) {
+                localVarQueryParameter['iRowOffset'] = iRowOffset;
+            }
+
+            if (sFilter !== undefined) {
+                localVarQueryParameter['sFilter'] = sFilter;
+            }
+
+            localVarHeaderParameter['Accept'] = 'application/json,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
+
+            if (acceptLanguage != null) {
+                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
+                    ? acceptLanguage
+                    : JSON.stringify(acceptLanguage, replaceWithSerializableTypeIfNeeded);
+            }
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * 
          * @summary Import attachments into the Disclosure
          * @param {number} pkiDisclosureID 
@@ -551,6 +635,23 @@ export const ObjectDisclosureApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
+         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eDisclosureInteresttype | Direct<br>Indirect |
+         * @summary Retrieve Disclosure list
+         * @param {DisclosureGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async disclosureGetListV1(eOrderBy?: DisclosureGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DisclosureGetListV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.disclosureGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectDisclosureApi.disclosureGetListV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * 
          * @summary Import attachments into the Disclosure
          * @param {number} pkiDisclosureID 
@@ -633,6 +734,20 @@ export const ObjectDisclosureApiFactory = function (configuration?: Configuratio
          */
         disclosureGetCommunicationsendersV1(pkiDisclosureID: number, options?: RawAxiosRequestConfig): AxiosPromise<DisclosureGetCommunicationsendersV1Response> {
             return localVarFp.disclosureGetCommunicationsendersV1(pkiDisclosureID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eDisclosureInteresttype | Direct<br>Indirect |
+         * @summary Retrieve Disclosure list
+         * @param {DisclosureGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        disclosureGetListV1(eOrderBy?: DisclosureGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): AxiosPromise<DisclosureGetListV1Response> {
+            return localVarFp.disclosureGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -720,6 +835,21 @@ export class ObjectDisclosureApi extends BaseAPI {
     }
 
     /**
+     * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eDisclosureInteresttype | Direct<br>Indirect |
+     * @summary Retrieve Disclosure list
+     * @param {DisclosureGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+     * @param {number} [iRowMax] 
+     * @param {number} [iRowOffset] 
+     * @param {HeaderAcceptLanguage} [acceptLanguage] 
+     * @param {string} [sFilter] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public disclosureGetListV1(eOrderBy?: DisclosureGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig) {
+        return ObjectDisclosureApiFp(this.configuration).disclosureGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * 
      * @summary Import attachments into the Disclosure
      * @param {number} pkiDisclosureID 
@@ -732,3 +862,32 @@ export class ObjectDisclosureApi extends BaseAPI {
     }
 }
 
+export const DisclosureGetListV1EOrderByEnum = {
+    pkiDisclosureID_ASC: 'pkiDisclosureID_ASC',
+    pkiDisclosureID_DESC: 'pkiDisclosureID_DESC',
+    fkiAgentID_ASC: 'fkiAgentID_ASC',
+    fkiAgentID_DESC: 'fkiAgentID_DESC',
+    fkiBrokerID_ASC: 'fkiBrokerID_ASC',
+    fkiBrokerID_DESC: 'fkiBrokerID_DESC',
+    eDisclosureInteresttype_ASC: 'eDisclosureInteresttype_ASC',
+    eDisclosureInteresttype_DESC: 'eDisclosureInteresttype_DESC',
+    sDisclosureRelation_ASC: 'sDisclosureRelation_ASC',
+    sDisclosureRelation_DESC: 'sDisclosureRelation_DESC',
+    dtDisclosureRedactiondate_ASC: 'dtDisclosureRedactiondate_ASC',
+    dtDisclosureRedactiondate_DESC: 'dtDisclosureRedactiondate_DESC',
+    dtDisclosureAcceptationdate_ASC: 'dtDisclosureAcceptationdate_ASC',
+    dtDisclosureAcceptationdate_DESC: 'dtDisclosureAcceptationdate_DESC',
+    dtDisclosureReceptiondate_ASC: 'dtDisclosureReceptiondate_ASC',
+    dtDisclosureReceptiondate_DESC: 'dtDisclosureReceptiondate_DESC',
+    bDisclosureIsactive_ASC: 'bDisclosureIsactive_ASC',
+    bDisclosureIsactive_DESC: 'bDisclosureIsactive_DESC',
+    sDisclosureNumber_ASC: 'sDisclosureNumber_ASC',
+    sDisclosureNumber_DESC: 'sDisclosureNumber_DESC',
+    sContactFirstname_ASC: 'sContactFirstname_ASC',
+    sContactFirstname_DESC: 'sContactFirstname_DESC',
+    sContactLastname_ASC: 'sContactLastname_ASC',
+    sContactLastname_DESC: 'sContactLastname_DESC',
+    sBrokerName_ASC: 'sBrokerName_ASC',
+    sBrokerName_DESC: 'sBrokerName_DESC',
+} as const;
+export type DisclosureGetListV1EOrderByEnum = typeof DisclosureGetListV1EOrderByEnum[keyof typeof DisclosureGetListV1EOrderByEnum];

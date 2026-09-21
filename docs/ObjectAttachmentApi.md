@@ -5,11 +5,13 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
 |[**attachmentDeleteV1**](#attachmentdeletev1) | **POST** /1/object/attachment/{pkiAttachmentID}/delete | Delete an existing attachment|
+|[**attachmentDocumentTypeV1**](#attachmentdocumenttypev1) | **POST** /1/object/attachment/{pkiAttachmentID}/documentType | Change attachment document type|
 |[**attachmentDownloadV1**](#attachmentdownloadv1) | **GET** /1/object/attachment/{pkiAttachmentID}/download | Retrieve the content|
 |[**attachmentGetAttachmentlogsV1**](#attachmentgetattachmentlogsv1) | **GET** /1/object/attachment/{pkiAttachmentID}/getAttachmentlogs | Retrieve the Attachmentlogs|
+|[**attachmentPrivacyV1**](#attachmentprivacyv1) | **POST** /1/object/attachment/{pkiAttachmentID}/privacy | Change the attachment privacy|
 |[**attachmentRenameV1**](#attachmentrenamev1) | **POST** /1/object/attachment/{pkiAttachmentID}/rename | Rename an attachment|
 |[**attachmentRestoreV1**](#attachmentrestorev1) | **POST** /1/object/attachment/{pkiAttachmentID}/restore | Restore a deleted attachment|
-|[**attachmentValidateV1**](#attachmentvalidatev1) | **PATCH** /1/object/attachment/{pkiAttachmentID}/validate | Validate an existing attachment|
+|[**attachmentValidateV1**](#attachmentvalidatev1) | **POST** /1/object/attachment/{pkiAttachmentID}/validate | Validate an existing attachment|
 
 # **attachmentDeleteV1**
 > AttachmentDeleteV1Response attachmentDeleteV1(body)
@@ -47,6 +49,64 @@ const { status, data } = await apiInstance.attachmentDeleteV1(
 ### Return type
 
 **AttachmentDeleteV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**403** | The request is not allowed to be executed. Look for detail about the error in the body. |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+|**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **attachmentDocumentTypeV1**
+> AttachmentDocumentTypeV1Response attachmentDocumentTypeV1(attachmentDocumentTypeV1Request)
+
+The endpoint allows to change the checklist document type for an attachment.
+
+### Example
+
+```typescript
+import {
+    ObjectAttachmentApi,
+    Configuration,
+    AttachmentDocumentTypeV1Request
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectAttachmentApi(configuration);
+
+let pkiAttachmentID: number; // (default to undefined)
+let attachmentDocumentTypeV1Request: AttachmentDocumentTypeV1Request; //
+
+const { status, data } = await apiInstance.attachmentDocumentTypeV1(
+    pkiAttachmentID,
+    attachmentDocumentTypeV1Request
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **attachmentDocumentTypeV1Request** | **AttachmentDocumentTypeV1Request**|  | |
+| **pkiAttachmentID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**AttachmentDocumentTypeV1Response**
 
 ### Authorization
 
@@ -169,6 +229,64 @@ const { status, data } = await apiInstance.attachmentGetAttachmentlogsV1(
 |-------------|-------------|------------------|
 |**200** | Successful response |  -  |
 |**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **attachmentPrivacyV1**
+> AttachmentPrivacyV1Response attachmentPrivacyV1(attachmentPrivacyV1Request)
+
+The endpoint allows to change an attachment\'s access privacy.
+
+### Example
+
+```typescript
+import {
+    ObjectAttachmentApi,
+    Configuration,
+    AttachmentPrivacyV1Request
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectAttachmentApi(configuration);
+
+let pkiAttachmentID: number; // (default to undefined)
+let attachmentPrivacyV1Request: AttachmentPrivacyV1Request; //
+
+const { status, data } = await apiInstance.attachmentPrivacyV1(
+    pkiAttachmentID,
+    attachmentPrivacyV1Request
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **attachmentPrivacyV1Request** | **AttachmentPrivacyV1Request**|  | |
+| **pkiAttachmentID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**AttachmentPrivacyV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**403** | The request is not allowed to be executed. Look for detail about the error in the body. |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+|**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

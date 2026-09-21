@@ -36,6 +36,8 @@ import type { BankaccountGetCommunicationrecipientsV1Response } from '../model';
 // @ts-ignore
 import type { BankaccountGetCommunicationsendersV1Response } from '../model';
 // @ts-ignore
+import type { BankaccountGetListV1Response } from '../model';
+// @ts-ignore
 import type { BankaccountImportIntoEDMV1Request } from '../model';
 // @ts-ignore
 import type { BankaccountImportIntoEDMV1Response } from '../model';
@@ -478,6 +480,86 @@ export const ObjectBankaccountApiAxiosParamCreator = function (configuration?: C
             };
         },
         /**
+         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eBankaccountType | Chequing<br>Trust |
+         * @summary Retrieve Bankaccount list
+         * @param {BankaccountGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        bankaccountGetListV1: async (eOrderBy?: BankaccountGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/1/object/bankaccount/getList`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            if (eOrderBy !== undefined) {
+                localVarQueryParameter['eOrderBy'] = eOrderBy;
+            }
+
+            if (iRowMax !== undefined) {
+                localVarQueryParameter['iRowMax'] = iRowMax;
+            }
+
+            if (iRowOffset !== undefined) {
+                localVarQueryParameter['iRowOffset'] = iRowOffset;
+            }
+
+            if (sFilter !== undefined) {
+                localVarQueryParameter['sFilter'] = sFilter;
+            }
+
+            localVarHeaderParameter['Accept'] = 'application/json,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
+
+            if (acceptLanguage != null) {
+                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
+                    ? acceptLanguage
+                    : JSON.stringify(acceptLanguage, replaceWithSerializableTypeIfNeeded);
+            }
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * 
          * @summary Import attachments into the Bankaccount
          * @param {number} pkiBankaccountID 
@@ -645,6 +727,23 @@ export const ObjectBankaccountApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
+         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eBankaccountType | Chequing<br>Trust |
+         * @summary Retrieve Bankaccount list
+         * @param {BankaccountGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async bankaccountGetListV1(eOrderBy?: BankaccountGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BankaccountGetListV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.bankaccountGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectBankaccountApi.bankaccountGetListV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * 
          * @summary Import attachments into the Bankaccount
          * @param {number} pkiBankaccountID 
@@ -740,6 +839,20 @@ export const ObjectBankaccountApiFactory = function (configuration?: Configurati
          */
         bankaccountGetCommunicationsendersV1(pkiBankaccountID: number, options?: RawAxiosRequestConfig): AxiosPromise<BankaccountGetCommunicationsendersV1Response> {
             return localVarFp.bankaccountGetCommunicationsendersV1(pkiBankaccountID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eBankaccountType | Chequing<br>Trust |
+         * @summary Retrieve Bankaccount list
+         * @param {BankaccountGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        bankaccountGetListV1(eOrderBy?: BankaccountGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): AxiosPromise<BankaccountGetListV1Response> {
+            return localVarFp.bankaccountGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -841,6 +954,21 @@ export class ObjectBankaccountApi extends BaseAPI {
     }
 
     /**
+     * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eBankaccountType | Chequing<br>Trust |
+     * @summary Retrieve Bankaccount list
+     * @param {BankaccountGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+     * @param {number} [iRowMax] 
+     * @param {number} [iRowOffset] 
+     * @param {HeaderAcceptLanguage} [acceptLanguage] 
+     * @param {string} [sFilter] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public bankaccountGetListV1(eOrderBy?: BankaccountGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig) {
+        return ObjectBankaccountApiFp(this.configuration).bankaccountGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * 
      * @summary Import attachments into the Bankaccount
      * @param {number} pkiBankaccountID 
@@ -863,3 +991,28 @@ export const BankaccountGetAutocompleteV2EFilterActiveEnum = {
     Inactive: 'Inactive',
 } as const;
 export type BankaccountGetAutocompleteV2EFilterActiveEnum = typeof BankaccountGetAutocompleteV2EFilterActiveEnum[keyof typeof BankaccountGetAutocompleteV2EFilterActiveEnum];
+export const BankaccountGetListV1EOrderByEnum = {
+    pkiBankaccountID_ASC: 'pkiBankaccountID_ASC',
+    pkiBankaccountID_DESC: 'pkiBankaccountID_DESC',
+    sBankaccountBankname_ASC: 'sBankaccountBankname_ASC',
+    sBankaccountBankname_DESC: 'sBankaccountBankname_DESC',
+    sBankaccountTransit_ASC: 'sBankaccountTransit_ASC',
+    sBankaccountTransit_DESC: 'sBankaccountTransit_DESC',
+    sBankaccountInstitution_ASC: 'sBankaccountInstitution_ASC',
+    sBankaccountInstitution_DESC: 'sBankaccountInstitution_DESC',
+    sBankaccountAccount_ASC: 'sBankaccountAccount_ASC',
+    sBankaccountAccount_DESC: 'sBankaccountAccount_DESC',
+    sBankaccountNumber_ASC: 'sBankaccountNumber_ASC',
+    sBankaccountNumber_DESC: 'sBankaccountNumber_DESC',
+    eBankaccountType_ASC: 'eBankaccountType_ASC',
+    eBankaccountType_DESC: 'eBankaccountType_DESC',
+    bBankaccountCommissionprocessing_ASC: 'bBankaccountCommissionprocessing_ASC',
+    bBankaccountCommissionprocessing_DESC: 'bBankaccountCommissionprocessing_DESC',
+    bBankaccountIsactive_ASC: 'bBankaccountIsactive_ASC',
+    bBankaccountIsactive_DESC: 'bBankaccountIsactive_DESC',
+    iGlaccountCode_ASC: 'iGlaccountCode_ASC',
+    iGlaccountCode_DESC: 'iGlaccountCode_DESC',
+    sGlaccountDescriptionX_ASC: 'sGlaccountDescriptionX_ASC',
+    sGlaccountDescriptionX_DESC: 'sGlaccountDescriptionX_DESC',
+} as const;
+export type BankaccountGetListV1EOrderByEnum = typeof BankaccountGetListV1EOrderByEnum[keyof typeof BankaccountGetListV1EOrderByEnum];
