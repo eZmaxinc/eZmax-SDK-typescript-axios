@@ -6,7 +6,7 @@ Payload for POST /1/object/invoice/{pkiInvoiceID}/importIntoEDM
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**a_pkiAttachmentID** | **Array&lt;number&gt;** |  | [default to undefined]
+**a_objAttachment** | [**Array&lt;CustomAttachmentImportIntoEDMResponse&gt;**](CustomAttachmentImportIntoEDMResponse.md) |  | [default to undefined]
 
 ## Example
 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 import { InvoiceImportIntoEDMV1ResponseMPayload } from '@ezmaxinc/ezmax-sdk-typescript-axios';
 
 const instance: InvoiceImportIntoEDMV1ResponseMPayload = {
-    a_pkiAttachmentID,
+    a_objAttachment,
 };
 ```
 

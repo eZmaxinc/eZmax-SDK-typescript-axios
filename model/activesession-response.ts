@@ -51,10 +51,20 @@ export interface ActivesessionResponse {
     /*'fkiLanguageID': number;*/
     'fkiLanguageID': number;
     /**
+     * The unique ID of the Company
+     */
+    /*'fkiCompanyID': number;*/
+    'fkiCompanyID': number;
+    /**
      * The Name of the Company in the language of the requester
      */
     /*'sCompanyNameX': string;*/
     'sCompanyNameX': string;
+    /**
+     * The unique ID of the Department
+     */
+    /*'fkiDepartmentID': number;*/
+    'fkiDepartmentID': number;
     /**
      * The Name of the Department in the language of the requester
      */
@@ -132,7 +142,9 @@ export class DataObjectActivesessionResponse {
    eActivesessionOrigin:FieldEActivesessionOrigin = 'BuiltIn'
    eActivesessionWeekdaystart:FieldEActivesessionWeekdaystart = 'Sunday'
    fkiLanguageID:number = 0
+   fkiCompanyID:number = 0
    sCompanyNameX:string = ''
+   fkiDepartmentID:number = 0
    sDepartmentNameX:string = ''
    bActivesessionDebug:boolean = false
    bActivesessionIssuperadmin:boolean = false
@@ -176,8 +188,19 @@ export class ValidationObjectActivesessionResponse {
       maximum: 2,
       required: true
    }
+   fkiCompanyID = {
+      type: 'integer',
+      minimum: 1,
+      maximum: 255,
+      required: true
+   }
    sCompanyNameX = {
       type: 'string',
+      required: true
+   }
+   fkiDepartmentID = {
+      type: 'integer',
+      minimum: 0,
       required: true
    }
    sDepartmentNameX = {

@@ -6,6 +6,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |------------- | ------------- | -------------|
 |[**salaryBatchDownloadV1**](#salarybatchdownloadv1) | **POST** /1/object/salary/{pkiSalaryID}/batchDownload | Download multiples attachments from a Reconciliation|
 |[**salaryGetAttachmentsV1**](#salarygetattachmentsv1) | **GET** /1/object/salary/{pkiSalaryID}/getAttachments | Retrieve Salary\&#39;s attachments|
+|[**salaryGetCommunicationCountV1**](#salarygetcommunicationcountv1) | **GET** /1/object/salary/{pkiSalaryID}/getCommunicationCount | Retrieve Communication count|
+|[**salaryGetCommunicationListV1**](#salarygetcommunicationlistv1) | **GET** /1/object/salary/{pkiSalaryID}/getCommunicationList | Retrieve Communication list|
+|[**salaryGetCommunicationrecipientsV1**](#salarygetcommunicationrecipientsv1) | **GET** /1/object/salary/{pkiSalaryID}/getCommunicationrecipients | Retrieve Communication recipients|
+|[**salaryGetCommunicationsendersV1**](#salarygetcommunicationsendersv1) | **GET** /1/object/salary/{pkiSalaryID}/getCommunicationsenders | Retrieve Communication senders|
 |[**salaryGetListV1**](#salarygetlistv1) | **GET** /1/object/salary/getList | Retrieve Salary list|
 |[**salaryImportIntoEDMV1**](#salaryimportintoedmv1) | **POST** /1/object/salary/{pkiSalaryID}/importIntoEDM | Import attachments into the Salary|
 
@@ -98,6 +102,210 @@ const { status, data } = await apiInstance.salaryGetAttachmentsV1(
 ### Return type
 
 **SalaryGetAttachmentsV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **salaryGetCommunicationCountV1**
+> SalaryGetCommunicationCountV1Response salaryGetCommunicationCountV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectSalaryApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectSalaryApi(configuration);
+
+let pkiSalaryID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.salaryGetCommunicationCountV1(
+    pkiSalaryID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiSalaryID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**SalaryGetCommunicationCountV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **salaryGetCommunicationListV1**
+> SalaryGetCommunicationListV1Response salaryGetCommunicationListV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectSalaryApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectSalaryApi(configuration);
+
+let pkiSalaryID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.salaryGetCommunicationListV1(
+    pkiSalaryID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiSalaryID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**SalaryGetCommunicationListV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **salaryGetCommunicationrecipientsV1**
+> SalaryGetCommunicationrecipientsV1Response salaryGetCommunicationrecipientsV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectSalaryApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectSalaryApi(configuration);
+
+let pkiSalaryID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.salaryGetCommunicationrecipientsV1(
+    pkiSalaryID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiSalaryID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**SalaryGetCommunicationrecipientsV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **salaryGetCommunicationsendersV1**
+> SalaryGetCommunicationsendersV1Response salaryGetCommunicationsendersV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectSalaryApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectSalaryApi(configuration);
+
+let pkiSalaryID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.salaryGetCommunicationsendersV1(
+    pkiSalaryID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiSalaryID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**SalaryGetCommunicationsendersV1Response**
 
 ### Authorization
 

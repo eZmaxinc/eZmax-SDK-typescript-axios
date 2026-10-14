@@ -36,9 +36,13 @@ import type { ElectronicfundstransferGetCommunicationrecipientsV1Response } from
 // @ts-ignore
 import type { ElectronicfundstransferGetCommunicationsendersV1Response } from '../model';
 // @ts-ignore
+import type { ElectronicfundstransferGetListV1Response } from '../model';
+// @ts-ignore
 import type { ElectronicfundstransferImportIntoEDMV1Request } from '../model';
 // @ts-ignore
 import type { ElectronicfundstransferImportIntoEDMV1Response } from '../model';
+// @ts-ignore
+import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -401,6 +405,86 @@ export const ObjectElectronicfundstransferApiAxiosParamCreator = function (confi
         },
         /**
          * 
+         * @summary Retrieve Electronicfundstransfer list
+         * @param {ElectronicfundstransferGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        electronicfundstransferGetListV1: async (eOrderBy?: ElectronicfundstransferGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/1/object/electronicfundstransfer/getList`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            if (eOrderBy !== undefined) {
+                localVarQueryParameter['eOrderBy'] = eOrderBy;
+            }
+
+            if (iRowMax !== undefined) {
+                localVarQueryParameter['iRowMax'] = iRowMax;
+            }
+
+            if (iRowOffset !== undefined) {
+                localVarQueryParameter['iRowOffset'] = iRowOffset;
+            }
+
+            if (sFilter !== undefined) {
+                localVarQueryParameter['sFilter'] = sFilter;
+            }
+
+            localVarHeaderParameter['Accept'] = 'application/json,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
+
+            if (acceptLanguage != null) {
+                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
+                    ? acceptLanguage
+                    : JSON.stringify(acceptLanguage, replaceWithSerializableTypeIfNeeded);
+            }
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Import attachments into the Electronicfundstransfer
          * @param {number} pkiElectronicfundstransferID 
          * @param {ElectronicfundstransferImportIntoEDMV1Request} electronicfundstransferImportIntoEDMV1Request 
@@ -552,6 +636,23 @@ export const ObjectElectronicfundstransferApiFp = function(configuration?: Confi
         },
         /**
          * 
+         * @summary Retrieve Electronicfundstransfer list
+         * @param {ElectronicfundstransferGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async electronicfundstransferGetListV1(eOrderBy?: ElectronicfundstransferGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ElectronicfundstransferGetListV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.electronicfundstransferGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectElectronicfundstransferApi.electronicfundstransferGetListV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Import attachments into the Electronicfundstransfer
          * @param {number} pkiElectronicfundstransferID 
          * @param {ElectronicfundstransferImportIntoEDMV1Request} electronicfundstransferImportIntoEDMV1Request 
@@ -633,6 +734,20 @@ export const ObjectElectronicfundstransferApiFactory = function (configuration?:
          */
         electronicfundstransferGetCommunicationsendersV1(pkiElectronicfundstransferID: number, options?: RawAxiosRequestConfig): AxiosPromise<ElectronicfundstransferGetCommunicationsendersV1Response> {
             return localVarFp.electronicfundstransferGetCommunicationsendersV1(pkiElectronicfundstransferID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Electronicfundstransfer list
+         * @param {ElectronicfundstransferGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        electronicfundstransferGetListV1(eOrderBy?: ElectronicfundstransferGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): AxiosPromise<ElectronicfundstransferGetListV1Response> {
+            return localVarFp.electronicfundstransferGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -721,6 +836,21 @@ export class ObjectElectronicfundstransferApi extends BaseAPI {
 
     /**
      * 
+     * @summary Retrieve Electronicfundstransfer list
+     * @param {ElectronicfundstransferGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+     * @param {number} [iRowMax] 
+     * @param {number} [iRowOffset] 
+     * @param {HeaderAcceptLanguage} [acceptLanguage] 
+     * @param {string} [sFilter] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public electronicfundstransferGetListV1(eOrderBy?: ElectronicfundstransferGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig) {
+        return ObjectElectronicfundstransferApiFp(this.configuration).electronicfundstransferGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
      * @summary Import attachments into the Electronicfundstransfer
      * @param {number} pkiElectronicfundstransferID 
      * @param {ElectronicfundstransferImportIntoEDMV1Request} electronicfundstransferImportIntoEDMV1Request 
@@ -732,3 +862,24 @@ export class ObjectElectronicfundstransferApi extends BaseAPI {
     }
 }
 
+export const ElectronicfundstransferGetListV1EOrderByEnum = {
+    pkiElectronicfundstransferID_ASC: 'pkiElectronicfundstransferID_ASC',
+    pkiElectronicfundstransferID_DESC: 'pkiElectronicfundstransferID_DESC',
+    fkiPaymentmethodID_ASC: 'fkiPaymentmethodID_ASC',
+    fkiPaymentmethodID_DESC: 'fkiPaymentmethodID_DESC',
+    fkiUserIDCreated_ASC: 'fkiUserIDCreated_ASC',
+    fkiUserIDCreated_DESC: 'fkiUserIDCreated_DESC',
+    sPaymentmethodDescriptionX_ASC: 'sPaymentmethodDescriptionX_ASC',
+    sPaymentmethodDescriptionX_DESC: 'sPaymentmethodDescriptionX_DESC',
+    sUserLoginnameCreated_ASC: 'sUserLoginnameCreated_ASC',
+    sUserLoginnameCreated_DESC: 'sUserLoginnameCreated_DESC',
+    iElectronicfundstransferNumber_ASC: 'iElectronicfundstransferNumber_ASC',
+    iElectronicfundstransferNumber_DESC: 'iElectronicfundstransferNumber_DESC',
+    dtElectronicfundstransferDate_ASC: 'dtElectronicfundstransferDate_ASC',
+    dtElectronicfundstransferDate_DESC: 'dtElectronicfundstransferDate_DESC',
+    iElectronicfundstransferTransactioncount_ASC: 'iElectronicfundstransferTransactioncount_ASC',
+    iElectronicfundstransferTransactioncount_DESC: 'iElectronicfundstransferTransactioncount_DESC',
+    dElectronicfundstransferAmountvisible_ASC: 'dElectronicfundstransferAmountvisible_ASC',
+    dElectronicfundstransferAmountvisible_DESC: 'dElectronicfundstransferAmountvisible_DESC',
+} as const;
+export type ElectronicfundstransferGetListV1EOrderByEnum = typeof ElectronicfundstransferGetListV1EOrderByEnum[keyof typeof ElectronicfundstransferGetListV1EOrderByEnum];

@@ -131,7 +131,7 @@ export class ValidationObjectEzsigntemplatepackagesignerResponseV3 {
    fkiUsergroupID = {
       type: 'integer',
       minimum: 0,
-      maximum: 255,
+      maximum: 65535,
       required: false
    }
    sEzdoctemplatedocumentNameX = {

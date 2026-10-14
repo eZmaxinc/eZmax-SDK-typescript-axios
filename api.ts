@@ -22,6 +22,7 @@ export enum EApiOperation {
     'module-user-api',
     'object-activesession-api',
     'object-adjustment-api',
+    'object-adjustmentreminder-api',
     'object-agent-api',
     'object-agenttype-api',
     'object-apikey-api',
@@ -56,6 +57,7 @@ export enum EApiOperation {
     'object-discussionmessage-api',
     'object-domain-api',
     'object-electronicfundstransfer-api',
+    'object-electronicfundstransfertransaction-api',
     'object-emailtype-api',
     'object-employee-api',
     'object-externalbroker-api',
@@ -179,6 +181,7 @@ export * from './api/module-report-api';
 export * from './api/module-user-api';
 export * from './api/object-activesession-api';
 export * from './api/object-adjustment-api';
+export * from './api/object-adjustmentreminder-api';
 export * from './api/object-agent-api';
 export * from './api/object-agenttype-api';
 export * from './api/object-apikey-api';
@@ -213,6 +216,7 @@ export * from './api/object-discussionmembership-api';
 export * from './api/object-discussionmessage-api';
 export * from './api/object-domain-api';
 export * from './api/object-electronicfundstransfer-api';
+export * from './api/object-electronicfundstransfertransaction-api';
 export * from './api/object-emailtype-api';
 export * from './api/object-employee-api';
 export * from './api/object-externalbroker-api';

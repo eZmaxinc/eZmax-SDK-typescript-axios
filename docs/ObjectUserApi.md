@@ -365,14 +365,16 @@ import {
 const configuration = new Configuration();
 const apiInstance = new ObjectUserApi(configuration);
 
-let sSelector: 'AgentBrokerAssistant' | 'AgentBrokerEmployeeEzsignUserNormalWithoutEzmaxpartner' | 'AgentBrokerEmployeeEzsignUserNormal' | 'AgentBrokerEmployeeNormalBuiltIn' | 'AgentBrokerEzsignuserNormal' | 'ClonableUsers' | 'EzsignuserBuiltIn' | 'Ezsignuser' | 'Normal' | 'UsergroupDelegated'; //The type of Users to return (default to undefined)
+let sSelector: 'AgentBrokerAssistant' | 'AgentBrokerEmployeeEzsignUserNormalWithoutEzmaxpartner' | 'AgentBrokerEmployeeEzsignUserNormal' | 'AgentBrokerEmployeeNormalBuiltIn' | 'AgentBrokerEzsignuserNormal' | 'AttachmentSpecificUser' | 'ClonableUsers' | 'EzsignuserBuiltIn' | 'Ezsignuser' | 'Normal' | 'UsergroupDelegated'; //The type of Users to return (default to undefined)
 let eFilterActive: 'All' | 'Active' | 'Inactive'; //Specify which results we want to display. (optional) (default to 'Active')
+let fkiAttachmentID: string; //Specify for which fkiAttachmentID we want to find users for. Only used when sSelector is AttachmentSpecificUser. (optional) (default to undefined)
 let sQuery: string; //Allow to filter the returned results (optional) (default to undefined)
 let acceptLanguage: HeaderAcceptLanguage; // (optional) (default to undefined)
 
 const { status, data } = await apiInstance.userGetAutocompleteV2(
     sSelector,
     eFilterActive,
+    fkiAttachmentID,
     sQuery,
     acceptLanguage
 );
@@ -382,8 +384,9 @@ const { status, data } = await apiInstance.userGetAutocompleteV2(
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **sSelector** | [**&#39;AgentBrokerAssistant&#39; | &#39;AgentBrokerEmployeeEzsignUserNormalWithoutEzmaxpartner&#39; | &#39;AgentBrokerEmployeeEzsignUserNormal&#39; | &#39;AgentBrokerEmployeeNormalBuiltIn&#39; | &#39;AgentBrokerEzsignuserNormal&#39; | &#39;ClonableUsers&#39; | &#39;EzsignuserBuiltIn&#39; | &#39;Ezsignuser&#39; | &#39;Normal&#39; | &#39;UsergroupDelegated&#39;**]**Array<&#39;AgentBrokerAssistant&#39; &#124; &#39;AgentBrokerEmployeeEzsignUserNormalWithoutEzmaxpartner&#39; &#124; &#39;AgentBrokerEmployeeEzsignUserNormal&#39; &#124; &#39;AgentBrokerEmployeeNormalBuiltIn&#39; &#124; &#39;AgentBrokerEzsignuserNormal&#39; &#124; &#39;ClonableUsers&#39; &#124; &#39;EzsignuserBuiltIn&#39; &#124; &#39;Ezsignuser&#39; &#124; &#39;Normal&#39; &#124; &#39;UsergroupDelegated&#39;>** | The type of Users to return | defaults to undefined|
+| **sSelector** | [**&#39;AgentBrokerAssistant&#39; | &#39;AgentBrokerEmployeeEzsignUserNormalWithoutEzmaxpartner&#39; | &#39;AgentBrokerEmployeeEzsignUserNormal&#39; | &#39;AgentBrokerEmployeeNormalBuiltIn&#39; | &#39;AgentBrokerEzsignuserNormal&#39; | &#39;AttachmentSpecificUser&#39; | &#39;ClonableUsers&#39; | &#39;EzsignuserBuiltIn&#39; | &#39;Ezsignuser&#39; | &#39;Normal&#39; | &#39;UsergroupDelegated&#39;**]**Array<&#39;AgentBrokerAssistant&#39; &#124; &#39;AgentBrokerEmployeeEzsignUserNormalWithoutEzmaxpartner&#39; &#124; &#39;AgentBrokerEmployeeEzsignUserNormal&#39; &#124; &#39;AgentBrokerEmployeeNormalBuiltIn&#39; &#124; &#39;AgentBrokerEzsignuserNormal&#39; &#124; &#39;AttachmentSpecificUser&#39; &#124; &#39;ClonableUsers&#39; &#124; &#39;EzsignuserBuiltIn&#39; &#124; &#39;Ezsignuser&#39; &#124; &#39;Normal&#39; &#124; &#39;UsergroupDelegated&#39;>** | The type of Users to return | defaults to undefined|
 | **eFilterActive** | [**&#39;All&#39; | &#39;Active&#39; | &#39;Inactive&#39;**]**Array<&#39;All&#39; &#124; &#39;Active&#39; &#124; &#39;Inactive&#39;>** | Specify which results we want to display. | (optional) defaults to 'Active'|
+| **fkiAttachmentID** | [**string**] | Specify for which fkiAttachmentID we want to find users for. Only used when sSelector is AttachmentSpecificUser. | (optional) defaults to undefined|
 | **sQuery** | [**string**] | Allow to filter the returned results | (optional) defaults to undefined|
 | **acceptLanguage** | **HeaderAcceptLanguage** |  | (optional) defaults to undefined|
 

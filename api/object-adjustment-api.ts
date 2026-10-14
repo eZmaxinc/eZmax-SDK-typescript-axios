@@ -34,11 +34,15 @@ import type { AdjustmentGetCommunicationrecipientsV1Response } from '../model';
 // @ts-ignore
 import type { AdjustmentGetCommunicationsendersV1Response } from '../model';
 // @ts-ignore
+import type { AdjustmentGetListV1Response } from '../model';
+// @ts-ignore
 import type { AdjustmentImportIntoEDMV1Request } from '../model';
 // @ts-ignore
 import type { AdjustmentImportIntoEDMV1Response } from '../model';
 // @ts-ignore
 import type { CommonResponseError } from '../model';
+// @ts-ignore
+import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -401,6 +405,86 @@ export const ObjectAdjustmentApiAxiosParamCreator = function (configuration?: Co
         },
         /**
          * 
+         * @summary Retrieve Adjustment list
+         * @param {AdjustmentGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        adjustmentGetListV1: async (eOrderBy?: AdjustmentGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/1/object/adjustment/getList`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            if (eOrderBy !== undefined) {
+                localVarQueryParameter['eOrderBy'] = eOrderBy;
+            }
+
+            if (iRowMax !== undefined) {
+                localVarQueryParameter['iRowMax'] = iRowMax;
+            }
+
+            if (iRowOffset !== undefined) {
+                localVarQueryParameter['iRowOffset'] = iRowOffset;
+            }
+
+            if (sFilter !== undefined) {
+                localVarQueryParameter['sFilter'] = sFilter;
+            }
+
+            localVarHeaderParameter['Accept'] = 'application/json,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
+
+            if (acceptLanguage != null) {
+                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
+                    ? acceptLanguage
+                    : JSON.stringify(acceptLanguage, replaceWithSerializableTypeIfNeeded);
+            }
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Import attachments into the Adjustment
          * @param {number} pkiAdjustmentID 
          * @param {AdjustmentImportIntoEDMV1Request} adjustmentImportIntoEDMV1Request 
@@ -552,6 +636,23 @@ export const ObjectAdjustmentApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Retrieve Adjustment list
+         * @param {AdjustmentGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async adjustmentGetListV1(eOrderBy?: AdjustmentGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AdjustmentGetListV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.adjustmentGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectAdjustmentApi.adjustmentGetListV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Import attachments into the Adjustment
          * @param {number} pkiAdjustmentID 
          * @param {AdjustmentImportIntoEDMV1Request} adjustmentImportIntoEDMV1Request 
@@ -633,6 +734,20 @@ export const ObjectAdjustmentApiFactory = function (configuration?: Configuratio
          */
         adjustmentGetCommunicationsendersV1(pkiAdjustmentID: number, options?: RawAxiosRequestConfig): AxiosPromise<AdjustmentGetCommunicationsendersV1Response> {
             return localVarFp.adjustmentGetCommunicationsendersV1(pkiAdjustmentID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Adjustment list
+         * @param {AdjustmentGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+         * @param {number} [iRowMax] 
+         * @param {number} [iRowOffset] 
+         * @param {HeaderAcceptLanguage} [acceptLanguage] 
+         * @param {string} [sFilter] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        adjustmentGetListV1(eOrderBy?: AdjustmentGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): AxiosPromise<AdjustmentGetListV1Response> {
+            return localVarFp.adjustmentGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -721,6 +836,21 @@ export class ObjectAdjustmentApi extends BaseAPI {
 
     /**
      * 
+     * @summary Retrieve Adjustment list
+     * @param {AdjustmentGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
+     * @param {number} [iRowMax] 
+     * @param {number} [iRowOffset] 
+     * @param {HeaderAcceptLanguage} [acceptLanguage] 
+     * @param {string} [sFilter] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public adjustmentGetListV1(eOrderBy?: AdjustmentGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig) {
+        return ObjectAdjustmentApiFp(this.configuration).adjustmentGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
      * @summary Import attachments into the Adjustment
      * @param {number} pkiAdjustmentID 
      * @param {AdjustmentImportIntoEDMV1Request} adjustmentImportIntoEDMV1Request 
@@ -732,3 +862,26 @@ export class ObjectAdjustmentApi extends BaseAPI {
     }
 }
 
+export const AdjustmentGetListV1EOrderByEnum = {
+    pkiAdjustmentID_ASC: 'pkiAdjustmentID_ASC',
+    pkiAdjustmentID_DESC: 'pkiAdjustmentID_DESC',
+    fkiPeriodID_ASC: 'fkiPeriodID_ASC',
+    fkiPeriodID_DESC: 'fkiPeriodID_DESC',
+    sPeriodYYYYMM_ASC: 'sPeriodYYYYMM_ASC',
+    sPeriodYYYYMM_DESC: 'sPeriodYYYYMM_DESC',
+    fkiUserIDCreated_ASC: 'fkiUserIDCreated_ASC',
+    fkiUserIDCreated_DESC: 'fkiUserIDCreated_DESC',
+    sUserLoginname_ASC: 'sUserLoginname_ASC',
+    sUserLoginname_DESC: 'sUserLoginname_DESC',
+    dtAdjustmentDate_ASC: 'dtAdjustmentDate_ASC',
+    dtAdjustmentDate_DESC: 'dtAdjustmentDate_DESC',
+    sAdjustmentNumber_ASC: 'sAdjustmentNumber_ASC',
+    sAdjustmentNumber_DESC: 'sAdjustmentNumber_DESC',
+    sAdjustmentComment_ASC: 'sAdjustmentComment_ASC',
+    sAdjustmentComment_DESC: 'sAdjustmentComment_DESC',
+    dAdjustmentTotaldebit_ASC: 'dAdjustmentTotaldebit_ASC',
+    dAdjustmentTotaldebit_DESC: 'dAdjustmentTotaldebit_DESC',
+    dAdjustmentTotalcredit_ASC: 'dAdjustmentTotalcredit_ASC',
+    dAdjustmentTotalcredit_DESC: 'dAdjustmentTotalcredit_DESC',
+} as const;
+export type AdjustmentGetListV1EOrderByEnum = typeof AdjustmentGetListV1EOrderByEnum[keyof typeof AdjustmentGetListV1EOrderByEnum];

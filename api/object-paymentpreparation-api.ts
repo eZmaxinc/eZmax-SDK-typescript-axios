@@ -28,6 +28,14 @@ import type { PaymentpreparationBatchDownloadV1Request } from '../model';
 // @ts-ignore
 import type { PaymentpreparationGetAttachmentsV1Response } from '../model';
 // @ts-ignore
+import type { PaymentpreparationGetCommunicationCountV1Response } from '../model';
+// @ts-ignore
+import type { PaymentpreparationGetCommunicationListV1Response } from '../model';
+// @ts-ignore
+import type { PaymentpreparationGetCommunicationrecipientsV1Response } from '../model';
+// @ts-ignore
+import type { PaymentpreparationGetCommunicationsendersV1Response } from '../model';
+// @ts-ignore
 import type { PaymentpreparationImportIntoEDMV1Request } from '../model';
 // @ts-ignore
 import type { PaymentpreparationImportIntoEDMV1Response } from '../model';
@@ -112,6 +120,238 @@ export const ObjectPaymentpreparationApiAxiosParamCreator = function (configurat
             // verify required parameter 'pkiPaymentpreparationID' is not null or undefined
             assertParamExists('paymentpreparationGetAttachmentsV1', 'pkiPaymentpreparationID', pkiPaymentpreparationID)
             const localVarPath = `/1/object/paymentpreparation/{pkiPaymentpreparationID}/getAttachments`
+                .replace('{pkiPaymentpreparationID}', encodeURIComponent(String(pkiPaymentpreparationID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiPaymentpreparationID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        paymentpreparationGetCommunicationCountV1: async (pkiPaymentpreparationID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiPaymentpreparationID' is not null or undefined
+            assertParamExists('paymentpreparationGetCommunicationCountV1', 'pkiPaymentpreparationID', pkiPaymentpreparationID)
+            const localVarPath = `/1/object/paymentpreparation/{pkiPaymentpreparationID}/getCommunicationCount`
+                .replace('{pkiPaymentpreparationID}', encodeURIComponent(String(pkiPaymentpreparationID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiPaymentpreparationID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        paymentpreparationGetCommunicationListV1: async (pkiPaymentpreparationID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiPaymentpreparationID' is not null or undefined
+            assertParamExists('paymentpreparationGetCommunicationListV1', 'pkiPaymentpreparationID', pkiPaymentpreparationID)
+            const localVarPath = `/1/object/paymentpreparation/{pkiPaymentpreparationID}/getCommunicationList`
+                .replace('{pkiPaymentpreparationID}', encodeURIComponent(String(pkiPaymentpreparationID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiPaymentpreparationID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        paymentpreparationGetCommunicationrecipientsV1: async (pkiPaymentpreparationID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiPaymentpreparationID' is not null or undefined
+            assertParamExists('paymentpreparationGetCommunicationrecipientsV1', 'pkiPaymentpreparationID', pkiPaymentpreparationID)
+            const localVarPath = `/1/object/paymentpreparation/{pkiPaymentpreparationID}/getCommunicationrecipients`
+                .replace('{pkiPaymentpreparationID}', encodeURIComponent(String(pkiPaymentpreparationID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiPaymentpreparationID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        paymentpreparationGetCommunicationsendersV1: async (pkiPaymentpreparationID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiPaymentpreparationID' is not null or undefined
+            assertParamExists('paymentpreparationGetCommunicationsendersV1', 'pkiPaymentpreparationID', pkiPaymentpreparationID)
+            const localVarPath = `/1/object/paymentpreparation/{pkiPaymentpreparationID}/getCommunicationsenders`
                 .replace('{pkiPaymentpreparationID}', encodeURIComponent(String(pkiPaymentpreparationID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
@@ -260,6 +500,58 @@ export const ObjectPaymentpreparationApiFp = function(configuration?: Configurat
         },
         /**
          * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiPaymentpreparationID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async paymentpreparationGetCommunicationCountV1(pkiPaymentpreparationID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PaymentpreparationGetCommunicationCountV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.paymentpreparationGetCommunicationCountV1(pkiPaymentpreparationID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectPaymentpreparationApi.paymentpreparationGetCommunicationCountV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiPaymentpreparationID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async paymentpreparationGetCommunicationListV1(pkiPaymentpreparationID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PaymentpreparationGetCommunicationListV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.paymentpreparationGetCommunicationListV1(pkiPaymentpreparationID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectPaymentpreparationApi.paymentpreparationGetCommunicationListV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiPaymentpreparationID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async paymentpreparationGetCommunicationrecipientsV1(pkiPaymentpreparationID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PaymentpreparationGetCommunicationrecipientsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.paymentpreparationGetCommunicationrecipientsV1(pkiPaymentpreparationID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectPaymentpreparationApi.paymentpreparationGetCommunicationrecipientsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiPaymentpreparationID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async paymentpreparationGetCommunicationsendersV1(pkiPaymentpreparationID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PaymentpreparationGetCommunicationsendersV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.paymentpreparationGetCommunicationsendersV1(pkiPaymentpreparationID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectPaymentpreparationApi.paymentpreparationGetCommunicationsendersV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Import attachments into the Paymentpreparation
          * @param {number} pkiPaymentpreparationID 
          * @param {PaymentpreparationImportIntoEDMV1Request} paymentpreparationImportIntoEDMV1Request 
@@ -304,6 +596,46 @@ export const ObjectPaymentpreparationApiFactory = function (configuration?: Conf
         },
         /**
          * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiPaymentpreparationID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        paymentpreparationGetCommunicationCountV1(pkiPaymentpreparationID: number, options?: RawAxiosRequestConfig): AxiosPromise<PaymentpreparationGetCommunicationCountV1Response> {
+            return localVarFp.paymentpreparationGetCommunicationCountV1(pkiPaymentpreparationID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiPaymentpreparationID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        paymentpreparationGetCommunicationListV1(pkiPaymentpreparationID: number, options?: RawAxiosRequestConfig): AxiosPromise<PaymentpreparationGetCommunicationListV1Response> {
+            return localVarFp.paymentpreparationGetCommunicationListV1(pkiPaymentpreparationID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiPaymentpreparationID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        paymentpreparationGetCommunicationrecipientsV1(pkiPaymentpreparationID: number, options?: RawAxiosRequestConfig): AxiosPromise<PaymentpreparationGetCommunicationrecipientsV1Response> {
+            return localVarFp.paymentpreparationGetCommunicationrecipientsV1(pkiPaymentpreparationID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiPaymentpreparationID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        paymentpreparationGetCommunicationsendersV1(pkiPaymentpreparationID: number, options?: RawAxiosRequestConfig): AxiosPromise<PaymentpreparationGetCommunicationsendersV1Response> {
+            return localVarFp.paymentpreparationGetCommunicationsendersV1(pkiPaymentpreparationID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Import attachments into the Paymentpreparation
          * @param {number} pkiPaymentpreparationID 
          * @param {PaymentpreparationImportIntoEDMV1Request} paymentpreparationImportIntoEDMV1Request 
@@ -341,6 +673,50 @@ export class ObjectPaymentpreparationApi extends BaseAPI {
      */
     public paymentpreparationGetAttachmentsV1(pkiPaymentpreparationID: number, options?: RawAxiosRequestConfig) {
         return ObjectPaymentpreparationApiFp(this.configuration).paymentpreparationGetAttachmentsV1(pkiPaymentpreparationID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication count
+     * @param {number} pkiPaymentpreparationID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public paymentpreparationGetCommunicationCountV1(pkiPaymentpreparationID: number, options?: RawAxiosRequestConfig) {
+        return ObjectPaymentpreparationApiFp(this.configuration).paymentpreparationGetCommunicationCountV1(pkiPaymentpreparationID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication list
+     * @param {number} pkiPaymentpreparationID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public paymentpreparationGetCommunicationListV1(pkiPaymentpreparationID: number, options?: RawAxiosRequestConfig) {
+        return ObjectPaymentpreparationApiFp(this.configuration).paymentpreparationGetCommunicationListV1(pkiPaymentpreparationID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication recipients
+     * @param {number} pkiPaymentpreparationID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public paymentpreparationGetCommunicationrecipientsV1(pkiPaymentpreparationID: number, options?: RawAxiosRequestConfig) {
+        return ObjectPaymentpreparationApiFp(this.configuration).paymentpreparationGetCommunicationrecipientsV1(pkiPaymentpreparationID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication senders
+     * @param {number} pkiPaymentpreparationID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public paymentpreparationGetCommunicationsendersV1(pkiPaymentpreparationID: number, options?: RawAxiosRequestConfig) {
+        return ObjectPaymentpreparationApiFp(this.configuration).paymentpreparationGetCommunicationsendersV1(pkiPaymentpreparationID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

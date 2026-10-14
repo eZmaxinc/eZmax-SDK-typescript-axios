@@ -59,6 +59,7 @@ Name | Type | Description | Notes
 **sAttachmentCategory** | **string** | The attachment category | [default to undefined]
 **eAttachmentPrivacy** | [**FieldEAttachmentPrivacy**](FieldEAttachmentPrivacy.md) |  | [default to undefined]
 **fkiUserIDSpecific** | **number** | The unique ID of the User | [optional] [default to undefined]
+**objUserSpecific** | [**CustomUserNameResponse**](CustomUserNameResponse.md) |  | [optional] [default to undefined]
 **eAttachmentType** | [**FieldEAttachmentType**](FieldEAttachmentType.md) |  | [default to undefined]
 **iAttachmentSize** | **number** | The size of the Attachment | [default to undefined]
 **iAttachmentEDMmoduleflag** | **number** | The edmmoduleflag of the Attachment | [optional] [default to undefined]
@@ -133,6 +134,7 @@ const instance: CustomAttachmentResponse = {
     sAttachmentCategory,
     eAttachmentPrivacy,
     fkiUserIDSpecific,
+    objUserSpecific,
     eAttachmentType,
     iAttachmentSize,
     iAttachmentEDMmoduleflag,

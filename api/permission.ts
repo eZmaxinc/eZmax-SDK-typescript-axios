@@ -276,6 +276,7 @@ class UPermission {
         Payments_PaymentCancellation: 9,
         Payments_PaymentsClients: 68,
         Payments_PaymentsEmployees: 66,
+        Payments_PaymentsNotariesLawyers: 340,
         Payments_PaymentsOffices: 178,
         Payments_PaymentsRealestate: 67,
         Payments_PaymentsSuppliers: 69,
@@ -459,6 +460,7 @@ class UPermission {
                     case 66: return 'Comptes à payer: Paiements: Paiements (Employés)'
                     case 69: return 'Comptes à payer: Paiements: Paiements (Fournisseurs)'
                     case 67: return 'Comptes à payer: Paiements: Paiements (Immobilier)'
+                    case 340: return 'Comptes à payer: Paiements: Paiements (Notaires)'
                     case 8: return 'Comptes à payer: Paiements: Transferts électroniques'
                     case 10: return 'Comptes à payer: Rapports: Rapports'
                     case 103: return 'Comptes à recevoir: Chèque en attente de dépôt: Accès'
@@ -668,6 +670,7 @@ class UPermission {
                     case 9: return 'Accounts Payable: Payments: Payment Cancellation'
                     case 68: return 'Accounts Payable: Payments: Payments (Clients)'
                     case 66: return 'Accounts Payable: Payments: Payments (Employees)'
+                    case 340: return 'Accounts Payable: Payments: Payments (Notaries/Lawyers)'
                     case 178: return 'Accounts Payable: Payments: Payments (Offices)'
                     case 67: return 'Accounts Payable: Payments: Payments (Real estate)'
                     case 69: return 'Accounts Payable: Payments: Payments (Suppliers)'

@@ -6,6 +6,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |------------- | ------------- | -------------|
 |[**purchaseBatchDownloadV1**](#purchasebatchdownloadv1) | **POST** /1/object/purchase/{pkiPurchaseID}/batchDownload | Download multiples attachments from a Purchase|
 |[**purchaseGetAttachmentsV1**](#purchasegetattachmentsv1) | **GET** /1/object/purchase/{pkiPurchaseID}/getAttachments | Retrieve Purchase\&#39;s attachments|
+|[**purchaseGetCommunicationCountV1**](#purchasegetcommunicationcountv1) | **GET** /1/object/purchase/{pkiPurchaseID}/getCommunicationCount | Retrieve Communication count|
+|[**purchaseGetCommunicationListV1**](#purchasegetcommunicationlistv1) | **GET** /1/object/purchase/{pkiPurchaseID}/getCommunicationList | Retrieve Communication list|
+|[**purchaseGetCommunicationrecipientsV1**](#purchasegetcommunicationrecipientsv1) | **GET** /1/object/purchase/{pkiPurchaseID}/getCommunicationrecipients | Retrieve Communication recipients|
+|[**purchaseGetCommunicationsendersV1**](#purchasegetcommunicationsendersv1) | **GET** /1/object/purchase/{pkiPurchaseID}/getCommunicationsenders | Retrieve Communication senders|
 |[**purchaseGetListV1**](#purchasegetlistv1) | **GET** /1/object/purchase/getList | Retrieve Purchase list|
 |[**purchaseImportIntoEDMV1**](#purchaseimportintoedmv1) | **POST** /1/object/purchase/{pkiPurchaseID}/importIntoEDM | Import attachments into the Purchase|
 
@@ -98,6 +102,210 @@ const { status, data } = await apiInstance.purchaseGetAttachmentsV1(
 ### Return type
 
 **PurchaseGetAttachmentsV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **purchaseGetCommunicationCountV1**
+> PurchaseGetCommunicationCountV1Response purchaseGetCommunicationCountV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectPurchaseApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectPurchaseApi(configuration);
+
+let pkiPurchaseID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.purchaseGetCommunicationCountV1(
+    pkiPurchaseID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiPurchaseID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**PurchaseGetCommunicationCountV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **purchaseGetCommunicationListV1**
+> PurchaseGetCommunicationListV1Response purchaseGetCommunicationListV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectPurchaseApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectPurchaseApi(configuration);
+
+let pkiPurchaseID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.purchaseGetCommunicationListV1(
+    pkiPurchaseID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiPurchaseID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**PurchaseGetCommunicationListV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **purchaseGetCommunicationrecipientsV1**
+> PurchaseGetCommunicationrecipientsV1Response purchaseGetCommunicationrecipientsV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectPurchaseApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectPurchaseApi(configuration);
+
+let pkiPurchaseID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.purchaseGetCommunicationrecipientsV1(
+    pkiPurchaseID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiPurchaseID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**PurchaseGetCommunicationrecipientsV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **purchaseGetCommunicationsendersV1**
+> PurchaseGetCommunicationsendersV1Response purchaseGetCommunicationsendersV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectPurchaseApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectPurchaseApi(configuration);
+
+let pkiPurchaseID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.purchaseGetCommunicationsendersV1(
+    pkiPurchaseID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiPurchaseID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**PurchaseGetCommunicationsendersV1Response**
 
 ### Authorization
 

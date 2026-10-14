@@ -10,6 +10,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**adjustmentGetCommunicationListV1**](#adjustmentgetcommunicationlistv1) | **GET** /1/object/adjustment/{pkiAdjustmentID}/getCommunicationList | Retrieve Communication list|
 |[**adjustmentGetCommunicationrecipientsV1**](#adjustmentgetcommunicationrecipientsv1) | **GET** /1/object/adjustment/{pkiAdjustmentID}/getCommunicationrecipients | Retrieve Communication recipients|
 |[**adjustmentGetCommunicationsendersV1**](#adjustmentgetcommunicationsendersv1) | **GET** /1/object/adjustment/{pkiAdjustmentID}/getCommunicationsenders | Retrieve Communication senders|
+|[**adjustmentGetListV1**](#adjustmentgetlistv1) | **GET** /1/object/adjustment/getList | Retrieve Adjustment list|
 |[**adjustmentImportIntoEDMV1**](#adjustmentimportintoedmv1) | **POST** /1/object/adjustment/{pkiAdjustmentID}/importIntoEDM | Import attachments into the Adjustment|
 
 # **adjustmentBatchDownloadV1**
@@ -326,6 +327,70 @@ const { status, data } = await apiInstance.adjustmentGetCommunicationsendersV1(
 |**200** | Successful response |  -  |
 |**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
 |**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **adjustmentGetListV1**
+> AdjustmentGetListV1Response adjustmentGetListV1()
+
+
+
+### Example
+
+```typescript
+import {
+    ObjectAdjustmentApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectAdjustmentApi(configuration);
+
+let eOrderBy: 'pkiAdjustmentID_ASC' | 'pkiAdjustmentID_DESC' | 'fkiPeriodID_ASC' | 'fkiPeriodID_DESC' | 'sPeriodYYYYMM_ASC' | 'sPeriodYYYYMM_DESC' | 'fkiUserIDCreated_ASC' | 'fkiUserIDCreated_DESC' | 'sUserLoginname_ASC' | 'sUserLoginname_DESC' | 'dtAdjustmentDate_ASC' | 'dtAdjustmentDate_DESC' | 'sAdjustmentNumber_ASC' | 'sAdjustmentNumber_DESC' | 'sAdjustmentComment_ASC' | 'sAdjustmentComment_DESC' | 'dAdjustmentTotaldebit_ASC' | 'dAdjustmentTotaldebit_DESC' | 'dAdjustmentTotalcredit_ASC' | 'dAdjustmentTotalcredit_DESC'; //Specify how you want the results to be sorted (optional) (default to undefined)
+let iRowMax: number; // (optional) (default to undefined)
+let iRowOffset: number; // (optional) (default to 0)
+let acceptLanguage: HeaderAcceptLanguage; // (optional) (default to undefined)
+let sFilter: string; // (optional) (default to undefined)
+
+const { status, data } = await apiInstance.adjustmentGetListV1(
+    eOrderBy,
+    iRowMax,
+    iRowOffset,
+    acceptLanguage,
+    sFilter
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **eOrderBy** | [**&#39;pkiAdjustmentID_ASC&#39; | &#39;pkiAdjustmentID_DESC&#39; | &#39;fkiPeriodID_ASC&#39; | &#39;fkiPeriodID_DESC&#39; | &#39;sPeriodYYYYMM_ASC&#39; | &#39;sPeriodYYYYMM_DESC&#39; | &#39;fkiUserIDCreated_ASC&#39; | &#39;fkiUserIDCreated_DESC&#39; | &#39;sUserLoginname_ASC&#39; | &#39;sUserLoginname_DESC&#39; | &#39;dtAdjustmentDate_ASC&#39; | &#39;dtAdjustmentDate_DESC&#39; | &#39;sAdjustmentNumber_ASC&#39; | &#39;sAdjustmentNumber_DESC&#39; | &#39;sAdjustmentComment_ASC&#39; | &#39;sAdjustmentComment_DESC&#39; | &#39;dAdjustmentTotaldebit_ASC&#39; | &#39;dAdjustmentTotaldebit_DESC&#39; | &#39;dAdjustmentTotalcredit_ASC&#39; | &#39;dAdjustmentTotalcredit_DESC&#39;**]**Array<&#39;pkiAdjustmentID_ASC&#39; &#124; &#39;pkiAdjustmentID_DESC&#39; &#124; &#39;fkiPeriodID_ASC&#39; &#124; &#39;fkiPeriodID_DESC&#39; &#124; &#39;sPeriodYYYYMM_ASC&#39; &#124; &#39;sPeriodYYYYMM_DESC&#39; &#124; &#39;fkiUserIDCreated_ASC&#39; &#124; &#39;fkiUserIDCreated_DESC&#39; &#124; &#39;sUserLoginname_ASC&#39; &#124; &#39;sUserLoginname_DESC&#39; &#124; &#39;dtAdjustmentDate_ASC&#39; &#124; &#39;dtAdjustmentDate_DESC&#39; &#124; &#39;sAdjustmentNumber_ASC&#39; &#124; &#39;sAdjustmentNumber_DESC&#39; &#124; &#39;sAdjustmentComment_ASC&#39; &#124; &#39;sAdjustmentComment_DESC&#39; &#124; &#39;dAdjustmentTotaldebit_ASC&#39; &#124; &#39;dAdjustmentTotaldebit_DESC&#39; &#124; &#39;dAdjustmentTotalcredit_ASC&#39; &#124; &#39;dAdjustmentTotalcredit_DESC&#39;>** | Specify how you want the results to be sorted | (optional) defaults to undefined|
+| **iRowMax** | [**number**] |  | (optional) defaults to undefined|
+| **iRowOffset** | [**number**] |  | (optional) defaults to 0|
+| **acceptLanguage** | **HeaderAcceptLanguage** |  | (optional) defaults to undefined|
+| **sFilter** | [**string**] |  | (optional) defaults to undefined|
+
+
+### Return type
+
+**AdjustmentGetListV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**406** | The URL is valid, but one of the Accept header is not defined or invalid. For example, you set the header \&quot;Accept: application/json\&quot; but the function can only return \&quot;Content-type: image/png\&quot; |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

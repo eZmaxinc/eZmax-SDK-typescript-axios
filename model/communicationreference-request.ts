@@ -39,6 +39,11 @@ export interface CommunicationreferenceRequest {
     /*'fkiInscriptionID'?: number;*/
     'fkiInscriptionID'?: number;
     /**
+     * The unique ID of the Inscriptionnotauthenticated.
+     */
+    /*'fkiInscriptionnotauthenticatedID'?: number;*/
+    'fkiInscriptionnotauthenticatedID'?: number;
+    /**
      * The unique ID of the Inscriptiontemp
      */
     /*'fkiInscriptiontempID'?: number;*/
@@ -80,6 +85,7 @@ export class DataObjectCommunicationreferenceRequest {
    fkiBuyercontractID?:number = undefined
    fkiEzsignfolderID?:number = undefined
    fkiInscriptionID?:number = undefined
+   fkiInscriptionnotauthenticatedID?:number = undefined
    fkiInscriptiontempID?:number = undefined
    fkiInvoiceID?:number = undefined
    fkiOtherincomeID?:number = undefined
@@ -111,6 +117,11 @@ export class ValidationObjectCommunicationreferenceRequest {
       required: false
    }
    fkiInscriptionID = {
+      type: 'integer',
+      minimum: 0,
+      required: false
+   }
+   fkiInscriptionnotauthenticatedID = {
       type: 'integer',
       minimum: 0,
       required: false

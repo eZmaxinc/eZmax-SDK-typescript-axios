@@ -28,6 +28,14 @@ import type { ReconciliationBatchDownloadV1Request } from '../model';
 // @ts-ignore
 import type { ReconciliationGetAttachmentsV1Response } from '../model';
 // @ts-ignore
+import type { ReconciliationGetCommunicationCountV1Response } from '../model';
+// @ts-ignore
+import type { ReconciliationGetCommunicationListV1Response } from '../model';
+// @ts-ignore
+import type { ReconciliationGetCommunicationrecipientsV1Response } from '../model';
+// @ts-ignore
+import type { ReconciliationGetCommunicationsendersV1Response } from '../model';
+// @ts-ignore
 import type { ReconciliationImportIntoEDMV1Request } from '../model';
 // @ts-ignore
 import type { ReconciliationImportIntoEDMV1Response } from '../model';
@@ -112,6 +120,238 @@ export const ObjectReconciliationApiAxiosParamCreator = function (configuration?
             // verify required parameter 'pkiReconciliationID' is not null or undefined
             assertParamExists('reconciliationGetAttachmentsV1', 'pkiReconciliationID', pkiReconciliationID)
             const localVarPath = `/1/object/reconciliation/{pkiReconciliationID}/getAttachments`
+                .replace('{pkiReconciliationID}', encodeURIComponent(String(pkiReconciliationID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiReconciliationID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        reconciliationGetCommunicationCountV1: async (pkiReconciliationID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiReconciliationID' is not null or undefined
+            assertParamExists('reconciliationGetCommunicationCountV1', 'pkiReconciliationID', pkiReconciliationID)
+            const localVarPath = `/1/object/reconciliation/{pkiReconciliationID}/getCommunicationCount`
+                .replace('{pkiReconciliationID}', encodeURIComponent(String(pkiReconciliationID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiReconciliationID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        reconciliationGetCommunicationListV1: async (pkiReconciliationID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiReconciliationID' is not null or undefined
+            assertParamExists('reconciliationGetCommunicationListV1', 'pkiReconciliationID', pkiReconciliationID)
+            const localVarPath = `/1/object/reconciliation/{pkiReconciliationID}/getCommunicationList`
+                .replace('{pkiReconciliationID}', encodeURIComponent(String(pkiReconciliationID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiReconciliationID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        reconciliationGetCommunicationrecipientsV1: async (pkiReconciliationID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiReconciliationID' is not null or undefined
+            assertParamExists('reconciliationGetCommunicationrecipientsV1', 'pkiReconciliationID', pkiReconciliationID)
+            const localVarPath = `/1/object/reconciliation/{pkiReconciliationID}/getCommunicationrecipients`
+                .replace('{pkiReconciliationID}', encodeURIComponent(String(pkiReconciliationID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiReconciliationID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        reconciliationGetCommunicationsendersV1: async (pkiReconciliationID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiReconciliationID' is not null or undefined
+            assertParamExists('reconciliationGetCommunicationsendersV1', 'pkiReconciliationID', pkiReconciliationID)
+            const localVarPath = `/1/object/reconciliation/{pkiReconciliationID}/getCommunicationsenders`
                 .replace('{pkiReconciliationID}', encodeURIComponent(String(pkiReconciliationID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             let basePath = DUMMY_BASE_URL
@@ -260,6 +500,58 @@ export const ObjectReconciliationApiFp = function(configuration?: Configuration)
         },
         /**
          * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiReconciliationID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async reconciliationGetCommunicationCountV1(pkiReconciliationID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ReconciliationGetCommunicationCountV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.reconciliationGetCommunicationCountV1(pkiReconciliationID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectReconciliationApi.reconciliationGetCommunicationCountV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiReconciliationID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async reconciliationGetCommunicationListV1(pkiReconciliationID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ReconciliationGetCommunicationListV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.reconciliationGetCommunicationListV1(pkiReconciliationID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectReconciliationApi.reconciliationGetCommunicationListV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiReconciliationID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async reconciliationGetCommunicationrecipientsV1(pkiReconciliationID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ReconciliationGetCommunicationrecipientsV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.reconciliationGetCommunicationrecipientsV1(pkiReconciliationID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectReconciliationApi.reconciliationGetCommunicationrecipientsV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiReconciliationID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async reconciliationGetCommunicationsendersV1(pkiReconciliationID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ReconciliationGetCommunicationsendersV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.reconciliationGetCommunicationsendersV1(pkiReconciliationID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectReconciliationApi.reconciliationGetCommunicationsendersV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Import attachments into the Reconciliation
          * @param {number} pkiReconciliationID 
          * @param {ReconciliationImportIntoEDMV1Request} reconciliationImportIntoEDMV1Request 
@@ -304,6 +596,46 @@ export const ObjectReconciliationApiFactory = function (configuration?: Configur
         },
         /**
          * 
+         * @summary Retrieve Communication count
+         * @param {number} pkiReconciliationID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        reconciliationGetCommunicationCountV1(pkiReconciliationID: number, options?: RawAxiosRequestConfig): AxiosPromise<ReconciliationGetCommunicationCountV1Response> {
+            return localVarFp.reconciliationGetCommunicationCountV1(pkiReconciliationID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication list
+         * @param {number} pkiReconciliationID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        reconciliationGetCommunicationListV1(pkiReconciliationID: number, options?: RawAxiosRequestConfig): AxiosPromise<ReconciliationGetCommunicationListV1Response> {
+            return localVarFp.reconciliationGetCommunicationListV1(pkiReconciliationID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication recipients
+         * @param {number} pkiReconciliationID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        reconciliationGetCommunicationrecipientsV1(pkiReconciliationID: number, options?: RawAxiosRequestConfig): AxiosPromise<ReconciliationGetCommunicationrecipientsV1Response> {
+            return localVarFp.reconciliationGetCommunicationrecipientsV1(pkiReconciliationID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Retrieve Communication senders
+         * @param {number} pkiReconciliationID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        reconciliationGetCommunicationsendersV1(pkiReconciliationID: number, options?: RawAxiosRequestConfig): AxiosPromise<ReconciliationGetCommunicationsendersV1Response> {
+            return localVarFp.reconciliationGetCommunicationsendersV1(pkiReconciliationID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Import attachments into the Reconciliation
          * @param {number} pkiReconciliationID 
          * @param {ReconciliationImportIntoEDMV1Request} reconciliationImportIntoEDMV1Request 
@@ -341,6 +673,50 @@ export class ObjectReconciliationApi extends BaseAPI {
      */
     public reconciliationGetAttachmentsV1(pkiReconciliationID: number, options?: RawAxiosRequestConfig) {
         return ObjectReconciliationApiFp(this.configuration).reconciliationGetAttachmentsV1(pkiReconciliationID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication count
+     * @param {number} pkiReconciliationID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public reconciliationGetCommunicationCountV1(pkiReconciliationID: number, options?: RawAxiosRequestConfig) {
+        return ObjectReconciliationApiFp(this.configuration).reconciliationGetCommunicationCountV1(pkiReconciliationID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication list
+     * @param {number} pkiReconciliationID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public reconciliationGetCommunicationListV1(pkiReconciliationID: number, options?: RawAxiosRequestConfig) {
+        return ObjectReconciliationApiFp(this.configuration).reconciliationGetCommunicationListV1(pkiReconciliationID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication recipients
+     * @param {number} pkiReconciliationID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public reconciliationGetCommunicationrecipientsV1(pkiReconciliationID: number, options?: RawAxiosRequestConfig) {
+        return ObjectReconciliationApiFp(this.configuration).reconciliationGetCommunicationrecipientsV1(pkiReconciliationID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Retrieve Communication senders
+     * @param {number} pkiReconciliationID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public reconciliationGetCommunicationsendersV1(pkiReconciliationID: number, options?: RawAxiosRequestConfig) {
+        return ObjectReconciliationApiFp(this.configuration).reconciliationGetCommunicationsendersV1(pkiReconciliationID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

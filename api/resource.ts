@@ -894,7 +894,7 @@ class UResource {
                 },
                 {
                     eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.AgentBrokerSeller,
-                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All, EResourceattachmentprivacyPermission.Inscriptor, EResourceattachmentprivacyPermission.Specificuser],
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All, EResourceattachmentprivacyPermission.Seller, EResourceattachmentprivacyPermission.Specificuser],
                 },
             ],
             a_objResourcepermission: [
@@ -932,7 +932,7 @@ class UResource {
                 },
                 {
                     eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.AgentBrokerSeller,
-                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All, EResourceattachmentprivacyPermission.Inscriptor, EResourceattachmentprivacyPermission.Specificuser],
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All, EResourceattachmentprivacyPermission.Seller, EResourceattachmentprivacyPermission.Specificuser],
                 },
             ],
             a_objResourcepermission: [
@@ -970,7 +970,7 @@ class UResource {
                 },
                 {
                     eResourceattachmentprivacyRole: EResourceattachmentprivacyRole.AgentBrokerSeller,
-                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All, EResourceattachmentprivacyPermission.Inscriptor, EResourceattachmentprivacyPermission.Specificuser],
+                    a_eResourceattachmentprivacyPermission: [EResourceattachmentprivacyPermission.All, EResourceattachmentprivacyPermission.Seller, EResourceattachmentprivacyPermission.Specificuser],
                 },
             ],
             a_objResourcepermission: [

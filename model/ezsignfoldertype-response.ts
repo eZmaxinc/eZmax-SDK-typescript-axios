@@ -362,13 +362,13 @@ export class ValidationObjectEzsignfoldertypeResponse {
    fkiUsergroupID = {
       type: 'integer',
       minimum: 0,
-      maximum: 255,
+      maximum: 65535,
       required: false
    }
    fkiUsergroupIDRestricted = {
       type: 'integer',
       minimum: 0,
-      maximum: 255,
+      maximum: 65535,
       required: false
    }
    fkiEzsigntsarequirementID = {
