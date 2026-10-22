@@ -1,8 +1,7 @@
-declare var require: any
-var forge = require('node-forge')
-var utf8 = require('utf8')
+import { sha256 } from '@noble/hashes/sha2.js'
+import { hmac } from '@noble/hashes/hmac.js'
+import { bytesToHex } from '@noble/hashes/utils.js'
 
-  
 export interface IFingerprintData {
   authorization: string
   date: string
@@ -33,22 +32,18 @@ export class RequestSignature {
     const expiration = fingerprintData.expiration ? `\n${fingerprintData.expiration}` : ''
     const contentToHash = `${fingerprintData.method}\n${fingerprintData.url}\n${fingerprintData.body}\n${fingerprintData.authorization}\n${fingerprintData.date}${expiration}`
     
-    const md = forge.md.sha256.create()
-    md.update(contentToHash)
-
-    const ouput = md.digest().toHex()
+    const output = bytesToHex(sha256(new TextEncoder().encode(contentToHash)))
     
-    return 'v1=' + ouput
+    return 'v1=' + output
   }
 
   public static getSignature(signatureData: ISignatureData): string {
     const contentToSign = `${signatureData.fingerprint}${signatureData.authorization}${signatureData.date}`
+    const encoder = new TextEncoder()
 
-    const hmac = forge.hmac.create()
-    hmac.start('sha256', signatureData.secret)
-    hmac.update(contentToSign)
+    const output = bytesToHex(hmac(sha256, encoder.encode(signatureData.secret), encoder.encode(contentToSign)))
   
-    return 'v1=' + hmac.digest().toHex()
+    return 'v1=' + output
   }
 
   public static getHeaders(headerData: IHeadersData) {
@@ -60,7 +55,7 @@ export class RequestSignature {
       date: isoDate,
       method: headerData.method,
       url: headerData.url,
-      body: utf8.encode(headerData.body),
+      body: headerData.body,
       expiration: headerData.expiration
     })
 
