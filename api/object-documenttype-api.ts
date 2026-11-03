@@ -28,8 +28,6 @@ import type { DocumenttypeCreateObjectV1Request } from '../model';
 // @ts-ignore
 import type { DocumenttypeCreateObjectV1Response } from '../model';
 // @ts-ignore
-import type { DocumenttypeDeleteObjectV1Response } from '../model';
-// @ts-ignore
 import type { DocumenttypeEditObjectV1Request } from '../model';
 // @ts-ignore
 import type { DocumenttypeEditObjectV1Response } from '../model';
@@ -94,64 +92,6 @@ export const ObjectDocumenttypeApiAxiosParamCreator = function (configuration?: 
                         authorization: configuration.apiKey as string,
                         secret: secret as string,
                         method: 'POST' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary Delete an existing Documenttype
-         * @param {number} pkiDocumenttypeID The unique ID of the Documenttype
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        documenttypeDeleteObjectV1: async (pkiDocumenttypeID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiDocumenttypeID' is not null or undefined
-            assertParamExists('documenttypeDeleteObjectV1', 'pkiDocumenttypeID', pkiDocumenttypeID)
-            const localVarPath = `/1/object/documenttype/{pkiDocumenttypeID}`
-                .replace('{pkiDocumenttypeID}', encodeURIComponent(String(pkiDocumenttypeID)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-            localVarHeaderParameter['Accept'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'DELETE' as string,
                         url: basePath + toPathString(localVarUrlObj) as string,
                         body: localVarRequestOptions.data || '' as string
                     }
@@ -464,19 +404,6 @@ export const ObjectDocumenttypeApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
-         * @summary Delete an existing Documenttype
-         * @param {number} pkiDocumenttypeID The unique ID of the Documenttype
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async documenttypeDeleteObjectV1(pkiDocumenttypeID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DocumenttypeDeleteObjectV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.documenttypeDeleteObjectV1(pkiDocumenttypeID, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ObjectDocumenttypeApi.documenttypeDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * 
          * @summary Edit an existing Documenttype
          * @param {number} pkiDocumenttypeID The unique ID of the Documenttype
          * @param {DocumenttypeEditObjectV1Request} documenttypeEditObjectV1Request 
@@ -556,16 +483,6 @@ export const ObjectDocumenttypeApiFactory = function (configuration?: Configurat
         },
         /**
          * 
-         * @summary Delete an existing Documenttype
-         * @param {number} pkiDocumenttypeID The unique ID of the Documenttype
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        documenttypeDeleteObjectV1(pkiDocumenttypeID: number, options?: RawAxiosRequestConfig): AxiosPromise<DocumenttypeDeleteObjectV1Response> {
-            return localVarFp.documenttypeDeleteObjectV1(pkiDocumenttypeID, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
          * @summary Edit an existing Documenttype
          * @param {number} pkiDocumenttypeID The unique ID of the Documenttype
          * @param {DocumenttypeEditObjectV1Request} documenttypeEditObjectV1Request 
@@ -628,17 +545,6 @@ export class ObjectDocumenttypeApi extends BaseAPI {
      */
     public documenttypeCreateObjectV1(documenttypeCreateObjectV1Request: DocumenttypeCreateObjectV1Request, options?: RawAxiosRequestConfig) {
         return ObjectDocumenttypeApiFp(this.configuration).documenttypeCreateObjectV1(documenttypeCreateObjectV1Request, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Delete an existing Documenttype
-     * @param {number} pkiDocumenttypeID The unique ID of the Documenttype
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    public documenttypeDeleteObjectV1(pkiDocumenttypeID: number, options?: RawAxiosRequestConfig) {
-        return ObjectDocumenttypeApiFp(this.configuration).documenttypeDeleteObjectV1(pkiDocumenttypeID, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

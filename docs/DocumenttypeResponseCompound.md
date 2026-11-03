@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pkiDocumenttypeID** | **number** | The unique ID of the Documenttype | [default to undefined]
 **objDocumenttypeName** | [**MultilingualDocumenttypeName**](MultilingualDocumenttypeName.md) |  | [default to undefined]
+**eDocumenttypeStep** | [**ComputedEDocumenttypeStep**](ComputedEDocumenttypeStep.md) |  | [default to undefined]
 **sDocumenttypeDefaultfilename** | **string** | The defaultfilename of the Documenttype | [default to undefined]
 **bDocumenttypeShowagent** | **boolean** | Whether if it\&#39;s an showagent | [default to undefined]
 **bDocumenttypeIsactive** | **boolean** | Whether the documenttype is active or not | [default to undefined]
@@ -29,6 +30,7 @@ Name | Type | Description | Notes
 **eDocumenttypeSaledisplaybyrole** | [**FieldEDocumenttypeSaledisplaybyrole**](FieldEDocumenttypeSaledisplaybyrole.md) |  | [optional] [default to undefined]
 **eDocumenttypeTransactiontype** | [**FieldEDocumenttypeTransactiontype**](FieldEDocumenttypeTransactiontype.md) |  | [optional] [default to undefined]
 **eDocumenttypeRepossession** | [**FieldEDocumenttypeRepossession**](FieldEDocumenttypeRepossession.md) |  | [optional] [default to undefined]
+**a_fkiInscriptiontypeID** | **Array&lt;number&gt;** |  | [default to undefined]
 
 ## Example
 
@@ -38,6 +40,7 @@ import { DocumenttypeResponseCompound } from '@ezmaxinc/ezmax-sdk-typescript-axi
 const instance: DocumenttypeResponseCompound = {
     pkiDocumenttypeID,
     objDocumenttypeName,
+    eDocumenttypeStep,
     sDocumenttypeDefaultfilename,
     bDocumenttypeShowagent,
     bDocumenttypeIsactive,
@@ -59,6 +62,7 @@ const instance: DocumenttypeResponseCompound = {
     eDocumenttypeSaledisplaybyrole,
     eDocumenttypeTransactiontype,
     eDocumenttypeRepossession,
+    a_fkiInscriptiontypeID,
 };
 ```
 

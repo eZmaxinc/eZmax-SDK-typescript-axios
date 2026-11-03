@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pkiInscriptionnotauthenticatedID** | **number** | The unique ID of the Inscriptionnotauthenticated. | [default to undefined]
 **fkiInscriptionID** | **number** | The unique ID of the Inscription. | [default to undefined]
+**objInscription** | [**CustomInscription**](CustomInscription.md) |  | [default to undefined]
 **fkiDepartmentID** | **number** | The unique ID of the Department | [optional] [default to undefined]
 **sDepartmentNameX** | **string** | The Name of the Department in the language of the requester | [optional] [default to undefined]
 **fkiFinancialinstitutionID** | **number** | The unique ID of the Financialinstitution | [optional] [default to undefined]
@@ -54,6 +55,7 @@ import { InscriptionnotauthenticatedResponseCompound } from '@ezmaxinc/ezmax-sdk
 const instance: InscriptionnotauthenticatedResponseCompound = {
     pkiInscriptionnotauthenticatedID,
     fkiInscriptionID,
+    objInscription,
     fkiDepartmentID,
     sDepartmentNameX,
     fkiFinancialinstitutionID,

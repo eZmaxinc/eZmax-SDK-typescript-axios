@@ -7,7 +7,7 @@ A Attachmentrejectreason AutocompleteElement Response
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **pkiAttachmentrejectreasonID** | **number** | The unique ID of the Attachmentrejectreason | [default to undefined]
-**sAttachmentrejectreasonnameX** | **string** | The name of the Attachmentrejectreason in the language of the requester | [default to undefined]
+**sAttachmentrejectreasonNameX** | **string** | The name of the Attachmentrejectreason in the language of the requester | [default to undefined]
 **bAttachmentrejectreasonIsactive** | **boolean** | Whether the Attachmentrejectreason is active or not | [default to undefined]
 
 ## Example
@@ -17,7 +17,7 @@ import { AttachmentrejectreasonAutocompleteElementResponse } from '@ezmaxinc/ezm
 
 const instance: AttachmentrejectreasonAutocompleteElementResponse = {
     pkiAttachmentrejectreasonID,
-    sAttachmentrejectreasonnameX,
+    sAttachmentrejectreasonNameX,
     bAttachmentrejectreasonIsactive,
 };
 ```

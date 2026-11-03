@@ -119,8 +119,8 @@ export interface DocumenttypeListElement {
      */
     /*'bDocumenttypeCanafe': boolean;*/
     'bDocumenttypeCanafe': boolean;
-    /*'eDocumenttypeEzcom': FieldEDocumenttypeEzcom;*/
-    'eDocumenttypeEzcom': FieldEDocumenttypeEzcom;
+    /*'eDocumenttypeEzcom'?: FieldEDocumenttypeEzcom;*/
+    'eDocumenttypeEzcom'?: FieldEDocumenttypeEzcom;
     /*'eDocumenttypePrivacydefault': FieldEDocumenttypePrivacydefault;*/
     'eDocumenttypePrivacydefault': FieldEDocumenttypePrivacydefault;
     /*'eDocumenttypeStatusdefault': FieldEDocumenttypeStatusdefault;*/
@@ -164,7 +164,7 @@ export class DataObjectDocumenttypeListElement {
    bDocumenttypeForeclosedsale:boolean = false
    bDocumenttypeCommercialfunding:boolean = false
    bDocumenttypeCanafe:boolean = false
-   eDocumenttypeEzcom:FieldEDocumenttypeEzcom = 'PromiseToPurchase'
+   eDocumenttypeEzcom?:FieldEDocumenttypeEzcom = undefined
    eDocumenttypePrivacydefault:FieldEDocumenttypePrivacydefault = 'Administration'
    eDocumenttypeStatusdefault:FieldEDocumenttypeStatusdefault = 'Not required'
    eDocumenttypeSalebyowner:FieldEDocumenttypeSalebyowner = 'All'
@@ -250,7 +250,7 @@ export class ValidationObjectDocumenttypeListElement {
    eDocumenttypeEzcom = {
       type: 'enum',
       allowableValues: ['PromiseToPurchase','Annex','Modification','CounterOffer','Conditions','BankApproval','Other'],
-      required: true
+      required: false
    }
    eDocumenttypePrivacydefault = {
       type: 'enum',

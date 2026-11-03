@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import type { ComputedEDocumenttypeStep } from './computed-edocumenttype-step';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { FieldEDocumenttypeEzcom } from './field-edocumenttype-ezcom';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -49,6 +52,8 @@ export interface DocumenttypeRequest {
     'pkiDocumenttypeID'?: number;
     /*'objDocumenttypeName': MultilingualDocumenttypeName;*/
     'objDocumenttypeName': MultilingualDocumenttypeName;
+    /*'eDocumenttypeStep': ComputedEDocumenttypeStep;*/
+    'eDocumenttypeStep': ComputedEDocumenttypeStep;
     /**
      * The defaultfilename of the Documenttype
      */
@@ -119,8 +124,8 @@ export interface DocumenttypeRequest {
      */
     /*'bDocumenttypeCanafe': boolean;*/
     'bDocumenttypeCanafe': boolean;
-    /*'eDocumenttypeEzcom': FieldEDocumenttypeEzcom;*/
-    'eDocumenttypeEzcom': FieldEDocumenttypeEzcom;
+    /*'eDocumenttypeEzcom'?: FieldEDocumenttypeEzcom;*/
+    'eDocumenttypeEzcom'?: FieldEDocumenttypeEzcom;
     /*'eDocumenttypePrivacydefault': FieldEDocumenttypePrivacydefault;*/
     'eDocumenttypePrivacydefault': FieldEDocumenttypePrivacydefault;
     /*'eDocumenttypeStatusdefault': FieldEDocumenttypeStatusdefault;*/
@@ -133,6 +138,8 @@ export interface DocumenttypeRequest {
     'eDocumenttypeTransactiontype': FieldEDocumenttypeTransactiontype;
     /*'eDocumenttypeRepossession': FieldEDocumenttypeRepossession;*/
     'eDocumenttypeRepossession': FieldEDocumenttypeRepossession;
+    /*'a_fkiInscriptiontypeID': Array<number>;*/
+    'a_fkiInscriptiontypeID': Array<number>;
 }
 
 
@@ -154,6 +161,7 @@ import { ValidationObjectMultilingualDocumenttypeName } from './'
 export class DataObjectDocumenttypeRequest {
    pkiDocumenttypeID?:number = undefined
    objDocumenttypeName:MultilingualDocumenttypeName = new DataObjectMultilingualDocumenttypeName()
+   eDocumenttypeStep:ComputedEDocumenttypeStep = 'Agentbroker'
    sDocumenttypeDefaultfilename:string = ''
    bDocumenttypeShowagent:boolean = false
    bDocumenttypeIsactive:boolean = false
@@ -168,13 +176,14 @@ export class DataObjectDocumenttypeRequest {
    bDocumenttypeForeclosedsale:boolean = false
    bDocumenttypeCommercialfunding:boolean = false
    bDocumenttypeCanafe:boolean = false
-   eDocumenttypeEzcom:FieldEDocumenttypeEzcom = 'PromiseToPurchase'
+   eDocumenttypeEzcom?:FieldEDocumenttypeEzcom = undefined
    eDocumenttypePrivacydefault:FieldEDocumenttypePrivacydefault = 'Administration'
    eDocumenttypeStatusdefault:FieldEDocumenttypeStatusdefault = 'Not required'
    eDocumenttypeSalebyowner:FieldEDocumenttypeSalebyowner = 'All'
    eDocumenttypeSaledisplaybyrole:FieldEDocumenttypeSaledisplaybyrole = 'InscriptorSeller'
    eDocumenttypeTransactiontype:FieldEDocumenttypeTransactiontype = 'All'
    eDocumenttypeRepossession:FieldEDocumenttypeRepossession = 'All'
+   a_fkiInscriptiontypeID:Array<number> = []
 }
 
 /**
@@ -190,6 +199,11 @@ export class ValidationObjectDocumenttypeRequest {
       required: false
    }
    objDocumenttypeName = new ValidationObjectMultilingualDocumenttypeName()
+   eDocumenttypeStep = {
+      type: 'enum',
+      allowableValues: ['Agentbroker','Buyercontract','Inscription','NotAuthenticated','Otherincome','RejectedOfferToPurchase'],
+      required: true
+   }
    sDocumenttypeDefaultfilename = {
       type: 'string',
       pattern: /^.{0,50}$/,
@@ -250,7 +264,7 @@ export class ValidationObjectDocumenttypeRequest {
    eDocumenttypeEzcom = {
       type: 'enum',
       allowableValues: ['PromiseToPurchase','Annex','Modification','CounterOffer','Conditions','BankApproval','Other'],
-      required: true
+      required: false
    }
    eDocumenttypePrivacydefault = {
       type: 'enum',
@@ -280,6 +294,10 @@ export class ValidationObjectDocumenttypeRequest {
    eDocumenttypeRepossession = {
       type: 'enum',
       allowableValues: ['All','No','Yes'],
+      required: true
+   }
+   a_fkiInscriptiontypeID = {
+      type: 'array',
       required: true
    }
 } 

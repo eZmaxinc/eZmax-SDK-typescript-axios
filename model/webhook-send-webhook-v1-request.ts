@@ -18,6 +18,9 @@
 import type { CustomEWebhookEzsignevent } from './custom-ewebhook-ezsignevent';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { FieldEWebhookEzmaxpartnerevent } from './field-ewebhook-ezmaxpartnerevent';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { FieldEWebhookManagementevent } from './field-ewebhook-managementevent';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -34,6 +37,8 @@ export interface WebhookSendWebhookV1Request {
     'eWebhookModule': FieldEWebhookModule;
     /*'eWebhookEzsignevent'?: CustomEWebhookEzsignevent;*/
     'eWebhookEzsignevent'?: CustomEWebhookEzsignevent;
+    /*'eWebhookEzmaxpartnerevent'?: FieldEWebhookEzmaxpartnerevent;*/
+    'eWebhookEzmaxpartnerevent'?: FieldEWebhookEzmaxpartnerevent;
     /*'eWebhookManagementevent'?: FieldEWebhookManagementevent;*/
     'eWebhookManagementevent'?: FieldEWebhookManagementevent;
     /*'eWebhookRealestateevent'?: FieldEWebhookRealestateevent;*/
@@ -80,6 +85,7 @@ export interface WebhookSendWebhookV1Request {
 export class DataObjectWebhookSendWebhookV1Request {
    eWebhookModule:FieldEWebhookModule = 'Ezmaxpartner'
    eWebhookEzsignevent?:CustomEWebhookEzsignevent = undefined
+   eWebhookEzmaxpartnerevent?:FieldEWebhookEzmaxpartnerevent = undefined
    eWebhookManagementevent?:FieldEWebhookManagementevent = undefined
    eWebhookRealestateevent?:FieldEWebhookRealestateevent = undefined
    fkiEzsignfolderID?:number = undefined
@@ -103,6 +109,11 @@ export class ValidationObjectWebhookSendWebhookV1Request {
    eWebhookEzsignevent = {
       type: 'enum',
       allowableValues: ['DocumentCompleted','DocumentFormCompleted','DocumentUnsent','EzsignsignerAcceptclause','EzsignsignerConnect','FolderCompleted','FolderDisposed','FolderSent','FolderUnsent'],
+      required: false
+   }
+   eWebhookEzmaxpartnerevent = {
+      type: 'enum',
+      allowableValues: ['ProductstageSubscribe','ProductstageUnsubscribe'],
       required: false
    }
    eWebhookManagementevent = {

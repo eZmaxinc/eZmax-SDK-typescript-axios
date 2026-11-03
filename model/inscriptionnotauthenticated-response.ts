@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import type { CustomInscription } from './custom-inscription';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { FieldEInscriptionnotauthenticatedRemunerationtype } from './field-einscriptionnotauthenticated-remunerationtype';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -40,6 +43,8 @@ export interface InscriptionnotauthenticatedResponse {
      */
     /*'fkiInscriptionID': number;*/
     'fkiInscriptionID': number;
+    /*'objInscription': CustomInscription;*/
+    'objInscription': CustomInscription;
     /**
      * The unique ID of the Department
      */
@@ -220,6 +225,10 @@ export interface InscriptionnotauthenticatedResponse {
  * @import
  * Imports Child Data Object
  */
+// @ts-ignore
+import { DataObjectCustomInscription } from './'
+// @ts-ignore
+import { ValidationObjectCustomInscription } from './'
 
 /**
  * @export 
@@ -230,6 +239,7 @@ export interface InscriptionnotauthenticatedResponse {
 export class DataObjectInscriptionnotauthenticatedResponse {
    pkiInscriptionnotauthenticatedID:number = 0
    fkiInscriptionID:number = 0
+   objInscription:CustomInscription = new DataObjectCustomInscription()
    fkiDepartmentID?:number = undefined
    sDepartmentNameX?:string = undefined
    fkiFinancialinstitutionID?:number = undefined
@@ -285,6 +295,7 @@ export class ValidationObjectInscriptionnotauthenticatedResponse {
       minimum: 0,
       required: true
    }
+   objInscription = new ValidationObjectCustomInscription()
    fkiDepartmentID = {
       type: 'integer',
       minimum: 0,

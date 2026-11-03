@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import type { ComputedEDocumenttypeStep } from './computed-edocumenttype-step';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { DocumenttypeResponse } from './documenttype-response';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -59,6 +62,12 @@ export interface DocumenttypeResponseCompound {
      * @memberof DocumenttypeResponseCompound
      */
     objDocumenttypeName:MultilingualDocumenttypeName 
+    /**
+     * 
+     * @type {ComputedEDocumenttypeStep}
+     * @memberof DocumenttypeResponseCompound
+     */
+    eDocumenttypeStep:ComputedEDocumenttypeStep 
     /**
      * The defaultfilename of the Documenttype
      * @type {string}
@@ -185,6 +194,12 @@ export interface DocumenttypeResponseCompound {
      * @memberof DocumenttypeResponseCompound
      */
     eDocumenttypeRepossession?:FieldEDocumenttypeRepossession 
+    /**
+     * 
+     * @type {Array<number>}
+     * @memberof DocumenttypeResponseCompound
+     */
+    a_fkiInscriptiontypeID:Array<number> 
 }
 
 
@@ -207,6 +222,7 @@ import { ValidationObjectMultilingualDocumenttypeName } from './'
 export class DataObjectDocumenttypeResponseCompound {
     pkiDocumenttypeID:number = 0
     objDocumenttypeName:MultilingualDocumenttypeName = new DataObjectMultilingualDocumenttypeName()
+    eDocumenttypeStep:ComputedEDocumenttypeStep = 'Agentbroker'
     sDocumenttypeDefaultfilename:string = ''
     bDocumenttypeShowagent:boolean = false
     bDocumenttypeIsactive:boolean = false
@@ -228,6 +244,7 @@ export class DataObjectDocumenttypeResponseCompound {
     eDocumenttypeSaledisplaybyrole?:FieldEDocumenttypeSaledisplaybyrole = undefined
     eDocumenttypeTransactiontype?:FieldEDocumenttypeTransactiontype = undefined
     eDocumenttypeRepossession?:FieldEDocumenttypeRepossession = undefined
+    a_fkiInscriptiontypeID:Array<number> = []
 }
 
 /**
@@ -243,6 +260,11 @@ export class ValidationObjectDocumenttypeResponseCompound {
       required: true
    }
    objDocumenttypeName = new ValidationObjectMultilingualDocumenttypeName()
+   eDocumenttypeStep = {
+      type: 'enum',
+      allowableValues: ['Agentbroker','Buyercontract','Inscription','NotAuthenticated','Otherincome','RejectedOfferToPurchase'],
+      required: true
+   }
    sDocumenttypeDefaultfilename = {
       type: 'string',
       pattern: /^.{0,50}$/,
@@ -334,6 +356,10 @@ export class ValidationObjectDocumenttypeResponseCompound {
       type: 'enum',
       allowableValues: ['All','No','Yes'],
       required: false
+   }
+   a_fkiInscriptiontypeID = {
+      type: 'array',
+      required: true
    }
 } 
 

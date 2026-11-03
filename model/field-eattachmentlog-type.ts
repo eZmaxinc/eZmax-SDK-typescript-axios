@@ -38,6 +38,7 @@ export const FieldEAttachmentlogType = {
     ImportedFromProspects: 'ImportedFromProspects',
     Move: 'Move',
     OpenFromEmail: 'OpenFromEmail',
+    Pending: 'Pending',
     Purged: 'Purged',
     Reject: 'Reject',
     Rename: 'Rename',

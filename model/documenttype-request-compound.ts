@@ -15,6 +15,9 @@
 
 // May contain unused imports in some cases
 // @ts-ignore
+import type { ComputedEDocumenttypeStep } from './computed-edocumenttype-step';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { DocumenttypeRequest } from './documenttype-request';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -59,6 +62,12 @@ export interface DocumenttypeRequestCompound {
      * @memberof DocumenttypeRequestCompound
      */
     objDocumenttypeName:MultilingualDocumenttypeName 
+    /**
+     * 
+     * @type {ComputedEDocumenttypeStep}
+     * @memberof DocumenttypeRequestCompound
+     */
+    eDocumenttypeStep:ComputedEDocumenttypeStep 
     /**
      * The defaultfilename of the Documenttype
      * @type {string}
@@ -148,7 +157,7 @@ export interface DocumenttypeRequestCompound {
      * @type {FieldEDocumenttypeEzcom}
      * @memberof DocumenttypeRequestCompound
      */
-    eDocumenttypeEzcom:FieldEDocumenttypeEzcom 
+    eDocumenttypeEzcom?:FieldEDocumenttypeEzcom 
     /**
      * 
      * @type {FieldEDocumenttypePrivacydefault}
@@ -185,6 +194,12 @@ export interface DocumenttypeRequestCompound {
      * @memberof DocumenttypeRequestCompound
      */
     eDocumenttypeRepossession:FieldEDocumenttypeRepossession 
+    /**
+     * 
+     * @type {Array<number>}
+     * @memberof DocumenttypeRequestCompound
+     */
+    a_fkiInscriptiontypeID:Array<number> 
 }
 
 
@@ -207,6 +222,7 @@ import { ValidationObjectMultilingualDocumenttypeName } from './'
 export class DataObjectDocumenttypeRequestCompound {
     pkiDocumenttypeID?:number = undefined
     objDocumenttypeName:MultilingualDocumenttypeName = new DataObjectMultilingualDocumenttypeName()
+    eDocumenttypeStep:ComputedEDocumenttypeStep = 'Agentbroker'
     sDocumenttypeDefaultfilename:string = ''
     bDocumenttypeShowagent:boolean = false
     bDocumenttypeIsactive:boolean = false
@@ -221,13 +237,14 @@ export class DataObjectDocumenttypeRequestCompound {
     bDocumenttypeForeclosedsale:boolean = false
     bDocumenttypeCommercialfunding:boolean = false
     bDocumenttypeCanafe:boolean = false
-    eDocumenttypeEzcom:FieldEDocumenttypeEzcom = 'PromiseToPurchase'
+    eDocumenttypeEzcom?:FieldEDocumenttypeEzcom = undefined
     eDocumenttypePrivacydefault:FieldEDocumenttypePrivacydefault = 'Administration'
     eDocumenttypeStatusdefault:FieldEDocumenttypeStatusdefault = 'Not required'
     eDocumenttypeSalebyowner:FieldEDocumenttypeSalebyowner = 'All'
     eDocumenttypeSaledisplaybyrole:FieldEDocumenttypeSaledisplaybyrole = 'InscriptorSeller'
     eDocumenttypeTransactiontype:FieldEDocumenttypeTransactiontype = 'All'
     eDocumenttypeRepossession:FieldEDocumenttypeRepossession = 'All'
+    a_fkiInscriptiontypeID:Array<number> = []
 }
 
 /**
@@ -243,6 +260,11 @@ export class ValidationObjectDocumenttypeRequestCompound {
       required: false
    }
    objDocumenttypeName = new ValidationObjectMultilingualDocumenttypeName()
+   eDocumenttypeStep = {
+      type: 'enum',
+      allowableValues: ['Agentbroker','Buyercontract','Inscription','NotAuthenticated','Otherincome','RejectedOfferToPurchase'],
+      required: true
+   }
    sDocumenttypeDefaultfilename = {
       type: 'string',
       pattern: /^.{0,50}$/,
@@ -303,7 +325,7 @@ export class ValidationObjectDocumenttypeRequestCompound {
    eDocumenttypeEzcom = {
       type: 'enum',
       allowableValues: ['PromiseToPurchase','Annex','Modification','CounterOffer','Conditions','BankApproval','Other'],
-      required: true
+      required: false
    }
    eDocumenttypePrivacydefault = {
       type: 'enum',
@@ -333,6 +355,10 @@ export class ValidationObjectDocumenttypeRequestCompound {
    eDocumenttypeRepossession = {
       type: 'enum',
       allowableValues: ['All','No','Yes'],
+      required: true
+   }
+   a_fkiInscriptiontypeID = {
+      type: 'array',
       required: true
    }
 } 

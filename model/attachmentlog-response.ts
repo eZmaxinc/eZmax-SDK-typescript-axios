@@ -99,12 +99,12 @@ export class ValidationObjectAttachmentlogResponse {
    }
    eAttachmentlogType = {
       type: 'enum',
-      allowableValues: ['AutoValidation','CopyFrom','CopyTo','CopyToEzsign','CreateByEzsign','Download','Deleted','Destroyed','Email','EmailCC','EmailCCI','Fax','ImportedFromExternalSystem','ImportedFromEZA','ImportedFromFaltour','ImportedFromLonewolf','ImportedFromProspects','Move','OpenFromEmail','Purged','Reject','Rename','Restore','Scanned','SendToGED','UnvalidatedBy','Upload','ValidatedBy','VetinfoUpload'],
+      allowableValues: ['AutoValidation','CopyFrom','CopyTo','CopyToEzsign','CreateByEzsign','Download','Deleted','Destroyed','Email','EmailCC','EmailCCI','Fax','ImportedFromExternalSystem','ImportedFromEZA','ImportedFromFaltour','ImportedFromLonewolf','ImportedFromProspects','Move','OpenFromEmail','Pending','Purged','Reject','Rename','Restore','Scanned','SendToGED','UnvalidatedBy','Upload','ValidatedBy','VetinfoUpload'],
       required: true
    }
    sAttachmentlogDetail = {
       type: 'string',
-      pattern: /^.{0,75}$/,
+      pattern: /[\s\S]{0,65535}$/,
       required: false
    }
 } 

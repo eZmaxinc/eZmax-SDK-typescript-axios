@@ -24,21 +24,11 @@ import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError
 // @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
-import type { DocumenttypechecklistCreateObjectV1Request } from '../model';
-// @ts-ignore
-import type { DocumenttypechecklistCreateObjectV1Response } from '../model';
-// @ts-ignore
 import type { DocumenttypechecklistDeleteObjectV1Response } from '../model';
 // @ts-ignore
-import type { DocumenttypechecklistEditObjectV1Request } from '../model';
+import type { DocumenttypechecklistPatchObjectV1Request } from '../model';
 // @ts-ignore
-import type { DocumenttypechecklistEditObjectV1Response } from '../model';
-// @ts-ignore
-import type { DocumenttypechecklistGetListV1Response } from '../model';
-// @ts-ignore
-import type { DocumenttypechecklistGetObjectV2Response } from '../model';
-// @ts-ignore
-import type { HeaderAcceptLanguage } from '../model';
+import type { DocumenttypechecklistPatchObjectV1Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -46,65 +36,6 @@ import { RequestSignature, IHeadersData } from '../api/request-signature';
  */
 export const ObjectDocumenttypechecklistApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
-        /**
-         * The endpoint allows to create one or many elements at once.
-         * @summary Create a new Documenttypechecklist
-         * @param {DocumenttypechecklistCreateObjectV1Request} documenttypechecklistCreateObjectV1Request 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        documenttypechecklistCreateObjectV1: async (documenttypechecklistCreateObjectV1Request: DocumenttypechecklistCreateObjectV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'documenttypechecklistCreateObjectV1Request' is not null or undefined
-            assertParamExists('documenttypechecklistCreateObjectV1', 'documenttypechecklistCreateObjectV1Request', documenttypechecklistCreateObjectV1Request)
-            const localVarPath = `/1/object/documenttypechecklist`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-            localVarHeaderParameter['Accept'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(documenttypechecklistCreateObjectV1Request, localVarRequestOptions, configuration)
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'POST' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
         /**
          * 
          * @summary Delete an existing Documenttypechecklist
@@ -165,17 +96,17 @@ export const ObjectDocumenttypechecklistApiAxiosParamCreator = function (configu
         },
         /**
          * 
-         * @summary Edit an existing Documenttypechecklist
+         * @summary Patch an existing Documenttypechecklist
          * @param {number} pkiDocumenttypechecklistID The unique ID of the Documenttypechecklist
-         * @param {DocumenttypechecklistEditObjectV1Request} documenttypechecklistEditObjectV1Request 
+         * @param {DocumenttypechecklistPatchObjectV1Request} documenttypechecklistPatchObjectV1Request 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        documenttypechecklistEditObjectV1: async (pkiDocumenttypechecklistID: number, documenttypechecklistEditObjectV1Request: DocumenttypechecklistEditObjectV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+        documenttypechecklistPatchObjectV1: async (pkiDocumenttypechecklistID: number, documenttypechecklistPatchObjectV1Request: DocumenttypechecklistPatchObjectV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
             // verify required parameter 'pkiDocumenttypechecklistID' is not null or undefined
-            assertParamExists('documenttypechecklistEditObjectV1', 'pkiDocumenttypechecklistID', pkiDocumenttypechecklistID)
-            // verify required parameter 'documenttypechecklistEditObjectV1Request' is not null or undefined
-            assertParamExists('documenttypechecklistEditObjectV1', 'documenttypechecklistEditObjectV1Request', documenttypechecklistEditObjectV1Request)
+            assertParamExists('documenttypechecklistPatchObjectV1', 'pkiDocumenttypechecklistID', pkiDocumenttypechecklistID)
+            // verify required parameter 'documenttypechecklistPatchObjectV1Request' is not null or undefined
+            assertParamExists('documenttypechecklistPatchObjectV1', 'documenttypechecklistPatchObjectV1Request', documenttypechecklistPatchObjectV1Request)
             const localVarPath = `/1/object/documenttypechecklist/{pkiDocumenttypechecklistID}`
                 .replace('{pkiDocumenttypechecklistID}', encodeURIComponent(String(pkiDocumenttypechecklistID)));
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
@@ -189,7 +120,7 @@ export const ObjectDocumenttypechecklistApiAxiosParamCreator = function (configu
                 baseOptions = configuration.baseOptions;
             }
 
-            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
@@ -203,7 +134,7 @@ export const ObjectDocumenttypechecklistApiAxiosParamCreator = function (configu
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(documenttypechecklistEditObjectV1Request, localVarRequestOptions, configuration)
+            localVarRequestOptions.data = serializeDataIfNeeded(documenttypechecklistPatchObjectV1Request, localVarRequestOptions, configuration)
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -212,145 +143,7 @@ export const ObjectDocumenttypechecklistApiAxiosParamCreator = function (configu
                     const headers:IHeadersData = {
                         authorization: configuration.apiKey as string,
                         secret: secret as string,
-                        method: 'PUT' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eDocumenttypechecklistStatus | Not required<br>Required<br>Filed<br>Justified |
-         * @summary Retrieve Documenttypechecklist list
-         * @param {DocumenttypechecklistGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
-         * @param {number} [iRowMax] 
-         * @param {number} [iRowOffset] 
-         * @param {HeaderAcceptLanguage} [acceptLanguage] 
-         * @param {string} [sFilter] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        documenttypechecklistGetListV1: async (eOrderBy?: DocumenttypechecklistGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/1/object/documenttypechecklist/getList`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-            if (eOrderBy !== undefined) {
-                localVarQueryParameter['eOrderBy'] = eOrderBy;
-            }
-
-            if (iRowMax !== undefined) {
-                localVarQueryParameter['iRowMax'] = iRowMax;
-            }
-
-            if (iRowOffset !== undefined) {
-                localVarQueryParameter['iRowOffset'] = iRowOffset;
-            }
-
-            if (sFilter !== undefined) {
-                localVarQueryParameter['sFilter'] = sFilter;
-            }
-
-            localVarHeaderParameter['Accept'] = 'application/json,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
-
-            if (acceptLanguage != null) {
-                localVarHeaderParameter['Accept-Language'] = typeof acceptLanguage === 'string'
-                    ? acceptLanguage
-                    : JSON.stringify(acceptLanguage, replaceWithSerializableTypeIfNeeded);
-            }
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'GET' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary Retrieve an existing Documenttypechecklist
-         * @param {number} pkiDocumenttypechecklistID The unique ID of the Documenttypechecklist
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        documenttypechecklistGetObjectV2: async (pkiDocumenttypechecklistID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiDocumenttypechecklistID' is not null or undefined
-            assertParamExists('documenttypechecklistGetObjectV2', 'pkiDocumenttypechecklistID', pkiDocumenttypechecklistID)
-            const localVarPath = `/2/object/documenttypechecklist/{pkiDocumenttypechecklistID}`
-                .replace('{pkiDocumenttypechecklistID}', encodeURIComponent(String(pkiDocumenttypechecklistID)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-            localVarHeaderParameter['Accept'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'GET' as string,
+                        method: 'PATCH' as string,
                         url: basePath + toPathString(localVarUrlObj) as string,
                         body: localVarRequestOptions.data || '' as string
                     }
@@ -374,19 +167,6 @@ export const ObjectDocumenttypechecklistApiFp = function(configuration?: Configu
     const localVarAxiosParamCreator = ObjectDocumenttypechecklistApiAxiosParamCreator(configuration)
     return {
         /**
-         * The endpoint allows to create one or many elements at once.
-         * @summary Create a new Documenttypechecklist
-         * @param {DocumenttypechecklistCreateObjectV1Request} documenttypechecklistCreateObjectV1Request 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async documenttypechecklistCreateObjectV1(documenttypechecklistCreateObjectV1Request: DocumenttypechecklistCreateObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DocumenttypechecklistCreateObjectV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.documenttypechecklistCreateObjectV1(documenttypechecklistCreateObjectV1Request, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ObjectDocumenttypechecklistApi.documenttypechecklistCreateObjectV1']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
          * 
          * @summary Delete an existing Documenttypechecklist
          * @param {number} pkiDocumenttypechecklistID The unique ID of the Documenttypechecklist
@@ -401,46 +181,16 @@ export const ObjectDocumenttypechecklistApiFp = function(configuration?: Configu
         },
         /**
          * 
-         * @summary Edit an existing Documenttypechecklist
+         * @summary Patch an existing Documenttypechecklist
          * @param {number} pkiDocumenttypechecklistID The unique ID of the Documenttypechecklist
-         * @param {DocumenttypechecklistEditObjectV1Request} documenttypechecklistEditObjectV1Request 
+         * @param {DocumenttypechecklistPatchObjectV1Request} documenttypechecklistPatchObjectV1Request 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async documenttypechecklistEditObjectV1(pkiDocumenttypechecklistID: number, documenttypechecklistEditObjectV1Request: DocumenttypechecklistEditObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DocumenttypechecklistEditObjectV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.documenttypechecklistEditObjectV1(pkiDocumenttypechecklistID, documenttypechecklistEditObjectV1Request, options);
+        async documenttypechecklistPatchObjectV1(pkiDocumenttypechecklistID: number, documenttypechecklistPatchObjectV1Request: DocumenttypechecklistPatchObjectV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DocumenttypechecklistPatchObjectV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.documenttypechecklistPatchObjectV1(pkiDocumenttypechecklistID, documenttypechecklistPatchObjectV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ObjectDocumenttypechecklistApi.documenttypechecklistEditObjectV1']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eDocumenttypechecklistStatus | Not required<br>Required<br>Filed<br>Justified |
-         * @summary Retrieve Documenttypechecklist list
-         * @param {DocumenttypechecklistGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
-         * @param {number} [iRowMax] 
-         * @param {number} [iRowOffset] 
-         * @param {HeaderAcceptLanguage} [acceptLanguage] 
-         * @param {string} [sFilter] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async documenttypechecklistGetListV1(eOrderBy?: DocumenttypechecklistGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DocumenttypechecklistGetListV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.documenttypechecklistGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ObjectDocumenttypechecklistApi.documenttypechecklistGetListV1']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * 
-         * @summary Retrieve an existing Documenttypechecklist
-         * @param {number} pkiDocumenttypechecklistID The unique ID of the Documenttypechecklist
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async documenttypechecklistGetObjectV2(pkiDocumenttypechecklistID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DocumenttypechecklistGetObjectV2Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.documenttypechecklistGetObjectV2(pkiDocumenttypechecklistID, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ObjectDocumenttypechecklistApi.documenttypechecklistGetObjectV2']?.[localVarOperationServerIndex]?.url;
+            const localVarOperationServerBasePath = operationServerMap['ObjectDocumenttypechecklistApi.documenttypechecklistPatchObjectV1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -453,16 +203,6 @@ export const ObjectDocumenttypechecklistApiFactory = function (configuration?: C
     const localVarFp = ObjectDocumenttypechecklistApiFp(configuration)
     return {
         /**
-         * The endpoint allows to create one or many elements at once.
-         * @summary Create a new Documenttypechecklist
-         * @param {DocumenttypechecklistCreateObjectV1Request} documenttypechecklistCreateObjectV1Request 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        documenttypechecklistCreateObjectV1(documenttypechecklistCreateObjectV1Request: DocumenttypechecklistCreateObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<DocumenttypechecklistCreateObjectV1Response> {
-            return localVarFp.documenttypechecklistCreateObjectV1(documenttypechecklistCreateObjectV1Request, options).then((request) => request(axios, basePath));
-        },
-        /**
          * 
          * @summary Delete an existing Documenttypechecklist
          * @param {number} pkiDocumenttypechecklistID The unique ID of the Documenttypechecklist
@@ -474,38 +214,14 @@ export const ObjectDocumenttypechecklistApiFactory = function (configuration?: C
         },
         /**
          * 
-         * @summary Edit an existing Documenttypechecklist
+         * @summary Patch an existing Documenttypechecklist
          * @param {number} pkiDocumenttypechecklistID The unique ID of the Documenttypechecklist
-         * @param {DocumenttypechecklistEditObjectV1Request} documenttypechecklistEditObjectV1Request 
+         * @param {DocumenttypechecklistPatchObjectV1Request} documenttypechecklistPatchObjectV1Request 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        documenttypechecklistEditObjectV1(pkiDocumenttypechecklistID: number, documenttypechecklistEditObjectV1Request: DocumenttypechecklistEditObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<DocumenttypechecklistEditObjectV1Response> {
-            return localVarFp.documenttypechecklistEditObjectV1(pkiDocumenttypechecklistID, documenttypechecklistEditObjectV1Request, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eDocumenttypechecklistStatus | Not required<br>Required<br>Filed<br>Justified |
-         * @summary Retrieve Documenttypechecklist list
-         * @param {DocumenttypechecklistGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
-         * @param {number} [iRowMax] 
-         * @param {number} [iRowOffset] 
-         * @param {HeaderAcceptLanguage} [acceptLanguage] 
-         * @param {string} [sFilter] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        documenttypechecklistGetListV1(eOrderBy?: DocumenttypechecklistGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig): AxiosPromise<DocumenttypechecklistGetListV1Response> {
-            return localVarFp.documenttypechecklistGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary Retrieve an existing Documenttypechecklist
-         * @param {number} pkiDocumenttypechecklistID The unique ID of the Documenttypechecklist
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        documenttypechecklistGetObjectV2(pkiDocumenttypechecklistID: number, options?: RawAxiosRequestConfig): AxiosPromise<DocumenttypechecklistGetObjectV2Response> {
-            return localVarFp.documenttypechecklistGetObjectV2(pkiDocumenttypechecklistID, options).then((request) => request(axios, basePath));
+        documenttypechecklistPatchObjectV1(pkiDocumenttypechecklistID: number, documenttypechecklistPatchObjectV1Request: DocumenttypechecklistPatchObjectV1Request, options?: RawAxiosRequestConfig): AxiosPromise<DocumenttypechecklistPatchObjectV1Response> {
+            return localVarFp.documenttypechecklistPatchObjectV1(pkiDocumenttypechecklistID, documenttypechecklistPatchObjectV1Request, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -514,17 +230,6 @@ export const ObjectDocumenttypechecklistApiFactory = function (configuration?: C
  * ObjectDocumenttypechecklistApi - object-oriented interface
  */
 export class ObjectDocumenttypechecklistApi extends BaseAPI {
-    /**
-     * The endpoint allows to create one or many elements at once.
-     * @summary Create a new Documenttypechecklist
-     * @param {DocumenttypechecklistCreateObjectV1Request} documenttypechecklistCreateObjectV1Request 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    public documenttypechecklistCreateObjectV1(documenttypechecklistCreateObjectV1Request: DocumenttypechecklistCreateObjectV1Request, options?: RawAxiosRequestConfig) {
-        return ObjectDocumenttypechecklistApiFp(this.configuration).documenttypechecklistCreateObjectV1(documenttypechecklistCreateObjectV1Request, options).then((request) => request(this.axios, this.basePath));
-    }
-
     /**
      * 
      * @summary Delete an existing Documenttypechecklist
@@ -538,51 +243,14 @@ export class ObjectDocumenttypechecklistApi extends BaseAPI {
 
     /**
      * 
-     * @summary Edit an existing Documenttypechecklist
+     * @summary Patch an existing Documenttypechecklist
      * @param {number} pkiDocumenttypechecklistID The unique ID of the Documenttypechecklist
-     * @param {DocumenttypechecklistEditObjectV1Request} documenttypechecklistEditObjectV1Request 
+     * @param {DocumenttypechecklistPatchObjectV1Request} documenttypechecklistPatchObjectV1Request 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    public documenttypechecklistEditObjectV1(pkiDocumenttypechecklistID: number, documenttypechecklistEditObjectV1Request: DocumenttypechecklistEditObjectV1Request, options?: RawAxiosRequestConfig) {
-        return ObjectDocumenttypechecklistApiFp(this.configuration).documenttypechecklistEditObjectV1(pkiDocumenttypechecklistID, documenttypechecklistEditObjectV1Request, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eDocumenttypechecklistStatus | Not required<br>Required<br>Filed<br>Justified |
-     * @summary Retrieve Documenttypechecklist list
-     * @param {DocumenttypechecklistGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
-     * @param {number} [iRowMax] 
-     * @param {number} [iRowOffset] 
-     * @param {HeaderAcceptLanguage} [acceptLanguage] 
-     * @param {string} [sFilter] 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    public documenttypechecklistGetListV1(eOrderBy?: DocumenttypechecklistGetListV1EOrderByEnum, iRowMax?: number, iRowOffset?: number, acceptLanguage?: HeaderAcceptLanguage, sFilter?: string, options?: RawAxiosRequestConfig) {
-        return ObjectDocumenttypechecklistApiFp(this.configuration).documenttypechecklistGetListV1(eOrderBy, iRowMax, iRowOffset, acceptLanguage, sFilter, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Retrieve an existing Documenttypechecklist
-     * @param {number} pkiDocumenttypechecklistID The unique ID of the Documenttypechecklist
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    public documenttypechecklistGetObjectV2(pkiDocumenttypechecklistID: number, options?: RawAxiosRequestConfig) {
-        return ObjectDocumenttypechecklistApiFp(this.configuration).documenttypechecklistGetObjectV2(pkiDocumenttypechecklistID, options).then((request) => request(this.axios, this.basePath));
+    public documenttypechecklistPatchObjectV1(pkiDocumenttypechecklistID: number, documenttypechecklistPatchObjectV1Request: DocumenttypechecklistPatchObjectV1Request, options?: RawAxiosRequestConfig) {
+        return ObjectDocumenttypechecklistApiFp(this.configuration).documenttypechecklistPatchObjectV1(pkiDocumenttypechecklistID, documenttypechecklistPatchObjectV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
-export const DocumenttypechecklistGetListV1EOrderByEnum = {
-    pkiDocumenttypechecklistID_ASC: 'pkiDocumenttypechecklistID_ASC',
-    pkiDocumenttypechecklistID_DESC: 'pkiDocumenttypechecklistID_DESC',
-    fkiDocumenttypeID_ASC: 'fkiDocumenttypeID_ASC',
-    fkiDocumenttypeID_DESC: 'fkiDocumenttypeID_DESC',
-    eDocumenttypechecklistStatus_ASC: 'eDocumenttypechecklistStatus_ASC',
-    eDocumenttypechecklistStatus_DESC: 'eDocumenttypechecklistStatus_DESC',
-    tDocumenttypechecklistComment_ASC: 'tDocumenttypechecklistComment_ASC',
-    tDocumenttypechecklistComment_DESC: 'tDocumenttypechecklistComment_DESC',
-} as const;
-export type DocumenttypechecklistGetListV1EOrderByEnum = typeof DocumenttypechecklistGetListV1EOrderByEnum[keyof typeof DocumenttypechecklistGetListV1EOrderByEnum];

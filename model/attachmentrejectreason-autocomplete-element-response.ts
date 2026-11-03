@@ -26,8 +26,8 @@ export interface AttachmentrejectreasonAutocompleteElementResponse {
     /**
      * The name of the Attachmentrejectreason in the language of the requester
      */
-    /*'sAttachmentrejectreasonnameX': string;*/
-    'sAttachmentrejectreasonnameX': string;
+    /*'sAttachmentrejectreasonNameX': string;*/
+    'sAttachmentrejectreasonNameX': string;
     /**
      * Whether the Attachmentrejectreason is active or not
      */
@@ -47,7 +47,7 @@ export interface AttachmentrejectreasonAutocompleteElementResponse {
  */
 export class DataObjectAttachmentrejectreasonAutocompleteElementResponse {
    pkiAttachmentrejectreasonID:number = 0
-   sAttachmentrejectreasonnameX:string = ''
+   sAttachmentrejectreasonNameX:string = ''
    bAttachmentrejectreasonIsactive:boolean = false
 }
 
@@ -63,7 +63,7 @@ export class ValidationObjectAttachmentrejectreasonAutocompleteElementResponse {
       maximum: 255,
       required: true
    }
-   sAttachmentrejectreasonnameX = {
+   sAttachmentrejectreasonNameX = {
       type: 'string',
       pattern: /^.{0,75}$/,
       required: true
