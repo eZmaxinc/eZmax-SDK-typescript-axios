@@ -18,6 +18,9 @@
 import type { CustomContactNameResponse } from './custom-contact-name-response';
 // May contain unused imports in some cases
 // @ts-ignore
+import type { CustomCreditcardmerchantResponse } from './custom-creditcardmerchant-response';
+// May contain unused imports in some cases
+// @ts-ignore
 import type { CustomCreditcardtransactionResponse } from './custom-creditcardtransaction-response';
 // May contain unused imports in some cases
 // @ts-ignore
@@ -383,6 +386,12 @@ export interface EzsignsignatureResponseCompound {
      * @memberof EzsignsignatureResponseCompound
      */
     a_objEzsignsignaturepaymentdetail?:Array<EzsignsignaturepaymentdetailResponseCompound> 
+    /**
+     * 
+     * @type {CustomCreditcardmerchantResponse}
+     * @memberof EzsignsignatureResponseCompound
+     */
+    objCreditcardmerchant?:CustomCreditcardmerchantResponse 
 }
 
 
@@ -402,6 +411,8 @@ import { DataObjectCustomCreditcardtransactionResponse } from './'
 // @ts-ignore
 import { DataObjectCustomTimezoneWithCodeResponse } from './'
 // @ts-ignore
+import { DataObjectCustomCreditcardmerchantResponse } from './'
+// @ts-ignore
 import { ValidationObjectCustomContactNameResponse } from './'
 // @ts-ignore
 import { ValidationObjectCustomContactNameResponse } from './'
@@ -411,6 +422,8 @@ import { ValidationObjectSignatureResponseCompound } from './'
 import { ValidationObjectCustomCreditcardtransactionResponse } from './'
 // @ts-ignore
 import { ValidationObjectCustomTimezoneWithCodeResponse } from './'
+// @ts-ignore
+import { ValidationObjectCustomCreditcardmerchantResponse } from './'
 
 /**
  * @export 
@@ -471,6 +484,7 @@ export class DataObjectEzsignsignatureResponseCompound {
     a_objEzsignelementdependency?:Array<EzsignelementdependencyResponseCompound> = undefined
     objTimezone?:CustomTimezoneWithCodeResponse = undefined
     a_objEzsignsignaturepaymentdetail?:Array<EzsignsignaturepaymentdetailResponseCompound> = undefined
+    objCreditcardmerchant?:CustomCreditcardmerchantResponse = undefined
 }
 
 /**
@@ -706,6 +720,7 @@ export class ValidationObjectEzsignsignatureResponseCompound {
       type: 'array',
       required: false
    }
+   objCreditcardmerchant = new ValidationObjectCustomCreditcardmerchantResponse()
 } 
 
 

@@ -405,6 +405,7 @@ export * from './custom-communicationsender-response';
 export * from './custom-contact-name-response';
 export * from './custom-create-ezsignelements-positioned-by-word-request';
 export * from './custom-creditcard-request';
+export * from './custom-creditcardmerchant-response';
 export * from './custom-creditcardtransaction-response';
 export * from './custom-creditcardtransactionresponse-response';
 export * from './custom-discussionconfiguration-response';

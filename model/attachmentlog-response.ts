@@ -104,7 +104,7 @@ export class ValidationObjectAttachmentlogResponse {
    }
    sAttachmentlogDetail = {
       type: 'string',
-      pattern: /[\s\S]{0,65535}$/,
+      pattern: /^[\s\S]{0,65535}$/,
       required: false
    }
 } 

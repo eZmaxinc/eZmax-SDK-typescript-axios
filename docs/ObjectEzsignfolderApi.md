@@ -2274,7 +2274,7 @@ const { status, data } = await apiInstance.ezsignfolderSendV3(
 # **ezsignfolderUnsendV1**
 > EzsignfolderUnsendV1Response ezsignfolderUnsendV1(body)
 
-Once an Ezsignfolder has been sent to signatories, it cannot be modified.  Using this endpoint, you can unsend the Ezsignfolder and make it modifiable again.  Signatories will receive an email informing them the signature process was aborted and they might receive a new invitation to sign.  âš ï¸ Warning: Any signature previously made by signatories on \"Non-completed\" Ezsigndocuments will be lost.
+Once an Ezsignfolder has been sent to signatories, it cannot be modified.  Using this endpoint, you can unsend the Ezsignfolder and make it modifiable again.  Signatories will receive an email informing them the signature process was aborted and they might receive a new invitation to sign.  ⚠ Warning: Any signature previously made by signatories on \"Non-completed\" Ezsigndocuments will be lost.
 
 ### Example
 

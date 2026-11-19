@@ -573,6 +573,7 @@ docs/CustomCommunicationsenderResponse.md
 docs/CustomContactNameResponse.md
 docs/CustomCreateEzsignelementsPositionedByWordRequest.md
 docs/CustomCreditcardRequest.md
+docs/CustomCreditcardmerchantResponse.md
 docs/CustomCreditcardtransactionResponse.md
 docs/CustomCreditcardtransactionresponseResponse.md
 docs/CustomDiscussionconfigurationResponse.md
@@ -3213,6 +3214,7 @@ model/custom-communicationsender-response.ts
 model/custom-contact-name-response.ts
 model/custom-create-ezsignelements-positioned-by-word-request.ts
 model/custom-creditcard-request.ts
+model/custom-creditcardmerchant-response.ts
 model/custom-creditcardtransaction-response.ts
 model/custom-creditcardtransactionresponse-response.ts
 model/custom-discussionconfiguration-response.ts

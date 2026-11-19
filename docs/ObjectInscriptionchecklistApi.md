@@ -22,7 +22,7 @@ import {
 const configuration = new Configuration();
 const apiInstance = new ObjectInscriptionchecklistApi(configuration);
 
-let sSelector: 'All'; //The type of Inscriptionchecklist to return (default to undefined)
+let sSelector: 'All' | 'Required'; //The type of Inscriptionchecklist to return (default to undefined)
 let fkiBuyercontractID: string; //Specify which Buyercontract we want to display. (optional) (default to undefined)
 let fkiInscriptionID: string; //Specify which Inscription we want to display. (optional) (default to undefined)
 let fkiInscriptionnotauthenticatedID: string; //Specify which Inscriptionnotauthenticated we want to display. (optional) (default to undefined)
@@ -55,7 +55,7 @@ const { status, data } = await apiInstance.inscriptionchecklistGetAutocompleteV3
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **sSelector** | [**&#39;All&#39;**]**Array<&#39;All&#39;>** | The type of Inscriptionchecklist to return | defaults to undefined|
+| **sSelector** | [**&#39;All&#39; | &#39;Required&#39;**]**Array<&#39;All&#39; &#124; &#39;Required&#39;>** | The type of Inscriptionchecklist to return | defaults to undefined|
 | **fkiBuyercontractID** | [**string**] | Specify which Buyercontract we want to display. | (optional) defaults to undefined|
 | **fkiInscriptionID** | [**string**] | Specify which Inscription we want to display. | (optional) defaults to undefined|
 | **fkiInscriptionnotauthenticatedID** | [**string**] | Specify which Inscriptionnotauthenticated we want to display. | (optional) defaults to undefined|

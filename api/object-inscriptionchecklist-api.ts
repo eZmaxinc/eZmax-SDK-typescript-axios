@@ -241,6 +241,7 @@ export class ObjectInscriptionchecklistApi extends BaseAPI {
 
 export const InscriptionchecklistGetAutocompleteV3SSelectorEnum = {
     All: 'All',
+    Required: 'Required',
 } as const;
 export type InscriptionchecklistGetAutocompleteV3SSelectorEnum = typeof InscriptionchecklistGetAutocompleteV3SSelectorEnum[keyof typeof InscriptionchecklistGetAutocompleteV3SSelectorEnum];
 export const InscriptionchecklistGetAutocompleteV3EFilterActiveEnum = {
