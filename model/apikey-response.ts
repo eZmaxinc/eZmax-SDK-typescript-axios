@@ -52,7 +52,7 @@ export interface ApikeyResponse {
     /*'sApikeyApikey'?: string;*/
     'sApikeyApikey'?: string;
     /**
-     * The Secret for the API key.  This will be hidden if we are not creating or regenerating the Apikey.
+     * The secret of the Apikey
      */
     /*'sApikeySecret'?: string;*/
     'sApikeySecret'?: string;
@@ -135,6 +135,7 @@ export class ValidationObjectApikeyResponse {
    }
    sApikeySecret = {
       type: 'string',
+      pattern: /^[0-9a-fA-F]{1,32}$/,
       required: false
    }
    bApikeyIsactive = {

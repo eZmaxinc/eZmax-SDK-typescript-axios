@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **objApikeyDescription** | [**MultilingualApikeyDescription**](MultilingualApikeyDescription.md) |  | [default to undefined]
 **objContactName** | [**CustomContactNameResponse**](CustomContactNameResponse.md) |  | [default to undefined]
 **sApikeyApikey** | **string** | The Apikey for the API key.  This will be hidden if we are not creating or regenerating the Apikey. | [optional] [default to undefined]
-**sApikeySecret** | **string** | The Secret for the API key.  This will be hidden if we are not creating or regenerating the Apikey. | [optional] [default to undefined]
+**sApikeySecret** | **string** | The secret of the Apikey | [optional] [default to undefined]
 **bApikeyIsactive** | **boolean** | Whether the apikey is active or not | [default to undefined]
 **bApikeyIssigned** | **boolean** | Whether the apikey is signed or not | [optional] [default to undefined]
 **objAudit** | [**CommonAudit**](CommonAudit.md) |  | [default to undefined]

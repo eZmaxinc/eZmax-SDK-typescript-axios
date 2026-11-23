@@ -71,6 +71,7 @@ export enum EApiOperation {
     'object-ezmaxinvoicing-api',
     'object-ezmaxmaillinglist-api',
     'object-ezmaxpartner-api',
+    'object-ezmaxpartnerproductstage-api',
     'object-ezmaxproduct-api',
     'object-ezsignannotation-api',
     'object-ezsignbulksend-api',
@@ -232,6 +233,7 @@ export * from './api/object-ezmaxcustomeruser-api';
 export * from './api/object-ezmaxinvoicing-api';
 export * from './api/object-ezmaxmaillinglist-api';
 export * from './api/object-ezmaxpartner-api';
+export * from './api/object-ezmaxpartnerproductstage-api';
 export * from './api/object-ezmaxproduct-api';
 export * from './api/object-ezsignannotation-api';
 export * from './api/object-ezsignbulksend-api';

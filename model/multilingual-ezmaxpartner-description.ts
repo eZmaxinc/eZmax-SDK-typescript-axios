@@ -53,10 +53,12 @@ export class DataObjectMultilingualEzmaxpartnerDescription {
 export class ValidationObjectMultilingualEzmaxpartnerDescription {
    sEzmaxpartnerDescription1 = {
       type: 'string',
+      pattern: /^[\s\S]{0,65535}$/,
       required: false
    }
    sEzmaxpartnerDescription2 = {
       type: 'string',
+      pattern: /^[\s\S]{0,65535}$/,
       required: false
    }
 } 

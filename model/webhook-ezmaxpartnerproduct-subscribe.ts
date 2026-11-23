@@ -57,13 +57,13 @@ export interface WebhookEzmaxpartnerproductSubscribe {
      */
     sExternalID?:string 
     /**
-     * 
+     * The Apikey for the API key.  This will be hidden if we are not creating or regenerating the Apikey.
      * @type {string}
      * @memberof WebhookEzmaxpartnerproductSubscribe
      */
     sApikeyApikey:string 
     /**
-     * 
+     * The secret of the Apikey
      * @type {string}
      * @memberof WebhookEzmaxpartnerproductSubscribe
      */
@@ -122,6 +122,7 @@ export class ValidationObjectWebhookEzmaxpartnerproductSubscribe {
    }
    sApikeySecret = {
       type: 'string',
+      pattern: /^[0-9a-fA-F]{1,32}$/,
       required: true
    }
 } 
