@@ -45,7 +45,6 @@ api/object-disclosure-api.ts
 api/object-discussion-api.ts
 api/object-discussionmembership-api.ts
 api/object-discussionmessage-api.ts
-api/object-documenttypechecklist-api.ts
 api/object-domain-api.ts
 api/object-electronicfundstransfer-api.ts
 api/object-electronicfundstransfertransaction-api.ts
@@ -744,9 +743,6 @@ docs/DiscussionmessageRequestCompound.md
 docs/DiscussionmessageRequestPatch.md
 docs/DiscussionmessageResponse.md
 docs/DiscussionmessageResponseCompound.md
-docs/DocumenttypechecklistPatchObjectV1Request.md
-docs/DocumenttypechecklistPatchObjectV1Response.md
-docs/DocumenttypechecklistRequestPatch.md
 docs/DomainAutocompleteElementResponse.md
 docs/DomainCreateObjectV1Request.md
 docs/DomainCreateObjectV1Response.md
@@ -1766,7 +1762,6 @@ docs/FieldECustomerType.md
 docs/FieldEDisclosureInteresttype.md
 docs/FieldEDiscussionRobot.md
 docs/FieldEDiscussionmessageStatus.md
-docs/FieldEDocumenttypechecklistStatus.md
 docs/FieldEErrorCode.md
 docs/FieldEEzdoctemplatedocumentPrivacylevel.md
 docs/FieldEEzmaxinvoicingPaymenttype.md
@@ -2158,7 +2153,6 @@ docs/ObjectDisclosureApi.md
 docs/ObjectDiscussionApi.md
 docs/ObjectDiscussionmembershipApi.md
 docs/ObjectDiscussionmessageApi.md
-docs/ObjectDocumenttypechecklistApi.md
 docs/ObjectDomainApi.md
 docs/ObjectElectronicfundstransferApi.md
 docs/ObjectElectronicfundstransfertransactionApi.md
@@ -3380,9 +3374,6 @@ model/discussionmessage-request-patch.ts
 model/discussionmessage-request.ts
 model/discussionmessage-response-compound.ts
 model/discussionmessage-response.ts
-model/documenttypechecklist-patch-object-v1-request.ts
-model/documenttypechecklist-patch-object-v1-response.ts
-model/documenttypechecklist-request-patch.ts
 model/domain-autocomplete-element-response.ts
 model/domain-create-object-v1-request.ts
 model/domain-create-object-v1-response-mpayload.ts
@@ -4401,7 +4392,6 @@ model/field-ecustomer-type.ts
 model/field-edisclosure-interesttype.ts
 model/field-ediscussion-robot.ts
 model/field-ediscussionmessage-status.ts
-model/field-edocumenttypechecklist-status.ts
 model/field-eerror-code.ts
 model/field-eezdoctemplatedocument-privacylevel.ts
 model/field-eezmaxinvoicing-paymenttype.ts

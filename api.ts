@@ -55,7 +55,6 @@ export enum EApiOperation {
     'object-discussion-api',
     'object-discussionmembership-api',
     'object-discussionmessage-api',
-    'object-documenttypechecklist-api',
     'object-domain-api',
     'object-electronicfundstransfer-api',
     'object-electronicfundstransfertransaction-api',
@@ -216,7 +215,6 @@ export * from './api/object-disclosure-api';
 export * from './api/object-discussion-api';
 export * from './api/object-discussionmembership-api';
 export * from './api/object-discussionmessage-api';
-export * from './api/object-documenttypechecklist-api';
 export * from './api/object-domain-api';
 export * from './api/object-electronicfundstransfer-api';
 export * from './api/object-electronicfundstransfertransaction-api';
