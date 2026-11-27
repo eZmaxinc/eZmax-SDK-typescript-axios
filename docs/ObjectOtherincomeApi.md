@@ -10,10 +10,8 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**otherincomeGetCommunicationListV1**](#otherincomegetcommunicationlistv1) | **GET** /1/object/otherincome/{pkiOtherincomeID}/getCommunicationList | Retrieve Communication list|
 |[**otherincomeGetCommunicationrecipientsV1**](#otherincomegetcommunicationrecipientsv1) | **GET** /1/object/otherincome/{pkiOtherincomeID}/getCommunicationrecipients | Retrieve Otherincome\&#39;s Communicationrecipient|
 |[**otherincomeGetCommunicationsendersV1**](#otherincomegetcommunicationsendersv1) | **GET** /1/object/otherincome/{pkiOtherincomeID}/getCommunicationsenders | Retrieve Otherincome\&#39;s Communicationsender|
-|[**otherincomeGetDocumenttypechecklistV1**](#otherincomegetdocumenttypechecklistv1) | **GET** /1/object/otherincome/{pkiOtherincomeID}/getDocumenttypechecklist | Retrieve Document type checklist|
 |[**otherincomeGetListV1**](#otherincomegetlistv1) | **GET** /1/object/otherincome/getList | Retrieve Otherincome list|
 |[**otherincomeImportIntoEDMV1**](#otherincomeimportintoedmv1) | **POST** /1/object/otherincome/{pkiOtherincomeID}/importIntoEDM | Import attachments into the Otherincome|
-|[**otherincomeSyncDocumenttypechecklistV1**](#otherincomesyncdocumenttypechecklistv1) | **POST** /1/object/otherincome/{pkiOtherincomeID}/syncDocumenttypechecklist | Synchronize Document type checklist|
 
 # **otherincomeBatchDownloadV1**
 > File otherincomeBatchDownloadV1(otherincomeBatchDownloadV1Request)
@@ -329,57 +327,6 @@ const { status, data } = await apiInstance.otherincomeGetCommunicationsendersV1(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **otherincomeGetDocumenttypechecklistV1**
-> OtherincomeGetDocumenttypechecklistV1Response otherincomeGetDocumenttypechecklistV1()
-
-
-### Example
-
-```typescript
-import {
-    ObjectOtherincomeApi,
-    Configuration
-} from '@ezmaxinc/ezmax-sdk-typescript-axios';
-
-const configuration = new Configuration();
-const apiInstance = new ObjectOtherincomeApi(configuration);
-
-let pkiOtherincomeID: number; // (default to undefined)
-
-const { status, data } = await apiInstance.otherincomeGetDocumenttypechecklistV1(
-    pkiOtherincomeID
-);
-```
-
-### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **pkiOtherincomeID** | [**number**] |  | defaults to undefined|
-
-
-### Return type
-
-**OtherincomeGetDocumenttypechecklistV1Response**
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-|**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **otherincomeGetListV1**
 > OtherincomeGetListV1Response otherincomeGetListV1()
 
@@ -481,60 +428,6 @@ const { status, data } = await apiInstance.otherincomeImportIntoEDMV1(
 ### Return type
 
 **OtherincomeImportIntoEDMV1Response**
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-|**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **otherincomeSyncDocumenttypechecklistV1**
-> OtherincomeSyncDocumenttypechecklistV1Response otherincomeSyncDocumenttypechecklistV1()
-
-
-### Example
-
-```typescript
-import {
-    ObjectOtherincomeApi,
-    Configuration
-} from '@ezmaxinc/ezmax-sdk-typescript-axios';
-
-const configuration = new Configuration();
-const apiInstance = new ObjectOtherincomeApi(configuration);
-
-let pkiOtherincomeID: number; // (default to undefined)
-let body: object; // (optional)
-
-const { status, data } = await apiInstance.otherincomeSyncDocumenttypechecklistV1(
-    pkiOtherincomeID,
-    body
-);
-```
-
-### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **body** | **object**|  | |
-| **pkiOtherincomeID** | [**number**] |  | defaults to undefined|
-
-
-### Return type
-
-**OtherincomeSyncDocumenttypechecklistV1Response**
 
 ### Authorization
 

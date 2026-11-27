@@ -10,10 +10,8 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**disclosureGetCommunicationListV1**](#disclosuregetcommunicationlistv1) | **GET** /1/object/disclosure/{pkiDisclosureID}/getCommunicationList | Retrieve Communication list|
 |[**disclosureGetCommunicationrecipientsV1**](#disclosuregetcommunicationrecipientsv1) | **GET** /1/object/disclosure/{pkiDisclosureID}/getCommunicationrecipients | Retrieve Communication recipients|
 |[**disclosureGetCommunicationsendersV1**](#disclosuregetcommunicationsendersv1) | **GET** /1/object/disclosure/{pkiDisclosureID}/getCommunicationsenders | Retrieve Communication senders|
-|[**disclosureGetDocumenttypechecklistV1**](#disclosuregetdocumenttypechecklistv1) | **GET** /1/object/disclosure/{pkiDisclosureID}/getDocumenttypechecklist | Retrieve Document type checklist|
 |[**disclosureGetListV1**](#disclosuregetlistv1) | **GET** /1/object/disclosure/getList | Retrieve Disclosure list|
 |[**disclosureImportIntoEDMV1**](#disclosureimportintoedmv1) | **POST** /1/object/disclosure/{pkiDisclosureID}/importIntoEDM | Import attachments into the Disclosure|
-|[**disclosureSyncDocumenttypechecklistV1**](#disclosuresyncdocumenttypechecklistv1) | **POST** /1/object/disclosure/{pkiDisclosureID}/syncDocumenttypechecklist | Synchronize Document type checklist|
 
 # **disclosureBatchDownloadV1**
 > File disclosureBatchDownloadV1(disclosureBatchDownloadV1Request)
@@ -327,57 +325,6 @@ const { status, data } = await apiInstance.disclosureGetCommunicationsendersV1(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **disclosureGetDocumenttypechecklistV1**
-> DisclosureGetDocumenttypechecklistV1Response disclosureGetDocumenttypechecklistV1()
-
-
-### Example
-
-```typescript
-import {
-    ObjectDisclosureApi,
-    Configuration
-} from '@ezmaxinc/ezmax-sdk-typescript-axios';
-
-const configuration = new Configuration();
-const apiInstance = new ObjectDisclosureApi(configuration);
-
-let pkiDisclosureID: number; // (default to undefined)
-
-const { status, data } = await apiInstance.disclosureGetDocumenttypechecklistV1(
-    pkiDisclosureID
-);
-```
-
-### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **pkiDisclosureID** | [**number**] |  | defaults to undefined|
-
-
-### Return type
-
-**DisclosureGetDocumenttypechecklistV1Response**
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-|**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **disclosureGetListV1**
 > DisclosureGetListV1Response disclosureGetListV1()
 
@@ -478,60 +425,6 @@ const { status, data } = await apiInstance.disclosureImportIntoEDMV1(
 ### Return type
 
 **DisclosureImportIntoEDMV1Response**
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-|**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **disclosureSyncDocumenttypechecklistV1**
-> DisclosureSyncDocumenttypechecklistV1Response disclosureSyncDocumenttypechecklistV1()
-
-
-### Example
-
-```typescript
-import {
-    ObjectDisclosureApi,
-    Configuration
-} from '@ezmaxinc/ezmax-sdk-typescript-axios';
-
-const configuration = new Configuration();
-const apiInstance = new ObjectDisclosureApi(configuration);
-
-let pkiDisclosureID: number; // (default to undefined)
-let body: object; // (optional)
-
-const { status, data } = await apiInstance.disclosureSyncDocumenttypechecklistV1(
-    pkiDisclosureID,
-    body
-);
-```
-
-### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **body** | **object**|  | |
-| **pkiDisclosureID** | [**number**] |  | defaults to undefined|
-
-
-### Return type
-
-**DisclosureSyncDocumenttypechecklistV1Response**
 
 ### Authorization
 

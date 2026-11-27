@@ -8,9 +8,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**tranqcontractGetCommunicationListV1**](#tranqcontractgetcommunicationlistv1) | **GET** /1/object/tranqcontract/{pkiTranqcontractID}/getCommunicationList | Retrieve Communication list|
 |[**tranqcontractGetCommunicationrecipientsV1**](#tranqcontractgetcommunicationrecipientsv1) | **GET** /1/object/tranqcontract/{pkiTranqcontractID}/getCommunicationrecipients | Retrieve Tranqcontract\&#39;s Communicationrecipient|
 |[**tranqcontractGetCommunicationsendersV1**](#tranqcontractgetcommunicationsendersv1) | **GET** /1/object/tranqcontract/{pkiTranqcontractID}/getCommunicationsenders | Retrieve Tranqcontract\&#39;s Communicationsender|
-|[**tranqcontractGetDocumenttypechecklistV1**](#tranqcontractgetdocumenttypechecklistv1) | **GET** /1/object/tranqcontract/{pkiTranqcontractID}/getDocumenttypechecklist | Retrieve Document type checklist|
 |[**tranqcontractImportIntoEDMV1**](#tranqcontractimportintoedmv1) | **POST** /1/object/tranqcontract/{pkiTranqcontractID}/importIntoEDM | Import attachments into the Tranqcontract|
-|[**tranqcontractSyncDocumenttypechecklistV1**](#tranqcontractsyncdocumenttypechecklistv1) | **POST** /1/object/tranqcontract/{pkiTranqcontractID}/syncDocumenttypechecklist | Synchronize Document type checklist|
 
 # **tranqcontractGetCommunicationCountV1**
 > TranqcontractGetCommunicationCountV1Response tranqcontractGetCommunicationCountV1()
@@ -220,57 +218,6 @@ const { status, data } = await apiInstance.tranqcontractGetCommunicationsendersV
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **tranqcontractGetDocumenttypechecklistV1**
-> TranqcontractGetDocumenttypechecklistV1Response tranqcontractGetDocumenttypechecklistV1()
-
-
-### Example
-
-```typescript
-import {
-    ObjectTranqcontractApi,
-    Configuration
-} from '@ezmaxinc/ezmax-sdk-typescript-axios';
-
-const configuration = new Configuration();
-const apiInstance = new ObjectTranqcontractApi(configuration);
-
-let pkiTranqcontractID: number; // (default to undefined)
-
-const { status, data } = await apiInstance.tranqcontractGetDocumenttypechecklistV1(
-    pkiTranqcontractID
-);
-```
-
-### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **pkiTranqcontractID** | [**number**] |  | defaults to undefined|
-
-
-### Return type
-
-**TranqcontractGetDocumenttypechecklistV1Response**
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-|**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **tranqcontractImportIntoEDMV1**
 > TranqcontractImportIntoEDMV1Response tranqcontractImportIntoEDMV1(tranqcontractImportIntoEDMV1Request)
 
@@ -308,60 +255,6 @@ const { status, data } = await apiInstance.tranqcontractImportIntoEDMV1(
 ### Return type
 
 **TranqcontractImportIntoEDMV1Response**
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-|**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **tranqcontractSyncDocumenttypechecklistV1**
-> TranqcontractSyncDocumenttypechecklistV1Response tranqcontractSyncDocumenttypechecklistV1()
-
-
-### Example
-
-```typescript
-import {
-    ObjectTranqcontractApi,
-    Configuration
-} from '@ezmaxinc/ezmax-sdk-typescript-axios';
-
-const configuration = new Configuration();
-const apiInstance = new ObjectTranqcontractApi(configuration);
-
-let pkiTranqcontractID: number; // (default to undefined)
-let body: object; // (optional)
-
-const { status, data } = await apiInstance.tranqcontractSyncDocumenttypechecklistV1(
-    pkiTranqcontractID,
-    body
-);
-```
-
-### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **body** | **object**|  | |
-| **pkiTranqcontractID** | [**number**] |  | defaults to undefined|
-
-
-### Return type
-
-**TranqcontractSyncDocumenttypechecklistV1Response**
 
 ### Authorization
 

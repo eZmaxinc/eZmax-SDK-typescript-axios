@@ -36,15 +36,11 @@ import type { ElectronicfundstransferGetCommunicationrecipientsV1Response } from
 // @ts-ignore
 import type { ElectronicfundstransferGetCommunicationsendersV1Response } from '../model';
 // @ts-ignore
-import type { ElectronicfundstransferGetDocumenttypechecklistV1Response } from '../model';
-// @ts-ignore
 import type { ElectronicfundstransferGetListV1Response } from '../model';
 // @ts-ignore
 import type { ElectronicfundstransferImportIntoEDMV1Request } from '../model';
 // @ts-ignore
 import type { ElectronicfundstransferImportIntoEDMV1Response } from '../model';
-// @ts-ignore
-import type { ElectronicfundstransferSyncDocumenttypechecklistV1Response } from '../model';
 // @ts-ignore
 import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
@@ -409,64 +405,6 @@ export const ObjectElectronicfundstransferApiAxiosParamCreator = function (confi
         },
         /**
          * 
-         * @summary Retrieve Document type checklist
-         * @param {number} pkiElectronicfundstransferID 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        electronicfundstransferGetDocumenttypechecklistV1: async (pkiElectronicfundstransferID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiElectronicfundstransferID' is not null or undefined
-            assertParamExists('electronicfundstransferGetDocumenttypechecklistV1', 'pkiElectronicfundstransferID', pkiElectronicfundstransferID)
-            const localVarPath = `/1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/getDocumenttypechecklist`
-                .replace('{pkiElectronicfundstransferID}', encodeURIComponent(String(pkiElectronicfundstransferID)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-            localVarHeaderParameter['Accept'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'GET' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
          * @summary Retrieve Electronicfundstransfer list
          * @param {ElectronicfundstransferGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -608,67 +546,6 @@ export const ObjectElectronicfundstransferApiAxiosParamCreator = function (confi
                 options: localVarRequestOptions,
             };
         },
-        /**
-         * 
-         * @summary Synchronize Document type checklist
-         * @param {number} pkiElectronicfundstransferID 
-         * @param {object} [body] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        electronicfundstransferSyncDocumenttypechecklistV1: async (pkiElectronicfundstransferID: number, body?: object, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiElectronicfundstransferID' is not null or undefined
-            assertParamExists('electronicfundstransferSyncDocumenttypechecklistV1', 'pkiElectronicfundstransferID', pkiElectronicfundstransferID)
-            const localVarPath = `/1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/syncDocumenttypechecklist`
-                .replace('{pkiElectronicfundstransferID}', encodeURIComponent(String(pkiElectronicfundstransferID)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-            localVarHeaderParameter['Accept'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'POST' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
     }
 };
 
@@ -759,19 +636,6 @@ export const ObjectElectronicfundstransferApiFp = function(configuration?: Confi
         },
         /**
          * 
-         * @summary Retrieve Document type checklist
-         * @param {number} pkiElectronicfundstransferID 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async electronicfundstransferGetDocumenttypechecklistV1(pkiElectronicfundstransferID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ElectronicfundstransferGetDocumenttypechecklistV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.electronicfundstransferGetDocumenttypechecklistV1(pkiElectronicfundstransferID, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ObjectElectronicfundstransferApi.electronicfundstransferGetDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * 
          * @summary Retrieve Electronicfundstransfer list
          * @param {ElectronicfundstransferGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -799,20 +663,6 @@ export const ObjectElectronicfundstransferApiFp = function(configuration?: Confi
             const localVarAxiosArgs = await localVarAxiosParamCreator.electronicfundstransferImportIntoEDMV1(pkiElectronicfundstransferID, electronicfundstransferImportIntoEDMV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectElectronicfundstransferApi.electronicfundstransferImportIntoEDMV1']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * 
-         * @summary Synchronize Document type checklist
-         * @param {number} pkiElectronicfundstransferID 
-         * @param {object} [body] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async electronicfundstransferSyncDocumenttypechecklistV1(pkiElectronicfundstransferID: number, body?: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ElectronicfundstransferSyncDocumenttypechecklistV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.electronicfundstransferSyncDocumenttypechecklistV1(pkiElectronicfundstransferID, body, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ObjectElectronicfundstransferApi.electronicfundstransferSyncDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -887,16 +737,6 @@ export const ObjectElectronicfundstransferApiFactory = function (configuration?:
         },
         /**
          * 
-         * @summary Retrieve Document type checklist
-         * @param {number} pkiElectronicfundstransferID 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        electronicfundstransferGetDocumenttypechecklistV1(pkiElectronicfundstransferID: number, options?: RawAxiosRequestConfig): AxiosPromise<ElectronicfundstransferGetDocumenttypechecklistV1Response> {
-            return localVarFp.electronicfundstransferGetDocumenttypechecklistV1(pkiElectronicfundstransferID, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
          * @summary Retrieve Electronicfundstransfer list
          * @param {ElectronicfundstransferGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -919,17 +759,6 @@ export const ObjectElectronicfundstransferApiFactory = function (configuration?:
          */
         electronicfundstransferImportIntoEDMV1(pkiElectronicfundstransferID: number, electronicfundstransferImportIntoEDMV1Request: ElectronicfundstransferImportIntoEDMV1Request, options?: RawAxiosRequestConfig): AxiosPromise<ElectronicfundstransferImportIntoEDMV1Response> {
             return localVarFp.electronicfundstransferImportIntoEDMV1(pkiElectronicfundstransferID, electronicfundstransferImportIntoEDMV1Request, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary Synchronize Document type checklist
-         * @param {number} pkiElectronicfundstransferID 
-         * @param {object} [body] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        electronicfundstransferSyncDocumenttypechecklistV1(pkiElectronicfundstransferID: number, body?: object, options?: RawAxiosRequestConfig): AxiosPromise<ElectronicfundstransferSyncDocumenttypechecklistV1Response> {
-            return localVarFp.electronicfundstransferSyncDocumenttypechecklistV1(pkiElectronicfundstransferID, body, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -1007,17 +836,6 @@ export class ObjectElectronicfundstransferApi extends BaseAPI {
 
     /**
      * 
-     * @summary Retrieve Document type checklist
-     * @param {number} pkiElectronicfundstransferID 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    public electronicfundstransferGetDocumenttypechecklistV1(pkiElectronicfundstransferID: number, options?: RawAxiosRequestConfig) {
-        return ObjectElectronicfundstransferApiFp(this.configuration).electronicfundstransferGetDocumenttypechecklistV1(pkiElectronicfundstransferID, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
      * @summary Retrieve Electronicfundstransfer list
      * @param {ElectronicfundstransferGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
      * @param {number} [iRowMax] 
@@ -1041,18 +859,6 @@ export class ObjectElectronicfundstransferApi extends BaseAPI {
      */
     public electronicfundstransferImportIntoEDMV1(pkiElectronicfundstransferID: number, electronicfundstransferImportIntoEDMV1Request: ElectronicfundstransferImportIntoEDMV1Request, options?: RawAxiosRequestConfig) {
         return ObjectElectronicfundstransferApiFp(this.configuration).electronicfundstransferImportIntoEDMV1(pkiElectronicfundstransferID, electronicfundstransferImportIntoEDMV1Request, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Synchronize Document type checklist
-     * @param {number} pkiElectronicfundstransferID 
-     * @param {object} [body] 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    public electronicfundstransferSyncDocumenttypechecklistV1(pkiElectronicfundstransferID: number, body?: object, options?: RawAxiosRequestConfig) {
-        return ObjectElectronicfundstransferApiFp(this.configuration).electronicfundstransferSyncDocumenttypechecklistV1(pkiElectronicfundstransferID, body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

@@ -38,15 +38,11 @@ import type { OfficetaxreportGetCommunicationrecipientsV1Response } from '../mod
 // @ts-ignore
 import type { OfficetaxreportGetCommunicationsendersV1Response } from '../model';
 // @ts-ignore
-import type { OfficetaxreportGetDocumenttypechecklistV1Response } from '../model';
-// @ts-ignore
 import type { OfficetaxreportGetListV1Response } from '../model';
 // @ts-ignore
 import type { OfficetaxreportImportIntoEDMV1Request } from '../model';
 // @ts-ignore
 import type { OfficetaxreportImportIntoEDMV1Response } from '../model';
-// @ts-ignore
-import type { OfficetaxreportSyncDocumenttypechecklistV1Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -409,64 +405,6 @@ export const ObjectOfficetaxreportApiAxiosParamCreator = function (configuration
         },
         /**
          * 
-         * @summary Retrieve Document type checklist
-         * @param {number} pkiOfficetaxreportID 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        officetaxreportGetDocumenttypechecklistV1: async (pkiOfficetaxreportID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiOfficetaxreportID' is not null or undefined
-            assertParamExists('officetaxreportGetDocumenttypechecklistV1', 'pkiOfficetaxreportID', pkiOfficetaxreportID)
-            const localVarPath = `/1/object/officetaxreport/{pkiOfficetaxreportID}/getDocumenttypechecklist`
-                .replace('{pkiOfficetaxreportID}', encodeURIComponent(String(pkiOfficetaxreportID)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-            localVarHeaderParameter['Accept'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'GET' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
          * @summary Retrieve Officetaxreport list
          * @param {OfficetaxreportGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -608,67 +546,6 @@ export const ObjectOfficetaxreportApiAxiosParamCreator = function (configuration
                 options: localVarRequestOptions,
             };
         },
-        /**
-         * 
-         * @summary Synchronize Document type checklist
-         * @param {number} pkiOfficetaxreportID 
-         * @param {object} [body] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        officetaxreportSyncDocumenttypechecklistV1: async (pkiOfficetaxreportID: number, body?: object, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiOfficetaxreportID' is not null or undefined
-            assertParamExists('officetaxreportSyncDocumenttypechecklistV1', 'pkiOfficetaxreportID', pkiOfficetaxreportID)
-            const localVarPath = `/1/object/officetaxreport/{pkiOfficetaxreportID}/syncDocumenttypechecklist`
-                .replace('{pkiOfficetaxreportID}', encodeURIComponent(String(pkiOfficetaxreportID)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-            localVarHeaderParameter['Accept'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'POST' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
     }
 };
 
@@ -759,19 +636,6 @@ export const ObjectOfficetaxreportApiFp = function(configuration?: Configuration
         },
         /**
          * 
-         * @summary Retrieve Document type checklist
-         * @param {number} pkiOfficetaxreportID 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async officetaxreportGetDocumenttypechecklistV1(pkiOfficetaxreportID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<OfficetaxreportGetDocumenttypechecklistV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.officetaxreportGetDocumenttypechecklistV1(pkiOfficetaxreportID, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ObjectOfficetaxreportApi.officetaxreportGetDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * 
          * @summary Retrieve Officetaxreport list
          * @param {OfficetaxreportGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -799,20 +663,6 @@ export const ObjectOfficetaxreportApiFp = function(configuration?: Configuration
             const localVarAxiosArgs = await localVarAxiosParamCreator.officetaxreportImportIntoEDMV1(pkiOfficetaxreportID, officetaxreportImportIntoEDMV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectOfficetaxreportApi.officetaxreportImportIntoEDMV1']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * 
-         * @summary Synchronize Document type checklist
-         * @param {number} pkiOfficetaxreportID 
-         * @param {object} [body] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async officetaxreportSyncDocumenttypechecklistV1(pkiOfficetaxreportID: number, body?: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<OfficetaxreportSyncDocumenttypechecklistV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.officetaxreportSyncDocumenttypechecklistV1(pkiOfficetaxreportID, body, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ObjectOfficetaxreportApi.officetaxreportSyncDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -887,16 +737,6 @@ export const ObjectOfficetaxreportApiFactory = function (configuration?: Configu
         },
         /**
          * 
-         * @summary Retrieve Document type checklist
-         * @param {number} pkiOfficetaxreportID 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        officetaxreportGetDocumenttypechecklistV1(pkiOfficetaxreportID: number, options?: RawAxiosRequestConfig): AxiosPromise<OfficetaxreportGetDocumenttypechecklistV1Response> {
-            return localVarFp.officetaxreportGetDocumenttypechecklistV1(pkiOfficetaxreportID, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
          * @summary Retrieve Officetaxreport list
          * @param {OfficetaxreportGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -919,17 +759,6 @@ export const ObjectOfficetaxreportApiFactory = function (configuration?: Configu
          */
         officetaxreportImportIntoEDMV1(pkiOfficetaxreportID: number, officetaxreportImportIntoEDMV1Request: OfficetaxreportImportIntoEDMV1Request, options?: RawAxiosRequestConfig): AxiosPromise<OfficetaxreportImportIntoEDMV1Response> {
             return localVarFp.officetaxreportImportIntoEDMV1(pkiOfficetaxreportID, officetaxreportImportIntoEDMV1Request, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary Synchronize Document type checklist
-         * @param {number} pkiOfficetaxreportID 
-         * @param {object} [body] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        officetaxreportSyncDocumenttypechecklistV1(pkiOfficetaxreportID: number, body?: object, options?: RawAxiosRequestConfig): AxiosPromise<OfficetaxreportSyncDocumenttypechecklistV1Response> {
-            return localVarFp.officetaxreportSyncDocumenttypechecklistV1(pkiOfficetaxreportID, body, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -1007,17 +836,6 @@ export class ObjectOfficetaxreportApi extends BaseAPI {
 
     /**
      * 
-     * @summary Retrieve Document type checklist
-     * @param {number} pkiOfficetaxreportID 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    public officetaxreportGetDocumenttypechecklistV1(pkiOfficetaxreportID: number, options?: RawAxiosRequestConfig) {
-        return ObjectOfficetaxreportApiFp(this.configuration).officetaxreportGetDocumenttypechecklistV1(pkiOfficetaxreportID, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
      * @summary Retrieve Officetaxreport list
      * @param {OfficetaxreportGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
      * @param {number} [iRowMax] 
@@ -1041,18 +859,6 @@ export class ObjectOfficetaxreportApi extends BaseAPI {
      */
     public officetaxreportImportIntoEDMV1(pkiOfficetaxreportID: number, officetaxreportImportIntoEDMV1Request: OfficetaxreportImportIntoEDMV1Request, options?: RawAxiosRequestConfig) {
         return ObjectOfficetaxreportApiFp(this.configuration).officetaxreportImportIntoEDMV1(pkiOfficetaxreportID, officetaxreportImportIntoEDMV1Request, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Synchronize Document type checklist
-     * @param {number} pkiOfficetaxreportID 
-     * @param {object} [body] 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    public officetaxreportSyncDocumenttypechecklistV1(pkiOfficetaxreportID: number, body?: object, options?: RawAxiosRequestConfig) {
-        return ObjectOfficetaxreportApiFp(this.configuration).officetaxreportSyncDocumenttypechecklistV1(pkiOfficetaxreportID, body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

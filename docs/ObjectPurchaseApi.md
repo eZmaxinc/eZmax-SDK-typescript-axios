@@ -10,10 +10,8 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**purchaseGetCommunicationListV1**](#purchasegetcommunicationlistv1) | **GET** /1/object/purchase/{pkiPurchaseID}/getCommunicationList | Retrieve Communication list|
 |[**purchaseGetCommunicationrecipientsV1**](#purchasegetcommunicationrecipientsv1) | **GET** /1/object/purchase/{pkiPurchaseID}/getCommunicationrecipients | Retrieve Communication recipients|
 |[**purchaseGetCommunicationsendersV1**](#purchasegetcommunicationsendersv1) | **GET** /1/object/purchase/{pkiPurchaseID}/getCommunicationsenders | Retrieve Communication senders|
-|[**purchaseGetDocumenttypechecklistV1**](#purchasegetdocumenttypechecklistv1) | **GET** /1/object/purchase/{pkiPurchaseID}/getDocumenttypechecklist | Retrieve Document type checklist|
 |[**purchaseGetListV1**](#purchasegetlistv1) | **GET** /1/object/purchase/getList | Retrieve Purchase list|
 |[**purchaseImportIntoEDMV1**](#purchaseimportintoedmv1) | **POST** /1/object/purchase/{pkiPurchaseID}/importIntoEDM | Import attachments into the Purchase|
-|[**purchaseSyncDocumenttypechecklistV1**](#purchasesyncdocumenttypechecklistv1) | **POST** /1/object/purchase/{pkiPurchaseID}/syncDocumenttypechecklist | Synchronize Document type checklist|
 
 # **purchaseBatchDownloadV1**
 > File purchaseBatchDownloadV1(purchaseBatchDownloadV1Request)
@@ -327,57 +325,6 @@ const { status, data } = await apiInstance.purchaseGetCommunicationsendersV1(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **purchaseGetDocumenttypechecklistV1**
-> PurchaseGetDocumenttypechecklistV1Response purchaseGetDocumenttypechecklistV1()
-
-
-### Example
-
-```typescript
-import {
-    ObjectPurchaseApi,
-    Configuration
-} from '@ezmaxinc/ezmax-sdk-typescript-axios';
-
-const configuration = new Configuration();
-const apiInstance = new ObjectPurchaseApi(configuration);
-
-let pkiPurchaseID: number; // (default to undefined)
-
-const { status, data } = await apiInstance.purchaseGetDocumenttypechecklistV1(
-    pkiPurchaseID
-);
-```
-
-### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **pkiPurchaseID** | [**number**] |  | defaults to undefined|
-
-
-### Return type
-
-**PurchaseGetDocumenttypechecklistV1Response**
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-|**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **purchaseGetListV1**
 > PurchaseGetListV1Response purchaseGetListV1()
 
@@ -478,60 +425,6 @@ const { status, data } = await apiInstance.purchaseImportIntoEDMV1(
 ### Return type
 
 **PurchaseImportIntoEDMV1Response**
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-|**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **purchaseSyncDocumenttypechecklistV1**
-> PurchaseSyncDocumenttypechecklistV1Response purchaseSyncDocumenttypechecklistV1()
-
-
-### Example
-
-```typescript
-import {
-    ObjectPurchaseApi,
-    Configuration
-} from '@ezmaxinc/ezmax-sdk-typescript-axios';
-
-const configuration = new Configuration();
-const apiInstance = new ObjectPurchaseApi(configuration);
-
-let pkiPurchaseID: number; // (default to undefined)
-let body: object; // (optional)
-
-const { status, data } = await apiInstance.purchaseSyncDocumenttypechecklistV1(
-    pkiPurchaseID,
-    body
-);
-```
-
-### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **body** | **object**|  | |
-| **pkiPurchaseID** | [**number**] |  | defaults to undefined|
-
-
-### Return type
-
-**PurchaseSyncDocumenttypechecklistV1Response**
 
 ### Authorization
 

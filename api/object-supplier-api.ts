@@ -38,15 +38,11 @@ import type { SupplierGetCommunicationrecipientsV1Response } from '../model';
 // @ts-ignore
 import type { SupplierGetCommunicationsendersV1Response } from '../model';
 // @ts-ignore
-import type { SupplierGetDocumenttypechecklistV1Response } from '../model';
-// @ts-ignore
 import type { SupplierGetListV1Response } from '../model';
 // @ts-ignore
 import type { SupplierImportIntoEDMV1Request } from '../model';
 // @ts-ignore
 import type { SupplierImportIntoEDMV1Response } from '../model';
-// @ts-ignore
-import type { SupplierSyncDocumenttypechecklistV1Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -409,64 +405,6 @@ export const ObjectSupplierApiAxiosParamCreator = function (configuration?: Conf
         },
         /**
          * 
-         * @summary Retrieve Document type checklist
-         * @param {number} pkiSupplierID 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        supplierGetDocumenttypechecklistV1: async (pkiSupplierID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiSupplierID' is not null or undefined
-            assertParamExists('supplierGetDocumenttypechecklistV1', 'pkiSupplierID', pkiSupplierID)
-            const localVarPath = `/1/object/supplier/{pkiSupplierID}/getDocumenttypechecklist`
-                .replace('{pkiSupplierID}', encodeURIComponent(String(pkiSupplierID)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-            localVarHeaderParameter['Accept'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'GET' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
          * @summary Retrieve Supplier list
          * @param {SupplierGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -608,67 +546,6 @@ export const ObjectSupplierApiAxiosParamCreator = function (configuration?: Conf
                 options: localVarRequestOptions,
             };
         },
-        /**
-         * 
-         * @summary Synchronize Document type checklist
-         * @param {number} pkiSupplierID 
-         * @param {object} [body] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        supplierSyncDocumenttypechecklistV1: async (pkiSupplierID: number, body?: object, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiSupplierID' is not null or undefined
-            assertParamExists('supplierSyncDocumenttypechecklistV1', 'pkiSupplierID', pkiSupplierID)
-            const localVarPath = `/1/object/supplier/{pkiSupplierID}/syncDocumenttypechecklist`
-                .replace('{pkiSupplierID}', encodeURIComponent(String(pkiSupplierID)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-            localVarHeaderParameter['Accept'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'POST' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
     }
 };
 
@@ -759,19 +636,6 @@ export const ObjectSupplierApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
-         * @summary Retrieve Document type checklist
-         * @param {number} pkiSupplierID 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async supplierGetDocumenttypechecklistV1(pkiSupplierID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SupplierGetDocumenttypechecklistV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.supplierGetDocumenttypechecklistV1(pkiSupplierID, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ObjectSupplierApi.supplierGetDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * 
          * @summary Retrieve Supplier list
          * @param {SupplierGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -799,20 +663,6 @@ export const ObjectSupplierApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.supplierImportIntoEDMV1(pkiSupplierID, supplierImportIntoEDMV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectSupplierApi.supplierImportIntoEDMV1']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * 
-         * @summary Synchronize Document type checklist
-         * @param {number} pkiSupplierID 
-         * @param {object} [body] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async supplierSyncDocumenttypechecklistV1(pkiSupplierID: number, body?: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<SupplierSyncDocumenttypechecklistV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.supplierSyncDocumenttypechecklistV1(pkiSupplierID, body, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ObjectSupplierApi.supplierSyncDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -887,16 +737,6 @@ export const ObjectSupplierApiFactory = function (configuration?: Configuration,
         },
         /**
          * 
-         * @summary Retrieve Document type checklist
-         * @param {number} pkiSupplierID 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        supplierGetDocumenttypechecklistV1(pkiSupplierID: number, options?: RawAxiosRequestConfig): AxiosPromise<SupplierGetDocumenttypechecklistV1Response> {
-            return localVarFp.supplierGetDocumenttypechecklistV1(pkiSupplierID, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
          * @summary Retrieve Supplier list
          * @param {SupplierGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -919,17 +759,6 @@ export const ObjectSupplierApiFactory = function (configuration?: Configuration,
          */
         supplierImportIntoEDMV1(pkiSupplierID: number, supplierImportIntoEDMV1Request: SupplierImportIntoEDMV1Request, options?: RawAxiosRequestConfig): AxiosPromise<SupplierImportIntoEDMV1Response> {
             return localVarFp.supplierImportIntoEDMV1(pkiSupplierID, supplierImportIntoEDMV1Request, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary Synchronize Document type checklist
-         * @param {number} pkiSupplierID 
-         * @param {object} [body] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        supplierSyncDocumenttypechecklistV1(pkiSupplierID: number, body?: object, options?: RawAxiosRequestConfig): AxiosPromise<SupplierSyncDocumenttypechecklistV1Response> {
-            return localVarFp.supplierSyncDocumenttypechecklistV1(pkiSupplierID, body, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -1007,17 +836,6 @@ export class ObjectSupplierApi extends BaseAPI {
 
     /**
      * 
-     * @summary Retrieve Document type checklist
-     * @param {number} pkiSupplierID 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    public supplierGetDocumenttypechecklistV1(pkiSupplierID: number, options?: RawAxiosRequestConfig) {
-        return ObjectSupplierApiFp(this.configuration).supplierGetDocumenttypechecklistV1(pkiSupplierID, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
      * @summary Retrieve Supplier list
      * @param {SupplierGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
      * @param {number} [iRowMax] 
@@ -1041,18 +859,6 @@ export class ObjectSupplierApi extends BaseAPI {
      */
     public supplierImportIntoEDMV1(pkiSupplierID: number, supplierImportIntoEDMV1Request: SupplierImportIntoEDMV1Request, options?: RawAxiosRequestConfig) {
         return ObjectSupplierApiFp(this.configuration).supplierImportIntoEDMV1(pkiSupplierID, supplierImportIntoEDMV1Request, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Synchronize Document type checklist
-     * @param {number} pkiSupplierID 
-     * @param {object} [body] 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    public supplierSyncDocumenttypechecklistV1(pkiSupplierID: number, body?: object, options?: RawAxiosRequestConfig) {
-        return ObjectSupplierApiFp(this.configuration).supplierSyncDocumenttypechecklistV1(pkiSupplierID, body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

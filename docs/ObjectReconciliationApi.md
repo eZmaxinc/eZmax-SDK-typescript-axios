@@ -10,9 +10,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**reconciliationGetCommunicationListV1**](#reconciliationgetcommunicationlistv1) | **GET** /1/object/reconciliation/{pkiReconciliationID}/getCommunicationList | Retrieve Communication list|
 |[**reconciliationGetCommunicationrecipientsV1**](#reconciliationgetcommunicationrecipientsv1) | **GET** /1/object/reconciliation/{pkiReconciliationID}/getCommunicationrecipients | Retrieve Communication recipients|
 |[**reconciliationGetCommunicationsendersV1**](#reconciliationgetcommunicationsendersv1) | **GET** /1/object/reconciliation/{pkiReconciliationID}/getCommunicationsenders | Retrieve Communication senders|
-|[**reconciliationGetDocumenttypechecklistV1**](#reconciliationgetdocumenttypechecklistv1) | **GET** /1/object/reconciliation/{pkiReconciliationID}/getDocumenttypechecklist | Retrieve Document type checklist|
 |[**reconciliationImportIntoEDMV1**](#reconciliationimportintoedmv1) | **POST** /1/object/reconciliation/{pkiReconciliationID}/importIntoEDM | Import attachments into the Reconciliation|
-|[**reconciliationSyncDocumenttypechecklistV1**](#reconciliationsyncdocumenttypechecklistv1) | **POST** /1/object/reconciliation/{pkiReconciliationID}/syncDocumenttypechecklist | Synchronize Document type checklist|
 
 # **reconciliationBatchDownloadV1**
 > File reconciliationBatchDownloadV1(reconciliationBatchDownloadV1Request)
@@ -326,57 +324,6 @@ const { status, data } = await apiInstance.reconciliationGetCommunicationsenders
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **reconciliationGetDocumenttypechecklistV1**
-> ReconciliationGetDocumenttypechecklistV1Response reconciliationGetDocumenttypechecklistV1()
-
-
-### Example
-
-```typescript
-import {
-    ObjectReconciliationApi,
-    Configuration
-} from '@ezmaxinc/ezmax-sdk-typescript-axios';
-
-const configuration = new Configuration();
-const apiInstance = new ObjectReconciliationApi(configuration);
-
-let pkiReconciliationID: number; // (default to undefined)
-
-const { status, data } = await apiInstance.reconciliationGetDocumenttypechecklistV1(
-    pkiReconciliationID
-);
-```
-
-### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **pkiReconciliationID** | [**number**] |  | defaults to undefined|
-
-
-### Return type
-
-**ReconciliationGetDocumenttypechecklistV1Response**
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-|**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **reconciliationImportIntoEDMV1**
 > ReconciliationImportIntoEDMV1Response reconciliationImportIntoEDMV1(reconciliationImportIntoEDMV1Request)
 
@@ -413,60 +360,6 @@ const { status, data } = await apiInstance.reconciliationImportIntoEDMV1(
 ### Return type
 
 **ReconciliationImportIntoEDMV1Response**
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-|**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **reconciliationSyncDocumenttypechecklistV1**
-> ReconciliationSyncDocumenttypechecklistV1Response reconciliationSyncDocumenttypechecklistV1()
-
-
-### Example
-
-```typescript
-import {
-    ObjectReconciliationApi,
-    Configuration
-} from '@ezmaxinc/ezmax-sdk-typescript-axios';
-
-const configuration = new Configuration();
-const apiInstance = new ObjectReconciliationApi(configuration);
-
-let pkiReconciliationID: number; // (default to undefined)
-let body: object; // (optional)
-
-const { status, data } = await apiInstance.reconciliationSyncDocumenttypechecklistV1(
-    pkiReconciliationID,
-    body
-);
-```
-
-### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **body** | **object**|  | |
-| **pkiReconciliationID** | [**number**] |  | defaults to undefined|
-
-
-### Return type
-
-**ReconciliationSyncDocumenttypechecklistV1Response**
 
 ### Authorization
 

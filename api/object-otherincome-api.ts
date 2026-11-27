@@ -38,15 +38,11 @@ import type { OtherincomeGetCommunicationrecipientsV1Response } from '../model';
 // @ts-ignore
 import type { OtherincomeGetCommunicationsendersV1Response } from '../model';
 // @ts-ignore
-import type { OtherincomeGetDocumenttypechecklistV1Response } from '../model';
-// @ts-ignore
 import type { OtherincomeGetListV1Response } from '../model';
 // @ts-ignore
 import type { OtherincomeImportIntoEDMV1Request } from '../model';
 // @ts-ignore
 import type { OtherincomeImportIntoEDMV1Response } from '../model';
-// @ts-ignore
-import type { OtherincomeSyncDocumenttypechecklistV1Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -408,64 +404,6 @@ export const ObjectOtherincomeApiAxiosParamCreator = function (configuration?: C
             };
         },
         /**
-         * 
-         * @summary Retrieve Document type checklist
-         * @param {number} pkiOtherincomeID 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        otherincomeGetDocumenttypechecklistV1: async (pkiOtherincomeID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiOtherincomeID' is not null or undefined
-            assertParamExists('otherincomeGetDocumenttypechecklistV1', 'pkiOtherincomeID', pkiOtherincomeID)
-            const localVarPath = `/1/object/otherincome/{pkiOtherincomeID}/getDocumenttypechecklist`
-                .replace('{pkiOtherincomeID}', encodeURIComponent(String(pkiOtherincomeID)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-            localVarHeaderParameter['Accept'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'GET' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
          * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eOtherincomeRemunerationtype | Dollars<br>DollarsTaxesIncluded |
          * @summary Retrieve Otherincome list
          * @param {OtherincomeGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
@@ -608,67 +546,6 @@ export const ObjectOtherincomeApiAxiosParamCreator = function (configuration?: C
                 options: localVarRequestOptions,
             };
         },
-        /**
-         * 
-         * @summary Synchronize Document type checklist
-         * @param {number} pkiOtherincomeID 
-         * @param {object} [body] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        otherincomeSyncDocumenttypechecklistV1: async (pkiOtherincomeID: number, body?: object, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiOtherincomeID' is not null or undefined
-            assertParamExists('otherincomeSyncDocumenttypechecklistV1', 'pkiOtherincomeID', pkiOtherincomeID)
-            const localVarPath = `/1/object/otherincome/{pkiOtherincomeID}/syncDocumenttypechecklist`
-                .replace('{pkiOtherincomeID}', encodeURIComponent(String(pkiOtherincomeID)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-            localVarHeaderParameter['Accept'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'POST' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
     }
 };
 
@@ -758,19 +635,6 @@ export const ObjectOtherincomeApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * 
-         * @summary Retrieve Document type checklist
-         * @param {number} pkiOtherincomeID 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async otherincomeGetDocumenttypechecklistV1(pkiOtherincomeID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<OtherincomeGetDocumenttypechecklistV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.otherincomeGetDocumenttypechecklistV1(pkiOtherincomeID, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ObjectOtherincomeApi.otherincomeGetDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
          * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eOtherincomeRemunerationtype | Dollars<br>DollarsTaxesIncluded |
          * @summary Retrieve Otherincome list
          * @param {OtherincomeGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
@@ -799,20 +663,6 @@ export const ObjectOtherincomeApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.otherincomeImportIntoEDMV1(pkiOtherincomeID, otherincomeImportIntoEDMV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectOtherincomeApi.otherincomeImportIntoEDMV1']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * 
-         * @summary Synchronize Document type checklist
-         * @param {number} pkiOtherincomeID 
-         * @param {object} [body] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async otherincomeSyncDocumenttypechecklistV1(pkiOtherincomeID: number, body?: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<OtherincomeSyncDocumenttypechecklistV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.otherincomeSyncDocumenttypechecklistV1(pkiOtherincomeID, body, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ObjectOtherincomeApi.otherincomeSyncDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -886,16 +736,6 @@ export const ObjectOtherincomeApiFactory = function (configuration?: Configurati
             return localVarFp.otherincomeGetCommunicationsendersV1(pkiOtherincomeID, options).then((request) => request(axios, basePath));
         },
         /**
-         * 
-         * @summary Retrieve Document type checklist
-         * @param {number} pkiOtherincomeID 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        otherincomeGetDocumenttypechecklistV1(pkiOtherincomeID: number, options?: RawAxiosRequestConfig): AxiosPromise<OtherincomeGetDocumenttypechecklistV1Response> {
-            return localVarFp.otherincomeGetDocumenttypechecklistV1(pkiOtherincomeID, options).then((request) => request(axios, basePath));
-        },
-        /**
          * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eOtherincomeRemunerationtype | Dollars<br>DollarsTaxesIncluded |
          * @summary Retrieve Otherincome list
          * @param {OtherincomeGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
@@ -919,17 +759,6 @@ export const ObjectOtherincomeApiFactory = function (configuration?: Configurati
          */
         otherincomeImportIntoEDMV1(pkiOtherincomeID: number, otherincomeImportIntoEDMV1Request: OtherincomeImportIntoEDMV1Request, options?: RawAxiosRequestConfig): AxiosPromise<OtherincomeImportIntoEDMV1Response> {
             return localVarFp.otherincomeImportIntoEDMV1(pkiOtherincomeID, otherincomeImportIntoEDMV1Request, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary Synchronize Document type checklist
-         * @param {number} pkiOtherincomeID 
-         * @param {object} [body] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        otherincomeSyncDocumenttypechecklistV1(pkiOtherincomeID: number, body?: object, options?: RawAxiosRequestConfig): AxiosPromise<OtherincomeSyncDocumenttypechecklistV1Response> {
-            return localVarFp.otherincomeSyncDocumenttypechecklistV1(pkiOtherincomeID, body, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -1006,17 +835,6 @@ export class ObjectOtherincomeApi extends BaseAPI {
     }
 
     /**
-     * 
-     * @summary Retrieve Document type checklist
-     * @param {number} pkiOtherincomeID 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    public otherincomeGetDocumenttypechecklistV1(pkiOtherincomeID: number, options?: RawAxiosRequestConfig) {
-        return ObjectOtherincomeApiFp(this.configuration).otherincomeGetDocumenttypechecklistV1(pkiOtherincomeID, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
      * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eOtherincomeRemunerationtype | Dollars<br>DollarsTaxesIncluded |
      * @summary Retrieve Otherincome list
      * @param {OtherincomeGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
@@ -1041,18 +859,6 @@ export class ObjectOtherincomeApi extends BaseAPI {
      */
     public otherincomeImportIntoEDMV1(pkiOtherincomeID: number, otherincomeImportIntoEDMV1Request: OtherincomeImportIntoEDMV1Request, options?: RawAxiosRequestConfig) {
         return ObjectOtherincomeApiFp(this.configuration).otherincomeImportIntoEDMV1(pkiOtherincomeID, otherincomeImportIntoEDMV1Request, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Synchronize Document type checklist
-     * @param {number} pkiOtherincomeID 
-     * @param {object} [body] 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    public otherincomeSyncDocumenttypechecklistV1(pkiOtherincomeID: number, body?: object, options?: RawAxiosRequestConfig) {
-        return ObjectOtherincomeApiFp(this.configuration).otherincomeSyncDocumenttypechecklistV1(pkiOtherincomeID, body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

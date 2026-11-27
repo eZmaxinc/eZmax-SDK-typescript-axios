@@ -10,10 +10,8 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**adjustmentGetCommunicationListV1**](#adjustmentgetcommunicationlistv1) | **GET** /1/object/adjustment/{pkiAdjustmentID}/getCommunicationList | Retrieve Communication list|
 |[**adjustmentGetCommunicationrecipientsV1**](#adjustmentgetcommunicationrecipientsv1) | **GET** /1/object/adjustment/{pkiAdjustmentID}/getCommunicationrecipients | Retrieve Communication recipients|
 |[**adjustmentGetCommunicationsendersV1**](#adjustmentgetcommunicationsendersv1) | **GET** /1/object/adjustment/{pkiAdjustmentID}/getCommunicationsenders | Retrieve Communication senders|
-|[**adjustmentGetDocumenttypechecklistV1**](#adjustmentgetdocumenttypechecklistv1) | **GET** /1/object/adjustment/{pkiAdjustmentID}/getDocumenttypechecklist | Retrieve Document type checklist|
 |[**adjustmentGetListV1**](#adjustmentgetlistv1) | **GET** /1/object/adjustment/getList | Retrieve Adjustment list|
 |[**adjustmentImportIntoEDMV1**](#adjustmentimportintoedmv1) | **POST** /1/object/adjustment/{pkiAdjustmentID}/importIntoEDM | Import attachments into the Adjustment|
-|[**adjustmentSyncDocumenttypechecklistV1**](#adjustmentsyncdocumenttypechecklistv1) | **POST** /1/object/adjustment/{pkiAdjustmentID}/syncDocumenttypechecklist | Synchronize Document type checklist|
 
 # **adjustmentBatchDownloadV1**
 > File adjustmentBatchDownloadV1(adjustmentBatchDownloadV1Request)
@@ -332,57 +330,6 @@ const { status, data } = await apiInstance.adjustmentGetCommunicationsendersV1(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **adjustmentGetDocumenttypechecklistV1**
-> AdjustmentGetDocumenttypechecklistV1Response adjustmentGetDocumenttypechecklistV1()
-
-
-### Example
-
-```typescript
-import {
-    ObjectAdjustmentApi,
-    Configuration
-} from '@ezmaxinc/ezmax-sdk-typescript-axios';
-
-const configuration = new Configuration();
-const apiInstance = new ObjectAdjustmentApi(configuration);
-
-let pkiAdjustmentID: number; // (default to undefined)
-
-const { status, data } = await apiInstance.adjustmentGetDocumenttypechecklistV1(
-    pkiAdjustmentID
-);
-```
-
-### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **pkiAdjustmentID** | [**number**] |  | defaults to undefined|
-
-
-### Return type
-
-**AdjustmentGetDocumenttypechecklistV1Response**
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-|**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **adjustmentGetListV1**
 > AdjustmentGetListV1Response adjustmentGetListV1()
 
@@ -500,60 +447,6 @@ const { status, data } = await apiInstance.adjustmentImportIntoEDMV1(
 |**200** | Successful response |  -  |
 |**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
 |**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **adjustmentSyncDocumenttypechecklistV1**
-> AdjustmentSyncDocumenttypechecklistV1Response adjustmentSyncDocumenttypechecklistV1()
-
-
-### Example
-
-```typescript
-import {
-    ObjectAdjustmentApi,
-    Configuration
-} from '@ezmaxinc/ezmax-sdk-typescript-axios';
-
-const configuration = new Configuration();
-const apiInstance = new ObjectAdjustmentApi(configuration);
-
-let pkiAdjustmentID: number; // (default to undefined)
-let body: object; // (optional)
-
-const { status, data } = await apiInstance.adjustmentSyncDocumenttypechecklistV1(
-    pkiAdjustmentID,
-    body
-);
-```
-
-### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **body** | **object**|  | |
-| **pkiAdjustmentID** | [**number**] |  | defaults to undefined|
-
-
-### Return type
-
-**AdjustmentSyncDocumenttypechecklistV1Response**
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-|**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

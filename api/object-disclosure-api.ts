@@ -36,15 +36,11 @@ import type { DisclosureGetCommunicationrecipientsV1Response } from '../model';
 // @ts-ignore
 import type { DisclosureGetCommunicationsendersV1Response } from '../model';
 // @ts-ignore
-import type { DisclosureGetDocumenttypechecklistV1Response } from '../model';
-// @ts-ignore
 import type { DisclosureGetListV1Response } from '../model';
 // @ts-ignore
 import type { DisclosureImportIntoEDMV1Request } from '../model';
 // @ts-ignore
 import type { DisclosureImportIntoEDMV1Response } from '../model';
-// @ts-ignore
-import type { DisclosureSyncDocumenttypechecklistV1Response } from '../model';
 // @ts-ignore
 import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
@@ -408,64 +404,6 @@ export const ObjectDisclosureApiAxiosParamCreator = function (configuration?: Co
             };
         },
         /**
-         * 
-         * @summary Retrieve Document type checklist
-         * @param {number} pkiDisclosureID 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        disclosureGetDocumenttypechecklistV1: async (pkiDisclosureID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiDisclosureID' is not null or undefined
-            assertParamExists('disclosureGetDocumenttypechecklistV1', 'pkiDisclosureID', pkiDisclosureID)
-            const localVarPath = `/1/object/disclosure/{pkiDisclosureID}/getDocumenttypechecklist`
-                .replace('{pkiDisclosureID}', encodeURIComponent(String(pkiDisclosureID)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-            localVarHeaderParameter['Accept'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'GET' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
          * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eDisclosureInteresttype | Direct<br>Indirect |
          * @summary Retrieve Disclosure list
          * @param {DisclosureGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
@@ -608,67 +546,6 @@ export const ObjectDisclosureApiAxiosParamCreator = function (configuration?: Co
                 options: localVarRequestOptions,
             };
         },
-        /**
-         * 
-         * @summary Synchronize Document type checklist
-         * @param {number} pkiDisclosureID 
-         * @param {object} [body] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        disclosureSyncDocumenttypechecklistV1: async (pkiDisclosureID: number, body?: object, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiDisclosureID' is not null or undefined
-            assertParamExists('disclosureSyncDocumenttypechecklistV1', 'pkiDisclosureID', pkiDisclosureID)
-            const localVarPath = `/1/object/disclosure/{pkiDisclosureID}/syncDocumenttypechecklist`
-                .replace('{pkiDisclosureID}', encodeURIComponent(String(pkiDisclosureID)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-            localVarHeaderParameter['Accept'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'POST' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
     }
 };
 
@@ -758,19 +635,6 @@ export const ObjectDisclosureApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * 
-         * @summary Retrieve Document type checklist
-         * @param {number} pkiDisclosureID 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async disclosureGetDocumenttypechecklistV1(pkiDisclosureID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DisclosureGetDocumenttypechecklistV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.disclosureGetDocumenttypechecklistV1(pkiDisclosureID, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ObjectDisclosureApi.disclosureGetDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
          * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eDisclosureInteresttype | Direct<br>Indirect |
          * @summary Retrieve Disclosure list
          * @param {DisclosureGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
@@ -799,20 +663,6 @@ export const ObjectDisclosureApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.disclosureImportIntoEDMV1(pkiDisclosureID, disclosureImportIntoEDMV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectDisclosureApi.disclosureImportIntoEDMV1']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * 
-         * @summary Synchronize Document type checklist
-         * @param {number} pkiDisclosureID 
-         * @param {object} [body] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async disclosureSyncDocumenttypechecklistV1(pkiDisclosureID: number, body?: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DisclosureSyncDocumenttypechecklistV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.disclosureSyncDocumenttypechecklistV1(pkiDisclosureID, body, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ObjectDisclosureApi.disclosureSyncDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -886,16 +736,6 @@ export const ObjectDisclosureApiFactory = function (configuration?: Configuratio
             return localVarFp.disclosureGetCommunicationsendersV1(pkiDisclosureID, options).then((request) => request(axios, basePath));
         },
         /**
-         * 
-         * @summary Retrieve Document type checklist
-         * @param {number} pkiDisclosureID 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        disclosureGetDocumenttypechecklistV1(pkiDisclosureID: number, options?: RawAxiosRequestConfig): AxiosPromise<DisclosureGetDocumenttypechecklistV1Response> {
-            return localVarFp.disclosureGetDocumenttypechecklistV1(pkiDisclosureID, options).then((request) => request(axios, basePath));
-        },
-        /**
          * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eDisclosureInteresttype | Direct<br>Indirect |
          * @summary Retrieve Disclosure list
          * @param {DisclosureGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
@@ -919,17 +759,6 @@ export const ObjectDisclosureApiFactory = function (configuration?: Configuratio
          */
         disclosureImportIntoEDMV1(pkiDisclosureID: number, disclosureImportIntoEDMV1Request: DisclosureImportIntoEDMV1Request, options?: RawAxiosRequestConfig): AxiosPromise<DisclosureImportIntoEDMV1Response> {
             return localVarFp.disclosureImportIntoEDMV1(pkiDisclosureID, disclosureImportIntoEDMV1Request, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary Synchronize Document type checklist
-         * @param {number} pkiDisclosureID 
-         * @param {object} [body] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        disclosureSyncDocumenttypechecklistV1(pkiDisclosureID: number, body?: object, options?: RawAxiosRequestConfig): AxiosPromise<DisclosureSyncDocumenttypechecklistV1Response> {
-            return localVarFp.disclosureSyncDocumenttypechecklistV1(pkiDisclosureID, body, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -1006,17 +835,6 @@ export class ObjectDisclosureApi extends BaseAPI {
     }
 
     /**
-     * 
-     * @summary Retrieve Document type checklist
-     * @param {number} pkiDisclosureID 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    public disclosureGetDocumenttypechecklistV1(pkiDisclosureID: number, options?: RawAxiosRequestConfig) {
-        return ObjectDisclosureApiFp(this.configuration).disclosureGetDocumenttypechecklistV1(pkiDisclosureID, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
      * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eDisclosureInteresttype | Direct<br>Indirect |
      * @summary Retrieve Disclosure list
      * @param {DisclosureGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
@@ -1041,18 +859,6 @@ export class ObjectDisclosureApi extends BaseAPI {
      */
     public disclosureImportIntoEDMV1(pkiDisclosureID: number, disclosureImportIntoEDMV1Request: DisclosureImportIntoEDMV1Request, options?: RawAxiosRequestConfig) {
         return ObjectDisclosureApiFp(this.configuration).disclosureImportIntoEDMV1(pkiDisclosureID, disclosureImportIntoEDMV1Request, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Synchronize Document type checklist
-     * @param {number} pkiDisclosureID 
-     * @param {object} [body] 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    public disclosureSyncDocumenttypechecklistV1(pkiDisclosureID: number, body?: object, options?: RawAxiosRequestConfig) {
-        return ObjectDisclosureApiFp(this.configuration).disclosureSyncDocumenttypechecklistV1(pkiDisclosureID, body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

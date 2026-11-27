@@ -36,10 +36,6 @@ import type { DiscussionDeleteObjectV1Response } from '../model';
 // @ts-ignore
 import type { DiscussionGetObjectV2Response } from '../model';
 // @ts-ignore
-import type { DiscussionImproveMessageV1Request } from '../model';
-// @ts-ignore
-import type { DiscussionImproveMessageV1Response } from '../model';
-// @ts-ignore
 import type { DiscussionPatchObjectV1Request } from '../model';
 // @ts-ignore
 import type { DiscussionPatchObjectV1Response } from '../model';
@@ -289,65 +285,6 @@ export const ObjectDiscussionApiAxiosParamCreator = function (configuration?: Co
             };
         },
         /**
-         * The endpoint allows to improve a discussion message using the AI.
-         * @summary Improve a message using the AI
-         * @param {DiscussionImproveMessageV1Request} discussionImproveMessageV1Request 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        discussionImproveMessageV1: async (discussionImproveMessageV1Request: DiscussionImproveMessageV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'discussionImproveMessageV1Request' is not null or undefined
-            assertParamExists('discussionImproveMessageV1', 'discussionImproveMessageV1Request', discussionImproveMessageV1Request)
-            const localVarPath = `/1/object/discussion/improveMessage`;
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-            localVarHeaderParameter['Accept'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(discussionImproveMessageV1Request, localVarRequestOptions, configuration)
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'POST' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
          * 
          * @summary Patch an existing Discussion
          * @param {number} pkiDiscussionID The unique ID of the Discussion
@@ -535,19 +472,6 @@ export const ObjectDiscussionApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * The endpoint allows to improve a discussion message using the AI.
-         * @summary Improve a message using the AI
-         * @param {DiscussionImproveMessageV1Request} discussionImproveMessageV1Request 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async discussionImproveMessageV1(discussionImproveMessageV1Request: DiscussionImproveMessageV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DiscussionImproveMessageV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.discussionImproveMessageV1(discussionImproveMessageV1Request, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ObjectDiscussionApi.discussionImproveMessageV1']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
          * 
          * @summary Patch an existing Discussion
          * @param {number} pkiDiscussionID The unique ID of the Discussion
@@ -625,16 +549,6 @@ export const ObjectDiscussionApiFactory = function (configuration?: Configuratio
             return localVarFp.discussionGetObjectV2(pkiDiscussionID, options).then((request) => request(axios, basePath));
         },
         /**
-         * The endpoint allows to improve a discussion message using the AI.
-         * @summary Improve a message using the AI
-         * @param {DiscussionImproveMessageV1Request} discussionImproveMessageV1Request 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        discussionImproveMessageV1(discussionImproveMessageV1Request: DiscussionImproveMessageV1Request, options?: RawAxiosRequestConfig): AxiosPromise<DiscussionImproveMessageV1Response> {
-            return localVarFp.discussionImproveMessageV1(discussionImproveMessageV1Request, options).then((request) => request(axios, basePath));
-        },
-        /**
          * 
          * @summary Patch an existing Discussion
          * @param {number} pkiDiscussionID The unique ID of the Discussion
@@ -705,17 +619,6 @@ export class ObjectDiscussionApi extends BaseAPI {
      */
     public discussionGetObjectV2(pkiDiscussionID: number, options?: RawAxiosRequestConfig) {
         return ObjectDiscussionApiFp(this.configuration).discussionGetObjectV2(pkiDiscussionID, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * The endpoint allows to improve a discussion message using the AI.
-     * @summary Improve a message using the AI
-     * @param {DiscussionImproveMessageV1Request} discussionImproveMessageV1Request 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    public discussionImproveMessageV1(discussionImproveMessageV1Request: DiscussionImproveMessageV1Request, options?: RawAxiosRequestConfig) {
-        return ObjectDiscussionApiFp(this.configuration).discussionImproveMessageV1(discussionImproveMessageV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

@@ -8,7 +8,6 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**discussionCreateObjectV1**](#discussioncreateobjectv1) | **POST** /1/object/discussion | Create a new Discussion|
 |[**discussionDeleteObjectV1**](#discussiondeleteobjectv1) | **DELETE** /1/object/discussion/{pkiDiscussionID} | Delete an existing Discussion|
 |[**discussionGetObjectV2**](#discussiongetobjectv2) | **GET** /2/object/discussion/{pkiDiscussionID} | Retrieve an existing Discussion|
-|[**discussionImproveMessageV1**](#discussionimprovemessagev1) | **POST** /1/object/discussion/improveMessage | Improve a message using the AI|
 |[**discussionPatchObjectV1**](#discussionpatchobjectv1) | **PATCH** /1/object/discussion/{pkiDiscussionID} | Patch an existing Discussion|
 |[**discussionUpdateDiscussionreadstatusV1**](#discussionupdatediscussionreadstatusv1) | **POST** /1/object/discussion/{pkiDiscussionID}/updateDiscussionreadstatus | Update the read status of the discussion|
 
@@ -217,59 +216,6 @@ const { status, data } = await apiInstance.discussionGetObjectV2(
 |-------------|-------------|------------------|
 |**200** | Successful response |  -  |
 |**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **discussionImproveMessageV1**
-> DiscussionImproveMessageV1Response discussionImproveMessageV1(discussionImproveMessageV1Request)
-
-The endpoint allows to improve a discussion message using the AI.
-
-### Example
-
-```typescript
-import {
-    ObjectDiscussionApi,
-    Configuration,
-    DiscussionImproveMessageV1Request
-} from '@ezmaxinc/ezmax-sdk-typescript-axios';
-
-const configuration = new Configuration();
-const apiInstance = new ObjectDiscussionApi(configuration);
-
-let discussionImproveMessageV1Request: DiscussionImproveMessageV1Request; //
-
-const { status, data } = await apiInstance.discussionImproveMessageV1(
-    discussionImproveMessageV1Request
-);
-```
-
-### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **discussionImproveMessageV1Request** | **DiscussionImproveMessageV1Request**|  | |
-
-
-### Return type
-
-**DiscussionImproveMessageV1Response**
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-|**200** | Successful response |  -  |
-|**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

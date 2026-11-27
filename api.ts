@@ -48,7 +48,6 @@ export enum EApiOperation {
     'object-creditcardtype-api',
     'object-currency-api',
     'object-customer-api',
-    'object-customertemplate-api',
     'object-department-api',
     'object-deposit-api',
     'object-deposittransitcheque-api',
@@ -211,7 +210,6 @@ export * from './api/object-creditcardmerchant-api';
 export * from './api/object-creditcardtype-api';
 export * from './api/object-currency-api';
 export * from './api/object-customer-api';
-export * from './api/object-customertemplate-api';
 export * from './api/object-department-api';
 export * from './api/object-deposit-api';
 export * from './api/object-deposittransitcheque-api';

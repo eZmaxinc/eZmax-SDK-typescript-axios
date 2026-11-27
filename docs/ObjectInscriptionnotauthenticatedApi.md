@@ -11,12 +11,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**inscriptionnotauthenticatedGetCommunicationListV1**](#inscriptionnotauthenticatedgetcommunicationlistv1) | **GET** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getCommunicationList | Retrieve Communication list|
 |[**inscriptionnotauthenticatedGetCommunicationrecipientsV1**](#inscriptionnotauthenticatedgetcommunicationrecipientsv1) | **GET** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getCommunicationrecipients | Retrieve Inscriptionnotauthenticated\&#39;s Communicationrecipient|
 |[**inscriptionnotauthenticatedGetCommunicationsendersV1**](#inscriptionnotauthenticatedgetcommunicationsendersv1) | **GET** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getCommunicationsenders | Retrieve Inscriptionnotauthenticated\&#39;s Communicationsender|
-|[**inscriptionnotauthenticatedGetDocumenttypechecklistV1**](#inscriptionnotauthenticatedgetdocumenttypechecklistv1) | **GET** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getDocumenttypechecklist | Retrieve Document type checklist|
 |[**inscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1**](#inscriptionnotauthenticatedgetinscriptionnotauthenticatedconditionsv1) | **GET** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getInscriptionnotauthenticatedconditions | Retrieve Inscriptionnotauthenticated conditions|
 |[**inscriptionnotauthenticatedGetListV1**](#inscriptionnotauthenticatedgetlistv1) | **GET** /1/object/inscriptionnotauthenticated/getList | Retrieve Inscriptionnotauthenticated list|
 |[**inscriptionnotauthenticatedGetObjectV2**](#inscriptionnotauthenticatedgetobjectv2) | **GET** /2/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID} | Retrieve an existing Inscriptionnotauthenticated|
 |[**inscriptionnotauthenticatedImportIntoEDMV1**](#inscriptionnotauthenticatedimportintoedmv1) | **POST** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/importIntoEDM | Import attachments into the Inscriptionnotauthenticated|
-|[**inscriptionnotauthenticatedSyncDocumenttypechecklistV1**](#inscriptionnotauthenticatedsyncdocumenttypechecklistv1) | **POST** /1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/syncDocumenttypechecklist | Synchronize Document type checklist|
 
 # **inscriptionnotauthenticatedBatchDownloadV1**
 > File inscriptionnotauthenticatedBatchDownloadV1(inscriptionnotauthenticatedBatchDownloadV1Request)
@@ -388,57 +386,6 @@ const { status, data } = await apiInstance.inscriptionnotauthenticatedGetCommuni
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **inscriptionnotauthenticatedGetDocumenttypechecklistV1**
-> InscriptionnotauthenticatedGetDocumenttypechecklistV1Response inscriptionnotauthenticatedGetDocumenttypechecklistV1()
-
-
-### Example
-
-```typescript
-import {
-    ObjectInscriptionnotauthenticatedApi,
-    Configuration
-} from '@ezmaxinc/ezmax-sdk-typescript-axios';
-
-const configuration = new Configuration();
-const apiInstance = new ObjectInscriptionnotauthenticatedApi(configuration);
-
-let pkiInscriptionnotauthenticatedID: number; // (default to undefined)
-
-const { status, data } = await apiInstance.inscriptionnotauthenticatedGetDocumenttypechecklistV1(
-    pkiInscriptionnotauthenticatedID
-);
-```
-
-### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **pkiInscriptionnotauthenticatedID** | [**number**] |  | defaults to undefined|
-
-
-### Return type
-
-**InscriptionnotauthenticatedGetDocumenttypechecklistV1Response**
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-|**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **inscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1**
 > InscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1Response inscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1()
 
@@ -644,60 +591,6 @@ const { status, data } = await apiInstance.inscriptionnotauthenticatedImportInto
 ### Return type
 
 **InscriptionnotauthenticatedImportIntoEDMV1Response**
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-|**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **inscriptionnotauthenticatedSyncDocumenttypechecklistV1**
-> InscriptionnotauthenticatedSyncDocumenttypechecklistV1Response inscriptionnotauthenticatedSyncDocumenttypechecklistV1()
-
-
-### Example
-
-```typescript
-import {
-    ObjectInscriptionnotauthenticatedApi,
-    Configuration
-} from '@ezmaxinc/ezmax-sdk-typescript-axios';
-
-const configuration = new Configuration();
-const apiInstance = new ObjectInscriptionnotauthenticatedApi(configuration);
-
-let pkiInscriptionnotauthenticatedID: number; // (default to undefined)
-let body: object; // (optional)
-
-const { status, data } = await apiInstance.inscriptionnotauthenticatedSyncDocumenttypechecklistV1(
-    pkiInscriptionnotauthenticatedID,
-    body
-);
-```
-
-### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **body** | **object**|  | |
-| **pkiInscriptionnotauthenticatedID** | [**number**] |  | defaults to undefined|
-
-
-### Return type
-
-**InscriptionnotauthenticatedSyncDocumenttypechecklistV1Response**
 
 ### Authorization
 

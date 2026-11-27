@@ -10,10 +10,8 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**salaryGetCommunicationListV1**](#salarygetcommunicationlistv1) | **GET** /1/object/salary/{pkiSalaryID}/getCommunicationList | Retrieve Communication list|
 |[**salaryGetCommunicationrecipientsV1**](#salarygetcommunicationrecipientsv1) | **GET** /1/object/salary/{pkiSalaryID}/getCommunicationrecipients | Retrieve Communication recipients|
 |[**salaryGetCommunicationsendersV1**](#salarygetcommunicationsendersv1) | **GET** /1/object/salary/{pkiSalaryID}/getCommunicationsenders | Retrieve Communication senders|
-|[**salaryGetDocumenttypechecklistV1**](#salarygetdocumenttypechecklistv1) | **GET** /1/object/salary/{pkiSalaryID}/getDocumenttypechecklist | Retrieve Document type checklist|
 |[**salaryGetListV1**](#salarygetlistv1) | **GET** /1/object/salary/getList | Retrieve Salary list|
 |[**salaryImportIntoEDMV1**](#salaryimportintoedmv1) | **POST** /1/object/salary/{pkiSalaryID}/importIntoEDM | Import attachments into the Salary|
-|[**salarySyncDocumenttypechecklistV1**](#salarysyncdocumenttypechecklistv1) | **POST** /1/object/salary/{pkiSalaryID}/syncDocumenttypechecklist | Synchronize Document type checklist|
 
 # **salaryBatchDownloadV1**
 > File salaryBatchDownloadV1(salaryBatchDownloadV1Request)
@@ -327,57 +325,6 @@ const { status, data } = await apiInstance.salaryGetCommunicationsendersV1(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **salaryGetDocumenttypechecklistV1**
-> SalaryGetDocumenttypechecklistV1Response salaryGetDocumenttypechecklistV1()
-
-
-### Example
-
-```typescript
-import {
-    ObjectSalaryApi,
-    Configuration
-} from '@ezmaxinc/ezmax-sdk-typescript-axios';
-
-const configuration = new Configuration();
-const apiInstance = new ObjectSalaryApi(configuration);
-
-let pkiSalaryID: number; // (default to undefined)
-
-const { status, data } = await apiInstance.salaryGetDocumenttypechecklistV1(
-    pkiSalaryID
-);
-```
-
-### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **pkiSalaryID** | [**number**] |  | defaults to undefined|
-
-
-### Return type
-
-**SalaryGetDocumenttypechecklistV1Response**
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-|**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **salaryGetListV1**
 > SalaryGetListV1Response salaryGetListV1()
 
@@ -478,60 +425,6 @@ const { status, data } = await apiInstance.salaryImportIntoEDMV1(
 ### Return type
 
 **SalaryImportIntoEDMV1Response**
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-|**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **salarySyncDocumenttypechecklistV1**
-> SalarySyncDocumenttypechecklistV1Response salarySyncDocumenttypechecklistV1()
-
-
-### Example
-
-```typescript
-import {
-    ObjectSalaryApi,
-    Configuration
-} from '@ezmaxinc/ezmax-sdk-typescript-axios';
-
-const configuration = new Configuration();
-const apiInstance = new ObjectSalaryApi(configuration);
-
-let pkiSalaryID: number; // (default to undefined)
-let body: object; // (optional)
-
-const { status, data } = await apiInstance.salarySyncDocumenttypechecklistV1(
-    pkiSalaryID,
-    body
-);
-```
-
-### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **body** | **object**|  | |
-| **pkiSalaryID** | [**number**] |  | defaults to undefined|
-
-
-### Return type
-
-**SalarySyncDocumenttypechecklistV1Response**
 
 ### Authorization
 

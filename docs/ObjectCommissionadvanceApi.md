@@ -10,9 +10,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**commissionadvanceGetCommunicationListV1**](#commissionadvancegetcommunicationlistv1) | **GET** /1/object/commissionadvance/{pkiCommissionadvanceID}/getCommunicationList | Retrieve Communication list|
 |[**commissionadvanceGetCommunicationrecipientsV1**](#commissionadvancegetcommunicationrecipientsv1) | **GET** /1/object/commissionadvance/{pkiCommissionadvanceID}/getCommunicationrecipients | Retrieve Communication recipients|
 |[**commissionadvanceGetCommunicationsendersV1**](#commissionadvancegetcommunicationsendersv1) | **GET** /1/object/commissionadvance/{pkiCommissionadvanceID}/getCommunicationsenders | Retrieve Communication senders|
-|[**commissionadvanceGetDocumenttypechecklistV1**](#commissionadvancegetdocumenttypechecklistv1) | **GET** /1/object/commissionadvance/{pkiCommissionadvanceID}/getDocumenttypechecklist | Retrieve Document type checklist|
 |[**commissionadvanceImportIntoEDMV1**](#commissionadvanceimportintoedmv1) | **POST** /1/object/commissionadvance/{pkiCommissionadvanceID}/importIntoEDM | Import attachments into the Commissionadvance|
-|[**commissionadvanceSyncDocumenttypechecklistV1**](#commissionadvancesyncdocumenttypechecklistv1) | **POST** /1/object/commissionadvance/{pkiCommissionadvanceID}/syncDocumenttypechecklist | Synchronize Document type checklist|
 
 # **commissionadvanceBatchDownloadV1**
 > File commissionadvanceBatchDownloadV1(commissionadvanceBatchDownloadV1Request)
@@ -326,57 +324,6 @@ const { status, data } = await apiInstance.commissionadvanceGetCommunicationsend
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **commissionadvanceGetDocumenttypechecklistV1**
-> CommissionadvanceGetDocumenttypechecklistV1Response commissionadvanceGetDocumenttypechecklistV1()
-
-
-### Example
-
-```typescript
-import {
-    ObjectCommissionadvanceApi,
-    Configuration
-} from '@ezmaxinc/ezmax-sdk-typescript-axios';
-
-const configuration = new Configuration();
-const apiInstance = new ObjectCommissionadvanceApi(configuration);
-
-let pkiCommissionadvanceID: number; // (default to undefined)
-
-const { status, data } = await apiInstance.commissionadvanceGetDocumenttypechecklistV1(
-    pkiCommissionadvanceID
-);
-```
-
-### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **pkiCommissionadvanceID** | [**number**] |  | defaults to undefined|
-
-
-### Return type
-
-**CommissionadvanceGetDocumenttypechecklistV1Response**
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-|**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **commissionadvanceImportIntoEDMV1**
 > CommissionadvanceImportIntoEDMV1Response commissionadvanceImportIntoEDMV1(commissionadvanceImportIntoEDMV1Request)
 
@@ -413,60 +360,6 @@ const { status, data } = await apiInstance.commissionadvanceImportIntoEDMV1(
 ### Return type
 
 **CommissionadvanceImportIntoEDMV1Response**
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-|**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **commissionadvanceSyncDocumenttypechecklistV1**
-> CommissionadvanceSyncDocumenttypechecklistV1Response commissionadvanceSyncDocumenttypechecklistV1()
-
-
-### Example
-
-```typescript
-import {
-    ObjectCommissionadvanceApi,
-    Configuration
-} from '@ezmaxinc/ezmax-sdk-typescript-axios';
-
-const configuration = new Configuration();
-const apiInstance = new ObjectCommissionadvanceApi(configuration);
-
-let pkiCommissionadvanceID: number; // (default to undefined)
-let body: object; // (optional)
-
-const { status, data } = await apiInstance.commissionadvanceSyncDocumenttypechecklistV1(
-    pkiCommissionadvanceID,
-    body
-);
-```
-
-### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **body** | **object**|  | |
-| **pkiCommissionadvanceID** | [**number**] |  | defaults to undefined|
-
-
-### Return type
-
-**CommissionadvanceSyncDocumenttypechecklistV1Response**
 
 ### Authorization
 

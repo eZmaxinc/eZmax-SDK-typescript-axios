@@ -10,10 +10,8 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**electronicfundstransferGetCommunicationListV1**](#electronicfundstransfergetcommunicationlistv1) | **GET** /1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/getCommunicationList | Retrieve Communication list|
 |[**electronicfundstransferGetCommunicationrecipientsV1**](#electronicfundstransfergetcommunicationrecipientsv1) | **GET** /1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/getCommunicationrecipients | Retrieve Electronicfundstransfer\&#39;s Communicationrecipient|
 |[**electronicfundstransferGetCommunicationsendersV1**](#electronicfundstransfergetcommunicationsendersv1) | **GET** /1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/getCommunicationsenders | Retrieve Electronicfundstransfer\&#39;s Communicationsender|
-|[**electronicfundstransferGetDocumenttypechecklistV1**](#electronicfundstransfergetdocumenttypechecklistv1) | **GET** /1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/getDocumenttypechecklist | Retrieve Document type checklist|
 |[**electronicfundstransferGetListV1**](#electronicfundstransfergetlistv1) | **GET** /1/object/electronicfundstransfer/getList | Retrieve Electronicfundstransfer list|
 |[**electronicfundstransferImportIntoEDMV1**](#electronicfundstransferimportintoedmv1) | **POST** /1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/importIntoEDM | Import attachments into the Electronicfundstransfer|
-|[**electronicfundstransferSyncDocumenttypechecklistV1**](#electronicfundstransfersyncdocumenttypechecklistv1) | **POST** /1/object/electronicfundstransfer/{pkiElectronicfundstransferID}/syncDocumenttypechecklist | Synchronize Document type checklist|
 
 # **electronicfundstransferBatchDownloadV1**
 > File electronicfundstransferBatchDownloadV1(electronicfundstransferBatchDownloadV1Request)
@@ -331,57 +329,6 @@ const { status, data } = await apiInstance.electronicfundstransferGetCommunicati
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **electronicfundstransferGetDocumenttypechecklistV1**
-> ElectronicfundstransferGetDocumenttypechecklistV1Response electronicfundstransferGetDocumenttypechecklistV1()
-
-
-### Example
-
-```typescript
-import {
-    ObjectElectronicfundstransferApi,
-    Configuration
-} from '@ezmaxinc/ezmax-sdk-typescript-axios';
-
-const configuration = new Configuration();
-const apiInstance = new ObjectElectronicfundstransferApi(configuration);
-
-let pkiElectronicfundstransferID: number; // (default to undefined)
-
-const { status, data } = await apiInstance.electronicfundstransferGetDocumenttypechecklistV1(
-    pkiElectronicfundstransferID
-);
-```
-
-### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **pkiElectronicfundstransferID** | [**number**] |  | defaults to undefined|
-
-
-### Return type
-
-**ElectronicfundstransferGetDocumenttypechecklistV1Response**
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-|**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **electronicfundstransferGetListV1**
 > ElectronicfundstransferGetListV1Response electronicfundstransferGetListV1()
 
@@ -483,60 +430,6 @@ const { status, data } = await apiInstance.electronicfundstransferImportIntoEDMV
 ### Return type
 
 **ElectronicfundstransferImportIntoEDMV1Response**
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-|**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **electronicfundstransferSyncDocumenttypechecklistV1**
-> ElectronicfundstransferSyncDocumenttypechecklistV1Response electronicfundstransferSyncDocumenttypechecklistV1()
-
-
-### Example
-
-```typescript
-import {
-    ObjectElectronicfundstransferApi,
-    Configuration
-} from '@ezmaxinc/ezmax-sdk-typescript-axios';
-
-const configuration = new Configuration();
-const apiInstance = new ObjectElectronicfundstransferApi(configuration);
-
-let pkiElectronicfundstransferID: number; // (default to undefined)
-let body: object; // (optional)
-
-const { status, data } = await apiInstance.electronicfundstransferSyncDocumenttypechecklistV1(
-    pkiElectronicfundstransferID,
-    body
-);
-```
-
-### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **body** | **object**|  | |
-| **pkiElectronicfundstransferID** | [**number**] |  | defaults to undefined|
-
-
-### Return type
-
-**ElectronicfundstransferSyncDocumenttypechecklistV1Response**
 
 ### Authorization
 

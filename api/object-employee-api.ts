@@ -36,15 +36,11 @@ import type { EmployeeGetCommunicationrecipientsV1Response } from '../model';
 // @ts-ignore
 import type { EmployeeGetCommunicationsendersV1Response } from '../model';
 // @ts-ignore
-import type { EmployeeGetDocumenttypechecklistV1Response } from '../model';
-// @ts-ignore
 import type { EmployeeGetListV1Response } from '../model';
 // @ts-ignore
 import type { EmployeeImportIntoEDMV1Request } from '../model';
 // @ts-ignore
 import type { EmployeeImportIntoEDMV1Response } from '../model';
-// @ts-ignore
-import type { EmployeeSyncDocumenttypechecklistV1Response } from '../model';
 // @ts-ignore
 import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
@@ -409,64 +405,6 @@ export const ObjectEmployeeApiAxiosParamCreator = function (configuration?: Conf
         },
         /**
          * 
-         * @summary Retrieve Document type checklist
-         * @param {number} pkiEmployeeID 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        employeeGetDocumenttypechecklistV1: async (pkiEmployeeID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiEmployeeID' is not null or undefined
-            assertParamExists('employeeGetDocumenttypechecklistV1', 'pkiEmployeeID', pkiEmployeeID)
-            const localVarPath = `/1/object/employee/{pkiEmployeeID}/getDocumenttypechecklist`
-                .replace('{pkiEmployeeID}', encodeURIComponent(String(pkiEmployeeID)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-            localVarHeaderParameter['Accept'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'GET' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
          * @summary Retrieve Employee list
          * @param {EmployeeGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -608,67 +546,6 @@ export const ObjectEmployeeApiAxiosParamCreator = function (configuration?: Conf
                 options: localVarRequestOptions,
             };
         },
-        /**
-         * 
-         * @summary Synchronize Document type checklist
-         * @param {number} pkiEmployeeID 
-         * @param {object} [body] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        employeeSyncDocumenttypechecklistV1: async (pkiEmployeeID: number, body?: object, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiEmployeeID' is not null or undefined
-            assertParamExists('employeeSyncDocumenttypechecklistV1', 'pkiEmployeeID', pkiEmployeeID)
-            const localVarPath = `/1/object/employee/{pkiEmployeeID}/syncDocumenttypechecklist`
-                .replace('{pkiEmployeeID}', encodeURIComponent(String(pkiEmployeeID)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-            localVarHeaderParameter['Accept'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'POST' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
     }
 };
 
@@ -759,19 +636,6 @@ export const ObjectEmployeeApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
-         * @summary Retrieve Document type checklist
-         * @param {number} pkiEmployeeID 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async employeeGetDocumenttypechecklistV1(pkiEmployeeID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EmployeeGetDocumenttypechecklistV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.employeeGetDocumenttypechecklistV1(pkiEmployeeID, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ObjectEmployeeApi.employeeGetDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * 
          * @summary Retrieve Employee list
          * @param {EmployeeGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -799,20 +663,6 @@ export const ObjectEmployeeApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.employeeImportIntoEDMV1(pkiEmployeeID, employeeImportIntoEDMV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectEmployeeApi.employeeImportIntoEDMV1']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * 
-         * @summary Synchronize Document type checklist
-         * @param {number} pkiEmployeeID 
-         * @param {object} [body] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async employeeSyncDocumenttypechecklistV1(pkiEmployeeID: number, body?: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<EmployeeSyncDocumenttypechecklistV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.employeeSyncDocumenttypechecklistV1(pkiEmployeeID, body, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ObjectEmployeeApi.employeeSyncDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -887,16 +737,6 @@ export const ObjectEmployeeApiFactory = function (configuration?: Configuration,
         },
         /**
          * 
-         * @summary Retrieve Document type checklist
-         * @param {number} pkiEmployeeID 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        employeeGetDocumenttypechecklistV1(pkiEmployeeID: number, options?: RawAxiosRequestConfig): AxiosPromise<EmployeeGetDocumenttypechecklistV1Response> {
-            return localVarFp.employeeGetDocumenttypechecklistV1(pkiEmployeeID, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
          * @summary Retrieve Employee list
          * @param {EmployeeGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -919,17 +759,6 @@ export const ObjectEmployeeApiFactory = function (configuration?: Configuration,
          */
         employeeImportIntoEDMV1(pkiEmployeeID: number, employeeImportIntoEDMV1Request: EmployeeImportIntoEDMV1Request, options?: RawAxiosRequestConfig): AxiosPromise<EmployeeImportIntoEDMV1Response> {
             return localVarFp.employeeImportIntoEDMV1(pkiEmployeeID, employeeImportIntoEDMV1Request, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary Synchronize Document type checklist
-         * @param {number} pkiEmployeeID 
-         * @param {object} [body] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        employeeSyncDocumenttypechecklistV1(pkiEmployeeID: number, body?: object, options?: RawAxiosRequestConfig): AxiosPromise<EmployeeSyncDocumenttypechecklistV1Response> {
-            return localVarFp.employeeSyncDocumenttypechecklistV1(pkiEmployeeID, body, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -1007,17 +836,6 @@ export class ObjectEmployeeApi extends BaseAPI {
 
     /**
      * 
-     * @summary Retrieve Document type checklist
-     * @param {number} pkiEmployeeID 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    public employeeGetDocumenttypechecklistV1(pkiEmployeeID: number, options?: RawAxiosRequestConfig) {
-        return ObjectEmployeeApiFp(this.configuration).employeeGetDocumenttypechecklistV1(pkiEmployeeID, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
      * @summary Retrieve Employee list
      * @param {EmployeeGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
      * @param {number} [iRowMax] 
@@ -1041,18 +859,6 @@ export class ObjectEmployeeApi extends BaseAPI {
      */
     public employeeImportIntoEDMV1(pkiEmployeeID: number, employeeImportIntoEDMV1Request: EmployeeImportIntoEDMV1Request, options?: RawAxiosRequestConfig) {
         return ObjectEmployeeApiFp(this.configuration).employeeImportIntoEDMV1(pkiEmployeeID, employeeImportIntoEDMV1Request, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Synchronize Document type checklist
-     * @param {number} pkiEmployeeID 
-     * @param {object} [body] 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    public employeeSyncDocumenttypechecklistV1(pkiEmployeeID: number, body?: object, options?: RawAxiosRequestConfig) {
-        return ObjectEmployeeApiFp(this.configuration).employeeSyncDocumenttypechecklistV1(pkiEmployeeID, body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

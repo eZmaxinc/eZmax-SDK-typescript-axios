@@ -36,13 +36,9 @@ import type { FolderGetCommunicationrecipientsV1Response } from '../model';
 // @ts-ignore
 import type { FolderGetCommunicationsendersV1Response } from '../model';
 // @ts-ignore
-import type { FolderGetDocumenttypechecklistV1Response } from '../model';
-// @ts-ignore
 import type { FolderImportIntoEDMV1Request } from '../model';
 // @ts-ignore
 import type { FolderImportIntoEDMV1Response } from '../model';
-// @ts-ignore
-import type { FolderSyncDocumenttypechecklistV1Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -405,64 +401,6 @@ export const ObjectFolderApiAxiosParamCreator = function (configuration?: Config
         },
         /**
          * 
-         * @summary Retrieve Document type checklist
-         * @param {number} pkiFolderID 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        folderGetDocumenttypechecklistV1: async (pkiFolderID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiFolderID' is not null or undefined
-            assertParamExists('folderGetDocumenttypechecklistV1', 'pkiFolderID', pkiFolderID)
-            const localVarPath = `/1/object/folder/{pkiFolderID}/getDocumenttypechecklist`
-                .replace('{pkiFolderID}', encodeURIComponent(String(pkiFolderID)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-            localVarHeaderParameter['Accept'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'GET' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
          * @summary Import attachments into the Folder
          * @param {number} pkiFolderID 
          * @param {FolderImportIntoEDMV1Request} folderImportIntoEDMV1Request 
@@ -502,67 +440,6 @@ export const ObjectFolderApiAxiosParamCreator = function (configuration?: Config
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(folderImportIntoEDMV1Request, localVarRequestOptions, configuration)
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'POST' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
-         * 
-         * @summary Synchronize Document type checklist
-         * @param {number} pkiFolderID 
-         * @param {object} [body] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        folderSyncDocumenttypechecklistV1: async (pkiFolderID: number, body?: object, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiFolderID' is not null or undefined
-            assertParamExists('folderSyncDocumenttypechecklistV1', 'pkiFolderID', pkiFolderID)
-            const localVarPath = `/1/object/folder/{pkiFolderID}/syncDocumenttypechecklist`
-                .replace('{pkiFolderID}', encodeURIComponent(String(pkiFolderID)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-            localVarHeaderParameter['Accept'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -675,19 +552,6 @@ export const ObjectFolderApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
-         * @summary Retrieve Document type checklist
-         * @param {number} pkiFolderID 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async folderGetDocumenttypechecklistV1(pkiFolderID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<FolderGetDocumenttypechecklistV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.folderGetDocumenttypechecklistV1(pkiFolderID, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ObjectFolderApi.folderGetDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * 
          * @summary Import attachments into the Folder
          * @param {number} pkiFolderID 
          * @param {FolderImportIntoEDMV1Request} folderImportIntoEDMV1Request 
@@ -698,20 +562,6 @@ export const ObjectFolderApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.folderImportIntoEDMV1(pkiFolderID, folderImportIntoEDMV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectFolderApi.folderImportIntoEDMV1']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * 
-         * @summary Synchronize Document type checklist
-         * @param {number} pkiFolderID 
-         * @param {object} [body] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async folderSyncDocumenttypechecklistV1(pkiFolderID: number, body?: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<FolderSyncDocumenttypechecklistV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.folderSyncDocumenttypechecklistV1(pkiFolderID, body, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ObjectFolderApi.folderSyncDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -786,16 +636,6 @@ export const ObjectFolderApiFactory = function (configuration?: Configuration, b
         },
         /**
          * 
-         * @summary Retrieve Document type checklist
-         * @param {number} pkiFolderID 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        folderGetDocumenttypechecklistV1(pkiFolderID: number, options?: RawAxiosRequestConfig): AxiosPromise<FolderGetDocumenttypechecklistV1Response> {
-            return localVarFp.folderGetDocumenttypechecklistV1(pkiFolderID, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
          * @summary Import attachments into the Folder
          * @param {number} pkiFolderID 
          * @param {FolderImportIntoEDMV1Request} folderImportIntoEDMV1Request 
@@ -804,17 +644,6 @@ export const ObjectFolderApiFactory = function (configuration?: Configuration, b
          */
         folderImportIntoEDMV1(pkiFolderID: number, folderImportIntoEDMV1Request: FolderImportIntoEDMV1Request, options?: RawAxiosRequestConfig): AxiosPromise<FolderImportIntoEDMV1Response> {
             return localVarFp.folderImportIntoEDMV1(pkiFolderID, folderImportIntoEDMV1Request, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
-         * @summary Synchronize Document type checklist
-         * @param {number} pkiFolderID 
-         * @param {object} [body] 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        folderSyncDocumenttypechecklistV1(pkiFolderID: number, body?: object, options?: RawAxiosRequestConfig): AxiosPromise<FolderSyncDocumenttypechecklistV1Response> {
-            return localVarFp.folderSyncDocumenttypechecklistV1(pkiFolderID, body, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -892,17 +721,6 @@ export class ObjectFolderApi extends BaseAPI {
 
     /**
      * 
-     * @summary Retrieve Document type checklist
-     * @param {number} pkiFolderID 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    public folderGetDocumenttypechecklistV1(pkiFolderID: number, options?: RawAxiosRequestConfig) {
-        return ObjectFolderApiFp(this.configuration).folderGetDocumenttypechecklistV1(pkiFolderID, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
      * @summary Import attachments into the Folder
      * @param {number} pkiFolderID 
      * @param {FolderImportIntoEDMV1Request} folderImportIntoEDMV1Request 
@@ -911,18 +729,6 @@ export class ObjectFolderApi extends BaseAPI {
      */
     public folderImportIntoEDMV1(pkiFolderID: number, folderImportIntoEDMV1Request: FolderImportIntoEDMV1Request, options?: RawAxiosRequestConfig) {
         return ObjectFolderApiFp(this.configuration).folderImportIntoEDMV1(pkiFolderID, folderImportIntoEDMV1Request, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * 
-     * @summary Synchronize Document type checklist
-     * @param {number} pkiFolderID 
-     * @param {object} [body] 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    public folderSyncDocumenttypechecklistV1(pkiFolderID: number, body?: object, options?: RawAxiosRequestConfig) {
-        return ObjectFolderApiFp(this.configuration).folderSyncDocumenttypechecklistV1(pkiFolderID, body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 
