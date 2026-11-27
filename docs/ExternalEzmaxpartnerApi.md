@@ -4,12 +4,12 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
-|[**ezmaxpartnerSubscribeV1**](#ezmaxpartnersubscribev1) | **POST** /1/external/ezmaxpartner/subscribe | Subscribe to an Ezmaxparnerproductstage|
+|[**ezmaxpartnerSubscribeV1**](#ezmaxpartnersubscribev1) | **POST** /1/external/ezmaxpartner/subscribe | Subscribe to an Ezmaxpartnerproductstage|
 
 # **ezmaxpartnerSubscribeV1**
 > EzmaxpartnerSubscribeV1Response ezmaxpartnerSubscribeV1(ezmaxpartnerSubscribeV1Request)
 
-Subscribe to an Ezmaxparnerproductstage
+Subscribe to an Ezmaxpartnerproductstage
 
 ### Example
 
@@ -55,6 +55,8 @@ const { status, data } = await apiInstance.ezmaxpartnerSubscribeV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Successful response |  -  |
+|**403** | The request is not allowed to be executed. Look for detail about the error in the body. |  -  |
+|**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

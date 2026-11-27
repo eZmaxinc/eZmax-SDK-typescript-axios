@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **a_objAttempt** | [**Array&lt;AttemptResponseCompound&gt;**](AttemptResponseCompound.md) | An array containing details of previous attempts that were made to deliver the message. The array is empty if it\&#39;s the first attempt. | [default to undefined]
 **objEzmaxpartnerproduct** | [**CustomEzmaxpartnerproductSubscribe**](CustomEzmaxpartnerproductSubscribe.md) |  | [default to undefined]
 **sExternalID** | **string** |  | [optional] [default to undefined]
-**sApikeyApikey** | **string** |  | [optional] [default to undefined]
-**sApikeySecret** | **string** |  | [optional] [default to undefined]
+**sApikeyApikey** | **string** | The Apikey for the API key.  This will be hidden if we are not creating or regenerating the Apikey. | [default to undefined]
+**sApikeySecret** | **string** | The secret of the Apikey | [default to undefined]
 
 ## Example
 

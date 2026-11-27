@@ -4,8 +4,324 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
+|[**leadBatchDownloadV1**](#leadbatchdownloadv1) | **POST** /1/object/lead/{pkiLeadID}/batchDownload | Download multiples attachments from a Lead|
+|[**leadGetAttachmentsV1**](#leadgetattachmentsv1) | **GET** /1/object/lead/{pkiLeadID}/getAttachments | Retrieve Lead\&#39;s attachments|
+|[**leadGetCommunicationCountV1**](#leadgetcommunicationcountv1) | **GET** /1/object/lead/{pkiLeadID}/getCommunicationCount | Retrieve Communication count|
+|[**leadGetCommunicationListV1**](#leadgetcommunicationlistv1) | **GET** /1/object/lead/{pkiLeadID}/getCommunicationList | Retrieve Communication list|
+|[**leadGetCommunicationrecipientsV1**](#leadgetcommunicationrecipientsv1) | **GET** /1/object/lead/{pkiLeadID}/getCommunicationrecipients | Retrieve Communication recipients|
+|[**leadGetCommunicationsendersV1**](#leadgetcommunicationsendersv1) | **GET** /1/object/lead/{pkiLeadID}/getCommunicationsenders | Retrieve Communication senders|
 |[**leadGetListV1**](#leadgetlistv1) | **GET** /1/object/lead/getList | Retrieve Lead list|
 |[**leadImportIntoEDMV1**](#leadimportintoedmv1) | **POST** /1/object/lead/{pkiLeadID}/importIntoEDM | Import attachments into the Lead|
+
+# **leadBatchDownloadV1**
+> File leadBatchDownloadV1(leadBatchDownloadV1Request)
+
+
+### Example
+
+```typescript
+import {
+    ObjectLeadApi,
+    Configuration,
+    LeadBatchDownloadV1Request
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectLeadApi(configuration);
+
+let pkiLeadID: number; // (default to undefined)
+let leadBatchDownloadV1Request: LeadBatchDownloadV1Request; //
+
+const { status, data } = await apiInstance.leadBatchDownloadV1(
+    pkiLeadID,
+    leadBatchDownloadV1Request
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **leadBatchDownloadV1Request** | **LeadBatchDownloadV1Request**|  | |
+| **pkiLeadID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**File**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/zip, text/xml, application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **leadGetAttachmentsV1**
+> LeadGetAttachmentsV1Response leadGetAttachmentsV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectLeadApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectLeadApi(configuration);
+
+let pkiLeadID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.leadGetAttachmentsV1(
+    pkiLeadID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiLeadID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**LeadGetAttachmentsV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **leadGetCommunicationCountV1**
+> LeadGetCommunicationCountV1Response leadGetCommunicationCountV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectLeadApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectLeadApi(configuration);
+
+let pkiLeadID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.leadGetCommunicationCountV1(
+    pkiLeadID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiLeadID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**LeadGetCommunicationCountV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **leadGetCommunicationListV1**
+> LeadGetCommunicationListV1Response leadGetCommunicationListV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectLeadApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectLeadApi(configuration);
+
+let pkiLeadID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.leadGetCommunicationListV1(
+    pkiLeadID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiLeadID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**LeadGetCommunicationListV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **leadGetCommunicationrecipientsV1**
+> LeadGetCommunicationrecipientsV1Response leadGetCommunicationrecipientsV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectLeadApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectLeadApi(configuration);
+
+let pkiLeadID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.leadGetCommunicationrecipientsV1(
+    pkiLeadID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiLeadID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**LeadGetCommunicationrecipientsV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **leadGetCommunicationsendersV1**
+> LeadGetCommunicationsendersV1Response leadGetCommunicationsendersV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectLeadApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectLeadApi(configuration);
+
+let pkiLeadID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.leadGetCommunicationsendersV1(
+    pkiLeadID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiLeadID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**LeadGetCommunicationsendersV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **leadGetListV1**
 > LeadGetListV1Response leadGetListV1()
@@ -123,7 +439,7 @@ const { status, data } = await apiInstance.leadImportIntoEDMV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -21,8 +21,9 @@ Name | Type | Description | Notes
 **iAgentLongdistancecode** | **number** | The longdistancecode of the Agent | [default to undefined]
 **iAgentBannernumber** | **number** | The bannernumber of the Agent | [default to undefined]
 **sAgentRealestateassociationlicense** | **string** | The realestateassociationlicense of the Agent | [default to undefined]
-**dtAgentHiredate** | **string** | The hiredate of the Agent | [optional] [default to undefined]
-**dtAgentLeavedate** | **string** | The leavedate of the Agent | [optional] [default to undefined]
+**dtAgentPermitexpiration** | **string** | The expiration date of permit of the Agent | [optional] [default to undefined]
+**dtAgentHiredate** | **string** | The hire date of the Agent | [optional] [default to undefined]
+**dtAgentLeavedate** | **string** | The leave date of the Agent | [optional] [default to undefined]
 **dtAgentContractdate** | **string** | The contract date of the Agent | [optional] [default to undefined]
 **dtAgentTransferdate** | **string** | The transfer date of the Agent | [optional] [default to undefined]
 **dtAgentSenioritydate** | **string** | The seniority date of the Agent | [optional] [default to undefined]
@@ -72,6 +73,7 @@ const instance: AgentListElement = {
     iAgentLongdistancecode,
     iAgentBannernumber,
     sAgentRealestateassociationlicense,
+    dtAgentPermitexpiration,
     dtAgentHiredate,
     dtAgentLeavedate,
     dtAgentContractdate,

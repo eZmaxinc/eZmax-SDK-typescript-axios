@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **eWebhookModule** | [**FieldEWebhookModule**](FieldEWebhookModule.md) |  | [default to undefined]
 **eWebhookEzsignevent** | [**CustomEWebhookEzsignevent**](CustomEWebhookEzsignevent.md) |  | [optional] [default to undefined]
+**eWebhookEzmaxpartnerevent** | [**FieldEWebhookEzmaxpartnerevent**](FieldEWebhookEzmaxpartnerevent.md) |  | [optional] [default to undefined]
 **eWebhookManagementevent** | [**FieldEWebhookManagementevent**](FieldEWebhookManagementevent.md) |  | [optional] [default to undefined]
 **eWebhookRealestateevent** | [**FieldEWebhookRealestateevent**](FieldEWebhookRealestateevent.md) |  | [optional] [default to undefined]
 **fkiEzsignfolderID** | **number** | The unique ID of the Ezsignfolder | [optional] [default to undefined]
@@ -24,6 +25,7 @@ import { WebhookSendWebhookV1Request } from '@ezmaxinc/ezmax-sdk-typescript-axio
 const instance: WebhookSendWebhookV1Request = {
     eWebhookModule,
     eWebhookEzsignevent,
+    eWebhookEzmaxpartnerevent,
     eWebhookManagementevent,
     eWebhookRealestateevent,
     fkiEzsignfolderID,

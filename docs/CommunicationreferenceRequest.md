@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **fkiBuyercontractID** | **number** | The unique ID of the Buyercontract | [optional] [default to undefined]
 **fkiEzsignfolderID** | **number** | The unique ID of the Ezsignfolder | [optional] [default to undefined]
 **fkiInscriptionID** | **number** | The unique ID of the Inscription. | [optional] [default to undefined]
+**fkiInscriptionnotauthenticatedID** | **number** | The unique ID of the Inscriptionnotauthenticated. | [optional] [default to undefined]
 **fkiInscriptiontempID** | **number** | The unique ID of the Inscriptiontemp | [optional] [default to undefined]
 **fkiInvoiceID** | **number** | The unique ID of the Invoice. | [optional] [default to undefined]
 **fkiOtherincomeID** | **number** | The unique ID of the Otherincome | [optional] [default to undefined]
@@ -26,6 +27,7 @@ const instance: CommunicationreferenceRequest = {
     fkiBuyercontractID,
     fkiEzsignfolderID,
     fkiInscriptionID,
+    fkiInscriptionnotauthenticatedID,
     fkiInscriptiontempID,
     fkiInvoiceID,
     fkiOtherincomeID,

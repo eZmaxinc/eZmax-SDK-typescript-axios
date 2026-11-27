@@ -179,8 +179,8 @@ const { status, data } = await apiInstance.userEditColleaguesV2(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
-|**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+|**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -236,8 +236,8 @@ const { status, data } = await apiInstance.userEditObjectV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
-|**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+|**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -293,8 +293,8 @@ const { status, data } = await apiInstance.userEditPermissionsV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
-|**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+|**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -345,7 +345,7 @@ const { status, data } = await apiInstance.userGetApikeysV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -365,14 +365,16 @@ import {
 const configuration = new Configuration();
 const apiInstance = new ObjectUserApi(configuration);
 
-let sSelector: 'AgentBrokerAssistant' | 'AgentBrokerEmployeeEzsignUserNormalWithoutEzmaxpartner' | 'AgentBrokerEmployeeEzsignUserNormal' | 'AgentBrokerEmployeeNormalBuiltIn' | 'AgentBrokerEzsignuserNormal' | 'ClonableUsers' | 'EzsignuserBuiltIn' | 'Ezsignuser' | 'Normal' | 'UsergroupDelegated'; //The type of Users to return (default to undefined)
+let sSelector: 'AgentBrokerAssistant' | 'AgentBrokerEmployeeEzsignUserNormalWithoutEzmaxpartner' | 'AgentBrokerEmployeeEzsignUserNormal' | 'AgentBrokerEmployeeNormalBuiltIn' | 'AgentBrokerEzsignuserNormal' | 'AttachmentSpecificUser' | 'ClonableUsers' | 'EzsignuserBuiltIn' | 'Ezsignuser' | 'Normal' | 'UsergroupDelegated'; //The type of Users to return (default to undefined)
 let eFilterActive: 'All' | 'Active' | 'Inactive'; //Specify which results we want to display. (optional) (default to 'Active')
+let fkiAttachmentID: string; //Specify for which fkiAttachmentID we want to find users for. Only used when sSelector is AttachmentSpecificUser. (optional) (default to undefined)
 let sQuery: string; //Allow to filter the returned results (optional) (default to undefined)
 let acceptLanguage: HeaderAcceptLanguage; // (optional) (default to undefined)
 
 const { status, data } = await apiInstance.userGetAutocompleteV2(
     sSelector,
     eFilterActive,
+    fkiAttachmentID,
     sQuery,
     acceptLanguage
 );
@@ -382,8 +384,9 @@ const { status, data } = await apiInstance.userGetAutocompleteV2(
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **sSelector** | [**&#39;AgentBrokerAssistant&#39; | &#39;AgentBrokerEmployeeEzsignUserNormalWithoutEzmaxpartner&#39; | &#39;AgentBrokerEmployeeEzsignUserNormal&#39; | &#39;AgentBrokerEmployeeNormalBuiltIn&#39; | &#39;AgentBrokerEzsignuserNormal&#39; | &#39;ClonableUsers&#39; | &#39;EzsignuserBuiltIn&#39; | &#39;Ezsignuser&#39; | &#39;Normal&#39; | &#39;UsergroupDelegated&#39;**]**Array<&#39;AgentBrokerAssistant&#39; &#124; &#39;AgentBrokerEmployeeEzsignUserNormalWithoutEzmaxpartner&#39; &#124; &#39;AgentBrokerEmployeeEzsignUserNormal&#39; &#124; &#39;AgentBrokerEmployeeNormalBuiltIn&#39; &#124; &#39;AgentBrokerEzsignuserNormal&#39; &#124; &#39;ClonableUsers&#39; &#124; &#39;EzsignuserBuiltIn&#39; &#124; &#39;Ezsignuser&#39; &#124; &#39;Normal&#39; &#124; &#39;UsergroupDelegated&#39;>** | The type of Users to return | defaults to undefined|
+| **sSelector** | [**&#39;AgentBrokerAssistant&#39; | &#39;AgentBrokerEmployeeEzsignUserNormalWithoutEzmaxpartner&#39; | &#39;AgentBrokerEmployeeEzsignUserNormal&#39; | &#39;AgentBrokerEmployeeNormalBuiltIn&#39; | &#39;AgentBrokerEzsignuserNormal&#39; | &#39;AttachmentSpecificUser&#39; | &#39;ClonableUsers&#39; | &#39;EzsignuserBuiltIn&#39; | &#39;Ezsignuser&#39; | &#39;Normal&#39; | &#39;UsergroupDelegated&#39;**]**Array<&#39;AgentBrokerAssistant&#39; &#124; &#39;AgentBrokerEmployeeEzsignUserNormalWithoutEzmaxpartner&#39; &#124; &#39;AgentBrokerEmployeeEzsignUserNormal&#39; &#124; &#39;AgentBrokerEmployeeNormalBuiltIn&#39; &#124; &#39;AgentBrokerEzsignuserNormal&#39; &#124; &#39;AttachmentSpecificUser&#39; &#124; &#39;ClonableUsers&#39; &#124; &#39;EzsignuserBuiltIn&#39; &#124; &#39;Ezsignuser&#39; &#124; &#39;Normal&#39; &#124; &#39;UsergroupDelegated&#39;>** | The type of Users to return | defaults to undefined|
 | **eFilterActive** | [**&#39;All&#39; | &#39;Active&#39; | &#39;Inactive&#39;**]**Array<&#39;All&#39; &#124; &#39;Active&#39; &#124; &#39;Inactive&#39;>** | Specify which results we want to display. | (optional) defaults to 'Active'|
+| **fkiAttachmentID** | [**string**] | Specify for which fkiAttachmentID we want to find users for. Only used when sSelector is AttachmentSpecificUser. | (optional) defaults to undefined|
 | **sQuery** | [**string**] | Allow to filter the returned results | (optional) defaults to undefined|
 | **acceptLanguage** | **HeaderAcceptLanguage** |  | (optional) defaults to undefined|
 
@@ -456,7 +459,7 @@ const { status, data } = await apiInstance.userGetColleaguesV2(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -508,7 +511,7 @@ const { status, data } = await apiInstance.userGetEffectivePermissionsV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -560,8 +563,8 @@ const { status, data } = await apiInstance.userGetEzmaxcustomeruserV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
-|**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+|**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -581,7 +584,7 @@ import {
 const configuration = new Configuration();
 const apiInstance = new ObjectUserApi(configuration);
 
-let eOrderBy: 'pkiUserID_ASC' | 'pkiUserID_DESC' | 'sUserFirstname_ASC' | 'sUserFirstname_DESC' | 'sUserLastname_ASC' | 'sUserLastname_DESC' | 'sUserLoginname_ASC' | 'sUserLoginname_DESC' | 'bUserIsactive_ASC' | 'bUserIsactive_DESC' | 'eUserType_ASC' | 'eUserType_DESC' | 'eUserOrigin_ASC' | 'eUserOrigin_DESC' | 'eUserEzsignaccess_ASC' | 'eUserEzsignaccess_DESC' | 'dtUserEzsignprepaidexpiration_ASC' | 'dtUserEzsignprepaidexpiration_DESC' | 'sEmailAddress_ASC' | 'sEmailAddress_DESC' | 'bUserSuspended_ASC' | 'bUserSuspended_DESC'; //Specify how you want the results to be sorted (optional) (default to undefined)
+let eOrderBy: 'pkiUserID_ASC' | 'pkiUserID_DESC' | 'fkiAgentID_ASC' | 'fkiAgentID_DESC' | 'fkiBrokerID_ASC' | 'fkiBrokerID_DESC' | 'sUserFirstname_ASC' | 'sUserFirstname_DESC' | 'sUserLastname_ASC' | 'sUserLastname_DESC' | 'sUserLoginname_ASC' | 'sUserLoginname_DESC' | 'bUserIsactive_ASC' | 'bUserIsactive_DESC' | 'eUserType_ASC' | 'eUserType_DESC' | 'eUserOrigin_ASC' | 'eUserOrigin_DESC' | 'eUserEzsignaccess_ASC' | 'eUserEzsignaccess_DESC' | 'dtUserEzsignprepaidexpiration_ASC' | 'dtUserEzsignprepaidexpiration_DESC' | 'sEmailAddress_ASC' | 'sEmailAddress_DESC' | 'bUserSuspended_ASC' | 'bUserSuspended_DESC'; //Specify how you want the results to be sorted (optional) (default to undefined)
 let iRowMax: number; // (optional) (default to undefined)
 let iRowOffset: number; // (optional) (default to 0)
 let acceptLanguage: HeaderAcceptLanguage; // (optional) (default to undefined)
@@ -600,7 +603,7 @@ const { status, data } = await apiInstance.userGetListV1(
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **eOrderBy** | [**&#39;pkiUserID_ASC&#39; | &#39;pkiUserID_DESC&#39; | &#39;sUserFirstname_ASC&#39; | &#39;sUserFirstname_DESC&#39; | &#39;sUserLastname_ASC&#39; | &#39;sUserLastname_DESC&#39; | &#39;sUserLoginname_ASC&#39; | &#39;sUserLoginname_DESC&#39; | &#39;bUserIsactive_ASC&#39; | &#39;bUserIsactive_DESC&#39; | &#39;eUserType_ASC&#39; | &#39;eUserType_DESC&#39; | &#39;eUserOrigin_ASC&#39; | &#39;eUserOrigin_DESC&#39; | &#39;eUserEzsignaccess_ASC&#39; | &#39;eUserEzsignaccess_DESC&#39; | &#39;dtUserEzsignprepaidexpiration_ASC&#39; | &#39;dtUserEzsignprepaidexpiration_DESC&#39; | &#39;sEmailAddress_ASC&#39; | &#39;sEmailAddress_DESC&#39; | &#39;bUserSuspended_ASC&#39; | &#39;bUserSuspended_DESC&#39;**]**Array<&#39;pkiUserID_ASC&#39; &#124; &#39;pkiUserID_DESC&#39; &#124; &#39;sUserFirstname_ASC&#39; &#124; &#39;sUserFirstname_DESC&#39; &#124; &#39;sUserLastname_ASC&#39; &#124; &#39;sUserLastname_DESC&#39; &#124; &#39;sUserLoginname_ASC&#39; &#124; &#39;sUserLoginname_DESC&#39; &#124; &#39;bUserIsactive_ASC&#39; &#124; &#39;bUserIsactive_DESC&#39; &#124; &#39;eUserType_ASC&#39; &#124; &#39;eUserType_DESC&#39; &#124; &#39;eUserOrigin_ASC&#39; &#124; &#39;eUserOrigin_DESC&#39; &#124; &#39;eUserEzsignaccess_ASC&#39; &#124; &#39;eUserEzsignaccess_DESC&#39; &#124; &#39;dtUserEzsignprepaidexpiration_ASC&#39; &#124; &#39;dtUserEzsignprepaidexpiration_DESC&#39; &#124; &#39;sEmailAddress_ASC&#39; &#124; &#39;sEmailAddress_DESC&#39; &#124; &#39;bUserSuspended_ASC&#39; &#124; &#39;bUserSuspended_DESC&#39;>** | Specify how you want the results to be sorted | (optional) defaults to undefined|
+| **eOrderBy** | [**&#39;pkiUserID_ASC&#39; | &#39;pkiUserID_DESC&#39; | &#39;fkiAgentID_ASC&#39; | &#39;fkiAgentID_DESC&#39; | &#39;fkiBrokerID_ASC&#39; | &#39;fkiBrokerID_DESC&#39; | &#39;sUserFirstname_ASC&#39; | &#39;sUserFirstname_DESC&#39; | &#39;sUserLastname_ASC&#39; | &#39;sUserLastname_DESC&#39; | &#39;sUserLoginname_ASC&#39; | &#39;sUserLoginname_DESC&#39; | &#39;bUserIsactive_ASC&#39; | &#39;bUserIsactive_DESC&#39; | &#39;eUserType_ASC&#39; | &#39;eUserType_DESC&#39; | &#39;eUserOrigin_ASC&#39; | &#39;eUserOrigin_DESC&#39; | &#39;eUserEzsignaccess_ASC&#39; | &#39;eUserEzsignaccess_DESC&#39; | &#39;dtUserEzsignprepaidexpiration_ASC&#39; | &#39;dtUserEzsignprepaidexpiration_DESC&#39; | &#39;sEmailAddress_ASC&#39; | &#39;sEmailAddress_DESC&#39; | &#39;bUserSuspended_ASC&#39; | &#39;bUserSuspended_DESC&#39;**]**Array<&#39;pkiUserID_ASC&#39; &#124; &#39;pkiUserID_DESC&#39; &#124; &#39;fkiAgentID_ASC&#39; &#124; &#39;fkiAgentID_DESC&#39; &#124; &#39;fkiBrokerID_ASC&#39; &#124; &#39;fkiBrokerID_DESC&#39; &#124; &#39;sUserFirstname_ASC&#39; &#124; &#39;sUserFirstname_DESC&#39; &#124; &#39;sUserLastname_ASC&#39; &#124; &#39;sUserLastname_DESC&#39; &#124; &#39;sUserLoginname_ASC&#39; &#124; &#39;sUserLoginname_DESC&#39; &#124; &#39;bUserIsactive_ASC&#39; &#124; &#39;bUserIsactive_DESC&#39; &#124; &#39;eUserType_ASC&#39; &#124; &#39;eUserType_DESC&#39; &#124; &#39;eUserOrigin_ASC&#39; &#124; &#39;eUserOrigin_DESC&#39; &#124; &#39;eUserEzsignaccess_ASC&#39; &#124; &#39;eUserEzsignaccess_DESC&#39; &#124; &#39;dtUserEzsignprepaidexpiration_ASC&#39; &#124; &#39;dtUserEzsignprepaidexpiration_DESC&#39; &#124; &#39;sEmailAddress_ASC&#39; &#124; &#39;sEmailAddress_DESC&#39; &#124; &#39;bUserSuspended_ASC&#39; &#124; &#39;bUserSuspended_DESC&#39;>** | Specify how you want the results to be sorted | (optional) defaults to undefined|
 | **iRowMax** | [**number**] |  | (optional) defaults to undefined|
 | **iRowOffset** | [**number**] |  | (optional) defaults to 0|
 | **acceptLanguage** | **HeaderAcceptLanguage** |  | (optional) defaults to undefined|
@@ -677,7 +680,7 @@ const { status, data } = await apiInstance.userGetObjectV2(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -728,7 +731,7 @@ const { status, data } = await apiInstance.userGetPermissionsV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -779,7 +782,7 @@ const { status, data } = await apiInstance.userGetSubnetsV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -830,7 +833,7 @@ const { status, data } = await apiInstance.userGetUsergroupexternalsV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -881,7 +884,7 @@ const { status, data } = await apiInstance.userGetUsergroupsV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -937,8 +940,8 @@ const { status, data } = await apiInstance.userImpersonateV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
-|**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+|**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -993,8 +996,8 @@ const { status, data } = await apiInstance.userSendPasswordResetV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
-|**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+|**422** | The request was syntactically valid but failed because of an interdependance condition. Look for detail about the error in the body. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

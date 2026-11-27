@@ -47,7 +47,8 @@ Name | Type | Description | Notes
 **fkiSupplierID** | **number** | The unique ID of the Supplier. | [optional] [default to undefined]
 **fkiTranqcontractID** | **number** | The unique ID of the Tranqcontract | [optional] [default to undefined]
 **fkiTemplateID** | **number** | The unique ID of the Template | [optional] [default to undefined]
-**fkiInscriptionchecklistID** | **number** | The unique ID of the Inscriptionchecklist | [optional] [default to undefined]
+**fkiDocumenttypechecklistID** | **number** | The unique ID of the Documenttypechecklist | [optional] [default to undefined]
+**sDocumenttypeNameX** | **string** | The name of the document type in the requester\&#39;s language | [optional] [default to undefined]
 **fkiFolderID** | **number** | The unique ID of the Folder | [optional] [default to undefined]
 **fkiRejectedoffertopurchaseID** | **number** | The unique ID of the Rejectedoffertopurchase | [optional] [default to undefined]
 **fkiDisclosureID** | **number** | The unique ID of the Disclosure | [optional] [default to undefined]
@@ -55,14 +56,16 @@ Name | Type | Description | Notes
 **fkiEzsigndocumentIDReference** | **number** | The unique ID of the Ezsigndocument | [optional] [default to undefined]
 **eAttachmentDocumenttype** | [**FieldEAttachmentDocumenttype**](FieldEAttachmentDocumenttype.md) |  | [default to undefined]
 **sAttachmentName** | **string** | The name of the Attachment | [default to undefined]
+**sAttachmentCategory** | **string** | The attachment category | [default to undefined]
 **eAttachmentPrivacy** | [**FieldEAttachmentPrivacy**](FieldEAttachmentPrivacy.md) |  | [default to undefined]
 **fkiUserIDSpecific** | **number** | The unique ID of the User | [optional] [default to undefined]
+**objUserSpecific** | [**CustomUserNameResponse**](CustomUserNameResponse.md) |  | [optional] [default to undefined]
 **eAttachmentType** | [**FieldEAttachmentType**](FieldEAttachmentType.md) |  | [default to undefined]
 **iAttachmentSize** | **number** | The size of the Attachment | [default to undefined]
 **iAttachmentEDMmoduleflag** | **number** | The edmmoduleflag of the Attachment | [optional] [default to undefined]
 **sAttachmentMD5** | **string** | The MD5 of the Attachment | [default to undefined]
-**bAttachmentDeleted** | **boolean** | Whether if it\&#39;s deleted | [default to undefined]
-**bAttachmentValid** | **boolean** | Whether if it\&#39;s valid | [default to undefined]
+**bAttachmentDeleted** | **boolean** | Whether the Attachment is deleted or not | [default to undefined]
+**bAttachmentValid** | **boolean** | Whether the Attachment is valid or not | [default to undefined]
 **eAttachmentVerified** | [**FieldEAttachmentVerified**](FieldEAttachmentVerified.md) |  | [default to undefined]
 **tAttachmentRejectioncomment** | **string** | The rejectioncomment of the Attachment | [optional] [default to undefined]
 **fkiUserIDOwner** | **number** | The unique ID of the User | [optional] [default to undefined]
@@ -119,7 +122,8 @@ const instance: CustomAttachmentResponse = {
     fkiSupplierID,
     fkiTranqcontractID,
     fkiTemplateID,
-    fkiInscriptionchecklistID,
+    fkiDocumenttypechecklistID,
+    sDocumenttypeNameX,
     fkiFolderID,
     fkiRejectedoffertopurchaseID,
     fkiDisclosureID,
@@ -127,8 +131,10 @@ const instance: CustomAttachmentResponse = {
     fkiEzsigndocumentIDReference,
     eAttachmentDocumenttype,
     sAttachmentName,
+    sAttachmentCategory,
     eAttachmentPrivacy,
     fkiUserIDSpecific,
+    objUserSpecific,
     eAttachmentType,
     iAttachmentSize,
     iAttachmentEDMmoduleflag,

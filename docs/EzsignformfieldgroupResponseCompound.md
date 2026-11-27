@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **sEzsignformfieldgroupTextvalidationcustommessage** | **string** | Description of validation rule. Show by signatory. | [optional] [default to undefined]
 **tEzsignformfieldgroupTooltip** | **string** | A tooltip that will be presented to Ezsignsigner about the Ezsignformfieldgroup | [optional] [default to undefined]
 **eEzsignformfieldgroupTooltipposition** | [**FieldEEzsignformfieldgroupTooltipposition**](FieldEEzsignformfieldgroupTooltipposition.md) |  | [optional] [default to undefined]
+**dtEzsignformfieldgroupCompleted** | **string** | The date the Ezsignformfieldgroup was completed. | [optional] [default to undefined]
 **a_objEzsignformfield** | [**Array&lt;EzsignformfieldResponseCompound&gt;**](EzsignformfieldResponseCompound.md) |  | [default to undefined]
 **a_objDropdownElement** | [**Array&lt;CustomDropdownElementResponseCompound&gt;**](CustomDropdownElementResponseCompound.md) |  | [optional] [default to undefined]
 **a_objEzsignformfieldgroupsigner** | [**Array&lt;EzsignformfieldgroupsignerResponseCompound&gt;**](EzsignformfieldgroupsignerResponseCompound.md) |  | [default to undefined]
@@ -50,6 +51,7 @@ const instance: EzsignformfieldgroupResponseCompound = {
     sEzsignformfieldgroupTextvalidationcustommessage,
     tEzsignformfieldgroupTooltip,
     eEzsignformfieldgroupTooltipposition,
+    dtEzsignformfieldgroupCompleted,
     a_objEzsignformfield,
     a_objDropdownElement,
     a_objEzsignformfieldgroupsigner,

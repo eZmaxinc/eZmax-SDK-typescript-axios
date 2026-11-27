@@ -58,6 +58,7 @@ Name | Type | Description | Notes
 **a_objEzsignelementdependency** | [**Array&lt;EzsignelementdependencyResponseCompound&gt;**](EzsignelementdependencyResponseCompound.md) |  | [optional] [default to undefined]
 **objTimezone** | [**CustomTimezoneWithCodeResponse**](CustomTimezoneWithCodeResponse.md) |  | [optional] [default to undefined]
 **a_objEzsignsignaturepaymentdetail** | [**Array&lt;EzsignsignaturepaymentdetailResponseCompound&gt;**](EzsignsignaturepaymentdetailResponseCompound.md) |  | [optional] [default to undefined]
+**objCreditcardmerchant** | [**CustomCreditcardmerchantResponse**](CustomCreditcardmerchantResponse.md) |  | [optional] [default to undefined]
 
 ## Example
 
@@ -117,6 +118,7 @@ const instance: EzsignsignatureResponseCompound = {
     a_objEzsignelementdependency,
     objTimezone,
     a_objEzsignsignaturepaymentdetail,
+    objCreditcardmerchant,
 };
 ```
 

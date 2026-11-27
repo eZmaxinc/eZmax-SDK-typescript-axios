@@ -10,11 +10,13 @@ Name | Type | Description | Notes
 **eActivesessionOrigin** | [**FieldEActivesessionOrigin**](FieldEActivesessionOrigin.md) |  | [default to undefined]
 **eActivesessionWeekdaystart** | [**FieldEActivesessionWeekdaystart**](FieldEActivesessionWeekdaystart.md) |  | [default to undefined]
 **fkiLanguageID** | **number** | The unique ID of the Language.  Valid values:  |Value|Description| |-|-| |1|French| |2|English| | [default to undefined]
+**fkiCompanyID** | **number** | The unique ID of the Company | [default to undefined]
 **sCompanyNameX** | **string** | The Name of the Company in the language of the requester | [default to undefined]
+**fkiDepartmentID** | **number** | The unique ID of the Department | [default to undefined]
 **sDepartmentNameX** | **string** | The Name of the Department in the language of the requester | [default to undefined]
 **bActivesessionDebug** | **boolean** | Whether the active session is in debug or not | [default to undefined]
 **bActivesessionIssuperadmin** | **boolean** | Whether the active session is superadmin or not | [default to undefined]
-**bActivesessionAttachment** | **boolean** | Can access attachment when we clone a user | [optional] [default to undefined]
+**bActivesessionAttachment** | **boolean** | Whether the user can access attachments when their session is cloned | [optional] [default to undefined]
 **bActivesessionCanafe** | **boolean** | Can access canafe when we clone a user | [optional] [default to undefined]
 **bActivesessionFinancial** | **boolean** | Can access financial element when we clone a user | [optional] [default to undefined]
 **bActivesessionRealestatecompleted** | **boolean** | Can access closed realestate folders when we clone a user | [optional] [default to undefined]
@@ -36,7 +38,9 @@ const instance: ActivesessionResponse = {
     eActivesessionOrigin,
     eActivesessionWeekdaystart,
     fkiLanguageID,
+    fkiCompanyID,
     sCompanyNameX,
+    fkiDepartmentID,
     sDepartmentNameX,
     bActivesessionDebug,
     bActivesessionIssuperadmin,

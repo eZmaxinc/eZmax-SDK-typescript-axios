@@ -4,8 +4,324 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 
 |Method | HTTP request | Description|
 |------------- | ------------- | -------------|
+|[**employeeBatchDownloadV1**](#employeebatchdownloadv1) | **POST** /1/object/employee/{pkiEmployeeID}/batchDownload | Download multiples attachments from a Employee|
+|[**employeeGetAttachmentsV1**](#employeegetattachmentsv1) | **GET** /1/object/employee/{pkiEmployeeID}/getAttachments | Retrieve Employee\&#39;s attachments|
+|[**employeeGetCommunicationCountV1**](#employeegetcommunicationcountv1) | **GET** /1/object/employee/{pkiEmployeeID}/getCommunicationCount | Retrieve Communication count|
+|[**employeeGetCommunicationListV1**](#employeegetcommunicationlistv1) | **GET** /1/object/employee/{pkiEmployeeID}/getCommunicationList | Retrieve Communication list|
+|[**employeeGetCommunicationrecipientsV1**](#employeegetcommunicationrecipientsv1) | **GET** /1/object/employee/{pkiEmployeeID}/getCommunicationrecipients | Retrieve Communication recipients|
+|[**employeeGetCommunicationsendersV1**](#employeegetcommunicationsendersv1) | **GET** /1/object/employee/{pkiEmployeeID}/getCommunicationsenders | Retrieve Communication senders|
 |[**employeeGetListV1**](#employeegetlistv1) | **GET** /1/object/employee/getList | Retrieve Employee list|
 |[**employeeImportIntoEDMV1**](#employeeimportintoedmv1) | **POST** /1/object/employee/{pkiEmployeeID}/importIntoEDM | Import attachments into the Employee|
+
+# **employeeBatchDownloadV1**
+> File employeeBatchDownloadV1(employeeBatchDownloadV1Request)
+
+
+### Example
+
+```typescript
+import {
+    ObjectEmployeeApi,
+    Configuration,
+    EmployeeBatchDownloadV1Request
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectEmployeeApi(configuration);
+
+let pkiEmployeeID: number; // (default to undefined)
+let employeeBatchDownloadV1Request: EmployeeBatchDownloadV1Request; //
+
+const { status, data } = await apiInstance.employeeBatchDownloadV1(
+    pkiEmployeeID,
+    employeeBatchDownloadV1Request
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **employeeBatchDownloadV1Request** | **EmployeeBatchDownloadV1Request**|  | |
+| **pkiEmployeeID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**File**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/zip, text/xml, application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **employeeGetAttachmentsV1**
+> EmployeeGetAttachmentsV1Response employeeGetAttachmentsV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectEmployeeApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectEmployeeApi(configuration);
+
+let pkiEmployeeID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.employeeGetAttachmentsV1(
+    pkiEmployeeID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiEmployeeID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**EmployeeGetAttachmentsV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **employeeGetCommunicationCountV1**
+> EmployeeGetCommunicationCountV1Response employeeGetCommunicationCountV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectEmployeeApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectEmployeeApi(configuration);
+
+let pkiEmployeeID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.employeeGetCommunicationCountV1(
+    pkiEmployeeID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiEmployeeID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**EmployeeGetCommunicationCountV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **employeeGetCommunicationListV1**
+> EmployeeGetCommunicationListV1Response employeeGetCommunicationListV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectEmployeeApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectEmployeeApi(configuration);
+
+let pkiEmployeeID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.employeeGetCommunicationListV1(
+    pkiEmployeeID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiEmployeeID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**EmployeeGetCommunicationListV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **employeeGetCommunicationrecipientsV1**
+> EmployeeGetCommunicationrecipientsV1Response employeeGetCommunicationrecipientsV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectEmployeeApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectEmployeeApi(configuration);
+
+let pkiEmployeeID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.employeeGetCommunicationrecipientsV1(
+    pkiEmployeeID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiEmployeeID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**EmployeeGetCommunicationrecipientsV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **employeeGetCommunicationsendersV1**
+> EmployeeGetCommunicationsendersV1Response employeeGetCommunicationsendersV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectEmployeeApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectEmployeeApi(configuration);
+
+let pkiEmployeeID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.employeeGetCommunicationsendersV1(
+    pkiEmployeeID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiEmployeeID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**EmployeeGetCommunicationsendersV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **employeeGetListV1**
 > EmployeeGetListV1Response employeeGetListV1()
@@ -123,7 +439,7 @@ const { status, data } = await apiInstance.employeeImportIntoEDMV1(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
