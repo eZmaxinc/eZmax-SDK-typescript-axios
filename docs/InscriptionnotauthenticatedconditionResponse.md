@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **fkiInscriptionnotauthenticatedconditiontypeID** | **number** | The unique ID of the Inscriptionnotauthenticatedconditiontype | [default to undefined]
 **sInscriptionnotauthenticatedconditiontypeNameX** | **string** | The name of the Inscriptionnotauthenticatedconditiontype in the language of the requester | [default to undefined]
 **fkiInscriptionnotauthenticatedID** | **number** | The unique ID of the Inscriptionnotauthenticated. | [default to undefined]
-**bInscriptionnotauthenticatedconditionFilled** | **boolean** | Can access attachment when we clone a user | [default to undefined]
+**bInscriptionnotauthenticatedconditionFilled** | **boolean** | Whether the user can access attachments when their session is cloned | [default to undefined]
 **dtInscriptionnotauthenticatedconditionCompleted** | **string** | The date the Inscriptionnotauthenticatedcondition was completed | [optional] [default to undefined]
 **dtInscriptionnotauthenticatedconditionDue** | **string** | The date the Inscriptionnotauthenticatedcondition is due | [optional] [default to undefined]
 **tInscriptionnotauthenticatedconditionComment** | **string** | The comment of the Inscriptionnotauthenticatedcondition | [default to undefined]

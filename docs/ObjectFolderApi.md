@@ -10,7 +10,9 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**folderGetCommunicationListV1**](#foldergetcommunicationlistv1) | **GET** /1/object/folder/{pkiFolderID}/getCommunicationList | Retrieve Communication list|
 |[**folderGetCommunicationrecipientsV1**](#foldergetcommunicationrecipientsv1) | **GET** /1/object/folder/{pkiFolderID}/getCommunicationrecipients | Retrieve Communication recipients|
 |[**folderGetCommunicationsendersV1**](#foldergetcommunicationsendersv1) | **GET** /1/object/folder/{pkiFolderID}/getCommunicationsenders | Retrieve Communication senders|
+|[**folderGetDocumenttypechecklistV1**](#foldergetdocumenttypechecklistv1) | **GET** /1/object/folder/{pkiFolderID}/getDocumenttypechecklist | Retrieve Document type checklist|
 |[**folderImportIntoEDMV1**](#folderimportintoedmv1) | **POST** /1/object/folder/{pkiFolderID}/importIntoEDM | Import attachments into the Folder|
+|[**folderSyncDocumenttypechecklistV1**](#foldersyncdocumenttypechecklistv1) | **POST** /1/object/folder/{pkiFolderID}/syncDocumenttypechecklist | Synchronize Document type checklist|
 
 # **folderBatchDownloadV1**
 > File folderBatchDownloadV1(folderBatchDownloadV1Request)
@@ -324,6 +326,57 @@ const { status, data } = await apiInstance.folderGetCommunicationsendersV1(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **folderGetDocumenttypechecklistV1**
+> FolderGetDocumenttypechecklistV1Response folderGetDocumenttypechecklistV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectFolderApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectFolderApi(configuration);
+
+let pkiFolderID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.folderGetDocumenttypechecklistV1(
+    pkiFolderID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiFolderID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**FolderGetDocumenttypechecklistV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **folderImportIntoEDMV1**
 > FolderImportIntoEDMV1Response folderImportIntoEDMV1(folderImportIntoEDMV1Request)
 
@@ -360,6 +413,60 @@ const { status, data } = await apiInstance.folderImportIntoEDMV1(
 ### Return type
 
 **FolderImportIntoEDMV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **folderSyncDocumenttypechecklistV1**
+> FolderSyncDocumenttypechecklistV1Response folderSyncDocumenttypechecklistV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectFolderApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectFolderApi(configuration);
+
+let pkiFolderID: number; // (default to undefined)
+let body: object; // (optional)
+
+const { status, data } = await apiInstance.folderSyncDocumenttypechecklistV1(
+    pkiFolderID,
+    body
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | **object**|  | |
+| **pkiFolderID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**FolderSyncDocumenttypechecklistV1Response**
 
 ### Authorization
 

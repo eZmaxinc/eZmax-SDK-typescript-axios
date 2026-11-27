@@ -39,7 +39,7 @@ export interface InscriptionnotauthenticatedconditionResponse {
     /*'fkiInscriptionnotauthenticatedID': number;*/
     'fkiInscriptionnotauthenticatedID': number;
     /**
-     * Can access attachment when we clone a user
+     * Whether the user can access attachments when their session is cloned
      */
     /*'bInscriptionnotauthenticatedconditionFilled': boolean;*/
     'bInscriptionnotauthenticatedconditionFilled': boolean;

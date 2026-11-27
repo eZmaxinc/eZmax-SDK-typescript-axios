@@ -23,6 +23,7 @@ export const FieldEDocumenttypechecklistStatus = {
     Required: 'Required',
     Filed: 'Filed',
     Justified: 'Justified',
+    Mandatory: 'Mandatory',
 } as const;
 
 export type FieldEDocumenttypechecklistStatus = typeof FieldEDocumenttypechecklistStatus[keyof typeof FieldEDocumenttypechecklistStatus];

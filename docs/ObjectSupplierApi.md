@@ -10,8 +10,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**supplierGetCommunicationListV1**](#suppliergetcommunicationlistv1) | **GET** /1/object/supplier/{pkiSupplierID}/getCommunicationList | Retrieve Communication list|
 |[**supplierGetCommunicationrecipientsV1**](#suppliergetcommunicationrecipientsv1) | **GET** /1/object/supplier/{pkiSupplierID}/getCommunicationrecipients | Retrieve Communication recipients|
 |[**supplierGetCommunicationsendersV1**](#suppliergetcommunicationsendersv1) | **GET** /1/object/supplier/{pkiSupplierID}/getCommunicationsenders | Retrieve Communication senders|
+|[**supplierGetDocumenttypechecklistV1**](#suppliergetdocumenttypechecklistv1) | **GET** /1/object/supplier/{pkiSupplierID}/getDocumenttypechecklist | Retrieve Document type checklist|
 |[**supplierGetListV1**](#suppliergetlistv1) | **GET** /1/object/supplier/getList | Retrieve Supplier list|
 |[**supplierImportIntoEDMV1**](#supplierimportintoedmv1) | **POST** /1/object/supplier/{pkiSupplierID}/importIntoEDM | Import attachments into the Supplier|
+|[**supplierSyncDocumenttypechecklistV1**](#suppliersyncdocumenttypechecklistv1) | **POST** /1/object/supplier/{pkiSupplierID}/syncDocumenttypechecklist | Synchronize Document type checklist|
 
 # **supplierBatchDownloadV1**
 > File supplierBatchDownloadV1(supplierBatchDownloadV1Request)
@@ -323,6 +325,57 @@ const { status, data } = await apiInstance.supplierGetCommunicationsendersV1(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **supplierGetDocumenttypechecklistV1**
+> SupplierGetDocumenttypechecklistV1Response supplierGetDocumenttypechecklistV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectSupplierApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectSupplierApi(configuration);
+
+let pkiSupplierID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.supplierGetDocumenttypechecklistV1(
+    pkiSupplierID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiSupplierID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**SupplierGetDocumenttypechecklistV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **supplierGetListV1**
 > SupplierGetListV1Response supplierGetListV1()
 
@@ -424,6 +477,60 @@ const { status, data } = await apiInstance.supplierImportIntoEDMV1(
 ### Return type
 
 **SupplierImportIntoEDMV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **supplierSyncDocumenttypechecklistV1**
+> SupplierSyncDocumenttypechecklistV1Response supplierSyncDocumenttypechecklistV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectSupplierApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectSupplierApi(configuration);
+
+let pkiSupplierID: number; // (default to undefined)
+let body: object; // (optional)
+
+const { status, data } = await apiInstance.supplierSyncDocumenttypechecklistV1(
+    pkiSupplierID,
+    body
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | **object**|  | |
+| **pkiSupplierID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**SupplierSyncDocumenttypechecklistV1Response**
 
 ### Authorization
 

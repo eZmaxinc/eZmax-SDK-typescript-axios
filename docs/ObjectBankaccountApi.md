@@ -11,8 +11,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**bankaccountGetCommunicationListV1**](#bankaccountgetcommunicationlistv1) | **GET** /1/object/bankaccount/{pkiBankaccountID}/getCommunicationList | Retrieve Communication list|
 |[**bankaccountGetCommunicationrecipientsV1**](#bankaccountgetcommunicationrecipientsv1) | **GET** /1/object/bankaccount/{pkiBankaccountID}/getCommunicationrecipients | Retrieve Communication recipients|
 |[**bankaccountGetCommunicationsendersV1**](#bankaccountgetcommunicationsendersv1) | **GET** /1/object/bankaccount/{pkiBankaccountID}/getCommunicationsenders | Retrieve Communication senders|
+|[**bankaccountGetDocumenttypechecklistV1**](#bankaccountgetdocumenttypechecklistv1) | **GET** /1/object/bankaccount/{pkiBankaccountID}/getDocumenttypechecklist | Retrieve Document type checklist|
 |[**bankaccountGetListV1**](#bankaccountgetlistv1) | **GET** /1/object/bankaccount/getList | Retrieve Bankaccount list|
 |[**bankaccountImportIntoEDMV1**](#bankaccountimportintoedmv1) | **POST** /1/object/bankaccount/{pkiBankaccountID}/importIntoEDM | Import attachments into the Bankaccount|
+|[**bankaccountSyncDocumenttypechecklistV1**](#bankaccountsyncdocumenttypechecklistv1) | **POST** /1/object/bankaccount/{pkiBankaccountID}/syncDocumenttypechecklist | Synchronize Document type checklist|
 
 # **bankaccountBatchDownloadV1**
 > File bankaccountBatchDownloadV1(bankaccountBatchDownloadV1Request)
@@ -386,6 +388,57 @@ const { status, data } = await apiInstance.bankaccountGetCommunicationsendersV1(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **bankaccountGetDocumenttypechecklistV1**
+> BankaccountGetDocumenttypechecklistV1Response bankaccountGetDocumenttypechecklistV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectBankaccountApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectBankaccountApi(configuration);
+
+let pkiBankaccountID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.bankaccountGetDocumenttypechecklistV1(
+    pkiBankaccountID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiBankaccountID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**BankaccountGetDocumenttypechecklistV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **bankaccountGetListV1**
 > BankaccountGetListV1Response bankaccountGetListV1()
 
@@ -486,6 +539,60 @@ const { status, data } = await apiInstance.bankaccountImportIntoEDMV1(
 ### Return type
 
 **BankaccountImportIntoEDMV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **bankaccountSyncDocumenttypechecklistV1**
+> BankaccountSyncDocumenttypechecklistV1Response bankaccountSyncDocumenttypechecklistV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectBankaccountApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectBankaccountApi(configuration);
+
+let pkiBankaccountID: number; // (default to undefined)
+let body: object; // (optional)
+
+const { status, data } = await apiInstance.bankaccountSyncDocumenttypechecklistV1(
+    pkiBankaccountID,
+    body
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | **object**|  | |
+| **pkiBankaccountID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**BankaccountSyncDocumenttypechecklistV1Response**
 
 ### Authorization
 

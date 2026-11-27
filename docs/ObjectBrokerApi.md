@@ -11,8 +11,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**brokerGetCommunicationListV1**](#brokergetcommunicationlistv1) | **GET** /1/object/broker/{pkiBrokerID}/getCommunicationList | Retrieve Communication list|
 |[**brokerGetCommunicationrecipientsV1**](#brokergetcommunicationrecipientsv1) | **GET** /1/object/broker/{pkiBrokerID}/getCommunicationrecipients | Retrieve Communication recipients|
 |[**brokerGetCommunicationsendersV1**](#brokergetcommunicationsendersv1) | **GET** /1/object/broker/{pkiBrokerID}/getCommunicationsenders | Retrieve Communication senders|
+|[**brokerGetDocumenttypechecklistV1**](#brokergetdocumenttypechecklistv1) | **GET** /1/object/broker/{pkiBrokerID}/getDocumenttypechecklist | Retrieve Document type checklist|
 |[**brokerGetListV1**](#brokergetlistv1) | **GET** /1/object/broker/getList | Retrieve Broker list|
 |[**brokerImportIntoEDMV1**](#brokerimportintoedmv1) | **POST** /1/object/broker/{pkiBrokerID}/importIntoEDM | Import attachments into the Broker|
+|[**brokerSyncDocumenttypechecklistV1**](#brokersyncdocumenttypechecklistv1) | **POST** /1/object/broker/{pkiBrokerID}/syncDocumenttypechecklist | Synchronize Document type checklist|
 
 # **brokerBatchDownloadV1**
 > File brokerBatchDownloadV1(brokerBatchDownloadV1Request)
@@ -384,6 +386,57 @@ const { status, data } = await apiInstance.brokerGetCommunicationsendersV1(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **brokerGetDocumenttypechecklistV1**
+> BrokerGetDocumenttypechecklistV1Response brokerGetDocumenttypechecklistV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectBrokerApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectBrokerApi(configuration);
+
+let pkiBrokerID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.brokerGetDocumenttypechecklistV1(
+    pkiBrokerID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiBrokerID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**BrokerGetDocumenttypechecklistV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **brokerGetListV1**
 > BrokerGetListV1Response brokerGetListV1()
 
@@ -485,6 +538,60 @@ const { status, data } = await apiInstance.brokerImportIntoEDMV1(
 ### Return type
 
 **BrokerImportIntoEDMV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **brokerSyncDocumenttypechecklistV1**
+> BrokerSyncDocumenttypechecklistV1Response brokerSyncDocumenttypechecklistV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectBrokerApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectBrokerApi(configuration);
+
+let pkiBrokerID: number; // (default to undefined)
+let body: object; // (optional)
+
+const { status, data } = await apiInstance.brokerSyncDocumenttypechecklistV1(
+    pkiBrokerID,
+    body
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | **object**|  | |
+| **pkiBrokerID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**BrokerSyncDocumenttypechecklistV1Response**
 
 ### Authorization
 

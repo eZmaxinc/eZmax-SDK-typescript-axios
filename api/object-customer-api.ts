@@ -38,11 +38,15 @@ import type { CustomerGetCommunicationrecipientsV1Response } from '../model';
 // @ts-ignore
 import type { CustomerGetCommunicationsendersV1Response } from '../model';
 // @ts-ignore
+import type { CustomerGetDocumenttypechecklistV1Response } from '../model';
+// @ts-ignore
 import type { CustomerGetObjectV2Response } from '../model';
 // @ts-ignore
 import type { CustomerImportIntoEDMV1Request } from '../model';
 // @ts-ignore
 import type { CustomerImportIntoEDMV1Response } from '../model';
+// @ts-ignore
+import type { CustomerSyncDocumenttypechecklistV1Response } from '../model';
 // @ts-ignore
 import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
@@ -481,6 +485,64 @@ export const ObjectCustomerApiAxiosParamCreator = function (configuration?: Conf
         },
         /**
          * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiCustomerID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        customerGetDocumenttypechecklistV1: async (pkiCustomerID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiCustomerID' is not null or undefined
+            assertParamExists('customerGetDocumenttypechecklistV1', 'pkiCustomerID', pkiCustomerID)
+            const localVarPath = `/1/object/customer/{pkiCustomerID}/getDocumenttypechecklist`
+                .replace('{pkiCustomerID}', encodeURIComponent(String(pkiCustomerID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Retrieve an existing Customer
          * @param {number} pkiCustomerID The unique ID of the Customer
          * @param {*} [options] Override http request option.
@@ -578,6 +640,67 @@ export const ObjectCustomerApiAxiosParamCreator = function (configuration?: Conf
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(customerImportIntoEDMV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiCustomerID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        customerSyncDocumenttypechecklistV1: async (pkiCustomerID: number, body?: object, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiCustomerID' is not null or undefined
+            assertParamExists('customerSyncDocumenttypechecklistV1', 'pkiCustomerID', pkiCustomerID)
+            const localVarPath = `/1/object/customer/{pkiCustomerID}/syncDocumenttypechecklist`
+                .replace('{pkiCustomerID}', encodeURIComponent(String(pkiCustomerID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -706,6 +829,19 @@ export const ObjectCustomerApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiCustomerID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async customerGetDocumenttypechecklistV1(pkiCustomerID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CustomerGetDocumenttypechecklistV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.customerGetDocumenttypechecklistV1(pkiCustomerID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectCustomerApi.customerGetDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Retrieve an existing Customer
          * @param {number} pkiCustomerID The unique ID of the Customer
          * @param {*} [options] Override http request option.
@@ -729,6 +865,20 @@ export const ObjectCustomerApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.customerImportIntoEDMV1(pkiCustomerID, customerImportIntoEDMV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectCustomerApi.customerImportIntoEDMV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiCustomerID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async customerSyncDocumenttypechecklistV1(pkiCustomerID: number, body?: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<CustomerSyncDocumenttypechecklistV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.customerSyncDocumenttypechecklistV1(pkiCustomerID, body, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectCustomerApi.customerSyncDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -816,6 +966,16 @@ export const ObjectCustomerApiFactory = function (configuration?: Configuration,
         },
         /**
          * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiCustomerID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        customerGetDocumenttypechecklistV1(pkiCustomerID: number, options?: RawAxiosRequestConfig): AxiosPromise<CustomerGetDocumenttypechecklistV1Response> {
+            return localVarFp.customerGetDocumenttypechecklistV1(pkiCustomerID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Retrieve an existing Customer
          * @param {number} pkiCustomerID The unique ID of the Customer
          * @param {*} [options] Override http request option.
@@ -834,6 +994,17 @@ export const ObjectCustomerApiFactory = function (configuration?: Configuration,
          */
         customerImportIntoEDMV1(pkiCustomerID: number, customerImportIntoEDMV1Request: CustomerImportIntoEDMV1Request, options?: RawAxiosRequestConfig): AxiosPromise<CustomerImportIntoEDMV1Response> {
             return localVarFp.customerImportIntoEDMV1(pkiCustomerID, customerImportIntoEDMV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiCustomerID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        customerSyncDocumenttypechecklistV1(pkiCustomerID: number, body?: object, options?: RawAxiosRequestConfig): AxiosPromise<CustomerSyncDocumenttypechecklistV1Response> {
+            return localVarFp.customerSyncDocumenttypechecklistV1(pkiCustomerID, body, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -925,6 +1096,17 @@ export class ObjectCustomerApi extends BaseAPI {
 
     /**
      * 
+     * @summary Retrieve Document type checklist
+     * @param {number} pkiCustomerID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public customerGetDocumenttypechecklistV1(pkiCustomerID: number, options?: RawAxiosRequestConfig) {
+        return ObjectCustomerApiFp(this.configuration).customerGetDocumenttypechecklistV1(pkiCustomerID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
      * @summary Retrieve an existing Customer
      * @param {number} pkiCustomerID The unique ID of the Customer
      * @param {*} [options] Override http request option.
@@ -944,6 +1126,18 @@ export class ObjectCustomerApi extends BaseAPI {
      */
     public customerImportIntoEDMV1(pkiCustomerID: number, customerImportIntoEDMV1Request: CustomerImportIntoEDMV1Request, options?: RawAxiosRequestConfig) {
         return ObjectCustomerApiFp(this.configuration).customerImportIntoEDMV1(pkiCustomerID, customerImportIntoEDMV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Synchronize Document type checklist
+     * @param {number} pkiCustomerID 
+     * @param {object} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public customerSyncDocumenttypechecklistV1(pkiCustomerID: number, body?: object, options?: RawAxiosRequestConfig) {
+        return ObjectCustomerApiFp(this.configuration).customerSyncDocumenttypechecklistV1(pkiCustomerID, body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

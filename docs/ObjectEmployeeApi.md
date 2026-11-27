@@ -10,8 +10,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**employeeGetCommunicationListV1**](#employeegetcommunicationlistv1) | **GET** /1/object/employee/{pkiEmployeeID}/getCommunicationList | Retrieve Communication list|
 |[**employeeGetCommunicationrecipientsV1**](#employeegetcommunicationrecipientsv1) | **GET** /1/object/employee/{pkiEmployeeID}/getCommunicationrecipients | Retrieve Communication recipients|
 |[**employeeGetCommunicationsendersV1**](#employeegetcommunicationsendersv1) | **GET** /1/object/employee/{pkiEmployeeID}/getCommunicationsenders | Retrieve Communication senders|
+|[**employeeGetDocumenttypechecklistV1**](#employeegetdocumenttypechecklistv1) | **GET** /1/object/employee/{pkiEmployeeID}/getDocumenttypechecklist | Retrieve Document type checklist|
 |[**employeeGetListV1**](#employeegetlistv1) | **GET** /1/object/employee/getList | Retrieve Employee list|
 |[**employeeImportIntoEDMV1**](#employeeimportintoedmv1) | **POST** /1/object/employee/{pkiEmployeeID}/importIntoEDM | Import attachments into the Employee|
+|[**employeeSyncDocumenttypechecklistV1**](#employeesyncdocumenttypechecklistv1) | **POST** /1/object/employee/{pkiEmployeeID}/syncDocumenttypechecklist | Synchronize Document type checklist|
 
 # **employeeBatchDownloadV1**
 > File employeeBatchDownloadV1(employeeBatchDownloadV1Request)
@@ -323,6 +325,57 @@ const { status, data } = await apiInstance.employeeGetCommunicationsendersV1(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **employeeGetDocumenttypechecklistV1**
+> EmployeeGetDocumenttypechecklistV1Response employeeGetDocumenttypechecklistV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectEmployeeApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectEmployeeApi(configuration);
+
+let pkiEmployeeID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.employeeGetDocumenttypechecklistV1(
+    pkiEmployeeID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiEmployeeID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**EmployeeGetDocumenttypechecklistV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **employeeGetListV1**
 > EmployeeGetListV1Response employeeGetListV1()
 
@@ -424,6 +477,60 @@ const { status, data } = await apiInstance.employeeImportIntoEDMV1(
 ### Return type
 
 **EmployeeImportIntoEDMV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **employeeSyncDocumenttypechecklistV1**
+> EmployeeSyncDocumenttypechecklistV1Response employeeSyncDocumenttypechecklistV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectEmployeeApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectEmployeeApi(configuration);
+
+let pkiEmployeeID: number; // (default to undefined)
+let body: object; // (optional)
+
+const { status, data } = await apiInstance.employeeSyncDocumenttypechecklistV1(
+    pkiEmployeeID,
+    body
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | **object**|  | |
+| **pkiEmployeeID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**EmployeeSyncDocumenttypechecklistV1Response**
 
 ### Authorization
 

@@ -13,29 +13,17 @@
  */
 
 
-// May contain unused imports in some cases
-// @ts-ignore
-import type { FieldEDiscussionRobot } from './field-ediscussion-robot';
 
 /**
  * Request for POST /1/object/discussion/improveMessage
  */
 export interface DiscussionImproveMessageV1Request {
     /**
-     * The unique ID of the Discussion
-     */
-    /*'fkiDiscussionID'?: number;*/
-    'fkiDiscussionID'?: number;
-    /*'eDiscussionRobot': FieldEDiscussionRobot;*/
-    'eDiscussionRobot': FieldEDiscussionRobot;
-    /**
      * The Message of the Discussion
      */
     /*'tDiscussionMessage': string;*/
     'tDiscussionMessage': string;
 }
-
-
 /**
  * @import
  * Imports Child Data Object
@@ -48,8 +36,6 @@ export interface DiscussionImproveMessageV1Request {
  * @class DataObjectDiscussionImproveMessageV1Request
  */
 export class DataObjectDiscussionImproveMessageV1Request {
-   fkiDiscussionID?:number = undefined
-   eDiscussionRobot:FieldEDiscussionRobot = 'Advanced'
    tDiscussionMessage:string = ''
 }
 
@@ -59,17 +45,6 @@ export class DataObjectDiscussionImproveMessageV1Request {
  * @class ValidationObjectDiscussionImproveMessageV1Request
  */
 export class ValidationObjectDiscussionImproveMessageV1Request {
-   fkiDiscussionID = {
-      type: 'integer',
-      minimum: 0,
-      maximum: 16777215,
-      required: false
-   }
-   eDiscussionRobot = {
-      type: 'enum',
-      allowableValues: ['Advanced','Normal','Support'],
-      required: true
-   }
    tDiscussionMessage = {
       type: 'string',
       pattern: /^[\s\S]{0,65535}$/,

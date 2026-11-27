@@ -36,11 +36,15 @@ import type { AgentGetCommunicationrecipientsV1Response } from '../model';
 // @ts-ignore
 import type { AgentGetCommunicationsendersV1Response } from '../model';
 // @ts-ignore
+import type { AgentGetDocumenttypechecklistV1Response } from '../model';
+// @ts-ignore
 import type { AgentGetListV1Response } from '../model';
 // @ts-ignore
 import type { AgentImportIntoEDMV1Request } from '../model';
 // @ts-ignore
 import type { AgentImportIntoEDMV1Response } from '../model';
+// @ts-ignore
+import type { AgentSyncDocumenttypechecklistV1Response } from '../model';
 // @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
@@ -481,6 +485,64 @@ export const ObjectAgentApiAxiosParamCreator = function (configuration?: Configu
         },
         /**
          * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiAgentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        agentGetDocumenttypechecklistV1: async (pkiAgentID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiAgentID' is not null or undefined
+            assertParamExists('agentGetDocumenttypechecklistV1', 'pkiAgentID', pkiAgentID)
+            const localVarPath = `/1/object/agent/{pkiAgentID}/getDocumenttypechecklist`
+                .replace('{pkiAgentID}', encodeURIComponent(String(pkiAgentID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Retrieve Agent list
          * @param {AgentGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -622,6 +684,67 @@ export const ObjectAgentApiAxiosParamCreator = function (configuration?: Configu
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiAgentID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        agentSyncDocumenttypechecklistV1: async (pkiAgentID: number, body?: object, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiAgentID' is not null or undefined
+            assertParamExists('agentSyncDocumenttypechecklistV1', 'pkiAgentID', pkiAgentID)
+            const localVarPath = `/1/object/agent/{pkiAgentID}/syncDocumenttypechecklist`
+                .replace('{pkiAgentID}', encodeURIComponent(String(pkiAgentID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -728,6 +851,19 @@ export const ObjectAgentApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiAgentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async agentGetDocumenttypechecklistV1(pkiAgentID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AgentGetDocumenttypechecklistV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.agentGetDocumenttypechecklistV1(pkiAgentID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectAgentApi.agentGetDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Retrieve Agent list
          * @param {AgentGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -755,6 +891,20 @@ export const ObjectAgentApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.agentImportIntoEDMV1(pkiAgentID, agentImportIntoEDMV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectAgentApi.agentImportIntoEDMV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiAgentID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async agentSyncDocumenttypechecklistV1(pkiAgentID: number, body?: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AgentSyncDocumenttypechecklistV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.agentSyncDocumenttypechecklistV1(pkiAgentID, body, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectAgentApi.agentSyncDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -842,6 +992,16 @@ export const ObjectAgentApiFactory = function (configuration?: Configuration, ba
         },
         /**
          * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiAgentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        agentGetDocumenttypechecklistV1(pkiAgentID: number, options?: RawAxiosRequestConfig): AxiosPromise<AgentGetDocumenttypechecklistV1Response> {
+            return localVarFp.agentGetDocumenttypechecklistV1(pkiAgentID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Retrieve Agent list
          * @param {AgentGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -864,6 +1024,17 @@ export const ObjectAgentApiFactory = function (configuration?: Configuration, ba
          */
         agentImportIntoEDMV1(pkiAgentID: number, agentImportIntoEDMV1Request: AgentImportIntoEDMV1Request, options?: RawAxiosRequestConfig): AxiosPromise<AgentImportIntoEDMV1Response> {
             return localVarFp.agentImportIntoEDMV1(pkiAgentID, agentImportIntoEDMV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiAgentID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        agentSyncDocumenttypechecklistV1(pkiAgentID: number, body?: object, options?: RawAxiosRequestConfig): AxiosPromise<AgentSyncDocumenttypechecklistV1Response> {
+            return localVarFp.agentSyncDocumenttypechecklistV1(pkiAgentID, body, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -955,6 +1126,17 @@ export class ObjectAgentApi extends BaseAPI {
 
     /**
      * 
+     * @summary Retrieve Document type checklist
+     * @param {number} pkiAgentID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public agentGetDocumenttypechecklistV1(pkiAgentID: number, options?: RawAxiosRequestConfig) {
+        return ObjectAgentApiFp(this.configuration).agentGetDocumenttypechecklistV1(pkiAgentID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
      * @summary Retrieve Agent list
      * @param {AgentGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
      * @param {number} [iRowMax] 
@@ -978,6 +1160,18 @@ export class ObjectAgentApi extends BaseAPI {
      */
     public agentImportIntoEDMV1(pkiAgentID: number, agentImportIntoEDMV1Request: AgentImportIntoEDMV1Request, options?: RawAxiosRequestConfig) {
         return ObjectAgentApiFp(this.configuration).agentImportIntoEDMV1(pkiAgentID, agentImportIntoEDMV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Synchronize Document type checklist
+     * @param {number} pkiAgentID 
+     * @param {object} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public agentSyncDocumenttypechecklistV1(pkiAgentID: number, body?: object, options?: RawAxiosRequestConfig) {
+        return ObjectAgentApiFp(this.configuration).agentSyncDocumenttypechecklistV1(pkiAgentID, body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

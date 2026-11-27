@@ -10,8 +10,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**rejectedoffertopurchaseGetCommunicationListV1**](#rejectedoffertopurchasegetcommunicationlistv1) | **GET** /1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/getCommunicationList | Retrieve Communication list|
 |[**rejectedoffertopurchaseGetCommunicationrecipientsV1**](#rejectedoffertopurchasegetcommunicationrecipientsv1) | **GET** /1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/getCommunicationrecipients | Retrieve Rejectedoffertopurchase\&#39;s Communicationrecipient|
 |[**rejectedoffertopurchaseGetCommunicationsendersV1**](#rejectedoffertopurchasegetcommunicationsendersv1) | **GET** /1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/getCommunicationsenders | Retrieve Rejectedoffertopurchase\&#39;s Communicationsender|
+|[**rejectedoffertopurchaseGetDocumenttypechecklistV1**](#rejectedoffertopurchasegetdocumenttypechecklistv1) | **GET** /1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/getDocumenttypechecklist | Retrieve Document type checklist|
 |[**rejectedoffertopurchaseGetListV1**](#rejectedoffertopurchasegetlistv1) | **GET** /1/object/rejectedoffertopurchase/getList | Retrieve Rejectedoffertopurchase list|
 |[**rejectedoffertopurchaseImportIntoEDMV1**](#rejectedoffertopurchaseimportintoedmv1) | **POST** /1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/importIntoEDM | Import attachments into the Rejectedoffertopurchase|
+|[**rejectedoffertopurchaseSyncDocumenttypechecklistV1**](#rejectedoffertopurchasesyncdocumenttypechecklistv1) | **POST** /1/object/rejectedoffertopurchase/{pkiRejectedoffertopurchaseID}/syncDocumenttypechecklist | Synchronize Document type checklist|
 
 # **rejectedoffertopurchaseBatchDownloadV1**
 > File rejectedoffertopurchaseBatchDownloadV1(rejectedoffertopurchaseBatchDownloadV1Request)
@@ -327,6 +329,57 @@ const { status, data } = await apiInstance.rejectedoffertopurchaseGetCommunicati
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **rejectedoffertopurchaseGetDocumenttypechecklistV1**
+> RejectedoffertopurchaseGetDocumenttypechecklistV1Response rejectedoffertopurchaseGetDocumenttypechecklistV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectRejectedoffertopurchaseApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectRejectedoffertopurchaseApi(configuration);
+
+let pkiRejectedoffertopurchaseID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.rejectedoffertopurchaseGetDocumenttypechecklistV1(
+    pkiRejectedoffertopurchaseID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiRejectedoffertopurchaseID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**RejectedoffertopurchaseGetDocumenttypechecklistV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **rejectedoffertopurchaseGetListV1**
 > RejectedoffertopurchaseGetListV1Response rejectedoffertopurchaseGetListV1()
 
@@ -428,6 +481,60 @@ const { status, data } = await apiInstance.rejectedoffertopurchaseImportIntoEDMV
 ### Return type
 
 **RejectedoffertopurchaseImportIntoEDMV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **rejectedoffertopurchaseSyncDocumenttypechecklistV1**
+> RejectedoffertopurchaseSyncDocumenttypechecklistV1Response rejectedoffertopurchaseSyncDocumenttypechecklistV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectRejectedoffertopurchaseApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectRejectedoffertopurchaseApi(configuration);
+
+let pkiRejectedoffertopurchaseID: number; // (default to undefined)
+let body: object; // (optional)
+
+const { status, data } = await apiInstance.rejectedoffertopurchaseSyncDocumenttypechecklistV1(
+    pkiRejectedoffertopurchaseID,
+    body
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | **object**|  | |
+| **pkiRejectedoffertopurchaseID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**RejectedoffertopurchaseSyncDocumenttypechecklistV1Response**
 
 ### Authorization
 

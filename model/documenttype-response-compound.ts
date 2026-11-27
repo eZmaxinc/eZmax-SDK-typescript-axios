@@ -69,13 +69,13 @@ export interface DocumenttypeResponseCompound {
      */
     eDocumenttypeStep:ComputedEDocumenttypeStep 
     /**
-     * The defaultfilename of the Documenttype
+     * The default filename for the document type
      * @type {string}
      * @memberof DocumenttypeResponseCompound
      */
     sDocumenttypeDefaultfilename:string 
     /**
-     * Whether if it\'s an showagent
+     * Whether the document type should be shown to the agent
      * @type {boolean}
      * @memberof DocumenttypeResponseCompound
      */
@@ -87,67 +87,61 @@ export interface DocumenttypeResponseCompound {
      */
     bDocumenttypeIsactive:boolean 
     /**
-     * Whether if it\'s an isrequired
-     * @type {boolean}
-     * @memberof DocumenttypeResponseCompound
-     */
-    bDocumenttypeIsrequired:boolean 
-    /**
-     * Whether if it\'s an sale
+     * Whether the document type applies to sale transactions
      * @type {boolean}
      * @memberof DocumenttypeResponseCompound
      */
     bDocumenttypeSale?:boolean 
     /**
-     * Whether if it\'s an rental
+     * Whether the document type applies to rental transactions
      * @type {boolean}
      * @memberof DocumenttypeResponseCompound
      */
     bDocumenttypeRental?:boolean 
     /**
-     * Whether if it\'s an reference
+     * Whether the document type is a reference document
      * @type {boolean}
      * @memberof DocumenttypeResponseCompound
      */
     bDocumenttypeReference?:boolean 
     /**
-     * Whether if it\'s an mortgagereference
+     * Whether the document type is a mortgage reference
      * @type {boolean}
      * @memberof DocumenttypeResponseCompound
      */
     bDocumenttypeMortgagereference?:boolean 
     /**
-     * Whether if it\'s an evaluation
+     * Whether the document type applies to evaluation transactions
      * @type {boolean}
      * @memberof DocumenttypeResponseCompound
      */
     bDocumenttypeEvaluation?:boolean 
     /**
-     * Whether if it\'s an consultation
+     * Whether the document type applies to consultation transactions
      * @type {boolean}
      * @memberof DocumenttypeResponseCompound
      */
     bDocumenttypeConsultation?:boolean 
     /**
-     * Whether if it\'s an otherservices
+     * Whether the document type applies to other services
      * @type {boolean}
      * @memberof DocumenttypeResponseCompound
      */
     bDocumenttypeOtherservices?:boolean 
     /**
-     * Whether if it\'s an foreclosedsale
+     * Whether the document type applies to foreclosed sale transactions
      * @type {boolean}
      * @memberof DocumenttypeResponseCompound
      */
     bDocumenttypeForeclosedsale?:boolean 
     /**
-     * Whether if it\'s an commercialfunding
+     * Whether the document type applies to commercial funding transactions
      * @type {boolean}
      * @memberof DocumenttypeResponseCompound
      */
     bDocumenttypeCommercialfunding?:boolean 
     /**
-     * Whether if it\'s an canafe
+     * Whether the document type applies to Canafe transactions
      * @type {boolean}
      * @memberof DocumenttypeResponseCompound
      */
@@ -226,7 +220,6 @@ export class DataObjectDocumenttypeResponseCompound {
     sDocumenttypeDefaultfilename:string = ''
     bDocumenttypeShowagent:boolean = false
     bDocumenttypeIsactive:boolean = false
-    bDocumenttypeIsrequired:boolean = false
     bDocumenttypeSale?:boolean = undefined
     bDocumenttypeRental?:boolean = undefined
     bDocumenttypeReference?:boolean = undefined
@@ -275,10 +268,6 @@ export class ValidationObjectDocumenttypeResponseCompound {
       required: true
    }
    bDocumenttypeIsactive = {
-      type: 'boolean',
-      required: true
-   }
-   bDocumenttypeIsrequired = {
       type: 'boolean',
       required: true
    }
@@ -334,7 +323,7 @@ export class ValidationObjectDocumenttypeResponseCompound {
    }
    eDocumenttypeStatusdefault = {
       type: 'enum',
-      allowableValues: ['Not required','Required'],
+      allowableValues: ['Not required','Required','Mandatory'],
       required: false
    }
    eDocumenttypeSalebyowner = {

@@ -28,7 +28,7 @@ import type { DiscussionImproveMessageV1ResponseMPayload } from './discussion-im
 
 /**
  * @type DiscussionImproveMessageV1Response
- * Response for POST /1/object/discussion
+ * Response for POST /1/object/discussion/improveMessage
  */
 /*export type DiscussionImproveMessageV1Response = CommonResponse;*/
 export interface DiscussionImproveMessageV1Response {

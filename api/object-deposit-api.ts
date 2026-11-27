@@ -36,11 +36,15 @@ import type { DepositGetCommunicationrecipientsV1Response } from '../model';
 // @ts-ignore
 import type { DepositGetCommunicationsendersV1Response } from '../model';
 // @ts-ignore
+import type { DepositGetDocumenttypechecklistV1Response } from '../model';
+// @ts-ignore
 import type { DepositGetListV1Response } from '../model';
 // @ts-ignore
 import type { DepositImportIntoEDMV1Request } from '../model';
 // @ts-ignore
 import type { DepositImportIntoEDMV1Response } from '../model';
+// @ts-ignore
+import type { DepositSyncDocumenttypechecklistV1Response } from '../model';
 // @ts-ignore
 import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
@@ -405,6 +409,64 @@ export const ObjectDepositApiAxiosParamCreator = function (configuration?: Confi
         },
         /**
          * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiDepositID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        depositGetDocumenttypechecklistV1: async (pkiDepositID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiDepositID' is not null or undefined
+            assertParamExists('depositGetDocumenttypechecklistV1', 'pkiDepositID', pkiDepositID)
+            const localVarPath = `/1/object/deposit/{pkiDepositID}/getDocumenttypechecklist`
+                .replace('{pkiDepositID}', encodeURIComponent(String(pkiDepositID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Retrieve Deposit list
          * @param {DepositGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -546,6 +608,67 @@ export const ObjectDepositApiAxiosParamCreator = function (configuration?: Confi
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiDepositID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        depositSyncDocumenttypechecklistV1: async (pkiDepositID: number, body?: object, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiDepositID' is not null or undefined
+            assertParamExists('depositSyncDocumenttypechecklistV1', 'pkiDepositID', pkiDepositID)
+            const localVarPath = `/1/object/deposit/{pkiDepositID}/syncDocumenttypechecklist`
+                .replace('{pkiDepositID}', encodeURIComponent(String(pkiDepositID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -636,6 +759,19 @@ export const ObjectDepositApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiDepositID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async depositGetDocumenttypechecklistV1(pkiDepositID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DepositGetDocumenttypechecklistV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.depositGetDocumenttypechecklistV1(pkiDepositID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectDepositApi.depositGetDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Retrieve Deposit list
          * @param {DepositGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -663,6 +799,20 @@ export const ObjectDepositApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.depositImportIntoEDMV1(pkiDepositID, depositImportIntoEDMV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectDepositApi.depositImportIntoEDMV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiDepositID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async depositSyncDocumenttypechecklistV1(pkiDepositID: number, body?: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DepositSyncDocumenttypechecklistV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.depositSyncDocumenttypechecklistV1(pkiDepositID, body, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectDepositApi.depositSyncDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -737,6 +887,16 @@ export const ObjectDepositApiFactory = function (configuration?: Configuration, 
         },
         /**
          * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiDepositID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        depositGetDocumenttypechecklistV1(pkiDepositID: number, options?: RawAxiosRequestConfig): AxiosPromise<DepositGetDocumenttypechecklistV1Response> {
+            return localVarFp.depositGetDocumenttypechecklistV1(pkiDepositID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Retrieve Deposit list
          * @param {DepositGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -759,6 +919,17 @@ export const ObjectDepositApiFactory = function (configuration?: Configuration, 
          */
         depositImportIntoEDMV1(pkiDepositID: number, depositImportIntoEDMV1Request: DepositImportIntoEDMV1Request, options?: RawAxiosRequestConfig): AxiosPromise<DepositImportIntoEDMV1Response> {
             return localVarFp.depositImportIntoEDMV1(pkiDepositID, depositImportIntoEDMV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiDepositID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        depositSyncDocumenttypechecklistV1(pkiDepositID: number, body?: object, options?: RawAxiosRequestConfig): AxiosPromise<DepositSyncDocumenttypechecklistV1Response> {
+            return localVarFp.depositSyncDocumenttypechecklistV1(pkiDepositID, body, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -836,6 +1007,17 @@ export class ObjectDepositApi extends BaseAPI {
 
     /**
      * 
+     * @summary Retrieve Document type checklist
+     * @param {number} pkiDepositID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public depositGetDocumenttypechecklistV1(pkiDepositID: number, options?: RawAxiosRequestConfig) {
+        return ObjectDepositApiFp(this.configuration).depositGetDocumenttypechecklistV1(pkiDepositID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
      * @summary Retrieve Deposit list
      * @param {DepositGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
      * @param {number} [iRowMax] 
@@ -859,6 +1041,18 @@ export class ObjectDepositApi extends BaseAPI {
      */
     public depositImportIntoEDMV1(pkiDepositID: number, depositImportIntoEDMV1Request: DepositImportIntoEDMV1Request, options?: RawAxiosRequestConfig) {
         return ObjectDepositApiFp(this.configuration).depositImportIntoEDMV1(pkiDepositID, depositImportIntoEDMV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Synchronize Document type checklist
+     * @param {number} pkiDepositID 
+     * @param {object} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public depositSyncDocumenttypechecklistV1(pkiDepositID: number, body?: object, options?: RawAxiosRequestConfig) {
+        return ObjectDepositApiFp(this.configuration).depositSyncDocumenttypechecklistV1(pkiDepositID, body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

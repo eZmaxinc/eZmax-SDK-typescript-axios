@@ -11,8 +11,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**customerGetCommunicationListV1**](#customergetcommunicationlistv1) | **GET** /1/object/customer/{pkiCustomerID}/getCommunicationList | Retrieve Communication list|
 |[**customerGetCommunicationrecipientsV1**](#customergetcommunicationrecipientsv1) | **GET** /1/object/customer/{pkiCustomerID}/getCommunicationrecipients | Retrieve Communication recipients|
 |[**customerGetCommunicationsendersV1**](#customergetcommunicationsendersv1) | **GET** /1/object/customer/{pkiCustomerID}/getCommunicationsenders | Retrieve Communication senders|
+|[**customerGetDocumenttypechecklistV1**](#customergetdocumenttypechecklistv1) | **GET** /1/object/customer/{pkiCustomerID}/getDocumenttypechecklist | Retrieve Document type checklist|
 |[**customerGetObjectV2**](#customergetobjectv2) | **GET** /2/object/customer/{pkiCustomerID} | Retrieve an existing Customer|
 |[**customerImportIntoEDMV1**](#customerimportintoedmv1) | **POST** /1/object/customer/{pkiCustomerID}/importIntoEDM | Import attachments into the Customer|
+|[**customerSyncDocumenttypechecklistV1**](#customersyncdocumenttypechecklistv1) | **POST** /1/object/customer/{pkiCustomerID}/syncDocumenttypechecklist | Synchronize Document type checklist|
 
 # **customerBatchDownloadV1**
 > File customerBatchDownloadV1(customerBatchDownloadV1Request)
@@ -384,6 +386,57 @@ const { status, data } = await apiInstance.customerGetCommunicationsendersV1(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **customerGetDocumenttypechecklistV1**
+> CustomerGetDocumenttypechecklistV1Response customerGetDocumenttypechecklistV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectCustomerApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectCustomerApi(configuration);
+
+let pkiCustomerID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.customerGetDocumenttypechecklistV1(
+    pkiCustomerID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiCustomerID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**CustomerGetDocumenttypechecklistV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **customerGetObjectV2**
 > CustomerGetObjectV2Response customerGetObjectV2()
 
@@ -473,6 +526,60 @@ const { status, data } = await apiInstance.customerImportIntoEDMV1(
 ### Return type
 
 **CustomerImportIntoEDMV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **customerSyncDocumenttypechecklistV1**
+> CustomerSyncDocumenttypechecklistV1Response customerSyncDocumenttypechecklistV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectCustomerApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectCustomerApi(configuration);
+
+let pkiCustomerID: number; // (default to undefined)
+let body: object; // (optional)
+
+const { status, data } = await apiInstance.customerSyncDocumenttypechecklistV1(
+    pkiCustomerID,
+    body
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | **object**|  | |
+| **pkiCustomerID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**CustomerSyncDocumenttypechecklistV1Response**
 
 ### Authorization
 

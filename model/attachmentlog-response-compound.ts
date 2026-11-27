@@ -60,7 +60,7 @@ export interface AttachmentlogResponseCompound {
      */
     eAttachmentlogType:FieldEAttachmentlogType 
     /**
-     * The additionnal detail
+     * The additional detail for the Attachmentlog
      * @type {string}
      * @memberof AttachmentlogResponseCompound
      */

@@ -11,8 +11,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**agentGetCommunicationListV1**](#agentgetcommunicationlistv1) | **GET** /1/object/agent/{pkiAgentID}/getCommunicationList | Retrieve Communication list|
 |[**agentGetCommunicationrecipientsV1**](#agentgetcommunicationrecipientsv1) | **GET** /1/object/agent/{pkiAgentID}/getCommunicationrecipients | Retrieve Communication recipients|
 |[**agentGetCommunicationsendersV1**](#agentgetcommunicationsendersv1) | **GET** /1/object/agent/{pkiAgentID}/getCommunicationsenders | Retrieve Communication senders|
+|[**agentGetDocumenttypechecklistV1**](#agentgetdocumenttypechecklistv1) | **GET** /1/object/agent/{pkiAgentID}/getDocumenttypechecklist | Retrieve Document type checklist|
 |[**agentGetListV1**](#agentgetlistv1) | **GET** /1/object/agent/getList | Retrieve Agent list|
 |[**agentImportIntoEDMV1**](#agentimportintoedmv1) | **POST** /1/object/agent/{pkiAgentID}/importIntoEDM | Import attachments into the Agent|
+|[**agentSyncDocumenttypechecklistV1**](#agentsyncdocumenttypechecklistv1) | **POST** /1/object/agent/{pkiAgentID}/syncDocumenttypechecklist | Synchronize Document type checklist|
 
 # **agentBatchDownloadV1**
 > File agentBatchDownloadV1(agentBatchDownloadV1Request)
@@ -384,6 +386,57 @@ const { status, data } = await apiInstance.agentGetCommunicationsendersV1(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **agentGetDocumenttypechecklistV1**
+> AgentGetDocumenttypechecklistV1Response agentGetDocumenttypechecklistV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectAgentApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectAgentApi(configuration);
+
+let pkiAgentID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.agentGetDocumenttypechecklistV1(
+    pkiAgentID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiAgentID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**AgentGetDocumenttypechecklistV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **agentGetListV1**
 > AgentGetListV1Response agentGetListV1()
 
@@ -485,6 +538,60 @@ const { status, data } = await apiInstance.agentImportIntoEDMV1(
 ### Return type
 
 **AgentImportIntoEDMV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **agentSyncDocumenttypechecklistV1**
+> AgentSyncDocumenttypechecklistV1Response agentSyncDocumenttypechecklistV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectAgentApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectAgentApi(configuration);
+
+let pkiAgentID: number; // (default to undefined)
+let body: object; // (optional)
+
+const { status, data } = await apiInstance.agentSyncDocumenttypechecklistV1(
+    pkiAgentID,
+    body
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | **object**|  | |
+| **pkiAgentID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**AgentSyncDocumenttypechecklistV1Response**
 
 ### Authorization
 

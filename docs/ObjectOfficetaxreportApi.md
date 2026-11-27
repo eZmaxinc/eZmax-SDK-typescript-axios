@@ -10,8 +10,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**officetaxreportGetCommunicationListV1**](#officetaxreportgetcommunicationlistv1) | **GET** /1/object/officetaxreport/{pkiOfficetaxreportID}/getCommunicationList | Retrieve Communication list|
 |[**officetaxreportGetCommunicationrecipientsV1**](#officetaxreportgetcommunicationrecipientsv1) | **GET** /1/object/officetaxreport/{pkiOfficetaxreportID}/getCommunicationrecipients | Retrieve Communication recipients|
 |[**officetaxreportGetCommunicationsendersV1**](#officetaxreportgetcommunicationsendersv1) | **GET** /1/object/officetaxreport/{pkiOfficetaxreportID}/getCommunicationsenders | Retrieve Communication senders|
+|[**officetaxreportGetDocumenttypechecklistV1**](#officetaxreportgetdocumenttypechecklistv1) | **GET** /1/object/officetaxreport/{pkiOfficetaxreportID}/getDocumenttypechecklist | Retrieve Document type checklist|
 |[**officetaxreportGetListV1**](#officetaxreportgetlistv1) | **GET** /1/object/officetaxreport/getList | Retrieve Officetaxreport list|
 |[**officetaxreportImportIntoEDMV1**](#officetaxreportimportintoedmv1) | **POST** /1/object/officetaxreport/{pkiOfficetaxreportID}/importIntoEDM | Import attachments into the Officetaxreport|
+|[**officetaxreportSyncDocumenttypechecklistV1**](#officetaxreportsyncdocumenttypechecklistv1) | **POST** /1/object/officetaxreport/{pkiOfficetaxreportID}/syncDocumenttypechecklist | Synchronize Document type checklist|
 
 # **officetaxreportBatchDownloadV1**
 > File officetaxreportBatchDownloadV1(officetaxreportBatchDownloadV1Request)
@@ -325,6 +327,57 @@ const { status, data } = await apiInstance.officetaxreportGetCommunicationsender
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **officetaxreportGetDocumenttypechecklistV1**
+> OfficetaxreportGetDocumenttypechecklistV1Response officetaxreportGetDocumenttypechecklistV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectOfficetaxreportApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectOfficetaxreportApi(configuration);
+
+let pkiOfficetaxreportID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.officetaxreportGetDocumenttypechecklistV1(
+    pkiOfficetaxreportID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiOfficetaxreportID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**OfficetaxreportGetDocumenttypechecklistV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **officetaxreportGetListV1**
 > OfficetaxreportGetListV1Response officetaxreportGetListV1()
 
@@ -425,6 +478,60 @@ const { status, data } = await apiInstance.officetaxreportImportIntoEDMV1(
 ### Return type
 
 **OfficetaxreportImportIntoEDMV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **officetaxreportSyncDocumenttypechecklistV1**
+> OfficetaxreportSyncDocumenttypechecklistV1Response officetaxreportSyncDocumenttypechecklistV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectOfficetaxreportApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectOfficetaxreportApi(configuration);
+
+let pkiOfficetaxreportID: number; // (default to undefined)
+let body: object; // (optional)
+
+const { status, data } = await apiInstance.officetaxreportSyncDocumenttypechecklistV1(
+    pkiOfficetaxreportID,
+    body
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | **object**|  | |
+| **pkiOfficetaxreportID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**OfficetaxreportSyncDocumenttypechecklistV1Response**
 
 ### Authorization
 

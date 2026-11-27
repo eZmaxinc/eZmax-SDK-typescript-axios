@@ -48,7 +48,7 @@ export interface InscriptionnotauthenticatedconditionResponseCompound {
      */
     fkiInscriptionnotauthenticatedID:number 
     /**
-     * Can access attachment when we clone a user
+     * Whether the user can access attachments when their session is cloned
      * @type {boolean}
      * @memberof InscriptionnotauthenticatedconditionResponseCompound
      */

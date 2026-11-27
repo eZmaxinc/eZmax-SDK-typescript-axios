@@ -15,7 +15,7 @@
 
 
 /**
- * The saledisplaybyrole of the Documenttype
+ * The role that determines document display in sale transactions
  */
 
 export const FieldEDocumenttypeSaledisplaybyrole = {

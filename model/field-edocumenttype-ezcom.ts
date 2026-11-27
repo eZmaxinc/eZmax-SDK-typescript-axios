@@ -15,7 +15,7 @@
 
 
 /**
- * The ezcom of the Documenttype
+ * The ezcom document type category
  */
 
 export const FieldEDocumenttypeEzcom = {

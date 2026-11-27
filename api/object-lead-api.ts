@@ -38,11 +38,15 @@ import type { LeadGetCommunicationrecipientsV1Response } from '../model';
 // @ts-ignore
 import type { LeadGetCommunicationsendersV1Response } from '../model';
 // @ts-ignore
+import type { LeadGetDocumenttypechecklistV1Response } from '../model';
+// @ts-ignore
 import type { LeadGetListV1Response } from '../model';
 // @ts-ignore
 import type { LeadImportIntoEDMV1Request } from '../model';
 // @ts-ignore
 import type { LeadImportIntoEDMV1Response } from '../model';
+// @ts-ignore
+import type { LeadSyncDocumenttypechecklistV1Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -404,6 +408,64 @@ export const ObjectLeadApiAxiosParamCreator = function (configuration?: Configur
             };
         },
         /**
+         * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiLeadID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        leadGetDocumenttypechecklistV1: async (pkiLeadID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiLeadID' is not null or undefined
+            assertParamExists('leadGetDocumenttypechecklistV1', 'pkiLeadID', pkiLeadID)
+            const localVarPath = `/1/object/lead/{pkiLeadID}/getDocumenttypechecklist`
+                .replace('{pkiLeadID}', encodeURIComponent(String(pkiLeadID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eLeadStatus | New<br>Dispatching<br>Assigned<br>Lost<br>Won |
          * @summary Retrieve Lead list
          * @param {LeadGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
@@ -546,6 +608,67 @@ export const ObjectLeadApiAxiosParamCreator = function (configuration?: Configur
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiLeadID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        leadSyncDocumenttypechecklistV1: async (pkiLeadID: number, body?: object, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiLeadID' is not null or undefined
+            assertParamExists('leadSyncDocumenttypechecklistV1', 'pkiLeadID', pkiLeadID)
+            const localVarPath = `/1/object/lead/{pkiLeadID}/syncDocumenttypechecklist`
+                .replace('{pkiLeadID}', encodeURIComponent(String(pkiLeadID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -635,6 +758,19 @@ export const ObjectLeadApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
+         * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiLeadID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async leadGetDocumenttypechecklistV1(pkiLeadID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<LeadGetDocumenttypechecklistV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.leadGetDocumenttypechecklistV1(pkiLeadID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectLeadApi.leadGetDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eLeadStatus | New<br>Dispatching<br>Assigned<br>Lost<br>Won |
          * @summary Retrieve Lead list
          * @param {LeadGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
@@ -663,6 +799,20 @@ export const ObjectLeadApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.leadImportIntoEDMV1(pkiLeadID, leadImportIntoEDMV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectLeadApi.leadImportIntoEDMV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiLeadID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async leadSyncDocumenttypechecklistV1(pkiLeadID: number, body?: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<LeadSyncDocumenttypechecklistV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.leadSyncDocumenttypechecklistV1(pkiLeadID, body, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectLeadApi.leadSyncDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -736,6 +886,16 @@ export const ObjectLeadApiFactory = function (configuration?: Configuration, bas
             return localVarFp.leadGetCommunicationsendersV1(pkiLeadID, options).then((request) => request(axios, basePath));
         },
         /**
+         * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiLeadID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        leadGetDocumenttypechecklistV1(pkiLeadID: number, options?: RawAxiosRequestConfig): AxiosPromise<LeadGetDocumenttypechecklistV1Response> {
+            return localVarFp.leadGetDocumenttypechecklistV1(pkiLeadID, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eLeadStatus | New<br>Dispatching<br>Assigned<br>Lost<br>Won |
          * @summary Retrieve Lead list
          * @param {LeadGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
@@ -759,6 +919,17 @@ export const ObjectLeadApiFactory = function (configuration?: Configuration, bas
          */
         leadImportIntoEDMV1(pkiLeadID: number, leadImportIntoEDMV1Request: LeadImportIntoEDMV1Request, options?: RawAxiosRequestConfig): AxiosPromise<LeadImportIntoEDMV1Response> {
             return localVarFp.leadImportIntoEDMV1(pkiLeadID, leadImportIntoEDMV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiLeadID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        leadSyncDocumenttypechecklistV1(pkiLeadID: number, body?: object, options?: RawAxiosRequestConfig): AxiosPromise<LeadSyncDocumenttypechecklistV1Response> {
+            return localVarFp.leadSyncDocumenttypechecklistV1(pkiLeadID, body, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -835,6 +1006,17 @@ export class ObjectLeadApi extends BaseAPI {
     }
 
     /**
+     * 
+     * @summary Retrieve Document type checklist
+     * @param {number} pkiLeadID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public leadGetDocumenttypechecklistV1(pkiLeadID: number, options?: RawAxiosRequestConfig) {
+        return ObjectLeadApiFp(this.configuration).leadGetDocumenttypechecklistV1(pkiLeadID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eLeadStatus | New<br>Dispatching<br>Assigned<br>Lost<br>Won |
      * @summary Retrieve Lead list
      * @param {LeadGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
@@ -859,6 +1041,18 @@ export class ObjectLeadApi extends BaseAPI {
      */
     public leadImportIntoEDMV1(pkiLeadID: number, leadImportIntoEDMV1Request: LeadImportIntoEDMV1Request, options?: RawAxiosRequestConfig) {
         return ObjectLeadApiFp(this.configuration).leadImportIntoEDMV1(pkiLeadID, leadImportIntoEDMV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Synchronize Document type checklist
+     * @param {number} pkiLeadID 
+     * @param {object} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public leadSyncDocumenttypechecklistV1(pkiLeadID: number, body?: object, options?: RawAxiosRequestConfig) {
+        return ObjectLeadApiFp(this.configuration).leadSyncDocumenttypechecklistV1(pkiLeadID, body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

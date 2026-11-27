@@ -6,8 +6,8 @@ The name1 of the Documenttype
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**sDocumenttypeName1** | **string** | The name1 of the Documenttype | [optional] [default to undefined]
-**sDocumenttypeName2** | **string** | The name2 of the Documenttype | [optional] [default to undefined]
+**sDocumenttypeName1** | **string** | The name of the document type in French | [optional] [default to undefined]
+**sDocumenttypeName2** | **string** | The name of the document type in English | [optional] [default to undefined]
 
 ## Example
 

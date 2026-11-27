@@ -10,8 +10,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**deposittransitchequeGetCommunicationListV1**](#deposittransitchequegetcommunicationlistv1) | **GET** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getCommunicationList | Retrieve Communication list|
 |[**deposittransitchequeGetCommunicationrecipientsV1**](#deposittransitchequegetcommunicationrecipientsv1) | **GET** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getCommunicationrecipients | Retrieve Communication recipients|
 |[**deposittransitchequeGetCommunicationsendersV1**](#deposittransitchequegetcommunicationsendersv1) | **GET** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getCommunicationsenders | Retrieve Communication senders|
+|[**deposittransitchequeGetDocumenttypechecklistV1**](#deposittransitchequegetdocumenttypechecklistv1) | **GET** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getDocumenttypechecklist | Retrieve Document type checklist|
 |[**deposittransitchequeGetListV1**](#deposittransitchequegetlistv1) | **GET** /1/object/deposittransitcheque/getList | Retrieve Deposittransitcheque list|
 |[**deposittransitchequeImportIntoEDMV1**](#deposittransitchequeimportintoedmv1) | **POST** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/importIntoEDM | Import attachments into the Deposittransitcheque|
+|[**deposittransitchequeSyncDocumenttypechecklistV1**](#deposittransitchequesyncdocumenttypechecklistv1) | **POST** /1/object/deposittransitcheque/{pkiDeposittransitchequeID}/syncDocumenttypechecklist | Synchronize Document type checklist|
 
 # **deposittransitchequeBatchDownloadV1**
 > File deposittransitchequeBatchDownloadV1(deposittransitchequeBatchDownloadV1Request)
@@ -325,6 +327,57 @@ const { status, data } = await apiInstance.deposittransitchequeGetCommunications
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **deposittransitchequeGetDocumenttypechecklistV1**
+> DeposittransitchequeGetDocumenttypechecklistV1Response deposittransitchequeGetDocumenttypechecklistV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectDeposittransitchequeApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectDeposittransitchequeApi(configuration);
+
+let pkiDeposittransitchequeID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.deposittransitchequeGetDocumenttypechecklistV1(
+    pkiDeposittransitchequeID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiDeposittransitchequeID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**DeposittransitchequeGetDocumenttypechecklistV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **deposittransitchequeGetListV1**
 > DeposittransitchequeGetListV1Response deposittransitchequeGetListV1()
 
@@ -425,6 +478,60 @@ const { status, data } = await apiInstance.deposittransitchequeImportIntoEDMV1(
 ### Return type
 
 **DeposittransitchequeImportIntoEDMV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deposittransitchequeSyncDocumenttypechecklistV1**
+> DeposittransitchequeSyncDocumenttypechecklistV1Response deposittransitchequeSyncDocumenttypechecklistV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectDeposittransitchequeApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectDeposittransitchequeApi(configuration);
+
+let pkiDeposittransitchequeID: number; // (default to undefined)
+let body: object; // (optional)
+
+const { status, data } = await apiInstance.deposittransitchequeSyncDocumenttypechecklistV1(
+    pkiDeposittransitchequeID,
+    body
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | **object**|  | |
+| **pkiDeposittransitchequeID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**DeposittransitchequeSyncDocumenttypechecklistV1Response**
 
 ### Authorization
 

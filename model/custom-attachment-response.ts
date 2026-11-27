@@ -297,7 +297,7 @@ export interface CustomAttachmentResponse {
      */
     fkiDocumenttypechecklistID?:number 
     /**
-     * The name of the Documenttype in the language of the requester
+     * The name of the document type in the requester\'s language
      * @type {string}
      * @memberof CustomAttachmentResponse
      */
@@ -393,13 +393,13 @@ export interface CustomAttachmentResponse {
      */
     sAttachmentMD5:string 
     /**
-     * Whether if it\'s deleted
+     * Whether the Attachment is deleted or not
      * @type {boolean}
      * @memberof CustomAttachmentResponse
      */
     bAttachmentDeleted:boolean 
     /**
-     * Whether if it\'s valid
+     * Whether the Attachment is valid or not
      * @type {boolean}
      * @memberof CustomAttachmentResponse
      */

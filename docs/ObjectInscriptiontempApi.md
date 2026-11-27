@@ -10,8 +10,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**inscriptiontempGetCommunicationListV1**](#inscriptiontempgetcommunicationlistv1) | **GET** /1/object/inscriptiontemp/{pkiInscriptiontempID}/getCommunicationList | Retrieve Communication list|
 |[**inscriptiontempGetCommunicationrecipientsV1**](#inscriptiontempgetcommunicationrecipientsv1) | **GET** /1/object/inscriptiontemp/{pkiInscriptiontempID}/getCommunicationrecipients | Retrieve Inscriptiontemp\&#39;s Communicationrecipient|
 |[**inscriptiontempGetCommunicationsendersV1**](#inscriptiontempgetcommunicationsendersv1) | **GET** /1/object/inscriptiontemp/{pkiInscriptiontempID}/getCommunicationsenders | Retrieve Inscriptiontemp\&#39;s Communicationsender|
+|[**inscriptiontempGetDocumenttypechecklistV1**](#inscriptiontempgetdocumenttypechecklistv1) | **GET** /1/object/inscriptiontemp/{pkiInscriptiontempID}/getDocumenttypechecklist | Retrieve Document type checklist|
 |[**inscriptiontempGetListV1**](#inscriptiontempgetlistv1) | **GET** /1/object/inscriptiontemp/getList | Retrieve Inscriptiontemp list|
 |[**inscriptiontempImportIntoEDMV1**](#inscriptiontempimportintoedmv1) | **POST** /1/object/inscriptiontemp/{pkiInscriptiontempID}/importIntoEDM | Import attachments into the Inscriptiontemp|
+|[**inscriptiontempSyncDocumenttypechecklistV1**](#inscriptiontempsyncdocumenttypechecklistv1) | **POST** /1/object/inscriptiontemp/{pkiInscriptiontempID}/syncDocumenttypechecklist | Synchronize Document type checklist|
 
 # **inscriptiontempBatchDownloadV1**
 > File inscriptiontempBatchDownloadV1(inscriptiontempBatchDownloadV1Request)
@@ -327,6 +329,57 @@ const { status, data } = await apiInstance.inscriptiontempGetCommunicationsender
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **inscriptiontempGetDocumenttypechecklistV1**
+> InscriptiontempGetDocumenttypechecklistV1Response inscriptiontempGetDocumenttypechecklistV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectInscriptiontempApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectInscriptiontempApi(configuration);
+
+let pkiInscriptiontempID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.inscriptiontempGetDocumenttypechecklistV1(
+    pkiInscriptiontempID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiInscriptiontempID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**InscriptiontempGetDocumenttypechecklistV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **inscriptiontempGetListV1**
 > InscriptiontempGetListV1Response inscriptiontempGetListV1()
 
@@ -428,6 +481,60 @@ const { status, data } = await apiInstance.inscriptiontempImportIntoEDMV1(
 ### Return type
 
 **InscriptiontempImportIntoEDMV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **inscriptiontempSyncDocumenttypechecklistV1**
+> InscriptiontempSyncDocumenttypechecklistV1Response inscriptiontempSyncDocumenttypechecklistV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectInscriptiontempApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectInscriptiontempApi(configuration);
+
+let pkiInscriptiontempID: number; // (default to undefined)
+let body: object; // (optional)
+
+const { status, data } = await apiInstance.inscriptiontempSyncDocumenttypechecklistV1(
+    pkiInscriptiontempID,
+    body
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | **object**|  | |
+| **pkiInscriptiontempID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**InscriptiontempSyncDocumenttypechecklistV1Response**
 
 ### Authorization
 

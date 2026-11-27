@@ -10,7 +10,9 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**paymentpreparationGetCommunicationListV1**](#paymentpreparationgetcommunicationlistv1) | **GET** /1/object/paymentpreparation/{pkiPaymentpreparationID}/getCommunicationList | Retrieve Communication list|
 |[**paymentpreparationGetCommunicationrecipientsV1**](#paymentpreparationgetcommunicationrecipientsv1) | **GET** /1/object/paymentpreparation/{pkiPaymentpreparationID}/getCommunicationrecipients | Retrieve Communication recipients|
 |[**paymentpreparationGetCommunicationsendersV1**](#paymentpreparationgetcommunicationsendersv1) | **GET** /1/object/paymentpreparation/{pkiPaymentpreparationID}/getCommunicationsenders | Retrieve Communication senders|
+|[**paymentpreparationGetDocumenttypechecklistV1**](#paymentpreparationgetdocumenttypechecklistv1) | **GET** /1/object/paymentpreparation/{pkiPaymentpreparationID}/getDocumenttypechecklist | Retrieve Document type checklist|
 |[**paymentpreparationImportIntoEDMV1**](#paymentpreparationimportintoedmv1) | **POST** /1/object/paymentpreparation/{pkiPaymentpreparationID}/importIntoEDM | Import attachments into the Paymentpreparation|
+|[**paymentpreparationSyncDocumenttypechecklistV1**](#paymentpreparationsyncdocumenttypechecklistv1) | **POST** /1/object/paymentpreparation/{pkiPaymentpreparationID}/syncDocumenttypechecklist | Synchronize Document type checklist|
 
 # **paymentpreparationBatchDownloadV1**
 > File paymentpreparationBatchDownloadV1(paymentpreparationBatchDownloadV1Request)
@@ -324,6 +326,57 @@ const { status, data } = await apiInstance.paymentpreparationGetCommunicationsen
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **paymentpreparationGetDocumenttypechecklistV1**
+> PaymentpreparationGetDocumenttypechecklistV1Response paymentpreparationGetDocumenttypechecklistV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectPaymentpreparationApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectPaymentpreparationApi(configuration);
+
+let pkiPaymentpreparationID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.paymentpreparationGetDocumenttypechecklistV1(
+    pkiPaymentpreparationID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiPaymentpreparationID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**PaymentpreparationGetDocumenttypechecklistV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **paymentpreparationImportIntoEDMV1**
 > PaymentpreparationImportIntoEDMV1Response paymentpreparationImportIntoEDMV1(paymentpreparationImportIntoEDMV1Request)
 
@@ -360,6 +413,60 @@ const { status, data } = await apiInstance.paymentpreparationImportIntoEDMV1(
 ### Return type
 
 **PaymentpreparationImportIntoEDMV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **paymentpreparationSyncDocumenttypechecklistV1**
+> PaymentpreparationSyncDocumenttypechecklistV1Response paymentpreparationSyncDocumenttypechecklistV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectPaymentpreparationApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectPaymentpreparationApi(configuration);
+
+let pkiPaymentpreparationID: number; // (default to undefined)
+let body: object; // (optional)
+
+const { status, data } = await apiInstance.paymentpreparationSyncDocumenttypechecklistV1(
+    pkiPaymentpreparationID,
+    body
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | **object**|  | |
+| **pkiPaymentpreparationID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**PaymentpreparationSyncDocumenttypechecklistV1Response**
 
 ### Authorization
 

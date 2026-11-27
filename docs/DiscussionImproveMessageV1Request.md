@@ -6,8 +6,6 @@ Request for POST /1/object/discussion/improveMessage
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**fkiDiscussionID** | **number** | The unique ID of the Discussion | [optional] [default to undefined]
-**eDiscussionRobot** | [**FieldEDiscussionRobot**](FieldEDiscussionRobot.md) |  | [default to undefined]
 **tDiscussionMessage** | **string** | The Message of the Discussion | [default to undefined]
 
 ## Example
@@ -16,8 +14,6 @@ Name | Type | Description | Notes
 import { DiscussionImproveMessageV1Request } from '@ezmaxinc/ezmax-sdk-typescript-axios';
 
 const instance: DiscussionImproveMessageV1Request = {
-    fkiDiscussionID,
-    eDiscussionRobot,
     tDiscussionMessage,
 };
 ```

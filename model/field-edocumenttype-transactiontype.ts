@@ -15,7 +15,7 @@
 
 
 /**
- * The transactiontype of the Documenttype
+ * The transaction type for which the document is applicable
  */
 
 export const FieldEDocumenttypeTransactiontype = {

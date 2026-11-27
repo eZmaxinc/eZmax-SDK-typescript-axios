@@ -15,12 +15,13 @@
 
 
 /**
- * The statusdefault of the Documenttype
+ * The default status requirement for the document type
  */
 
 export const FieldEDocumenttypeStatusdefault = {
     Not_required: 'Not required',
     Required: 'Required',
+    Mandatory: 'Mandatory',
 } as const;
 
 export type FieldEDocumenttypeStatusdefault = typeof FieldEDocumenttypeStatusdefault[keyof typeof FieldEDocumenttypeStatusdefault];

@@ -10,8 +10,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**buyercontractGetCommunicationListV1**](#buyercontractgetcommunicationlistv1) | **GET** /1/object/buyercontract/{pkiBuyercontractID}/getCommunicationList | Retrieve Communication list|
 |[**buyercontractGetCommunicationrecipientsV1**](#buyercontractgetcommunicationrecipientsv1) | **GET** /1/object/buyercontract/{pkiBuyercontractID}/getCommunicationrecipients | Retrieve Buyercontract\&#39;s Communicationrecipient|
 |[**buyercontractGetCommunicationsendersV1**](#buyercontractgetcommunicationsendersv1) | **GET** /1/object/buyercontract/{pkiBuyercontractID}/getCommunicationsenders | Retrieve Buyercontract\&#39;s Communicationsender|
+|[**buyercontractGetDocumenttypechecklistV1**](#buyercontractgetdocumenttypechecklistv1) | **GET** /1/object/buyercontract/{pkiBuyercontractID}/getDocumenttypechecklist | Retrieve Document type checklist|
 |[**buyercontractGetListV1**](#buyercontractgetlistv1) | **GET** /1/object/buyercontract/getList | Retrieve Buyercontract list|
 |[**buyercontractImportIntoEDMV1**](#buyercontractimportintoedmv1) | **POST** /1/object/buyercontract/{pkiBuyercontractID}/importIntoEDM | Import attachments into the Buyercontract|
+|[**buyercontractSyncDocumenttypechecklistV1**](#buyercontractsyncdocumenttypechecklistv1) | **POST** /1/object/buyercontract/{pkiBuyercontractID}/syncDocumenttypechecklist | Synchronize Document type checklist|
 
 # **buyercontractBatchDownloadV1**
 > File buyercontractBatchDownloadV1(buyercontractBatchDownloadV1Request)
@@ -327,6 +329,57 @@ const { status, data } = await apiInstance.buyercontractGetCommunicationsendersV
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **buyercontractGetDocumenttypechecklistV1**
+> BuyercontractGetDocumenttypechecklistV1Response buyercontractGetDocumenttypechecklistV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectBuyercontractApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectBuyercontractApi(configuration);
+
+let pkiBuyercontractID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.buyercontractGetDocumenttypechecklistV1(
+    pkiBuyercontractID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiBuyercontractID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**BuyercontractGetDocumenttypechecklistV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **buyercontractGetListV1**
 > BuyercontractGetListV1Response buyercontractGetListV1()
 
@@ -428,6 +481,60 @@ const { status, data } = await apiInstance.buyercontractImportIntoEDMV1(
 ### Return type
 
 **BuyercontractImportIntoEDMV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **buyercontractSyncDocumenttypechecklistV1**
+> BuyercontractSyncDocumenttypechecklistV1Response buyercontractSyncDocumenttypechecklistV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectBuyercontractApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectBuyercontractApi(configuration);
+
+let pkiBuyercontractID: number; // (default to undefined)
+let body: object; // (optional)
+
+const { status, data } = await apiInstance.buyercontractSyncDocumenttypechecklistV1(
+    pkiBuyercontractID,
+    body
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | **object**|  | |
+| **pkiBuyercontractID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**BuyercontractSyncDocumenttypechecklistV1Response**
 
 ### Authorization
 

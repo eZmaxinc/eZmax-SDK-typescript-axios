@@ -44,7 +44,7 @@ export interface AttachmentlogResponse {
     /*'eAttachmentlogType': FieldEAttachmentlogType;*/
     'eAttachmentlogType': FieldEAttachmentlogType;
     /**
-     * The additionnal detail
+     * The additional detail for the Attachmentlog
      */
     /*'sAttachmentlogDetail'?: string;*/
     'sAttachmentlogDetail'?: string;

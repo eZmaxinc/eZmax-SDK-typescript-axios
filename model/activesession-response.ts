@@ -81,7 +81,7 @@ export interface ActivesessionResponse {
     /*'bActivesessionIssuperadmin': boolean;*/
     'bActivesessionIssuperadmin': boolean;
     /**
-     * Can access attachment when we clone a user
+     * Whether the user can access attachments when their session is cloned
      */
     /*'bActivesessionAttachment'?: boolean;*/
     'bActivesessionAttachment'?: boolean;

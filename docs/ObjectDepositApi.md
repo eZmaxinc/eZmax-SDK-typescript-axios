@@ -10,8 +10,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**depositGetCommunicationListV1**](#depositgetcommunicationlistv1) | **GET** /1/object/deposit/{pkiDepositID}/getCommunicationList | Retrieve Communication list|
 |[**depositGetCommunicationrecipientsV1**](#depositgetcommunicationrecipientsv1) | **GET** /1/object/deposit/{pkiDepositID}/getCommunicationrecipients | Retrieve Communication recipients|
 |[**depositGetCommunicationsendersV1**](#depositgetcommunicationsendersv1) | **GET** /1/object/deposit/{pkiDepositID}/getCommunicationsenders | Retrieve Communication senders|
+|[**depositGetDocumenttypechecklistV1**](#depositgetdocumenttypechecklistv1) | **GET** /1/object/deposit/{pkiDepositID}/getDocumenttypechecklist | Retrieve Document type checklist|
 |[**depositGetListV1**](#depositgetlistv1) | **GET** /1/object/deposit/getList | Retrieve Deposit list|
 |[**depositImportIntoEDMV1**](#depositimportintoedmv1) | **POST** /1/object/deposit/{pkiDepositID}/importIntoEDM | Import attachments into the Deposit|
+|[**depositSyncDocumenttypechecklistV1**](#depositsyncdocumenttypechecklistv1) | **POST** /1/object/deposit/{pkiDepositID}/syncDocumenttypechecklist | Synchronize Document type checklist|
 
 # **depositBatchDownloadV1**
 > File depositBatchDownloadV1(depositBatchDownloadV1Request)
@@ -325,6 +327,57 @@ const { status, data } = await apiInstance.depositGetCommunicationsendersV1(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **depositGetDocumenttypechecklistV1**
+> DepositGetDocumenttypechecklistV1Response depositGetDocumenttypechecklistV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectDepositApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectDepositApi(configuration);
+
+let pkiDepositID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.depositGetDocumenttypechecklistV1(
+    pkiDepositID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiDepositID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**DepositGetDocumenttypechecklistV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **depositGetListV1**
 > DepositGetListV1Response depositGetListV1()
 
@@ -425,6 +478,60 @@ const { status, data } = await apiInstance.depositImportIntoEDMV1(
 ### Return type
 
 **DepositImportIntoEDMV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **depositSyncDocumenttypechecklistV1**
+> DepositSyncDocumenttypechecklistV1Response depositSyncDocumenttypechecklistV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectDepositApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectDepositApi(configuration);
+
+let pkiDepositID: number; // (default to undefined)
+let body: object; // (optional)
+
+const { status, data } = await apiInstance.depositSyncDocumenttypechecklistV1(
+    pkiDepositID,
+    body
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | **object**|  | |
+| **pkiDepositID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**DepositSyncDocumenttypechecklistV1Response**
 
 ### Authorization
 

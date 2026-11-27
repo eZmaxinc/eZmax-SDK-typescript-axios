@@ -42,6 +42,8 @@ import type { InscriptionnotauthenticatedGetCommunicationrecipientsV1Response } 
 // @ts-ignore
 import type { InscriptionnotauthenticatedGetCommunicationsendersV1Response } from '../model';
 // @ts-ignore
+import type { InscriptionnotauthenticatedGetDocumenttypechecklistV1Response } from '../model';
+// @ts-ignore
 import type { InscriptionnotauthenticatedGetInscriptionnotauthenticatedconditionsV1Response } from '../model';
 // @ts-ignore
 import type { InscriptionnotauthenticatedGetListV1Response } from '../model';
@@ -51,6 +53,8 @@ import type { InscriptionnotauthenticatedGetObjectV2Response } from '../model';
 import type { InscriptionnotauthenticatedImportIntoEDMV1Request } from '../model';
 // @ts-ignore
 import type { InscriptionnotauthenticatedImportIntoEDMV1Response } from '../model';
+// @ts-ignore
+import type { InscriptionnotauthenticatedSyncDocumenttypechecklistV1Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -476,6 +480,64 @@ export const ObjectInscriptionnotauthenticatedApiAxiosParamCreator = function (c
         },
         /**
          * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiInscriptionnotauthenticatedID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        inscriptionnotauthenticatedGetDocumenttypechecklistV1: async (pkiInscriptionnotauthenticatedID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiInscriptionnotauthenticatedID' is not null or undefined
+            assertParamExists('inscriptionnotauthenticatedGetDocumenttypechecklistV1', 'pkiInscriptionnotauthenticatedID', pkiInscriptionnotauthenticatedID)
+            const localVarPath = `/1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/getDocumenttypechecklist`
+                .replace('{pkiInscriptionnotauthenticatedID}', encodeURIComponent(String(pkiInscriptionnotauthenticatedID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Retrieve Inscriptionnotauthenticated conditions
          * @param {number} pkiInscriptionnotauthenticatedID 
          * @param {*} [options] Override http request option.
@@ -733,6 +795,67 @@ export const ObjectInscriptionnotauthenticatedApiAxiosParamCreator = function (c
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiInscriptionnotauthenticatedID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        inscriptionnotauthenticatedSyncDocumenttypechecklistV1: async (pkiInscriptionnotauthenticatedID: number, body?: object, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiInscriptionnotauthenticatedID' is not null or undefined
+            assertParamExists('inscriptionnotauthenticatedSyncDocumenttypechecklistV1', 'pkiInscriptionnotauthenticatedID', pkiInscriptionnotauthenticatedID)
+            const localVarPath = `/1/object/inscriptionnotauthenticated/{pkiInscriptionnotauthenticatedID}/syncDocumenttypechecklist`
+                .replace('{pkiInscriptionnotauthenticatedID}', encodeURIComponent(String(pkiInscriptionnotauthenticatedID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -837,6 +960,19 @@ export const ObjectInscriptionnotauthenticatedApiFp = function(configuration?: C
         },
         /**
          * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiInscriptionnotauthenticatedID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async inscriptionnotauthenticatedGetDocumenttypechecklistV1(pkiInscriptionnotauthenticatedID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InscriptionnotauthenticatedGetDocumenttypechecklistV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.inscriptionnotauthenticatedGetDocumenttypechecklistV1(pkiInscriptionnotauthenticatedID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectInscriptionnotauthenticatedApi.inscriptionnotauthenticatedGetDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Retrieve Inscriptionnotauthenticated conditions
          * @param {number} pkiInscriptionnotauthenticatedID 
          * @param {*} [options] Override http request option.
@@ -890,6 +1026,20 @@ export const ObjectInscriptionnotauthenticatedApiFp = function(configuration?: C
             const localVarAxiosArgs = await localVarAxiosParamCreator.inscriptionnotauthenticatedImportIntoEDMV1(pkiInscriptionnotauthenticatedID, inscriptionnotauthenticatedImportIntoEDMV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectInscriptionnotauthenticatedApi.inscriptionnotauthenticatedImportIntoEDMV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiInscriptionnotauthenticatedID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async inscriptionnotauthenticatedSyncDocumenttypechecklistV1(pkiInscriptionnotauthenticatedID: number, body?: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InscriptionnotauthenticatedSyncDocumenttypechecklistV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.inscriptionnotauthenticatedSyncDocumenttypechecklistV1(pkiInscriptionnotauthenticatedID, body, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectInscriptionnotauthenticatedApi.inscriptionnotauthenticatedSyncDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -975,6 +1125,16 @@ export const ObjectInscriptionnotauthenticatedApiFactory = function (configurati
         },
         /**
          * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiInscriptionnotauthenticatedID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        inscriptionnotauthenticatedGetDocumenttypechecklistV1(pkiInscriptionnotauthenticatedID: number, options?: RawAxiosRequestConfig): AxiosPromise<InscriptionnotauthenticatedGetDocumenttypechecklistV1Response> {
+            return localVarFp.inscriptionnotauthenticatedGetDocumenttypechecklistV1(pkiInscriptionnotauthenticatedID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Retrieve Inscriptionnotauthenticated conditions
          * @param {number} pkiInscriptionnotauthenticatedID 
          * @param {*} [options] Override http request option.
@@ -1017,6 +1177,17 @@ export const ObjectInscriptionnotauthenticatedApiFactory = function (configurati
          */
         inscriptionnotauthenticatedImportIntoEDMV1(pkiInscriptionnotauthenticatedID: number, inscriptionnotauthenticatedImportIntoEDMV1Request: InscriptionnotauthenticatedImportIntoEDMV1Request, options?: RawAxiosRequestConfig): AxiosPromise<InscriptionnotauthenticatedImportIntoEDMV1Response> {
             return localVarFp.inscriptionnotauthenticatedImportIntoEDMV1(pkiInscriptionnotauthenticatedID, inscriptionnotauthenticatedImportIntoEDMV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiInscriptionnotauthenticatedID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        inscriptionnotauthenticatedSyncDocumenttypechecklistV1(pkiInscriptionnotauthenticatedID: number, body?: object, options?: RawAxiosRequestConfig): AxiosPromise<InscriptionnotauthenticatedSyncDocumenttypechecklistV1Response> {
+            return localVarFp.inscriptionnotauthenticatedSyncDocumenttypechecklistV1(pkiInscriptionnotauthenticatedID, body, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -1106,6 +1277,17 @@ export class ObjectInscriptionnotauthenticatedApi extends BaseAPI {
 
     /**
      * 
+     * @summary Retrieve Document type checklist
+     * @param {number} pkiInscriptionnotauthenticatedID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public inscriptionnotauthenticatedGetDocumenttypechecklistV1(pkiInscriptionnotauthenticatedID: number, options?: RawAxiosRequestConfig) {
+        return ObjectInscriptionnotauthenticatedApiFp(this.configuration).inscriptionnotauthenticatedGetDocumenttypechecklistV1(pkiInscriptionnotauthenticatedID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
      * @summary Retrieve Inscriptionnotauthenticated conditions
      * @param {number} pkiInscriptionnotauthenticatedID 
      * @param {*} [options] Override http request option.
@@ -1151,6 +1333,18 @@ export class ObjectInscriptionnotauthenticatedApi extends BaseAPI {
      */
     public inscriptionnotauthenticatedImportIntoEDMV1(pkiInscriptionnotauthenticatedID: number, inscriptionnotauthenticatedImportIntoEDMV1Request: InscriptionnotauthenticatedImportIntoEDMV1Request, options?: RawAxiosRequestConfig) {
         return ObjectInscriptionnotauthenticatedApiFp(this.configuration).inscriptionnotauthenticatedImportIntoEDMV1(pkiInscriptionnotauthenticatedID, inscriptionnotauthenticatedImportIntoEDMV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Synchronize Document type checklist
+     * @param {number} pkiInscriptionnotauthenticatedID 
+     * @param {object} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public inscriptionnotauthenticatedSyncDocumenttypechecklistV1(pkiInscriptionnotauthenticatedID: number, body?: object, options?: RawAxiosRequestConfig) {
+        return ObjectInscriptionnotauthenticatedApiFp(this.configuration).inscriptionnotauthenticatedSyncDocumenttypechecklistV1(pkiInscriptionnotauthenticatedID, body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

@@ -38,11 +38,15 @@ import type { NotaryGetCommunicationrecipientsV1Response } from '../model';
 // @ts-ignore
 import type { NotaryGetCommunicationsendersV1Response } from '../model';
 // @ts-ignore
+import type { NotaryGetDocumenttypechecklistV1Response } from '../model';
+// @ts-ignore
 import type { NotaryGetListV1Response } from '../model';
 // @ts-ignore
 import type { NotaryImportIntoEDMV1Request } from '../model';
 // @ts-ignore
 import type { NotaryImportIntoEDMV1Response } from '../model';
+// @ts-ignore
+import type { NotarySyncDocumenttypechecklistV1Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -405,6 +409,64 @@ export const ObjectNotaryApiAxiosParamCreator = function (configuration?: Config
         },
         /**
          * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiNotaryID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        notaryGetDocumenttypechecklistV1: async (pkiNotaryID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiNotaryID' is not null or undefined
+            assertParamExists('notaryGetDocumenttypechecklistV1', 'pkiNotaryID', pkiNotaryID)
+            const localVarPath = `/1/object/notary/{pkiNotaryID}/getDocumenttypechecklist`
+                .replace('{pkiNotaryID}', encodeURIComponent(String(pkiNotaryID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Retrieve Notary list
          * @param {NotaryGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -546,6 +608,67 @@ export const ObjectNotaryApiAxiosParamCreator = function (configuration?: Config
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiNotaryID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        notarySyncDocumenttypechecklistV1: async (pkiNotaryID: number, body?: object, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiNotaryID' is not null or undefined
+            assertParamExists('notarySyncDocumenttypechecklistV1', 'pkiNotaryID', pkiNotaryID)
+            const localVarPath = `/1/object/notary/{pkiNotaryID}/syncDocumenttypechecklist`
+                .replace('{pkiNotaryID}', encodeURIComponent(String(pkiNotaryID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -636,6 +759,19 @@ export const ObjectNotaryApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiNotaryID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async notaryGetDocumenttypechecklistV1(pkiNotaryID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<NotaryGetDocumenttypechecklistV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.notaryGetDocumenttypechecklistV1(pkiNotaryID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectNotaryApi.notaryGetDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Retrieve Notary list
          * @param {NotaryGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -663,6 +799,20 @@ export const ObjectNotaryApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.notaryImportIntoEDMV1(pkiNotaryID, notaryImportIntoEDMV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectNotaryApi.notaryImportIntoEDMV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiNotaryID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async notarySyncDocumenttypechecklistV1(pkiNotaryID: number, body?: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<NotarySyncDocumenttypechecklistV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.notarySyncDocumenttypechecklistV1(pkiNotaryID, body, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectNotaryApi.notarySyncDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -737,6 +887,16 @@ export const ObjectNotaryApiFactory = function (configuration?: Configuration, b
         },
         /**
          * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiNotaryID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        notaryGetDocumenttypechecklistV1(pkiNotaryID: number, options?: RawAxiosRequestConfig): AxiosPromise<NotaryGetDocumenttypechecklistV1Response> {
+            return localVarFp.notaryGetDocumenttypechecklistV1(pkiNotaryID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Retrieve Notary list
          * @param {NotaryGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -759,6 +919,17 @@ export const ObjectNotaryApiFactory = function (configuration?: Configuration, b
          */
         notaryImportIntoEDMV1(pkiNotaryID: number, notaryImportIntoEDMV1Request: NotaryImportIntoEDMV1Request, options?: RawAxiosRequestConfig): AxiosPromise<NotaryImportIntoEDMV1Response> {
             return localVarFp.notaryImportIntoEDMV1(pkiNotaryID, notaryImportIntoEDMV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiNotaryID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        notarySyncDocumenttypechecklistV1(pkiNotaryID: number, body?: object, options?: RawAxiosRequestConfig): AxiosPromise<NotarySyncDocumenttypechecklistV1Response> {
+            return localVarFp.notarySyncDocumenttypechecklistV1(pkiNotaryID, body, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -836,6 +1007,17 @@ export class ObjectNotaryApi extends BaseAPI {
 
     /**
      * 
+     * @summary Retrieve Document type checklist
+     * @param {number} pkiNotaryID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public notaryGetDocumenttypechecklistV1(pkiNotaryID: number, options?: RawAxiosRequestConfig) {
+        return ObjectNotaryApiFp(this.configuration).notaryGetDocumenttypechecklistV1(pkiNotaryID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
      * @summary Retrieve Notary list
      * @param {NotaryGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
      * @param {number} [iRowMax] 
@@ -859,6 +1041,18 @@ export class ObjectNotaryApi extends BaseAPI {
      */
     public notaryImportIntoEDMV1(pkiNotaryID: number, notaryImportIntoEDMV1Request: NotaryImportIntoEDMV1Request, options?: RawAxiosRequestConfig) {
         return ObjectNotaryApiFp(this.configuration).notaryImportIntoEDMV1(pkiNotaryID, notaryImportIntoEDMV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Synchronize Document type checklist
+     * @param {number} pkiNotaryID 
+     * @param {object} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public notarySyncDocumenttypechecklistV1(pkiNotaryID: number, body?: object, options?: RawAxiosRequestConfig) {
+        return ObjectNotaryApiFp(this.configuration).notarySyncDocumenttypechecklistV1(pkiNotaryID, body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

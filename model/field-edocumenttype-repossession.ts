@@ -15,7 +15,7 @@
 
 
 /**
- * The repossession of the Documenttype
+ * Whether the document type applies to repossession transactions
  */
 
 export const FieldEDocumenttypeRepossession = {

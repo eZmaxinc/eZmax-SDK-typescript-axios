@@ -36,9 +36,13 @@ import type { ExternalbrokerGetCommunicationrecipientsV1Response } from '../mode
 // @ts-ignore
 import type { ExternalbrokerGetCommunicationsendersV1Response } from '../model';
 // @ts-ignore
+import type { ExternalbrokerGetDocumenttypechecklistV1Response } from '../model';
+// @ts-ignore
 import type { ExternalbrokerImportIntoEDMV1Request } from '../model';
 // @ts-ignore
 import type { ExternalbrokerImportIntoEDMV1Response } from '../model';
+// @ts-ignore
+import type { ExternalbrokerSyncDocumenttypechecklistV1Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -401,6 +405,64 @@ export const ObjectExternalbrokerApiAxiosParamCreator = function (configuration?
         },
         /**
          * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiExternalbrokerID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        externalbrokerGetDocumenttypechecklistV1: async (pkiExternalbrokerID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiExternalbrokerID' is not null or undefined
+            assertParamExists('externalbrokerGetDocumenttypechecklistV1', 'pkiExternalbrokerID', pkiExternalbrokerID)
+            const localVarPath = `/1/object/externalbroker/{pkiExternalbrokerID}/getDocumenttypechecklist`
+                .replace('{pkiExternalbrokerID}', encodeURIComponent(String(pkiExternalbrokerID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Import attachments into the Externalbroker
          * @param {number} pkiExternalbrokerID 
          * @param {ExternalbrokerImportIntoEDMV1Request} externalbrokerImportIntoEDMV1Request 
@@ -440,6 +502,67 @@ export const ObjectExternalbrokerApiAxiosParamCreator = function (configuration?
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(externalbrokerImportIntoEDMV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiExternalbrokerID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        externalbrokerSyncDocumenttypechecklistV1: async (pkiExternalbrokerID: number, body?: object, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiExternalbrokerID' is not null or undefined
+            assertParamExists('externalbrokerSyncDocumenttypechecklistV1', 'pkiExternalbrokerID', pkiExternalbrokerID)
+            const localVarPath = `/1/object/externalbroker/{pkiExternalbrokerID}/syncDocumenttypechecklist`
+                .replace('{pkiExternalbrokerID}', encodeURIComponent(String(pkiExternalbrokerID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -552,6 +675,19 @@ export const ObjectExternalbrokerApiFp = function(configuration?: Configuration)
         },
         /**
          * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiExternalbrokerID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async externalbrokerGetDocumenttypechecklistV1(pkiExternalbrokerID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ExternalbrokerGetDocumenttypechecklistV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.externalbrokerGetDocumenttypechecklistV1(pkiExternalbrokerID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectExternalbrokerApi.externalbrokerGetDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Import attachments into the Externalbroker
          * @param {number} pkiExternalbrokerID 
          * @param {ExternalbrokerImportIntoEDMV1Request} externalbrokerImportIntoEDMV1Request 
@@ -562,6 +698,20 @@ export const ObjectExternalbrokerApiFp = function(configuration?: Configuration)
             const localVarAxiosArgs = await localVarAxiosParamCreator.externalbrokerImportIntoEDMV1(pkiExternalbrokerID, externalbrokerImportIntoEDMV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectExternalbrokerApi.externalbrokerImportIntoEDMV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiExternalbrokerID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async externalbrokerSyncDocumenttypechecklistV1(pkiExternalbrokerID: number, body?: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<ExternalbrokerSyncDocumenttypechecklistV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.externalbrokerSyncDocumenttypechecklistV1(pkiExternalbrokerID, body, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectExternalbrokerApi.externalbrokerSyncDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -636,6 +786,16 @@ export const ObjectExternalbrokerApiFactory = function (configuration?: Configur
         },
         /**
          * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiExternalbrokerID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        externalbrokerGetDocumenttypechecklistV1(pkiExternalbrokerID: number, options?: RawAxiosRequestConfig): AxiosPromise<ExternalbrokerGetDocumenttypechecklistV1Response> {
+            return localVarFp.externalbrokerGetDocumenttypechecklistV1(pkiExternalbrokerID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Import attachments into the Externalbroker
          * @param {number} pkiExternalbrokerID 
          * @param {ExternalbrokerImportIntoEDMV1Request} externalbrokerImportIntoEDMV1Request 
@@ -644,6 +804,17 @@ export const ObjectExternalbrokerApiFactory = function (configuration?: Configur
          */
         externalbrokerImportIntoEDMV1(pkiExternalbrokerID: number, externalbrokerImportIntoEDMV1Request: ExternalbrokerImportIntoEDMV1Request, options?: RawAxiosRequestConfig): AxiosPromise<ExternalbrokerImportIntoEDMV1Response> {
             return localVarFp.externalbrokerImportIntoEDMV1(pkiExternalbrokerID, externalbrokerImportIntoEDMV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiExternalbrokerID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        externalbrokerSyncDocumenttypechecklistV1(pkiExternalbrokerID: number, body?: object, options?: RawAxiosRequestConfig): AxiosPromise<ExternalbrokerSyncDocumenttypechecklistV1Response> {
+            return localVarFp.externalbrokerSyncDocumenttypechecklistV1(pkiExternalbrokerID, body, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -721,6 +892,17 @@ export class ObjectExternalbrokerApi extends BaseAPI {
 
     /**
      * 
+     * @summary Retrieve Document type checklist
+     * @param {number} pkiExternalbrokerID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public externalbrokerGetDocumenttypechecklistV1(pkiExternalbrokerID: number, options?: RawAxiosRequestConfig) {
+        return ObjectExternalbrokerApiFp(this.configuration).externalbrokerGetDocumenttypechecklistV1(pkiExternalbrokerID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
      * @summary Import attachments into the Externalbroker
      * @param {number} pkiExternalbrokerID 
      * @param {ExternalbrokerImportIntoEDMV1Request} externalbrokerImportIntoEDMV1Request 
@@ -729,6 +911,18 @@ export class ObjectExternalbrokerApi extends BaseAPI {
      */
     public externalbrokerImportIntoEDMV1(pkiExternalbrokerID: number, externalbrokerImportIntoEDMV1Request: ExternalbrokerImportIntoEDMV1Request, options?: RawAxiosRequestConfig) {
         return ObjectExternalbrokerApiFp(this.configuration).externalbrokerImportIntoEDMV1(pkiExternalbrokerID, externalbrokerImportIntoEDMV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Synchronize Document type checklist
+     * @param {number} pkiExternalbrokerID 
+     * @param {object} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public externalbrokerSyncDocumenttypechecklistV1(pkiExternalbrokerID: number, body?: object, options?: RawAxiosRequestConfig) {
+        return ObjectExternalbrokerApiFp(this.configuration).externalbrokerSyncDocumenttypechecklistV1(pkiExternalbrokerID, body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

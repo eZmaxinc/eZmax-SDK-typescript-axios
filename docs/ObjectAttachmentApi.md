@@ -16,7 +16,7 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 # **attachmentDeleteV1**
 > AttachmentDeleteV1Response attachmentDeleteV1(body)
 
-Te endpoint allows to delete an attachment.
+The endpoint allows to delete an attachment.
 
 ### Example
 
@@ -236,7 +236,7 @@ const { status, data } = await apiInstance.attachmentRenameV1(
 # **attachmentRestoreV1**
 > AttachmentRestoreV1Response attachmentRestoreV1(attachmentRestoreV1Request)
 
-The endpoints allows to restore a previously deleted attachment.
+The endpoint allows to restore a previously deleted attachment.
 
 ### Example
 
@@ -295,7 +295,7 @@ const { status, data } = await apiInstance.attachmentRestoreV1(
 # **attachmentSetDocumentTypeV1**
 > AttachmentSetDocumentTypeV1Response attachmentSetDocumentTypeV1(attachmentSetDocumentTypeV1Request)
 
-The endpoint allows to change the checklist document type for an attachment.
+The endpoint allows to change the document type for an attachment.
 
 ### Example
 

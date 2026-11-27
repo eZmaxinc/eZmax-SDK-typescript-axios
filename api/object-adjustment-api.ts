@@ -34,11 +34,15 @@ import type { AdjustmentGetCommunicationrecipientsV1Response } from '../model';
 // @ts-ignore
 import type { AdjustmentGetCommunicationsendersV1Response } from '../model';
 // @ts-ignore
+import type { AdjustmentGetDocumenttypechecklistV1Response } from '../model';
+// @ts-ignore
 import type { AdjustmentGetListV1Response } from '../model';
 // @ts-ignore
 import type { AdjustmentImportIntoEDMV1Request } from '../model';
 // @ts-ignore
 import type { AdjustmentImportIntoEDMV1Response } from '../model';
+// @ts-ignore
+import type { AdjustmentSyncDocumenttypechecklistV1Response } from '../model';
 // @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
@@ -405,6 +409,64 @@ export const ObjectAdjustmentApiAxiosParamCreator = function (configuration?: Co
         },
         /**
          * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiAdjustmentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        adjustmentGetDocumenttypechecklistV1: async (pkiAdjustmentID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiAdjustmentID' is not null or undefined
+            assertParamExists('adjustmentGetDocumenttypechecklistV1', 'pkiAdjustmentID', pkiAdjustmentID)
+            const localVarPath = `/1/object/adjustment/{pkiAdjustmentID}/getDocumenttypechecklist`
+                .replace('{pkiAdjustmentID}', encodeURIComponent(String(pkiAdjustmentID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Retrieve Adjustment list
          * @param {AdjustmentGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -546,6 +608,67 @@ export const ObjectAdjustmentApiAxiosParamCreator = function (configuration?: Co
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiAdjustmentID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        adjustmentSyncDocumenttypechecklistV1: async (pkiAdjustmentID: number, body?: object, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiAdjustmentID' is not null or undefined
+            assertParamExists('adjustmentSyncDocumenttypechecklistV1', 'pkiAdjustmentID', pkiAdjustmentID)
+            const localVarPath = `/1/object/adjustment/{pkiAdjustmentID}/syncDocumenttypechecklist`
+                .replace('{pkiAdjustmentID}', encodeURIComponent(String(pkiAdjustmentID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -636,6 +759,19 @@ export const ObjectAdjustmentApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiAdjustmentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async adjustmentGetDocumenttypechecklistV1(pkiAdjustmentID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AdjustmentGetDocumenttypechecklistV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.adjustmentGetDocumenttypechecklistV1(pkiAdjustmentID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectAdjustmentApi.adjustmentGetDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Retrieve Adjustment list
          * @param {AdjustmentGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -663,6 +799,20 @@ export const ObjectAdjustmentApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.adjustmentImportIntoEDMV1(pkiAdjustmentID, adjustmentImportIntoEDMV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectAdjustmentApi.adjustmentImportIntoEDMV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiAdjustmentID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async adjustmentSyncDocumenttypechecklistV1(pkiAdjustmentID: number, body?: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AdjustmentSyncDocumenttypechecklistV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.adjustmentSyncDocumenttypechecklistV1(pkiAdjustmentID, body, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectAdjustmentApi.adjustmentSyncDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -737,6 +887,16 @@ export const ObjectAdjustmentApiFactory = function (configuration?: Configuratio
         },
         /**
          * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiAdjustmentID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        adjustmentGetDocumenttypechecklistV1(pkiAdjustmentID: number, options?: RawAxiosRequestConfig): AxiosPromise<AdjustmentGetDocumenttypechecklistV1Response> {
+            return localVarFp.adjustmentGetDocumenttypechecklistV1(pkiAdjustmentID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Retrieve Adjustment list
          * @param {AdjustmentGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -759,6 +919,17 @@ export const ObjectAdjustmentApiFactory = function (configuration?: Configuratio
          */
         adjustmentImportIntoEDMV1(pkiAdjustmentID: number, adjustmentImportIntoEDMV1Request: AdjustmentImportIntoEDMV1Request, options?: RawAxiosRequestConfig): AxiosPromise<AdjustmentImportIntoEDMV1Response> {
             return localVarFp.adjustmentImportIntoEDMV1(pkiAdjustmentID, adjustmentImportIntoEDMV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiAdjustmentID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        adjustmentSyncDocumenttypechecklistV1(pkiAdjustmentID: number, body?: object, options?: RawAxiosRequestConfig): AxiosPromise<AdjustmentSyncDocumenttypechecklistV1Response> {
+            return localVarFp.adjustmentSyncDocumenttypechecklistV1(pkiAdjustmentID, body, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -836,6 +1007,17 @@ export class ObjectAdjustmentApi extends BaseAPI {
 
     /**
      * 
+     * @summary Retrieve Document type checklist
+     * @param {number} pkiAdjustmentID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public adjustmentGetDocumenttypechecklistV1(pkiAdjustmentID: number, options?: RawAxiosRequestConfig) {
+        return ObjectAdjustmentApiFp(this.configuration).adjustmentGetDocumenttypechecklistV1(pkiAdjustmentID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
      * @summary Retrieve Adjustment list
      * @param {AdjustmentGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
      * @param {number} [iRowMax] 
@@ -859,6 +1041,18 @@ export class ObjectAdjustmentApi extends BaseAPI {
      */
     public adjustmentImportIntoEDMV1(pkiAdjustmentID: number, adjustmentImportIntoEDMV1Request: AdjustmentImportIntoEDMV1Request, options?: RawAxiosRequestConfig) {
         return ObjectAdjustmentApiFp(this.configuration).adjustmentImportIntoEDMV1(pkiAdjustmentID, adjustmentImportIntoEDMV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Synchronize Document type checklist
+     * @param {number} pkiAdjustmentID 
+     * @param {object} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public adjustmentSyncDocumenttypechecklistV1(pkiAdjustmentID: number, body?: object, options?: RawAxiosRequestConfig) {
+        return ObjectAdjustmentApiFp(this.configuration).adjustmentSyncDocumenttypechecklistV1(pkiAdjustmentID, body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

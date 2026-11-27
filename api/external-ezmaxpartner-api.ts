@@ -35,8 +35,8 @@ import { RequestSignature, IHeadersData } from '../api/request-signature';
 export const ExternalEzmaxpartnerApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * Subscribe to an Ezmaxparnerproductstage
-         * @summary Subscribe to an Ezmaxparnerproductstage
+         * Subscribe to an Ezmaxpartnerproductstage
+         * @summary Subscribe to an Ezmaxpartnerproductstage
          * @param {EzmaxpartnerSubscribeV1Request} ezmaxpartnerSubscribeV1Request 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -103,8 +103,8 @@ export const ExternalEzmaxpartnerApiFp = function(configuration?: Configuration)
     const localVarAxiosParamCreator = ExternalEzmaxpartnerApiAxiosParamCreator(configuration)
     return {
         /**
-         * Subscribe to an Ezmaxparnerproductstage
-         * @summary Subscribe to an Ezmaxparnerproductstage
+         * Subscribe to an Ezmaxpartnerproductstage
+         * @summary Subscribe to an Ezmaxpartnerproductstage
          * @param {EzmaxpartnerSubscribeV1Request} ezmaxpartnerSubscribeV1Request 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -125,8 +125,8 @@ export const ExternalEzmaxpartnerApiFactory = function (configuration?: Configur
     const localVarFp = ExternalEzmaxpartnerApiFp(configuration)
     return {
         /**
-         * Subscribe to an Ezmaxparnerproductstage
-         * @summary Subscribe to an Ezmaxparnerproductstage
+         * Subscribe to an Ezmaxpartnerproductstage
+         * @summary Subscribe to an Ezmaxpartnerproductstage
          * @param {EzmaxpartnerSubscribeV1Request} ezmaxpartnerSubscribeV1Request 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -142,8 +142,8 @@ export const ExternalEzmaxpartnerApiFactory = function (configuration?: Configur
  */
 export class ExternalEzmaxpartnerApi extends BaseAPI {
     /**
-     * Subscribe to an Ezmaxparnerproductstage
-     * @summary Subscribe to an Ezmaxparnerproductstage
+     * Subscribe to an Ezmaxpartnerproductstage
+     * @summary Subscribe to an Ezmaxpartnerproductstage
      * @param {EzmaxpartnerSubscribeV1Request} ezmaxpartnerSubscribeV1Request 
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}

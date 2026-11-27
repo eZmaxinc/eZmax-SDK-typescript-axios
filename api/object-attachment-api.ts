@@ -55,7 +55,7 @@ import { RequestSignature, IHeadersData } from '../api/request-signature';
 export const ObjectAttachmentApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
         /**
-         * Te endpoint allows to delete an attachment.
+         * The endpoint allows to delete an attachment.
          * @summary Delete an existing attachment
          * @param {number} pkiAttachmentID 
          * @param {object} body 
@@ -300,7 +300,7 @@ export const ObjectAttachmentApiAxiosParamCreator = function (configuration?: Co
             };
         },
         /**
-         * The endpoints allows to restore a previously deleted attachment.
+         * The endpoint allows to restore a previously deleted attachment.
          * @summary Restore a deleted attachment
          * @param {number} pkiAttachmentID 
          * @param {AttachmentRestoreV1Request} attachmentRestoreV1Request 
@@ -363,7 +363,7 @@ export const ObjectAttachmentApiAxiosParamCreator = function (configuration?: Co
             };
         },
         /**
-         * The endpoint allows to change the checklist document type for an attachment.
+         * The endpoint allows to change the document type for an attachment.
          * @summary Change attachment document type
          * @param {number} pkiAttachmentID 
          * @param {AttachmentSetDocumentTypeV1Request} attachmentSetDocumentTypeV1Request 
@@ -561,7 +561,7 @@ export const ObjectAttachmentApiFp = function(configuration?: Configuration) {
     const localVarAxiosParamCreator = ObjectAttachmentApiAxiosParamCreator(configuration)
     return {
         /**
-         * Te endpoint allows to delete an attachment.
+         * The endpoint allows to delete an attachment.
          * @summary Delete an existing attachment
          * @param {number} pkiAttachmentID 
          * @param {object} body 
@@ -615,7 +615,7 @@ export const ObjectAttachmentApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * The endpoints allows to restore a previously deleted attachment.
+         * The endpoint allows to restore a previously deleted attachment.
          * @summary Restore a deleted attachment
          * @param {number} pkiAttachmentID 
          * @param {AttachmentRestoreV1Request} attachmentRestoreV1Request 
@@ -629,7 +629,7 @@ export const ObjectAttachmentApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * The endpoint allows to change the checklist document type for an attachment.
+         * The endpoint allows to change the document type for an attachment.
          * @summary Change attachment document type
          * @param {number} pkiAttachmentID 
          * @param {AttachmentSetDocumentTypeV1Request} attachmentSetDocumentTypeV1Request 
@@ -680,7 +680,7 @@ export const ObjectAttachmentApiFactory = function (configuration?: Configuratio
     const localVarFp = ObjectAttachmentApiFp(configuration)
     return {
         /**
-         * Te endpoint allows to delete an attachment.
+         * The endpoint allows to delete an attachment.
          * @summary Delete an existing attachment
          * @param {number} pkiAttachmentID 
          * @param {object} body 
@@ -722,7 +722,7 @@ export const ObjectAttachmentApiFactory = function (configuration?: Configuratio
             return localVarFp.attachmentRenameV1(pkiAttachmentID, attachmentRenameV1Request, options).then((request) => request(axios, basePath));
         },
         /**
-         * The endpoints allows to restore a previously deleted attachment.
+         * The endpoint allows to restore a previously deleted attachment.
          * @summary Restore a deleted attachment
          * @param {number} pkiAttachmentID 
          * @param {AttachmentRestoreV1Request} attachmentRestoreV1Request 
@@ -733,7 +733,7 @@ export const ObjectAttachmentApiFactory = function (configuration?: Configuratio
             return localVarFp.attachmentRestoreV1(pkiAttachmentID, attachmentRestoreV1Request, options).then((request) => request(axios, basePath));
         },
         /**
-         * The endpoint allows to change the checklist document type for an attachment.
+         * The endpoint allows to change the document type for an attachment.
          * @summary Change attachment document type
          * @param {number} pkiAttachmentID 
          * @param {AttachmentSetDocumentTypeV1Request} attachmentSetDocumentTypeV1Request 
@@ -773,7 +773,7 @@ export const ObjectAttachmentApiFactory = function (configuration?: Configuratio
  */
 export class ObjectAttachmentApi extends BaseAPI {
     /**
-     * Te endpoint allows to delete an attachment.
+     * The endpoint allows to delete an attachment.
      * @summary Delete an existing attachment
      * @param {number} pkiAttachmentID 
      * @param {object} body 
@@ -819,7 +819,7 @@ export class ObjectAttachmentApi extends BaseAPI {
     }
 
     /**
-     * The endpoints allows to restore a previously deleted attachment.
+     * The endpoint allows to restore a previously deleted attachment.
      * @summary Restore a deleted attachment
      * @param {number} pkiAttachmentID 
      * @param {AttachmentRestoreV1Request} attachmentRestoreV1Request 
@@ -831,7 +831,7 @@ export class ObjectAttachmentApi extends BaseAPI {
     }
 
     /**
-     * The endpoint allows to change the checklist document type for an attachment.
+     * The endpoint allows to change the document type for an attachment.
      * @summary Change attachment document type
      * @param {number} pkiAttachmentID 
      * @param {AttachmentSetDocumentTypeV1Request} attachmentSetDocumentTypeV1Request 

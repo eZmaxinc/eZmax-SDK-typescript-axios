@@ -34,11 +34,15 @@ import type { BuyercontractGetCommunicationrecipientsV1Response } from '../model
 // @ts-ignore
 import type { BuyercontractGetCommunicationsendersV1Response } from '../model';
 // @ts-ignore
+import type { BuyercontractGetDocumenttypechecklistV1Response } from '../model';
+// @ts-ignore
 import type { BuyercontractGetListV1Response } from '../model';
 // @ts-ignore
 import type { BuyercontractImportIntoEDMV1Request } from '../model';
 // @ts-ignore
 import type { BuyercontractImportIntoEDMV1Response } from '../model';
+// @ts-ignore
+import type { BuyercontractSyncDocumenttypechecklistV1Response } from '../model';
 // @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
@@ -404,6 +408,64 @@ export const ObjectBuyercontractApiAxiosParamCreator = function (configuration?:
             };
         },
         /**
+         * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiBuyercontractID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        buyercontractGetDocumenttypechecklistV1: async (pkiBuyercontractID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiBuyercontractID' is not null or undefined
+            assertParamExists('buyercontractGetDocumenttypechecklistV1', 'pkiBuyercontractID', pkiBuyercontractID)
+            const localVarPath = `/1/object/buyercontract/{pkiBuyercontractID}/getDocumenttypechecklist`
+                .replace('{pkiBuyercontractID}', encodeURIComponent(String(pkiBuyercontractID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eBuyercontractStep | Imported<br>Active<br>Modified<br>ContractEnded<br>ExpiredContract<br>Bought | | eBuyercontractType | Rent<br>Sale<br>RentOrSale |
          * @summary Retrieve Buyercontract list
          * @param {BuyercontractGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
@@ -546,6 +608,67 @@ export const ObjectBuyercontractApiAxiosParamCreator = function (configuration?:
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiBuyercontractID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        buyercontractSyncDocumenttypechecklistV1: async (pkiBuyercontractID: number, body?: object, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiBuyercontractID' is not null or undefined
+            assertParamExists('buyercontractSyncDocumenttypechecklistV1', 'pkiBuyercontractID', pkiBuyercontractID)
+            const localVarPath = `/1/object/buyercontract/{pkiBuyercontractID}/syncDocumenttypechecklist`
+                .replace('{pkiBuyercontractID}', encodeURIComponent(String(pkiBuyercontractID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -635,6 +758,19 @@ export const ObjectBuyercontractApiFp = function(configuration?: Configuration) 
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
+         * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiBuyercontractID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async buyercontractGetDocumenttypechecklistV1(pkiBuyercontractID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BuyercontractGetDocumenttypechecklistV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.buyercontractGetDocumenttypechecklistV1(pkiBuyercontractID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectBuyercontractApi.buyercontractGetDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eBuyercontractStep | Imported<br>Active<br>Modified<br>ContractEnded<br>ExpiredContract<br>Bought | | eBuyercontractType | Rent<br>Sale<br>RentOrSale |
          * @summary Retrieve Buyercontract list
          * @param {BuyercontractGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
@@ -663,6 +799,20 @@ export const ObjectBuyercontractApiFp = function(configuration?: Configuration) 
             const localVarAxiosArgs = await localVarAxiosParamCreator.buyercontractImportIntoEDMV1(pkiBuyercontractID, buyercontractImportIntoEDMV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectBuyercontractApi.buyercontractImportIntoEDMV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiBuyercontractID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async buyercontractSyncDocumenttypechecklistV1(pkiBuyercontractID: number, body?: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BuyercontractSyncDocumenttypechecklistV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.buyercontractSyncDocumenttypechecklistV1(pkiBuyercontractID, body, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectBuyercontractApi.buyercontractSyncDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -736,6 +886,16 @@ export const ObjectBuyercontractApiFactory = function (configuration?: Configura
             return localVarFp.buyercontractGetCommunicationsendersV1(pkiBuyercontractID, options).then((request) => request(axios, basePath));
         },
         /**
+         * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiBuyercontractID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        buyercontractGetDocumenttypechecklistV1(pkiBuyercontractID: number, options?: RawAxiosRequestConfig): AxiosPromise<BuyercontractGetDocumenttypechecklistV1Response> {
+            return localVarFp.buyercontractGetDocumenttypechecklistV1(pkiBuyercontractID, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eBuyercontractStep | Imported<br>Active<br>Modified<br>ContractEnded<br>ExpiredContract<br>Bought | | eBuyercontractType | Rent<br>Sale<br>RentOrSale |
          * @summary Retrieve Buyercontract list
          * @param {BuyercontractGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
@@ -759,6 +919,17 @@ export const ObjectBuyercontractApiFactory = function (configuration?: Configura
          */
         buyercontractImportIntoEDMV1(pkiBuyercontractID: number, buyercontractImportIntoEDMV1Request: BuyercontractImportIntoEDMV1Request, options?: RawAxiosRequestConfig): AxiosPromise<BuyercontractImportIntoEDMV1Response> {
             return localVarFp.buyercontractImportIntoEDMV1(pkiBuyercontractID, buyercontractImportIntoEDMV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiBuyercontractID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        buyercontractSyncDocumenttypechecklistV1(pkiBuyercontractID: number, body?: object, options?: RawAxiosRequestConfig): AxiosPromise<BuyercontractSyncDocumenttypechecklistV1Response> {
+            return localVarFp.buyercontractSyncDocumenttypechecklistV1(pkiBuyercontractID, body, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -835,6 +1006,17 @@ export class ObjectBuyercontractApi extends BaseAPI {
     }
 
     /**
+     * 
+     * @summary Retrieve Document type checklist
+     * @param {number} pkiBuyercontractID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public buyercontractGetDocumenttypechecklistV1(pkiBuyercontractID: number, options?: RawAxiosRequestConfig) {
+        return ObjectBuyercontractApiFp(this.configuration).buyercontractGetDocumenttypechecklistV1(pkiBuyercontractID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eBuyercontractStep | Imported<br>Active<br>Modified<br>ContractEnded<br>ExpiredContract<br>Bought | | eBuyercontractType | Rent<br>Sale<br>RentOrSale |
      * @summary Retrieve Buyercontract list
      * @param {BuyercontractGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
@@ -859,6 +1041,18 @@ export class ObjectBuyercontractApi extends BaseAPI {
      */
     public buyercontractImportIntoEDMV1(pkiBuyercontractID: number, buyercontractImportIntoEDMV1Request: BuyercontractImportIntoEDMV1Request, options?: RawAxiosRequestConfig) {
         return ObjectBuyercontractApiFp(this.configuration).buyercontractImportIntoEDMV1(pkiBuyercontractID, buyercontractImportIntoEDMV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Synchronize Document type checklist
+     * @param {number} pkiBuyercontractID 
+     * @param {object} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public buyercontractSyncDocumenttypechecklistV1(pkiBuyercontractID: number, body?: object, options?: RawAxiosRequestConfig) {
+        return ObjectBuyercontractApiFp(this.configuration).buyercontractSyncDocumenttypechecklistV1(pkiBuyercontractID, body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

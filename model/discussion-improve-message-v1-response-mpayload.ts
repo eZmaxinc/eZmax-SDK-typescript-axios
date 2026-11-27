@@ -15,14 +15,14 @@
 
 
 /**
- * Payload for POST /1/object/discussion
+ * Payload for POST /1/object/discussion/improveMessage
  */
 export interface DiscussionImproveMessageV1ResponseMPayload {
     /**
-     * An array of unique IDs representing the object that were requested to be created.  They are returned in the same order as the array containing the objects to be created that was sent in the request.
+     * The Message of the Discussion
      */
-    /*'a_pkiDiscussionID': Array<number>;*/
-    'a_pkiDiscussionID': Array<number>;
+    /*'tDiscussionMessage': string;*/
+    'tDiscussionMessage': string;
 }
 /**
  * @import
@@ -36,7 +36,7 @@ export interface DiscussionImproveMessageV1ResponseMPayload {
  * @class DataObjectDiscussionImproveMessageV1ResponseMPayload
  */
 export class DataObjectDiscussionImproveMessageV1ResponseMPayload {
-   a_pkiDiscussionID:Array<number> = []
+   tDiscussionMessage:string = ''
 }
 
 /**
@@ -45,8 +45,9 @@ export class DataObjectDiscussionImproveMessageV1ResponseMPayload {
  * @class ValidationObjectDiscussionImproveMessageV1ResponseMPayload
  */
 export class ValidationObjectDiscussionImproveMessageV1ResponseMPayload {
-   a_pkiDiscussionID = {
-      type: 'array',
+   tDiscussionMessage = {
+      type: 'string',
+      pattern: /^[\s\S]{0,65535}$/,
       required: true
    }
 } 

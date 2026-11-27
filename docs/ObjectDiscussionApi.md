@@ -223,7 +223,7 @@ const { status, data } = await apiInstance.discussionGetObjectV2(
 # **discussionImproveMessageV1**
 > DiscussionImproveMessageV1Response discussionImproveMessageV1(discussionImproveMessageV1Request)
 
-Improve a message using the AI.
+The endpoint allows to improve a discussion message using the AI.
 
 ### Example
 

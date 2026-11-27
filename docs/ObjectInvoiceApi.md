@@ -10,8 +10,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**invoiceGetCommunicationListV1**](#invoicegetcommunicationlistv1) | **GET** /1/object/invoice/{pkiInvoiceID}/getCommunicationList | Retrieve Communication list|
 |[**invoiceGetCommunicationrecipientsV1**](#invoicegetcommunicationrecipientsv1) | **GET** /1/object/invoice/{pkiInvoiceID}/getCommunicationrecipients | Retrieve Invoice\&#39;s Communicationrecipient|
 |[**invoiceGetCommunicationsendersV1**](#invoicegetcommunicationsendersv1) | **GET** /1/object/invoice/{pkiInvoiceID}/getCommunicationsenders | Retrieve Invoice\&#39;s Communicationsender|
+|[**invoiceGetDocumenttypechecklistV1**](#invoicegetdocumenttypechecklistv1) | **GET** /1/object/invoice/{pkiInvoiceID}/getDocumenttypechecklist | Retrieve Document type checklist|
 |[**invoiceGetListV1**](#invoicegetlistv1) | **GET** /1/object/invoice/getList | Retrieve Invoice list|
 |[**invoiceImportIntoEDMV1**](#invoiceimportintoedmv1) | **POST** /1/object/invoice/{pkiInvoiceID}/importIntoEDM | Import attachments into the Invoice|
+|[**invoiceSyncDocumenttypechecklistV1**](#invoicesyncdocumenttypechecklistv1) | **POST** /1/object/invoice/{pkiInvoiceID}/syncDocumenttypechecklist | Synchronize Document type checklist|
 
 # **invoiceBatchDownloadV1**
 > File invoiceBatchDownloadV1(invoiceBatchDownloadV1Request)
@@ -330,6 +332,57 @@ const { status, data } = await apiInstance.invoiceGetCommunicationsendersV1(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **invoiceGetDocumenttypechecklistV1**
+> InvoiceGetDocumenttypechecklistV1Response invoiceGetDocumenttypechecklistV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectInvoiceApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectInvoiceApi(configuration);
+
+let pkiInvoiceID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.invoiceGetDocumenttypechecklistV1(
+    pkiInvoiceID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiInvoiceID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**InvoiceGetDocumenttypechecklistV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **invoiceGetListV1**
 > InvoiceGetListV1Response invoiceGetListV1()
 
@@ -431,6 +484,60 @@ const { status, data } = await apiInstance.invoiceImportIntoEDMV1(
 ### Return type
 
 **InvoiceImportIntoEDMV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **invoiceSyncDocumenttypechecklistV1**
+> InvoiceSyncDocumenttypechecklistV1Response invoiceSyncDocumenttypechecklistV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectInvoiceApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectInvoiceApi(configuration);
+
+let pkiInvoiceID: number; // (default to undefined)
+let body: object; // (optional)
+
+const { status, data } = await apiInstance.invoiceSyncDocumenttypechecklistV1(
+    pkiInvoiceID,
+    body
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | **object**|  | |
+| **pkiInvoiceID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**InvoiceSyncDocumenttypechecklistV1Response**
 
 ### Authorization
 

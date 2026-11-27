@@ -55,7 +55,7 @@ export class DataObjectDocumenttypechecklistRequestPatch {
 export class ValidationObjectDocumenttypechecklistRequestPatch {
    eDocumenttypechecklistStatus = {
       type: 'enum',
-      allowableValues: ['Not required','Required','Filed','Justified'],
+      allowableValues: ['Not required','Required','Filed','Justified','Mandatory'],
       required: false
    }
    tDocumenttypechecklistComment = {

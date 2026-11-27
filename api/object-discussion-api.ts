@@ -289,7 +289,7 @@ export const ObjectDiscussionApiAxiosParamCreator = function (configuration?: Co
             };
         },
         /**
-         * Improve a message using the AI.
+         * The endpoint allows to improve a discussion message using the AI.
          * @summary Improve a message using the AI
          * @param {DiscussionImproveMessageV1Request} discussionImproveMessageV1Request 
          * @param {*} [options] Override http request option.
@@ -535,7 +535,7 @@ export const ObjectDiscussionApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * Improve a message using the AI.
+         * The endpoint allows to improve a discussion message using the AI.
          * @summary Improve a message using the AI
          * @param {DiscussionImproveMessageV1Request} discussionImproveMessageV1Request 
          * @param {*} [options] Override http request option.
@@ -625,7 +625,7 @@ export const ObjectDiscussionApiFactory = function (configuration?: Configuratio
             return localVarFp.discussionGetObjectV2(pkiDiscussionID, options).then((request) => request(axios, basePath));
         },
         /**
-         * Improve a message using the AI.
+         * The endpoint allows to improve a discussion message using the AI.
          * @summary Improve a message using the AI
          * @param {DiscussionImproveMessageV1Request} discussionImproveMessageV1Request 
          * @param {*} [options] Override http request option.
@@ -708,7 +708,7 @@ export class ObjectDiscussionApi extends BaseAPI {
     }
 
     /**
-     * Improve a message using the AI.
+     * The endpoint allows to improve a discussion message using the AI.
      * @summary Improve a message using the AI
      * @param {DiscussionImproveMessageV1Request} discussionImproveMessageV1Request 
      * @param {*} [options] Override http request option.

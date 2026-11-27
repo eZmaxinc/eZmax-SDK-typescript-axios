@@ -55,12 +55,12 @@ export interface DocumenttypeRequest {
     /*'eDocumenttypeStep': ComputedEDocumenttypeStep;*/
     'eDocumenttypeStep': ComputedEDocumenttypeStep;
     /**
-     * The defaultfilename of the Documenttype
+     * The default filename for the document type
      */
     /*'sDocumenttypeDefaultfilename': string;*/
     'sDocumenttypeDefaultfilename': string;
     /**
-     * Whether if it\'s an showagent
+     * Whether the document type should be shown to the agent
      */
     /*'bDocumenttypeShowagent': boolean;*/
     'bDocumenttypeShowagent': boolean;
@@ -70,57 +70,52 @@ export interface DocumenttypeRequest {
     /*'bDocumenttypeIsactive': boolean;*/
     'bDocumenttypeIsactive': boolean;
     /**
-     * Whether if it\'s an isrequired
-     */
-    /*'bDocumenttypeIsrequired': boolean;*/
-    'bDocumenttypeIsrequired': boolean;
-    /**
-     * Whether if it\'s an sale
+     * Whether the document type applies to sale transactions
      */
     /*'bDocumenttypeSale': boolean;*/
     'bDocumenttypeSale': boolean;
     /**
-     * Whether if it\'s an rental
+     * Whether the document type applies to rental transactions
      */
     /*'bDocumenttypeRental': boolean;*/
     'bDocumenttypeRental': boolean;
     /**
-     * Whether if it\'s an reference
+     * Whether the document type is a reference document
      */
     /*'bDocumenttypeReference': boolean;*/
     'bDocumenttypeReference': boolean;
     /**
-     * Whether if it\'s an mortgagereference
+     * Whether the document type is a mortgage reference
      */
     /*'bDocumenttypeMortgagereference': boolean;*/
     'bDocumenttypeMortgagereference': boolean;
     /**
-     * Whether if it\'s an evaluation
+     * Whether the document type applies to evaluation transactions
      */
     /*'bDocumenttypeEvaluation': boolean;*/
     'bDocumenttypeEvaluation': boolean;
     /**
-     * Whether if it\'s an consultation
+     * Whether the document type applies to consultation transactions
      */
     /*'bDocumenttypeConsultation': boolean;*/
     'bDocumenttypeConsultation': boolean;
     /**
-     * Whether if it\'s an otherservices
+     * Whether the document type applies to other services
      */
     /*'bDocumenttypeOtherservices': boolean;*/
     'bDocumenttypeOtherservices': boolean;
     /**
-     * Whether if it\'s an foreclosedsale
+     * Whether the document type applies to foreclosed sale transactions
      */
     /*'bDocumenttypeForeclosedsale': boolean;*/
     'bDocumenttypeForeclosedsale': boolean;
     /**
-     * Whether if it\'s an commercialfunding
+     * Whether the document type applies to commercial funding transactions
      */
     /*'bDocumenttypeCommercialfunding': boolean;*/
     'bDocumenttypeCommercialfunding': boolean;
     /**
-     * Whether if it\'s an canafe
+     * Whether the document type applies to Canafe transactions
      */
     /*'bDocumenttypeCanafe': boolean;*/
     'bDocumenttypeCanafe': boolean;
@@ -165,7 +160,6 @@ export class DataObjectDocumenttypeRequest {
    sDocumenttypeDefaultfilename:string = ''
    bDocumenttypeShowagent:boolean = false
    bDocumenttypeIsactive:boolean = false
-   bDocumenttypeIsrequired:boolean = false
    bDocumenttypeSale:boolean = false
    bDocumenttypeRental:boolean = false
    bDocumenttypeReference:boolean = false
@@ -214,10 +208,6 @@ export class ValidationObjectDocumenttypeRequest {
       required: true
    }
    bDocumenttypeIsactive = {
-      type: 'boolean',
-      required: true
-   }
-   bDocumenttypeIsrequired = {
       type: 'boolean',
       required: true
    }
@@ -273,7 +263,7 @@ export class ValidationObjectDocumenttypeRequest {
    }
    eDocumenttypeStatusdefault = {
       type: 'enum',
-      allowableValues: ['Not required','Required'],
+      allowableValues: ['Not required','Required','Mandatory'],
       required: true
    }
    eDocumenttypeSalebyowner = {

@@ -38,11 +38,15 @@ import type { InvoiceGetCommunicationrecipientsV1Response } from '../model';
 // @ts-ignore
 import type { InvoiceGetCommunicationsendersV1Response } from '../model';
 // @ts-ignore
+import type { InvoiceGetDocumenttypechecklistV1Response } from '../model';
+// @ts-ignore
 import type { InvoiceGetListV1Response } from '../model';
 // @ts-ignore
 import type { InvoiceImportIntoEDMV1Request } from '../model';
 // @ts-ignore
 import type { InvoiceImportIntoEDMV1Response } from '../model';
+// @ts-ignore
+import type { InvoiceSyncDocumenttypechecklistV1Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -404,6 +408,64 @@ export const ObjectInvoiceApiAxiosParamCreator = function (configuration?: Confi
             };
         },
         /**
+         * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiInvoiceID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        invoiceGetDocumenttypechecklistV1: async (pkiInvoiceID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiInvoiceID' is not null or undefined
+            assertParamExists('invoiceGetDocumenttypechecklistV1', 'pkiInvoiceID', pkiInvoiceID)
+            const localVarPath = `/1/object/invoice/{pkiInvoiceID}/getDocumenttypechecklist`
+                .replace('{pkiInvoiceID}', encodeURIComponent(String(pkiInvoiceID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eInvoiceType | Commission<br>CommissionAdvance<br>Financed<br>Manual<br>Monthly |
          * @summary Retrieve Invoice list
          * @param {InvoiceGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
@@ -546,6 +608,67 @@ export const ObjectInvoiceApiAxiosParamCreator = function (configuration?: Confi
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiInvoiceID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        invoiceSyncDocumenttypechecklistV1: async (pkiInvoiceID: number, body?: object, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiInvoiceID' is not null or undefined
+            assertParamExists('invoiceSyncDocumenttypechecklistV1', 'pkiInvoiceID', pkiInvoiceID)
+            const localVarPath = `/1/object/invoice/{pkiInvoiceID}/syncDocumenttypechecklist`
+                .replace('{pkiInvoiceID}', encodeURIComponent(String(pkiInvoiceID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -635,6 +758,19 @@ export const ObjectInvoiceApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
+         * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiInvoiceID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async invoiceGetDocumenttypechecklistV1(pkiInvoiceID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InvoiceGetDocumenttypechecklistV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.invoiceGetDocumenttypechecklistV1(pkiInvoiceID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectInvoiceApi.invoiceGetDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eInvoiceType | Commission<br>CommissionAdvance<br>Financed<br>Manual<br>Monthly |
          * @summary Retrieve Invoice list
          * @param {InvoiceGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
@@ -663,6 +799,20 @@ export const ObjectInvoiceApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.invoiceImportIntoEDMV1(pkiInvoiceID, invoiceImportIntoEDMV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectInvoiceApi.invoiceImportIntoEDMV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiInvoiceID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async invoiceSyncDocumenttypechecklistV1(pkiInvoiceID: number, body?: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InvoiceSyncDocumenttypechecklistV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.invoiceSyncDocumenttypechecklistV1(pkiInvoiceID, body, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectInvoiceApi.invoiceSyncDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -736,6 +886,16 @@ export const ObjectInvoiceApiFactory = function (configuration?: Configuration, 
             return localVarFp.invoiceGetCommunicationsendersV1(pkiInvoiceID, options).then((request) => request(axios, basePath));
         },
         /**
+         * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiInvoiceID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        invoiceGetDocumenttypechecklistV1(pkiInvoiceID: number, options?: RawAxiosRequestConfig): AxiosPromise<InvoiceGetDocumenttypechecklistV1Response> {
+            return localVarFp.invoiceGetDocumenttypechecklistV1(pkiInvoiceID, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eInvoiceType | Commission<br>CommissionAdvance<br>Financed<br>Manual<br>Monthly |
          * @summary Retrieve Invoice list
          * @param {InvoiceGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
@@ -759,6 +919,17 @@ export const ObjectInvoiceApiFactory = function (configuration?: Configuration, 
          */
         invoiceImportIntoEDMV1(pkiInvoiceID: number, invoiceImportIntoEDMV1Request: InvoiceImportIntoEDMV1Request, options?: RawAxiosRequestConfig): AxiosPromise<InvoiceImportIntoEDMV1Response> {
             return localVarFp.invoiceImportIntoEDMV1(pkiInvoiceID, invoiceImportIntoEDMV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiInvoiceID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        invoiceSyncDocumenttypechecklistV1(pkiInvoiceID: number, body?: object, options?: RawAxiosRequestConfig): AxiosPromise<InvoiceSyncDocumenttypechecklistV1Response> {
+            return localVarFp.invoiceSyncDocumenttypechecklistV1(pkiInvoiceID, body, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -835,6 +1006,17 @@ export class ObjectInvoiceApi extends BaseAPI {
     }
 
     /**
+     * 
+     * @summary Retrieve Document type checklist
+     * @param {number} pkiInvoiceID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public invoiceGetDocumenttypechecklistV1(pkiInvoiceID: number, options?: RawAxiosRequestConfig) {
+        return ObjectInvoiceApiFp(this.configuration).invoiceGetDocumenttypechecklistV1(pkiInvoiceID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eInvoiceType | Commission<br>CommissionAdvance<br>Financed<br>Manual<br>Monthly |
      * @summary Retrieve Invoice list
      * @param {InvoiceGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
@@ -859,6 +1041,18 @@ export class ObjectInvoiceApi extends BaseAPI {
      */
     public invoiceImportIntoEDMV1(pkiInvoiceID: number, invoiceImportIntoEDMV1Request: InvoiceImportIntoEDMV1Request, options?: RawAxiosRequestConfig) {
         return ObjectInvoiceApiFp(this.configuration).invoiceImportIntoEDMV1(pkiInvoiceID, invoiceImportIntoEDMV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Synchronize Document type checklist
+     * @param {number} pkiInvoiceID 
+     * @param {object} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public invoiceSyncDocumenttypechecklistV1(pkiInvoiceID: number, body?: object, options?: RawAxiosRequestConfig) {
+        return ObjectInvoiceApiFp(this.configuration).invoiceSyncDocumenttypechecklistV1(pkiInvoiceID, body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

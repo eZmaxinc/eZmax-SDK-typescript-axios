@@ -120,7 +120,7 @@ export interface ActivesessionResponseCompound {
      */
     bActivesessionIssuperadmin:boolean 
     /**
-     * Can access attachment when we clone a user
+     * Whether the user can access attachments when their session is cloned
      * @type {boolean}
      * @memberof ActivesessionResponseCompound
      */

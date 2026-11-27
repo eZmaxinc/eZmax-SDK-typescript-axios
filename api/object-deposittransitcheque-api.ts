@@ -36,11 +36,15 @@ import type { DeposittransitchequeGetCommunicationrecipientsV1Response } from '.
 // @ts-ignore
 import type { DeposittransitchequeGetCommunicationsendersV1Response } from '../model';
 // @ts-ignore
+import type { DeposittransitchequeGetDocumenttypechecklistV1Response } from '../model';
+// @ts-ignore
 import type { DeposittransitchequeGetListV1Response } from '../model';
 // @ts-ignore
 import type { DeposittransitchequeImportIntoEDMV1Request } from '../model';
 // @ts-ignore
 import type { DeposittransitchequeImportIntoEDMV1Response } from '../model';
+// @ts-ignore
+import type { DeposittransitchequeSyncDocumenttypechecklistV1Response } from '../model';
 // @ts-ignore
 import type { HeaderAcceptLanguage } from '../model';
 // @ts-ignore
@@ -405,6 +409,64 @@ export const ObjectDeposittransitchequeApiAxiosParamCreator = function (configur
         },
         /**
          * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiDeposittransitchequeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deposittransitchequeGetDocumenttypechecklistV1: async (pkiDeposittransitchequeID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiDeposittransitchequeID' is not null or undefined
+            assertParamExists('deposittransitchequeGetDocumenttypechecklistV1', 'pkiDeposittransitchequeID', pkiDeposittransitchequeID)
+            const localVarPath = `/1/object/deposittransitcheque/{pkiDeposittransitchequeID}/getDocumenttypechecklist`
+                .replace('{pkiDeposittransitchequeID}', encodeURIComponent(String(pkiDeposittransitchequeID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Retrieve Deposittransitcheque list
          * @param {DeposittransitchequeGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -546,6 +608,67 @@ export const ObjectDeposittransitchequeApiAxiosParamCreator = function (configur
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiDeposittransitchequeID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deposittransitchequeSyncDocumenttypechecklistV1: async (pkiDeposittransitchequeID: number, body?: object, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiDeposittransitchequeID' is not null or undefined
+            assertParamExists('deposittransitchequeSyncDocumenttypechecklistV1', 'pkiDeposittransitchequeID', pkiDeposittransitchequeID)
+            const localVarPath = `/1/object/deposittransitcheque/{pkiDeposittransitchequeID}/syncDocumenttypechecklist`
+                .replace('{pkiDeposittransitchequeID}', encodeURIComponent(String(pkiDeposittransitchequeID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -636,6 +759,19 @@ export const ObjectDeposittransitchequeApiFp = function(configuration?: Configur
         },
         /**
          * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiDeposittransitchequeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deposittransitchequeGetDocumenttypechecklistV1(pkiDeposittransitchequeID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeposittransitchequeGetDocumenttypechecklistV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deposittransitchequeGetDocumenttypechecklistV1(pkiDeposittransitchequeID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectDeposittransitchequeApi.deposittransitchequeGetDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Retrieve Deposittransitcheque list
          * @param {DeposittransitchequeGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -663,6 +799,20 @@ export const ObjectDeposittransitchequeApiFp = function(configuration?: Configur
             const localVarAxiosArgs = await localVarAxiosParamCreator.deposittransitchequeImportIntoEDMV1(pkiDeposittransitchequeID, deposittransitchequeImportIntoEDMV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectDeposittransitchequeApi.deposittransitchequeImportIntoEDMV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiDeposittransitchequeID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deposittransitchequeSyncDocumenttypechecklistV1(pkiDeposittransitchequeID: number, body?: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DeposittransitchequeSyncDocumenttypechecklistV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deposittransitchequeSyncDocumenttypechecklistV1(pkiDeposittransitchequeID, body, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectDeposittransitchequeApi.deposittransitchequeSyncDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -737,6 +887,16 @@ export const ObjectDeposittransitchequeApiFactory = function (configuration?: Co
         },
         /**
          * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiDeposittransitchequeID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deposittransitchequeGetDocumenttypechecklistV1(pkiDeposittransitchequeID: number, options?: RawAxiosRequestConfig): AxiosPromise<DeposittransitchequeGetDocumenttypechecklistV1Response> {
+            return localVarFp.deposittransitchequeGetDocumenttypechecklistV1(pkiDeposittransitchequeID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Retrieve Deposittransitcheque list
          * @param {DeposittransitchequeGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
          * @param {number} [iRowMax] 
@@ -759,6 +919,17 @@ export const ObjectDeposittransitchequeApiFactory = function (configuration?: Co
          */
         deposittransitchequeImportIntoEDMV1(pkiDeposittransitchequeID: number, deposittransitchequeImportIntoEDMV1Request: DeposittransitchequeImportIntoEDMV1Request, options?: RawAxiosRequestConfig): AxiosPromise<DeposittransitchequeImportIntoEDMV1Response> {
             return localVarFp.deposittransitchequeImportIntoEDMV1(pkiDeposittransitchequeID, deposittransitchequeImportIntoEDMV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiDeposittransitchequeID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deposittransitchequeSyncDocumenttypechecklistV1(pkiDeposittransitchequeID: number, body?: object, options?: RawAxiosRequestConfig): AxiosPromise<DeposittransitchequeSyncDocumenttypechecklistV1Response> {
+            return localVarFp.deposittransitchequeSyncDocumenttypechecklistV1(pkiDeposittransitchequeID, body, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -836,6 +1007,17 @@ export class ObjectDeposittransitchequeApi extends BaseAPI {
 
     /**
      * 
+     * @summary Retrieve Document type checklist
+     * @param {number} pkiDeposittransitchequeID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public deposittransitchequeGetDocumenttypechecklistV1(pkiDeposittransitchequeID: number, options?: RawAxiosRequestConfig) {
+        return ObjectDeposittransitchequeApiFp(this.configuration).deposittransitchequeGetDocumenttypechecklistV1(pkiDeposittransitchequeID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
      * @summary Retrieve Deposittransitcheque list
      * @param {DeposittransitchequeGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
      * @param {number} [iRowMax] 
@@ -859,6 +1041,18 @@ export class ObjectDeposittransitchequeApi extends BaseAPI {
      */
     public deposittransitchequeImportIntoEDMV1(pkiDeposittransitchequeID: number, deposittransitchequeImportIntoEDMV1Request: DeposittransitchequeImportIntoEDMV1Request, options?: RawAxiosRequestConfig) {
         return ObjectDeposittransitchequeApiFp(this.configuration).deposittransitchequeImportIntoEDMV1(pkiDeposittransitchequeID, deposittransitchequeImportIntoEDMV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Synchronize Document type checklist
+     * @param {number} pkiDeposittransitchequeID 
+     * @param {object} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public deposittransitchequeSyncDocumenttypechecklistV1(pkiDeposittransitchequeID: number, body?: object, options?: RawAxiosRequestConfig) {
+        return ObjectDeposittransitchequeApiFp(this.configuration).deposittransitchequeSyncDocumenttypechecklistV1(pkiDeposittransitchequeID, body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

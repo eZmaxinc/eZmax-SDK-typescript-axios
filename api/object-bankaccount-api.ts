@@ -36,11 +36,15 @@ import type { BankaccountGetCommunicationrecipientsV1Response } from '../model';
 // @ts-ignore
 import type { BankaccountGetCommunicationsendersV1Response } from '../model';
 // @ts-ignore
+import type { BankaccountGetDocumenttypechecklistV1Response } from '../model';
+// @ts-ignore
 import type { BankaccountGetListV1Response } from '../model';
 // @ts-ignore
 import type { BankaccountImportIntoEDMV1Request } from '../model';
 // @ts-ignore
 import type { BankaccountImportIntoEDMV1Response } from '../model';
+// @ts-ignore
+import type { BankaccountSyncDocumenttypechecklistV1Response } from '../model';
 // @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
@@ -480,6 +484,64 @@ export const ObjectBankaccountApiAxiosParamCreator = function (configuration?: C
             };
         },
         /**
+         * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiBankaccountID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        bankaccountGetDocumenttypechecklistV1: async (pkiBankaccountID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiBankaccountID' is not null or undefined
+            assertParamExists('bankaccountGetDocumenttypechecklistV1', 'pkiBankaccountID', pkiBankaccountID)
+            const localVarPath = `/1/object/bankaccount/{pkiBankaccountID}/getDocumenttypechecklist`
+                .replace('{pkiBankaccountID}', encodeURIComponent(String(pkiBankaccountID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eBankaccountType | Chequing<br>Trust |
          * @summary Retrieve Bankaccount list
          * @param {BankaccountGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
@@ -622,6 +684,67 @@ export const ObjectBankaccountApiAxiosParamCreator = function (configuration?: C
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiBankaccountID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        bankaccountSyncDocumenttypechecklistV1: async (pkiBankaccountID: number, body?: object, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiBankaccountID' is not null or undefined
+            assertParamExists('bankaccountSyncDocumenttypechecklistV1', 'pkiBankaccountID', pkiBankaccountID)
+            const localVarPath = `/1/object/bankaccount/{pkiBankaccountID}/syncDocumenttypechecklist`
+                .replace('{pkiBankaccountID}', encodeURIComponent(String(pkiBankaccountID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -727,6 +850,19 @@ export const ObjectBankaccountApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
+         * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiBankaccountID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async bankaccountGetDocumenttypechecklistV1(pkiBankaccountID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BankaccountGetDocumenttypechecklistV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.bankaccountGetDocumenttypechecklistV1(pkiBankaccountID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectBankaccountApi.bankaccountGetDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
          * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eBankaccountType | Chequing<br>Trust |
          * @summary Retrieve Bankaccount list
          * @param {BankaccountGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
@@ -755,6 +891,20 @@ export const ObjectBankaccountApiFp = function(configuration?: Configuration) {
             const localVarAxiosArgs = await localVarAxiosParamCreator.bankaccountImportIntoEDMV1(pkiBankaccountID, bankaccountImportIntoEDMV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectBankaccountApi.bankaccountImportIntoEDMV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiBankaccountID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async bankaccountSyncDocumenttypechecklistV1(pkiBankaccountID: number, body?: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<BankaccountSyncDocumenttypechecklistV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.bankaccountSyncDocumenttypechecklistV1(pkiBankaccountID, body, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectBankaccountApi.bankaccountSyncDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -841,6 +991,16 @@ export const ObjectBankaccountApiFactory = function (configuration?: Configurati
             return localVarFp.bankaccountGetCommunicationsendersV1(pkiBankaccountID, options).then((request) => request(axios, basePath));
         },
         /**
+         * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiBankaccountID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        bankaccountGetDocumenttypechecklistV1(pkiBankaccountID: number, options?: RawAxiosRequestConfig): AxiosPromise<BankaccountGetDocumenttypechecklistV1Response> {
+            return localVarFp.bankaccountGetDocumenttypechecklistV1(pkiBankaccountID, options).then((request) => request(axios, basePath));
+        },
+        /**
          * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eBankaccountType | Chequing<br>Trust |
          * @summary Retrieve Bankaccount list
          * @param {BankaccountGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
@@ -864,6 +1024,17 @@ export const ObjectBankaccountApiFactory = function (configuration?: Configurati
          */
         bankaccountImportIntoEDMV1(pkiBankaccountID: number, bankaccountImportIntoEDMV1Request: BankaccountImportIntoEDMV1Request, options?: RawAxiosRequestConfig): AxiosPromise<BankaccountImportIntoEDMV1Response> {
             return localVarFp.bankaccountImportIntoEDMV1(pkiBankaccountID, bankaccountImportIntoEDMV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiBankaccountID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        bankaccountSyncDocumenttypechecklistV1(pkiBankaccountID: number, body?: object, options?: RawAxiosRequestConfig): AxiosPromise<BankaccountSyncDocumenttypechecklistV1Response> {
+            return localVarFp.bankaccountSyncDocumenttypechecklistV1(pkiBankaccountID, body, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -954,6 +1125,17 @@ export class ObjectBankaccountApi extends BaseAPI {
     }
 
     /**
+     * 
+     * @summary Retrieve Document type checklist
+     * @param {number} pkiBankaccountID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public bankaccountGetDocumenttypechecklistV1(pkiBankaccountID: number, options?: RawAxiosRequestConfig) {
+        return ObjectBankaccountApiFp(this.configuration).bankaccountGetDocumenttypechecklistV1(pkiBankaccountID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * Enum values that can be filtered in query parameter *sFilter*:  | Variable | Valid values | |---|---| | eBankaccountType | Chequing<br>Trust |
      * @summary Retrieve Bankaccount list
      * @param {BankaccountGetListV1EOrderByEnum} [eOrderBy] Specify how you want the results to be sorted
@@ -978,6 +1160,18 @@ export class ObjectBankaccountApi extends BaseAPI {
      */
     public bankaccountImportIntoEDMV1(pkiBankaccountID: number, bankaccountImportIntoEDMV1Request: BankaccountImportIntoEDMV1Request, options?: RawAxiosRequestConfig) {
         return ObjectBankaccountApiFp(this.configuration).bankaccountImportIntoEDMV1(pkiBankaccountID, bankaccountImportIntoEDMV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Synchronize Document type checklist
+     * @param {number} pkiBankaccountID 
+     * @param {object} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public bankaccountSyncDocumenttypechecklistV1(pkiBankaccountID: number, body?: object, options?: RawAxiosRequestConfig) {
+        return ObjectBankaccountApiFp(this.configuration).bankaccountSyncDocumenttypechecklistV1(pkiBankaccountID, body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

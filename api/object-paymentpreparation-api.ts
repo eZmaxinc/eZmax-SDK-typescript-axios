@@ -36,9 +36,13 @@ import type { PaymentpreparationGetCommunicationrecipientsV1Response } from '../
 // @ts-ignore
 import type { PaymentpreparationGetCommunicationsendersV1Response } from '../model';
 // @ts-ignore
+import type { PaymentpreparationGetDocumenttypechecklistV1Response } from '../model';
+// @ts-ignore
 import type { PaymentpreparationImportIntoEDMV1Request } from '../model';
 // @ts-ignore
 import type { PaymentpreparationImportIntoEDMV1Response } from '../model';
+// @ts-ignore
+import type { PaymentpreparationSyncDocumenttypechecklistV1Response } from '../model';
 // @ts-ignore
 import { RequestSignature, IHeadersData } from '../api/request-signature';
 /**
@@ -401,6 +405,64 @@ export const ObjectPaymentpreparationApiAxiosParamCreator = function (configurat
         },
         /**
          * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiPaymentpreparationID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        paymentpreparationGetDocumenttypechecklistV1: async (pkiPaymentpreparationID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiPaymentpreparationID' is not null or undefined
+            assertParamExists('paymentpreparationGetDocumenttypechecklistV1', 'pkiPaymentpreparationID', pkiPaymentpreparationID)
+            const localVarPath = `/1/object/paymentpreparation/{pkiPaymentpreparationID}/getDocumenttypechecklist`
+                .replace('{pkiPaymentpreparationID}', encodeURIComponent(String(pkiPaymentpreparationID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'GET' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Import attachments into the Paymentpreparation
          * @param {number} pkiPaymentpreparationID 
          * @param {PaymentpreparationImportIntoEDMV1Request} paymentpreparationImportIntoEDMV1Request 
@@ -440,6 +502,67 @@ export const ObjectPaymentpreparationApiAxiosParamCreator = function (configurat
             //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
             localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
             localVarRequestOptions.data = serializeDataIfNeeded(paymentpreparationImportIntoEDMV1Request, localVarRequestOptions, configuration)
+
+            // Signature
+            if (configuration && configuration.apiKey) {
+                const secret = configuration.getSecret()
+                if (secret) {
+                    const headers:IHeadersData = {
+                        authorization: configuration.apiKey as string,
+                        secret: secret as string,
+                        method: 'POST' as string,
+                        url: basePath + toPathString(localVarUrlObj) as string,
+                        body: localVarRequestOptions.data || '' as string
+                    }
+                    const signatureHeaders = RequestSignature.getHeaders(headers)
+                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
+                } 
+            }
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiPaymentpreparationID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        paymentpreparationSyncDocumenttypechecklistV1: async (pkiPaymentpreparationID: number, body?: object, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'pkiPaymentpreparationID' is not null or undefined
+            assertParamExists('paymentpreparationSyncDocumenttypechecklistV1', 'pkiPaymentpreparationID', pkiPaymentpreparationID)
+            const localVarPath = `/1/object/paymentpreparation/{pkiPaymentpreparationID}/syncDocumenttypechecklist`
+                .replace('{pkiPaymentpreparationID}', encodeURIComponent(String(pkiPaymentpreparationID)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            let basePath = DUMMY_BASE_URL
+            if (configuration && configuration.basePath) basePath = configuration.basePath
+            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            const localVarUrlObj = new URL(localVarPath, basePath);
+
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication Authorization required
+            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(body, localVarRequestOptions, configuration)
 
             // Signature
             if (configuration && configuration.apiKey) {
@@ -552,6 +675,19 @@ export const ObjectPaymentpreparationApiFp = function(configuration?: Configurat
         },
         /**
          * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiPaymentpreparationID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async paymentpreparationGetDocumenttypechecklistV1(pkiPaymentpreparationID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PaymentpreparationGetDocumenttypechecklistV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.paymentpreparationGetDocumenttypechecklistV1(pkiPaymentpreparationID, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectPaymentpreparationApi.paymentpreparationGetDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Import attachments into the Paymentpreparation
          * @param {number} pkiPaymentpreparationID 
          * @param {PaymentpreparationImportIntoEDMV1Request} paymentpreparationImportIntoEDMV1Request 
@@ -562,6 +698,20 @@ export const ObjectPaymentpreparationApiFp = function(configuration?: Configurat
             const localVarAxiosArgs = await localVarAxiosParamCreator.paymentpreparationImportIntoEDMV1(pkiPaymentpreparationID, paymentpreparationImportIntoEDMV1Request, options);
             const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
             const localVarOperationServerBasePath = operationServerMap['ObjectPaymentpreparationApi.paymentpreparationImportIntoEDMV1']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiPaymentpreparationID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async paymentpreparationSyncDocumenttypechecklistV1(pkiPaymentpreparationID: number, body?: object, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PaymentpreparationSyncDocumenttypechecklistV1Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.paymentpreparationSyncDocumenttypechecklistV1(pkiPaymentpreparationID, body, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['ObjectPaymentpreparationApi.paymentpreparationSyncDocumenttypechecklistV1']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
     }
@@ -636,6 +786,16 @@ export const ObjectPaymentpreparationApiFactory = function (configuration?: Conf
         },
         /**
          * 
+         * @summary Retrieve Document type checklist
+         * @param {number} pkiPaymentpreparationID 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        paymentpreparationGetDocumenttypechecklistV1(pkiPaymentpreparationID: number, options?: RawAxiosRequestConfig): AxiosPromise<PaymentpreparationGetDocumenttypechecklistV1Response> {
+            return localVarFp.paymentpreparationGetDocumenttypechecklistV1(pkiPaymentpreparationID, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Import attachments into the Paymentpreparation
          * @param {number} pkiPaymentpreparationID 
          * @param {PaymentpreparationImportIntoEDMV1Request} paymentpreparationImportIntoEDMV1Request 
@@ -644,6 +804,17 @@ export const ObjectPaymentpreparationApiFactory = function (configuration?: Conf
          */
         paymentpreparationImportIntoEDMV1(pkiPaymentpreparationID: number, paymentpreparationImportIntoEDMV1Request: PaymentpreparationImportIntoEDMV1Request, options?: RawAxiosRequestConfig): AxiosPromise<PaymentpreparationImportIntoEDMV1Response> {
             return localVarFp.paymentpreparationImportIntoEDMV1(pkiPaymentpreparationID, paymentpreparationImportIntoEDMV1Request, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @summary Synchronize Document type checklist
+         * @param {number} pkiPaymentpreparationID 
+         * @param {object} [body] 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        paymentpreparationSyncDocumenttypechecklistV1(pkiPaymentpreparationID: number, body?: object, options?: RawAxiosRequestConfig): AxiosPromise<PaymentpreparationSyncDocumenttypechecklistV1Response> {
+            return localVarFp.paymentpreparationSyncDocumenttypechecklistV1(pkiPaymentpreparationID, body, options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -721,6 +892,17 @@ export class ObjectPaymentpreparationApi extends BaseAPI {
 
     /**
      * 
+     * @summary Retrieve Document type checklist
+     * @param {number} pkiPaymentpreparationID 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public paymentpreparationGetDocumenttypechecklistV1(pkiPaymentpreparationID: number, options?: RawAxiosRequestConfig) {
+        return ObjectPaymentpreparationApiFp(this.configuration).paymentpreparationGetDocumenttypechecklistV1(pkiPaymentpreparationID, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
      * @summary Import attachments into the Paymentpreparation
      * @param {number} pkiPaymentpreparationID 
      * @param {PaymentpreparationImportIntoEDMV1Request} paymentpreparationImportIntoEDMV1Request 
@@ -729,6 +911,18 @@ export class ObjectPaymentpreparationApi extends BaseAPI {
      */
     public paymentpreparationImportIntoEDMV1(pkiPaymentpreparationID: number, paymentpreparationImportIntoEDMV1Request: PaymentpreparationImportIntoEDMV1Request, options?: RawAxiosRequestConfig) {
         return ObjectPaymentpreparationApiFp(this.configuration).paymentpreparationImportIntoEDMV1(pkiPaymentpreparationID, paymentpreparationImportIntoEDMV1Request, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Synchronize Document type checklist
+     * @param {number} pkiPaymentpreparationID 
+     * @param {object} [body] 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public paymentpreparationSyncDocumenttypechecklistV1(pkiPaymentpreparationID: number, body?: object, options?: RawAxiosRequestConfig) {
+        return ObjectPaymentpreparationApiFp(this.configuration).paymentpreparationSyncDocumenttypechecklistV1(pkiPaymentpreparationID, body, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

@@ -10,8 +10,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**notaryGetCommunicationListV1**](#notarygetcommunicationlistv1) | **GET** /1/object/notary/{pkiNotaryID}/getCommunicationList | Retrieve Communication list|
 |[**notaryGetCommunicationrecipientsV1**](#notarygetcommunicationrecipientsv1) | **GET** /1/object/notary/{pkiNotaryID}/getCommunicationrecipients | Retrieve Communication recipients|
 |[**notaryGetCommunicationsendersV1**](#notarygetcommunicationsendersv1) | **GET** /1/object/notary/{pkiNotaryID}/getCommunicationsenders | Retrieve Communication senders|
+|[**notaryGetDocumenttypechecklistV1**](#notarygetdocumenttypechecklistv1) | **GET** /1/object/notary/{pkiNotaryID}/getDocumenttypechecklist | Retrieve Document type checklist|
 |[**notaryGetListV1**](#notarygetlistv1) | **GET** /1/object/notary/getList | Retrieve Notary list|
 |[**notaryImportIntoEDMV1**](#notaryimportintoedmv1) | **POST** /1/object/notary/{pkiNotaryID}/importIntoEDM | Import attachments into the Notary|
+|[**notarySyncDocumenttypechecklistV1**](#notarysyncdocumenttypechecklistv1) | **POST** /1/object/notary/{pkiNotaryID}/syncDocumenttypechecklist | Synchronize Document type checklist|
 
 # **notaryBatchDownloadV1**
 > File notaryBatchDownloadV1(notaryBatchDownloadV1Request)
@@ -325,6 +327,57 @@ const { status, data } = await apiInstance.notaryGetCommunicationsendersV1(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **notaryGetDocumenttypechecklistV1**
+> NotaryGetDocumenttypechecklistV1Response notaryGetDocumenttypechecklistV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectNotaryApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectNotaryApi(configuration);
+
+let pkiNotaryID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.notaryGetDocumenttypechecklistV1(
+    pkiNotaryID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiNotaryID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**NotaryGetDocumenttypechecklistV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **notaryGetListV1**
 > NotaryGetListV1Response notaryGetListV1()
 
@@ -425,6 +478,60 @@ const { status, data } = await apiInstance.notaryImportIntoEDMV1(
 ### Return type
 
 **NotaryImportIntoEDMV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **notarySyncDocumenttypechecklistV1**
+> NotarySyncDocumenttypechecklistV1Response notarySyncDocumenttypechecklistV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectNotaryApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectNotaryApi(configuration);
+
+let pkiNotaryID: number; // (default to undefined)
+let body: object; // (optional)
+
+const { status, data } = await apiInstance.notarySyncDocumenttypechecklistV1(
+    pkiNotaryID,
+    body
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | **object**|  | |
+| **pkiNotaryID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**NotarySyncDocumenttypechecklistV1Response**
 
 ### Authorization
 

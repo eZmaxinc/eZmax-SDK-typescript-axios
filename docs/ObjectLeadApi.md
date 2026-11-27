@@ -10,8 +10,10 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**leadGetCommunicationListV1**](#leadgetcommunicationlistv1) | **GET** /1/object/lead/{pkiLeadID}/getCommunicationList | Retrieve Communication list|
 |[**leadGetCommunicationrecipientsV1**](#leadgetcommunicationrecipientsv1) | **GET** /1/object/lead/{pkiLeadID}/getCommunicationrecipients | Retrieve Communication recipients|
 |[**leadGetCommunicationsendersV1**](#leadgetcommunicationsendersv1) | **GET** /1/object/lead/{pkiLeadID}/getCommunicationsenders | Retrieve Communication senders|
+|[**leadGetDocumenttypechecklistV1**](#leadgetdocumenttypechecklistv1) | **GET** /1/object/lead/{pkiLeadID}/getDocumenttypechecklist | Retrieve Document type checklist|
 |[**leadGetListV1**](#leadgetlistv1) | **GET** /1/object/lead/getList | Retrieve Lead list|
 |[**leadImportIntoEDMV1**](#leadimportintoedmv1) | **POST** /1/object/lead/{pkiLeadID}/importIntoEDM | Import attachments into the Lead|
+|[**leadSyncDocumenttypechecklistV1**](#leadsyncdocumenttypechecklistv1) | **POST** /1/object/lead/{pkiLeadID}/syncDocumenttypechecklist | Synchronize Document type checklist|
 
 # **leadBatchDownloadV1**
 > File leadBatchDownloadV1(leadBatchDownloadV1Request)
@@ -323,6 +325,57 @@ const { status, data } = await apiInstance.leadGetCommunicationsendersV1(
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **leadGetDocumenttypechecklistV1**
+> LeadGetDocumenttypechecklistV1Response leadGetDocumenttypechecklistV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectLeadApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectLeadApi(configuration);
+
+let pkiLeadID: number; // (default to undefined)
+
+const { status, data } = await apiInstance.leadGetDocumenttypechecklistV1(
+    pkiLeadID
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **pkiLeadID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**LeadGetDocumenttypechecklistV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **leadGetListV1**
 > LeadGetListV1Response leadGetListV1()
 
@@ -424,6 +477,60 @@ const { status, data } = await apiInstance.leadImportIntoEDMV1(
 ### Return type
 
 **LeadImportIntoEDMV1Response**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Successful response |  -  |
+|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **leadSyncDocumenttypechecklistV1**
+> LeadSyncDocumenttypechecklistV1Response leadSyncDocumenttypechecklistV1()
+
+
+### Example
+
+```typescript
+import {
+    ObjectLeadApi,
+    Configuration
+} from '@ezmaxinc/ezmax-sdk-typescript-axios';
+
+const configuration = new Configuration();
+const apiInstance = new ObjectLeadApi(configuration);
+
+let pkiLeadID: number; // (default to undefined)
+let body: object; // (optional)
+
+const { status, data } = await apiInstance.leadSyncDocumenttypechecklistV1(
+    pkiLeadID,
+    body
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | **object**|  | |
+| **pkiLeadID** | [**number**] |  | defaults to undefined|
+
+
+### Return type
+
+**LeadSyncDocumenttypechecklistV1Response**
 
 ### Authorization
 

@@ -24,7 +24,7 @@ export interface DocumenttypeAutocompleteElementResponse {
     /*'pkiDocumenttypeID': number;*/
     'pkiDocumenttypeID': number;
     /**
-     * The name of the Documenttype in the language of the requester
+     * The name of the document type in the requester\'s language
      */
     /*'sDocumenttypeNameX': string;*/
     'sDocumenttypeNameX': string;
