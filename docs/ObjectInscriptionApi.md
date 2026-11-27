@@ -15,7 +15,6 @@ All URIs are relative to *https://prod.api.appcluster01.ca-central-1.ezmax.com/r
 |[**inscriptionGetObjectV2**](#inscriptiongetobjectv2) | **GET** /2/object/inscription/{pkiInscriptionID} | Retrieve an existing Inscription|
 |[**inscriptionImportIntoEDMV1**](#inscriptionimportintoedmv1) | **POST** /1/object/inscription/{pkiInscriptionID}/importIntoEDM | Import attachments into the Inscription|
 |[**inscriptionPrepareFilesTransferV1**](#inscriptionpreparefilestransferv1) | **POST** /1/object/inscription/{pkiInscriptionID}/prepareFilesTransfer | Prepares file transfer into EDM|
-|[**inscriptionSynchronizationDocumenttypeV1**](#inscriptionsynchronizationdocumenttypev1) | **POST** /1/object/inscription/{pkiInscriptionID}/synchronizationDocumenttype | Synchronization of the Documenttype in the Inscription|
 
 # **inscriptionBatchDownloadV1**
 > File inscriptionBatchDownloadV1(inscriptionBatchDownloadV1Request)
@@ -594,61 +593,6 @@ const { status, data } = await apiInstance.inscriptionPrepareFilesTransferV1(
 ### Return type
 
 **InscriptionPrepareFilesTransferV1Response**
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-|**200** | Successful response |  -  |
-|**404** | The request failed. The element on which you were trying to work does not exists. Look for detail about the error in the body. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **inscriptionSynchronizationDocumenttypeV1**
-> InscriptionSynchronizationDocumenttypeV1Response inscriptionSynchronizationDocumenttypeV1(body)
-
-
-
-### Example
-
-```typescript
-import {
-    ObjectInscriptionApi,
-    Configuration
-} from '@ezmaxinc/ezmax-sdk-typescript-axios';
-
-const configuration = new Configuration();
-const apiInstance = new ObjectInscriptionApi(configuration);
-
-let pkiInscriptionID: number; // (default to undefined)
-let body: object; //
-
-const { status, data } = await apiInstance.inscriptionSynchronizationDocumenttypeV1(
-    pkiInscriptionID,
-    body
-);
-```
-
-### Parameters
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **body** | **object**|  | |
-| **pkiInscriptionID** | [**number**] |  | defaults to undefined|
-
-
-### Return type
-
-**InscriptionSynchronizationDocumenttypeV1Response**
 
 ### Authorization
 

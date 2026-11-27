@@ -48,6 +48,7 @@ export const ObjectInscriptionchecklistApiAxiosParamCreator = function (configur
          * @param {string} [sQuery] Allow to filter the returned results
          * @param {HeaderAcceptLanguage} [acceptLanguage] 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         inscriptionchecklistGetAutocompleteV3: async (sSelector: InscriptionchecklistGetAutocompleteV3SSelectorEnum, fkiBuyercontractID?: string, fkiInscriptionID?: string, fkiInscriptionnotauthenticatedID?: string, fkiInscriptiontempID?: string, fkiAgentID?: string, fkiBrokerID?: string, fkiOtherincomeID?: string, fkiRejectedoffertopurchaseID?: string, eFilterActive?: InscriptionchecklistGetAutocompleteV3EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
@@ -171,6 +172,7 @@ export const ObjectInscriptionchecklistApiFp = function(configuration?: Configur
          * @param {string} [sQuery] Allow to filter the returned results
          * @param {HeaderAcceptLanguage} [acceptLanguage] 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         async inscriptionchecklistGetAutocompleteV3(sSelector: InscriptionchecklistGetAutocompleteV3SSelectorEnum, fkiBuyercontractID?: string, fkiInscriptionID?: string, fkiInscriptionnotauthenticatedID?: string, fkiInscriptiontempID?: string, fkiAgentID?: string, fkiBrokerID?: string, fkiOtherincomeID?: string, fkiRejectedoffertopurchaseID?: string, eFilterActive?: InscriptionchecklistGetAutocompleteV3EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<InscriptionchecklistGetAutocompleteV3Response>> {
@@ -204,6 +206,7 @@ export const ObjectInscriptionchecklistApiFactory = function (configuration?: Co
          * @param {string} [sQuery] Allow to filter the returned results
          * @param {HeaderAcceptLanguage} [acceptLanguage] 
          * @param {*} [options] Override http request option.
+         * @deprecated
          * @throws {RequiredError}
          */
         inscriptionchecklistGetAutocompleteV3(sSelector: InscriptionchecklistGetAutocompleteV3SSelectorEnum, fkiBuyercontractID?: string, fkiInscriptionID?: string, fkiInscriptionnotauthenticatedID?: string, fkiInscriptiontempID?: string, fkiAgentID?: string, fkiBrokerID?: string, fkiOtherincomeID?: string, fkiRejectedoffertopurchaseID?: string, eFilterActive?: InscriptionchecklistGetAutocompleteV3EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig): AxiosPromise<InscriptionchecklistGetAutocompleteV3Response> {
@@ -232,6 +235,7 @@ export class ObjectInscriptionchecklistApi extends BaseAPI {
      * @param {string} [sQuery] Allow to filter the returned results
      * @param {HeaderAcceptLanguage} [acceptLanguage] 
      * @param {*} [options] Override http request option.
+     * @deprecated
      * @throws {RequiredError}
      */
     public inscriptionchecklistGetAutocompleteV3(sSelector: InscriptionchecklistGetAutocompleteV3SSelectorEnum, fkiBuyercontractID?: string, fkiInscriptionID?: string, fkiInscriptionnotauthenticatedID?: string, fkiInscriptiontempID?: string, fkiAgentID?: string, fkiBrokerID?: string, fkiOtherincomeID?: string, fkiRejectedoffertopurchaseID?: string, eFilterActive?: InscriptionchecklistGetAutocompleteV3EFilterActiveEnum, sQuery?: string, acceptLanguage?: HeaderAcceptLanguage, options?: RawAxiosRequestConfig) {

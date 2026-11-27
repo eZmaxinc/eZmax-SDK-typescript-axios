@@ -34,10 +34,6 @@ import type { AttachmentRestoreV1Request } from '../model';
 // @ts-ignore
 import type { AttachmentRestoreV1Response } from '../model';
 // @ts-ignore
-import type { AttachmentSetDocumentTypeV1Request } from '../model';
-// @ts-ignore
-import type { AttachmentSetDocumentTypeV1Response } from '../model';
-// @ts-ignore
 import type { AttachmentSetPrivacyV1Request } from '../model';
 // @ts-ignore
 import type { AttachmentSetPrivacyV1Response } from '../model';
@@ -363,69 +359,6 @@ export const ObjectAttachmentApiAxiosParamCreator = function (configuration?: Co
             };
         },
         /**
-         * The endpoint allows to change the document type for an attachment.
-         * @summary Change attachment document type
-         * @param {number} pkiAttachmentID 
-         * @param {AttachmentSetDocumentTypeV1Request} attachmentSetDocumentTypeV1Request 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        attachmentSetDocumentTypeV1: async (pkiAttachmentID: number, attachmentSetDocumentTypeV1Request: AttachmentSetDocumentTypeV1Request, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiAttachmentID' is not null or undefined
-            assertParamExists('attachmentSetDocumentTypeV1', 'pkiAttachmentID', pkiAttachmentID)
-            // verify required parameter 'attachmentSetDocumentTypeV1Request' is not null or undefined
-            assertParamExists('attachmentSetDocumentTypeV1', 'attachmentSetDocumentTypeV1Request', attachmentSetDocumentTypeV1Request)
-            const localVarPath = `/1/object/attachment/{pkiAttachmentID}/setDocumentType`
-                .replace('{pkiAttachmentID}', encodeURIComponent(String(pkiAttachmentID)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-            localVarHeaderParameter['Content-Type'] = 'application/json';
-            localVarHeaderParameter['Accept'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-            localVarRequestOptions.data = serializeDataIfNeeded(attachmentSetDocumentTypeV1Request, localVarRequestOptions, configuration)
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'POST' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
-        /**
          * The endpoint allows to change an attachment\'s access privacy.
          * @summary Change the attachment privacy
          * @param {number} pkiAttachmentID 
@@ -629,20 +562,6 @@ export const ObjectAttachmentApiFp = function(configuration?: Configuration) {
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
         /**
-         * The endpoint allows to change the document type for an attachment.
-         * @summary Change attachment document type
-         * @param {number} pkiAttachmentID 
-         * @param {AttachmentSetDocumentTypeV1Request} attachmentSetDocumentTypeV1Request 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async attachmentSetDocumentTypeV1(pkiAttachmentID: number, attachmentSetDocumentTypeV1Request: AttachmentSetDocumentTypeV1Request, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AttachmentSetDocumentTypeV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.attachmentSetDocumentTypeV1(pkiAttachmentID, attachmentSetDocumentTypeV1Request, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ObjectAttachmentApi.attachmentSetDocumentTypeV1']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
          * The endpoint allows to change an attachment\'s access privacy.
          * @summary Change the attachment privacy
          * @param {number} pkiAttachmentID 
@@ -733,17 +652,6 @@ export const ObjectAttachmentApiFactory = function (configuration?: Configuratio
             return localVarFp.attachmentRestoreV1(pkiAttachmentID, attachmentRestoreV1Request, options).then((request) => request(axios, basePath));
         },
         /**
-         * The endpoint allows to change the document type for an attachment.
-         * @summary Change attachment document type
-         * @param {number} pkiAttachmentID 
-         * @param {AttachmentSetDocumentTypeV1Request} attachmentSetDocumentTypeV1Request 
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        attachmentSetDocumentTypeV1(pkiAttachmentID: number, attachmentSetDocumentTypeV1Request: AttachmentSetDocumentTypeV1Request, options?: RawAxiosRequestConfig): AxiosPromise<AttachmentSetDocumentTypeV1Response> {
-            return localVarFp.attachmentSetDocumentTypeV1(pkiAttachmentID, attachmentSetDocumentTypeV1Request, options).then((request) => request(axios, basePath));
-        },
-        /**
          * The endpoint allows to change an attachment\'s access privacy.
          * @summary Change the attachment privacy
          * @param {number} pkiAttachmentID 
@@ -828,18 +736,6 @@ export class ObjectAttachmentApi extends BaseAPI {
      */
     public attachmentRestoreV1(pkiAttachmentID: number, attachmentRestoreV1Request: AttachmentRestoreV1Request, options?: RawAxiosRequestConfig) {
         return ObjectAttachmentApiFp(this.configuration).attachmentRestoreV1(pkiAttachmentID, attachmentRestoreV1Request, options).then((request) => request(this.axios, this.basePath));
-    }
-
-    /**
-     * The endpoint allows to change the document type for an attachment.
-     * @summary Change attachment document type
-     * @param {number} pkiAttachmentID 
-     * @param {AttachmentSetDocumentTypeV1Request} attachmentSetDocumentTypeV1Request 
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    public attachmentSetDocumentTypeV1(pkiAttachmentID: number, attachmentSetDocumentTypeV1Request: AttachmentSetDocumentTypeV1Request, options?: RawAxiosRequestConfig) {
-        return ObjectAttachmentApiFp(this.configuration).attachmentSetDocumentTypeV1(pkiAttachmentID, attachmentSetDocumentTypeV1Request, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

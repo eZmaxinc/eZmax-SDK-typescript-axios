@@ -24,8 +24,6 @@ import { BASE_PATH, COLLECTION_FORMATS, type RequestArgs, BaseAPI, RequiredError
 // @ts-ignore
 import type { CommonResponseError } from '../model';
 // @ts-ignore
-import type { DocumenttypechecklistDeleteObjectV1Response } from '../model';
-// @ts-ignore
 import type { DocumenttypechecklistPatchObjectV1Request } from '../model';
 // @ts-ignore
 import type { DocumenttypechecklistPatchObjectV1Response } from '../model';
@@ -36,64 +34,6 @@ import { RequestSignature, IHeadersData } from '../api/request-signature';
  */
 export const ObjectDocumenttypechecklistApiAxiosParamCreator = function (configuration?: Configuration) {
     return {
-        /**
-         * 
-         * @summary Delete an existing Documenttypechecklist
-         * @param {number} pkiDocumenttypechecklistID The unique ID of the Documenttypechecklist
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        documenttypechecklistDeleteObjectV1: async (pkiDocumenttypechecklistID: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
-            // verify required parameter 'pkiDocumenttypechecklistID' is not null or undefined
-            assertParamExists('documenttypechecklistDeleteObjectV1', 'pkiDocumenttypechecklistID', pkiDocumenttypechecklistID)
-            const localVarPath = `/1/object/documenttypechecklist/{pkiDocumenttypechecklistID}`
-                .replace('{pkiDocumenttypechecklistID}', encodeURIComponent(String(pkiDocumenttypechecklistID)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            let basePath = DUMMY_BASE_URL
-            if (configuration && configuration.basePath) basePath = configuration.basePath
-            //const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
-            const localVarUrlObj = new URL(localVarPath, basePath);
-
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-
-            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
-            const localVarHeaderParameter = {} as any;
-            const localVarQueryParameter = {} as any;
-
-            // authentication Authorization required
-            await setApiKeyToObject(localVarHeaderParameter, "Authorization", configuration)
-
-            localVarHeaderParameter['Accept'] = 'application/json';
-
-            setSearchParams(localVarUrlObj, localVarQueryParameter);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            //localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
-            localVarRequestOptions.headers = {...headersFromBaseOptions, ...localVarHeaderParameter,  ...options.headers};
-
-            // Signature
-            if (configuration && configuration.apiKey) {
-                const secret = configuration.getSecret()
-                if (secret) {
-                    const headers:IHeadersData = {
-                        authorization: configuration.apiKey as string,
-                        secret: secret as string,
-                        method: 'DELETE' as string,
-                        url: basePath + toPathString(localVarUrlObj) as string,
-                        body: localVarRequestOptions.data || '' as string
-                    }
-                    const signatureHeaders = RequestSignature.getHeaders(headers)
-                    localVarRequestOptions.headers = { ...localVarRequestOptions.headers, ...signatureHeaders }
-                } 
-            }
-
-            return {
-                url: toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        },
         /**
          * 
          * @summary Patch an existing Documenttypechecklist
@@ -168,19 +108,6 @@ export const ObjectDocumenttypechecklistApiFp = function(configuration?: Configu
     return {
         /**
          * 
-         * @summary Delete an existing Documenttypechecklist
-         * @param {number} pkiDocumenttypechecklistID The unique ID of the Documenttypechecklist
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        async documenttypechecklistDeleteObjectV1(pkiDocumenttypechecklistID: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DocumenttypechecklistDeleteObjectV1Response>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.documenttypechecklistDeleteObjectV1(pkiDocumenttypechecklistID, options);
-            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
-            const localVarOperationServerBasePath = operationServerMap['ObjectDocumenttypechecklistApi.documenttypechecklistDeleteObjectV1']?.[localVarOperationServerIndex]?.url;
-            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
-        },
-        /**
-         * 
          * @summary Patch an existing Documenttypechecklist
          * @param {number} pkiDocumenttypechecklistID The unique ID of the Documenttypechecklist
          * @param {DocumenttypechecklistPatchObjectV1Request} documenttypechecklistPatchObjectV1Request 
@@ -204,16 +131,6 @@ export const ObjectDocumenttypechecklistApiFactory = function (configuration?: C
     return {
         /**
          * 
-         * @summary Delete an existing Documenttypechecklist
-         * @param {number} pkiDocumenttypechecklistID The unique ID of the Documenttypechecklist
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        documenttypechecklistDeleteObjectV1(pkiDocumenttypechecklistID: number, options?: RawAxiosRequestConfig): AxiosPromise<DocumenttypechecklistDeleteObjectV1Response> {
-            return localVarFp.documenttypechecklistDeleteObjectV1(pkiDocumenttypechecklistID, options).then((request) => request(axios, basePath));
-        },
-        /**
-         * 
          * @summary Patch an existing Documenttypechecklist
          * @param {number} pkiDocumenttypechecklistID The unique ID of the Documenttypechecklist
          * @param {DocumenttypechecklistPatchObjectV1Request} documenttypechecklistPatchObjectV1Request 
@@ -230,17 +147,6 @@ export const ObjectDocumenttypechecklistApiFactory = function (configuration?: C
  * ObjectDocumenttypechecklistApi - object-oriented interface
  */
 export class ObjectDocumenttypechecklistApi extends BaseAPI {
-    /**
-     * 
-     * @summary Delete an existing Documenttypechecklist
-     * @param {number} pkiDocumenttypechecklistID The unique ID of the Documenttypechecklist
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    public documenttypechecklistDeleteObjectV1(pkiDocumenttypechecklistID: number, options?: RawAxiosRequestConfig) {
-        return ObjectDocumenttypechecklistApiFp(this.configuration).documenttypechecklistDeleteObjectV1(pkiDocumenttypechecklistID, options).then((request) => request(this.axios, this.basePath));
-    }
-
     /**
      * 
      * @summary Patch an existing Documenttypechecklist
